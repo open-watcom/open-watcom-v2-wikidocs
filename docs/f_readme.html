@@ -1,0 +1,1472 @@
+<HEAD>
+<TITLE> Open Watcom 2.0 FORTRAN 77 Getting Started </TITLE>
+</HEAD>
+<BODY>
+<H1 ID="Index_of_Topics"> Index of Topics </H1>
+<DL>
+<DT>- A -
+<DD><A HREF="#Accessing_OnMline_Documentation">Accessing On-line Documentation</A>
+<BR><A HREF="#Adding_Multiple_Targets">Adding Multiple Targets</A>
+<DT>- C -
+<DD><A HREF="#Changes_in_10_6_that_may_Require_Recompilation">Changes in 10.6 that may Require Recompilation</A>
+<BR><A HREF="#Changes_in_11_0_that_may_Require_Recompilation">Changes in 11.0 that may Require Recompilation</A>
+<BR><A HREF="#Changes_in_Microsoft_Win32_SDK_Support_for_11_0">Changes in Microsoft Win32 SDK Support for 11.0</A>
+<BR><A HREF="#Changes_that_may_Require_Recompilation">Changes that may Require Recompilation</A>
+<BR><A HREF="#Changes_to_the_C_Library">Changes to the C Library</A>
+<BR><A HREF="#Changes_to_the_CDCPP_Libraries_for_11_0">Changes to the C/C++ Libraries for 11.0</A>
+<BR><A HREF="#Changes_to_the_Code_Generator_for_11_0">Changes to the Code Generator for 11.0</A>
+<BR><A HREF="#Changes_to_the_Compiler_Tools_for_11_0">Changes to the Compiler Tools for 11.0</A>
+<BR><A HREF="#Changes_to_the_Dialog_Editor">Changes to the Dialog Editor</A>
+<BR><A HREF="#Changes_to_the_DOS_Graphics_Library_for_11_0">Changes to the DOS Graphics Library for 11.0</A>
+<BR><A HREF="#Changes_to_the_Image_Editor">Changes to the Image Editor</A>
+<BR><A HREF="#Changes_to_the_Resource_Compiler">Changes to the Resource Compiler</A>
+<BR><A HREF="#Changes_to_the_Resource_Editor">Changes to the Resource Editor</A>
+<BR><A HREF="#Contacting_Technical_Support">Contacting Technical Support</A>
+<BR><A HREF="#Correcting_an_Error">Correcting an Error</A>
+<DT>- D -
+<DD><A HREF="#Debugging_the_Program">Debugging the Program</A>
+<BR><A HREF="#Defining_a_Project">Defining a Project</A>
+<BR><A HREF="#Documentation">Documentation</A>
+<BR><A HREF="#DOS_Developers">DOS Developers</A>
+<DT>- E -
+<DD><A HREF="#Editing_a_Bitmap">Editing a Bitmap</A>
+<BR><A HREF="#Editing_Menus">Editing Menus</A>
+<BR><A HREF="#Executing_the_Program">Executing the Program</A>
+<BR><A HREF="#Extended_DOS_Developers">Extended DOS Developers</A>
+<DT>- H -
+<DD><A HREF="#HandsMon_Introduction_to_Open_Watcom_FORTRAN_77">Hands-on Introduction to Open Watcom FORTRAN 77</A>
+<BR><A HREF="#Hardware_and_Software_Requirements">Hardware and Software Requirements</A>
+<DT>- I -
+<DD><A HREF="#Incremental_Installation">Incremental Installation</A>
+<BR><A HREF="#Information_Technical_Support_Will_Need_to_Help_You">Information Technical Support Will Need to Help You</A>
+<BR><A HREF="#Installation">Installation</A>
+<BR><A HREF="#Installation_Notes_for_OSD2">Installation Notes for OS/2</A>
+<BR><A HREF="#Installation_Notes_for_Windows_3_x">Installation Notes for Windows 3.x</A>
+<BR><A HREF="#Installing_Open_Watcom_FORTRAN_77">Installing Open Watcom FORTRAN 77</A>
+<BR><A HREF="#Introduction_to_Open_Watcom_FORTRAN_77">Introduction to Open Watcom FORTRAN 77</A>
+<BR><A HREF="#Items_No_Longer_Supported">Items No Longer Supported</A>
+<DT>- M -
+<DD><A HREF="#Major_Differences_from_Version_10_5">Major Differences from Version 10.5</A>
+<BR><A HREF="#Major_Differences_from_Version_10_6">Major Differences from Version 10.6</A>
+<BR><A HREF="#Major_Differences_from_Version_9_0">Major Differences from Version 9.0</A>
+<BR><A HREF="#Major_Differences_from_Version_9_5">Major Differences from Version 9.5</A>
+<BR><A HREF="#Making_a_Target">Making a Target</A>
+<BR><A HREF="#Making_All_Targets">Making All Targets</A>
+<DT>- O -
+<DD><A HREF="#OnMline_Documentation_under_DOS">On-line Documentation under DOS</A>
+<BR><A HREF="#OnMline_Documentation_under_OSD2">On-line Documentation under OS/2</A>
+<BR><A HREF="#OnMline_Documentation_under_Windows">On-line Documentation under Windows</A>
+<BR><A HREF="#The_Open_Watcom_FORTRAN_77_Tutorial">The Open Watcom FORTRAN 77 Tutorial</A>
+<BR><A HREF="#OSD2_Developers">OS/2 Developers</A>
+<BR><A HREF="#Outline">Outline</A>
+<DT>- R -
+<DD><A HREF="#The_README_File">The README File</A>
+<BR><A HREF="#Release_Notes_for_Open_Watcom_FORTRAN_77_2_0">Release Notes for Open Watcom FORTRAN 77 2.0</A>
+<BR><A HREF="#Resources_at_Your_Fingertips">Resources at Your Fingertips</A>
+<DT>- S -
+<DD><A HREF="#Sampling_and_Profiling_an_Executable">Sampling and Profiling an Executable</A>
+<BR><A HREF="#Saving_the_Project_and_Terminating_the_Session">Saving the Project and Terminating the Session</A>
+<BR><A HREF="#Smart_Editing">Smart Editing</A>
+<BR><A HREF="#Suggested_Reading">Suggested Reading</A>
+<BR><A HREF="#Sybase_Open_Watcom_Public_License">Sybase Open Watcom Public License</A>
+<BR><A HREF="#System_Configuration_File_Modifications">System Configuration File Modifications</A>
+<DT>- T -
+<DD><A HREF="#Technical_Support_and_Services">Technical Support and Services</A>
+<BR><A HREF="#TroubleMShooting">Trouble-Shooting</A>
+<BR><A HREF="#Tutorial_Review">Tutorial Review</A>
+<DT>- W -
+<DD><A HREF="#What_is_in_version_2_0_of_Open_Watcom_FORTRAN_77_">What is in version 2.0 of Open Watcom FORTRAN 77?</A>
+<BR><A HREF="#WinMOSD2_and_OSD2_Specific">Win-OS/2 and OS/2 Specific</A>
+<BR><A HREF="#Windows_3_x_Developers">Windows 3.x Developers</A>
+<BR><A HREF="#Windows_95_Help_File_Format">Windows 95 Help File Format</A>
+<BR><A HREF="#Windows_NT_Developers">Windows NT Developers</A>
+</DL>
+<H1 ID="Introduction_to_Open_Watcom_FORTRAN_77"> Introduction to Open Watcom FORTRAN 77 </H1>
+<BR>Welcome to the Open Watcom FORTRAN 77 2.0 development system.&nbsp; Open Watcom FORTRAN 77 is an Open Source successor
+to commercial compilers previously marketed by Sybase, Powersoft and originally WATCOM International Corp.
+<BR><BR>Version 2.0 of Open Watcom FORTRAN 77 is a professional, optimizing, multi-platform FORTRAN 77 compiler with a comprehensive
+suite of development tools for developing and debugging both 16-bit and 32-bit applications for DOS, extended DOS, Novell
+NLMs, 16-bit OS/2, 32-bit OS/2, Windows 3.x, Windows 95/98/Me, Win32s, and Windows NT/2000/XP (Win32).
+<BR><BR>You should read the entire contents of this booklet, as it contains information on new programs and modifications
+that have been made since the previous release.
+<HR>
+<BR><B>Special NOTE to users of previous versions!&nbsp; See the section entitled</B> <A HREF="#Release_Notes_for_Open_Watcom_FORTRAN_77_2_0">Release Notes for Open Watcom FORTRAN 77 2.0</A><B>
+to determine if you need to recompile your application.</B>
+<HR>
+<H2 ID="What_is_in_version_2_0_of_Open_Watcom_FORTRAN_77_"> What is in version 2.0 of Open Watcom FORTRAN 77? </H2>
+<BR>Version 2.0 incorporates the features professional developers have been demanding:
+<DL>
+<DT>Open, Multi-target Integrated Development Environment
+<DD>The IDE allows you to easily edit, compile, link, debug and build applications for 16-bit systems like DOS, OS/2 1.x, and
+Windows 3.x and 32-bit systems like extended DOS, Novell NLMs, OS/2, Windows 3.x (Win32s), Windows 95/98/Me, and Windows NT/2000/XP.
+&nbsp;Projects can be made up of multiple targets which permit a project to include EXEs and DLLs.&nbsp; The IDE produces
+makefiles for the project which can be viewed and edited with a text editor.&nbsp; The IDE is hosted under Windows 3.x, Windows
+95/98/Me, Windows NT/2000/XP, and 32-bit OS/2.
+<DT>The Widest Range of Intel x86 Platforms
+<DD>
+<DL>
+<DT>Host Platforms
+<DD>
+<UL>
+<LI>DOS (command line)
+<LI>32-bit OS/2 (IDE and command line)
+<LI>Windows 3.x (IDE)
+<LI>Windows 95/98/Me (IDE and command line)
+<LI>Windows NT/2000/XP (IDE and command line)
+</UL>
+<DT>16-bit Target Platforms
+<DD>
+<UL>
+<LI>DOS
+<LI>Windows 3.x
+<LI>OS/2 1.x
+</UL>
+<DT>32-bit Target Platforms
+<DD>
+<UL>
+<LI>Extended DOS
+<LI>Win32s
+<LI>Windows 95/98/Me
+<LI>Windows NT/2000/XP
+<LI>32-bit OS/2
+<LI>Novell NLMs
+</UL>
+</DL>
+<DT>Cross-Platform Development Tools
+<DD>The core tools in the package permit cross-platform development that allows developers to exploit the advanced features of
+today's popular 32-bit operating systems, including Windows 95/98/Me, Windows NT/2000/XP, and OS/2.&nbsp; Cross-platform support
+allows you to develop on a host development environment for execution on a different target system.
+<DT>Multi-Platform Debugger
+<DD>The new debugger advances developer productivity.&nbsp; New features include redesigned interface, ability to set breakpoints
+on nested function calls, improved C++ and DLL debugging, reverse execution, and configurable interface.&nbsp; Graphical versions
+of the debugger are available under Windows 3.x, Windows 95/98/Me, Windows NT/2000/XP, and 32-bit OS/2.&nbsp; Character versions
+of the debugger are available under DOS, Windows 3.x, Windows NT/2000/XP, and 32-bit OS/2.&nbsp; For VIDEO fans, we have kept
+the command line compatibility from the original debugger.
+<DT>Performance Analysis
+<DD>The Open Watcom Execution Sampler and Open Watcom Execution Profiler are performance analysis tools that locate heavily used
+sections of code so that you may focus your efforts on these areas and improve your application's performance.
+<DT>Editor
+<DD>The Open Watcom Editor is a context sensitive source editor, integrated into the Windows 3.x, Windows 95/98/Me and Windows
+NT/2000/XP version of the IDE.
+<DT>Graphical Development Tools
+<DD>Open Watcom FORTRAN 77 includes a suite of graphical development tools to aid development of Windows 3.x, Windows 95/98/Me
+and Windows NT/2000/XP applications.&nbsp; The development tools include:
+<DL>
+<DT>Resource Editors
+<DD>Enable you to create resources for your 16-bit and 32-bit Windows applications.&nbsp; For 32-bit OS/2 PM development, Open
+Watcom FORTRAN 77 interoperates with IBM's OS/2 Developer's Toolkit (available from IBM).&nbsp; These tools have been seamlessly
+integrated into the IDE.&nbsp; The resource compiler allows you to incorporate these resources into your application.
+<DT>Resource Compiler
+<DD>Produces a compiled resource file from a source file.
+<DT>Zoom
+<DD>Magnifies selected sections of your screen.
+<DT>Heap Walker
+<DD>Displays memory usage for testing and debugging purposes.
+<DT>Spy
+<DD>Monitors messages passed between your application and Windows.
+<DT>DDESpy
+<DD>Monitors all DDE activity occurring in the system.
+<DT>Dr.&nbsp; Watcom
+<DD>Enables you to debug your program by examining both the program and the system after an exception occurs; monitors native
+applications running under Windows 3.x, Windows 95/98/Me or Windows NT/2000/XP.
+</DL>
+<DT>Assembler
+<DD>An assembler is included in the package.&nbsp; It is compatible with a subset of the Microsoft macro assembler (MASM).
+<DT>Royalty-free 32-bit DOS Extender
+<DD>Open Watcom FORTRAN 77 includes the DOS/4GW 32-bit DOS extender by Tenberry Software with royalty-free run-time and virtual
+memory support up to 32MB.
+<DT>Support for wide range of DOS Extenders
+<DD>Open Watcom FORTRAN 77 allows you to develop and debug applications based on the following DOS extender technology:&nbsp;
+CauseWay DOS Extender, Tenberry Software's DOS/4G and Phar Lap's TNT DOS Extender.&nbsp; You can also develop applications
+using DOS/32A and FlashTek's DOS Extender but, currently, there is no support for debugging these applications.
+<DT>Sample programs and applications
+<DD>Open Watcom FORTRAN 77 includes a large set of sample applications to demonstrate the integrated development environment.
+</DL>
+<H2 ID="Technical_Support_and_Services"> Technical Support and Services </H2>
+<BR>We are committed to ensuring that our products perform as they were designed.&nbsp; Although a significant amount of testing
+has gone into this product, you may encounter errors in the software or documentation.&nbsp; Technical support is provided
+on an informal basis through the Open Watcom FORTRAN 77 newsgroups.&nbsp; Please visit http://www.openwatcom.org/ for more
+information.
+<H3 ID="Resources_at_Your_Fingertips"> Resources at Your Fingertips </H3>
+<BR>Open Watcom FORTRAN 77 contains many resources to help you find answers to your questions.&nbsp; The documentation is
+the first place to start.&nbsp; With each release of the product, we update the manuals to answer the most frequently asked
+questions.&nbsp; Most of this information is also accessible through on-line help.
+<BR><BR>The &quot;README&quot; file in the main product directory contains up-to-date information that recently became available.
+<BR><BR>Answers to frequently asked questions are available on the Open Watcom World Wide Web server (http://www.openwatcom.org/).
+<H3 ID="Contacting_Technical_Support"> Contacting Technical Support </H3>
+<BR>Our technical support is available to help resolve technical defects in the software.&nbsp; Note that all support is currently
+informal and free.&nbsp; The following are ways to contact technical support.
+<DL>
+<DT>Newsgroups
+<DD>The easiest way to get support is through the Open Watcom newsgroups at news://news.openwatcom.org/.
+<DT>World Wide Web
+<DD>You can also submit bug reports or enhancement requests through the Open Watcom bug tracking system at http://bugzilla.openwatcom.org/.
+</DL>
+<H3 ID="Information_Technical_Support_Will_Need_to_Help_You"> Information Technical Support Will Need to Help You </H3>
+<BR>The more information you can provide to technical support, the faster they can help you solve your problem.&nbsp; A detailed
+description of the problem, short sample program, and a summary of steps to duplicate the problem (including compiler and
+linker options) are essential.&nbsp; Concise problem reports allow technical support to quickly pinpoint the problem and offer
+a resolution.&nbsp; Here is a list of information that will help technical support solve the problem:
+<DL>
+<DT>Contact information
+<DD>We would like your name, as well as telephone and fax numbers where you can be reached during the day.
+<DT>Product information
+<DD>Please tell us the product name and exact version number.
+<DT>Hardware configuration
+<DD>Please tell us what type of processor you are using (e.g., 2.2GHz Intel Pentium 4), how much memory is present, what kind
+of graphics adapter you are using, and how much memory it has.
+<DT>Software configuration
+<DD>Please tell us what operating system and version you are using.
+<DT>Concise problem report with short sample program
+<DD>Please provide a complete description of the problem and the steps to reproduce it.&nbsp; A small, self-contained program
+example with compile and link options is ideal.
+</DL>
+<H3 ID="Suggested_Reading"> Suggested Reading </H3>
+<BR>There are a number of good books and references that can help you answer your questions.&nbsp; Following is a list of
+some of the books and documents we feel might be helpful.&nbsp; This is by no means an exhaustive list.&nbsp; Contact your
+local bookstore for additional information.
+<H4 ID="DOS_Developers"> DOS Developers </H4>
+<DL>
+<DT>PC Interrupts, Second Edition
+<DD>
+<BR><BR>Ralf Brown and Jim Kyle; Addison-Wesley Publishing Company, 1994.
+<DT>Relocatable Object Module Format Specification, V1.1
+<DD>
+<BR><BR>The Tool Interface Standards (TIS) OMF specification can be obtained from the Open Watcom website.&nbsp; Here is the
+URL.
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; http://www.openwatcom.org/ftp/devel/docs/omf.pdf</TT>
+<BR><BR>This file contains a PDF version of the TIS OMF V1.1 specification.
+</DL>
+<H4 ID="Extended_DOS_Developers"> Extended DOS Developers </H4>
+<DL>
+<DT>Extending DOS-A Programmer's Guide to Protected-Mode DOS, 2nd Edition
+<DD>
+<BR><BR>Ray Duncan, et al; Addison-Wesley Publishing Company, 1992.
+<DT>DOS Protected-Mode Interface (DPMI) Specification
+<DD>
+<BR><BR>The DPMI 1.0 specification can be obtained from the Open Watcom website.&nbsp; Here is the URL.
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; http://www.openwatcom.org/ftp/devel/docs/dpmi10.pdf</TT>
+<BR><BR>This file contains a PDF version of the DPMI 1.0 specification.
+</DL>
+<H4 ID="Windows_3_x_Developers"> Windows 3.x Developers </H4>
+<DL>
+<DT>Microsoft Windows Programmer's Reference
+<DD>
+<BR><BR>Microsoft Corporation; Microsoft Press, 1990.
+<DT>Programming Windows 3.1, Third Edition
+<DD>
+<BR><BR>Charles Petzold; Microsoft Press, 1992.
+<DT>Windows Programming Primer Plus
+<DD>
+<BR><BR>Jim Conger; Waite Group Press, 1992.
+</DL>
+<H4 ID="Windows_NT_Developers"> Windows NT Developers </H4>
+<DL>
+<DT>Advanced Windows NT
+<DD>
+<BR><BR>Jeffrey Richter; Microsoft Press.&nbsp; 1994.
+<DT>Inside Windows NT
+<DD>
+<BR><BR>Helen Custer; Microsoft Press.&nbsp; 1993.
+<DT>Microsoft Win32 Programmer's Reference, Volume One
+<DD>
+<BR><BR>Microsoft Corporation; Microsoft Press, 1993.
+</DL>
+<H4 ID="OSD2_Developers"> OS/2 Developers </H4>
+<DL>
+<DT>The Design of OS/2
+<DD>
+<BR><BR>H.M.&nbsp; Deitel and M.S.&nbsp; Kogan; Addison-Wesley Publishing Company, 1992.
+<DT>OS/2 Warp Unleashed, Deluxe Edition
+<DD>
+<BR><BR>David Moskowitz and David Kerr, et al; Sams Publishing, 1995.
+</DL>
+<H1 ID="Installation"> Installation </H1>
+<BR>The package contains the following components:
+<UL>
+<LI><B> Open Watcom FORTRAN 77 CD-ROM</B>
+<LI><B> This manual</B>
+</UL>
+<H2 ID="Hardware_and_Software_Requirements"> Hardware and Software Requirements </H2>
+<BR>Open Watcom FORTRAN 77 requires the following minimum configuration:
+<UL>
+<LI>IBM PC compatible
+<LI>An 80386 or higher processor
+<LI>8 MB of memory
+<LI>Hard disk with enough space available to install the components you require.
+<LI>A CD-ROM disk drive
+</UL>
+<BR>In addition to the above requirements, you need one of the following operating systems:
+<UL>
+<LI>DOS version 5.0 or higher
+<LI>Microsoft Windows version 3.1 running in enhanced mode
+<LI>Microsoft Windows 95 or higher
+<LI>Microsoft Windows NT version 3.1 or higher
+<LI>IBM OS/2 2.1 or higher
+</UL>
+<H2 ID="The_README_File"> The README File </H2>
+<BR>Before you install Open Watcom FORTRAN 77, you should read the contents of the &quot;README&quot; file which is stored
+in the root directory of the CD-ROM.&nbsp; It contains valuable, up-to-date information concerning this product.
+<H2 ID="Installing_Open_Watcom_FORTRAN_77"> Installing Open Watcom FORTRAN 77 </H2>
+<BR>The installation program in this version has been completely redesigned with several new &quot;smart&quot; features.&nbsp;
+If you have installed a previous version of Open Watcom FORTRAN 77 then you should install Open Watcom FORTRAN 77 2.0 into
+the same path (except for the reason described in the following paragraph).&nbsp; It will examine a previous installation
+to determine what features were previously installed.&nbsp; It will use this information to establish default settings for
+the installation that you are about to attempt.&nbsp; Of course, you can add or remove features as you progress through the
+installation steps.
+<BR><BR>If you are installing only one of the Open Watcom C/C++ or Open Watcom FORTRAN 77 products and you have an older version
+of the other product, we do NOT recommend that you install the new product into the same directory as the old product.&nbsp;
+The Open Watcom C/C++ and Open Watcom FORTRAN 77 products are compatible at the same version number.&nbsp; However, the Open
+Watcom C/C++ and Open Watcom FORTRAN 77 products are usually NOT compatible across different version numbers.&nbsp; If this
+is the case, care must be exercised when switching between use of the two products.&nbsp; Environment variables such as<B>
+PATH</B> and<B> WATCOM</B> must be modified and/or corrected.&nbsp; System files such as<TT> CONFIG.SYS</TT> and<TT> SYSTEM.INI</TT>
+must be modified and/or corrected.
+<BR><BR>If you are installing both Open Watcom C/C++ 2.0 and Open Watcom FORTRAN 77 2.0, we recommend that you install both
+products under the same directory.&nbsp; This will eliminate duplication of files and, as a result, reduce the total required
+disk space.&nbsp; The two products share the use of certain environment variables which point to the installation directory.
+&nbsp;If separate installation directories are used, problems will arise.
+<BR><BR>When you install Open Watcom C/C++ and Open Watcom FORTRAN 77 in the same directory, you should not deselect any options
+when running the second installation; otherwise the second product's install may remove files that were installed (and are
+required) by the first product's install.&nbsp; This isn't an issue if you only have one of Open Watcom C/C++ or Open Watcom
+FORTRAN 77.&nbsp; The problem is that Open Watcom C/C++ and Open Watcom FORTRAN 77 don't know about the installation options
+you have selected for each other's product.
+<BR><BR>If you wish to create a backup of your previous version, please do so before installing Open Watcom FORTRAN 77 2.0.
+<BR><BR>If you decide to install Open Watcom FORTRAN 77 2.0 into a different directory than the previously installed version,
+you will have to manually edit system files (e.g., CONFIG.SYS, AUTOEXEC.BAT, SYSTEM.INI) after the installation process is
+complete to remove the old version from various environment variables (e.g., PATH, DEVICE=).&nbsp; This is necessary since
+the path to the new version will appear after the path to the old version.&nbsp; To avoid this extra work, we recommend installing
+the new version into the same path as the old version.
+<BR><BR>As an example, here are a few of the environment variables and &quot;RUN&quot; directives that are modified/added
+to the OS/2<TT> CONFIG.SYS</TT> file.&nbsp; You should make sure that all references to the older version of the software
+are removed.
+<BR><BR><B>Example:</B>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; LIBPATH=...;D:\WATCOM\BINP\DLL;...</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET PATH=...;D:\WATCOM\BINP;D:\WATCOM\BINW;...</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET HELP=...;D:\WATCOM\BINP\HELP;...</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET BOOKSHELF=...;D:\WATCOM\BINP\HELP;...</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET INCLUDE=...;D:\WATCOM\H\OS2;D:\WATCOM\H;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET WATCOM=D:\WATCOM</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET EDPATH=D:\WATCOM\EDDAT</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; RUN=D:\WATCOM\BINP\NMPBIND.EXE</TT>
+<BR><BR>You may wish to run Open Watcom FORTRAN 77 under more than one operating system on the same personal computer.&nbsp;
+For every operating system that you use, simply start up the operating system and run the corresponding install procedure.
+<BR><BR>If you run the Windows 3.x installation procedure, you do not need to run the DOS installation procedure also.
+<BR><BR>If you plan to use Win-OS/2 as a development platform under OS/2, you must run the Windows 3.1 install program (selecting
+Windows 3.1 host support).
+<BR><BR>Place the CD-ROM disk in your CD-ROM drive.&nbsp; Select one of the following procedures depending on the host operating
+system that you are currently running.&nbsp; Below, substitute the CD-ROM drive specification for &quot;x:&quot;.
+<DL>
+<DT>DOS
+<DD>Enter the following command:&nbsp; 
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; x:\setup</TT>
+<DT>Windows 3.x
+<DD>Start Windows 3.x and choose Run from the File menu of the Program Manager.&nbsp; Enter the following command:&nbsp; 
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; x:\setup</TT>
+<DT>Windows 95/98/Me
+<DD>Choose Run from the Start menu and enter the following command:&nbsp; 
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; x:\setup</TT>
+<DT>Windows NT/2000/XP
+<DD>Log on to an account that is a member of the &quot;Administrator&quot; group so that you have sufficient rights to modify
+the system environment.&nbsp; Choose Run from the File menu of the Program Manager.&nbsp; Enter the following command:&nbsp;
+
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; x:\setup</TT>
+<DT>OS/2
+<DD>Start an OS/2 session and enter the following command:&nbsp; 
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; x:\install</TT>
+</DL>
+<H2 ID="Incremental_Installation"> Incremental Installation </H2>
+<BR>You may wish to install Open Watcom FORTRAN 77, and subsequently install features that you omitted in the first install.
+&nbsp;You can also remove features that you no longer wish to have installed.&nbsp; You can achieve this as follows:
+<OL>
+<LI>Start the installation program.
+<LI>Select any new features that you wish to install.
+<LI>Deselect any features that you wish to remove.
+<LI>Re-run the installation program for each host operating system that you use.
+</OL>
+<H2 ID="System_Configuration_File_Modifications"> System Configuration File Modifications </H2>
+<BR>The install program makes changes to your operating system startup files to allow Open Watcom FORTRAN 77 to run.&nbsp;
+We strongly recommend that you allow the install program to modify your system configuration files for you, but you may do
+it by hand.&nbsp; The changes required may be found in any of the following files which have been placed in the root of the
+installation directory:
+<DL>
+<DT>CONFIG.NEW
+<DD>Changes required for<TT> CONFIG.SYS</TT> (DOS, Windows, Windows 95/98/Me, OS/2)
+<DT>AUTOEXEC.NEW
+<DD>Changes required for<TT> AUTOEXEC.BAT</TT> (DOS, Windows, Windows 95/98/Me, OS/2)
+<DT>CHANGES.ENV
+<DD>Changes required for the Windows NT/2000/XP environment
+</DL>
+<H2 ID="Installation_Notes_for_Windows_3_x"> Installation Notes for Windows 3.x </H2>
+<OL>
+<LI>When you use the Integrated Development Environment under Windows 3.x, it is important that the IDE's batch server program
+be able to run in the background.&nbsp; Therefore, make sure that the &quot;Exclusive in Foreground&quot; checkbox is NOT
+checked in the &quot;Scheduling&quot; options of &quot;386 Enhanced&quot; in the &quot;Control Panel&quot;.
+<LI>When you use the Integrated Development Environment under Windows 3.x, the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OverlappedIO=ON</TT>
+<BR><BR>in your &quot;SYSTEM.INI&quot; file can cause problems.&nbsp; This controls (disables) the queuing of DiskIO and makes
+some changes between DOS box timings to allow some processes to finish.
+<LI>When you use the Integrated Development Environment under Windows 3.x, it is important that the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NoEMMDriver=ON</TT>
+<BR><BR>not appear in your &quot;SYSTEM.INI&quot; file.&nbsp; It will prevent a link from succeeding in the IDE..
+<LI>When you use the Integrated Development Environment under Windows 3.x on the NEC PC-9800 series, it is important that
+the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; InDOSPolling=TRUE</TT>
+<BR><BR>not appear in your &quot;SYSTEM.INI&quot; file.&nbsp; It will prevent a make from succeeding in the IDE.
+<LI>Central Point Software's anti-virus programs (VDEFEND, VSAFE, VWATCH) conflict with the Integrated Development Environment
+under Windows 3.x.
+<LI>The Program Information File &quot;BATCHBOX.PIF&quot; is used by the Integrated Development Environment (IDE) to start
+up a background batch server for compiling, linking, etc.&nbsp; The PIF references &quot;COMMAND.COM&quot;.&nbsp; If you are
+using a substitute for &quot;COMMAND.COM&quot; such as &quot;4DOS.COM&quot; then you must modify the PIF accordingly using
+a PIF editor.
+</OL>
+<H2 ID="Installation_Notes_for_OSD2"> Installation Notes for OS/2 </H2>
+<OL>
+<LI>The Integrated Development Environment (IDE) uses the IBM OS/2 Enhanced System Editor (EPM) for editing text files.&nbsp;
+You must ensure that EPM is installed in your OS/2 system if you are planning to use the IDE.&nbsp; You can selectively install
+the Enhanced Editor by running the OS/2 Setup and Installation program (Selective Install) and choosing &quot;Enhanced Editor&quot;
+from the &quot;Tools and Games&quot; detail page.
+<LI>On some systems with limited memory that use the UNDELETE feature of OS/2, compile times may be slow because OS/2 is saving
+copies of compiler temporary files.&nbsp; You may start the BATSERV process using the OS/2<TT> STARTUP.CMD</TT> file with<B>
+DELDIR</B> turned off as illustrated below.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET OLD_DEL_DIR=%DELDIR%</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET DELDIR=</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; DETACH C:\WATCOM\BINP\BATSERV.EXE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET DELDIR=%OLD_DEL_DIR%</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; SET OLD_DEL_DIR=</TT>
+<LI>If you plan to use the Named Pipe Remote Debugging support of the Open Watcom Debugger then the<TT> NMPSERV.EXE.</TT>
+&nbsp;program must be running.&nbsp; It may be started during OS/2 initialization via a &quot;RUN=&quot; statement in your<TT>
+CONFIG.SYS</TT> file or manually as needed through the DETACH command.
+</OL>
+<H1 ID="HandsMon_Introduction_to_Open_Watcom_FORTRAN_77"> Hands-on Introduction to Open Watcom FORTRAN 77 </H1>
+<BR>Let's get started and introduce some of the tools that are in Open Watcom FORTRAN 77.&nbsp; The purpose of this chapter
+is to briefly test out the new graphical tools in Open Watcom FORTRAN 77 using an existing application.
+<BR><BR>In this tutorial, we will take an existing set of FORTRAN 77 source files, create a project in our integrated development
+environment, and perform the following tasks:
+<UL>
+<LI>Add multiple targets
+<LI>Make a target
+<LI>Make all targets
+<LI>Execute the program
+<LI>Debug the program
+<LI>Correct errors
+<LI>Sample and profile the executable
+<LI>Save the project
+<LI>Terminate the session
+</UL>
+<H2 ID="Outline"> Outline </H2>
+<BR>Open Watcom's Integrated Development Environment (IDE) manages the files and tools that a programmer uses when developing
+a project.&nbsp; This includes all the source files, include files, libraries, compiler(s), linkers, preprocessors, etc.&nbsp;
+that one uses.
+<BR><BR>The IDE has a graphical interface that makes it easy to visualize the make-up of a project.&nbsp; A single IDE session
+shows a project.&nbsp; If the project consists of a number of components, such as two executables and one library, these are
+each shown as target windows in the project window.&nbsp; Each target window shows the files that are needed to construct
+the target and is associated via its filename extension with a rule that describes the construction mechanism.&nbsp; For example,
+a filename with the extension &quot;.EXE&quot; may be associated with the rule for constructing 32-bit Windows executables,
+or a filename with the extension &quot;.LIB&quot; may be associated with the rule for constructing static libraries.&nbsp;
+Different projects can refer to the same target.&nbsp; If they do, the target is shared and can be manipulated via either
+project, with changes made through one affecting the other.
+<BR><BR>The IDE itself is a collection of programs that manages the various files and tools used to create the target libraries
+and executables.&nbsp; It creates makefile(s) from the information in the target descriptions and invokes Open Watcom Make
+to construct the targets themselves.&nbsp; A configuration file contains built-in knowledge of the Open Watcom compilers,
+editors, Profiler, and Browser, as well as all their switches.
+<H2 ID="The_Open_Watcom_FORTRAN_77_Tutorial"> The Open Watcom FORTRAN 77 Tutorial </H2>
+<BR>This tutorial walks you through the creation and execution of a FORTRAN 77 program under Windows.&nbsp; This will give
+you an understanding of the basic concepts of the IDE and its components, and it will detail the steps involved in project
+development.&nbsp; The result of this tutorial is a three dimensional drawing of a kitchen which you can manipulate using
+either the menus or the icons on the toolbar.&nbsp; You can rotate and resize the drawing, as well as adjust the lighting
+and contrast.
+<BR><BR>To begin, start the IDE.&nbsp; This is done by double-clicking on the &quot;IDE&quot; icon in the Open Watcom FORTRAN
+77 window.
+<BR><BR>A status field at the bottom of the IDE window indicates the function of the icon on the toolbar over which your mouse
+cursor is currently positioned.&nbsp; If the status area does not show you the function of the icons as you move the mouse
+cursor over them, check that no item in the menu bar is highlighted (if one is highlighted, press the Alt key).
+<BR><BR><TT><IMG SRC="ide1c.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 1.</I></B><B><I></I></B><B> The initial IDE screen</B>
+<H3 ID="Defining_a_Project"> Defining a Project </H3>
+<BR>In this tutorial, you will be creating a new project called<TT> KITCHEN.</TT>&nbsp; Here are the steps required to accomplish
+this task.
+<OL>
+<LI>Define a new project by pulling down the<B> File</B> menu and selecting the<B> New Project...</B>&nbsp; item.&nbsp; You
+can also define a new project by clicking on the &quot;Create a new project&quot; icon on the toolbar.
+<LI>A choice of different sample project directories is available.&nbsp; Assuming that you installed the Open Watcom FORTRAN
+77 software in the<TT> \WATCOM</TT> directory, you will find the sample project directories in the following directory:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; \WATCOM\SAMPLES\IDE\FORTRAN</TT>
+<BR><BR>For purposes of this tutorial, we recommend that you select one of the following project directories:
+<DL>
+<DT>WIN
+<DD>for an example of 16-bit Windows 3.x application development when using Windows 3.x under DOS as a host development system,
+<DT>WIN386
+<DD>for an example of 32-bit Windows 3.x application development when using Windows 3.x under DOS as a host development system,
+<DT>WIN32
+<DD>for an example of 32-bit Win32 application development when using Windows NT/2000/XP or Windows 95/98/Me as a host development
+system, and
+<DT>OS2
+<DD>for an example of 32-bit OS/2 application development when using 32-bit OS/2 as a host development system.
+</DL>
+<BR>Thus the<TT> target</TT> that we refer to below should be one of<TT> WIN, WIN386, WIN32,</TT> or<TT> OS2</TT> depending
+on your selection.&nbsp; The tutorial uses the<TT> WIN32</TT> example for illustrative purposes.&nbsp; You will find some
+minor variations from your selected target environment.
+<BR><BR>When asked for a project name, you can do one of two things:
+<OL>
+<LI>enter the following pathname:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; d:[path]\SAMPLES\IDE\FORTRAN\target\KITCHEN</TT>
+<BR><BR>where<TT> d:[path]</TT> is the drive and path where you installed the Open Watcom software, or
+<LI>use the file browser to select the following directory:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; d:[path]\SAMPLES\IDE\FORTRAN\target</TT>
+<BR><BR>and specify the filename<TT> kitchen.</TT>
+</OL>
+<BR><TT><IMG SRC="ide2f.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 2.</I></B><B><I></I></B><B> Creating a new project</B>
+<BR><BR>Press the Enter key or click on OK (OPEN).
+<BR><BR>The project description will be stored in this file and the IDE will set the current working directory to the specified
+path during your session.
+<LI>You will be prompted for a target name.&nbsp; Since we will be attaching pre-defined targets, just click the<B> Browse</B>
+button when prompted for the target name.&nbsp; Select the &quot;draw&quot; target file (it will be one of<TT> draw16.tgt,
+draw.tgt, draw32.tgt, drawos2.tgt</TT> depending on your selection of target).
+<BR><BR><TT><IMG SRC="ide3f.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 3.</I></B><B><I></I></B><B> Attaching existing targets</B>
+<BR><BR>Press the Enter key or click on OK (OPEN).
+<LI>You can ignore the settings displayed for<B> Target Environment</B> and<B> Image Type</B> since the target definition
+already exists (we created it for you).&nbsp; The settings are important when you are defining a new target (i.e., one that
+was not predefined).
+<BR><BR><TT><IMG SRC="ide4c.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 4.</I></B><B><I></I></B><B> Selecting a target type</B>
+<BR><BR>Press the Enter key or click on OK.
+</OL>
+<BR>A target window is created in the project window for the &quot;draw&quot; target.&nbsp; This window contains all of the
+files associated with the target.&nbsp; You can click on any of the &quot;Folder&quot; icons to hide or un-hide all files
+with a particular extension.&nbsp; For example, you may wish to un-hide all the files with a<TT> .bmp</TT> extension by clicking
+on the folder icon associated with bitmap files.
+<H3 ID="Adding_Multiple_Targets"> Adding Multiple Targets </H3>
+<BR>Open Watcom's IDE allows you to have multiple targets in any particular project.&nbsp; Note that targets can be used by
+multiple projects.&nbsp; To add a new target to the project, do the following.
+<OL>
+<LI>Pull down the<B> Targets</B> menu and select the<B> New Target...</B>&nbsp; item.
+<LI>Enter<TT> button.tgt</TT> as the target name for the new target to be added to the project.&nbsp; Do not forget to include
+the<TT> .tgt</TT> extension.&nbsp; It is required when selecting a pre-existing target.
+<LI>You can ignore the settings displayed for<B> Target Environment</B> and<B> Image Type</B> since the target definition
+already exists (we created it for you).&nbsp; The settings are important when you are defining a new target (i.e., one that
+was not predefined).
+<LI>Press the Enter key or click on OK.
+</OL>
+<BR>A target window is created in the project window for the<TT> button</TT> target.
+<H3 ID="Making_a_Target"> Making a Target </H3>
+<BR>Open Watcom's IDE will automatically generate the sequence of steps required to build or &quot;make&quot; each of the
+targets in a project.&nbsp; Note that the targets in a project can be made individually or collectively.&nbsp; To make the<TT>
+button.lib</TT> target, do the following.
+<OL>
+<LI>Click on the window of the target you wish to make.&nbsp; In this case, click on the<TT> button.lib</TT> target window.
+<LI>Pull down the<B> Targets</B> menu and select the<B> Make</B> item (you can also do this by clicking on the &quot;Make
+the current target&quot; icon on the toolbar, or by right-clicking on the target and selecting the<B> Make</B> item from the
+pop-up menu).
+</OL>
+<BR>The IDE will now construct a makefile based on its knowledge of the target and construction rules, and then invoke the
+make utility to create the target, in this case<TT> button.lib.</TT>&nbsp; The output of this procedure is displayed in the
+Log window.
+<H3 ID="Making_All_Targets"> Making All Targets </H3>
+<BR>Click the &quot;Make all targets in the project&quot; icon on the toolbar to make all of the targets in the current project.
+&nbsp;If one target depends on another target, the latter target will be made first.&nbsp; In this tutorial<TT> button.lib</TT>
+will be made first (there will be nothing to do since it was made previously) and then<TT> draw???.exe,</TT> since<TT> button.lib</TT>
+is in the list of files associated with<TT> draw???.exe.</TT>&nbsp; In each case, the IDE constructs makefiles based on its
+knowledge of the target and construction rules.&nbsp; The output of this procedure is displayed in the Log window.
+<BR><BR><TT><IMG SRC="ide5f.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 5.</I></B><B><I></I></B><B> Making one or more targets</B>
+<H3 ID="Executing_the_Program"> Executing the Program </H3>
+<BR>The project should have built without errors, so now you are ready to execute the program you have developed.
+<BR><BR>Click on the<TT> draw???.exe</TT> target window and simply click on the &quot;Run the current target&quot; icon on
+the toolbar.&nbsp; You can also do this by selecting<B> Run</B> from the<B> Targets</B> menu, or right-clicking anywhere on
+the target window outside of the inner frame and selecting<B> Run</B> from the pop-up menu (right-clicking is context sensitive
+and the pop-up menu that results will vary depending on the area of the window in which you right-click).
+<BR><BR><TT><IMG SRC="ide6c.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 6.</I></B><B><I></I></B><B> The kitchen demo</B>
+<BR><BR>The demo you have created is a simple three dimensional drawing of a kitchen.&nbsp; By using either the icons on the
+toolbar or the menus you can rotate the picture left, right, up, and down, make the picture brighter or dimmer, move the picture
+closer or farther away, and increase or decrease the amount of contrast (this latter feature is found in the &quot;Lighting&quot;
+menu).&nbsp; Choose<B> Exit</B> from the<B> File</B> menu to exit the demo program when you are finished.
+<H3 ID="Smart_Editing"> Smart Editing </H3>
+<BR>The IDE recognizes the type of file you wish to edit, and invokes the appropriate editor for the task.&nbsp; To edit a
+file, you either double-click on it or select it and click the &quot;Edit&quot; icon on the toolbar.&nbsp; Files with a<TT>
+.c, .cpp, .h, .hpp, .for, .asm</TT> or<TT> .rc</TT> extension are edited with a text editor; files with a<TT> .bmp, .ico,</TT>
+or<TT> .cur</TT> extension are edited with the Image Editor; files with a<TT> .dlg</TT> or<TT> .res</TT> extension are edited
+with the Resource Editor.
+<BR><BR><TT><IMG SRC="ide7f.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 7.</I></B><B><I></I></B><B> The Open Watcom Editor for Windows</B>
+<BR><BR>Now we will edit one of the source files and introduce an error into the application.
+<OL>
+<LI>Double-click on the &quot;draw&quot; source file (i.e.,<TT> draw???.for</TT>) to load the source file into the editor.
+<LI>Search for the line containing the text:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; c$ifdef undefined</TT>
+<BR><BR>For Windows users, &quot;Find&quot; is in the &quot;Edit&quot; menu.&nbsp; If you are building a WIN386 application,
+search for the second line containing this text (located in subroutine<TT> memclear</TT>).
+<LI>Now, to introduce an error into the application, add the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; c$define undefined</TT>
+<BR><BR>just before the line containing<TT> c$ifdef.</TT>
+<LI>Save your changes by clicking on the &quot;Write the current file to disk&quot; icon or select<B> Save</B> from the<B>
+File</B> menu.
+<LI>Return to the IDE (by clicking on it if it is visible on your screen, or by using Alt-Tab), re-make your project, and
+run it.&nbsp; A fault occurs in your application, so the next step is to track down the problem using the Open Watcom Debugger.
+</OL>
+<H3 ID="Debugging_the_Program"> Debugging the Program </H3>
+<BR>To debug a program it must first be compiled to include debugging information.&nbsp; The IDE maintains two sets of switches
+for each target in a project.&nbsp; These are known as the Development Switches and the Release Switches.
+<OL>
+<LI>Right click on<TT> draw???.for</TT> and select<B> Source options</B> from the pop-up menu.&nbsp; Select<B> Fortran Compiler
+Switches</B> from the sub-menu.
+<BR><BR>By default, your target is placed in development mode with the debugging switches for the compiler and linker set
+to include debugging information.&nbsp; You can either set the switches in each category manually or you can copy the default
+Release switches using the CopyRel button.&nbsp; This method of setting switches is especially convenient since you can specify
+everything from diagnostic, optimization, and code generation switches to special linker switches all without having to memorize
+a cryptic switch name - you simply click next to the switches you wish to use for a particular item.
+<LI>Scroll through the categories using the &gt;&gt; button until you get to:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 4. Debugging Switches</TT>
+<BR><BR>We can see that full debugging information was used in the compile, so just click on<B> Cancel</B> to exit this screen.
+<BR><BR><TT><IMG SRC="ide8f.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 8.</I></B><B><I></I></B><B> Setting compiler switches</B>
+<LI>To invoke the debugger, pull down the<B> Targets</B> menu and choose the<B> Debug</B> item or select the &quot;Debug the
+current target&quot; icon from the toolbar.
+</OL>
+<BR>The Open Watcom Debugger is designed to be as convenient and intuitive as possible, while at the same time providing a
+comprehensive and flexible environment for serious debugging.&nbsp; You can configure your environment to display exactly
+the information you require to be most productive.&nbsp; Among the windows available are source and assembly, modules, functions,
+calls, threads, images, watches, locals, globals, file variables, registers, 80x87 FPU, stack, I/O ports, memory display,
+and a log window.&nbsp; You can step through your source using the keys or icons on the toolbar.&nbsp; Execute one line at
+a time by stepping over calls or stepping into calls, or execute until the current function returns.&nbsp; Right-mouse button
+functionality gives context-sensitive pop-up menus.
+<BR><BR><TT><IMG SRC="ide9f.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 9.</I></B><B><I></I></B><B> The Open Watcom Debugger</B>
+<BR><BR>We know that a fault has occurred in<TT> draw???.exe,</TT> so we will run the application and examine the state of
+the program when the fault occurs.
+<OL>
+<LI>Click on the &quot;go!&quot; icon on the toolbar to begin execution of the program.&nbsp; The exception occurs and the
+source window shows the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; arr( cnt ) = ch</TT>
+<BR><BR>in the subroutine<TT> memclear</TT> as the last line executed before the exception.&nbsp; Examining the Locals window
+you will see that the array location or address,<TT> locale,</TT> is 0.&nbsp; This means that the array<TT> arr</TT> was mapped
+to location 0.&nbsp; For the 32-bit Windows example, we also needed to use the &quot;array&quot; pragma to force a far pointer
+reference to cause the exception.
+<LI>We can now move up the call stack by clicking on the &quot;Move up the call stack&quot; icon on the toolbar (red up arrow)
+to follow the program's execution.&nbsp; On the previous executable line of code, we see<TT> memclear</TT> is called from
+the main program with three arguments.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; call memclear( 0, loc(Draw_area), isizeof(RECTL) )</TT>
+<BR><BR>We see that<TT> memclear</TT> is called with 0 as the first argument and<TT> loc(Draw_area)</TT> as the second argument
+which is backwards to the way it should be.&nbsp; An artificial error was introduced for the purposes of this tutorial.
+<LI>By removing the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; c$define undefined</TT>
+<BR><BR>we can undo this error.&nbsp; Exit the debugger.
+<LI>Double-click on<TT> draw???.for</TT> to load the source file into the editor.
+<LI>Go to the line in question using &quot;find&quot; or &quot;search&quot; and delete the line.&nbsp; Save your changes by
+clicking on the &quot;Write the current file to disk&quot; icon or selecting<B> Save</B> from the<B> File</B> menu.
+<LI>Return to the IDE (by clicking on it if it is visible on your screen, or by using Alt-Tab) and re-make your project.
+<LI>Run your project to see the kitchen demo.
+</OL>
+<H3 ID="Correcting_an_Error"> Correcting an Error </H3>
+<BR>We are now going to introduce an error into the source code to illustrate another feature of the IDE.
+<OL>
+<LI>Double-click on<TT> draw???.for</TT> to load the source file into the editor.
+<LI>Search for the line containing the text:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; c$ifdef undefined</TT>
+<BR><BR>For Windows users, &quot;Find&quot; is in the &quot;Edit&quot; menu.
+<LI>Now, to introduce a syntax error into the application, add the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; hThree_d + 0</TT>
+<BR><BR>just before the line containing<TT> c$ifdef.</TT>
+<LI>Save your changes by clicking on the &quot;Write the current file to disk&quot; icon or select<B> Save</B> from the<B>
+File</B> menu.
+<LI>Return to the IDE (by clicking on it if it is visible on your screen, or by using Alt-Tab).
+<LI>Click the &quot;Make all targets in the project&quot; icon to re-make the project.
+</OL>
+<BR>An error is encountered during the make and error message(s) appear in the log window.&nbsp; Additional information on
+the error is available by selecting the error, pulling down the<B> Log</B> menu and selecting the<B> Help on Message</B> item.
+<OL>
+<LI>Double-click on the error message
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; drawwin.for(83): *ERR* ST-17 column 9, undecodeable statement or</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; misspelled word HTHREE_D</TT>
+<BR><BR>The offending source file (<TT> draw???.for</TT>) is loaded into the Editor and the cursor is positioned at the line
+which caused the error.
+<LI>Delete the line to correct the error.
+<LI>Save your changes.
+<LI>Return to the IDE and re-make the project.
+</OL>
+<H3 ID="Editing_a_Bitmap"> Editing a Bitmap </H3>
+<BR>You can edit bitmaps, icons, or cursors associated with your project using Open Watcom's Image Editor.&nbsp; Double-click
+on a file with a<TT> .bmp, .ico,</TT> or<TT> .cur</TT> extension and the file is loaded into the Image Editor.&nbsp; The editor
+has many features to design your images, including resizing, rotation, shifting, and a utility to take a &quot;snapshot&quot;
+of another image and import it.
+<BR><BR><TT><IMG SRC="ide11c.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 10.</I></B><B><I></I></B><B> The Open Watcom Image Editor</B>
+<BR><BR>Suppose you wanted to change the color of the right-arrow icon in your application.
+<OL>
+<LI>If the &quot;Folder&quot; icon next to<TT> .bmp</TT> is closed, click on it to restore all the files with a<TT> .bmp</TT>
+extension to the file list.
+<LI>Scroll the window until the file<TT> right.bmp</TT> is visible.
+<LI>Double-click on<TT> right.bmp</TT> in the<TT> draw???.exe</TT> target window.
+<LI>Select the &quot;Paint Can&quot; icon from the Tool Palette.
+<LI>Select a color from the Color Palette.
+<LI>Click on the arrow.
+<LI>Save your changes using the &quot;Save&quot; icon on the toolbar and exit the Image Editor.
+<LI>Click the &quot;Make all targets in the project&quot; icon to rebuild the project with the change incorporated.
+</OL>
+<H3 ID="Editing_Menus"> Editing Menus </H3>
+<BR>Next, you will add source files to the list of items that make up<TT> draw???.exe.</TT>
+<OL>
+<LI>Pull down the<B> Sources</B> menu and select the<B> New Source...</B>&nbsp; item.
+<DL>
+<DT>Note:
+<DD>You can do this either by choosing from the menu bar or by positioning the mouse over the file list area and clicking the
+right mouse button.&nbsp; The IDE displays a pop-up menu from which you can choose the desired action.
+</DL>
+<LI>Enter the filename<TT> draw.res</TT> (or<TT> drawos2.res</TT> for OS/2).&nbsp; For OS/2, click OK when you have entered
+the source file name.&nbsp; For all other systems, click on Add when you have entered the source file name and then click
+on Close.&nbsp; Now we will remove the<TT> .rc</TT> file from the project so that our changes to the<TT> .res</TT> file will
+not be overwritten.&nbsp; When an<TT> .rc</TT> file is present, the<TT> .res</TT> file is generated from the<TT> .rc</TT>
+file.
+<LI>Right click on<TT> draw.rc</TT> (or<TT> drawos2.rc</TT> for OS/2), then select<B> Remove Source</B> from the pop-up menu.
+<LI>Double-click on<TT> draw.res</TT> (or<TT> drawos2.res</TT>).&nbsp; The Resource Editor is invoked, displaying all the
+available resources (in this case, icons, bitmaps, and menus).
+<BR><BR><TT><IMG SRC="ide12c.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 11.</I></B><B><I></I></B><B> The Open Watcom Resource Editor</B>
+<LI>Click on &quot;Menu Resources&quot;.
+<LI>Double-click on &quot;DrawMenu&quot; in the right-hand box.&nbsp; This will bring up the Menu Editor.&nbsp; The Menu Editor
+displays the menus defined for the resource<TT> DrawMenu.</TT>&nbsp; You can specify pop-up menus, menu items and sub-items,
+text, separators, attributes, break styles, and memory flags.
+<BR><BR><TT><IMG SRC="ide13c.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 12.</I></B><B><I></I></B><B> The Open Watcom Menu Editor</B>
+<LI>Click on<TT> MENUITEM &quot;&amp;Dimmer&quot;</TT> in the item list window.
+<LI>In the &quot;Item Text&quot; window change the item to<TT> &amp;Darker</TT> and then click on the &quot;Change&quot; button.
+<LI>Select<B> Update</B> from the<B> File</B> menu or click on the &quot;Update the file with this menu&quot; icon.
+<LI>Exit the Menu Editor.
+<LI>Now, select<B> Save</B> from the<B> File</B> menu or click on the &quot;Save this file&quot; icon and exit the Resource
+Editor.
+<LI>Click the &quot;Make all targets in the project&quot; icon to re-make the project.
+</OL>
+<H3 ID="Sampling_and_Profiling_an_Executable"> Sampling and Profiling an Executable </H3>
+<BR>Together, the Open Watcom Execution Sampler and the Open Watcom Execution Profiler allow you to pinpoint the areas of
+your code that are the most heavily used, indicating possible candidates for performance improvements.
+<OL>
+<LI>Click on the<TT> draw???.exe</TT> target.
+<LI>Select the<B> Sample</B> item from the<B> Targets</B> menu item, or click on the &quot;Run and sample the current target&quot;
+icon from the toolbar.&nbsp; The Open Watcom Execution Sampler is invoked and your application begins to execute.
+<LI>Try rotating and resizing the image a few times.&nbsp; The sampler takes a &quot;snapshot&quot; of the code that is being
+executed at regular intervals.&nbsp; Exit the application.&nbsp; A samples file with extension<TT> .smp</TT> is created in
+the current directory.&nbsp; This file is input for the profiler.
+<LI>You are now ready to profile the executable.&nbsp; Do this by selecting<B> Profile</B> from the<B> Targets</B> menu, or
+by clicking on the &quot;Profile the current target&quot; icon on the toolbar.&nbsp; The profiler scans the<TT> .smp</TT>
+file and reports the activity in the various modules of the application.&nbsp; The percentage of time spent in the modules
+is indicated as an absolute percentage (percent of total samples) and as a relative percentage (percent of samples in the<TT>
+.exe</TT> image).
+<LI>Double-click on the module or routine names to step down to the exact source being executed when a sample was taken.&nbsp;
+For more details, you can adjust the sampling rate of the Sampler to get a better picture of your code.&nbsp; To do this,
+exit the Profiler, pull down the<B> Targets</B> menu, and select<B> Target options,</B> then<B> Sample Switches...</B>&nbsp;
+from the pop-up menus.&nbsp; Specify a sampling rate such as 2 (for 2 milliseconds), click on OK, then run the Sampler and
+Profiler again.
+</OL>
+<BR><TT><IMG SRC="ide14f.bmp" ALIGN=MIDDLE></TT>
+<BR><B><I>Figure 13.</I></B><B><I></I></B><B> The Open Watcom Execution Profiler</B>
+<H3 ID="Saving_the_Project_and_Terminating_the_Session"> Saving the Project and Terminating the Session </H3>
+<BR>You can now exit the IDE session by selecting<B> Exit</B> from the<B> File</B> menu.&nbsp; If you have not already saved
+your project, you will be prompted to do so.&nbsp; Choose &quot;Yes&quot; and the session ends.
+<H2 ID="Tutorial_Review"> Tutorial Review </H2>
+<BR>In this tutorial, you created a project called<TT> kitchen.wpj,</TT> which was composed of two targets:<TT>&nbsp; draw???.exe</TT>
+and<TT> button.lib.</TT>&nbsp; You compiled and linked it into an executable program using the WMAKE utility, the Open Watcom
+FORTRAN 77 compiler, and the Open Watcom Linker.&nbsp; You executed it both directly and under the control of the Open Watcom
+Debugger..&nbsp; You browsed the source, and made changes using the text and resource editors.&nbsp; Finally, you sampled
+and profiled the application.
+<BR><BR>When you saved the project, you created the following permanent files:
+<UL>
+<LI><TT> kitchen.wpj</TT> - describes the screen layout and refers to the target files called<TT> draw???.tgt</TT> and<TT>
+button.tgt.</TT>
+<LI><TT> draw???.tgt</TT> - describes the target executable<TT> draw???.exe</TT> and all switches required to link it.&nbsp;
+It also describes the<TT> .for</TT> files and switches required to compile them.
+<LI><TT> button.tgt</TT> - describes the target library and all switches required to create it.&nbsp; It also describes the<TT>
+.for</TT> file and the switches used to build the library.
+</UL>
+<H1 ID="Documentation"> Documentation </H1>
+<BR>The following manuals comprise the Open Watcom FORTRAN 77 documentation set.&nbsp; When you install the software, the
+Open Watcom FORTRAN 77 documentation set is provided as on-line help files.&nbsp; Subsequent sections describe how to access
+this on-line help.
+<BR><BR>The following describes the titles in the Open Watcom FORTRAN 77 documentation set.
+<DL>
+<DT>Open Watcom FORTRAN 77 User's Guide
+<DD>This manual describes how to use Open Watcom FORTRAN 77.&nbsp; It contains an introduction to the compiler and a tutorial
+section.&nbsp; It also describes compiler options, include file processing, libraries, memory models, calling conventions,
+pragmas, in-line assembly, and environment variables.
+<DT>Open Watcom FORTRAN 77 Tools User's Guide
+<DD>This manual describes the command line oriented tools including the compile and link utility, library manager, object file
+disassembler, far call optimization tool, assembler, patch utility, strip utility, make utility, and touch utility.
+<DT>Open Watcom Graphical Tools User's Guide
+<DD>This manual describes Open Watcom's Windows and OS/2 graphical tools including the Integrated Development Environment, Browser,
+Dr.&nbsp; Watcom, Spy, DDE Spy, Image Editor, Resource Editor, Sampler/Profiler, Resource Compiler, Heap Walker, Zoom, and
+Editor.
+<DT>Open Watcom FORTRAN 77 Programmer's Guide
+<DD>This manual includes 5 major sections each of which describes operating system specific development issues.&nbsp; The operating
+systems covered include extended DOS, OS/2, Windows 3.x, Windows NT/2000/XP, Windows 95/98/Me, 32-bit Windows 3.x (using Open
+Watcom's Supervisor technology) and Novell NLMs.&nbsp; Topics include creating a sample program, operating system specific
+error messages, and debugging techniques.
+<DT>Open Watcom FORTRAN 77 Language Reference
+<DD>This manual describes the ANSI FORTRAN 77 programming language and extensions which are supported by Open Watcom FORTRAN 77.
+<DT>Open Watcom FORTRAN 77 Graphics Library Reference
+<DD>This manual describes the graphics libraries supported by Open Watcom FORTRAN 77.&nbsp; The graphics functions are used to
+display graphical images such as lines and circles upon the screen.&nbsp; Functions are also provided for displaying text.
+<DT>Open Watcom Debugger User's Guide
+<DD>This manual describes the Open Watcom Debugger and discusses advanced debugging techniques.
+<DT>Open Watcom Linker User's Guide
+<DD>This manual describes how to use the Open Watcom Linker to generate executables for target systems such as extended DOS, Windows
+3.x, Windows 95/98/Me, Windows NT/2000/XP, OS/2, and Novell NLMs.
+</DL>
+<H2 ID="Accessing_OnMline_Documentation"> Accessing On-line Documentation </H2>
+<BR>The following sections describe how to access the on-line help that is available for DOS, Windows and OS/2.
+<H3 ID="OnMline_Documentation_under_DOS"> On-line Documentation under DOS </H3>
+<BR>The Open Watcom Help program,<B><I> WHELP</I></B> , may be used under DOS to access on-line documentation.&nbsp; The Open
+Watcom Help command line syntax is:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; WHELP help_file [topic_name]</TT>
+<BR><BR><B>Notes:</B>
+<OL>
+<LI>If<B> help_file</B> is specified without an extension then &quot;.IHP&quot; is assumed.
+<LI>The<B> topic_name</B> parameter is optional.
+<LI>If<B> topic_name</B> is not specified, the default topic is &quot;Table of Contents&quot;.
+<LI>If<B> topic_name</B> contains spaces then it must be enclosed in quotes.
+</OL>
+<BR>The following help files are available:
+<DL>
+<DT>CLIB
+<DD><B><I> Open Watcom C Library Reference</I></B>
+<DT>FMIX
+<DD><B><I> Open Watcom FORTRAN 77 Master Index</I></B>
+<DT>FPGUIDE
+<DD><B><I> Open Watcom FORTRAN 77 Programmer's Guide</I></B>
+<DT>FTOOLS
+<DD><B><I> Open Watcom FORTRAN 77 Tools User's Guide</I></B>
+<DT>FUGUIDE
+<DD><B><I> Open Watcom FORTRAN 77 User's Guide</I></B> (excludes Diagnostic Messages appendix which is available as a separate
+help file)
+<DT>F77LR
+<DD><B><I> Open Watcom FORTRAN 77 Language Reference</I></B>
+<DT>F77GRAPH
+<DD><B><I> Open Watcom FORTRAN 77 Graphics Library Reference</I></B>
+<DT>LGUIDE
+<DD><B><I> Open Watcom Linker User's Guide</I></B>
+<DT>F_README
+<DD><B><I> Open Watcom FORTRAN 77 Getting Started manual</I></B>
+<DT>RESCOMP
+<DD>Documentation for the Open Watcom Resource Compiler (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>WD
+<DD><B><I> Open Watcom Debugger User's Guide</I></B>
+<DT>WPROF
+<DD>Documentation for the Open Watcom Execution Sampler and Open Watcom Execution Profiler (excerpt from the<B><I> Open Watcom
+Graphical Tools User's Guide</I></B>)
+<DT>WFCERRS
+<DD>Documentation for the Open Watcom F77 Diagnostic Messages (excerpt from the<B><I> Open Watcom FORTRAN 77 User's Guide</I></B>).
+</DL>
+<H3 ID="OnMline_Documentation_under_Windows"> On-line Documentation under Windows </H3>
+<BR>On-line documentation is presented in the form of Windows Help files (&quot;.HLP&quot; files).&nbsp; When the software
+is installed under Windows 3.x, Windows 95/98/Me or Windows NT/2000/XP, a number of program groups are created.&nbsp; You
+can access the on-line document by opening a program group and double-clicking on a help icon.
+<DL>
+<DT>Open Watcom FORTRAN 77 Group
+<DD>
+<DT>Getting Started
+<DD><B><I> Open Watcom FORTRAN 77 Getting Started</I></B>
+</DL>
+<DL>
+<DT>Open Watcom FORTRAN 77 Tools Help Group
+<DD>
+<DT>Accelerator Editor Help
+<DD>Documentation for the Accelerator Editor (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>C Library Reference
+<DD><B><I> Open Watcom C Library Reference</I></B>
+<DT>DDE Spy Help
+<DD>Documentation for the DDE Spy utility (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Debugger Help
+<DD><B><I> Open Watcom Debugger User's Guide</I></B>
+<DT>Dialog Editor Help
+<DD>Documentation for the Dialogue Editor (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Dr.&nbsp; Watcom Help
+<DD>Documentation for Dr.&nbsp; Watcom (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Editor Help
+<DD>Documentation for the Open Watcom Editor (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>FORTRAN 77 Error Messages
+<DD>Documentation for the Open Watcom F77 Diagnostic Messages (excerpt from the<B><I> Open Watcom FORTRAN 77 User's Guide</I></B>)
+<DT>FORTRAN 77 Master Index
+<DD>The master index for all of the Open Watcom FORTRAN 77 on-line help
+<DT>Heap Walker Help
+<DD>Documentation for the Heap Walker utility (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>IDE Help
+<DD>Documentation for the Interactive Development Environment (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Image Editor Help
+<DD>Documentation for the Image Editor (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Linker Guide
+<DD><B><I> Open Watcom Linker User's Guide</I></B>
+<DT>Menu Editor Help
+<DD>Documentation for the Menu Editor (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Profiler Help
+<DD>Documentation for the Open Watcom Execution Sampler and Open Watcom Execution Profiler (excerpt from the<B><I> Open Watcom
+Graphical Tools User's Guide</I></B>)
+<DT>Programmer's Guide
+<DD><B><I> Open Watcom FORTRAN 77 Programmer's Guide</I></B>
+<DT>Resource Compiler Help
+<DD>Documentation for the Resource Compiler (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Resource Editor Help
+<DD>Documentation for the Resource Editor (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Spy Help
+<DD>Documentation for the Spy utility (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>String Editor Help
+<DD>Documentation for the String Editor (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Tools Guide
+<DD><B><I> Open Watcom FORTRAN 77 Tools User's Guide</I></B>
+<DT>User's Guide
+<DD><B><I> Open Watcom FORTRAN 77 User's Guide</I></B>
+<DT>Zoom Help
+<DD>Documentation for the Zoom utility (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+</DL>
+<H3 ID="OnMline_Documentation_under_OSD2"> On-line Documentation under OS/2 </H3>
+<BR>On-line documentation is presented in the form of OS/2 Information files (&quot;.INF&quot; files).&nbsp; When the software
+is installed under OS/2, the Open Watcom FORTRAN 77 folder is created.&nbsp; You can access the on-line document by opening
+the Open Watcom FORTRAN 77 folder and double-clicking on a help icon.
+<DL>
+<DT>C Library Reference
+<DD><B><I> Open Watcom C Library Reference</I></B>
+<DT>Debugger Help
+<DD><B><I> Open Watcom Debugger User's Guide</I></B>
+<DT>FORTRAN 77 Error Messages
+<DD>Documentation for the Open Watcom F77 Diagnostic Messages (excerpt from the<B><I> Open Watcom FORTRAN 77 User's Guide</I></B>)
+<DT>FORTRAN 77 Master Index
+<DD>The master index for all of the Open Watcom FORTRAN 77 on-line help
+<DT>Getting Started
+<DD><B><I> Open Watcom FORTRAN 77 Getting Started</I></B>
+<DT>IDE Help
+<DD>Documentation for the Interactive Development Environment (excerpt from the<B><I> Open Watcom Graphical Tools User's Guide</I></B>)
+<DT>Profiler Help
+<DD>Documentation for the Open Watcom Execution Sampler and Open Watcom Execution Profiler (excerpt from the<B><I> Open Watcom
+Graphical Tools User's Guide</I></B>)
+<DT>Programmer's Guide
+<DD><B><I> Open Watcom FORTRAN 77 Programmer's Guide</I></B>
+<DT>Tools Guide
+<DD><B><I> Open Watcom FORTRAN 77 Tools User's Guide</I></B>
+<DT>User's Guide
+<DD><B><I> Open Watcom FORTRAN 77 User's Guide</I></B>
+</DL>
+<H1 ID="Release_Notes_for_Open_Watcom_FORTRAN_77_2_0"> Release Notes for Open Watcom FORTRAN 77 2.0 </H1>
+<BR>There are a number of enhancements and changes in this new version of Open Watcom FORTRAN 77.&nbsp; The following sections
+outline most of the major changes.&nbsp; You should consult the User's Guide for full details on these and other changes made
+to the compiler and related tools.&nbsp; You should check the next section to determine if you need to recompile your application.
+<H2 ID="Changes_in_11_0_that_may_Require_Recompilation"> Changes in 11.0 that may Require Recompilation </H2>
+<BR>Do not attempt to mix object code generated by earlier versions of the compilers with object code generated by this release
+or with the libraries provided in this release.
+<DL>
+<DT>clock()
+<DD>The<B><I> clock</I></B> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<B><I> CLOCKS_PER_SEC</I></B>
+has changed).&nbsp; Source code that uses the<B><I> clock</I></B> function and<B><I> CLOCKS_PER_SEC</I></B> in its calculations
+must be recompiled before linking the application with new libraries.
+</DL>
+<H2 ID="Major_Differences_from_Version_10_6"> Major Differences from Version 10.6 </H2>
+<BR>The following sections summarize the major differences from the previous release of Watcom FORTRAN 77.
+<UL>
+<LI>Some of the Win32 and 32-bit OS/2 versions of our tools are now available in DLL form.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; EXE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DLL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------&nbsp;&nbsp; -------&nbsp;&nbsp;&nbsp; -----------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; wlink&nbsp;&nbsp;&nbsp; wlink&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom Linker</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; wlib&nbsp;&nbsp;&nbsp;&nbsp; wlibd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom Library Manager</TT>
+<BR><BR>This provides better performance when using the Integrated Development Environment or Open Watcom Make.&nbsp; See
+the description of the<TT> !loaddll</TT> preprocessing directive in Open Watcom Make for more information.
+</UL>
+<H3 ID="Changes_to_the_Code_Generator_for_11_0"> Changes to the Code Generator for 11.0 </H3>
+<UL>
+<LI>A new optimization, &quot;branch prediction&quot;, has been added.&nbsp; This optimization is enabled by the &quot;OBP&quot;
+or &quot;OX&quot; compiler options.&nbsp; The code generator tries to increase the density of cache use by predicting branches
+based upon heuristics (this optimization is especially important for Intel's Pentium Pro).
+<LI>We have added Multi-media Extensions (MMX) support to the in-line assembler.
+</UL>
+<H3 ID="Changes_to_the_Compiler_Tools_for_11_0"> Changes to the Compiler Tools for 11.0 </H3>
+<UL>
+<LI>The Open Watcom Linker supports incremental linking.
+<LI>The Open Watcom Linker can now process COFF and ELF format object files, as well as OMF et al.&nbsp; The Open Watcom Linker
+can now read both AR-format (Microsoft compatible) libraries and old-style OMF libraries.
+<LI>Support for creating 16-bit DOS overlaid executables has been removed from the linker.
+<LI>The Open Watcom Library Manager (WLIB) can now process COFF and ELF format object files, as well as OMF et al.&nbsp; The
+Open Watcom Library Manager can now read/write both AR-format (Microsoft compatible) libraries and old-style OMF libraries.
+&nbsp;The default output format is AR-format and this can be changed by switches.&nbsp; The Open Watcom Library Manager can
+output various format import libraries.
+<LI>We have added Multi-media Extensions (MMX) support to the Open Watcom Assembler (WASM).
+<LI>A new version of the Open Watcom Disassembler (WDIS) is included.&nbsp; It can process ELF, COFF or OMF object files and
+ELF, COFF or PE format (Win32) executables.
+<BR><BR>The old disassembler (WDISASM) has been retired and is not included in the package.
+<LI>We have added new tool front-ends that emulate Microsoft tools.&nbsp; These are:
+<UL>
+<LI>rc
+</UL>
+<BR>These programs take the usual Microsoft arguments and translate them, where possible, into equivalent Open Watcom arguments
+and spawn the equivalent Open Watcom tools.
+<LI>Open Watcom Make now processes Microsoft format makefiles when the &quot;ms&quot; option is used.
+</UL>
+<H3 ID="Changes_to_the_CDCPP_Libraries_for_11_0"> Changes to the C/C++ Libraries for 11.0 </H3>
+<UL>
+<LI>We have added multi-byte and wide character (including UNICODE) support to the libraries.
+<LI>We have added Multi-media Extensions (MMX) support to the libraries.
+<LI>The<B><I> clock</I></B> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<B><I>
+CLOCKS_PER_SEC</I></B> has changed).
+</UL>
+<H3 ID="Changes_to_the_DOS_Graphics_Library_for_11_0"> Changes to the DOS Graphics Library for 11.0 </H3>
+<UL>
+<LI>The graphics library now performs the VESA test<B> before</B> testing for vendor specific graphics cards.&nbsp; This fix
+is intended to broaden the number of graphics cards that are supported.
+</UL>
+<H3 ID="Changes_in_Microsoft_Win32_SDK_Support_for_11_0"> Changes in Microsoft Win32 SDK Support for 11.0 </H3>
+<UL>
+<LI>The Win32 SDK is included for Windows 95 and Windows NT platforms.
+</UL>
+<H2 ID="Changes_in_10_6_that_may_Require_Recompilation"> Changes in 10.6 that may Require Recompilation </H2>
+<DL>
+<DT>_diskfree_t
+<DD>The struct members of the _diskfree_t structure has been changed from UNSIGNED SHORTs to UNSIGNED INTs.&nbsp; This is to deal
+with possible HPFS partitions whose size will overflow a short, as well as Microsoft compatibility.
+<DT>clock()
+<DD>The<B><I> clock</I></B> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<B><I> CLOCKS_PER_SEC</I></B>
+has changed).&nbsp; Source code that uses the<B><I> clock</I></B> function and<B><I> CLOCKS_PER_SEC</I></B> in its calculations
+must be recompiled before linking the application with new libraries.
+</DL>
+<H2 ID="Major_Differences_from_Version_10_5"> Major Differences from Version 10.5 </H2>
+<BR>The following sections summarize the major differences from the previous release of Watcom FORTRAN 77.
+<H3 ID="Windows_95_Help_File_Format"> Windows 95 Help File Format </H3>
+<BR>We have included Windows 95 format help files.
+<H3 ID="Changes_to_the_C_Library"> Changes to the C Library </H3>
+<BR>The following new functions were added to the library.
+<DL>
+<DT>_getw
+<DD>read int from stream file
+<DT>_putw
+<DD>write int to stream file
+</DL>
+<BR>The<B><I> clock</I></B> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<B><I>
+CLOCKS_PER_SEC</I></B> has changed).
+<H3 ID="Changes_to_the_Image_Editor"> Changes to the Image Editor </H3>
+<UL>
+<LI>Support has been added for &gt; 16 colors for bitmaps.
+<LI>Support has been added for 16 X 16 icons.
+<LI>Support has been added for 48 X 48 icons.
+</UL>
+<H3 ID="Changes_to_the_Dialog_Editor"> Changes to the Dialog Editor </H3>
+<UL>
+<LI>Support has been added for Windows 95 controls.
+<LI>Support has been added for adding new control styles to existing controls.
+<LI>Support has been added for new dialog styles.
+<LI>Support has been added for allowing help IDs to be specified in dialog and control statements.
+<LI>Support has been added for generating new resource statements in .RC files.
+</UL>
+<H3 ID="Changes_to_the_Resource_Editor"> Changes to the Resource Editor </H3>
+<UL>
+<LI>Support has been added for new Windows 95 resource types.
+<LI>Support has been added for generating new resource statements in .RC files.
+</UL>
+<H3 ID="Changes_to_the_Resource_Compiler"> Changes to the Resource Compiler </H3>
+<UL>
+<LI>Support has been added for extended styles for dialogs.
+<LI>Support has been added for the RCINCLUDE keyword.
+</UL>
+<H2 ID="Major_Differences_from_Version_9_5"> Major Differences from Version 9.5 </H2>
+<UL>
+<LI>The functionality of Open Watcom FORTRAN 77/16 and Open Watcom FORTRAN 77/32 is included in a single package.
+<LI>OS/2 3.0 Warp is supported.
+<LI>Windows NT 3.5 is supported.
+<LI>Windows 95 (Chicago) is supported.
+<LI>An Integrated Development Environment for Windows 3.x, Windows 95, Windows NT and OS/2 PM is included.
+<LI>New, redesigned debugger with GUI interfaces for Windows 3.x, Windows 95, Windows NT and OS/2 PM is included.
+<LI>TCP/IP remote debug servers for OS/2 and Windows NT are included.
+<LI>The optimizer has been enhanced.
+<LI>New, redesigned user interface for the Profiler.
+<LI>Windows resource editing tools are included:
+<DL>
+<DT>Dialog Editor
+<DD>
+<DT>Bitmap Editor
+<DD>
+<DT>Resource Editor
+<DD>
+<DT>Menu Editor
+<DD>
+<DT>String Editor
+<DD>
+<DT>Accelerator Editor
+<DD>
+</DL>
+<LI>Windows development tools are included:
+<DL>
+<DT>Dr.&nbsp; Watcom (a post mortem debug utility)
+<DD>
+<DT>Spy (Windows message spy program)
+<DD>
+<DT>DDESpy
+<DD>
+<DT>Heap Walker
+<DD>
+<DT>Zoom
+<DD>
+</DL>
+<LI>On-line documentation is included.
+<LI>Creation of FlashTek DOS extender applications is supported.
+<LI>Compiler executables have been created that run under all supported operating systems.&nbsp; They are located in the BINW
+directory.
+</UL>
+<H3 ID="Items_No_Longer_Supported"> Items No Longer Supported </H3>
+<UL>
+<LI>Debugging of Ergo OS/386 DOS extender applications
+<LI>DESQView remote debugging
+</UL>
+<H3 ID="Changes_that_may_Require_Recompilation"> Changes that may Require Recompilation </H3>
+<BR>FORTRAN applications should not require recompilation, but<B> you should recompile your application if you want to take
+full advantage new features in the debugger.</B>
+<H2 ID="Major_Differences_from_Version_9_0"> Major Differences from Version 9.0 </H2>
+<BR>The following lists some of the new features/differences between version 9.5 and 9.0.
+<OL>
+<LI>The &quot;/resource&quot; option has been added and allows run-time messages to be placed in the executable file as resource
+information instead of being linked with the application.&nbsp; The resource file containing these messages is called &quot;wf77.res&quot;
+and is locating in the root of the directory in which you installed the software.&nbsp; The strip utility (WSTRIP) can be
+used to place the resource information in the executable file.&nbsp; Special libraries for processing resource information
+will be required when you link your application.&nbsp; These libraries are called &quot;wresf.lib&quot; (for 32-bit register
+calling convention), &quot;wresfs.lib&quot; (for 32-bit stack calling convention), &quot;wresm.lib&quot; (for 16-bit medium
+memory model), and &quot;wresl.lib&quot; (for 16-bit large and huge memory models) and are located in the &quot;lib386&quot;
+and &quot;lib286&quot; directories of the directory in which you installed the software.
+<LI>The &quot;/5&quot; option has been added and causes the compiler to generate code that is optimized for the Pentium.&nbsp;
+This is the default.&nbsp; The &quot;/fp5&quot; option has been added and causes the compiler to generate floating-point code
+that is optimized for the Pentium.&nbsp; This is not the default.&nbsp; The default floating-point option is &quot;/fp3&quot;.
+<LI>The &quot;/3&quot; option has been added and causes the compiler to generate code optimized for a 80386 processor.&nbsp;
+The &quot;/4&quot; option has been added and causes the compiler to generate code optimized for a 80486 processor.&nbsp; The
+&quot;/5&quot; option has been added and causes the compiler to generate code that is optimized for the Pentium.&nbsp; In
+addition, the &quot;/fp5&quot; option has been added and causes the compiler to generate floating-point code that is optimized
+for the Pentium.
+<LI>The &quot;/descriptor&quot; option has been added which specifies that string descriptors are to be passed for character
+arguments.&nbsp; You can specify the &quot;/nodescriptor&quot; option if you do not want string descriptors to be passed for
+character arguments.&nbsp; Instead, the pointer to the actual character data and the length will be passed as two arguments.
+&nbsp;The arguments for the length will be passed as additional arguments following the normal argument list.&nbsp; For character
+functions, the pointer to the data and the length of the character function will be passed as the first two arguments.
+<LI>The &quot;oi&quot; option has been added.&nbsp; This option causes code for statement functions to be generated in-line.
+<LI>The floating-point model used when generating in-line 80x87 instructions has changed.&nbsp; If you wish to call subprograms
+compiled with version 9.0 you must specify the &quot;/fpr&quot; option.
+<LI>Support for records in text files separated by only a line feed character has been added.&nbsp; Previously, records in
+text files had to be separated by a carriage return/line feed sequence.
+<LI>The &quot;/debug&quot; option has been divided into two separate options.&nbsp; The &quot;/bounds&quot; option generates
+array and character subscript checking code.&nbsp; The &quot;/trace&quot; option generates code that allows a run-time traceback
+to be generated when a error is issued.
+<LI>The &quot;/quiet&quot; option has been added to suppress banner/summary information.&nbsp; The &quot;terminal&quot; option
+only affects the display of diagnostic messages (extensions, warnings and errors).&nbsp; For example, compiling with the &quot;/quiet&quot;
+option will only display diagnostic messages (if any).
+<LI>The &quot;/cc&quot; option has been added.&nbsp; It specifies that unit 6 is a carriage control device and that output
+to this unit will be assumed to contain carriage control characters.&nbsp; Note that a blank carriage control character will
+automatically be generated for list-directed output.
+<LI>The &quot;/automatic&quot; option causes all local variables (including arrays) to be allocated on the stack.&nbsp; Care
+should be taken when using this option since the stack requirements of your application may increase dramatically.
+<LI>The &quot;/wild&quot; option has been added.&nbsp; It suppresses the compile-time checking that normally causes an error
+to be issued when an attempt is made to transfer control into a block structure from outside the block structure and vice
+versa.&nbsp; This option is only to be used when compiling existing code that contains GOTO statements of this type; it does
+not encourage this style of programming.
+<LI>National language support has been added.&nbsp; The &quot;/japanese&quot; option causes the compiler to process Japanese
+double-byte characters in variable names and character data.&nbsp; Similarly, the &quot;/chinese&quot; option will process
+Traditional Chinese characters and the &quot;/korean&quot; will process Korean characters.
+<LI>The &quot;/ob&quot; option has been added.&nbsp; This allows the code generator to use register ESP as a base register
+to reference local variables and subprogram arguments.&nbsp; Note that when this option is specified, the compiler will abort
+when there is not enough memory to optimize the subprogram.&nbsp; By default, the code generator uses more memory-efficient
+algorithms when a low-on-memory condition is detected.
+<LI>The GROWHANDLES() function has be added.&nbsp; This function increases the number of files that can be opened by a program
+to the specified amount.&nbsp; The value returned is the new maximum.&nbsp; This may be less than the requested amount because
+of operating system limitations.
+<LI>The IARGC() and IGETARG() functions have been added.&nbsp; IARGC is an integer function that returns the argument count.
+&nbsp;IGETARG is an integer function that takes two arguments.&nbsp; The first argument is of type INTEGER and is the index
+of the argument to be returned.&nbsp; The second argument is of type CHARACTER and is used to return the argument.&nbsp; The
+value returned by the function is the length of the argument.
+<LI>The SHARE= specifier has been added to the OPEN statement.&nbsp; It allows the program to specify how other processes
+can access a file that is opened by the original process.&nbsp; Possible values for the SHARE= specifier are as follows.
+<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp; DENYRW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - deny read and write access
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; DENYWR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - deny write access
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; DENYRD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - deny read access
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; DENYNO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - allow read and write access
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; COMPAT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - compatibility mode
+</OL>
+<H1 ID="Sybase_Open_Watcom_Public_License"> Sybase Open Watcom Public License </H1>
+<BR><B>USE OF THE SYBASE OPEN WATCOM SOFTWARE DESCRIBED BELOW (&quot;SOFTWARE&quot;) IS SUBJECT TO THE TERMS AND CONDITIONS
+SET FORTH IN THE SYBASE OPEN WATCOM PUBLIC LICENSE SET FORTH BELOW (&quot;LICENSE&quot;).&nbsp; YOU MAY NOT USE THE SOFTWARE
+IN ANY MANNER UNLESS YOU ACCEPT THE TERMS AND CONDITIONS OF THE LICENSE.&nbsp; YOU INDICATE YOUR ACCEPTANCE BY IN ANY MANNER
+USING (INCLUDING WITHOUT LIMITATION BY REPRODUCING, MODIFYING OR DISTRIBUTING) THE SOFTWARE.&nbsp; IF YOU DO NOT ACCEPT ALL
+OF THE TERMS AND CONDITIONS OF THE LICENSE, DO NOT USE THE SOFTWARE IN ANY MANNER.</B>
+<BR><B>Sybase Open Watcom Public License version 1.0</B>
+<BR><BR>1.&nbsp; General; Definitions.&nbsp; This License applies only to the following software programs:&nbsp; the open
+source versions of Sybase's Watcom C/C++ and Fortran compiler products (&quot;Software&quot;), which are modified versions
+of, with significant changes from, the last versions made commercially available by Sybase.&nbsp; As used in this License:
+<BR><BR>1.1 &quot;Applicable Patent Rights&quot; mean:&nbsp; (a) in the case where Sybase is the grantor of rights, (i) claims
+of patents that are now or hereafter acquired, owned by or assigned to Sybase and (ii) that cover subject matter contained
+in the Original Code, but only to the extent necessary to use, reproduce and/or distribute the Original Code without infringement;
+and (b) in the case where You are the grantor of rights, (i) claims of patents that are now or hereafter acquired, owned by
+or assigned to You and (ii) that cover subject matter in Your Modifications, taken alone or in combination with Original Code.
+<BR><BR>1.2 &quot;Contributor&quot; means any person or entity that creates or contributes to the creation of Modifications.
+<BR><BR>1.3 &quot;Covered Code&quot; means the Original Code, Modifications, the combination of Original Code and any Modifications,
+and/or any respective portions thereof.
+<BR><BR>1.4 &quot;Deploy&quot; means to use, sublicense or distribute Covered Code other than for Your internal research and
+development (R&amp;D) and/or Personal Use, and includes without limitation, any and all internal use or distribution of Covered
+Code within Your business or organization except for R&amp;D use and/or Personal Use, as well as direct or indirect sublicensing
+or distribution of Covered Code by You to any third party in any form or manner.
+<BR><BR>1.5 &quot;Larger Work&quot; means a work which combines Covered Code or portions thereof with code not governed by
+the terms of this License.
+<BR><BR>1.6 &quot;Modifications&quot; mean any addition to, deletion from, and/or change to, the substance and/or structure
+of the Original Code, any previous Modifications, the combination of Original Code and any previous Modifications, and/or
+any respective portions thereof.&nbsp; When code is released as a series of files, a Modification is:&nbsp; (a) any addition
+to or deletion from the contents of a file containing Covered Code; and/or (b) any new file or other representation of computer
+program statements that contains any part of Covered Code.
+<BR><BR>1.7 &quot;Original Code&quot; means (a) the Source Code of a program or other work as originally made available by
+Sybase under this License, including the Source Code of any updates or upgrades to such programs or works made available by
+Sybase under this License, and that has been expressly identified by Sybase as such in the header file(s) of such work; and
+(b) the object code compiled from such Source Code and originally made available by Sybase under this License.
+<BR><BR>1.8 &quot;Personal Use&quot; means use of Covered Code by an individual solely for his or her personal, private and
+non-commercial purposes.&nbsp; An individual's use of Covered Code in his or her capacity as an officer, employee, member,
+independent contractor or agent of a corporation, business or organization (commercial or non-commercial) does not qualify
+as Personal Use.
+<BR><BR>1.9 &quot;Source Code&quot; means the human readable form of a program or other work that is suitable for making modifications
+to it, including all modules it contains, plus any associated interface definition files, scripts used to control compilation
+and installation of an executable (object code).
+<BR><BR>1.10 &quot;You&quot; or &quot;Your&quot; means an individual or a legal entity exercising rights under this License.
+&nbsp;For legal entities, &quot;You&quot; or &quot;Your&quot; includes any entity which controls, is controlled by, or is
+under common control with, You, where &quot;control&quot; means (a) the power, direct or indirect, to cause the direction
+or management of such entity, whether by contract or otherwise, or (b) ownership of fifty percent (50%) or more of the outstanding
+shares or beneficial ownership of such entity.
+<BR><BR>2.&nbsp; Permitted Uses; Conditions &amp; Restrictions.Subject to the terms and conditions of this License, Sybase
+hereby grants You, effective on the date You accept this License and download the Original Code, a world-wide, royalty-free,
+non-exclusive license, to the extent of Sybase's Applicable Patent Rights and copyrights covering the Original Code, to do
+the following:
+<BR><BR>2.1 You may use, reproduce, display, perform, modify and distribute Original Code, with or without Modifications,
+solely for Your internal research and development and/or Personal Use, provided that in each instance:
+<BR><BR>(a) You must retain and reproduce in all copies of Original Code the copyright and other proprietary notices and disclaimers
+of Sybase as they appear in the Original Code, and keep intact all notices in the Original Code that refer to this License;
+and
+<BR><BR>(b) You must retain and reproduce a copy of this License with every copy of Source Code of Covered Code and documentation
+You distribute, and You may not offer or impose any terms on such Source Code that alter or restrict this License or the recipients'
+rights hereunder, except as permitted under Section 6.
+<BR><BR>(c) Whenever reasonably feasible you should include the copy of this License in a click-wrap format, which requires
+affirmative acceptance by clicking on an &quot;I accept&quot; button or similar mechanism.&nbsp; If a click-wrap format is
+not included, you must include a statement that any use (including without limitation reproduction, modification or distribution)
+of the Software, and any other affirmative act that you define, constitutes acceptance of the License, and instructing the
+user not to use the Covered Code in any manner if the user does not accept all of the terms and conditions of the License.
+<BR><BR>2.2 You may use, reproduce, display, perform, modify and Deploy Covered Code, provided that in each instance:
+<BR><BR>(a) You must satisfy all the conditions of Section 2.1 with respect to the Source Code of the Covered Code;
+<BR><BR>(b) You must duplicate, to the extent it does not already exist, the notice in Exhibit A in each file of the Source
+Code of all Your Modifications, and cause the modified files to carry prominent notices stating that You changed the files
+and the date of any change;
+<BR><BR>(c) You must make Source Code of all Your Deployed Modifications publicly available under the terms of this License,
+including the license grants set forth in Section 3 below, for as long as you Deploy the Covered Code or twelve (12) months
+from the date of initial Deployment, whichever is longer.&nbsp; You should preferably distribute the Source Code of Your Deployed
+Modifications electronically (e.g.&nbsp; download from a web site);
+<BR><BR>(d) if You Deploy Covered Code in object code, executable form only, You must include a prominent notice, in the code
+itself as well as in related documentation, stating that Source Code of the Covered Code is available under the terms of this
+License with information on how and where to obtain such Source Code; and
+<BR><BR>(e) the object code form of the Covered Code may be distributed under Your own license agreement, provided that such
+license agreement contains terms no less protective of Sybase and each Contributor than the terms of this License, and stating
+that any provisions which differ from this License are offered by You alone and not by any other party.
+<BR><BR>2.3 You expressly acknowledge and agree that although Sybase and each Contributor grants the licenses to their respective
+portions of the Covered Code set forth herein, no assurances are provided by Sybase or any Contributor that the Covered Code
+does not infringe the patent or other intellectual property rights of any other entity.&nbsp; Sybase and each Contributor
+disclaim any liability to You for claims brought by any other entity based on infringement of intellectual property rights
+or otherwise.&nbsp; As a condition to exercising the rights and licenses granted hereunder, You hereby assume sole responsibility
+to secure any other intellectual property rights needed, if any.&nbsp; For example, if a third party patent license is required
+to allow You to distribute the Covered Code, it is Your responsibility to acquire that license before distributing the Covered
+Code.
+<BR><BR>3.&nbsp; Your Grants.&nbsp; In consideration of, and as a condition to, the licenses granted to You under this License,
+You hereby grant to Sybase and all third parties a non-exclusive, royalty-free license, under Your Applicable Patent Rights
+and other intellectual property rights (other than patent) owned or controlled by You, to use, reproduce, display, perform,
+modify, distribute and Deploy Your Modifications of the same scope and extent as Sybase's licenses under Sections 2.1 and
+2.2.
+<BR><BR>4.&nbsp; Larger Works.&nbsp; You may create a Larger Work by combining Covered Code with other code not governed by
+the terms of this License and distribute the Larger Work as a single product.&nbsp; In each such instance, You must make sure
+the requirements of this License are fulfilled for the Covered Code or any portion thereof.
+<BR><BR>5.&nbsp; Limitations on Patent License.&nbsp; Except as expressly stated in Section 2, no other patent rights, express
+or implied, are granted by Sybase herein.&nbsp; Modifications and/or Larger Works may require additional patent licenses from
+Sybase which Sybase may grant in its sole discretion.
+<BR><BR>6.&nbsp; Additional Terms.&nbsp; You may choose to offer, and to charge a fee for, warranty, support, indemnity or
+liability obligations and/or other rights consistent with this License (&quot;Additional Terms&quot;) to one or more recipients
+of Covered Code.&nbsp; However, You may do so only on Your own behalf and as Your sole responsibility, and not on behalf of
+Sybase or any Contributor.&nbsp; You must obtain the recipient's agreement that any such Additional Terms are offered by You
+alone, and You hereby agree to indemnify, defend and hold Sybase and every Contributor harmless for any liability incurred
+by or claims asserted against Sybase or such Contributor by reason of any such Additional Terms.
+<BR><BR>7.&nbsp; Versions of the License.&nbsp; Sybase may publish revised and/or new versions of this License from time to
+time.&nbsp; Each version will be given a distinguishing version number.&nbsp; Once Original Code has been published under
+a particular version of this License, You may continue to use it under the terms of that version.&nbsp; You may also choose
+to use such Original Code under the terms of any subsequent version of this License published by Sybase.&nbsp; No one other
+than Sybase has the right to modify the terms applicable to Covered Code created under this License.
+<BR><BR>8.&nbsp; NO WARRANTY OR SUPPORT.&nbsp; The Covered Code may contain in whole or in part pre-release, untested, or
+not fully tested works.&nbsp; The Covered Code may contain errors that could cause failures or loss of data, and may be incomplete
+or contain inaccuracies.&nbsp; You expressly acknowledge and agree that use of the Covered Code, or any portion thereof, is
+at Your sole and entire risk.&nbsp; THE COVERED CODE IS PROVIDED &quot;AS IS&quot; AND WITHOUT WARRANTY, UPGRADES OR SUPPORT
+OF ANY KIND AND SYBASE AND SYBASE'S LICENSOR(S) (COLLECTIVELY REFERRED TO AS &quot;SYBASE&quot; FOR THE PURPOSES OF SECTIONS
+8 AND 9) AND ALL CONTRIBUTORS EXPRESSLY DISCLAIM ALL WARRANTIES AND/OR CONDITIONS, EXPRESS OR IMPLIED, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR
+PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.&nbsp; SYBASE AND EACH CONTRIBUTOR DOES
+NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE COVERED CODE, THAT THE FUNCTIONS CONTAINED IN THE COVERED CODE
+WILL MEET YOUR REQUIREMENTS, THAT THE OPERATION OF THE COVERED CODE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN
+THE COVERED CODE WILL BE CORRECTED.&nbsp; NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY SYBASE, A SYBASE AUTHORIZED REPRESENTATIVE
+OR ANY CONTRIBUTOR SHALL CREATE A WARRANTY.&nbsp; You acknowledge that the Covered Code is not intended for use in the operation
+of nuclear facilities, aircraft navigation, communication systems, or air traffic control machines in which case the failure
+of the Covered Code could lead to death, personal injury, or severe physical or environmental damage.
+<BR><BR>9.&nbsp; LIMITATION OF LIABILITY.&nbsp; TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL SYBASE OR ANY CONTRIBUTOR
+BE LIABLE FOR ANY DIRECT, INCIDENTAL, SPECIAL, INDIRECT, CONSEQUENTIAL OR OTHER DAMAGES OF ANY KIND ARISING OUT OF OR RELATING
+TO THIS LICENSE OR YOUR USE OR INABILITY TO USE THE COVERED CODE, OR ANY PORTION THEREOF, WHETHER UNDER A THEORY OF CONTRACT,
+WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCTS LIABILITY OR OTHERWISE, EVEN IF SYBASE OR SUCH CONTRIBUTOR HAS BEEN ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGES, AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY.&nbsp; SOME JURISDICTIONS
+DO NOT ALLOW THE LIMITATION OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL OR OTHER DAMAGES OF ANY KIND, SO THIS LIMITATION MAY
+NOT APPLY TO YOU.&nbsp; In no event shall Sybase's or any Contributor's total liability to You for all damages (other than
+as may be required by applicable law) under this License exceed the amount of five hundred dollars ($500.00).
+<BR><BR>10.&nbsp; Trademarks.&nbsp; This License does not grant any rights to use the trademarks or trade names &quot;Sybase&quot;
+or any other trademarks or trade names belonging to Sybase (collectively &quot;Sybase Marks&quot;) or to any trademark or
+trade name belonging to any Contributor(&quot;Contributor Marks&quot;).&nbsp; No Sybase Marks or Contributor Marks may be
+used to endorse or promote products derived from the Original Code or Covered Code other than with the prior written consent
+of Sybase or the Contributor, as applicable.
+<BR><BR>11.&nbsp; Ownership.&nbsp; Subject to the licenses granted under this License, each Contributor retains all rights,
+title and interest in and to any Modifications made by such Contributor.&nbsp; Sybase retains all rights, title and interest
+in and to the Original Code and any Modifications made by or on behalf of Sybase (&quot;Sybase Modifications&quot;), and such
+Sybase Modifications will not be automatically subject to this License.&nbsp; Sybase may, at its sole discretion, choose to
+license such Sybase Modifications under this License, or on different terms from those contained in this License or may choose
+not to license them at all.
+<BR><BR>12.&nbsp; Termination.
+<BR><BR>12.1 Termination.&nbsp; This License and the rights granted hereunder will terminate:
+<BR><BR>(a) automatically without notice if You fail to comply with any term(s) of this License and fail to cure such breach
+within 30 days of becoming aware of such breach;
+<BR><BR>(b) immediately in the event of the circumstances described in Section 13.5(b); or
+<BR><BR>(c) automatically without notice if You, at any time during the term of this License, commence an action for patent
+infringement (including as a cross claim or counterclaim) against Sybase or any Contributor.
+<BR><BR>12.2 Effect of Termination.&nbsp; Upon termination, You agree to immediately stop any further use, reproduction, modification,
+sublicensing and distribution of the Covered Code and to destroy all copies of the Covered Code that are in your possession
+or control.&nbsp; All sublicenses to the Covered Code that have been properly granted prior to termination shall survive any
+termination of this License.&nbsp; Provisions which, by their nature, should remain in effect beyond the termination of this
+License shall survive, including but not limited to Sections 3, 5, 8, 9, 10, 11, 12.2 and 13.&nbsp; No party will be liable
+to any other for compensation, indemnity or damages of any sort solely as a result of terminating this License in accordance
+with its terms, and termination of this License will be without prejudice to any other right or remedy of any party.
+<BR><BR>13.&nbsp; Miscellaneous.
+<BR><BR>13.1 Government End Users.&nbsp; The Covered Code is a &quot;commercial item&quot; as defined in FAR 2.101.&nbsp;
+Government software and technical data rights in the Covered Code include only those rights customarily provided to the public
+as defined in this License.&nbsp; This customary commercial license in technical data and software is provided in accordance
+with FAR 12.211 (Technical Data) and 12.212 (Computer Software) and, for Department of Defense purchases, DFAR 252.227-7015
+(Technical Data -- Commercial Items) and 227.7202-3 (Rights in Commercial Computer Software or Computer Software Documentation).
+&nbsp;Accordingly, all U.S.&nbsp; Government End Users acquire Covered Code with only those rights set forth herein.
+<BR><BR>13.2 Relationship of Parties.&nbsp; This License will not be construed as creating an agency, partnership, joint venture
+or any other form of legal association between or among you, Sybase or any Contributor, and You will not represent to the
+contrary, whether expressly, by implication, appearance or otherwise.
+<BR><BR>13.3 Independent Development.&nbsp; Nothing in this License will impair Sybase's or any Contributor's right to acquire,
+license, develop, have others develop for it, market and/or distribute technology or products that perform the same or similar
+functions as, or otherwise compete with, Modifications, Larger Works, technology or products that You may develop, produce,
+market or distribute.
+<BR><BR>13.4 Waiver; Construction.&nbsp; Failure by Sybase or any Contributor to enforce any provision of this License will
+not be deemed a waiver of future enforcement of that or any other provision.&nbsp; Any law or regulation which provides that
+the language of a contract shall be construed against the drafter will not apply to this License.
+<BR><BR>13.5 Severability.&nbsp; (a) If for any reason a court of competent jurisdiction finds any provision of this License,
+or portion thereof, to be unenforceable, that provision of the License will be enforced to the maximum extent permissible
+so as to effect the economic benefits and intent of the parties, and the remainder of this License will continue in full force
+and effect.&nbsp; (b) Notwithstanding the foregoing, if applicable law prohibits or restricts You from fully and/or specifically
+complying with Sections 2 and/or 3 or prevents the enforceability of either of those Sections, this License will immediately
+terminate and You must immediately discontinue any use of the Covered Code and destroy all copies of it that are in your possession
+or control.
+<BR><BR>13.6 Dispute Resolution.&nbsp; Any litigation or other dispute resolution between You and Sybase relating to this
+License shall take place in the Northern District of California, and You and Sybase hereby consent to the personal jurisdiction
+of, and venue in, the state and federal courts within that District with respect to this License.&nbsp; The application of
+the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded.
+<BR><BR>13.7 Entire Agreement; Governing Law.&nbsp; This License constitutes the entire agreement between the parties with
+respect to the subject matter hereof.&nbsp; This License shall be governed by the laws of the United States and the State
+of California, except that body of California law concerning conflicts of law.
+<BR><BR>Where You are located in the province of Quebec, Canada, the following clause applies:&nbsp; The parties hereby confirm
+that they have requested that this License and all related documents be drafted in English.&nbsp; Les parties ont exige que
+le present contrat et tous les documents connexes soient rediges en anglais.
+<BR><BR><B>EXHIBIT A.</B>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1983-2002 Sybase, Inc. All Rights Reserved.</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; This file contains Original Code and/or Modifications of</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Original Code as defined in and that are subject to the</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Sybase Open Watcom Public License version 1.0 (the</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 'License'). You may not use this file except in compliance</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; with the License. BY USING THIS FILE YOU AGREE TO ALL</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TERMS AND CONDITIONS OF THE LICENSE. A copy of the License</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; is provided with the Original Code and Modifications, and</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; is also available at www.sybase.com/developer/opensource.</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; The Original Code and all software distributed under the</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; License are distributed on an 'AS IS' basis, WITHOUT</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, AND SYBASE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; AND ALL CONTRIBUTORS HEREBY DISCLAIM ALL SUCH WARRANTIES,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ENJOYMENT OR NON-INFRINGEMENT. Please see the License for</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; the specific language governing rights and limitations</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; under the License.</TT>
+<H1 ID="TroubleMShooting"> Trouble-Shooting </H1>
+<BR>This section is intended to provide you with help on some of the common (and not so common) problems that users have encountered
+when trying to run the software.
+<DL>
+<DT>Symptom:
+<DD>The message &quot;Cannot connect to batch spawn server&quot; is displayed.
+<DT>Resolution:
+<DD>This message occurs when the Open Watcom IDE is trying to connect to the batch server.&nbsp; The batch server is a program
+that is employed by the Open Watcom IDE to run &quot;makes&quot; in the background.&nbsp; There are several reasons why you
+may receive this message.
+<UL>
+<LI><B> Installing Under the Host System and Selecting &quot;Modify System Files&quot; During Install</B>
+<BR><BR>For the IDE to run properly under a particular host operating system, the install program must be run on that system.
+<BR><BR>It is very important to check the &quot;Modify System Files&quot; when running the install on the host platform.&nbsp;
+Otherwise, changes required in the host system's environment will not be made.&nbsp; If this is the problem, you should re-install
+under the host environment and select this option.
+<LI><B> System stability</B>
+<BR><BR>If for some reason the operating system has become unstable, the IDE may have trouble connecting to the batch server.
+&nbsp;This can happen if you have run a badly behaved application that caused an exception, for example a page fault.&nbsp;
+If this is the problem, you should shutdown the operating system and reboot.
+<LI><B> Running Windows 3.1 in Enhanced Mode</B>
+<BR><BR>The IDE requires at least version 3.1 of Windows to be running, in enhanced mode.&nbsp; Windows 3.0 is not supported.
+</UL>
+</DL>
+<BR><B>Running Third-Party Shell Programs</B>
+<BR><BR>If you run 4DOS.COM or some other shell besides COMMAND.COM, you must change the &quot;BATCHBOX.PIF&quot; file accordingly.
+&nbsp;You can do this using the standard Windows PIF editor.
+<BR><BR><B>Running Virus Checkers</B>
+<BR><BR>If you are running Central Point's PCTOOLS, VWATCH, or some other virus checker, it may be conflicting with our batch
+server.&nbsp; To isolate the problem, uninstall the virus checker and see if the IDE works again.
+<BR><BR><B>386 Enhanced &quot;Exclusive in Foreground&quot; Option</B>
+<BR><BR>If you go to the Windows Control Panel, &quot;Scheduling Options&quot; of &quot;386 Enhanced&quot;, and the &quot;Exclusive
+in Foreground&quot; checkbox is checked, uncheck it.&nbsp; This causes our batch server to starve under Windows.
+<BR><BR><B>Changes to the SYSTEM.INI File</B>
+<BR><BR>The WDEBUG.386 driver is required to be installed in the [386Enh] section of SYSTEM.INI.&nbsp; This should have been
+done automatically by the WATCOM install program when the software was installed under the host environment and the &quot;modify
+system files&quot; option was selected.
+<BR><BR>It has been reported that the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OverlappedIO=on</TT>
+<BR><BR>not appear in the SYSTEM.INI file.
+<BR><BR>It appears the user's problem was related to conflicts with other devices installed in the SYSTEM.INI file.&nbsp;
+On its own, the above line does not appear to affect the execution of the IDE.
+<BR><BR>It has been reported that the line
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NoEMMDriver=ON</TT>
+<BR><BR>not appear in the SYSTEM.INI file.&nbsp; It will prevent a link from succeeding in the IDE.
+<H2 ID="WinMOSD2_and_OSD2_Specific"> Win-OS/2 and OS/2 Specific </H2>
+<BR><B>Installing for a Win-OS/2 Host</B>
+<BR><BR>For Win-OS/2, the install must be run under OS/2 and &quot;Modify System Files&quot; must be selected.&nbsp; This
+installs the batch server under OS/2, which we require under Win-OS/2.&nbsp; Then the Windows install program should be run
+under Win-OS/2 so that the program groups will be created.&nbsp; &quot;Modify System Files&quot; should also be checked for
+the Win-OS/2 install.
+<BR><BR><B>Named Pipe Conflicts</B>
+<BR><BR>Under OS/2, the batch server is a named pipe.&nbsp; Win-OS/2 uses the OS/2 named pipe for the batch server, hence
+the OS/2 IDE will conflict with the Win-OS/2 IDE if they are both running.&nbsp; If this is the problem, you should run only
+one of the OS/2 and Win-OS/2 IDE, not both at the same time.
+</BODY>

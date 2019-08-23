@@ -1,0 +1,682 @@
+<HEAD>
+<TITLE> Open Watcom 2.0 OWSTL developer guide </TITLE>
+</HEAD>
+<BODY>
+<H1 ID="Index_of_Topics"> Index of Topics </H1>
+<DL>
+<DT>- A -
+<DD><A HREF="#Algorithms">Algorithms</A>
+<DT>- D -
+<DD><A HREF="#Deque">Deque</A>
+<BR><A HREF="#Design_Details">Design Details</A>
+<DT>- I -
+<DD><A HREF="#Implementors_Notes">Implementors Notes</A>
+<BR><A HREF="#Introduction">Introduction</A>
+<DT>- L -
+<DD><A HREF="#List">List</A>
+<DT>- O -
+<DD><A HREF="#Overview">Overview</A>
+<DT>- P -
+<DD><A HREF="#Philosophy">Philosophy</A>
+<DT>- R -
+<DD><A HREF="#Red_Black_Tree">Red Black Tree</A>
+<DT>- S -
+<DD><A HREF="#Stack">Stack</A>
+<BR><A HREF="#Status">Status</A>
+<BR><A HREF="#String">String</A>
+<DT>- T -
+<DD><A HREF="#Type_Traits">Type Traits</A>
+<DT>- V -
+<DD><A HREF="#Vector">Vector</A>
+</DL>
+<H1 ID="Introduction"> Introduction </H1>
+<BR>Introduction
+<H2 ID="Overview"> Overview </H2>
+<BR>The Open Watcom Standard Template Library (OWSTL) is an implimentation of the C++ standard library defined in ISO/IEC
+14882.&nbsp; This document describes the design of the various parts of OWSTL.&nbsp; Each section will describe an element
+of the library and will typically include an overview of the design, design desisions made and reasoning behind them, and
+problems encountered and explanations of the solution.&nbsp; It is hoped a peer review of the code and design documentation
+will be undertaken at some stage and questions raised, answers, or resulting changes made will be documented here.
+<H2 ID="Philosophy"> Philosophy </H2>
+<BR>OWSTL is written entirely from scratch.&nbsp; It does not, for example, assimilate an old HP/SGI code base.&nbsp; When
+a new element is added to the library the topic should be researched by the author before they commence coding so they can
+make use of any new research and theories.&nbsp; The commercial compiler Open Watcom is based on made its name for producing
+high quality fast code.&nbsp; The intention is to produce a high performance library to complement that.&nbsp; This means
+choosing and experimenting with the best algorithms possible.&nbsp; It does not mean the source code should be messy.&nbsp;
+It is important the code is easy to read and understand as that will encorage new developers to maintain and improve the library
+and will give the greatest advantage in the long term.&nbsp; This document is part of that, giving an overview and logging
+historical improvements and pitfalls discovered, the source files are the other half.&nbsp; If improvements can be made by
+crafting complicated, difficult to understand constructs in the source it probably suggests more effort should be spent on
+the compiler and codegenerator.
+<H2 ID="Status"> Status </H2>
+<BR>OWSTL is currently in very early stages of developement.&nbsp; No parts are completely implemented, and many elements
+of the library have not been started yet.&nbsp; Having said that what does exsist will tend to be the most useful key parts.
+&nbsp;The code is mainly templates and currently resides in under the<TT> hdr</TT> project.&nbsp; In the future non-template
+classes or functions may be factored out of the templated code and be built into the static and dynamic libraries.&nbsp; The
+exisiting library code is in<TT> bld\plusplus\cpplib.</TT>&nbsp; For example it should be possible to seperate the rebalancing
+algorithms from the red-black tree code as these just manipulate pointers - they don't really need to know the contained type.
+&nbsp;Reasonably thorough regression tests can be found in<TT> plustest/regress/owstl.</TT>&nbsp; These should be updated
+in parallel with new fuctionallity or fixes made to the library itself.&nbsp; Some Benchmarks can be found in<TT> bench/owstl.</TT>
+<BR><BR>Author:&nbsp; P Chapin, D Cletheroe
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>About two thirds of the required algorithms have been implemented.&nbsp; For a list of those remaining, see the Wiki
+web site.
+<BR><BR>Author:&nbsp; Peter C.&nbsp; Chapin
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>The basic functionality of<TT> std::deque</TT> has been implemented.&nbsp; This includes the specialized deque operations
+and deque iterators.&nbsp; However, the more &quot;exotic&quot; vector-like operations (insert and erase in the middle of
+the sequence) have not yet been implemented.&nbsp; There has been essentially no user feedback.
+<BR><BR>Author:&nbsp; P Chapin, D Cletheroe
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>Missing members:
+<UL>
+<LI>err...&nbsp; need to look throught the standard
+<LI>
+</UL>
+<BR>Completed members:
+<UL>
+<LI>explicit list( Allocator const &amp; )
+<LI>list( list const &amp; )
+<LI>list()
+<LI>operator=( list const &amp; )
+<LI>assign( size_type, value_type const &amp; )
+<LI>get_allocator() const
+<LI>iterator
+<LI>const_iterator
+<LI>reverse_iterator
+<LI>const_reverse_iterator
+<LI>begin() (+const)
+<LI>end() (+const)
+<LI>rbegin() (+const)
+<LI>rend() (+const)
+<LI>size()
+<LI>empty()
+<LI>front()
+<LI>back()
+<LI>push_front( value_type const &amp; )
+<LI>push_back( value_type const &amp; )
+<LI>pop_front()
+<LI>pop_back()
+<LI>insert( iterator, value_type const &amp; )
+<LI>erase( iterator )
+<LI>erase( iterator, iterator )
+<LI>swap( list&amp; )
+<LI>clear()
+<LI>remove( value_type const &amp; )
+<LI>splice( iterator, list &amp; )
+<LI>splice( iterator, list &amp;, iterator )
+<LI>splice( iterator list &amp;, iterator, literator )
+<LI>reverse()
+<LI>merge( list const &amp; )
+</UL>
+<BR><BR>Author:&nbsp; D Cletheroe
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>The majority of the required functionality has been written.&nbsp; Regression tests have been written in parallel,
+but little user testing and feedback exists.
+<BR><BR>The missing members are:
+<UL>
+<LI>reverse_iterator
+<LI>const_reverse_iterator
+<LI>template&lt;InputIterator&gt; ctor( InputIterator, InputIterator,...&nbsp; )
+<LI>rend() and rend() const
+<LI>rbegin() and rbegin() const
+<LI>max_size()
+<LI>erase( iterator first, iterator last )
+<LI>swap( RBTree&amp; )
+<LI>key_comp()
+<LI>value_comp()
+<LI>find( key_type ) const
+<LI>count()
+<LI>equal_range( key_type ) and equal_range( key_type ) const
+<LI>non member operators and specialized swap algorithm
+</UL>
+<BR>Completed member are:
+<UL>
+<LI>iterator
+<LI>const_iterator
+<LI>ctor( Compare, Allocator )
+<LI>cpyctor
+<LI>operator=
+<LI>dtor
+<LI>begin() and begin() const
+<LI>end() and end() const
+<LI>empty()
+<LI>size()
+<LI>{ operator[] is implemented in class map not tree }
+<LI>insert( value_type )
+<LI>insert( iterator, value_type ) (see N1780)
+<LI>erase( iterator )
+<LI>erase( key_type cont &amp;)
+<LI>clear()
+<LI>find( key_type )
+<LI>lower_bound( key_type ) and lower_bound( key_type ) const
+<LI>upper_bound( key_type ) and upper_bound( key_type ) const
+<LI>_Sane()
+<LI>internal tree balancing functions
+</UL>
+<BR><BR>Author:&nbsp; D Cletheroe
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>The default container is currently a vector as deque has yet to be written
+<BR><BR>All members complete:
+<UL>
+<LI>explicit stack( Container const &amp; x = Container() )
+<LI>empty() const
+<LI>size() const
+<LI>top() and top() const
+<LI>push( value_type const &amp; )
+<LI>pop()
+<LI>_Sane()
+<LI>operators == != &lt; &gt; &lt;= &gt;=
+</UL>
+<BR><BR>Author:&nbsp; Peter C.&nbsp; Chapin
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>Most of the required functionality has been implemented together with moderately complete regression tests.&nbsp;
+There has so far been very little user feedback, however.
+<BR><BR>The main component that is missing is the I/O support for<TT> std::string.</TT>&nbsp; Implementing this component
+has been put on hold until the iostreams part of the library is reworked.&nbsp; In the meantime users will have to do string
+I/O using C-style strings and convert them between<TT> std::string.</TT>&nbsp; This is a significant issue; it is assumed
+that most standard programs will do I/O on strings directly and the library doesn't currently support such programs no matter
+how complete the<TT> std::string</TT> implementation itself might be.
+<BR><BR>In addition to the problem above, the template methods of<TT> std::string</TT> have not been implemented because the
+compiler does not yet support template methods sufficiently well.
+<BR><BR>Author:&nbsp; D J F Cletheroe
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>About half of the required functionality has been implemented so far.&nbsp; There are currently a few compiler bugs
+stopping some parts being implemented.
+<BR><BR>The missing templates are:
+<UL>
+<LI>is_member_object_pointer
+<LI>is_member_function_pointer
+<LI>is_enum
+<LI>is_union
+<LI>is_class
+<LI>is_function
+<LI>struct is_object
+<LI>is_scalar
+<LI>is_compound
+<LI>is_member_pointer
+<LI>is_pod
+<LI>is_empty
+<LI>is_polymorphic
+<LI>is_abstract
+<LI>has_trivial_constructor
+<LI>has_trivial_copy
+<LI>has_trivial_assign
+<LI>has_trivial_destructor
+<LI>has_nothrow_constructor
+<LI>has_nothrow_copy
+<LI>has_nothrow_assign
+<LI>has_virtual_destructor
+<LI>is_signed
+<LI>is_unsigned
+<LI>alignment_of
+<LI>rank
+<LI>extent
+<LI>is_same
+<LI>is_base_of
+<LI>is_convertible
+<LI>remove_extent
+<LI>remove_all_extents
+<LI>add_pointer
+<LI>aligned_storage
+</UL>
+<BR><BR>Author:&nbsp; Peter C.&nbsp; Chapin
+<BR><BR>Reviewer:&nbsp; Not reviewed
+<BR><BR>Most of the required functionality has been implemented.&nbsp; Some of the methods are not yet exception safe.
+<H2 ID="Implementors_Notes"> Implementors Notes </H2>
+<BR>When updating OWSTL remember to do all the following steps:
+<UL>
+<LI>check out latest source
+<LI>run regresion tests, if broken fix or complain on contributors.news.openwatcom.org
+<LI>update source
+<LI>update regresion tests
+<LI>update this document
+<LI>update user documents (when/if they exist)
+<LI>check regresion tests one last time
+<LI>submit changelist
+</UL>
+<H1 ID="Algorithms"> Algorithms </H1>
+<BR>Introduction
+<BR><BR>The algorithm header (truncated to &quot;algorith&quot; for 8.3 file name compatibility) contains definitions of the
+algorthms from chaper 25 of the standard.
+<H2 ID="Atatus"> Status </H2>
+<H2 ID="Design_Details"> Design Details </H2>
+<BR>Most of the standard algorithms are template functions that operate on iterators to perform some common task.&nbsp; Each
+function template is quickly addressed in the sections that follow.&nbsp; They are generally quite simple and looking directly
+at the source may be the simplest form of information.
+<BR><BR>A number of the algorithms come in both a form that uses<TT> operator&lt;</TT> or<TT> operator==</TT> (as appropriate)
+and in a form that uses a predicate.&nbsp; The predicate form is more general.&nbsp; The non-predicate form can be implemented
+in terms of the predicate form by using the function objects in<TT> functional.</TT>&nbsp; In theory implementing the non-predicate
+forms in terms of the predicate forms should not entail any abstraction penalty because the compiler should be able to optimize
+away any overhead due to the function objects.&nbsp; Some investigation was done using Open Watcom v1.5 to find out if that
+was true.&nbsp; In fact, the compiler was able to produce essentially identical code for the non-predicate functions that
+were implemented directly as for non-predicate functions that were implemented in terms of the predicate functions.&nbsp;
+However, at the call site, there was some abstraction penalty:&nbsp; the compiler issued a few extra instructions to manipulate
+the (zero sized) function objects.
+<BR><BR>These experiments led us to conclude that the non-predicate functions should be implemented directly for short, simple
+algorithms where the extra overhead might be an issue.&nbsp; For the more complex algorithms, the non-predicate forms should
+be implemented in terms of the corresponding predicate forms.&nbsp; The extra overhead of doing so should be insignificant
+in such cases and the savings in source code (as well as the improved ease of maintanence) would make such an approach desirable.
+<BR><BR>If the compiler's ability to optimize away the function objects improves, this matter should be revisited.
+<BR><BR>*_heap
+<BR><BR>The functions<TT> push_heap, pop_heap, make_heap,</TT> and<TT> sort_heap</TT> support the manipulation of a heap data
+structure.&nbsp; Currently only versions using an explicit<TT> operator&lt;</TT> have been implemented.&nbsp; The versions
+taking a comparison object have yet to be created.&nbsp; Several heap related helper functions have been implemented in namespace<TT>
+std::_ow.</TT>&nbsp; These functions are not intended for general use.
+<BR>There is a compiler bug that prevents the signature of the internal<TT> heapify</TT> function from compiling.&nbsp; This
+has been worked around by providing the necessary type as an additional template parameter.&nbsp; See the comments in<TT>
+algorith.mh</TT> for more information.
+<BR><BR>remove remove_if
+<BR><BR>These functions &quot;remove&quot; the value that compares equal or the element at which the predicate evaluates !=
+false.&nbsp; Because iterators can't be used to access the underlying container the element can't really be removed.&nbsp;
+It may well be the container is just a bit of stack and the iterator a pointer.&nbsp; These functions instead copy elements
+from the right (an incremented iterator) over the top of the element that is &quot;removed&quot; and then return an iterator
+identifying the new end of the sequence.&nbsp; The initial implementation just called the<TT> remove_copy</TT> and<TT> remove_copy_if</TT>
+functions described below.&nbsp; This would perform unnecessary copies on top of the same object if there any values at the
+begining of the container that aren't to be removed.&nbsp; This could cause a bit of performance hit if the object is large
+and there are lots of objects that don't need to be removed, therefore these functions were re-written to be independent of
+the the<TT> *_copy</TT> versions and perform a check for this condition.
+<BR>remove_copy remove_copy_if
+<BR><BR>This makes a copy of the elements that don't compare equal, or when the predictate is false, starting at the location
+given by Output.&nbsp; It is a simple while loop over the input iterator first to last, either just skipping the element or
+copying it to the output.
+<BR>unique
+<BR><BR>For C++98 and C++2003 there is an open library issue regarding the behavior of<TT> unique</TT> when non-equivalence
+relations are used.&nbsp; The standard says that the predicate should be applied in the opposite order of one's intuition.
+&nbsp;In particular:<TT>&nbsp; pred(*i, *(i-1)).</TT>&nbsp; This means the predicate compares an item with its previous item.
+<BR>The resolution of the open issue suggests that non-equivalence relations should not be premitted.&nbsp; In any case, the
+standard should apply the predicate between an item and the next item:<TT>&nbsp; pred(*(i-1), *i).</TT>
+<BR><BR>The Open Watcom implementation follows the proposed resolution and thus deliberately violates the standard.&nbsp;
+Most (all?) other implementations do the same.
+<BR><BR>find_first_of
+<BR><BR>There are two versions of this, one that uses<TT> operator==</TT> and one that uses a binary predicate.&nbsp; There
+is a simple nested loop to compare each element with each element indexed by the 2nd iterator range.
+<BR>find_end
+<BR><BR>There are two versions of this, one that uses<TT> operator==</TT> and one that uses a binary predicate.&nbsp; The
+main loop executes two other loops.&nbsp; The first loop finds an input1 element that matches the first input2 element.&nbsp;
+When a match is found the second loop then checks to see if it is complete match for the subsequence.&nbsp; If it is, the
+position the subsequence started is noted and the main loop is iterated as there may be another match later on.&nbsp; Note
+this can't search for the substring backwards as the iterators are ForwardIterators.
+<BR>random_shuffle
+<BR><BR>The<TT> random_shuffle</TT> template with two arguments has been implemented using the C library function<TT> rand.</TT>
+&nbsp;However, the 1998/2003 standard is unclear about the source of random numbers that<TT> random_shuffle</TT> should use.
+&nbsp;There is an open library issue about this with the C++ standardization group.&nbsp; See http://anubis.dkuug.dk/JTC1/SC22/WG21/docs/lwg-active.html,
+item #395.&nbsp; The proposed resolution is to allow the implementation to use<TT> rand</TT> without requiring it to do so
+(the source of random numbers is proposed to be implementation defined).
+<BR>The problem with<TT> rand</TT> in this case is that Open Watcom's implementation of<TT> rand</TT> is limited to 16 bits
+of output even on 32 bit platforms.&nbsp; This means that<TT> random_shuffle</TT> will malfunction on sequences larger than
+32K objects.&nbsp; This is a problem that needs to be resolved.&nbsp; The solution, probably, will be to provide 32 bit random
+number generators as an option (check this:&nbsp; has it already been done?)
+<BR><BR>sort
+<BR><BR>The<TT> sort</TT> template is implemented using a QuickSort algorithm.&nbsp; This was shown to be significantly faster
+(over twice as fast) as using a HeapSort based on the heap functions in this library.&nbsp; This implementation of QuickSort
+is recursive.&nbsp; Since each recursive call has private state, it is unclear if a non-recursive version would be any faster
+(at the time of this writing, no performance comparisons between recursive and non-recursive versions have been made).&nbsp;
+Stack consumption of the recursive implementation should be O(log(n)) on the average, which is not excessive.&nbsp; However,
+the stack consumption would be O(n) in the worst case, which would be undesirable for large n.
+<BR>add quick descriptions of other algorithms here...
+<BR><BR>Overall Structure
+<BR><BR>This implementation is based on a circular buffer.&nbsp; Like a vector, a deque object allocates more memory than
+it actually uses.&nbsp; In other words its capacity may be greater than its size.&nbsp; However, unlike a vector the sequence
+stored in a deque is allowed to wrap around in the buffer resulting in non-contiguous storage.&nbsp; This means an operation
+such as<TT> &amp;deq[0] + n</TT> may result in a pointer that is invalid even if<TT> n</TT> is less than the deque's size.
+&nbsp;This behavior is allowed by the standard [reference?].
+<BR>A deque object maintains two indicies.&nbsp; The<TT> head_index</TT> refers to the location in the buffer where the first
+item is stored.&nbsp; The<TT> tail_index</TT> refers to the location in the buffer just past (after possible wrap-around)
+where the last item is stored.&nbsp; When<TT> head_index == tail_index</TT> the deque is empty.&nbsp; To avoid the potential
+ambiguity of this condition, the buffer is reallocated just before it is full (when<TT> deq_length + 1 == buf_length</TT>
+) so that the condition<TT> head_index == tail_index</TT> never occurs due to a full buffer.&nbsp; This makes implementing
+some of the deque operations much easier.
+<BR><BR>For example, deque iterators are represented using a pointer to the deque object and an index value that marks the
+iterator's current position in the deque's buffer.&nbsp; If the iterator's index value equals<TT> head_index</TT> this can
+only mean the iterator is at the beginning of the sequence.&nbsp; It never means that the iterator is just past the end of
+the sequence.&nbsp; This disambiguation makes implementing<TT> operator&lt;</TT> and the other relational operators on iterator
+much more straight forward.
+<BR><BR>The general organization and style of deque's implementation follows that of the other buffered sequences,<TT> std::vector</TT>
+and<TT> std::string.</TT>&nbsp; This consistency is intentional.&nbsp; It is intended to make the<TT> std::deque</TT> code
+easier to understand.&nbsp; It also opens up some possibility that all the buffered sequences might one day share code.
+<BR><BR>Alternative Implementations
+<BR><BR>In addition to the circular buffer implementation an alternative approach was considered that uses contiguous storage.
+&nbsp;The idea was to store the deque's contents in the &quot;middle&quot; of the buffer so that some free space would be
+available on either end for fast<TT> push_back</TT> and<TT> push_front</TT> operations.&nbsp; If the deque grows to the point
+where one of the buffer ends is reached, the active contents of the deque might be recentered (if the allocated space was
+not too large) or completely reallocated (if the allocated space was almost full).
+<BR>This contiguous storage approach allows deque to be more vector-like and might promote code sharing between deque and
+vector.&nbsp; For example, a vector would be a special kind of deque in this case.&nbsp; However, at the time of this writing
+it is unclear how such an implementation would best decide between recentering and reallocation.&nbsp; More analysis is necessary
+to understand the issues involved.
+<BR><BR>Open Watcom Extensions
+<BR><BR>Because of this implementation's use of a circular buffer it is not difficult to provide<TT> capacity</TT> and<TT>
+reserve</TT> methods for deque even though the standard does not require them.&nbsp; As with vector, the<TT> reserve</TT>
+method causes a deque to set aside enough memory so that no additional allocations or internal copies will be needed until
+at least the reserved size is reached.
+<BR><TT>template &lt; class Type, class Allocator &gt; class std::list</TT>
+<BR><BR>Description of a Double Linked List
+<BR><BR>This is a data structure that is made up of nodes, where each node contains the data, a pointer to the next node,
+and a pointer to the previous node.&nbsp; The overall structure also knows where the first element in the list is and usually
+the last.&nbsp; Obviously it requires two pointers for every piece of data held in the list, but this allows movement between
+adjacent nodes in both directions in constant time.
+<BR>Overview of the class
+<BR><BR>The class defines a internal DoubleLink structure that only holds forward and backward pointers to itself.&nbsp; It
+then defines a Node structure that inherits the DoubleLink and adds to it the space for the real data (of type value_type)
+that is held in the list nodes.&nbsp; This is done so a special sentinel object can be created that is related to every other
+node in the list, but it doesn't require space for a value_type object.&nbsp; This sentinel is used by the list class to point
+to the first and last elements in the list.&nbsp; A sentinel is useful in this case (the alternative would just be individual
+first and last pointers) because it means the insertion and deletion code does not have to check for the special case of editing
+the list at the begining and end.&nbsp; The sentinel is initialised pointing to itself and is used as the reference point
+of the end of the list.&nbsp; When the an element is inserted or deleted before the end or at the begining all the pointer
+manipulation just falls out in the wash.&nbsp; [This seems to be a good uses of sentinels, I can't see the point of using
+them in a tree structure for example.]
+<BR>There are two allocators that need to be rebound for the Node and DoubleLink types.&nbsp; [For review:&nbsp; DJFC called
+the first one mMem where the lower case m was for &quot;member&quot; then PCC needed to add another for DoubleLink and called
+it dlMem, we could really do with standadising a naming convention---perhaps mMem should be nMem or dlMem should be mDLMem???]
+The two allocators are needed because objects of different types are being allocated:&nbsp; the node allocation allocates
+nodes (with their contained value_type) while the link allocator allocates the sentinel node of type DoubleLink.
+<BR><BR>Inserting nodes
+<BR><BR>The work for the functions<TT> push_front, push_back</TT> and<TT> insert</TT> is done by the private member<TT> push.
+&nbsp;Node* push( Node* o, Type const &amp; )</TT> is quite simple.&nbsp; It allocates a Node and then tries to make a copy
+of type in the memory allocated.&nbsp; The usual try-catch wrappings deallocate the memory if the construction was unsuccessful.
+&nbsp;It then modifies the pointers of the Node o that was passed, the element before o, and the new Node so that the new
+node is linked in is now placed just before o.&nbsp; The end of the list is signified by the sentinal object, so if we are
+trying to insert before the end o is sentinal and everything works.&nbsp; If we are trying to insert before the first node
+the old node before the first is again the sentinal, so the pointers are all valid and everything works.
+<BR>Deleting nodes
+<BR><BR>Clearing all
+<BR><TT>template &lt; class Key, class Compare, class Allocator, class ValueWrapper &gt; class RedBlackTree</TT>
+<BR><BR><TT>Key</TT> is the type that is used to index the tree;<TT> Compare</TT> is a functor (class with operator() defined)
+that provides ordering to the keys;<TT> Allocator</TT> provides the memory allocation;<TT> ValueWrapper</TT> is a class that
+defines the type of the objects stored in the tree and provides an operator() that knows how to extract the key from that
+type.<TT>&nbsp; ValueWrapper</TT> allows the same tree code to apply to sets where the key is the only thing stored and maps
+where the object stored has a key and a mapped value.
+<BR><BR>Relation to map and set
+<BR><BR><TT>std::set</TT> and<TT> std::map</TT> take their base class as a template parameter.&nbsp; They select the appropriate
+value wrapper and inherit all the functionallity.&nbsp; The base currently defaults to RedBlackTree and is the only implementation
+avaliable.
+<BR>Description of a Red Black Tree
+<BR><BR>A Red-Black tree is a ordered binary tree.&nbsp; An binary tree is made up of nodes, where each node can have up to
+two children.&nbsp; An ordered binary tree orders the nodes so that a left child is less than its parent and a right child
+is greater.&nbsp; It could be the other way around, and this implementation uses a comparison function and puts the child
+on the left if compare( child, parent ) evaluates true.&nbsp; If a node has no children it is a leaf, otherwise it is an internal
+node.&nbsp; Some implementations only hold the actual data in the leaves and the internal nodes are just place holders.&nbsp;
+This implemenation has imaginary leaves - null pointers.&nbsp; If a node's child pointer is null then that non-existant child
+is a leaf, and we hold all the data in the real, exisiting nodes.&nbsp; Therefore there is no special leaf node type, just
+a null pointer if there is no child with data.
+<BR>A Red-Black tree adds a colour to ever node, and defines some rules that mean the tree stays balanced.&nbsp; A tree is
+balanced if the difference between the largest and smallest depth of a leaf is bounded.&nbsp; The invarients are:
+<UL>
+<LI>Every red node has a black parent
+<LI>Every route from the root node to a node with 0 or 1 children has the same number of black nodes
+<LI>Every leaf is black (note this is assumed as leaves don't really exist in this implementation.)
+<LI>The root is black
+</UL>
+<BR>This data structure has been well covered in the literature, for a more detailed information see:&nbsp; [Prof Lyn Turba,
+Wellesly College, CS231 Algorithms Handout 21, 2001] [McGill University, Notes for 308-251B, http://www.cs.mcgill.ca/cs251/
+!check link!, 1997] [err...] [google red black trees, binary trees etc]
+<BR><BR>Overview of the class
+<BR><BR>The tree class defines an internal Node structure that is made up of the object stored in the tree, Node pointers
+for the parent and left and right children, and the Node colour.&nbsp; There is an allocator member object, mMem, that is
+rebound to allocate Node types.&nbsp; There are pointers to the root and furthest left and right nodes.&nbsp; These are used
+to mark were to start the search, and create the begin and end iterators respectively.&nbsp; The iterator and const_iterator
+are member classes derived from a common member class.&nbsp; There is an Open Watcom extention method<TT> bool _Sane()</TT>
+that checks the integrity of the data structure.&nbsp; Related to this is a integer mError member that is assigned a value
+if an error is detected when _Sane is run.&nbsp; [for review] This should perhaps be renamed _Error or made private and a
+_GetError() method provided.
+<BR>Inserting Elements and Reballancing
+<BR><BR>The<TT> insert</TT> method calls<TT> unbalancedInsert</TT> and<TT> insBalTransform.</TT>&nbsp; The loop in<TT> unBallancedInsert</TT>
+moves from child to child searching for the leaf of the tree where the new item can be inserted, in a simular way as the find
+algorithm checks for the item.&nbsp; A final check is made at the end of the loop to see if the key already exists.&nbsp;
+If it does an iterator to the existing key is returned.&nbsp; Otherwise a new node is allocated and constructed.&nbsp; The
+Node is linked into the tree at the place found.&nbsp; A try-catch construction is placed around the construction of the node
+to deallocate the node again if any exceptions are raised.&nbsp; This is needed to stop a memory leak that could occur beacuse
+the memory has been allocated but the exception has stopped the Node being linked in to the tree (so it would never get destroyed
+when the tree is destoyed).
+<BR>At this point the tree is a valid binary tree but not necessaraly obeying the Red-Black balance criteria.&nbsp; The new
+Node is painted Red so as not to invalidate the black-height rule, but this may introduce a violation of the red-red rule.<TT>
+&nbsp;insBalTransform</TT> is called with a pointer to the newly inserted Node to correct this.&nbsp; This is where this implementation
+of a Red-Black tree varies from the most common implementations.&nbsp; Usually the balancing procedure is broken down into
+a series of &quot;rotations&quot; where a sub-tree of the tree would appear to be rotated if represented graphically.&nbsp;
+These rotations can be left or right and the procedure moves up to the parent sub-tree and is repeated until the violation
+is removed.&nbsp; Instead Open Watcom uses the concept of a &quot;transformation&quot;.&nbsp; [Alternatives to Two Classic
+Data Structures, Chris Okaski, 2005?] A sub-branch of the tree is analysed to see which case it matches and the elements in
+that branch are then reorganised and recoloured in one block of code.&nbsp; Although this isn't wildly different it was hoped
+that it would allow a faster algorithm to be created because larger sub-trees and special cases could be matched and manipulated
+in one go, and the code generator may be able to make a better job of optimising the code because a larger block of manipulating
+instructions would be together.&nbsp; Whether this was a good desision will be born out in time.
+<BR><BR>Explain why the insert methods are currently inline - compiler bug - what exactly was the problem?
+<BR><BR>Deleting Elements
+<BR><BR>Deletion is a bit more complicated than insertion.&nbsp; The main method that gets called is<TT> erase( iterator ).</TT>
+&nbsp;I did hope it may be possible to rewrite this in a way that is easier to understand.&nbsp; There are two main cases:
+<OL>
+<LI>The node to be removed has both children
+<LI>The node has one or more children null (i.e.&nbsp; has 0 or 1 real child, in other words 1 or 2 leaves) - I've called
+this an &quot;end node&quot;
+</OL>
+<BR>If it is an &quot;end node&quot; (has 0 or 1 real child) then that child can be linked into it's place or the node can
+just be deleted.&nbsp; We take note of the deleted node's parent, the child, and its colour.&nbsp; The other case where it
+has 2 children is more complicated.&nbsp; We swap the predecesor (which cannot have a right child by definition) of the deleted
+node into the place of the deleted node, and change its colour so that part of the tree is still valid.&nbsp; The node being
+removed is now effectively the predecesors old possition, so we take note of its original child, parent and colour.
+<BR><BR>Now we have created a situation where we are really removing an &quot;end node&quot; (0 or 1 real child).&nbsp; We
+can look at the colour of the node to be removed, if it is red then there is no violation of the black height rule by removing
+it.&nbsp; Also it cannot have a real child so there is nothing to link in its place.&nbsp; If the removed &quot;end node&quot;
+is black there are two cases.&nbsp; If it has a child that child must be red or there would have been a black height violation,
+thus we link the child in the place and paint it black to maintain the black height.&nbsp; If there was no child we have created
+a black height problem - there is a lack of black on this branch.&nbsp; The deleted node has left a null leaf node in its
+place, we usually count these as black, but in this case we have to call it double black to resolve the black hieght problem.
+&nbsp;This isn't valid so we call<TT> doubleBlackTransform() to run through</TT> a set of cases to rearrange subtrees and
+remove the need for double black.
+<BR><TT>template &lt; class Type, class Container = std::dequeue &gt; class std::stack</TT>
+<BR><BR>This template is called an adaptor because it uses a real container (the Container template parameter) to do the storing
+of the objects and just provides a different interface to it.&nbsp; It lacks begin() and end() so you can't use iterators
+with it and therefore you can't use the standard algorithms.
+<BR><BR>Description of a stack
+<BR><BR>A stack is a bit like a pile of books, where each book is the contained object.&nbsp; You can add books to the top
+of the pile (push), look at the top book (top), and discard the top book (pop).
+<BR>Overview of the class
+<BR><BR>This is a very simple wrapper.&nbsp; I suggest you just look at the source code.
+<BR><BR>Copy-On-Write?
+<BR><BR>This implementation of<TT> std::string</TT> does not use a copy-on-write or a reference counted approach.&nbsp; Instead
+every string object maintains its own independent representation.&nbsp; This was done, in large measure, to simplify the implementation
+so that a reasonable<TT> std::string</TT> could be offered quickly.&nbsp; However there are a number of difficulties with
+making<TT> std::string</TT> reference counted and it is worth reviewing those issues here.
+<BR>The fundamental problem is that the<TT> std::string</TT> interface leaks references to a string's internal representation.
+&nbsp;It could be argued that this is a design problem with<TT> std::string.</TT>&nbsp; Consider the following program.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;iostream&gt;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;string&gt;</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; using namespace std;</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; int main()</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string s1( &quot;Hello&quot; ), s2;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char &amp;c( s1[0] );</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s2 = s1;&nbsp; // s1 and s2 perhaps share representations</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c = 'x';&nbsp; // Do both s1 and s2 change?</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( s2[0] == 'x' )</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; &quot;Wrong!\n&quot;;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; &quot;Right!\n&quot;;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><BR>The value semantics of<TT> std::string</TT> require that modifying one string should not influence the value seen
+in another logically distinct string.&nbsp; Thus all correct implementations of<TT> std::string</TT> should produce &quot;Right!&quot;
+for the program above.
+<BR><BR>To deal with this case properly while using reference counted strings, the implementation must &quot;unshare&quot;
+the representation whenever a method is called that leaks a reference to that representation.&nbsp; The method<TT> operator[]</TT>
+is one example of such a method.&nbsp; In fact, section 21.3, paragraph 5 of the C++ standard contains explicit language regarding
+this issue.&nbsp; The standard allows implementations to invalidate references, pointers, and iterators to the elements of
+a<TT> basic_string</TT> sequence whenever, for example, the non-const<TT> operator[]</TT> is called.&nbsp; However, this leads
+to rather unexpected behavior in at least two respects.&nbsp; In particular:
+<OL>
+<LI>Accessing a string might be an O(n) operation.
+<LI>Accessing a string might cause a<TT> std::bad_alloc</TT> exception to be thrown.
+</OL>
+<BR>The first issue is a concern to those doing time sensitive operations, such as those writing embedded systems (Open Watcom's
+support for 16 bit 8086 targets might be attractive to such programmers).&nbsp; In fact,<TT> std::string</TT> provides a<TT>
+reserve</TT> method specifically to give the programmer some degree of control over when allocations are done.&nbsp; Copying
+a string's representation unexpectedly when a string is accessed frustrates this intention.
+<BR><BR>The second issue is a concern to those writing robust, exception safe code.&nbsp; To build code that is exception
+safe it is important to know when exceptions might be thrown.&nbsp; A savy programmer might know that calling the<TT> std::string
+operator[]</TT> might throw an exception.&nbsp; However because that is an unnatural side-effect many programmers won't be
+expecting it and thus using such an implementation will be error prone.&nbsp; Note that on some systems, notably Linux, the
+operating system will usually terminate the program when it runs out of memory before<TT> std::bad_alloc</TT> can be thrown.
+&nbsp;However, that is not the case on smaller, real-mode systems like DOS.&nbsp; Thus for Open Watcom this issue is a concern.
+<BR><BR>In a multithreaded program reference counted strings encounter other problems.&nbsp; Since Open Watcom supports a
+number of multithreaded targets this is also a concern.
+<BR><BR>The C++ standard does not address the semantics of programs in the face of multithreading.&nbsp; However, most programmers
+implicitly assume the following behavior (described by SGI in the documentation for their STL implementation).&nbsp; [Should
+this discussion be moved to a more generic part of this document?&nbsp; Some of this would be applicable to the whole OWSTL
+library.]
+<OL>
+<LI>Two threads can read the same object without locking.&nbsp; This means that if reading an object changes its internal
+state, the implementation must provide appropriate locking.
+<LI>Two threads can operate on logically distinct objects without locking.&nbsp; This means that if objects share information
+internally, the implementation must provide appropriate locking.
+<LI>If two threads operate on the same object and at least one of the threads is modifying that object, the programmer must
+provide locking.&nbsp; This means that the implementation does not need to protect itself from this case.
+</OL>
+<BR>Reference counted strings must deal with both situations 1 and 2 above.&nbsp; This means they must provide locks on the
+representations and use them when appropriate.&nbsp; The problem with this is that strings are rather low level objects and
+locking them is generally inappropriate.&nbsp; Most strings are used entirely by one thread; locks are usually only needed
+on larger structures.&nbsp; For example consider the following function:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef std::map&lt; std::string, std::string &gt; string_map_t;</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string_map_t global_map;</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; void f( )</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Modify the global_map.</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><BR>If more than one thread is modifying the global map it would be appropriate to include a lock for the entire map.
+&nbsp;Locking the individual strings in the map would most likely be too fine-grained since a single transaction might involve
+updating several strings.&nbsp; It would be important to serialize the entire transaction.&nbsp; Locking the components of
+the transaction separately would be incorrect.
+<BR><BR>Yet a reference counted implementation of<TT> std::string</TT> must add locking to the strings themselves to ensure
+correct behavior when apparently unrelated strings are simultaneously modified.&nbsp; This would be adding a large amount
+of logically unnecessary locking overhead in cases such as the one above.&nbsp; This overhead can cause reference counted
+strings to have very poor performance when used in a multithreaded environment [reference?].&nbsp; This is particularly ironic
+considering that reference counting is intended to improve string performance.
+<BR><BR>Concerns about the day-to-day performance of Open Watcom's non-reference counted implementation have been partially
+addressed by the results of some (minimal) benchmark tests.&nbsp; See<TT> /bench/owstl.</TT>&nbsp; These tests show that the
+current performance of<TT> std::string</TT> is at least competitive with that offered by other implementations.&nbsp; More
+complete benchmark testing is needed to verify this result.
+<BR><BR>It is interesting to note that<TT> gcc,</TT> which at the time of this writing (2005) uses a reference counted approach,
+has extraordinarly poor performance on these benchmark tests.&nbsp; If this result stands up to further investigation it would
+be dramatic evidence that a reference counted approach does not automatically ensure good performance.&nbsp; In fact I am
+lead to wonder if the<TT> gcc</TT> maintainers did any benchmark studies of their implementation or if they just assumed that
+it would be fast because it is reference counted.&nbsp; Either way this highlights the importance, in my mind, of following
+up performance assumptions by making real measurements on the final implementation.&nbsp; One should always verify that any
+change designed to improve performance actually does improve performance before committing to it.
+<BR><BR>Design Overview
+<BR><BR>This implementation of<TT> std::string</TT> uses a single pointer and two counters to define the buffer space allocated
+for a string.&nbsp; One counter measures the length of the allocated space while the other measures the number of character
+units in that space that are actually used.&nbsp; In order to meet the complexity requirements of the standard,<TT> string</TT>
+allocates more space than it needs, increasing that amount of space by a constant multiplicative factor whenever more is needed.
+&nbsp;This implementation uses a multiplicative factor of two [note:&nbsp; other factors, such as 1.5, might be more desirable;
+a factor of two causes somewhat inefficient memory reuse characteristics [reference?]].&nbsp; The capacity of a string is
+always an exact power of two.&nbsp; When a string is first created it is given a particular minimum size for its capacity
+(currently 8) or a capacity that is the smallest power of two larger than the new string's length, whichever is larger.
+<BR>A string's capacity is never reduced in this implementation.&nbsp; Once a string's capacity is increased, the memory is
+not reclaimed until the string is destroyed.&nbsp; This was done on the assumption that if a string was once large it will
+probably be large again.&nbsp; Not returning memory when a string's length shrinks reduces the total number of memory allocation
+operations and reduces the chances of an out of memory exception being thrown during a string operation.&nbsp; However, this
+design choice is not particularly friendly to low memory systems.&nbsp; Considering that Open Watcom targets some small machines,
+an alternative memory management strategy might be worth offering as an option.&nbsp; In the meantime programmers on such
+systems should be careful to destroy large strings when they are no longer needed rather than, for example, just calling<TT>
+erase.</TT>
+<BR><BR>Relationship to vector
+<BR><BR>The<TT> std::string</TT> template is very similar in many ways to the<TT> std::vector</TT> template.&nbsp; In fact,
+in OWSTL both implementations use a similar representation technique and a similar memory management approach.&nbsp; However,
+the implementation of<TT> std::vector</TT> is more complicated because the objects in a vector need not be of a POD type (as
+is the case for string) so they need to be carefully copied and initialized using appropriate methods.&nbsp; In contrast the<TT>
+CharT</TT> type used by<TT> std::string</TT> can be copied and moved with low level memory copying functions (see<TT> std::char_traits</TT>
+).
+<BR>Open Watcom Extensions
+<BR><BR>Because of the widespread demand for case insensitive string manipulation, OWSTL provides a traits class that includes
+case insensitive character comparisons.&nbsp; An instantiation of<TT> std::string,</TT> called<TT> _watcom::istring</TT> is
+provided that uses this traits class.
+<BR>Quierying types
+<BR><BR>This is implemented by specialising templates for the types that the test holds true.&nbsp; The class derives from
+a helper class that contains a static const value.&nbsp; The important cases are when this static const is a bool and is true
+or false.&nbsp; The user can then access is_void&lt; type &gt;::value to see if the test is positive.&nbsp; A set of macros
+are used to help make the definitions look a bit less cluttered.&nbsp; There is a default case which declares the main template
+and is usually false.&nbsp; There are then other macros that define the specialisations.&nbsp; There are also macros that
+define 4 specialisations for the const volatile qualified variations of the type.
+<BR>Modifiying types
+<BR><BR>This works in a simular way.&nbsp; The template is specialised for the type with the modifier and the class contains
+a typedef &quot;type&quot; that refers to the modified type.&nbsp; Macros aren't used for the modifiers as they tend to have
+subtle differences for each template and in many cases there isn't the need for 4 different CV variations.
+<BR>Use in main library
+<BR><BR>This header should be a help for writing the constructors and member functions of the standard containers that are
+required to have different behaviour for iterators and integral types.
+<BR><BR>The internal structure of<TT> vector</TT> is very similar to that of<TT> string.</TT>&nbsp; Any enhancement or bug
+fix applied to either of these templates should be reviewed for possible application to the other.&nbsp; Like a string a vector
+allocates more raw memory than it needs.&nbsp; This allows the logical size of the vector to increase without necessarily
+requiring a reallocation of memory.&nbsp; However, unlike a string, a vector can contain objects with user defined copy constructors
+and user defined<TT> operator=.</TT>&nbsp; In addition, copying and assigning objects in a vector might cause an exception
+to be thrown.&nbsp; These details make implementing<TT> vector</TT> more difficult than implementing<TT> string.</TT>
+<BR><BR>For example, consider a vector of size 100 with 200 units of memory allocated.&nbsp; Now suppose that 10 new objects
+are inserted in the middle of this vector.&nbsp; The 10 objects at the end of the vector need to be copying onto the raw memory
+just past the end using a copy constructor.&nbsp; However, the other objects that are moved will be placed on top of existing
+objects and thus must be copied with an<TT> operator=.</TT>
+<BR><BR>If an exception occurs while the new objects are being constructed, the objects constructed so far can be destroyed
+and the vector can be left in an unmodifed state.&nbsp; However, if an exception occurs after the new objects have been created
+but during the assignment of the remaining objects it is somewhat unclear how to best proceed.&nbsp; If the new objects are
+destroyed data may be lost since the original copies of those objects may have already been overwritten.&nbsp; Yet trying
+to restore the vector to its initial state is probably unwise; if an exception has occured while copying objects around, further
+copying is unlikely to be successful.&nbsp; There is little choice but to leave the vector in a corrupted, partially modified
+state.
+<H1 ID="Deque"> Deque </H1>
+<BR>Introduction
+<BR><BR>The class template<TT> std::deque</TT> provides a random access sequence with amortized O(1)<TT> push_back</TT> and<TT>
+push_front</TT> operations.
+<H2 ID="Btatus"> Status </H2>
+<H2 ID="Aesign_Details"> Design Details </H2>
+<H1 ID="List"> List </H1>
+<BR>Introduction
+<H2 ID="Ctatus"> Status </H2>
+<H2 ID="Besign_Details"> Design Details </H2>
+<H1 ID="Red_Black_Tree"> Red Black Tree </H1>
+<BR>Introduction
+<BR><BR>Template class<TT> std::_ow::RedBlackTree&lt;&gt;</TT> is an implementation of a red-black tree data structure.&nbsp;
+It is used as a common base for<TT> std::set</TT> and<TT> std::map.</TT>&nbsp; It can be found in<TT> hdr/watcom/_rbtree.mh.</TT>
+&nbsp;The intention was to allow easy replacement and experementation with other implementations such as an AVL tree or perhaps
+some sort of relaxed chromatic tree suited to concurrent systems.
+<H2 ID="Dtatus"> Status </H2>
+<H2 ID="Cesign_Details"> Design Details </H2>
+<H1 ID="Stack"> Stack </H1>
+<BR>Introduction
+<BR><BR>This chapter describes the std::stack adaptor.
+<H2 ID="Etatus"> Status </H2>
+<H2 ID="Eesign_Details"> Design Details </H2>
+<H1 ID="String"> String </H1>
+<BR>Introduction
+<BR><BR>The class template<TT> std::string</TT> provides dynamic strings of objects with a type given by the type parameter<TT>
+CharT.</TT>&nbsp; The behavior of<TT> CharT</TT> objects is described by a suitable traits class.&nbsp; By default a specialization
+of<TT> std::char_traits&lt; CharT &gt;</TT> is used.&nbsp; Specializations of<TT> std::char_traits</TT> for both character
+and wide character types are part of the library and are used without any further intervention by the programmer.
+<BR>Most of the methods in class template<TT> std::string</TT> are located in<TT> hdr/watcom/string.mh.</TT>&nbsp; This file
+is also used to generate the C library header<TT> string.h</TT> and the corresponding &quot;new style&quot; C++ library header<TT>
+cstring.</TT>&nbsp; This is accomplished by executing<TT> wsplice</TT> over the file multiple times using different options.
+&nbsp;The material that goes into the C++ library header<TT> string</TT> appears in<TT> string.mh</TT> below the C library
+material.
+<BR><BR>The class template<TT> std::char_traits</TT> along with its specializations for character and wide character, the
+definition of<TT> std::string,</TT> and certain methods of<TT> std::string</TT> are located in<TT> hdr/watcom/_strdef.mh.</TT>
+&nbsp;This file generates the header<TT> _strdef.h</TT> which is not to be directly included in user programs.&nbsp; It is,
+however, included in<TT> string</TT> thus completing the contents of<TT> string.</TT>&nbsp; The reason for this separation
+of<TT> string</TT> is because of the exception classes.&nbsp; The standard exception classes use strings and yet some of the
+methods of string throw standard exceptions.&nbsp; This leads to circular inclusions which are clearly unacceptable.&nbsp;
+To resolve this problem, the parts of<TT> string</TT> that are needed by the standard exception classes are split off into<TT>
+_strdef.h.</TT>&nbsp; These parts do not themselves need the standard exceptions and so the circular reference is broken.
+<H2 ID="Ftatus"> Status </H2>
+<H2 ID="Fesign_Details"> Design Details </H2>
+<H1 ID="Type_Traits"> Type Traits </H1>
+<BR>Introduction
+<BR><BR>The header type_traits is based on the metaprogramming section of n1836 &quot;Draft Technical Report on C++ Library
+Extensions&quot;.&nbsp; It contains a set of templates that allow compile type testing and modification of types.
+<H2 ID="Gtatus"> Status </H2>
+<H2 ID="Gesign_Details"> Design Details </H2>
+<H1 ID="Vector"> Vector </H1>
+<BR>Introduction
+<BR><BR>The class template<TT> std::vector</TT> provides a dynamic array of objects with a type given by the type parameter.
+&nbsp;Unlike<TT> std::string</TT> vectors can be instantiated with non-POD types.&nbsp; This complicates the implementation
+of<TT> std::vector</TT> considerably, as discussed below.
+<H2 ID="Htatus"> Status </H2>
+<H2 ID="Hesign_Details"> Design Details </H2>
+</BODY>
