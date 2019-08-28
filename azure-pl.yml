@@ -90,7 +90,7 @@ jobs:
   - script: |
       # push updated files to repository
       # warning: repository is in detached HEAD mode
-      # set -x
+      set -x
       git add -v -f .
       if [ -n "$(git status -uno --porcelain)" ]; then
         git commit -v -m "$(owpattern) $(Build.BuildNumber)"
