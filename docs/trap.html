@@ -1,0 +1,1493 @@
+<HEAD>
+<TITLE> Open Watcom 2.0 Trap Developers Guide </TITLE>
+</HEAD>
+<BODY>
+<H1 ID="Index_of_Topics"> Index of Topics </H1>
+<DL>
+<DT>- B -
+<DD><A HREF="#Base_Types">Base Types</A>
+<BR><A HREF="#Byte_Order">Byte Order</A>
+<DT>- C -
+<DD><A HREF="#Core_Requests">Core Requests</A>
+<DT>- F -
+<DD><A HREF="#File_IDO_requests">File I/O requests</A>
+<DT>- I -
+<DD><A HREF="#The_Interface_Routines">The Interface Routines</A>
+<BR><A HREF="#Introduction">Introduction</A>
+<DT>- O -
+<DD><A HREF="#Overlay_requests">Overlay requests</A>
+<DT>- P -
+<DD><A HREF="#Pointer_Sizes">Pointer Sizes</A>
+<DT>- R -
+<DD><A HREF="#REQ_ADDR_INFO_L8R">REQ_ADDR_INFO (8)</A>
+<BR><A HREF="#REQ_CHECKSUM_MEM_L9R">REQ_CHECKSUM_MEM (9)</A>
+<BR><A HREF="#REQ_CLEAR_BREAK_L25R">REQ_CLEAR_BREAK (25)</A>
+<BR><A HREF="#REQ_CLEAR_WATCH_L23R">REQ_CLEAR_WATCH (23)</A>
+<BR><A HREF="#REQ_CONNECT_L0R">REQ_CONNECT (0)</A>
+<BR><A HREF="#REQ_DISCONNECT_L1R">REQ_DISCONNECT (1)</A>
+<BR><A HREF="#REQ_FILE_CLOSE_L6R">REQ_FILE_CLOSE (6)</A>
+<BR><A HREF="#REQ_FILE_ERASE_L7R">REQ_FILE_ERASE (7)</A>
+<BR><A HREF="#REQ_FILE_GET_CONFIG_L0R">REQ_FILE_GET_CONFIG (0)</A>
+<BR><A HREF="#REQ_FILE_OPEN_L1R">REQ_FILE_OPEN (1)</A>
+<BR><A HREF="#REQ_FILE_READ_L3R">REQ_FILE_READ (3)</A>
+<BR><A HREF="#REQ_FILE_RUN_CMD_L9R">REQ_FILE_RUN_CMD (9)</A>
+<BR><A HREF="#REQ_FILE_SEEK_L2R">REQ_FILE_SEEK (2)</A>
+<BR><A HREF="#REQ_FILE_STRING_TO_FULLPATH_L8R">REQ_FILE_STRING_TO_FULLPATH (8)</A>
+<BR><A HREF="#REQ_FILE_WRITE_L4R">REQ_FILE_WRITE (4)</A>
+<BR><A HREF="#REQ_FILE_WRITE_CONSOLE_L5R">REQ_FILE_WRITE_CONSOLE (5)</A>
+<BR><A HREF="#REQ_GET_ERR_TEXT_L31R">REQ_GET_ERR_TEXT (31)</A>
+<BR><A HREF="#REQ_GET_LIB_NAME_L30R">REQ_GET_LIB_NAME (30)</A>
+<BR><A HREF="#REQ_GET_MESSAGE_TEXT_L32R">REQ_GET_MESSAGE_TEXT (32)</A>
+<BR><A HREF="#REQ_GET_NEXT_ALIAS_L26R">REQ_GET_NEXT_ALIAS (26)</A>
+<BR><A HREF="#REQ_GET_SUPPLEMENTARY_SERVICE_L4R">REQ_GET_SUPPLEMENTARY_SERVICE (4)</A>
+<BR><A HREF="#REQ_GET_SYS_CONFIG_L6R">REQ_GET_SYS_CONFIG (6)</A>
+<BR><A HREF="#REQ_MACHINE_DATA_L38R">REQ_MACHINE_DATA (38)</A>
+<BR><A HREF="#REQ_MAP_ADDR_L7R">REQ_MAP_ADDR (7)</A>
+<BR><A HREF="#REQ_OVL_GET_DATA_L1R">REQ_OVL_GET_DATA (1)</A>
+<BR><A HREF="#REQ_OVL_GET_REMAP_ENTRY_L6R">REQ_OVL_GET_REMAP_ENTRY (6)</A>
+<BR><A HREF="#REQ_OVL_READ_STATE_L2R">REQ_OVL_READ_STATE (2)</A>
+<BR><A HREF="#REQ_OVL_STATE_SIZE_L0R">REQ_OVL_STATE_SIZE (0)</A>
+<BR><A HREF="#REQ_OVL_TRANS_RET_ADDR_L5R">REQ_OVL_TRANS_RET_ADDR (5)</A>
+<BR><A HREF="#REQ_OVL_TRANS_VECT_ADDR_L4R">REQ_OVL_TRANS_VECT_ADDR (4)</A>
+<BR><A HREF="#REQ_OVL_WRITE_STATE_L3R">REQ_OVL_WRITE_STATE (3)</A>
+<BR><A HREF="#REQ_PERFORM_SUPPLEMENTARY_SERVICE_L5R">REQ_PERFORM_SUPPLEMENTARY_SERVICE (5)</A>
+<BR><A HREF="#REQ_PROG_GO_L18RDREQ_PROG_STEP_L19R">REQ_PROG_GO (18)/REQ_PROG_STEP (19)</A>
+<BR><A HREF="#REQ_PROG_KILL_L21R">REQ_PROG_KILL (21)</A>
+<BR><A HREF="#REQ_PROG_LOAD_L20R">REQ_PROG_LOAD (20)</A>
+<BR><A HREF="#REQ_READ_CPU_L14R">REQ_READ_CPU (14)</A>
+<BR><A HREF="#REQ_READ_FPU_L15R">REQ_READ_FPU (15)</A>
+<BR><A HREF="#REQ_READ_IO_L12R">REQ_READ_IO (12)</A>
+<BR><A HREF="#REQ_READ_MEM_L10R">REQ_READ_MEM (10)</A>
+<BR><A HREF="#REQ_READ_REGS_L36R">REQ_READ_REGS (36)</A>
+<BR><A HREF="#REQ_READ_USER_KEYBOARD_L29R">REQ_READ_USER_KEYBOARD (29)</A>
+<BR><A HREF="#REQ_REDIRECT_STDIN_L33RDREQ_REDIRECT_STDOUT_L34R">REQ_REDIRECT_STDIN (33)/REQ_REDIRECT_STDOUT (34)</A>
+<BR><A HREF="#REQ_RESUME_L3R">REQ_RESUME (3)</A>
+<BR><A HREF="#REQ_RFX_FINDCLOSE_L15R">REQ_RFX_FINDCLOSE (15)</A>
+<BR><A HREF="#REQ_RFX_FINDFIRST_L13R">REQ_RFX_FINDFIRST (13)</A>
+<BR><A HREF="#REQ_RFX_FINDNEXT_L14R">REQ_RFX_FINDNEXT (14)</A>
+<BR><A HREF="#REQ_RFX_GETCWD_L6R">REQ_RFX_GETCWD (6)</A>
+<BR><A HREF="#REQ_RFX_GETDATETIME_L8R">REQ_RFX_GETDATETIME (8)</A>
+<BR><A HREF="#REQ_RFX_GETDRIVE_L4R">REQ_RFX_GETDRIVE (4)</A>
+<BR><A HREF="#REQ_RFX_GETFILEATTR_L11R">REQ_RFX_GETFILEATTR (11)</A>
+<BR><A HREF="#REQ_RFX_GETFREESPACE_L9R">REQ_RFX_GETFREESPACE (9)</A>
+<BR><A HREF="#REQ_RFX_MKDIR_L1R">REQ_RFX_MKDIR (1)</A>
+<BR><A HREF="#REQ_RFX_NAMETOCANNONICAL_L12R">REQ_RFX_NAMETOCANNONICAL (12)</A>
+<BR><A HREF="#REQ_RFX_RENAME_L0R">REQ_RFX_RENAME (0)</A>
+<BR><A HREF="#REQ_RFX_RMDIR_L2R">REQ_RFX_RMDIR (2)</A>
+<BR><A HREF="#REQ_RFX_SETCWD_L5R">REQ_RFX_SETCWD (5)</A>
+<BR><A HREF="#REQ_RFX_SETDATETIME_L7R">REQ_RFX_SETDATETIME (7)</A>
+<BR><A HREF="#REQ_RFX_SETDRIVE_L3R">REQ_RFX_SETDRIVE (3)</A>
+<BR><A HREF="#REQ_RFX_SETFILEATTR_L10R">REQ_RFX_SETFILEATTR (10)</A>
+<BR><A HREF="#REQ_SET_BREAK_L24R">REQ_SET_BREAK (24)</A>
+<BR><A HREF="#REQ_SET_DEBUG_SCREEN_L28R">REQ_SET_DEBUG_SCREEN (28)</A>
+<BR><A HREF="#REQ_SET_USER_SCREEN_L27R">REQ_SET_USER_SCREEN (27)</A>
+<BR><A HREF="#REQ_SET_WATCH_L22R">REQ_SET_WATCH (22)</A>
+<BR><A HREF="#REQ_SPLIT_CMD_L35R">REQ_SPLIT_CMD (35)</A>
+<BR><A HREF="#REQ_SUSPEND_L2R">REQ_SUSPEND (2)</A>
+<BR><A HREF="#REQ_THREAD_FREEZE_L2R">REQ_THREAD_FREEZE (2)</A>
+<BR><A HREF="#REQ_THREAD_GET_EXTRA_L4R">REQ_THREAD_GET_EXTRA (4)</A>
+<BR><A HREF="#REQ_THREAD_GET_NEXT_L0R">REQ_THREAD_GET_NEXT (0)</A>
+<BR><A HREF="#REQ_THREAD_SET_L1R">REQ_THREAD_SET (1)</A>
+<BR><A HREF="#REQ_THREAD_THAW_L3R">REQ_THREAD_THAW (3)</A>
+<BR><A HREF="#REQ_WRITE_CPU_L16RDREQ_WRITE_FPU_L17R">REQ_WRITE_CPU (16)/REQ_WRITE_FPU (17)</A>
+<BR><A HREF="#REQ_WRITE_IO_L13R">REQ_WRITE_IO (13)</A>
+<BR><A HREF="#REQ_WRITE_MEM_L11R">REQ_WRITE_MEM (11)</A>
+<BR><A HREF="#REQ_WRITE_REGS_L37R">REQ_WRITE_REGS (37)</A>
+<BR><A HREF="#Request_Example">Request Example</A>
+<BR><A HREF="#The_Request_Interface">The Request Interface</A>
+<BR><A HREF="#Request_Structure_">Request Structure.</A>
+<BR><A HREF="#The_Requests">The Requests</A>
+<BR><A HREF="#RFX_requests">RFX requests</A>
+<DT>- S -
+<DD><A HREF="#Some_Definitions">Some Definitions</A>
+<BR><A HREF="#System_Dependent_Aspects">System Dependent Aspects</A>
+<DT>- T -
+<DD><A HREF="#Thread_requests">Thread requests</A>
+<BR><A HREF="#Trap_Files_Under_DOS">Trap Files Under DOS</A>
+<BR><A HREF="#Trap_Files_Under_Netware_386">Trap Files Under Netware 386</A>
+<BR><A HREF="#Trap_Files_Under_OSD2">Trap Files Under OS/2</A>
+<BR><A HREF="#Trap_Files_Under_QNX">Trap Files Under QNX</A>
+<BR><A HREF="#Trap_Files_Under_Windows_NT_">Trap Files Under Windows NT.</A>
+<BR><A HREF="#Trap_Files_Under_Windows_">Trap Files Under Windows.</A>
+<BR><A HREF="#TrapFini">TrapFini</A>
+<BR><A HREF="#TrapInit">TrapInit</A>
+<BR><A HREF="#TrapRequest">TrapRequest</A>
+</DL>
+<H1 ID="Introduction"> Introduction </H1>
+<BR>The Open Watcom debugger consists of a number of separate pieces of code.&nbsp; The main executable, WD.EXE (wd on UNIX
+systems), provides a debugging `engine' and user interface.&nbsp; When the engine wishes to perform an operation upon the
+program being debugged such as reading memory or setting a breakpoint, it creates a request structure and sends it to the
+`trap file' (so called because under DOS, it contains the first level trap handlers).&nbsp; The trap file examines the request
+structure, performs the indicated action and returns a result structure to the debugger.&nbsp; The debugger and trap files
+also use Machine Architecture Description (MAD) files which abstract the CPU architecture.&nbsp; This design has the following
+benefits:
+<OL>
+<LI>OS debugging interfaces tend to be wildly varying in how they are accessed.&nbsp; By moving all the OS specific interface
+code into the trap file and having a defined interface to access it, porting the debugger becomes much easier.
+<LI>By abstracting the machine architecture specifics through MAD files, it becomes possible to use one debugger for several
+target CPU architectures (such as x86 and Alpha AXP).&nbsp; Unlike most other debuggers, the Open Watcom debugger is not tied
+to a single host/target combination and if appropriate trap and MAD files are available, the debugger running on any host
+can remotely debug any target.
+<LI>The trap file does not have to actually perform the operation.&nbsp; Instead it could send the request out to a remote
+server by a communication link such as a serial line or LAN.&nbsp; The remote server can retrieve the request, perform the
+operation on the remote machine and send the results back via the link.&nbsp; This enables the debugger to debug applications
+in cases where there are memory constraints or other considerations which prevent the debugger proper from running on the
+remote system (such as Novell Netware 386).
+</OL>
+<BR>This document describes the interface initially used by version 4.0 of the WATCOM debugger (shipped with the 10.0 C/C++
+and FORTRAN releases).&nbsp; It has been revised to describe changes incorporated in Watcom 11.0 release, as well as subsequent
+Open Watcom releases.&nbsp; It is expected to be modified in future releases.&nbsp; Where possible, notification of expected
+changes are given in the document, but all aspects are subject to revision.
+<H2 ID="Some_Definitions"> Some Definitions </H2>
+<BR>Next follow some general trap definitions.
+<H3 ID="Byte_Order"> Byte Order </H3>
+<BR>The trap file interface is defined to use little endian byte order.&nbsp; That is, the least significant byte is stored
+at the lowest address.&nbsp; Little endian byte order was chosen for compatibility with existing trap files and tools.&nbsp;
+Fixed byte order also eases network communication between debuggers and trap files running on machines with different byte
+order.
+<H3 ID="Pointer_Sizes"> Pointer Sizes </H3>
+<BR>In a 16-bit hosted environment such as DOS, all pointers used by the trap file are &quot;far&quot; 16:16 pointers.&nbsp;
+In a 32-bit environment such as Windows NT the pointers are &quot;near&quot; 0:32 pointers.
+<H3 ID="Base_Types"> Base Types </H3>
+<BR>A number of basic types are used in the interface.&nbsp; They are defined as follows:
+<DL>
+<DT><B><I>Type</I></B>
+<DD><B><I>Definition</I></B>
+<DT>unsigned_8
+<DD>1 byte unsigned quantity
+<DT>unsigned_16
+<DD>2 byte unsigned quantity
+<DT>unsigned_32
+<DD>4 byte unsigned quantity
+<DT>access_req
+<DD>The first field of every request is of this type.&nbsp; It is a 1 byte field which identifies the request to be performed.
+<DT>addr48_ptr
+<DD>This type encapsulates the concept of a 16:32 pointer.&nbsp; All addresses in the debuggee memory are described with these.
+&nbsp;The debugger always acts as if the debuggee were in a 32-bit large model environment since the 32-bit flat model and
+all 16-bit memory models are subsets.&nbsp; The structure is defined as follows:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp; offset;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp; segment;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } addr48_ptr;</TT>
+<BR><BR>The<TT> segment</TT> field contains the segment of the address and the<TT> offset</TT> field stores the offset of
+the address.
+<DT>bytes
+<DD>The type<TT> bytes</TT> is an array of unsigned_8.&nbsp; The length is provided by other means.&nbsp; Typically a field of
+type<TT> bytes</TT> is the last one in a request and the length is calculated from the total length of the request.
+<DT>string
+<DD>The type<TT> string</TT> is actually an array of characters.&nbsp; The array is terminated by a null ('\0') character.&nbsp;
+The length is provided by other means.&nbsp; Typically a field of type<TT> string</TT> is the last one in a request and the
+length is calculated from the total length of the request.
+<DT>trap_error
+<DD>Some trap file requests return debuggee operating system error codes, notably the requests to perform file I/O on the remote
+system.&nbsp; These error codes are returned as an unsigned_32.&nbsp; The debugger considers the value zero to indicate no
+error.
+<DT>trap_phandle
+<DD>This is an<TT> unsigned_32</TT> which holds process (task) handle.&nbsp; A task handle is used to uniquely identify a debuggee
+process.
+<DT>trap_mhandle
+<DD>This is an<TT> unsigned_32</TT> which holds a module handle.&nbsp; Typically the main executable will be one module, and on
+systems which support DLLs or shared libraries, each library will be identified by a unique module handle.
+</DL>
+<H1 ID="The_Request_Interface"> The Request Interface </H1>
+<BR>Next follow detailed description of interface elements.
+<H2 ID="Request_Structure_"> Request Structure. </H2>
+<BR>Each request is a composed of two sequences of bytes provided by the debugger called messages.&nbsp; The first set contains
+the actual request code and whatever parameters that are required by the request.&nbsp; The second sequence is where the result
+of the operation is to be stored by the trap file.
+<BR><BR>The two sequences need not be contiguous.&nbsp; The sequences are described to the trap file through two arrays of
+message entry structures.&nbsp; This allows the debugger to avoid unnecessary packing and unpacking of messages, since<TT>
+mx_entry</TT>'s can be set to point directly at parameter/result buffers.
+<BR><BR>Multiple requests are<B> not</B> allowed in a single message.&nbsp; The<TT> mx_entry</TT>'s are only used to provide
+scatter/gather capabilities for one request at a time.
+<BR><BR>The message entry structure is as follows (defined in<TT> trptypes.h</TT>):
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;*ptr;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } mx_entry;</TT>
+<BR><BR>The<TT> ptr</TT> is pointing to a block of data for that message entry.&nbsp; The<TT> len</TT> field gives the length
+of that block.&nbsp; One array of<TT> mx_entry</TT>'s describes the request message.&nbsp; The second array describes the
+return message.
+<BR><BR>It is not legal to split a message into arbitrary pieces with mx_entries.&nbsp; Each request documents where an<TT>
+mx_entry</TT> is allowed to start with a line of dashes.
+<H2 ID="The_Interface_Routines"> The Interface Routines </H2>
+<BR>The trap file interface must provide three routines:<TT>&nbsp; TrapInit</TT>,<TT> TrapRequest</TT>, and<TT> TrapFini</TT>.
+&nbsp;How the debugger determines the address of these routines after loading a trap file, as well as the calling convention
+used, is system dependent and described later.&nbsp; These functions are prototyped in<TT> trpimp.h</TT>.
+<H3 ID="TrapInit"> TrapInit </H3>
+<BR>This function initializes the environment for proper operation of<TT> TrapRequest</TT>.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_version TRAPENTRY TrapInit(</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *parm,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *error,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8 remote</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; );</TT>
+<BR><BR>The<TT> parm</TT> is a string that the user passes to the trap file.&nbsp; Its interpretation is completely up to
+the trap file.&nbsp; In the case of the Open Watcom debugger, all the characters following the semicolon in the<TT> /TRAP</TT>
+option are passed as the<TT> parm</TT>.&nbsp; For example:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; wd /trap=nov;testing program</TT>
+<BR><BR>The<TT> parm</TT> would be &quot;testing&quot;.&nbsp; Any error message will be returned in<TT> error</TT>.&nbsp;
+The<TT> remote</TT> field is a zero if the Open Watcom debugger is loading the trap file and a one if a remote server is loading
+it.&nbsp; This function returns a structure<TT> trap_version</TT> of the following form (defined in<TT> trptypes.h</TT>):
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; major;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; minor;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; remote;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } trap_version;</TT>
+<BR><BR>The<TT> major</TT> field contains the major version number of the trap file while the<TT> minor</TT> field tells the
+minor version number of the trap file.<TT>&nbsp; Major</TT> is changed whenever there is a modification made to the trap file
+that is not upwardly compatable with previous versions.<TT>&nbsp; Minor</TT> increments by one whenever a change is made to
+the trap file that is upwardly compatible with previous versions.&nbsp; The current major verion is 17, the current minor
+version is 1.&nbsp; The<TT> remote</TT> field informs the debugger whether the trap file communicates with a remote machine.
+<BR><BR><TT>TrapInit</TT> must be called before using<TT> TrapRequest</TT> to send a request.&nbsp; Failure to do so may result
+in unpredictable operation of<TT> TrapRequest</TT>.
+<H3 ID="TrapRequest"> TrapRequest </H3>
+<BR>All requests between the server and the remote trap file are handled by TrapRequest.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned TRAPENTRY TrapRequest(</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned num_in_mx,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mx_entry *mx_in,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned num_out_mx,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mx_entry *mx_out</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; );</TT>
+<BR><BR>The<TT> mx_in</TT> points to an array of request mx_entry's.&nbsp; The<TT> num_in_mx</TT> field contains the number
+of elements of the array.&nbsp; Similarly, the<TT> mx_out</TT> will point to an array of return mx_entry's.&nbsp; The number
+of elements will be given by the<TT> num_out_mx</TT> field.&nbsp; The total number of bytes actually filled in to the return
+message by the trap file is returned by the function (this may be less than the total number of bytes described by the<TT>
+mx_out</TT> array).
+<BR><BR>Since every request must start with an<TT> access_req</TT> field, the minimum size of a request message is one byte.
+<BR><BR>Some requests do not require a return message.&nbsp; In this case, the program invoking TrapRequest<B> must</B> pass
+zero for<TT> num_out_mx</TT> and NULL for<TT> mx_out</TT>.
+<H4 ID="Request_Example"> Request Example </H4>
+<BR>The request REQ_READ_MEM needs the memory address and length of memory to read as input and will return the memory block
+in the output message.&nbsp; To read 30 bytes of memory from address 0x0010:0x8000 into a buffer, we can write:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in[1];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out[1];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; buffer[30];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; struct in_msg_def {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+req;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+addr;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } in_msg = { REQ_READ_MEM, { 0x8000, 0x0010 }, sizeof( buffer ) };</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 mem_blk_len;</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; in[0].ptr = &amp;in_msg;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; in[0].len = sizeof( in_msg );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; out[0].ptr = &amp;buffer;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; out[0].len = sizeof( buffer );</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; mem_blk_len = TrapRequest( 1, in, 1, out );</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; if( mem_blk_length != sizeof( buffer ) ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Error in reading memory\n&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } else {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;OK\n&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><BR>The program will print &quot;OK&quot; if it has transferred 30 bytes of data from the debuggee's address space to
+the<TT> buffer</TT> variable.&nbsp; If less than 30 bytes is transfered, an error message is printed out.
+<H3 ID="TrapFini"> TrapFini </H3>
+<BR>The function terminates the link between the debugger and the trap file.&nbsp; It should be called after finishing all
+access requests.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; void TRAPENTRY TrapFini( void );</TT>
+<BR><BR>After calling<TT> TrapFini</TT>, it is illegal to call<TT> TrapRequest</TT> without calling<TT> TrapInit</TT> again.
+<H1 ID="The_Requests"> The Requests </H1>
+<BR>This section descibes the individual requests, their parameters, and their return values.&nbsp; A line of dashes indicates
+where an<TT> mx_entry</TT> is allowed (but not required) to start.&nbsp; The debugger allows (via REQ_GET_SUPPLEMENTARY_SERVICE/REQ_PERFORM_SUPPLEMENTARY_SERVICE)
+optional components to be implemented only on specific systems.
+<BR>The numeric value of the request which is placed in the<TT> req</TT> field follows the symbolic name in parentheses.
+<H2 ID="Core_Requests"> Core Requests </H2>
+<BR>These requests need to be implemented in all versions of the trap file, although some of them may only be stub implementations
+in some environments.&nbsp; Note that structures suitable for individual requests are declared in<TT> trpcore.h</TT>.
+<H3 ID="REQ_CONNECT_L0R"> REQ_CONNECT (0) </H3>
+<BR>Request to connect to the remote machine.&nbsp; This must be the first request made.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; major;&nbsp;&nbsp; &lt;-+- struct trap_version</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minor;&nbsp;&nbsp;&nbsp;&nbsp; |</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remote;&nbsp; &lt;-+</TT>
+<BR><BR>The<TT> req</TT> field contains the request.&nbsp; The<TT> trap_version</TT> structure tells the version of the program
+making the request.&nbsp; The<TT> major</TT> field contains the major version number of the trap file while the<TT> minor</TT>
+field tells the minor version number of the trap file.&nbsp; The<TT> major</TT> is changed whenever there is a modification
+made to the trap file that is not upwardly compatable with previous versions.&nbsp; The<TT> minor</TT> increments by one whenever
+a change is made to the trap file that is upwardly compatable with previous versions.&nbsp; The current major version is 17,
+the current minor version is 1.&nbsp; The<TT> remote</TT> field informs the trap file whether a remote server is between the
+Open Watcom debugger and the trap file.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 max_msg_size</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ----------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err_msg</TT>
+<BR><BR>If error has occurred, the<TT> err_msg</TT> field will returns the error message string.&nbsp; If there is no error,<TT>
+error_msg</TT> returns a null character and the field<TT> max_msg_size</TT> will contain the allowed maximum size of a message
+in bytes.&nbsp; Any message (typically reading/writing memory or files) which would require more than the maximum number of
+bytes to transmit or receive must be broken up into multiple requests.&nbsp; The minimum acceptable value for this field is
+256.
+<H3 ID="REQ_DISCONNECT_L1R"> REQ_DISCONNECT (1) </H3>
+<BR>Request to terminate the link between the local and remote machine.&nbsp; After this request, a REQ_CONNECT must be the
+next one made.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The<TT> req</TT> field contains the request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_SUSPEND_L2R"> REQ_SUSPEND (2) </H3>
+<BR>Request to suspend the link between the server and the remote trap file.&nbsp; The debugger issues this message just before
+it spawns a sub-shell (the &quot;system&quot; command).&nbsp; This allows a remote server to enter a state where it allows
+other trap files to connect to it (normally, once a remote server has connected to a trap file, the remote link will fail
+any other attempts to connect to it).&nbsp; This allows the user for instance to start up an RFX process and transfer any
+missing files to the remote machine before continuing the debugging process.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The<TT> req</TT> field contains the request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_RESUME_L3R"> REQ_RESUME (3) </H3>
+<BR>Request to resume the link between the server and the remote trap file.&nbsp; The debugger issues this request when the
+spawned sub-shell exits.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The<TT> req</TT> field contains the request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_GET_SUPPLEMENTARY_SERVICE_L4R"> REQ_GET_SUPPLEMENTARY_SERVICE (4) </H3>
+<BR>Request to obtain a supplementary service id.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; service_name</TT>
+<BR><BR>The<TT> req</TT> field contains the request.&nbsp; The<TT> service_name</TT> field contains a string identifying the
+supplementary service.&nbsp; This string is case insensitive.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_shandle&nbsp;&nbsp;&nbsp; id;</TT>
+<BR><BR>The<TT> err</TT> field is non-zero if something went wrong in obtaining or initializing the service.<TT>&nbsp; Id</TT>
+is the identifier for a particular supplementary service.&nbsp; It need not be the same from one invocation of the trap file
+to another.&nbsp; If both it and the<TT> err</TT> field are zero, it means that the service is not available from this trap
+file.
+<BR><BR><B>NOTE:</B>&nbsp; integrated with the debugger.&nbsp; There would be two components, one to be added to the debugger
+and one to be added to the trap file.&nbsp; The two pieces could communicate with each other via the supplementary services
+mechanism.
+<H3 ID="REQ_PERFORM_SUPPLEMENTARY_SERVICE_L5R"> REQ_PERFORM_SUPPLEMENTARY_SERVICE (5) </H3>
+<BR>Request to perform a supplementary service.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 service_id</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</TT>
+<BR><BR>The<TT> req</TT> field contains the request.&nbsp; The<TT> service_id</TT> field indicates which service is being
+requested.&nbsp; The remainder of the request is specified by the individual supplementary service provider.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</TT>
+<BR><BR>The return message is specified by the individual supplementary service provider.
+<H3 ID="REQ_GET_SYS_CONFIG_L6R"> REQ_GET_SYS_CONFIG (6) </H3>
+<BR>Request to get system information from the remote machine.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The<TT> req</TT> field contains the request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; cpu;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; fpu;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; osmajor;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; osminor;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; os;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; huge_shift;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; mad_handle&nbsp; mad;</TT>
+<BR><BR>The<TT> mad</TT> field specifies the MAD (Machine Architecture Description) in use and determines how the other fields
+will be interpreted.&nbsp; Currently the following MADs are used:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; MAD_X86 - Intel IA-32 compatible</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; MAD_AXP - Alpha AXP</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; MAD_PPC - PowerPC</TT>
+<BR><BR>The<TT> cpu</TT> fields returns the type of the remote CPU.&nbsp; The size of that field is unsigned_8.&nbsp; Possible
+CPU types for MAD_X86 are:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bits 0-3</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_86&nbsp; = 0&nbsp;&nbsp; - 8086</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_186 = 1&nbsp;&nbsp; - 80186</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_286 = 2&nbsp;&nbsp; - 80286</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_386 = 3&nbsp;&nbsp; - 80386</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_486 = 4&nbsp;&nbsp; - 80486</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_586 = 5&nbsp;&nbsp; - Pentium</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_686 = 6&nbsp;&nbsp; - Pentium Pro/II/III</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_P4&nbsp; = 15&nbsp; - Pentium 4</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bit&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - MM registers</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bit&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - XMM registers</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bits 6,7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - unused</TT>
+<BR><BR>The<TT> fpu</TT> fields tells the type of FPU.&nbsp; The size of the field is unsigned_8.&nbsp; FPU types for MAD_X86
+include:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_EMU = -1&nbsp;&nbsp;&nbsp;&nbsp; - Software emulated FPU</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_NO&nbsp; =&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; - No FPU</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_87&nbsp; =&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; - 8087</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_287 =&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; - 80287</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_387 =&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; - 80387</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_487 =&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; - 486 integrated FPU</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_587 =&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp; - Pentium integrated FPU</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_587 =&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp; - Pentium Pro/II/III integrated FPU</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; X86_P47 =&nbsp; 15&nbsp;&nbsp;&nbsp; - Pentium 4 integrated FPU</TT>
+<BR><BR>The<TT> osmajor</TT> and<TT> osminor</TT> contains the major and minor version number for the operating system of
+the remote machine.&nbsp; The type of operating system can be found in<TT> os</TT> field.&nbsp; The size of this field is
+unsigned_8.&nbsp; The OS can be:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_IDUNNO&nbsp;&nbsp;&nbsp; =&nbsp; 0&nbsp;&nbsp; - Unknown operating system</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_DOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 1&nbsp;&nbsp; - DOS</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_OS2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 2&nbsp;&nbsp; - OS/2</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_PHAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 3&nbsp;&nbsp; - Phar Lap 386 DOS Extender</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_ECLIPSE&nbsp;&nbsp; =&nbsp; 4&nbsp;&nbsp; - Eclipse 386 DOS Extender (obsolete)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_NW386&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 5&nbsp;&nbsp; - NetWare 386</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_QNX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 6&nbsp;&nbsp; - QNX 4.x</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_RATIONAL&nbsp; =&nbsp; 7&nbsp;&nbsp; - DOS/4G or compatible</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_WINDOWS&nbsp;&nbsp; =&nbsp; 8&nbsp;&nbsp; - Windows 3.x</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_PENPOINT&nbsp; =&nbsp; 9&nbsp;&nbsp; - PenPoint (obsolete)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_NT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 10&nbsp;&nbsp; - Win32</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_AUTOCAD&nbsp;&nbsp; = 11&nbsp;&nbsp; - ADS/ADI development (obsolete)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_NEUTRINO&nbsp; = 12&nbsp;&nbsp; - QNX 6.x</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; OS_LINUX&nbsp;&nbsp;&nbsp;&nbsp; = 13&nbsp;&nbsp; - Linux</TT>
+<BR><BR>The<TT> huge_shift</TT> field is used to determine the shift needed for huge arithmetic in that system.&nbsp; It stores
+the number of left shifts required in order to calculate the next segment correctly.&nbsp; It is 12 for real mode programs.
+&nbsp;The value in a protect mode environment must be obtained from the OS of the debuggee machine.&nbsp; This field is only
+relevant for 16-bit segmented architectures.
+<H3 ID="REQ_MAP_ADDR_L7R"> REQ_MAP_ADDR (7) </H3>
+<BR>Request to map the input address to the actual address of the remote machine.&nbsp; The addresses in the symbolic information
+provided by the linker do not reflect any relocation performed on the executable by the system loader.&nbsp; This request
+obtains that relocation information so that the debugger can update its addresses.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in_addr;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_mhandle&nbsp;&nbsp;&nbsp; handle;</TT>
+<BR><BR>The<TT> req</TT> field contains the request.&nbsp; The<TT> in_addr</TT> tells the address to map.&nbsp; The<TT> handle</TT>
+field identifies the module which the address is from.&nbsp; The value from this field is obtained by REQ_PROG_LOAD or REQ_GET_LIB_NAME.
+&nbsp;There are two magical values for the<TT> in_addr.segment</TT> field.
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; MAP_FLAT_CODE_SELECTOR&nbsp; = -1</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; MAP_FLAT_DATA_SELECTOR&nbsp; = -2</TT>
+<BR><BR>When the<TT> in_addr.segment</TT> equals one of these values, the debugger does not have a map segment value and is
+requesting that the trap file performs the mapping as if the given offset was in the flat address space.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out_addr</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_off&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lo_bound;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_off&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hi_bound;</TT>
+<BR><BR>The mapped address is returned in<TT> out_addr</TT>.&nbsp; Note that in addition to the segment portion being modified,
+the offset of the portion of the address may be adjusted as well if the loader performs offset relocations (like OS/2 2.x
+or Windows NT).&nbsp; The<TT> lo_bound</TT> and<TT> hi_bound</TT> fields identify the lowest and highest input offsets for
+which this mapping is valid.&nbsp; If the debugger needs to map another address whose input segment value is the same as a
+previous request, and the input offset falls within the valid range identified by the return of that previous request, it
+can perform the mapping itself and not bother sending the request to the trap file.
+<H3 ID="REQ_ADDR_INFO_L8R"> REQ_ADDR_INFO (8) </H3>
+<BR>This request is x86 specific and obsolete; REQ_MACHINE_DATA should be used instead.&nbsp; It needs to be provided only
+for backwards compatibility.
+<BR><BR>Request to check if a given address is using 32-bit addressing (the 386 compatible CPU's current selector's B-bit
+is on) by default.&nbsp; The debugger requires this information to properly disassemble instructions.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in_addr</TT>
+<BR><BR>The<TT> req</TT> field contains the request and the<TT> in_addr</TT> tells the input address.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is_32</TT>
+<BR><BR>The field returns one if the address is a USE32 segment, zero otherwise.
+<H3 ID="REQ_CHECKSUM_MEM_L9R"> REQ_CHECKSUM_MEM (9) </H3>
+<BR>Request to calculate the checksum for a block of memory in the debuggee's address space.&nbsp; This is used by the debugger
+to determine if the contents of the memory block have changed since the last time it was read.&nbsp; Since only a four byte
+checksum has to be transmitted back, it is more efficient than actually reading the memory again.&nbsp; The debugger does
+not care how the checksum is calculated.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in_addr;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; len;</TT>
+<BR><BR>The<TT> req</TT> field stores the request.&nbsp; The<TT> in_addr</TT> contains the starting address and the<TT> len</TT>
+field tells how large the block of memory is.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; result</TT>
+<BR><BR>The checksum will be returned in<TT> result</TT>.
+<H3 ID="REQ_READ_MEM_L10R"> REQ_READ_MEM (10) </H3>
+<BR>Request to read a block of memory.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem_addr;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; len;</TT>
+<BR><BR>The<TT> mem_addr</TT> contains the address of the memory block to read from the remote machine.&nbsp; The length of
+the block is determined by<TT> len</TT>.&nbsp; The memory data will be copied to output message.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> data</TT> field stores the memory block read in.&nbsp; The length of this memory block is given by the return
+value from TrapRequest.&nbsp; If error has occurred in reading memory, the length of the data returns will not be equal to
+the number of bytes requested.
+<H3 ID="REQ_WRITE_MEM_L11R"> REQ_WRITE_MEM (11) </H3>
+<BR>Request to write a block of memory.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem_addr</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> data</TT> field stores the memory data to be transferred.&nbsp; The data will be stored in the debuggee's
+address space starting at the address in the<TT> mem_addr</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 len</TT>
+<BR><BR>The<TT> len</TT> field tells the length of memory block actually written to the debuggee machine.&nbsp; If error has
+occurred in writing the memory, the length returned will not be equal to the number of bytes requested.
+<H3 ID="REQ_READ_IO_L12R"> REQ_READ_IO (12) </H3>
+<BR>Request to read data from I/O address space of the debuggee.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; IO_offset</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len</TT>
+<BR><BR>The<TT> IO_offset</TT> contains the I/O address of the debuggee machine.&nbsp; The length of the block is determined
+by<TT> len</TT>.&nbsp; It must be 1, 2 or 4 bytes.&nbsp; The data will be copied from<TT> IO_offset</TT> to the return message.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> data</TT> field stores the memory block read in.&nbsp; The length of this memory block is given by the return
+value from TrapRequest.&nbsp; If an error has occurred in reading, the length returned will not be equal to the number of
+bytes requested.
+<H3 ID="REQ_WRITE_IO_L13R"> REQ_WRITE_IO (13) </H3>
+<BR>Request to write data to the I/O address space of the debuggee.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; IO_offset</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> IO_offset</TT> contains the I/O address of the debuggee machine.&nbsp; The data stored in<TT> data</TT> field
+will be copied to<TT> IO_offset</TT> on the debuggee machine.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; len</TT>
+<BR><BR>The<TT> len</TT> field tells the number of bytes actually written out.&nbsp; If an error has occurred in writing,
+the length returned will not be equal to the number of bytes requested.
+<H3 ID="REQ_READ_CPU_L14R"> REQ_READ_CPU (14) </H3>
+<BR>This request is x86 specific and obsolete; REQ_READ_REGS should be used instead.&nbsp; It needs to be provided only for
+backwards compatibility.
+<BR><BR>Request to read the CPU registers.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> data</TT> field contains the register information requested.&nbsp; It contains the following structure:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; struct cpu_regs {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 EAX;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 EBX;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 ECX;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 EDX;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 ESI;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 EDI;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 EBP;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 ESP;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 EIP;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 EFL;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 CR0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 CR2;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 CR3;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 DS;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 ES;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 SS;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 CS;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 FS;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 GS;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</TT>
+<H3 ID="REQ_READ_FPU_L15R"> REQ_READ_FPU (15) </H3>
+<BR>This request is x86 specific and obsolete; REQ_READ_REGS should be used instead.&nbsp; It needs to be provided only for
+backwards compatibility.
+<BR><BR>Request to read the FPU registers.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> data</TT> field contains the register information requested.&nbsp; Its format is the same as the result of
+a &quot;fsave&quot; instruction in a 32-bit segment (the instruction pointer and operand pointer fields take up 8 bytes each).
+&nbsp;Implementations of trap files in 16-bit environments should expand the instruction pointer and operand pointer fields
+from 4 bytes to 8 (shuffling the data register fields down in memory) before returning the result to the debugger.
+<H3 ID="REQ_WRITE_CPU_L16RDREQ_WRITE_FPU_L17R"> REQ_WRITE_CPU (16)/REQ_WRITE_FPU (17) </H3>
+<BR>These requests are x86 specific and obsolete; REQ_WRITE_REGS should be used instead.&nbsp; They needs to be provided only
+for backwards compatibility.
+<BR><BR>Requests to write to the CPU or FPU state.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+data</TT>
+<BR><BR>Information in<TT> data</TT> field will be transfered to the debuggee's registers.&nbsp; The formats of data can be
+found in REQ_READ_CPU/REQ_READ_FPU
+<BR><BR><B>NOTE:</B>&nbsp; For the REQ_WRITE_FPU case, the data will be in a 32-bit &quot;fsave&quot; instruction format,
+so 16-bit environments will have to squish the instruction and operand pointer fields back to their 4 byte forms.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_PROG_GO_L18RDREQ_PROG_STEP_L19R"> REQ_PROG_GO (18)/REQ_PROG_STEP (19) </H3>
+<BR>Requests to execute the debuggee.&nbsp; REQ_PROG_GO causes the debuggee to resume execution, while REQ_PROG_STEP requests
+only a single machine instruction to be executed before returning.&nbsp; In either case, this request will return when a breakpoint,
+watchpoint, machine exception or other significant event has been encountered.&nbsp; While executing, a trap file is allowed
+to return spurious COND_WATCH indications.&nbsp; The debugger always checks its own watchpoint table for changes before reporting
+to the user.&nbsp; This means that a legal implementation of a trap file (but<B> very</B> inefficient) can just single step
+the program and return COND_WATCH for every instruction when there are active watchpoints present.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The request is in<TT> req</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack_pointer</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program_counter</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; conditions</TT>
+<BR><BR>The<TT> stack_pointer</TT> and<TT> program_counter</TT> fields store the latest values of SS:ESP and CS:EIP (or their
+non-x86 equivalents) respectively.&nbsp; The<TT> conditions</TT> informs the debugger what conditions have changed since execution
+began.&nbsp; It contains the following flags:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 0&nbsp;&nbsp; : COND_CONFIG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;- Configurations change</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 1&nbsp;&nbsp; : COND_SECTIONS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Program
+overlays change</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 2&nbsp;&nbsp; : COND_LIBRARIES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Libraries
+(DLL) change</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 3&nbsp;&nbsp; : COND_ALIASING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Alias
+change</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 4&nbsp;&nbsp; : COND_THREAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- Thread change</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 5&nbsp;&nbsp; : COND_THREAD_EXTRA&nbsp;&nbsp;&nbsp;&nbsp; - Thread extra change</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 6&nbsp;&nbsp; : COND_TRACE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;- Trace point occurred</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 7&nbsp;&nbsp; : COND_BREAK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;- Break point occurred</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 8&nbsp;&nbsp; : COND_WATCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;- Watch point occurred</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 9&nbsp;&nbsp; : COND_USER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; - User interrupt</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 10&nbsp; : COND_TERMINATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Program terminated</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 11&nbsp; : COND_EXCEPTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Machine exception</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 12&nbsp; : COND_MESSAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Message
+to be displayed</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 13&nbsp; : COND_STOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;- Debuggee wants to stop</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 14&nbsp; : not used</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 15&nbsp; : not used</TT>
+<BR><BR>When a bit is off, the debugger avoids having to make additional requests to determine the new state of the debuggee.
+&nbsp;If the trap file is not sure that a particular item has changed, or if it is expensive to find out, it should just turn
+the bit on.
+<H3 ID="REQ_PROG_LOAD_L20R"> REQ_PROG_LOAD (20) </H3>
+<BR>Request to load a program.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; true_argv</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; argv</TT>
+<BR><BR>The<TT> true_argv</TT> field indicates whether the argument consists of a single string, or a true C-style argument
+vector.&nbsp; This field is set to be one for a true argument vector and zero otherwise.&nbsp; The<TT> argv</TT> is a set
+of zero-terminated strings, one following each other.&nbsp; The first string gives the name of the program to be loaded.&nbsp;
+The remainder of the<TT> argv</TT> field contains the program's arguments.&nbsp; The arguments can be a single string or an
+array of strings.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_phandle&nbsp;&nbsp;&nbsp; task_id</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_mhandle&nbsp;&nbsp;&nbsp; mod_handle</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flags</TT>
+<BR><BR>The<TT> err</TT> field returns the error code while loading the program.&nbsp; The<TT> task_id</TT> shows the task
+(process) ID for the program loaded.&nbsp; The<TT> mod_handle</TT> is the system module identification for the executable
+image.&nbsp; It is used as input to the REQ_MAP_ADDR request.&nbsp; The<TT> flags</TT> field contains the following information:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 0 :&nbsp; LD_FLAG_IS_32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; - 32-bit program (obsolete)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 1 :&nbsp; LD_FLAG_IS_PROT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- Protected mode (obsolete)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 2 :&nbsp; LD_FLAG_IS_STARTED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Program already
+started</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 3 :&nbsp; LD_FLAG_IGNORE_SEGMENTS&nbsp;&nbsp; - Ignore segments (flat)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 4 :&nbsp; LD_FLAG_HAVE_RUNTIME_DLLS - DLL load breaks supported</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 5 :&nbsp; LD_FLAG_DISPLAY_DAMAGED&nbsp;&nbsp; - Debugger must repaint screen</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 6 :&nbsp; not used</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 7 :&nbsp; not used</TT>
+<H3 ID="REQ_PROG_KILL_L21R"> REQ_PROG_KILL (21) </H3>
+<BR>Request to kill the program.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_phandle&nbsp;&nbsp;&nbsp; task_id</TT>
+<BR><BR>The<TT> req</TT> field contains the request.&nbsp; The<TT> task_id</TT> field (obtained from REQ_PROG_LOAD) identifies
+the program to be killed.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>The<TT> err</TT> field returns the error code of the OS kill program operation.
+<H3 ID="REQ_SET_WATCH_L22R"> REQ_SET_WATCH (22) </H3>
+<BR>Request to set a watchpoint at the address given.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; watch_addr</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size</TT>
+<BR><BR>The address of the watchpoint is given by the<TT> watch_addr</TT> field.&nbsp; The<TT> size</TT> field gives the number
+of bytes to be watched.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; multiplier</TT>
+<BR><BR>The<TT> err</TT> field returns the error code if the setting failed.&nbsp; If the setting of the watchpoint worked,
+the 31 low order bits of<TT> multiplier</TT> indicate the expected slow down of the program when it's placed into execution.
+&nbsp;The top bit of the field is set to one if a debug register is being used for the watchpoint, and zero if the watchpoint
+is being done by software.
+<H3 ID="REQ_CLEAR_WATCH_L23R"> REQ_CLEAR_WATCH (23) </H3>
+<BR>Request to clear a watchpoint at the address given.&nbsp; The trap file may assume all watch points are cleared at once.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; watch_addr</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size</TT>
+<BR><BR>The address of the watch point is given by the<TT> watch_addr</TT> field.&nbsp; The<TT> size</TT> field gives the
+size of the watch point.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_SET_BREAK_L24R"> REQ_SET_BREAK (24) </H3>
+<BR>Request to set a breakpoint at the address given.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break_addr</TT>
+<BR><BR>The address of the break point is given by the<TT> break_addr</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; old</TT>
+<BR><BR>The<TT> old</TT> field returns the original byte(s) at the address<TT> break_addr</TT>.
+<H3 ID="REQ_CLEAR_BREAK_L25R"> REQ_CLEAR_BREAK (25) </H3>
+<BR>Request to clear a breakpoint at the address given.&nbsp; The trap file may assume all breakpoints are cleared at once.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break_addr</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; old</TT>
+<BR><BR>The address of the break point is given by the<TT> break_addr</TT> field.&nbsp; The<TT> old</TT> field holds the old
+instruction returned from the REQ_SET_BREAK request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_GET_NEXT_ALIAS_L26R"> REQ_GET_NEXT_ALIAS (26) </H3>
+<BR>Request to get alias information for a segment.&nbsp; In some protect mode environments (typically 32-bit flat) two different
+selectors may refer to the same physical memory.&nbsp; Which selectors do this is important to the debugger in certain cases
+(so that symbolic information is properly displayed).
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; seg</TT>
+<BR><BR>The<TT> seg</TT> field contains the segment.&nbsp; To get the first alias, put zero in this field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; seg</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; alias</TT>
+<BR><BR>The<TT> seg</TT> field contains the next segment where an alias appears.&nbsp; If this field returns zero, it implies
+no more aliases can be found.&nbsp; The<TT> alias</TT> field returns the alias of the input segment.&nbsp; Zero indicates
+a previously set alias should be deleted.
+<H3 ID="REQ_SET_USER_SCREEN_L27R"> REQ_SET_USER_SCREEN (27) </H3>
+<BR>Request to make the debuggee's screen visible.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_SET_DEBUG_SCREEN_L28R"> REQ_SET_DEBUG_SCREEN (28) </H3>
+<BR>Request to make the debugger's screen visible.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_READ_USER_KEYBOARD_L29R"> REQ_READ_USER_KEYBOARD (29) </H3>
+<BR>Request to read the remote keyboard input.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; wait</TT>
+<BR><BR>The request will be time out if it waits longer than the period specifies in the<TT> wait</TT> field.&nbsp; The waiting
+period is measured in seconds.&nbsp; A value of zero means to wait forever.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key</TT>
+<BR><BR>The<TT> key</TT> field returns the input character from remote machine.
+<H3 ID="REQ_GET_LIB_NAME_L30R"> REQ_GET_LIB_NAME (30) </H3>
+<BR>Request to get the name of a newly loaded library (DLL).
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_mhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><BR>The<TT> handle</TT> field contains the library handle.&nbsp; It should be zero to get the name of the first DLL or
+the value from the<TT> handle</TT> of a previous request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_mhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ---------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</TT>
+<BR><BR>The<TT> handle</TT> field contains the library handle.&nbsp; It contains zero if there are no more DLL names to be
+returned.&nbsp; The name of the library will be returned in<TT> name</TT> field.&nbsp; If the<TT> name</TT> field is an empty
+string (consists just of the '\0' character), then this is a indication that the DLL indicated by the given handle has been
+unloaded, and the debugger should remove any symbolic information for the image.&nbsp; It is an error to attempt to remove
+a handle that has not been loaded in a previous REQ_GET_LIB_NAME request.
+<H3 ID="REQ_GET_ERR_TEXT_L31R"> REQ_GET_ERR_TEXT (31) </H3>
+<BR>Request to get the error message text for an error code.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>The<TT> err</TT> field contains the error code number of the error text requested.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; error_msg</TT>
+<BR><BR>The error message text will be returned in<TT> error_msg</TT> field.
+<H3 ID="REQ_GET_MESSAGE_TEXT_L32R"> REQ_GET_MESSAGE_TEXT (32) </H3>
+<BR>Request to retrieve generic message text.&nbsp; After a REQ_PROG_LOAD, REQ_PROG_GO or REQ_PROG_STEP has returned with
+COND_MESSAGE or COND_EXCEPTION, the debugger will make this request to obtain the message text.&nbsp; In the case of a COND_EXCEPTION
+return text describing the machine exception that caused the return to the debugger.&nbsp; Otherwise return whatever generic
+message text that the trap file wants to display to the user.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flags</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ---------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msg</TT>
+<BR><BR>The message text will be returned in the<TT> msg</TT> field.&nbsp; The<TT> flags</TT> contains a number of bits which
+control the next action of the debugger.&nbsp; They are:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : MSG_NEWLINE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : MSG_MORE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : MSG_WARNING</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : MSG_ERROR</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 4 - 7&nbsp;&nbsp; : not used</TT>
+<BR><BR>The MSG_NEWLINE bit indicates that the debugger should scroll its display to a new line after displaying the message.
+&nbsp;The MSG_MORE bit indicates that there is another line of output to come and the debugger should make another REQ_GET_MESSAGE_TEXT.
+&nbsp;MSG_WARNING indicates that the message is a warning level message while MSG_ERROR is an error level message.&nbsp; If
+neither of these bits are on, the message is merely informational.
+<H3 ID="REQ_REDIRECT_STDIN_L33RDREQ_REDIRECT_STDOUT_L34R"> REQ_REDIRECT_STDIN (33)/REQ_REDIRECT_STDOUT (34) </H3>
+<BR>Request to redirect the standard input (REQ_REDIRECT_STDIN) or standard output (REQ_REDIRECT_STDOUT) of the debuggee.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</TT>
+<BR><BR>The file name to be redirected to/from is given by the<TT> name</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>When an error has occurred, the<TT> err</TT> field contains an error code indicating the type of error that has been
+detected.
+<BR><BR><B>NOTE:</B>&nbsp; and almost all of them also do not return an accurate error code for failures.&nbsp; This is work
+in progress.&nbsp; The debugger may report an error to open the specified file rather than report that the requested operation
+is not supported.
+<H3 ID="REQ_SPLIT_CMD_L35R"> REQ_SPLIT_CMD (35) </H3>
+<BR>Request to split the command line into the command name and parameters.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd</TT>
+<BR><BR>The<TT> cmd</TT> field contains the command.&nbsp; Command can be a single command line or an array of command strings.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; cmd_end</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; parm_start</TT>
+<BR><BR>The<TT> cmd_end</TT> field tells the position in command line where the command name ends.&nbsp; The<TT> parm_start</TT>
+field stores the position where the program arguments begin.
+<H3 ID="REQ_READ_REGS_L36R"> REQ_READ_REGS (36) </H3>
+<BR>Request to read CPU register contents.&nbsp; The data returned depends on the target architecture and is defined by the
+MAD file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</TT>
+<BR><BR>The return message content is specific to the MAD in use and will contain a<TT> mad_registers</TT> union (defined
+in<TT> madtypes.h</TT>).
+<H3 ID="REQ_WRITE_REGS_L37R"> REQ_WRITE_REGS (37) </H3>
+<BR>Request to write CPU register contents.&nbsp; The data is target architecture specific.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</TT>
+<BR><BR>The message content is specific to the MAD in use and will contain a<TT> mad_registers</TT> union.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_MACHINE_DATA_L38R"> REQ_MACHINE_DATA (38) </H3>
+<BR>Request to retrieve machine specific data.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info_type;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -----------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</TT>
+<BR><BR>The<TT> info_type</TT> field specifies what kind of information should be returned and<TT> addr</TT> determines the
+address for which the information is requested.&nbsp; The remainder of the message is MAD specific.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_off&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cache_start;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; addr48_off&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cache_end;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -----------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</TT>
+<BR><BR>The return message content is specific to the MAD in use.
+<H2 ID="File_IDO_requests"> File I/O requests </H2>
+<BR>This section describes requests that deal with file input/output on the target (debuggee) machine.&nbsp; These requests
+are actually performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following
+descriptions do not show that &quot;prefix&quot; to the request messages.
+<BR><BR>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;Files&quot;.
+<BR><BR>The file requests use a new basic type in addition to the ones already described:
+<DL>
+<DT><B><I>Type</I></B>
+<DD><B><I>Definition</I></B>
+<DT>trap_fhandle
+<DD>This is an<TT> unsigned_32</TT> which holds a debuggee file handle.
+</DL>
+<H3 ID="REQ_FILE_GET_CONFIG_L0R"> REQ_FILE_GET_CONFIG (0) </H3>
+<BR>Request to retreive characteristics of the remote file system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ext_separator;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_separator[3];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newline[2];</TT>
+<BR><BR>The<TT> ext_separator</TT> contains the separator for file name extensions.&nbsp; The possible path separators can
+be found in array<TT> path_separator</TT>.&nbsp; The first one is the &quot;preferred&quot; path separator for that operating
+system.&nbsp; This is the path separator that the debugger will use if it needs to construct a file name for the remote system.
+&nbsp;The new line control characters are stored in array<TT> newline</TT>.&nbsp; If the operating system uses only a single
+character for newline, put a zero in the second element.
+<H3 ID="REQ_FILE_OPEN_L1R"> REQ_FILE_OPEN (1) </H3>
+<BR>Request to create/open a file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</TT>
+<BR><BR>The name of the file to be opened is given by<TT> name</TT>.&nbsp; The<TT> mode</TT> field stores the access mode
+of the file.&nbsp; The following bits are defined:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_READ</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_WRITE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_CREATE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_EXEC</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; Bit 4 - 7&nbsp; :&nbsp; not used</TT>
+<BR><BR>For read/write mode, turn both<TT> TF_READ</TT> and<TT> TF_WRITE</TT> bits on.&nbsp; The<TT> TF_EXEC</TT> bit should
+only be used together with<TT> TF_CREATE</TT> and indicates that the created file needs executable permission (if relevant
+on the target platform).
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><BR>If successful, the<TT> handle</TT> returns a handle for the file.&nbsp; When an error has occurred, the<TT> err</TT>
+field contains a value indicating the type of error that has been detected.
+<H3 ID="REQ_FILE_SEEK_L2R"> REQ_FILE_SEEK (2) </H3>
+<BR>Request to seek to a particular file position.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; pos</TT>
+<BR><BR>The handle of the file is given by the<TT> handle</TT> field.&nbsp; The<TT> mode</TT> field stores the seek mode.
+&nbsp;There are three seek modes:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TF_SEEK_ORG = 0&nbsp; - Relative to the start of file</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TF_SEEK_CUR = 1&nbsp; - Relative to the current file position</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TF_SEEK_END = 2&nbsp; - Rrelative to the end of file</TT>
+<BR><BR>The position to seek to is in the<TT> pos</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; pos</TT>
+<BR><BR>If an error has occurred, the<TT> err</TT> field contains a value indicating the type of error that has been detected.
+&nbsp;The<TT> pos</TT> field returns the current position of the file.
+<H3 ID="REQ_FILE_READ_L3R"> REQ_FILE_READ (3) </H3>
+<BR>Request to read a block of data from a file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len</TT>
+<BR><BR>The handle of the file is given by the<TT> handle</TT> field.&nbsp; The<TT> len</TT> field stores the number of bytes
+to be transmitted.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; --------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+data</TT>
+<BR><BR>If successful, the<TT> data</TT> returns the block of data.&nbsp; The length of returned data is given by the return
+value of TrapRequest minus 4 (to account for the size of<TT> err</TT>).&nbsp; The length will normally be equal to the<TT>
+len</TT> field.&nbsp; If the end of file is encountered before the read completes, the return value will be less than the
+number of bytes requested.&nbsp; When an error has occurred, the<TT> err</TT> field contains a value indicating the type of
+error that has been detected.
+<H3 ID="REQ_FILE_WRITE_L4R"> REQ_FILE_WRITE (4) </H3>
+<BR>Request to write a block of data to a file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The handle of the file is given by the<TT> handle</TT> field.&nbsp; The data is given in<TT> data</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; len</TT>
+<BR><BR>If there is no error,<TT> len</TT> will equal to that in the<TT> data_len</TT> field.&nbsp; When an error has occurred,
+the<TT> err</TT> field contains a value indicating the type of error that has been detected.
+<H3 ID="REQ_FILE_WRITE_CONSOLE_L5R"> REQ_FILE_WRITE_CONSOLE (5) </H3>
+<BR>Request to write a block of data to the debuggee's screen.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The data is given in<TT> data</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; len</TT>
+<BR><BR>If there is no error,<TT> len</TT> will equal to the<TT> data_len</TT> field.&nbsp; When an error has occurred, the<TT>
+err</TT> field contains a value indicating the type of error that has been detected.
+<H3 ID="REQ_FILE_CLOSE_L6R"> REQ_FILE_CLOSE (6) </H3>
+<BR>Request to close a file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><BR>The handle of the file is given by the<TT> handle</TT> field.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>When an error has occurred, the<TT> err</TT> field contains a value indicating the type of error that has been detected.
+<H3 ID="REQ_FILE_ERASE_L7R"> REQ_FILE_ERASE (7) </H3>
+<BR>Request to erase a file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</TT>
+<BR><BR>The<TT> file_name</TT> field contains the file name to be deleted.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp; err</TT>
+<BR><BR>If error has occurred when erasing the file, the<TT> err</TT> field will return the error code number.
+<H3 ID="REQ_FILE_STRING_TO_FULLPATH_L8R"> REQ_FILE_STRING_TO_FULLPATH (8) </H3>
+<BR>Request to convert a file name to its full path name.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_type</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</TT>
+<BR><BR>The<TT> file_type</TT> field indicates the type of the input file.&nbsp; File types can be:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_EXE&nbsp; =&nbsp; 0</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_DBG&nbsp; =&nbsp; 1</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_PRS&nbsp; =&nbsp; 2</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_HLP&nbsp; =&nbsp; 3</TT>
+<BR><BR>This is so the trap file can search different paths for the different types of files.&nbsp; For example, under QNX,
+the PATH environment variable is searched for the FILE_EXE type, and the WD_PATH environment variable is searched for the
+others.&nbsp; The<TT> file_name</TT> field contains the file name to be converted.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; --------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_name</TT>
+<BR><BR>If no error occurs the<TT> err</TT> field returns a zero and the full path name will be stored in the<TT> path_name</TT>
+field.&nbsp; When an error has occurred, the<TT> err</TT> field contains an error code indicating the type of error that has
+been detected.
+<H3 ID="REQ_FILE_RUN_CMD_L9R"> REQ_FILE_RUN_CMD (9) </H3>
+<BR>Request to run a command on the target (debuggee's) system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; chk_size</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd</TT>
+<BR><BR>The<TT> chk_size</TT> field gives the check size in kilobytes.&nbsp; This field is only useful in the DOS implementation.
+&nbsp;It contains the value of the /CHECKSIZE debugger command line option and represents the amount of memory the user wishes
+to have free for the spawned sub-shell.&nbsp; The<TT> cmd</TT> field stores the command to be executed.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If error has occurred when executing the command, the<TT> err</TT> field will return the error code number.
+<H2 ID="Overlay_requests"> Overlay requests </H2>
+<BR>This section describes requests that deal with overlays (supported only under 16-bit DOS).&nbsp; These requests are actually
+performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following descriptions
+do not show that &quot;prefix&quot; to the request messages.
+<BR><BR>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;Overlays&quot;.
+<BR><BR>The overlay requests use a new basic type in addition to the ones already described:
+<DL>
+<DT><B><I>Type</I></B>
+<DD><B><I>Definition</I></B>
+<DT>addr32_ptr
+<DD>This type encapsulates the concept of a 16:16 pointer into the debuggee's address space.&nbsp; Since overlays are only useful
+for 16-bit environments, using the addr48_ptr type would be inefficient.&nbsp; The structure is defined as follows:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp; offset;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp; segment;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } addr32_ptr;</TT>
+<BR><BR>The<TT> segment</TT> field contains the segment of the address and the<TT> offset</TT> field stores the offset of
+the address.
+<DT>ovl_address
+<DD>This type contains the overlay address and the number of entries down in the overlay stack.&nbsp; The structure is defined
+as follows:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr32_ptr&nbsp; mach;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 sect_id;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } ovl_address;</TT>
+<BR><BR>The<TT> mach</TT> field is the machine address.&nbsp; The<TT> sect_id</TT> field stores the address section number.
+</DL>
+<H3 ID="REQ_OVL_STATE_SIZE_L0R"> REQ_OVL_STATE_SIZE (0) </H3>
+<BR>Request to return the size of the overlay state information in bytes of the task program.&nbsp; This request maps onto
+the overlay manager's GET_STATE_SIZE request.&nbsp; See the Overlay Manager Interface document for more information on the
+contents of the return message.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The<TT> req</TT> field contains the request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; size</TT>
+<BR><BR>The<TT> size</TT> field returns the size in bytes.&nbsp; A value of zero indicates no overlays are present in the
+debuggee and none of the other requests dealing with overlays will ever be called.
+<H3 ID="REQ_OVL_GET_DATA_L1R"> REQ_OVL_GET_DATA (1) </H3>
+<BR>Request to get the address and size of an overlay section.&nbsp; This request maps onto the overlay manager's GET_SECTION_DATA
+request.&nbsp; See the Overlay Manager Interface document for more information on the contents of the return message.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; sect_id</TT>
+<BR><BR>The<TT> sect_id</TT> field indicates the overlay section the information is being requested of.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; segment</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; size</TT>
+<BR><BR>The<TT> segment</TT> field contains the segment value where the overlay section is loaded (or would be loaded if it
+was brought into memory).&nbsp; The<TT> size</TT> field gives the size, in bytes, of the overlay section.&nbsp; If there is
+no section for the given id, the<TT> segment</TT> field will be zero.
+<H3 ID="REQ_OVL_READ_STATE_L2R"> REQ_OVL_READ_STATE (2) </H3>
+<BR>Request to read the overlay table state.&nbsp; This request maps onto the overlay manager's GET_OVERLAY_STATE request.
+&nbsp;See the Overlay Manager Interface document for more information on the contents of the return message.&nbsp; The size
+of the returned data is provided by the REQ_OVL_STATE_SIZE trap file request.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> data</TT> field contains the overlay state information requested.
+<H3 ID="REQ_OVL_WRITE_STATE_L3R"> REQ_OVL_WRITE_STATE (3) </H3>
+<BR>Request to write the overlay table state.&nbsp; This request maps onto the overlay manager's SET_OVERLAY_STATE request.
+&nbsp;See the Overlay Manager Interface document for more information on the contents of the return message.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; --------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</TT>
+<BR><BR>The<TT> data</TT> field contains the overlay state information to be restored.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_OVL_TRANS_VECT_ADDR_L4R"> REQ_OVL_TRANS_VECT_ADDR (4) </H3>
+<BR>Request to check if the input overlay address is actually an overlay vector.&nbsp; This request maps onto the overlay
+manager's TRANSLATE_VECTOR_ADDR request.&nbsp; See the Overlay Manager Interface document for more information on the contents
+of the messages.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</TT>
+<BR><BR>The<TT> mach</TT> field is the machine address.&nbsp; The<TT> sect_id</TT> field stores the number of entries down
+in the overlay stack.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</TT>
+<BR><BR>The translated address will be returned in the<TT> ovl_addr</TT> field.&nbsp; If the address is not an overlay vector,
+then the input address will be returned and the<TT> sect_id</TT> field will be zero.
+<H3 ID="REQ_OVL_TRANS_RET_ADDR_L5R"> REQ_OVL_TRANS_RET_ADDR (5) </H3>
+<BR>Request to check if the address is the overlay manager parallel return code.&nbsp; This request maps onto the overlay
+manager's TRANSLATE_RETURN_ADDR request.&nbsp; See the Overlay Manager Interface document for more information on the contents
+of the messages.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</TT>
+<BR><BR>The translated address will be returned in the<TT> ovl_addr</TT> field.&nbsp; If the address is not an parallel return
+code, then the input address will be returned and the<TT> sect_id</TT> field in the structure<TT> ovl_addr</TT> will be zero.
+<H3 ID="REQ_OVL_GET_REMAP_ENTRY_L6R"> REQ_OVL_GET_REMAP_ENTRY (6) </H3>
+<BR>Request to check if the overlay address needs to be remapped.&nbsp; This request maps onto the overlay manager's GET_MOVED_SECTION
+request.&nbsp; See the Overlay Manager Interface document for more information on the contents of the messages.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</TT>
+<BR><BR>The<TT> ovl_addr</TT> field contains the overlay address.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remapped</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</TT>
+<BR><BR>If the address gets remapped the<TT> remapped</TT> field will return one.&nbsp; The remapped address will be returned
+in the<TT> ovl_addr</TT> field.&nbsp; The input address will be unchanged if the address has not been remapped.
+<H2 ID="Thread_requests"> Thread requests </H2>
+<BR>This section descibes requests that deal with threads.&nbsp; These requests are actually performed by the core request
+REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following descriptions do not show that &quot;prefix&quot;
+to the request messages.
+<BR><BR>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;Threads&quot;.
+<BR><BR>The thread requests use a new basic type in addition to the ones already described:
+<DL>
+<DT><B><I>Type</I></B>
+<DD><B><I>Definition</I></B>
+<DT>trap_thandle
+<DD>This is an<TT> unsigned_32</TT> which holds a thread handle.
+</DL>
+<H3 ID="REQ_THREAD_GET_NEXT_L0R"> REQ_THREAD_GET_NEXT (0) </H3>
+<BR>Request to get next thread.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</TT>
+<BR><BR>The<TT> thread</TT> contains the either a zero to get information on the first thread, or the value of the<TT> thread</TT>
+field in the return message of a previous request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; state</TT>
+<BR><BR>The<TT> thread</TT> field returns the thread ID.&nbsp; There are no more threads in the list, it will contain zero.
+&nbsp;The<TT> state</TT> field can have two values:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; THREAD_THAWED = 0</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; THREAD_FROZEN = 1</TT>
+<H3 ID="REQ_THREAD_SET_L1R"> REQ_THREAD_SET (1) </H3>
+<BR>Request to set a given thread ID to be the current thread.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</TT>
+<BR><BR>The<TT> thread</TT> contains the thread number to set.&nbsp; If it's zero, do not attempt to set the thread, just
+return the current thread ID.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; error</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; old_thread</TT>
+<BR><BR>The<TT> old_thread</TT> field returns the previous thread ID.&nbsp; If the set fails, the<TT> err</TT> field will
+be non-zero.
+<H3 ID="REQ_THREAD_FREEZE_L2R"> REQ_THREAD_FREEZE (2) </H3>
+<BR>Request to freeze a thread so that it will not be run next time when executing the task program.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</TT>
+<BR><BR>The<TT> thread</TT> contains the thread number to freeze.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If the thread cannot be frozen, the<TT> err</TT> field returns non-zero value.
+<H3 ID="REQ_THREAD_THAW_L3R"> REQ_THREAD_THAW (3) </H3>
+<BR>Request to allow a thread to run next time when executing the program.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</TT>
+<BR><BR>The<TT> thread</TT> contains the thread number to thaw.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If the thread cannot be thawed, the<TT> err</TT> field returns non zero value.
+<H3 ID="REQ_THREAD_GET_EXTRA_L4R"> REQ_THREAD_GET_EXTRA (4) </H3>
+<BR>Request to get extra information about a thread.&nbsp; This is arbitrary textual data which the debugger merely displays
+in its thread window.&nbsp; The trap file can place any information in the return message which it feels would be useful for
+the user to know.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; thread</TT>
+<BR><BR>The<TT> thread</TT> field contains the thread ID.&nbsp; A zero value means to get the title string for the thread
+extra information.&nbsp; This is displayed at the top of the thread window.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; extra</TT>
+<BR><BR>The extra information of the thread will be returned in<TT> extra</TT> field.
+<H2 ID="RFX_requests"> RFX requests </H2>
+<BR>This section deals with requests that are only used by the RFX (Remote File Xfer) program.&nbsp; These requests are actually
+performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following descriptions
+do not show that &quot;prefix&quot; to the request messages.
+<BR><BR>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;RFX&quot;.
+<H3 ID="REQ_RFX_RENAME_L0R"> REQ_RFX_RENAME (0) </H3>
+<BR>Request to rename a file on the debuggee's system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; from_name</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to_name</TT>
+<BR><BR>The file whose name is indicated by the field<TT> from_name</TT> will be renamed to the name given by the field<TT>
+to_name</TT>
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If error has occurred, the<TT> err</TT> field will return the error code number.
+<H3 ID="REQ_RFX_MKDIR_L1R"> REQ_RFX_MKDIR (1) </H3>
+<BR>Request to create a directory on the target (debuggee) system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_name</TT>
+<BR><BR>The<TT> dir_name</TT> field contains the name of the directory to be created.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If error has occurred when creating the directory, the<TT> err</TT> field will return the error code number.
+<H3 ID="REQ_RFX_RMDIR_L2R"> REQ_RFX_RMDIR (2) </H3>
+<BR>Request to remove a directory on the target system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_name</TT>
+<BR><BR>The<TT> dir_name</TT> field contains the name of the directory to be removed.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If error has occurred, the<TT> err</TT> field will return the error code number.
+<H3 ID="REQ_RFX_SETDRIVE_L3R"> REQ_RFX_SETDRIVE (3) </H3>
+<BR>Request to set the current drive on the target system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drive</TT>
+<BR><BR>The<TT> drive</TT> field contains the drive number to be set on the target system.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If error has occurred, the<TT> err</TT> field will return the error code number.
+<H3 ID="REQ_RFX_GETDRIVE_L4R"> REQ_RFX_GETDRIVE (4) </H3>
+<BR>Request to get the current drive on the target system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The<TT> req</TT> field contains the request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drive</TT>
+<BR><BR>The<TT> drive</TT> field returns the current drive number on the target system.
+<H3 ID="REQ_RFX_SETCWD_L5R"> REQ_RFX_SETCWD (5) </H3>
+<BR>Request to set a directory on the target system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_name</TT>
+<BR><BR>The<TT> dir_name</TT> field contains the name of the directory to be set.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If error has occurred, the<TT> err</TT> field will return the error code number.
+<H3 ID="REQ_RFX_GETCWD_L6R"> REQ_RFX_GETCWD (6) </H3>
+<BR>Request to get the current directory name on the target system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drive</TT>
+<BR><BR>The<TT> drive</TT> field contains the target drive number.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; --------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_name</TT>
+<BR><BR>The<TT> dir_name</TT> field contains the name of the directory to be set.&nbsp; If error has occurred, the<TT> err</TT>
+field will return the error code number.
+<H3 ID="REQ_RFX_SETDATETIME_L7R"> REQ_RFX_SETDATETIME (7) </H3>
+<BR>Request to set a file's date and time information on the target system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time</TT>
+<BR><BR>The<TT> handle</TT> contains the file handle.&nbsp; The<TT> time</TT> field follows the UNIX time format.&nbsp; The<TT>
+time</TT> represents the time since January 1, 1970 (UTC).
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; NONE</TT>
+<H3 ID="REQ_RFX_GETDATETIME_L8R"> REQ_RFX_GETDATETIME (8) </H3>
+<BR>Request to get the date and time information for a file on the target system.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</TT>
+<BR><BR>The<TT> handle</TT> contains the file handle.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time</TT>
+<BR><BR>The<TT> time</TT> field follows the UNIX time format.&nbsp; The<TT> time</TT> represents the time since January 1,
+1970 (UTC).
+<H3 ID="REQ_RFX_GETFREESPACE_L9R"> REQ_RFX_GETFREESPACE (9) </H3>
+<BR>Request to get the amount of free space left on the drive.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drive</TT>
+<BR><BR>The<TT> drive</TT> field contains the target drive number.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; size</TT>
+<BR><BR>The<TT> size</TT> field returns the number of bytes left on the drive.
+<H3 ID="REQ_RFX_SETFILEATTR_L10R"> REQ_RFX_SETFILEATTR (10) </H3>
+<BR>Request to set the file attribute of a file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; attribute</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</TT>
+<BR><BR>The<TT> name</TT> field contains the name whose attributes are to be set.&nbsp; The<TT> attribute</TT> field contains
+the new attributes of the file.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If error has occurred, the<TT> err</TT> field will return the error code number.
+<H3 ID="REQ_RFX_GETFILEATTR_L11R"> REQ_RFX_GETFILEATTR (11) </H3>
+<BR>Request to get the file attribute of a file.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; --------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</TT>
+<BR><BR>The<TT> name</TT> field contains the name to be checked.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; attribute</TT>
+<BR><BR>The<TT> attribute</TT> field returns the attribute of the file.
+<H3 ID="REQ_RFX_NAMETOCANNONICAL_L12R"> REQ_RFX_NAMETOCANNONICAL (12) </H3>
+<BR>Request to convert a file name to its canonical form.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</TT>
+<BR><BR>The<TT> file_name</TT> field contains the file name to be converted.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; --------------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_name</TT>
+<BR><BR>If there is no error, the<TT> err</TT> field returns a zero and the full path name will be stored in the<TT> path_name</TT>
+field.&nbsp; When an error has occurred, the<TT> err</TT> field contains an error code indicating the type of error that has
+been detected.
+<H3 ID="REQ_RFX_FINDFIRST_L13R"> REQ_RFX_FINDFIRST (13) </H3>
+<BR>Request to find the first file in a directory.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; attrib</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; ----------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</TT>
+<BR><BR>The<TT> name</TT> field contains the name of the directory and the<TT> attrib</TT> field contains the attribute of
+the files to list in the directory.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -----------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; dta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info</TT>
+<BR><BR>If found, the<TT> err</TT> field will be zero.&nbsp; The location and information of about the first file will be
+in the structure<TT> info.</TT>&nbsp; Definition of the structure<TT> dta</TT> is as follows:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct dta {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; spare1[13];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; dir_entry_num;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; cluster;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; spare2[4];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } dos;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+attr;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+name[14];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } dta;</TT>
+<H3 ID="REQ_RFX_FINDNEXT_L14R"> REQ_RFX_FINDNEXT (14) </H3>
+<BR>Request to find the next file in the directory.&nbsp; This request should be used only after REQ_RFX_FINDFIRST.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; --------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; dta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info</TT>
+<BR><BR>The<TT> req</TT> field contains the request.&nbsp; The<TT> info</TT> field contains the dta returned from the previous
+REQ_FIND_NEXT or REQ_FIND_FIRST.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; -----------------------</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; dta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info</TT>
+<BR><BR>The<TT> info</TT> field is the same as in REQ_FIND_FIRST.
+<H3 ID="REQ_RFX_FINDCLOSE_L15R"> REQ_RFX_FINDCLOSE (15) </H3>
+<BR>Request to end the directory search operation.
+<BR><BR><TT>Request message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</TT>
+<BR><BR>The<TT> req</TT> field contains the request.
+<BR><BR><TT>Return message:</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</TT>
+<BR><BR>If successful, the<TT> err</TT> field will be zero, otherwise the system error code will be returned.
+<H1 ID="System_Dependent_Aspects"> System Dependent Aspects </H1>
+<BR>Every environment has a different method of loading the code for the trap file and locating the TrapInit, TrapRequest,
+and TrapFini routines.&nbsp; This section descibes how the Open Watcom debugger performs these operations for the various
+systems.
+<H2 ID="Trap_Files_Under_DOS"> Trap Files Under DOS </H2>
+<BR>A trap file is an &quot;EXE&quot; format file with the extension &quot;.TRP&quot;.&nbsp; The debugger searches the directories
+specified by the PATH environment variable.&nbsp; Once found, it is loaded into memory and has the normal EXE style relocations
+applied to the image.&nbsp; Then the lowest address in the load image (NOTE:&nbsp; not the starting address from EXE header
+information) is examined for the following structure:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; signature; /* == 0xDEAF */</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; init_off;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; acc_off;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; fini_off;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } trap_header;</TT>
+<BR><BR>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<TT> init_off</TT>,<TT>
+acc_off</TT>, and<TT> fini_off</TT> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini routines
+repectively.
+<BR><BR>The starting address field of the EXE header should be set to point at some code which prints out a message about
+not being able to be run from the command line and then terminates.
+<H2 ID="Trap_Files_Under_OSD2"> Trap Files Under OS/2 </H2>
+<BR>A trap file is a normal OS/2 DLL.&nbsp; The system automatically searches the directories specified by the LIBPATH command
+in the CONFIG.SYS file.&nbsp; Once loaded, the Open Watcom debugger uses export ordinal 1 from the DLL for TrapInit, export
+ordinal 2 for TrapFini and export ordinal 3 for TrapRequest.&nbsp; Some example code follows:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; rc = DosLoadModule( NULL, 0, trap_file_name, &amp;dll_module );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; if( rc != 0 ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;unable to load trap file&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; if( DosGetProcAddr( dll_module, &quot;#1&quot;, &amp;TrapInit ) != 0</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; || DosGetProcAddr( dll_module, &quot;#2&quot;, &amp;TrapFini ) != 0</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; || DosGetProcAddr( dll_module, &quot;#3&quot;, &amp;TrapRequest ) != 0 )</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;incorrect version of trap file&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<H2 ID="Trap_Files_Under_Windows_"> Trap Files Under Windows. </H2>
+<BR>A trap file is a normal Windows DLL.&nbsp; The system automatically searches the directories specified by the PATH environment
+variable.&nbsp; Once loaded, the Open Watcom debugger uses export ordinal 2 from the DLL for TrapInit, export ordinal 3 for
+TrapFini and export ordinal 4 for TrapRequest.&nbsp; Some example code follows:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; dll = LoadLibrary( trap_file_name );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; if( dll &lt; 32 ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;unable to load trap file&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TrapInit&nbsp;&nbsp; = (LPVOID) GetProcAddress( dll, (LPSTR)2 );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TrapFini&nbsp;&nbsp; = (LPVOID) GetProcAddress( dll, (LPSTR)3 );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TrapRequest = (LPVOID) GetProcAddress( dll, (LPSTR)4 );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; if( TrapInit == NULL || TrapFini == NULL || TrapRequest == NULL ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;incorrect version of trap file&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<H2 ID="Trap_Files_Under_Windows_NT_"> Trap Files Under Windows NT. </H2>
+<BR>A trap file is a normal Windows NT DLL.&nbsp; The system automatically searches the directories specified by the PATH
+environment variable.&nbsp; Once loaded, the Open Watcom debugger uses export ordinal 1 from the DLL for TrapInit, export
+ordinal 2 for TrapFini and export ordinal 3 for TrapRequest.&nbsp; Some example code follows:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; dll = LoadLibrary( trap_file_name );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; if( dll &lt; 32 ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;unable to load trap file&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TrapInit&nbsp;&nbsp; = (LPVOID) GetProcAddress( dll, (LPSTR)1 );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TrapFini&nbsp;&nbsp; = (LPVOID) GetProcAddress( dll, (LPSTR)2 );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; TrapRequest = (LPVOID) GetProcAddress( dll, (LPSTR)3 );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; if( TrapInit == NULL || TrapFini == NULL || TrapRequest == NULL ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;incorrect version of trap file&quot; );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<H2 ID="Trap_Files_Under_QNX"> Trap Files Under QNX </H2>
+<BR>A trap file is a QNX load module format file with the extension &quot;.trp&quot; and whose file permissions are not marked
+as executable.&nbsp; The debugger searches the directories specified by the WD_PATH environment variable and then the &quot;/usr/watcom/wd&quot;
+directory.&nbsp; Once found, it is loaded into memory and has the normal loader relocations applied to the image.&nbsp; Then
+the lowest address in the load image (NOTE:&nbsp; not the starting address from load module header information) is examined
+for the following structure:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; signature; /* == 0xDEAF */</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; init_off;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; acc_off;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; fini_off;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; } trap_header;</TT>
+<BR><BR>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<TT> init_off</TT>,<TT>
+acc_off</TT>, and<TT> fini_off</TT> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini routines
+repectively.
+<BR><BR>The starting address field of the load image header should be set to point at some code which prints out a message
+about not being able to be run from the command line and then terminates.
+<H2 ID="Trap_Files_Under_Netware_386"> Trap Files Under Netware 386 </H2>
+<BR>The trap file routines are linked directly into the remote server code and TrapInit, TrapRequest, TrapFini are directly
+called.
+</BODY>
