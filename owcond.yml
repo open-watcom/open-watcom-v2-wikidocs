@@ -1,8 +1,0 @@
-steps:
-- script: echo "##vso[task.setvariable variable=owcond]True"
-  condition: >
-      or(
-        not(contains( variables['Build.SourceVersionMessage'], variables['owpattern'] )),
-        in(variables['Build.Reason'], 'Schedule')
-      )
-  displayName: "set owcond true"
