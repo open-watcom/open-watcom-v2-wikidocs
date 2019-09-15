@@ -1025,7 +1025,7 @@ case.
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; case_label = BENewLabel();</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_LABEL, NULL, case_label );</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; CGSelCase( sel_handle, case_label, case_value );</TT>
-<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... generate code associated with &quot;case_value&quot;&nbsp; here.</TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... generate code associated with &quot;case_value&quot; here.</TT>
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_GOTO, NULL, end_label ); // or else, fall through</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; other_label = BENewLabel();</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_LABEL, NULL, other_label );</TT>
@@ -2035,7 +2035,7 @@ constant such as HW_EAX must be used.&nbsp; Anything else must be a variable of 
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HW_CTurnOn( low, HW_CX );</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HW_CTurnOn( low, HW_DX );</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( HW_Ovlap( reg, low ) ) {</TT>
-<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HW_OnlyOn( reg, low );</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HW_OnlyOn( reg, low );</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
 <BR><BR>The following register constants are defined for all targets.
@@ -2059,14 +2059,16 @@ and will always be hopelessly confused.
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; handle = NULL;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; for( ;; ) {</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handle = FEAuxInfo( handle, NEXT_IMPORT );</TT>
-<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( handle == NULL ) break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( handle == NULL )</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do_something( FEAuxInfo( handle, IMPORT_NAME ) );</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
 <BR><BR>The FREE_SEGMENT request is used as follows.
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; segment = 0;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; for( ;; ) {</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; segment = FEAuxInfo( segment, FREE_SEGMENT );</TT>
-<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( segment == NULL ) break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( segment == NULL )</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; segment_size = *(short *)MK_FP( segment, 0 ) * 16;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this_is_my_memory_now( MK_FP( segment, 0 ), segment_size );</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
