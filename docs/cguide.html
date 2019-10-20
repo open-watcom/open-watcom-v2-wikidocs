@@ -80,7 +80,7 @@
 <BR><A HREF="#16Mbit__The_PACK_Pragma">16-bit:&nbsp; The PACK Pragma</A>
 <BR><A HREF="#16Mbit__The_READ_ONLY_FILE_Pragma">16-bit:&nbsp; The READ_ONLY_FILE Pragma</A>
 <BR><A HREF="#16Mbit__The_TEMPLATE_DEPTH_Pragma_LCPP_OnlyR">16-bit:&nbsp; The TEMPLATE_DEPTH Pragma (C++ Only)</A>
-<BR><A HREF="#16Mbit__The_WARNING_Pragma_LCPP_OnlyR">16-bit:&nbsp; The WARNING Pragma (C++ Only)</A>
+<BR><A HREF="#16Mbit__The_WARNING_Pragma">16-bit:&nbsp; The WARNING Pragma</A>
 <BR><A HREF="#16Mbit__Type__char_">16-bit:&nbsp; Type &quot;char&quot;</A>
 <BR><A HREF="#16Mbit__Type__double_">16-bit:&nbsp; Type &quot;double&quot;</A>
 <BR><A HREF="#16Mbit__Type__float_">16-bit:&nbsp; Type &quot;float&quot;</A>
@@ -167,7 +167,7 @@
 <BR><A HREF="#32Mbit__The_PACK_Pragma">32-bit:&nbsp; The PACK Pragma</A>
 <BR><A HREF="#32Mbit__The_READ_ONLY_FILE_Pragma">32-bit:&nbsp; The READ_ONLY_FILE Pragma</A>
 <BR><A HREF="#32Mbit__The_TEMPLATE_DEPTH_Pragma_LCPP_OnlyR">32-bit:&nbsp; The TEMPLATE_DEPTH Pragma (C++ Only)</A>
-<BR><A HREF="#32Mbit__The_WARNING_Pragma_LCPP_OnlyR">32-bit:&nbsp; The WARNING Pragma (C++ Only)</A>
+<BR><A HREF="#32Mbit__The_WARNING_Pragma">32-bit:&nbsp; The WARNING Pragma</A>
 <BR><A HREF="#32Mbit__Type__char_">32-bit:&nbsp; Type &quot;char&quot;</A>
 <BR><A HREF="#32Mbit__Type__double_">32-bit:&nbsp; Type &quot;double&quot;</A>
 <BR><A HREF="#32Mbit__Type__float_">32-bit:&nbsp; Type &quot;float&quot;</A>
@@ -7022,7 +7022,7 @@ specified, a warning message will be issued and the default value for<TT> n</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S&lt;T*&gt; x;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; };</TT>
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; S&lt;char&gt; v;</TT>
-<H2 ID="16Mbit__The_WARNING_Pragma_LCPP_OnlyR"> 16-bit:&nbsp; The WARNING Pragma (C++ Only) </H2>
+<H2 ID="16Mbit__The_WARNING_Pragma"> 16-bit:&nbsp; The WARNING Pragma </H2>
 <BR>The &quot;warning&quot; pragma sets the level of warning messages.&nbsp; The form of the &quot;warning&quot; pragma is
 as follows.
 <HR>
@@ -7036,8 +7036,9 @@ as follows.
 is &quot;*&quot;, the level of all warning messages is changed to the specified level.&nbsp; Make sure to strip all leading
 zeroes from the message number (to avoid interpretation as an octal constant).
 <DT>level
-<DD>is a number from 0 to 9 and represents the level of the warning message.&nbsp; When a value of zero is specified, the warning
-becomes an error.
+<DD>is a number from 0 to 5 (C compiler) or 0 to 9 (C++ compiler) and represents the level of the warning message.&nbsp; When
+a value of zero is specified, the warning becomes an error.&nbsp; When a value of 5 (C compiler) or 9 (C++ compiler) is specified,
+the warning is disabled.
 </DL>
 <H2 ID="16Mbit__Auxiliary_Pragmas"> 16-bit:&nbsp; Auxiliary Pragmas </H2>
 <BR>The following sections describe the capabilities provided by auxiliary pragmas.
@@ -10045,7 +10046,7 @@ specified, a warning message will be issued and the default value for<TT> n</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S&lt;T*&gt; x;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; };</TT>
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; S&lt;char&gt; v;</TT>
-<H2 ID="32Mbit__The_WARNING_Pragma_LCPP_OnlyR"> 32-bit:&nbsp; The WARNING Pragma (C++ Only) </H2>
+<H2 ID="32Mbit__The_WARNING_Pragma"> 32-bit:&nbsp; The WARNING Pragma </H2>
 <BR>The &quot;warning&quot; pragma sets the level of warning messages.&nbsp; The form of the &quot;warning&quot; pragma is
 as follows.
 <HR>
@@ -10059,8 +10060,9 @@ as follows.
 is &quot;*&quot;, the level of all warning messages is changed to the specified level.&nbsp; Make sure to strip all leading
 zeroes from the message number (to avoid interpretation as an octal constant).
 <DT>level
-<DD>is a number from 0 to 9 and represents the level of the warning message.&nbsp; When a value of zero is specified, the warning
-becomes an error.
+<DD>is a number from 0 to 5 (C compiler) or 0 to 9 (C++ compiler) and represents the level of the warning message.&nbsp; When
+a value of zero is specified, the warning becomes an error.&nbsp; When a value of 5 (C compiler) or 9 (C++ compiler) is specified,
+the warning is disabled.
 </DL>
 <H2 ID="32Mbit__Auxiliary_Pragmas"> 32-bit:&nbsp; Auxiliary Pragmas </H2>
 <BR>The following sections describe the capabilities provided by auxiliary pragmas.

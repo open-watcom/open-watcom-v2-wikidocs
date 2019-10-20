@@ -195,6 +195,8 @@
 <BR><A HREF="#E1187_No_type_specified_in_declaration">E1187 No type specified in declaration</A>
 <BR><A HREF="#E1188_Symbol___s__declared_in__for__statement_must_be_object">E1188 Symbol '%s' declared in 'for' statement must be object</A>
 <BR><A HREF="#E1189_Unexpected_declaration">E1189 Unexpected declaration</A>
+<BR><A HREF="#E1190_message_number___d__is_invalid">E1190 message number '%d' is invalid</A>
+<BR><A HREF="#E1191_warning_level_must_be_an_integer_in_range_0_to_5">E1191 warning level must be an integer in range 0 to 5</A>
 <DT>- H -
 <DD><A HREF="#H3000_Error_reading_PCH_file">H3000 Error reading PCH file</A>
 <BR><A HREF="#H3001_PCH_file_header_is_out_of_date">H3001 PCH file header is out of date</A>
@@ -1077,6 +1079,14 @@ statement, etc.
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ++a;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int j = 3;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<H2 ID="E1190_message_number___d__is_invalid"> E1190 message number '%d' is invalid </H2>
+<BR>The message number used in the #pragma does not match the message number for any warning message.&nbsp; This message can
+also indicate that a number or '*' (meaning all warnings) was not found when it was expected.
+<H2 ID="E1191_warning_level_must_be_an_integer_in_range_0_to_5"> E1191 warning level must be an integer in range 0 to 5 </H2>
+<BR>The new warning level that can be used for the warning can be in the range 0 to 5.&nbsp; The level 0 means that the warning
+will be treated as an error (compilation will not succeed).&nbsp; Levels 1 up to 5 are used to classify warnings.&nbsp; The
+-w option sets an upper limit on the level for warnings.&nbsp; By setting the level above the command line limit, you effectively
+ignore all cases where the warning shows up.
 <H2 ID="I2000_Not_enough_memory_to_fully_optimize_procedure___s_"> I2000 Not enough memory to fully optimize procedure '%s' </H2>
 <BR>The compiler did not have enough memory to fully optimize the specified procedure.&nbsp; The code generated will still
 be correct and execute properly.&nbsp; This message is purely informational.
