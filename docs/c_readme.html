@@ -1173,7 +1173,26 @@ to the compiler and related tools.&nbsp; You should check the next section to de
 <H2 ID="Differences_from_Open_Watcom_version_1_9"> Differences from Open Watcom version 1.9 </H2>
 <BR>Following is a list of changes made in Open Watcom C/C++ 2.0:
 <UL>
-<LI>OW tools were ported to 64-bit host platform (Linux and Windows)
+<LI>OW tools ported to 64-bit host platform (Linux and Windows)
+<LI>OW installer for 64-bit host platform (Linux and Windows)
+</UL>
+<BR>C compiler changes:
+<UL>
+<LI>pragma &quot;warning&quot; was added
+<LI>new option was added to supress predefined macros non-conforming ISO standard naming convention (without leading underscore)
+</UL>
+<BR>C++ compiler changes:
+<UL>
+<LI>fix pragmas &quot;enable_message&quot; and &quot;disable_message&quot; to not change warning level
+</UL>
+<BR>Linker changes:
+<UL>
+<LI>added support for 64-bit COFF objects and 64-bit PE executable
+<LI>default stack size for Windows NT was changed to 1 MB for better compatibility with Microsoft linker
+</UL>
+<BR>C run-time library changes:
+<UL>
+<LI>POSIX threads implementation was added for Linux target
 </UL>
 <H2 ID="Differences_from_Open_Watcom_version_1_8"> Differences from Open Watcom version 1.8 </H2>
 <BR>Following is a list of changes made in Open Watcom C/C++ 1.9:
