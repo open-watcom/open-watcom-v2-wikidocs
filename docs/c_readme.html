@@ -1179,11 +1179,19 @@ to the compiler and related tools.&nbsp; You should check the next section to de
 <BR>C compiler changes:
 <UL>
 <LI>pragma &quot;warning&quot; was added
-<LI>new option was added to supress predefined macros non-conforming ISO standard naming convention (without leading underscore)
+<LI>new option -zam was added to supress predefined macros non-conforming ISO standard naming convention (macros without leading
+underscore)
+<LI>Warning W303 &quot;Parameter '%s' has been defined, but not referenced&quot; was enabled by default.
+<LI>Warning W308 &quot;Unprototyped function '%s' called&quot; was enabled by default.
+<LI>Warning W309 &quot;Unprototyped function indirectly called&quot; was enabled by default.
+<LI>predefined macro NO_EXT_KEYS was replaced by _NO_EXT_KEYS, old one is defined if -zam option is not used
 </UL>
 <BR>C++ compiler changes:
 <UL>
 <LI>fix pragmas &quot;enable_message&quot; and &quot;disable_message&quot; to not change warning level
+<LI>new option -zam was added to supress predefined macros non-conforming ISO standard naming convention (macros without leading
+underscore)
+<LI>predefined macro NO_EXT_KEYS was replaced by _NO_EXT_KEYS, old one is defined if -zam option is not used
 </UL>
 <BR>Linker changes:
 <UL>
@@ -1193,6 +1201,10 @@ to the compiler and related tools.&nbsp; You should check the next section to de
 <BR>C run-time library changes:
 <UL>
 <LI>POSIX threads implementation was added for Linux target
+</UL>
+<BR>Wmake utility changes:
+<UL>
+<LI>add interception for rm, mkdir and rmdir commands to be processed by wmake (POSIX simplified implementation)
 </UL>
 <H2 ID="Differences_from_Open_Watcom_version_1_8"> Differences from Open Watcom version 1.8 </H2>
 <BR>Following is a list of changes made in Open Watcom C/C++ 1.9:

@@ -45,6 +45,7 @@
 <BR><A HREF="#Double_Colon_Explicit_Rules">Double Colon Explicit Rules</A>
 <DT>- E -
 <DD><A HREF="#e">e</A>
+<BR><A HREF="#echo_command">echo command</A>
 <BR><A HREF="#Erasing_Targets_After_Error_L_ERASER">Erasing Targets After Error (.ERASE)</A>
 <BR><A HREF="#Error_Action_L_ERRORR">Error Action (.ERROR)</A>
 <BR><A HREF="#An_Example">An Example</A>
@@ -57,6 +58,7 @@
 <BR><A HREF="#Far_Call_Optimizations_for_NonMOpen_Watcom_Object_Modules">Far Call Optimizations for Non-Open Watcom Object Modules</A>
 <BR><A HREF="#File_Inclusion">File Inclusion</A>
 <BR><A HREF="#Final_Commands_L_AFTERR">Final Commands (.AFTER)</A>
+<BR><A HREF="#for_command">for command</A>
 <BR><A HREF="#The_FPU_emulator_fixups_Option_M__ff_">The FPU emulator fixups Option - &quot;ff&quot;</A>
 <DT>- G -
 <DD><A HREF="#Generating_Imports_M__i__Option">Generating Imports - &quot;i&quot; Option</A>
@@ -66,6 +68,7 @@
 <DD><A HREF="#i">i</A>
 <BR><A HREF="#IDE2MAKE_Operation">IDE2MAKE Operation</A>
 <BR><A HREF="#The_IDE2MAKE_Utility">The IDE2MAKE Utility</A>
+<BR><A HREF="#if_command">if command</A>
 <BR><A HREF="#Ignoring_Dependent_Timestamps_L_ALWAYSR">Ignoring Dependent Timestamps (.ALWAYS)</A>
 <BR><A HREF="#Ignoring_Errors_L_CONTINUER">Ignoring Errors (.CONTINUE)</A>
 <BR><A HREF="#Ignoring_Return_Codes_L_IGNORER">Ignoring Return Codes (.IGNORE)</A>
@@ -83,8 +86,10 @@
 <DT>- M -
 <DD><A HREF="#m">m</A>
 <BR><A HREF="#Macros">Macros</A>
+<BR><A HREF="#Make_internal_commands">Make internal commands</A>
 <BR><A HREF="#MAKEINIT_File">MAKEINIT File</A>
 <BR><A HREF="#Minimising_Target_Timestamp_L_JUST_ENOUGHR">Minimising Target Timestamp (.JUST_ENOUGH)</A>
+<BR><A HREF="#mkdir_command">mkdir command</A>
 <BR><A HREF="#ms">ms</A>
 <BR><A HREF="#Multiple_Dependents">Multiple Dependents</A>
 <BR><A HREF="#Multiple_Rules">Multiple Rules</A>
@@ -139,8 +144,11 @@
 <BR><A HREF="#ReMChecking_Target_Timestamp_L_RECHECKR">Re-Checking Target Timestamp (.RECHECK)</A>
 <BR><A HREF="#Replacing_Modules_in_a_Library_File">Replacing Modules in a Library File</A>
 <BR><A HREF="#Retain_CPP_Mangled_Names__M__m_">Retain C++ Mangled Names - &quot;m&quot;</A>
+<BR><A HREF="#rm_command">rm command</A>
+<BR><A HREF="#rmdir_command">rmdir command</A>
 <DT>- S -
 <DD><A HREF="#s">s</A>
+<BR><A HREF="#set_command">set command</A>
 <BR><A HREF="#sn">sn</A>
 <BR><A HREF="#The_Source_Option_M__sUEXsource_fileYV_">The Source Option - &quot;s[=&lt;source_file&gt;]&quot;</A>
 <BR><A HREF="#Special_Macros">Special Macros</A>
@@ -6010,7 +6018,7 @@ option.&nbsp; The use of a &quot;MAKEINIT&quot; file will allow you to reuse com
 more maintainable makefiles.
 <H2 ID="Command_List_Execution"> Command List Execution </H2>
 <BR>Open Watcom Make is a program which must execute other programs and operating system shell commands.&nbsp; There are three
-basic types of executable files in DOS.
+basic types of executable files in DOS and RDOS.
 <OL>
 <LI><TT> .COM</TT> files
 <LI><TT> .EXE</TT> files
@@ -6051,81 +6059,100 @@ this syntax but many of the Open Watcom tools do.
 executed by the shell if the command is an internal shell command from the following list:
 <DL>
 <DT>break
-<DD>(check for Ctrl+Break)
+<DD>check for Ctrl+Break
 <DT>call
-<DD>(nest batch files)
+<DD>nest batch files
 <DT>chdir
-<DD>(change current directory)
+<DD>change current directory
 <DT>cd
-<DD>(change current directory)
+<DD>change current directory
 <DT>cls
-<DD>(clear the screen)
+<DD>clear the screen
 <DT>cmd
-<DD>(start NT or OS/2 command processor)
+<DD>start NT or OS/2 command processor
 <DT>command
-<DD>(start DOS command processor)
+<DD>start DOS command processor
 <DT>copy
-<DD>(copy or combine files)
+<DD>copy or combine files
 <DT>ctty
-<DD>(DOS redirect input/output to COM port)
+<DD>DOS redirect input/output to COM port
 <DT>d:
-<DD>(change drive where &quot;d&quot; represents a drive specifier)
+<DD>change drive where &quot;d&quot; represents a drive specifier
 <DT>date
-<DD>(set system date)
+<DD>set system date
 <DT>del
-<DD>(erase files)
+<DD>erase files
 <DT>dir
-<DD>(display contents in a directory)
+<DD>display contents in a directory
 <DT>echo
-<DD>(display commands as they are processed)
+<DD>display commands as they are processed, intercepted by WMAKE
 <DT>erase
-<DD>(erase files)
+<DD>erase files
 <DT>for
-<DD>(repetitively process commands, intercepted by WMAKE)
+<DD>repetitively process commands, intercepted by WMAKE
 <DT>if
-<DD>(allow conditional processing of commands)
+<DD>allow conditional processing of commands, intercepted by WMAKE
 <DT>md
-<DD>(make directory)
+<DD>make directory
 <DT>mkdir
-<DD>(make directory, intercepted by WMAKE)
+<DD>make directory, intercepted by WMAKE
 <DT>path
-<DD>(set search path)
+<DD>set search path
 <DT>pause
-<DD>(suspend batch operations)
+<DD>suspend batch operations
 <DT>prompt
-<DD>(change command prompt)
+<DD>change command prompt
 <DT>ren
-<DD>(rename files)
+<DD>rename files
 <DT>rename
-<DD>(rename files)
+<DD>rename files
 <DT>rmdir
-<DD>(remove directory, intercepted by WMAKE)
+<DD>remove directory, intercepted by WMAKE
 <DT>rd
-<DD>(remove directory)
+<DD>remove directory
 <DT>rm
-<DD>(erase files or directories, intercepted by WMAKE)
+<DD>erase files or directories, intercepted by WMAKE
 <DT>set
-<DD>(set environment variables, intercepted by WMAKE)
+<DD>set environment variables, intercepted by WMAKE
 <DT>time
-<DD>(set system time)
+<DD>set system time
 <DT>type
-<DD>(display contents of a file)
+<DD>display contents of a file
 <DT>ver
-<DD>(display the operating system version number)
+<DD>display the operating system version number
 <DT>verify
-<DD>(set data verification)
+<DD>set data verification
 <DT>vol
-<DD>(display disk volume label)
+<DD>display disk volume label
 </DL>
-<BR>The operating system shell &quot;SET&quot; command is intercepted by Make.&nbsp; The &quot;SET&quot; command may be used
-to set environment variables to values required during makefile processing.&nbsp; The environment variable changes are only
-valid during makefile processing and do not affect the values that were in effect before Make was invoked.&nbsp; The &quot;SET&quot;
-command may be used to initialize environment variables necessary for the makefile commands to execute properly.&nbsp; The
-setting of environment variables in makefiles reduces the number of &quot;SET&quot; commands required in the system initialization
-file.&nbsp; Here is an example with the Open Watcom C/C++ compiler.&nbsp; 
+<BR>Below is description of all commands intercepted by Make.&nbsp; Their syntax and functionality is derived from DOS version
+of these commands.&nbsp; Some of them is not available on DOS OS, these commands syntax and functionality is derived from
+POSIX standard.
+<BR><BR>Any of these commands have not the same limitations as on appropriate OS and support features necessary for all supported
+OSes.
+<UL>
+<LI>no length limit for commands
+<LI>long file name (LFN) support for file names
+<LI>mixed forward and backward slash support for directory and file names
+</UL>
+<H3 ID="echo_command"> echo command </H3>
+<BR>The operating system shell &quot;echo&quot; command is intercepted by Make.&nbsp; It uses following syntax:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; echo [&lt;value&gt;]</TT>
+<BR><BR>The &quot;echo&quot; command may be used to output any string to standard output without length limitation.
+<H3 ID="set_command"> set command </H3>
+<BR>The operating system shell &quot;set&quot; command is intercepted by Make.&nbsp; It uses following syntax:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; set &lt;name&gt; =[&lt;value&gt;]&nbsp;&nbsp;&nbsp; (if no value then variable is deleted)</TT>
+<BR><BR>The &quot;set&quot; command may be used to set environment variables to values required during makefile processing.
+&nbsp;The environment variable changes are only valid during makefile processing and do not affect the values that were in
+effect before Make was invoked.&nbsp; The &quot;set&quot; command may be used to initialize environment variables necessary
+for the makefile commands to execute properly.&nbsp; The setting of environment variables in makefiles reduces the number
+of &quot;set&quot; commands required in the system initialization file.&nbsp; Here is an example with the Open Watcom C/C++
+compiler.&nbsp; 
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #</TT>
-<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; # SET example</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; # set example</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; .BEFORE</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set include=c:\special\h;$(%include)</TT>
@@ -6136,10 +6163,10 @@ file.&nbsp; Here is an example with the Open Watcom C/C++ compiler.&nbsp;
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</TT>
-<BR><BR>The first &quot;SET&quot; command will set up the<B> INCLUDE</B> environment variable so that the Open Watcom C/C++
+<BR><BR>The first &quot;set&quot; command will set up the<B> INCLUDE</B> environment variable so that the Open Watcom C/C++
 compiler may find header files.&nbsp; Notice that the old value of the<B> INCLUDE</B> environment variable is used in setting
 the new value.
-<BR><BR>The second &quot;SET&quot; command indicates to the Open Watcom Linker that libraries may be found in the indicated
+<BR><BR>The second &quot;set&quot; command indicates to the Open Watcom Linker that libraries may be found in the indicated
 directories.
 <BR><BR>Environment variables may be used also as dynamic variables that may communicate information between different parts
 of the makefile.&nbsp; An example of communication within a makefile is illustrated in the following example.&nbsp; 
@@ -6162,16 +6189,20 @@ of the makefile.&nbsp; An example of communication within a makefile is illustra
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; *message text 1*</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; **</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; *message text 2*</TT>
-<BR><BR>Make handles the &quot;SET&quot; command so that it appears to work in an intuitive manner similar to the operating
-system shell's &quot;SET&quot; command.&nbsp; The &quot;SET&quot; command also may be used to allow commands to relay information
+<BR><BR>Make handles the &quot;set&quot; command so that it appears to work in an intuitive manner similar to the operating
+system shell's &quot;set&quot; command.&nbsp; The &quot;set&quot; command also may be used to allow commands to relay information
 to commands that are executed afterwards.
-<BR>The DOS &quot;FOR&quot; command is intercepted by Make.&nbsp; The reason for this is that DOS has a fixed limit for the
-size of a command thus making it unusable for large makefile applications.&nbsp; One such application that can be done easily
-with Make is the construction of a WLINK command file from a makefile.&nbsp; The idea behind the next example is to have one
-file that contains the list of object files.&nbsp; Anytime this file is changed, say, after a new module has been added, a
-new linker command file will be generated which in turn, will cause the linker to relink the executable.&nbsp; First we need
-the makefile to define the list of object files, this file is &quot;OBJDEF.MIF&quot; and it declares a macro &quot;objs&quot;
-which has as its value the list of object files in the application.&nbsp; The content of the &quot;OBJDEF.MIF&quot; file is:
+<H3 ID="for_command"> for command </H3>
+<BR>The operating system shell &quot;for&quot; command is intercepted by Make.&nbsp; It uses following syntax:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; for %[%]&lt;var&gt; in (&lt;set&gt;) do &lt;command&gt;</TT>
+<BR><BR>DOS has a fixed limit for the size of a command thus making it unusable for large makefile applications.&nbsp; One
+such application that can be done easily with Make is the construction of a WLINK command file from a makefile.&nbsp; The
+idea behind the next example is to have one file that contains the list of object files.&nbsp; Anytime this file is changed,
+say, after a new module has been added, a new linker command file will be generated which in turn, will cause the linker to
+relink the executable.&nbsp; First we need the makefile to define the list of object files, this file is &quot;OBJDEF.MIF&quot;
+and it declares a macro &quot;objs&quot; which has as its value the list of object files in the application.&nbsp; The content
+of the &quot;OBJDEF.MIF&quot; file is:
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; # list of object files</TT>
@@ -6184,7 +6215,7 @@ which has as its value the list of object files in the application.&nbsp; The co
 <BR><BR>The main makefile (&quot;MAKEFILE&quot;) is:
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #</TT>
-<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; # FOR command example</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; # for command example</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; !include objdef.mif</TT>
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; plot.exe : $(objs) plot.lnk</TT>
@@ -6202,10 +6233,22 @@ which has as its value the list of object files in the application.&nbsp; The co
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; FILE bios.obj</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; FILE keyboard.obj</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; FILE mouse.obj</TT>
-<BR><BR>The commands &quot;rm&quot;, &quot;mkdir&quot; and &quot;rmdir&quot; are intercepted by Make to handle file/directory
-names consistently with other Make commands (LFN, forward/backward slashes).&nbsp; If you want to use host OS native versions
-then simply use '!' character in front of these commands.
-<BR><BR>The &quot;rm&quot; command is simplified implementation of the POSIX rm command.&nbsp; It supports following options.
+<H3 ID="if_command"> if command </H3>
+<BR>The operating system shell &quot;if&quot; command is intercepted by Make.&nbsp; It uses following syntax:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { errorlevel &lt;number&gt;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if [not] { &lt;str1&gt; == &lt;str2&gt;&nbsp;&nbsp;&nbsp; } &lt;command&gt;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { exist &lt;file&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><BR>It handles file names consistently with other Make commands.
+<H3 ID="rm_command"> rm command </H3>
+<BR>The commands &quot;rm&quot; is intercepted by Make.&nbsp; It uses following syntax:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; rm [-frv] &lt;files/directories&gt;</TT>
+<BR><BR>The &quot;rm&quot; command may be used to delete files or directories.&nbsp; Make &quot;rm&quot; command is simplified
+implementation of the POSIX rm command.&nbsp; It handles file/directory names consistently with other Make commands.&nbsp;
+Following options are support.
 <DL>
 <DT>-f
 <DD>force deletion of read-only files, no diagnostics messages about missing items
@@ -6214,14 +6257,25 @@ then simply use '!' character in front of these commands.
 <DT>-v
 <DD>verbose operation
 </DL>
-<BR>The &quot;mkdir&quot; command is simplified implementation of the POSIX &quot;mkdir&quot; command.&nbsp; It supports following
-options.
+<H3 ID="mkdir_command"> mkdir command </H3>
+<BR>The commands &quot;mkdir&quot; is intercepted by Make.&nbsp; It uses following syntax:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; mkdir [-p] &lt;directory&gt;</TT>
+<BR><BR>The &quot;mkdir&quot; command may be used to create a directory.&nbsp; Make &quot;mkdir&quot; command is simplified
+implementation of the POSIX &quot;mkdir&quot; command.&nbsp; It handles directory names consistently with other Make commands.
+&nbsp;Following options are support.
 <DL>
 <DT>-p
 <DD>force creation of all parent directories
 </DL>
-<BR>The &quot;rmdir&quot; command is is simplified implementation of the POSIX &quot;rmdir&quot; command.
-<BR><BR>Make supports nine internal commands:
+<H3 ID="rmdir_command"> rmdir command </H3>
+<BR>The commands &quot;rmdir&quot; is intercepted by Make.&nbsp; It uses following syntax:
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; rmdir &lt;directory&gt;</TT>
+<BR><BR>The &quot;rmdir&quot; command may be used to delete a directory.&nbsp; Make &quot;rmdir&quot; command is is simplified
+implementation of the POSIX &quot;rmdir&quot; command.&nbsp; It handles directory names consistently with other Make commands.
+<H3 ID="Make_internal_commands"> Make internal commands </H3>
+<BR>Make supports nine internal commands:
 <OL>
 <LI><TT> %abort</TT>
 <LI><TT> %append</TT>
@@ -6319,7 +6373,7 @@ example illustrates a common use of these internal commands.&nbsp;
 }</TT>
 <BR><BR>The<TT> %null</TT> internal command does absolutely nothing.&nbsp; It is useful because Make demands that a command
 list be present whenever a target is updated.&nbsp; 
-<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
+<BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; # %null example</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; #</TT>
