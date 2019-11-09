@@ -279,8 +279,8 @@
 <BR><A HREF="#W305_Type__int__assumed_in_declaration_of___s_">W305 Type 'int' assumed in declaration of '%s'</A>
 <BR><A HREF="#W306_Assembler_warning____s_">W306 Assembler warning:&nbsp; '%s'</A>
 <BR><A HREF="#W307_Obsolete_nonMprototype_declarator">W307 Obsolete non-prototype declarator</A>
-<BR><A HREF="#W308_Unprototyped_function___s__called">W308 Unprototyped function '%s' called</A>
-<BR><A HREF="#W309_Unprototyped_function_indirectly_called">W309 Unprototyped function indirectly called</A>
+<BR><A HREF="#W308_The_function___s__without_prototyped_parameters_called">W308 The function '%s' without prototyped parameters called</A>
+<BR><A HREF="#W309_The_function_without_prototyped_parameters_indirectly_called">W309 The function without prototyped parameters indirectly called</A>
 <BR><A HREF="#W310_Pointer_truncated_during_cast">W310 Pointer truncated during cast</A>
 <BR><A HREF="#W400_Array_subscript_is_of_type_plain_char">W400 Array subscript is of type plain char</A>
 </DL>
@@ -532,7 +532,7 @@ or option &quot;-wce=303&quot;.&nbsp; It can be disabled later by using<B> #prag
 language feature.&nbsp; Their use is dangerous and discouraged.
 <BR><BR><B>Example:</B>
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; int func();</TT>
-<H2 ID="W308_Unprototyped_function___s__called"> W308 Unprototyped function '%s' called </H2>
+<H2 ID="W308_The_function___s__without_prototyped_parameters_called"> W308 The function '%s' without prototyped parameters called </H2>
 <BR>A call to an unprototyped function was made, preventing the compiler from checking the number of function arguments and
 their types.&nbsp; Use of unprototyped functions is obsolescent, dangerous and discouraged.
 <BR><BR><B>Example:</B>
@@ -542,7 +542,7 @@ their types.&nbsp; Use of unprototyped functions is obsolescent, dangerous and d
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func( 4, &quot;s&quot; );&nbsp;&nbsp;&nbsp;&nbsp; /* possible argument
 mismatch */</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
-<H2 ID="W309_Unprototyped_function_indirectly_called"> W309 Unprototyped function indirectly called </H2>
+<H2 ID="W309_The_function_without_prototyped_parameters_indirectly_called"> W309 The function without prototyped parameters indirectly called </H2>
 <BR>An indirect call to an unprototyped function was made, preventing the compiler from checking the number of function arguments
 and their types.&nbsp; Use of unprototyped functions is obsolescent, dangerous and discouraged.
 <BR><BR><B>Example:</B>
