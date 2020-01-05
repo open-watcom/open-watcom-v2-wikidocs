@@ -48032,6 +48032,8 @@ in<TT> &lt;stdlib.h&gt;.</TT>
 <DT>drive
 <DD>The<B> drive</B> argument is the location that is to contain the pointer to the drive letter (e.g., A, B, C, etc.) followed
 by a colon if a drive is specified in the full pathname (filled in by<TT> _splitpath2</TT> ).
+<BR><BR>For Netware applications, the<B> drive</B> argument points to a buffer that will be filled in with the volume identifier
+(e.g., \\NAME_SPACE) if a volume is specified in the full pathname (filled in by<TT> _splitpath2</TT> ).
 <DT>dir
 <DD>The<B> dir</B> argument is the location that is to contain the pointer to the directory path including the trailing slash
 if a directory path is specified in the full pathname (filled in by<TT> _splitpath2</TT> ).&nbsp; Either forward slashes (/)
@@ -48097,7 +48099,7 @@ strings.
 </DL>
 <DL>
 <DT>Systems:
-<DD><TT> _splitpath2 - All, Linux, RDOS</TT>
+<DD><TT> _splitpath2 - All, Linux, RDOS, Netware</TT>
 <BR><BR><TT>_wsplitpath2 - All, Linux</TT>
 </DL>
 <H2 ID="sprintf"> sprintf, swprintf </H2>
