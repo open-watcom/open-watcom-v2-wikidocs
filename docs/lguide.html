@@ -1978,8 +1978,8 @@ is to generate.&nbsp; The format of the &quot;FORMAT&quot; directive (short form
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS [win_dll]
 [MEMORY] [FONT]</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS VXD [DYNAMIC]</TT>
-<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS NT [TNT
-| RDOS] [dll_attrs]</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS NT [TNT]
+[dll_attrs]</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | OS2 [os2_type]
 [dll_attrs | os2_attrs]</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | PHARLAP [EXTENDED
@@ -2070,7 +2070,6 @@ Windows 3.11 or 9x).&nbsp; By default the Open Watcom Linker generate staticaly 
 <BR><BR>If &quot;TNT&quot; is specified, an executable for the Phar Lap TNT DOS extender is created.&nbsp; A &quot;PL&quot;
 format (rather than &quot;PE&quot;) executable is created so that the Phar Lap TNT DOS extender will always run the application
 (including under Windows NT).
-<BR><BR>If &quot;RDOS&quot; is specified, an executable for the RDOS operating system is created.
 <BR><BR>If &quot;DLL&quot; (short form &quot;DL&quot;) is specified, a Dynamic Link Library will be generated in which case
 the name of the executable file will have extension &quot;dll&quot;.&nbsp; Note that these default extensions can be overridden
 by using the &quot;NAME&quot; directive to name the executable file.
@@ -2256,8 +2255,8 @@ that this default extension can be overridden by using the &quot;NAME&quot; dire
 <BR><BR>For more information on QNX executable file formats, see the chapter entitled <A HREF="#QNX__The_QNX_Executable_File_Format">QNX:&nbsp; The QNX Executable File Format</A>.
 <DT>RDOS
 <DD>tells the Open Watcom Linker to generate a RDOS special executable file.
-<BR><BR>If &quot;DEV16&quot; or &quot;DEV32&quot; is specified, a 16-bit or 32-bit device driver file is created.
-<BR><BR>If &quot;BIN16&quot; or &quot;BIN32&quot; is specified, a 16-bit or 32-bit binary executable file is created.
+<BR><BR>If &quot;DEV&quot; is specified, a device driver file is created.
+<BR><BR>If &quot;BIN&quot; is specified, a binary executable file is created.
 <BR><BR>If &quot;MBOOT&quot; is specified, a 16-bit multi-boot executable file is created.
 <BR><BR>The name of the executable file will have the extension &quot;dev&quot; for device driver or &quot;bin&quot; for binary
 or multi-boot executable.&nbsp; Note that these default extensions can be overridden by using the &quot;NAME&quot; directive
@@ -4002,6 +4001,7 @@ the &quot;RUNTIME&quot; directive (short form &quot;RU&quot;) is as follows.
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RUNTIME&nbsp; env[=major[.minor]]</TT>
 <BR><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; env ::= NATIVE | WINDOWS | CONSOLE | POSIX | OS2 | DOSSTYLE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | RDOS | EFIBOOT</TT>
 <DL>
 <DT>where
 <DD><B>description</B>
@@ -4023,6 +4023,10 @@ version required for the application.&nbsp; For example, the following indicates
 <DT>DOSSTYLE
 <DD>(short form &quot;DOS&quot;) indicates that the application is a Phar Lap TNT DOS extender application that uses INT 21 to
 communicate to the DOS extender rather than calls to a DLL.
+<DT>RDOS
+<DD>indicates that the application is a 32-bit RDOS application.
+<DT>EFIBOOT
+<DD>indicates that the application is a EFI boot application.
 </DL>
 <H3 ID="RUNTIME_M_PharLap_only"> RUNTIME - PharLap only </H3>
 <BR>The &quot;RUNTIME&quot; directive describes information that is used by 386|DOS-Extender to setup the environment for
@@ -7244,7 +7248,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <DD>
 <DT>FILE obj_spec{,obj_spec}
 <DD>
-<DT>FORMAT WINDOWS NT [TNT | RDOS] [dll_form]
+<DT>FORMAT WINDOWS NT [TNT] [dll_form]
 <DD>
 <DT>IMPORT import{,import}
 <DD>
