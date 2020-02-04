@@ -195,8 +195,6 @@
 <BR><A HREF="#E1187_No_type_specified_in_declaration">E1187 No type specified in declaration</A>
 <BR><A HREF="#E1188_Symbol___s__declared_in__for__statement_must_be_object">E1188 Symbol '%s' declared in 'for' statement must be object</A>
 <BR><A HREF="#E1189_Unexpected_declaration">E1189 Unexpected declaration</A>
-<BR><A HREF="#E1190_message_number___d__is_invalid">E1190 message number '%d' is invalid</A>
-<BR><A HREF="#E1191_warning_level_must_be_an_integer_in_range_0_to_5">E1191 warning level must be an integer in range 0 to 5</A>
 <DT>- H -
 <DD><A HREF="#H3000_Error_reading_PCH_file">H3000 Error reading PCH file</A>
 <BR><A HREF="#H3001_PCH_file_header_is_out_of_date">H3001 PCH file header is out of date</A>
@@ -267,6 +265,8 @@
 <BR><A HREF="#W138_No_newline_at_end_of_file">W138 No newline at end of file</A>
 <BR><A HREF="#W139_Divisor_for_modulo_or_division_operation_is_zero">W139 Divisor for modulo or division operation is zero</A>
 <BR><A HREF="#W140_Definition_of_macro___s__not_identical_to_previous_definition">W140 Definition of macro '%s' not identical to previous definition</A>
+<BR><A HREF="#W141_message_number___d__is_invalid">W141 message number '%d' is invalid</A>
+<BR><A HREF="#W142_warning_level_must_be_an_integer_in_range_0_to_5">W142 warning level must be an integer in range 0 to 5</A>
 <BR><A HREF="#W200___s__has_been_referenced_but_never_assigned_a_value">W200 '%s' has been referenced but never assigned a value</A>
 <BR><A HREF="#W201_Unreachable_code">W201 Unreachable code</A>
 <BR><A HREF="#W202_Symbol___s__has_been_defined__but_not_referenced">W202 Symbol '%s' has been defined, but not referenced</A>
@@ -488,6 +488,14 @@ rewrite the offending code to avoid divisions by zero.
 <H2 ID="W140_Definition_of_macro___s__not_identical_to_previous_definition"> W140 Definition of macro '%s' not identical to previous definition </H2>
 <BR>If a macro is defined more than once, the definitions must be identical.&nbsp; If you want to redefine a macro to have
 a different definition, you must<TT> #undef</TT> it before you can define it with a new definition.
+<H2 ID="W141_message_number___d__is_invalid"> W141 message number '%d' is invalid </H2>
+<BR>The message number used in the #pragma does not match the message number for any warning message.&nbsp; This message can
+also indicate that a number or '*' (meaning all warnings) was not found when it was expected.
+<H2 ID="W142_warning_level_must_be_an_integer_in_range_0_to_5"> W142 warning level must be an integer in range 0 to 5 </H2>
+<BR>The new warning level that can be used for the warning can be in the range 0 to 5.&nbsp; The level 0 means that the warning
+will be treated as an error (compilation will not succeed).&nbsp; Levels 1 up to 5 are used to classify warnings.&nbsp; The
+-w option sets an upper limit on the level for warnings.&nbsp; By setting the level above the command line limit, you effectively
+ignore all cases where the warning shows up.
 <H2 ID="W200___s__has_been_referenced_but_never_assigned_a_value"> W200 '%s' has been referenced but never assigned a value </H2>
 <BR>You have used the variable in an expression without previously assigning a value to that variable.
 <H2 ID="W201_Unreachable_code"> W201 Unreachable code </H2>
@@ -1079,14 +1087,6 @@ statement, etc.
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ++a;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int j = 3;</TT>
 <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
-<H2 ID="E1190_message_number___d__is_invalid"> E1190 message number '%d' is invalid </H2>
-<BR>The message number used in the #pragma does not match the message number for any warning message.&nbsp; This message can
-also indicate that a number or '*' (meaning all warnings) was not found when it was expected.
-<H2 ID="E1191_warning_level_must_be_an_integer_in_range_0_to_5"> E1191 warning level must be an integer in range 0 to 5 </H2>
-<BR>The new warning level that can be used for the warning can be in the range 0 to 5.&nbsp; The level 0 means that the warning
-will be treated as an error (compilation will not succeed).&nbsp; Levels 1 up to 5 are used to classify warnings.&nbsp; The
--w option sets an upper limit on the level for warnings.&nbsp; By setting the level above the command line limit, you effectively
-ignore all cases where the warning shows up.
 <H2 ID="I2000_Not_enough_memory_to_fully_optimize_procedure___s_"> I2000 Not enough memory to fully optimize procedure '%s' </H2>
 <BR>The compiler did not have enough memory to fully optimize the specified procedure.&nbsp; The code generated will still
 be correct and execute properly.&nbsp; This message is purely informational.
