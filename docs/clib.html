@@ -13124,8 +13124,7 @@ matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> func
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> exp2</tt> function computes 2.0 raised to the value<b> x</b>.&nbsp; The current implementation uses a simple power
-calculation.
+<dd>The<tt> exp2</tt> function computes 2.0 raised to the value<b> x</b>.&nbsp; calculation.
 </dl>
 <dl>
 <dt>Returns:
@@ -13481,7 +13480,7 @@ integer pointed to by<b> sign</b> will contain 0 if the number is positive, and 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> fdim</tt> function computes the positive difference of<b> x</b> and<b> y</b>.&nbsp; The function is equivalent to:
+<dd>The<tt> fdim</tt> function computes the positive difference of<b> x</b> and<b> y</b>.
 <br><br><tt>fmax( x - y, 0.0 );</tt>
 </dl>
 <dl>
@@ -22896,9 +22895,8 @@ function.&nbsp; The<tt> ignore_handler_s</tt> function simply returns to its cal
 </dl>
 <dl>
 <dt>Returns:
-<dd>If successful, the return value is the exponent of<b> x</b>.&nbsp; When the argument is zero, the function returns FP_ILOGB0.
-&nbsp;When the argument is not-a-number, or NAN, the function returns FP_ILOGBNAN.&nbsp; For positive or negative infinity,
-the function returns INT_MAX.
+<dd>If successful, the return value is the exponent of<b> x</b>.&nbsp; FP_ILOGB0.&nbsp; When the argument is not-a-number, or
+NAN, the function returns FP_ILOGBNAN.&nbsp; For positive or negative infinity, the function returns INT_MAX.
 </dl>
 <dl>
 <dt>See Also:
@@ -27986,14 +27984,14 @@ compare ) == NULL ) {</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> lgamma</tt> function returns the natural logarithm of the absolute value of the Gamma function of<b> x</b>.&nbsp;
-The sign of the Gamma function after this function is called will be located in signgam.&nbsp; This function is not thread-safe
-if the user is interested in the sign of Gamma, and <tt> lgamma_r</tt> should be used instead in multithreaded applications.
+is called will be located in signgam.&nbsp; This function is not thread-safe if the user is interested in the sign of Gamma,
+and <tt> lgamma_r</tt> should be used instead in multithreaded applications.
 </dl>
 <dl>
 <dt>Returns:
 <dd>If successful, the return value is the natural logarithm of the absolute value of the Gamma function computed for<b> x</b>.
-&nbsp;When the argument is not-a-number, the function returns NAN.&nbsp; For arguments of the values positive or negative
-infinity, the function returns positive or negative infinity respectively.
+&nbsp;returns NAN.&nbsp; For arguments of the values positive or negative infinity, the function returns positive or negative
+infinity respectively.
 </dl>
 <dl>
 <dt>See Also:
@@ -28031,13 +28029,13 @@ infinity, the function returns positive or negative infinity respectively.
 <dl>
 <dt>Description:
 <dd>The<tt> lgamma_r</tt> function returns the natural logarithm of the absolute value of the Gamma function of<b> x</b>.&nbsp;
-The sign of the Gamma function will be returned in the location pointed to by<b> y</b>.
+in the location pointed to by<b> y</b>.
 </dl>
 <dl>
 <dt>Returns:
 <dd>If successful, the return value is the natural logarithm of the absolute value of the Gamma function computed for<b> x</b>.
-&nbsp;When the argument is not-a-number, the function returns NAN.&nbsp; For arguments of the values positive or negative
-infinity, the function returns positive or negative infinity respectively.
+&nbsp;returns NAN.&nbsp; For arguments of the values positive or negative infinity, the function returns positive or negative
+infinity respectively.
 </dl>
 <dl>
 <dt>See Also:
@@ -28773,13 +28771,13 @@ set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOM
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> log1p</tt> function computes the natural logarithm of one plus<b> x</b>.&nbsp; For small values of<b> x</b> this function
-provides far better accuracy than using the <tt> log</tt> function directly.
+<dd>The<tt> log1p</tt> function computes the natural logarithm of one plus<b> x</b>.<b>&nbsp; x</b> this function provides far
+better accuracy than using the <tt> log</tt> function directly.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If successful, the return value is the logarithm of one plus<b> x</b>.&nbsp; When the argument is -1.0, the function returns
-infinity.&nbsp; If the value of<b> x</b> is less than -1.0, the function returns NAN.
+<dd>If successful, the return value is the logarithm of one plus<b> x</b>.&nbsp; infinity.&nbsp; If the value of<b> x</b> is less
+than -1.0, the function returns NAN.
 </dl>
 <dl>
 <dt>See Also:
@@ -28861,7 +28859,7 @@ set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOM
 </dl>
 <dl>
 <dt>Returns:
-<dd>If successful, the return value is the exponent of<b> x</b>.&nbsp; When the argument is zero, the function returns infinity.
+<dd>If successful, the return value is the exponent of<b> x</b>.&nbsp; infinity.
 </dl>
 <dl>
 <dt>See Also:
@@ -42761,8 +42759,8 @@ filenames opened by <tt> _wopendir</tt>.
 <dl>
 <dt>Description:
 <dd>The<tt> rint</tt> function rounds the argument<b> x</b> to a nearby integer.&nbsp; The direction of the rounding is determined
-by the current value of <tt> fegetround</tt>.&nbsp; If supported, this function will throw a floating point error if an overflow
-occurs due to the current rounding mode.
+by the current value of <tt> fegetround</tt>.&nbsp; floating point error if an overflow occurs due to the current rounding
+mode.
 </dl>
 <dl>
 <dt>Returns:
@@ -53393,9 +53391,8 @@ NULL.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If successful, the return value is the value of the Gamma function computed for<b> x</b>.&nbsp; When the argument is not-a-number
-or negative infinity, the function returns NAN.&nbsp; If the argument is positive infinity, the function returns positive
-infinity.
+<dd>If successful, the return value is the value of the Gamma function computed for<b> x</b>.&nbsp; the function returns NAN.
+&nbsp;If the argument is positive infinity, the function returns positive infinity.
 </dl>
 <dl>
 <dt>See Also:
