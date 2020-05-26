@@ -744,7 +744,7 @@ calling convention.
 <h3 id="Linking_32Mbit_x86_Novell_NetWare_Loadable_Modules"> Linking 32-bit x86 Novell NetWare Loadable Modules </h3>
 <br>To create this type of file, use the following structure.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; system&nbsp;&nbsp; netware_(clib|libc)[_lite]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; system&nbsp;&nbsp; netware_(clib|libc)&#91;_lite&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option&nbsp;&nbsp; map</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; name&nbsp;&nbsp;&nbsp;&nbsp; app_name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file&nbsp;&nbsp;&nbsp;&nbsp; obj1, obj2, ...</tt>
@@ -975,7 +975,7 @@ example, the &quot;FILE&quot; directive can take a list of object file names as 
 <dl>
 <dt>ABC
 <dd>All items in upper case are required.
-<dt>[abc]
+<dt>&#91;abc&#93;
 <dd>The item<b> abc</b> is optional.
 <dt>{abc}
 <dd>The item<b> abc</b> may be repeated zero or more times.
@@ -1049,7 +1049,7 @@ the &quot;ALIGNMENT&quot; option (short form &quot;A&quot;) is as follows.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -1070,7 +1070,7 @@ entry point is, however, still available for ordinal linking.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ANONYMOUSEXPORT export{,export}</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ANONYMOUSEXPORT =lbc_file</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export ::= entry_name[.ordinal][=internal_name]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export ::= entry_name&#91;.ordinal&#93;&#91;=internal_name&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -1086,7 +1086,7 @@ by using this ordinal number.
 of &quot;lbc&quot; is assumed.&nbsp; The linker will process the librarian command file and look for commands to the librarian
 that are used to create import library entries.&nbsp; These commands have the following form.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ++sym.dll_name[.[altsym].export_name][.ordinal]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ++sym.dll_name&#91;.&#91;altsym&#93;.export_name&#93;&#91;.ordinal&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -1126,7 +1126,7 @@ the dynamic overlay manager.&nbsp; The format of the &quot;AREA&quot; option (sh
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -1152,7 +1152,7 @@ directive, up to the next &quot;SECTION&quot; or &quot;END&quot; directive, will
 the &quot;DYNAMIC&quot; option.&nbsp; For more information on the dynamic overlay manager, see the section entitled <a href="#DOS__Using_Overlays">DOS:&nbsp; Using Overlays</a>.
 <br><br>The format of the &quot;AUTOSECTION&quot; directive (short form &quot;AUTOS&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AUTOSECTION [INTO ovl_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AUTOSECTION &#91;INTO ovl_file&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -1298,7 +1298,7 @@ or committed to the application.&nbsp; Any part of the stack and heap that is no
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -1351,11 +1351,11 @@ debugger will accept it.
 file.&nbsp; This extra information in the executable file is used by the Open Watcom Debugger.&nbsp; The format of the &quot;DEBUG&quot;
 directive (short form &quot;D&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEBUG dbtype [dblist] |</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEBUG [dblist]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEBUG dbtype &#91;dblist&#93; |</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEBUG &#91;dblist&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dbtype ::= DWARF | WATCOM | CODEVIEW | NOVELL</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dblist ::= [db_option{,db_option}]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dblist ::= &#91;db_option{,db_option}&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; db_option ::= LINES | TYPES | LOCALS | ALL</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DEBUG NOVELL only</tt>
@@ -1724,13 +1724,13 @@ clicked with a mouse.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXPORT =lbc_file</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS/2 only:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export ::= entry_name[.ordinal][=internal_name]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export ::= entry_name&#91;.ordinal&#93;&#91;=internal_name&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;[PRIVATE] [RESIDENT] [iopl_bytes]</tt>
+&nbsp;&#91;PRIVATE&#93; &#91;RESIDENT&#93; &#91;iopl_bytes&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Win16, Win32 only:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export ::= entry_name[.ordinal][=internal_name]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export ::= entry_name&#91;.ordinal&#93;&#91;=internal_name&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;[PRIVATE] [RESIDENT]</tt>
+&nbsp;&#91;PRIVATE&#93; &#91;RESIDENT&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -1764,7 +1764,7 @@ caller's stack to the I/O-privileged function's stack.&nbsp; The maximum number 
 of &quot;lbc&quot; is assumed.&nbsp; The linker will process the librarian command file and look for commands to the librarian
 that are used to create import library entries.&nbsp; These commands have the following form.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ++sym.dll_name[.[altsym].export_name][.ordinal]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ++sym.dll_name&#91;.&#91;altsym&#93;.export_name&#93;&#91;.ordinal&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -1862,9 +1862,9 @@ the linker will revert to using the default<tt> wlink.lnk</tt> file.
 is to process.&nbsp; The format of the &quot;FILE&quot; directive (short form &quot;F&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FILE obj_spec{,obj_spec}</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj_spec ::= obj_file[(obj_module)]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj_spec ::= obj_file&#91;(obj_module)&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | library_file[(obj_module)]</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | library_file&#91;(obj_module)&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -1918,7 +1918,7 @@ image.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -1971,33 +1971,34 @@ symbols.&nbsp; The format of the &quot;FORCEVECTOR&quot; directive (short form &
 is to generate.&nbsp; The format of the &quot;FORMAT&quot; directive (short form &quot;FORM&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FORMAT form</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form ::= DOS [COM]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ZDOS [SYS | HWD
-| FSD]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | RAW [BIN | HEX]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS [win_dll_attrs]
-[MEMORY] [FONT]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS VXD [STATIC
-| DYNAMIC]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS NT [TNT]
-[nt_dll_attrs]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | OS2 [FLAT | LE
-| LX] [os2_dll_attrs | os2_attrs]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | PHARLAP [EXTENDED
-| REX | SEGMENTED]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | NOVELL [NLM | LAN
-| DSK | NAM | 'number'] 'description'</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | QNX [FLAT]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ELF [DLL]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | RDOS [DEV | BIN
-| MBOOT]</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; win_dll_attrs ::= DLL [INITGLOBAL | INITINSTANCE]</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nt_dll_attrs ::= DLL [INITGLOBAL | INITINSTANCE | INITTHREAD</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form ::= DOS &#91;COM&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ZDOS &#91;SYS |
+HWD | FSD&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | RAW &#91;BIN |
+HEX&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS &#91;win_dll_attrs&#93;
+&#91;MEMORY&#93; &#91;FONT&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS VXD &#91;STATIC
+| DYNAMIC&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS NT &#91;TNT&#93;
+&#91;nt_dll_attrs&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | OS2 &#91;FLAT |
+LE | LX&#93; &#91;os2_dll_attrs | os2_attrs&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | PHARLAP &#91;EXTENDED
+| REX | SEGMENTED&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | NOVELL &#91;NLM
+| LAN | DSK | NAM | 'number'&#93; 'description'</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | QNX &#91;FLAT&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ELF &#91;DLL&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | RDOS &#91;DEV |
+BIN | MBOOT&#93;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; win_dll_attrs ::= DLL &#91;INITGLOBAL | INITINSTANCE&#93;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nt_dll_attrs ::= DLL &#91;INITGLOBAL | INITINSTANCE | INITTHREAD</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [TERMINSTANCE | TERMGLOBAL | TERMTHREAD]]</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; os2_dll_attrs ::= DLL [INITGLOBAL | INITINSTANCE</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;TERMINSTANCE | TERMGLOBAL | TERMTHREAD&#93;&#93;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; os2_dll_attrs ::= DLL &#91;INITGLOBAL | INITINSTANCE</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [TERMINSTANCE | TERMGLOBAL]]</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;TERMINSTANCE | TERMGLOBAL&#93;&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; os2_attrs ::= PM | PMCOMPATIBLE | FULLSCREEN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | PHYSDEVICE | VIRTDEVICE</tt>
@@ -2320,7 +2321,7 @@ created using a third-party linker which does not automatically extend the heade
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -2353,7 +2354,7 @@ The format of the &quot;HSHIFT&quot; option is as follows.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -2374,7 +2375,7 @@ where the Open Watcom Linker cannot create an import library file when you have 
 the linker fails to launch Open Watcom Library Manager).
 <br><br>The format of the &quot;IMPFILE&quot; option (short form &quot;IMPF&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION IMPFILE[=imp_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION IMPFILE&#91;=imp_file&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2400,7 +2401,7 @@ option.
 <br><br>The &quot;IMPLIB&quot; option requests the linker to produce an import library that corresponds to the DLL that is
 being generated.&nbsp; The format of the &quot;IMPLIB&quot; option (short form &quot;IMPL&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION IMPLIB[=imp_lib]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION IMPLIB&#91;=imp_lib&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2432,7 +2433,8 @@ executables.
 &quot;IMPORT&quot; directive (short form &quot;IMP&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IMPORT import{,import}</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; import ::= internal_name module_name[.entry_name | ordinal]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; import ::= internal_name module_name&#91;.entry_name |
+ordinal&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2601,7 +2603,7 @@ whereby the linker attempts to modify the existing executable file by changing o
 are provided.
 <br><br>The format of the &quot;INCREMENTAL&quot; option (short form &quot;INC&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION INCREMENTAL[=inc_file_name]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION INCREMENTAL&#91;=inc_file_name&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2709,7 +2711,7 @@ not been explicitly placed in a library file.
 in subsequent &quot;LIBRARY&quot; directives and object files appearing in subsequent &quot;LIBFILE&quot; directives.&nbsp;
 The format of the &quot;LIBPATH&quot; directive (short form &quot;LIBP&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LIBPATH [path_name{;path_name}]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LIBPATH &#91;path_name{;path_name}&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2824,7 +2826,7 @@ a segment to another offset within the same segment.
 to the PE format image header.&nbsp; If a version number is not specified, then the built-in value of 2.18 is used.&nbsp;
 The format of the &quot;LINKVERSION&quot; option (short form &quot;LINKV&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION LINKVERSION = major[.minor]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION LINKVERSION = major&#91;.minor&#93;</tt>
 <h2 id="The_LONGLIVED_Option"> The LONGLIVED Option </h2>
 <br>Formats:&nbsp; QNX 
 <br><br>The &quot;LONGLIVED&quot; option specifies that the application being linked will reside in memory, or be active,
@@ -2871,7 +2873,7 @@ on the &quot;INITINSTANCE&quot;, &quot;TERMINSTANCE&quot;, &quot;INITGLOBAL&quot
 <br><br>The &quot;MAP&quot; option controls the generation of a map file.&nbsp; The format of the &quot;MAP&quot; option (short
 form &quot;M&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION MAP[=map_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION MAP&#91;=map_file&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2901,7 +2903,7 @@ file and call it &quot;myprog.map&quot; regardless of the name of the executable
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -2949,7 +2951,7 @@ allows the same NLM to display messages in different languages by switching mess
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3089,7 +3091,7 @@ The warning message will state that a symbol has been defined more than once.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3265,7 +3267,7 @@ a function through an overlay vector.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3306,7 +3308,7 @@ option (short form &quot;OFF&quot;) is as follows.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3331,7 +3333,7 @@ a different location which will increase the load time since a relocation phase 
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3352,7 +3354,7 @@ loaded.&nbsp; The format of the &quot;OFFSET&quot; option (short form &quot;OFF&
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3378,7 +3380,7 @@ form &quot;OFF&quot;) is as follows.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3487,18 +3489,18 @@ to another.&nbsp; The &quot;ORDER&quot; Directive is primarily intended for embe
 an operating system, or for other special purpose applications.&nbsp; The format of the &quot;ORDER&quot; directive (short
 form &quot;ORD&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ORDER {CLNAME class_name [class_options]}+</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ORDER {CLNAME class_name &#91;class_options&#93;}+</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class_options ::= [SEGADDR=n][OFFSET=n][copy_option][NOEMIT]{seglist}</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; copy_option ::= [COPY source_class_name]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seglist := {SEGMENT seg_name [SEGADDR=n][OFFSET=n][NOEMIT]}+</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class_options ::= &#91;SEGADDR=n&#93;&#91;OFFSET=n&#93;&#91;copy_option&#93;&#91;NOEMIT&#93;{seglist}</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; copy_option ::= &#91;COPY source_class_name&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seglist := {SEGMENT seg_name &#91;SEGADDR=n&#93;&#91;OFFSET=n&#93;&#91;NOEMIT&#93;}+</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3637,21 +3639,21 @@ to the PE format image header.&nbsp; This specifies the major and minor versions
 this image.&nbsp; If a version number is not specified, then the built-in value of 1.11 is used.&nbsp; The format of the &quot;OSVERSION&quot;
 option (short form &quot;OSV&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION OSVERSION = major[.minor]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION OSVERSION = major&#91;.minor&#93;</tt>
 <h2 id="The_OUTPUT_Directive"> The OUTPUT Directive </h2>
 <br>Formats:&nbsp; All 
 <br><br>The &quot;OUTPUT&quot; directive overrides the normal operating system specific executable format and creates either
 a raw binary image or an Intel Hex file.&nbsp; The format of the &quot;OUTPUT&quot; directive (short form &quot;OUT&quot;)
 is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OUTPUT RAW|HEX [OFFSET=n][HSHIFT=n][STARTREC]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OUTPUT RAW|HEX &#91;OFFSET=n&#93;&#91;HSHIFT=n&#93;&#91;STARTREC&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3767,7 +3769,7 @@ the physical segment.&nbsp; The format of the &quot;PACKCODE&quot; option (short
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3795,7 +3797,7 @@ of the physical segment.&nbsp; The format of the &quot;PACKDATA&quot; option (sh
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3867,7 +3869,7 @@ The format of the &quot;PRIVILEGE&quot; option (short form &quot;PRIV&quot;) is 
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -3961,7 +3963,7 @@ option specifies the contents of the resource record.
 <br>The &quot;RESOURCE&quot; option requests the linker to add the specified resource file to the executable file that is
 being generated.&nbsp; The format of the &quot;RESOURCE&quot; option (short form &quot;RES&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION RESOURCE[=resource_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION RESOURCE&#91;=resource_file&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -4002,7 +4004,7 @@ will run.
 <br>The &quot;RUNTIME&quot; directive specifies the environment under which the application will run.&nbsp; The format of
 the &quot;RUNTIME&quot; directive (short form &quot;RU&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RUNTIME&nbsp; env[=major[.minor]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RUNTIME&nbsp; env&#91;=major&#91;.minor&#93;&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; env ::= NATIVE | WINDOWS | CONSOLE | POSIX | OS2 | DOSSTYLE</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | RDOS | EFIBOOT</tt>
 <dl>
@@ -4048,7 +4050,7 @@ execution of the program.&nbsp; The format of the &quot;RUNTIME&quot; directive 
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -4110,8 +4112,8 @@ This is the default privilege level.
 <br>The &quot;RUNTIME&quot; directive specifies the Application Binary Interface (ABI) type and version under which the application
 will run.&nbsp; The format of the &quot;RUNTIME&quot; directive (short form &quot;RU&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RUNTIME&nbsp; ABIVER[=abinum.abiversion] | abispec</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; abispec ::= abiname[=abiversion]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RUNTIME&nbsp; ABIVER&#91;=abinum.abiversion&#93; | abispec</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; abispec ::= abiname&#91;=abiversion&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; abiname ::= SVR4 | LINUX | FREEBSD | NETBSD | SOLARIS</tt>
 <dl>
 <dt>where
@@ -4167,7 +4169,7 @@ directive is used as the screen name.
 &quot;FILE&quot; directives, up to the next &quot;SECTION&quot; or &quot;END&quot; directive, belong to that overlay.&nbsp;
 The format of the &quot;SECTION&quot; directive (short form &quot;S&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SECTION [INTO ovl_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SECTION &#91;INTO ovl_file&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -4188,7 +4190,8 @@ the &quot;SEGMENT&quot; directive (short form &quot;SEG&quot;) is as follows.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SEGMENT seg_desc{,seg_desc}</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seg_desc ::= seg_id {seg_attrs}+</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seg_id ::= 'seg_name' | CLASS 'class_name' | TYPE [CODE | DATA]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seg_id ::= 'seg_name' | CLASS 'class_name' | TYPE &#91;CODE |
+DATA&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS/2:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; seg_attrs ::= PRELOAD | LOADONCALL</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4357,7 +4360,7 @@ far calls to overlay vectors.&nbsp; In this case, your application must have bee
 That is, a module header is displayed followed by the symbols defined by the module.
 <br><br>The format of the &quot;SORT&quot; directive (short form &quot;SO&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SORT [GLOBAL] [ALPHABETICAL]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;</tt>
 <br><br>If the &quot;SORT&quot; directive is specified without any options, as in the following example, the module headers
 will be displayed each followed by the list of symbols it defines sorted by address.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -4389,7 +4392,7 @@ option (short form &quot;ST&quot;) is as follows.
 <dt>n
 <dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [0x]d{d}[k|m]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
 <br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
 number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
 by 1024*1024.
@@ -4461,7 +4464,7 @@ being generated.
 <br><br>The &quot;SYMFILE&quot; option provides a method for specifying an alternate file for debugging information.&nbsp;
 The format of the &quot;SYMFILE&quot; option (short form &quot;SYMF&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION SYMFILE[=symbol_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION SYMFILE&#91;=symbol_file&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -4701,9 +4704,9 @@ with a specific version of the DLL or NLM.
 <br><br>The format of the &quot;VERSION&quot; option (short form &quot;VERS&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS/2, Win16, Win32:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION VERSION=major[.minor]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION VERSION=major&#91;.minor&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Netware:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION VERSION=major[.minor[.revision]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION VERSION=major&#91;.minor&#91;.revision&#93;&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -4750,9 +4753,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>AUTOSECTION
 <dd>
-<dt>BEGIN {section_type [INTO ovl_file] {directive}} END
+<dt>BEGIN {section_type &#91;INTO ovl_file&#93; {directive}} END
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -4764,7 +4767,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FORCEVECTOR symbol_name{,symbol_name}
 <dd>
-<dt>FORMAT DOS [COM]
+<dt>FORMAT DOS &#91;COM&#93;
 <dd>
 <dt>LANGUAGE lang
 <dd>
@@ -4789,9 +4792,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -4803,13 +4806,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>FULLHEADER
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -4843,9 +4846,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STATICS
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
@@ -4862,7 +4865,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>SECTION
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -5366,7 +5369,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ALIAS alias_name=symbol_name{,alias_name=symbol_name}
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -5374,7 +5377,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT ZDOS [SYS | HWD | FSD]
+<dt>FORMAT ZDOS &#91;SYS | HWD | FSD&#93;
 <dd>
 <dt>LANGUAGE lang
 <dd>
@@ -5395,9 +5398,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -5405,13 +5408,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>INCREMENTAL
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -5433,9 +5436,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STATICS
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
@@ -5448,7 +5451,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>REFERENCE symbol_name{,symbol_name}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -5543,7 +5546,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ALIAS alias_name=symbol_name{,alias_name=symbol_name}
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -5551,7 +5554,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT RAW [BIN | HEX]
+<dt>FORMAT RAW &#91;BIN | HEX&#93;
 <dd>
 <dt>LANGUAGE lang
 <dd>
@@ -5572,9 +5575,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -5582,13 +5585,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>INCREMENTAL
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -5612,9 +5615,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STATICS
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
@@ -5627,7 +5630,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>REFERENCE symbol_name{,symbol_name}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -5723,7 +5726,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ALIAS alias_name=symbol_name{,alias_name=symbol_name}
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -5733,7 +5736,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT ELF [DLL]
+<dt>FORMAT ELF &#91;DLL&#93;
 <dd>
 <dt>IMPORT external_name {,external_name}
 <dd>
@@ -5760,9 +5763,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -5770,13 +5773,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>INCREMENTAL
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -5802,9 +5805,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STATICS
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
@@ -5819,7 +5822,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>RUNTIME run_option
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -5882,7 +5885,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>AUTOUNLOAD
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -5892,7 +5895,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT NOVELL [NLM | LAN | DSK | NAM | 'number'] 'description'
+<dt>FORMAT NOVELL &#91;NLM | LAN | DSK | NAM | 'number'&#93; 'description'
 <dd>
 <dt>IMPORT external_name {,external_name}
 <dd>
@@ -5915,9 +5918,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CHECK=symbol_name
 <dd>
@@ -5933,17 +5936,17 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>EXIT=symbol_name
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>HELP=help_file
 <dd>
-<dt>IMPFILE[=imp_file]
+<dt>IMPFILE&#91;=imp_file&#93;
 <dd>
-<dt>IMPLIB[=imp_lib]
+<dt>IMPLIB&#91;=imp_lib&#93;
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -5983,17 +5986,17 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STATICS
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
 <dt>SYNCHRONIZE
 <dd>
 <dt>THREADNAME 'thread_name'
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
-<dt>VERSION=major[.minor[.revision]]
+<dt>VERSION=major&#91;.minor&#91;.revision&#93;&#93;
 <dd>
 <dt>VFREMOVAL
 <dd>
@@ -6006,7 +6009,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>REFERENCE symbol_name{,symbol_name}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -6147,7 +6150,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ALIAS alias_name=symbol_name{,alias_name=symbol_name}
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -6159,7 +6162,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT OS2 [exe_type] [dll_form | exe_attrs]
+<dt>FORMAT OS2 &#91;exe_type&#93; &#91;dll_form | exe_attrs&#93;
 <dd>
 <dt>IMPORT import{,import}
 <dd>
@@ -6188,9 +6191,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -6200,13 +6203,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>HEAPSIZE=n
 <dd>
-<dt>IMPFILE[=imp_file]
+<dt>IMPFILE&#91;=imp_file&#93;
 <dd>
-<dt>IMPLIB[=imp_lib]
+<dt>IMPLIB&#91;=imp_lib&#93;
 <dd>
 <dt>INCREMENTAL
 <dd>
@@ -6216,7 +6219,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>MANYAUTODATA
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -6266,15 +6269,15 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STUB=stub_name
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
 <dt>TOGGLERELOCS
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
-<dt>VERSION=major[.minor]
+<dt>VERSION=major&#91;.minor&#93;
 <dd>
 <dt>VFREMOVAL
 <dd>
@@ -6285,7 +6288,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>SEGMENT seg_desc{,seg_desc}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -6421,7 +6424,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ALIAS alias_name=symbol_name{,alias_name=symbol_name}
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -6429,7 +6432,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT PHARLAP [EXTENDED | REX | SEGMENTED]
+<dt>FORMAT PHARLAP &#91;EXTENDED | REX | SEGMENTED&#93;
 <dd>
 <dt>LANGUAGE lang
 <dd>
@@ -6450,9 +6453,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -6460,13 +6463,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>INCREMENTAL
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXDATA=n
 <dd>
@@ -6496,9 +6499,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STATICS
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
@@ -6513,7 +6516,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>RUNTIME run_option{,run_option}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -6615,7 +6618,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ALIAS symbol_name=symbol_name{,symbol_name=symbol_name}
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -6623,7 +6626,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT QNX [FLAT]
+<dt>FORMAT QNX &#91;FLAT&#93;
 <dd>
 <dt>LANGUAGE
 <dd>
@@ -6646,9 +6649,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dl>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -6656,7 +6659,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>HEAPSIZE=n
 <dd>
@@ -6668,7 +6671,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -6694,7 +6697,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>REDEFSOK
 <dd>
-<dt>RESOURCE[=resource_file | 'string']
+<dt>RESOURCE&#91;=resource_file | 'string'&#93;
 <dd>
 <dt>SHOWDEAD
 <dd>
@@ -6704,9 +6707,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STATICS
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
@@ -6721,7 +6724,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>SEGMENT seg_desc{,seg_desc}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -6784,7 +6787,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ANONYMOUSEXPORT export{,export} | =lbc_file
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -6796,7 +6799,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT WINDOWS [dll_form] [MEMORY] [FONT]
+<dt>FORMAT WINDOWS &#91;dll_form&#93; &#91;MEMORY&#93; &#91;FONT&#93;
 <dd>
 <dt>IMPORT import{,import}
 <dd>
@@ -6825,9 +6828,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CVPACK
 <dd>
@@ -6837,13 +6840,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>HEAPSIZE=n
 <dd>
-<dt>IMPFILE[=imp_file]
+<dt>IMPFILE&#91;=imp_file&#93;
 <dd>
-<dt>IMPLIB[=imp_lib]
+<dt>IMPLIB&#91;=imp_lib&#93;
 <dd>
 <dt>INCREMENTAL
 <dd>
@@ -6851,7 +6854,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>MANYAUTODATA
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -6895,13 +6898,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STUB=stub_name
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
-<dt>VERSION=major[.minor]
+<dt>VERSION=major&#91;.minor&#93;
 <dd>
 <dt>VFREMOVAL
 <dd>
@@ -6912,7 +6915,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>SEGMENT seg_desc{,seg_desc}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -7079,7 +7082,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT WINDOWS VXD [STATIC | DYNAMIC]
+<dt>FORMAT WINDOWS VXD &#91;STATIC | DYNAMIC&#93;
 <dd>
 <dt>LANGUAGE lang
 <dd>
@@ -7104,27 +7107,27 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>DESCRIPTION 'string'
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>HEAPSIZE=n
 <dd>
-<dt>IMPFILE[=imp_file]
+<dt>IMPFILE&#91;=imp_file&#93;
 <dd>
-<dt>IMPLIB[=imp_lib]
+<dt>IMPLIB&#91;=imp_lib&#93;
 <dd>
 <dt>INCREMENTAL
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -7156,13 +7159,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STUB=stub_name
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
-<dt>VERSION=major[.minor]
+<dt>VERSION=major&#91;.minor&#93;
 <dd>
 <dt>VFREMOVAL
 <dd>
@@ -7173,7 +7176,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>SEGMENT seg_desc{,seg_desc}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>
@@ -7239,7 +7242,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>COMMIT mem_type
 <dd>
-<dt>DEBUG dbtype [dblist] | DEBUG [dblist]
+<dt>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
 <dd>
 <dt>DISABLE msg_num{,msg_num}
 <dd>
@@ -7251,7 +7254,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>FILE obj_spec{,obj_spec}
 <dd>
-<dt>FORMAT WINDOWS NT [TNT] [dll_form]
+<dt>FORMAT WINDOWS NT &#91;TNT&#93; &#91;dll_form&#93;
 <dd>
 <dt>IMPORT import{,import}
 <dd>
@@ -7278,9 +7281,9 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ARTIFICIAL
 <dd>
-<dt>[NO]CACHE
+<dt>&#91;NO&#93;CACHE
 <dd>
-<dt>[NO]CASEEXACT
+<dt>&#91;NO&#93;CASEEXACT
 <dd>
 <dt>CHECKSUM
 <dd>
@@ -7292,21 +7295,21 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>ELIMINATE
 <dd>
-<dt>[NO]FARCALLS
+<dt>&#91;NO&#93;FARCALLS
 <dd>
 <dt>HEAPSIZE=n
 <dd>
-<dt>IMPFILE[=imp_file]
+<dt>IMPFILE&#91;=imp_file&#93;
 <dd>
-<dt>IMPLIB[=imp_lib]
+<dt>IMPLIB&#91;=imp_lib&#93;
 <dd>
 <dt>INCREMENTAL
 <dd>
-<dt>LINKVERSION=major[.minor]
+<dt>LINKVERSION=major&#91;.minor&#93;
 <dd>
 <dt>MANGLEDNAMES
 <dd>
-<dt>MAP[=map_file]
+<dt>MAP&#91;=map_file&#93;
 <dd>
 <dt>MAXERRORS=n
 <dd>
@@ -7332,7 +7335,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>OSNAME='string'
 <dd>
-<dt>OSVERSION=major[.minor]
+<dt>OSVERSION=major&#91;.minor&#93;
 <dd>
 <dt>QUIET
 <dd>
@@ -7350,13 +7353,13 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>STUB=stub_name
 <dd>
-<dt>SYMFILE[=symbol_file]
+<dt>SYMFILE&#91;=symbol_file&#93;
 <dd>
-<dt>[NO]UNDEFSOK
+<dt>&#91;NO&#93;UNDEFSOK
 <dd>
 <dt>VERBOSE
 <dd>
-<dt>VERSION=major[.minor]
+<dt>VERSION=major&#91;.minor&#93;
 <dd>
 <dt>VFREMOVAL
 <dd>
@@ -7369,7 +7372,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>SEGMENT seg_desc{,seg_desc}
 <dd>
-<dt>SORT [GLOBAL] [ALPHABETICAL]
+<dt>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
 <dd>
 <dt>STARTLINK
 <dd>

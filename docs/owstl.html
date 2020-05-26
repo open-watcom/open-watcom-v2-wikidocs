@@ -141,7 +141,7 @@ but little user testing and feedback exists.
 <li>end() and end() const
 <li>empty()
 <li>size()
-<li>{ operator[] is implemented in class map not tree }
+<li>{ operator&#91;&#93; is implemented in class map not tree }
 <li>insert( value_type )
 <li>insert( iterator, value_type ) (see N1780)
 <li>erase( iterator )
@@ -318,8 +318,8 @@ the stack consumption would be O(n) in the worst case, which would be undesirabl
 <br><br>This implementation is based on a circular buffer.&nbsp; Like a vector, a deque object allocates more memory than
 it actually uses.&nbsp; In other words its capacity may be greater than its size.&nbsp; However, unlike a vector the sequence
 stored in a deque is allowed to wrap around in the buffer resulting in non-contiguous storage.&nbsp; This means an operation
-such as<tt> &amp;deq[0] + n</tt> may result in a pointer that is invalid even if<tt> n</tt> is less than the deque's size.
-&nbsp;This behavior is allowed by the standard [reference?].
+such as<tt> &amp;deq&#91;0&#93; + n</tt> may result in a pointer that is invalid even if<tt> n</tt> is less than the deque's
+size.&nbsp; This behavior is allowed by the standard &#91;reference?&#93;.
 <br>A deque object maintains two indicies.&nbsp; The<tt> head_index</tt> refers to the location in the buffer where the first
 item is stored.&nbsp; The<tt> tail_index</tt> refers to the location in the buffer just past (after possible wrap-around)
 where the last item is stored.&nbsp; When<tt> head_index == tail_index</tt> the deque is empty.&nbsp; To avoid the potential
@@ -364,13 +364,13 @@ to the first and last elements in the list.&nbsp; A sentinel is useful in this c
 first and last pointers) because it means the insertion and deletion code does not have to check for the special case of editing
 the list at the begining and end.&nbsp; The sentinel is initialised pointing to itself and is used as the reference point
 of the end of the list.&nbsp; When the an element is inserted or deleted before the end or at the begining all the pointer
-manipulation just falls out in the wash.&nbsp; [This seems to be a good uses of sentinels, I can't see the point of using
-them in a tree structure for example.]
-<br>There are two allocators that need to be rebound for the Node and DoubleLink types.&nbsp; [For review:&nbsp; DJFC called
-the first one mMem where the lower case m was for &quot;member&quot; then PCC needed to add another for DoubleLink and called
-it dlMem, we could really do with standadising a naming convention---perhaps mMem should be nMem or dlMem should be mDLMem???]
-The two allocators are needed because objects of different types are being allocated:&nbsp; the node allocation allocates
-nodes (with their contained value_type) while the link allocator allocates the sentinel node of type DoubleLink.
+manipulation just falls out in the wash.&nbsp; &#91;This seems to be a good uses of sentinels, I can't see the point of using
+them in a tree structure for example.&#93;
+<br>There are two allocators that need to be rebound for the Node and DoubleLink types.&nbsp; &#91;For review:&nbsp; DJFC
+called the first one mMem where the lower case m was for &quot;member&quot; then PCC needed to add another for DoubleLink
+and called it dlMem, we could really do with standadising a naming convention---perhaps mMem should be nMem or dlMem should
+be mDLMem???&#93; The two allocators are needed because objects of different types are being allocated:&nbsp; the node allocation
+allocates nodes (with their contained value_type) while the link allocator allocates the sentinel node of type DoubleLink.
 <br><br>Inserting nodes
 <br><br>The work for the functions<tt> push_front, push_back</tt> and<tt> insert</tt> is done by the private member<tt> push.
 &nbsp;Node* push( Node* o, Type const &amp; )</tt> is quite simple.&nbsp; It allocates a Node and then tries to make a copy
@@ -408,9 +408,9 @@ balanced if the difference between the largest and smallest depth of a leaf is b
 <li>Every leaf is black (note this is assumed as leaves don't really exist in this implementation.)
 <li>The root is black
 </ul>
-<br>This data structure has been well covered in the literature, for a more detailed information see:&nbsp; [Prof Lyn Turba,
-Wellesly College, CS231 Algorithms Handout 21, 2001] [McGill University, Notes for 308-251B, http://www.cs.mcgill.ca/cs251/
-!check link!, 1997] [err...] [google red black trees, binary trees etc]
+<br>This data structure has been well covered in the literature, for a more detailed information see:&nbsp; &#91;Prof Lyn
+Turba, Wellesly College, CS231 Algorithms Handout 21, 2001&#93; &#91;McGill University, Notes for 308-251B, http://www.cs.mcgill.ca/cs251/
+!check link!, 1997&#93; &#91;err...&#93; &#91;google red black trees, binary trees etc&#93;
 <br><br>Overview of the class
 <br><br>The tree class defines an internal Node structure that is made up of the object stored in the tree, Node pointers
 for the parent and left and right children, and the Node colour.&nbsp; There is an allocator member object, mMem, that is
@@ -418,8 +418,8 @@ rebound to allocate Node types.&nbsp; There are pointers to the root and furthes
 to mark were to start the search, and create the begin and end iterators respectively.&nbsp; The iterator and const_iterator
 are member classes derived from a common member class.&nbsp; There is an Open Watcom extention method<tt> bool _Sane()</tt>
 that checks the integrity of the data structure.&nbsp; Related to this is a integer mError member that is assigned a value
-if an error is detected when _Sane is run.&nbsp; [for review] This should perhaps be renamed _Error or made private and a
-_GetError() method provided.
+if an error is detected when _Sane is run.&nbsp; &#91;for review&#93; This should perhaps be renamed _Error or made private
+and a _GetError() method provided.
 <br>Inserting Elements and Reballancing
 <br><br>The<tt> insert</tt> method calls<tt> unbalancedInsert</tt> and<tt> insBalTransform.</tt>&nbsp; The loop in<tt> unBallancedInsert</tt>
 moves from child to child searching for the leaf of the tree where the new item can be inserted, in a simular way as the find
@@ -435,12 +435,12 @@ Node is painted Red so as not to invalidate the black-height rule, but this may 
 of a Red-Black tree varies from the most common implementations.&nbsp; Usually the balancing procedure is broken down into
 a series of &quot;rotations&quot; where a sub-tree of the tree would appear to be rotated if represented graphically.&nbsp;
 These rotations can be left or right and the procedure moves up to the parent sub-tree and is repeated until the violation
-is removed.&nbsp; Instead Open Watcom uses the concept of a &quot;transformation&quot;.&nbsp; [Alternatives to Two Classic
-Data Structures, Chris Okaski, 2005?] A sub-branch of the tree is analysed to see which case it matches and the elements in
-that branch are then reorganised and recoloured in one block of code.&nbsp; Although this isn't wildly different it was hoped
-that it would allow a faster algorithm to be created because larger sub-trees and special cases could be matched and manipulated
-in one go, and the code generator may be able to make a better job of optimising the code because a larger block of manipulating
-instructions would be together.&nbsp; Whether this was a good desision will be born out in time.
+is removed.&nbsp; Instead Open Watcom uses the concept of a &quot;transformation&quot;.&nbsp; &#91;Alternatives to Two Classic
+Data Structures, Chris Okaski, 2005?&#93; A sub-branch of the tree is analysed to see which case it matches and the elements
+in that branch are then reorganised and recoloured in one block of code.&nbsp; Although this isn't wildly different it was
+hoped that it would allow a faster algorithm to be created because larger sub-trees and special cases could be matched and
+manipulated in one go, and the code generator may be able to make a better job of optimising the code because a larger block
+of manipulating instructions would be together.&nbsp; Whether this was a good desision will be born out in time.
 <br><br>Explain why the insert methods are currently inline - compiler bug - what exactly was the problem?
 <br><br>Deleting Elements
 <br><br>Deletion is a bit more complicated than insertion.&nbsp; The main method that gets called is<tt> erase( iterator ).</tt>
@@ -486,10 +486,10 @@ making<tt> std::string</tt> reference counted and it is worth reviewing those is
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int main()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string s1( &quot;Hello&quot; ), s2;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char &amp;c( s1[0] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char &amp;c( s1&#91;0&#93; );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s2 = s1;&nbsp; // s1 and s2 perhaps share representations</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c = 'x';&nbsp; // Do both s1 and s2 change?</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( s2[0] == 'x' )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( s2&#91;0&#93; == 'x' )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; &quot;Wrong!\n&quot;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; &quot;Right!\n&quot;;</tt>
@@ -499,11 +499,11 @@ making<tt> std::string</tt> reference counted and it is worth reviewing those is
 in another logically distinct string.&nbsp; Thus all correct implementations of<tt> std::string</tt> should produce &quot;Right!&quot;
 for the program above.
 <br><br>To deal with this case properly while using reference counted strings, the implementation must &quot;unshare&quot;
-the representation whenever a method is called that leaks a reference to that representation.&nbsp; The method<tt> operator[]</tt>
+the representation whenever a method is called that leaks a reference to that representation.&nbsp; The method<tt> operator&#91;&#93;</tt>
 is one example of such a method.&nbsp; In fact, section 21.3, paragraph 5 of the C++ standard contains explicit language regarding
 this issue.&nbsp; The standard allows implementations to invalidate references, pointers, and iterators to the elements of
-a<tt> basic_string</tt> sequence whenever, for example, the non-const<tt> operator[]</tt> is called.&nbsp; However, this leads
-to rather unexpected behavior in at least two respects.&nbsp; In particular:
+a<tt> basic_string</tt> sequence whenever, for example, the non-const<tt> operator&#91;&#93;</tt> is called.&nbsp; However,
+this leads to rather unexpected behavior in at least two respects.&nbsp; In particular:
 <ol>
 <li>Accessing a string might be an O(n) operation.
 <li>Accessing a string might cause a<tt> std::bad_alloc</tt> exception to be thrown.
@@ -514,16 +514,17 @@ reserve</tt> method specifically to give the programmer some degree of control o
 a string's representation unexpectedly when a string is accessed frustrates this intention.
 <br><br>The second issue is a concern to those writing robust, exception safe code.&nbsp; To build code that is exception
 safe it is important to know when exceptions might be thrown.&nbsp; A savy programmer might know that calling the<tt> std::string
-operator[]</tt> might throw an exception.&nbsp; However because that is an unnatural side-effect many programmers won't be
-expecting it and thus using such an implementation will be error prone.&nbsp; Note that on some systems, notably Linux, the
-operating system will usually terminate the program when it runs out of memory before<tt> std::bad_alloc</tt> can be thrown.
-&nbsp;However, that is not the case on smaller, real-mode systems like DOS.&nbsp; Thus for Open Watcom this issue is a concern.
+operator&#91;&#93;</tt> might throw an exception.&nbsp; However because that is an unnatural side-effect many programmers
+won't be expecting it and thus using such an implementation will be error prone.&nbsp; Note that on some systems, notably
+Linux, the operating system will usually terminate the program when it runs out of memory before<tt> std::bad_alloc</tt> can
+be thrown.&nbsp; However, that is not the case on smaller, real-mode systems like DOS.&nbsp; Thus for Open Watcom this issue
+is a concern.
 <br><br>In a multithreaded program reference counted strings encounter other problems.&nbsp; Since Open Watcom supports a
 number of multithreaded targets this is also a concern.
 <br><br>The C++ standard does not address the semantics of programs in the face of multithreading.&nbsp; However, most programmers
-implicitly assume the following behavior (described by SGI in the documentation for their STL implementation).&nbsp; [Should
+implicitly assume the following behavior (described by SGI in the documentation for their STL implementation).&nbsp; &#91;Should
 this discussion be moved to a more generic part of this document?&nbsp; Some of this would be applicable to the whole OWSTL
-library.]
+library.&#93;
 <ol>
 <li>Two threads can read the same object without locking.&nbsp; This means that if reading an object changes its internal
 state, the implementation must provide appropriate locking.
@@ -549,8 +550,8 @@ the transaction separately would be incorrect.
 <br><br>Yet a reference counted implementation of<tt> std::string</tt> must add locking to the strings themselves to ensure
 correct behavior when apparently unrelated strings are simultaneously modified.&nbsp; This would be adding a large amount
 of logically unnecessary locking overhead in cases such as the one above.&nbsp; This overhead can cause reference counted
-strings to have very poor performance when used in a multithreaded environment [reference?].&nbsp; This is particularly ironic
-considering that reference counting is intended to improve string performance.
+strings to have very poor performance when used in a multithreaded environment &#91;reference?&#93;.&nbsp; This is particularly
+ironic considering that reference counting is intended to improve string performance.
 <br><br>Concerns about the day-to-day performance of Open Watcom's non-reference counted implementation have been partially
 addressed by the results of some (minimal) benchmark tests.&nbsp; See<tt> /bench/owstl.</tt>&nbsp; These tests show that the
 current performance of<tt> std::string</tt> is at least competitive with that offered by other implementations.&nbsp; More
@@ -567,10 +568,10 @@ change designed to improve performance actually does improve performance before 
 for a string.&nbsp; One counter measures the length of the allocated space while the other measures the number of character
 units in that space that are actually used.&nbsp; In order to meet the complexity requirements of the standard,<tt> string</tt>
 allocates more space than it needs, increasing that amount of space by a constant multiplicative factor whenever more is needed.
-&nbsp;This implementation uses a multiplicative factor of two [note:&nbsp; other factors, such as 1.5, might be more desirable;
-a factor of two causes somewhat inefficient memory reuse characteristics [reference?]].&nbsp; The capacity of a string is
-always an exact power of two.&nbsp; When a string is first created it is given a particular minimum size for its capacity
-(currently 8) or a capacity that is the smallest power of two larger than the new string's length, whichever is larger.
+&nbsp;This implementation uses a multiplicative factor of two &#91;note:&nbsp; other factors, such as 1.5, might be more desirable;
+a factor of two causes somewhat inefficient memory reuse characteristics &#91;reference?&#93;&#93;.&nbsp; The capacity of
+a string is always an exact power of two.&nbsp; When a string is first created it is given a particular minimum size for its
+capacity (currently 8) or a capacity that is the smallest power of two larger than the new string's length, whichever is larger.
 <br>A string's capacity is never reduced in this implementation.&nbsp; Once a string's capacity is increased, the memory is
 not reclaimed until the string is destroyed.&nbsp; This was done on the assumption that if a string was once large it will
 probably be large again.&nbsp; Not returning memory when a string's length shrinks reduces the total number of memory allocation

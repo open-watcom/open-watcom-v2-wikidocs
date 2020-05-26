@@ -81,7 +81,7 @@
 <dt>- L -
 <dd><a href="#l">l</a>
 <br><a href="#Librarian_Error_Messages">Librarian Error Messages</a>
-<br><a href="#The_Listing_Option_M__lUEXlist_fileYV_">The Listing Option - &quot;l[=&lt;list_file&gt;]&quot;</a>
+<br><a href="#The_Listing_Option_M__lUEXlist_fileYV_">The Listing Option - &quot;l&#91;=&lt;list_file&gt;&#93;&quot;</a>
 <br><a href="#Loading_Dynamic_Link_Libraries">Loading Dynamic Link Libraries</a>
 <dt>- M -
 <dd><a href="#m">m</a>
@@ -146,7 +146,7 @@
 <dd><a href="#s">s</a>
 <br><a href="#set_command">set command</a>
 <br><a href="#sn">sn</a>
-<br><a href="#The_Source_Option_M__sUEXsource_fileYV_">The Source Option - &quot;s[=&lt;source_file&gt;]&quot;</a>
+<br><a href="#The_Source_Option_M__sUEXsource_fileYV_">The Source Option - &quot;s&#91;=&lt;source_file&gt;&#93;&quot;</a>
 <br><a href="#Special_Macros">Special Macros</a>
 <br><a href="#Specify_Output_Directory_M__d__Option">Specify Output Directory - &quot;d&quot; Option</a>
 <br><a href="#Specify_Output_Format_M__f__Option">Specify Output Format - &quot;f&quot; Option</a>
@@ -187,9 +187,9 @@ the compiler and linker.
 <h2 id="WFLDWFL386_Command_Line_Format"> WFL/WFL386 Command Line Format </h2>
 <br>The format of the command line is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WFL [files] [options]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WFL386 [files] [options]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WFL &#91;files&#93; &#91;options&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WFL386 &#91;files&#93; &#91;options&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>WFL
 <dd>is the name of the Open Watcom Compile and Link utility that invokes the 16-bit compiler.
@@ -232,51 +232,51 @@ the screen by simply entering the &quot;WFL&quot; or &quot;WFL386&quot; command 
 <dd>assume Pentium processor
 <dt>6
 <dd>assume Pentium Pro processor
-<dt>[NO]ALign
+<dt>&#91;NO&#93;ALign
 <dd>align COMMON segments
-<dt>[NO]AUtomatic
+<dt>&#91;NO&#93;AUtomatic
 <dd>all local variables on the stack
 <dt>BD
 <dd>(32-bit only) dynamic link library
 <dt>BM
 <dd>(32-bit only) multithread application
-<dt>[NO]BOunds
+<dt>&#91;NO&#93;BOunds
 <dd>generate subscript bounds checking code
 <dt>BW
 <dd>(32-bit only) default windowed application
-<dt>[NO]CC
+<dt>&#91;NO&#93;CC
 <dd>carriage control recognition requested for output devices such as the console
 <dt>CHInese
 <dd>Chinese character set
-<dt>[NO]COde
+<dt>&#91;NO&#93;COde
 <dd>constants in code segment
 <dt>D1
 <dd>include line # debugging information
 <dt>D2
 <dd>include full debugging information
-<dt>[NO]DEBug
+<dt>&#91;NO&#93;DEBug
 <dd>perform run-time checking
 <dt>DEFine=&lt;macro&gt;
 <dd>define macro
-<dt>[NO]DEPendency
+<dt>&#91;NO&#93;DEPendency
 <dd>generate file dependencies
-<dt>[NO]DEScriptor
+<dt>&#91;NO&#93;DEScriptor
 <dd>pass character arguments using string descriptor
 <dt>DIsk
 <dd>write listing file to disk
 <dt>DT=&lt;size&gt;
 <dd>set data threshold
-<dt>[NO]ERrorfile
+<dt>&#91;NO&#93;ERrorfile
 <dd>generate an error file
-<dt>[NO]EXPlicit
+<dt>&#91;NO&#93;EXPlicit
 <dd>declare type of all symbols
-<dt>[NO]EXtensions
+<dt>&#91;NO&#93;EXtensions
 <dd>issue extension messages
-<dt>[NO]EZ
+<dt>&#91;NO&#93;EZ
 <dd>(32-bit only) Easy OMF-386 object files
 <dt>FO=&lt;obj_default&gt;
 <dd>set default object file name
-<dt>[NO]FORmat
+<dt>&#91;NO&#93;FORmat
 <dd>relax format type checking
 <dt>FPC
 <dd>generate calls to floating-point library
@@ -296,9 +296,9 @@ the screen by simply entering the &quot;WFL&quot; or &quot;WFL386&quot; command 
 <dd>optimize floating-point for Pentium
 <dt>FP6
 <dd>optimize floating-point for Pentium Pro
-<dt>[NO]FSfloats
+<dt>&#91;NO&#93;FSfloats
 <dd>FS not fixed
-<dt>[NO]GSfloats
+<dt>&#91;NO&#93;GSfloats
 <dd>GS not fixed
 <dt>HC
 <dd>Codeview debugging information
@@ -306,23 +306,23 @@ the screen by simply entering the &quot;WFL&quot; or &quot;WFL386&quot; command 
 <dd>DWARF debugging information
 <dt>HW
 <dd>Open Watcom debugging information
-<dt>[NO]INCList
+<dt>&#91;NO&#93;INCList
 <dd>write content of INCLUDE files to listing
-<dt>INCPath=[d:]path
-<dd>[d:]path...&nbsp; path for INCLUDE files
-<dt>[NO]IPromote
+<dt>INCPath=&#91;d:&#93;path
+<dd>&#91;d:&#93;path...&nbsp; path for INCLUDE files
+<dt>&#91;NO&#93;IPromote
 <dd>promote INTEGER*1 and INTEGER*2 arguments to INTEGER*4
 <dt>Japanese
 <dd>Japanese character set
 <dt>KOrean
 <dd>Korean character set
-<dt>[NO]LFwithff
+<dt>&#91;NO&#93;LFwithff
 <dd>LF with FF
-<dt>[NO]LIBinfo
+<dt>&#91;NO&#93;LIBinfo
 <dd>include default library information in object file
-<dt>[NO]LISt
+<dt>&#91;NO&#93;LISt
 <dd>generate a listing file
-<dt>[NO]MAngle
+<dt>&#91;NO&#93;MAngle
 <dd>mangle COMMON segment names
 <dt>MC
 <dd>(32-bit only) compact memory model
@@ -374,57 +374,57 @@ the screen by simply entering the &quot;WFL&quot; or &quot;WFL386&quot; command 
 <dd>equivalent to OBP, ODO, OI, OK, OL, OM, OR, and OT (16-bit) or OB, OBP, ODO, OI, OK, OL, OM, OR, and OT (32-bit)
 <dt>PRint
 <dd>write listing file to printer
-<dt>[NO]Quiet
+<dt>&#91;NO&#93;Quiet
 <dd>operate quietly
-<dt>[NO]Reference
+<dt>&#91;NO&#93;Reference
 <dd>issue unreferenced warning
-<dt>[NO]RESource
+<dt>&#91;NO&#93;RESource
 <dd>messages in resource file
-<dt>[NO]SAve
+<dt>&#91;NO&#93;SAve
 <dd>SAVE local variables
-<dt>[NO]SC
+<dt>&#91;NO&#93;SC
 <dd>(32-bit only) stack calling convention
-<dt>[NO]SEpcomma
+<dt>&#91;NO&#93;SEpcomma
 <dd>allow comma separator in formatted input
-<dt>[NO]SG
+<dt>&#91;NO&#93;SG
 <dd>(32-bit only) automatic stack growing
-<dt>[NO]SHort
+<dt>&#91;NO&#93;SHort
 <dd>set default INTEGER/LOGICAL size to 2/1 bytes
-<dt>[NO]SR
+<dt>&#91;NO&#93;SR
 <dd>save/restore segment registers
-<dt>[NO]SSfloats
+<dt>&#91;NO&#93;SSfloats
 <dd>(16-bit only) SS is not default data segment
-<dt>[NO]STack
+<dt>&#91;NO&#93;STack
 <dd>generate stack checking code
-<dt>[NO]SYntax
+<dt>&#91;NO&#93;SYntax
 <dd>syntax check only
-<dt>[NO]TErminal
+<dt>&#91;NO&#93;TErminal
 <dd>messages to terminal
-<dt>[NO]TRace
+<dt>&#91;NO&#93;TRace
 <dd>generate code for run-time traceback
 <dt>TYpe
 <dd>write listing file to terminal
-<dt>[NO]WArnings
+<dt>&#91;NO&#93;WArnings
 <dd>issue warning messages
-<dt>[NO]WILd
+<dt>&#91;NO&#93;WILd
 <dd>relax wild branch checking
-<dt>[NO]WIndows
+<dt>&#91;NO&#93;WIndows
 <dd>(16-bit only) compile code for Windows
-<dt>[NO]XFloat
+<dt>&#91;NO&#93;XFloat
 <dd>extend floating-point precision
-<dt>[NO]XLine
+<dt>&#91;NO&#93;XLine
 <dd>extend line length to 132
 </dl>
 <dl>
 <dt><b><i>Linker options:</i></b>
 <dd><b><i>Description:</i></b>
-<dt>FD[=&lt;directive_file&gt;]
+<dt>FD&#91;=&lt;directive_file&gt;&#93;
 <dd>keep directive file and, optionally, rename it (default name is &quot;__WFL__.LNK&quot;).
 <dt>FE=&lt;executable&gt;
 <dd>name executable file
 <dt>FI=&lt;fn&gt;
 <dd>include additional directive file
-<dt>FM[=&lt;map_file&gt;]
+<dt>FM&#91;=&lt;map_file&gt;&#93;
 <dd>generate map file and, optionally, name it
 <dt>K=&lt;stack_size&gt;
 <dd>set stack size
@@ -699,8 +699,9 @@ usually &quot;C:\OS2&quot;.
 &quot;.asm&quot;) and produces, as output, an object file.
 <br><br>The Open Watcom Assembler command line syntax is the following.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WASM [options] [d:][path]filename[.ext] [options] [@env_var]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WASM &#91;options&#93; &#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93; &#91;options&#93;
+&#91;@env_var&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>WASM
 <dd>is the name of the Open Watcom Assembler.
@@ -754,7 +755,7 @@ from &quot;USE16&quot; to &quot;USE32&quot;)
 <dd>defines &quot;__&lt;os&gt;__&quot; and checks the &quot;&lt;os&gt;_INCLUDE&quot; environment variable for include files
 <dt>c
 <dd>do not output OMF COMENT records that allow WDISASM to figure out when data bytes have been placed in a code segment
-<dt>d&lt;name&gt;[=text]
+<dt>d&lt;name&gt;&#91;=text&#93;
 <dd>define text macro
 <dt>d1
 <dd>line number debugging support
@@ -1789,8 +1790,8 @@ file instead of several object files.
 <h2 id="The_Open_Watcom_Library_Manager_Command_Line"> The Open Watcom Library Manager Command Line </h2>
 <br>The following describes the Open Watcom Library Manager command line.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WLIB [options_1] lib_file [options_2] [cmd_list]</tt>
-<br><br>The square brackets &quot;[]&quot; denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WLIB &#91;options_1&#93; lib_file &#91;options_2&#93; &#91;cmd_list&#93;</tt>
+<br><br>The square brackets &quot;&#91;&#93;&quot; denote items which are optional.
 <dl>
 <dt>lib_file
 <dd>is the file specification for the library file to be processed.&nbsp; If no file extension is specified, a file extension
@@ -1807,10 +1808,10 @@ be used as an option delimiter for options following the library file name since
 <dd>is a list of commands to the Open Watcom Library Manager specifying what operations are to be performed.&nbsp; Each command
 in<b> cmd_list</b> is separated by a space.
 </dl>
-<br>The following is a summary of valid options.&nbsp; Items enclosed in square brackets &quot;[]&quot; are optional.&nbsp;
-Items separated by an or-bar &quot;|&quot; and enclosed in parentheses &quot;()&quot; indicate that one of the items must
-be specified.&nbsp; Items enclosed in angle brackets &quot;&lt;&gt;&quot; are to be replaced with a user-supplied name or
-value (the &quot;&lt;&gt;&quot; are not included in what you specify).
+<br>The following is a summary of valid options.&nbsp; Items enclosed in square brackets &quot;&#91;&#93;&quot; are optional.
+&nbsp;Items separated by an or-bar &quot;|&quot; and enclosed in parentheses &quot;()&quot; indicate that one of the items
+must be specified.&nbsp; Items enclosed in angle brackets &quot;&lt;&gt;&quot; are to be replaced with a user-supplied name
+or value (the &quot;&lt;&gt;&quot; are not included in what you specify).
 <dl>
 <dt>?
 <dd>display the usage message
@@ -1848,7 +1849,7 @@ value (the &quot;&lt;&gt;&quot; are not included in what you specify).
 <dd>generate OMF import records
 <dt>i(r|n)(n|o)
 <dd>imports for the resident/non-resident names table are to be imported by name/ordinal.
-<dt>l[=&lt;list_file&gt;]
+<dt>l&#91;=&lt;list_file&gt;&#93;
 <dd>create a listing file
 <dt>m
 <dd>display C++ mangled names
@@ -1937,11 +1938,12 @@ the library file &quot;mylib.lib&quot;.&nbsp; Any module in the library &quot;up
 is added to the library &quot;mylib.lib&quot;.&nbsp; Note that you must specify the &quot;lib&quot; file extension.&nbsp;
 Otherwise, the Open Watcom Library Manager will assume you are replacing an object module.
 <h2 id="Extracting_a_Module_from_a_Library_File"> Extracting a Module from a Library File </h2>
-<br>A module can be extracted from a library file by specifying a<b> *mod_name</b> [=file_name] command for a DOS, OS/2 or
-Windows-hosted version of the Open Watcom Library Manager or a<b> :mod_name</b> [=file_name] command for a UNIX-hosted version
-of the Open Watcom Library Manager.&nbsp; The module<b> mod_name</b> is not deleted but is copied to a disk file.&nbsp; If<b>
-mod_name</b> is preceded by a path specification, the output file will be placed in the directory identified by the path specification.
-&nbsp;If<b> mod_name</b> is followed by a file extension, the output file will contain the specified file extension.
+<br>A module can be extracted from a library file by specifying a<b> *mod_name</b> &#91;=file_name&#93; command for a DOS,
+OS/2 or Windows-hosted version of the Open Watcom Library Manager or a<b> :mod_name</b> &#91;=file_name&#93; command for a
+UNIX-hosted version of the Open Watcom Library Manager.&nbsp; The module<b> mod_name</b> is not deleted but is copied to a
+disk file.&nbsp; If<b> mod_name</b> is preceded by a path specification, the output file will be placed in the directory identified
+by the path specification.&nbsp; If<b> mod_name</b> is followed by a file extension, the output file will contain the specified
+file extension.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib *myobj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOS, OS/2 or Windows-hosted</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
@@ -1984,7 +1986,7 @@ assume you are adding an object file.
 <h2 id="Creating_Import_Library_Entries"> Creating Import Library Entries </h2>
 <br>An import library entry can be created and added to a library by specifying a command of the following form.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ++sym.dll_name[.[altsym].export_name][.ordinal]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ++sym.dll_name&#91;.&#91;altsym&#93;.export_name&#93;&#91;.ordinal&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2272,8 +2274,8 @@ language listing directly from a source program.&nbsp; Instead, the Open Watcom 
 language listing from the object file generated by the compiler.
 <br><br>The Open Watcom Disassembler command line syntax is the following.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WDIS [options] [d:][path]filename[.ext] [options]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WDIS &#91;options&#93; &#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93; &#91;options&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>WDIS
 <dd>is the name of the Open Watcom Disassembler.
@@ -2300,22 +2302,22 @@ in any order.
 <dt>ff
 <dd>print FPU emulator fixups as comment line
 <dt>fi
-<dd>use alternate indexing format [80(x)86 only]
+<dd>use alternate indexing format &#91;80(x)86 only&#93;
 <dt>fp
 <dd>do not use instruction name pseudonyms
 <dt>fr
-<dd>do not use register name pseudonyms [Alpha only]
+<dd>do not use register name pseudonyms &#91;Alpha only&#93;
 <dt>fu
 <dd>instructions/registers in upper case
 <dt>i=&lt;char&gt;
 <dd>redefine the initial character of internal labels (default:&nbsp; L)
-<dt>l[=&lt;list_file&gt;]
+<dt>l&#91;=&lt;list_file&gt;&#93;
 <dd>create a listing file
 <dt>m
 <dd>leave C++ names mangled
 <dt>p
 <dd>include list of public names
-<dt>s[=&lt;source_file&gt;]
+<dt>s&#91;=&lt;source_file&gt;&#93;
 <dd>using object file source line information, imbed original source lines into the output file
 </dl>
 <br>The following sections describe the list of options.
@@ -2356,15 +2358,15 @@ below.
 <br>The &quot;ff&quot; option causes the FPU emulator fixups will be printed as comment line before Intel FPU instruction.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; FPU fixup FIDRQQ</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fld&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tbyte ptr [bx]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fld&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tbyte ptr &#91;bx&#93;</tt>
 <h2 id="The_Alternate_Addressing_Form_Option_M__fi_"> The Alternate Addressing Form Option - &quot;fi&quot; </h2>
 <br>The &quot;fi&quot; option causes an alternate syntactical form of the based or indexed addressing mode of the 80x86 to
 be used in an instruction.&nbsp; For example, the following form is used by default for Intel instructions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov ax,-2[bp]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov ax,-2&#91;bp&#93;</tt>
 <br><br>If the &quot;fi&quot; option is specified, the following form is used.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov ax,[bp-2]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov ax,&#91;bp-2&#93;</tt>
 <h2 id="The_No_Instruction_Name_Pseudonyms_Option_M__fp_"> The No Instruction Name Pseudonyms Option - &quot;fp&quot; </h2>
 <br>By default, AXP instruction name pseudonyms are emitted in place of actual instruction names.&nbsp; The Open Watcom AXP
 Assembler accepts instruction name pseudonyms.&nbsp; The &quot;fp&quot; option instructs the Open Watcom Disassembler to emit
@@ -2375,7 +2377,7 @@ the actual instruction names instead.
 <h2 id="The_Uppercase_InstructionsDRegisters_Option_M__fu_"> The Uppercase Instructions/Registers Option - &quot;fu&quot; </h2>
 <br>The &quot;fu&quot; option instructs the Open Watcom Disassembler to display instruction and register names in uppercase
 characters.&nbsp; The default is to display them in lowercase characters.
-<h2 id="The_Listing_Option_M__lUEXlist_fileYV_"> The Listing Option - &quot;l[=&lt;list_file&gt;]&quot; </h2>
+<h2 id="The_Listing_Option_M__lUEXlist_fileYV_"> The Listing Option - &quot;l&#91;=&lt;list_file&gt;&#93;&quot; </h2>
 <br>By default, the Open Watcom Disassembler produces its output to the terminal.&nbsp; The &quot;l&quot; (lowercase L) option
 instructs the Open Watcom Disassembler to produce the output to a listing file.&nbsp; The default file name of the listing
 file is the same as the file name of the object file.&nbsp; The default file extension of the listing file is<tt> .lst.</tt>
@@ -2421,7 +2423,7 @@ below.
 <h2 id="Retain_CPP_Mangled_Names__M__m_"> Retain C++ Mangled Names - &quot;m&quot; </h2>
 <br>The &quot;m&quot; option instructs the Open Watcom Disassembler to retain C++ mangled names rather than displaying their
 demangled form.&nbsp; The default is to interpret mangled C++ names and display them in a somewhat more intelligible form.
-<h2 id="The_Source_Option_M__sUEXsource_fileYV_"> The Source Option - &quot;s[=&lt;source_file&gt;]&quot; </h2>
+<h2 id="The_Source_Option_M__sUEXsource_fileYV_"> The Source Option - &quot;s&#91;=&lt;source_file&gt;&#93;&quot; </h2>
 <br>The &quot;s&quot; option causes the source lines corresponding to the assembly language instructions to be produced in
 the listing file.&nbsp; The object file must contain line numbering information.&nbsp; That is, the &quot;d1&quot; or &quot;d2&quot;
 option must have been specified when the source file was compiled.&nbsp; If no line numbering information is present in the
@@ -2620,7 +2622,7 @@ information that enables the far call optimization.
 <br><br>The format of the Open Watcom Far Call Optimization Enabling Utility is as follows.&nbsp; Items enclosed in square
 brackets are optional; items enclosed in braces may be repeated zero or more times.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FCENABLE { [option] [file] }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FCENABLE { &#91;option&#93; &#91;file&#93; }</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2701,10 +2703,10 @@ executables is to use the Open Watcom Linker with directive<tt> &quot;format dos
 Linker Guide for details.
 <hr>
 <h2 id="The_Open_Watcom_Exe2bin_Utility_Command_Line"> The Open Watcom Exe2bin Utility Command Line </h2>
-<br>The format of the Open Watcom Exe2bin command line is as follows.&nbsp; Items enclosed in square brackets (&quot;[ ]&quot;)
-are optional.
+<br>The format of the Open Watcom Exe2bin command line is as follows.&nbsp; Items enclosed in square brackets (&quot;&#91;
+&#93;&quot;) are optional.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; EXE2BIN [options] exe_file [bin_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; EXE2BIN &#91;options&#93; exe_file &#91;bin_file&#93;</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2825,8 +2827,8 @@ BBS, Open Watcom's FTP site, or CompuServe for users to download and apply to th
 <h2 id="Applying_a_Patch"> Applying a Patch </h2>
 <br>The format of the BPATCH command line is:&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; BPATCH [options] patch_file</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; BPATCH &#91;options&#93; patch_file</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -2853,7 +2855,7 @@ variable.&nbsp; The actual name of the executable file is extracted from the fil
 that the file to be patched is the correct one by comparing the size of the file to be patched to the expected size.&nbsp;
 If the file sizes match, the program responds with:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Ok to modify 'C:\WATCOM\BINW\WLINK.EXE'? [y|n]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Ok to modify 'C:\WATCOM\BINW\WLINK.EXE'? &#91;y|n&#93;</tt>
 <br><br>If you respond with &quot;yes&quot;, BPATCH will modify the indicated file.&nbsp; If you respond with &quot;no&quot;,
 BPATCH aborts.&nbsp; Once the patch has been applied the resulting file is verified.&nbsp; First the file size is checked
 to make sure it matches the expected file size.&nbsp; If the file size matches, a check-sum is computed and compared to the
@@ -2942,11 +2944,11 @@ the &quot;DEBUG&quot; directive from the directive file and re-link your applica
 <h2 id="The_Open_Watcom_Strip_Utility_Command_Line"> The Open Watcom Strip Utility Command Line </h2>
 <br>The Open Watcom Strip Utility command line syntax is:&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WSTRIP [options] input_file [output_file] [info_file]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WSTRIP &#91;options&#93; input_file &#91;output_file&#93; &#91;info_file&#93;</tt>
 <dl>
 <dt>where:
 <dd>
-<dt>[]
+<dt>&#91;&#93;
 <dd>The square brackets denote items which are optional.
 <dt>options
 <dd>
@@ -2993,7 +2995,7 @@ does not already exist.
 <h2 id="Strip_Utility_Messages"> Strip Utility Messages </h2>
 <br>The following messages may be issued by the Open Watcom Strip Utility.
 <dl>
-<dt>Usage:&nbsp; WSTRIP [options] input_file [output_file] [info_file]
+<dt>Usage:&nbsp; WSTRIP &#91;options&#93; input_file &#91;output_file&#93; &#91;info_file&#93;
 <dd><b><i> options:&nbsp; (-option is also accepted)</i></b>
 <br><br><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /n&nbsp;&nbsp;&nbsp;&nbsp; don't print warning messages</i></b>
 <br><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /q&nbsp;&nbsp;&nbsp;&nbsp; don't print informational messages</i></b>
@@ -3056,8 +3058,8 @@ we recommend that you skip to the next major section entitled &quot;Dependency D
 <h3 id="Open_Watcom_Make_Command_Line_Format"> Open Watcom Make Command Line Format </h3>
 <br>The formal Open Watcom Make command line syntax is shown below.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WMAKE [options] [macro_defs] [targets]</tt>
-<br><br>As indicated by the square brackets [ ], all items are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WMAKE &#91;options&#93; &#91;macro_defs&#93; &#91;targets&#93;</tt>
+<br><br>As indicated by the square brackets &#91; &#93;, all items are optional.
 <dl>
 <dt>options
 <dd>is a list of valid Open Watcom Make options, each preceded by a slash (&quot;/&quot;) or a dash (&quot;-&quot;).&nbsp; Options
@@ -3438,29 +3440,29 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <dl>
 <dt><b><i>Macro</i></b>
 <dd><b><i>Expansion</i></b>
-<dt>$[@
+<dt>$&#91;@
 <dd>b:\dir1\dep1.ex1
-<dt>$[*
+<dt>$&#91;*
 <dd>b:\dir1\dep1
-<dt>$[&amp;
+<dt>$&#91;&amp;
 <dd>dep1
-<dt>$[.
+<dt>$&#91;.
 <dd>dep1.ex1
-<dt>$[:
+<dt>$&#91;:
 <dd>b:\dir1\
 </dl>
 <dl>
 <dt><b><i>Macro</i></b>
 <dd><b><i>Expansion</i></b>
-<dt>$]@
+<dt>$&#93;@
 <dd>c:\dir2\dep2.ex2
-<dt>$]*
+<dt>$&#93;*
 <dd>c:\dir2\dep2
-<dt>$]&amp;
+<dt>$&#93;&amp;
 <dd>dep2
-<dt>$].
+<dt>$&#93;.
 <dd>dep2.ex2
-<dt>$]:
+<dt>$&#93;:
 <dd>c:\dir2\
 </dl>
 <h2 id="Dependency_Declarations"> Dependency Declarations </h2>
@@ -3640,7 +3642,7 @@ may be shown.&nbsp; Without inline files, this is done as:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set magicstring = ()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; atomic</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %s/\.dll'/'/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %s/^(\+\+')(.*)('\.'.*')\.[0-9]+$/\1\2\3..'\2'/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %s/^(\+\+')(.*)('\.'.*')\.&#91;0-9&#93;+$/\1\2\3..'\2'/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; x</tt>
 <br><br>A doubled &quot;$&quot; to produce a single dollar is notable when an inline file is used:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -3651,7 +3653,7 @@ may be shown.&nbsp; Without inline files, this is done as:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set magicstring = ()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; atomic</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %s/\.dll'/'/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %s/^(\+\+')(.*)('\.'.*')\.[0-9]+$$/\1\2\3..'\2'/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %s/^(\+\+')(.*)('\.'.*')\.&#91;0-9&#93;+$$/\1\2\3..'\2'/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; x</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt;</tt>
 <br><br>A filename may follow a &quot;&lt;&lt;&quot; on a command line to cause a file with that name to be created.&nbsp;
@@ -3682,12 +3684,12 @@ rule.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .AUTODEPEND example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj: .AUTODEPEND</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wfc386 $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wfc386 $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; test.exe : a.obj b.obj c.obj test.res</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink FILE a.obj, b.obj, c.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wrc /q /bt=windows test.res test.exe</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; test.res : test.rc test.ico .AUTODEPEND</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wrc /ad /q /bt=windows /r $[@ $^@</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wrc /ad /q /bt=windows /r $&#91;@ $^@</tt>
 <br><br>In the above example, Make will use the contents of the object file to determine whether the object file has to be
 built during processing.&nbsp; The Open Watcom Resource Compiler can also insert dependency information into a resource file
 that can be used by Make.
@@ -4355,9 +4357,9 @@ macros.&nbsp; These special macros have the form:&nbsp;
 <dl>
 <dt>&quot;^&quot;
 <dd>represents the current target being updated
-<dt>&quot;[&quot;
+<dt>&quot;&#91;&quot;
 <dd>represents the first member of the dependent list
-<dt>&quot;]&quot;
+<dt>&quot;&#93;&quot;
 <dd>represents the last member of the dependent list
 </dl>
 <br>and &lt;form_qualifier&gt; is one of:
@@ -4404,7 +4406,7 @@ how the form qualifiers are used.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compile_options_production = /mf /warn</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compile_options_debugging = /mf /d1 /warn</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compile_options = $(compile_options_$(version))</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compiler_command = wfc386 $[* $(compile_options)</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compiler_command = wfc386 $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; include_files = defs.fi globals.fi</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; object_files = main.obj input.obj calc.obj &amp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4500,13 +4502,13 @@ dependents &quot;TEST.PAS&quot; and &quot;TEST.FOR&quot; will be tried.&nbsp; If
 being tried next.
 <br><br>One apparent problem with implicit rules and their associated command lists is that they are used for many different
 targets and dependents during the processing of a makefile.&nbsp; The same problem occurs with commands constructed from macros.
-&nbsp;Recall that there is a set of special macros that start with &quot;$^&quot;, &quot;$[&quot;, or &quot;$]&quot; that
-reference the target, first dependent, or last dependent of an explicit dependency rule.&nbsp; In an implicit rule there may
-be only one dependent or many dependents depending on whether the rule is being executed for a target with a single colon
+&nbsp;Recall that there is a set of special macros that start with &quot;$^&quot;, &quot;$&#91;&quot;, or &quot;$&#93;&quot;
+that reference the target, first dependent, or last dependent of an explicit dependency rule.&nbsp; In an implicit rule there
+may be only one dependent or many dependents depending on whether the rule is being executed for a target with a single colon
 &quot;:&quot; or double colon &quot;::&quot; dependency.&nbsp; If the target has a single colon or double colon dependency,
-the &quot;$^&quot;, &quot;$[&quot;, and &quot;$]&quot; special macros will reflect the values in the rule that caused the
-implicit rule to be invoked.&nbsp; Otherwise, if the target does not have a dependency rule then the &quot;$[&quot; and &quot;$]&quot;
-special macros will be set to the same value, namely, the file found in the implicit rule search.
+the &quot;$^&quot;, &quot;$&#91;&quot;, and &quot;$&#93;&quot; special macros will reflect the values in the rule that caused
+the implicit rule to be invoked.&nbsp; Otherwise, if the target does not have a dependency rule then the &quot;$&#91;&quot;
+and &quot;$&#93;&quot; special macros will be set to the same value, namely, the file found in the implicit rule search.
 <br><br>We will use the last programming example to illustrate a possible use of implicit rules.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -4531,7 +4533,7 @@ output.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(msg_$(version))</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink $(link_options) @$^*</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main.obj : main.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; calc.obj : calc.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; input.obj : input.for $(include_files)</tt>
@@ -4587,7 +4589,7 @@ output.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(msg_$(version))</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink $(link_options) @$^*</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main.obj : $(s_dir)main.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; calc.obj : $(s_dir)calc.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; input.obj : $(s_dir)input.for $(include_files)</tt>
@@ -4636,7 +4638,7 @@ output.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink $(link_options) @$^*</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for:&nbsp;&nbsp;&nbsp;&nbsp; $(s_dir)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main.obj : $(s_dir)main.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; calc.obj : $(s_dir)calc.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; input.obj : $(s_dir)input.for $(include_files)</tt>
@@ -4695,7 +4697,7 @@ output.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink $(link_options) @$^*</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for:&nbsp;&nbsp;&nbsp;&nbsp; $(program_dir);$(screen_dir)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main.obj : $(program_dir)main.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; calc.obj : $(program_dir)calc.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; input.obj : $(screen_dir)input.for $(include_files)</tt>
@@ -4768,7 +4770,7 @@ output.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink $(link_options) @$^*</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for:&nbsp;&nbsp;&nbsp;&nbsp; $(program_dir);$(screen_dir)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main.obj : $(program_dir)main.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; calc.obj : $(program_dir)calc.for $(include_files)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; input.obj : $(screen_dir)input.for $(include_files)</tt>
@@ -4837,7 +4839,7 @@ output.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink $(link_options) @$^*</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for:&nbsp;&nbsp;&nbsp;&nbsp; $(program_dir);$(screen_dir)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(compiler) $&#91;* $(compile_options)</tt>
 <br><br>Implicit rules are very useful in this regard providing you are aware that you have to make up for the information
 that is missing from the makefile.&nbsp; In the case of FORTRAN 77 programs, you must ensure that you force Make to compile
 any programs affected by changes in include files.&nbsp; Forcing Make to compile programs may be done by touching source files
@@ -4927,7 +4929,7 @@ file is as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; objs = window.obj bios.obj keyboard.obj mouse.obj</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for: ..\src</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .for.obj:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wfc $[* $(common) $(local) /m$(model)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wfc $&#91;* $(common) $(local) /m$(model)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; window_$(model).lib : $(objs)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlib window_$(model) @..\window</tt>
 <br><br>The macros &quot;model&quot; and &quot;local&quot; are defined by the file &quot;MAKEFILE&quot; in each object directory.
@@ -4969,7 +4971,7 @@ that contains:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # program generated makefile information</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FOR_to_OBJ = $(compiler) $[* $(compile_options)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FOR_to_OBJ = $(compiler) $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OBJECTS = WINDOW.OBJ BIOS.OBJ KEYBOARD.OBJ MOUSE.OBJ</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WINDOW.OBJ : ..\SRC\WINDOW.FOR ..\INC\PROTO.FI ..\INC\GLOBALS.FI</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(FOR_to_OBJ)</tt>
@@ -5433,12 +5435,13 @@ OSes.
 <h3 id="echo_command"> echo command </h3>
 <br>The operating system shell &quot;echo&quot; command is intercepted by Make.&nbsp; It uses following syntax:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; echo [&lt;value&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; echo &#91;&lt;value&gt;&#93;</tt>
 <br><br>The &quot;echo&quot; command may be used to output any string to standard output without length limitation.
 <h3 id="set_command"> set command </h3>
 <br>The operating system shell &quot;set&quot; command is intercepted by Make.&nbsp; It uses following syntax:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set &lt;name&gt; =[&lt;value&gt;]&nbsp;&nbsp;&nbsp; (if no value then variable is deleted)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set &lt;name&gt; =&#91;&lt;value&gt;&#93;&nbsp;&nbsp;&nbsp; (if no value then variable is
+deleted)</tt>
 <br><br>The &quot;set&quot; command may be used to set environment variables to values required during makefile processing.
 &nbsp;The environment variable changes are only valid during makefile processing and do not affect the values that were in
 effect before Make was invoked.&nbsp; The &quot;set&quot; command may be used to initialize environment variables necessary
@@ -5490,7 +5493,7 @@ to commands that are executed afterwards.
 <h3 id="for_command"> for command </h3>
 <br>The operating system shell &quot;for&quot; command is intercepted by Make.&nbsp; It uses following syntax:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; for %[%]&lt;var&gt; in (&lt;set&gt;) do &lt;command&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; for %&#91;%&#93;&lt;var&gt; in (&lt;set&gt;) do &lt;command&gt;</tt>
 <br><br>DOS has a fixed limit for the size of a command thus making it unusable for large makefile applications.&nbsp; One
 such application that can be done easily with Make is the construction of a WLINK command file from a makefile.&nbsp; The
 idea behind the next example is to have one file that contains the list of object files.&nbsp; Anytime this file is changed,
@@ -5533,14 +5536,14 @@ of the &quot;OBJDEF.MIF&quot; file is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { errorlevel &lt;number&gt;
 }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if [not] { &lt;str1&gt; == &lt;str2&gt;&nbsp;&nbsp;&nbsp; } &lt;command&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if &#91;not&#93; { &lt;str1&gt; == &lt;str2&gt;&nbsp;&nbsp;&nbsp; } &lt;command&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { exist &lt;file&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>It handles file names consistently with other Make commands.
 <h3 id="rm_command"> rm command </h3>
 <br>The commands &quot;rm&quot; is intercepted by Make.&nbsp; It uses following syntax:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rm [-frv] &lt;files/directories&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rm &#91;-frv&#93; &lt;files/directories&gt;</tt>
 <br><br>The &quot;rm&quot; command may be used to delete files or directories.&nbsp; Make &quot;rm&quot; command is simplified
 implementation of the POSIX rm command.&nbsp; It handles file/directory names consistently with other Make commands.&nbsp;
 Following options are support.
@@ -5555,7 +5558,7 @@ Following options are support.
 <h3 id="mkdir_command"> mkdir command </h3>
 <br>The commands &quot;mkdir&quot; is intercepted by Make.&nbsp; It uses following syntax:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mkdir [-p] &lt;directory&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mkdir &#91;-p&#93; &lt;directory&gt;</tt>
 <br><br>The &quot;mkdir&quot; command may be used to create a directory.&nbsp; Make &quot;mkdir&quot; command is simplified
 implementation of the POSIX &quot;mkdir&quot; command.&nbsp; It handles directory names consistently with other Make commands.
 &nbsp;Following options are support.
@@ -5893,8 +5896,8 @@ with the Open Watcom Make utility.&nbsp; The rationale for bringing a file up-to
 understood by reading the chapter which describes the Make utility.
 <br><br>The Open Watcom Touch command line syntax is:&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WTOUCH [options] file_spec [file_spec...]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WTOUCH &#91;options&#93; file_spec &#91;file_spec...&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>options
 <dd>is a list of valid options, each preceded by a slash (&quot;/&quot;) or a dash (&quot;-&quot;).&nbsp; Options may be specified
@@ -5962,9 +5965,9 @@ generates make files that can be invoked with WMAKE.&nbsp; If the .wpj file does
 If any tgtfile(s) are specified, they are used as the targets in creating the make files.
 <br><br>The IDE2MAKE command line syntax is:&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ide2make [options] [tgtfile]</tt>
-<br><br>The square brackets [ ] denote items which are optional.&nbsp; At least one item must be specified, otherwise the
-program usage is shown.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ide2make &#91;options&#93; &#91;tgtfile&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.&nbsp; At least one item must be specified, otherwise
+the program usage is shown.
 <dl>
 <dt>options
 <dd>is a list of valid options, each preceded by a slash (&quot;/&quot;) or a dash (&quot;-&quot;).&nbsp; Options may be specified

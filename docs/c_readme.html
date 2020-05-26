@@ -590,11 +590,11 @@ minor variations from your selected target environment.
 <ol>
 <li>enter the following pathname:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; d:[path]\SAMPLES\IDE\target\KITCHEN</tt>
-<br><br>where<tt> d:[path]</tt> is the drive and path where you installed the Open Watcom software, or
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; d:&#91;path&#93;\SAMPLES\IDE\target\KITCHEN</tt>
+<br><br>where<tt> d:&#91;path&#93;</tt> is the drive and path where you installed the Open Watcom software, or
 <li>use the file browser to select the following directory:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; d:[path]\SAMPLES\IDE\target</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; d:&#91;path&#93;\SAMPLES\IDE\target</tt>
 <br><br>and specify the filename<tt> kitchen.</tt>
 </ol>
 <br><tt><img src="ide2c.bmp" align=middle></tt>
@@ -760,7 +760,7 @@ Switches</b> from the sub-menu.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 6. Debugging Switches</tt>
 <br><br>category by selecting it from the drop-down list box or by scrolling through the categories using the &gt;&gt; button.
-<li>Select<tt> Emit Browser information [-db]</tt> and click on OK.
+<li>Select<tt> Emit Browser information &#91;-db&#93;</tt> and click on OK.
 <li>Click the &quot;Make all targets in the project&quot; icon to re-make the project.&nbsp; The compiler will emit Browser
 information for<tt> furnitu.cpp</tt> in a file called<tt> draw???.dbr.</tt>&nbsp; Now you are ready to browse the target's
 source.
@@ -942,7 +942,7 @@ error messages, and debugging techniques.
 <br>The Open Watcom Help program,<b><i> WHELP</i></b> , may be used under DOS to access on-line documentation.&nbsp; The Open
 Watcom Help command line syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WHELP help_file [topic_name]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WHELP help_file &#91;topic_name&#93;</tt>
 <br><br><b>Notes:</b>
 <ol>
 <li>If<b> help_file</b> is specified without an extension then &quot;.IHP&quot; is assumed.
@@ -1420,7 +1420,7 @@ on/off associated source code.
 debugging information (which is used by default).
 <li>The debugger now correctly displays multi-dimensional Fortran arrays when DWARF debug information format is used (which
 is used by default).
-<li>The debugger can now display [partial] strings in Fortran code when the string length exceeds the debugger's internal
+<li>The debugger can now display &#91;partial&#93; strings in Fortran code when the string length exceeds the debugger's internal
 limit.&nbsp; The internal limit has also been increased from 512 to 1024 characters.
 <li>The resource compiler now properly copies non-resident name table when processing LX executables.
 <li>The console version of vi for Win32 no longer quits after Ctrl+Left is pressed followed by any other key.
@@ -1591,8 +1591,8 @@ etc.) to the executable name.&nbsp; Any argument to the NAME directive will be u
 by earlier versions of the linker but not documented.
 <li>The 'include' preprocessor directive not prefixed by an exclamation mark is now recognized in wmake -ms mode for compatibility
 with Microsoft and IBM NMAKE.
-<li>The wmake utility has been enhanced to evaluate NMAKE style '[cmd]' expressions (ie.&nbsp; shell commands) in preprocessor
-!if directives.&nbsp; This functionality is supported in both wmake and -ms mode.
+<li>The wmake utility has been enhanced to evaluate NMAKE style '&#91;cmd&#93;' expressions (ie.&nbsp; shell commands) in
+preprocessor !if directives.&nbsp; This functionality is supported in both wmake and -ms mode.
 <li>Several problems related to the Watcom debugging information format have been fixed in the linker and debugger.&nbsp;
 Note that the Watcom format is considered obsolete and its use is not recommended.
 <li>A random but very rare startup failure of Windows based GUI tools (notably wdw) has been fixed.
@@ -1601,7 +1601,7 @@ Note that the Watcom format is considered obsolete and its use is not recommende
 <br>Following is a list of changes made in Open Watcom C/C++ 1.4:
 <ul>
 <li>Support for C99 designated initializers has been added to the C compiler, for example &quot;struct {int a, b;} c = {.a=0,
-.b=1};&quot;.&nbsp; This is also supported for arrays, for example &quot;int a[4] = {[0]=5, [3]=2};&quot;.
+.b=1};&quot;.&nbsp; This is also supported for arrays, for example &quot;int a&#91;4&#93; = {&#91;0&#93;=5, &#91;3&#93;=2};&quot;.
 <li>Handling of enumerations has been fixed in the C compiler.&nbsp; In certain cases, the compiler chose the wrong type for
 operations on objects of enumerated types.&nbsp; Enumerated constants up to 64 bits wide are now also allowed (including in
 16-bit compilers).
@@ -1798,13 +1798,14 @@ platforms support stdaux or stdprn.
 <li>The _heapchk() function will now always perform a consistency check on the heap, where it would previously only check
 consistency if there had been allocations/frees since last call to _heapchk().&nbsp; As a consequence, _heapchk() previously
 did not detect certain instances of heap corruption.
-<li>[OS/2 32-bit] The default __disallow_single_dgroup() implementation no longer statically links against PMWIN.DLL.&nbsp;
-This allows DLLs to load on systems where PMWIN.DLL isn't present.
-<li>[OS/2 32-bit] Re-implemented clock().&nbsp; The new implementation uses the OS millisecond counter and is hence not susceptible
-to TZ changes.&nbsp; It is also smaller, faster and more accurate, although it may wrap around earlier than the original implementation.
+<li>&#91;OS/2 32-bit&#93; The default __disallow_single_dgroup() implementation no longer statically links against PMWIN.DLL.
+&nbsp;This allows DLLs to load on systems where PMWIN.DLL isn't present.
+<li>&#91;OS/2 32-bit&#93; Re-implemented clock().&nbsp; The new implementation uses the OS millisecond counter and is hence
+not susceptible to TZ changes.&nbsp; It is also smaller, faster and more accurate, although it may wrap around earlier than
+the original implementation.
 <li>The disassembler (wdis) now correctly processes x86 'push 8-bit immediate' instructions.
 <li>The disassembler now correctly processes absolute memory references.&nbsp; All memory references without fixup are now
-disassembled as ds:[...] or sreg:[...].
+disassembled as ds:&#91;...&#93; or sreg:&#91;...&#93;.
 <li>Several DirectX Win32 programming samples have been added.&nbsp; Note that a separate DirectX SDK (available from Microsoft)
 is required to build these sample programs.
 </ul>
@@ -1855,14 +1856,14 @@ with DLLs that export symbols differing only in case.
 <li>The printf() function has been enhanced to support %b format specifier for bitfields.
 <li>Execution order of C library termination routines is now better defined to prevent instances where temporary files created
 through mktemp() could be left behind.
-<li>[OS/2 32-bit] To prevent crashes, termination code is not run if second instance of a DLL failed to load due to single
-DGROUP.
-<li>[OS/2 32-bit] The __grow_handles() function was incorrectly adding n requested handles to existing limit instead of setting
-the limit to n.
-<li>[OS/2 32-bit] Fixed a problem with _STACKLOW in multithreaded programs and DLLs.&nbsp; This prevents crashes where Fortran
-DLLs would run out of stack.
-<li>[OS/2 16-bit] Fixed default math exception handler which wasn't popping the FP status word off the stack and would therefore
-crash on exit.
+<li>&#91;OS/2 32-bit&#93; To prevent crashes, termination code is not run if second instance of a DLL failed to load due to
+single DGROUP.
+<li>&#91;OS/2 32-bit&#93; The __grow_handles() function was incorrectly adding n requested handles to existing limit instead
+of setting the limit to n.
+<li>&#91;OS/2 32-bit&#93; Fixed a problem with _STACKLOW in multithreaded programs and DLLs.&nbsp; This prevents crashes where
+Fortran DLLs would run out of stack.
+<li>&#91;OS/2 16-bit&#93; Fixed default math exception handler which wasn't popping the FP status word off the stack and would
+therefore crash on exit.
 <li>The Win32 Image Editor has been enhanced with drag-and-drop support.
 <li>The IDE has been fixed to properly handle mixed case filenames.
 <li>The Microsoft compatibility tools (NMAKE, CL) have been fixed to better handle command line arguments.
@@ -2134,7 +2135,7 @@ code generation technique.&nbsp; Open Watcom's generated code is always &quot;fa
 <ul>
 <li>When /bt=DOS is specified, define<tt> _DOS.</tt>
 <li>When /bt=WINDOWS is specified, define<tt> _WINDOWS.</tt>
-<li>When /m[s|m|c|l|h] is specified, define<tt> __SW_M[S|M|C|L|H]</tt> and<tt> _M_I86[S|M|C|L|H]M.</tt>
+<li>When /m&#91;s|m|c|l|h&#93; is specified, define<tt> __SW_M&#91;S|M|C|L|H&#93;</tt> and<tt> _M_I86&#91;S|M|C|L|H&#93;M.</tt>
 </ul>
 <br>The compiler now supports the C++ Standard Template Library (STL).&nbsp; This library is available at the ftp site &quot;butler.hpl.hp.com&quot;.
 &nbsp;When compiling applications that use the STL, you must use the &quot;hd&quot; compiler option for debugging info (the
@@ -2235,12 +2236,12 @@ C/C++ don't match the calling conventions of the current version.&nbsp; The solu
 or to define a &quot;__cdecl_old&quot; pragma that matches the old calling conventions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux __cdecl_old &quot;_*&quot; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __parm __caller []
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __parm __caller &#91;&#93;
 \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __value __struct
-__float __struct __routine [eax] \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __modify [eax ebx
-ecx edx];</tt>
+__float __struct __routine &#91;eax&#93; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __modify &#91;eax
+ebx ecx edx&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (__cdecl_old) foo;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int foo( int a, int b );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
@@ -2288,7 +2289,7 @@ values.
 will reduce the size of executables under certain circumstances.
 <li>In C++, we have removed the prohibition of pointer to array of unknown size declarations.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*p)[];</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*p)&#91;&#93;;</tt>
 <li>In C++, we have fixed the diagnosis of lexical problems during macro expansion to remove spurious warnings.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define stringize( x )&nbsp; #x</tt>
@@ -3085,9 +3086,9 @@ server.&nbsp; To isolate the problem, uninstall the virus checker and see if the
 <br><br>If you go to the Windows Control Panel, &quot;Scheduling Options&quot; of &quot;386 Enhanced&quot;, and the &quot;Exclusive
 in Foreground&quot; checkbox is checked, uncheck it.&nbsp; This causes our batch server to starve under Windows.
 <br><br><b>Changes to the SYSTEM.INI File</b>
-<br><br>The WDEBUG.386 driver is required to be installed in the [386Enh] section of SYSTEM.INI.&nbsp; This should have been
-done automatically by the WATCOM install program when the software was installed under the host environment and the &quot;modify
-system files&quot; option was selected.
+<br><br>The WDEBUG.386 driver is required to be installed in the &#91;386Enh&#93; section of SYSTEM.INI.&nbsp; This should
+have been done automatically by the WATCOM install program when the software was installed under the host environment and
+the &quot;modify system files&quot; option was selected.
 <br><br>It has been reported that the line
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OverlappedIO=on</tt>

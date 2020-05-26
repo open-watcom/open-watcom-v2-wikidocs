@@ -393,16 +393,16 @@ made considering the high and low bounds as signed numbers.
 <h3 id="POINTER_Lvalue_0x4_R"> POINTER (value 0x4?) </h3>
 <br>This definition is used to define a pointer type.&nbsp; There are 10 sub-classes.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x40) base_type_index
-[,base_locator]</tt>
+&#91;,base_locator&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x41)
 base_type_index</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HUGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x42) base_type_index</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEAR_DEREF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x43) base_type_index [,base_locator]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEAR_DEREF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x43) base_type_index &#91;,base_locator&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FAR_DEREF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x44) base_type_index</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HUGE_DEREF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x45) base_type_index</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEAR386&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x46) base_type_index [,base_locator]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEAR386&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x46) base_type_index &#91;,base_locator&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FAR386&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x47) base_type_index</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEAR386_DEFREF&nbsp; (value 0x48) base_type_index [,base_locator]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEAR386_DEFREF&nbsp; (value 0x48) base_type_index &#91;,base_locator&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FAR386_DEREF&nbsp;&nbsp;&nbsp; (value 0x49) base_type_index</tt>
 <br><br>When a symbol is one of the *_DEREF types, the Open Watcom Debugger will automatically dereference the pointer.&nbsp;
 This &quot;hidden&quot; indirection may be used to define reference parameter types, or other indirectly located symbols.
@@ -431,7 +431,7 @@ when determining type index values.
 <br><br>The LIST record and its associated CONST_* records must all be contained in the same $$TYPES segment.
 <h3 id="STRUCTURE_Lvalue_0x6_R"> STRUCTURE (value 0x6?) </h3>
 <br>This definition is used to define a structure type.&nbsp; There are 10 sub-classes.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x60) #fields_word [,size_dword]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (value 0x60) #fields_word &#91;,size_dword&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FIELD_BYTE (value 0x61) offset_byte, type_index, name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FIELD_WORD (value 0x62) offset_word, type_index, name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FIELD_LONG (value 0x63) offset_dword, type_index, name</tt>
@@ -570,7 +570,7 @@ program is executing in a block which defines the symbol.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {,parm_location}, name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MEMBER_SCOPE (value 0x26) parent_block_offset, class_type_index</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [obj_ptr_type_byte, object_loc]</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;obj_ptr_type_byte, object_loc&#93;</tt>
 <br><br>BLOCK is used to indicate a block of code that contains local symbol definitions.&nbsp; The field<tt> parent_block_offset</tt>
 is used to tell the Open Watcom Debugger the next block to search for a symbol definition if it is not found in this block.
 &nbsp;The field is set to zero if there is no parent block.
@@ -780,7 +780,7 @@ level array is the following structure:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct line_segment {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; segment;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; num;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line_info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line[1];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line_info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line&#91;1&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The<tt> segment</tt> field contains a offset, from the start of the address info class, to an addr_info structure
 (see the address info class description).&nbsp; This provides the segment value for the array of line_info's following.&nbsp;
@@ -833,14 +833,14 @@ The table looks like this:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; A list of zero terminated source file names</tt>
 <br><br>To find the correct cue entry given the value in a<tt> line_number</tt>, search the<tt> cue_entry</tt> table for the
 cue which satisfies the following:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; cue_entry[entry].cue &lt;= (line_number &amp; 0x7fff) &lt; cue_entry[entry+1].cue</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; cue_entry&#91;entry&#93;.cue &lt;= (line_number &amp; 0x7fff) &lt; cue_entry&#91;entry+1&#93;.cue</tt>
 <br><br>Once you have the cue entry, you can extract the true line number by:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; line = cue_entry[entry].line + (line_number &amp; 0x7fff)</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; line = cue_entry&#91;entry&#93;.line + (line_number &amp; 0x7fff)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-- cue_entry[entry].cue;</tt>
+- cue_entry&#91;entry&#93;.cue;</tt>
 <br><br>The file name is found by:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fname_index = file_name_index_table[ cue_entry[entry].fno ]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fname =&nbsp; file_name_table[ fname_index ]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fname_index = file_name_index_table&#91; cue_entry&#91;entry&#93;.fno &#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fname =&nbsp; file_name_table&#91; fname_index &#93;</tt>
 <br><br>The code offset and segment are found in the<tt> line_info</tt> and<tt> line_segment</tt> structures as usual.
 <h3 id="Module_information_class"> Module information class </h3>
 <br>The module information class is built from the linker's list of object files that it processes to build the executable
@@ -852,7 +852,7 @@ identify individual modules.&nbsp; The module structure contains the following f
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; demand_info locals;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; demand_info types;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; demand_info lines;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; name[1];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; name&#91;1&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The<tt> language</tt> field contains an offset, from the start of the source language table to the string of the source
 language for this module.&nbsp; The<tt> name</tt> field is a variable length array of characters with the first element of
@@ -930,13 +930,13 @@ examined, or the information is located.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; mod_index;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kind;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name[1];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;1&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The<tt> addr</tt> field contains the location in memory associated with this symbol.&nbsp; The value placed in this
 field is the same that the linker places in the map file (i.e.&nbsp; unrelocated, as if the executable loads at location 0:0).
 &nbsp;The field contains a 48 bit value (32 bit offset followed by a 16 bit segment).&nbsp; The<tt> mod_index</tt> field is
-an index which identifies the module which defines the symbol (i.e.&nbsp; contained the [L]PUBDEF record).&nbsp; The<tt> kind</tt>
-gives rudimentary typing information for the symbol.&nbsp; It consists of the following set of bits:
+an index which identifies the module which defines the symbol (i.e.&nbsp; contained the &#91;L&#93;PUBDEF record).&nbsp; The<tt>
+kind</tt> gives rudimentary typing information for the symbol.&nbsp; It consists of the following set of bits:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; BIT: 7 6 5 4 3 2 1 0</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | | |</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | | +--- STATIC symbol</tt>
@@ -957,7 +957,7 @@ memory address.&nbsp; The linker builds this class from the SEGDEF and GRPDEF re
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct seg_info {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; num;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr_info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sects[1];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr_info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sects&#91;1&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The<tt> addr</tt> field identifies the start of a segment in memory.&nbsp; This field contains the unrelocated value
 of the segment starting address (i.e.&nbsp; as if the executable had been loaded at 0:0).&nbsp; The the low order 15 bits
@@ -1139,9 +1139,9 @@ zero for<tt> num_out_mx</tt> and NULL for<tt> mx_out</tt>.
 <h4 id="Request_Example"> Request Example </h4>
 <br>The request REQ_READ_MEM needs the memory address and length of memory to read as input and will return the memory block
 in the output message.&nbsp; To read 30 bytes of memory from address 0x0010:0x8000 into a buffer, we can write:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in[1];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out[1];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; buffer[30];</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in&#91;1&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out&#91;1&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; buffer&#91;30&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct in_msg_def {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 req;</tt>
@@ -1150,10 +1150,10 @@ addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } in_msg = { REQ_READ_MEM, { 0x8000, 0x0010 }, sizeof( buffer ) };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 mem_blk_len;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in[0].ptr = &amp;in_msg;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in[0].len = sizeof( in_msg );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out[0].ptr = &amp;buffer;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out[0].len = sizeof( buffer );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in&#91;0&#93;.ptr = &amp;in_msg;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in&#91;0&#93;.len = sizeof( in_msg );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out&#91;0&#93;.ptr = &amp;buffer;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out&#91;0&#93;.len = sizeof( buffer );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mem_blk_len = TrapRequest( 1, in, 1, out );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; if( mem_blk_length != sizeof( buffer ) ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Error in reading memory\n&quot; );</tt>
@@ -1705,8 +1705,8 @@ descriptions do not show that &quot;prefix&quot; to the request messages.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ext_separator;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_separator[3];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newline[2];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_separator&#91;3&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newline&#91;2&#93;;</tt>
 <br><br>The<tt> ext_separator</tt> contains the separator for file name extensions.&nbsp; The possible path separators can
 be found in array<tt> path_separator</tt>.&nbsp; The first one is the &quot;preferred&quot; path separator for that operating
 system.&nbsp; This is the path separator that the debugger will use if it needs to construct a file name for the remote system.
@@ -2182,14 +2182,14 @@ the files to list in the directory.
 in the structure<tt> info.</tt>&nbsp; Definition of the structure<tt> rfx_find</tt> is as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct rfx_find {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-reserved[21];</tt>
+reserved&#91;21&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 attr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-name[260];</tt>
+name&#91;260&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } rfx_find;</tt>
 <h3 id="REQ_RFX_FINDNEXT_L14R"> REQ_RFX_FINDNEXT (14) </h3>
 <br>Request to find the next file in the directory.&nbsp; This request should be used only after REQ_RFX_FINDFIRST.
@@ -2466,7 +2466,7 @@ with the size of the section in paragraphs.
 &nbsp;far *start;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; delta;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; ovl_size;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ovltab_entry&nbsp;&nbsp;&nbsp; entries[ 1 ];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ovltab_entry&nbsp;&nbsp;&nbsp; entries&#91; 1 &#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } ovl_table;</tt>
 <br><br>The fields<tt> major</tt> and<tt> minor</tt> field contain version numbers for the overlay table structure.&nbsp;
 If an upwardly compatible change in the structures is made, the minor number will be incremented.&nbsp; If a non-upwardly

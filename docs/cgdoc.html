@@ -1597,7 +1597,7 @@ is the symbol which was truncated.
 <dd>byte_seq * - A pointer to bytes to be generated instead of a call, or NULL if a call is to be generated.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct byte_seq {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; length;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; data[ 1 ];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; data&#91; 1 &#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } byte_seq;</tt>
 <dt>( aux_handle, CALL_CLASS )
 <dd>call_class * - returns call_class of the given aux_handle.&nbsp; See definitions below.
@@ -1607,7 +1607,7 @@ size of the free memory in bytes.&nbsp; (DOS real mode host only)
 <dt>( NULL, OBJECT_FILE_NAME )
 <dd>char * - The name of the object file to be generated.&nbsp; 
 <dt>( aux_handle, PARM_REGS )
-<dd>hw_reg_set[] - The set of register to be used as parameters.
+<dd>hw_reg_set&#91;&#93; - The set of register to be used as parameters.
 <dt>( aux_handle, RETURN_REG )
 <dd>hw_reg_set * - The return register.&nbsp; This is only called if the routine is declared to have the SPECIAL_RETURN call_class.
 <dt>( NULL, REVISION_NUMBER )
@@ -1680,7 +1680,7 @@ attribute.
 <dt>( NULL, STACK_SIZE_8087 )
 <dd>int - How many 8087 registers are reserved for stack.
 <dt>( NULL, CODE_LABEL_ALIGNMENT )
-<dd>char * - An array x, such that x[i] is the label alignment requirements for labels nested within i loops.
+<dd>char * - An array x, such that x&#91;i&#93; is the label alignment requirements for labels nested within i loops.
 <dt>( NULL, PROEPI_DATA_SIZE )
 <dd>int - How much stack is reserved for the prolog hook routine.
 <dt>( cg_sym_handle, IMPORT_TYPE )
@@ -1986,7 +1986,7 @@ constant such as HW_EAX must be used.&nbsp; Anything else must be a variable of 
 <li>HW_D( c1 )
 <li>HW_NotD( c1 )
 </ul>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; hw_reg_set regs[] = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; hw_reg_set regs&#91;&#93; = {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* the EAX register */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HW_D( HW_EAX ),</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* all registers except EDX and EBX */</tt>

@@ -839,7 +839,7 @@ memory information.&nbsp; The following program illustrates this procedure.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned TotalPhysicalPages;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned FreeLinAddrSpace;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned SizeOfPageFile;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned Reserved[3];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned Reserved&#91;3&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } MemInfo;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -895,7 +895,7 @@ how to use this system call from a 32-bit program.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;dos.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned data[25];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned data&#91;25&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } pharlap_mem_status;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Names suggested in Phar Lap documentation */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define APHYSPG&nbsp;&nbsp;&nbsp;&nbsp; 5</tt>
@@ -912,9 +912,9 @@ how to use this system call from a 32-bit program.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; regs.x.edx = (unsigned int) &amp;status;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; intdos( &amp;regs, &amp;regs );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* equation is given in description for nfreepg */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amount = status.data[ APHYSPG ];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amount += status.data[ SYSPHYSPG ];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amount += status.data[ NFREEPG ];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amount = status.data&#91; APHYSPG &#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amount += status.data&#91; SYSPHYSPG &#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amount += status.data&#91; NFREEPG &#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( amount * 4096 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
@@ -955,7 +955,7 @@ an int386() call.&nbsp; The following program demonstrates the techniques mentio
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned TotalPhysicalPages;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned FreeLinAddrSpace;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned SizeOfPageFile;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned Reserved[3];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned Reserved&#91;3&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } MemInfo;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define DPMI_INT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x31</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
@@ -1223,7 +1223,7 @@ how</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signed short&nbsp;&nbsp;&nbsp; mouse_di;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } cbd = { 0 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Set up data buffer for mouse cursor bitmap */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned short cursor[] = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned short cursor&#91;&#93; = {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 16 words of screen mask */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x3fff,&nbsp; /*0011111111111111*/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x1fff,&nbsp; /*0001111111111111*/</tt>
@@ -1287,9 +1287,10 @@ how</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int msi, int mdi )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux click_handler __parm [EAX] [EBX] [ECX] \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux click_handler __parm &#91;EAX&#93; &#91;EBX&#93; &#91;ECX&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [EDX] [ESI] [EDI]</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;EDX&#93; &#91;ESI&#93;
+&#91;EDI&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cbd.mouse_event = 1;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cbd.mouse_code = (unsigned short)max;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cbd.mouse_bx&nbsp;&nbsp; = (unsigned short)mbx;</tt>
@@ -1686,11 +1687,11 @@ routine for the real-mode interrupt handler.&nbsp; The second provides the prote
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; ES = 0xB800</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sub&nbsp;&nbsp;&nbsp;&nbsp; bx,bx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; BX = 0</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; WORD PTR es:[bx],0720h&nbsp; ; Clear
-2 char cells</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; WORD PTR es:[bx+2],0720h</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; BYTE PTR es:[bx],'R'&nbsp;&nbsp;&nbsp;
-; Write R to memory</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; WORD PTR es:&#91;bx&#93;,0720h&nbsp;
+; Clear 2 char cells</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; WORD PTR es:&#91;bx+2&#93;,0720h</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; BYTE PTR es:&#91;bx&#93;,'R'&nbsp;&nbsp;
+&nbsp;; Write R to memory</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;&nbsp;&nbsp; bx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;&nbsp;&nbsp; es</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp; ax</tt>
@@ -1737,17 +1738,17 @@ routine for the real-mode interrupt handler.&nbsp; The second provides the prote
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Initialize COM1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; bx,03F8h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; COM1 port space</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,[bx+5]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; line status reg</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,&#91;bx+5&#93;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; line status reg</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; al,dx</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,[bx+4]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; modem control reg</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,&#91;bx+4&#93;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; modem control reg</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; al,dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; al,8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; enable OUT2 int</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out&nbsp;&nbsp;&nbsp;&nbsp; dx,al</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,[bx+2]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; int id register</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,&#91;bx+2&#93;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; int id register</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; al,dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; dx,bx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; data receive reg</tt>
@@ -1757,8 +1758,8 @@ routine for the real-mode interrupt handler.&nbsp; The second provides the prote
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and&nbsp;&nbsp;&nbsp;&nbsp; al,0EFh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; force IRQ4 unmask</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out&nbsp;&nbsp;&nbsp;&nbsp; 21h,al</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,[bx+1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; int enable reg</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp; dx,&#91;bx+1&#93;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; int enable reg</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; al,1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out&nbsp;&nbsp;&nbsp;&nbsp; dx,al&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; enable received int</tt>
@@ -1771,10 +1772,10 @@ routine for the real-mode interrupt handler.&nbsp; The second provides the prote
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es,bx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ebx,0B8000h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; ES:EBX=flat:0B8000h</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; DWORD PTR es:[ebx],07200720h&nbsp; ;
-Clear cells</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; BYTE PTR es:[ebx+2],'P' ; Write P to
-memory</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; DWORD PTR es:&#91;ebx&#93;,07200720h
+&nbsp;; Clear cells</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; BYTE PTR es:&#91;ebx+2&#93;,'P' ; Write
+P to memory</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;&nbsp;&nbsp; bx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;&nbsp;&nbsp; es</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp; ax</tt>
@@ -1853,50 +1854,52 @@ a new stub program.&nbsp; Following is the code in &quot;WSTUB.C&quot;:&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;errno.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;string.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Add environment strings to be searched here */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *paths_to_check[] = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *paths_to_check&#91;&#93; = {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;DOS4GPATH&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;PATH&quot;};</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *dos4g_path()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static char fullpath[80];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static char fullpath&#91;80&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i &lt; sizeof( paths_to_check ) / sizeof(
-paths_to_check[0] );</tt>
+paths_to_check&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4gw.exe&quot;, paths_to_check[i],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4gw.exe&quot;, paths_to_check&#91;i&#93;,
 fullpath );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath[0] ) return( &amp;fullpath );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath&#91;0&#93; ) return( &amp;fullpath
+);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i &lt; sizeof( paths_to_check ) / sizeof(
-paths_to_check[0] );</tt>
+paths_to_check&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4g.exe&quot;, paths_to_check[i],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4g.exe&quot;, paths_to_check&#91;i&#93;,
 fullpath );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath[0] ) return( &amp;fullpath );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath&#91;0&#93; ) return( &amp;fullpath
+);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;dos4gw.exe&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main( int argc, char *argv[] )</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main( int argc, char *argv&#91;&#93; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *av[4];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; auto char&nbsp;&nbsp; cmdline[128];</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[0] = dos4g_path();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Locate the DOS/4G loader */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[1] = argv[0];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* name of executable to run */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[2] = getcmd( cmdline );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; /* command line */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[3] = NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* end of list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *av&#91;4&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; auto char&nbsp;&nbsp; cmdline&#91;128&#93;;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;0&#93; = dos4g_path();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Locate the DOS/4G loader */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;1&#93; = argv&#91;0&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* name of executable to run */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;2&#93; = getcmd( cmdline );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; /* command line */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;3&#93; = NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* end of list */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef QUIET</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putenv( &quot;DOS4G=QUIET&quot; );&nbsp;&nbsp;&nbsp; /* disables
 DOS/4G Copyright banner */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; execvp( av[0], av );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; execvp( av&#91;0&#93;, av );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( &quot;Stub exec failed:&quot; );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( av[0] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( av&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( strerror( errno ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit( 1 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* indicate error */</tt>
@@ -2060,7 +2063,7 @@ however, in the following cases:
 <br>If none of these conditions applies to you, you can skip this section.
 <br><br>The general syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M= [switch_mode] [@start_address [- end_address]] [:size]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M= &#91;switch_mode&#93; &#91;@start_address &#91;- end_address&#93;&#93; &#91;:size&#93;</tt>
 <br><br>In the syntax shown above,<tt> start_address, end_address</tt> and<tt> size</tt> represent numbers, expressed in decimal
 or in hexadecimal (hex requires a<tt> 0x</tt> prefix).&nbsp; The number may end with a K to indicate an address or size in
 kilobytes, or an M to indicate megabytes.&nbsp; If no suffix is given, the address or size is assumed to be in kilobytes.
@@ -2112,7 +2115,7 @@ but won't have any other effect on your system.
 system.
 <br><br>To set the environment variable, the syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=[switch_mode_setting]^options.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=&#91;switch_mode_setting&#93;^options.</tt>
 <br><br><b>Note:</b>&nbsp; Some command line editing TSRs, such as CED, use the caret (^) as a delimiter.&nbsp; If you want
 to set<b> DOS16M</b> using the syntax above while one of these TSRs is resident, modify the TSR to use a different delimiter.
 <br><br>These are the options:
@@ -2184,7 +2187,7 @@ is needed again.&nbsp; The combination of the swap file and available RAM is the
 <br><br>Your program can use VMM if you set the DOS environment variable,<b> DOS4GVM</b> , as follows.&nbsp; To set the<b>
 DOS4GVM</b> environment variable, use the format shown below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM= [option[#value]] [option[#value]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM= &#91;option&#91;#value&#93;&#93; &#91;option&#91;#value&#93;&#93;</tt>
 <br><br>A &quot;#&quot; is used with options that take values since the DOS command shell will not accept &quot;=&quot;.
 <br><br>If you set<b> DOS4GVM</b> equal to 1, the default parameters are used for all options.
 <br><br><b>Example:</b>
@@ -3147,9 +3150,9 @@ mode to real mode, the following code will intercept all DOS calls from both rea
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; bl, 21h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; 31h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ERROR</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; [Orig_Real_Seg],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; &#91;Orig_Real_Seg&#93;,
 cx</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; [Orig_Real_Offset],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; &#91;Orig_Real_Offset&#93;,
 dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ; Allocate a real-mode callback</tt>
@@ -3187,7 +3190,7 @@ dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;******************************************************</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; My_Int_21_Hook:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_AH],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_AH&#93;,
 41h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jne&nbsp;&nbsp;&nbsp;&nbsp; Chain_To_DOS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
@@ -3199,21 +3202,21 @@ dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cld</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lodsw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Get real-mode ret IP</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_IP],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_IP&#93;,
 ax</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lodsw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Get real-mode ret CS</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_CS],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_CS&#93;,
 ax</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lodsw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Get real-mode flags</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ax, 1&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Set carry flag</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_Flags],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_Flags&#93;,
 ax</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_SP],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_SP&#93;,
 6</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_AX],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_AX&#93;,
 5</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jmp&nbsp;&nbsp;&nbsp;&nbsp; My_Hook_Exit</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
@@ -3221,11 +3224,11 @@ ax</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ; real-mode CS:IP with the original Seg:Offset.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Chain_To_DOS:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:[Orig_Real_Seg]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_CS],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:&#91;Orig_Real_Seg&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_CS&#93;,
 ax</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:[Orig_Real_Offset]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_IP],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:&#91;Orig_Real_Offset&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_IP&#93;,
 ax</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; My_Hook_Exit:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iret</tt>
@@ -3690,7 +3693,7 @@ presence or absence of a coprocessor based on the CPU type alone.
 <dd>This is a brief statement of what the utility program does.&nbsp; More specific information is provided under &quot;Notes&quot;.
 <dt>Syntax:
 <dd>This shows the syntax of the program.&nbsp; The fixed portion of each command is in a<tt> typewriter font,</tt> while variable
-parts of the command are in<b> italics.</b>&nbsp; Optional parts are enclosed in [brackets].
+parts of the command are in<b> italics.</b>&nbsp; Optional parts are enclosed in &#91;brackets&#93;.
 <dt>Notes:
 <dd>These are explanatory remarks noting major features and possible pitfalls.&nbsp; We explain anything special that you might
 need to know about the program.
@@ -3772,7 +3775,7 @@ can occur per second, and the time for a single round-trip switch, broken out in
 <dt>Purpose:
 <dd>Creates a private pool of memory for<b> DOS/4GW</b> programs.
 <dt>Syntax:
-<dd><tt> PRIVATXM [-r]</tt>
+<dd><tt> PRIVATXM &#91;-r&#93;</tt>
 <dt>Notes:
 <dd>This program may be distributed to your users.
 <br><br>Without PRIVATXM, a<b> DOS/4GW</b> program that starts up while another<b> DOS/4GW</b> program is active uses the
@@ -4077,7 +4080,7 @@ for the DOS/4G application.
 <br><br>DOS/4G could not open the specified program.&nbsp; Probably the file didn't exist.&nbsp; It is possible that DOS ran
 out of file handles, or that a network or similar utility has prohibited read access to the program.&nbsp; Make sure that
 the file name was spelled correctly.
-<dt>1008 &quot;can't load executable format for file &lt;filename&gt; [&lt;error code&gt;]&quot;
+<dt>1008 &quot;can't load executable format for file &lt;filename&gt; &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>DOS/4G did not recognize the specified file as a valid executable file.&nbsp; DOS/4G can load linear executables (LE
 and LX) and EXPs (BW).&nbsp; The error code is for Tenberry Software's use.
@@ -4085,12 +4088,12 @@ and LX) and EXPs (BW).&nbsp; The error code is for Tenberry Software's use.
 <dd>
 <br><br>This message does not occur in DOS/4G, only DOS/4GW Professional; the latter requires that the DOS extender be bound
 to the program file.&nbsp; The error signals an attempt to load
-<dt>1010 &quot;can't initialize loader &lt;loader&gt; [&lt;error code&gt;]&quot;
+<dt>1010 &quot;can't initialize loader &lt;loader&gt; &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>DOS/4G could not initialize the named loader, probably because of a resource shortage.&nbsp; Try making more memory
 available.&nbsp; If that doesn't work, please contact Tenberry Technical Support.&nbsp; The error code is for Tenberry Software'
 use.
-<dt>1011 &quot;VMM initialization error [&lt;error code&gt;]&quot;
+<dt>1011 &quot;VMM initialization error &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>DOS/4G could not initialize the Virtual Memory Manager, probably because of a resource shortage.&nbsp; Try making
 more memory available.&nbsp; If that doesn't work, please contact Tenberry Technical Support.&nbsp; The error code is for
@@ -4214,10 +4217,10 @@ is page buffer, make more DOS memory available.
 <dd>
 <br><br>There is less physical memory available than the amount specified by the MINMEM parameter.&nbsp; Make more memory
 available.
-<dt>2511 &quot;swap out error [&lt;error code&gt;]&quot;
+<dt>2511 &quot;swap out error &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>Unknown disk error.&nbsp; The error code is for Tenberry Software' use.
-<dt>2512 &quot;swap in error [&lt;error code&gt;]&quot;
+<dt>2512 &quot;swap in error &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>Unknown disk error.&nbsp; The error code is for Tenberry Software' use.
 <dt>2514 &quot;can't open trace file&quot;
@@ -4855,7 +4858,7 @@ caused this particular fault.
 &nbsp;You can therefore tell where a crash occurred even if you can't reproduce the crash in a debugger.
 <li>The opcode stream, if it appears, shows the next 16 bytes from the code segment at the point of the exception.&nbsp; If
 you disassemble these instructions, you can tell what instructions caused the crash, even without using a debugger.&nbsp;
-In this case, 8A 18 is the instruction<tt> mov bl,[eax].</tt>
+In this case, 8A 18 is the instruction<tt> mov bl,&#91;eax&#93;.</tt>
 <li>72 words from the top of the stack, at the point of the exception, may be listed next.&nbsp; You may be able to recognize
 function calls or data from your program on the stack.
 <li>The four interrupts least to most recently handled by DOS/4GW in protected mode are listed next.&nbsp; In this example,
@@ -5302,8 +5305,8 @@ with the same name as the &quot;.rex&quot; file.
 </ol>
 <br>The following describes the syntax of the<tt> WBIND</tt> command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec [-d] [-n] [-q] [-s supervisor] [-R rc_options]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec &#91;-d&#93; &#91;-n&#93; &#91;-q&#93; &#91;-s supervisor&#93; &#91;-R rc_options&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>WBIND
 <dd>is the name of the Open Watcom Bind utility.
@@ -5473,8 +5476,8 @@ with the same name as the &quot;.rex&quot; file.
 </ol>
 <br>The following describes the syntax of the<tt> WBIND</tt> command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec [-d] [-n] [-q] [-s supervisor] [-R rc_options]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec &#91;-d&#93; &#91;-n&#93; &#91;-q&#93; &#91;-s supervisor&#93; &#91;-R rc_options&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>WBIND
 <dd>is the name of the Open Watcom Bind utility.
@@ -5789,11 +5792,11 @@ only on the maximum number of active callbacks.
 </ul>
 <h2 id="Windows__FloatingMpoint_Emulation"> Windows:&nbsp; Floating-point Emulation </h2>
 <br>The file<tt> WEMU387.386</tt> is included to support floating-point emulation for 32-bit applications running under Windows.
-&nbsp;This file is installed in the<tt> [386Enh]</tt> section of your<tt> SYSTEM.INI</tt> file.&nbsp; By using the floating-point
-emulator, your application can be compiled with the &quot;fpi87&quot; option to use inline floating-point instructions, and
-it will run on a machine without a numeric coprocessor.
-<br><br>Only one of<tt> WEMU387.386</tt> and<tt> WDEBUG.386</tt> may be installed in your<tt> [386Enh]</tt> section.&nbsp;
-<tt> WEMU387.386</tt> may be distributed with your application.
+&nbsp;This file is installed in the<tt> &#91;386Enh&#93;</tt> section of your<tt> SYSTEM.INI</tt> file.&nbsp; By using the
+floating-point emulator, your application can be compiled with the &quot;fpi87&quot; option to use inline floating-point instructions,
+and it will run on a machine without a numeric coprocessor.
+<br><br>Only one of<tt> WEMU387.386</tt> and<tt> WDEBUG.386</tt> may be installed in your<tt> &#91;386Enh&#93;</tt> section.
+&nbsp;<tt> WEMU387.386</tt> may be distributed with your application.
 <h2 id="Windows__Multiple_Instances"> Windows:&nbsp; Multiple Instances </h2>
 <br>Since the 32-bit application resides in a flat memory space, it is NOT possible to share code with other instances.&nbsp;
 This means that you must register new window classes with callbacks into the new instance's code space.&nbsp; A simple way
@@ -5809,7 +5812,7 @@ of accomplishing this is as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WNDCLASS&nbsp; wc;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HWND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hWnd</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class[32];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class&#91;32&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wc.style = NULL;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wc.lpfnWndProc = (LPVOID) MainWndProc;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wc.cbClsExtra = 0;</tt>
@@ -6320,7 +6323,8 @@ of view, the 16-bit supervisor might look like the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32bitDLLindirect:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set up stack frame</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch to 32-bit data space</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call indirect registration_list[ index ]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call indirect registration_list&#91; index
+&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
@@ -6350,7 +6354,7 @@ of DLLs.&nbsp; The 32-bit DLL has a<tt> WinMain</tt> routine and the 16-bit DLL 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long FAR PASCAL __export FooMe1(WORD w1, DWORD w2, WORD w3)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buff[128];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buff&#91;128&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sprintf( buff, &quot;FooMe1: w1=%hx, w2=%lx, w3=%hx&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; w1, w2, w3 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox( NULL, buff, DLL_ID, MB_OK );</tt>
@@ -6359,7 +6363,7 @@ of DLLs.&nbsp; The 32-bit DLL has a<tt> WinMain</tt> routine and the 16-bit DLL 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long FAR PASCAL __export FooMe2( DWORD w1, WORD w2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buff[128];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buff&#91;128&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sprintf( buff, &quot;FooMe2: w1=%lx, w2=%hx&quot;, w1, w2 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox( NULL, buff, DLL_ID, MB_OK );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( w1 + 1 );</tt>
@@ -6454,7 +6458,7 @@ to the DLL.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FPROC fp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HANDLE hlib;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long cb;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buff[128];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buff&#91;128&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox( NULL, &quot;16-bit EXE Started&quot;, &quot;EXE16&quot;, MB_OK );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6720,7 +6724,7 @@ and &quot;Exit&quot;.
 <dd><b> Select &quot;View Code&quot;</b> from the &quot;Project&quot; window.&nbsp; To interface these Visual Basic functions
 to the DLLs, the following code is needed in the
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Object: [general] Proc: [declarations]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Object: &#91;general&#93; Proc: &#91;declarations&#93;</tt>
 <br><br>section of the code.&nbsp; This code assumes that<tt> VBDLL32.DLL</tt> and<tt> COVER16.DLL</tt> are in the<tt> c:\path</tt>
 directory.&nbsp; Modify the pathnames appropriately if this is not the case.&nbsp; (Note:&nbsp; the =&gt; means to continue
 the statement on the same line.)
@@ -6755,7 +6759,7 @@ in the 32-bit DLL.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;windows.h&gt;&nbsp;&nbsp;&nbsp; /* required for all Windows applications */</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long FAR PASCAL Add3( short var1, long varlong, short var2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buf[128];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buf&#91;128&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sprintf( buf, &quot;Add3: var1=%d, varlong=%ld, var2=%d&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;var1, varlong, var2 );</tt>
@@ -6764,7 +6768,7 @@ in the 32-bit DLL.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long FAR PASCAL Add2( long varlong, short var2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buf[128];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buf&#91;128&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sprintf( buf, &quot;Add2: varlong=%ld, var2=%d&quot;, varlong, var2 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox( NULL, buf, &quot;VBDLL32&quot;, MB_OK | MB_TASKMODAL );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( varlong + var2 );</tt>
@@ -7090,7 +7094,7 @@ macro must be applied.&nbsp; The data can then be accessed with the resulting 32
 <br><tt>#include &lt;windows.h&gt;</tt>
 <br><tt>int FAR PASCAL FooMe( WORD w1, DWORD w2, WORD w3 )</tt>
 <br><tt>{</tt>
-<br><tt>&nbsp; char str[128];</tt>
+<br><tt>&nbsp; char str&#91;128&#93;;</tt>
 <br><br><tt>&nbsp; sprintf( str, &quot;w1=%hx, w2=%lx, w3=%hx&quot;, w1, w2, w3 );</tt>
 <br><tt>&nbsp; MessageBox( NULL, str, &quot;DLL Test&quot;, MB_OK );</tt>
 <br><tt>&nbsp; return( w1 + w2 );</tt>
@@ -7155,7 +7159,7 @@ used to get a 16-bit function pointer that may be used by Windows.
 <br><tt>#include &lt;windows.h&gt;</tt>
 <br><br><tt>WORD FAR PASCAL Test( DWORD a, WORD b )</tt>
 <br><tt>{</tt>
-<br><tt>&nbsp; char foo[128];</tt>
+<br><tt>&nbsp; char foo&#91;128&#93;;</tt>
 <br><br><tt>&nbsp; sprintf( foo, &quot;a=%lx, b=%hx&quot;, a, b );</tt>
 <br><tt>&nbsp; MessageBox( NULL, foo, &quot;TEST&quot;, MB_OK );</tt>
 <br><tt>&nbsp; return( 0x123 );</tt>
@@ -8951,7 +8955,7 @@ compile option to instruct the Open Watcom compiler not to include references to
 <br>To illustrate the creation of a POSIX application, we will use a simple example.&nbsp; This program displays an identifying
 banner and then displays its arguments one at a time.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [POSIXSMP.C]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;POSIXSMP.C&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;unistd.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // The Win32 SDK doesn't provide a complete set of</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // headers for the libraries (e.g., no stdio.h).</tt>
@@ -8962,7 +8966,7 @@ banner and then displays its arguments one at a time.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;POSIX sample program\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0 ; i &lt; argc ; i++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%d: %s\n&quot;, i, argv[i]
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%d: %s\n&quot;, i, argv&#91;i&#93;
 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;</tt>
@@ -8971,7 +8975,7 @@ banner and then displays its arguments one at a time.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // make sure that parms go on the stack for main</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // and that main gets the _ in the right place by</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // using a pragma to do so.</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux main &quot;_*&quot; __parm [];</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux main &quot;_*&quot; __parm &#91;&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // The compiler emits references to these symbols,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // so make sure they get defined here to prevent</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // unresolved references.</tt>
@@ -8983,7 +8987,7 @@ banner and then displays its arguments one at a time.
 rather than the Open Watcom libraries.&nbsp; There are also some special link time issues and these are addressed in the following
 sample &quot;makefile&quot;.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [MAKEFILE]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;MAKEFILE&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; posixsmp.exe : posixsmp.c posix.add makefile.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set nt_include=</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set include=$(%watcom)\sdk\posix\h;$(%watcom)\sdk\posix\h\sys</tt>
@@ -9037,10 +9041,10 @@ to accomplish this task.&nbsp; We will take you through the steps necessary to p
 <h2 id="16Mbit_OSD2__Building_and_Running_the_Sample_OSD2_1_x_Application"> 16-bit OS/2:&nbsp; Building and Running the Sample OS/2 1.x Application </h2>
 <br>To compile and link our example program which is stored in the file<tt> hello.c</tt>, enter the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl -l=os2 hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl -l=os2 hello.c</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl -l=os2&nbsp; hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl -l=os2&nbsp; hello.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom C/C++16 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1988-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -9065,7 +9069,7 @@ to accomplish this task.&nbsp; We will take you through the steps necessary to p
 <br><br>Provided that no errors were encountered during the compile or link phases, the &quot;hello&quot; program may now
 be run.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;hello</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Hello world</tt>
 <br><br>If you examine the current directory, you will find that two files have been created.&nbsp; These are<tt> hello.obj</tt>
 (the result of compiling<tt> hello.c</tt>) and<tt> hello.exe</tt> (the result of linking<tt> hello.obj</tt> with the appropriate
@@ -9081,10 +9085,10 @@ appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl -l=os2 -d2 hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl -l=os2 -d2 hello.c</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl -l=os2&nbsp; -d2 hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl -l=os2&nbsp; -d2 hello.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom C/C++16 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1988-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -9119,7 +9123,7 @@ configuration file<tt> CONFIG.SYS.</tt>&nbsp; It contains the Open Watcom Debugg
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath=c:\watcom\binp\dll</tt>
 <br><br>To request the Open Watcom Debugger to assist in debugging the application, the following command may be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wd hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wd hello</tt>
 <br><br>It would be too ambitious to describe the debugger in this introductory chapter so we refer you to the book entitled<b><i>
 Open Watcom Debugger User's Guide.</i></b>
 <h1 id="32Mbit_OSD2__Creating_32Mbit_OSD2_Applications"> 32-bit OS/2:&nbsp; Creating 32-bit OS/2 Applications </h1>
@@ -9154,10 +9158,10 @@ to accomplish this task.&nbsp; We will take you through the steps necessary to p
 <h2 id="32Mbit_OSD2__Building_and_Running_the_Sample_OSD2_Application"> 32-bit OS/2:&nbsp; Building and Running the Sample OS/2 Application </h2>
 <br>To compile and link our example program which is stored in the file<tt> hello.c</tt>, enter the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2 hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2 hello.c</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2&nbsp; hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2&nbsp; hello.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom C/C++32 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1988-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -9182,7 +9186,7 @@ to accomplish this task.&nbsp; We will take you through the steps necessary to p
 <br><br>Provided that no errors were encountered during the compile or link phases, the &quot;hello&quot; program may now
 be run.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;hello</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Hello world</tt>
 <br><br>If you examine the current directory, you will find that two files have been created.&nbsp; These are<tt> hello.obj</tt>
 (the result of compiling<tt> hello.c</tt>) and<tt> hello.exe</tt> (the result of linking<tt> hello.obj</tt> with the appropriate
@@ -9198,10 +9202,10 @@ the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2 -d2 hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2 -d2 hello.c</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2&nbsp; -d2 hello.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2&nbsp; -d2 hello.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom C/C++32 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1988-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -9232,7 +9236,7 @@ results in fewer code optimizations by default.&nbsp; You can request more optim
 code and the original source language code.
 <br><br>To request the Open Watcom Debugger to assist in debugging the application, the following command may be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wd hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wd hello</tt>
 <br><br>It would be too ambitious to describe the debugger in this introductory chapter so we refer you to the book entitled<b><i>
 Open Watcom Debugger User's Guide.</i></b>
 <h1 id="OSD2__OSD2_2_x_MultiMthreaded_Applications"> OS/2:&nbsp; OS/2 2.x Multi-threaded Applications </h1>
@@ -9367,7 +9371,7 @@ the<b> INCLUDE</b> environment variable must include the<tt> \watcom\h\os2</tt> 
 is the directory in which Open Watcom C/C++ was installed).
 <br><br>We can now compile and link the application by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -bt=os2 -bm -l=os2v2 mthread</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -bt=os2 -bm -l=os2v2 mthread</tt>
 <br><br>The &quot;bm&quot; option must be specified since we are creating a multi-threaded application.&nbsp; If your multi-threaded
 application contains more than one module, each module must be compiled using the &quot;bm&quot; switch.
 <br><br>The &quot;l&quot; option specifies the target system for which the application is to be linked.&nbsp; The system name<tt>
@@ -9476,7 +9480,7 @@ an error.
 <br>Assume the above example is contained in the file<tt> dllsamp.c.</tt>&nbsp; We can compile the file using the following
 command.&nbsp; Note that we must specify the &quot;bd&quot; compiler option.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcc386 -bd dllsamp</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcc386 -bd dllsamp</tt>
 <br><br>Before we can link our example, we must create a linker directive file that describes the attributes and entry points
 of our dynamic link library.&nbsp; The following is a linker directive file, called<tt> dllsamp.lnk,</tt> that can be used
 to create the dynamic link library.
@@ -9506,7 +9510,7 @@ calling convention.
 </ol>
 <br>We can now create our dynamic link library by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlink @dllsamp</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlink @dllsamp</tt>
 <br><br>A file called<tt> dllsamp.dll</tt> will be created.
 <h2 id="OSD2__Using_Dynamic_Link_Libraries"> OS/2:&nbsp; Using Dynamic Link Libraries </h2>
 <br>Once we have created a dynamic link library, we must allow other applications to access the functions available in the
@@ -9527,7 +9531,7 @@ directive need not be modified.&nbsp; However, if you are using &quot;IMPORT&quo
 <br><br>Let us create an import library for our sample dynamic link library we created in the previous section.&nbsp; We do
 this by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlib dllsamp +dllsamp.dll</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlib dllsamp +dllsamp.dll</tt>
 <br><br>A standard library called<tt> dllsamp.lib</tt> will be created.
 <br><br>Suppose the following sample program, contained in the file<tt> dlltest.c,</tt> calls the functions from our sample
 dynamic link library.
@@ -9548,7 +9552,7 @@ dynamic link library.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>We can compile and link our sample application by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2 dlltest dllsamp.lib</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2 dlltest dllsamp.lib</tt>
 <br><br>If we had created a linker directive file of &quot;IMPORT&quot; directives instead of an import library for the dynamic
 link library, the linker directive file, say<tt> dllimps.lnk,</tt> would be as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -9559,7 +9563,7 @@ default naming convention used when compiling using the register-based calling c
 when compiling using the stack-based calling convention.
 <br><br>To compile and link our sample application, we would issue the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2 dlltest -&quot;@dllimps&quot;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2 dlltest -&quot;@dllimps&quot;</tt>
 <h2 id="OSD2__The_Dynamic_Link_Library_Data_Area"> OS/2:&nbsp; The Dynamic Link Library Data Area </h2>
 <br>The Open Watcom C/C++ 32-bit run-time library does not support the general case operation of DLLs in an execution environment
 where there is only one instance of the DATA segment (DGROUP) for that DLL.
@@ -9673,17 +9677,17 @@ program (contained in the file<tt> hello.c</tt>).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>First we must compile the file<tt> hello.c</tt> by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcc386 hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcc386 hello</tt>
 <br><br>Once we have successfully compiled the file, we can link it by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlink sys os2v2 file hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlink sys os2v2 file hello</tt>
 <br><br>It is also possible to compile and link in one step, by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2 hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2 hello</tt>
 <br><br>This will create a PM-compatible application.&nbsp; If you wish to create a fullscreen application, link with the
 following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlink sys os2v2 fullscreen file hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlink sys os2v2 fullscreen file hello</tt>
 <h2 id="OSD2__Calling_Presentation_Manager_API_Functions"> OS/2:&nbsp; Calling Presentation Manager API Functions </h2>
 <br>It is also possible for a C/C++ application to create its own windowing environment.&nbsp; This is achieved by calling
 PM API functions directly from your C/C++ program.&nbsp; The techniques for developing these applications can be found in
@@ -9823,8 +9827,8 @@ resized */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>You can compile, link and run this demonstration by issuing the following commands.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wcl386 -l=os2v2_pm shapes</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]shapes</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wcl386 -l=os2v2_pm shapes</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;shapes</tt>
 <h1 id="OSD2__Developing_an_OSD2_Physical_Device_Driver"> OS/2:&nbsp; Developing an OS/2 Physical Device Driver </h1>
 <br>In this chapter, we discuss the development of Physical Device Drivers (PDD) for OS/2.&nbsp; The tools used in the creation
 of the sample PDD are:
@@ -9954,8 +9958,8 @@ type:
 <br><br>You must then reboot OS/2.
 <br><br>To run the test program, use the following command-line:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HRTEST [milliseconds]</tt>
-<br><br>For<tt> [milliseconds],</tt> you can enter any number (e.g., 2000 which is 2 seconds).
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HRTEST &#91;milliseconds&#93;</tt>
+<br><br>For<tt> &#91;milliseconds&#93;,</tt> you can enter any number (e.g., 2000 which is 2 seconds).
 <br><br><tt> HRTEST.EXE</tt> will issue a DosSleep for the amount of milliseconds specified or will use a default if no command-line
 parameter is given.&nbsp; It will get a timestamp from the device driver before and after the DosSleep and will calculate
 the elapsed time of that sleep and display the results.&nbsp; It will do this continuously until Ctrl/C or Ctrl/Break is pressed.
@@ -9964,7 +9968,7 @@ used for the DosSleep and the elapsed time results from the timer are the fault 
 timer.&nbsp; DosSleep is used solely as a convenient method of displaying the capabilities of the driver.
 <br><br>To run the timer program, use the following command-line:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TIMER program_name [program_args]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TIMER program_name &#91;program_args&#93;</tt>
 <br><br>For example, to time an OS/2 Directory command, issue the following command.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; timer cmd /c dir c:</tt>
@@ -10137,7 +10141,7 @@ wcl386&nbsp; mix1c mix1f.obj /fe=mix1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * MIX1F.FOR - This FORTRAN function accepts three integer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arguments and returns
 their maximum.</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc[386] mix1f.for</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc&#91;386&#93; mix1f.for</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer function tmax3( arga, argb, argc
 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer arga, argb, argc</tt>
@@ -10153,7 +10157,7 @@ value.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute the
 max of three numbers.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix2f mix2c.obj /fe=mix2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix2f mix2c.obj /fe=mix2</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux tmax3 &quot;!_&quot; parm (value)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix2f</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer*4&nbsp; tmax3</tt>
@@ -10215,7 +10219,7 @@ the length of the string being passed.&nbsp; A pointer to this structure can the
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in C that passes
 back a string.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix3f mix3c.obj /fe=mix3</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix3f mix3c.obj /fe=mix3</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix3f</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*80 sendstr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*80 cstring</tt>
@@ -10254,7 +10258,7 @@ normal C-type strings, then a FORTRAN pragma can be used to pass the string corr
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in C and passes
 it a string.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix4f mix4c.obj /fe=mix4</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix4f mix4c.obj /fe=mix4</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux cstr &quot;!_&quot; parm (value)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix4f</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*80 forstring</tt>
@@ -10282,7 +10286,7 @@ an extern struct to correspond to the FORTRAN common block.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; block can be accessed
 from C.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix5f mix5c.obj /fe=mix5</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix5f mix5c.obj /fe=mix5</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix5f</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; external put</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; common/cblk/i,j</tt>
@@ -10326,16 +10330,16 @@ assumed to be located in the DGROUP group which is accessed through the SS segme
 feature is not present, however, in the definition of the FORTRAN 77 language.&nbsp; As a result, a special pragma is required
 to call these kinds of functions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller []</tt>
-<br><br>The &quot;caller&quot; specifies that the caller will pop the arguments from the stack.&nbsp; The &quot;[]&quot; indicates
-that there are no arguments passed in registers because the<tt> printf</tt> function takes a variable number of arguments
-passed on the stack.&nbsp; The following example is a FORTRAN function that uses this pragma.&nbsp; It calls the<tt> printf</tt>
-function to print the value 47 on the screen.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller &#91;&#93;</tt>
+<br><br>The &quot;caller&quot; specifies that the caller will pop the arguments from the stack.&nbsp; The &quot;&#91;&#93;&quot;
+indicates that there are no arguments passed in registers because the<tt> printf</tt> function takes a variable number of
+arguments passed on the stack.&nbsp; The following example is a FORTRAN function that uses this pragma.&nbsp; It calls the<tt>
+printf</tt> function to print the value 47 on the screen.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * MIX6.FOR - This FORTRAN program calls the C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf function.</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix6</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller []</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix6</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller &#91;&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix6</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character cr/z0d/, nullchar/z00/</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call printf( 'Value is %ld.'//cr//nullchar,
@@ -10590,16 +10594,16 @@ the &quot;d1&quot; option.&nbsp; One way this sort of problem arises involves lo
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void example( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int a[10];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int a&#91;10&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt;= 10; ++i )</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[i] = i;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a&#91;i&#93; = i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do_something( a );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The &quot;for&quot; loop initializes one too many array elements but the version compiled with the &quot;d2&quot;
 option will overwrite the variable &quot;i&quot; without causing any problems.&nbsp; The same function compiled with the &quot;d1&quot;
-option would have the variable &quot;i&quot; in a register.&nbsp; The erroneous access of &quot;a[10]&quot; would modify a
-value that is used to restore a register when the function returns.&nbsp; The register would be &quot;restored&quot; with
-an incorrect value and this would affect the execution of the function that called this function.&nbsp; The above example
+option would have the variable &quot;i&quot; in a register.&nbsp; The erroneous access of &quot;a&#91;10&#93;&quot; would
+modify a value that is used to restore a register when the function returns.&nbsp; The register would be &quot;restored&quot;
+with an incorrect value and this would affect the execution of the function that called this function.&nbsp; The above example
 shows how a program can work when compiled with the &quot;d2&quot; option and stop working when compiled with the &quot;d1&quot;
 option.&nbsp; You should always test your program fully with all the modules compiled with the &quot;d1&quot; option to protect
 yourself from any surprises.
@@ -10889,7 +10893,7 @@ the &quot;files=n&quot; statement.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; i, j, maxh, maxo;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FILE&nbsp; *temp_files[50];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FILE&nbsp; *temp_files&#91;50&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 25; i &lt; 40; i++ ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* count 5 for stdin,stdout,stderr,stdaux,stdprn
 */</tt>
@@ -10898,15 +10902,16 @@ the &quot;files=n&quot; statement.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxh = _grow_handles( 5 + i );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxo = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( j = 0; j &lt; maxh; j++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temp_files[j] = tmpfile();</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( temp_files[j]
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; temp_files&#91;j&#93;
+= tmpfile();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( temp_files&#91;j&#93;
 == NULL )break;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxo++;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot; %d/%d temp files opened\n&quot;,
 maxo, maxh );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( j = 0; j &lt; maxo; j++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( temp_files[j]
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( temp_files&#91;j&#93;
 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
@@ -10993,12 +10998,12 @@ optimizations and still maintain &quot;d1&quot; (line) information.&nbsp; The &q
 to ensure that any local variable can be displayed at any time in the function.&nbsp; To illustrate why this results in less
 optimum code being generated for a function, let us look at a simple array initialization.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int a[100];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int a&#91;100&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void init_a( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt; 100; ++i ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[i] = 3*i;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a&#91;i&#93; = 3*i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The code optimizer will ensure that you can print the value of the variable &quot;i&quot; at any time during the execution
@@ -11008,7 +11013,7 @@ source file while debugging, the &quot;d1&quot; option only generates line numbe
 With line number information, much better code can be generated.&nbsp; Here is the C equivalent of the code generated for
 the array initialization example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int a[100];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int a&#91;100&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void init_a( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int *t1;</tt>
@@ -11017,7 +11022,7 @@ the array initialization example.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t1 = a;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t2 = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* a[i] = 3*i; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* a&#91;i&#93; = 3*i; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *t1 = t2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ++t1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t2 += 3;</tt>

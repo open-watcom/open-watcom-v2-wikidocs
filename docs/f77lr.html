@@ -883,8 +883,8 @@ for quick reference.&nbsp; The syntax models for each statement are presented in
 box denotes a standard FORTRAN 77 statement.&nbsp; The shaded box denotes a Open Watcom FORTRAN 77 extension to the language.
 &nbsp;Users should note that extensions which are supported by this compiler may not be supported by other compilers.&nbsp;
 We leave the choice to use a particular extension to the discretion of the programmer.
-<br><br>In the following sections the use of square brackets ([ ]) denotes items which may be optionally specified.&nbsp;
-The use of the ellipsis (...) denotes items which may be repeated as often as desired.
+<br><br>In the following sections the use of square brackets (&#91; &#93;) denotes items which may be optionally specified.
+&nbsp;The use of the ellipsis (...) denotes items which may be repeated as often as desired.
 <h2 id="ADMIT_Statement"> ADMIT Statement </h2>
 <br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADMIT</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -919,14 +919,14 @@ in a previous<tt> GUESS</tt> or<tt> ADMIT</tt> block.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END GUESS</tt>
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="ALLOCATE_Statement"> ALLOCATE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp; ALLOCATE (array([l:]u[,[l:]u,...])[,...][,LOCATION=loc])</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp; ALLOCATE (array(&#91;l:&#93;u&#91;,&#91;l:&#93;u,...&#93;)&#91;,...&#93;&#91;,LOCATION=loc&#93;)</tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
-<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp; ALLOCATE (array([l:]u[,[l:]u,...])[,...][,STAT=ierr])</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp; ALLOCATE (array(&#91;l:&#93;u&#91;,&#91;l:&#93;u,...&#93;)&#91;,...&#93;&#91;,STAT=ierr&#93;)</tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1144,9 +1144,9 @@ statement.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LABEL2 = 100</tt>
 <br><br>the assignment statement would have been legal.
 <h2 id="AT_END_Statement"> AT END Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AT END DO&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AT END DO&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1220,7 +1220,7 @@ ON UNIT 1'</tt>
 <dt>alist
 <dd>is a list of backspace specifiers separated by commas:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IOSTAT = ios</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ERR = s</tt>
 </dl>
@@ -1230,7 +1230,7 @@ the endfile record.
 <dl>
 <dt>Backspace Specifiers
 <dd>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>
 <br><br><tt>u</tt> is an<b> external unit identifier.</b>&nbsp; An external unit identifier is a non-negative integer expression.
 &nbsp;If the optional<tt> UNIT=</tt> specifier is omitted then the specifier must be the first item in the list of specifiers.
@@ -1263,10 +1263,10 @@ Open Watcom FORTRAN 77 allows it.
 is positioned at the endfile record, then the<tt> BACKSPACE</tt> statement cannot be used.
 <br><br>For more information on input/output, see the chapter entitled <a href="#InputDOutput">Input/Output</a>.
 <h2 id="BLOCK_DATA_Statement"> BLOCK DATA Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BLOCK DATA [sub]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BLOCK DATA &#91;sub&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tt><tt></tt>
+&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1318,9 +1318,9 @@ common block may be given initial values.
 <li>A named block data subprogram may occur only once in an executable program.
 </ol>
 <h2 id="CALL_Statement"> CALL Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALL sub [( [a [, a] ... ] )]</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALL sub &#91;( &#91;a &#91;, a&#93; ... &#93; )&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1439,9 +1439,9 @@ or by an<tt> IMPLICIT</tt> statement, is either confirmed or overridden.&nbsp; H
 of type character, it cannot appear in another type declaration statement.
 <br><br>There are various forms of the<tt> CHARACTER</tt> statement.&nbsp; The following sections describe them.
 <h3 id="Standard_CHARACTER_Statement"> Standard CHARACTER Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER[*len [,]] name [,name] ...</tt></tt>&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER&#91;*len &#91;,&#93;&#93; name &#91;,name&#93; ...</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1455,9 +1455,9 @@ of type character, it cannot appear in another type declaration statement.
 <dd><b><i> </i></b>
 <dt>name
 <dd>is one of the following forms:
-<br><br><tt>v[*len]</tt>
-<br><br><tt>a(d)[*len]</tt>
-<br><br><tt>a[*len](d)</tt>
+<br><br><tt>v&#91;*len&#93;</tt>
+<br><br><tt>a(d)&#91;*len&#93;</tt>
+<br><br><tt>a&#91;*len&#93;(d)</tt>
 <dt>v
 <dd>is a variable name, symbolic name of a constant, function name or dummy procedure name.
 <dt>a
@@ -1531,8 +1531,9 @@ to have a length specification of<tt> (*).</tt>
 corresponding character constant expression in the<tt> PARAMETER</tt> statement.
 <br><br>The length specification of a character statement function or statement function dummy argument must not be<tt> (*).</tt>
 <h3 id="Extended_CHARACTER_Statement__Data_Initialization"> Extended CHARACTER Statement:&nbsp; Data Initialization </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER[*len[,]] name [/cl/] [,name[/cl/]] ...</tt></tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER&#91;*len&#91;,&#93;&#93; name &#91;/cl/&#93; &#91;,name&#91;/cl/&#93;&#93;
+...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1550,7 +1551,7 @@ corresponding character constant expression in the<tt> PARAMETER</tt> statement.
 <dd>is as described in the previous section.
 <dt>cl
 <dd>is a list of the form:
-<br><br><tt>k [,k] ...</tt>
+<br><br><tt>k &#91;,k&#93; ...</tt>
 <dt>k
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -1585,7 +1586,7 @@ the array<tt> B</tt> is initialized with the character constant<tt> '111'.</tt>
 <dt>cllist
 <dd>is a list of close specifiers separated by commas:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IOSTAT = ios</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ERR = s</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; STATUS = sta</tt>
@@ -1594,7 +1595,7 @@ the array<tt> B</tt> is initialized with the character constant<tt> '111'.</tt>
 <dl>
 <dt>Close Specifiers
 <dd>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>
 <br><br><tt>u</tt> is an<b> external unit identifier.</b>&nbsp; An external unit identifier is a non-negative integer expression.
 &nbsp;If the optional<tt> UNIT=</tt> specifier is omitted then the specifier must be the first item in the list of specifiers.
@@ -1644,9 +1645,9 @@ without a<tt> STATUS=</tt> specifier.
 </ol>
 <br>For more information on input/output, see the chapter entitled <a href="#InputDOutput">Input/Output</a>.
 <h2 id="COMMON_Statement"> COMMON Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMMON [/[cb]/] nlist [[,]/[cb]/ nlist] ...</tt></tt>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMMON &#91;/&#91;cb&#93;/&#93; nlist &#91;&#91;,&#93;/&#91;cb&#93;/
+nlist&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1732,9 +1733,9 @@ or by an<tt> IMPLICIT</tt> statement, is either confirmed or overridden.&nbsp; H
 of type complex, it cannot appear in another type declaration statement.
 <br><br>There are various forms of the<tt> COMPLEX</tt> statement.&nbsp; The following sections describe them.
 <h3 id="Standard_COMPLEX_Statement"> Standard COMPLEX Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMPLEX name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMPLEX name &#91;,name&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1756,9 +1757,9 @@ of type complex, it cannot appear in another type declaration statement.
 <br><br>In the previous example,<tt> A</tt> is defined to be a variable of type complex and<tt> B</tt> and<tt> C</tt> are
 defined to be arrays of type complex.
 <h3 id="Extended_COMPLEX_Statement__Length_Specification"> Extended COMPLEX Statement:&nbsp; Length Specification </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMPLEX[*len[,]] name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMPLEX&#91;*len&#91;,&#93;&#93; name &#91;,name&#93; ...</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1772,9 +1773,9 @@ defined to be arrays of type complex.
 <dd><b><i> </i></b>
 <dt>name
 <dd>is one of the following forms:
-<br><br><tt>v[*len]</tt>
-<br><br><tt>a[*len](d)</tt>
-<br><br><tt>a(d)[*len]</tt>
+<br><br><tt>v&#91;*len&#93;</tt>
+<br><br><tt>a&#91;*len&#93;(d)</tt>
+<br><br><tt>a(d)&#91;*len&#93;</tt>
 <dt>v
 <dd>is a variable name, array name, symbolic name of a constant, function name or dummy procedure name.
 <dt>a
@@ -1801,8 +1802,9 @@ to<b> each</b> element of the array.
 <br><br>In the previous example,<tt> X</tt> is declared to be a variable of type double precision complex,<tt> A</tt> is declared
 to be a variable of type complex and<tt> B</tt> and<tt> C</tt> are declared to be arrays of type double precision complex.
 <h3 id="Extended_COMPLEX_Statement__Data_Initialization"> Extended COMPLEX Statement:&nbsp; Data Initialization </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMPLEX[*len[,]] name [/cl/] [,name[/cl/]] ...</tt></tt>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMPLEX&#91;*len&#91;,&#93;&#93; name &#91;/cl/&#93; &#91;,name&#91;/cl/&#93;&#93;
+...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1820,7 +1822,7 @@ to be a variable of type complex and<tt> B</tt> and<tt> C</tt> are declared to b
 <dd>is as described in the previous section.
 <dt>cl
 <dd>is a list of the form:
-<br><br><tt>k [,k] ...</tt>
+<br><br><tt>k &#91;,k&#93; ...</tt>
 <dt>k
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -1865,9 +1867,9 @@ have the ability to transfer control of execution.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp; CONTINUE</tt>
 <h2 id="CYCLE_Statement"> CYCLE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CYCLE&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CYCLE&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1893,9 +1895,9 @@ IOSTAT=IOS ) X</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="DATA_Statement"> DATA Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA nlist/clist/ [[,]nlist/clist/] ...</tt></tt>&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA nlist/clist/ &#91;&#91;,&#93;nlist/clist/&#93; ...</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1911,7 +1913,7 @@ IOSTAT=IOS ) X</tt>
 <dd>is a list of variable names, array element names, substring names and implied-DO lists.
 <dt>clist
 <dd>is a list of the form:
-<br><br><tt>a [,a] ...</tt>
+<br><br><tt>a &#91;,a&#93; ...</tt>
 <dt>a
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -1950,7 +1952,7 @@ equivalenced), only one of the items can be initialized.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DATA Y/10*5/</tt>
 <br><br>An<b> implied-DO list</b> in a<tt> DATA</tt> statement has the following form:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = m1, m2[, m3] )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = m1, m2&#91;, m3&#93; )</tt>
 <dl>
 <dt><b><i>where:</i></b>
 <dd><b><i> </i></b>
@@ -2034,9 +2036,9 @@ hexadecimal constant used to initialize the variable<tt> X,</tt> represents the 
 &nbsp;The number 5.0 will have a different floating-point representation on other computers.
 </ol>
 <h2 id="DEALLOCATE_Statement"> DEALLOCATE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEALLOCATE (arraylist [, STAT = ierr])</tt></tt>&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEALLOCATE (arraylist &#91;, STAT = ierr&#93;)</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2103,9 +2105,9 @@ first (see the<tt> ALLOCATE</tt> statement).
 <br><br>An array that was allocated using the<tt> LOCATION=</tt> specifier need not be deallocated.
 <br><br>For more information on arrays, see the chapter entitled <a href="#Arrays">Arrays</a>.
 <h2 id="DIMENSION_Statement"> DIMENSION Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIMENSION a(d) [,a(d)] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIMENSION a(d) &#91;,a(d)&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2143,9 +2145,9 @@ arrays.
 <br>Two forms of the<tt> DO</tt> statement are presented.&nbsp; The second form is a Open Watcom FORTRAN 77 extension to the
 FORTRAN 77 language.
 <h3 id="Standard_DO_Statement"> Standard DO Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO s [,] i = e1, e2 [, e3]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO s &#91;,&#93; i = e1, e2 &#91;, e3&#93;</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2166,8 +2168,9 @@ in the same program unit.
 <dd>are each an integer, real, or double precision expression.
 </dl>
 <h3 id="Extended_DO_Statement"> Extended DO Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO [s[,]] i = e1, e2 [, e3]&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO &#91;s&#91;,&#93;&#93; i = e1, e2 &#91;, e3&#93;&nbsp;
+&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2342,9 +2345,9 @@ is either confirmed or overridden.&nbsp; However, once a name has been declared 
 in another type declaration statement.
 <br><br>There are various forms of the<tt> DOUBLE COMPLEX</tt> statement.&nbsp; The following sections describe them.
 <h3 id="Simple_DOUBLE_COMPLEX_Statement"> Simple DOUBLE COMPLEX Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE COMPLEX name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE COMPLEX name &#91;,name&#93; ...</tt></tt>&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2366,8 +2369,9 @@ in another type declaration statement.
 <br><br>In the previous example,<tt> A</tt> is defined to be a variable of type double complex and<tt> B</tt> and<tt> C</tt>
 are defined to be arrays of type double complex.
 <h3 id="DOUBLE_COMPLEX_Statement__Data_Initialization"> DOUBLE COMPLEX Statement:&nbsp; Data Initialization </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE COMPLEX name [/cl/] [,name[/cl/]] ...</tt></tt>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE COMPLEX name &#91;/cl/&#93; &#91;,name&#91;/cl/&#93;&#93;
+...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2383,7 +2387,7 @@ are defined to be arrays of type double complex.
 <dd>is as described in the previous section.
 <dt>cl
 <dd>is a list of the form:
-<br><br><tt>k [,k] ...</tt>
+<br><br><tt>k &#91;,k&#93; ...</tt>
 <dt>k
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -2407,9 +2411,9 @@ is either confirmed or overridden.&nbsp; However, once a name has been declared 
 appear in another type declaration statement.
 <br><br>There are various forms of the<tt> DOUBLE PRECISION</tt> statement.&nbsp; The following sections describe them.
 <h3 id="Standard_DOUBLE_PRECISION_Statement"> Standard DOUBLE PRECISION Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE PRECISION name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE PRECISION name &#91;,name&#93; ...</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2431,8 +2435,9 @@ appear in another type declaration statement.
 <br><br>In the previous example,<tt> A</tt> is defined to be a variable of type double precision and<tt> B</tt> and<tt> C</tt>
 are defined to be arrays of type double precision.
 <h3 id="Extended_DOUBLE_PRECISION_Statement__Data_Initialization"> Extended DOUBLE PRECISION Statement:&nbsp; Data Initialization </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE PRECISION name [/cl/] [,name[/cl/]] ...</tt></tt>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOUBLE PRECISION name &#91;/cl/&#93; &#91;,name&#91;/cl/&#93;&#93;
+...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2448,7 +2453,7 @@ are defined to be arrays of type double precision.
 <dd>is as described in the previous section.
 <dt>cl
 <dd>is a list of the form:
-<br><br><tt>k [,k] ...</tt>
+<br><br><tt>k &#91;,k&#93; ...</tt>
 <dt>k
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -2465,9 +2470,9 @@ initialization are the same as for the<tt> DATA</tt> statement.
 <br><br>In the previous example,<tt> A</tt> is initialized with the double precision constant<tt> 4D4</tt> and each element
 of the array<tt> B</tt> is initialized with the double precision constant<tt> 5D1.</tt>
 <h2 id="DO_WHILE_Statement"> DO WHILE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO [s[,]] WHILE (e)&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO &#91;s&#91;,&#93;&#93; WHILE (e)&nbsp;&nbsp;&nbsp; &#91;:
+block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2749,7 +2754,7 @@ of the structured<tt> DO</tt> statement or the chapter entitled <a href="#Progra
 <dt>alist
 <dd>is a list of endfile specifiers separated by commas:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IOSTAT = ios</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ERR = s</tt>
 </dl>
@@ -2760,7 +2765,7 @@ endfile record may be read during subsequent direct access connections to the fi
 <dl>
 <dt>Endfile Specifiers
 <dd>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>
 <br><br><tt>u</tt> is an<b> external unit identifier.</b>&nbsp; An external unit identifier is a non-negative integer expression.
 &nbsp;If the optional<tt> UNIT=</tt> specifier is omitted then the specifier must be the first item in the list of specifiers.
@@ -3051,9 +3056,9 @@ expression) of the<tt> WHILE</tt> statement has a true (or non-zero) value or un
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="ENTRY_Statement"> ENTRY Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENTRY name [( [d [, d] ...] )]</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENTRY name &#91;( &#91;d &#91;, d&#93; ...&#93; )&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3100,9 +3105,9 @@ optional.
 </ol>
 <br>For more information, see the chapter entitled <a href="#Functions_and_Subroutines">Functions and Subroutines</a>.
 <h2 id="EQUIVALENCE_Statement"> EQUIVALENCE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EQUIVALENCE (nlist) [,(nlist)] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EQUIVALENCE (nlist) &#91;,(nlist)&#93; ...</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3219,9 +3224,9 @@ invoked it.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END BLOCK</tt>
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="EXIT_Statement"> EXIT Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXIT&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXIT&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3253,9 +3258,9 @@ IOSTAT=IOS ) X</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="EXTERNAL_Statement"> EXTERNAL Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXTERNAL p [,p] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXTERNAL p &#91;,p&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3331,9 +3336,9 @@ whose statement label is 100 to display the value of<tt> X.</tt>
 <br>A<tt> FUNCTION</tt> statement is used to define the start of a function subprogram.&nbsp; There are two forms of the<tt>
 FUNCTION</tt> function statement.&nbsp; The second form is a Open Watcom FORTRAN 77 extension.
 <h3 id="Standard_FUNCTION_Statement"> Standard FUNCTION Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [type] FUNCTION fun ( [d [, d] ...] )</tt></tt>&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;type&#93; FUNCTION fun ( &#91;d &#91;, d&#93; ...&#93;
+)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3346,7 +3351,7 @@ FUNCTION</tt> function statement.&nbsp; The second form is a Open Watcom FORTRAN
 <dt><b><i>where:</i></b>
 <dd><b><i> </i></b>
 <dt>type
-<dd>is one of<tt> LOGICAL, INTEGER, REAL, DOUBLE PRECISION, COMPLEX</tt> or<tt> CHARACTER [*len].</tt>
+<dd>is one of<tt> LOGICAL, INTEGER, REAL, DOUBLE PRECISION, COMPLEX</tt> or<tt> CHARACTER &#91;*len&#93;.</tt>
 <dt>fun
 <dd>is a symbolic name of a function subprogram.
 <dt>d
@@ -3380,8 +3385,9 @@ ARGC</tt>
 </ol>
 <br>For more information, see the chapter entitled <a href="#Functions_and_Subroutines">Functions and Subroutines</a>.
 <h3 id="Extended_FUNCTION_Statement"> Extended FUNCTION Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [type[*len]] FUNCTION fun[*len] ( [d [, d] ...] )</tt></tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;type&#91;*len&#93;&#93; FUNCTION fun&#91;*len&#93; (
+&#91;d &#91;, d&#93; ...&#93; )</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3468,9 +3474,9 @@ In the above example, the<tt> GO TO</tt> statement causes execution to proceed t
 <br><br>The above example contains an illegal<tt> GO TO</tt> statement since the statement identified by the label 100 is
 not executable.
 <h2 id="Computed_GO_TO_Statement"> Computed GO TO Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GO TO (s [,s]...) [,] i</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GO TO (s &#91;,s&#93;...) &#91;,&#93; i</tt></tt>&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3502,9 +3508,9 @@ simply of an integer variable.
 <br><br>The above example illustrates that statement labels may be repeated in the list and that a &quot;,&quot; may follow
 the closing right parenthesis.
 <h2 id="Assigned_GO_TO_Statement"> Assigned GO TO Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GO TO i [[,] (s [,s]...)]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GO TO i &#91;&#91;,&#93; (s &#91;,s&#93;...)&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3565,9 +3571,9 @@ GO TO</tt> statement, execution does not continue with the next statement.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end of selections</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <h2 id="GUESS_Statement"> GUESS Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUESS&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUESS&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3733,9 +3739,9 @@ to test for the inverse condition, namely<tt> .GE..</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END IF</tt>
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h3 id="Extended_Block_IF_Statement"> Extended Block IF Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IF (e) THEN&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IF (e) THEN&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3778,8 +3784,8 @@ END IF</tt> statement.
 <br>Open Watcom FORTRAN 77 supports three forms of the<tt> IMPLICIT</tt> statement.&nbsp; The second and third forms are extensions
 to the FORTRAN 77 language.
 <h3 id="Standard_IMPLICIT_Statement"> Standard IMPLICIT Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IMPLICIT type (a [,a] ...) [,type (a [,a] ...)]...</tt></tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IMPLICIT type (a &#91;,a&#93; ...) &#91;,type (a &#91;,a&#93;
+...)&#93;...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3792,7 +3798,7 @@ to the FORTRAN 77 language.
 <dt><b><i>where:</i></b>
 <dd><b><i> </i></b>
 <dt>type
-<dd>is one of<tt> LOGICAL, INTEGER, REAL, DOUBLE PRECISION, COMPLEX</tt> or<tt> CHARACTER[*len].</tt>
+<dd>is one of<tt> LOGICAL, INTEGER, REAL, DOUBLE PRECISION, COMPLEX</tt> or<tt> CHARACTER&#91;*len&#93;.</tt>
 <dt>a
 <dd>is either a single letter or a range of letters denoted by separating the first letter in the range from the last letter in
 the range by a minus sign.
@@ -3801,12 +3807,12 @@ the range by a minus sign.
 enclosed in parentheses.&nbsp; If<tt> len</tt> is not specified, the length is 1.
 </dl>
 <h3 id="Extended_IMPLICIT_Statement"> Extended IMPLICIT Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IMPLICIT type[*len] (a [,a] ...)</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IMPLICIT type&#91;*len&#93; (a &#91;,a&#93; ...)</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
-<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,type[*len]
-(a [,a] ...)] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;,type&#91;*len&#93;
+(a &#91;,a&#93; ...)&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -3968,7 +3974,7 @@ if it exists, whether it is connected to a unit, and what the unit number is (if
 <dd>includes the<tt> UNIT=</tt> specifier and may include at most one of each of the inquiry specifiers listed below.&nbsp; Specifiers
 are separated by commas.&nbsp; The<tt> UNIT=</tt> specified has the form
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
 <br><br>where<tt> u</tt> is an<b> external unit identifier.</b>&nbsp; An external unit identifier is a non-negative integer
 expression.&nbsp; If the optional<tt> UNIT=</tt> specifier is omitted then the specifier must be the first item in the list
 of specifiers.
@@ -4218,9 +4224,9 @@ or by an<tt> IMPLICIT</tt> statement, is either confirmed or overridden.&nbsp; H
 of type integer, it cannot appear in another type declaration statement.
 <br><br>There are various forms of the<tt> INTEGER</tt> statement.&nbsp; The following sections describe them.
 <h3 id="Standard_INTEGER_Statement"> Standard INTEGER Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER name &#91;,name&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4242,9 +4248,9 @@ of type integer, it cannot appear in another type declaration statement.
 <br><br>In the previous example,<tt> A</tt> is defined to be a variable of type integer and<tt> B</tt> and<tt> C</tt> are
 defined to be arrays of type integer.
 <h3 id="Extended_INTEGER_Statement__Length_Specification"> Extended INTEGER Statement:&nbsp; Length Specification </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER[*len[,]] name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER&#91;*len&#91;,&#93;&#93; name &#91;,name&#93; ...</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4258,9 +4264,9 @@ defined to be arrays of type integer.
 <dd><b><i> </i></b>
 <dt>name
 <dd>is one of the following forms:
-<br><br><tt>v[*len]</tt>
-<br><br><tt>a[*len](d)</tt>
-<br><br><tt>a(d)[*len]</tt>
+<br><br><tt>v&#91;*len&#93;</tt>
+<br><br><tt>a&#91;*len&#93;(d)</tt>
+<br><br><tt>a(d)&#91;*len&#93;</tt>
 <dt>v
 <dd>is a variable name, array name, symbolic name of a constant, function name or dummy procedure name.
 <dt>a
@@ -4289,8 +4295,9 @@ to<b> each</b> element of the array.
 A</tt> is declared to be a variable of type integer and occupying 4 bytes of storage and<tt> B</tt> and<tt> C</tt> are declared
 to be arrays of type integer with<b> each</b> element of the array occupying 2 bytes.
 <h3 id="Extended_INTEGER_Statement__Data_Initialization"> Extended INTEGER Statement:&nbsp; Data Initialization </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER[*len[,]] name [/cl/] [,name[/cl/]] ...</tt></tt>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER&#91;*len&#91;,&#93;&#93; name &#91;/cl/&#93; &#91;,name&#91;/cl/&#93;&#93;
+...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4308,7 +4315,7 @@ to be arrays of type integer with<b> each</b> element of the array occupying 2 b
 <dd>is as described in the previous section.
 <dt>cl
 <dd>is a list of the form:
-<br><br><tt>k [,k] ...</tt>
+<br><br><tt>k &#91;,k&#93; ...</tt>
 <dt>k
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -4325,9 +4332,9 @@ are the same as for the<tt> DATA</tt> statement.
 <br><br>In the previous example,<tt> A</tt> is initialized with the integer constant<tt> 100</tt> and each element of the
 array<tt> B</tt> is initialized with the integer constant<tt> 0.</tt>
 <h2 id="INTRINSIC_Statement"> INTRINSIC Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTRINSIC f [,f] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTRINSIC f &#91;,f&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4365,9 +4372,9 @@ or by an<tt> IMPLICIT</tt> statement, is either confirmed or overridden.&nbsp; H
 of type logical, it cannot appear in another type declaration statement.
 <br><br>There are various forms of the<tt> LOGICAL</tt> statement.&nbsp; The following sections describe them.
 <h3 id="Standard_LOGICAL_Statement"> Standard LOGICAL Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGICAL name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGICAL name &#91;,name&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4389,9 +4396,9 @@ of type logical, it cannot appear in another type declaration statement.
 <br><br>In the previous example,<tt> A</tt> is defined to be a variable of type logical and<tt> B</tt> and<tt> C</tt> are
 defined to be arrays of type logical.
 <h3 id="Extended_LOGICAL_Statement__Length_Specification"> Extended LOGICAL Statement:&nbsp; Length Specification </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGICAL[*len[,]] name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGICAL&#91;*len&#91;,&#93;&#93; name &#91;,name&#93; ...</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4405,9 +4412,9 @@ defined to be arrays of type logical.
 <dd><b><i> </i></b>
 <dt>name
 <dd>is one of the following forms:
-<br><br><tt>v[*len]</tt>
-<br><br><tt>a[*len](d)</tt>
-<br><br><tt>a(d)[*len]</tt>
+<br><br><tt>v&#91;*len&#93;</tt>
+<br><br><tt>a&#91;*len&#93;(d)</tt>
+<br><br><tt>a(d)&#91;*len&#93;</tt>
 <dt>v
 <dd>is a variable name, array name, symbolic name of a constant, function name or dummy procedure name.
 <dt>a
@@ -4435,8 +4442,9 @@ to<b> each</b> element of the array.
 A</tt> is declared to be a variable of type logical and occupying 4 bytes of storage and<tt> B</tt> and<tt> C</tt> are declared
 to be arrays of type logical with<b> each</b> element of the array occupying 1 byte.
 <h3 id="Extended_LOGICAL_Statement__Data_Initialization"> Extended LOGICAL Statement:&nbsp; Data Initialization </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGICAL[*len[,]] name [/cl/] [,name[/cl/]] ...</tt></tt>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGICAL&#91;*len&#91;,&#93;&#93; name &#91;/cl/&#93; &#91;,name&#91;/cl/&#93;&#93;
+...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4454,7 +4462,7 @@ to be arrays of type logical with<b> each</b> element of the array occupying 1 b
 <dd>is as described in the previous section.
 <dt>cl
 <dd>is a list of the form:
-<br><br><tt>k [,k] ...</tt>
+<br><br><tt>k &#91;,k&#93; ...</tt>
 <dt>k
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -4471,9 +4479,9 @@ are the same as for the<tt> DATA</tt> statement.
 <br><br>In the previous example,<tt> A</tt> is initialized with the logical constant<tt> .TRUE.</tt>&nbsp; and each element
 of the array<tt> B</tt> is initialized with the logical constant<tt> .FALSE..</tt>
 <h2 id="LOOP_Statement"> LOOP Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOOP&nbsp;&nbsp;&nbsp; [:block-label]</tt></tt>&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOOP&nbsp;&nbsp;&nbsp; &#91;:block-label&#93;</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4552,9 +4560,9 @@ different ways.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>For more information, see the chapter entitled <a href="#Structures__Unions_and_Records">Structures, Unions and Records</a>.
 <h2 id="NAMELIST_Statement"> NAMELIST Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAMELIST /name/ vlist [[,]/name/ vlist] ...</tt></tt>&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAMELIST /name/ vlist &#91;&#91;,&#93;/name/ vlist&#93; ...</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tt><tt></tt>
+&nbsp;<tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4683,7 +4691,7 @@ to its type.
 <dd>must include the<tt> UNIT=</tt> specifier and may include at most one of each of the open specifiers listed below.&nbsp; Specifiers
 are separated by commas.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IOSTAT = ios</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ERR = s</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FILE = fin</tt>
@@ -4705,7 +4713,7 @@ a file and connect it to a unit, or change certain specifications of a connectio
 <dl>
 <dt>Open Specifiers
 <dd>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>
 <br><br><tt>u</tt> is an<b> external unit identifier.</b>&nbsp; An external unit identifier is a non-negative integer expression.
 &nbsp;If the optional<tt> UNIT=</tt> specifier is omitted then the specifier must be the first item in the list of specifiers.
@@ -4861,9 +4869,9 @@ of execution is transferred to the first executable statement following the<tt> 
 </dl>
 <br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="PARAMETER_Statement"> PARAMETER Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PARAMETER (p=e [,p=e] ...)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PARAMETER (p=e &#91;,p=e&#93; ...)</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4897,10 +4905,10 @@ or a type statement before its occurrence in a<tt> PARAMETER</tt> statement.&nbs
 symbolic constant is not the default length of 1, its length must be specified in an<tt> IMPLICIT</tt> statement or a type
 statement before its occurrence in a<tt> PARAMETER</tt> statement.
 <h2 id="PAUSE_Statement"> PAUSE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAUSE [n]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAUSE &#91;n&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4934,10 +4942,10 @@ into the debugger.&nbsp; Program execution may be resumed by issuing the debugge
 <h2 id="PRINT_Statement"> PRINT Statement </h2>
 <br>Two forms of the<tt> PRINT</tt> statement are supported by Open Watcom FORTRAN 77.
 <h3 id="Standard_PRINT_Statement"> Standard PRINT Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT f [,olist]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT f &#91;,olist&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tt><tt></tt>
+&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4988,7 +4996,7 @@ unless the operand is a symbolic constant (see the<tt> PARAMETER</tt> statement)
 <br><br>Open Watcom FORTRAN 77 supports a variation of<b> list-directed</b> formatting in which the asterisk<tt> (*)</tt>
 may be omitted.&nbsp; It is equivalent to
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PRINT * [,olist]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PRINT * &#91;,olist&#93;</tt>
 <li>A<tt> NAMELIST</tt> name, indicating<b> namelist-directed</b> formatting.
 </ol>
 <br><b>Output list -</b> An output list may contain one or more of the following:
@@ -5002,7 +5010,7 @@ an asterisk in parentheses unless the operand is the symbol name of a constant (
 time).
 <li>An implied-DO list of the form:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = e1, e2 [,e3] )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = e1, e2 &#91;,e3&#93; )</tt>
 <br><br>where<tt> dlist</tt> is composed of one or more of items (1) through (6).
 </ol>
 <br><b>Example:</b>
@@ -5099,9 +5107,9 @@ in the main program.
 BLOCK DATA</tt>,<tt> RETURN</tt> or<tt> ENTRY</tt> statement.&nbsp; Note that a<tt> SAVE</tt> statement is allowed but has
 no effect in the main program.
 <h2 id="QUIT_Statement"> QUIT Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUIT&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUIT&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5130,13 +5138,13 @@ IOSTAT=IOS ) X</tt>
 <h2 id="READ_Statement"> READ Statement </h2>
 <br>Three forms of the<tt> READ</tt> statement are supported by Open Watcom FORTRAN 77.
 <h3 id="Standard_READ_Statement"> Standard READ Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; READ (cilist) [ilist]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; READ (cilist) &#91;ilist&#93;</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
-<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; READ f [,ilist]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; READ f &#91;,ilist&#93;</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5151,8 +5159,8 @@ IOSTAT=IOS ) X</tt>
 <dt>cilist
 <dd>is a control information list of specifiers separated by commas:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [FMT =] f</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;FMT =&#93; f</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; REC = rn</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IOSTAT = ios</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ERR = s</tt>
@@ -5187,7 +5195,7 @@ shown above, Open Watcom FORTRAN 77 supports three forms of the<tt> READ</tt> st
 <dl>
 <dt>Control Information List and Format Identifier
 <dd>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>
 <br><br><tt>u</tt> is an<b> external unit identifier</b> or an<b> internal file identifier.</b>
 <ol>
@@ -5196,7 +5204,7 @@ shown above, Open Watcom FORTRAN 77 supports three forms of the<tt> READ</tt> st
 substring.
 </ol>
 <br>If the optional<tt> UNIT=</tt> specifier is omitted then the unit specifier must be the first item in the list of specifiers.
-<dt>[FMT =] f
+<dt>&#91;FMT =&#93; f
 <dd>
 <br><br><tt>f</tt> is a<b> format identifier.</b>&nbsp; A format identifier is one of the following:
 <ol>
@@ -5211,7 +5219,7 @@ unless the operand is a symbolic constant (see the<tt> PARAMETER</tt> statement)
 <br><br>Open Watcom FORTRAN 77 supports a third form of the<tt> READ</tt> statement in which the asterisk<tt> (*)</tt> may
 be omitted.&nbsp; This is a form of<b> list-directed</b> formatting in which unit 5 is assumed.&nbsp; It is equivalent to
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; READ * [,ilist]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; READ * &#91;,ilist&#93;</tt>
 <li>A<tt> NAMELIST</tt> name, indicating<b> namelist-directed</b> formatting.
 </ol>
 <br>If the optional<tt> FMT=</tt> specifier is omitted then the format specifier must be the second item in the list of specifiers
@@ -5241,7 +5249,7 @@ to the statement labelled by<tt> s.</tt>
 <li>An array name except an assumed-size dummy array.
 <li>An implied-DO list of the form:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = e1, e2 [,e3] )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = e1, e2 &#91;,e3&#93; )</tt>
 <br><br>where<tt> dlist</tt> is composed of one or more of items (1) through (5).
 </ol>
 <br><b>Example:</b>
@@ -5308,9 +5316,9 @@ or by an<tt> IMPLICIT</tt> statement, is either confirmed or overridden.&nbsp; H
 of type real, it cannot appear in another type declaration statement.
 <br><br>There are various forms of the<tt> REAL</tt> statement.&nbsp; The following sections describe them.
 <h3 id="Standard_REAL_Statement"> Standard REAL Statement </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL name &#91;,name&#93; ...</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5332,9 +5340,9 @@ of type real, it cannot appear in another type declaration statement.
 <br><br>In the previous example,<tt> A</tt> is defined to be a variable of type real and<tt> B</tt> and<tt> C</tt> are defined
 to be arrays of type real.
 <h3 id="Extended_REAL_Statement__Length_Specification"> Extended REAL Statement:&nbsp; Length Specification </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL[*len[,]] name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL&#91;*len&#91;,&#93;&#93; name &#91;,name&#93; ...</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5348,9 +5356,9 @@ to be arrays of type real.
 <dd><b><i> </i></b>
 <dt>name
 <dd>is one of the following forms:
-<br><br><tt>v[*len]</tt>
-<br><br><tt>a[*len](d)</tt>
-<br><br><tt>a(d)[*len]</tt>
+<br><br><tt>v&#91;*len&#93;</tt>
+<br><br><tt>a&#91;*len&#93;(d)</tt>
+<br><br><tt>a(d)&#91;*len&#93;</tt>
 <dt>v
 <dd>is a variable name, array name, symbolic name of a constant, function name or dummy procedure name.
 <dt>a
@@ -5377,9 +5385,9 @@ to<b> each</b> element of the array.
 <br><br>In the previous example,<tt> X</tt> is declared to be a variable of type double precision,<tt> A</tt> is declared
 to be a variable of type real and<tt> B</tt> and<tt> C</tt> are declared to be arrays of type double precision.
 <h3 id="Extended_REAL_Statement__Data_Initialization"> Extended REAL Statement:&nbsp; Data Initialization </h3>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL[*len[,]] name [/cl/] [,name[/cl/]] ...</tt></tt>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL&#91;*len&#91;,&#93;&#93; name &#91;/cl/&#93; &#91;,name&#91;/cl/&#93;&#93;
+...</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5397,7 +5405,7 @@ to be a variable of type real and<tt> B</tt> and<tt> C</tt> are declared to be a
 <dd>is as described in the previous section.
 <dt>cl
 <dd>is a list of the form:
-<br><br><tt>k [,k] ...</tt>
+<br><br><tt>k &#91;,k&#93; ...</tt>
 <dt>k
 <dd>is one of the forms:
 <br><br><tt>c</tt>
@@ -5414,9 +5422,9 @@ are the same as for the<tt> DATA</tt> statement.
 <br><br>In the previous example,<tt> A</tt> is initialized with the real constant<tt> 1.2</tt> and each element of the array<tt>
 B</tt> is initialized with the real constant<tt> 5.0.</tt>
 <h2 id="RECORD_Statement"> RECORD Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RECORD /typename/ name [,name] ...</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RECORD /typename/ name &#91;,name&#93; ...</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5506,10 +5514,10 @@ when the block is executed by the second<tt> EXECUTE</tt> statement, control ret
 it and the word<tt> SECOND</tt> is printed.
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="RETURN_Statement"> RETURN Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RETURN [e]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RETURN &#91;e&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5563,7 +5571,7 @@ it can only be specified when returning from a subroutine subprogram.
 <dt>alist
 <dd>is a list of rewind specifiers separated by commas:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IOSTAT = ios</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ERR = s</tt>
 </dl>
@@ -5572,7 +5580,7 @@ it can only be specified when returning from a subroutine subprogram.
 <dl>
 <dt>Rewind Specifiers
 <dd>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>
 <br><br><tt>u</tt> is an<b> external unit identifier.</b>&nbsp; An external unit identifier is a non-negative integer expression.
 &nbsp;If the optional<tt> UNIT=</tt> specifier is omitted then the specifier must be the first item in the list of specifiers.
@@ -5608,10 +5616,10 @@ endfile record, a<tt> REWIND</tt> statement is executed and the file is read a s
 </ol>
 <br>For more information on input/output, see the chapter entitled <a href="#InputDOutput">Input/Output</a>.
 <h2 id="SAVE_Statement"> SAVE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SAVE [a [,a] ...]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SAVE &#91;a &#91;,a&#93; ...&#93;</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tt><tt></tt>
+&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5672,9 +5680,9 @@ uses a<tt> SAVE</tt> statement to ensure that their values are made available to
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, A, B, C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <h2 id="SELECT_Statement"> SELECT Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT [CASE] (e) [FROM]&nbsp; [: block-label]</tt></tt>&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT &#91;CASE&#93; (e) &#91;FROM&#93;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; <tt><tt></tt>
+&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5686,7 +5694,7 @@ uses a<tt> SAVE</tt> statement to ensure that their values are made available to
 <br>The<tt> SELECT</tt> statement is used in conjunction with the<tt> CASE</tt> and<tt> END SELECT</tt> statements.&nbsp;
 The form of a<tt> SELECT</tt> block is as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT [CASE] (e) [FROM]&nbsp; [: block-label]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT &#91;CASE&#93; (e) &#91;FROM&#93;&nbsp; &#91;: block-label&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CASE ( case-list )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement (s)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CASE ( case-list )</tt>
@@ -5758,10 +5766,10 @@ statement.&nbsp; The<tt> CASE DEFAULT</tt> block must follow all other<tt> CASE<
 may be used in place of the<tt> CASE DEFAULT</tt> statement.
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="STOP_Statement"> STOP Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STOP [n]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STOP &#91;n&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5841,9 +5849,9 @@ the sequence of elements required to reach the desired element, separated by per
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CUSTOMER%AGE = 23</tt>
 <br><br>For more information, see the chapter entitled <a href="#Structures__Unions_and_Records">Structures, Unions and Records</a>.
 <h2 id="SUBROUTINE_Statement"> SUBROUTINE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUBROUTINE sub [( [d [, d] ...] )]</tt></tt>&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUBROUTINE sub &#91;( &#91;d &#91;, d&#93; ...&#93; )&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5969,9 +5977,9 @@ J + K + 6</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UNTIL( ( J + K + 6 ) .GT. 100 )</tt>
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>.
 <h2 id="VOLATILE_Statement"> VOLATILE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VOLATILE [a [,a] ...]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VOLATILE &#91;a &#91;,a&#93; ...&#93;</tt></tt>&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6025,9 +6033,9 @@ the<tt> VOLATILE</tt> statement to ensure that the variable is re-loaded from me
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALL endthread()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <h2 id="Block_WHILE_Statement"> Block WHILE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHILE (e) DO&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHILE (e) DO&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6103,9 +6111,9 @@ eventually stop execution.
 <br><br>For more information, see the chapter entitled <a href="#Program_Structure_Control_Statements">Program Structure Control Statements</a>
 Control Statements&quot;.
 <h2 id="WRITE_Statement"> WRITE Statement </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WRITE (cilist) [olist]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WRITE (cilist) &#91;olist&#93;</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6120,8 +6128,8 @@ Control Statements&quot;.
 <dt>cilist
 <dd>is a control information list of specifiers separated by commas:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [UNIT =] u</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [FMT =] f</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;UNIT =&#93; u</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;FMT =&#93; f</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; REC = rn</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IOSTAT = ios</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ERR = s</tt>
@@ -6132,7 +6140,7 @@ Control Statements&quot;.
 <dl>
 <dt>Control Information List
 <dd>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>
 <br><br><tt>u</tt> is an<b> external unit identifier</b> or an<b> internal file identifier.</b>
 <ol>
@@ -6141,7 +6149,7 @@ Control Statements&quot;.
 substring.
 </ol>
 <br>If the optional<tt> UNIT=</tt> specifier is omitted then the unit specifier must be the first item in the list of specifiers.
-<dt>[FMT =] f
+<dt>&#91;FMT =&#93; f
 <dd>
 <br><br><tt>f</tt> is a<b> format identifier.</b>&nbsp; A format identifier is one of the following:
 <ol>
@@ -6181,7 +6189,7 @@ an asterisk in parentheses unless the operand is the symbolic name of a constant
 time).
 <li>An implied-DO list of the form:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = e1, e2 [,e3] )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( dlist, i = e1, e2 &#91;,e3&#93; )</tt>
 <br><br>where<tt> dlist</tt> is composed of one or more of items (1) through (6).
 </ol>
 <br><b>Example:</b>
@@ -6496,10 +6504,10 @@ tend to be general in nature.&nbsp; Arrays also facilitate the repetitive comput
 of data in that they lend themselves to loop processing.
 <h2 id="Properties_of_Arrays"> Properties of Arrays </h2>
 <br>Arrays are defined by an array declarator.&nbsp; The form of an<b> array declarator</b> is:
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a( d [,d] ... )</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a( d &#91;,d&#93; ... )</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; <tt><tt></tt>
+&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6523,10 +6531,10 @@ generally difficult to intuitively describe and hence examples will deal with ar
 <br><br>Each dimension has a range of values.&nbsp; When referencing elements in that dimension, the dimension expression
 must fall in that range.&nbsp; The range of a dimension is defined in the dimension declarator.&nbsp; A<b> dimension declarator</b>
 has the following form:
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [lo:] hi</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;lo:&#93; hi</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6563,10 +6571,10 @@ a<tt> COMMON</tt> statement.
 <br>Each array is comprised of a sequence of array elements.&nbsp; An array element is referenced by following the array name
 with a<b> subscript.</b>&nbsp; Different elements of the array are referenced by simply changing the subscript.&nbsp; An<b>
 array element</b> has the following form:
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a(s[,s]...)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a(s&#91;,s&#93;...)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6580,7 +6588,7 @@ array element</b> has the following form:
 <dd><b><i> </i></b>
 <dt>a
 <dd>is the array name.
-<dt>(s[,s]...)
+<dt>(s&#91;,s&#93;...)
 <dd>is a subscript.
 <dt>s
 <dd>is a subscript expression.
@@ -6769,12 +6777,13 @@ a character entity.&nbsp; The resulting substring can then be treated as a chara
 also allows the replacement of substrings from character entities with other character entities.
 <h2 id="Substring_Names"> Substring Names </h2>
 <br>Substrings are formed by specifying a substring name.&nbsp; The forms of a<b> substring name</b> are:
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v( [ e1] : [ e2] )</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v( &#91; e1&#93; : &#91; e2&#93; )</tt></tt>&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
-<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a(s [,s] ...)( [ e1] : [ e2] )</tt></tt>&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp; <tt><tt></tt>
+<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a(s &#91;,s&#93; ...)( &#91; e1&#93; : &#91; e2&#93;
+)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6788,7 +6797,7 @@ also allows the replacement of substrings from character entities with other cha
 <dd><b><i> </i></b>
 <dt>v
 <dd>is a character variable name.
-<dt>a(s[,s]...)
+<dt>a(s&#91;,s&#93;...)
 <dd>is a character array element name.
 <dt>e1
 <dd>is an integer expression identifying the leftmost character of the substring.
@@ -7924,8 +7933,8 @@ integer expression is compared for inequality to the integer value 0.
 <br><br>In the preceding example, the expression<tt> LEN - 1</tt> is interpreted as<tt> LEN - 1 .NE.&nbsp; 0.</tt>
 <h2 id="IF_M_ELSE_M_END_IF"> IF - ELSE - END IF </h2>
 <br>The<tt> ELSE</tt> portion of this construct is optional, thus there are two possible formats.
-<br><br> <tt>&nbsp;&nbsp;&nbsp; (a) IF( logical-expression )THEN&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br><br> <tt>&nbsp;&nbsp;&nbsp; (a) IF( logical-expression )THEN&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -7938,7 +7947,7 @@ integer expression is compared for inequality to the integer value 0.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt>
-<br></tt></tt> <tt><tt><tt>&nbsp;&nbsp;&nbsp; (b) IF( logical-expression )THEN&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>
+<br></tt></tt> <tt><tt><tt>&nbsp;&nbsp;&nbsp; (b) IF( logical-expression )THEN&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8000,8 +8009,8 @@ END IF</tt> statement.
 <h2 id="ELSE_IF"> ELSE IF </h2>
 <br>A further enhancement of the IF-THEN-ELSE construct is the<tt> ELSE IF</tt> statement which may be used in the following
 two formats:
-<br><br> <tt>&nbsp;&nbsp;&nbsp; (a) IF( logical-expression-1 )THEN&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br><br> <tt>&nbsp;&nbsp;&nbsp; (a) IF( logical-expression-1 )THEN&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8025,7 +8034,7 @@ two formats:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt>
-<br></tt></tt> <tt><tt><tt>&nbsp;&nbsp;&nbsp; (b) IF( logical-expression-1 )THEN&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>
+<br></tt></tt> <tt><tt><tt>&nbsp;&nbsp;&nbsp; (b) IF( logical-expression-1 )THEN&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8109,8 +8118,8 @@ value of the expression<tt> B - A.</tt>&nbsp; Control will then pass to the stat
 is executed, the string<tt> A EQUAL TO B</tt> will be printed and variable<tt> A</tt> will be assigned the value zero.&nbsp;
 Control will pass to the statement following the<tt> END IF</tt> statement.
 <h2 id="DO_M_END_DO"> DO - END DO </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO init-expr,end-value[,inc-value] [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO init-expr,end-value&#91;,inc-value&#93; &#91;: block-label&#93;</tt></tt>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8183,9 +8192,9 @@ example is an equivalent algorithm to the one above but the intent is much clear
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'OUTER LOOP - J=', J</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END DO</tt>
 <h2 id="DO_WHILE_M_END_DO"> DO WHILE - END DO </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO WHILE (e) [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO WHILE (e) &#91;: block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8265,9 +8274,9 @@ example is an equivalent algorithm to the one above but the intent is much clear
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'OUTER LOOP - J=', J</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END DO</tt>
 <h2 id="LOOP_M_END_LOOP"> LOOP - END LOOP </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOOP&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOOP&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8299,7 +8308,7 @@ variable<tt> X</tt> has this value, the logical expression in the<tt> IF</tt> st
 statement causes a transfer of control to the statement following the<tt> END LOOP</tt> statement.&nbsp; The<tt> EXIT</tt>
 statement is discussed in more detail in a later section.
 <h2 id="WHILE_M_END_WHILE"> WHILE - END WHILE </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHILE( logical-expression )DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHILE( logical-expression )DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8361,9 +8370,9 @@ If the expression is true, REMOTE-block<tt> A</tt> (assumed to be defined elsewh
 the logical expression is re-evaluated.&nbsp; This is repeated until the logical expression, when evaluated, is false; control
 then passes to the next statement.
 <h2 id="UNTIL"> UNTIL </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOOP&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOOP&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8380,7 +8389,7 @@ then passes to the next statement.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt></tt>
 <br>or
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHILE( logical-expression )DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHILE( logical-expression )DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8412,9 +8421,9 @@ until the value of variable<tt> X</tt> is greater than 10.0.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X = X + 1.0</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UNTIL( X .GT. 10.0 )</tt>
 <h2 id="SELECT_M_END_SELECT"> SELECT - END SELECT </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT [CASE] (e) [FROM]&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT &#91;CASE&#93; (e) &#91;FROM&#93;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CASE ( case-list )</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8713,9 +8722,9 @@ of REMOTE-blocks from other REMOTE-blocks may take place to any level; however, 
 not permitted, either directly or through a chain of<tt> EXECUTE</tt> statements.&nbsp; Attempts to execute REMOTE-blocks
 recursively are detected as errors at execution time.
 <h2 id="GUESSMADMITMEND_GUESS"> GUESS-ADMIT-END GUESS </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUESS&nbsp;&nbsp;&nbsp; [: block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUESS&nbsp;&nbsp;&nbsp; &#91;: block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8842,9 +8851,9 @@ is illustrated in the following example.
 <br><br>It might be noted that the IF-ELSE-END IF construct is simply a specific instance of the more general GUESS-ADMIT-END
 GUESS construct wherein the data values are known beforehand (as could be illustrated using the previous example).
 <h2 id="QUIT"> QUIT </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUIT&nbsp;&nbsp;&nbsp; [ : block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUIT&nbsp;&nbsp;&nbsp; &#91; : block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8911,9 +8920,9 @@ is within two levels of nesting:&nbsp; the DO-loop and the LOOP-END LOOP structu
 the<tt> QUIT :&nbsp; RDREC</tt> statement will cause control to be passed to the<tt> PRINT</tt> statement after the<tt> END
 LOOP</tt> statement.
 <h2 id="EXIT"> EXIT </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXIT&nbsp;&nbsp;&nbsp; [ : block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXIT&nbsp;&nbsp;&nbsp; &#91; : block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8969,9 +8978,9 @@ is within two levels of nesting:&nbsp; the DO-loop and the LOOP-END LOOP structu
 the<tt> EXIT :&nbsp; RDREC</tt> statement will cause control to be passed to the<tt> PRINT</tt> statement after the<tt> END
 LOOP</tt> statement.
 <h2 id="CYCLE"> CYCLE </h2>
-<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CYCLE&nbsp;&nbsp; [ : block-label]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CYCLE&nbsp;&nbsp; &#91; : block-label&#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -9030,9 +9039,9 @@ will cause control to be passed to the<tt> READ</tt> statement that follows the<
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <tt><tt></tt>
-<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AT END DO [: block-label ]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AT END DO &#91;: block-label &#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement(s)</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -9391,9 +9400,9 @@ of the more common specifiers are those listed below.&nbsp; Not all of them need
 &nbsp;You should consult the description of the input/output statement under consideration to discover which specifiers are
 allowed and what they mean.
 <dl>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd>the unit specifier 
-<dt>[FMT =] f
+<dt>&#91;FMT =&#93; f
 <dd>the format specifier 
 <dt>REC = rn
 <dd>the record specifier 
@@ -9408,7 +9417,7 @@ allowed and what they mean.
 <h3 id="The_Unit_Specifier"> The Unit Specifier </h3>
 <br>The form of a unit specifier in an input/output statement is:
 <dl>
-<dt>[UNIT =] u
+<dt>&#91;UNIT =&#93; u
 <dd><tt> u</tt> is an<b> external unit identifier</b> or an<b> internal file identifier.</b>
 <ol>
 <li>An external unit identifier is a non-negative integer expression or an asterisk<tt> (*)</tt> in which case unit 5 is assumed
@@ -9422,7 +9431,7 @@ substring.
 <h3 id="Format_Specifier"> Format Specifier </h3>
 <br>The form of a format specifier in an input/output statement is:
 <dl>
-<dt>[FMT =] f
+<dt>&#91;FMT =&#93; f
 <dd><tt> f</tt> is a<b> format identifier.</b>&nbsp; A format identifier is one of the following:
 <ol>
 <li>A statement label of a<tt> FORMAT</tt> statement that appears in the same program unit as the format identifier.
@@ -9575,10 +9584,10 @@ to be only that array element.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <h2 id="Format_Specification"> Format Specification </h2>
 <br>A<b> format specification</b> has the following form.
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( [flist] )</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( &#91;flist&#93; )</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -9592,9 +9601,9 @@ to be only that array element.
 <dd><b><i> </i></b>
 <dt>flist
 <dd>is a list whose items are separated by commas.&nbsp; The forms of the items in<tt> flist</tt> are:
-<br><br><tt>[r] ed</tt>
+<br><br><tt>&#91;r&#93; ed</tt>
 <br><br><tt>ned</tt>
-<br><br><tt>[r] fs</tt>
+<br><br><tt>&#91;r&#93; fs</tt>
 <dt>ed
 <dd>is a repeatable edit descriptor.
 <dt>ned
@@ -9883,13 +9892,14 @@ part contains<tt> d</tt> digits unless a scale factor greater than one is in eff
 digits.&nbsp; The<tt> e</tt> has no effect on input.
 <br><br>The form of the input field and processing of it is the same as that for<tt> F</tt> editing.&nbsp; The form of the
 output field is:
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [+] [0] . x&nbsp; x&nbsp; ... x&nbsp; exp</tt></tt>&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;+&#93; &#91;0&#93; . x&nbsp; x&nbsp; ... x&nbsp;
+exp</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
-<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [-]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;
-2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<tt><tt></tt>
+<br> <tt><tt><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;-&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -10026,10 +10036,10 @@ w-1</tt> blanks followed by a<tt> T</tt> for true or<tt> F</tt> for false.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;&nbsp; T&nbsp;&nbsp;&nbsp; F&gt;</tt>
 <h3 id="A_Edit_Descriptor"> A Edit Descriptor </h3>
-<br>The<tt> A[w]</tt> edit descriptor is used for I/O list items of type character.&nbsp; On input, the I/O list item becomes
-defined with character data.&nbsp; On output, the I/O list item must be defined with character data.&nbsp; If<tt> w</tt> is
-specified in the edit descriptor, the field width is<tt> w</tt> otherwise the field width is the number of characters in the
-I/O list item.
+<br>The<tt> A&#91;w&#93;</tt> edit descriptor is used for I/O list items of type character.&nbsp; On input, the I/O list item
+becomes defined with character data.&nbsp; On output, the I/O list item must be defined with character data.&nbsp; If<tt>
+w</tt> is specified in the edit descriptor, the field width is<tt> w</tt> otherwise the field width is the number of characters
+in the I/O list item.
 <br><br>Open Watcom FORTRAN 77 also permits I/O list items of non-character data types.&nbsp; On input, the I/O list item
 becomes defined with the binary representation of the character data.&nbsp; On output, the I/O list item is assumed to be
 defined with character data.
@@ -10295,9 +10305,9 @@ SUBROUTINE</tt> statement as its first statement.
 statements and precede the first executable statement.&nbsp; The statement defining a statement function is not an executable
 statement.
 <br><br>A<b> statement function</b> has the following form.
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sf ( [d [,d] ...] ) = e</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sf ( &#91;d &#91;,d&#93; ...&#93; ) = e</tt></tt>&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -11719,10 +11729,10 @@ STOP</tt> or<tt> END</tt> statement.&nbsp; This is an extension to FORTRAN 77.
 is then passed back to the program unit that referenced it.
 <h3 id="RETURN_Statement_in_Subroutine_Subprograms"> RETURN Statement in Subroutine Subprograms </h3>
 <br>The form of a<tt> RETURN</tt> statement in a subroutine subprogram is:
-<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RETURN [ e ]</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RETURN &#91; e &#93;</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; <tt><tt></tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt><tt></tt>
 <br> <tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

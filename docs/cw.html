@@ -185,10 +185,10 @@ at startup, then the DOS extender VMM is disabled, no swap file is created, and 
 options are supported, although they are ignored in a Windows or OS/2 DPMI environment.&nbsp; Use any combination of the options
 in the following format:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET CAUSEWAY=[&lt;setting_1&gt;;][&lt;setting_2&gt;;][&lt;setting_n&gt;;]</tt>
-<br><br>Items in square brackets ([ ]) are optional.&nbsp; Do not actually type the brackets if you use the optional items.
-&nbsp;Items in brackets (&lt; &gt;) should be replaced with actual values, separated by semicolons.&nbsp; Following is a description
-of the valid settings:
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET CAUSEWAY=&#91;&lt;setting_1&gt;;&#93;&#91;&lt;setting_2&gt;;&#93;&#91;&lt;setting_n&gt;;&#93;</tt>
+<br><br>Items in square brackets (&#91; &#93;) are optional.&nbsp; Do not actually type the brackets if you use the optional
+items.&nbsp; Items in brackets (&lt; &gt;) should be replaced with actual values, separated by semicolons.&nbsp; Following
+is a description of the valid settings:
 <dl>
 <dt>BIG1
 <dd>
@@ -326,8 +326,8 @@ Watcom Linker documentation for a description of these commands.
 the linker can export it.
 </dl>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IMPORT [local_name] module_name.function_name</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IMPORT [local_name] module_name.ordinal</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IMPORT &#91;local_name&#93; module_name.function_name</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IMPORT &#91;local_name&#93; module_name.ordinal</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -558,7 +558,7 @@ example:
 <dt>where
 <dd><b>description</b>
 <dt>handle
-<dd>Linear memory [de]allocation uses handles to control the blocks.&nbsp; This field is the block's handle.
+<dd>Linear memory &#91;de&#93;allocation uses handles to control the blocks.&nbsp; This field is the block's handle.
 <dt>base
 <dd>Linear base address of the memory block.
 <dt>length
@@ -874,7 +874,7 @@ then the file pointer will be moved to whatever comes after the compressed data.
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff32h
-<br><br>CX:[E]DX = selector:offset of ASCIIZ error file name
+<br><br>CX:&#91;E&#93;DX = selector:offset of ASCIIZ error file name
 <dt>Outputs:
 <dd>None
 <dt>Errors:
@@ -915,8 +915,8 @@ is released.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff24h
-<br><br>DS:[E]DX= File name.
-<br>ES:[E]SI= Command line.&nbsp; First byte is length, then real data.
+<br><br>DS:&#91;E&#93;DX= File name.
+<br>ES:&#91;E&#93;SI= Command line.&nbsp; First byte is length, then real data.
 <br>CX= Environment selector, 0 to use existing copy.
 <dt>Outputs:
 <dd>Carry set on error and AX = error code, else
@@ -956,7 +956,7 @@ is released.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff02h
-<br><br>ES:[E]DI= Real mode register list.
+<br><br>ES:&#91;E&#93;DI= Real mode register list.
 <dt>Outputs:
 <dd>Register list updated.
 <dt>Errors:
@@ -971,8 +971,8 @@ to the real mode code.
 <dl>
 <dt>Inputs:
 <dd>AX= 0303h
-<br><br>DS:[E]SI= Call address.
-<br>ES:[E]DI= Real mode register structure.
+<br><br>DS:&#91;E&#93;SI= Call address.
+<br>ES:&#91;E&#93;DI= Real mode register structure.
 <dt>Outputs:
 <dd>Carry set on error, else
 <br><br>CX:DX= Real mode address to trigger mode switch.
@@ -981,12 +981,12 @@ to the real mode code.
 them as soon as they are no longer required.
 <dt>Callback:
 <dd>Interrupts disabled.
-<br><br>DS:[E]SI = Selector:Offset of real mode SS:SP.
-<br>ES:[E]DI = Selector:Offset of real mode call structure.
-<br>SS:[E]SP = Locked protected mode stack.
+<br><br>DS:&#91;E&#93;SI = Selector:Offset of real mode SS:SP.
+<br>ES:&#91;E&#93;DI = Selector:Offset of real mode call structure.
+<br>SS:&#91;E&#93;SP = Locked protected mode stack.
 <br>All other registers undefined.
 <br>To return from callback procedure, execute an IRET to return.
-<br>ES:[E]DI = Selector:Offset of real mode call structure to restore.
+<br>ES:&#91;E&#93;DI = Selector:Offset of real mode call structure to restore.
 <dt>Notes:
 <dd>Real mode callbacks provide a means of switching from real mode to protected mode.&nbsp; This function returns a unique real
 mode address that when given control in real mode, switches to protected mode and passes control to the protected mode routine
@@ -1020,7 +1020,7 @@ address to CauseWay to speed file I/O.
 <br><br>BL= Exception vector number.
 <dt>Outputs:
 <dd>Carry set on error, else
-<br><br>CX:[E]DX= selector:offset of handler.
+<br><br>CX:&#91;E&#93;DX= selector:offset of handler.
 <dt>Errors:
 <dd>The number in BL must be in the range 0-1Fh.&nbsp; Anything outside this range returns carry set.
 </dl>
@@ -1229,7 +1229,7 @@ to make the selectors useful.
 <dd>AX= 0204h
 <br><br>BL= Interrupt vector number.
 <dt>Outputs:
-<dd>CX:[E]DX= selector:offset of handler.
+<dd>CX:&#91;E&#93;DX= selector:offset of handler.
 <dt>Errors:
 <dd>None.
 </dl>
@@ -1255,9 +1255,9 @@ to make the selectors useful.
 <dt>Outputs:
 <dd>AX= Selector for real mode segment address of 00000h, 4GB limit.
 <br><br>BX= Selector for current PSP segment.&nbsp; 100h limit.
-<br>[E]CX= DOS transfer buffer size.&nbsp; Always &lt;64KB.
+<br>&#91;E&#93;CX= DOS transfer buffer size.&nbsp; Always &lt;64KB.
 <br>DX= DOS transfer buffer real mode segment address.
-<br>ES:[E]SI= DOS transfer buffer address.
+<br>ES:&#91;E&#93;SI= DOS transfer buffer address.
 <br>ESI+ECX always &lt;64KB
 <br>EDI= System flags.&nbsp; Bits significant if set.
 <br>0 - 32 bit code default.
@@ -1284,16 +1284,16 @@ that requires segment pointers.
 <dt>Inputs:
 <dd>AX= 0ff01h
 <br><br>BL= Interrupt number.
-<br>ES:[E]DI= Real mode register list.
+<br>ES:&#91;E&#93;DI= Real mode register list.
 <dt>Outputs:
 <dd>Register list updated.
 <dt>Errors:
 <dd>None.
 <dt>Notes:
-<dd>The real mode register list referenced by ES:[E]DI should contain the register values you want passed to the real mode interrupt
-handler.&nbsp; CauseWay fills in the SS:SP and Flags values to ensure that legal values are used and the CS:IP entries are
-ignored.&nbsp; This function bypasses protected mode interrupt handlers and provides access to INT APIs that require segment
-pointers.
+<dd>The real mode register list referenced by ES:&#91;E&#93;DI should contain the register values you want passed to the real
+mode interrupt handler.&nbsp; CauseWay fills in the SS:SP and Flags values to ensure that legal values are used and the CS:IP
+entries are ignored.&nbsp; This function bypasses protected mode interrupt handlers and provides access to INT APIs that require
+segment pointers.
 </dl>
 <hr>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; LinearCheck</b><tt> </tt>Check linear address of memory.
@@ -1583,7 +1583,7 @@ to turn on and off CauseWay error processing output any number of times within a
 <dt>Inputs:
 <dd>AX= 0203h
 <br><br>BL= Exception vector number.
-<br>CX:[E]DX= selector:offset of new handler.
+<br>CX:&#91;E&#93;DX= selector:offset of new handler.
 <dt>Outputs:
 <dd>None
 <dt>Errors:
@@ -1659,7 +1659,7 @@ this function controls the size of memory chunks that will be allocated to and m
 <dt>Inputs:
 <dd>AX= 0205h
 <br><br>BL= Interrupt vector number.
-<br>CX:[E]DX= selector:offset of new handler.
+<br>CX:&#91;E&#93;DX= selector:offset of new handler.
 <dt>Outputs:
 <dd>None.
 <dt>Errors:
@@ -1703,7 +1703,7 @@ to the nearest page (4KB) boundary are unlocked if the specified region is not a
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff2fh
-<br><br>ES:[E]DI - user buffer to display in CW.ERR
+<br><br>ES:&#91;E&#93;DI - user buffer to display in CW.ERR
 <br>CX = count of bytes to display from buffer in CW.ERR
 <br>BL = 'A' if ASCII dump (non-binary display of bytes, control characters display as periods)
 <br>BH = nonzero if preset ASCII buffer to word value, ignored for non-ASCII
@@ -1726,8 +1726,8 @@ made.
 <dd>AX = 0ff31h
 <br><br>CL = 0 if 16-bit termination routine
 <br>CL = nonzero if 32-bit termination routine
-<br>DS:[E]SI = user termination routine address.&nbsp; If DS is zero, the user termination routine call is removed.
-<br>ES:[E]DI = Information dump buffer address, 104 bytes.&nbsp; If ES is zero, no information dump is performed.
+<br>DS:&#91;E&#93;SI = user termination routine address.&nbsp; If DS is zero, the user termination routine call is removed.
+<br>ES:&#91;E&#93;DI = Information dump buffer address, 104 bytes.&nbsp; If ES is zero, no information dump is performed.
 <dt>Outputs:
 <dd>None
 <dt>Errors:
@@ -1735,9 +1735,9 @@ made.
 <dt>Notes:
 <dd>The user termination routine is responsible for returning to the CauseWay termination routines to allow proper shutdown of
 the application.&nbsp; The instruction must be the proper 16- or 32-bit return to match the CL register setting.&nbsp; For
-ease of use with high-level languages (specifically Watcom C and setting SS back to DGROUP), [E]SI equals the internal DOS
-extender stack ESP immediately prior to the 32- or 16-bit call to the termination routine.&nbsp; If an information dump buffer
-address is provided, register and other termination values are placed into it using the following format:
+ease of use with high-level languages (specifically Watcom C and setting SS back to DGROUP), &#91;E&#93;SI equals the internal
+DOS extender stack ESP immediately prior to the 32- or 16-bit call to the termination routine.&nbsp; If an information dump
+buffer address is provided, register and other termination values are placed into it using the following format:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EBP;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EDI;</tt>
@@ -1804,55 +1804,55 @@ CauseWay or DOS/4GW under a DPMI host such as Windows or OS/2.
 <h2 id="Extended_or_Altered_Interrupt_Services"> Extended or Altered Interrupt Services </h2>
 <br>The size of registers used by CauseWay's extended or modified interrupt services depends on the limit of the selector.
 &nbsp;Extended 32-bit registers are used for 32-bit sized selectors and 16-bit registers are used for selectors within 16-bits.
-&nbsp;To reflect this, the convention of an [E] in brackets is used before a listed register when it must be a 32-bit value
-with a 32-bit selector and a 16-bit value with a 16-bit selector.
+&nbsp;To reflect this, the convention of an &#91;E&#93; in brackets is used before a listed register when it must be a 32-bit
+value with a 32-bit selector and a 16-bit value with a 16-bit selector.
 <br><br>Required registers that are not specified in this list should be set up in the same way as required for normal DOS
 real mode operation.&nbsp; For INT APIs that are not listed and require segemnt pointers, either handle them using the CauseWay
 IntXX function or create your own interrupt translation code.
 <br><br>INT 10h
-<br><br>10h sub function 02h, [E]DX instead of DX.
-<br><br>10h sub function 09h, [E]DX instead of DX.
-<br>10h sub function 12h, [E]DX instead of DX.
-<br>10h sub function 17h, [E]DX instead of DX.
-<br>13h [E]BP instead of BP.
-<br>1Ch sub function 01h, [E]BX instead of BX.
-<br>1Ch sub function 02h, [E]BX instead of BX.
+<br><br>10h sub function 02h, &#91;E&#93;DX instead of DX.
+<br><br>10h sub function 09h, &#91;E&#93;DX instead of DX.
+<br>10h sub function 12h, &#91;E&#93;DX instead of DX.
+<br>10h sub function 17h, &#91;E&#93;DX instead of DX.
+<br>13h &#91;E&#93;BP instead of BP.
+<br>1Ch sub function 01h, &#91;E&#93;BX instead of BX.
+<br>1Ch sub function 02h, &#91;E&#93;BX instead of BX.
 <br>INT 21h
-<br><br>09h [E]DX instead of DX
-<br><br>0Ah [E]DX instead of DX
+<br><br>09h &#91;E&#93;DX instead of DX
+<br><br>0Ah &#91;E&#93;DX instead of DX
 <br>0FH - 17H not supported; use corresponding file handle function.
-<br>1Ah [E]DX instead of DX
+<br>1Ah &#91;E&#93;DX instead of DX
 <br>21h - 24h not supported; use corresponding file handle function.
-<br>25h [E]DX instead of DX.&nbsp; Protected mode vector will be set.
+<br>25h &#91;E&#93;DX instead of DX.&nbsp; Protected mode vector will be set.
 <br>26h - 29h not supported; use corresponding file handle function.
-<br>2Fh [E]BX instead of BX
+<br>2Fh &#91;E&#93;BX instead of BX
 <br>31h No value is required in DX
-<br>35h [E]DX instead of BX.&nbsp; Protected mode vector will be returned.
-<br>39h [E]DX instead of DX
-<br>3Ah [E]DX instead of DX
-<br>3Bh [E]DX instead of DX
-<br>3Ch [E]DX instead of DX
-<br>3Dh [E]DX instead of DX
-<br>3Fh [E]DX instead of DX
-<br>40h [E]DX instead of DX
-<br>41h [E]DX instead of DX
-<br>43h [E]DX instead of DX
-<br>44h subfunction 02h, use [E]DX instead
-<br>44h subfunction 03h, use [E]DX instead
-<br>44h subfunction 04h, use [E]DX instead
-<br>44h subfunction 05h, use [E]DX instead
-<br>47h [E]SI instead of SI
+<br>35h &#91;E&#93;DX instead of BX.&nbsp; Protected mode vector will be returned.
+<br>39h &#91;E&#93;DX instead of DX
+<br>3Ah &#91;E&#93;DX instead of DX
+<br>3Bh &#91;E&#93;DX instead of DX
+<br>3Ch &#91;E&#93;DX instead of DX
+<br>3Dh &#91;E&#93;DX instead of DX
+<br>3Fh &#91;E&#93;DX instead of DX
+<br>40h &#91;E&#93;DX instead of DX
+<br>41h &#91;E&#93;DX instead of DX
+<br>43h &#91;E&#93;DX instead of DX
+<br>44h subfunction 02h, use &#91;E&#93;DX instead
+<br>44h subfunction 03h, use &#91;E&#93;DX instead
+<br>44h subfunction 04h, use &#91;E&#93;DX instead
+<br>44h subfunction 05h, use &#91;E&#93;DX instead
+<br>47h &#91;E&#93;SI instead of SI
 <br>48h Protected mode memory will be allocated
 <br>49h Protected mode memory will be released
 <br>4Ah Protected mode memory will be resized
-<br>4Bh [E]DX &amp; [E]BX instead of DX &amp; BX
-<br>Parameter block offset entries are [d]word
-<br>4Eh [E]DX instead of DX
-<br>56h [E]DX &amp; [E]DI instead of DX &amp; DI
-<br>5Ah [E]DX instead of DX
-<br>5Bh [E]DX instead of DX
+<br>4Bh &#91;E&#93;DX &amp; &#91;E&#93;BX instead of DX &amp; BX
+<br>Parameter block offset entries are &#91;d&#93;word
+<br>4Eh &#91;E&#93;DX instead of DX
+<br>56h &#91;E&#93;DX &amp; &#91;E&#93;DI instead of DX &amp; DI
+<br>5Ah &#91;E&#93;DX instead of DX
+<br>5Bh &#91;E&#93;DX instead of DX
 <br>62h Protected mode selector will be returned
-<br>6Ch [E]SI instead of SI
+<br>6Ch &#91;E&#93;SI instead of SI
 <br>INT 23h Control-C Handler Address
 <br><br>This interrupt is always reflected back to the protected mode handler to ensure the CauseWay application can handle
 it correctly.&nbsp; The default handler aborts the application in the same manner as DOS.&nbsp; If you need to terminate your
@@ -1865,10 +1865,10 @@ it correctly.&nbsp; The default handler behaves in the same way as the DOS handl
 mode.&nbsp; Only the register values are valid.&nbsp; You may terminate your application from within this interrupt with INT
 21h, AH=4ch as normal.
 <br><br>INT 33h
-<br><br>09h [E]DX instead of DX
-<br><br>0Ch [E]DX instead of DX
-<br>16h [E]DX instead of DX
-<br>17h [E]DX instead of DX
+<br><br>09h &#91;E&#93;DX instead of DX
+<br><br>0Ch &#91;E&#93;DX instead of DX
+<br>16h &#91;E&#93;DX instead of DX
+<br>17h &#91;E&#93;DX instead of DX
 <br>Notes:
 <br><br>With the exception of software interrupts that require segment pointers as parameters, all interrupts can be issued
 as normal.&nbsp; The most common interrupt APIs that require segment pointers are intercepted by CauseWay to provide normal

@@ -260,9 +260,9 @@ zero for<tt> num_out_mx</tt> and NULL for<tt> mx_out</tt>.
 <h4 id="Request_Example"> Request Example </h4>
 <br>The request REQ_READ_MEM needs the memory address and length of memory to read as input and will return the memory block
 in the output message.&nbsp; To read 30 bytes of memory from address 0x0010:0x8000 into a buffer, we can write:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in[1];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out[1];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; buffer[30];</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in&#91;1&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out&#91;1&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; buffer&#91;30&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct in_msg_def {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 req;</tt>
@@ -271,10 +271,10 @@ addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } in_msg = { REQ_READ_MEM, { 0x8000, 0x0010 }, sizeof( buffer ) };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 mem_blk_len;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in[0].ptr = &amp;in_msg;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in[0].len = sizeof( in_msg );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out[0].ptr = &amp;buffer;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out[0].len = sizeof( buffer );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in&#91;0&#93;.ptr = &amp;in_msg;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; in&#91;0&#93;.len = sizeof( in_msg );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out&#91;0&#93;.ptr = &amp;buffer;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; out&#91;0&#93;.len = sizeof( buffer );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mem_blk_len = TrapRequest( 1, in, 1, out );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; if( mem_blk_length != sizeof( buffer ) ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Error in reading memory\n&quot; );</tt>
@@ -893,8 +893,8 @@ descriptions do not show that &quot;prefix&quot; to the request messages.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br><tt>Return message:</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ext_separator;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_separator[3];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newline[2];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_separator&#91;3&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newline&#91;2&#93;;</tt>
 <br><br>The<tt> ext_separator</tt> contains the separator for file name extensions.&nbsp; The possible path separators can
 be found in array<tt> path_separator</tt>.&nbsp; The first one is the &quot;preferred&quot; path separator for that operating
 system.&nbsp; This is the path separator that the debugger will use if it needs to construct a file name for the remote system.
@@ -1371,13 +1371,13 @@ in the structure<tt> info.</tt>&nbsp; Definition of the structure<tt> dta</tt> i
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct dta {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; spare1[13];</tt>
+&nbsp;&nbsp;&nbsp; spare1&#91;13&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; dir_entry_num;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; cluster;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; spare2[4];</tt>
+&nbsp;&nbsp;&nbsp; spare2&#91;4&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } dos;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 attr;</tt>
@@ -1385,7 +1385,7 @@ attr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-name[14];</tt>
+name&#91;14&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } dta;</tt>
 <h3 id="REQ_RFX_FINDNEXT_L14R"> REQ_RFX_FINDNEXT (14) </h3>
 <br>Request to find the next file in the directory.&nbsp; This request should be used only after REQ_RFX_FINDFIRST.

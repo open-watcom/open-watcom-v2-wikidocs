@@ -692,7 +692,7 @@ cursor to help you remember that you are are inputting text.
 <br><b><i>Figure 7.</i></b><b><i></i></b><b> Editing the New File &quot;test&quot;</b>
 <br><br>Note the message window (the bottom two lines of the screen) contains the message
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;test&quot; [new file] line 1 of 1&nbsp; -- 100% --</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;test&quot; &#91;new file&#93; line 1 of 1&nbsp; -- 100% --</tt>
 <br><br>This message indicates that you are editing a new file called test, that you are on line 1 of a 1 line file, and that
 line 1 is 100% of the way into the file.
 <br><br>You may see that message any time by pressing<b> CTRL_G</b> (hold down the Ctrl key and press the g key).
@@ -704,7 +704,7 @@ line 1 is 100% of the way into the file.
 <br><br>Press<b> CTRL_G</b> (hold down Ctrl and press the g key).&nbsp; The message window (the bottom two lines of the screen)
 will show the message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;test&quot; [modified] line 2 of 2&nbsp; -- 100% --</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;test&quot; &#91;modified&#93; line 2 of 2&nbsp; -- 100% --</tt>
 <br><br>Now, press two capital z's in a row ('ZZ').&nbsp; This will save the file and return to the operating system command
 prompt.
 <li>Edit the file you created in the previous example, by typing
@@ -716,7 +716,7 @@ prompt.
 <br><br>Note the message window (the bottom two lines of the screen) contains the message
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;test&quot; line 1 of 2&nbsp; -- 50% --</tt>
-<br><br>This message is different than when you edited &quot;test&quot; for the first time.&nbsp; The &quot;[new file]&quot;
+<br><br>This message is different than when you edited &quot;test&quot; for the first time.&nbsp; The &quot;&#91;new file&#93;&quot;
 indicator is gone, since you have edited an existing file.&nbsp; This message indicates to you that you are now editing a
 file called test, that you are on line 1 of a 2 line file, and that line 1 is 50% of the way into the file.
 <br><br>Now try to experiment with the different ways of entering insert mode.
@@ -1155,11 +1155,11 @@ then simply type <a href="#EDIT">EDIT</a> (optionally followed by a file name or
 <br><br>If you do not specify a file, then a directory listing is displayed.&nbsp; From this listing, you may pick a file,
 another directory, or another drive (the available drives are at the end of the listing).&nbsp; A directory is indicated by
 the leading backslash ('\').&nbsp; If a directory is chosen in this window, then the list of files in that directory is displayed.
-&nbsp;This list also contains all the drives available (which are enclosed in square brackets, e.g.&nbsp; [c:]).&nbsp; If
-you select a drive, the list of files in the current directory on that drive is displayed.
-<br><br>For files and directories, each line indicates the file name, the various attributes of the file ([d]irectory, [a]rchive,
-[h]idden, [s]ystem, [r]eadable, [w]riteable, e[x]ecutable), the file size in bytes, the date and time of the last file update.
-&nbsp;Some sample lines are:
+&nbsp;This list also contains all the drives available (which are enclosed in square brackets, e.g.&nbsp; &#91;c:&#93;).&nbsp;
+If you select a drive, the list of files in the current directory on that drive is displayed.
+<br><br>For files and directories, each line indicates the file name, the various attributes of the file (&#91;d&#93;irectory,
+&#91;a&#93;rchive, &#91;h&#93;idden, &#91;s&#93;ystem, &#91;r&#93;eadable, &#91;w&#93;riteable, e&#91;x&#93;ecutable), the
+file size in bytes, the date and time of the last file update.&nbsp; Some sample lines are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -a--rw-&nbsp;&nbsp;&nbsp; 25586
 &nbsp;08/16/92&nbsp; 08:14</tt>
@@ -1167,7 +1167,7 @@ you select a drive, the list of files in the current directory on that drive is 
 &nbsp; 639&nbsp; 02/27/92&nbsp; 13:25</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \tmpdir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d---rw-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; 0&nbsp; 08/16/92&nbsp; 19:05</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [c:]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;c:&#93;</tt>
 <br><br>You may also specify one or more files after the <a href="#EDIT">EDIT</a> command.&nbsp; If a file you specify is
 the same as one already being edited, then control is simply transferred to the window with that file.
 <br><br><b>Exercises</b>
@@ -1414,7 +1414,7 @@ window).&nbsp; You will see the message:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; File modified - use :q! to force</tt>
 <br><br>Press<b> CTRL_G</b>.&nbsp; The message window will indicate the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;abc&quot; [modified] line 3 of 3&nbsp; -- 100% --</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;abc&quot; &#91;modified&#93; line 3 of 3&nbsp; -- 100% --</tt>
 <br><br>As you can see, the file has been modified, so you are not allowed to quit.
 <li>Enter the command line command <a href="#WRITE">WRITE</a>.&nbsp; You will see the message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1694,7 +1694,7 @@ direction as the last search command.
 <br><br>You can use complex search strings known as<b> regular expressions</b>.&nbsp; Certain characters have special meaning
 in a regular expression, they are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ^ $ . [ ( ) | ? + * \&nbsp; @</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ^ $ . &#91; ( ) | ? + * \&nbsp; @</tt>
 <br><br>If you wish to search for any of these special characters, you must place a backslash ('\') before the character.
 &nbsp;For example, to search for:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2018,7 +2018,7 @@ is assumed.
 <br><br>You can use complex search strings known as<b> regular expressions</b>.&nbsp; Certain characters have special meaning
 in a regular expression, they are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ^ $ . [ ( ) | ? + * \&nbsp; @</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ^ $ . &#91; ( ) | ? + * \&nbsp; @</tt>
 <br><br>If you wish to search for any of these special characters, you must place a backslash ('\') before the character.
 &nbsp;For example, to search for:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2064,7 +2064,7 @@ not have) a specific string.
 <br><br>You can use complex search strings known as<b> regular expressions</b>.&nbsp; Certain characters have special meaning
 in a regular expression, they are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ^ $ . [ ( ) | ? + * \&nbsp; @</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ^ $ . &#91; ( ) | ? + * \&nbsp; @</tt>
 <br><br>If you wish to search for any of these special characters, you must place a backslash ('\') before the character.
 &nbsp;For example, to search for:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2279,9 +2279,9 @@ of compiled editor scripts (the files with the ._vi extension).
 <h2 id="Invoking_the_Open_Watcom_Vi_Editor"> Invoking the Open Watcom Vi Editor </h2>
 <br>Vi is invoked from the command prompt with the following possible set of parameters:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; vi [-?-dinqrvz] +&lt;n&gt; -k &quot;keys&quot; [-s &lt;scr&gt; [-p &quot;parm&quot;]] [-t
-&lt;tag&gt;]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [-c &lt;cfg&gt;] files</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; vi &#91;-?-dinqrvz&#93; +&lt;n&gt; -k &quot;keys&quot; &#91;-s &lt;scr&gt; &#91;-p &quot;parm&quot;&#93;&#93;
+&#91;-t &lt;tag&gt;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;-c &lt;cfg&gt;&#93; files</tt>
 <br><br>The files specified may contain regular expressions.
 <br><br>The parameters cause the following:
 <dl>
@@ -2939,9 +2939,9 @@ will cascade buffer 3 to buffer 4, buffer 4 to buffer 5, and so on, with the con
 <dd>Yanks (copies) the current line.
 </dl>
 <br>There is more information on these command mode commands later in this chapter.
-<br>Text may be yanked/deleted into a specific copy buffer by typing &quot;[1-9] before the appropriate command.&nbsp; As
-well, there are 26 named buffers that may be used, 'a'-'z'.&nbsp; When text is yanked or deleted into a named buffer, it remains
-there for the life of the editing session (or until replaced).
+<br>Text may be yanked/deleted into a specific copy buffer by typing &quot;&#91;1-9&#93; before the appropriate command.&nbsp;
+As well, there are 26 named buffers that may be used, 'a'-'z'.&nbsp; When text is yanked or deleted into a named buffer, it
+remains there for the life of the editing session (or until replaced).
 <br><br>To retrieve the contents of a buffer, use:
 <dl>
 <dt>&lt;&quot;?&gt;SHIFT_INS 
@@ -3541,8 +3541,8 @@ that you really want to discard the modified file(s).&nbsp; If you do not respon
 </ul>
 <br>Some sample results are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;test.c&quot; [modified] line 5 of 100&nbsp; -- 5% --</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; &quot;..\c\file.c&quot; [read only] line 100 of 100&nbsp; -- 100% --
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;test.c&quot; &#91;modified&#93; line 5 of 100&nbsp; -- 5% --</tt>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; &quot;..\c\file.c&quot; &#91;read only&#93; line 100 of 100&nbsp; -- 100% --
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; &quot;\autoexec.bat&quot; line 1 of 100&nbsp; -- 1% --
 <dt>CTRL_L 
 <dd>Redraws the current screen.
@@ -3554,7 +3554,7 @@ that you really want to discard the modified file(s).&nbsp; If you do not respon
 is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Char 'e': 0x65 (101)</tt>
-<dt>CTRL_] (control right square bracket) 
+<dt>CTRL_&#93; (control right square bracket) 
 <dd>Go to the tag given by the current word.&nbsp; The word is defined using the command line command <a href="#word">word</a>.
 <br><br>Also see the<b> command line</b> command <a href="#TAG">TAG</a>.
 <br>See the appendix <a href="#CTAGS">CTAGS</a> for more information.
@@ -4118,11 +4118,11 @@ control is transferred to the window with the original copy of the file.
 &nbsp;From this listing, you may pick a file, another directory, or another drive (the available drives are at the end of
 the listing).&nbsp; A directory is indicated by the leading backslash ('\').&nbsp; If a directory is chosen in this window,
 then the list of files in that directory is displayed.&nbsp; This list also contains all the drives available (which are enclosed
-in square brackets, e.g.&nbsp; [c:]).&nbsp; If you select a drive, the list of files in the current directory on that drive
-is displayed.
-<br><br>For files and directories, each line indicates the file name, the various attributes of the file ([d]irectory, [a]rchive,
-[h]idden, [s]ystem, [r]eadable, [w]riteable, e[x]ecutable), the file size in bytes, the date and time of the last file update.
-&nbsp;Some sample lines are:
+in square brackets, e.g.&nbsp; &#91;c:&#93;).&nbsp; If you select a drive, the list of files in the current directory on that
+drive is displayed.
+<br><br>For files and directories, each line indicates the file name, the various attributes of the file (&#91;d&#93;irectory,
+&#91;a&#93;rchive, &#91;h&#93;idden, &#91;s&#93;ystem, &#91;r&#93;eadable, &#91;w&#93;riteable, e&#91;x&#93;ecutable), the
+file size in bytes, the date and time of the last file update.&nbsp; Some sample lines are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -a--rw-&nbsp;&nbsp;&nbsp; 25586
 &nbsp;08/16/92&nbsp; 08:14</tt>
@@ -4130,7 +4130,7 @@ is displayed.
 &nbsp; 639&nbsp; 02/27/92&nbsp; 13:25</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \tmpdir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d---rw-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; 0&nbsp; 08/16/92&nbsp; 19:05</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [c:]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;c:&#93;</tt>
 </dl>
 <dl>
 <dt>Example(s):
@@ -4141,7 +4141,7 @@ is displayed.
 <br><br>Discards the current file, and edits test2.c.
 <br><br><tt>edit test.(c|h)</tt>
 <br><br>Edits the file test.c if it exists, and the file test.h if it exists.
-<br><br><tt>edit ([a-c])*.c</tt>
+<br><br><tt>edit (&#91;a-c&#93;)*.c</tt>
 <br><br>Edits all files in the current directory that start with the letters a, b or c and have the extension .c.
 <br><br><tt>edit *</tt>
 <br><br>Edits all files in the current directory.
@@ -4178,11 +4178,11 @@ on regular expressions, see the chapter <a href="#Regular_Expressions">Regular E
 <dd>
 <br><br><tt>egrep ((if)|(while)) *.c</tt>
 <br><br>Searches all files in the current directory ending in the extension .c for the regular expression<b> ((if)|(while))</b>.
-<br><br><tt>egrep [a-z]a+</tt>
-<br><br>Searches all files specified by <a href="#grepdefault">grepdefault</a> for the regular expression<b> [a-z]a+</b>.
-<br><br><tt>egrep [a-z]a+ ..\c</tt>
+<br><br><tt>egrep &#91;a-z&#93;a+</tt>
+<br><br>Searches all files specified by <a href="#grepdefault">grepdefault</a> for the regular expression<b> &#91;a-z&#93;a+</b>.
+<br><br><tt>egrep &#91;a-z&#93;a+ ..\c</tt>
 <br><br>Searches all files in the directory ..\c specified by <a href="#grepdefault">grepdefault</a> for the regular expression<b>
-[a-z]a+</b>.
+&#91;a-z&#93;a+</b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -4387,8 +4387,8 @@ the current edit buffer.
 <dd>
 <br><br><tt>g/printf/d</tt>
 <br><br>Deletes all lines in the current edit buffer that have the word<b> printf</b>.
-<br><br><tt>g!/[a-c]123/ d</tt>
-<br><br>Deletes all lines in the current edit buffer that DO not match the regular expression<b> [a-c]123</b>.
+<br><br><tt>g!/&#91;a-c&#93;123/ d</tt>
+<br><br>Deletes all lines in the current edit buffer that DO not match the regular expression<b> &#91;a-c&#93;123</b>.
 <br><br><tt>g/(abc)*/ execute Iabc\e</tt>
 <br><br>For every line that matches the regular expression<b> (abc)*</b>, execute the keystrokes<b> Iabc&lt;ESC&gt;</b> (this
 will insert the characters abc at the start of the line).
@@ -5072,8 +5072,8 @@ matching and substitution.
 <dd>
 <br><br><tt>%s/foo/bar/</tt>
 <br><br>Changes the first occurrence of<b> foo</b> to<b> bar</b> on each line of the entire file.
-<br><br><tt>1,.s/(([a-z]bc)*)/Abc\2/g</tt>
-<br><br>Changes all occurrences of the regular expression<b> (([a-z]bc)*)</b> to the substitution expression<b> Abc\2</b>.
+<br><br><tt>1,.s/((&#91;a-z&#93;bc)*)/Abc\2/g</tt>
+<br><br>Changes all occurrences of the regular expression<b> ((&#91;a-z&#93;bc)*)</b> to the substitution expression<b> Abc\2</b>.
 &nbsp;The changes are only applied on lines 1 to the current line of the current edit buffer.
 <br><br><tt>'a,'b/^abc//i</tt>
 <br><br>Any line that starts with<b> abc</b> has the<b> abc</b> changed to the null string.&nbsp; The user is prompted before
@@ -5976,7 +5976,7 @@ you for the new value.&nbsp; This window may be cancelled by pressing the ESC ke
 <h3 id="autoindent"> autoindent </h3>
 <dl>
 <dt>Syntax:
-<dd>autoindent [ai]
+<dd>autoindent &#91;ai&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -5986,7 +5986,7 @@ command mode, autoindent causes the cursor to go to the first non white-space wh
 <h3 id="automessageclear"> automessageclear </h3>
 <dl>
 <dt>Syntax:
-<dd>automessageclear [ac]
+<dd>automessageclear &#91;ac&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -5995,7 +5995,7 @@ command mode, autoindent causes the cursor to go to the first non white-space wh
 <h3 id="beepflag"> beepflag </h3>
 <dl>
 <dt>Syntax:
-<dd>beepflag [bf]
+<dd>beepflag &#91;bf&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6004,7 +6004,7 @@ command mode, autoindent causes the cursor to go to the first non white-space wh
 <h3 id="caseignore"> caseignore </h3>
 <dl>
 <dt>Syntax:
-<dd>caseignore [ci]
+<dd>caseignore &#91;ci&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6013,7 +6013,7 @@ command mode, autoindent causes the cursor to go to the first non white-space wh
 <h3 id="changelikevi"> changelikevi </h3>
 <dl>
 <dt>Syntax:
-<dd>changelikevi [cv]
+<dd>changelikevi &#91;cv&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6023,7 +6023,7 @@ is deleted.&nbsp; Normally, pressing ESC cancels the change without deleting the
 <h3 id="cmode"> cmode </h3>
 <dl>
 <dt>Syntax:
-<dd>cmode [cm]
+<dd>cmode &#91;cm&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6050,7 +6050,7 @@ will work.
 <h3 id="columninfilestatus"> columninfilestatus </h3>
 <dl>
 <dt>Syntax:
-<dd>columninfilestatus [cs]
+<dd>columninfilestatus &#91;cs&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6059,7 +6059,7 @@ will work.
 <h3 id="currentstatus"> currentstatus </h3>
 <dl>
 <dt>Syntax:
-<dd>currentstatus [ct]
+<dd>currentstatus &#91;ct&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6068,7 +6068,7 @@ will work.
 <h3 id="drawtildes"> drawtildes </h3>
 <dl>
 <dt>Syntax:
-<dd>drawtildes [dt]
+<dd>drawtildes &#91;dt&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6079,7 +6079,7 @@ will be displayed after the last line with data.
 <h3 id="eightbits"> eightbits </h3>
 <dl>
 <dt>Syntax:
-<dd>eightbits [eb]
+<dd>eightbits &#91;eb&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6089,7 +6089,7 @@ be displayed as control characters.
 <h3 id="escapemessage"> escapemessage </h3>
 <dl>
 <dt>Syntax:
-<dd>escapemessage [em]
+<dd>escapemessage &#91;em&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6098,7 +6098,7 @@ be displayed as control characters.
 <h3 id="extendedmemory"> extendedmemory </h3>
 <dl>
 <dt>Syntax:
-<dd>extendedmemory [xm]
+<dd>extendedmemory &#91;xm&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6108,7 +6108,7 @@ to the real-mode DOS version of Vi only.
 <h3 id="ignorectrlz"> ignorectrlz </h3>
 <dl>
 <dt>Syntax:
-<dd>ignorectrlz [iz]
+<dd>ignorectrlz &#91;iz&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6118,7 +6118,7 @@ another character in the file.&nbsp; This option may also be selected using the 
 <h3 id="ignoretagcase"> ignoretagcase </h3>
 <dl>
 <dt>Syntax:
-<dd>ignoretagcase [it]
+<dd>ignoretagcase &#91;it&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6128,19 +6128,19 @@ ignoretagcase causes the tag matching to be case insensitive.
 <h3 id="magic"> magic </h3>
 <dl>
 <dt>Syntax:
-<dd>magic [ma]
+<dd>magic &#91;ma&#93;
 </dl>
 <dl>
 <dt>Description:
 <dd>If magic is set, then all special characters in a regular expression are treated as &quot;magic&quot;, and must be escaped
 to be used in an ordinary fashion.&nbsp; If nomagic is set, then any special characters in <a href="#magicstring">magicstring</a>
 are NOT treated as magic characters by the regular expression handler, and must be escaped to have special meaning.
-<br><br>Magic characters are:<tt>&nbsp; ^$.[()|?+*\@</tt>
+<br><br>Magic characters are:<tt>&nbsp; ^$.&#91;()|?+*\@</tt>
 </dl>
 <h3 id="pauseonspawnerr"> pauseonspawnerr </h3>
 <dl>
 <dt>Syntax:
-<dd>pauseonspawnerr [ps]
+<dd>pauseonspawnerr &#91;ps&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6151,7 +6151,7 @@ the editor.
 <h3 id="quiet"> quiet </h3>
 <dl>
 <dt>Syntax:
-<dd>quiet [qu]
+<dd>quiet &#91;qu&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6162,7 +6162,7 @@ to run in a 'batch mode'.
 <h3 id="quitmovesforward"> quitmovesforward </h3>
 <dl>
 <dt>Syntax:
-<dd>quitmovesforward [qf]
+<dd>quitmovesforward &#91;qf&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6172,7 +6172,7 @@ file in the list of files is moved to.
 <h3 id="readentirefile"> readentirefile </h3>
 <dl>
 <dt>Syntax:
-<dd>readentirefile [rf]
+<dd>readentirefile &#91;rf&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6184,7 +6184,7 @@ the '-n' switch.
 <h3 id="readonlycheck"> readonlycheck </h3>
 <dl>
 <dt>Syntax:
-<dd>readonlycheck [rc]
+<dd>readonlycheck &#91;rc&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6193,7 +6193,7 @@ the '-n' switch.
 <h3 id="realtabs"> realtabs </h3>
 <dl>
 <dt>Syntax:
-<dd>realtabs [rt]
+<dd>realtabs &#91;rt&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6202,7 +6202,7 @@ the '-n' switch.
 <h3 id="regsubmagic"> regsubmagic </h3>
 <dl>
 <dt>Syntax:
-<dd>regsubmagic [rm]
+<dd>regsubmagic &#91;rm&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6211,7 +6211,7 @@ the '-n' switch.
 <h3 id="samefilecheck"> samefilecheck </h3>
 <dl>
 <dt>Syntax:
-<dd>samefilecheck [sc]
+<dd>samefilecheck &#91;sc&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6222,7 +6222,7 @@ up, rather than a new copy being read in.
 <h3 id="saveconfig"> saveconfig </h3>
 <dl>
 <dt>Syntax:
-<dd>saveconfig [sn]
+<dd>saveconfig &#91;sn&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6232,7 +6232,7 @@ up, rather than a new copy being read in.
 <h3 id="saveposition"> saveposition </h3>
 <dl>
 <dt>Syntax:
-<dd>saveposition [so]
+<dd>saveposition &#91;so&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6243,7 +6243,7 @@ the editor is started.
 <h3 id="searchwrap"> searchwrap </h3>
 <dl>
 <dt>Syntax:
-<dd>searchwrap [sw]
+<dd>searchwrap &#91;sw&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6253,7 +6253,7 @@ its searches once it reaches the top or bottom of the file.
 <h3 id="showmatch"> showmatch </h3>
 <dl>
 <dt>Syntax:
-<dd>showmatch [sm]
+<dd>showmatch &#91;sm&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6263,7 +6263,7 @@ Also, the matching '{' is shown if a '}' is typed if <a href="#cmode">cmode</a> 
 <h3 id="tagprompt"> tagprompt </h3>
 <dl>
 <dt>Syntax:
-<dd>tagprompt [tp]
+<dd>tagprompt &#91;tp&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6272,7 +6272,7 @@ Also, the matching '{' is shown if a '}' is typed if <a href="#cmode">cmode</a> 
 <h3 id="undo"> undo </h3>
 <dl>
 <dt>Syntax:
-<dd>undo [un]
+<dd>undo &#91;un&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6281,7 +6281,7 @@ Also, the matching '{' is shown if a '}' is typed if <a href="#cmode">cmode</a> 
 <h3 id="verbose"> verbose </h3>
 <dl>
 <dt>Syntax:
-<dd>verbose [ve]
+<dd>verbose &#91;ve&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6290,7 +6290,7 @@ Also, the matching '{' is shown if a '}' is typed if <a href="#cmode">cmode</a> 
 <h3 id="wordwrap"> wordwrap </h3>
 <dl>
 <dt>Syntax:
-<dd>wordwrap [ww]
+<dd>wordwrap &#91;ww&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6299,7 +6299,7 @@ Also, the matching '{' is shown if a '}' is typed if <a href="#cmode">cmode</a> 
 <h3 id="wrapbackspace"> wrapbackspace </h3>
 <dl>
 <dt>Syntax:
-<dd>wrapbackspace [ws]
+<dd>wrapbackspace &#91;ws&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6309,7 +6309,7 @@ Also, the matching '{' is shown if a '}' is typed if <a href="#cmode">cmode</a> 
 <h3 id="writecrlf"> writecrlf </h3>
 <dl>
 <dt>Syntax:
-<dd>writecrlf [wl]
+<dd>writecrlf &#91;wl&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6321,7 +6321,7 @@ lines are written with only a line feed at the end.
 <h4 id="lefthandmouse"> lefthandmouse </h4>
 <dl>
 <dt>Syntax:
-<dd>lefthandmouse [lm]
+<dd>lefthandmouse &#91;lm&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6330,7 +6330,7 @@ lines are written with only a line feed at the end.
 <h4 id="usemouse"> usemouse </h4>
 <dl>
 <dt>Syntax:
-<dd>usemouse [um]
+<dd>usemouse &#91;um&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6341,7 +6341,7 @@ lines are written with only a line feed at the end.
 <h4 id="clock"> clock </h4>
 <dl>
 <dt>Syntax:
-<dd>clock [cl]
+<dd>clock &#91;cl&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6351,7 +6351,7 @@ and <a href="#clocky">clocky</a> set commands.
 <h4 id="linenumbers"> linenumbers </h4>
 <dl>
 <dt>Syntax:
-<dd>linenumbers [ln]
+<dd>linenumbers &#91;ln&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6361,7 +6361,7 @@ unless <a href="#linenumsonright">linenumsonright</a> is set.
 <h4 id="linenumsonright"> linenumsonright </h4>
 <dl>
 <dt>Syntax:
-<dd>linenumsonright [lr]
+<dd>linenumsonright &#91;lr&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6370,7 +6370,7 @@ unless <a href="#linenumsonright">linenumsonright</a> is set.
 <h4 id="marklonglines"> marklonglines </h4>
 <dl>
 <dt>Syntax:
-<dd>marklonglines [ml]
+<dd>marklonglines &#91;ml&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6380,7 +6380,7 @@ is a non-zero ASCII value, then the last character is displayed as that ASCII va
 <h4 id="menus"> menus </h4>
 <dl>
 <dt>Syntax:
-<dd>menus [me]
+<dd>menus &#91;me&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6389,7 +6389,7 @@ is a non-zero ASCII value, then the last character is displayed as that ASCII va
 <h4 id="repeatinfo"> repeatinfo </h4>
 <dl>
 <dt>Syntax:
-<dd>repeatinfo [ri]
+<dd>repeatinfo &#91;ri&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6399,7 +6399,7 @@ disables this feature.
 <h4 id="spinning"> spinning </h4>
 <dl>
 <dt>Syntax:
-<dd>spinning [sp]
+<dd>spinning &#91;sp&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6409,7 +6409,7 @@ of the spinner is controlled using the <a href="#spinx">spinx</a> and the <a hre
 <h4 id="statusinfo"> statusinfo </h4>
 <dl>
 <dt>Syntax:
-<dd>statusinfo [si]
+<dd>statusinfo &#91;si&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6419,7 +6419,7 @@ using the <a href="#STATUSWINDOW">STATUSWINDOW</a> window command.
 <h4 id="toolbar"> toolbar </h4>
 <dl>
 <dt>Syntax:
-<dd>toolbar [tb]
+<dd>toolbar &#91;tb&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6429,7 +6429,7 @@ using the <a href="#STATUSWINDOW">STATUSWINDOW</a> window command.
 <h4 id="windowgadgets"> windowgadgets </h4>
 <dl>
 <dt>Syntax:
-<dd>windowgadgets [wg]
+<dd>windowgadgets &#91;wg&#93;
 </dl>
 <dl>
 <dt>Description:
@@ -6534,7 +6534,7 @@ size, 100=thin).
 <dt>Description:
 <dd>If <a href="#magic">magic</a> is not set, then the characters specified in &lt;str&gt; are NOT treated as magic characters
 by the regular expression handler, and must be escaped to have special meaning.
-<br><br>Magic characters are:<tt>&nbsp; ^$.[()|?+*\@</tt>
+<br><br>Magic characters are:<tt>&nbsp; ^$.&#91;()|?+*\@</tt>
 </dl>
 <h3 id="maxclhistory"> maxclhistory </h3>
 <dl>
@@ -6699,7 +6699,7 @@ spaces so that the it occupies &lt;n&gt; characters.
 <li>$n skip to next line in status window (character mode editors only)
 <li>$$ replaced with a '$'
 <li>$c replaced with a comma ','
-<li>$[ skip to next block in the status window (GUI editors only)
+<li>$&#91; skip to next block in the status window (GUI editors only)
 <li>$| text will be centered (within current block for GUI editors)
 <li>$&gt; text will be right-justified (within current block for GUI editors)
 <li>$&lt; text will be left-justified (within current block for GUI editors)
@@ -6712,7 +6712,7 @@ mode editors is:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set statusstring=&quot;L:$6L$nC:$6C&quot;</tt>
 <br><br>For GUI editors, the default status string setting is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set statusstring = &quot;Ln:$5L$[Col:$3C$[Mode: $M$[$|$T$[$H&quot;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set statusstring = &quot;Ln:$5L$&#91;Col:$3C$&#91;Mode: $M$&#91;$|$T$&#91;$H&quot;</tt>
 </dl>
 <h3 id="shellprompt"> shellprompt </h3>
 <dl>
@@ -7029,18 +7029,18 @@ characters is:
 <li>The dollar sign ('$') matches the end of a line.
 <li>The dot ('.') matches any character.
 <li>A single character that does not have any other special meaning matches that character.
-<li>A string enclosed in brackets [] matches any single character from the string.&nbsp; Ranges of ASCII character codes may
-be abbreviated as in &quot;a-z0-9&quot;.&nbsp; A ']' may occur only as the first character of the string.&nbsp; A literal
-'-' must be placed where it cannot be mistaken as a range indicator.&nbsp; If a caret ('^') occurs as the first character
-inside the brackets, then any characters NOT in the string are matched.
+<li>A string enclosed in brackets &#91;&#93; matches any single character from the string.&nbsp; Ranges of ASCII character
+codes may be abbreviated as in &quot;a-z0-9&quot;.&nbsp; A '&#93;' may occur only as the first character of the string.&nbsp;
+A literal '-' must be placed where it cannot be mistaken as a range indicator.&nbsp; If a caret ('^') occurs as the first
+character inside the brackets, then any characters NOT in the string are matched.
 <li>A regular expression followed by an asterisk ('*') matches a sequence of 0 or more matches of the regular expression.
 <li>A regular expression followed by a plus sign ('+') matches one or more matches of the regular expression.
 <li>A regular expression followed by a question mark ('?') matches zero or one matches of the regular expression.
 <li>Two regular expressions concatenated match a match of the first followed by a match of the second.
 <li>Two regular expressions separated by an or bar ('|') match either a match for the first or a match for the second.
 <li>A regular expression enclosed in parentheses matches a match for the regular expression.
-<li>The order of precedence of operators at the same parenthesis level is the following:<b>&nbsp; []</b>, then<b> *+?</b>,
-then concatenation, then<b> |</b>.
+<li>The order of precedence of operators at the same parenthesis level is the following:<b>&nbsp; &#91;&#93;</b>, then<b>
+*+?</b>, then concatenation, then<b> |</b>.
 <li>All regular expressions following an at sign ('@') are to be treated as case sensitive, regardless of the setting of <a href="#caseignore">caseignore</a>.
 <li>All regular expressions following a tilde ('~') are to be treated as case insensitive, regardless of the setting of <a href="#caseignore">caseignore</a>.
 <li>If an exclamation point ('!') occurs as the first character in a regular expression, it causes the ignoring of the <a href="#magic">magic</a>
@@ -7074,7 +7074,7 @@ match a match of the atom, or the null string
 <dt>atom
 <dd>(reg-exp) or range or ~ or @ or ^ or $ or \char or char
 <dt>range
-<dd>[ {^} char and/or charlo-charhi ]
+<dd>&#91; {^} char and/or charlo-charhi &#93;
 <br><br>'^' causes negation of range.
 <dt>.
 <dd>Match any character.
@@ -7338,7 +7338,7 @@ the initial string, and the result.&nbsp; In the result, the part of the string 
 <dd><b><i> a</i></b>cab
 </dl>
 </ol>
-<br><tt>[abc]</tt>
+<br><tt>&#91;abc&#93;</tt>
 <ol>
 <li>
 <dl>
@@ -7398,7 +7398,7 @@ the initial string, and the result.&nbsp; In the result, the part of the string 
 <dd>def<b><i>a</i></b>bc
 </dl>
 </ol>
-<br><tt>[a-z]+</tt>
+<br><tt>&#91;a-z&#93;+</tt>
 <ol>
 <li>
 <dl>
@@ -7428,7 +7428,7 @@ the initial string, and the result.&nbsp; In the result, the part of the string 
 <dd>0<b><i>abcdef</i></b>
 </dl>
 </ol>
-<br><tt>([^</tt>
+<br><tt>(&#91;^</tt>
 <ol>
 <li>
 <dl>
@@ -7535,8 +7535,8 @@ the initial string, and the result.&nbsp; In the result, the part of the string 
 the initial string, the match, and the resulting string after the replacement.
 <br><br>The regular expression and the replacement are separated by forward slashes ('/').&nbsp; For example, in the string
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /([a-z]+)((a|b))/Test:\1\2/</tt>
-<br><br><b>([a-z]+)((a|b))</b> is the regular expression and<b> Test:\1\2</b> is the replacement expression.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /(&#91;a-z&#93;+)((a|b))/Test:\1\2/</tt>
+<br><br><b>(&#91;a-z&#93;+)((a|b))</b> is the regular expression and<b> Test:\1\2</b> is the replacement expression.
 <h1 id="Editor_Script_Language"> Editor Script Language </h1>
 <br>The Open Watcom Vi Editor supports a powerful command language.&nbsp; In a script, you may use any command line command,
 along with a number of special commands explicitly for the script environment.
@@ -8773,7 +8773,7 @@ be achieved by using the search command.
 <dd>Display hex value of character under cursor.
 <dt>&lt;n&gt;CTRL_Y
 <dd>Expose the line before the top line on the screen.
-<dt>CTRL_]
+<dt>CTRL_&#93;
 <dd>Go to the tag indicated by the current word.
 <dt>&lt;n&gt;SPACE
 <dd>Move the cursor right one character.
@@ -9164,7 +9164,7 @@ command line command.&nbsp; This occurs if you use line number past the end of t
 <dd>The parameters to &quot;border&quot;, &quot;text&quot;, &quot;hilight&quot;, or &quot;dimension&quot; were invalid.
 <dt>Invalid yank command
 <dd>You did not enter a valid operation after starting the yank ('y') command mode command.
-<dt>invalid [] range
+<dt>invalid &#91;&#93; range
 <dd>A regular expression error, issued when you specified an invalid range inside the square brackets.
 <dt>Label not found
 <dd>In a script, you attempted to &quot;goto&quot; a label that was not defined.
@@ -9249,7 +9249,7 @@ that the disk is full.
 character, it must always have a character following it.
 <dt>Unmatched ()
 <dd>A regular expression error.&nbsp; You have an unequal number of open and closed round brackets.
-<dt>Unmatched []
+<dt>Unmatched &#91;&#93;
 <dd>A regular expression error.&nbsp; You have specified one square bracket, without using the matching one.
 <dt>Warning:&nbsp; file is read only
 <dd>This warning is issued if &quot;readonlycheck&quot; is set.&nbsp; The message is issued every time you modify a read only
@@ -9261,9 +9261,9 @@ C, C++, and FORTRAN code.
 <br><br>In C or C++ files, tags will help you locate functions, typedefs, structs, enums and unions.&nbsp; In a C++ file,
 you will also be able to locate classes.
 <br><br>Tags will help you find all function and subroutines in FORTRAN files.
-<br><br>Once you select a tag that you wish to locate (by either using the command mode key CTRL_] (control close square bracket)
-or the command line command<b> tag</b>), Open Watcom Vi Editor searchs a special tag file for the specified tag.&nbsp; The
-name of the tag file is determined by the setting of<b> tagfilename</b>, the default is<b> tags</b>.
+<br><br>Once you select a tag that you wish to locate (by either using the command mode key CTRL_&#93; (control close square
+bracket) or the command line command<b> tag</b>), Open Watcom Vi Editor searchs a special tag file for the specified tag.
+&nbsp;The name of the tag file is determined by the setting of<b> tagfilename</b>, the default is<b> tags</b>.
 <br><br>If the tag is located in the tag file, then Open Watcom Vi Editor edits the file that contains the tag that you specified
 and goes to the line with the definition on it, highlighting the line.&nbsp; If the tag is not found, you will get an error
 message.
@@ -9271,12 +9271,12 @@ message.
 <br><br>There is a special program provided for the creation of tag files.&nbsp; This program is called<b> ctags</b>.&nbsp;
 It is used as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Usage: ctags [-?admstqvx] [-f&lt;fname&gt;] [files] [@optfile]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [files]&nbsp;&nbsp;&nbsp;&nbsp; : source files (may be C, C++, or
-FORTRAN)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Usage: ctags &#91;-?admstqvx&#93; &#91;-f&lt;fname&gt;&#93; &#91;files&#93; &#91;@optfile&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;files&#93;&nbsp;&nbsp;&nbsp;&nbsp; : source files (may be C,
+C++, or FORTRAN)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; file names may contain wild cards (* and ?)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [@optfile]&nbsp; : specifies an option file</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;@optfile&#93;&nbsp; : specifies an option file</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Option File Directives:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; option &lt;opts&gt;:
 any command line options (no dashes).</tt>

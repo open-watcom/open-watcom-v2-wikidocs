@@ -785,7 +785,7 @@ supported in protected mode by DOS/4GW.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile &amp; Link: set finclude=\watcom\src\fortran\dos</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;wfl386 -l=dos4g dta</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux GetDS = &quot;mov ax,ds&quot; value [ax]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux GetDS = &quot;mov ax,ds&quot; value &#91;ax&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program dta</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implicit integer*2 (i-n)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer*2 res</tt>
@@ -870,7 +870,7 @@ free memory information.&nbsp; The following program illustrates this procedure.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; wfl386 -l=dos4g fmemory</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Pragma to get the default data segment</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux GetDS = &quot;mov ax,ds&quot; value [ax] modify exact [ax]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux GetDS = &quot;mov ax,ds&quot; value &#91;ax&#93; modify exact &#91;ax&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program memory</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implicit none</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; include 'dos.fi'</tt>
@@ -976,50 +976,52 @@ a new stub program.&nbsp; Following is the code in &quot;WSTUB.C&quot;:&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;errno.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;string.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Add environment strings to be searched here */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *paths_to_check[] = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *paths_to_check&#91;&#93; = {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;DOS4GPATH&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;PATH&quot;};</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *dos4g_path()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static char fullpath[80];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static char fullpath&#91;80&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i &lt; sizeof( paths_to_check ) / sizeof(
-paths_to_check[0] );</tt>
+paths_to_check&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4gw.exe&quot;, paths_to_check[i],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4gw.exe&quot;, paths_to_check&#91;i&#93;,
 fullpath );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath[0] ) return( &amp;fullpath );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath&#91;0&#93; ) return( &amp;fullpath
+);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i &lt; sizeof( paths_to_check ) / sizeof(
-paths_to_check[0] );</tt>
+paths_to_check&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4g.exe&quot;, paths_to_check[i],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _searchenv( &quot;dos4g.exe&quot;, paths_to_check&#91;i&#93;,
 fullpath );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath[0] ) return( &amp;fullpath );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( fullpath&#91;0&#93; ) return( &amp;fullpath
+);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( &quot;dos4gw.exe&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main( int argc, char *argv[] )</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main( int argc, char *argv&#91;&#93; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *av[4];</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; auto char&nbsp;&nbsp; cmdline[128];</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[0] = dos4g_path();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Locate the DOS/4G loader */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[1] = argv[0];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* name of executable to run */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[2] = getcmd( cmdline );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; /* command line */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av[3] = NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* end of list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *av&#91;4&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; auto char&nbsp;&nbsp; cmdline&#91;128&#93;;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;0&#93; = dos4g_path();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Locate the DOS/4G loader */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;1&#93; = argv&#91;0&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* name of executable to run */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;2&#93; = getcmd( cmdline );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; /* command line */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; av&#91;3&#93; = NULL;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* end of list */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef QUIET</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putenv( &quot;DOS4G=QUIET&quot; );&nbsp;&nbsp;&nbsp; /* disables
 DOS/4G Copyright banner */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; execvp( av[0], av );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; execvp( av&#91;0&#93;, av );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( &quot;Stub exec failed:&quot; );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( av[0] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( av&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts( strerror( errno ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit( 1 );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* indicate error */</tt>
@@ -1185,7 +1187,7 @@ however, in the following cases:
 <br>If none of these conditions applies to you, you can skip this section.
 <br><br>The general syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M= [switch_mode] [@start_address [- end_address]] [:size]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M= &#91;switch_mode&#93; &#91;@start_address &#91;- end_address&#93;&#93; &#91;:size&#93;</tt>
 <br><br>In the syntax shown above,<tt> start_address, end_address</tt> and<tt> size</tt> represent numbers, expressed in decimal
 or in hexadecimal (hex requires a<tt> 0x</tt> prefix).&nbsp; The number may end with a K to indicate an address or size in
 kilobytes, or an M to indicate megabytes.&nbsp; If no suffix is given, the address or size is assumed to be in kilobytes.
@@ -1237,7 +1239,7 @@ but won't have any other effect on your system.
 system.
 <br><br>To set the environment variable, the syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=[switch_mode_setting]^options.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=&#91;switch_mode_setting&#93;^options.</tt>
 <br><br><b>Note:</b>&nbsp; Some command line editing TSRs, such as CED, use the caret (^) as a delimiter.&nbsp; If you want
 to set<b> DOS16M</b> using the syntax above while one of these TSRs is resident, modify the TSR to use a different delimiter.
 <br><br>These are the options:
@@ -1309,7 +1311,7 @@ is needed again.&nbsp; The combination of the swap file and available RAM is the
 <br><br>Your program can use VMM if you set the DOS environment variable,<b> DOS4GVM</b> , as follows.&nbsp; To set the<b>
 DOS4GVM</b> environment variable, use the format shown below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM= [option[#value]] [option[#value]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM= &#91;option&#91;#value&#93;&#93; &#91;option&#91;#value&#93;&#93;</tt>
 <br><br>A &quot;#&quot; is used with options that take values since the DOS command shell will not accept &quot;=&quot;.
 <br><br>If you set<b> DOS4GVM</b> equal to 1, the default parameters are used for all options.
 <br><br><b>Example:</b>
@@ -2272,9 +2274,9 @@ mode to real mode, the following code will intercept all DOS calls from both rea
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; bl, 21h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; 31h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ERROR</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; [Orig_Real_Seg],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; &#91;Orig_Real_Seg&#93;,
 cx</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; [Orig_Real_Offset],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; &#91;Orig_Real_Offset&#93;,
 dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ; Allocate a real-mode callback</tt>
@@ -2312,7 +2314,7 @@ dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;******************************************************</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; My_Int_21_Hook:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_AH],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_AH&#93;,
 41h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jne&nbsp;&nbsp;&nbsp;&nbsp; Chain_To_DOS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
@@ -2324,21 +2326,21 @@ dx</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cld</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lodsw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Get real-mode ret IP</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_IP],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_IP&#93;,
 ax</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lodsw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Get real-mode ret CS</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_CS],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_CS&#93;,
 ax</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lodsw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Get real-mode flags</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ax, 1&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Set carry flag</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_Flags],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_Flags&#93;,
 ax</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_SP],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_SP&#93;,
 6</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_AX],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_AX&#93;,
 5</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jmp&nbsp;&nbsp;&nbsp;&nbsp; My_Hook_Exit</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
@@ -2346,11 +2348,11 @@ ax</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ; real-mode CS:IP with the original Seg:Offset.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Chain_To_DOS:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:[Orig_Real_Seg]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_CS],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:&#91;Orig_Real_Seg&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_CS&#93;,
 ax</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:[Orig_Real_Offset]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:[di.RealMode_IP],
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ax, cs:&#91;Orig_Real_Offset&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; es:&#91;di.RealMode_IP&#93;,
 ax</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; My_Hook_Exit:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iret</tt>
@@ -2815,7 +2817,7 @@ presence or absence of a coprocessor based on the CPU type alone.
 <dd>This is a brief statement of what the utility program does.&nbsp; More specific information is provided under &quot;Notes&quot;.
 <dt>Syntax:
 <dd>This shows the syntax of the program.&nbsp; The fixed portion of each command is in a<tt> typewriter font,</tt> while variable
-parts of the command are in<b> italics.</b>&nbsp; Optional parts are enclosed in [brackets].
+parts of the command are in<b> italics.</b>&nbsp; Optional parts are enclosed in &#91;brackets&#93;.
 <dt>Notes:
 <dd>These are explanatory remarks noting major features and possible pitfalls.&nbsp; We explain anything special that you might
 need to know about the program.
@@ -2897,7 +2899,7 @@ can occur per second, and the time for a single round-trip switch, broken out in
 <dt>Purpose:
 <dd>Creates a private pool of memory for<b> DOS/4GW</b> programs.
 <dt>Syntax:
-<dd><tt> PRIVATXM [-r]</tt>
+<dd><tt> PRIVATXM &#91;-r&#93;</tt>
 <dt>Notes:
 <dd>This program may be distributed to your users.
 <br><br>Without PRIVATXM, a<b> DOS/4GW</b> program that starts up while another<b> DOS/4GW</b> program is active uses the
@@ -3202,7 +3204,7 @@ for the DOS/4G application.
 <br><br>DOS/4G could not open the specified program.&nbsp; Probably the file didn't exist.&nbsp; It is possible that DOS ran
 out of file handles, or that a network or similar utility has prohibited read access to the program.&nbsp; Make sure that
 the file name was spelled correctly.
-<dt>1008 &quot;can't load executable format for file &lt;filename&gt; [&lt;error code&gt;]&quot;
+<dt>1008 &quot;can't load executable format for file &lt;filename&gt; &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>DOS/4G did not recognize the specified file as a valid executable file.&nbsp; DOS/4G can load linear executables (LE
 and LX) and EXPs (BW).&nbsp; The error code is for Tenberry Software's use.
@@ -3210,12 +3212,12 @@ and LX) and EXPs (BW).&nbsp; The error code is for Tenberry Software's use.
 <dd>
 <br><br>This message does not occur in DOS/4G, only DOS/4GW Professional; the latter requires that the DOS extender be bound
 to the program file.&nbsp; The error signals an attempt to load
-<dt>1010 &quot;can't initialize loader &lt;loader&gt; [&lt;error code&gt;]&quot;
+<dt>1010 &quot;can't initialize loader &lt;loader&gt; &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>DOS/4G could not initialize the named loader, probably because of a resource shortage.&nbsp; Try making more memory
 available.&nbsp; If that doesn't work, please contact Tenberry Technical Support.&nbsp; The error code is for Tenberry Software'
 use.
-<dt>1011 &quot;VMM initialization error [&lt;error code&gt;]&quot;
+<dt>1011 &quot;VMM initialization error &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>DOS/4G could not initialize the Virtual Memory Manager, probably because of a resource shortage.&nbsp; Try making
 more memory available.&nbsp; If that doesn't work, please contact Tenberry Technical Support.&nbsp; The error code is for
@@ -3339,10 +3341,10 @@ is page buffer, make more DOS memory available.
 <dd>
 <br><br>There is less physical memory available than the amount specified by the MINMEM parameter.&nbsp; Make more memory
 available.
-<dt>2511 &quot;swap out error [&lt;error code&gt;]&quot;
+<dt>2511 &quot;swap out error &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>Unknown disk error.&nbsp; The error code is for Tenberry Software' use.
-<dt>2512 &quot;swap in error [&lt;error code&gt;]&quot;
+<dt>2512 &quot;swap in error &#91;&lt;error code&gt;&#93;&quot;
 <dd>
 <br><br>Unknown disk error.&nbsp; The error code is for Tenberry Software' use.
 <dt>2514 &quot;can't open trace file&quot;
@@ -3980,7 +3982,7 @@ caused this particular fault.
 &nbsp;You can therefore tell where a crash occurred even if you can't reproduce the crash in a debugger.
 <li>The opcode stream, if it appears, shows the next 16 bytes from the code segment at the point of the exception.&nbsp; If
 you disassemble these instructions, you can tell what instructions caused the crash, even without using a debugger.&nbsp;
-In this case, 8A 18 is the instruction<tt> mov bl,[eax].</tt>
+In this case, 8A 18 is the instruction<tt> mov bl,&#91;eax&#93;.</tt>
 <li>72 words from the top of the stack, at the point of the exception, may be listed next.&nbsp; You may be able to recognize
 function calls or data from your program on the stack.
 <li>The four interrupts least to most recently handled by DOS/4GW in protected mode are listed next.&nbsp; In this example,
@@ -4497,8 +4499,8 @@ with the same name as the &quot;.rex&quot; file.
 </ol>
 <br>The following describes the syntax of the<tt> WBIND</tt> command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec [-d] [-n] [-q] [-s supervisor] [-R rc_options]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec &#91;-d&#93; &#91;-n&#93; &#91;-q&#93; &#91;-s supervisor&#93; &#91;-R rc_options&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>WBIND
 <dd>is the name of the Open Watcom Bind utility.
@@ -4683,8 +4685,8 @@ with the same name as the &quot;.rex&quot; file.
 </ol>
 <br>The following describes the syntax of the<tt> WBIND</tt> command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec [-d] [-n] [-q] [-s supervisor] [-R rc_options]</tt>
-<br><br>The square brackets [ ] denote items which are optional.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WBIND file_spec &#91;-d&#93; &#91;-n&#93; &#91;-q&#93; &#91;-s supervisor&#93; &#91;-R rc_options&#93;</tt>
+<br><br>The square brackets &#91; &#93; denote items which are optional.
 <dl>
 <dt>WBIND
 <dd>is the name of the Open Watcom Bind utility.
@@ -4996,11 +4998,11 @@ only on the maximum number of active callbacks.
 </ul>
 <h2 id="Windows__FloatingMpoint_Emulation"> Windows:&nbsp; Floating-point Emulation </h2>
 <br>The file<tt> WEMU387.386</tt> is included to support floating-point emulation for 32-bit applications running under Windows.
-&nbsp;This file is installed in the<tt> [386Enh]</tt> section of your<tt> SYSTEM.INI</tt> file.&nbsp; By using the floating-point
-emulator, your application can be compiled with the &quot;fpi87&quot; option to use inline floating-point instructions, and
-it will run on a machine without a numeric coprocessor.
-<br><br>Only one of<tt> WEMU387.386</tt> and<tt> WDEBUG.386</tt> may be installed in your<tt> [386Enh]</tt> section.&nbsp;
-<tt> WEMU387.386</tt> may be distributed with your application.
+&nbsp;This file is installed in the<tt> &#91;386Enh&#93;</tt> section of your<tt> SYSTEM.INI</tt> file.&nbsp; By using the
+floating-point emulator, your application can be compiled with the &quot;fpi87&quot; option to use inline floating-point instructions,
+and it will run on a machine without a numeric coprocessor.
+<br><br>Only one of<tt> WEMU387.386</tt> and<tt> WDEBUG.386</tt> may be installed in your<tt> &#91;386Enh&#93;</tt> section.
+&nbsp;<tt> WEMU387.386</tt> may be distributed with your application.
 <h2 id="Windows__Multiple_Instances"> Windows:&nbsp; Multiple Instances </h2>
 <br>Since the 32-bit application resides in a flat memory space, it is NOT possible to share code with other instances.&nbsp;
 This means that you must register new window classes with callbacks into the new instance's code space.&nbsp; A simple way
@@ -5421,7 +5423,8 @@ of view, the 16-bit supervisor might look like the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32bitDLLindirect:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set up stack frame</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch to 32-bit data space</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call indirect registration_list[ index ]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call indirect registration_list&#91; index
+&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
@@ -6093,7 +6096,7 @@ and &quot;Exit&quot;.
 <dd><b> Select &quot;View Code&quot;</b> from the &quot;Project&quot; window.&nbsp; To interface these Visual Basic functions
 to the DLLs, the following code is needed in the
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Object: [general] Proc: [declarations]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Object: &#91;general&#93; Proc: &#91;declarations&#93;</tt>
 <br><br>section of the code.&nbsp; This code assumes that<tt> VBDLL32.DLL</tt> and<tt> COVER16.DLL</tt> are in the<tt> c:\path</tt>
 directory.&nbsp; Modify the pathnames appropriately if this is not the case.&nbsp; (Note:&nbsp; the =&gt; means to continue
 the statement on the same line.)
@@ -7993,10 +7996,10 @@ Eratosthenes</b> algorithm to accomplish this task.&nbsp; We will take you throu
 <h2 id="16Mbit_OSD2__Building_and_Running_the_Sample_OSD2_1_x_Application"> 16-bit OS/2:&nbsp; Building and Running the Sample OS/2 1.x Application </h2>
 <br>To compile and link our example program which is stored in the file<tt> sieve.for</tt>, enter the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl -l=os2 sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl -l=os2 sieve.for</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl -l=os2&nbsp; sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl -l=os2&nbsp; sieve.for</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom F77/16 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1990-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -8020,7 +8023,7 @@ Eratosthenes</b> algorithm to accomplish this task.&nbsp; We will take you throu
 <br><br>Provided that no errors were encountered during the compile or link phases, the &quot;sieve&quot; program may now
 be run.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]sieve</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;sieve</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; The Number of Primes between 1 and 10000 are:&nbsp; 1229</tt>
 <br><br>If you examine the current directory, you will find that two files have been created.&nbsp; These are<tt> sieve.obj</tt>
 (the result of compiling<tt> sieve.for</tt>) and<tt> sieve.exe</tt> (the result of linking<tt> sieve.obj</tt> with the appropriate
@@ -8037,10 +8040,10 @@ appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;sieve&quot; program with debugging information, the following command may
 be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl -l=os2 -d2 sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl -l=os2 -d2 sieve.for</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl -l=os2&nbsp; -d2 sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl -l=os2&nbsp; -d2 sieve.for</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom F77/16 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1990-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -8074,7 +8077,7 @@ configuration file<tt> CONFIG.SYS.</tt>&nbsp; It contains the Open Watcom Debugg
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath=c:\watcom\binp\dll</tt>
 <br><br>To request the Open Watcom Debugger to assist in debugging the application, the following command may be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wd sieve</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wd sieve</tt>
 <br><br>It would be too ambitious to describe the debugger in this introductory chapter so we refer you to the book entitled<b><i>
 Open Watcom Debugger User's Guide.</i></b>
 <h1 id="32Mbit_OSD2__Creating_32Mbit_OSD2_Applications"> 32-bit OS/2:&nbsp; Creating 32-bit OS/2 Applications </h1>
@@ -8124,10 +8127,10 @@ Eratosthenes</b> algorithm to accomplish this task.&nbsp; We will take you throu
 <h2 id="32Mbit_OSD2__Building_and_Running_the_Sample_OSD2_Application"> 32-bit OS/2:&nbsp; Building and Running the Sample OS/2 Application </h2>
 <br>To compile and link our example program which is stored in the file<tt> sieve.for</tt>, enter the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2 sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2 sieve.for</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2 sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2 sieve.for</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom F77/32 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1990-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -8151,7 +8154,7 @@ Eratosthenes</b> algorithm to accomplish this task.&nbsp; We will take you throu
 <br><br>Provided that no errors were encountered during the compile or link phases, the &quot;sieve&quot; program may now
 be run.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]sieve</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;sieve</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; The Number of Primes between 1 and 10000 are:&nbsp; 1229</tt>
 <br><br>If you examine the current directory, you will find that two files have been created.&nbsp; These are<tt> sieve.obj</tt>
 (the result of compiling<tt> sieve.for</tt>) and<tt> sieve.exe</tt> (the result of linking<tt> sieve.obj</tt> with the appropriate
@@ -8168,10 +8171,10 @@ the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;sieve&quot; program with debugging information, the following command may
 be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2 -d2 sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2 -d2 sieve.for</tt>
 <br><br>The typical messages that appear on the screen are shown in the following illustration.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2 -d2 sieve.for</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2 -d2 sieve.for</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Open Watcom F77/32 Compile and Link Utility</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2020 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1990-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -8201,7 +8204,7 @@ However, you do so at the risk of making it more difficult for yourself to deter
 and the original source language code.
 <br><br>To request the Open Watcom Debugger to assist in debugging the application, the following command may be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wd sieve</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wd sieve</tt>
 <br><br>It would be too ambitious to describe the debugger in this introductory chapter so we refer you to the book entitled<b><i>
 Open Watcom Debugger User's Guide.</i></b>
 <h1 id="OSD2__OSD2_2_x_MultiMthreaded_Applications"> OS/2:&nbsp; OS/2 2.x Multi-threaded Applications </h1>
@@ -8267,7 +8270,7 @@ of -1 is returned.
 <br>Let us create a simple multi-threaded application.&nbsp; The source code for this example can be found in<tt> \watcom\samples\fortran\os2.</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * MTHREAD.FOR</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux DosSleep parm( value ) [] caller</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux DosSleep parm( value ) &#91;&#93; caller</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer NumThreads</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; logical HoldThreads</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; common NumThreads, HoldThreads</tt>
@@ -8323,7 +8326,7 @@ the<b> FINCLUDE</b> environment variable must contain the<tt> \watcom\src\fortra
 is the name of the directory in which you installed Open Watcom FORTRAN 77.
 <br><br>We can now compile and link the application by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -bm -l=os2v2 mthread</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -bm -l=os2v2 mthread</tt>
 <br><br>The &quot;bm&quot; option must be specified since we are creating a multi-threaded application.&nbsp; If your multi-threaded
 application contains more than one module, each module must be compiled using the &quot;bm&quot; switch.
 <br><br>The &quot;l&quot; option specifies the target system for which the application is to be linked.&nbsp; The system name<tt>
@@ -8428,7 +8431,7 @@ These routines are optional but we show skeleton versions in the following examp
 <br><br>Assume the above example is contained in the file<tt> dllsamp.for.</tt>&nbsp; We can compile the file using the following
 command.&nbsp; Note that we must specify the &quot;bd&quot; compiler option.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfc386 -bd dllsamp</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfc386 -bd dllsamp</tt>
 <br><br>Before we can link our example, we must create a linker directive file that describes the attributes and entry points
 of our dynamic link library.&nbsp; The following is a linker directive file, called<tt> dllsamp.lnk,</tt> that can be used
 to create the dynamic link library.
@@ -8458,7 +8461,7 @@ may be used to override this.
 </ol>
 <br>We can now create our dynamic link library by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlink @dllsamp</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlink @dllsamp</tt>
 <br><br>A file called<tt> dllsamp.dll</tt> will be created.
 <h2 id="OSD2__Using_Dynamic_Link_Libraries"> OS/2:&nbsp; Using Dynamic Link Libraries </h2>
 <br>Once we have created a dynamic link library, we must allow other applications to access the functions available in the
@@ -8479,7 +8482,7 @@ directive need not be modified.&nbsp; However, if you are using &quot;IMPORT&quo
 <br><br>Let us create an import library for our sample dynamic link library we created in the previous section.&nbsp; We do
 this by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlib dllsamp +dllsamp.dll</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlib dllsamp +dllsamp.dll</tt>
 <br><br>A standard library called<tt> dllsamp.lib</tt> will be created.
 <br><br>Suppose the following sample program, contained in the file<tt> dlltest.for,</tt> calls the functions from our sample
 dynamic link library.
@@ -8490,7 +8493,7 @@ dynamic link library.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br>We can compile and link our sample application by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2 dlltest dllsamp.lib</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2 dlltest dllsamp.lib</tt>
 <br><br>If we had created a linker directive file of &quot;IMPORT&quot; directives instead of an import library for the dynamic
 link library, the linker directive file, say<tt> dllimps.lnk,</tt> would be as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -8498,7 +8501,7 @@ link library, the linker directive file, say<tt> dllimps.lnk,</tt> would be as f
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; import DLL_ENTRY_2 dllsamp</tt>
 <br><br>To compile and link our sample application, we would issue the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2 dlltest -&quot;@dllimps&quot;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2 dlltest -&quot;@dllimps&quot;</tt>
 <h2 id="OSD2__The_Dynamic_Link_Library_Data_Area"> OS/2:&nbsp; The Dynamic Link Library Data Area </h2>
 <br>The Open Watcom FORTRAN 77 32-bit run-time library does not support the general case operation of DLLs in an execution
 environment where there is only one instance of the DATA segment (DGROUP) for that DLL.
@@ -8591,17 +8594,17 @@ sample program (contained in the file<tt> hello.for</tt>).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br>First we must compile the file<tt> hello.for</tt> by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfc386 hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfc386 hello</tt>
 <br><br>Once we have successfully compiled the file, we can link it by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlink sys os2v2 file hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlink sys os2v2 file hello</tt>
 <br><br>It is also possible to compile and link in one step, by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2 hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2 hello</tt>
 <br><br>This will create a PM-compatible application.&nbsp; If you wish to create a fullscreen application, link with the
 following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wlink sys os2v2 fullscreen file hello</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wlink sys os2v2 fullscreen file hello</tt>
 <h2 id="OSD2__Calling_Presentation_Manager_API_Functions"> OS/2:&nbsp; Calling Presentation Manager API Functions </h2>
 <br>It is also possible for a FORTRAN 77 application to create its own windowing environment.&nbsp; This is achieved by calling
 PM API functions directly from your FORTRAN 77 program.&nbsp; The techniques for developing these applications can be found
@@ -8803,9 +8806,9 @@ those components of the OS/2 API required by the module will be compiled.
 </ol>
 <br>You can compile, link and run this demonstration by issuing the following commands.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]set finclude=\watcom\src\fortran\os2</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]wfl386 -l=os2v2_pm fshapes</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [C:\]fshapes</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;set finclude=\watcom\src\fortran\os2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;wfl386 -l=os2v2_pm fshapes</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;fshapes</tt>
 <h1 id="Creating_NetWare_386_NLM_Applications"> Creating NetWare 386 NLM Applications </h1>
 <br>Open Watcom FORTRAN 77 supports version 4.0 of the Netware 386 API.&nbsp; We include the following components:
 <dl>
@@ -8944,7 +8947,7 @@ wcl386&nbsp; mix1c mix1f.obj /fe=mix1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * MIX1F.FOR - This FORTRAN function accepts three integer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arguments and returns
 their maximum.</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc[386] mix1f.for</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc&#91;386&#93; mix1f.for</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer function tmax3( arga, argb, argc
 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer arga, argb, argc</tt>
@@ -8960,7 +8963,7 @@ value.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute the
 max of three numbers.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix2f mix2c.obj /fe=mix2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix2f mix2c.obj /fe=mix2</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux tmax3 &quot;!_&quot; parm (value)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix2f</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer*4&nbsp; tmax3</tt>
@@ -9022,7 +9025,7 @@ the length of the string being passed.&nbsp; A pointer to this structure can the
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in C that passes
 back a string.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix3f mix3c.obj /fe=mix3</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix3f mix3c.obj /fe=mix3</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix3f</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*80 sendstr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*80 cstring</tt>
@@ -9061,7 +9064,7 @@ normal C-type strings, then a FORTRAN pragma can be used to pass the string corr
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in C and passes
 it a string.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix4f mix4c.obj /fe=mix4</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix4f mix4c.obj /fe=mix4</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux cstr &quot;!_&quot; parm (value)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix4f</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*80 forstring</tt>
@@ -9089,7 +9092,7 @@ an extern struct to correspond to the FORTRAN common block.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; block can be accessed
 from C.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix5f mix5c.obj /fe=mix5</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix5f mix5c.obj /fe=mix5</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix5f</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; external put</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; common/cblk/i,j</tt>
@@ -9133,16 +9136,16 @@ assumed to be located in the DGROUP group which is accessed through the SS segme
 feature is not present, however, in the definition of the FORTRAN 77 language.&nbsp; As a result, a special pragma is required
 to call these kinds of functions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller []</tt>
-<br><br>The &quot;caller&quot; specifies that the caller will pop the arguments from the stack.&nbsp; The &quot;[]&quot; indicates
-that there are no arguments passed in registers because the<tt> printf</tt> function takes a variable number of arguments
-passed on the stack.&nbsp; The following example is a FORTRAN function that uses this pragma.&nbsp; It calls the<tt> printf</tt>
-function to print the value 47 on the screen.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller &#91;&#93;</tt>
+<br><br>The &quot;caller&quot; specifies that the caller will pop the arguments from the stack.&nbsp; The &quot;&#91;&#93;&quot;
+indicates that there are no arguments passed in registers because the<tt> printf</tt> function takes a variable number of
+arguments passed on the stack.&nbsp; The following example is a FORTRAN function that uses this pragma.&nbsp; It calls the<tt>
+printf</tt> function to print the value 47 on the screen.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * MIX6.FOR - This FORTRAN program calls the C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf function.</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl[386] mix6</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller []</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile/Link: wfl&#91;386&#93; mix6</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux printf &quot;!_&quot; parm (value) caller &#91;&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program mix6</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character cr/z0d/, nullchar/z00/</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call printf( 'Value is %ld.'//cr//nullchar,
@@ -9308,7 +9311,7 @@ a floating-point overflow error, a floating-point underflow error, and an invali
 code that demonstrates how to take over control of</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 math error handling from the run-time system.</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfl[386] mathdemo cw87 _matherr</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfl&#91;386&#93; mathdemo cw87 _matherr</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Notes:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * (1) We call &quot;cw87&quot; to enable underflow exceptions which are</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; masked (ignored) by default.</tt>
@@ -9446,7 +9449,7 @@ error'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * CW87.FOR</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * This subroutine uses the C Library routine &quot;_control87&quot;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * to modify the math coprocessor exception mask.</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc[386] cw87</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc&#91;386&#93; cw87</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; include 'fsignal.fi'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*9 status(0:1)/' disabled',' enabled'/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer fp_cw, fp_mask, bits, i</tt>
@@ -9490,7 +9493,7 @@ to this example is provided with the software (look for the file<tt> _matherr.fo
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * _MATHERR.FOR&nbsp; : math error handler</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc[386] _matherr</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Compile: wfc&#91;386&#93; _matherr</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux __imath2err &quot;*_&quot; parm( value, reference, reference )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux __amath1err &quot;*_&quot; parm( value, reference )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux __amath2err &quot;*_&quot; parm( value, reference, reference )</tt>
@@ -9802,9 +9805,10 @@ and you want to ensure that your performance is optimal, build your application 
 <br><br>In a Windows environment, both the &quot;fpi87&quot; and the &quot;fpi&quot; options will use floating-point emulation
 if a co-processor is not available.&nbsp; Windows floating-point emulation is provided through Open Watcom's &quot;WEMU387.386&quot;.
 &nbsp;&quot;WEMU387.386&quot; is royalty free and may be redistributed with your application.&nbsp; For machines that do not
-have a math co-processor, install &quot;WEMU387.386&quot; as a device in the [386Enh] section of the Windows SYSTEM.INI file
-to handle the floating-point operations.&nbsp; Note that the speed of code using &quot;WEMU387.386&quot; on machines without
-a co-processor will be much slower than code compiled with the &quot;fpc&quot; option that always uses floating-point libraries.
+have a math co-processor, install &quot;WEMU387.386&quot; as a device in the &#91;386Enh&#93; section of the Windows SYSTEM.INI
+file to handle the floating-point operations.&nbsp; Note that the speed of code using &quot;WEMU387.386&quot; on machines
+without a co-processor will be much slower than code compiled with the &quot;fpc&quot; option that always uses floating-point
+libraries.
 <h2 id="How_more_than_20_files_at_a_time_can_be_opened"> How more than 20 files at a time can be opened </h2>
 <br>The number of file handles allowed by Open Watcom F77 is initialized to 20 in<tt> stdio.h,</tt> but this can be changed
 by the application developer.&nbsp; To change the number of file handles allowed with Open Watcom F77, follow the steps outlined
@@ -9833,7 +9837,7 @@ the &quot;files=n&quot; statement.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp; Compile/Link: set finclude=\watcom\src\fortran</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-wfl[386] fhandles</tt>
+wfl&#91;386&#93; fhandles</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; Get proper typing information from include file</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; include 'fsublib.fi'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer i, j, maxh, maxo</tt>

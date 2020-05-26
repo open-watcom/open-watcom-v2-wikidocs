@@ -218,7 +218,7 @@
 <dt>- T -
 <dd><a href="#TCPDIP_LInternet_PacketsR">TCP/IP (Internet Packets)</a>
 <br><a href="#Text_Selection">Text Selection</a>
-<br><a href="#THread_Lor___R">THread (or ]</a>
+<br><a href="#THread_Lor___R">THread (or &#93;</a>
 <br><a href="#The_Thread_Window">The Thread Window</a>
 <br><a href="#The_Toolbar">The Toolbar</a>
 <br><a href="#Trace">Trace</a>
@@ -477,7 +477,7 @@ option short forms are indicated in capital letters.&nbsp; For example, the<b> /
 <h2 id="Common_Switches"> Common Switches </h2>
 <br>The following switches are applicable to all operating systems.
 <dl>
-<dt>/TRap=trap_file[;trap_parm]
+<dt>/TRap=trap_file&#91;;trap_parm&#93;
 <dd>specifies an executable helper program that the debugger uses to control the application being debugged, or to communicate
 across a remote link.&nbsp; It is called a &quot;trap file&quot; since the interrupts used for debugging are sometimes called
 &quot;traps&quot;.&nbsp; The<b> trap</b> option selects the appropriate trap file to use.<b><i>&nbsp; This option must be
@@ -1789,29 +1789,29 @@ or evaluating expressions.&nbsp; See <a href="#Open_Watcom_Debugger_Expression_H
 <dd>Display the value of this member at the top of the structure/class.&nbsp; You can selectively add or remove items from the
 list that is displayed &quot;on top&quot;.&nbsp; For example, say you have a<tt> struct Point</tt> displayed as:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [-] point</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;-&#93; point</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; other&nbsp; &quot;asdf&quot;</tt>
 <br><br>If you toggle<b><i> FieldOnTop</i></b> for both<tt> x</tt> and<tt> y</tt> then<tt> point</tt> would be displayed like
 this:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [-] point { 10, 30 }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;-&#93; point { 10, 30 }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; other&nbsp; &quot;asdf&quot;</tt>
 <br><br>Furthermore, if you closed the struct (or pointer to struct) then you would see:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [+] point { 10, 30 }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;+&#93; point { 10, 30 }</tt>
 <br><br>This carries to structs containing structs (and so on) as shown in the following struct containing two<tt> Point</tt>
 structures.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [-] rect { { 10, 10 }, { 30, 30 } }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;-&#93; rect { { 10, 10 }, { 30, 30 } }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top_left { 10, 10 }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bot_right { 30, 30 }</tt>
 <br><br>If you close it, then you will see:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [+] rect { { 10, 10 }, { 30, 30 } }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;+&#93; rect { { 10, 10 }, { 30, 30 } }</tt>
 <dt>Class/Show Functions
 <dd>Display function members of this object.&nbsp; If this option is not selected, no functions are displayed.&nbsp; This option
 works in conjunction with other<b><i> Class</i></b> selections to display &quot;Inherited&quot;, &quot;Generated&quot;, &quot;Private&quot;
@@ -2027,9 +2027,9 @@ pop-up menu.
 <li>disabled
 <li>cleared (non-existent)
 </ul>
-<br>The button for an enabled break point is a stop sign or [!].&nbsp; The button for a disabled break point is a grey stop
-sign or [.].&nbsp; A green diamond or [ ] appears when no breakpoint exists at the given line.&nbsp; The same buttons also
-appear in the Assembly window and the Break window to indicate the status of a break point.
+<br>The button for an enabled break point is a stop sign or &#91;!&#93;.&nbsp; The button for a disabled break point is a
+grey stop sign or &#91;.&#93;.&nbsp; A green diamond or &#91; &#93; appears when no breakpoint exists at the given line.&nbsp;
+The same buttons also appear in the Assembly window and the Break window to indicate the status of a break point.
 <dl>
 <dt>Note:
 <dd>Some lines in your program do not contain any machine code to execute and therefore, you cannot set a breakpoint on them.
@@ -2290,12 +2290,12 @@ debugging sessions.&nbsp; To change an option permanently, see <a href="#The_Win
 software to use<b> IN</b> and<b> OUT</b> instructions.&nbsp; I/O ports can be added to the window, and typed as a byte, word
 (2 bytes) or dword (4 bytes).&nbsp; Use<b><i> New</i></b> from the pop-up menu to add a new port to the window.&nbsp; Once
 you have done this, four items will appear on the line.&nbsp; First appears the read button which appears as an open book,
-or [r].&nbsp; Second appears the write button.&nbsp; It is a pencil or [w].&nbsp; Third appears the port address, and finally
-the value.&nbsp; When you first enter a port address the value appears as question marks.&nbsp; The debugger does not automatically
-read or write the value since this can have side effects.&nbsp; In order to read the displayed value from the port, click
-on the read button.&nbsp; To write the displayed value back, click on the write button.&nbsp; You can change the value by
-double clicking on it, or by cursoring to it and pressing ENTER.&nbsp; Press the right mouse button to access the following
-pop-up menu items:
+or &#91;r&#93;.&nbsp; Second appears the write button.&nbsp; It is a pencil or &#91;w&#93;.&nbsp; Third appears the port address,
+and finally the value.&nbsp; When you first enter a port address the value appears as question marks.&nbsp; The debugger does
+not automatically read or write the value since this can have side effects.&nbsp; In order to read the displayed value from
+the port, click on the read button.&nbsp; To write the displayed value back, click on the write button.&nbsp; You can change
+the value by double clicking on it, or by cursoring to it and pressing ENTER.&nbsp; Press the right mouse button to access
+the following pop-up menu items:
 <dl>
 <dt>Modify
 <dd>Change the selected item.&nbsp; You can change either the value field or the address field.<b><i>&nbsp; This does not write
@@ -2755,8 +2755,8 @@ more information on debugging applications that use the Phar Lap DOS extender.
 <h3 id="WIN_LWindows_3_xD9x_Virtual_DOS_MachineR"> WIN (Windows 3.x/9x Virtual DOS Machine) </h3>
 <br>This link communicates between 2 Windows DOS boxes.&nbsp; In order to use this link, you must have Windows 3.x or Windows
 95 installed on your machine.&nbsp; You must run Windows 3.x in enhanced mode.&nbsp; You must also include the &quot;device&quot;
-specification listed below in the [386Enh] section of your &quot;SYSTEM.INI&quot; file (this line is usually added during
-the Open Watcom software installation process).
+specification listed below in the &#91;386Enh&#93; section of your &quot;SYSTEM.INI&quot; file (this line is usually added
+during the Open Watcom software installation process).
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DEVICE=C:\WATCOM\BINW\WDEBUG.386</tt>
 <br><br>In order for this link to work properly, you must ensure that this link runs in a DOS box that has background execution
@@ -2906,9 +2906,9 @@ will vary with the distances involved.
 <dd>The &quot;@L&quot; prefix is used to indicate that the file resides on the local machine (the one on which the debugger is
 running).
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L[d:][path]filename[.ext]</tt>
-<br><br>When &quot;[path]&quot; is not specified, the current directory of the specified drive of the local machine is assumed.
-&nbsp;When &quot;[d:]&quot; is not specified, the current drive of the local machine is assumed.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L&#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93;</tt>
+<br><br>When &quot;&#91;path&#93;&quot; is not specified, the current directory of the specified drive of the local machine
+is assumed.&nbsp; When &quot;&#91;d:&#93;&quot; is not specified, the current drive of the local machine is assumed.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @LOUTPUT.LOG</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @LD:\CMDS</tt>
@@ -2916,9 +2916,9 @@ running).
 <dt>@R
 <dd>The &quot;@R&quot; prefix is used to indicate that the file resides on the remote machine.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R[d:][path]filename[.ext]</tt>
-<br><br>When &quot;[path]&quot; is not specified, the current directory of the specified drive of the remote machine is assumed.
-&nbsp;When &quot;[d:]&quot; is not specified, the current drive of the remote machine is assumed.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R&#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93;</tt>
+<br><br>When &quot;&#91;path&#93;&quot; is not specified, the current directory of the specified drive of the remote machine
+is assumed.&nbsp; When &quot;&#91;d:&#93;&quot; is not specified, the current drive of the remote machine is assumed.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @RMYAPPL.DAT</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @RD:\PROGRAMS\EXE\MYAPPL.LNK</tt>
@@ -2927,29 +2927,29 @@ running).
 </dl>
 <br>Thus a file may be identified in three different ways.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [d:][path]filename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L[d:][path]filename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R[d:][path]filename[.ext]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L&#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R&#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93;</tt>
 <br><br>A file of the first form resides on either the local or remote machine depending on whether the current drive is a
 local or remote drive.&nbsp; A file of the second form always resides on the local machine.&nbsp; A file of the third form
 always resides on the remote machine.
 <br><br><b>Notes:</b>
 <ol>
-<li>In the each form, the omission of &quot;[d:]&quot; indicates the current drive.
+<li>In the each form, the omission of &quot;&#91;d:&#93;&quot; indicates the current drive.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [path]filename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L[path]filename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R[path]filename[.ext]</tt>
-<li>In the each form, the omission of &quot;[path]&quot; indicates the current path of the specified drive.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;path&#93;filename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L&#91;path&#93;filename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R&#91;path&#93;filename&#91;.ext&#93;</tt>
+<li>In the each form, the omission of &quot;&#91;path&#93;&quot; indicates the current path of the specified drive.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [d:]filename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L[d:]filename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R[d:]filename[.ext]</tt>
-<br><br>Observe that if &quot;[d:]&quot; is omitted also then the following forms are obtained:
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;d:&#93;filename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @L&#91;d:&#93;filename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @R&#91;d:&#93;filename&#91;.ext&#93;</tt>
+<br><br>Observe that if &quot;&#91;d:&#93;&quot; is omitted also then the following forms are obtained:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; filename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @Lfilename[.ext]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @Rfilename[.ext]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; filename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @Lfilename&#91;.ext&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @Rfilename&#91;.ext&#93;</tt>
 <li>The special drive prefixes &quot;@L&quot; and &quot;@R&quot; cannot be used in your own application to reference files
 on two different machines.&nbsp; These prefixes are recognized by the Open Watcom Debugger only.&nbsp; Should the situation
 arise where one of your filenames begins with the same prefix (&quot;@L&quot;, &quot;@l&quot;, &quot;@R&quot; or &quot;@r&quot;)
@@ -2967,7 +2967,7 @@ system code.&nbsp;
 <br><br>When debugging with the CauseWay DOS extender, by default the running program can be interrupted by pressing CTRL-ALT.
 &nbsp;The key combination is configurable in the CWHELP.CFG file (located in &quot;BINW&quot; directory).
 <h2 id="Windows_3_x"> Windows 3.x </h2>
-<br>Press CTRL-ALT-F.&nbsp; Windows must be running in enhanced mode and the device WDEBUG.386 must be installed the [386Enh]
+<br>Press CTRL-ALT-F.&nbsp; Windows must be running in enhanced mode and the device WDEBUG.386 must be installed the &#91;386Enh&#93;
 section of SYSTEM.INI for this to work.&nbsp; You cannot interrupt a running program under Win-OS/2.
 <h2 id="Windows_NT__Windows_95"> Windows NT, Windows 95 </h2>
 <br>If you are using the non-GUI version of the debugger, switch focus to the debugger screen and press CTRL-BREAK.
@@ -3230,7 +3230,7 @@ describes the search order for debugger files under QNX.
 <br>A limited form of debugging of an application that has terminated and produced a postmortem dump can be done under QNX.
 &nbsp;In order to use this feature, you must start the QNX &quot;dumper&quot; program.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dumper [-d path] [-p pid] &amp;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dumper &#91;-d path&#93; &#91;-p pid&#93; &amp;</tt>
 <dl>
 <dt>dumper
 <dd>is the program name for the QNX postmortem dump program.
@@ -3257,12 +3257,12 @@ dump is written to the user's home directory provided that the<b> -d</b> option 
 the Open Watcom Debugger and the postmortem dump is contained in a special &quot;trap&quot; file.&nbsp; The trap file is specified
 to the Open Watcom Debugger using the<b> TRap</b> option.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wd -TRap=pmd[;i] [:sym_file] file_spec</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wd -TRap=pmd&#91;;i&#93; &#91;:sym_file&#93; file_spec</tt>
 <dl>
 <dt>wd
 <dd>is the program name for the Open Watcom Debugger.
-<dt>-TRap=pmd[
-<dd>i] must be specified when debugging an application that has terminated and produced a postmortem dump.&nbsp; The optional
+<dt>-TRap=pmd&#91;
+<dd>i&#93; must be specified when debugging an application that has terminated and produced a postmortem dump.&nbsp; The optional
 &quot;;i&quot; is specified when the modification date of the original program file does not match the information contained
 in the dumper file.&nbsp; It indicates that the symbolic debugging information in the program file may be out-of-date.&nbsp;
 It instructs the Open Watcom Debugger to ignore the date mismatch.&nbsp; Depending on the shell that you are using, it may
@@ -3347,7 +3347,7 @@ with the application's execution module).&nbsp; The debugger does not restrict t
 &nbsp;A name could represent a variable but it could also represent the entry point into a routine.
 <br><br>The syntax of a symbol name reference is quite complicated.&nbsp; 
 <br><br><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </i></b>
-<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; [[[image]@][module]@][routine_name.]symbol_name</i></b>
+<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; &#91;&#91;&#91;image&#93;@&#93;&#91;module&#93;@&#93;&#91;routine_name.&#93;symbol_name</i></b>
 <br><br>Generally, an application will consist of many modules which were compiled separately.&nbsp; The current image is
 the one containing the module which is currently executing.&nbsp; The current module is the one containing the source lines
 currently under examination in the Source or Assembly window.&nbsp; By default, the Source window's title line contains the
@@ -3448,7 +3448,7 @@ references are used in expressions.&nbsp; A line number represents the code addr
 For example, source lines consisting of comments do not represent executable statements.
 <br><br>The general format for a line number reference is:
 <br><br><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </i></b>
-<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; [ [image]@ ] [module_name] @ decimal_digits</i></b>
+<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; &#91; &#91;image&#93;@ &#93; &#91;module_name&#93; @ decimal_digits</i></b>
 <br><br>The following are examples of references to executable statements.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; @36</tt>
@@ -3573,7 +3573,7 @@ of constants, register names, and symbol names.&nbsp; In the Intel 80x86 archite
 and offset specification.&nbsp; When symbol names are used, these are implicit.&nbsp; The general form of a memory reference
 is:
 <br><br><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </i></b>
-<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; [segment:]offset</i></b>
+<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; &#91;segment:&#93;offset</i></b>
 <br><br>When an offset is specified alone, the default segment value is taken from the CS, DS or SS register depending on
 the circumstances.
 <h3 id="Predefined_Debugger_Variables"> Predefined Debugger Variables </h3>
@@ -3618,21 +3618,22 @@ is specified by placing register names in brackets in order from most significan
 may be specified as long as it forms an 8, 16, 32 or 64-bit quantity.&nbsp; The following are examples of some of the many
 aggregates that can be formed.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 8-bit&nbsp;&nbsp;&nbsp; [al]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 16-bit&nbsp;&nbsp; [ah al]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 16-bit&nbsp;&nbsp; [bl ah]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 16-bit&nbsp;&nbsp; [ax]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; [dx ax]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; [dh dl ax]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; [dh dl ah al]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; [ds di]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 64-bit&nbsp;&nbsp; [ax bx cx dx]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 64-bit&nbsp;&nbsp; [edx eax]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (386/486/Pentium only)</tt>
-<br><br>In some cases, the specified aggregate may be equivalent to a register.&nbsp; For example, the aggregates &quot;[ah
-al]&quot; and &quot;[ax]&quot; are equivalent to &quot;ax&quot;.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 8-bit&nbsp;&nbsp;&nbsp; &#91;al&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 16-bit&nbsp;&nbsp; &#91;ah al&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 16-bit&nbsp;&nbsp; &#91;bl ah&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 16-bit&nbsp;&nbsp; &#91;ax&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; &#91;dx ax&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; &#91;dh dl ax&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; &#91;dh dl ah al&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 32-bit&nbsp;&nbsp; &#91;ds di&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 64-bit&nbsp;&nbsp; &#91;ax bx cx dx&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 64-bit&nbsp;&nbsp; &#91;edx eax&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (386/486/Pentium
+only)</tt>
+<br><br>In some cases, the specified aggregate may be equivalent to a register.&nbsp; For example, the aggregates &quot;&#91;ah
+al&#93;&quot; and &quot;&#91;ax&#93;&quot; are equivalent to &quot;ax&quot;.
 <br><br>The default type for 8-bit, 16-bit, and 32-bit aggregates is integer.&nbsp; The default type for 64-bit aggregates
 is double-precision floating-point.&nbsp; To force the debugger into treating a 32-bit aggregate as single-precision floating-point,
-the type coercion operator &quot;[float]&quot; may be used.
+the type coercion operator &quot;&#91;float&#93;&quot; may be used.
 <h2 id="Operators_for_the_C_Grammar"> Operators for the C Grammar </h2>
 <br>The debugger supports most C operators and includes an additional set of operators for convenience.&nbsp; The<b> Open
 Watcom C Language Reference</b> manual describes many of these operators.
@@ -3666,7 +3667,7 @@ in order of precedence, from lowest to highest.&nbsp; Operators on the same line
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sizeof unary_expr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sizeof(type_name)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (type_name) unary_expr</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [type_name] unary_expr</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;type_name&#93; unary_expr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ?</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Binary Address Operator</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</tt>
@@ -3677,7 +3678,7 @@ in order of precedence, from lowest to highest.&nbsp; Operators on the same line
 <br><br>In addition to the operators listed above, a number of primary expression operators are supported.&nbsp; These operators
 are used in identifying the object to be operated upon.
 <dl>
-<dt>[]
+<dt>&#91;&#93;
 <dd>subscripting, substringing
 <dt>()
 <dd>function call
@@ -3833,8 +3834,8 @@ segment specified, the default data segment (DGROUP) is assumed.
 <dd>The type conversion operator<b> (type_name)</b> is used to convert an item from one type to another.&nbsp; The following describes
 the syntax of &quot;type_name&quot;.
 <br><br><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </i></b>
-<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; type_name ::= type_spec { [ &quot;near&quot; | &quot;far&quot; | &quot;huge&quot; ] &quot;*&quot;
-}</i></b>
+<br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; type_name ::= type_spec { &#91; &quot;near&quot; | &quot;far&quot; | &quot;huge&quot; &#93;
+&quot;*&quot; }</i></b>
 <br><b><i>&nbsp;&nbsp;&nbsp;&nbsp; type_spec ::= typedef_name</i></b>
 <br><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;|&nbsp;&nbsp; &quot;struct&quot; structure_tag</i></b>
@@ -3850,7 +3851,7 @@ the syntax of &quot;type_name&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (float) 4</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (int) 3.1415926</tt>
-<dt>[type_name] unary_expression
+<dt>&#91;type_name&#93; unary_expression
 <dd>You can force the debugger to treat a memory reference as a particular type of value by using a type coercion operator.&nbsp;
 A type specification is placed inside brackets as shown above.&nbsp; The basic types are<b><i> char</i></b> (character, 8
 bits),<b><i> short</i></b> (short integer, 16 bits),<b><i> long</i></b> (long integer, 32 bits),<b><i> float</i></b> (single-precision
@@ -3860,25 +3861,25 @@ in 32-bit applications (386, 486 and Pentium systems).&nbsp; The character, shor
 as<b><i> signed</i></b> or<b><i> unsigned</i></b> items.&nbsp; The default for the character type is unsigned.&nbsp; The default
 for the integer types is signed.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [char]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; (default unsigned)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [signed char]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [unsigned char]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [int]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; (default is signed)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [short]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; (default is signed)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [short int]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (default
-is signed)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [signed short int]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [long]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;char&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; (default unsigned)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;signed char&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;unsigned char&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;int&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; (default is signed)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;short&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; (default is signed)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [long int]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;short int&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 (default is signed)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [signed long]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [unsigned long int]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [float]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [double]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;signed short int&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;long&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; (default is signed)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;long int&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;(default is signed)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;signed long&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;unsigned long int&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;float&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;double&#93;</tt>
 <br><br>Note that it is unnecessary to specify the<b><i> int</i></b> keyword when<b><i> short</i></b> or<b><i> long</i></b>
 are specified.
 <dt>?
@@ -3904,11 +3905,11 @@ A memory reference using the &quot;:&quot; operator takes the following form:
 </dl>
 <h3 id="Primary_Expression_Operators_for_the_C_Grammar"> Primary Expression Operators for the C Grammar </h3>
 <dl>
-<dt>[]
+<dt>&#91;&#93;
 <dd>Elements of an array can be identified using subscript expressions.&nbsp; Consider the following 3-dimensional array defined
 in the &quot;C&quot; language.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *ProcessorType[2][4][2] =</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *ProcessorType&#91;2&#93;&#91;4&#93;&#91;2&#93; =</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { { { &quot;Intel 8086&quot;,&nbsp;&nbsp; &quot;Intel 8088&quot;
 &nbsp;},</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { &quot;Intel 80186&quot;,&nbsp; &quot;Intel
@@ -3930,18 +3931,18 @@ all pointers to string values.
 <br><br>By using a subscript expression, specific slices of an array can be displayed.&nbsp; To see only the values of the
 first layer, the following expression can be issued.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype[0]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype&#91;0&#93;</tt>
 <br><br>To see only the first row of the first layer, the following expression can be issued.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype[0][0]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype&#91;0&#93;&#91;0&#93;</tt>
 <br><br>To see the second row of the first layer, the following command can be issued.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype[0][1]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype&#91;0&#93;&#91;1&#93;</tt>
 <br><br>To see the value of a specific entry in a matrix, all the indices can be specified.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype[0][0][0]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype[0][0][1]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype[0][1][0]</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype&#91;0&#93;&#91;0&#93;&#91;0&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype&#91;0&#93;&#91;0&#93;&#91;1&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; processortype&#91;0&#93;&#91;1&#93;&#91;0&#93;</tt>
 <dt>()
 <dd>The function call operators appear to the right of a symbol name and identify a function call in an expression.&nbsp; The
 parentheses can contain arguments.
@@ -4110,7 +4111,7 @@ same priority.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Unary Operators</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +&nbsp; -</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~&nbsp; ++&nbsp; --&nbsp; &amp;&nbsp;&nbsp; *&nbsp;&nbsp; %</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [type_name] unary_expr</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;type_name&#93; unary_expr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ?</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Binary Address Operator</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</tt>
@@ -4321,9 +4322,9 @@ following example,<tt> tyme</tt> is the pointer and<tt> tm_year</tt> is a field 
 <ul>
 <li>A word in angle brackets, like &lt;anything&gt; is a defined term.&nbsp; Its definition will appear after the syntax description
 of the command.
-<li>[x] indicates that &quot;x&quot; is an optional item.&nbsp; It may or may not be included in the command.
-<li>[x|y|z] indicates that on of x, y or z should be included in the command.
-<li>[x [x [...]]] indicates that x may be repeated zero or more times in the command.
+<li>&#91;x&#93; indicates that &quot;x&quot; is an optional item.&nbsp; It may or may not be included in the command.
+<li>&#91;x|y|z&#93; indicates that on of x, y or z should be included in the command.
+<li>&#91;x &#91;x &#91;...&#93;&#93;&#93; indicates that x may be repeated zero or more times in the command.
 <li>CApital indicates that ca,cap,capi,...&nbsp; are accepted short forms for the command &quot;capital&quot;.
 <li>(GUI only) indicates that this command is only available in a GUI debugger.
 <li>(character-based) indicates that this command is only available in a character mode debugger.
@@ -4408,9 +4409,9 @@ are:
 <br><br>This command sets a break point.&nbsp; See the section entitled <a href="#Breakpoints">Breakpoints</a> for details
 about breakpoint operation.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Break [|/Set|/Byte|/Word|/DWord|/Modify]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;address&gt; [ {&lt;do_command&gt;}
-[ { &lt;condition&gt; } [ &lt;countdown&gt; ]]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Break &#91;|/Set|/Byte|/Word|/DWord|/Modify&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;address&gt; &#91; {&lt;do_command&gt;}
+&#91; { &lt;condition&gt; } &#91; &lt;countdown&gt; &#93;&#93;&#93;</tt>
 <br><br>This command deactivates a breakpoint:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Break/Deactivate &lt;brkid&gt;</tt>
@@ -4431,7 +4432,7 @@ about breakpoint operation.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Break/UnResume &lt;brkid&gt;</tt>
 <br><br>This command turns on/off the breakpoint for appropriate image(DLL) load:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Break/Image [/Clear] &lt;image(DLL) name&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Break/Image &#91;/Clear&#93; &lt;image(DLL) name&gt;</tt>
 <br><br>The Break options are:
 <dl>
 <dt>/Set (default)
@@ -4483,10 +4484,10 @@ executed:
 <h3 id="Call"> Call </h3>
 <br>Use the Call command to call a routine.&nbsp; The Call command options are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Call [/Far|/Interrupt|/Near]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Call &#91;/Far|/Interrupt|/Near&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;address&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [([&lt;parm&gt;[,&lt;parm&gt;[...]]])]
-[/|&lt;printlist&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;(&#91;&lt;parm&gt;&#91;,&lt;parm&gt;&#91;...&#93;&#93;&#93;)&#93;
+&#91;/|&lt;printlist&gt;&#93;</tt>
 <br><br>This command calls the routine at &lt;address&gt; with parameters.
 <dl>
 <dt>/Far
@@ -4496,9 +4497,9 @@ executed:
 <dt>/Interrupt
 <dd>Call the routine as if it were an interrupt handler.
 <dt>&lt;parm&gt;
-<dd>is [/&lt;location&gt;] &lt;expr&gt;
+<dd>is &#91;/&lt;location&gt;&#93; &lt;expr&gt;
 <dt>&lt;location&gt;
-<dd>is [/|&lt;regset&gt;]
+<dd>is &#91;/|&lt;regset&gt;&#93;
 <dl>
 <dt>/
 <dd>means to put the parm on the stack.
@@ -4519,7 +4520,7 @@ executed:
 <br><br>This command calls foo putting 1 on the stack, 2 in AX and 3 in CX:BX printing out the value of AX and DX in decimal
 and hexadecimal respectively on return:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; call /near foo( // 1, /ax 2, /[cx bx] 3 ) {%d %x} ax,dx</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; call /near foo( // 1, /ax 2, /&#91;cx bx&#93; 3 ) {%d %x} ax,dx</tt>
 <br><br>The Call command only uses very basic symbolic information - it's designed that way so that it can work even when
 no symbolic information is available.&nbsp; This has a number of implications.&nbsp; The first is that the debugger pays no
 attention to any information on where parameters are stored.&nbsp; For example, in 32-bit applications, unless explictly instructed
@@ -4560,19 +4561,19 @@ the configuration file name.
 <h3 id="Display"> Display </h3>
 <br>The display command allows you to open any window.&nbsp; The general Display command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display &lt;wndname&gt; [/Open|/Close|/New|/MInimize|/MAximize|/Restore] [&lt;ord&gt;,&lt;ord&gt;,&lt;ord&gt;,&lt;ord&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display &lt;wndname&gt; &#91;/Open|/Close|/New|/MInimize|/MAximize|/Restore&#93; &#91;&lt;ord&gt;,&lt;ord&gt;,&lt;ord&gt;,&lt;ord&gt;&#93;</tt>
 <br><br>This command causes the debugger screen to repaint:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display</tt>
 <br><br>This command displays the toolbar as either fixed (default) or floating:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display TOolbar [/Open] [/FLoating/Fixed] [&lt;ord&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display TOolbar &#91;/Open&#93; &#91;/FLoating/Fixed&#93; &#91;&lt;ord&gt;&#93;</tt>
 <br><br>This command closes the toolbar:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display TOolbar [/Close]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display TOolbar &#91;/Close&#93;</tt>
 <br><br>This command opens the status line:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display Status [/Open]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display Status &#91;/Open&#93;</tt>
 <br><br>This command closes the status line:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Display Status /Close</tt>
@@ -4623,7 +4624,7 @@ screen:
 <h3 id="Examine"> Examine </h3>
 <br>Use the Examine command to examine memory at a specific address.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine [/&lt;type&gt;] [&lt;address&gt;] [,&lt;follow&gt; [,&lt;len&gt;]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine &#91;/&lt;type&gt;&#93; &#91;&lt;address&gt;&#93; &#91;,&lt;follow&gt; &#91;,&lt;len&gt;&#93;&#93;</tt>
 <br><br>where &quot;&lt;type&gt;&quot; is one of
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Byte</tt>
@@ -4647,13 +4648,13 @@ screen:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Extended_Float</tt>
 <br><br>To show an assembly window at a specific address:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine /Assembly [&lt;address&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine /Assembly &#91;&lt;address&gt;&#93;</tt>
 <br><br>To show a source window at a specific address
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine /Source [&lt;address&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine /Source &#91;&lt;address&gt;&#93;</tt>
 <br><br>To add an address to the I/O window as a byte, word, or dword:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine [/IOByte|/IOWord|/IODword] [&lt;address&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Examine &#91;/IOByte|/IOWord|/IODword&#93; &#91;&lt;address&gt;&#93;</tt>
 <br><br>The options for the Examine command follow:
 <dl>
 <dt>/&lt;type&gt;
@@ -4694,7 +4695,7 @@ for details
 <br>Use the Go command to start or continue program execution.&nbsp; Execution then resumes at the specified address or at
 the location defined by the current contents of the CS:IP or CS:EIP register pair.&nbsp; The format of the Go command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Go [/Until] [/Keep] [/Noflip] [[&lt;start&gt;,]&lt;stop&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Go &#91;/Until&#93; &#91;/Keep&#93; &#91;/Noflip&#93; &#91;&#91;&lt;start&gt;,&#93;&lt;stop&gt;&#93;</tt>
 <br><br>The options are:
 <dl>
 <dt>/Until
@@ -4754,16 +4755,17 @@ is entered:
 format of the If command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IF &lt;expr&gt; { &lt;command&gt; }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [ ELSEIF &lt;expr&gt; { &lt;command&gt; } [ ELSEIF &lt;expr&gt; { &lt;command&gt; } [...]]]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [ELSE { &lt;command&gt; }]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91; ELSEIF &lt;expr&gt; { &lt;command&gt; } &#91; ELSEIF &lt;expr&gt; { &lt;command&gt;
+} &#91;...&#93;&#93;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;ELSE { &lt;command&gt; }&#93;</tt>
 <br><br>If the expression results in a non-zero value, the list of debugger commands contained after the IF expression are
 executed.&nbsp; Otherwise, the list of commands that appear after the ELSEIF expression are executed.
 <h3 id="INvoke_Lor_XR"> INvoke (or &lt;) </h3>
 <br>Use the Invoke command to invoke a file containing a number of debugger commands.&nbsp; The format of the Invoke command
 is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; INvoke &lt;file&gt; [&lt;string&gt; [&lt;string&gt; [...]]]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;file&gt; [&lt;string&gt; [&lt;string&gt; [...]]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; INvoke &lt;file&gt; &#91;&lt;string&gt; &#91;&lt;string&gt; &#91;...&#93;&#93;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;file&gt; &#91;&lt;string&gt; &#91;&lt;string&gt; &#91;...&#93;&#93;&#93;</tt>
 <dl>
 <dt>&lt;file&gt;
 <dd>is the name of the command file to invoke.
@@ -4789,7 +4791,7 @@ a file:
 <h3 id="MOdify"> MOdify </h3>
 <br>Use the Modify command to change memory at an address to the values specified by the list of expressions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MOdify [/Byte|/Pointer|/Word|/Dword|/IOByte|/IOWord|/IODword] &lt;address&gt;[,&lt;expr&gt;[...]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MOdify &#91;/Byte|/Pointer|/Word|/Dword|/IOByte|/IOWord|/IODword&#93; &lt;address&gt;&#91;,&lt;expr&gt;&#91;...&#93;&#93;</tt>
 <br><br>The options for the modify command are:
 <dl>
 <dt>/Byte /Pointer /Word /Dword
@@ -4810,12 +4812,12 @@ a file:
 <h3 id="NEW"> NEW </h3>
 <br>Use the New command to initialize various items.&nbsp; The format of the New command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW [&lt;args&gt;]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /Program [[:&lt;symfile&gt;] &lt;progfile&gt; [&lt;args&gt;]]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /Restart [&lt;args&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW &#91;&lt;args&gt;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /Program &#91;&#91;:&lt;symfile&gt;&#93; &lt;progfile&gt; &#91;&lt;args&gt;&#93;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /Restart &#91;&lt;args&gt;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /STDIn &lt;file&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /STDOut &lt;file&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /SYmbol &lt;file&gt; [seg [,seg [...]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NEW /SYmbol &lt;file&gt; &#91;seg &#91;,seg &#91;...&#93;&#93;</tt>
 <dl>
 <dt>&lt;symfile&gt;
 <dd>represents a file containing the symbolic information.
@@ -4837,7 +4839,7 @@ addresses.
 <h3 id="PAint"> PAint </h3>
 <br>Use the Paint command to define window or dialog colours.&nbsp; To define the colour for windows, use the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PAint [Status|&lt;wndname&gt;] &lt;wndattr&gt; &lt;color&gt; ON &lt;color&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PAint &#91;Status|&lt;wndname&gt;&#93; &lt;wndattr&gt; &lt;color&gt; ON &lt;color&gt;</tt>
 <br><br>To define the colour for dialogs in the character-based version of the debugger, use the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PAint DIalog &lt;dlgattr&gt; &lt;color&gt; ON &lt;color&gt;</tt>
@@ -4931,17 +4933,17 @@ addresses.
 <br>Use the Print command to prompt for an expression and then print it to the log window.&nbsp; Use this command to examine
 the values of variables and expressions.&nbsp; The Print command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Print [/Program] [&lt;printlist&gt;]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Print /Window [&lt;exprlist&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Print &#91;/Program&#93; &#91;&lt;printlist&gt;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Print /Window &#91;&lt;exprlist&gt;&#93;</tt>
 <dl>
 <dt>/Window
 <dd>opens up a watch window containing the listed expressions.
 <dt>/Program
 <dd>print the results to the application's screen.
 <dt>&lt;printlist&gt;
-<dd>is [&lt;format&gt;] [&lt;exprlist&gt;]
+<dd>is &#91;&lt;format&gt;&#93; &#91;&lt;exprlist&gt;&#93;
 <dt>&lt;exprlist&gt;
-<dd>is [&lt;expr&gt; [,&lt;expr&gt; [...]]]
+<dd>is &#91;&lt;expr&gt; &#91;,&lt;expr&gt; &#91;...&#93;&#93;&#93;
 <dt>&lt;format&gt;
 <dd>is a printf like format string.&nbsp; It consists of plain text intermixed with control sequences, which will be substituted
 with values from the expression list.&nbsp; The control sequences are:
@@ -5000,9 +5002,9 @@ it is printed out as a pointer (segment:offset) value in hexadecimal notation.
 <br><br>This command prints &quot;decimal=100 hex=0x64&quot;:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; print {decimal=%d hex=%x} 100,100</tt>
-<br><br>This command opens a watch window and displays the value of argv[0]:
+<br><br>This command opens a watch window and displays the value of argv&#91;0&#93;:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; print/window argv[0]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; print/window argv&#91;0&#93;</tt>
 <h3 id="Quit"> Quit </h3>
 <br>Use the Quit command to leave the debugger.
 <h3 id="RECord"> RECord </h3>
@@ -5023,36 +5025,37 @@ is positive, this is equivalent to using the menu item Undo/Redo &lt;intexpr&gt;
 <h3 id="Set"> Set </h3>
 <br>These commands are used internally by the debugger to save and restore the configuration.&nbsp; The syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set AUtosave [ON|OFf]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set ASsembly [Lower|Upper] [Outside|Inside] [Source|NOSource] [Hexadecimal|Decimal]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Variable [Entire|Partial] [CODe|NOCODe] [INherit|NOINherit] [COMpiler|NOCOMpiler] [PRIvate|NOPRIvate]
-[PROtected|NOPROTected] [Members|NOMembers]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set FUnctions [Typed|All]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set GLobals [Typed|All]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set REGister [Hexadecimal|Decimal] [Extended|Normal]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Fpu [Hexadecimal|Decimal]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set BEll [ON|OFf]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set BReakonwrite [ON|OFf]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Call [/Far|/Interrupt|/Near] [ ( [&lt;location&gt; [,&lt;location&gt; [...]]] ) ]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set AUtosave &#91;ON|OFf&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set ASsembly &#91;Lower|Upper&#93; &#91;Outside|Inside&#93; &#91;Source|NOSource&#93; &#91;Hexadecimal|Decimal&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Variable &#91;Entire|Partial&#93; &#91;CODe|NOCODe&#93; &#91;INherit|NOINherit&#93; &#91;COMpiler|NOCOMpiler&#93;
+&#91;PRIvate|NOPRIvate&#93; &#91;PROtected|NOPROTected&#93; &#91;Members|NOMembers&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set FUnctions &#91;Typed|All&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set GLobals &#91;Typed|All&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set REGister &#91;Hexadecimal|Decimal&#93; &#91;Extended|Normal&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Fpu &#91;Hexadecimal|Decimal&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set BEll &#91;ON|OFf&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set BReakonwrite &#91;ON|OFf&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Call &#91;/Far|/Interrupt|/Near&#93; &#91; ( &#91;&lt;location&gt; &#91;,&lt;location&gt;
+&#91;...&#93;&#93;&#93; ) &#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Dclick &lt;expr&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Implicit [ON|OFf]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Implicit &#91;ON|OFf&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set INput &lt;wndname&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Radix &lt;expr&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set RECursion [ON|OFf]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set SEarch [CASEIgnore|CASEREspect] [Rx|NORx] &lt;string&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set SOurce [/Add] [&lt;path&gt; [&lt;path&gt;] [...]]]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set SYmbol [/Add|/Ignore|/Respect] [&lt;lookspec&gt; [&lt;lookspec&gt; [...]]]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set RECursion &#91;ON|OFf&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set SEarch &#91;CASEIgnore|CASEREspect&#93; &#91;Rx|NORx&#93; &lt;string&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set SOurce &#91;/Add&#93; &#91;&lt;path&gt; &#91;&lt;path&gt;&#93; &#91;...&#93;&#93;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set SYmbol &#91;/Add|/Ignore|/Respect&#93; &#91;&lt;lookspec&gt; &#91;&lt;lookspec&gt; &#91;...&#93;&#93;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Tab &lt;intexpr&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Level [Assembly|Mixed|Source]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set LAnguage [CPP|C|FORTRAN]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set Level &#91;Assembly|Mixed|Source&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set LAnguage &#91;CPP|C|FORTRAN&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set SUpportroutine &lt;string&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set MAcro &lt;wndname&gt; &lt;key&gt; &lt;command&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set DOntexpandhex [ON|OFf]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Set DOntexpandhex &#91;ON|OFf&#93;</tt>
 <dl>
 <dt>&lt;location&gt;
 <dd>see call command.
 <dt>&lt;lookspec&gt;
-<dd>[/Ignore|/Respect] &lt;string&gt;
+<dd>&#91;/Ignore|/Respect&#93; &lt;string&gt;
 </dl>
 <h3 id="SHow"> SHow </h3>
 <br>The Show commands are used internally by the debugger to save and restore its configuration.&nbsp; The syntax is:
@@ -5097,7 +5100,7 @@ to undo or unwind.
 <h3 id="SYstem_Lor__R"> SYstem (or !) </h3>
 <br>Use the System command to spawn an operating shell to execute a given string.&nbsp; The format of the system command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SYstem [/Remote|/Local] &lt;string&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SYstem &#91;/Remote|/Local&#93; &lt;string&gt;</tt>
 <dl>
 <dt>/Remote
 <dd>the shell is started on the program side of a remote debug link.
@@ -5108,7 +5111,7 @@ to undo or unwind.
 <br>Use the Thread command to manipulate the threads of execution of a multi-threaded application under OS/2 or NetWare 386.
 &nbsp;The format of the Thread command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; THread [/Show|/Freeze|/Thaw|/Change] [&lt;threadid&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; THread &#91;/Show|/Freeze|/Thaw|/Change&#93; &#91;&lt;threadid&gt;&#93;</tt>
 <dl>
 <dt>/Show
 <dd>display the status of the current thread.
@@ -5124,7 +5127,7 @@ to undo or unwind.
 <h3 id="Trace"> Trace </h3>
 <br>Use the Trace command to step through the execution of your program.&nbsp; The Trace command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Trace [/Assembly|/Mixed|/Source] [/Into|/Next|/Over]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Trace &#91;/Assembly|/Mixed|/Source&#93; &#91;/Into|/Next|/Over&#93;</tt>
 <dl>
 <dt>/Assembly
 <dd>trace through your assembly code on instruction at a time.
@@ -5153,7 +5156,7 @@ is negative, this is equivalent to using the menu item Undo/Redo -&lt;intexpr&gt
 <h3 id="View"> View </h3>
 <br>Use the View command to show a file in a window.&nbsp; The format of the command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; View [/Binary] [&lt;file&gt;|&lt;module&gt;]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; View &#91;/Binary&#93; &#91;&lt;file&gt;|&lt;module&gt;&#93;</tt>
 <dl>
 <dt>/Binary
 <dd>show the file contents in binary.
@@ -5773,7 +5776,7 @@ local and remote machines include:
 <br>To run RFX, set up your machines as if you are about to do remote debugging.&nbsp; Start the remote debug server, then
 start RFX using the the following syntax.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; RFX trap_file[;trap_parm] [rfx_cmd]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; RFX trap_file&#91;;trap_parm&#93; &#91;rfx_cmd&#93;</tt>
 <br><br>The name of a trap file must be specified when running RFX.&nbsp; See <a href="#Remote_Debugging">Remote Debugging</a>.
 <br><br>See the section entitled <a href="#Specifying_Files_on_Remote_and_Local_Machines">Specifying Files on Remote and Local Machines</a>
 for an explanation of remote and local file names.
@@ -5783,8 +5786,8 @@ for an explanation of remote and local file names.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mon&nbsp; 11-06-1989 15:17:05.84 E:\DOC\UG</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; E&gt;rfx par</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Mon&nbsp; 11-06-1989 15:17:12.75 @LE:\DOC\UG</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; [RFX] E&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Mon&nbsp; 11-06-1989 15:17:12.75 @LE:\DOC\UG</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; E&gt;</tt>
 <br><br>Note that the current drive specifier &quot;E&quot; in &quot;E:\DOC\UG&quot; has changed to &quot;@LE&quot; indicating
 that the current drive is the local &quot;E&quot; drive.
 <br><br>Any command can be typed in response to the prompt.&nbsp; RFX recognizes a special set of commands and passes all
@@ -5828,7 +5831,7 @@ drive.&nbsp; Both locale and disk are specified.
 current directory of that drive.&nbsp; Both locale and disk are specified.
 <h2 id="Copy_Files_M_COPY"> Copy Files - COPY </h2>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; copy [/s] src_spec [dst_spec] [/s]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; copy &#91;/s&#93; src_spec &#91;dst_spec&#93; &#91;/s&#93;</tt>
 <br><br>The<b> COPY</b> command operates in a manner very similar to the DOS &quot;COPY&quot; and &quot;XCOPY&quot; commands.
 &nbsp;Files may be copied from the local machine to the local or remote machine.&nbsp; Similarly files may be copied from
 the remote machine to the local or remote machine.&nbsp; If<b> /s</b> is specified then subdirectories are copied as well.
@@ -5868,7 +5871,7 @@ of data from the remote machine to the local machine and back to the remote mach
 <hr>
 <h2 id="List_Directory_M_DIR"> List Directory - DIR </h2>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dir [/w] dir_spec [/w]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dir &#91;/w&#93; dir_spec &#91;/w&#93;</tt>
 <br><br>This command may be used to list the directories of any disk on the local or remote machine.&nbsp; Any of the DOS,
 NT or OS/2 &quot;wild card&quot; characters (&quot;?&quot; and &quot;*&quot;) may be used.&nbsp; If<b> /w</b> is specified
 then file names are displayed across the screen (&quot;wide&quot;) and the file creation date and time are omitted.
@@ -5894,8 +5897,8 @@ be listed.&nbsp; Both locale and disk are specified.
 machine.&nbsp; Both locale and disk are specified.
 <h2 id="Erase_File_M_ERASE__DEL"> Erase File - ERASE, DEL </h2>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; erase [/s] file_spec [/s]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; del [/s] file_spec [/s]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; erase &#91;/s&#93; file_spec &#91;/s&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; del &#91;/s&#93; file_spec &#91;/s&#93;</tt>
 <br><br>This command may be used to erase files from the directories of any disk on the local or remote machine.<b>&nbsp;
 DEL</b> is a short form for<b> ERASE.</b>&nbsp; Any of the DOS, NT or OS/2 &quot;wild card&quot; characters (&quot;?&quot;
 and &quot;*&quot;) may be used.&nbsp; If<b> /s</b> is specified then subdirectories are also processed.
@@ -5967,8 +5970,8 @@ to &quot;TEST1.TMP&quot;.&nbsp; Both locale and disk are specified.
 and move it to the parent directory.&nbsp; Both locale and disk are specified.
 <h2 id="Remove_Directory_M_RMDIR__RD"> Remove Directory - RMDIR, RD </h2>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rmdir [/s] dir_spec [/s]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rd [/s] dir_spec [/s]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rmdir &#91;/s&#93; dir_spec &#91;/s&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rd &#91;/s&#93; dir_spec &#91;/s&#93;</tt>
 <br><br>This command may be used to remove one or more directories on any disk on the local or remote machine.<b>&nbsp; RD</b>
 is a short form for<b> RMDIR.</b>&nbsp; The &quot;@L&quot; or &quot;@R&quot; prefix may be used to specify the locale (local
 or remote).&nbsp; If<b> /s</b> is specified then subdirectories are also removed.&nbsp; Before a directory can be removed,
@@ -6020,8 +6023,8 @@ of the local machine.&nbsp; Both locale and disk are specified.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Link at 38400 baud</tt>
 <br><br>List directory of remote machine's &quot;F&quot; drive.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:30:59.33 @LE:\DOC\UG</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] E&gt;dir @rf:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:30:59.33 @LE:\DOC\UG</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; E&gt;dir @rf:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLIB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DIR&gt;&nbsp;&nbsp;
 &nbsp; 02-01-89&nbsp; 06:43p</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MATH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DIR&gt;&nbsp;&nbsp;
@@ -6032,10 +6035,10 @@ of the local machine.&nbsp; Both locale and disk are specified.
 free</tt>
 <br><br>Switch to remote machine's &quot;F&quot; drive and list files.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:31:11.80 @LE:\DOC\UG</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] E&gt;@rf:</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:31:22.51 @RF:\</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] F&gt;dir</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:31:11.80 @LE:\DOC\UG</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; E&gt;@rf:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:31:22.51 @RF:\</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; F&gt;dir</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLIB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DIR&gt;&nbsp;&nbsp;
 &nbsp; 02-01-89&nbsp; 06:43p</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MATH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DIR&gt;&nbsp;&nbsp;
@@ -6046,10 +6049,10 @@ free</tt>
 free</tt>
 <br><br>Change to subdirectory and list files.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:31:27.73 @RF:\</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] F&gt;cd clib</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:31:47.83 @RF:\CLIB</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] F&gt;dir</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:31:27.73 @RF:\</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; F&gt;cd clib</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:31:47.83 @RF:\CLIB</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; F&gt;dir</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DIR&gt;
 &nbsp;&nbsp;&nbsp; 02-01-89&nbsp; 06:43p</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;DIR&gt;&nbsp;
@@ -6087,8 +6090,8 @@ free</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18 File(s)&nbsp; 16748544 bytes free</tt>
 <br><br>List directory of local machine.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:31:51.57 @RF:\CLIB</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] F&gt;dir @l..\tools\*.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:31:51.57 @RF:\CLIB</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; F&gt;dir @l..\tools\*.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALENDAR C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4378&nbsp; 04-17-89&nbsp; 08:17p</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLRSCRN&nbsp; C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 233&nbsp; 04-17-89
 &nbsp;08:17p</tt>
@@ -6116,23 +6119,23 @@ free</tt>
 free</tt>
 <br><br>Copy file from local machine to current directory of remote machine.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:32:21.99 @RF:\CLIB</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] F&gt;copy @l..\tools\test.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:32:21.99 @RF:\CLIB</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; F&gt;copy @l..\tools\test.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E:..\TOOLS\TEST.C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 Files copied&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; 0 Directories created</tt>
 <br><br>Confirm presence of file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:32:41.22 @RF:\CLIB</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] F&gt;dir *.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:32:41.22 @RF:\CLIB</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; F&gt;dir *.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEST&nbsp;&nbsp;&nbsp;&nbsp; C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 236
 &nbsp;05-08-89&nbsp; 07:02p</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 File(s)&nbsp; 16746496 bytes
 free</tt>
 <br><br>Leave RFX.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] Tue&nbsp; 11-07-1989 15:32:46.99 @RF:\CLIB</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [RFX] F&gt;exit</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; Tue&nbsp; 11-07-1989 15:32:46.99 @RF:\CLIB</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;RFX&#93; F&gt;exit</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tue 1989-11-07 15:32:57.20 E:\DOC\UG</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E&gt;</tt>
 </body>

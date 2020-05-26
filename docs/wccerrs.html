@@ -364,7 +364,7 @@ modifiers.
 <br>You are missing the semicolon &quot;;&quot; on the field definition just before the right curly brace &quot;}&quot;.
 <h2 id="W115__array_may_not_produce_intended_result"> W115 &amp;array may not produce intended result </h2>
 <br>The type of the expression &quot;&amp;array&quot; is different from the type of the expression &quot;array&quot;.&nbsp;
-Suppose we have the declaration<tt> char buffer[80]</tt> Then the expression<tt> (&amp;buffer + 3)</tt> will be evaluated
+Suppose we have the declaration<tt> char buffer&#91;80&#93;</tt> Then the expression<tt> (&amp;buffer + 3)</tt> will be evaluated
 as<tt> (buffer + 3 * sizeof(buffer))</tt> which is<tt> (buffer + 3 * 80)</tt> and not<tt> (buffer + 3 * 1)</tt> which is what
 most people expect to happen.&nbsp; The address of operator &quot;&amp;&quot; is not required for getting the address of an
 array.
@@ -412,7 +412,7 @@ to see if it is &gt;= 0 or &lt; 0 is redundant.&nbsp; Check to see if the expres
 <br>Trigraph expansion occurs inside a string literal.&nbsp; This warning can be disabled via the command line or<b><i> #pragma
 warning</i></b> directive.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // string expands to &quot;(?]?????&quot;!</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // string expands to &quot;(?&#93;?????&quot;!</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *e = &quot;(???)???-????&quot;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // possible work-arounds</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *f = &quot;(&quot; &quot;???&quot; &quot;)&quot; &quot;???&quot; &quot;-&quot; &quot;????&quot;;</tt>
@@ -572,9 +572,9 @@ mismatch */</tt>
 depending on compiler settings.&nbsp; A different type should be chosen instead of char.&nbsp; A cast may be used in cases
 when the value of the expression is known to never fall outside the 0-127 range.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int arr[], char c )</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int arr&#91;&#93;, char c )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( arr[c] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( arr&#91;c&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="E1000_BREAK_must_appear_in_while__do__for_or_switch_statement"> E1000 BREAK must appear in while, do, for or switch statement </h2>
 <br>A<b><i> break</i></b> statement has been found in an illegal place in the program.&nbsp; You may be missing an opening
@@ -633,7 +633,7 @@ or check the spelling of the label(s) in the function.
 <br>The dimension of an array must be positive and non-zero.
 <h2 id="E1021_Dimensions_of_multiMdimension_array_must_be_specified"> E1021 Dimensions of multi-dimension array must be specified </h2>
 <br>All dimensions of a multiple dimension array must be specified.&nbsp; The only exception is the first dimension which
-can declared as &quot;[]&quot;.
+can declared as &quot;&#91;&#93;&quot;.
 <h2 id="E1022_Missing_or_misspelled_data_type_near___s_"> E1022 Missing or misspelled data type near '%s' </h2>
 <br>The compiler has found an identifier that is not a predefined type or the name of a &quot;typedef&quot;.&nbsp; Check the
 identifier for a spelling mistake.
@@ -690,7 +690,7 @@ short</i></b> and<b><i> int.</i></b>&nbsp;
 <h2 id="E1044_Variable___s__has_incomplete_type"> E1044 Variable '%s' has incomplete type </h2>
 <br>A full definition of a<b><i> struct</i></b> or<b><i> union</i></b> has not been given.
 <h2 id="E1045_Subscript_on_nonMarray"> E1045 Subscript on non-array </h2>
-<br>One of the operands of &quot;[]&quot; must be an array.
+<br>One of the operands of &quot;&#91;&#93;&quot; must be an array.
 <h2 id="E1046_Incomplete_comment_started_on_line__u"> E1046 Incomplete comment started on line %u </h2>
 <br>The compiler did not find<tt> */</tt> to mark the end of a comment.
 <h2 id="E1047_Argument_for___must_be_a_macro_parm"> E1047 Argument for # must be a macro parm </h2>
@@ -1032,8 +1032,8 @@ type.
 <h2 id="E1174_Invalid_constant"> E1174 Invalid constant </h2>
 <br>The token sequence does not represent a valid numeric constant.
 <h2 id="E1175_Too_many_initializers"> E1175 Too many initializers </h2>
-<br>There are more initializers than objects to initialize.&nbsp; For example int X[2] = { 0, 1, 2 }; The variable &quot;X&quot;
-requires two initializers not three.
+<br>There are more initializers than objects to initialize.&nbsp; For example int X&#91;2&#93; = { 0, 1, 2 }; The variable
+&quot;X&quot; requires two initializers not three.
 <h2 id="E1176_Parameter__d__pointer_type_mismatch"> E1176 Parameter %d, pointer type mismatch </h2>
 <br>You have two pointers that either point to different objects, or the pointers are of different size, or they have different
 modifiers.

@@ -438,7 +438,7 @@ mapping is implementation-defined, but generally maps the visual representation 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 0 1 2 3 4 5 6 7 8 9</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ! &quot; # % &amp; ' ( ) * + , - . /</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; : ; &lt; = &gt; ? [ \ ] ^ _ { | } ~</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; : ; &lt; = &gt; ? &#91; \ &#93; ^ _ { | } ~</tt>
 <br><br>as well as the<b> space</b> (blank), <b> horizontal tab,</b> <b> vertical tab</b> and <b> form feed.</b>&nbsp; Also,
 a <b> new line</b> character will exist for both the source and execution character sets.
 <br><br>Any character other than those previously listed should appear in a source file in a character constant, a string
@@ -562,20 +562,20 @@ are examined only until the<tt> */</tt> is found.&nbsp; This excludes nesting of
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Close all the files.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt; fcount; i++ ) { /* loop through list */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist[i] );&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; /* close the file */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist&#91;i&#93; );&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; /* close the file */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>is equivalent to,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt; fcount; i++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist[i] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist&#91;i&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>Comments are sometimes used to temporarily remove a section of code during testing or debugging of a program.&nbsp;
 For example, the second program fragment could be &quot;commented out&quot; as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt; fcount; i++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist[i] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist&#91;i&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><br>This technique will not work on the first fragment because it contains comments, and comments may not be nested.&nbsp;
@@ -590,8 +590,8 @@ at the beginning of this section can be rewritten as,</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Close all the files.</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( i = 0; i &lt; fcount; i++ ) { // loop through
 list</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist[i] );&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // close the file</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( flist&#91;i&#93; );&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // close the file</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><b>&nbsp; This form of comment can be used to &quot;comment out&quot; code without the difficulties encountered with</b><tt>
 /*.</tt>
@@ -676,7 +676,7 @@ frequently in the function.&nbsp; This is also a definition.
 <dd>Not valid because of the <tt> auto</tt> storage class.
 </dl>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int nums[10];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int nums&#91;10&#93;;</tt>
 <dl>
 <dt>Inside a function
 <dd>The object<tt> nums</tt> is declared to be an<b> array of 10 integers</b> with<b> static storage duration</b>.&nbsp; Its value
@@ -1042,63 +1042,64 @@ to be &quot;pointer to<b> type</b>&quot;),
 </ul>
 <br>An array of undetermined size is an <b> incomplete type</b>.
 <br><br>An array declaration is of the following form:
-<br><br><b>&nbsp; type identifier</b><tt> [</tt><b> constant-expression</b><tt> ];</tt>
+<br><br><b>&nbsp; type identifier</b><tt> &#91;</tt><b> constant-expression</b><tt> &#93;;</tt>
 <br><b>&nbsp; or</b>
-<br><b>&nbsp; type identifier</b><tt>[] = {</tt><b> initializer-list</b><tt> };</tt>
+<br><b>&nbsp; type identifier</b><tt>&#91;&#93; = {</tt><b> initializer-list</b><tt> };</tt>
 <br><b>&nbsp; or</b>
-<br><b>&nbsp; type identifier</b><tt>[</tt><b> constant-expression</b><tt> ] = {</tt><b> initializer-list</b><tt> };</tt>
+<br><b>&nbsp; type identifier</b><tt>&#91;</tt><b> constant-expression</b><tt> &#93; = {</tt><b> initializer-list</b><tt>
+};</tt>
 <br><b>&nbsp; or</b>
-<br><b>&nbsp; type identifier</b><tt>[];</tt>
+<br><b>&nbsp; type identifier</b><tt>&#91;&#93;;</tt>
 <br><br>where<b> type</b> is the type of each element of the array,<b> identifier</b> is the name of the array,<b> constant-expression</b>
 is an expression that evaluates to a positive integer defining the number of elements in the array, and<b> initializer-list</b>
 is a list of values (of type<b> type</b>) to be assigned to successive elements of the array.
 <br><br>For example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int values[10];</tt>
-<br><br>declares<tt> values</tt> to be an array of 10 integers, with indices from 0 to 9.&nbsp; The expression<tt> values[5]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int values&#91;10&#93;;</tt>
+<br><br>declares<tt> values</tt> to be an array of 10 integers, with indices from 0 to 9.&nbsp; The expression<tt> values&#91;5&#93;</tt>
 refers to the sixth integer in the array.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char text[] = { &quot;some stuff&quot; };</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char text&#91;&#93; = { &quot;some stuff&quot; };</tt>
 <br><br>declares<tt> text</tt> to be an array of 11 characters, each containing successive letters from<tt> &quot;some stuff&quot;.</tt>
-&nbsp;The value of<tt> text[10]</tt> is<tt> '\0'</tt> (the null character), representing the terminating character in the
-string (see Strings).
+&nbsp;The value of<tt> text&#91;10&#93;</tt> is<tt> '\0'</tt> (the null character), representing the terminating character
+in the string (see Strings).
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern NODES nodelist[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern NODES nodelist&#91;&#93;;</tt>
 <br><br>declares<tt> nodelist</tt> to be an array of<tt> NODES</tt> (defined elsewhere), and the array is of unknown size.
 &nbsp;In another source file or later in the current file, there must be a corresponding declaration of<tt> nodelist</tt>
 which defines how big the array actually is.
 <br><br>It is possible to declare multi-dimensional arrays by including more than one set of dimensions.&nbsp; For example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int tbl[2][3];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int tbl&#91;2&#93;&#91;3&#93;;</tt>
 <br><br>defines a 2-row by 3-column array of integers.&nbsp; In fact, it defines an array of 2 arrays of 3 integers.&nbsp;
 The values are stored in memory in the following order:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl[0][0]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl[0][1]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl[0][2]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl[1][0]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl[1][1]</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl[1][2]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl&#91;0&#93;&#91;0&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl&#91;0&#93;&#91;1&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl&#91;0&#93;&#91;2&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl&#91;1&#93;&#91;0&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl&#91;1&#93;&#91;1&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tbl&#91;1&#93;&#91;2&#93;</tt>
 <br><br>The rows of the table are stored together.&nbsp; This form of storing an array is called<b> row-major order.</b>&nbsp;
-The expression<tt> tbl[1][2]</tt> refers to the element in the last row and last column of the array.
+The expression<tt> tbl&#91;1&#93;&#91;2&#93;</tt> refers to the element in the last row and last column of the array.
 <br><br>In an expression, if an array is named without specifying any indices, the value of the array name is the address
 of its first element.&nbsp; In the example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; array[10];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; array&#91;10&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * aptr;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; aptr = array;</tt>
 <br><br>the assignment to<tt> aptr</tt> is equivalent to,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; aptr = &amp;array[0];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; aptr = &amp;array&#91;0&#93;;</tt>
 <br><br>Since multi-dimensional arrays are just arrays of arrays, it follows that omission of some, but not all, dimensions
 is equivalent to taking the address of the first element of the sub-array.&nbsp; In the example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; array[9][5][2];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; array&#91;9&#93;&#91;5&#93;&#91;2&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * aptr;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; aptr = array[7];</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; aptr = array&#91;7&#93;;</tt>
 <br><br>the assignment to<tt> aptr</tt> is equivalent to,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; aptr = &amp;array[7][0][0];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; aptr = &amp;array&#91;7&#93;&#91;0&#93;&#91;0&#93;;</tt>
 <br><br>Note that no checking of indices is performed at execution time.&nbsp; An invalid index (less than zero or greater
 than the highest index) will refer to memory as if the array was extended to accommodate the index.
 <h2 id="Strings"> Strings </h2>
@@ -1109,10 +1110,10 @@ C provides a set of library functions for handling strings.
 <br><br>A string is represented by the address of the first character in the string.&nbsp; The<b> length</b> of a string is
 the number of characters up to, but not including, the null character.
 <br><br>An array can be initialized to be a string using the following form:
-<br><br><b>&nbsp; type identifier</b><tt>[] = { &quot;</tt><b>string value</b><tt> &quot; };</tt>
+<br><br><b>&nbsp; type identifier</b><tt>&#91;&#93; = { &quot;</tt><b>string value</b><tt> &quot; };</tt>
 <br><br>(The braces are optional.) For example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char ident[] = &quot;This is my program&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char ident&#91;&#93; = &quot;This is my program&quot;;</tt>
 <br><br>declares<tt> ident</tt> to be an array of 19 characters, the last of which has the value zero.&nbsp; The string has
 18 characters plus the null character.
 <br><br>In the above example,<tt> ident</tt> is an array whose value is a string.&nbsp; However, the quote-enclosed value
@@ -1319,8 +1320,8 @@ line</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trigraph</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Character&nbsp;&nbsp; Sequence</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ---------&nbsp;&nbsp; --------</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??(</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??&lt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??!</tt>
@@ -1406,9 +1407,9 @@ the character<tt> L</tt>.
 integral types, and is described in the header <tt> &lt;stddef.h&gt;</tt>.
 <br><br><b>&nbsp; With Open Watcom C/16 and C/32, </b><tt> wchar_t</tt><b> is defined as </b><tt> unsigned short</tt><b>.</b>
 <br><br>For example, the string literal<tt> L&quot;ab&quot;</tt> is a wide string literal containing the letters<tt> a</tt>
-and<tt> b</tt>.&nbsp; Its type is &quot;array [3] of <tt> wchar_t</tt>&quot;, and the values of its elements are<tt> L'a'</tt>,<tt>
-L'b'</tt> and<tt> '\0'</tt>.&nbsp; In contrast, the string literal<tt> &quot;ab&quot;</tt> has type &quot;array [3] of <tt>
-char</tt>&quot;, and the values of its elements are<tt> 'a'</tt>,<tt> 'b'</tt> and<tt> '\0'</tt>.
+and<tt> b</tt>.&nbsp; Its type is &quot;array &#91;3&#93; of <tt> wchar_t</tt>&quot;, and the values of its elements are<tt>
+L'a'</tt>,<tt> L'b'</tt> and<tt> '\0'</tt>.&nbsp; In contrast, the string literal<tt> &quot;ab&quot;</tt> has type &quot;array
+&#91;3&#93; of <tt> char</tt>&quot;, and the values of its elements are<tt> 'a'</tt>,<tt> 'b'</tt> and<tt> '\0'</tt>.
 <br><br>How the multibyte characters map onto wide character values is defined by the <tt> mbtowc</tt> library function.
 <br><br>As shown above, a wide string literal may also contain single byte characters, since the extended character set contains
 the single byte characters.&nbsp; The single byte characters are mapped onto the corresponding wide character codes.
@@ -1610,7 +1611,7 @@ used for linked lists, trees and for describing externally-defined regions of da
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct tokendef {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; length;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; type;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp; text[80];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp; text&#91;80&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>This defines a structure containing three members, an integer containing the token length, another integer containing
 some encoding of the token type, and the third an array of 80 characters containing the text of the token.&nbsp; The tag of
@@ -1622,14 +1623,14 @@ of a type for declaring an object.&nbsp; For example,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct tokendef {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; length;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; type;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp; text[80];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp; text&#91;80&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } token;</tt>
 <br><br>is equivalent to,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct tokendef {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; length;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; type;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp; text[80];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp; text&#91;80&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct tokendef token;</tt>
 <br><br>Both create the object<tt> token</tt> as an instance of the structure<tt> tokendef.</tt>&nbsp; The<b> type</b> of<tt>
@@ -1811,7 +1812,7 @@ is a pointer to no particular type of object (a generic pointer).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct tokendef * token;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; token</tt> is a pointer to the structure<tt> tokendef.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char * argv[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char * argv&#91;&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; argv</tt> is an array of pointers to <tt> char</tt> or an array of pointers to strings.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char ** strptr;</tt>
@@ -2007,7 +2008,7 @@ and compatibility with the Microsoft C compiler.&nbsp; They may be used in place
 <br><br>These examples illustrate the use of the <tt> __huge</tt> keyword.&nbsp; They assume that big code, small data (the
 medium memory model) is in effect.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __huge iarray[50000];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __huge iarray&#91;50000&#93;;</tt>
 <br><br>&nbsp;&nbsp;&nbsp; declares the object<tt> iarray</tt> to be an array of 50000 integers, for a total size of 100000
 bytes.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2684,9 +2685,9 @@ values provided.&nbsp; In particular, an array of characters of unknown size may
 which case the size of the array is the number of characters in the string, plus one for the terminating null character.&nbsp;
 Each character of the string is placed in successive elements of the array.&nbsp; Consider the following array declarations:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp; StartPt[] = &quot;Starting point...&quot;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; Tabs[]&nbsp;&nbsp;&nbsp; = { 1, 9, 17, 25, 33, 41 };</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float Roots[]&nbsp;&nbsp; = { 1., 1.414, 1.732, 2., 2.236 };</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp; StartPt&#91;&#93; = &quot;Starting point...&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; Tabs&#91;&#93;&nbsp;&nbsp;&nbsp; = { 1, 9, 17, 25, 33, 41 };</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float Roots&#91;&#93;&nbsp;&nbsp; = { 1., 1.414, 1.732, 2., 2.236 };</tt>
 <br><br>The object<tt> StartPt</tt> is an array of 18 characters,<tt> Tabs</tt> is an array of 6 integers, and<tt> Roots</tt>
 is an array of 5 floating-point numbers.
 <br><br>If an array is declared to have a certain number of elements, then the maximum number of values in the initialization
@@ -2697,10 +2698,10 @@ to the corresponding element of the array.&nbsp; The null character at the end o
 the list are assigned the value zero (for arithmetic types), or the null pointer constant (for pointers).&nbsp; Consider the
 following examples:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp; Vowels1[6]&nbsp; = &quot;aeiouy&quot;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp; Vowels2[6]&nbsp; = { 'a', 'e', 'i', 'o', 'u', 'y' };</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; Numbers[10] = { 100, 10, 1 };</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float Blort[5]&nbsp;&nbsp;&nbsp; = { 5.6, -2.2 };</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp; Vowels1&#91;6&#93;&nbsp; = &quot;aeiouy&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp; Vowels2&#91;6&#93;&nbsp; = { 'a', 'e', 'i', 'o', 'u', 'y' };</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp; Numbers&#91;10&#93; = { 100, 10, 1 };</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float Blort&#91;5&#93;&nbsp;&nbsp;&nbsp; = { 5.6, -2.2 };</tt>
 <br><br>The objects<tt> Vowels1</tt> and<tt> Vowels2</tt> are both arrays of six characters, and both contain exactly the
 same values in each of their corresponding elements.&nbsp; The object<tt> Numbers</tt> is an array of 10 integers, the first
 three of which are initialized to<tt> 100</tt>,<tt> 10</tt> and<tt> 1</tt>, and the remaining seven are set to zero.&nbsp;
@@ -2710,7 +2711,7 @@ and<tt> -2.2</tt>, and the remaining three are set to zero.
 list of values.&nbsp; This form will work for an arbitrary number of dimensions.&nbsp; Consider the following two-dimensional
 case:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Box[3][4] = { { 11, 12, 13, 14 },</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Box&#91;3&#93;&#91;4&#93; = { { 11, 12, 13, 14 },</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; { 21, 22, 23, 24 },</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2723,7 +2724,7 @@ Box</tt>, and the third list of values<tt> { 31, 32, 33, 34 }</tt> is assigned t
 <br><br>If all values are supplied for initializing an array, or if only elements from the end of the array are omitted, then
 the sub-levels need not be within braces.&nbsp; For example, the following declaration of<tt> Box</tt> is the same as above:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Box[3][4] = { 11, 12, 13, 14,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Box&#91;3&#93;&#91;4&#93; = { 11, 12, 13, 14,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; 21, 22, 23, 24,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2731,21 +2732,21 @@ the sub-levels need not be within braces.&nbsp; For example, the following decla
 <br><br>The same rules about incomplete initialization lists apply to multi-dimensional arrays.&nbsp; The following example
 defines a mathematical 3-by-3 identity matrix:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Identity[3][3] = { { 1 },</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Identity&#91;3&#93;&#91;3&#93; = { { 1 },</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 0, 1 },</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 0, 0, 1 } };</tt>
 <br><br>The missing values are replaced with zeroes.&nbsp; The initialization also could have been given as,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Identity[3][3] = { { 1, 0, 0 },</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Identity&#91;3&#93;&#91;3&#93; = { { 1, 0, 0 },</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 0, 1, 0 },</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 0, 0, 1 } };</tt>
 <br><br>or as,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Identity[3][3] = { 1, 0, 0,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int Identity&#91;3&#93;&#91;3&#93; = { 1, 0, 0,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0, 1, 0,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2759,7 +2760,7 @@ defines a mathematical 3-by-3 identity matrix:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; carr_ctl;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *&nbsp; buffer;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char PrBuffer[256];</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char PrBuffer&#91;256&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct printformat PrtFmt = { 80, ' ', PrBuffer };</tt>
 <br><br>Each value from the initializer list is assigned to each successive member of the structure.&nbsp; Any unnamed gaps
 between members or at the end of the structure (caused by alignment) are ignored during initialization.&nbsp; If there are
@@ -2779,7 +2780,7 @@ using a brace-enclosed initializer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; union ustr {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-string[20];</tt>
+string&#91;20&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct first3&nbsp; firstthree;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; union ustr Str = { &quot;Hello there&quot; };</tt>
@@ -2791,7 +2792,7 @@ first3</tt> will have the characters<tt> 'H', 'e'</tt> and<tt> 'l'.</tt>&nbsp; H
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; union ustr {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct first3&nbsp; firstthree;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-string[20];</tt>
+string&#91;20&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>then the initialization could only set the first three characters.
 <h2 id="Uninitialized_Objects"> Uninitialized Objects </h2>
@@ -2831,7 +2832,7 @@ and intuitive.&nbsp; However, when in doubt, use parentheses.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (expression)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ----------------------&nbsp; ------------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; postfix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; a[b]</tt>
+&nbsp; a&#91;b&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2974,18 +2975,18 @@ lvalue,</b> function designator or void expression.
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; post-decrement-expression</b>
 <h3 id="Array_Subscripting"> Array Subscripting </h3>
 <br><b>&nbsp; array-subscripting-expression:</b>
-<br><b>&nbsp;&nbsp;&nbsp; postfix-expression</b><tt>[</tt><b>expression</b><tt>]</tt>
+<br><b>&nbsp;&nbsp;&nbsp; postfix-expression</b><tt>&#91;</tt><b>expression</b><tt>&#93;</tt>
 <br><br>The general form for array subscripting is,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; array[index]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; array&#91;index&#93;</tt>
 <br><br>where<tt> array</tt> must have the type &quot;array of<b> type</b>&quot; or &quot;pointer to<b> type</b>&quot;, and<tt>
 index</tt> must have an integral type.&nbsp; The result has type &quot;<b>type</b>&quot;.
-<br><br><tt>array[index]</tt> is equivalent to<tt> (*(array+index))</tt>, or the<tt> index</tt>-th element of the array<tt>
-array</tt>, where the first element is numbered zero.&nbsp; Note that<tt> index</tt> is scaled automatically to account for
-the size of the elements of<tt> array.</tt>
+<br><br><tt>array&#91;index&#93;</tt> is equivalent to<tt> (*(array+index))</tt>, or the<tt> index</tt>-th element of the
+array<tt> array</tt>, where the first element is numbered zero.&nbsp; Note that<tt> index</tt> is scaled automatically to
+account for the size of the elements of<tt> array.</tt>
 <br><br>An alternate form for array subscripting is,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; index[array]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; index&#91;array&#93;</tt>
 <br><br>although this form is not commonly used.
 <h3 id="Function_Calls"> Function Calls </h3>
 <br><b>&nbsp; function-call-expression:</b>
@@ -3767,10 +3768,10 @@ of a counter.<b>&nbsp; expr3</b> may be omitted.
 <br><br>The<b> statement</b> may be a compound statement.
 <br><br>For example,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char charvec[256];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char charvec&#91;256&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp; count;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; for( count = 0; count &lt;= 255; count++ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; charvec[count] = count;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; charvec&#91;count&#93; = count;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>This example will initialize the character array<tt> charvec</tt> to the values from 0 to 255.
 <br><br>The following are examples of <tt> for</tt> statements:
@@ -4037,7 +4038,7 @@ the average of the numbers:
 <br>The function <tt> main</tt> has a special meaning in C.&nbsp; It is the function that receives control when a program
 is started.&nbsp; The function<tt> main</tt> has the following definition:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int main( int argc, char * argv[] )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int main( int argc, char * argv&#91;&#93; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt><b>statements</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
@@ -4046,12 +4047,13 @@ is started.&nbsp; The function<tt> main</tt> has the following definition:
 <li><tt> argc</tt> is the &quot;argument count&quot;, or the number of parameters (including program name) supplied to the
 program, and its value is greater than zero,
 <li><tt> argv</tt> is an array of pointers to strings containing the parameters,
-<li><tt> argv[0]</tt> is the program name, if available, otherwise it is a pointer to a string containing only the null character,
-<li><tt> argv[argc]</tt> is a null pointer, representing the end of the argument list,
-<li><tt> argv[1]</tt> through<tt> argv[argc-1]</tt> are pointers to strings representing the arguments to the program.&nbsp;
-These strings are modifiable by the program, and exist throughout the execution of the program.&nbsp; The strings will generally
-be in mixed (upper and lower) case, although a system that cannot provide mixed case argument strings will provide them in
-lower case.
+<li><tt> argv&#91;0&#93;</tt> is the program name, if available, otherwise it is a pointer to a string containing only the
+null character,
+<li><tt> argv&#91;argc&#93;</tt> is a null pointer, representing the end of the argument list,
+<li><tt> argv&#91;1&#93;</tt> through<tt> argv&#91;argc-1&#93;</tt> are pointers to strings representing the arguments to
+the program.&nbsp; These strings are modifiable by the program, and exist throughout the execution of the program.&nbsp; The
+strings will generally be in mixed (upper and lower) case, although a system that cannot provide mixed case argument strings
+will provide them in lower case.
 </ul>
 <br>The translation of the arguments to the program, as provided by the operating system (often from the command-line used
 to invoke the program), into the strings contained in<tt> argv</tt>, is implementation-defined.
@@ -4513,7 +4515,7 @@ are used:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #undef&nbsp; x</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define x&nbsp;&nbsp;&nbsp; 2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define g&nbsp;&nbsp;&nbsp; f</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define z&nbsp;&nbsp;&nbsp; z[0]</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define z&nbsp;&nbsp;&nbsp; z&#91;0&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define h&nbsp;&nbsp;&nbsp; g(~</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define m(a) a(w)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define w&nbsp;&nbsp;&nbsp; 0,1</tt>
@@ -4527,8 +4529,8 @@ are used:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + f(f(2 * (z))) % ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + f(x * (f(2 * (z)))) % ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + f(2 * (f(2 * (z)))) % ...</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + f(2 * (f(2 * (z[0])))) % t(t(g)(0)
-+ t)(1)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + f(2 * (f(2 * (z&#91;0&#93;))))
+% t(t(g)(0) + t)(1)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % t(g(0) + t)(1)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4539,7 +4541,7 @@ are used:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % t(f(2 * (0))
 + t)(1)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; f(2 * (y+1)) + f(2 * (f(2 * (z[0])))) % f(2 * (0)) + t(1)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; f(2 * (y+1)) + f(2 * (f(2 * (z&#91;0&#93;)))) % f(2 * (0)) + t(1)</tt>
 <br><br>Another example:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; g(2+(3,4)-w) | h 5) &amp; m(f)^m(m)</tt>
@@ -4905,7 +4907,7 @@ provides the function <tt> isalpha</tt> which takes a character argument and ret
 alphabetic, and 0 otherwise.&nbsp; Suppose a programmer, writing a FORTRAN compiler, wanted to know if a variable name started
 with the letters 'I' through 'N', in order to determine if it should be an integer variable.&nbsp; The programmer might write,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; upletter = toupper( name[0] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; upletter = toupper( name&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; if( upletter &gt;= 'I'&nbsp; &amp;&amp;&nbsp; upletter &lt;= 'N' ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* ... */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
@@ -4915,8 +4917,8 @@ set, problems may arise because between the letters 'I' and 'J' are 7 other char
 &quot;}VAR&quot; might be considered a valid integer variable name, which it is not.&nbsp; To solve this problem, the programmer
 could write,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; if( isalpha( name[0] ) ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; upletter = toupper( name[0] );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; if( isalpha( name&#91;0&#93; ) ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; upletter = toupper( name&#91;0&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( upletter &gt;= 'I'&nbsp; &amp;&amp;&nbsp; upletter &lt;= 'N'
 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* ... */</tt>
@@ -5293,18 +5295,18 @@ from trying to think of a good name, make it more difficult for the next program
 <h2 id="Indent_to_Emphasize_Structure"> Indent to Emphasize Structure </h2>
 <br>The following is a valid function:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static void BubbleSort( int list[], int n )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static void BubbleSort( int list&#91;&#93;, int n )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /**********************************/ { int index1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; = 0; int index2; int temp; if( n &lt; 2 )return; do {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; index2 = index1 + 1; do { if( list[ index1 ] &gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; list[ index2 ] ) { temp = list[ index1 ]; list[</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; index1 ] = list[ index2 ]; list[ index2 ] = temp;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; index2 = index1 + 1; do { if( list&#91; index1 &#93; &gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; list&#91; index2 &#93; ) { temp = list&#91; index1 &#93;; list&#91;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; index1 &#93; = list&#91; index2 &#93;; list&#91; index2 &#93; = temp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } } while( ++index2 &lt; n ); } while( ++index1 &lt; n-1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ); }</tt>
 <br><br>(The compiler will know that it's valid, but the programmer would find it difficult to validate.) Here is the same
 function, but using indenting to clearly illustrate the function structure:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static void BubbleSort( int list[], int n )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static void BubbleSort( int list&#91;&#93;, int n )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*****************************************/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int index1 = 0;</tt>
@@ -5314,14 +5316,14 @@ function, but using indenting to clearly illustrate the function structure:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index2 = index1 + 1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( list[ index1
-] &gt; list[ index2 ] ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( list&#91; index1
+&#93; &gt; list&#91; index2 &#93; ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;temp = list[ index1 ];</tt>
+&nbsp;temp = list&#91; index1 &#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;list[ index1 ] = list[ index2 ];</tt>
+&nbsp;list&#91; index1 &#93; = list&#91; index2 &#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;list[ index2 ] = temp;</tt>
+&nbsp;list&#91; index2 &#93; = temp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } while( ++index2 &lt; n );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } while( ++index1 &lt; n-1 );</tt>
@@ -5649,8 +5651,8 @@ character constants) of any of the trigraph sequences below are replaced by the 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trigraph</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Character&nbsp;&nbsp; Sequence</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ---------&nbsp;&nbsp; --------</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??(</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??&lt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ??!</tt>
@@ -5694,7 +5696,7 @@ corresponding to that character is performed.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (expression)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ----------------------&nbsp; ------------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; postfix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; a[b]</tt>
+&nbsp; a&#91;b&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5921,7 +5923,7 @@ by the compiler.
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; escape-sequence
 <h3 id="Definition_of_an_Operator"> Definition of an Operator </h3>
 <br><b>operator</b> is one of
-<br>&nbsp;&nbsp;&nbsp; <tt>[&nbsp; ]&nbsp; (&nbsp; )&nbsp; .&nbsp; -&gt;</tt>
+<br>&nbsp;&nbsp;&nbsp; <tt>&#91;&nbsp; &#93;&nbsp; (&nbsp; )&nbsp; .&nbsp; -&gt;</tt>
 <br>&nbsp;&nbsp;&nbsp; <tt>++&nbsp; --&nbsp; &amp;&nbsp; *&nbsp; +&nbsp; -&nbsp; ~&nbsp; !&nbsp; sizeof</tt>
 <br>&nbsp;&nbsp;&nbsp; <tt>/&nbsp; %&nbsp; &lt;&lt;&nbsp; &gt;&gt;&nbsp; &lt;&nbsp; &gt;&nbsp; &lt;=&nbsp; &gt;=&nbsp; ==
 &nbsp;!=&nbsp; ^&nbsp; |&nbsp; &amp;&amp;&nbsp; ||</tt>
@@ -5932,8 +5934,8 @@ by the compiler.
 <br>&nbsp;&nbsp;&nbsp; <tt>:&gt;</tt>
 <h3 id="Definition_of_a_Punctuator"> Definition of a Punctuator </h3>
 <br><b>punctuator</b>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt>[&nbsp; ]&nbsp; (&nbsp; )&nbsp; {&nbsp; }&nbsp; *&nbsp; ,&nbsp; :
-&nbsp;= ; ... #</tt>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt>&#91;&nbsp; &#93;&nbsp; (&nbsp; )&nbsp; {&nbsp; }&nbsp; *&nbsp; ,
+&nbsp;:&nbsp; = ; ... #</tt>
 <h2 id="Phrase_Structure_Grammar"> Phrase Structure Grammar </h2>
 <br>The following topics are discussed:
 <ul>
@@ -5989,7 +5991,7 @@ shift-expression}<tt>(0)</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt>&amp; * + - ~ !</tt>
 <br><br><b>postfix-expression</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; primary-expression
-<br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; postfix-expression<tt> [</tt> expression<tt> ]</tt>
+<br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; postfix-expression<tt> &#91;</tt> expression<tt> &#93;</tt>
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; postfix-expression<tt> (</tt> &lt;argument-expression-list &gt;<tt> )</tt>
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; postfix-expression .&nbsp; identifier
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; postfix-expression<tt> -&gt;</tt> identifier
@@ -6075,7 +6077,7 @@ shift-expression}<tt>(0)</tt>
 <br><br><b>direct-declarator</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; identifier
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; <tt>(</tt> declarator<tt> )</tt>
-<br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; direct-declarator<tt> [</tt> &lt;constant-expression &gt;<tt> ]</tt>
+<br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; direct-declarator<tt> &#91;</tt> &lt;constant-expression &gt;<tt> &#93;</tt>
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; direct-declarator<tt> (</tt> parameter-type-list<tt> )</tt>
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp; direct-declarator<tt> (</tt> &lt;identifier-list &gt;<tt> )</tt>
 <br><br><b>pointer</b>
@@ -6096,8 +6098,8 @@ shift-expression}<tt>(0)</tt>
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp;&nbsp; &lt;pointer &gt; direct-abstract-declarator
 <br><br><b>direct-abstract-declarator</b>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt>(</tt> abstract-declarator<tt> )</tt>
-<br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp;&nbsp; &lt;direct-abstract-declarator &gt;<tt> [</tt> &lt;constant-expression &gt;<tt>
-]</tt>
+<br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp;&nbsp; &lt;direct-abstract-declarator &gt;<tt> &#91;</tt> &lt;constant-expression &gt;<tt>
+&#93;</tt>
 <br>&nbsp;&nbsp;&nbsp; or&nbsp;&nbsp;&nbsp; &lt;direct-abstract-declarator &gt;<tt> (</tt> &lt;parameter-type-list &gt;<tt>
 )</tt>
 <br><br><b>typedef-name</b>
@@ -6989,23 +6991,23 @@ will always point at the same location, but the contents of that location may va
 (5)</tt>integer.&nbsp; The value of<tt> x</tt> may not change, and the integer that it points to may not change.&nbsp; In
 other words,<tt> x</tt> will always point at the same location, which cannot be modified via<tt> x.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp; 12</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is an<tt> (2)</tt>array of<tt> (3)</tt>integers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x[53];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x&#91;53&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp; 123</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is an<tt> (2)</tt>array of<tt> (3)</tt>53<tt> (4)</tt>integers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * x[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * x&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp; 3 12</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is an<tt> (2)</tt>array of<tt> (3)</tt>pointers to<tt> (4)</tt>integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*x)[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*x)&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; 21 3</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is a<tt> (2)</tt>pointer to an<tt> (3)</tt>array of<tt> (4)</tt>integers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * (*x)[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * (*x)&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp; 4&nbsp; 21 3</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is a<tt> (2)</tt>pointer to an<tt> (3)</tt>array of<tt> (4)</tt>pointers
 to<tt> (5)</tt>integer.
@@ -7014,7 +7016,7 @@ to<tt> (5)</tt>integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; 21 3</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is a<tt> (2)</tt>pointer to a<tt> (3)</tt>function returning an<tt> (4)</tt>integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*x[25])();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*x&#91;25&#93;)();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp; 4123&nbsp;&nbsp; 5</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is an<tt> (2)</tt>array of<tt> (3)</tt>25<tt> (4)</tt>pointers to<tt> (5)</tt>functions
 returning an<tt> (6)</tt>integer.
@@ -7039,17 +7041,17 @@ returning an<tt> (5)</tt>integer.
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>F</tt> is a<tt> (2)</tt>function returning a<tt> (3)</tt>pointer to a<tt> (4)</tt>function
 returning a<tt> (5)</tt>pointer to an<tt> (6)</tt>integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*F())[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*F())&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 312&nbsp; 4</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>F</tt> is a<tt> (2)</tt>function returning a<tt> (3)</tt>pointer to an<tt> (4)</tt>array
 of<tt> (5)</tt>integers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*(*F())[])();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*(*F())&#91;&#93;)();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp; 5 312&nbsp; 4&nbsp; 6</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>F</tt> is a<tt> (2)</tt>function returning a<tt> (3)</tt>pointer to an<tt> (4)</tt>array
 of<tt> (5)</tt>pointers to<tt> (6)</tt>functions returning an<tt> (7)</tt>integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * (*(*F())[])();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * (*(*F())&#91;&#93;)();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp; 7&nbsp; 5 312&nbsp; 4&nbsp; 6</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>F</tt> is a<tt> (2)</tt>function returning a<tt> (3)</tt>pointer to an<tt> (4)</tt>array
 of<tt> (5)</tt>pointers to<tt> (6)</tt>functions returning a<tt> (7)</tt>pointer to an<tt> (8)</tt>integer.
@@ -7075,24 +7077,24 @@ of <tt> __near</tt> are shown.
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is<tt> (2)</tt>far, and is a<tt> (3)</tt>far<tt> (4)</tt>pointer to an<tt>
 (5)</tt>integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __far X[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __far X&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp; 13</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>X</tt> is a<tt> (2)</tt>far<tt> (3)</tt>array of<tt> (4)</tt>integers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __huge X[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __huge X&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp; 13</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is a<tt> (2)</tt>huge<tt> (3)</tt>array of<tt> (4)</tt>integers (<tt>X</tt>
 is an array that can exceed 64K in size.)
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * __far X[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int * __far X&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp; 4&nbsp;&nbsp; 2&nbsp;&nbsp; 13</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>X</tt> is a<tt> (2)</tt>far<tt> (3)</tt>array of<tt> (4)</tt>pointers to<tt> (5)</tt>integers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __far * X[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __far * X&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp; 4 12</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>X</tt> is an<tt> (2)</tt>array of<tt> (3)</tt>far<tt> (4)</tt>pointers to<tt> (5)</tt>integers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __far * __far X[];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __far * __far X&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp; 5&nbsp;&nbsp; 2&nbsp;&nbsp; 13</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>X</tt> is a<tt> (2)</tt>far<tt> (3)</tt>array of<tt> (4)</tt>far<tt> (5)</tt>pointers
 to<tt> (6)</tt>integers.
@@ -7155,7 +7157,7 @@ on any system that provides an ISO-conforming C compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct text_line {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct text_line * next;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; text[1];</tt>
+&nbsp;&nbsp;&nbsp; text&#91;1&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } TEXT_LINE;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* This structure is the head of an individual memo.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
@@ -7164,7 +7166,7 @@ on any system that provides an ISO-conforming C compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct memo_el * next;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEXT_LINE *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; date[9];</tt>
+&nbsp; date&#91;9&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } MEMO_EL;</tt>
 <h2 id="The_memos_c_File"> The memos.c File </h2>
 <br>The source for the program follows:
@@ -7195,8 +7197,8 @@ on any system that provides an ISO-conforming C compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define TRUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define FALSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define NULLCHAR&nbsp;&nbsp;&nbsp; '\0'</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static const char FileName[] = { &quot;memos.db&quot; };</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static const char TempName[] = { &quot;tempmemo.db&quot; };</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static const char FileName&#91;&#93; = { &quot;memos.db&quot; };</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static const char TempName&#91;&#93; = { &quot;tempmemo.db&quot; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static MEMO_EL *&nbsp; MemoHead&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = NULL;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MemosModified = FALSE;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QuitFlag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -7222,7 +7224,7 @@ on any system that provides an ISO-conforming C compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ACTION act;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char * keyword;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } ACTION_MAP;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static ACTION_MAP KeywordMap[] = {</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static ACTION_MAP KeywordMap&#91;&#93; = {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HELP,&nbsp;&nbsp;&nbsp; &quot;help&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HELP,&nbsp;&nbsp;&nbsp; &quot;h&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADD,&nbsp;&nbsp;&nbsp;&nbsp; &quot;add&quot;,</tt>
@@ -7264,7 +7266,7 @@ on any system that provides an ISO-conforming C compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static ACTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ReadAction();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static MEMO_EL *&nbsp;&nbsp;&nbsp; ReadAMemo();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static MEMO_EL *&nbsp;&nbsp;&nbsp; ShowTodaysMemos();</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int main( int argc, char * argv[] )</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int main( int argc, char * argv&#91;&#93; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /****************************************/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index;</tt>
@@ -7273,7 +7275,7 @@ on any system that provides an ISO-conforming C compiler.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Check for a single argument that is a question mark,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * If found, then display the usage notes.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( argc == 2&nbsp; &amp;&amp;&nbsp; strcmp( argv[1], &quot;?&quot;
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( argc == 2&nbsp; &amp;&amp;&nbsp; strcmp( argv&#91;1&#93;, &quot;?&quot;
 ) == 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usage();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit( 0 );</tt>
@@ -7286,7 +7288,7 @@ on any system that provides an ISO-conforming C compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el = NULL;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( index = 1; index &lt; argc; ++index ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el = DoActions( el, GetAction( argv[index]
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el = DoActions( el, GetAction( argv&#91;index&#93;
 ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( QuitFlag ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( FALSE );</tt>
@@ -7336,7 +7338,7 @@ prev_el;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_el = new_el;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int ReadLine( char buffer[], int len, FILE * fid )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int ReadLine( char buffer&#91;&#93;, int len, FILE * fid )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*******************************************************/</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Read a line from the memos file. Handle any I/O errors and</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * EOF. Return the length read, not counting the newline on</tt>
@@ -7362,7 +7364,7 @@ prev_el;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEMO_EL *&nbsp;&nbsp; el;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEXT_LINE * line;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer[MAXLEN];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer&#91;MAXLEN&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len = ReadLine( buffer, MAXLEN, fid );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( len == EOF ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( NULL );</tt>
@@ -7374,7 +7376,7 @@ prev_el;</tt>
 buffer, &quot;Date:&quot;, 5 ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BadFormat();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer[len] = NULLCHAR;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer&#91;len&#93; = NULLCHAR;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el = MemoMAlloc( sizeof( MEMO_EL ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el-&gt;text = NULL;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strcpy( el-&gt;date, buffer + 5 );</tt>
@@ -7384,7 +7386,7 @@ buffer, &quot;Date:&quot;, 5 ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( len == EOF ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BadFormat();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer[len] = NULLCHAR;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer&#91;len&#93; = NULLCHAR;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( strcmp( buffer, &quot;====&quot; ) ==
 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( el );</tt>
@@ -7392,7 +7394,7 @@ buffer, &quot;Date:&quot;, 5 ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line = AddLine( buffer, el, line );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static TEXT_LINE * AddLine( char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer[],</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static TEXT_LINE * AddLine( char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer&#91;&#93;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEMO_EL *&nbsp;&nbsp; el,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -7438,7 +7440,7 @@ buffer, &quot;Date:&quot;, 5 ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Return the action code.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buffer[80];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buffer&#91;80&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( gets( buffer ) == NULL ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; perror( &quot;Error reading action&quot;
 );</tt>
@@ -7446,7 +7448,7 @@ buffer, &quot;Date:&quot;, 5 ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( GetAction( buffer ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static ACTION GetAction( char buffer[] )</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static ACTION GetAction( char buffer&#91;&#93; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /**************************************/</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Given the string in the buffer, return the action that</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * corresponds to it.</tt>
@@ -7570,7 +7572,7 @@ buffer, &quot;Date:&quot;, 5 ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEMO_EL *&nbsp;&nbsp; el;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEXT_LINE * line;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer[MAXLEN];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer&#91;MAXLEN&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;What date do you want the memo displayed&quot;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; (YY/MM/DD)?\n&quot;
 );</tt>
@@ -7584,9 +7586,9 @@ buffer, &quot;Date:&quot;, 5 ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;&amp;&nbsp;
 (len != 8</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;||&nbsp; buffer[2] != '/'</tt>
+&nbsp;||&nbsp; buffer&#91;2&#93; != '/'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;|| buffer[5] != '/') ) {</tt>
+&nbsp;|| buffer&#91;5&#93; != '/') ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Date is not valid.\n&quot;
 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( NULL );</tt>
@@ -7605,7 +7607,7 @@ starting with =\n&quot; );</tt>
 reading from terminal.\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( NULL );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( buffer[0] == '=' ) {</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( buffer&#91;0&#93; == '=' ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( el );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line = AddLine( buffer, el, line );</tt>
@@ -7685,7 +7687,7 @@ reading from terminal.\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEMO_EL * last_el;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; timer;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct tm ltime;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date[9];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date&#91;9&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Get today's time in YY/MM/DD format.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time( &amp;timer );</tt>
@@ -7693,7 +7695,7 @@ reading from terminal.\n&quot; );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strftime( date, 9, &quot;%y/%m/%d&quot;, &amp;ltime );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; last_el = NULL;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for( el = MemoHead; el != NULL; el = el-&gt;next ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( el-&gt;date[0] == NULLCHAR</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( el-&gt;date&#91;0&#93; == NULLCHAR</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;||&nbsp; strcmp( date, el-&gt;date ) == 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DisplayMemo( el );</tt>
@@ -7712,7 +7714,7 @@ reading from terminal.\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DisplayTop();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( el-&gt;date[0] == NULLCHAR ) {</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( el-&gt;date&#91;0&#93; == NULLCHAR ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;\nUndated memo\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;\nDated: %s\n&quot;, el-&gt;date
@@ -7732,7 +7734,7 @@ tline-&gt;text );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FILE *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fid;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MEMO_EL *&nbsp;&nbsp; el;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEXT_LINE * tline;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer[20];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer&#91;20&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( MemoHead == NULL ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;No memos to save.\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( FALSE );</tt>
@@ -7865,7 +7867,7 @@ is one of:\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * without saving the memos.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buffer[MAXLEN];</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char buffer&#91;MAXLEN&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( !MemosModified&nbsp; ||&nbsp; MemoHead == NULL ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( TRUE );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
@@ -7873,7 +7875,7 @@ is one of:\n&quot; );</tt>
 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Do you want to leave without saving them?\n&quot; );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gets( buffer );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( tolower( buffer[0] ) == 'y' );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( tolower( buffer&#91;0&#93; ) == 'y' );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static void BadFormat( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /***************************/</tt>
