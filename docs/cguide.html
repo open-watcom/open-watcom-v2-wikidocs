@@ -494,8 +494,8 @@
 <br><a href="#zls">zls</a>
 <br><a href="#zm">zm</a>
 <br><a href="#zmf">zmf</a>
-<br><a href="#zpU_1_2_4_8_16_V">zp&#91;{1,2,4,8,16}&#93;</a>
 <br><a href="#zpw">zpw</a>
+<br><a href="#zp_1_2_4_8_16_">zp{1,2,4,8,16}</a>
 <br><a href="#zq">zq</a>
 <br><a href="#zri">zri</a>
 <br><a href="#zro">zro</a>
@@ -752,7 +752,7 @@ options that are available.
 <br><a href="#zls">zls</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#zm">zm</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#zmf">zmf</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<br><a href="#zpU_1_2_4_8_16_V">zp&#91;{1,2,4,8,16}&#93;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><a href="#zp_1_2_4_8_16_">zp{1,2,4,8,16}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#zpw">zpw</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#zq">zq</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#zri">zri</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -1076,8 +1076,8 @@ wrap) (see <a href="#p_e_l_c_wEXnumY_">p{e,l,c,w=&lt;num&gt;}</a>)
 <dd>place each function in separate segment (near functions not allowed) (see <a href="#zm">zm</a>)
 <dt>zmf
 <dd>place each function in separate segment (near functions allowed) (see <a href="#zmf">zmf</a>)
-<dt>zp&#91;{1,2,4,8,16}&#93;
-<dd>set minimal structure packing (member alignment) (see <a href="#zpU_1_2_4_8_16_V">zp&#91;{1,2,4,8,16}&#93;</a>)
+<dt>zp{1,2,4,8,16}
+<dd>set minimal structure packing (member alignment) (see <a href="#zp_1_2_4_8_16_">zp{1,2,4,8,16}</a>)
 <dt>zpw
 <dd>output warning when padding is added in a struct/class (see <a href="#zpw">zpw</a>)
 <dt>zq
@@ -1344,7 +1344,7 @@ wrap) (see <a href="#p_e_l_c_wEXnumY_">p{e,l,c,w=&lt;num&gt;}</a>)
 <dt>zc
 <dd>place literal strings in the code segment (see <a href="#zc">zc</a>)
 <dt>zp{1,2,4,8,16}
-<dd>pack structure members (see <a href="#zpU_1_2_4_8_16_V">zp&#91;{1,2,4,8,16}&#93;</a>)
+<dd>pack structure members (see <a href="#zp_1_2_4_8_16_">zp{1,2,4,8,16}</a>)
 <dt>zpw
 <dd>output warning when padding is added in a struct/class (see <a href="#zpw">zpw</a>)
 <dt>zt&lt;number&gt;
@@ -2479,7 +2479,7 @@ an exception) if used on a class instance that was not compiled with the &quot;x
 <br><br>In the above example,<tt> cvar</tt> and<tt> ctable</tt> and the strings<tt> &quot;robin&quot;</tt>,<tt> &quot;finch&quot;</tt>
 , etc.&nbsp; are placed in the code segment.&nbsp; This option is supported in large data or flat memory models only, or if
 the item is explicitly &quot;far&quot;.&nbsp; The macro<tt> __SW_ZC</tt> will be predefined if &quot;zc&quot; is selected.
-<h4 id="zpU_1_2_4_8_16_V"> zp&#91;{1,2,4,8,16}&#93; </h4>
+<h4 id="zp_1_2_4_8_16_"> zp{1,2,4,8,16} </h4>
 <br>The &quot;zp&quot; option allows you to specify the alignment of members in a structure.&nbsp; The default is &quot;zp2&quot;
 for the 16-bit compiler and &quot;zp8&quot; for 32-bit compiler.&nbsp; The alignment of structure members is described in
 the following table.&nbsp; If the size of the member is 1, 2, 4, 8 or 16, the alignment is given for each of the &quot;zp&quot;
@@ -4724,7 +4724,7 @@ So far, the behavior is no different than if<tt> next</tt> had been declared as,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct a *next;</tt>
 <br><br>The expression<tt> aptr-&gt;next-&gt;next</tt> illustrates the difference of using a self based pointer.&nbsp; The
-first part of the expression (<tt> aptr-&gt;next</tt>) occurs as described above.&nbsp; However, using the result to point
+first part of the expression (<tt>aptr-&gt;next</tt>) occurs as described above.&nbsp; However, using the result to point
 to the next member occurs by using the offset value found in the<tt> next</tt> member and combining it with the segment value
 of the<b> pointer used to get to that member,</b> which is still the segment implied by<tt> aptr</tt>, which is the value
 stored in<tt> seg</tt>.&nbsp; If<tt> next</tt> had not been declared using<tt> __based( __self )</tt>, then the second pointing
