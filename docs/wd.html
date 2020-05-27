@@ -4023,7 +4023,7 @@ function call.&nbsp; Try to set a breakpoint at foo.
 <br><br>You will be presented with a window containing a list of &quot;foo&quot; functions to choose from since the reference
 to<tt> foo</tt> at this point is ambiguous.&nbsp; Select the one in which you are interested.
 <br><br>You may also have observed that, in this instance,<tt> p</tt> is really a pointer to the variable<tt> x</tt> which
-is a<tt> DERIVED</tt> type.&nbsp; To display all the fields of<tt> x,</tt> you can type cast it as follows.
+is a<tt> DERIVED</tt> type.&nbsp; To display all the fields of<tt> x</tt> , you can type cast it as follows.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *(DERIVED *)p</tt>
 <h3 id="The__this__Operator_for_the_CPP_Grammar"> The &quot;this&quot; Operator for the C++ Grammar </h3>
@@ -4050,7 +4050,7 @@ example of the previous sections, we can enter an address like:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; base::foo</tt>
 <br><br>In some cases, this also helps to resolve any ambiguity.&nbsp; The example above permits us to set a breakpoint at
-the source code for the function<tt> foo</tt> in the class<tt> BASE.</tt>
+the source code for the function<tt> foo</tt> in the class<tt> BASE</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual void foo()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -4068,7 +4068,7 @@ previous sections, we can enter expressions like:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; base::base</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; base::~base</tt>
 <br><br>The examples above permit us to reference the source code for the constructor and destructor functions in the class<tt>
-BASE.</tt>
+BASE</tt>.
 <h2 id="Operators_for_the_FORTRAN_Grammar"> Operators for the FORTRAN Grammar </h2>
 <br>The debugger supports most FORTRAN 77 operators and includes an additional set of operators for convenience.&nbsp; The
 additional operators are patterned after those available in the C programming language.

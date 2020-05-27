@@ -6299,7 +6299,7 @@ use of the 32-bit DLL, the DLL supervisor loads the 32-bit DLL and invokes the 3
 WinMain</tt> routine).&nbsp; The initialization routine declares all entry points (via<tt> DefineDLLEntry</tt>) and performs
 any other necessary initialization.&nbsp; An index number in the range 1 to 128 is used to identify all external 32-bit DLL
 routines.<tt>&nbsp; DefineDLLEntry</tt> is used to assign an index number to each routine, as well as to identify the arguments.
-<br><br>The DLL supervisor contains a general entry point for Windows applications to call into called<tt> Win386LibEntry.</tt>
+<br><br>The DLL supervisor contains a general entry point for Windows applications to call into called<tt> Win386LibEntry</tt>.
 &nbsp;It also contains 128 specific entry points called<tt> DLL1</tt> to<tt> DLL128</tt> which correspond to the entry points
 established via<tt> DefineDLLEntry</tt> (the first argument to<tt> DefineDLLEntry</tt> is an index number in the range 1 to
 128).&nbsp; These entry points are<tt> FAR PASCAL</tt> functions.&nbsp; All applications call into the 32-bit DLL via these
@@ -6495,9 +6495,9 @@ to the DLL.
 trying to use the DLL.
 <br><br>Create a library of cover functions for each of the entry points.&nbsp; Each library entry would call the 32-bit DLL
 using the appropriate index number.
-<br><br>For example, assume we have 3 functions in our DLL,<tt> Initialize, DoStuff,</tt> and<tt> Finish.</tt>&nbsp; Assume<tt>
-Initialize</tt> takes an integer,<tt> DoStuff</tt> takes an integer and a pointer, and<tt> Finish</tt> takes nothing.&nbsp;
-We could build a 16-bit library as follows:
+<br><br>For example, assume we have 3 functions in our DLL,<tt> Initialize</tt>,<tt> DoStuff</tt> , and<tt> Finish</tt>.&nbsp;
+Assume<tt> Initialize</tt> takes an integer,<tt> DoStuff</tt> takes an integer and a pointer, and<tt> Finish</tt> takes nothing.
+&nbsp;We could build a 16-bit library as follows:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;windows.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef long (FAR PASCAL *FPROC)();</tt>
@@ -6633,7 +6633,7 @@ is installed in the<tt> c:\watcom</tt> directory, and Visual Basic is in the<tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set include=c:\watcom\h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set windows_include=c:\watcom\h\win</tt>
 <br><br>Open Watcom's 32-bit DLL supervisor contains a general entry point for Windows applications to call into called<tt>
-Win386LibEntry.</tt>&nbsp; It also contains 128 specific entry points called<tt> DLL1</tt> to<tt> DLL128</tt> which correspond
+Win386LibEntry</tt>.&nbsp; It also contains 128 specific entry points called<tt> DLL1</tt> to<tt> DLL128</tt> which correspond
 to the entry points established via<tt> DefineDLLEntry</tt> (the first argument to<tt> DefineDLLEntry</tt> is an index number
 in the range 1 to 128).&nbsp; All applications call into the 32-bit DLL via these entry points.&nbsp; They build the necessary
 stack frame and switch to the 32-bit DLL's data space.
@@ -6655,7 +6655,7 @@ in any 32-bit extended DLL with a 16-bit integer as the first and third argument
 <ol>
 <li>Use the Visual Basic &quot;Alias&quot; attribute to declare<tt> Win386LibEntry</tt> differently for each DLL routine.
 &nbsp;Reference the different DLL routines using these aliases.
-<li>Use the specific entry point, one of<tt> DLL1</tt> through<tt> DLL128,</tt> corresponding to the DLL routine that you
+<li>Use the specific entry point, one of<tt> DLL1</tt> through<tt> DLL128</tt> , corresponding to the DLL routine that you
 want to call.&nbsp; Each entry point can be described to take different arguments.&nbsp; We can still use the &quot;Alias&quot;
 attribute to make the link between the name we use in the Visual Basic function and the name in the 32-bit extended DLL.&nbsp;
 This is the method that we will use in the &quot;Direct Call&quot; technique discussed below.&nbsp; It is simpler to use since
@@ -6745,7 +6745,7 @@ the statement on the same line.)
 <br>Now, when all of the code below is compiled correctly, and the Visual Basic program is run, the &quot;Direct call&quot;
 button will call the<tt> DLL1</tt> and<tt> DLL2</tt> functions directly, aliased as the functions<tt> Add3</tt> and<tt> Add2</tt>
 respectively.&nbsp; The &quot;Indirect call&quot; button will call the 16-bit DLL, which will then call the 32-bit DLL, for
-both<tt> Function1</tt> and<tt> Function2.</tt>&nbsp; To run the Visual Basic program, select &quot;Start&quot; from the &quot;Run&quot;
+both<tt> Function1</tt> and<tt> Function2</tt>.&nbsp; To run the Visual Basic program, select &quot;Start&quot; from the &quot;Run&quot;
 menu.
 <h2 id="Windows__Sample_Visual_Basic_DLL_Programs"> Windows:&nbsp; Sample Visual Basic DLL Programs </h2>
 <br>The sample programs provided below are for a 32-bit DLL, and a 16-bit cover DLL, which will call the two functions contained
@@ -8026,14 +8026,14 @@ your 32-bit application.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (void FAR*)dwAlias);
 &nbsp;&nbsp; // lpCreateParams</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FreeAlias16( dwAlias );</tt>
-<br><br>When I get the<tt> lpCreateParams</tt> parameter in<tt> WM_CREATE,</tt> I don't get the original<tt> dwAlias</tt>
+<br><br>When I get the<tt> lpCreateParams</tt> parameter in<tt> WM_CREATE</tt> , I don't get the original<tt> dwAlias</tt>
 but something else which looks like another alias to me.&nbsp; So the question is:&nbsp; Must the<tt> CreateWindowEx</tt>
 parameter<tt> lpCreateParams</tt> be &quot;thunked&quot; or is this done automatically by the supervisor?
 <br><br>Thunks are always created for function pointers.&nbsp; Aliases are always created for data pointers.&nbsp; There are
 3 data pointer parameters in the<tt> CreateWindowEx</tt> function call.&nbsp; Aliases are created for all three pointers.
 &nbsp;The<tt> lpCreateParams</tt> argument is a pointer to a struct which contains 3 pointers.&nbsp; Aliases are not created
 for the 3 pointers inside the struct.&nbsp; If you need to have this done, then you will have to create the aliases yourself.
-&nbsp;If you create aliases for the parameters to<tt> CreateWindowEx,</tt> then you must call the<tt> _16CreateWindowEx</tt>
+&nbsp;If you create aliases for the parameters to<tt> CreateWindowEx</tt> , then you must call the<tt> _16CreateWindowEx</tt>
 function which will not create any aliases.
 <br><br>Here is some further information on thunks (which are created for function pointers).&nbsp; There is code in the supervisor
 that<b> trys</b> (note the word<b> trys</b>) to determine if the user has already created a thunk and, if so, avoids creating
@@ -8557,13 +8557,13 @@ the thread.
 <dd>specifies the size of the stack to be allocated by the operating system for the new thread.&nbsp; The stack size should be
 a multiple of 4K.
 <dt>arglist
-<dd>is passed as an argument to the function specified by<tt> start_address.</tt>&nbsp; If no argument is required, a value of
+<dd>is passed as an argument to the function specified by<tt> start_address</tt>.&nbsp; If no argument is required, a value of
 NULL can be specified.
 </dl>
 <br>If a new thread is successfully created, the thread identifier of the new thread is returned.&nbsp; Otherwise, a value
 of -1 is returned.
 <br><br>The header file<tt> process.h</tt> contains the definition of the<tt> _beginthread</tt> function.
-<br><br>Another thread related function for Windows NT is<tt> _beginthreadex.</tt>&nbsp; See the<b><i> Open Watcom C Library
+<br><br>Another thread related function for Windows NT is<tt> _beginthreadex</tt>.&nbsp; See the<b><i> Open Watcom C Library
 Reference</i></b> for more information.
 <h3 id="NT__Terminating_the_Current_Thread"> NT:&nbsp; Terminating the Current Thread </h3>
 <br>The<tt> _endthread</tt> function terminates the current thread.&nbsp; It is defined as follows.
@@ -8627,10 +8627,10 @@ of thread %d failed\n&quot;, i );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><b>Note:</b>
 <ol>
-<li>In the function<tt> a_thread, EnterCriticalSection</tt> and<tt> LeaveCriticalSection</tt> are called when we modify the
-variable<tt> NumThreads.</tt>&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt> from memory,
-incrementing the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions were
-not called, it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update
+<li>In the function<tt> a_thread</tt>,<tt> EnterCriticalSection</tt> and<tt> LeaveCriticalSection</tt> are called when we
+modify the variable<tt> NumThreads</tt>.&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt>
+from memory, incrementing the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions
+were not called, it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update
 occurred.
 </ol>
 <br>Let us assume that the file<tt> mthread.c</tt> contains the above example.&nbsp; Before compiling the file, make sure
@@ -8799,8 +8799,8 @@ does not call the DLL's <tt> LibMain</tt> with the<tt> DLL_THREAD_DETACH</tt> va
 resources for all threads attached and known to the DLL.
 </dl>
 <dt>lpvReserved
-<dd>This argument specifies further aspects of DLL initialization and cleanup.&nbsp; If<tt> fdwReason</tt> is<tt> DLL_PROCESS_ATTACH,
-lpvReserved</tt> is NULL for dynamic loads and non-NULL for static loads.&nbsp; If<tt> fdwReason</tt> is<tt> DLL_PROCESS_DETACH,
+<dd>This argument specifies further aspects of DLL initialization and cleanup.&nbsp; If<tt> fdwReason</tt> is<tt> DLL_PROCESS_ATTACH</tt>,<tt>
+lpvReserved</tt> is NULL for dynamic loads and non-NULL for static loads.&nbsp; If<tt> fdwReason</tt> is<tt> DLL_PROCESS_DETACH</tt>,<tt>
 lpvReserved</tt> is NULL if <tt> LibMain</tt> has been called by using <tt> FreeLibrary</tt> and non-NULL if <tt> LibMain</tt>
 has been called during process termination.
 <dt>Return Value
@@ -8810,7 +8810,7 @@ has been called during process termination.
 function, <tt> LoadLibrary</tt> returns NULL.
 <br><br>If the return value is FALSE (0) when <tt> LibMain</tt> is called during process initialization, the process terminates
 with an error.&nbsp; To get extended error information, call <tt> GetLastError</tt>.
-<br><br>When the system calls <tt> LibMain</tt> with any value other than<tt> DLL_PROCESS_ATTACH,</tt> the return value is
+<br><br>When the system calls <tt> LibMain</tt> with any value other than<tt> DLL_PROCESS_ATTACH</tt> , the return value is
 ignored.
 </dl>
 <br>Assume the above example is contained in the file<tt> dllsamp.c.</tt>&nbsp; We can compile the file using the following
@@ -9294,7 +9294,7 @@ the stack for the new thread.&nbsp; A value of NULL may be specified.
 <dd>specifies the size of the stack to be allocated by the operating system for the new thread.&nbsp; The stack size should be
 a multiple of 4K.
 <dt>arglist
-<dd>is passed as an argument to the function specified by<tt> start_address.</tt>&nbsp; If no argument is required, a value of
+<dd>is passed as an argument to the function specified by<tt> start_address</tt>.&nbsp; If no argument is required, a value of
 NULL can be specified.
 </dl>
 <br>If a new thread is successfully created, the thread identifier of the new thread is returned.&nbsp; Otherwise, a value
@@ -9360,10 +9360,11 @@ of thread %d failed\n&quot;, i );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><b>Note:</b>
 <ol>
-<li>In the function<tt> a_thread, DosEnterCritSec</tt> and<tt> DosExitCritSec</tt> are called when we modify the variable<tt>
-NumThreads.</tt>&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt> from memory, incrementing
-the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions were not called,
-it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update occurred.
+<li>In the function<tt> a_thread</tt>,<tt> DosEnterCritSec</tt> and<tt> DosExitCritSec</tt> are called when we modify the
+variable<tt> NumThreads</tt>.&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt> from memory,
+incrementing the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions were
+not called, it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update
+occurred.
 </ol>
 <br>Let us assume that the file<tt> mthread.c</tt> contains the above example.&nbsp; Before compiling the file, make sure
 that the<b> WATCOM</b> environment variable is set to the directory in which you installed Open Watcom C/C++.&nbsp; Also,
@@ -9380,12 +9381,12 @@ in which you installed Open Watcom C/C++.
 <br><br>The multi-threaded application is now ready to be run.
 <h2 id="OSD2__Thread_Limits"> OS/2:&nbsp; Thread Limits </h2>
 <br>There is a limit to the number of threads an application can create under 16-bit OS/2.&nbsp; The default limit is 32.
-&nbsp;This limit can be adjusted by statically initializing the unsigned global variable<tt> __MaxThreads.</tt>
+&nbsp;This limit can be adjusted by statically initializing the unsigned global variable<tt> __MaxThreads</tt>.
 <br><br>Under 32-bit OS/2, there is no limit to the number of threads an application can create.&nbsp; However, due to the
 way in which multiple threads are supported in the Open Watcom libraries, there is a small performance penalty once the number
 of threads exceeds the default limit of 32 (this number includes the initial thread).&nbsp; If you are creating more than
 32 threads and wish to avoid this performance penalty, you can redefine the threshold value of 32.&nbsp; You can statically
-initialize the global variable<tt> __MaxThreads.</tt>
+initialize the global variable<tt> __MaxThreads</tt>.
 <br><br>By adding the following line to your multi-threaded application, the new threshold value will be set to 48.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned __MaxThreads = { 48 };</tt>
@@ -10876,7 +10877,7 @@ will also affect the number of available file handles.&nbsp; In this case, you m
 the &quot;files=n&quot; statement.
 <li>Add a call to<tt> _grow_handles</tt> in your application.
 </ol>
-<br>The following example illustrates the use of<tt> _grow_handles.</tt>
+<br>The following example illustrates the use of<tt> _grow_handles</tt>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp; HANDLES.C</tt>

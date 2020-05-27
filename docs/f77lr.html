@@ -487,7 +487,7 @@ The maximum number of continuation lines depends on the sum of the lengths of al
 <dt>(2)
 <dd>Apostrophe and H edit descriptors in format specifications.
 </dl>
-<br>For example, the symbolic name<tt> A B</tt> is the same as the symbolic name<tt> AB.</tt>
+<br>For example, the symbolic name<tt> A B</tt> is the same as the symbolic name<tt> AB</tt>.
 <h3 id="Significance_of_Lower_Case_Characters_LExtensionR"> Significance of Lower Case Characters (Extension) </h3>
 <br>Except in the following cases, lower case characters are treated as if they were the upper case equivalent.&nbsp; This
 is a Open Watcom FORTRAN 77 extension to the usual rules of FORTRAN.
@@ -497,8 +497,8 @@ is a Open Watcom FORTRAN 77 extension to the usual rules of FORTRAN.
 <dt>(2)
 <dd>Apostrophe and H edit descriptors in format specifications.
 </dl>
-<br>Hence,<tt> TOTAL, total,</tt> and<tt> Total</tt> represent the same symbolic name and<tt> 3F10.2</tt> and<tt> 3f10.2</tt>
-represent the same format edit descriptor.
+<br>Hence,<tt> TOTAL</tt>,<tt> total</tt>, and<tt> Total</tt> represent the same symbolic name and<tt> 3F10.2</tt> and<tt>
+3f10.2</tt> represent the same format edit descriptor.
 <h3 id="Examples"> Examples </h3>
 <br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C This and the following five lines are comment lines.</tt>
@@ -2130,12 +2130,13 @@ containing the<tt> DIMENSION</tt> statement.&nbsp; A name can only be dimensione
 a name can also be dimensioned in a<tt> COMMON</tt> statement and type declaration statements.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIMENSION A(10), B(-5:5), C(I,J), D(4,*)</tt>
-<br><br>In this example<tt> A</tt> is a 1-dimensional array containing 10 elements, each element referenced as<tt> A(1), A(2),
-..., A(9), A(10).&nbsp; B</tt> is a 1-dimensional array containing 11 elements, each element referenced as<tt> B(-5), B(-4),
-..., B(4), B(5).&nbsp; C</tt> is a 2-dimensional array containing<tt> I</tt> rows and<tt> J</tt> columns.<tt>&nbsp; C, I,</tt>
-and<tt> J</tt> must be<b> dummy arguments</b> or belong to a common block.<tt>&nbsp; D</tt> is a 2-dimensional array containing
-4 rows.&nbsp; The<tt> *</tt> in the last dimension indicates that<tt> D</tt> is an<b> assumed size array.</b>&nbsp; <tt> D</tt>
-must be a<b> dummy argument.</b>&nbsp; The number of columns is determined from the number of elements of the<b> actual argument.</b>
+<br><br>In this example<tt> A</tt> is a 1-dimensional array containing 10 elements, each element referenced as<tt> A(1)</tt>,<tt>
+A(2)</tt>,<tt> '...'</tt>,<tt> A(9)</tt>,<tt> A(10)</tt>.<tt>&nbsp; B</tt> is a 1-dimensional array containing 11 elements,
+each element referenced as<tt> B(-5)</tt>,<tt> B(-4)</tt>,<tt> '...'</tt>,<tt> B(4)</tt>,<tt> B(5)</tt>.<tt>&nbsp; C</tt>
+is a 2-dimensional array containing<tt> I</tt> rows and<tt> J</tt> columns.<tt>&nbsp; C</tt>,<tt> I</tt> , and<tt> J</tt>
+must be<b> dummy arguments</b> or belong to a common block.<tt>&nbsp; D</tt> is a 2-dimensional array containing 4 rows.&nbsp;
+The<tt> *</tt> in the last dimension indicates that<tt> D</tt> is an<b> assumed size array.</b>&nbsp; <tt> D</tt> must be
+a<b> dummy argument.</b>&nbsp; The number of columns is determined from the number of elements of the<b> actual argument.</b>
 &nbsp;For example, if the actual argument contains 8 elements then<tt> D</tt> would contain 2 columns (i.e., 8 elements /
 4 rows).
 <br><br>For more information on dimensioning arrays refer to the chapter entitled <a href="#Arrays">Arrays</a>.&nbsp; See
@@ -6555,7 +6556,7 @@ has the following form:
 equal to the lower dimension bound.&nbsp; The upper dimension bound of the last dimension may be an asterisk<tt> (*).</tt>
 &nbsp;The meaning of this will be discussed later.&nbsp; If the lower dimension bound is not specified then a default of 1
 is assumed.&nbsp; The size of a dimension is defined as<tt> hi</tt> - lo + 1.&nbsp; Note that if the lower dimension bound
-is not specified the size of the dimension is just<tt> hi.</tt>&nbsp; The size of the array (or the number of elements in
+is not specified the size of the dimension is just<tt> hi</tt>.&nbsp; The size of the array (or the number of elements in
 the array) is defined as the product of all the sizes of the dimensions of the array.&nbsp; The maximum number of elements
 in any dimension is limited to 65535.&nbsp; The maximum size of an array is limited by the amount of available memory.
 <br><br>Arrays are defined by the appearance of an array declarator in a<tt> DIMENSION</tt> statement, a type statement or
@@ -6741,7 +6742,7 @@ array declarator because the dimension bounds are specified at run-time in an<tt
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ALLOCATE( B(0:4,5) )</tt>
 <br><br>In the previous example,<tt> A(:)</tt> is a one-dimensional allocatable array declarator and<tt> B(:,:)</tt> is a
 two-dimensional allocatable array declarator.&nbsp; The first<tt> ALLOCATE</tt> statement is used to allocate the array<tt>
-A</tt> with bounds<tt> 1:N.</tt>&nbsp; The second<tt> ALLOCATE</tt> statement is used to allocate the array<tt> B</tt> with
+A</tt> with bounds<tt> 1:N</tt>.&nbsp; The second<tt> ALLOCATE</tt> statement is used to allocate the array<tt> B</tt> with
 bounds<tt> 0:4</tt> in the first dimension and<tt> 1:5</tt> in the second dimension.
 <h2 id="Classifying_Array_Declarators_by_Array_Name"> Classifying Array Declarators by Array Name </h2>
 <br>Array declarators can also be classified according to the characteristic of the array name.&nbsp; The following sections
@@ -6883,7 +6884,7 @@ declaration might be:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END STRUCTURE</tt>
 <br><br>As we stated above, a structure does not allocate storage.&nbsp; Instead, we have created a new type called<tt> NAME</tt>
 which may be used to describe objects.&nbsp; Objects of the new type are defined using the<tt> RECORD</tt> statement.&nbsp;
-For example, the following statements describe two objects,<tt> STUDENT_1</tt> and<tt> STUDENT_2</tt>, to be of type<tt> NAME.</tt>
+For example, the following statements describe two objects,<tt> STUDENT_1</tt> and<tt> STUDENT_2</tt>, to be of type<tt> NAME</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RECORD /NAME/ STUDENT_1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RECORD /NAME/ STUDENT_2</tt>
@@ -6918,10 +6919,10 @@ we can also store a person's date of birth and sex.&nbsp; First, let us define a
 &nbsp;This continues until the desired structure member is identified.&nbsp; The &quot;.&quot; or &quot;%&quot; is called
 a<b> field selection operator.</b>
 <br><br>The previous example contained both a structure called<tt> NAME (RECORD /NAME/)</tt> and a structure member called<tt>
-NAME (RECORD /NAME/ NAME).</tt>&nbsp; The structure name is enclosed within slashes (&quot;/&quot;).&nbsp; A structure name
+NAME (RECORD /NAME/ NAME)</tt>.&nbsp; The structure name is enclosed within slashes (&quot;/&quot;).&nbsp; A structure name
 must be unique among structure names.&nbsp; However, the same name can also be used to name either variables or structure
-members (fields).&nbsp; Thus it is possible to have a variable named<tt> X,</tt> a structure named<tt> X,</tt> and one or
-more fields named<tt> X.</tt>
+members (fields).&nbsp; Thus it is possible to have a variable named<tt> X</tt>, a structure named<tt> X</tt>, and one or
+more fields named<tt> X</tt>.
 <br><br>Structure, field, and variable names are all local to the program unit in which they are defined.
 <h2 id="Arrays_of_Records"> Arrays of Records </h2>
 <br>It is often the case that the individual attributes of objects are stored in separate arrays.&nbsp; If, for example, your
@@ -7026,11 +7027,11 @@ TYPE</tt>
 &nbsp; <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double precision</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt></tt>
-<br><br>The first 4 bytes of storage are occupied by<tt> TYPE.</tt>&nbsp; The next 4 to 8 bytes of storage are occupied by
-either<tt> LGL, INT, FLT,</tt> or<tt> DBL</tt> depending on the interpretation of the contents of the variable<tt> TYPE.</tt>
-&nbsp;The size of the record<tt> ITEM</tt> is a total of 12 bytes.&nbsp; Based on the conventions of the above program example,
-only 8 bytes of the record<tt> ITEM</tt> are used when<tt> TYPE</tt> is 1, 2, or 3.&nbsp; When<tt> TYPE</tt> is 4 then 12
-bytes of the record are used.
+<br><br>The first 4 bytes of storage are occupied by<tt> TYPE</tt>.&nbsp; The next 4 to 8 bytes of storage are occupied by
+either<tt> LGL</tt>,<tt> INT</tt>,<tt> FLT</tt>, or<tt> DBL</tt> depending on the interpretation of the contents of the variable<tt>
+TYPE</tt>.&nbsp; The size of the record<tt> ITEM</tt> is a total of 12 bytes.&nbsp; Based on the conventions of the above
+program example, only 8 bytes of the record<tt> ITEM</tt> are used when<tt> TYPE</tt> is 1, 2, or 3.&nbsp; When<tt> TYPE</tt>
+is 4 then 12 bytes of the record are used.
 <br><br>The following example maps out a 4-byte integer on an Intel 80x86-based processor.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STRUCTURE /MAPINT/</tt>
@@ -7137,7 +7138,7 @@ rules define the precedence relation among arithmetic operators.
 <br>For example, to evaluate the expression
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A-B**4</tt>
-<br><br><tt>B</tt> is raised to the exponent 4 first and the result is then subtracted from<tt> A.</tt>
+<br><br><tt>B</tt> is raised to the exponent 4 first and the result is then subtracted from<tt> A</tt>.
 <br><br>Parentheses can be used to alter the evaluation sequence of an arithmetic expression.&nbsp; When a left parenthesis
 is encountered, the entire expression enclosed in parentheses is evaluated.&nbsp; Consider the following expression.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -7288,7 +7289,7 @@ language.&nbsp; Combining an operand of type DOUBLE PRECISION with an operand of
 <h3 id="Character_Operators"> Character Operators </h3>
 <br>There is only one character operator, namely the concatenation operator (//).&nbsp; It requires two operands of type CHARACTER.
 &nbsp;If<tt> x</tt> is the left operand and<tt> y</tt> is the right operand, then the result is<tt> y</tt> concatenated to<tt>
-x.</tt>&nbsp; The length of the result is the sum of the lengths of the two operands.&nbsp; For example, the result of
+x</tt>.&nbsp; The length of the result is the sum of the lengths of the two operands.&nbsp; For example, the result of
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'AAAAA'//'BBB'</tt>
 <br><br>is the string<tt> AAAAABBB.</tt>
@@ -7654,7 +7655,7 @@ that the logical terms are combined from left to right.
 <br><br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A .OR. .NOT. B .AND. C</tt>
-<br><br>Since the .NOT.&nbsp; operator has highest precedence we first logically negate<tt> B.</tt>&nbsp; The result is then
+<br><br>Since the .NOT.&nbsp; operator has highest precedence we first logically negate<tt> B</tt>.&nbsp; The result is then
 combined with<tt> C</tt> using the .AND.&nbsp; operator.&nbsp; That result is then combined with<tt> A</tt> using the .OR.
 &nbsp;operator to form the final result.
 <h3 id="Logical_Constant_Expressions"> Logical Constant Expressions </h3>
@@ -7665,8 +7666,8 @@ combined with<tt> C</tt> using the .AND.&nbsp; operator.&nbsp; That result is th
 <li>a relational expression in which each primary is a constant expression
 <li>( logical constant expression )
 </ol>
-<br>The following are examples of a logical constant expression (assume that<tt> A, B, C</tt> and<tt> D</tt> are arithmetic
-constants appearing in<tt> PARAMETER</tt> statements).
+<br>The following are examples of a logical constant expression (assume that<tt> A</tt>,<tt> B</tt>,<tt> C</tt> and<tt> D</tt>
+are arithmetic constants appearing in<tt> PARAMETER</tt> statements).
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .TRUE. .AND. .NOT. .FALSE.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'A' .LT. 'a'</tt>
@@ -7676,11 +7677,11 @@ constants appearing in<tt> PARAMETER</tt> statements).
 to form an expression which contains all of these operators.&nbsp; Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A+B .LE. C .AND. X // Y .EQ. Z .AND. L</tt>
-<br><br>where<tt> A, B</tt> and<tt> C</tt> are of numeric type,<tt> X, Y</tt> and<tt> Z</tt> are of type CHARACTER and<tt>
-L</tt> is of type LOGICAL.&nbsp; In this expression, + is an arithmetic operator, // is a character operator, .EQ.&nbsp; is
-a relational operator and .AND.&nbsp; is a logical operator.&nbsp; Since we can mix these four types of operators, it is necessary
-to define a precedence among these four classes of operators.&nbsp; The following defines this precedence of operators.&nbsp;
-
+<br><br>where<tt> A</tt>,<tt> B</tt> and<tt> C</tt> are of numeric type,<tt> X</tt>,<tt> Y</tt> and<tt> Z</tt> are of type
+CHARACTER and<tt> L</tt> is of type LOGICAL.&nbsp; In this expression, + is an arithmetic operator, // is a character operator,
+.EQ.&nbsp; is a relational operator and .AND.&nbsp; is a logical operator.&nbsp; Since we can mix these four types of operators,
+it is necessary to define a precedence among these four classes of operators.&nbsp; The following defines this precedence
+of operators.&nbsp; 
 <ol>
 <li>arithmetic operators (highest precedence)
 <li>character operators
@@ -7725,15 +7726,15 @@ expression.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y = X**2 + 4.0*X + 3.0</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Z(10) = 4.3*(X+Y)</tt>
-<br><br>Executing an arithmetic assignment statement causes the evaluation of the arithmetic expression<tt> e,</tt> converting
-the type of the expression<tt> e</tt> to the type of<tt> v,</tt> and defining<tt> v</tt> with the result.
+<br><br>Executing an arithmetic assignment statement causes the evaluation of the arithmetic expression<tt> e</tt>, converting
+the type of the expression<tt> e</tt> to the type of<tt> v</tt>, and defining<tt> v</tt> with the result.
 <br><br>If<tt> v</tt> is of type INTEGER*1 or INTEGER*2, then the value of the expression<tt> e</tt> is first converted to
 type INTEGER.&nbsp; The resulting integer is then assigned to<tt> v</tt> in the following way.
 <ol>
 <li>If<tt> v</tt> is of type INTEGER*2 and the value of<tt> e</tt> is such that -32768 &lt;=<tt> e</tt> &lt;= 32767,<tt> v</tt>
-will be assigned the value of<tt> e.</tt>&nbsp; Otherwise,<tt> v</tt> will be undefined.
+will be assigned the value of<tt> e</tt>.&nbsp; Otherwise,<tt> v</tt> will be undefined.
 <li>If<tt> v</tt> is of type INTEGER*1 and the value of<tt> e</tt> is such that -128 &lt;=<tt> e</tt> &lt;= 127,<tt> v</tt>
-will be assigned the value of<tt> e.</tt>&nbsp; Otherwise,<tt> v</tt> will be undefined.
+will be assigned the value of<tt> e</tt>.&nbsp; Otherwise,<tt> v</tt> will be undefined.
 </ol>
 <h2 id="Logical_Assignment"> Logical Assignment </h2>
 <br>The form of a<b> logical assignment statement</b> is
@@ -7762,7 +7763,7 @@ will be assigned the value of<tt> e.</tt>&nbsp; Otherwise,<tt> v</tt> will be un
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOG1 = .TRUE.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOG2 = (X.GT.Y) .AND. (X.LT.Z)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOG3(2) = LOG2 .EQV. LOG1</tt>
-<br><br>Executing a logical assignment statement causes the evaluation of the logical expression<tt> e,</tt> and defining<tt>
+<br><br>Executing a logical assignment statement causes the evaluation of the logical expression<tt> e</tt>, and defining<tt>
 v</tt> with the result.&nbsp; Note that the type of<tt> v</tt> and<tt> e</tt> must be LOGICAL.
 <h2 id="Statement_Label_Assignment"> Statement Label Assignment </h2>
 <br>The form of a<b> statement label assignment</b> is
@@ -7790,9 +7791,9 @@ v</tt> with the result.&nbsp; Note that the type of<tt> v</tt> and<tt> e</tt> mu
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ASSIGN 10 TO I</tt>
 <br><br>The result of executing an<tt> ASSIGN</tt> statement causes the integer variable<tt> i</tt> to be defined with the
-value of the statement label<tt> s.&nbsp; s</tt> must be the statement label of an executable statement or a format statement
-in the same program unit in which the<tt> ASSIGN</tt> statement appears.&nbsp; It is possible to change the value of<tt> i</tt>
-by executing another<tt> ASSIGN</tt> statement.
+value of the statement label<tt> s</tt>.<tt>&nbsp; s</tt> must be the statement label of an executable statement or a format
+statement in the same program unit in which the<tt> ASSIGN</tt> statement appears.&nbsp; It is possible to change the value
+of<tt> i</tt> by executing another<tt> ASSIGN</tt> statement.
 <br><br>During execution when<tt> i</tt> is used in an assigned<tt> GO TO</tt> statement, an<tt> ASSIGN</tt> statement which
 defines<tt> i</tt> must have been executed prior to the execution of the assigned<tt> GO TO</tt> statement.
 <br><br>While the variable<tt> i</tt> is defined with a statement label, it should not be used in any other way other than
@@ -7833,16 +7834,16 @@ should be treated that way.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D(5)(14:15)='12'</tt>
 <br><br>Executing a character assignment statement causes the evaluation of the character expression<tt> e</tt> and the definition
 of<tt> v</tt> with the result.
-<br><br>None of the character positions defined in<tt> v</tt> may be referenced in<tt> e.</tt>&nbsp; The following example
+<br><br>None of the character positions defined in<tt> v</tt> may be referenced in<tt> e</tt>.&nbsp; The following example
 is illegal since the 4th and 5th character positions of<tt> A</tt> appear on the left and right hand side of the equal sign.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * Illegal character assignment.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER*10 A,B*5</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A(2:6) = A(4:5) // B</tt>
 <br><br>The length of<tt> v</tt> and<tt> e</tt> may be different.&nbsp; If the length of<tt> v</tt> is less than the length
-of<tt> e</tt> then the assignment has the effect of truncating<tt> e</tt> from the right to the length of<tt> v.</tt>&nbsp;
-If the length of<tt> v</tt> is greater than the length of<tt> e,</tt> the value assigned to<tt> v</tt> is the value of<tt>
-e</tt> padded on the right with blanks to the length of<tt> v.</tt>
+of<tt> e</tt> then the assignment has the effect of truncating<tt> e</tt> from the right to the length of<tt> v</tt>.&nbsp;
+If the length of<tt> v</tt> is greater than the length of<tt> e</tt>, the value assigned to<tt> v</tt> is the value of<tt>
+e</tt> padded on the right with blanks to the length of<tt> v</tt>.
 <h2 id="Extended_Assignment_Statement"> Extended Assignment Statement </h2>
 <br>Open Watcom FORTRAN 77 supports an extension to the FORTRAN 77 assignment statement, namely the<b> extended assignment
 statement</b> shown here:
@@ -8112,7 +8113,7 @@ is executed, the string<tt> A GREATER THAN B</tt> will be printed and variable<t
 expression<tt> A - B.</tt>&nbsp; Control will then pass to the statement following the<tt> END IF</tt> statement.
 <br><br>If the value of variable<tt> A</tt> is not greater than the value of variable<tt> B</tt> when the<tt> IF</tt> statement
 is executed, control passes to the<tt> ELSE IF</tt> statement.&nbsp; If the value of variable<tt> A</tt> is less than the
-value of variable<tt> B,</tt> the string<tt> A LESS THAN B</tt> will be printed and variable<tt> A</tt> will be assigned the
+value of variable<tt> B</tt>, the string<tt> A LESS THAN B</tt> will be printed and variable<tt> A</tt> will be assigned the
 value of the expression<tt> B - A.</tt>&nbsp; Control will then pass to the statement following the<tt> END IF</tt> statement.
 <br><br>If the value of variable<tt> A</tt> is not less than the value of variable<tt> B</tt> when the<tt> ELSE IF</tt> statement
 is executed, the string<tt> A EQUAL TO B</tt> will be printed and variable<tt> A</tt> will be assigned the value zero.&nbsp;
@@ -8341,7 +8342,7 @@ EXIT</tt> or<tt> QUIT</tt> statement for more information).&nbsp; An example fol
 of code will be by-passed and the statement following the<tt> END WHILE</tt> statement will be executed.
 <br><br>If variable<tt> J</tt> is greater than zero when the<tt> WHILE</tt> statement is executed, the<tt> WHILE</tt> block
 will be executed repeatedly until<tt> J</tt> becomes equal to zero.&nbsp; The effect of this loop will be to assign values
-to elements of array<tt> A</tt> from array<tt> B,</tt> starting with the element of<tt> A</tt> corresponding to the initial
+to elements of array<tt> A</tt> from array<tt> B</tt>, starting with the element of<tt> A</tt> corresponding to the initial
 value of variable<tt> J</tt> and working backwards down the array to element 1.
 <h2 id="WHILE_M_ExecutableMstatement"> WHILE - Executable-statement </h2>
 <br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHILE( logical-expression )stmt</tt></tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -8536,7 +8537,7 @@ END SELECT</tt> statement and none of the CASE-blocks is executed.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X = X * 32.0</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'CASE 4', X, Y, Z</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END SELECT</tt>
-<br><br>This example will execute in the manner described below for each of the possible values of variable<tt> I.</tt>
+<br><br>This example will execute in the manner described below for each of the possible values of variable<tt> I</tt>.
 <dl>
 <dt>(i)
 <dd><tt> I</tt> is zero or negative:
@@ -8549,7 +8550,7 @@ END SELECT</tt> statement and none of the CASE-blocks is executed.
 <dt>(iii)
 <dd><tt> I = 2:</tt>
 <br><br>-<tt> Z</tt> will be assigned the value of the expression<tt> Y**2 + X</tt>
-<br>- the values of<tt> X, Y</tt> and<tt> Z</tt> will be printed
+<br>- the values of<tt> X</tt>,<tt> Y</tt> and<tt> Z</tt> will be printed
 <br>- control will pass to the statement after the<tt> END SELECT</tt> statement
 <dt>(iv)
 <dd><tt> I = 3:</tt>
@@ -8558,8 +8559,8 @@ END SELECT</tt> statement and none of the CASE-blocks is executed.
 <br>- control will pass to the statement after the<tt> END SELECT</tt> statement
 <dt>(v)
 <dd><tt> I = 4:</tt>
-<br><br>-<tt> Z, Y</tt> and<tt> X</tt> will be assigned new values
-<br>- the string<tt> CASE 4,</tt> followed by the values of<tt> X, Y</tt> and<tt> Z</tt> will be printed
+<br><br>-<tt> Z</tt>,<tt> Y</tt> and<tt> X</tt> will be assigned new values
+<br>- the string<tt> CASE 4,</tt> followed by the values of<tt> X</tt>,<tt> Y</tt> and<tt> Z</tt> will be printed
 <br>- control will pass to the statement after the<tt> END SELECT</tt> statement
 <dt>(vi)
 <dd><tt> I = 5, 6, ...:</tt>
@@ -9346,7 +9347,7 @@ of internal files.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END IF</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>After checking for an<tt> &quot;I&quot;</tt> or<tt> &quot;R&quot;</tt> as the first character of the character variable<tt>
-INPUT,</tt> the appropriate internal<tt> READ</tt> statement is executed.
+INPUT</tt>, the appropriate internal<tt> READ</tt> statement is executed.
 <h2 id="Units"> Units </h2>
 <br>Many FORTRAN 77 input/output statements refer to external files using a mechanism called the<b> unit.</b>&nbsp; There
 are many units available to the FORTRAN 77 programmer.&nbsp; Open Watcom FORTRAN 77 numbers these units from 0 to 999; thus
@@ -9474,7 +9475,7 @@ nn</tt> corresponds to the message<tt> IO-nn.</tt>&nbsp; For example, if the sta
 <br>The form of an error specifier in an input/output statement is:
 <dl>
 <dt>ERR = s
-<dd><tt> s</tt> is a statement label.&nbsp; When an error occurs, execution is transferred to the statement labelled by<tt> s.</tt>
+<dd><tt> s</tt> is a statement label.&nbsp; When an error occurs, execution is transferred to the statement labelled by<tt> s</tt>.
 </dl>
 <br>If an input/output error occurs during the execution of an input/output statement and the<tt> ERR=</tt> specifier is present
 then execution of the program is not terminated.
@@ -9483,7 +9484,7 @@ then execution of the program is not terminated.
 <dl>
 <dt>END = s
 <dd><tt> s</tt> is a statement label.&nbsp; When an end-of-file condition occurs, execution is transferred to the statement labelled
-by<tt> s.</tt>
+by<tt> s</tt>.
 </dl>
 <br>If an end-of-file condition occurs during the execution of an input/output statement and the<tt> END=</tt> specifier is
 present then execution of the program is not terminated.
@@ -9552,7 +9553,7 @@ is converted to a character string and vice versa.&nbsp; A format specification 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 100&nbsp;&nbsp; FORMAT(F10.2)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>In the previous example, the<tt> PRINT</tt> statement uses the format specification in the<tt> FORMAT</tt> statement
-whose statement label is 100 to display the value of<tt> X.</tt>
+whose statement label is 100 to display the value of<tt> X</tt>.
 <h2 id="FORMAT_as_a_Character_Expression"> FORMAT as a Character Expression </h2>
 <br>Instead of specifying the statement label of a<tt> FORMAT</tt> statement, a character expression can be used.&nbsp; The
 previous example could be modified as follows and achieve the identical result.
@@ -9609,17 +9610,18 @@ to be only that array element.
 <dt>ned
 <dd>is a nonrepeatable edit descriptor.
 <dt>fs
-<dd>is a format specification with a nonempty list<tt> flist.</tt>
+<dd>is a format specification with a nonempty list<tt> flist</tt>.
 <dt>r
 <dd>is a positive unsigned integer constant called a<b> repeat specification.</b>&nbsp; 
 </dl>
 <br>The comma separating the items of<tt> flist</tt> can be omitted in the following cases.
 <ol>
-<li>Between a<tt> P</tt> edit descriptor and an<tt> F, E, D</tt> or<tt> G</tt> edit descriptor which immediately follows.
+<li>Between a<tt> P</tt> edit descriptor and an<tt> F</tt>,<tt> E</tt>,<tt> D</tt> or<tt> G</tt> edit descriptor which immediately
+follows.
 <li>Before or after a slash edit descriptor.
 <li>Before or after a colon edit descriptor.
 </ol>
-<br>Open Watcom FORTRAN 77 allows the omission of a comma between the items of<tt> flist.</tt>&nbsp; Care should be taken
+<br>Open Watcom FORTRAN 77 allows the omission of a comma between the items of<tt> flist</tt>.&nbsp; Care should be taken
 when omitting commas between edit descriptors.&nbsp; For example, the format specification<tt> (I5 2I3)</tt> may appear to
 be an<tt> I5</tt> edit descriptor followed by two<tt> I3</tt> edit descriptors when in actuality it is interpreted as an<tt>
 I52</tt> edit descriptor followed by an<tt> I3</tt> edit descriptor.
@@ -9645,7 +9647,8 @@ I52</tt> edit descriptor followed by an<tt> I3</tt> edit descriptor.
 <dt><b><i>where:</i></b>
 <dd><b><i> </i></b>
 <dt>
-<dd><tt> I, F, E, D, G, L, A</tt> and<tt> Z</tt> indicate the method of editing.
+<dd><tt> I</tt>,<tt> F</tt>,<tt> E</tt>,<tt> D</tt>,<tt> G</tt>,<tt> L</tt>,<tt> A</tt> and<tt> Z</tt> indicate the method of
+editing.
 <br><br><tt>w</tt> and<tt> e</tt> are positive unsigned integer constants.
 <br><br><tt>d</tt> and<tt> m</tt> are unsigned integer constants.
 </dl>
@@ -9675,7 +9678,8 @@ I52</tt> edit descriptor followed by an<tt> I3</tt> edit descriptor.
 <dt><b><i>where:</i></b>
 <dd><b><i> </i></b>
 <dt>
-<dd>Apostrophe,<tt> H, T, TL, TR, X, /, :, S, SP, SS, P, BN, BZ, \</tt> and<tt> $</tt> indicate the method of editing.
+<dd>Apostrophe,<tt> H</tt>,<tt> T</tt>,<tt> TL</tt>,<tt> TR</tt>,<tt> X</tt>,<tt> /</tt>,<tt> :</tt>,<tt> S</tt>,<tt> SP</tt>,<tt>
+SS</tt>,<tt> P</tt>,<tt> BN</tt>,<tt> BZ</tt>,<tt> \</tt> and<tt> $</tt> indicate the method of editing.
 <br><br><tt>h</tt> is a character.
 <br><br><tt>n</tt> and<tt> c</tt> are positive unsigned integer constants.
 <br><br><tt>k</tt> is an optionally signed integer constant.
@@ -9683,10 +9687,10 @@ I52</tt> edit descriptor followed by an<tt> I3</tt> edit descriptor.
 <br>Open Watcom FORTRAN 77 allows edit descriptors to be specified using lower case letters.
 <h2 id="Editing"> Editing </h2>
 <br>Edit descriptors are used to describe the way the editing between internal representation of data and the characters of
-a record in a file is to take place.&nbsp; When the edit descriptors<tt> I, F, E, D, G, L, A, H, Z</tt> or apostrophe are
-processed, they process a sequence of characters called a<b> field.</b>&nbsp; On input, the field is the character data read
-from a record; on output it is the character data written to a record.&nbsp; The number of characters in a field is called
-the<b> field width.</b>&nbsp; 
+a record in a file is to take place.&nbsp; When the edit descriptors<tt> I</tt>,<tt> F</tt>,<tt> E</tt>,<tt> D</tt>,<tt> G</tt>,<tt>
+L</tt>,<tt> A</tt>,<tt> H</tt>,<tt> Z</tt> or apostrophe are processed, they process a sequence of characters called a<b>
+field.</b>&nbsp; On input, the field is the character data read from a record; on output it is the character data written
+to a record.&nbsp; The number of characters in a field is called the<b> field width.</b>&nbsp; 
 <h3 id="Apostrophe_Editing"> Apostrophe Editing </h3>
 <br>The<b> apostrophe edit descriptor</b> has the same form as a character constant and can only be used on output.&nbsp;
 It causes the characters in the format specification enclosed in quotes to be written.&nbsp; The field width is the number
@@ -9699,7 +9703,7 @@ of characters enclosed in quotes.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HI THERE</tt>
 <br><br>would be the output produced by the<tt> PRINT</tt> statement.
 <h3 id="H_Editing"> H Editing </h3>
-<br>The<tt> nH</tt> edit descriptor causes the<tt> n</tt> characters following the<tt> H,</tt> including blanks, to be written.
+<br>The<tt> nH</tt> edit descriptor causes the<tt> n</tt> characters following the<tt> H</tt>, including blanks, to be written.
 &nbsp;Like the apostrophe edit descriptor, it can only appear in a format specification used for output.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT '(8HHI THERE)'</tt>
@@ -9709,9 +9713,9 @@ of characters enclosed in quotes.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HI THERE</tt>
 <br><br>would be the output produced by the<tt> PRINT</tt> statement.
 <h3 id="Positional_Editing__T__TL__TR_and_X_Editing"> Positional Editing:&nbsp; T, TL, TR and X Editing </h3>
-<br>The<tt> T, TL, TR</tt> and<tt> X</tt> edit descriptors specify at which position the next character will be read from
-or written to the record.&nbsp; In the case of input, this allows data to be read more than once with different edit descriptors.
-&nbsp;On output, it is possible to overwrite data previously written.
+<br>The<tt> T</tt>,<tt> TL</tt>,<tt> TR</tt> and<tt> X</tt> edit descriptors specify at which position the next character
+will be read from or written to the record.&nbsp; In the case of input, this allows data to be read more than once with different
+edit descriptors.&nbsp; On output, it is possible to overwrite data previously written.
 <br><br>On output it is possible to use positional editing to create a record in which gaps appear.&nbsp; That is, there may
 be parts of the record where no data has been written.&nbsp; The parts of a record in which no data has been written are filled
 with blanks.&nbsp; The effect is as if the record was previously initialized to blanks.&nbsp; Note that positioning does not
@@ -9743,14 +9747,14 @@ the beginning of that record.
 <br>The<b> colon edit descriptor</b> terminates processing of the format specification if there are no more items in the I/O
 list.&nbsp; If there are items remaining in the I/O list, the colon edit descriptor has no effect.
 <h3 id="S__SP_and_SS_Editing"> S, SP and SS Editing </h3>
-<br>The<tt> S, SP</tt> and<tt> SS</tt> edit descriptors control optional plus characters in numeric output fields.&nbsp; They
-only effect the<tt> I, F, E, D</tt> and<tt> G</tt> edit descriptors during output and have no effect on input.&nbsp; The FORTRAN
-77 standard specifies that before processing a format specification, the appearance of a plus sign in numeric output fields
-is optional and is determined by the processor.&nbsp; Open Watcom FORTRAN 77 does not produce plus signs in numeric output
-fields.&nbsp; When an<tt> SP</tt> edit descriptor is encountered, a plus sign is produced in any subsequent position that
-optionally contains a plus sign.&nbsp; When as<tt> SS</tt> edit descriptor is encountered, a plus sign is not produced in
-any subsequent position that optionally contains a plus sign.&nbsp; If an<tt> S</tt> edit descriptor is encountered, the option
-is returned to the processor.
+<br>The<tt> S</tt>,<tt> SP</tt> and<tt> SS</tt> edit descriptors control optional plus characters in numeric output fields.
+&nbsp;They only effect the<tt> I</tt>,<tt> F</tt>,<tt> E</tt>,<tt> D</tt> and<tt> G</tt> edit descriptors during output and
+have no effect on input.&nbsp; The FORTRAN 77 standard specifies that before processing a format specification, the appearance
+of a plus sign in numeric output fields is optional and is determined by the processor.&nbsp; Open Watcom FORTRAN 77 does
+not produce plus signs in numeric output fields.&nbsp; When an<tt> SP</tt> edit descriptor is encountered, a plus sign is
+produced in any subsequent position that optionally contains a plus sign.&nbsp; When as<tt> SS</tt> edit descriptor is encountered,
+a plus sign is not produced in any subsequent position that optionally contains a plus sign.&nbsp; If an<tt> S</tt> edit descriptor
+is encountered, the option is returned to the processor.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT '(1H&lt;,I5,SP,I5,SS,I5,1H&gt;)',1,2,3</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
@@ -9760,28 +9764,29 @@ is returned to the processor.
 <h3 id="P_Editing"> P Editing </h3>
 <br>The form of a<tt> P</tt> edit descriptor is <tt> kP</tt> where<tt> k</tt> is an optionally signed integer constant called
 the<b> scale factor.</b>&nbsp; The value of the scale factor is zero at the beginning of each I/O statement.&nbsp; The scale
-factor applies to all subsequent<tt> F, E, D</tt> and<tt> G</tt> edit descriptors until another scale factor is encountered.
-&nbsp;The scale factor affects editing in the following way.
+factor applies to all subsequent<tt> F</tt>,<tt> E</tt>,<tt> D</tt> and<tt> G</tt> edit descriptors until another scale factor
+is encountered.&nbsp; The scale factor affects editing in the following way.
 <ol>
-<li>On input with<tt> F, E, D</tt> and<tt> G</tt> editing, provided that no exponent exists in the field, the effect is that
-the represented number equals the internally represented number multiplied by<tt> 10**k.</tt>
-<li>On input with<tt> F, E, D</tt> and<tt> G</tt> editing, the scale factor has no effect if there is an exponent in the field.
+<li>On input with<tt> F</tt>,<tt> E</tt>,<tt> D</tt> and<tt> G</tt> editing, provided that no exponent exists in the field,
+the effect is that the represented number equals the internally represented number multiplied by<tt> 10**k.</tt>
+<li>On input with<tt> F</tt>,<tt> E</tt>,<tt> D</tt> and<tt> G</tt> editing, the scale factor has no effect if there is an
+exponent in the field.
 <li>On<tt> F</tt> output editing, the effect is that the represented number equals the internally represented number multiplied
 by<tt> 10**k.</tt>
 <li>On output with<tt> E</tt> and<tt> D</tt> editing, the simple real constant (see the chapter entitled <a href="#Names__Data_Types_and_Constants">Names, Data Types and Constants</a>)
-part of the data is multiplied by<tt> 10**k</tt> and the exponent is reduced by<tt> k.</tt>
+part of the data is multiplied by<tt> 10**k</tt> and the exponent is reduced by<tt> k</tt>.
 <li>On output with<tt> G</tt> editing, the scale factor has no effect unless the magnitude of the datum is outside the range
 that allows<tt> F</tt> editing (see the section entitled <a href="#G_Editing">G Editing</a>).&nbsp; If<tt> E</tt> editing
 is required, the scale factor has the same effect as with<tt> E</tt> output editing.
 </ol>
 <h3 id="BN_and_BZ_Editing"> BN and BZ Editing </h3>
 <br>The<tt> BN</tt> and<tt> BZ</tt> edit descriptors are used to describe the interpretation of embedded blanks in numeric
-input fields.&nbsp; They only effect<tt> I, F, E, D</tt> and<tt> G</tt> editing and have no effect during output.&nbsp; When
-a<tt> BN</tt> edit descriptor is encountered in a format specification, embedded blanks in subsequent numeric input fields
-are ignored.&nbsp; However, a field of all blanks has the value of zero.&nbsp; If a<tt> BZ</tt> edit descriptor is encountered,
-then all embedded blanks in subsequent numeric input fields are treated as zeroes.&nbsp; At the beginning of each I/O statement,
-all blanks are treated as zeroes or ignored depending on the value of the<tt> BLANK=</tt> specifier (see the<tt> OPEN</tt>
-statement) currently in effect for the unit.
+input fields.&nbsp; They only effect<tt> I</tt>,<tt> F</tt>,<tt> E</tt>,<tt> D</tt> and<tt> G</tt> editing and have no effect
+during output.&nbsp; When a<tt> BN</tt> edit descriptor is encountered in a format specification, embedded blanks in subsequent
+numeric input fields are ignored.&nbsp; However, a field of all blanks has the value of zero.&nbsp; If a<tt> BZ</tt> edit
+descriptor is encountered, then all embedded blanks in subsequent numeric input fields are treated as zeroes.&nbsp; At the
+beginning of each I/O statement, all blanks are treated as zeroes or ignored depending on the value of the<tt> BLANK=</tt>
+specifier (see the<tt> OPEN</tt> statement) currently in effect for the unit.
 <h3 id="__or_B_Editing_LExtensionR"> $ or \ Editing (Extension) </h3>
 <br>The $ and \ edit descriptors behave identically.&nbsp; The $ and \ edit descriptors are intended for output to an interactive
 device such as a terminal.&nbsp; They are a Open Watcom FORTRAN 77 extensions.&nbsp; The output record is displayed at the
@@ -9817,18 +9822,19 @@ data.&nbsp; The following rules apply to all numeric edit descriptors.
 <li>On input, leading blanks are not significant.&nbsp; The interpretation of blanks other than leading blanks is determined
 by any<tt> BN</tt> or<tt> BZ</tt> edit descriptors in effect and the<tt> BLANK=</tt> specifier (see the<tt> OPEN</tt> statement).
 &nbsp;A field of all blanks is always zero.&nbsp; Plus signs are optional.
-<li>On input, with<tt> F, E, D</tt> and<tt> G</tt> editing, the decimal location specified in the edit descriptor is overridden
-by a decimal point appearing in the input field.
-<li>On output, the plus sign is optional and is determined by the<tt> S, SP</tt> and<tt> SS</tt> edit descriptors.&nbsp; A
-negative quantity is represented by a negative sign.&nbsp; A minus sign is never produced when outputting a value of zero.
+<li>On input, with<tt> F</tt>,<tt> E</tt>,<tt> D</tt> and<tt> G</tt> editing, the decimal location specified in the edit descriptor
+is overridden by a decimal point appearing in the input field.
+<li>On output, the plus sign is optional and is determined by the<tt> S</tt>,<tt> SP</tt> and<tt> SS</tt> edit descriptors.
+&nbsp;A negative quantity is represented by a negative sign.&nbsp; A minus sign is never produced when outputting a value
+of zero.
 <li>On output, the representation is always right justified in the field with leading blanks inserted at the beginning of
 the field if the number of characters in the representation is less than the field width.
 <li>On output, if the number of characters in the external representation is greater than the field width or an exponent exceeds
-its specified length using<tt> Ew.dEe, Gw.dEe, Ew.dDe</tt> or<tt> Gw.dDe</tt> edit descriptors, the entire field is filled
-with asterisks.
+its specified length using<tt> Ew.dEe</tt>,<tt> Gw.dEe</tt>,<tt> Ew.dDe</tt> or<tt> Gw.dDe</tt> edit descriptors, the entire
+field is filled with asterisks.
 </ol>
 <h4 id="Integer_Editing__Iw_and_Iw_m_Edit_Descriptors"> Integer Editing:&nbsp; Iw and Iw.m Edit Descriptors </h4>
-<br>The<tt> Iw</tt> and<tt> Iw.m</tt> edit descriptors indicate that the field width of the field to be edited is<tt> w.</tt>
+<br>The<tt> Iw</tt> and<tt> Iw.m</tt> edit descriptors indicate that the field width of the field to be edited is<tt> w</tt>.
 &nbsp;The item in the I/O list must be of type integer; on input the I/O list item will be defined by integer data, on output
 the I/O list item must be defined with an integer datum.
 <br><br>On input, the<tt> Iw.m</tt> edit descriptor is treated identically to the<tt> Iw</tt> edit descriptor.&nbsp; The output
@@ -9836,7 +9842,7 @@ field for the<tt> Iw</tt> edit descriptor consists of zero or more leading blank
 the I/O list item is negative or an optional plus sign otherwise, followed by the magnitude of the integer datum with no leading
 zeroes.&nbsp; Note that the integer constant contains at least one digit.&nbsp; On output, the<tt> Iw.m</tt> edit descriptor
 specifies that at least<tt> m</tt> digits are to be displayed with leading zeroes if necessary.&nbsp; The value of<tt> m</tt>
-must be less than or equal to the value of<tt> w.</tt>&nbsp; If<tt> m</tt> is zero and the value of the datum is zero, then
+must be less than or equal to the value of<tt> w</tt>.&nbsp; If<tt> m</tt> is zero and the value of the datum is zero, then
 the output field is filled with blanks.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT '(1H&lt;,I4.4,I5,1H&gt;)',23,2345</tt>
@@ -9844,11 +9850,11 @@ the output field is filled with blanks.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;0023 2345&gt;</tt>
 <h4 id="FloatingMpoint_Editing__F__E__D_and_G_Edit_Descriptors"> Floating-point Editing:&nbsp; F, E, D and G Edit Descriptors </h4>
-<br>The<tt> F, E, D</tt> and<tt> G</tt> edit descriptors describe the editing of real, double precision, complex and double
-precision complex data.&nbsp; The I/O list item corresponding to one of these edit descriptors must be of type real, double
-precision, complex or double precision complex.&nbsp; On input, the I/O list item will become defined with a datum whose type
-is the same as that of the I/O list item.&nbsp; On output, the I/O list item must be defined with a datum whose type is that
-of the I/O list item.
+<br>The<tt> F</tt>,<tt> E</tt>,<tt> D</tt> and<tt> G</tt> edit descriptors describe the editing of real, double precision,
+complex and double precision complex data.&nbsp; The I/O list item corresponding to one of these edit descriptors must be
+of type real, double precision, complex or double precision complex.&nbsp; On input, the I/O list item will become defined
+with a datum whose type is the same as that of the I/O list item.&nbsp; On output, the I/O list item must be defined with
+a datum whose type is that of the I/O list item.
 <h4 id="F_Editing"> F Editing </h4>
 <br>An<tt> F</tt> edit descriptor has the form <tt> Fw.d</tt> where<tt> w</tt> is the field width and<tt> d</tt> is the number
 of digits in the fractional part.&nbsp; The input field consists of an optional sign, followed by a string of digits optionally
@@ -9887,9 +9893,9 @@ would otherwise be no digits in the output field.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;234.4300&gt;</tt>
 <h4 id="E_and_D_Editing"> E and D Editing </h4>
-<br>The<tt> Ew.d, Dw.d</tt> and<tt> Ew.dEe</tt> edit descriptors indicate that the field width is<tt> w,</tt> the fractional
-part contains<tt> d</tt> digits unless a scale factor greater than one is in effect, and the exponent consists of<tt> e</tt>
-digits.&nbsp; The<tt> e</tt> has no effect on input.
+<br>The<tt> Ew.d</tt>,<tt> Dw.d</tt> and<tt> Ew.dEe</tt> edit descriptors indicate that the field width is<tt> w</tt>, the
+fractional part contains<tt> d</tt> digits unless a scale factor greater than one is in effect, and the exponent consists
+of<tt> e</tt> digits.&nbsp; The<tt> e</tt> has no effect on input.
 <br><br>The form of the input field and processing of it is the same as that for<tt> F</tt> editing.&nbsp; The form of the
 output field is:
 <br><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;+&#93; &#91;0&#93; . x&nbsp; x&nbsp; ... x&nbsp;
@@ -9963,9 +9969,9 @@ point and<tt> d-k+1</tt> significant digits to the right of the decimal point.
 <li>Other values of<tt> k</tt> are not permitted.
 </ol>
 <br>The<tt> Ew.dDe</tt> edit descriptor behaves in the same way as the<tt> Ew.dEe</tt> edit descriptor on input; on output
-the only difference is that the letter<tt> D</tt> is used to mark the exponent instead of the letter<tt> E.</tt>
+the only difference is that the letter<tt> D</tt> is used to mark the exponent instead of the letter<tt> E</tt>.
 <h4 id="G_Editing"> G Editing </h4>
-<br>The<tt> Gw.d</tt> and<tt> Gw.dEe</tt> edit descriptors indicate that the field width is<tt> w,</tt> the fractional part
+<br>The<tt> Gw.d</tt> and<tt> Gw.dEe</tt> edit descriptors indicate that the field width is<tt> w</tt>, the fractional part
 contains<tt> d</tt> digits unless a scale factor greater than one is in effect, and the exponent consists of<tt> e</tt> digits.
 <br><br><tt>G</tt> input editing is the same as<tt> F</tt> input editing.
 <br><br>The representation on<tt> G</tt> output editing depends on the magnitude of the datum being edited.&nbsp; Let<tt>
@@ -10004,9 +10010,9 @@ as shown in the following table.
 <dt><b><i>where:</i></b>
 <dd><b><i> </i></b>
 <dt>&lt;w-n&gt;
-<dd>stands for the integer represented by evaluating<tt> w-n.</tt>
+<dd>stands for the integer represented by evaluating<tt> w-n</tt>.
 <dt>&lt;d-1&gt;
-<dd>stands for the integer represented by evaluating<tt> d-1.</tt>
+<dd>stands for the integer represented by evaluating<tt> d-1</tt>.
 <dt>n
 <dd>is 4 for<tt> Gw.d</tt> editing and<tt> e+2</tt> for<tt> Gw.dEe</tt> editing.
 </dl>
@@ -10019,11 +10025,11 @@ as shown in the following table.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;0.500000&nbsp;&nbsp;&nbsp; &gt;&lt;0.5000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;</tt>
 <h4 id="Complex_Editing"> Complex Editing </h4>
 <br>Since a complex datum consists of a pair of real or double precision data, the editing of a complex datum is specified
-by two successive pairs of<tt> F, E, D</tt> or<tt> G</tt> edit descriptors.&nbsp; The two descriptors may be different and
-may be separated by any number of non-repeatable edit descriptors.&nbsp; Double precision complex editing is identical to
-complex editing.
+by two successive pairs of<tt> F</tt>,<tt> E</tt>,<tt> D</tt> or<tt> G</tt> edit descriptors.&nbsp; The two descriptors may
+be different and may be separated by any number of non-repeatable edit descriptors.&nbsp; Double precision complex editing
+is identical to complex editing.
 <h3 id="L_Edit_Descriptor"> L Edit Descriptor </h3>
-<br>The<tt> Lw</tt> edit descriptor is used for I/O list items of type logical.&nbsp; The field width is<tt> w.</tt>
+<br>The<tt> Lw</tt> edit descriptor is used for I/O list items of type logical.&nbsp; The field width is<tt> w</tt>.
 <br><br>On input the I/O list item will become defined with a datum of type logical.&nbsp; The input field consists of optional
 blanks, followed by an optional decimal point followed by a<tt> T</tt> or<tt> F</tt> for true or false respectively.&nbsp;
 The<tt> T</tt> and<tt> F</tt> may be followed by additional characters in the field.&nbsp; Open Watcom FORTRAN 77 allows<tt>
@@ -10044,12 +10050,12 @@ in the I/O list item.
 becomes defined with the binary representation of the character data.&nbsp; On output, the I/O list item is assumed to be
 defined with character data.
 <br><br>If<tt> len</tt> is the length of the I/O list item and<tt> w</tt> is specified in<tt> A</tt> input editing so that<tt>
-w</tt> is greater than<tt> len,</tt> the rightmost<tt> len</tt> characters of the input field will be taken.&nbsp; If<tt>
-w</tt> is less than<tt> len,</tt> then the<tt> w</tt> characters in the input field will be taken and padded with<tt> len-w</tt>
+w</tt> is greater than<tt> len</tt>, the rightmost<tt> len</tt> characters of the input field will be taken.&nbsp; If<tt>
+w</tt> is less than<tt> len</tt>, then the<tt> w</tt> characters in the input field will be taken and padded with<tt> len-w</tt>
 blanks.
-<br><br>If<tt> w</tt> is specified in<tt> A</tt> output editing so that<tt> w</tt> is greater than<tt> len,</tt> then the
+<br><br>If<tt> w</tt> is specified in<tt> A</tt> output editing so that<tt> w</tt> is greater than<tt> len</tt>, then the
 output field will consist of<tt> w-len</tt> blanks followed by the<tt> len</tt> characters of the I/O list item.&nbsp; If<tt>
-w</tt> is less than or equal to<tt> len,</tt> the output field will consist of the first<tt> w</tt> characters of the I/O
+w</tt> is less than or equal to<tt> len</tt>, the output field will consist of the first<tt> w</tt> characters of the I/O
 list item.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT '(1H&lt;,A5,A8,1H&gt;)','ABCDEFG','123'</tt>
@@ -10059,7 +10065,7 @@ list item.
 <h3 id="Z_Editing_LExtensionR"> Z Editing (Extension) </h3>
 <br>The<tt> Zw</tt> edit descriptor is used to display the hexadecimal representation of data or read hexadecimal data.&nbsp;
 It is a Open Watcom FORTRAN 77 extension.&nbsp; The<tt> Zw</tt> edit descriptor can be used for I/O list items of any type.
-&nbsp;The field width is<tt> w.</tt>
+&nbsp;The field width is<tt> w</tt>.
 <br><br>On output,<tt> w</tt> must be greater than or equal to twice the size (in bytes) of the I/O list item since each byte
 is represented by two hexadecimal digits.&nbsp; For example, real data requires four bytes.&nbsp; Hence,<tt> w</tt> must be
 at least eight.
@@ -10146,9 +10152,9 @@ constant.&nbsp; The end of a record has the same effect as a blank character.
 <dt>c
 <dd>is a constant.
 </dl>
-<br>The<tt> r*c</tt> form is equivalent to<tt> r</tt> successive occurrences of<tt> c.</tt>&nbsp; The<tt> r*</tt> form is
+<br>The<tt> r*c</tt> form is equivalent to<tt> r</tt> successive occurrences of<tt> c</tt>.&nbsp; The<tt> r*</tt> form is
 equivalent to<tt> r</tt> successive occurrences of the null value.&nbsp; In these two forms, blanks are permitted only where
-they are allowed in the constant<tt> c.</tt>
+they are allowed in the constant<tt> c</tt>.
 <br><br>A<b> value separator</b> is one of the following:
 <ol>
 <li>A comma preceded and followed by any number of blanks.
@@ -10233,7 +10239,7 @@ must be of integer type.
 <dt>ArrayName = Set of Constants
 <dd>The set of constants consists of constants of the type integer, real, complex, logical or character.&nbsp; The constants are
 separated by commas.&nbsp; The number of constants must be less than or equal to the number of elements in the array.&nbsp;
-Successive occurrences of the same constant may be represented in the form<tt> r*constant,</tt> where<tt> r</tt> is a non-zero
+Successive occurrences of the same constant may be represented in the form<tt> r*constant</tt>, where<tt> r</tt> is a non-zero
 integer constant specifying the number of times the constant is to occur.&nbsp; Consecutive commas within a list indicate
 that the values of the array elements remain unchanged.
 </dl>

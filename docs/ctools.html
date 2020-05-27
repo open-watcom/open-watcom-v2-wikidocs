@@ -3978,7 +3978,7 @@ established.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .rc.res:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(RC) $(RFLAGS) /r $*</tt>
 <br><br>For OS/2, the<tt> __MSDOS__</tt> macro will be replaced by<tt> __OS2__</tt> and for Windows NT, the<tt> __MSDOS__</tt>
-macro will be replaced by<tt> __NT__.</tt>
+macro will be replaced by<tt> __NT__</tt>.
 <br><br>For UNIX make compatibility (when you use the &quot;u&quot; option), the following default definition is established.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS: .exe .obj .c .y .l .f</tt>
@@ -5799,8 +5799,9 @@ like:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; link_options&nbsp;&nbsp;&nbsp; = debug line&nbsp;&nbsp; # line number debugging</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compile_options = /d1 /s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # line numbers, no stack checking</tt>
 <br><br>These definitions are both readable and useful.&nbsp; A makefile can handle differences between compilers with the<tt>
-!ifeq, !ifneq, !ifeqi</tt> and<tt> !ifneqi</tt> conditional preprocessing directives.&nbsp; The first two perform case sensitive
-comparisons while the last two perform case insensitive comparisons.&nbsp; One way of setting up adaptive makefiles is:
+!ifeq</tt>,<tt> !ifneq</tt>,<tt> !ifeqi</tt> and<tt> !ifneqi</tt> conditional preprocessing directives.&nbsp; The first two
+perform case sensitive comparisons while the last two perform case insensitive comparisons.&nbsp; One way of setting up adaptive
+makefiles is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # options made simple</tt>
@@ -5992,8 +5993,9 @@ discussed in this section).&nbsp; These two directives may be used for maintenan
 <br><br>If all the targets in the makefile are up to date then neither the<tt> .BEFORE</tt> nor the<tt> .AFTER</tt> command
 lists will be executed.&nbsp; If any of the targets are not up to date then before any commands to update the target are executed,
 the<tt> .BEFORE</tt> command list will be executed.&nbsp; The<tt> .AFTER</tt> command list will be executed only if there
-were no errors detected during the updating of the targets.&nbsp; The<tt> .BEFORE, .DEFAULT,</tt> and<tt> .AFTER</tt> command
-list directives provide the capability to execute commands before, during, and after the makefile processing.&nbsp; 
+were no errors detected during the updating of the targets.&nbsp; The<tt> .BEFORE</tt>,<tt> .DEFAULT</tt>, and<tt> .AFTER</tt>
+command list directives provide the capability to execute commands before, during, and after the makefile processing.&nbsp;
+
 <br><br>Make also supports the<tt> .ERROR</tt> directive.&nbsp; The<tt> .ERROR</tt> directive supplies a command list to be
 executed if an error occurs during the updating of a target.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6300,9 +6302,10 @@ shell:<tt>&nbsp; %abort</tt> sets a non-zero exit code;<tt> %quit</tt> sets a ze
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %quit</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; suicide :</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %abort</tt>
-<br><br>The<tt> %append, %create, %erase,</tt> and<tt> %write</tt> internal commands allow WMAKE to generate files under makefile
-control.&nbsp; This is useful for files that have contents that depend on makefile contents.&nbsp; Through the use of macros
-and the &quot;for&quot; command, Make becomes a very powerful tool in maintaining lists of files for other programs.
+<br><br>The<tt> %append</tt>,<tt> %create</tt>,<tt> %erase</tt>, and<tt> %write</tt> internal commands allow WMAKE to generate
+files under makefile control.&nbsp; This is useful for files that have contents that depend on makefile contents.&nbsp; Through
+the use of macros and the &quot;for&quot; command, Make becomes a very powerful tool in maintaining lists of files for other
+programs.
 <br><br>The<tt> %append</tt> internal command appends a text line to the end of a file (which is created if absent) while
 the<tt> %write</tt> internal command creates or truncates a file and writes one line of text into it.&nbsp; Both commands
 have the same form, namely:

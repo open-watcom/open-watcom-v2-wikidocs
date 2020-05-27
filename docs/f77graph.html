@@ -4620,7 +4620,7 @@ routine is supported in all video modes, but only works with EGA, MCGA and VGA a
 specifies the actual color displayed on the screen by pixels with pixel value<b> pixval</b>.&nbsp; Color values are selected
 by specifying the red, green and blue intensities that make up the color.&nbsp; Each intensity can be in the range from 0
 to 63, resulting in 262144 possible different colors.&nbsp; A given color value can be conveniently specified as a value of
-type<tt> integer*4.</tt>&nbsp; The color value is of the form<tt> '00bbggrr'x,</tt> where<tt> bb</tt> is the blue intensity,<tt>
+type<tt> integer*4</tt>.&nbsp; The color value is of the form<tt> '00bbggrr'x,</tt> where<tt> bb</tt> is the blue intensity,<tt>
 gg</tt> is the green intensity and<tt> rr</tt> is the red intensity of the selected color.&nbsp; The file<tt> graph.fi</tt>
 defines constants containing the color intensities of each of the 16 default colors.
 <br><br>The<tt> _remappalette</tt> routine takes effect immediately.&nbsp; All pixels on the complete screen which have a
@@ -5516,9 +5516,9 @@ about the given point according to the current text alignment settings.
 <dt>_BOTTOM
 <dd>the bottom of the text string is aligned at the given point
 </dl>
-<br>The default is to use<tt> _LEFT</tt> alignment for the horizontal component unless the text path is<tt> _PATH_LEFT,</tt>
+<br>The default is to use<tt> _LEFT</tt> alignment for the horizontal component unless the text path is<tt> _PATH_LEFT</tt>,
 in which case<tt> _RIGHT</tt> alignment is used.&nbsp; The default value for the vertical component is<tt> _TOP</tt> unless
-the text path is<tt> _PATH_UP,</tt> in which case<tt> _BOTTOM</tt> alignment is used.
+the text path is<tt> _PATH_UP</tt>, in which case<tt> _BOTTOM</tt> alignment is used.
 </dl>
 <dl>
 <dt>See Also:

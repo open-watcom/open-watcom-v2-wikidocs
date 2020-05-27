@@ -5399,7 +5399,7 @@ use of the 32-bit DLL, the DLL supervisor loads the 32-bit DLL and invokes the 3
 FWinMain</tt> routine).&nbsp; The initialization routine declares all entry points (via<tt> DefineDLLEntry</tt>) and performs
 any other necessary initialization.&nbsp; An index number in the range 1 to 128 is used to identify all external 32-bit DLL
 routines.<tt>&nbsp; DefineDLLEntry</tt> is used to assign an index number to each routine, as well as to identify the arguments.
-<br><br>The DLL supervisor contains a general entry point for Windows applications to call into called<tt> Win386LibEntry.</tt>
+<br><br>The DLL supervisor contains a general entry point for Windows applications to call into called<tt> Win386LibEntry</tt>.
 &nbsp;It also contains 128 specific entry points called<tt> DLL1</tt> to<tt> DLL128</tt> which correspond to the entry points
 established via<tt> DefineDLLEntry</tt> (the first argument to<tt> DefineDLLEntry</tt> is an index number in the range 1 to
 128).&nbsp; All applications call into the 32-bit DLL via these entry points.&nbsp; They build the necessary stack frame and
@@ -5505,7 +5505,7 @@ w2, char(0)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br>There are two entry points defined,<tt> Add3</tt> (index number 1) and<tt> Add2</tt> (index number 2).<tt>&nbsp; Add3</tt>
 has three INTEGER*4 arguments and<tt> Add2</tt> has two INTEGER*4 arguments.&nbsp; The argument lists are described by calling<tt>
-DefineDLLEntry.</tt>&nbsp; All arguments are passed by value.&nbsp; As previously mentioned, all pointers passed to 32-bit
+DefineDLLEntry</tt>.&nbsp; All arguments are passed by value.&nbsp; As previously mentioned, all pointers passed to 32-bit
 DLLs are 16-bit far pointers.&nbsp; Since, by default, FORTRAN 77 passes arguments by reference (a pointer to the data is
 passed instead of the actual data), a level of complexity is introduced since some pointer conversions must take place when
 accessing the data pointed to by a 16-bit far pointer in a 32-bit environment.&nbsp; We will deal with this problem in a following
@@ -5567,8 +5567,8 @@ load WINDLLV'c,</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FWinMain = 0</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br>The addresses of the routines<tt> DLL1</tt> and<tt> DLL2</tt> in the 32-bit DLL are obtained and stored in the variables<tt>
-dll_1</tt> and<tt> dll_2.</tt>&nbsp; Since the FORTRAN 77 language does not support indirect function calls, we need a mechanism
-to call these functions indirectly.&nbsp; We do this using the two indirect functions called<tt> indirect_1</tt> and<tt> indirect_2.</tt>
+dll_1</tt> and<tt> dll_2</tt>.&nbsp; Since the FORTRAN 77 language does not support indirect function calls, we need a mechanism
+to call these functions indirectly.&nbsp; We do this using the two indirect functions called<tt> indirect_1</tt> and<tt> indirect_2</tt>.
 &nbsp;These two functions are given the<tt> dll32_call</tt> attribute using an auxiliary pragma which is defined in the file<tt>
 WINAPI.FI.</tt>&nbsp; Note that the last argument of the calls to<tt> indirect_1</tt> or<tt> indirect_2</tt> is the actual
 address of the DLL routine.
@@ -5579,7 +5579,7 @@ in the last argument.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; cb = indirect_1( 111, 22222, 3333, dll_1 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; cb = indirect_2( 4444, 55, dll_2 )</tt>
 <br><br>This is a result of using the<tt> dll32_call</tt> auxiliary pragma attribute to describe both<tt> indirect_1</tt>
-and<tt> indirect_2.</tt>&nbsp; You can verify this by disassembling the object file that is generated when this code is compiled.
+and<tt> indirect_2</tt>.&nbsp; You can verify this by disassembling the object file that is generated when this code is compiled.
 <h2 id="Windows__Calling_Functions_in_a_32Mbit_DLL_from_a_32Mbit_Application"> Windows:&nbsp; Calling Functions in a 32-bit DLL from a 32-bit Application </h2>
 <br>The following is a 32-bit Windows program that demonstrates how to call the two routines defined in our 32-bit DLL example.
 &nbsp;Since this is a 32-bit Windows program, we will use the<tt> _Call16</tt> function to call functions in our 32-bit DLL.
@@ -6007,7 +6007,7 @@ installed in the<tt> c:\watcom</tt> directory, and Visual Basic is in the<tt> c:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set path=c:\watcom\binw;c:\vb;c:\dos;c:\windows</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set finclude=c:\watcom\src\fortran\win</tt>
 <br><br>Open Watcom's 32-bit DLL supervisor contains a general entry point for Windows applications to call into called<tt>
-Win386LibEntry.</tt>&nbsp; It also contains 128 specific entry points called<tt> DLL1</tt> to<tt> DLL128</tt> which correspond
+Win386LibEntry</tt>.&nbsp; It also contains 128 specific entry points called<tt> DLL1</tt> to<tt> DLL128</tt> which correspond
 to the entry points established via<tt> DefineDLLEntry</tt> (the first argument to<tt> DefineDLLEntry</tt> is an index number
 in the range 1 to 128).&nbsp; All applications call into the 32-bit DLL via these entry points.&nbsp; They build the necessary
 stack frame and switch to the 32-bit DLL's data space.
@@ -6029,7 +6029,7 @@ in Visual Basic:
 <ol>
 <li>Use the Visual Basic &quot;Alias&quot; attribute to declare<tt> Win386LibEntry</tt> differently for each DLL routine.
 &nbsp;Reference the different DLL routines using these aliases.
-<li>Use the specific entry point, one of<tt> DLL1</tt> through<tt> DLL128,</tt> corresponding to the DLL routine that you
+<li>Use the specific entry point, one of<tt> DLL1</tt> through<tt> DLL128</tt> , corresponding to the DLL routine that you
 want to call.&nbsp; Each entry point can be described to take different arguments.&nbsp; We can still use the &quot;Alias&quot;
 attribute to make the link between the name we use in the Visual Basic function and the name in the 32-bit extended DLL.&nbsp;
 This is the method that we will use in the &quot;Direct Call&quot; technique discussed below.&nbsp; It is simpler to use since
@@ -6117,7 +6117,7 @@ the statement on the same line.)
 <br>Now, when all of the code below is compiled correctly, and the Visual Basic program is run, the &quot;Direct call&quot;
 button will call the<tt> DLL1</tt> and<tt> DLL2</tt> functions directly, aliased as the functions<tt> Add3</tt> and<tt> Add2</tt>
 respectively.&nbsp; The &quot;Indirect call&quot; button will call the 16-bit DLL, which will then call the 32-bit DLL, for
-both<tt> Function1</tt> and<tt> Function2.</tt>&nbsp; To run the Visual Basic program, select &quot;Start&quot; from the &quot;Run&quot;
+both<tt> Function1</tt> and<tt> Function2</tt>.&nbsp; To run the Visual Basic program, select &quot;Start&quot; from the &quot;Run&quot;
 menu.
 <h2 id="Windows__Sample_Visual_Basic_DLL_Programs"> Windows:&nbsp; Sample Visual Basic DLL Programs </h2>
 <br>The sample programs provided below are for a 32-bit DLL, and a 16-bit cover DLL, which will call the two functions contained
@@ -7559,7 +7559,7 @@ a multiple of 4K.
 <br>If a new thread is successfully created, the thread identifier of the new thread is returned.&nbsp; Otherwise, a value
 of -1 is returned.
 <br><br>The include file<tt> thread.fi</tt> contains the definition of the<tt> beginthread</tt> function.
-<br><br>Another thread related function for Windows NT is<tt> _beginthreadex.</tt>&nbsp; See the<b><i> Open Watcom C Library
+<br><br>Another thread related function for Windows NT is<tt> _beginthreadex</tt>.&nbsp; See the<b><i> Open Watcom C Library
 Reference</i></b> for more information.
 <h3 id="NT__Terminating_the_Current_Thread"> NT:&nbsp; Terminating the Current Thread </h3>
 <br>The<tt> endthread</tt> subroutine terminates the current thread.&nbsp; It is defined as follows.
@@ -7652,10 +7652,10 @@ a_thread, STACK_SIZE ) .eq. -1 )then</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br><b>Note:</b>
 <ol>
-<li>In the subroutine<tt> a_thread, EnterCriticalSection</tt> and<tt> LeaveCriticalSection</tt> are called when we modify
-the variable<tt> NumThreads.</tt>&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt> from memory,
-incrementing the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions were
-not called, it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update
+<li>In the subroutine<tt> a_thread</tt>,<tt> EnterCriticalSection</tt> and<tt> LeaveCriticalSection</tt> are called when we
+modify the variable<tt> NumThreads</tt>.&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt>
+from memory, incrementing the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions
+were not called, it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update
 occurred.
 </ol>
 <br>Let us assume that the file<tt> mthread.for</tt> contains the above example.&nbsp; Before compiling the file, make sure
@@ -8315,10 +8315,11 @@ of -1 is returned.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br><b>Note:</b>
 <ol>
-<li>In the subroutine<tt> a_thread, DosEnterCritSec</tt> and<tt> DosExitCritSec</tt> are called when we modify the variable<tt>
-NumThreads.</tt>&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt> from memory, incrementing
-the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions were not called,
-it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update occurred.
+<li>In the subroutine<tt> a_thread</tt>,<tt> DosEnterCritSec</tt> and<tt> DosExitCritSec</tt> are called when we modify the
+variable<tt> NumThreads</tt>.&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt> from memory,
+incrementing the value, and storing the new result into memory, occurs without interruption.&nbsp; If these functions were
+not called, it would be possible for two threads to extract the value of<tt> NumThreads</tt> from memory before an update
+occurred.
 </ol>
 <br>Let us assume that the file<tt> mthread.for</tt> contains the above example.&nbsp; Before compiling the file, make sure
 that the<b> WATCOM</b> environment variable is set to the directory in which you installed Open Watcom FORTRAN 77.&nbsp; Also,
@@ -8340,7 +8341,7 @@ in which you installed Open Watcom FORTRAN 77.
 way in which multiple threads are supported in the Open Watcom libraries, there is a small performance penalty once the number
 of threads exceeds the default limit of 32 (this number includes the initial thread).&nbsp; If you are creating more than
 32 threads and wish to avoid this performance penalty, you can redefine the threshold value of 32.&nbsp; You can statically
-initialize the global variable<tt> __MaxThreads.</tt>
+initialize the global variable<tt> __MaxThreads</tt>.
 <br><br>This limit can be adjusted by defining the integer function<tt> __getmaxthreads</tt> which returns the new thread
 limit.&nbsp; By defining<tt> __getmaxthreads</tt> as follows, the new threshold value will be set to 48.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -8348,7 +8349,7 @@ limit.&nbsp; By defining<tt> __getmaxthreads</tt> as follows, the new threshold 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __getmaxthreads = 48</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br>This version of<tt> __getmaxthreads</tt> will replace the default function that is included in the run-time library.
-&nbsp;The default function simply returns the current value of the internal variable<tt> __MaxThreads.</tt>&nbsp; Your version
+&nbsp;The default function simply returns the current value of the internal variable<tt> __MaxThreads</tt>.&nbsp; Your version
 of this function will return a new value for this variable.&nbsp; Internally, the run-time system executes code similar to
 the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -9823,7 +9824,7 @@ will also affect the number of available file handles.&nbsp; In this case, you m
 the &quot;files=n&quot; statement.
 <li>Add a call to<tt> GROWHANDLES</tt> in your application.
 </ol>
-<br>The following example illustrates the use of<tt> GROWHANDLES.</tt>
+<br>The following example illustrates the use of<tt> GROWHANDLES</tt>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp; FHANDLES.FOR</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *</tt>

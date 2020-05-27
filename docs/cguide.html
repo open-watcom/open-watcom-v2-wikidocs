@@ -1646,7 +1646,7 @@ target name.
 <h4 id="bw"> bw </h4>
 <br>(Win16 only) This option causes the compiler to import a special symbol so that the default windowing library code is
 linked into your application.&nbsp; The presence of<tt> LibMain/DLLMain</tt> in the source code does not influence the selection
-of startup code.&nbsp; Only<tt> main, wmain, WinMain</tt> and<tt> wWinMain</tt> are significant (see <a href="#bc">bc</a>).
+of startup code.&nbsp; Only<tt> main</tt>,<tt> wmain</tt>,<tt> WinMain</tt> and<tt> wWinMain</tt> are significant (see <a href="#bc">bc</a>).
 &nbsp;The macro<tt> __SW_BW</tt> will be predefined if &quot;bw&quot; is selected.
 <h4 id="of"> of </h4>
 <br>This option selects the generation of traceable stack frames for those functions that contain calls or require stack frame
@@ -1719,7 +1719,7 @@ page.&nbsp; A memory reference into the 4K guard page causes the operating syste
 add a new 4K guard page.&nbsp; This works fine when there is less than 4K of automatic variables in a function.&nbsp; When
 there is more than 4K of automatic data, the stack must be grown in an orderly fashion, 4K bytes at a time, until the stack
 has grown sufficiently to accommodate all the automatic variable storage requirements.&nbsp; Hence the requirement for a stack-growing
-run-time routine.&nbsp; The stack-growing run-time routine is called<tt> __GRO.</tt>
+run-time routine.&nbsp; The stack-growing run-time routine is called<tt> __GRO</tt>.
 <br><br>The &quot;stack=&quot; linker option specifies how much stack is available and committed for the primary thread when
 an executable starts.&nbsp; The stack size parameter to<tt> _beginthread()</tt> specifies how much stack is available for
 a child thread.&nbsp; The child thread starts with just 4k of stack committed.&nbsp; The stack will not grow to be bigger
@@ -2476,8 +2476,8 @@ an exception) if used on a class instance that was not compiled with the &quot;x
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int var = 2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; const int ctable&#91; 5 &#93; = { 1, 2, 3, 4, 5 };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *birds&#91; 3 &#93; = { &quot;robin&quot;, &quot;finch&quot;, &quot;wren&quot; };</tt>
-<br><br>In the above example,<tt> cvar</tt> and<tt> ctable</tt> and the strings<tt> &quot;robin&quot;, &quot;finch&quot;,</tt>
-etc.&nbsp; are placed in the code segment.&nbsp; This option is supported in large data or flat memory models only, or if
+<br><br>In the above example,<tt> cvar</tt> and<tt> ctable</tt> and the strings<tt> &quot;robin&quot;</tt>,<tt> &quot;finch&quot;</tt>
+, etc.&nbsp; are placed in the code segment.&nbsp; This option is supported in large data or flat memory models only, or if
 the item is explicitly &quot;far&quot;.&nbsp; The macro<tt> __SW_ZC</tt> will be predefined if &quot;zc&quot; is selected.
 <h4 id="zpU_1_2_4_8_16_V"> zp&#91;{1,2,4,8,16}&#93; </h4>
 <br>The &quot;zp&quot; option allows you to specify the alignment of members in a structure.&nbsp; The default is &quot;zp2&quot;
@@ -3327,9 +3327,9 @@ the loops and turning some loops into straight-line code.&nbsp; The macro<tt> __
 is selected.
 <h4 id="om"> om </h4>
 <br>Generate in-line 80x87 code for math functions like sin, cos, tan, etc.&nbsp; If this option is selected, it is the programmer's
-responsibility to make sure that arguments to these functions are within the range accepted by the<tt> fsin, fcos,</tt> etc.
-&nbsp;instructions since no run-time check is made.&nbsp; For 16-bit, you must also include the &quot;fp3&quot; option to
-get in-line 80x87 code (except for fabs).&nbsp; The functions that can be generated in-line are:
+responsibility to make sure that arguments to these functions are within the range accepted by the<tt> fsin</tt>,<tt> fcos</tt>,
+etc.&nbsp; instructions since no run-time check is made.&nbsp; For 16-bit, you must also include the &quot;fp3&quot; option
+to get in-line 80x87 code (except for fabs).&nbsp; The functions that can be generated in-line are:
 <br><tt>atan&nbsp; cos&nbsp;&nbsp; exp&nbsp;&nbsp; fabs&nbsp; log10 log&nbsp;&nbsp; sin&nbsp;&nbsp; sqrt&nbsp; tan&nbsp; </tt>
 <br><br>The macro<tt> __SW_OM</tt> will be predefined if &quot;om&quot; is selected.
 <h4 id="on"> on </h4>
@@ -3825,12 +3825,12 @@ a way as to introduce some errors.
 in: hello.cpp(6) (col 9)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; hello.cpp: 9 lines, included 1628, 1 warning, 1 error</tt>
 <br><br>Here we see an example of both types of messages.&nbsp; An error and a warning message have been issued.&nbsp; As
-indicated by the error message, we require a declarative statement for the identifier<tt> y.</tt>&nbsp; The warning message
+indicated by the error message, we require a declarative statement for the identifier<tt> y</tt>.&nbsp; The warning message
 indicates that, while it is not a violation of the rules of C/C++ to define a variable without ever using it, we probably
 did not intend to do so.&nbsp; Upon examining the program, we find that:
 <ol>
 <li>the variable<tt> x</tt> should have been assigned a value, and
-<li>the variable<tt> y</tt> has probably been incorrectly typed and should have been entered as<tt> x.</tt>
+<li>the variable<tt> y</tt> has probably been incorrectly typed and should have been entered as<tt> x</tt>.
 </ol>
 <h2 id="Open_Watcom_CDCPP__include_File_Processing"> Open Watcom C/C++ #include File Processing </h2>
 <br>When using the<tt> #include</tt> preprocessor directive, a header is identified by a sequence of characters placed between
@@ -4467,7 +4467,7 @@ have its return value converted in an appropriate manner.
 <br><br>For example, the declaration,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char * __far16 Scan( char *buffer, int len, short err );</tt>
-<br>declares the 16-bit function<tt> Scan.</tt>&nbsp; When this function is called from the 32-bit environment, the<tt> buffer</tt>
+<br>declares the 16-bit function<tt> Scan</tt>.&nbsp; When this function is called from the 32-bit environment, the<tt> buffer</tt>
 argument will be converted from a flat 32-bit pointer to a far16 pointer (which, in the 16-bit environment, would be declared
 as<tt> char __far *.</tt>&nbsp; The<tt> len</tt> argument will be converted from a 32-bit integer to a 16-bit integer.&nbsp;
 The<tt> err</tt> argument will be passed unchanged.&nbsp; Upon returning, the far16 pointer (far pointer in the 16-bit environment)
@@ -4633,10 +4633,10 @@ the named segment.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __based( __segname( &quot;_CODE&quot; ) ) *iptr;</tt>
 <br><br><tt>ival</tt> is an object that resides in the default code segment.<tt>&nbsp; iptr</tt> is an object that resides
 in the data segment (the usual place for data objects), but points at an integer which resides in the default code segment.<tt>
-&nbsp;iptr</tt> is suitable for pointing at<tt> ival.</tt>
+&nbsp;iptr</tt> is suitable for pointing at<tt> ival</tt>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char __based( __segname( &quot;GOODTHINGS&quot; ) ) thing;</tt>
-<br><br><tt>thing</tt> is an object which resides in the segment<tt> GOODTHINGS,</tt> which will be created if it does not
+<br><br><tt>thing</tt> is an object which resides in the segment<tt> GOODTHINGS</tt>, which will be created if it does not
 already exist.&nbsp; (The creation of segments is done by the linker, and is a method of grouping objects and functions.&nbsp;
 Nothing is implicitly created during the execution of the program.)
 <h3 id="Segment_Object_Based_Pointers"> Segment Object Based Pointers </h3>
@@ -4652,7 +4652,7 @@ use with segment object based pointers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char __based( seg ) *cptr;</tt>
 <br><br>The object<tt> seg</tt> contains only a segment value.&nbsp; Whenever the object<tt> cptr</tt> is used to point to
 a character, the actual pointer value will be made up of the segment value found in<tt> seg</tt> and the offset value found
-in<tt> cptr.</tt>&nbsp; The object<tt> seg</tt> might be assigned values such as the following:
+in<tt> cptr</tt>.&nbsp; The object<tt> seg</tt> might be assigned values such as the following:
 <ul>
 <li>a constant value (e.g., the segment containing screen memory),
 <li>the result of the library function<b><i> _bheapseg</i></b> ,
@@ -4680,7 +4680,7 @@ could be used:
 <br><br>The general form of the<tt> :&gt;</tt> operator is:
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; segment :&gt; offset
 <br><br>where<tt> segment</tt> is an expression of type<tt> __segment</tt> , and<tt> offset</tt> is an expression of type<tt>
-__based( void ) *.</tt>
+__based( void ) *</tt>.
 <h3 id="Self_Based_Pointers"> Self Based Pointers </h3>
 <br>A self based pointer infers its segment value from itself.&nbsp; It is particularly useful for structures such as linked
 lists, where all of the list elements are in the same segment.&nbsp; A self based pointer pointing to one element may be used
@@ -4717,19 +4717,19 @@ list:
 in memory.&nbsp; It is assumed that all members of a particular linked list of this type reside in the same segment of the
 computer's memory.&nbsp; (Another instance of the linked list might reside entirely in a different segment.) The object<tt>
 seg</tt> is given the segment portion of the far pointer.&nbsp; The object<tt> aptr</tt> is given the offset portion, and
-is described as being based in the segment stored in<tt> seg.</tt>
+is described as being based in the segment stored in<tt> seg</tt>.
 <br><br>The expression<tt> aptr-&gt;next</tt> refers to the<tt> next</tt> member of the structure stored in memory at the
-offset stored in<tt> aptr</tt> and the segment implied by<tt> aptr,</tt> which is the value stored in<tt> seg.</tt>&nbsp;
+offset stored in<tt> aptr</tt> and the segment implied by<tt> aptr</tt>, which is the value stored in<tt> seg</tt>.&nbsp;
 So far, the behavior is no different than if<tt> next</tt> had been declared as,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct a *next;</tt>
 <br><br>The expression<tt> aptr-&gt;next-&gt;next</tt> illustrates the difference of using a self based pointer.&nbsp; The
 first part of the expression (<tt> aptr-&gt;next</tt>) occurs as described above.&nbsp; However, using the result to point
 to the next member occurs by using the offset value found in the<tt> next</tt> member and combining it with the segment value
-of the<b> pointer used to get to that member,</b> which is still the segment implied by<tt> aptr,</tt> which is the value
-stored in<tt> seg.</tt>&nbsp; If<tt> next</tt> had not been declared using<tt> __based( __self ),</tt> then the second pointing
+of the<b> pointer used to get to that member,</b> which is still the segment implied by<tt> aptr</tt>, which is the value
+stored in<tt> seg</tt>.&nbsp; If<tt> next</tt> had not been declared using<tt> __based( __self )</tt>, then the second pointing
 operation would refer to the offset value found in the<tt> next</tt> member, but with the default data segment (DGROUP), which
-may or may not be the same segment as stored in<tt> seg.</tt>
+may or may not be the same segment as stored in<tt> seg</tt>.
 <h2 id="The___declspec_Keyword"> The __declspec Keyword </h2>
 <br>Open Watcom C/C++ supports the<tt> __declspec</tt> keyword for compatibility with Microsoft C++.&nbsp; The<tt> __declspec</tt>
 keyword is used to modify storage-class attributes of functions and/or data.
@@ -4843,7 +4843,7 @@ error.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>foo</tt> is defined to be a function that does not return.&nbsp; For example, it call<tt> exit</tt> to return
 to the system.&nbsp; In this case, Open Watcom C/C++ generates a &quot;jmp&quot; instruction instead of a &quot;call&quot;
-instruction to invoke<tt> foo.</tt>
+instruction to invoke<tt> foo</tt>.
 <br><br>The following rules apply to the use of the<tt> noreturn</tt> attribute.
 <ul>
 <li>The<tt> noreturn</tt> attribute cannot be used in a data declaration.&nbsp; The following declaration would be flagged
@@ -5447,7 +5447,7 @@ the command:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MDEF.INC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (macros included by assembly code)</tt>
 <br><br>The following is a summary description of the startup files for DOS.&nbsp; The startup files for Windows and OS/2
 are similar.&nbsp; The assembler file<tt> CSTRT086.ASM</tt> contains the first part of the initialization code and the remainder
-is continued in the file<tt> CMAIN086.C.</tt>&nbsp; It is<tt> CMAIN086.C</tt> that calls your main routine<tt> (main).</tt>
+is continued in the file<tt> CMAIN086.C.</tt>&nbsp; It is<tt> CMAIN086.C</tt> that calls your main routine<tt> (main)</tt>.
 <br><br>The<tt> DOS16M.ASM</tt> file is a special version of the<tt> CSTRT086.ASM</tt> file which is required when using the
 Tenberry Software, Inc.&nbsp; DOS/16M 286 DOS extender.
 <br><br>(32-bit only) The initialization code directories/files are listed below:
@@ -5462,7 +5462,7 @@ Tenberry Software, Inc.&nbsp; DOS/16M 286 DOS extender.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CSTRTX32.ASM (startup for FlashTek DOS Extender)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CMAIN386.C&nbsp;&nbsp; (final part of initialization sequence)</tt>
 <br><br>The assembler files<tt> CSTRT*.ASM</tt> contain the first part of the initialization code and the remainder is continued
-in the file<tt> CMAIN386.C.</tt>&nbsp; It is<tt> CMAIN386.C</tt> that calls your main routine<tt> (main).</tt>
+in the file<tt> CMAIN386.C.</tt>&nbsp; It is<tt> CMAIN386.C</tt> that calls your main routine<tt> (main)</tt>.
 <br><br>The source code is provided for those who wish to customize the initialization sequence for special applications.
 <br><br>The file<tt> wildargv.c</tt> contains an alternate form of &quot;argv&quot; processing in which wild card command
 line arguments are transformed into lists of matching file names.&nbsp; Wild card arguments are any arguments containing &quot;*&quot;
@@ -5943,11 +5943,11 @@ of Function Prototypes on Arguments&quot;.
 </ol>
 <h3 id="16Mbit__Size_of_Enumerated_Types"> 16-bit:&nbsp; Size of Enumerated Types </h3>
 <br>The integral type of an enumerated type is determined by the values of the enumeration constants.&nbsp; In strict ISO/ANSI
-C mode, all enumerated constants are of type<tt> int.</tt>&nbsp; In the extensions mode, the compiler will use the smallest
+C mode, all enumerated constants are of type<tt> int</tt>.&nbsp; In the extensions mode, the compiler will use the smallest
 integral type possible (excluding<tt> long</tt> ints) that can represent all values of the enumerated type.&nbsp; For instance,
 if the minimum and maximum values of the enumeration constants are in the range -128 and 127, the enumerated type will be
 equivalent to a<tt> signed char</tt> (size = 1 byte).&nbsp; All references to enumerated constants in the previous instance
-will have type<tt> signed char.</tt>&nbsp; An enumerated constant is always promoted to an<tt> int</tt> when passed as an
+will have type<tt> signed char</tt>.&nbsp; An enumerated constant is always promoted to an<tt> int</tt> when passed as an
 argument.
 <h3 id="16Mbit__Effect_of_Function_Prototypes_on_Arguments"> 16-bit:&nbsp; Effect of Function Prototypes on Arguments </h3>
 <br>Function prototypes define the types of the formal parameters of a function.&nbsp; Their appearance affects the way in
@@ -5967,7 +5967,7 @@ prototype.&nbsp; Consider the following example.
 <br><br>The function prototype for<tt> prototype</tt> specifies that the first argument is to be passed as a &quot;float&quot;
 and the second argument is to be passed as an &quot;int&quot;.&nbsp; This results in the first argument being passed in registers
 DX and AX and the second argument being passed in register BX.
-<br><br>If no function prototype is given, as is the case for the function<tt> rtn,</tt> the first argument will be passed
+<br><br>If no function prototype is given, as is the case for the function<tt> rtn</tt>, the first argument will be passed
 as a &quot;double&quot; and the second argument would be passed as an &quot;int&quot;.&nbsp; This results in the first argument
 being passed in registers AX, BX, CX and DX and the second argument being passed on the stack.
 <br><br>Note that even though both<tt> prototype</tt> and<tt> rtn</tt> were called with identical argument lists, the way
@@ -5996,7 +5996,7 @@ way:
 <li>The second argument will be passed in register BX leaving CX as an available register for other arguments.
 <li>The third argument will not fit in register CX (its size is 4 bytes) and hence will be pushed on the stack.
 </ol>
-<br>Let us look at the stack upon entry to<tt> myrtn.</tt>
+<br>Let us look at the stack upon entry to<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; Small Code Model</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Offset</tt>
@@ -6071,13 +6071,13 @@ BP and SP point here</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
 <br><br>As the above diagrams show, the third argument is at offset 4 from register BP in a small code model and offset 6
 in a big code model.
-<br><br>Upon exit from<tt> myrtn,</tt> we must restore the value of BP.&nbsp; The following two instructions achieve this.
+<br><br>Upon exit from<tt> myrtn</tt>, we must restore the value of BP.&nbsp; The following two instructions achieve this.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; SP,BP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; restore stack
 pointer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;&nbsp;&nbsp; BP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ; restore BP</tt>
-<br><br>The following is a sample assembly language function which implements<tt> myrtn.</tt>
+<br><br>The following is a sample assembly language function which implements<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; Small Memory Model (small code, small data)</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DGROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; group&nbsp;&nbsp; _DATA, _BSS</tt>
@@ -6314,7 +6314,7 @@ stack.
 <ol>
 <li>All arguments passed on the stack must be removed by the called function.
 </ol>
-<br>The following is a sample assembly language function which implements<tt> myrtn.</tt>
+<br>The following is a sample assembly language function which implements<tt> myrtn</tt>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .8087</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; segment byte public 'CODE'</tt>
@@ -6532,7 +6532,7 @@ pragma.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn1(int);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn2(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alloc_text ( my_text, fn1, fn2 );</tt>
-<br><br>The code for the functions<tt> fn1</tt> and<tt> fn2</tt> will be placed in the segment<tt> my_text.</tt>&nbsp; Note:
+<br><br>The code for the functions<tt> fn1</tt> and<tt> fn2</tt> will be placed in the segment<tt> my_text</tt>.&nbsp; Note:
 &nbsp;function prototypes for the named functions must exist prior to the &quot;alloc_text&quot; pragma.
 <h2 id="16Mbit__The_CODE_SEG_Pragma"> 16-bit:&nbsp; The CODE_SEG Pragma </h2>
 <br>The &quot;code_seg&quot; pragma can be used to specify the name of the text segment into which the generated code for
@@ -6567,7 +6567,7 @@ by the linker as code, a class name has to end in &quot;CODE&quot;.&nbsp; Also,<
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( i - 1 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The code for the functions<tt> incr</tt> and<tt> decr</tt> will be placed in the segment<tt> my_text.</tt>
+<br><br>The code for the functions<tt> incr</tt> and<tt> decr</tt> will be placed in the segment<tt> my_text</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ();</tt>
@@ -6626,7 +6626,7 @@ as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( my_data );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int j;</tt>
-<br><br>The data for<tt> i</tt> and<tt> j</tt> will be placed in the segment<tt> my_data.</tt>
+<br><br>The data for<tt> i</tt> and<tt> j</tt> will be placed in the segment<tt> my_data</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ();</tt>
@@ -7074,12 +7074,12 @@ by a previous auxiliary pragma.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol z is referenced</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &lt;attrs_2&gt;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux x &lt;attrs_3&gt;;</tt>
-<br><br>Auxiliary attributes are assigned to<tt> x, y</tt> and<tt> z</tt> in the following way.
+<br><br>Auxiliary attributes are assigned to<tt> x</tt>,<tt> y</tt> and<tt> z</tt> in the following way.
 <ol>
 <li>Symbol<tt> x</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>
-and<tt> &lt;attrs_3&gt;.</tt>
-<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;.</tt>
-<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;.</tt>
+and<tt> &lt;attrs_3&gt;</tt>.
+<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;</tt>.
+<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>.
 </ol>
 <h3 id="16Mbit__Alias_Names"> 16-bit:&nbsp; Alias Names </h3>
 <br>When a symbol referred to by an auxiliary pragma includes an alias name, the attributes of the alias name are also assumed
@@ -7115,8 +7115,8 @@ to<tt> rtn</tt> are passed on the stack.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern func_type rtn2;</tt>
 <br><br>The first auxiliary pragma defines an alias name called<tt> push_args</tt> that specifies the mechanism to be used
 to pass arguments.&nbsp; The mechanism is to pass all arguments on the stack.&nbsp; The second auxiliary pragma associates
-the attributes specified in the first pragma with the type definition<tt> func_type.</tt>&nbsp; Since<tt> rtn1</tt> and<tt>
-rtn2</tt> are of type<tt> func_type,</tt> arguments to either of those functions will be passed on the stack.
+the attributes specified in the first pragma with the type definition<tt> func_type</tt>.&nbsp; Since<tt> rtn1</tt> and<tt>
+rtn2</tt> are of type<tt> func_type</tt>, arguments to either of those functions will be passed on the stack.
 <br><br>The general form of an auxiliary pragma that can be used to specify an alias is as follows.&nbsp; 
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( </tt><b>alias</b><tt> ) </tt><b>sym</b><tt> </tt><b>aux_attrs</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
@@ -7146,16 +7146,16 @@ rtn2</tt> are of type<tt> func_type,</tt> arguments to either of those functions
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn3;</tt>
-<br><br>The routines<tt> rtn1, rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> MS_C</tt> which
-defines the calling convention used by the Microsoft C compiler.&nbsp; Whenever calls are made to<tt> rtn1, rtn2</tt> and<tt>
-rtn3,</tt> the Microsoft C calling convention will be used.
+<br><br>The routines<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> MS_C</tt>
+which defines the calling convention used by the Microsoft C compiler.&nbsp; Whenever calls are made to<tt> rtn1</tt>,<tt>
+rtn2</tt> and<tt> rtn3</tt>, the Microsoft C calling convention will be used.
 <br><br>Note that if the attributes of<tt> MS_C</tt> change, only one pragma needs to be changed.&nbsp; If we had not used
-an alias name and specified the attributes in each of the three pragmas for<tt> rtn1, rtn2</tt> and<tt> rtn3,</tt> we would
-have to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler to process
-the source file.
+an alias name and specified the attributes in each of the three pragmas for<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt>,
+we would have to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler
+to process the source file.
 <hr>
 <br><b><i>&nbsp; WARNING!</i></b>&nbsp; The alias name<tt> MS_C</tt> is just another symbol.&nbsp; If<tt> MS_C</tt> appeared
-in your source code, it would assume the attributes specified in the pragma for<tt> MS_C.</tt>
+in your source code, it would assume the attributes specified in the pragma for<tt> MS_C</tt>.
 <hr>
 <h3 id="16Mbit__Predefined_Aliases"> 16-bit:&nbsp; Predefined Aliases </h3>
 <br>A number of symbols are predefined by the compiler with a set of attributes that describe a particular calling convention.
@@ -7246,7 +7246,7 @@ object form.&nbsp;
 <dt>obj_name
 <dd>is any character string enclosed in double quotes.
 </dl>
-<br>When specifying<tt> obj_name,</tt> some characters have a special meaning:
+<br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -7314,20 +7314,20 @@ id)</b>
 <dd>is a sequence of bytes that forms a valid 80x87 instruction.&nbsp; The keyword<b><i> float</i></b> must precede<tt> fpinst</tt>
 so that special fixups are applied to the 80x87 instruction.
 <dt>seg
-<dd>specifies the segment of the symbol<tt> id.</tt>
+<dd>specifies the segment of the symbol<tt> id</tt>.
 <dt>offset
-<dd>specifies the offset of the symbol<tt> id.</tt>
+<dd>specifies the offset of the symbol<tt> id</tt>.
 <dt>reloff
 <dd>specifies the relative offset of the symbol<tt> id</tt> for near control transfers.
 <dt>asm
 <dd>is an assembly language instruction or directive.
 </dl>
-<br>In the following example, Open Watcom C/C++ will generate a far call to the function<tt> myrtn.</tt>
+<br>In the following example, Open Watcom C/C++ will generate a far call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn far;</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a far call will be generated even if you are compiling for a memory model with a small code model.
-<br><br>In the following example, Open Watcom C/C++ will generate a near call to the function<tt> myrtn.</tt>
+<br><br>In the following example, Open Watcom C/C++ will generate a near call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn near;</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
@@ -7597,7 +7597,7 @@ registers.
 Open Watcom C/C++ has some freedom in choosing how arguments are assigned to registers.&nbsp; Since the code for in-line functions
 is specified by the programmer, the description of the argument list must be very explicit.&nbsp; To achieve this, Open Watcom
 C/C++ assumes that each register set corresponds to an argument.&nbsp; Consider the following DOS example of an in-line function
-called<tt> scrollactivepgup.</tt>
+called<tt> scrollactivepgup</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void scrollactivepgup(char,char,char,char,char,char);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux scrollactivepgup = \</tt>
@@ -7844,7 +7844,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>exitrtn</tt> is defined to be a function that does not return.&nbsp; For example, it may call<tt> exit</tt> to
 return to the system.&nbsp; In this case, Open Watcom C/C++ generates a &quot;jmp&quot; instruction instead of a &quot;call&quot;
-instruction to invoke<tt> exitrtn.</tt>
+instruction to invoke<tt> exitrtn</tt>.
 <h3 id="16Mbit__Describing_How_Functions_Use_Memory"> 16-bit:&nbsp; Describing How Functions Use Memory </h3>
 <br>The following form of the auxiliary pragma can be used to describe a function that does not modify any memory (i.e., global
 or static variables) that is used directly or indirectly by the caller.&nbsp; 
@@ -7990,9 +7990,9 @@ L1</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; No disassembly errors</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that the value of<tt> i</tt> is in register DX after completion of the &quot;while&quot; loop.&nbsp; After
-the call to<tt> myrtn,</tt> the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
+the call to<tt> myrtn</tt>, the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
 &nbsp;The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not modify any memory (i.e., global or static variables)
-that is used directly or indirectly by<tt> Rtn</tt> and hence register DX contains the correct value of<tt> i.</tt>
+that is used directly or indirectly by<tt> Rtn</tt> and hence register DX contains the correct value of<tt> i</tt>.
 <br><br>The preceding auxiliary pragma deals with routines that modify memory.&nbsp; Let us consider the case where routines
 reference memory.&nbsp; The following form of the auxiliary pragma can be used to describe a function that does not reference
 any memory (i.e., global or static variables) that is used directly or indirectly by the caller.&nbsp; 
@@ -8063,9 +8063,9 @@ L1</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; No disassembly errors</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that after completion of the &quot;while&quot; loop we did not have to update<tt> i</tt> with the value in
-register DX before calling<tt> myrtn.</tt>&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
+register DX before calling<tt> myrtn</tt>.&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
 any memory (i.e., global or static variables) that is used directly or indirectly by<tt> myrtn</tt> so updating<tt> i</tt>
-was not necessary before calling<tt> myrtn.</tt>
+was not necessary before calling<tt> myrtn</tt>.
 <h3 id="16Mbit__Describing_the_Registers_Modified_by_a_Function"> 16-bit:&nbsp; Describing the Registers Modified by a Function </h3>
 <br>The following form of the auxiliary pragma can be used to describe the registers that a function will use without saving.
 &nbsp;
@@ -8759,11 +8759,11 @@ of Function Prototypes on Arguments&quot;.
 </ol>
 <h3 id="32Mbit__Size_of_Enumerated_Types"> 32-bit:&nbsp; Size of Enumerated Types </h3>
 <br>The integral type of an enumerated type is determined by the values of the enumeration constants.&nbsp; In strict ISO/ANSI
-C mode, all enumerated constants are of type<tt> int.</tt>&nbsp; In the extensions mode, the compiler will use the smallest
+C mode, all enumerated constants are of type<tt> int</tt>.&nbsp; In the extensions mode, the compiler will use the smallest
 integral type possible (excluding<tt> long</tt> ints) that can represent all values of the enumerated type.&nbsp; For instance,
 if the minimum and maximum values of the enumeration constants are in the range -128 and 127, the enumerated type will be
 equivalent to a<tt> signed char</tt> (size = 1 byte).&nbsp; All references to enumerated constants in the previous instance
-will have type<tt> signed char.</tt>&nbsp; An enumerated constant is always promoted to an<tt> int</tt> when passed as an
+will have type<tt> signed char</tt>.&nbsp; An enumerated constant is always promoted to an<tt> int</tt> when passed as an
 argument.
 <h3 id="32Mbit__Effect_of_Function_Prototypes_on_Arguments"> 32-bit:&nbsp; Effect of Function Prototypes on Arguments </h3>
 <br>Function prototypes define the types of the formal parameters of a function.&nbsp; Their appearance affects the way in
@@ -8783,7 +8783,7 @@ prototype.&nbsp; Consider the following example.
 <br><br>The function prototype for<tt> prototype</tt> specifies that the first argument is to be passed as a &quot;float&quot;
 and the second argument is to be passed as an &quot;int&quot;.&nbsp; This results in the first argument being passed in register
 EAX and the second argument being passed in register EDX.
-<br><br>If no function prototype is given, as is the case for the function<tt> rtn,</tt> the first argument will be passed
+<br><br>If no function prototype is given, as is the case for the function<tt> rtn</tt>, the first argument will be passed
 as a &quot;double&quot; and the second argument would be passed as an &quot;int&quot;.&nbsp; This results in the first argument
 being passed in registers EDX and EAX and the second argument being passed in register EBX.
 <br><br>Note that even though both<tt> prototype</tt> and<tt> rtn</tt> were called with identical argument lists, the way
@@ -8812,7 +8812,7 @@ way:
 <li>The second argument will be passed in register EBX leaving ECX as an available register for other arguments.
 <li>The third argument will not fit in register ECX (its size is 8 bytes) and hence will be pushed on the stack.
 </ol>
-<br>Let us look at the stack upon entry to<tt> myrtn.</tt>
+<br>Let us look at the stack upon entry to<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; Small Code Model</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Offset</tt>
@@ -8885,12 +8885,12 @@ and ESP point here</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
 <br><br>As the above diagrams show, the third argument is at offset 8 from register EBP in a small code model and offset 12
 in a big code model.
-<br><br>Upon exit from<tt> myrtn,</tt> we must restore the value of EBP.&nbsp; The following two instructions achieve this.
+<br><br>Upon exit from<tt> myrtn</tt>, we must restore the value of EBP.&nbsp; The following two instructions achieve this.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ESP,EBP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; restore stack pointer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;&nbsp;&nbsp; EBP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ; restore EBP</tt>
-<br><br>The following is a sample assembly language function which implements<tt> myrtn.</tt>
+<br><br>The following is a sample assembly language function which implements<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; Small Memory Model (small code, small data)</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DGROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; group&nbsp;&nbsp; _DATA, _BSS</tt>
@@ -8974,7 +8974,7 @@ instruction.
 &nbsp;The most significant difference between the stack-based calling convention and the register-based calling convention
 is the way the arguments are passed.&nbsp; When using the stack-based calling conventions, no registers are used to pass arguments.
 &nbsp;Instead, all arguments are passed on the stack.
-<br><br>Let us look at the stack upon entry to<tt> myrtn.</tt>
+<br><br>Let us look at the stack upon entry to<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; Small Code Model</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Offset</tt>
@@ -9079,12 +9079,12 @@ and ESP point here</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
 <br><br>As the above diagrams show, the argument are all on the stack and are referenced by specifying an offset from register
 EBP.
-<br><br>Upon exit from<tt> myrtn,</tt> we must restore the value of EBP.&nbsp; The following two instructions achieve this.
+<br><br>Upon exit from<tt> myrtn</tt>, we must restore the value of EBP.&nbsp; The following two instructions achieve this.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; ESP,EBP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; restore stack pointer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pop&nbsp;&nbsp;&nbsp;&nbsp; EBP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ; restore EBP</tt>
-<br><br>The following is a sample assembly language function which implements<tt> myrtn.</tt>
+<br><br>The following is a sample assembly language function which implements<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; Small Memory Model (small code, small data)</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DGROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; group&nbsp;&nbsp; _DATA, _BSS</tt>
@@ -9340,7 +9340,7 @@ stack.
 <ol>
 <li>All arguments passed on the stack must be removed by the called function.
 </ol>
-<br>The following is a sample assembly language function which implements<tt> myrtn.</tt>
+<br>The following is a sample assembly language function which implements<tt> myrtn</tt>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .8087</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; segment byte public 'CODE'</tt>
@@ -9560,7 +9560,7 @@ pragma.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn1(int);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn2(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alloc_text ( my_text, fn1, fn2 );</tt>
-<br><br>The code for the functions<tt> fn1</tt> and<tt> fn2</tt> will be placed in the segment<tt> my_text.</tt>&nbsp; Note:
+<br><br>The code for the functions<tt> fn1</tt> and<tt> fn2</tt> will be placed in the segment<tt> my_text</tt>.&nbsp; Note:
 &nbsp;function prototypes for the named functions must exist prior to the &quot;alloc_text&quot; pragma.
 <h2 id="32Mbit__The_CODE_SEG_Pragma"> 32-bit:&nbsp; The CODE_SEG Pragma </h2>
 <br>The &quot;code_seg&quot; pragma can be used to specify the name of the text segment into which the generated code for
@@ -9595,7 +9595,7 @@ by the linker as code, a class name has to end in &quot;CODE&quot;.&nbsp; Also,<
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( i - 1 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The code for the functions<tt> incr</tt> and<tt> decr</tt> will be placed in the segment<tt> my_text.</tt>
+<br><br>The code for the functions<tt> incr</tt> and<tt> decr</tt> will be placed in the segment<tt> my_text</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ();</tt>
@@ -9654,7 +9654,7 @@ as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( my_data );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int j;</tt>
-<br><br>The data for<tt> i</tt> and<tt> j</tt> will be placed in the segment<tt> my_data.</tt>
+<br><br>The data for<tt> i</tt> and<tt> j</tt> will be placed in the segment<tt> my_data</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ();</tt>
@@ -10102,12 +10102,12 @@ by a previous auxiliary pragma.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol z is referenced</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &lt;attrs_2&gt;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux x &lt;attrs_3&gt;;</tt>
-<br><br>Auxiliary attributes are assigned to<tt> x, y</tt> and<tt> z</tt> in the following way.
+<br><br>Auxiliary attributes are assigned to<tt> x</tt>,<tt> y</tt> and<tt> z</tt> in the following way.
 <ol>
 <li>Symbol<tt> x</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>
-and<tt> &lt;attrs_3&gt;.</tt>
-<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;.</tt>
-<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;.</tt>
+and<tt> &lt;attrs_3&gt;</tt>.
+<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;</tt>.
+<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>.
 </ol>
 <h3 id="32Mbit__Alias_Names"> 32-bit:&nbsp; Alias Names </h3>
 <br>When a symbol referred to by an auxiliary pragma includes an alias name, the attributes of the alias name are also assumed
@@ -10151,8 +10151,8 @@ to<tt> rtn</tt> are passed on the stack.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern func_type rtn2;</tt>
 <br><br>The first auxiliary pragma defines an alias name called<tt> push_args</tt> that specifies the mechanism to be used
 to pass arguments.&nbsp; The mechanism is to pass all arguments on the stack.&nbsp; The second auxiliary pragma associates
-the attributes specified in the first pragma with the type definition<tt> func_type.</tt>&nbsp; Since<tt> rtn1</tt> and<tt>
-rtn2</tt> are of type<tt> func_type,</tt> arguments to either of those functions will be passed on the stack.
+the attributes specified in the first pragma with the type definition<tt> func_type</tt>.&nbsp; Since<tt> rtn1</tt> and<tt>
+rtn2</tt> are of type<tt> func_type</tt>, arguments to either of those functions will be passed on the stack.
 <br><br>The general form of an auxiliary pragma that can be used to specify an alias is as follows.&nbsp; 
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( </tt><b>alias</b><tt> ) </tt><b>sym</b><tt> </tt><b>aux_attrs</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
@@ -10183,17 +10183,17 @@ rtn2</tt> are of type<tt> func_type,</tt> arguments to either of those functions
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn3;</tt>
-<br><br>The routines<tt> rtn1, rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> HIGH_C</tt> which
-defines the calling convention used by the MetaWare High C compiler.&nbsp; Note that register ES must also be specified in
-the &quot;modify&quot; register set when using a memory model that is not a small data model.&nbsp; Whenever calls are made
-to<tt> rtn1, rtn2</tt> and<tt> rtn3,</tt> the MetaWare High C calling convention will be used.
+<br><br>The routines<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> HIGH_C</tt>
+which defines the calling convention used by the MetaWare High C compiler.&nbsp; Note that register ES must also be specified
+in the &quot;modify&quot; register set when using a memory model that is not a small data model.&nbsp; Whenever calls are
+made to<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt>, the MetaWare High C calling convention will be used.
 <br><br>Note that if the attributes of<tt> HIGH_C</tt> change, only one pragma needs to be changed.&nbsp; If we had not used
-an alias name and specified the attributes in each of the three pragmas for<tt> rtn1, rtn2</tt> and<tt> rtn3,</tt> we would
-have to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler to process
-the source file.
+an alias name and specified the attributes in each of the three pragmas for<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt>,
+we would have to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler
+to process the source file.
 <hr>
 <br><b><i>&nbsp; WARNING!</i></b>&nbsp; The alias name<tt> HIGH_C</tt> is just another symbol.&nbsp; If<tt> HIGH_C</tt> appeared
-in your source code, it would assume the attributes specified in the pragma for<tt> HIGH_C.</tt>
+in your source code, it would assume the attributes specified in the pragma for<tt> HIGH_C</tt>.
 <hr>
 <h3 id="32Mbit__Predefined_Aliases"> 32-bit:&nbsp; Predefined Aliases </h3>
 <br>A number of symbols are predefined by the compiler with a set of attributes that describe a particular calling convention.
@@ -10347,7 +10347,7 @@ object form.&nbsp;
 <dt>obj_name
 <dd>is any character string enclosed in double quotes.
 </dl>
-<br>When specifying<tt> obj_name,</tt> some characters have a special meaning:
+<br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -10412,20 +10412,20 @@ id)</b>
 <dt>id
 <dd>is any valid C/C++ identifier.
 <dt>seg
-<dd>specifies the segment of the symbol<tt> id.</tt>
+<dd>specifies the segment of the symbol<tt> id</tt>.
 <dt>offset
-<dd>specifies the offset of the symbol<tt> id.</tt>
+<dd>specifies the offset of the symbol<tt> id</tt>.
 <dt>reloff
 <dd>specifies the relative offset of the symbol<tt> id</tt> for near control transfers.
 <dt>asm
 <dd>is an assembly language instruction or directive.
 </dl>
-<br>In the following example, Open Watcom C/C++ will generate a far call to the function<tt> myrtn.</tt>
+<br>In the following example, Open Watcom C/C++ will generate a far call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn far;</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a far call will be generated even if you are compiling for a memory model with a small code model.
-<br><br>In the following example, Open Watcom C/C++ will generate a near call to the function<tt> myrtn.</tt>
+<br><br>In the following example, Open Watcom C/C++ will generate a near call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn near;</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
@@ -10672,7 +10672,7 @@ registers.
 Open Watcom C/C++ has some freedom in choosing how arguments are assigned to registers.&nbsp; Since the code for in-line functions
 is specified by the programmer, the description of the argument list must be very explicit.&nbsp; To achieve this, Open Watcom
 C/C++ assumes that each register set corresponds to an argument.&nbsp; Consider the following DOS example of an in-line function
-called<tt> scrollactivepgup.</tt>
+called<tt> scrollactivepgup</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void scrollactivepgup(char,char,char,char,char,char);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux scrollactivepgup = \</tt>
@@ -10921,7 +10921,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>exitrtn</tt> is defined to be a function that does not return.&nbsp; For example, it may call<tt> exit</tt> to
 return to the system.&nbsp; In this case, Open Watcom C/C++ generates a &quot;jmp&quot; instruction instead of a &quot;call&quot;
-instruction to invoke<tt> exitrtn.</tt>
+instruction to invoke<tt> exitrtn</tt>.
 <h3 id="32Mbit__Describing_How_Functions_Use_Memory"> 32-bit:&nbsp; Describing How Functions Use Memory </h3>
 <br>The following form of the auxiliary pragma can be used to describe a function that does not modify any memory (i.e., global
 or static variables) that is used directly or indirectly by the caller.&nbsp; 
@@ -11065,9 +11065,9 @@ L1</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; No disassembly errors</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that the value of<tt> i</tt> is in register EDX after completion of the &quot;while&quot; loop.&nbsp; After
-the call to<tt> myrtn,</tt> the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
+the call to<tt> myrtn</tt>, the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
 &nbsp;The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not modify any memory (i.e., global or static variables)
-that is used directly or indirectly by<tt> Rtn</tt> and hence register EDX contains the correct value of<tt> i.</tt>
+that is used directly or indirectly by<tt> Rtn</tt> and hence register EDX contains the correct value of<tt> i</tt>.
 <br><br>The preceding auxiliary pragma deals with routines that modify memory.&nbsp; Let us consider the case where routines
 reference memory.&nbsp; The following form of the auxiliary pragma can be used to describe a function that does not reference
 any memory (i.e., global or static variables) that is used directly or indirectly by the caller.&nbsp; 
@@ -11137,9 +11137,9 @@ L1</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; No disassembly errors</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that after completion of the &quot;while&quot; loop we did not have to update<tt> i</tt> with the value in
-register EDX before calling<tt> myrtn.</tt>&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
+register EDX before calling<tt> myrtn</tt>.&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
 any memory (i.e., global or static variables) that is used directly or indirectly by<tt> myrtn</tt> so updating<tt> i</tt>
-was not necessary before calling<tt> myrtn.</tt>
+was not necessary before calling<tt> myrtn</tt>.
 <h3 id="32Mbit__Describing_the_Registers_Modified_by_a_Function"> 32-bit:&nbsp; Describing the Registers Modified by a Function </h3>
 <br>The following form of the auxiliary pragma can be used to describe the registers that a function will use without saving.
 &nbsp;
@@ -12688,7 +12688,7 @@ block.&nbsp; This is illustrated in the following example.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>In this example, any exception that occurs while executing &quot;inside&quot; the<b> try</b> block will cause the<b>
 except</b> block to execute.&nbsp; Unlike the<b> finally</b> block, execution of the<b> except</b> block occurs only when
-an exception is generated and only when the expression after the<b><i> _except</i></b> keyword evaluates to <tt> EXCEPTION_EXECUTE_HANDLER.</tt>
+an exception is generated and only when the expression after the<b><i> _except</i></b> keyword evaluates to <tt> EXCEPTION_EXECUTE_HANDLER</tt>.
 &nbsp;The expression can be quite complex and can involve the execution of a function that returns one of the permissible
 values.&nbsp; The expression is called the exception &quot;filter&quot; since it determines whether or not the exception is
 to be handled by the<b> except</b> block.&nbsp; The permissible result values for the exception filer are:
@@ -12741,7 +12741,7 @@ of computer instructions that is generated for the expression in question.
 _NullP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp; byte ptr &#91;eax&#93;,01H</tt>
 <br><br>The exception is caused by the second instruction which contains a pointer to the referenced memory location (i.e.,
-0) in register EAX.&nbsp; This is the instruction that will be repeated when the filter returns<tt> EXCEPTION_CONTINUE_EXECUTION.</tt>
+0) in register EAX.&nbsp; This is the instruction that will be repeated when the filter returns<tt> EXCEPTION_CONTINUE_EXECUTION</tt>.
 &nbsp;Since EAX did not get changed by our fix, the exception will reoccur.&nbsp; Fortunately,<tt> NullP</tt> is changed and
 this prevents our program from looping forever.&nbsp; The moral here is that there are very few instances where you can correct
 &quot;on the fly&quot; a problem that is causing an exception to occur.&nbsp; Certainly, any attempt to do so must involve
@@ -12852,11 +12852,11 @@ studying the following example.
 </ol>
 <br>It is in<tt> func_level4</tt> where the exception occurs.&nbsp; The run-time system traps the exception and performs a
 search of the active<b> try</b> blocks looking for one that is paired up with an<b> except</b> block.
-<br><br>When it finds one, the filter is executed and, if the result is<tt> EXCEPTION_EXECUTE_HANDLER,</tt> then the<b> except</b>
+<br><br>When it finds one, the filter is executed and, if the result is<tt> EXCEPTION_EXECUTE_HANDLER</tt>, then the<b> except</b>
 block is executed after performing a global unwind.
-<br><br>If the result is<tt> EXCEPTION_CONTINUE_EXECUTION,</tt> the run-time system resumes execution at the instruction that
+<br><br>If the result is<tt> EXCEPTION_CONTINUE_EXECUTION</tt>, the run-time system resumes execution at the instruction that
 caused the exception.
-<br><br>If the result is<tt> EXCEPTION_CONTINUE_SEARCH,</tt> the run-time system continues its search for an<b> except</b>
+<br><br>If the result is<tt> EXCEPTION_CONTINUE_SEARCH</tt>, the run-time system continues its search for an<b> except</b>
 block with a filter that returns one of the other possible values.&nbsp; If it does not find any exception handler that is
 prepared to handle the exception, the application will be terminated with the appropriate exception notification.
 <br><br>Let us look at the result of executing the example program.&nbsp; The following messages are printed.
@@ -12870,11 +12870,11 @@ prepared to handle the exception, the application will be terminated with the ap
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Normal return from func_level0</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Normal return from main</tt>
 <br><br>The run-time system searched down the<b> try/except</b> chain until it got to<tt> func_level0</tt> which had an<b>
-except</b> filter that evaluated to<tt> EXCEPTION_EXECUTE_HANDLER.</tt>&nbsp; It then performed a global unwind in which the<b>
-try/finally</b> blocks of<tt> func_level4, func_level3, func_level2,</tt> and<tt> func_level1</tt> were executed.&nbsp; After
-this, the exception handler in<tt> func_level0</tt> did its thing and execution resumed in<tt> func_level0</tt> which returned
-back to<tt> main</tt> which returned to the run-time system for normal program termination.&nbsp; Note the use of the built-in<b><i>
-AbnormalTermination</i></b> function in the<b> finally</b> blocks of each function.
+except</b> filter that evaluated to<tt> EXCEPTION_EXECUTE_HANDLER</tt>.&nbsp; It then performed a global unwind in which the<b>
+try/finally</b> blocks of<tt> func_level4</tt>,<tt> func_level3</tt>,<tt> func_level2</tt>, and<tt> func_level1</tt> were
+executed.&nbsp; After this, the exception handler in<tt> func_level0</tt> did its thing and execution resumed in<tt> func_level0</tt>
+which returned back to<tt> main</tt> which returned to the run-time system for normal program termination.&nbsp; Note the
+use of the built-in<b><i> AbnormalTermination</i></b> function in the<b> finally</b> blocks of each function.
 <br><br>This sequence of events permits each function to do any cleaning up that it deems necessary before it is wiped off
 the execution stack.
 <h2 id="Refining_Exception_Handling"> Refining Exception Handling </h2>
@@ -13576,8 +13576,8 @@ defined in<tt> errno.h.</tt>
 <br><br>The specified file or directory cannot be found.&nbsp; 
 <dt>E2BIG
 <dd><b> Argument list too big</b>
-<br><br>The argument list passed to the<tt> spawn..., exec...</tt>&nbsp; or<tt> system</tt> functions requires more than 128
-bytes, or the environment information exceeds 32K.&nbsp; 
+<br><br>The argument list passed to the<tt> spawn...</tt>,<tt> exec...</tt>&nbsp; or<tt> system</tt> functions requires more
+than 128 bytes, or the environment information exceeds 32K.&nbsp; 
 <dt>ENOEXEC
 <dd><b> Exec format error</b>
 <br><br>The executable file has an invalid format.&nbsp; 

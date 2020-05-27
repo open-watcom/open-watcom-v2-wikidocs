@@ -1057,7 +1057,7 @@ and to provide the capability to directly use operating-system file operations.
 a brief description of its purpose.&nbsp; The chapter<b> Library Functions and Macros</b> provides a complete description
 of each function and macro.
 <h3 id="Character_Manipulation_Functions"> Character Manipulation Functions </h3>
-<br>These functions operate upon single characters of type<tt> char.</tt>&nbsp; The functions test characters in various ways
+<br>These functions operate upon single characters of type<tt> char</tt>.&nbsp; The functions test characters in various ways
 and convert them between upper and lowercase.&nbsp; The following functions are defined:
 <dl>
 <dt><a href="#isalnum">isalnum</a>
@@ -1096,7 +1096,7 @@ and convert them between upper and lowercase.&nbsp; The following functions are 
 <dd>convert character to uppercase
 </dl>
 <h3 id="Wide_Character_Manipulation_Functions"> Wide Character Manipulation Functions </h3>
-<br>These functions operate upon wide characters of type<tt> wchar_t.</tt>&nbsp; The functions test wide characters in various
+<br>These functions operate upon wide characters of type<tt> wchar_t</tt>.&nbsp; The functions test wide characters in various
 ways and convert them between upper and lowercase.&nbsp; The following functions are defined:
 <dl>
 <dt>iswalnum (see <a href="#isalnum">isalnum</a>)
@@ -1953,7 +1953,7 @@ functions are defined:
 <dd>walk through each entry in the near heap
 </dl>
 <h3 id="Math_Functions"> Math Functions </h3>
-<br>These functions operate with objects of type<tt> double,</tt> also known as floating-point numbers.&nbsp; The Intel 8087
+<br>These functions operate with objects of type<tt> double</tt>, also known as floating-point numbers.&nbsp; The Intel 8087
 processor (and its successor chips) is commonly used to implement floating-point operations on personal computers.&nbsp; Functions
 ending in &quot;87&quot; pertain to this specific hardware and should be isolated in programs when portability is a consideration.
 &nbsp;The following functions are defined:
@@ -3302,7 +3302,7 @@ and <tt> P_OVERLAY</tt>.&nbsp;
 <dt>stdbool.h
 <dd>This ISO C99 header file defines the macro <tt> bool</tt> and the macros <tt> true</tt> and <tt> false</tt> for use in C programs.
 &nbsp;If this header is included in a C++ program there is no effect.&nbsp; The C++ reserved words will not be redefined.
-&nbsp;However the definition of <tt> bool</tt> , <tt> true</tt> , and <tt> false</tt> used in a C program will be compatible
+&nbsp;However the definition of <tt> bool</tt>, <tt> true</tt>, and <tt> false</tt> used in a C program will be compatible
 with their C++ counterparts.&nbsp; In particular, a C function declared as taking a <tt> bool</tt> parameter and a structure
 containing a <tt> bool</tt> member can both be shared between C and C++ without error.&nbsp; 
 <dt>stddef.h
@@ -5824,12 +5824,12 @@ thread to obtain its thread ID.&nbsp; In the 16-bit libraries, <tt> _threadid</t
 32-bit libraries, it is a function that returns an int.
 <br><br>There is no limit to the number of threads an application can create under Win32 platforms.
 <br><br>There is a limit to the number of threads an application can create under 16-bit OS/2 and 32-bit NetWare.&nbsp; The
-default limit is 32.&nbsp; This limit can be adjusted by statically initializing the unsigned global variable<tt> __MaxThreads.</tt>
+default limit is 32.&nbsp; This limit can be adjusted by statically initializing the unsigned global variable<tt> __MaxThreads</tt>.
 <br><br>Under 32-bit OS/2, there is no limit to the number of threads an application can create.&nbsp; However, due to the
 way in which multiple threads are supported in the Open Watcom libraries, there is a small performance penalty once the number
 of threads exceeds the default limit of 32 (this number includes the initial thread).&nbsp; If you are creating more than
 32 threads and wish to avoid this performance penalty, you can redefine the threshold value of 32.&nbsp; You can statically
-initialize the global variable<tt> __MaxThreads.</tt>
+initialize the global variable<tt> __MaxThreads</tt>.
 <br><br>By adding the following line to your multi-threaded application, the new threshold value will be set to 48.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned __MaxThreads = { 48 };</tt>
@@ -5934,7 +5934,7 @@ there is not enough available memory.
 <dd>Functions <tt> j0</tt>, <tt> j1</tt>, and <tt> jn</tt> return Bessel functions of the first kind.
 <br><br>Functions <tt> y0</tt>, <tt> y1</tt>, and <tt> yn</tt> return Bessel functions of the second kind.&nbsp; The argument<b>
 x</b> must be positive.&nbsp; If<b> x</b> is negative, <tt> _matherr</tt> will be called to print a DOMAIN error message to
-<tt> stderr</tt>, set <tt> errno</tt> to <tt> EDOM</tt>, and return the value<tt> -HUGE_VAL.</tt>&nbsp; This error handling
+<tt> stderr</tt>, set <tt> errno</tt> to <tt> EDOM</tt>, and return the value<tt> -HUGE_VAL</tt>.&nbsp; This error handling
 can be modified by using the <tt> matherr</tt> routine.
 </dl>
 <dl>
@@ -7050,8 +7050,8 @@ char * ),&nbsp; kw_compare );</tt>
 <dd>If any of the following runtime-constraints is violated, the currently active runtime-constraint handler will be invoked and<tt>
 bsearch_s</tt> will return a non-zero value to indicate an error, or the runtime-constraint handler aborts the program.
 <br><br>Neither<b> nmemb</b> nor<b> size</b> shall be greater than <tt> RSIZE_MAX</tt>.&nbsp; If<b> nmemb</b> is not equal
-to zero, then none of<b> key, base</b>, or<b> compar</b> shall be a null pointer.&nbsp; If there is a runtime-constraint violation,
-the<tt> bsearch_s</tt> function does not search the array.
+to zero, then none of<b> key</b>,<b> base</b>, or<b> compar</b> shall be a null pointer.&nbsp; If there is a runtime-constraint
+violation, the<tt> bsearch_s</tt> function does not search the array.
 </dl>
 <dl>
 <dt>Description:
@@ -7380,7 +7380,7 @@ is zero.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> ceil</tt> function returns the smallest integer not less than<b> x</b>, expressed as a<tt> double.</tt>
+<dd>The<tt> ceil</tt> function returns the smallest integer not less than<b> x</b>, expressed as a<tt> double</tt>.
 </dl>
 <dl>
 <dt>See Also:
@@ -8209,7 +8209,7 @@ errno</tt> appropriately on failures.
 <dt>EINTR
 <dd>The sleep was interrupted by a signal.
 <dt>EINVAL
-<dd>The value of<b> clockid</b> ,<b> request</b> , or<b> flags</b> is invalid.
+<dd>The value of<b> clockid</b>,<b> request</b>, or<b> flags</b> is invalid.
 <dt>ENOTSUP
 <dd>The specified clock does not support this function.
 </dl>
@@ -8240,7 +8240,7 @@ errno</tt> appropriately on failures.
 <dl>
 <dt>Description:
 <dd>The<tt> clock_settime</tt> function sets the time for the clock specified by<b> clockid</b> to the time contained in the<b>
-ts</b> pointer.&nbsp; Depending on the value of<b> clockid</b> , the function may fail if the user has insufficient privileges.
+ts</b> pointer.&nbsp; Depending on the value of<b> clockid</b>, the function may fail if the user has insufficient privileges.
 <br><br>Values of<b> ts</b> that specify significance beyond the clock's resolution will be truncated.
 </dl>
 <dl>
@@ -9292,8 +9292,8 @@ Functions, <a href="#difftime">difftime</a>, <a href="#gmtime">gmtime</a>, <a hr
 and return code of the terminated child process.
 <br><br>If the child process terminated normally, then the low order byte of the status word will be set to 0, and the high
 order byte will contain the low order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
-&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <tt> exit</tt> , or <tt> _Exit</tt> or
-<tt> _exit</tt> are explicity called.
+&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <tt> exit</tt>, or <tt> _Exit</tt> or <tt>
+_exit</tt> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>
@@ -9516,7 +9516,7 @@ would cause an overflow.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> difftime</tt> function returns the difference between the two times in seconds as a<tt> double.</tt>
+<dd>The<tt> difftime</tt> function returns the difference between the two times in seconds as a<tt> double</tt>.
 </dl>
 <dl>
 <dt>See Also:
@@ -12977,7 +12977,7 @@ environment variables<tt> SOURCE, TARGET</tt> and<tt> lines.</tt>
 on DOS systems.&nbsp; The<b> status</b> value is typically set to 0 to indicate successful termination and set to some other
 value to indicate an error.
 </ol>
-<br>The<tt> _exit</tt> is functionaly equivalent to<tt> _Exit.</tt>
+<br>The<tt> _exit</tt> is functionaly equivalent to<tt> _Exit</tt>.
 </dl>
 <dl>
 <dt>Returns:
@@ -13168,7 +13168,7 @@ accuracy for cases where the exponential of the argument<b> x</b> is significant
 </dl>
 <dl>
 <dt>Returns:
-<dd>The function returns a the exponential of ,arg x minus 1 without loss of accuracy due to subtractive cancelation.
+<dd>The function returns a the exponential of<b> x</b> minus 1 without loss of accuracy due to subtractive cancelation.
 </dl>
 <dl>
 <dt>See Also:
@@ -14029,7 +14029,7 @@ were successfully raised.&nbsp; Otherwise, it returns a nonzero value.
 <dt>Description:
 <dd>The<tt> fesetenv</tt> function attempts to establish the floating-point environment to environment represented by the object
 pointed by<b> envp</b> argument.&nbsp; The<b> envp</b> argument shall point to an object set by a call to <tt> fegetenv</tt>
-or <tt> feholdexcept</tt> , or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that fesetenv merely installs the state of
+or <tt> feholdexcept</tt>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that fesetenv merely installs the state of
 the floating-point status flags represented through its argument, and does not raise these floating-point exceptions.
 </dl>
 <dl>
@@ -15195,7 +15195,7 @@ has occurred.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> floor</tt> function computes the largest integer not greater than<b> x</b>, expressed as a<tt> double.</tt>
+<dd>The<tt> floor</tt> function computes the largest integer not greater than<b> x</b>, expressed as a<tt> double</tt>.
 </dl>
 <dl>
 <dt>See Also:
@@ -16690,7 +16690,7 @@ pointer.
 <dd>The<tt> freopen_s</tt> function opens the file whose name is the string pointed to by<b> filename</b> and associates the stream
 pointed to by<b> stream</b> with it.&nbsp; The<b> mode</b> argument has the same meaning as in the fopen_s function (including
 the mode's effect on exclusive access and file permissions).&nbsp; If<b> filename</b> is a null pointer,the<tt> freopen_s</tt>
-function attempts to change the mode of the<b> stream</b> to that specified by<b> mode</b> ,as if the name of the file currently
+function attempts to change the mode of the<b> stream</b> to that specified by<b> mode</b>, as if the name of the file currently
 associated with the stream had been used.&nbsp; It is implementation-defined which changes of mode are permitted (if any),
 and under what circumstances.&nbsp; The<tt> freopen_s</tt> function first attempts to close any file that is associated with<b>
 stream</b>.&nbsp; Failure to close the file is ignored.&nbsp; The error and end-of-file indicators for the stream are cleared.
@@ -17117,7 +17117,7 @@ calls to the <tt> fseek</tt> function.&nbsp; When a file is opened with update m
 of the<b> mode</b> argument), both input and output may be performed on the associated stream.
 <br><br>When a stream is opened in update mode, both reading and writing may be performed.&nbsp; However, writing may not
 be followed by reading without an intervening call to the <tt> fflush</tt> function or to a file positioning function (<tt>
-fseek</tt> , <tt> fsetpos</tt> , <tt> rewind</tt>).&nbsp; Similarly, reading may not be followed by writing without an intervening
+fseek</tt>, <tt> fsetpos</tt>, <tt> rewind</tt>).&nbsp; Similarly, reading may not be followed by writing without an intervening
 call to a file positioning function, unless the read resulted in end-of-file.
 <br><br>The shared access for the file,<b> share</b>, is established by a combination of bits defined in the<tt> &lt;share.h&gt;</tt>
 header file.&nbsp; The following values may be set:
@@ -19591,7 +19591,7 @@ byte code page is in use.
 <dl>
 <dt>Description:
 <dd>The<tt> getnetbyaddr</tt> function searches the network database for a network with a matching address type, specified by<b>
-type</b> as <tt> AF_INET</tt> , <tt> AF_INET6</tt> , etc., and address matching the<b> net</b> argument.&nbsp; The function
+type</b> as <tt> AF_INET</tt>, <tt> AF_INET6</tt>, etc., and address matching the<b> net</b> argument.&nbsp; The function
 returns information about said network if a match is found.&nbsp; The routine will query the local database only.
 <br><br>The structure returned is defined as:
 <br><br><tt>struct netent {</tt>
@@ -19680,7 +19680,7 @@ will never be NULL.
 <dl>
 <dt>Description:
 <dd>The<tt> getnetent</tt> function retrieves the next entry in the network database.&nbsp; If not proceeded by an appropriate
-call to <tt> setnetent</tt> , the function will always return the first network in the database.&nbsp; The routine will query
+call to <tt> setnetent</tt>, the function will always return the first network in the database.&nbsp; The routine will query
 the local database only.
 <br><br>The structure returned is defined as:
 <br><br><tt>struct netent {</tt>
@@ -20209,7 +20209,7 @@ to produce animated effects.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> getprotobyname</tt> function searches the protocol database for a protocol matching the specified<b> name</b> , considering
+<dd>The<tt> getprotobyname</tt> function searches the protocol database for a protocol matching the specified<b> name</b>, considering
 both the official name and aliases.&nbsp; The routine will query the local database only.
 <br><br>The structure returned is defined as:
 <br><br><tt>struct protoent {</tt>
@@ -20296,7 +20296,7 @@ structure entry will never be NULL.
 <dl>
 <dt>Description:
 <dd>The<tt> getprotoent</tt> function retrieves the next entry in the protocol database.&nbsp; If not proceeded by an appropriate
-call to <tt> setprotoent</tt> , the function will always return the first protocol in the database.&nbsp; The routine will
+call to <tt> setprotoent</tt>, the function will always return the first protocol in the database.&nbsp; The routine will
 query the local database only.
 <br><br>The structure returned is defined as:
 <br><br><tt>struct protoent {</tt>
@@ -20604,15 +20604,14 @@ that has been detected.
 <dd>If any of the following runtime-constraints is violated, the currently active runtime-constraint handler will be invoked and<tt>
 gets_s</tt> will set<b> s&#91;0&#93;</b> to be the null character, and characters are read and discarded from <tt> stdin</tt>
 until a new-line character is read, or end-of-file or a read error occurs.
-<br><br><b>s</b> shall not be a null pointer.<b>&nbsp; n</b> shall neither be equal to zero nor be greater than <tt> RSIZE_MAX</tt>
-.&nbsp; A new-line character, end-of-file, or read error shall occur within reading<b> n-1</b> characters from <tt> stdin</tt>
-.
+<br><br><b>s</b> shall not be a null pointer.<b>&nbsp; n</b> shall neither be equal to zero nor be greater than <tt> RSIZE_MAX</tt>.
+&nbsp;A new-line character, end-of-file, or read error shall occur within reading<b> n-1</b> characters from <tt> stdin</tt>.
 </dl>
 <dl>
 <dt>Description:
 <dd>The<tt> gets_s</tt> function gets a string of characters from the file designated by <tt> stdin</tt> and stores them in the
 array pointed to by<b> s</b> until end-of-file is encountered or a new-line character is read.&nbsp; Size of the array<b>
-s</b> is specified by the argument<b> n</b> , this information is used to protect buffer from overflow.&nbsp; If buffer<b>
+s</b> is specified by the argument<b> n</b>, this information is used to protect buffer from overflow.&nbsp; If buffer<b>
 s</b> is about to be overflown, runtime-constraint is activated.&nbsp; Any new-line character is discarded, and a null character
 is placed immediately after the last character read into the array.
 </dl>
@@ -20655,8 +20654,8 @@ violation, or if end-of-file is encountered and no caracters have been read into
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> getservbyname</tt> function searches the service database for a service with matching<b> name</b> and<b> protocol</b>
-, returning a pointer the a <tt> struct servent</tt> if found.&nbsp; The function will search for matching aliases as well.
+<dd>The<tt> getservbyname</tt> function searches the service database for a service with matching<b> name</b> and<b> protocol</b>,
+returning a pointer the a <tt> struct servent</tt> if found.&nbsp; The function will search for matching aliases as well.
 &nbsp;If<b> protocol</b> is NULL, the first encountered service matching the specified name will be returned regardless of
 protocol.&nbsp; The routine will query the local database only.
 <br><br>The structure returned is defined as:
@@ -20701,8 +20700,8 @@ structure entry will never be NULL.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> getservbyport</tt> function searches the service database for a service listening on<b> port</b> using<b> protocol</b>
-, returning a pointer the a <tt> struct servent</tt> if found.&nbsp; If<b> protocol</b> is NULL, the first encountered service
+<dd>The<tt> getservbyport</tt> function searches the service database for a service listening on<b> port</b> using<b> protocol</b>,
+returning a pointer the a <tt> struct servent</tt> if found.&nbsp; If<b> protocol</b> is NULL, the first encountered service
 matching the specified port number will be returned regardless of protocol.&nbsp; The routine will query the local database
 only.
 <br><br>The structure returned is defined as:
@@ -20748,7 +20747,7 @@ structure entry will never be NULL.
 <dl>
 <dt>Description:
 <dd>The<tt> getservent</tt> function retrieves the next entry in the service database.&nbsp; If not proceeded by an appropriate
-call to <tt> setservent</tt> , the function will always return the first service in the database.&nbsp; The routine will query
+call to <tt> setservent</tt>, the function will always return the first service in the database.&nbsp; The routine will query
 the local database only.
 <br><br>The structure returned is defined as:
 <br><br><tt>struct servent {</tt>
@@ -22895,8 +22894,9 @@ function.&nbsp; The<tt> ignore_handler_s</tt> function simply returns to its cal
 </dl>
 <dl>
 <dt>Returns:
-<dd>If successful, the return value is the exponent of<b> x</b>.&nbsp; FP_ILOGB0.&nbsp; When the argument is not-a-number, or
-NAN, the function returns FP_ILOGBNAN.&nbsp; For positive or negative infinity, the function returns INT_MAX.
+<dd>If successful, the return value is the exponent of<b> x</b>.&nbsp; When the argument is zero, the function returns FP_ILOGB0.
+&nbsp;When the argument is not-a-number, or NAN, the function returns FP_ILOGBNAN.&nbsp; For positive or negative infinity,
+the function returns INT_MAX.
 </dl>
 <dl>
 <dt>See Also:
@@ -32213,14 +32213,14 @@ same as the number of array elements modified when<b> dst</b> is not a null poin
 <dt>Constraints:
 <dd>If any of the following runtime-constraints is violated, the currently active runtime-constraint handler will be invoked and<tt>
 mbsrtowcs_s</tt> will return a non-zero value to indicate an error, or the runtime-constraint handler aborts the program.
-<br><br>None of<b> retval</b> ,<b> src</b> ,<b> *src</b> , or<b> ps</b> shall be null pointers.&nbsp; If<b> dst</b> is not
-a null pointer, then neither<b> len</b> nor<b> dstmax</b> shall be greater than <tt> RSIZE_MAX</tt>.&nbsp; If<b> dst</b> is
+<br><br>None of<b> retval</b>,<b> src</b>,<b> *src</b>, or<b> ps</b> shall be null pointers.&nbsp; If<b> dst</b> is not a
+null pointer, then neither<b> len</b> nor<b> dstmax</b> shall be greater than <tt> RSIZE_MAX</tt>.&nbsp; If<b> dst</b> is
 a null pointer, then<b> dstmax</b> shall equal zero.&nbsp; If<b> dst</b> is not a null pointer, then<b> dstmax</b> shall not
-equal zero.&nbsp; If<b> dst</b> is not a null pointer and<b> len</b> is not less than<b> dstmax</b> ,then a null character
+equal zero.&nbsp; If<b> dst</b> is not a null pointer and<b> len</b> is not less than<b> dstmax</b>, then a null character
 shall occur within the first<b> dstmax</b> multibyte characters of the array pointed to by<b> *src</b>.
 <br><br>If there is a runtime-constraint violation, then<tt> mbsrtowcs_s</tt> does the following.&nbsp; If<b> retval</b> is
 not a null pointer, then<tt> mbsrtowcs_s</tt> sets<b> *retval</b> to (size_t)(-1).&nbsp; If<b> dst</b> is not a null pointer
-and<b> dstmax</b> is greater than zero and less than <tt> RSIZE_MAX</tt> , then<tt> mbsrtowcs_s</tt> sets<b> dst&#91;0&#93;</b>
+and<b> dstmax</b> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> mbsrtowcs_s</tt> sets<b> dst&#91;0&#93;</b>
 to the null wide character.
 </dl>
 <dl>
@@ -33311,7 +33311,7 @@ RSIZE_MAX</b>.
 <dd>The<tt> memmove_s</tt> function copies<b> n</b> characters from the buffer pointed to by<b> s2</b> into the buffer pointed
 to by<b> s1</b>.&nbsp; This copying takes place as if the<b> n</b> characters from the buffer pointed to by<b> s2</b> are
 first copied into a temporary array of<b> n</b> characters that does not overlap the objects pointed to by<b> s1</b> or<b>
-s2</b> ,and then the<b> n</b> characters from the temporary array are copied into the object pointed to by<b> s1</b>.
+s2</b>, and then the<b> n</b> characters from the temporary array are copied into the object pointed to by<b> s1</b>.
 <br><br>See the<b> memcpy_s</b> function if you wish to copy objects that do not overlap.
 <br><br>The<tt> wmemmove_s</tt> function is a wide-character version of<tt> memmove_s</tt> that operates with wide-character
 strings.&nbsp; The arguments<b> s1max</b> and<b> n</b> are interpreted to mean the number of wide characters.
@@ -40703,7 +40703,7 @@ to create either the pipe or the subprocess, a<tt> NULL</tt> stream pointer is r
 <dt>EINVAL
 <dd>The<b> mode</b> argument is invalid.
 </dl>
-<br><tt>popen</tt> may also set <tt> errno</tt> values as described by the <tt> pipe</tt> , <tt> fork</tt> , and <tt> execl</tt>
+<br><tt>popen</tt> may also set <tt> errno</tt> values as described by the <tt> pipe</tt>, <tt> fork</tt>, and <tt> execl</tt>
 functions.
 </dl>
 <dl>
@@ -40948,7 +40948,7 @@ for the formatted item;
 <li>an optional<b> precision</b> specification in the form of a period character (.), followed by an optional decimal integer
 or an asterisk character (*);
 <li>an optional<b> type length</b> specification:&nbsp; one of &quot;hh&quot;, &quot;h&quot;, &quot;l&quot;, &quot;ll&quot;,
-&quot;j&quot;, &quot;z&quot;, &quot;t&quot;, &quot;L&quot;, &quot;I64&quot;, &quot;w&quot;, &quot;N&quot; or &quot;W&quot;;
+&quot;j&quot;, &quot;z&quot;, &quot;t&quot;, &quot;L&quot;, &quot;I64&quot;, &quot;w&quot;, &quot;N&quot; or &quot;W&quot;
 and
 <li>a character that specifies the type of conversion to be performed:&nbsp; one of the characters &quot;bcCdeEfFgGinopsSuxX&quot;.
 </ul>
@@ -42505,7 +42505,7 @@ function is supported in all video modes, but only works with EGA, MCGA and VGA 
 specifies the actual color displayed on the screen by pixels with pixel value<b> pixval</b>.&nbsp; Color values are selected
 by specifying the red, green and blue intensities that make up the color.&nbsp; Each intensity can be in the range from 0
 to 63, resulting in 262144 possible different colors.&nbsp; A given color value can be conveniently specified as a value of
-type<tt> long.</tt>&nbsp; The color value is of the form<tt> 0x00bbggrr,</tt> where<tt> bb</tt> is the blue intensity,<tt>
+type<tt> long</tt>.&nbsp; The color value is of the form<tt> 0x00bbggrr,</tt> where<tt> bb</tt> is the blue intensity,<tt>
 gg</tt> is the green intensity and<tt> rr</tt> is the red intensity of the selected color.&nbsp; The file<tt> graph.h</tt>
 defines constants containing the color intensities of each of the 16 default colors.
 <br><br>The<tt> _remappalette</tt> function takes effect immediately.&nbsp; All pixels on the complete screen which have a
@@ -43193,11 +43193,11 @@ recognized.
 <br><br>A type length specifier affects the conversion as follows:
 <ul>
 <li>&quot;hh&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
-to assign the converted value to an object of type<tt> signed char</tt> or<tt> unsigned char.</tt>
+to assign the converted value to an object of type<tt> signed char</tt> or<tt> unsigned char</tt>.
 <li>&quot;hh&quot; causes an &quot;n&quot; (read length assignment) operation to assign the number of characters that have
-been read to an object of type<tt> signed char.</tt>
+been read to an object of type<tt> signed char</tt>.
 <li>&quot;h&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
-to assign the converted value to an object of type<tt> short int</tt> or<tt> unsigned short int.</tt>
+to assign the converted value to an object of type<tt> short int</tt> or<tt> unsigned short int</tt>.
 <li>&quot;h&quot; causes an &quot;f&quot; conversion to assign a fixed-point number to an object of type<tt> long</tt> consisting
 of a 16-bit signed integer part and a 16-bit unsigned fractional part.&nbsp; The integer part is in the high 16 bits and the
 fractional part is in the low 16 bits.
@@ -43211,39 +43211,39 @@ fractional part is in the low 16 bits.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct fixpt foo2 =</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 0x8000, -1 };&nbsp;&nbsp; /* represents -0.5 (-1+.5) */</tt>
 <li>&quot;h&quot; causes an &quot;n&quot; (read length assignment) operation to assign the number of characters that have
-been read to an object of type<tt> short int.</tt>&nbsp; *.
+been read to an object of type<tt> short int</tt>.&nbsp; *.
 <li>&quot;h&quot; causes an &quot;s&quot; operation to convert the input string to an ASCII character string.&nbsp; For<tt>
 scanf</tt> this specifier is redundant.&nbsp; For wscanf, this specifier is required if the wide character input string is
 to be converted to an ASCII character string; otherwise it will not be converted.&nbsp; *.
 <li>&quot;l&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
-to assign the converted value to an object of type<tt> long int</tt> or<tt> unsigned long int.</tt>
+to assign the converted value to an object of type<tt> long int</tt> or<tt> unsigned long int</tt>.
 <li>&quot;l&quot; causes an &quot;n&quot; (read length assignment) operation to assign the number of characters that have
-been read to an object of type<tt> long int.</tt>
+been read to an object of type<tt> long int</tt>.
 <li>&quot;l&quot; causes an &quot;e&quot;, &quot;f&quot; or &quot;g&quot; (floating-point) conversion to assign the converted
-value to an object of type<tt> double.</tt>
+value to an object of type<tt> double</tt>.
 <li>&quot;l&quot; or &quot;w&quot; cause an &quot;s&quot; operation to convert the input string to a wide character string.
 &nbsp;For<tt> scanf</tt> this specifier is required if the input ASCII string is to be converted to a wide character string;
 otherwise it will not be converted.&nbsp; *.
 <li>&quot;ll&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
 to assign the converted value to an object of type<tt> long long</tt> or<tt> unsigned long long</tt> (e.g., %lld).
 <li>&quot;ll&quot; causes an &quot;n&quot; (read length assignment) operation to assign the number of characters that have
-been read to an object of type<tt> long long int.</tt>
+been read to an object of type<tt> long long int</tt>.
 <li>&quot;j&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
-to assign the converted value to an object of type<tt> intmax_t</tt> or<tt> uintmax_t.</tt>
+to assign the converted value to an object of type<tt> intmax_t</tt> or<tt> uintmax_t</tt>.
 <li>&quot;j&quot; causes an &quot;n&quot; (read length assignment) operation to assign the number of characters that have
-been read to an object of type<tt> intmax_t.</tt>
+been read to an object of type<tt> intmax_t</tt>.
 <li>&quot;z&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
 to assign the converted value to an object of type<tt> size_t</tt> or the corresponding signed integer type.
 <li>&quot;z&quot; causes an &quot;n&quot; (read length assignment) operation to assign the number of characters that have
-been read to an object of signed integer type corresponding to<tt> size_t.</tt>
+been read to an object of signed integer type corresponding to<tt> size_t</tt>.
 <li>&quot;t&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
 to assign the converted value to an object of type<tt> ptrdiff_t</tt> or the corresponding unsigned integer type.
 <li>&quot;t&quot; causes an &quot;n&quot; (read length assignment) operation to assign the number of characters that have
-been read to an object of type<tt> ptrdiff_t.</tt>
+been read to an object of type<tt> ptrdiff_t</tt>.
 <li>&quot;I64&quot; causes a &quot;d&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot; or &quot;x&quot; (integer) conversion
 to assign the converted value to an object of type<tt> __int64</tt> or<tt> unsigned __int64</tt> (e.g., %I64d).
 <li>&quot;L&quot; causes an &quot;e&quot;, &quot;f&quot; or &quot;g&quot; (floating-point) conversion to assign the converted
-value to an object of type<tt> long double.</tt>
+value to an object of type<tt> long double</tt>.
 </ul>
 <br>The valid conversion type specifiers are:
 <dl>
@@ -43254,30 +43254,30 @@ size to contain the sequence, without a terminating null character ('\0').&nbsp;
 to a single object of type<tt> char</tt> is sufficient.
 <dt>C
 <dd>A sequence of multibyte characters in the input stream is matched.&nbsp; Each multibyte character is converted to a wide character
-of type<tt> wchar_t.</tt>&nbsp; The number of wide characters matched is specified by the field width (1 if no field width
+of type<tt> wchar_t</tt>.&nbsp; The number of wide characters matched is specified by the field width (1 if no field width
 is specified).&nbsp; The argument is assumed to point to the first element of an array of<tt> wchar_t</tt> of sufficient size
 to contain the sequence.&nbsp; No terminating null wide character (L'\0') is added.&nbsp; For a single wide character assignment,
 a pointer to a single object of type<tt> wchar_t</tt> is sufficient.
 <dt>d
 <dd>A decimal integer, consisting of an optional sign, followed by one or more decimal digits, is matched.&nbsp; The argument
-is assumed to point to an object of type<tt> int.</tt>
+is assumed to point to an object of type<tt> int</tt>.
 <dt>e, f, g
 <dd>A floating-point number, consisting of an optional sign (&quot;+&quot; or &quot;-&quot;), followed by one or more decimal
 digits, optionally containing a decimal-point character, followed by an optional exponent of the form &quot;e&quot; or &quot;E&quot;,
 an optional sign and one or more decimal digits, is matched.&nbsp; The exponent, if present, specifies the power of ten by
-which the decimal fraction is multiplied.&nbsp; The argument is assumed to point to an object of type<tt> float.</tt>
+which the decimal fraction is multiplied.&nbsp; The argument is assumed to point to an object of type<tt> float</tt>.
 <dt>i
 <dd>An optional sign, followed by an octal, decimal or hexadecimal constant is matched.&nbsp; An octal constant consists of &quot;0&quot;
 and zero or more octal digits.&nbsp; A decimal constant consists of a non-zero decimal digit and zero or more decimal digits.
 &nbsp;A hexadecimal constant consists of the characters &quot;0x&quot; or &quot;0X&quot; followed by one or more (upper- or
-lowercase) hexadecimal digits.&nbsp; The argument is assumed to point to an object of type<tt> int.</tt>
+lowercase) hexadecimal digits.&nbsp; The argument is assumed to point to an object of type<tt> int</tt>.
 <dt>n
 <dd>No input data is processed.&nbsp; Instead, the number of characters that have already been read is assigned to the object
 of type<tt> unsigned int</tt> that is pointed to by the argument.&nbsp; The number of items that have been scanned and assigned
 (the return value) is not affected by the &quot;n&quot; conversion type specifier.
 <dt>o
 <dd>An octal integer, consisting of an optional sign, followed by one or more (zero or non-zero) octal digits, is matched.&nbsp;
-The argument is assumed to point to an object of type<tt> int.</tt>
+The argument is assumed to point to an object of type<tt> int</tt>.
 <dt>p
 <dd>A hexadecimal integer, as described for &quot;x&quot; conversions below, is matched.&nbsp; The converted value is further
 converted to a value of type<tt> void*</tt> and then assigned to the object pointed to by the argument.
@@ -43291,11 +43291,11 @@ first element of an array of<tt> wchar_t</tt> of sufficient size to contain the 
 which is added by the conversion operation.
 <dt>u
 <dd>An unsigned decimal integer, consisting of one or more decimal digits, is matched.&nbsp; The argument is assumed to point
-to an object of type<tt> unsigned int.</tt>
+to an object of type<tt> unsigned int</tt>.
 <dt>x
 <dd>A hexadecimal integer, consisting of an optional sign, followed by an optional prefix &quot;0x&quot; or &quot;0X&quot;, followed
 by one or more (upper- or lowercase) hexadecimal digits, is matched.&nbsp; The argument is assumed to point to an object of
-type<tt> int.</tt>
+type<tt> int</tt>.
 <dt>&#91;c1c2...&#93;
 <dd>The longest, non-empty sequence of characters, consisting of any of the characters<tt> c1, c2, ...</tt>&nbsp; called the<b>
 scanset,</b> in any order, is matched.<tt>&nbsp; c1</tt> cannot be the caret character ('^').&nbsp; If<tt> c1</tt> is &quot;&#93;&quot;,
@@ -43320,8 +43320,8 @@ lowercase equivalents.
 <br><br><tt>scanf( &quot;%s%*f%3hx%d&quot;, name, &amp;hexnum, &amp;decnum )</tt>
 <br><br>with input
 <br><br><tt>some_string 34.555e-3 abc1234</tt>
-<br><br>will copy<tt> &quot;some_string&quot;</tt> into the array<tt> name,</tt> skip<tt> 34.555e-3</tt>, assign<tt> 0xabc</tt>
-to<tt> hexnum</tt> and<tt> 1234</tt> to<tt> decnum.</tt>&nbsp; The return value will be 3.
+<br><br>will copy<tt> &quot;some_string&quot;</tt> into the array<tt> name</tt>, skip<tt> 34.555e-3</tt>, assign<tt> 0xabc</tt>
+to<tt> hexnum</tt> and<tt> 1234</tt> to<tt> decnum</tt>.&nbsp; The return value will be 3.
 <br>The program
 <br><br><tt>#include &lt;stdio.h&gt;</tt>
 <br><br><tt>void main( void )</tt>
@@ -43336,10 +43336,10 @@ to<tt> hexnum</tt> and<tt> 1234</tt> to<tt> decnum.</tt>&nbsp; The return value 
 <br><br><tt>They may look alike, but they don't perform alike.</tt>
 <br><br>will assign
 <br><br><tt>&quot;They may look alike&quot;</tt>
-<br><br>to<tt> string1,</tt> skip the comma (the<tt> &quot;%*2s&quot;</tt> will match only the comma; the following blank
+<br><br>to<tt> string1</tt>, skip the comma (the<tt> &quot;%*2s&quot;</tt> will match only the comma; the following blank
 terminates that field), and assign
 <br><br><tt>&quot; but they don't perform alike.&quot;</tt>
-<br><br>to<tt> string2.</tt>
+<br><br>to<tt> string2</tt>.
 </dl>
 <dl>
 <dt>Classification:
@@ -43696,7 +43696,7 @@ fails, the return value is -1 and <tt> errno</tt> is appropriately set.
 <dt>ESRCH
 <dd>The process ID<b> pid</b> could not be found
 <dt>EINVAL
-<dd>The process ID<b> pid</b> , policy value<b> policy</b> , or the pointer<b> sp</b> is invalid
+<dd>The process ID<b> pid</b>, policy value<b> policy</b>, or the pointer<b> sp</b> is invalid
 <dt>EFAULT
 <dd>The memory at<b> sp</b> could not be read
 </dl>
@@ -44753,7 +44753,7 @@ set <tt> errno</tt> to indicate the error.
 <dl>
 <dt>Description:
 <dd>The<tt> _setfillmask</tt> function sets the current fill mask to the value of the argument<b> mask</b>.&nbsp; When the value
-of the<b> mask</b> argument is<tt> NULL,</tt> there will be no fill mask set.
+of the<b> mask</b> argument is<tt> NULL</tt>, there will be no fill mask set.
 <br><br>The fill mask is an eight-byte array which is interpreted as a square pattern (8 by 8) of 64 bits.&nbsp; Each bit
 in the mask corresponds to a pixel.&nbsp; When a region is filled, each point in the region is mapped onto the fill mask.
 &nbsp;When a bit from the mask is one, the pixel value of the corresponding point is set using the current plotting action
@@ -45760,9 +45760,9 @@ and vertically about the given point according to the current text alignment set
 <dt>_BOTTOM
 <dd>the bottom of the text string is aligned at the given point
 </dl>
-<br>The default is to use<tt> _LEFT</tt> alignment for the horizontal component unless the text path is<tt> _PATH_LEFT,</tt>
+<br>The default is to use<tt> _LEFT</tt> alignment for the horizontal component unless the text path is<tt> _PATH_LEFT</tt>,
 in which case<tt> _RIGHT</tt> alignment is used.&nbsp; The default value for the vertical component is<tt> _TOP</tt> unless
-the text path is<tt> _PATH_UP,</tt> in which case<tt> _BOTTOM</tt> alignment is used.
+the text path is<tt> _PATH_UP</tt>, in which case<tt> _BOTTOM</tt> alignment is used.
 </dl>
 <dl>
 <dt>Returns:
@@ -54205,8 +54205,8 @@ values of<b> desc</b> are defined by the use of the <tt> wctrans</tt> function.
 <dt>Description:
 <dd>The POSIX-compliant<tt> ttyname</tt> function retrieves the name of a TTY as specified by the<b> fd</b> file descriptor, returning
 a static pointer to the name.&nbsp; Subsequent calls may change the contents of the string pointed to by the original call
-to<tt> ttyname</tt> , and the memory to which the return value points should not be freed.
-<br><br>The <tt> ttyname_r</tt> function performs the same function as<tt> ttyname</tt> , but the name of the TTY is returned
+to<tt> ttyname</tt>, and the memory to which the return value points should not be freed.
+<br><br>The <tt> ttyname_r</tt> function performs the same function as<tt> ttyname</tt>, but the name of the TTY is returned
 in the<b> buf</b> argument.&nbsp; The argument<b> buflen</b> should specify the size of the<b> buf</b> argument.&nbsp; The
 <tt> ttyname_r</tt> function is an Open Watcom extension commonly implemented in other standard libraries.
 </dl>
@@ -56605,8 +56605,8 @@ reason, the <tt> cwait</tt> function should be used (one of its arguments is a p
 and return code of the terminated child process.
 <br><br>If the child process terminated normally, then the low order byte of the status word will be set to 0, and the high
 order byte will contain the low order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
-&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <tt> exit</tt> , or <tt> _Exit</tt> or
-<tt> _exit</tt> are explicity called.
+&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <tt> exit</tt>, or <tt> _Exit</tt> or <tt>
+_exit</tt> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>

@@ -102,14 +102,14 @@ highlighting some of the more memorable sights.
 <br><br>The Open Watcom directory structure mostly mirrors the layout used by the Watcom/Sybase build server but it has been
 cleaned up, straightened out and unified, although there still may be some warts.
 <br><br>The root of the Open Watcom directory tree can be in the root of any drive (if your OS uses drive letters) or in any
-directory, for instance<tt> e:\ow.</tt>&nbsp; Long filenames are not recommended if compatibility with DOS tools is desired.
+directory, for instance<tt> e:\ow</tt>.&nbsp; Long filenames are not recommended if compatibility with DOS tools is desired.
 &nbsp;Directory names which include spaces are highly discouraged in any case.
 <br><br>The main subdirectories in the Open Watcom root are the following:
 <dl>
 <dt>build
 <dd>contains main builder control files and other useful files.&nbsp; One extremely important file lives here:<b>&nbsp; makeinit.</b>
 &nbsp;This file controls the operation of wmake and is the key to understanding of the build process.&nbsp; Since wmake looks
-for<b> makeinit</b> along the<tt> PATH,</tt> the<b> build</b> directory should be placed at or near the start of your<tt>
+for<b> makeinit</b> along the<tt> PATH</tt>, the<b> build</b> directory should be placed at or near the start of your<tt>
 PATH</tt> environment variable.
 <dt>build/bin
 <dd>contains binaries created during first build phase (bootstrap) and used during main building process (second build phase).
@@ -342,7 +342,7 @@ them.
 <br><br>To build the required executables, go to a subdirectory of the project<b> builder</b> directory which sounds like
 it would be appropriate for your host platform and run<b> wmake.</b>&nbsp; If you set up everything correctly, you will end
 up with working binaries that were automatically copied into the right subdirectory of the<b> build</b> directory, and that
-directory is already on the<tt> PATH.</tt>&nbsp; If not, it's back to square one - the most likely source of problems is incorrectly
+directory is already on the<tt> PATH</tt>.&nbsp; If not, it's back to square one - the most likely source of problems is incorrectly
 set up<b> setvars</b> batch file.
 <br><br>If you've got this far - congratulations, you've finished the one-time steps.&nbsp; You shouldn't need to redo them
 unless you decide to start from scratch, your harddrive decides to die or some similarly catastrophic event occurs.
@@ -366,12 +366,12 @@ defined therein:
 </dl>
 <br>For each project with name X you wish to have on the build machine,<tt> X_dir</tt> must be set to the directory containing
 the project.&nbsp; That is, if you want the code generator on your machine (and who wouldn't?), it is officially named cg
-(see Project Names below) and so you would define<tt> cg_dir.</tt>
+(see Project Names below) and so you would define<tt> cg_dir</tt>.
 <br>Alternatively, if all of your projects are in directories which correspond to their project names under a common directory,
 you can set dev_dir and<b> !include cdirs.mif</b> in your<b> makeinit.</b>&nbsp; This is the recommended setup and default
 for Open Watcom.&nbsp; You do not have to take any extra action to use it.
 <br><br>Alternatively, you can do the above and then redefine<tt> X_dir</tt> for any projects which are not under the<tt>
-dev_dir.</tt>
+dev_dir</tt>.
 <h2 id="Project_Names"> Project Names </h2>
 <br>Each project must be given a unique name, which should also be a valid directory name under FAT file systems (8.3 convention).
 <h2 id="Makefiles"> Makefiles </h2>
@@ -452,7 +452,7 @@ to bind up DOS protected mode apps will likely be added to the standard suite of
 tools should be checked in along with the project and built as part of the build process (so that we don't have to check in
 zillions of binaries for all supported platforms).&nbsp; An important future consideration will be the ability to build on
 a different architecture.&nbsp; Please try and avoid weirdo tools that have no hope of running on an Alpha or PPC running
-NT or on Linux.&nbsp; These tools should be referenced from the makefile as<tt> $(bld_dir)\tool.</tt>&nbsp; If your tool cannot
+NT or on Linux.&nbsp; These tools should be referenced from the makefile as<tt> $(bld_dir)\tool</tt>.&nbsp; If your tool cannot
 run under a particular OS, you should at least put a batchfile in that bin which echoes a message to that effect (to alert
 people to the fact that you've just made their life difficult).&nbsp; More general tools (yacc, re2c, w32bind) that are likely
 to be used by several projects should be copied up into the build/bin directory.
@@ -527,13 +527,13 @@ than exception - only dedicated build servers usually have all necessary files i
 comment in the main makefile of the dependant project.&nbsp; Hopefully, this main makefile should be called<b> master.mif</b>
 and be in the root directory, or a mif subdirectory thereof, of the project.
 <br><br>Also, it is suggested that the object file directory name be a combination of the<tt> host_os</tt> followed by the<tt>
-host_cpu,</tt> if convenient.&nbsp; For example, NT versions for the PPC should be genned into a ntppc directory.&nbsp; If
+host_cpu</tt> , if convenient.&nbsp; For example, NT versions for the PPC should be genned into a ntppc directory.&nbsp; If
 a directory structure which is different than this is used for some reason, then comments explaining exactly what is built
 where would be nice in the<b> master.mif</b> file.
 <br><br>Things get more interesting if cross compilers are thrown into the mix.&nbsp; In that case three components are required
 in the name:&nbsp; for instance a<b> ntaxp.386</b> directory can hold the Alpha AXP NT compiler producing 386 code.
 <br><br>This is also why the macro names are somewhat counterintuitive - most people would think of the<tt> host_os</tt> and<tt>
-host_cpu,</tt> as target OS and CPU.&nbsp; However, the 'target' designation is reserved for the target architecture of the
+host_cpu</tt> , as target OS and CPU.&nbsp; However, the 'target' designation is reserved for the target architecture of the
 generated binary.&nbsp; In the above case of a compiler that runs on Alpha AXP NT and produces 386 code, the makefile contains:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; host_os&nbsp;&nbsp;&nbsp; = nt</tt>
@@ -553,9 +553,9 @@ by redefining them after<b> cproj.mif</b> is included.&nbsp; The current structu
 <br><br>So, a project should put any include directories it needs into<b> inc_dirs</b> - note that this does not include<tt>
 $(watcom_dir)\h</tt> which is part of the default include directory set.
 <br><br>If it needs to, a project can override any and all of these - for instance, the clib needs to be built with the next
-release header files, and so would redefine<tt> inc_dirs_lang.</tt>
+release header files, and so would redefine<tt> inc_dirs_lang</tt>.
 <br><br>Any OS-specific header files needed by the project can be set in<tt> inc_dirs_$(host_os)</tt> - again, this should
-not include the standard system header files, which will be defined in<tt> inc_dirs_sys_$(host_os).</tt>
+not include the standard system header files, which will be defined in<tt> inc_dirs_sys_$(host_os)</tt>.
 <br><br>Note that the build system previously used to set the<tt> INCLUDE</tt> environment variable to hold the contents of<b>
 inc_dirs</b> macro.&nbsp; This mechanism is now considered obsolete and should no longer used.&nbsp; Instead, include paths
 are passed directly on the command line.&nbsp; This also means that all include paths must be prepended with a -I switch,
@@ -836,8 +836,8 @@ in producing the OS/2 online help files and Win32 system is needed for producing
 required help compilers on your host platform).&nbsp; DOS may work for producing some of the documentation but is untested
 at this time.
 <br><br>The environment variable<tt> doc_root</tt> must point to the root of the docunmentation tree.&nbsp; Add<tt> %doc_root%\cmds</tt>
-to your<tt> PATH.</tt>&nbsp; Your<tt> PATH</tt> must also contain the Open Watcom C/C++ binary directories appropriate for
-your host platform (for wmake).&nbsp; This is taken care of automatically by using<tt> setvars.cmd/setvars.bat.</tt>
+to your<tt> PATH</tt>.&nbsp; Your<tt> PATH</tt> must also contain the Open Watcom C/C++ binary directories appropriate for
+your host platform (for wmake).&nbsp; This is taken care of automatically by using<tt> setvars.cmd/setvars.bat</tt>.
 <br><br>Note that to produce Windows and/or OS/2 online documentation, you will need the appropriate SDKs and Toolkits containing
 the platform specific online help compilers.
 <h2 id="Building_PostScript_Documentation"> Building PostScript Documentation </h2>
@@ -867,7 +867,7 @@ QNX)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; lguide&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Linker User's Guide</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pguide&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C/C++ Programmer's Guide</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Debugger User's Guide</tt>
-<br><br>The output file is of type<tt> .ps.</tt>&nbsp; You should be able to send this file to any PostScript printer or view
+<br><br>The output file is of type<tt> .ps</tt>.&nbsp; You should be able to send this file to any PostScript printer or view
 it in GhostScript or convert it to PDF or do whatever it is you do with PostScript files.
 <h2 id="Building_Online_Help_Documentation"> Building Online Help Documentation </h2>
 <br>For Microsoft Help format (old Windows 3.x help format):
@@ -911,13 +911,13 @@ or digits).&nbsp; Script tags will be most familiar to anyone who has ever used 
 format is also similar in idea to other tagged formatting systems like RUNOFF or ROFF.
 <br><br>The GML tags are of the form &quot;:TAG.&quot; (i.e., they begin with a colon, followed by some letters and digits
 and end with a period).&nbsp; GML tags will be most familiar to anyone who has ever used IBM GML or Waterloo GML.&nbsp; This
-tag set is a variant of SGML.&nbsp; The most familiar SGML tag format is<tt> &lt;TAG&gt;.</tt>&nbsp; In Watcom GML, the &quot;&lt;&quot;
+tag set is a variant of SGML.&nbsp; The most familiar SGML tag format is<tt> &lt;TAG&gt;</tt>.&nbsp; In Watcom GML, the &quot;&lt;&quot;
 and &quot;&gt;&quot; are replaced by the &quot;:&quot; and &quot;.&quot;.&nbsp; If you know HTML, you know how tags work -
 HTML is just another variant of SGML.
 <br><br>The tag set includes a base set of predefined tags.&nbsp; In addition to this base set, you can define an extended
 tag set using the built-in macro language.&nbsp; The base Script tag set employs two letters (e.g., two, three, four or more
-letters (e.g.&nbsp; .chapter, .section, .beglevel).&nbsp; For a good example of user-defined Script tags, see<tt> %doc_root%\doc\gml\fmtmacro.gml.</tt>
-&nbsp;GML tags can also be defined.&nbsp; For a good example of user-defined GML tags, see<tt> %doc_root%\doc\gml\cppextra.gml.</tt>
+letters (e.g.&nbsp; .chapter, .section, .beglevel).&nbsp; For a good example of user-defined Script tags, see<tt> %doc_root%\doc\gml\fmtmacro.gml</tt>.
+&nbsp;GML tags can also be defined.&nbsp; For a good example of user-defined GML tags, see<tt> %doc_root%\doc\gml\cppextra.gml</tt>.
 <br><br>These tags are described here for you, not so that you can begin defining your own tags, but so that you will recognize
 them in the ASCII text that comprises the documentation.&nbsp; But of course no-one's stopping you from defining your own
 tags should you feel so inclined.

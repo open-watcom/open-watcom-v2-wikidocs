@@ -1291,11 +1291,11 @@ equipped with an Intel 80x87 numeric data processor.
 <br><br><b>Example 6:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc=/short /d2 /fo#*.dbj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc ..\source\modabs</tt>
-<br><br>The options<tt> /short, /d2</tt> and<tt> /fo=*.dbj</tt> are established as defaults using the<b> WFC</b> environment
-variable.&nbsp; The 16-bit compiler processes<tt> ..\SOURCE\MODABS.FOR</tt> (a file in a directory which is adjacent to the
-current one).&nbsp; The object file is placed in the current directory and it will have a default file extension of &quot;DBJ&quot;.
-&nbsp;All INTEGER and LOGICAL variables will have a default type of INTEGER*2 and LOGICAL*1 unless explicitly typed as INTEGER*4
-or LOGICAL*4.&nbsp; Source line number and local symbol information are included with the object file.
+<br><br>The options<tt> /short</tt>,<tt> /d2</tt> and<tt> /fo=*.dbj</tt> are established as defaults using the<b> WFC</b>
+environment variable.&nbsp; The 16-bit compiler processes<tt> ..\SOURCE\MODABS.FOR</tt> (a file in a directory which is adjacent
+to the current one).&nbsp; The object file is placed in the current directory and it will have a default file extension of
+&quot;DBJ&quot;.&nbsp; All INTEGER and LOGICAL variables will have a default type of INTEGER*2 and LOGICAL*1 unless explicitly
+typed as INTEGER*4 or LOGICAL*4.&nbsp; Source line number and local symbol information are included with the object file.
 <h2 id="Compiler_Diagnostics"> Compiler Diagnostics </h2>
 <br>If the Open Watcom F77 compiler prints diagnostic messages to the screen, it will also place a copy of these messages
 in a file in your current directory (unless the &quot;noerrorfile&quot; option is specified).&nbsp; The file will have the
@@ -1617,7 +1617,7 @@ way.&nbsp; The following lists these options.
 <br>This compiler directive causes a form-feed to be generated in the listing file.&nbsp; The listing file is a carriage-control
 file that is created by the compiler when the &quot;list&quot; compiler option is specified.&nbsp; In the following example,
 a form-feed character will be generated immediately before the source for subroutine<tt> sub2</tt> and immediately before
-the source for subroutine<tt> sub3.</tt>
+the source for subroutine<tt> sub3</tt>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subroutine sub1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! source code</tt>
@@ -2676,7 +2676,7 @@ environment variable so that the compiler can locate the include file.
 <br>The subroutine<tt> FINTR</tt> and<tt> FINTRF</tt> require two arguments.
 <ol>
 <li>The first argument is an interrupt number.&nbsp; These subroutines will generate the software interrupt given by the this
-argument.&nbsp; The type must be<tt> INTEGER.</tt>
+argument.&nbsp; The type must be<tt> INTEGER</tt>.
 <li>The second argument is an<tt> INTEGER</tt> array of ten elements.
 </ol>
 <br>When<tt> FINTR</tt> and<tt> FINTRF</tt> are called, the array contains the values to be assigned to the registers prior
@@ -2903,7 +2903,7 @@ then the program could not be run.&nbsp; If the value is positive then the value
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the<b> FINCLUDE</b>
 environment variable so that the compiler can locate the include file.
-<li>The INTEGER function<tt> FSYSTEM,</tt> which is described in a later section, implements a more general form of the example
+<li>The INTEGER function<tt> FSYSTEM</tt> , which is described in a later section, implements a more general form of the example
 given above.&nbsp; We recommend its use.
 </ol>
 <h2 id="INTEGER_Function_FSYSTEM"> INTEGER Function FSYSTEM </h2>
@@ -2959,8 +2959,8 @@ environment variable so that the compiler can locate the include file.
 </ol>
 <h2 id="Subroutine_GETDAT"> Subroutine GETDAT </h2>
 <br>The subroutine<tt> GETDAT</tt> allows an application to obtain the current date.
-<br><br>The subroutine<tt> GETDAT</tt> has three arguments of type<tt> INTEGER*2.</tt>&nbsp; When control is returned from<tt>
-GETDAT,</tt> they contain the year, month and day of the current date.
+<br><br>The subroutine<tt> GETDAT</tt> has three arguments of type<tt> INTEGER*2</tt>.&nbsp; When control is returned from<tt>
+GETDAT</tt> , they contain the year, month and day of the current date.
 <br><br>The following program prints the current date in the form &quot;YY-MM-DD&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
@@ -2978,8 +2978,8 @@ environment variable so that the compiler can locate the include file.
 </ol>
 <h2 id="Subroutine_GETTIM"> Subroutine GETTIM </h2>
 <br>The subroutine<tt> GETTIM</tt> allows an application to obtain the current time.
-<br><br>The subroutine<tt> GETTIM</tt> has four arguments of type<tt> INTEGER*2.</tt>&nbsp; When control is returned from<tt>
-GETTIM,</tt> they contain the hours, minutes, seconds, and hundredths of seconds of the current time.
+<br><br>The subroutine<tt> GETTIM</tt> has four arguments of type<tt> INTEGER*2</tt>.&nbsp; When control is returned from<tt>
+GETTIM</tt> , they contain the hours, minutes, seconds, and hundredths of seconds of the current time.
 <br><br>The following program prints the current time in the form &quot;HH:MM:SS.TT&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
@@ -3230,7 +3230,7 @@ integer value.<tt>&nbsp; URAND</tt> returns a REAL value which is a pseudo-rando
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br><b>Notes:</b>
 <ol>
-<li>Upon each invocation of<tt> URAND,</tt> the seed argument is updated by the random number generator.&nbsp; Therefore,
+<li>Upon each invocation of<tt> URAND</tt> , the seed argument is updated by the random number generator.&nbsp; Therefore,
 the argument must not be a constant and, once the seed value has been set, it must<b> not</b> be modified by the programmer.
 </ol>
 <h2 id="Default_Windowing_Functions"> Default Windowing Functions </h2>
@@ -3528,7 +3528,7 @@ n</b> can be represented in 4 bytes if
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -2147483648 &lt;= n &lt;= 2147483647</tt>
 <h2 id="REAL_and_REALT4_Data_Types"> REAL and REAL*4 Data Types </h2>
 <br>An item of type<b> REAL</b> or<b> REAL*4</b> is an approximate representation of a real number and occupies 4 bytes (one
-numeric storage unit).&nbsp; If<tt> m</tt> is the magnitude of a real number<tt> x,</tt> then<tt> x</tt> can be approximated
+numeric storage unit).&nbsp; If<tt> m</tt> is the magnitude of a real number<tt> x</tt>, then<tt> x</tt> can be approximated
 if
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -126&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 128</tt>
@@ -3566,7 +3566,7 @@ a &quot;denormal&quot; or nonnormal number.
 <h2 id="DOUBLE_PRECISION_and_REALT8_Data_Types"> DOUBLE PRECISION and REAL*8 Data Types </h2>
 <br>An item of type<b> DOUBLE PRECISION</b> or<b> REAL*8</b> is an approximate representation of a real number, occupies 8
 bytes (two numeric storage units) and has precision greater than or equal to that of an item of type<b> REAL</b> or<b> REAL*4</b>.
-&nbsp;If<tt> m</tt> is the magnitude of a real number<tt> x,</tt> then<tt> x</tt> can be approximated if
+&nbsp;If<tt> m</tt> is the magnitude of a real number<tt> x</tt>, then<tt> x</tt> can be approximated if
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1022&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;= m &lt; 2</tt>
@@ -4003,7 +4003,7 @@ signal_number, signal_type</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; if we don't then a subsequent exception will</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; cause an abnormal program termination</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br>Note the use of the<tt> VOLATILE</tt> intrinsic function to obtain up-to-date contents of the variable<tt> SIGNAL_COUNT.</tt>
+<br><br>Note the use of the<tt> VOLATILE</tt> intrinsic function to obtain up-to-date contents of the variable<tt> SIGNAL_COUNT</tt>.
 <h1 id="16Mbit_Memory_Models"> 16-bit Memory Models </h1>
 <br>This chapter describes the various 16-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
 by two properties; the code model used to implement subprogram calls and the data model used to reference data.
@@ -4262,17 +4262,17 @@ as two separate arguments.&nbsp; The character argument lengths are appended to 
 is of type INTEGER, and the fourth argument is of type CHARACTER.&nbsp; If the character arguments were passed by descriptor,
 the argument list would resemble the following.
 <ol>
-<li>The first argument would be the address of<tt> A.</tt>
-<li>The second argument would be the address of the string descriptor for<tt> B.</tt>
-<li>The third argument would be the address of<tt> C.</tt>
-<li>The fourth argument would be the address of the string descriptor for<tt> D.</tt>
+<li>The first argument would be the address of<tt> A</tt>.
+<li>The second argument would be the address of the string descriptor for<tt> B</tt>.
+<li>The third argument would be the address of<tt> C</tt>.
+<li>The fourth argument would be the address of the string descriptor for<tt> D</tt>.
 </ol>
 <br>If we specified the &quot;nodescriptor&quot; option, the argument list would be as follows.
 <ol>
-<li>The first argument would be the address of<tt> A.</tt>
-<li>The second argument would be the address of the character data for<tt> B.</tt>
-<li>The third argument would be the address of<tt> C.</tt>
-<li>The fourth argument would be the address of the character data for<tt> D.</tt>
+<li>The first argument would be the address of<tt> A</tt>.
+<li>The second argument would be the address of the character data for<tt> B</tt>.
+<li>The third argument would be the address of<tt> C</tt>.
+<li>The fourth argument would be the address of the character data for<tt> D</tt>.
 <li>A hidden argument for the length of<tt> B</tt> would be the fifth argument.
 <li>A hidden argument for the length of<tt> D</tt> would be the sixth argument.
 </ol>
@@ -4354,7 +4354,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <li>The address of the third argument will be passed on the stack.
 <li>The address of the fourth argument will be passed on the stack.
 </ol>
-<br>The following is an assembly language subprogram which implements<tt> GETTIM.</tt>
+<br>The following is an assembly language subprogram which implements<tt> GETTIM</tt>.
 <br><br><b>Large Memory Model (big code, big data)</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GETTIM_TEXT segment byte public 'CODE'</tt>
@@ -4448,7 +4448,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <li>Registers AX, BX, CX and DX were not saved and restored since they were used to pass arguments.&nbsp; However, registers
 DS, ES, DI and BP were modified in the subprogram and hence must be saved and restored.
 </ol>
-<br>Let us look at the stack upon entry to<tt> GETTIM.</tt>
+<br>Let us look at the stack upon entry to<tt> GETTIM</tt>.
 <br><br><b>Large Model (big code, big data)</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Offset</tt>
@@ -4871,12 +4871,12 @@ by a previous auxiliary pragma.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol z is referenced</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux default &lt;attrs_2&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux x &lt;attrs_3&gt;</tt>
-<br><br>Auxiliary attributes are assigned to<tt> x, y</tt> and<tt> z</tt> in the following way.
+<br><br>Auxiliary attributes are assigned to<tt> x</tt>,<tt> y</tt> and<tt> z</tt> in the following way.
 <ol>
 <li>Symbol<tt> x</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>
-and<tt> &lt;attrs_3&gt;.</tt>
-<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;.</tt>
-<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;.</tt>
+and<tt> &lt;attrs_3&gt;</tt>.
+<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;</tt>.
+<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>.
 </ol>
 <h3 id="16Mbit__Alias_Names"> 16-bit:&nbsp; Alias Names </h3>
 <br>When a symbol referred to by an auxiliary pragma includes an alias name, the attributes of the alias name are also assumed
@@ -4923,17 +4923,17 @@ to<tt> rtn</tt> are passed by value.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux (WC) rtn1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux (WC) rtn2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux (WC) rtn3</tt>
-<br><br>The routines<tt> rtn1, rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> WC</tt> which
-defines the calling convention used by the Open Watcom C compiler.&nbsp; Whenever calls are made to<tt> rtn1, rtn2</tt> and<tt>
-rtn3,</tt> the Open Watcom C calling convention will be used.&nbsp; Note that arguments must be passed by value.&nbsp; By
-default, Open Watcom F77 passes arguments by reference.
+<br><br>The routines<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> WC</tt>
+which defines the calling convention used by the Open Watcom C compiler.&nbsp; Whenever calls are made to<tt> rtn1</tt>,<tt>
+rtn2</tt> and<tt> rtn3</tt>, the Open Watcom C calling convention will be used.&nbsp; Note that arguments must be passed by
+value.&nbsp; By default, Open Watcom F77 passes arguments by reference.
 <br><br>Note that if the attributes of<tt> WC</tt> change, only one pragma needs to be changed.&nbsp; If we had not used an
-alias name and specified the attributes in each of the three pragmas for<tt> rtn1, rtn2</tt> and<tt> rtn3,</tt> we would have
-to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler to process the
-source file.
+alias name and specified the attributes in each of the three pragmas for<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt>, we
+would have to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler to
+process the source file.
 <hr>
 <br><b><i>&nbsp; WARNING!</i></b>&nbsp; The alias name<tt> WC</tt> is just another symbol.&nbsp; If<tt> WC</tt> appeared in
-your source code, it would assume the attributes specified in the pragma for<tt> WC.</tt>
+your source code, it would assume the attributes specified in the pragma for<tt> WC</tt>.
 <hr>
 <h3 id="16Mbit__Predefined_Aliases"> 16-bit:&nbsp; Predefined Aliases </h3>
 <br>A number of symbols are predefined by the compiler with a set of attributes that describe a particular calling convention.
@@ -5021,7 +5021,7 @@ object form.&nbsp;
 <dt>obj_name
 <dd>is any character string enclosed in double quotes.
 </dl>
-<br>When specifying<tt> obj_name,</tt> some characters have a special meaning:
+<br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -5083,12 +5083,12 @@ so that special fixups are applied to the 80x87 instruction.
 <dt>asm
 <dd>is an assembly language instruction or directive.
 </dl>
-<br>In the following example, Open Watcom F77 will generate a far call to the subprogram<tt> myrtn.</tt>
+<br>In the following example, Open Watcom F77 will generate a far call to the subprogram<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn far</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a far call will be generated even if you are compiling for a memory model with a small code model.
-<br><br>In the following example, Open Watcom F77 will generate a near call to the subprogram<tt> myrtn.</tt>
+<br><br>In the following example, Open Watcom F77 will generate a near call to the subprogram<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn near</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
@@ -5429,7 +5429,7 @@ registers.
 Open Watcom F77 has some freedom in choosing how arguments are assigned to registers.&nbsp; Since the code for in-line subprograms
 is specified by the programmer, the description of the argument list must be very explicit.&nbsp; To achieve this, Open Watcom
 F77 assumes that each register set corresponds to an argument.&nbsp; Consider the following DOS example of an in-line subprogram
-called<tt> scrollactivepgup.</tt>
+called<tt> scrollactivepgup</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux scrollactivepgup =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;mov AH,6&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5695,7 +5695,7 @@ or<b> DOUBLE PRECISION</b> are to be returned in ST(0) when compiling with the &
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br><tt>exitrtn</tt> is defined to be a function that does not return.&nbsp; For example, it may call<tt> exit</tt> to
 return to the system.&nbsp; In this case, Open Watcom F77 generates a &quot;jmp&quot; instruction instead of a &quot;call&quot;
-instruction to invoke<tt> exitrtn.</tt>
+instruction to invoke<tt> exitrtn</tt>.
 <h3 id="16Mbit__Describing_How_Subprograms_Use_Variables_in_Common"> 16-bit:&nbsp; Describing How Subprograms Use Variables in Common </h3>
 <br>The following form of the auxiliary pragma can be used to describe a subprogram that does not modify any variable that
 appears in a common block defined by the caller.&nbsp; 
@@ -5801,9 +5801,9 @@ L1</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FMAIN_TEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000000</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that the value of<tt> i</tt> is in register DX after completion of the &quot;while&quot; loop.&nbsp; After
-the call to<tt> myrtn,</tt> the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
+the call to<tt> myrtn</tt>, the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
 &nbsp;The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not modify any variable that appears in a common
-block defined by<tt> Rtn</tt> and hence register DX contains the correct value of<tt> i.</tt>
+block defined by<tt> Rtn</tt> and hence register DX contains the correct value of<tt> i</tt>.
 <br><br>The preceding auxiliary pragma deals with routines that modify variables in common.&nbsp; Let us consider the case
 where routines reference variables in common.&nbsp; The following form of the auxiliary pragma can be used to describe a subprogram
 that does not reference any variable that appears in a common block defined by the caller.&nbsp; 
@@ -5886,9 +5886,9 @@ L1</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FMAIN_TEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000000</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that after completion of the &quot;while&quot; loop we did not have to update<tt> i</tt> with the value in
-register DX before calling<tt> myrtn.</tt>&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
+register DX before calling<tt> myrtn</tt>.&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
 any variable that appears in a common block defined by<tt> myrtn</tt> so updating<tt> i</tt> was not necessary before calling<tt>
-myrtn.</tt>
+myrtn</tt>.
 <h3 id="16Mbit__Describing_the_Registers_Modified_by_a_Subprogram"> 16-bit:&nbsp; Describing the Registers Modified by a Subprogram </h3>
 <br>The following form of the auxiliary pragma can be used to describe the registers that a subprogram will use without saving.
 &nbsp;
@@ -6389,17 +6389,17 @@ as two separate arguments.&nbsp; The character argument lengths are appended to 
 is of type INTEGER, and the fourth argument is of type CHARACTER.&nbsp; If the character arguments were passed by descriptor,
 the argument list would resemble the following.
 <ol>
-<li>The first argument would be the address of<tt> A.</tt>
-<li>The second argument would be the address of the string descriptor for<tt> B.</tt>
-<li>The third argument would be the address of<tt> C.</tt>
-<li>The fourth argument would be the address of the string descriptor for<tt> D.</tt>
+<li>The first argument would be the address of<tt> A</tt>.
+<li>The second argument would be the address of the string descriptor for<tt> B</tt>.
+<li>The third argument would be the address of<tt> C</tt>.
+<li>The fourth argument would be the address of the string descriptor for<tt> D</tt>.
 </ol>
 <br>If we specified the &quot;nodescriptor&quot; option, the argument list would be as follows.
 <ol>
-<li>The first argument would be the address of<tt> A.</tt>
-<li>The second argument would be the address of the character data for<tt> B.</tt>
-<li>The third argument would be the address of<tt> C.</tt>
-<li>The fourth argument would be the address of the character data for<tt> D.</tt>
+<li>The first argument would be the address of<tt> A</tt>.
+<li>The second argument would be the address of the character data for<tt> B</tt>.
+<li>The third argument would be the address of<tt> C</tt>.
+<li>The fourth argument would be the address of the character data for<tt> D</tt>.
 <li>A hidden argument for the length of<tt> B</tt> would be the fifth argument.
 <li>A hidden argument for the length of<tt> D</tt> would be the sixth argument.
 </ol>
@@ -6482,7 +6482,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <li>The address of the third argument will be passed in register EBX.
 <li>The address of the fourth argument will be passed in register ECX.
 </ol>
-<br>The following is an assembly language subprogram which implements<tt> GETTIM.</tt>
+<br>The following is an assembly language subprogram which implements<tt> GETTIM</tt>.
 <br><br><b>Small or Flat Memory Model (small code, small data)</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; segment byte public 'CODE'</tt>
@@ -6563,7 +6563,7 @@ If you wish to write assembly language subprograms for the big code model, you m
 <br><tt>GETTIM</tt> is an assembly language subroutine that gets the current time.&nbsp; It requires four integer arguments.
 &nbsp;The arguments are passed by reference so that the subroutine can return the hour, minute, seconds and hundredths of
 a second for the current time.&nbsp; These arguments will be passed to<tt> GETTIM</tt> on the stack.
-<br><br>The following is an assembly language subprogram which implements<tt> GETTIM.</tt>
+<br><br>The following is an assembly language subprogram which implements<tt> GETTIM</tt>.
 <br><br><b>Small or Flat Memory Model (small code, small data)</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; segment byte public 'CODE'</tt>
@@ -6618,9 +6618,9 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <br><br><b>Notes:</b>
 <ol>
 <li>The four arguments that were passed on the stack will be removed by the caller.
-<li>Registers ESI and EBP were saved and restored since they were used in<tt> GETTIM.</tt>
+<li>Registers ESI and EBP were saved and restored since they were used in<tt> GETTIM</tt>.
 </ol>
-<br>Let us look at the stack upon entry to<tt> GETTIM.</tt>
+<br>Let us look at the stack upon entry to<tt> GETTIM</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Offset</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; +----------------+ &lt;- ESP points here</tt>
@@ -7043,12 +7043,12 @@ by a previous auxiliary pragma.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol z is referenced</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux default &lt;attrs_2&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux x &lt;attrs_3&gt;</tt>
-<br><br>Auxiliary attributes are assigned to<tt> x, y</tt> and<tt> z</tt> in the following way.
+<br><br>Auxiliary attributes are assigned to<tt> x</tt>,<tt> y</tt> and<tt> z</tt> in the following way.
 <ol>
 <li>Symbol<tt> x</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>
-and<tt> &lt;attrs_3&gt;.</tt>
-<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;.</tt>
-<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;.</tt>
+and<tt> &lt;attrs_3&gt;</tt>.
+<li>Symbol<tt> y</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_1&gt;</tt>.
+<li>Symbol<tt> z</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>.
 </ol>
 <h3 id="32Mbit__Alias_Names"> 32-bit:&nbsp; Alias Names </h3>
 <br>When a symbol referred to by an auxiliary pragma includes an alias name, the attributes of the alias name are also assumed
@@ -7095,17 +7095,17 @@ to<tt> rtn</tt> are passed by value.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux (WC) rtn1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux (WC) rtn2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux (WC) rtn3</tt>
-<br><br>The routines<tt> rtn1, rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> WC</tt> which
-defines the calling convention used by the Open Watcom C compiler.&nbsp; Whenever calls are made to<tt> rtn1, rtn2</tt> and<tt>
-rtn3,</tt> the Open Watcom C calling convention will be used.&nbsp; Note that arguments must be passed by value.&nbsp; By
-default, Open Watcom F77 passes arguments by reference.
+<br><br>The routines<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> WC</tt>
+which defines the calling convention used by the Open Watcom C compiler.&nbsp; Whenever calls are made to<tt> rtn1</tt>,<tt>
+rtn2</tt> and<tt> rtn3</tt>, the Open Watcom C calling convention will be used.&nbsp; Note that arguments must be passed by
+value.&nbsp; By default, Open Watcom F77 passes arguments by reference.
 <br><br>Note that if the attributes of<tt> WC</tt> change, only one pragma needs to be changed.&nbsp; If we had not used an
-alias name and specified the attributes in each of the three pragmas for<tt> rtn1, rtn2</tt> and<tt> rtn3,</tt> we would have
-to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler to process the
-source file.
+alias name and specified the attributes in each of the three pragmas for<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt>, we
+would have to change all three pragmas.&nbsp; This approach also reduces the amount of memory required by the compiler to
+process the source file.
 <hr>
 <br><b><i>&nbsp; WARNING!</i></b>&nbsp; The alias name<tt> WC</tt> is just another symbol.&nbsp; If<tt> WC</tt> appeared in
-your source code, it would assume the attributes specified in the pragma for<tt> WC.</tt>
+your source code, it would assume the attributes specified in the pragma for<tt> WC</tt>.
 <hr>
 <h3 id="32Mbit__Predefined_Aliases"> 32-bit:&nbsp; Predefined Aliases </h3>
 <br>A number of symbols are predefined by the compiler with a set of attributes that describe a particular calling convention.
@@ -7251,7 +7251,7 @@ object form.&nbsp;
 <dt>obj_name
 <dd>is any character string enclosed in double quotes.
 </dl>
-<br>When specifying<tt> obj_name,</tt> some characters have a special meaning:
+<br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
 <dt>where
 <dd><b>description</b>
@@ -7311,12 +7311,12 @@ or &quot;MYVAR&quot; is placed in the object file.
 <dt>asm
 <dd>is an assembly language instruction or directive.
 </dl>
-<br>In the following example, Open Watcom F77 will generate a far call to the subprogram<tt> myrtn.</tt>
+<br>In the following example, Open Watcom F77 will generate a far call to the subprogram<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn far</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a far call will be generated even if you are compiling for a memory model with a small code model.
-<br><br>In the following example, Open Watcom F77 will generate a near call to the subprogram<tt> myrtn.</tt>
+<br><br>In the following example, Open Watcom F77 will generate a near call to the subprogram<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn near</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
@@ -7647,7 +7647,7 @@ registers.
 Open Watcom F77 has some freedom in choosing how arguments are assigned to registers.&nbsp; Since the code for in-line subprograms
 is specified by the programmer, the description of the argument list must be very explicit.&nbsp; To achieve this, Open Watcom
 F77 assumes that each register set corresponds to an argument.&nbsp; Consider the following DOS example of an in-line subprogram
-called<tt> scrollactivepgup.</tt>
+called<tt> scrollactivepgup</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux scrollactivepgup =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;mov AH,6&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -7915,7 +7915,7 @@ or<b> DOUBLE PRECISION</b> are to be returned in ST(0) when compiling with the &
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br><tt>exitrtn</tt> is defined to be a function that does not return.&nbsp; For example, it may call<tt> exit</tt> to
 return to the system.&nbsp; In this case, Open Watcom F77 generates a &quot;jmp&quot; instruction instead of a &quot;call&quot;
-instruction to invoke<tt> exitrtn.</tt>
+instruction to invoke<tt> exitrtn</tt>.
 <h3 id="32Mbit__Describing_How_Subprograms_Use_Variables_in_Common"> 32-bit:&nbsp; Describing How Subprograms Use Variables in Common </h3>
 <br>The following form of the auxiliary pragma can be used to describe a subprogram that does not modify any variable that
 appears in a common block defined by the caller.&nbsp; 
@@ -8084,9 +8084,9 @@ L1</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FMAIN_TEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000000</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that the value of<tt> i</tt> is in register EDX after completion of the &quot;while&quot; loop.&nbsp; After
-the call to<tt> myrtn,</tt> the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
+the call to<tt> myrtn</tt>, the value of<tt> i</tt> is not loaded from memory into a register to perform the final addition.
 &nbsp;The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not modify any variable that appears in a common
-block defined by<tt> Rtn</tt> and hence register EDX contains the correct value of<tt> i.</tt>
+block defined by<tt> Rtn</tt> and hence register EDX contains the correct value of<tt> i</tt>.
 <br><br>The preceding auxiliary pragma deals with routines that modify variables in common.&nbsp; Let us consider the case
 where routines reference variables in common.&nbsp; The following form of the auxiliary pragma can be used to describe a subprogram
 that does not reference any variable that appears in a common block defined by the caller.&nbsp; 
@@ -8169,9 +8169,9 @@ L1</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FMAIN_TEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000000</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Notice that after completion of the &quot;while&quot; loop we did not have to update<tt> i</tt> with the value in
-register EDX before calling<tt> myrtn.</tt>&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
+register EDX before calling<tt> myrtn</tt>.&nbsp; The auxiliary pragma informs the compiler that<tt> myrtn</tt> does not reference
 any variable that appears in a common block defined by<tt> myrtn</tt> so updating<tt> i</tt> was not necessary before calling<tt>
-myrtn.</tt>
+myrtn</tt>.
 <h3 id="32Mbit__Describing_the_Registers_Modified_by_a_Subprogram"> 32-bit:&nbsp; Describing the Registers Modified by a Subprogram </h3>
 <br>The following form of the auxiliary pragma can be used to describe the registers that a subprogram will use without saving.
 &nbsp;
