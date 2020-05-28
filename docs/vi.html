@@ -3882,9 +3882,8 @@ key before returning to the editor.
 </dl>
 <dl>
 <dt>Description:
-<dd>Create an abbreviation of<b> &lt;short&gt;</b> for<b> &lt;long&gt;</b>.&nbsp; Whenever<b> &lt;short&gt;</b> is typed as a
-word during text insertion mode, it is expanded to<b> &lt;long&gt;</b>.&nbsp; <a href="#UNABBREV">UNABBREV</a> is used to
-remove the abbreviation.
+<dd>Create an abbreviation of<b> &lt;short&gt;</b> for<b> &lt;long&gt;</b>Whenever<b> &lt;short&gt;</b> is typed as a word during
+text insertion mode, it is expanded to<b> &lt;long&gt;</b><a href="#UNABBREV">UNABBREV</a> is used to remove the abbreviation.
 </dl>
 <dl>
 <dt>Example(s):
@@ -3903,9 +3902,9 @@ remove the abbreviation.
 </dl>
 <dl>
 <dt>Description:
-<dd>Creates an command line alias of<b> &lt;alias&gt;</b> for<b> &lt;data&gt;</b>.&nbsp; Whenever<b> &lt;alias&gt;</b> is typed
-on the command line, the full command<b> &lt;data&gt;</b> is substituted.&nbsp; <a href="#UNALIAS">UNALIAS</a> is used to
-remove the abbreviation.
+<dd>Creates an command line alias of<b> &lt;alias&gt;</b> for<b> &lt;data&gt;</b>Whenever<b> &lt;alias&gt;</b> is typed on the
+command line, the full command<b> &lt;data&gt;</b> is substituted.&nbsp; <a href="#UNALIAS">UNALIAS</a> is used to remove
+the abbreviation.
 </dl>
 <dl>
 <dt>Example(s):
@@ -3924,8 +3923,7 @@ remove the abbreviation.
 </dl>
 <dl>
 <dt>Description:
-<dd>Appends source lines after line<b> &lt;line_num&gt;</b>.&nbsp; Append is terminated when a line with nothing but a dot ('.')
-is entered.
+<dd>Appends source lines after line<b> &lt;line_num&gt;</b>Append is terminated when a line with nothing but a dot ('.') is entered.
 <dl>
 <dt>Notes:
 <dd>Only valid in<b> EX mode</b>.
@@ -3956,7 +3954,7 @@ is entered.
 </dl>
 <dl>
 <dt>Description:
-<dd>Changes current working directory to<b> &lt;dir&gt;</b>.&nbsp; If<b> &lt;dir&gt;</b> is not specified, then the current directory
+<dd>Changes current working directory to<b> &lt;dir&gt;</b>If<b> &lt;dir&gt;</b> is not specified, then the current directory
 is displayed in the message window.<b>&nbsp; &lt;dir&gt;</b> may be specified with drive and path.
 </dl>
 <dl>
@@ -3992,7 +3990,7 @@ with nothing on it but a dot ('.') is entered.
 </dl>
 <dl>
 <dt>Description:
-<dd>Compiles the editor script<b> &lt;script&gt;</b>.
+<dd>Compiles the editor script<b> &lt;script&gt;</b>
 <br><br>If<b> -a</b> is specified, all local variables are translated at compile time (rather than at run time) - this is
 useful for the<b> configuration script</b>.
 <br><br>If<b> -A</b> is specified, all variables (both local and global) are translated at compile time.
@@ -4031,7 +4029,7 @@ quoted string are not replaced with a tab.
 </dl>
 <dl>
 <dt>Description:
-<dd>Copies the specified range of lines<b> &lt;line_range&gt;</b> after the line<b> &lt;line_number&gt;</b>.
+<dd>Copies the specified range of lines<b> &lt;line_range&gt;</b> after the line<b> &lt;line_number&gt;</b>
 </dl>
 <dl>
 <dt>Example(s):
@@ -4057,7 +4055,7 @@ quoted string are not replaced with a tab.
 </dl>
 <dl>
 <dt>Description:
-<dd>Deletes the specified line range<b> &lt;line_range&gt;</b>.
+<dd>Deletes the specified line range<b> &lt;line_range&gt;</b>
 <br><br>If<b> &lt;buffer&gt;</b> is not specified, the text is deleted into the active copy buffer.
 <br><br>If<b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') is specified, the text is deleted into that copy buffer.
 <br><br>The <a href="#PUT">PUT</a> command may be used to place contents of a copy buffer into the file.
@@ -4105,7 +4103,7 @@ quoted string are not replaced with a tab.
 </dl>
 <dl>
 <dt>Description:
-<dd>Edits the specified files<b> &lt;files&gt;</b>.<b>&nbsp; &lt;files&gt;</b> may be a single file or a list of files.
+<dd>Edits the specified files<b> &lt;files&gt; &lt;files&gt;</b> may be a single file or a list of files.
 <br><br>Each file name may contain file regular expressions, see the section <a href="#File_Matching_Regular_Expressions">File Matching Regular Expressions</a>
 in the chapter <a href="#Regular_Expressions">Regular Expressions</a> for more information.
 <br><br>If<b> &quot;!&quot;</b> is specified, then the current file is discarded before editing the new file(s).
@@ -4161,7 +4159,7 @@ file size in bytes, the date and time of the last file update.&nbsp; Some sample
 </dl>
 <dl>
 <dt>Description:
-<dd>Searches the file list<b> &lt;files&gt;</b> for the regular expression<b> &lt;regexp&gt;</b>.
+<dd>Searches the file list<b> &lt;files&gt;</b> for the regular expression<b> &lt;regexp&gt;</b>
 <br><br><b>&lt;regexp&gt;</b> may be surrounded by double quotes (&quot;) or a forward slash (/) if it contains any spaces.
 <br><br><b>&lt;files&gt;</b> may be a single file, a directory, or a list of files.<b>&nbsp; &lt;files&gt;</b> may contain
 file regular expressions, see the section <a href="#File_Matching_Regular_Expressions">File Matching Regular Expressions</a>
@@ -4169,7 +4167,7 @@ in the chapter <a href="#Regular_Expressions">Regular Expressions</a> for more i
 <br><br>If<b> &lt;files&gt;</b> is not specified, it defaults to the setting of <a href="#grepdefault">grepdefault</a>.&nbsp;
 If a directory is specified for<b> &lt;files&gt;</b>, then the files in that directory are searched, based on the setting
 of <a href="#grepdefault">grepdefault</a>.
-<br><br>When all matches are found, a selection window is presented with all the files that contained<b> &lt;regexp&gt;</b>.
+<br><br>When all matches are found, a selection window is presented with all the files that contained<b> &lt;regexp&gt;</b>
 <br><br>If you are not using regular expressions, the <a href="#FGREP">FGREP</a> command is much faster.&nbsp; For more information
 on regular expressions, see the chapter <a href="#Regular_Expressions">Regular Expressions</a>.
 </dl>
@@ -4215,8 +4213,8 @@ of the rules for formulating the expression<b> &lt;expr&gt;</b>, see the chapter
 </dl>
 <dl>
 <dt>Description:
-<dd>Execute the string<b> &lt;str&gt;</b>.&nbsp; This causes the editor to behave as if the string<b> &lt;str&gt;</b> was typed
-at the keyboard.
+<dd>Execute the string<b> &lt;str&gt;</b>This causes the editor to behave as if the string<b> &lt;str&gt;</b> was typed at the
+keyboard.
 <br><br>Special keys in the string are indicated as follows:
 <dl>
 <dt>\&lt;&quot;key&quot;&gt;
@@ -4281,7 +4279,7 @@ of pre-defined keys symbols that are recognized.&nbsp; These are described in th
 </dl>
 <dl>
 <dt>Description:
-<dd>Searches the file list<b> &lt;files&gt;</b> for the string<b> &lt;string&gt;</b>.
+<dd>Searches the file list<b> &lt;files&gt;</b> for the string<b> &lt;string&gt;</b>
 <br><br>The search is by default case insensitive, unless<b> -c</b> is specified, which forces the search to be case sensitive.
 &nbsp;Specifying<b> -u</b> causes the setting of <a href="#caseignore">caseignore</a> to determine whether or not to be case
 sensitive in the search.
@@ -4291,7 +4289,7 @@ see the section <a href="#File_Matching_Regular_Expressions">File Matching Regul
 for more information.
 <br><br>If<b> &lt;files&gt;</b> is not specified, it defaults to the setting of <a href="#grepdefault">grepdefault</a>.
 <br><br>While searching for the item, Vi displays a window that shows all files being searched.&nbsp; When all matches are
-found, a selection window is presented with all the files that contained<b> &lt;files&gt;</b>.
+found, a selection window is presented with all the files that contained<b> &lt;files&gt;</b>
 </dl>
 <dl>
 <dt>Example(s):
@@ -4364,7 +4362,7 @@ fit by opening at (50,20), it will try to open at all other corners of the strin
 </dl>
 <dl>
 <dt>Description:
-<dd>Writes the current editor configuration out to the file<b> &lt;filename&gt;</b>.&nbsp; If<b> &lt;filename&gt;</b> is not specified,
+<dd>Writes the current editor configuration out to the file<b> &lt;filename&gt;</b>If<b> &lt;filename&gt;</b> is not specified,
 then the file name &quot;ed.cfg&quot; is assumed.
 </dl>
 <h3 id="GLOBAL"> GLOBAL </h3>
@@ -4435,8 +4433,8 @@ will insert the characters abc at the start of the line).
 </dl>
 <dl>
 <dt>Description:
-<dd>Inserts text after a the specified line number<b> &lt;line_number&gt;</b>.&nbsp; Insert is terminated when a line with nothing
-but a '.' is entered.
+<dd>Inserts text after a the specified line number<b> &lt;line_number&gt;</b>Insert is terminated when a line with nothing but
+a '.' is entered.
 <dl>
 <dt>Notes:
 <dd>Only valid in<b> EX mode</b>.
@@ -4634,9 +4632,9 @@ base meaning that is, all key mappings are ignored and the keys have their defau
 </dl>
 <dl>
 <dt>Description:
-<dd>Sets the<b> text mark &lt;markname&gt;</b> on the line<b> &lt;line_number&gt;</b>.&nbsp; The mark name is a single letter
-from<b> a</b> to<b> z</b>.&nbsp; This mark may then be referred to on the command line or in command mode by using a front
-quote (') before the mark name, e.g.:
+<dd>Sets the<b> text mark &lt;markname&gt;</b> on the line<b> &lt;line_number&gt;</b>The mark name is a single letter from<b>
+a</b> to<b> z</b>.&nbsp; This mark may then be referred to on the command line or in command mode by using a front quote (')
+before the mark name, e.g.:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 'a</tt>
 </dl>
@@ -4709,7 +4707,7 @@ is moved to the corresponding<b> #endif</b> statement.
 </dl>
 <dl>
 <dt>Description:
-<dd>Deletes the specified range of lines<b> &lt;line_range&gt;</b> and places them after the line<b> &lt;line_number&gt;</b>.
+<dd>Deletes the specified range of lines<b> &lt;line_range&gt;</b> and places them after the line<b> &lt;line_number&gt;</b>
 </dl>
 <dl>
 <dt>Example(s):
@@ -4818,9 +4816,9 @@ edit buffer is associated with that file:
 </dl>
 <dl>
 <dt>Description:
-<dd>Puts (pastes) the copy buffer<b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') after the line<b> &lt;line_number&gt;</b>.
+<dd>Puts (pastes) the copy buffer<b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') after the line<b> &lt;line_number&gt;</b>
 <br><br>If<b> &lt;buffer&gt;</b> is not specified, the active copy buffer is assumed.
-<br><br>If<b> &quot;!&quot;</b> is specified, then the lines are put before the line<b> &lt;line_number&gt;</b>.
+<br><br>If<b> &quot;!&quot;</b> is specified, then the lines are put before the line<b> &lt;line_number&gt;</b>
 </dl>
 <dl>
 <dt>Example(s):
@@ -4888,7 +4886,7 @@ that you really want to discard the modified file(s).&nbsp; If you do not respon
 <dl>
 <dt>Description:
 <dd>Reads the text from file<b> &lt;file_name&gt;</b> into the current edit buffer.&nbsp; The lines are placed after line specified
-by<b> &lt;line_number&gt;</b>.&nbsp; If<b> &lt;line_number&gt;</b> is not specified, the current line is assumed.
+by<b> &lt;line_number&gt;</b>If<b> &lt;line_number&gt;</b> is not specified, the current line is assumed.
 <br><br>Line 0 may be specified as<b> &lt;line_number&gt;</b> in order to read a file in before the first line of the current
 edit buffer.
 <br><br>Each file name<b> &lt;file_name&gt;</b> may contain file regular expressions, see the section <a href="#File_Matching_Regular_Expressions">File Matching Regular Expressions</a>
@@ -4956,7 +4954,7 @@ dollar sign are treated as a file regular expression, which is used to read in t
 </dl>
 <dl>
 <dt>Description:
-<dd>Certain variables within Vi may be changed after Vi is executing.<b>&nbsp; &lt;value&gt;</b> is assigned to<b> &lt;variable&gt;</b>.
+<dd>Certain variables within Vi may be changed after Vi is executing.<b>&nbsp; &lt;value&gt;</b> is assigned to<b> &lt;variable&gt;</b>
 <br><br>If<b> &lt;variable&gt;</b> and<b> &lt;value&gt;</b> are not specified, the a window containing a list of all boolean
 values is displayed.
 <br><br>If<b> &lt;variable&gt;</b> is specified as a<b> 2</b>, then a window containing all other values is displayed.
@@ -4980,9 +4978,8 @@ values is displayed.
 </dl>
 <dl>
 <dt>Description:
-<dd>Set the color number<b> &lt;c&gt;</b> to have the RGB value<b> &lt;r&gt;</b>,<b> &lt;g&gt;</b>,<b> &lt;b&gt;</b>.<b>&nbsp;
-&lt;c&gt;</b> may have a value of 0 to 15.<b>&nbsp; &lt;c&gt;</b>,<b> &lt;r&gt;</b>, and<b> &lt;g&gt;</b> may have values
-from 0 to 63.
+<dd>Set the color number<b> &lt;c&gt;</b> to have the RGB value<b> &lt;r&gt;</b>,<b> &lt;g&gt;</b>,<b> &lt;b&gt; &lt;c&gt;</b>
+may have a value of 0 to 15.<b>&nbsp; &lt;c&gt;</b>,<b> &lt;r&gt;</b>, and<b> &lt;g&gt;</b> may have values from 0 to 63.
 <br><br>This command only has an affect under operating systems where it is possible to remap the colors in some way (DOS).
 </dl>
 <dl>
@@ -5035,8 +5032,8 @@ at (10,10).
 </dl>
 <dl>
 <dt>Description:
-<dd>Execute Vi source script file<b> &lt;script&gt;</b>.&nbsp; Optional parameters<b> &lt;p1&gt;</b> to<b> &lt;pn&gt;</b> may
-be specified, these are passed to the specified script.
+<dd>Execute Vi source script file<b> &lt;script&gt;</b>Optional parameters<b> &lt;p1&gt;</b> to<b> &lt;pn&gt;</b> may be specified,
+these are passed to the specified script.
 <br><br>If &quot;.&quot; is specified as the script name, the current file being edited is run as a script.
 <br><br>For information on editor scripts, see the chapter <a href="#Editor_Script_Language">Editor Script Language</a>.
 </dl>
@@ -5090,10 +5087,10 @@ each change.&nbsp; The changes are only applied from the line containing mark<b>
 </dl>
 <dl>
 <dt>Description:
-<dd>Searches for the tag<b> &lt;tagname&gt;</b>.&nbsp; Tags are kept in a special file, which must be located somewhere in your
-path.&nbsp; This file is controlled with the <a href="#tagfilename">tagfilename</a> setting; the default for this setting
-is<b> tags</b>.&nbsp; The tags file contains a collection of procedure names and typedefs, along with the file in which they
-are located and a search command/line number with which to exactly locate the tag.
+<dd>Searches for the tag<b> &lt;tagname&gt;</b>Tags are kept in a special file, which must be located somewhere in your path.
+&nbsp;This file is controlled with the <a href="#tagfilename">tagfilename</a> setting; the default for this setting is<b>
+tags</b>.&nbsp; The tags file contains a collection of procedure names and typedefs, along with the file in which they are
+located and a search command/line number with which to exactly locate the tag.
 <br><br>See the appendix <a href="#CTAGS">CTAGS</a> for more information.
 </dl>
 <dl>
@@ -5143,7 +5140,7 @@ are used (this is the default tile grid).
 </dl>
 <dl>
 <dt>Description:
-<dd>Removes the abbreviation<b> &lt;abbrev&gt;</b>.&nbsp; See the <a href="#ABBREV">ABBREV</a> command for how to set an abbreviation.
+<dd>Removes the abbreviation<b> &lt;abbrev&gt;</b>See the <a href="#ABBREV">ABBREV</a> command for how to set an abbreviation.
 </dl>
 <dl>
 <dt>Example(s):
@@ -5162,8 +5159,8 @@ are used (this is the default tile grid).
 </dl>
 <dl>
 <dt>Description:
-<dd>Removes the command line alias<b> &lt;alias&gt;</b>.&nbsp; See the <a href="#ALIAS">ALIAS</a> command for how to set a command
-line alias.
+<dd>Removes the command line alias<b> &lt;alias&gt;</b>See the <a href="#ALIAS">ALIAS</a> command for how to set a command line
+alias.
 </dl>
 <dl>
 <dt>Example(s):
@@ -5196,8 +5193,8 @@ However, once you modify the file, you can longer undo the last undo.
 <dt>Description:
 <dd>Removes the mapping of the key<b> &lt;key&gt;</b> for command mode.&nbsp; If<b> &quot;!&quot;</b> is specified, then the key
 mapping is removed for text insertion mode.&nbsp; See the <a href="#MAP">MAP</a> command for details on mapping keys.
-<br><br>There are a number of pre-defined symbols that are recognized for<b> &quot;!&quot;</b>.&nbsp; These are described
-in the Appendix <a href="#Symbolic_Keystrokes">Symbolic Keystrokes</a>.
+<br><br>There are a number of pre-defined symbols that are recognized for<b> &quot;!&quot;</b>These are described in the Appendix
+<a href="#Symbolic_Keystrokes">Symbolic Keystrokes</a>.
 </dl>
 <dl>
 <dt>Example(s):
@@ -5270,7 +5267,7 @@ is specified, this functions just like the <a href="#EDIT">EDIT</a> command.
 </dl>
 <dl>
 <dt>Description:
-<dd>Writes the specified range of lines<b> &lt;line_range&gt;</b> to the file<b> &lt;file_name&gt;</b>.
+<dd>Writes the specified range of lines<b> &lt;line_range&gt;</b> to the file<b> &lt;file_name&gt;</b>
 <br><br>If no line range is specified, then all lines are written.
 <br><br>If<b> &lt;file_name&gt;</b> is not specified, then the current file is written.&nbsp; If<b> &lt;file_name&gt;</b>
 exists, and is not the name of the file that you are writing, then the write will fail.
@@ -5309,7 +5306,7 @@ exists.
 </dl>
 <dl>
 <dt>Description:
-<dd>Yank (make a copy of) the specified line range<b> &lt;line_range&gt;</b>.
+<dd>Yank (make a copy of) the specified line range<b> &lt;line_range&gt;</b>
 <br><br>If<b> &lt;buffer&gt;</b> is not specified, the text is yanked (copied) into the active copy buffer.
 <br><br>If<b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') is specified, the text is yanked into that copy buffer.
 <br><br>The <a href="#PUT">PUT</a> command may be used to place the contents of a copy buffer into the file.
@@ -5756,8 +5753,7 @@ that it was told to.
 </dl>
 <dl>
 <dt>Description:
-<dd>Adds a new item to a previously created menu<b> &lt;menuname&gt;</b>.&nbsp; The item<b> &lt;itemname&gt;</b> is added to the
-menu.
+<dd>Adds a new item to a previously created menu<b> &lt;menuname&gt;</b>The item<b> &lt;itemname&gt;</b> is added to the menu.
 <br><br>This command is similar to the command line command <a href="#MENUITEM">MENUITEM</a>, only the <a href="#MENUITEM">MENUITEM</a>
 command is used when first defining a menu.
 <br><br><b>&lt;menuname&gt;</b> may be a quoted string, if the parameter contains spaces.&nbsp; If<b> &lt;menuname&gt;</b>
@@ -5778,7 +5774,7 @@ is selected.
 </dl>
 <dl>
 <dt>Description:
-<dd>Destroys menu with name<b> &lt;menuname&gt;</b>.
+<dd>Destroys menu with name<b> &lt;menuname&gt;</b>
 </dl>
 <h3 id="DELETEMENUITEM"> DELETEMENUITEM </h3>
 <dl>
@@ -5787,8 +5783,7 @@ is selected.
 </dl>
 <dl>
 <dt>Description:
-<dd>Deletes item number<b> &lt;index&gt;</b> from menu<b> &lt;menuname&gt;</b>.&nbsp; The item number<b> &lt;index&gt;</b> is
-0 based.
+<dd>Deletes item number<b> &lt;index&gt;</b> from menu<b> &lt;menuname&gt;</b>The item number<b> &lt;index&gt;</b> is 0 based.
 <br><br>If<b> &lt;index&gt;</b> is specified as -1, then the last item is removed from the menu.
 </dl>
 <h3 id="ENDMENU"> ENDMENU </h3>
@@ -5811,9 +5806,9 @@ is selected.
 </dl>
 <dl>
 <dt>Description:
-<dd>Starts the creation of a new menu<b> &lt;menuname&gt;</b>.&nbsp; If a menu exists with the name already, it is destroyed and
-re-created.&nbsp; A character preceded with an ampersand ('&amp;') will be the hot key for activating the menu, e.g.&nbsp;
-&amp;Control would have 'C' as the hot key.
+<dd>Starts the creation of a new menu<b> &lt;menuname&gt;</b>If a menu exists with the name already, it is destroyed and re-created.
+&nbsp;A character preceded with an ampersand ('&amp;') will be the hot key for activating the menu, e.g.&nbsp; &amp;Control
+would have 'C' as the hot key.
 <br><br><b>&lt;menuname&gt;</b> may be a reserved name:&nbsp; windowgadget, float0, float1, float2, or float3
 </dl>
 <dl>
@@ -7960,7 +7955,7 @@ the entire script can be eliminated with a single <a href="#UNDO_LcommandR">UNDO
 </dl>
 <dl>
 <dt>Description:
-<dd>This command is used to assign the value<b> &lt;val&gt;</b> to the variable<b> &lt;v1&gt;</b>.
+<dd>This command is used to assign the value<b> &lt;val&gt;</b> to the variable<b> &lt;v1&gt;</b>
 <br><br>The forward slashes ('/') around<b> &lt;val&gt;</b> are only need if there are spaces in<b> &lt;val&gt;</b>, or if
 one of the special flags<b> r</b>,<b> x</b>,<b> l</b>,<b> $</b> or<b> @</b> is required at the end.
 <br><br>The special flags have the following meaning:
@@ -7970,14 +7965,14 @@ one of the special flags<b> r</b>,<b> x</b>,<b> l</b>,<b> $</b> or<b> @</b> is r
 searched for).&nbsp; For more information on regular expressions, see the chapter <a href="#Regular_Expressions">Regular Expressions</a>.
 <dt>l
 <dd>When this flag is used,<b> &lt;val&gt;</b> is assumed to be an expression that indicates a line number.&nbsp; The expression
-is evaluated, and the data on the corresponding line number is assigned to<b> &lt;v1&gt;</b>.
+is evaluated, and the data on the corresponding line number is assigned to<b> &lt;v1&gt;</b>
 <dt>x
 <dd>When this flag is used,<b> &lt;val&gt;</b> is assumed to be an expression, and is evaluated.&nbsp; The result is assigned
-to<b> &lt;v1&gt;</b>.&nbsp; For another way of assigning expression results to a variable, see the <a href="#EXPR">EXPR</a>
-script command.
+to<b> &lt;v1&gt;</b>For another way of assigning expression results to a variable, see the <a href="#EXPR">EXPR</a> script
+command.
 <dt>$ (dollar sign)
 <dd>When this flag is used,<b> &lt;val&gt;</b> is assumed to be the name of an operating system environment variable, and the
-contents of that environment variable is what is assigned to<b> &lt;v1&gt;</b>.
+contents of that environment variable is what is assigned to<b> &lt;v1&gt;</b>
 <dt>@
 <dd>When this flag is used,<b> &lt;val&gt;</b> may be the name of one of the <a href="#SET">SET</a> command parameters.<b>&nbsp;
 &lt;v1&gt;</b> will be given the current value of that parameter.
@@ -7986,16 +7981,16 @@ contents of that environment variable is what is assigned to<b> &lt;v1&gt;</b>.
 ('/') must NOT be used.&nbsp; The special operators are:
 <dl>
 <dt>strlen &lt;v&gt;
-<dd>Computes the length of the variable<b> &lt;v&gt;</b>.&nbsp; This value is assigned to<b> &lt;v1&gt;</b>.
+<dd>Computes the length of the variable<b> &lt;v&gt;</b>.&nbsp; This value is assigned to<b> &lt;v1&gt;</b>
 <dt>strchr &lt;v&gt; &lt;c&gt;
 <dd>Computes the offset of the character<b> &lt;c&gt;</b> in the variable<b> &lt;v&gt;</b>.&nbsp; The offset is assigned to<b>
-&lt;v1&gt;</b>.&nbsp; Note that the character<b> &lt;c&gt;</b> may be a variable, the value of which will be expanded before
-offset is computed..
+&lt;v1&gt;</b>Note that the character<b> &lt;c&gt;</b> may be a variable, the value of which will be expanded before offset
+is computed.
 <dt>substr &lt;v&gt; &lt;n1&gt; &lt;n2&gt;
 <dd>Computes a substring of the string contained in the variable<b> &lt;v&gt;</b>.&nbsp; The substring is composed of characters
-from offset<b> &lt;n1&gt;</b> to offset<b> &lt;n2&gt;</b>.&nbsp; The substring is assigned to<b> &lt;v1&gt;</b>.&nbsp; Note
-that the parameters<b> &lt;n1&gt;</b> and<b> &lt;n2&gt;</b> may be variables, the values of which will be expanded before
-the substring is computed.
+from offset<b> &lt;n1&gt;</b> to offset<b> &lt;n2&gt;</b>.&nbsp; The substring is assigned to<b> &lt;v1&gt;</b>Note that the
+parameters<b> &lt;n1&gt;</b> and<b> &lt;n2&gt;</b> may be variables, the values of which will be expanded before the substring
+is computed.
 </dl>
 </dl>
 <dl>
@@ -8135,7 +8130,7 @@ statements are true, the code following the<b> else</b> command is executed.
 </dl>
 <dl>
 <dt>Description:
-<dd>Assigns the expression<b> &lt;expr&gt;</b> to the variable<b> &lt;v1&gt;</b>.
+<dd>Assigns the expression<b> &lt;expr&gt;</b> to the variable<b> &lt;v1&gt;</b>
 <br><br>Any variables contained in<b> &lt;expr&gt;</b> are expanded before the expression is evaluated.
 </dl>
 <dl>
@@ -8176,7 +8171,7 @@ statements are true, the code following the<b> else</b> command is executed.
 </dl>
 <dl>
 <dt>Description:
-<dd>This command opens file<b> &lt;name&gt;</b>, assigning it file handle<b> &lt;n&gt;</b>.
+<dd>This command opens file<b> &lt;name&gt;</b>, assigning it file handle<b> &lt;n&gt;</b>
 <br><br><b>&lt;n&gt;</b> may be a value from 1 to 9.&nbsp; This number is used to identify the file for future <a href="#FREAD">FREAD</a>,
 <a href="#FWRITE">FWRITE</a> or <a href="#FCLOSE">FCLOSE</a> script commands.
 <br><br><b>&lt;how&gt;</b> specifies the method that the file is opened.&nbsp; Methods are:
@@ -8224,7 +8219,7 @@ statements are true, the code following the<b> else</b> command is executed.
 </dl>
 <dl>
 <dt>Description:
-<dd>Reads a line from the file identified by handle<b> &lt;n&gt;</b>.&nbsp; The line is stored in the variable<b> &lt;v1&gt;</b>.
+<dd>Reads a line from the file identified by handle<b> &lt;n&gt;</b>The line is stored in the variable<b> &lt;v1&gt;</b>
 </dl>
 <dl>
 <dt>Returns:
@@ -8255,7 +8250,7 @@ statements are true, the code following the<b> else</b> command is executed.
 </dl>
 <dl>
 <dt>Description:
-<dd>Writes the contents of the variable<b> &lt;v1&gt;</b> to the file identified by handle<b> &lt;n&gt;</b>.
+<dd>Writes the contents of the variable<b> &lt;v1&gt;</b> to the file identified by handle<b> &lt;n&gt;</b>
 </dl>
 <dl>
 <dt>Returns:
@@ -8284,7 +8279,7 @@ statements are true, the code following the<b> else</b> command is executed.
 </dl>
 <dl>
 <dt>Description:
-<dd>Waits for the user to type a single keystroke, and then assigns the keystroke into variable<b> &lt;v1&gt;</b>.
+<dd>Waits for the user to type a single keystroke, and then assigns the keystroke into variable<b> &lt;v1&gt;</b>
 </dl>
 <dl>
 <dt>Example(s):
@@ -8333,7 +8328,7 @@ false, control goes to the next <a href="#ELSEIF">ELSEIF</a>, <a href="#ELSE">EL
 <dl>
 <dt>Description:
 <dd>Open a window (the <a href="#COMMANDWINDOW">COMMANDWINDOW</a>) and get a string from the user.&nbsp; The string is assigned
-to the variable<b> &lt;v1&gt;</b>.
+to the variable<b> &lt;v1&gt;</b>
 <br><br>If<b> &lt;v1&gt;</b> was assigned a value before the<b> input</b> script command was executed, then that value is
 used as a prompt string in the input window.
 </dl>
@@ -8398,8 +8393,8 @@ or <a href="#UNTIL">UNTIL</a> control returns to the instruction after the<b> lo
 </dl>
 <dl>
 <dt>Description:
-<dd>Remove the next space-delimited word from the variable<b> &lt;srcvar&gt;</b>.&nbsp; The word is placed in the variable specified
-by<b> &lt;srcvar&gt;</b>.&nbsp; Both<b> &lt;srcvar&gt;</b> and<b> &lt;resvar&gt;</b> must be variables only.
+<dd>Remove the next space-delimited word from the variable<b> &lt;srcvar&gt;</b>The word is placed in the variable specified by<b>
+&lt;srcvar&gt;</b>Both<b> &lt;srcvar&gt;</b> and<b> &lt;resvar&gt;</b> must be variables only.
 </dl>
 <dl>
 <dt>Example(s):
@@ -8433,7 +8428,7 @@ of the current block.
 </dl>
 <dl>
 <dt>Description:
-<dd>Exit the script, returning<b> &lt;rc&gt;</b>.
+<dd>Exit the script, returning<b> &lt;rc&gt;</b>
 <br><br>If the script was invoked by another script, then this value becomes<b> lastrc</b>.
 <br><br>If the script was invoked at the command line, then this return code is reported as the appropriate error, if<b> &lt;rc&gt;</b>
 is not<b> ERR_NO_ERR</b>.
