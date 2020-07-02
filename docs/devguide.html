@@ -269,8 +269,6 @@ other projects.
 <dd>headers and libraries for the Windows 3.x API.
 <dt>w32api
 <dd>headers and libraries for the Win32 API.
-<dt>w32loadr
-<dd>loaders for OS independent (OSI) binaries.
 <dt>wasm
 <dd>the x86 assembler.&nbsp; Large parts of the source are shared between standalone wasm and inline assembler support for compilers
 targeting x86 platforms.
@@ -454,8 +452,8 @@ zillions of binaries for all supported platforms).&nbsp; An important future con
 a different architecture.&nbsp; Please try and avoid weirdo tools that have no hope of running on an Alpha or PPC running
 NT or on Linux.&nbsp; These tools should be referenced from the makefile as<tt> $(bld_dir)\tool</tt>.&nbsp; If your tool cannot
 run under a particular OS, you should at least put a batchfile in that bin which echoes a message to that effect (to alert
-people to the fact that you've just made their life difficult).&nbsp; More general tools (yacc, re2c, w32bind) that are likely
-to be used by several projects should be copied up into the build/bin directory.
+people to the fact that you've just made their life difficult).&nbsp; More general tools (yacc, re2c) that are likely to be
+used by several projects should be copied up into the build/bin directory.
 <h2 id="The_Runtime_DLL_Libraries"> The Runtime DLL Libraries </h2>
 <br>If you set<tt> $(proj_name)_rtdll</tt> = 1, the -br switch should be thrown for you automatically, providing the target
 os supports it.
