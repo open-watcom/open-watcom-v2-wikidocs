@@ -1018,10 +1018,10 @@ have a virtual destructor.&nbsp; A<b><i> delete</i></b> of a pointer cast to suc
 in all circumstances.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Base {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~Base();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾Base();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Derived : Base {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual ~Derived();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual ‾Derived();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>It is considered good programming practice to declare virtual destructors in all classes used as base classes of classes
 having virtual destructors.
@@ -1071,7 +1071,7 @@ be flagged as erroneous (i.e., accessing a private member).
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class Private {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int a;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Private();</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~Private();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾Private();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Private( const Private&amp; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="012_template_argument_cannot_be_type___T_"> 012 template argument cannot be type '%T' </h2>
@@ -1638,7 +1638,7 @@ is added later on to a constructor that makes it a copy constructor, an ambiguit
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } v;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = sizeof( v.b );</tt>
 <h2 id="092_option_requires_a_path"> 092 option requires a path </h2>
-<br>The specified option is not recognized by the compiler since there was no path after it (i.e., &quot;-i=d:\include;d:\path&quot;
+<br>The specified option is not recognized by the compiler since there was no path after it (i.e., &quot;-i=d:¥include;d:¥path&quot;
 ).
 <h2 id="093_must_use__va_start__macro_inside_function_with_variable_arguments"> 093 must use 'va_start' macro inside function with variable arguments </h2>
 <br>The<tt> va_start</tt> macro is used to setup access to the parameters in a function that takes a variable number of parameters.
@@ -2052,7 +2052,7 @@ cause Open Watcom C++ to not accept older C++ code.&nbsp; See Section 11.5 in th
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp; char *p;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~Obj();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾Obj();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Obj far obj;</tt>
 <br><br>The last line causes this error to be displayed when the memory model is small (switch -ms), since the memory model
@@ -2426,7 +2426,7 @@ effectively allows the caller to modify storage which does not exist.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; public:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C();</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~C();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾C();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&amp; foo()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2596,21 +2596,21 @@ is not required to be identical in form to all other member functions.&nbsp; Thi
 different uses for any return values.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void* ~S();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void* ‾S();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="235_destructor_must_be_a_function"> 235 destructor must be a function </h2>
-<br>The tilde ('~') style of name is reserved for declaring destructor functions.&nbsp; Variable names cannot make use of
+<br>The tilde ('‾') style of name is reserved for declaring destructor functions.&nbsp; Variable names cannot make use of
 the destructor style of names.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int ~S; // illegal</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int ‾S; // illegal</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="236_destructor_has_an_argument_list"> 236 destructor has an argument list </h2>
 <br>A destructor cannot have an argument list.&nbsp; Since destructors can only be non-static member functions, they have
 an implicit<b><i> this</i></b> argument.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~S( S&amp; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾S( S&amp; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="237___N__must_be_a_function"> 237 '%N' must be a function </h2>
 <br>The<b><i> operator</i></b> style of name is reserved for declaring operator functions.&nbsp; Variable names cannot make
@@ -2751,7 +2751,7 @@ is most likely a missing identifier.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fun( C* p )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;~S();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;‾S();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="253______qualifier_cannot_be_used_in_this_context"> 253 '::' qualifier cannot be used in this context </h2>
 <br>Qualified identifiers in a class context are allowed for declaring<b><i> friend</i></b> member functions.&nbsp; The Open
@@ -2927,7 +2927,7 @@ member function.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static ~S();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static ‾S();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="266___N__must_be_a_nonMstatic_member_function"> 266 '%N' must be a non-static member function </h2>
 <br>The operator function in the message is restricted to being a non-static member function.&nbsp; This usually means that
@@ -2939,14 +2939,14 @@ the operator function is treated in a special manner by the compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static operator =( C&amp;, int );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="267___N__must_have_one_argument"> 267 '%N' must have one argument </h2>
-<br>The operator function in the message is only allowed to have one argument.&nbsp; An operator like<b><i> operator ~</i></b>
+<br>The operator function in the message is only allowed to have one argument.&nbsp; An operator like<b><i> operator ‾</i></b>
 is one such example because it represents a unary operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; public: int c;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&amp; operator~( const C&amp;, int );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&amp; operator‾( const C&amp;, int );</tt>
 <h2 id="268___N__must_have_two_arguments"> 268 '%N' must have two arguments </h2>
 <br>The operator function in the message must have two arguments.&nbsp; An operator like<b><i> operator +=</i></b> is one
 such example because it represents a binary operator.
@@ -3156,7 +3156,7 @@ Both of the types must be identical, for the destructor to have meaning.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void foo( int *p )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;int::~double();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;int::‾double();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="293_overloaded_operator_is_ambiguous_for_operands_used"> 293 overloaded operator is ambiguous for operands used </h2>
 <br>The Open Watcom C++ compiler performs exhaustive analysis using formalized techniques in order to decide what implicit
@@ -3377,7 +3377,7 @@ the same piece of memory could be destructed twice.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int sv1, sv2, sv3;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct T {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~T();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾T();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static union</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -3972,13 +3972,13 @@ destructor.&nbsp; This means that the delete will not work correctly in all circ
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void operator delete( void *, size_t );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual void fn();</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~B();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾B();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct D : B {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int d;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void operator delete( void *, size_t );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual void fn();</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~D();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾D();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void dfn( B *p )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -5492,9 +5492,9 @@ body can usually provide optimization opportunities so the compiler is indicatin
 class definition, the compiler may be able to perform some important optimizations.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~S();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾S();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; S::~S() {</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; S::‾S() {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="657_define_this_function_inside_its_class_definition_Lcould_have_improved_code_qualityR"> 657 define this function inside its class definition (could have improved code quality) </h2>
 <br>The Open Watcom C++ compiler has found a constructor or destructor with an empty function body.&nbsp; An empty function
@@ -5504,12 +5504,12 @@ that the compiler has already found an opportunity in previous code but it found
 had an empty function body.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~S();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾S();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct T : S {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~T() {}</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾T() {}</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; S::~S() {</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; S::‾S() {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="658_cannot_convert_address_of_overloaded_function___S_"> 658 cannot convert address of overloaded function '%S' </h2>
 <br>This information message indicates that an address of an overloaded function cannot be converted to the indicated type.
@@ -5565,11 +5565,11 @@ type.
 <br>A member pointer value cannot reference a destructor.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~C();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾C();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0 == &amp;C::~C;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0 == &amp;C::‾C;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="664_attempt_to_initialize_a_nonMconstant_reference_with_a_temporary_object"> 664 attempt to initialize a non-constant reference with a temporary object </h2>
 <br>A temporary value cannot be converted to a non-constant reference type.
@@ -6150,10 +6150,10 @@ list.
 warning can be removed by switching to a C style comment (&quot;/**/&quot;).&nbsp; If you require the comment to be terminated
 at the end of the line, make sure that the backslash character is not the last character in the line.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define XX 23 // comment start \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; comment \</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define XX 23 // comment start ¥</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; comment ¥</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x = XX; // comment start ...\</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x = XX; // comment start ...¥</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; comment end</tt>
 <h2 id="736_cannot_open_file___s__for_write_access"> 736 cannot open file '%s' for write access </h2>
 <br>The compiler has detected a problem while trying to open the indicated file for write access.
@@ -6254,7 +6254,7 @@ for compatibility.&nbsp; Invalid memory model modifiers are also rejected by the
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct D {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~D();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ‾D();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C __declspec(thread) c;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; D __declspec(thread) d;</tt>
@@ -6300,7 +6300,7 @@ which are not overloaded and for external data items.
 <br>This message indicates that the octal escape sequence produces an integer that cannot fit into the required character
 type.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *p = &quot;\406&quot;;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *p = &quot;¥406&quot;;</tt>
 <h2 id="762_binary_operator___s__missing_right_operand"> 762 binary operator '%s' missing right operand </h2>
 <br>There is no expression to the right of the indicated binary operator.
 <h2 id="763_binary_operator___s__missing_left_operand"> 763 binary operator '%s' missing left operand </h2>
@@ -7189,16 +7189,16 @@ operator.&nbsp; The work-around for the warning is to cast the unary minus opera
 <br>Trigraph expansion occurs at a very low-level so it can affect string literals that contain question marks.&nbsp; This
 warning can be disabled via the command line or<b><i> #pragma warning</i></b> directive.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // string expands to &quot;(?&#93;?~????&quot;!</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // string expands to &quot;(?&#93;?‾????&quot;!</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *e = &quot;(???)???-????&quot;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // possible work-arounds</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *f = &quot;(&quot; &quot;???&quot; &quot;)&quot; &quot;???&quot; &quot;-&quot; &quot;????&quot;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *g = &quot;(\?\?\?)\?\?\?-\?\?\?\?&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *g = &quot;(¥?¥?¥?)¥?¥?¥?-¥?¥?¥?¥?&quot;;</tt>
 <h2 id="889_hexadecimal_escape_sequence_out_of_rangeS_truncated"> 889 hexadecimal escape sequence out of range; truncated </h2>
 <br>This message indicates that the hexadecimal escape sequence produces an integer that cannot fit into the required character
 type.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *p = &quot;\x0aCache Timings\x0a&quot;;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *p = &quot;¥x0aCache Timings¥x0a&quot;;</tt>
 <h2 id="890_undefined_macro___s__evaluates_to_0"> 890 undefined macro '%s' evaluates to 0 </h2>
 <br>The ISO C/C++ standard requires that undefined macros evaluate to zero during preprocessor expression evaluation.&nbsp;
 This default behaviour can often mask incorrectly spelled macro references.&nbsp; The warning is useful when used in critical
@@ -7210,8 +7210,8 @@ environments where all macros will be defined.
 <br>The ISO C/C++ standard requires that multi-char character constants be accepted with an implementation defined value.
 &nbsp;This default behaviour can often mask incorrectly specified character constants.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x = '\0x1a'; // warning</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int y = '\x1a';</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x = '¥0x1a'; // warning</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int y = '¥x1a';</tt>
 <h2 id="892_promotion_of_unadorned_char_type_to_int"> 892 promotion of unadorned char type to int </h2>
 <br>This message is enabled by the hidden -jw option.&nbsp; The warning may be used to locate all places where an unadorned
 char type (i.e., a type that is specified as<b><i> char</i></b> and neither<b><i> signed char</i></b> nor<b><i> unsigned char</i></b>
@@ -7233,12 +7233,12 @@ will always jump to the default case code.
 <br>The compiler has encountered a character in the source file that is not in the allowable set of input characters.&nbsp;
 The decimal representation of the character byte is output for diagnostic purposes.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // invalid char '\0'</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // invalid char '¥0'</tt>
 <h2 id="895_ignoring_whitespace_after_line_splice"> 895 ignoring whitespace after line splice </h2>
 <br>The compiler is ignoring some whitespace characters that occur after the line splice.&nbsp; This warning is useful when
 the source code must be compiled with other compilers that do not allow this extension.
 <br><br><b>Example:</b>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define XXXX int \</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define XXXX int ¥</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; x;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; XXXX</tt>
 <h2 id="896_empty_member_declaration"> 896 empty member declaration </h2>

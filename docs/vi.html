@@ -2226,8 +2226,6 @@ mode and command mode mappings for<b> F6</b> are different.
 <dt>keys.dat
 <dd>Symbolic key names used by the command line commands <a href="#MAP">MAP</a>, <a href="#MAPBASE">MAPBASE</a>, <a href="#UNMAP">UNMAP</a>,
 <a href="#EXECUTE">EXECUTE</a> and <a href="#KEYADD">KEYADD</a>.
-<dt>errmsg.dat
-<dd>The text strings for Vi's various error messages.
 <dt>error.dat
 <dd>Symbolic names for errors that can occur.&nbsp; These are used for testing return codes in editor scripts.
 </dl>
@@ -2262,7 +2260,6 @@ designated to be the file containing the<b> configuration script</b>, the name i
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mlsel._vi</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; lnum._vi</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; keys.dat</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; errmsg.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; error.dat</tt>
 <br><br>In this example,<tt> edbind.dat</tt> contains the special files<tt> ed.cfg</tt>, all the .dat files, and a number
 of compiled editor scripts (the files with the ._vi extension).
@@ -9101,7 +9098,7 @@ or you can discuss the problem on one of the OpenWatcom newsgroups (news://news.
 <dd>You did not code a script &quot;if&quot;, &quot;elseif&quot;, &quot;quif&quot;, &quot;until&quot; or &quot;while&quot; statement
 correctly.
 <dt>Invalid data in file '%s' at line %d
-<dd>This error is issued if one of the .dat files (error.dat, errmsg.dat, keys.dat) contains invalid data.
+<dd>This error is issued if one of the .dat files (error.dat, keys.dat) contains invalid data.
 <dt>Invalid delete command
 <dd>You did not enter a valid operation after starting the delete ('d') command mode command.
 <dt>Invalid EXPR
