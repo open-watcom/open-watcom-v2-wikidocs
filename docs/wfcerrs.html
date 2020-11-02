@@ -395,13 +395,6 @@
 <br><a href="#TYM05_type_of__s1_has_already_been_established_as__s2">TY-05 type of %s1 has already been established as %s2</a>
 <br><a href="#TYM06_type_of__s1_has_not_been_declared">TY-06 type of %s1 has not been declared</a>
 <br><a href="#TYM07__s1_of_type__s2_is_illegal_in__s3_statement">TY-07 %s1 of type %s2 is illegal in %s3 statement</a>
-<dt>- U -
-<dd><a href="#UVM01_substring_L_u1__u2R_of_expression_on_right_side_of_equal_sign_is_undefined">UV-01 substring (%u1:%u2) of expression on right side of equal sign is undefined</a>
-<br><a href="#UVM02_substring_L_u1__u2R_of_return_value_of_character_function__s3_is_undefined">UV-02 substring (%u1:%u2) of return value of character function %s3 is undefined</a>
-<br><a href="#UVM03_substring_L_u1__u2R_of_an_operand_in_a_relational_expression_is_undefined">UV-03 substring (%u1:%u2) of an operand in a relational expression is undefined</a>
-<br><a href="#UVM04_substring_L_u1__u2R_of_an_argument_to_an_intrinsic_function_is_undefined">UV-04 substring (%u1:%u2) of an argument to an intrinsic function is undefined</a>
-<br><a href="#UVM05_the_value_of__s1_is_undefined">UV-05 the value of %s1 is undefined</a>
-<br><a href="#UVM06_argument_number__d1_passed_to_intrinsic_function_is_undefined">UV-06 argument number %d1 passed to intrinsic function is undefined</a>
 <dt>- V -
 <dd><a href="#VAM01_illegal_use_of__s1_name__s2_in__s3_statement">VA-01 illegal use of %s1 name %s2 in %s3 statement</a>
 <br><a href="#VAM02_symbolic_name__s1_is_longer_than_6_characters">VA-02 symbolic name %s1 is longer than 6 characters</a>
@@ -1541,21 +1534,6 @@ is used.
 <h2 id="TYM07__s1_of_type__s2_is_illegal_in__s3_statement"> TY-07 %s1 of type %s2 is illegal in %s3 statement </h2>
 <br>The symbol %s1 with type %s2 cannot be used in statement %s3.&nbsp; For example, a symbol of type STRUCTURE cannot be
 used in a PARAMETER statement.
-<h2 id="UVM01_substring_L_u1__u2R_of_expression_on_right_side_of_equal_sign_is_undefined"> UV-01 substring (%u1:%u2) of expression on right side of equal sign is undefined </h2>
-<br>The substring (%d1:%d2) has been used on the right hand side of an expression and its value is undefined.&nbsp; A value
-must be assigned to the variable name or array element name before it can be used in an expression.
-<h2 id="UVM02_substring_L_u1__u2R_of_return_value_of_character_function__s3_is_undefined"> UV-02 substring (%u1:%u2) of return value of character function %s3 is undefined </h2>
-<br>The character function %s3 has been referenced and the function name has not been assigned a value in the function.&nbsp;
-The substring (%d1:%d2) does not have a value.
-<h2 id="UVM03_substring_L_u1__u2R_of_an_operand_in_a_relational_expression_is_undefined"> UV-03 substring (%u1:%u2) of an operand in a relational expression is undefined </h2>
-<br>The substring (%d1:%d2) has been used in a relational expression and has not previously been assigned a value.
-<h2 id="UVM04_substring_L_u1__u2R_of_an_argument_to_an_intrinsic_function_is_undefined"> UV-04 substring (%u1:%u2) of an argument to an intrinsic function is undefined </h2>
-<br>The substring (%d1:%d2), which is an actual argument to an intrinsic function, does not have a value assigned to it.
-<h2 id="UVM05_the_value_of__s1_is_undefined"> UV-05 the value of %s1 is undefined </h2>
-<br>The variable name %s1 has been used in a statement and a value has not yet been assigned to it.&nbsp; All variables must
-first be initialized through the use of statements or data initialization in specification statements.
-<h2 id="UVM06_argument_number__d1_passed_to_intrinsic_function_is_undefined"> UV-06 argument number %d1 passed to intrinsic function is undefined </h2>
-<br>The actual argument number %d1 does not have a value assigned to it.
 <h2 id="VAM01_illegal_use_of__s1_name__s2_in__s3_statement"> VA-01 illegal use of %s1 name %s2 in %s3 statement </h2>
 <br>The name %s2 has been defined as %s1 and cannot be used as a name in the statement %s3.
 <h2 id="VAM02_symbolic_name__s1_is_longer_than_6_characters"> VA-02 symbolic name %s1 is longer than 6 characters </h2>
