@@ -3134,7 +3134,7 @@ the same as the number of dimensions specified when the array was declared and e
 specified.&nbsp; As an extension to FORTRAN 77, Open Watcom FORTRAN 77 allows a single subscript expression for a multi-dimensional
 array.&nbsp; An array name used by itself is equivalent to specifying the first element of the array.
 <br><br>If a character substring appears in an<tt> EQUIVALENCE</tt> statement, the substring defined by the substring expression
-must be properly contained in the character entity being substrung.&nbsp; A character name used by itself is equivalent to
+must be properly contained in the character entity being substring.&nbsp; A character name used by itself is equivalent to
 specifying the first character of the character variable.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL A,B</tt>
@@ -6703,7 +6703,7 @@ this size is really an upper bound.
 actual array.
 <li>If the corresponding actual array argument is a non-character array element name with a subscript value of<b> r</b> in
 an array of size<b> x,</b> the size of the dummy array is<b> x</b> + 1 -<b> r.</b>
-<li>If the corresponding actual argument is a character array name, character array element or a substrung character array
+<li>If the corresponding actual argument is a character array name, character array element or a substring character array
 element which begins at character<b> t</b> of an array with<b> c</b> characters then the size of the dummy array is INT((<b>
 c</b> + 1 -<b> t</b> ) /<b> e)</b> where<b> e</b> is the size of an element of the dummy array.
 </ol>
