@@ -72,7 +72,7 @@
 <br><a href="#DAM10_cannot_initialize__s1_variable__s2_with__s3_constant">DA-10 cannot initialize %s1 variable %s2 with %s3 constant</a>
 <br><a href="#DAM11_entity_can_only_be_initialized_once_during_data_initialization">DA-11 entity can only be initialized once during data initialization</a>
 <br><a href="#DMM01_using__s1_incorrectly_in_dimension_expression">DM-01 using %s1 incorrectly in dimension expression</a>
-<br><a href="#DMM02_array_or_array_element_Lpossibly_substrungR_associated_with__s1_too_small">DM-02 array or array element (possibly substrung) associated with %s1 too small</a>
+<br><a href="#DMM02_array_or_array_element_Lpossibly_substringR_associated_with__s1_too_small">DM-02 array or array element (possibly substring) associated with %s1 too small</a>
 <br><a href="#DOM01_statement_number__i1_already_defined_in_line__d2_M_DO_loop_is_backwards">DO-01 statement number %i1 already defined in line %d2 - DO loop is backwards</a>
 <br><a href="#DOM02__s1_statement_not_allowed_at_termination_of_DO_range">DO-02 %s1 statement not allowed at termination of DO range</a>
 <br><a href="#DOM03_improper_nesting_of_DO_loop">DO-03 improper nesting of DO loop</a>
@@ -658,7 +658,7 @@ statement can only be used to initialize variables, arrays, array elements, and 
 <h2 id="DMM01_using__s1_incorrectly_in_dimension_expression"> DM-01 using %s1 incorrectly in dimension expression </h2>
 <br>The name used as a dimension declarator has been previously declared as type %s1 and cannot be used as a dimension declarator.
 &nbsp;A dimension declarator must be an integer expression.
-<h2 id="DMM02_array_or_array_element_Lpossibly_substrungR_associated_with__s1_too_small"> DM-02 array or array element (possibly substrung) associated with %s1 too small </h2>
+<h2 id="DMM02_array_or_array_element_Lpossibly_substringR_associated_with__s1_too_small"> DM-02 array or array element (possibly substring) associated with %s1 too small </h2>
 <br>The dummy argument, array %s1, is defined to be larger than the size of the actual argument.
 <h2 id="DOM01_statement_number__i1_already_defined_in_line__d2_M_DO_loop_is_backwards"> DO-01 statement number %i1 already defined in line %d2 - DO loop is backwards </h2>
 <br>The statement number to indicate the end of the DO control structure has been used previously in the program unit and
@@ -980,7 +980,7 @@ input.
 <h2 id="IOM33_subscripting_error_during_NAMELISTMdirected_iDo"> IO-33 subscripting error during NAMELIST-directed i/o </h2>
 <br>An array was incorrectly subscripted during NAMELIST-directed input.
 <h2 id="IOM34_substring_error_during_NAMELISTMdirected_iDo"> IO-34 substring error during NAMELIST-directed i/o </h2>
-<br>An character array element or variable was incorrectly substrung during NAMELIST-directed input.
+<br>An character array element or variable was incorrectly substring during NAMELIST-directed input.
 <h2 id="IOM35_BLOCKSIZE_specifier_is_invalid"> IO-35 BLOCKSIZE specifier is invalid </h2>
 <br>In the OPEN statement, the block size specifier must be a positive integer expression.
 <h2 id="IOM36_invalid_operation_for_files_with_no_record_structure"> IO-36 invalid operation for files with no record structure </h2>
@@ -1037,7 +1037,7 @@ second argument may only be used when the first argument is of type INTEGER, REA
 a character to its integer representation.
 <h2 id="LIM10_cannot_pass__s1_as_argument_to_intrinsic_function"> LI-10 cannot pass %s1 as argument to intrinsic function </h2>
 <br>The item %s1 cannot be used as an argument to an intrinsic function.&nbsp; Only constants, simple variables, array elements,
-and substrung array elements may be used as arguments.
+and substring array elements may be used as arguments.
 <h2 id="LIM11_intrinsic_function_requires_argumentLsR"> LI-11 intrinsic function requires argument(s) </h2>
 <br>An attempt has been made to invoke an intrinsic function and no actual arguments were listed.
 <h2 id="LIM12__s1_argument_type_is_invalid_for_this_generic_function"> LI-12 %s1 argument type is invalid for this generic function </h2>
@@ -1333,8 +1333,8 @@ before program execution commences.
 if the types and orders of each field are the same.&nbsp; Unions are considered equivalent if their sizes are the same.&nbsp;
 Field names, and the structure name itself, do not have to be the same.
 <h2 id="SSM01_substringing_of_function_or_statement_function_return_value_is_not_FORTRAN_77_standard"> SS-01 substringing of function or statement function return value is not FORTRAN 77 standard </h2>
-<br>The character value returned from a CHARACTER function or statement function cannot be substrung.&nbsp; Only character
-variable names and array element names may be substrung.
+<br>The character value returned from a CHARACTER function or statement function cannot be substring.&nbsp; Only character
+variable names and array element names may be substring.
 <h2 id="SSM02_substringing_valid_only_for_character_variables_and_array_elements"> SS-02 substringing valid only for character variables and array elements </h2>
 <br>An attempt has been made to substring a name that is not defined to be of type CHARACTER and is neither a variable nor
 an array element.
@@ -1438,7 +1438,7 @@ bound of the array when declaring the size of the array.
 the array.&nbsp; An array element is the array name followed by integer expressions enclosed in parentheses and separated
 by commas.
 <h2 id="SVM06_cannot_substring_array_name__s1"> SV-06 cannot substring array name %s1 </h2>
-<br>An attempt has been made to substring the array %s1.&nbsp; Only an array element may be substrung.
+<br>An attempt has been made to substring the array %s1.&nbsp; Only an array element may be substring.
 <h2 id="SVM07__s1_treated_as_an_assumed_size_array"> SV-07 %s1 treated as an assumed size array </h2>
 <br>A dummy array argument has been declared with 1 in the last dimension.&nbsp; The array is treated as if an '*' had been
 specified in place of the 1.&nbsp; This is done to support a feature called &quot;pseudo-variable dimensioning&quot; which
