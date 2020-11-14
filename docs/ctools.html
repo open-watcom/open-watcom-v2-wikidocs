@@ -6291,6 +6291,7 @@ implementation of the POSIX &quot;rmdir&quot; command.&nbsp; It handles director
 <li><tt> %make</tt>
 <li><tt> %null</tt>
 <li><tt> %quit</tt>
+<li><tt> %ren</tt>
 <li><tt> %stop</tt>
 <li><tt> %write</tt>
 </ol>
@@ -6315,6 +6316,10 @@ have the same form, namely:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %append &lt;file&gt; &lt;text&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %write &lt;file&gt; &lt;text&gt;</tt>
 <br><br>where<tt> &lt;file&gt;</tt> is a file specification and<tt> &lt;text&gt;</tt> is arbitrary text.
+<br><br>The<tt> %ren</tt> internal command will rename a file.&nbsp; The command has the form:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %ren &lt;from file&gt; &lt;to file&gt;</tt>
+<br><br>where<tt> &lt;from file&gt;</tt> and<tt> &lt;to file&gt;</tt> are a file specification.
 <br><br>The<tt> %create</tt> internal command will create or truncate a file so that the file does not contain any text while
 the<tt> %erase</tt> internal command will delete a file.&nbsp; Both commands have the same form, namely:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6597,6 +6602,8 @@ below, %?&nbsp; character sequences indicate places in the message that are repl
 <dd>
 <dt>79 Makefile may be Microsoft
 <dd>try /ms switch
+<dt>80 Expecting double quote character to end open string
+<dd>
 </dl>
 <h1 id="The_Touch_Utility"> The Touch Utility </h1>
 <br>This chapter describes the Open Watcom Touch utility.&nbsp; Open Watcom Touch will set the time-stamp (i.e., the modification
