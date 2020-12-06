@@ -196,6 +196,22 @@
 <br><a href="#E1188_Symbol___s__declared_in__for__statement_must_be_object">E1188 Symbol '%s' declared in 'for' statement must be object</a>
 <br><a href="#E1189_Unexpected_declaration">E1189 Unexpected declaration</a>
 <br><a href="#E1190__else__without__if_">E1190 'else' without 'if'</a>
+<br><a href="#E1191_expression_contains_consecutive_operandLsR">E1191 expression contains consecutive operand(s)</a>
+<br><a href="#E1192___s__unexpected_in_constant_expression">E1192 '%s' unexpected in constant expression</a>
+<br><a href="#E1193_floatingMpoint_constant_too_small_to_represent">E1193 floating-point constant too small to represent</a>
+<br><a href="#E1194_floatingMpoint_constant_too_large_to_represent">E1194 floating-point constant too large to represent</a>
+<br><a href="#E1195_unmatched_left_parenthesis__L_">E1195 unmatched left parenthesis '('</a>
+<br><a href="#E1196_expression_contains_extra_operandLsR">E1196 expression contains extra operand(s)</a>
+<br><a href="#E1197_unmatched_right_parenthesis__R_">E1197 unmatched right parenthesis ')'</a>
+<br><a href="#E1198_no_expression_between_parentheses__L_R_">E1198 no expression between parentheses '( )'</a>
+<br><a href="#E1199_expecting_____operator_in_conditional_expression">E1199 expecting ':' operator in conditional expression</a>
+<br><a href="#E1200_expecting_____operator_in_conditional_expression">E1200 expecting '?' operator in conditional expression</a>
+<br><a href="#E1201_expecting_first_operand_in_conditional_expression">E1201 expecting first operand in conditional expression</a>
+<br><a href="#E1202_expecting_second_operand_in_conditional_expression">E1202 expecting second operand in conditional expression</a>
+<br><a href="#E1203_expecting_third_operand_in_conditional_expression">E1203 expecting third operand in conditional expression</a>
+<br><a href="#E1204_binary_operator___s__missing_right_operand">E1204 binary operator '%s' missing right operand</a>
+<br><a href="#E1205_binary_operator___s__missing_left_operand">E1205 binary operator '%s' missing left operand</a>
+<br><a href="#E1206_expecting_operand_after_unary_operator___s_">E1206 expecting operand after unary operator '%s'</a>
 <dt>- H -
 <dd><a href="#H3000_Error_reading_PCH_file">H3000 Error reading PCH file</a>
 <br><a href="#H3001_PCH_file_header_is_out_of_date">H3001 PCH file header is out of date</a>
@@ -284,6 +300,7 @@
 <br><a href="#W309_The_function_without_prototyped_parameters_indirectly_called">W309 The function without prototyped parameters indirectly called</a>
 <br><a href="#W310_Pointer_truncated_during_cast">W310 Pointer truncated during cast</a>
 <br><a href="#W400_Array_subscript_is_of_type_plain_char">W400 Array subscript is of type plain char</a>
+<br><a href="#W500_undefined_macro___s__evaluates_to_0">W500 undefined macro '%s' evaluates to 0</a>
 </dl>
 <h1 id="Open_Watcom_C_Diagnostic_Messages"> Open Watcom C Diagnostic Messages </h1>
 <br>The following is a list of all warning and error messages produced by the Open Watcom C compilers.&nbsp; Diagnostic messages
@@ -577,6 +594,13 @@ when the value of the expression is known to never fall outside the 0-127 range.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( arr&#91;c&#93; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<h2 id="W500_undefined_macro___s__evaluates_to_0"> W500 undefined macro '%s' evaluates to 0 </h2>
+<br>The ISO C/C++ standard requires that undefined macros evaluate to zero during preprocessor expression evaluation.&nbsp;
+This default behaviour can often mask incorrectly spelled macro references.&nbsp; The warning is useful when used in critical
+environments where all macros will be defined.
+<br><br><b>Example:</b>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if _PRODUCTI0N // should be _PRODUCTION</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h2 id="E1000_BREAK_must_appear_in_while__do__for_or_switch_statement"> E1000 BREAK must appear in while, do, for or switch statement </h2>
 <br>A<b><i> break</i></b> statement has been found in an illegal place in the program.&nbsp; You may be missing an opening
 brace<tt> {</tt> for a<b><i> while,</i></b> <b><i> do,</i></b> <b><i> for</i></b> or<b><i> switch</i></b> statement.
@@ -687,7 +711,7 @@ be a pointer unless the left operand is also a pointer.
 <br>You cannot have a negative field width.
 <h2 id="E1043_Invalid_type_specified_for_bit_field"> E1043 Invalid type specified for bit field </h2>
 <br>The types allowed for bit fields are<b><i> signed</i></b> or<b><i> unsigned</i></b> varieties of<b><i> char,</i></b> <b><i>
-short</i></b> and<b><i> int.</i></b>&nbsp; 
+short</i></b> and<b><i> int</i></b> 
 <h2 id="E1044_Variable___s__has_incomplete_type"> E1044 Variable '%s' has incomplete type </h2>
 <br>A full definition of a<b><i> struct</i></b> or<b><i> union</i></b> has not been given.
 <h2 id="E1045_Subscript_on_nonMarray"> E1045 Subscript on non-array </h2>
@@ -724,12 +748,12 @@ variable or the &quot;-I&quot; option on the command line.
 <br>The name of a typedef has been found when an operand or operator is expected.&nbsp; If you are trying to use a type cast,
 make sure there are parentheses around the type, otherwise check for a spelling mistake.
 <h2 id="E1059_Invalid_storage_class_for_nonMlocal_variable"> E1059 Invalid storage class for non-local variable </h2>
-<br>A variable with module scope cannot be defined with the storage class of<b><i> auto</i></b> or<b><i> register.</i></b>
-&nbsp;
+<br>A variable with module scope cannot be defined with the storage class of<b><i> auto</i></b> or<b><i> register</i></b>
+
 <h2 id="E1060_Invalid_type"> E1060 Invalid type </h2>
 <br>An invalid combination of the following keywords has been specified in a type declaration:<b><i>&nbsp; const,</i></b>
 <b><i> volatile,</i></b> <b><i> signed,</i></b> <b><i> unsigned,</i></b> <b><i> char,</i></b> <b><i> int,</i></b> <b><i> short,</i></b>
-<b><i> long,</i></b> <b><i> float</i></b> and<b><i> double.</i></b>&nbsp; 
+<b><i> long,</i></b> <b><i> float</i></b> and<b><i> double</i></b> 
 <h2 id="E1061_Expecting_data_or_function_declaration__but_found___s_"> E1061 Expecting data or function declaration, but found '%s' </h2>
 <br>The compiler is expecting the start of a data or function declaration.&nbsp; If you are only part way through a function,
 then you have too many closing braces &quot;}&quot;.
@@ -747,8 +771,8 @@ with the &quot;-d1&quot; option instead.
 <h2 id="E1066_Cannot_perform_operation_with_pointer_to_void"> E1066 Cannot perform operation with pointer to void </h2>
 <br>You cannot use a &quot;pointer to void&quot; with the operators +, -, ++, --, += and -=.
 <h2 id="E1067_Cannot_take_address_of_variable_with_storage_class__register_"> E1067 Cannot take address of variable with storage class 'register' </h2>
-<br>If you want to take the address of a local variable, change the storage class from<b><i> register</i></b> to<b><i> auto.</i></b>
-&nbsp;
+<br>If you want to take the address of a local variable, change the storage class from<b><i> register</i></b> to<b><i> auto</i></b>
+
 <h2 id="E1068_Variable___s__already_initialized"> E1068 Variable '%s' already initialized </h2>
 <br>The specified variable has already been statically initialized.
 <h2 id="E1069_String_literal_not_terminated_before_end_of_line"> E1069 String literal not terminated before end of line </h2>
@@ -777,9 +801,9 @@ the structure<tt> foo</tt> ahead of its first reference or by adding the indicat
 the first instance of structure<tt> foo</tt> is defined at the proper outer scope.
 <h2 id="E1072_Storage_class_disagrees_with_previous_definition_of___s_"> E1072 Storage class disagrees with previous definition of '%s' </h2>
 <br>The previous definition of the specified variable has a storage class of<b><i> static.</i></b>&nbsp; The current definition
-must have a storage class of<b><i> static</i></b> or<b><i> extern.</i></b>&nbsp; 
-<br><br>Alternatively, a variable was previously declared as<b><i> extern</i></b> and later defined as<b><i> static.</i></b>
-&nbsp;
+must have a storage class of<b><i> static</i></b> or<b><i> extern</i></b> 
+<br><br>Alternatively, a variable was previously declared as<b><i> extern</i></b> and later defined as<b><i> static</i></b>
+
 <h2 id="E1073_Invalid_option___s_"> E1073 Invalid option '%s' </h2>
 <br>The specified option is not recognized by the compiler.
 <h2 id="E1074_Invalid_optimization_option___s_"> E1074 Invalid optimization option '%s' </h2>
@@ -795,6 +819,19 @@ which selects the Small, Medium, Compact, Large, Huge or Flat memory model.
 <br>The type of a switch expression must be integral.
 <h2 id="E1079_Expression_must_be_integral"> E1079 Expression must be integral </h2>
 <br>An integral expression is required.
+<br><br><b>Example:</b>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a, float b, int *p )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch( a ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 1.3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // must be integral</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return p&#91;b&#93;;&nbsp; // index not integer</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 2:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b &lt;&lt;= 2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // can only
+shift integers</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return b;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="E1080_Expression_must_be_arithmetic"> E1080 Expression must be arithmetic </h2>
 <br>Both operands of the &quot;*&quot;, &quot;/&quot; and &quot;%&quot; operators must be arithmetic.&nbsp; The operand of
 the unary minus must also be arithmetic.
@@ -822,8 +859,7 @@ which consists of just a semicolon (&quot;;&quot;).
 &quot;)&quot; is required to mark the end of the argument(s) for a function-like macro.
 <h2 id="E1090_Invalid_conversion"> E1090 Invalid conversion </h2>
 <br>A<b><i> struct</i></b> or<b><i> union</i></b> cannot be converted to anything.&nbsp; A<b><i> float</i></b> or<b><i> double</i></b>
-cannot be converted to a pointer and a pointer cannot be converted to a<b><i> float</i></b> or<b><i> double.</i></b>&nbsp;
-
+cannot be converted to a pointer and a pointer cannot be converted to a<b><i> float</i></b> or<b><i> double</i></b> 
 <h2 id="E1091__s"> E1091 %s </h2>
 <br>This is a user message generated with the<tt> #error</tt> preprocessing directive.
 <h2 id="E1092_Cannot_define_an_array_of_functions"> E1092 Cannot define an array of functions </h2>
@@ -854,7 +890,7 @@ must be inside a function.&nbsp; You either have too many closing braces &quot;}
 <br>The special macros<tt> __LINE__, __FILE__, __DATE__, __TIME__, __STDC__, __FUNCTION__</tt> and<tt> __func__,</tt> and
 the identifier &quot;defined&quot;, cannot be deleted by the<tt> #undef</tt> directive.
 <h2 id="E1102_Cannot__define_the_name__defined_"> E1102 Cannot #define the name 'defined' </h2>
-<br>You cannot define a macro called<tt> defined.</tt>
+<br>You cannot define a macro called<tt> defined</tt>
 <h2 id="E1103____must_not_be_at_start_or_end_of_replacement_tokens"> E1103 ## must not be at start or end of replacement tokens </h2>
 <br>There must be a token on each side of the &quot;##&quot; (token pasting) operator.
 <h2 id="E1104_Type_cast_not_allowed_in__if_or__elif_expression"> E1104 Type cast not allowed in #if or #elif expression </h2>
@@ -865,7 +901,7 @@ the identifier &quot;defined&quot;, cannot be deleted by the<tt> #undef</tt> dir
 <br>A<b><i> struct</i></b> or<b><i> union</i></b> cannot be compared with &quot;==&quot; or &quot;!=&quot;.&nbsp; You must
 compare each member of a<b><i> struct</i></b> or<b><i> union</i></b> to determine equality or inequality.&nbsp; If the<b><i>
 struct</i></b> or<b><i> union</i></b> is packed (has no holes in it for alignment purposes) then you can compare two structs
-using<tt> memcmp.</tt>
+using<tt> memcmp</tt>
 <h2 id="E1107_Enumerator_list_cannot_be_empty"> E1107 Enumerator list cannot be empty </h2>
 <br>You must have at least one identifier in an<b><i> enum</i></b> list.
 <h2 id="E1108_Invalid_floatingMpoint_constant"> E1108 Invalid floating-point constant </h2>
@@ -876,7 +912,7 @@ using<tt> memcmp.</tt>
 <br>A storage class of<b><i> extern</i></b> is used to associate the variable with its actual definition somewhere else in
 the program.
 <h2 id="E1111_Invalid_storage_class_for_parameter"> E1111 Invalid storage class for parameter </h2>
-<br>The only storage class allowed for a parameter is<b><i> register.</i></b>&nbsp; 
+<br>The only storage class allowed for a parameter is<b><i> register</i></b> 
 <h2 id="E1112_Initializer_list_cannot_be_empty"> E1112 Initializer list cannot be empty </h2>
 <br>An initializer list must have at least one item specified.
 <h2 id="E1113_Expression_has_incomplete_type"> E1113 Expression has incomplete type </h2>
@@ -1059,7 +1095,7 @@ program.
 <br>The register name is invalid/unknown.
 <h2 id="E1186_Storage_class_of__for__statement_declaration_not_register_or_auto"> E1186 Storage class of 'for' statement declaration not register or auto </h2>
 <br>The only storage class allowed for the optional declaration part of a<b><i> for</i></b> statement is<b><i> auto</i></b>
-or<b><i> register.</i></b>&nbsp; 
+or<b><i> register</i></b> 
 <h2 id="E1187_No_type_specified_in_declaration"> E1187 No type specified in declaration </h2>
 <br>A declaration specifier must include a type specifier.
 <br><br><b>Example:</b>
@@ -1090,6 +1126,44 @@ statement, etc.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="E1190__else__without__if_"> E1190 'else' without 'if' </h2>
 <br>The<b><i> else</i></b> must follow<b><i> if</i></b> 
+<h2 id="E1191_expression_contains_consecutive_operandLsR"> E1191 expression contains consecutive operand(s) </h2>
+<br>More than one operand found in a row.
+<h2 id="E1192___s__unexpected_in_constant_expression"> E1192 '%s' unexpected in constant expression </h2>
+<br>'%s' not allowed in constant expression.
+<h2 id="E1193_floatingMpoint_constant_too_small_to_represent"> E1193 floating-point constant too small to represent </h2>
+<br>The Open Watcom C compiler cannot represent the floating-point constant because the magnitude of the negative exponent
+is too large.
+<br><br><b>Example:</b>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float f = 1.2e-78965;</tt>
+<h2 id="E1194_floatingMpoint_constant_too_large_to_represent"> E1194 floating-point constant too large to represent </h2>
+<br>The Open Watcom C compiler cannot represent the floating-point constant because the magnitude of the positive exponent
+is too large.
+<br><br><b>Example:</b>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float f = 1.2e78965;</tt>
+<h2 id="E1195_unmatched_left_parenthesis__L_"> E1195 unmatched left parenthesis '(' </h2>
+<br>The expression contains a left parenthesis &quot;(&quot; without a matching right parenthesis.
+<h2 id="E1196_expression_contains_extra_operandLsR"> E1196 expression contains extra operand(s) </h2>
+<br>The expression contains operand(s) without an operator.
+<h2 id="E1197_unmatched_right_parenthesis__R_"> E1197 unmatched right parenthesis ')' </h2>
+<br>The expression contains a right parenthesis &quot;)&quot; without a matching left parenthesis.
+<h2 id="E1198_no_expression_between_parentheses__L_R_"> E1198 no expression between parentheses '( )' </h2>
+<br>There is a matching set of parenthesis &quot;()&quot; which do not contain an expression.
+<h2 id="E1199_expecting_____operator_in_conditional_expression"> E1199 expecting ':' operator in conditional expression </h2>
+<br>A conditional expression exists without the ':' operator.
+<h2 id="E1200_expecting_____operator_in_conditional_expression"> E1200 expecting '?' operator in conditional expression </h2>
+<br>A conditional expression exists without the '?' operator.
+<h2 id="E1201_expecting_first_operand_in_conditional_expression"> E1201 expecting first operand in conditional expression </h2>
+<br>A conditional expression exists without the first operand.
+<h2 id="E1202_expecting_second_operand_in_conditional_expression"> E1202 expecting second operand in conditional expression </h2>
+<br>A conditional expression exists without the second operand.
+<h2 id="E1203_expecting_third_operand_in_conditional_expression"> E1203 expecting third operand in conditional expression </h2>
+<br>A conditional expression exists without the third operand.
+<h2 id="E1204_binary_operator___s__missing_right_operand"> E1204 binary operator '%s' missing right operand </h2>
+<br>There is no expression to the right of the indicated binary operator.
+<h2 id="E1205_binary_operator___s__missing_left_operand"> E1205 binary operator '%s' missing left operand </h2>
+<br>There is no expression to the left of the indicated binary operator.
+<h2 id="E1206_expecting_operand_after_unary_operator___s_"> E1206 expecting operand after unary operator '%s' </h2>
+<br>A unary operator without being followed by an operand.
 <h2 id="I2000_Not_enough_memory_to_fully_optimize_procedure___s_"> I2000 Not enough memory to fully optimize procedure '%s' </h2>
 <br>The compiler did not have enough memory to fully optimize the specified procedure.&nbsp; The code generated will still
 be correct and execute properly.&nbsp; This message is purely informational.
