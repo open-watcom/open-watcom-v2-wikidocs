@@ -2732,7 +2732,8 @@ If any unresolved references remain after processing the object files, the libra
 be searched.
 <br><br>It is also possible to specify a list of paths in a &quot;LIBPATH&quot; directive.&nbsp; Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath \newmath;\math</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath \newmath</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; \math</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; library trig</tt>
 <br><br>When processing undefined references, the Open Watcom Linker will attempt to process the library file &quot;trig.lib&quot;
 in the current working directory.&nbsp; If &quot;trig.lib&quot; does not exist in the current working directory, the &quot;\newmath&quot;
@@ -2746,7 +2747,8 @@ in a &quot;LIBFILE&quot; directive contains a path specification, only the speci
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath path2</tt>
 <br><br>is equivalent to the following.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath path2;path1</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath path2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; path1</tt>
 <h2 id="The_LIBRARY_Directive"> The LIBRARY Directive </h2>
 <br>Formats:&nbsp; All 
 <br><br>The &quot;LIBRARY&quot; directive is used to specify the library files to be searched when unresolved symbols remain
@@ -2781,7 +2783,8 @@ one.
 <br>The &quot;LIB&quot; environment variable can be used to specify a list of paths that will be searched for library files.
 &nbsp;The &quot;LIB&quot; environment variable can be set using the &quot;set&quot; command as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set lib=\graphics\lib;\utility</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set lib=\graphics\lib</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; \utility</tt>
 <br><br>Consider the following &quot;LIBRARY&quot; directive and the above definition of the &quot;LIB&quot; environment variable.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; library \mylibs\util, graph</tt>
@@ -3458,7 +3461,8 @@ one.
 <br>The &quot;LIB&quot; environment variable can be used to specify a list of paths that will be searched for library files.
 &nbsp;The &quot;LIB&quot; environment variable can be set using the &quot;set&quot; command as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set lib=\graphics\lib;\utility</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set lib=\graphics\lib</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; \utility</tt>
 <br><br>Consider the following &quot;OPTLIB&quot; directive and the above definition of the &quot;LIB&quot; environment variable.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; optlib \mylibs\util, graph</tt>
@@ -3839,7 +3843,8 @@ no longer be searched unless it appears in the &quot;PATH&quot; directive.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; \stats\variance.obj</tt>
 <br><br>It is also possible to specify a list of paths in a &quot;PATH&quot; directive.&nbsp; Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; path \math;\stats</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; path \math</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; \stats</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file sin</tt>
 <br><br>First, the linker will attempt to load the file &quot;\math\sin.obj&quot;.&nbsp; If unsuccessful, the linker will
 attempt to load the file &quot;\stats\sin.obj&quot;.
@@ -6632,7 +6637,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <dd>
 <dt>LIBFILE obj_file{,obj_file}
 <dd>
-<dt>LIBPATH path_name{:path_name}
+<dt>LIBPATH path_name{;path_name}
 <dd>
 <dt>LIBRARY library_file{,library_file}
 <dd>
@@ -6718,7 +6723,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 </dl>
 <dt>OPTLIB library_file{,library_file}
 <dd>
-<dt>PATH path_name{:path_name}
+<dt>PATH path_name{;path_name}
 <dd>
 <dt>REFERENCE symbol_name{,symbol_name}
 <dd>
