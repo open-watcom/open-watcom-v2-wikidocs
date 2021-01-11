@@ -232,8 +232,8 @@ of the Open Watcom C/C++ compiler options plus some additional options specific 
 with no arguments.
 <h2 id="Open_Watcom_Compile_and_Link_Options_Summary"> Open Watcom Compile and Link Options Summary </h2>
 <dl>
-<dt><b><i>General options:</i></b>
-<dd><b><i>Description:</i></b>
+<dt>General options:
+<dd>Description:
 <dt>c
 <dd>compile the files only, do not link them
 <dt>cc
@@ -244,8 +244,8 @@ with no arguments.
 <dd>ignore the WCL/WCL386 environment variable
 </dl>
 <dl>
-<dt><b><i>Compiler options:</i></b>
-<dd><b><i>Description:</i></b>&nbsp; 
+<dt>Compiler options:
+<dd>Description:&nbsp; 
 <dt>0
 <dd>(16-bit only) 8088 and 8086 instructions (default for 16-bit)
 <dt>1
@@ -573,8 +573,8 @@ wrap)
 </dl>
 <br>See the<b><i> Open Watcom C/C++ User's Guide</i></b> for a full description of compiler options.
 <dl>
-<dt><b><i>Linker options:</i></b>
-<dd><b><i>Description:</i></b>
+<dt>Linker options:
+<dd>Description:
 <dt>bcl=&lt;system name&gt;
 <dd>Compile and link for the specified system name.&nbsp; See the section for link option 'l=' below and the linker user guide
 for available system names.&nbsp; This is equivalent to specifying -bt=&lt;system name&gt; and -l=&lt;system name&gt;.
@@ -794,8 +794,8 @@ compiler driver like this:&nbsp; &quot;owcc -?&quot;.&nbsp; If run without any a
 its name and hints towards the &quot;-?&quot; option.
 <h2 id="owcc_Options_Summary"> owcc Options Summary </h2>
 <dl>
-<dt><b><i>General options:</i></b>
-<dd><b><i>Description:</i></b>
+<dt>General options:
+<dd>Description:
 <dt>c
 <dd>compile the files only, do not link them
 <dt>S
@@ -818,8 +818,8 @@ operate verbosely, too.
 <dd>operate quietly (default).&nbsp; This is the opposite of the &quot;-v&quot; option.
 </dl>
 <dl>
-<dt><b><i>Compiler options:</i></b>
-<dd><b><i>Description:</i></b>&nbsp; 
+<dt>Compiler options:
+<dd>Description:&nbsp; 
 <dt>march=i{,1,2,3}86,axp,mips,ppc
 <dd>which CPU architecture instruction set is used
 <dt>mtune=i{3,4,5,6}86
@@ -1054,8 +1054,8 @@ ow enables all Open Watcom C/C++ extensions.
 </dl>
 <br>See the<b><i> Open Watcom C/C++ User's Guide</i></b> for a full description of compiler options.
 <dl>
-<dt><b><i>Linker options:</i></b>
-<dd><b><i>Description:</i></b>
+<dt>Linker options:
+<dd>Description:
 <dt>b &lt;target name&gt;
 <dd>Compile and link for the specified target system name.&nbsp; See the section linker user guide for available system names.
 &nbsp;The linker will effectively receive a -l=&lt;target name&gt; option.&nbsp; owcc looks up &lt;system name&gt; in a specification
@@ -4048,8 +4048,8 @@ current target being made should not be deleted.&nbsp; The<tt> .HOLD</tt> direct
 <h3 id="Special_Macros"> Special Macros </h3>
 <br>Open Watcom Make has many different special macros.&nbsp; Here are some of the simpler ones.
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$$
 <dd>represents the character &quot;$&quot;
 <dt>$#
@@ -4065,8 +4065,8 @@ current target being made should not be deleted.&nbsp; The<tt> .HOLD</tt> direct
 </dl>
 <br>The following macros are for more sophisticated makefiles.
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>__MSDOS__
 <dd>This macro is defined in the MS/DOS environment.
 <dt>__NT__
@@ -4094,8 +4094,8 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; a:\dir\target.ext : b:\dir1\dep1.ex1 c:\dir2\dep2.ex2</tt>
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$^@
 <dd>a:\dir\target.ext
 <dt>$^*
@@ -4108,8 +4108,8 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <dd>a:\dir\
 </dl>
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$&#91;@
 <dd>b:\dir1\dep1.ex1
 <dt>$&#91;*
@@ -4122,8 +4122,8 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <dd>b:\dir1\
 </dl>
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$&#93;@
 <dd>c:\dir2\dep2.ex2
 <dt>$&#93;*
@@ -4748,8 +4748,8 @@ character is also allowed in a macro identifier.&nbsp; If the macro identifier s
 macro identifier represents an environment variable.&nbsp; For instance, the macro identifier &quot;%path&quot; represents
 the environment variable &quot;path&quot;.
 <dl>
-<dt><b><i>Macro identifiers</i></b>
-<dd><b><i>Valid?</i></b>
+<dt>Macro identifiers
+<dd>Valid?
 <dt>2morrow
 <dd>yes
 <dt>stitch_in_9
@@ -5049,8 +5049,8 @@ macros.&nbsp; These special macros have the form:&nbsp;
 <br>If the file &quot;D:\DIR1\DIR2\NAME.EXT&quot; is the current target being updated then the following example will show
 how the form qualifiers are used.
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion for D:\DIR1\DIR2\NAME.EXT</i></b>
+<dt>Macro
+<dd>Expansion for D:\DIR1\DIR2\NAME.EXT
 <dt>$^@
 <dd><tt> D:\DIR1\DIR2\NAME.EXT</tt>
 <dt>$^*
@@ -5225,8 +5225,8 @@ file that is younger than the &quot;PLOT.EXE&quot; file that in turn must be gen
 &nbsp;Larger applications may have files that are in many different directories.&nbsp; Suppose we moved the programming example
 files to three sub-directories.
 <dl>
-<dt><b><i>Files</i></b>
-<dd><b><i>Sub-directory</i></b>
+<dt>Files
+<dd>Sub-directory
 <dt>*.H
 <dd><tt> \EXAMPLE\H</tt>
 <dt>*.C
@@ -5326,8 +5326,8 @@ is found to exist.&nbsp; The commands
 <br><br>If the application requires many source files in different directories Make will search for the files using their
 associated path specifications.&nbsp; For instance, if the current example files were setup as follows:
 <dl>
-<dt><b><i>Sub-directory</i></b>
-<dd><b><i>Contents</i></b>
+<dt>Sub-directory
+<dd>Contents
 <dt>\EXAMPLE\H
 <dd><tt> DEFS.H, GLOBALS.H</tt>
 <dt>\EXAMPLE\C\PROGRAM
@@ -5593,8 +5593,8 @@ many different files.&nbsp; Make supports file inclusion with the<tt> !include</
 of object libraries, using 16-bit Open Watcom C/C++, for the different 80x86 16-bit memory models provides an ideal example
 to illustrate the use of the<tt> !include</tt> preprocessing directive.
 <dl>
-<dt><b><i>Sub-directory</i></b>
-<dd><b><i>Contents</i></b>
+<dt>Sub-directory
+<dd>Contents
 <dt>\WINDOW
 <dd><tt> WINDOW.CMD, WINDOW.MIF</tt>
 <dt>\WINDOW\H
@@ -6432,8 +6432,8 @@ Make &quot;u&quot; (UNIX compatibility mode) option.
 Make will accept the UNIX Make directive<tt> .SUFFIXES</tt> for compatibility with UNIX makefiles.&nbsp; The UNIX compatible
 special macros supported are:
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b> 
+<dt>Macro
+<dd>Expansion 
 <dt>$@
 <dd>full name of the target 
 <dt>$*

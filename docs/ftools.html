@@ -208,16 +208,16 @@ of the Open Watcom F77 compiler options plus some additional options specific to
 the screen by simply entering the &quot;WFL&quot; or &quot;WFL386&quot; command with no arguments.
 <h2 id="Open_Watcom_Compile_and_Link_Options_Summary"> Open Watcom Compile and Link Options Summary </h2>
 <dl>
-<dt><b><i>General options:</i></b>
-<dd><b><i>Description:</i></b>
+<dt>General options:
+<dd>Description:
 <dt>C
 <dd>compile the files only, do not link them
 <dt>Y
 <dd>ignore the WFL/WFL386 environment variable
 </dl>
 <dl>
-<dt><b><i>Compiler options:</i></b>
-<dd><b><i>Description:</i></b>
+<dt>Compiler options:
+<dd>Description:
 <dt>0
 <dd>(16-bit only) assume 8088/8086 processor
 <dt>1
@@ -416,8 +416,8 @@ the screen by simply entering the &quot;WFL&quot; or &quot;WFL386&quot; command 
 <dd>extend line length to 132
 </dl>
 <dl>
-<dt><b><i>Linker options:</i></b>
-<dd><b><i>Description:</i></b>
+<dt>Linker options:
+<dd>Description:
 <dt>FD&#91;=&lt;directive_file&gt;&#93;
 <dd>keep directive file and, optionally, rename it (default name is &quot;__WFL__.LNK&quot;).
 <dt>FE=&lt;executable&gt;
@@ -3378,8 +3378,8 @@ current target being made should not be deleted.&nbsp; The<tt> .HOLD</tt> direct
 <h3 id="Special_Macros"> Special Macros </h3>
 <br>Open Watcom Make has many different special macros.&nbsp; Here are some of the simpler ones.
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$$
 <dd>represents the character &quot;$&quot;
 <dt>$#
@@ -3395,8 +3395,8 @@ current target being made should not be deleted.&nbsp; The<tt> .HOLD</tt> direct
 </dl>
 <br>The following macros are for more sophisticated makefiles.
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>__MSDOS__
 <dd>This macro is defined in the MS/DOS environment.
 <dt>__NT__
@@ -3424,8 +3424,8 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; a:\dir\target.ext : b:\dir1\dep1.ex1 c:\dir2\dep2.ex2</tt>
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$^@
 <dd>a:\dir\target.ext
 <dt>$^*
@@ -3438,8 +3438,8 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <dd>a:\dir\
 </dl>
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$&#91;@
 <dd>b:\dir1\dep1.ex1
 <dt>$&#91;*
@@ -3452,8 +3452,8 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <dd>b:\dir1\
 </dl>
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b>
+<dt>Macro
+<dd>Expansion
 <dt>$&#93;@
 <dd>c:\dir2\dep2.ex2
 <dt>$&#93;*
@@ -4077,8 +4077,8 @@ character is also allowed in a macro identifier.&nbsp; If the macro identifier s
 macro identifier represents an environment variable.&nbsp; For instance, the macro identifier &quot;%path&quot; represents
 the environment variable &quot;path&quot;.
 <dl>
-<dt><b><i>Macro identifiers</i></b>
-<dd><b><i>Valid?</i></b>
+<dt>Macro identifiers
+<dd>Valid?
 <dt>2morrow
 <dd>yes
 <dt>stitch_in_9
@@ -4378,8 +4378,8 @@ macros.&nbsp; These special macros have the form:&nbsp;
 <br>If the file &quot;D:\DIR1\DIR2\NAME.EXT&quot; is the current target being updated then the following example will show
 how the form qualifiers are used.
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion for D:\DIR1\DIR2\NAME.EXT</i></b>
+<dt>Macro
+<dd>Expansion for D:\DIR1\DIR2\NAME.EXT
 <dt>$^@
 <dd><tt> D:\DIR1\DIR2\NAME.EXT</tt>
 <dt>$^*
@@ -4554,8 +4554,8 @@ file that is younger than the &quot;PLOT.EXE&quot; file that in turn must be gen
 &nbsp;Larger applications may have files that are in many different directories.&nbsp; Suppose we moved the programming example
 files to three sub-directories.
 <dl>
-<dt><b><i>Files</i></b>
-<dd><b><i>Sub-directory</i></b>
+<dt>Files
+<dd>Sub-directory
 <dt>include files
 <dd><tt> \EXAMPLE\INC</tt>
 <dt>source files
@@ -4655,8 +4655,8 @@ is found to exist.&nbsp; The commands
 <br><br>If the application requires many source files in different directories Make will search for the files using their
 associated path specifications.&nbsp; For instance, if the current example files were setup as follows:
 <dl>
-<dt><b><i>Sub-directory</i></b>
-<dd><b><i>Contents</i></b>
+<dt>Sub-directory
+<dd>Contents
 <dt>\EXAMPLE\INC
 <dd><tt> DEFS.FI, GLOBALS.FI</tt>
 <dt>\EXAMPLE\SRC\PROGRAM
@@ -4894,8 +4894,8 @@ many different files.&nbsp; Make supports file inclusion with the<tt> !include</
 of object libraries, using 16-bit Open Watcom FORTRAN 77, for the different 80x86 16-bit memory models provides an ideal example
 to illustrate the use of the<tt> !include</tt> preprocessing directive.
 <dl>
-<dt><b><i>Sub-directory</i></b>
-<dd><b><i>Contents</i></b>
+<dt>Sub-directory
+<dd>Contents
 <dt>\WINDOW
 <dd><tt> WINDOW.CMD, WINDOW.MIF</tt>
 <dt>\WINDOW\INC
@@ -5725,8 +5725,8 @@ Make &quot;u&quot; (UNIX compatibility mode) option.
 Make will accept the UNIX Make directive<tt> .SUFFIXES</tt> for compatibility with UNIX makefiles.&nbsp; The UNIX compatible
 special macros supported are:
 <dl>
-<dt><b><i>Macro</i></b>
-<dd><b><i>Expansion</i></b> 
+<dt>Macro
+<dd>Expansion 
 <dt>$@
 <dd>full name of the target 
 <dt>$*
