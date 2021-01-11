@@ -920,10 +920,10 @@ conventions (see <a href="#6_r_s_">6{r|s}</a>)
 <dd>generate calls to floating-point library (see <a href="#fpc">fpc</a>)
 <dt>fpi
 <dd>(16-bit only) generate in-line 80x87 instructions with emulation (default)
-<br><br>(32-bit only) generate in-line 387 instructions with emulation (default) (see <a href="#fpi">fpi</a>)
+<br><dd>(32-bit only) generate in-line 387 instructions with emulation (default) (see <a href="#fpi">fpi</a>)
 <dt>fpi87
 <dd>(16-bit only) generate in-line 80x87 instructions
-<br><br>(32-bit only) generate in-line 387 instructions (see <a href="#fpi87">fpi87</a>)
+<br><dd>(32-bit only) generate in-line 387 instructions (see <a href="#fpi87">fpi87</a>)
 <dt>fp2
 <dd>generate in-line 80x87 instructions (see <a href="#fp2">fp2</a>)
 <dt>fp3
@@ -959,9 +959,14 @@ conventions (see <a href="#6_r_s_">6{r|s}</a>)
 <dt>k
 <dd>(C++ only) continue processing files (ignore errors) (see <a href="#k">k</a>)
 <dt>m{f,s,m,c,l,h}
-<dd>memory model - mf=flat (see <a href="#mf">mf</a>), ms=small (see <a href="#ms">ms</a>), mm=medium (see <a href="#mm">mm</a>),
-mc=compact (see <a href="#mc">mc</a>), ml=large (see <a href="#ml">ml</a>), mh=huge (see <a href="#mh">mh</a>) (default is
-&quot;ms&quot; for 16-bit and Netware, &quot;mf&quot; for 32-bit)
+<dd>memory model
+<br><dd>mf=flat (see <a href="#mf">mf</a>),
+<br><dd>ms=small (see <a href="#ms">ms</a>),
+<br><dd>mm=medium (see <a href="#mm">mm</a>),
+<br><dd>mc=compact (see <a href="#mc">mc</a>),
+<br><dd>ml=large (see <a href="#ml">ml</a>),
+<br><dd>mh=huge (see <a href="#mh">mh</a>)
+<br><dd>(default is &quot;ms&quot; for 16-bit and Netware, &quot;mf&quot; for 32-bit)
 <dt>nc=&lt;name&gt;
 <dd>set name of the code class (see <a href="#ncEXnameY">nc=&lt;name&gt;</a>)
 <dt>nd=&lt;name&gt;
@@ -975,9 +980,11 @@ mc=compact (see <a href="#mc">mc</a>), ml=large (see <a href="#ml">ml</a>), mh=h
 <dt>pil
 <dd>preprocessor ignores #line directives (see <a href="#pil">pil</a>)
 <dt>p{e,l,c,w=&lt;num&gt;}
-<dd>preprocess file only, sending output to standard output; &quot;c&quot; include comments; &quot;e&quot; encrypt identifiers
-(C++ only); &quot;l&quot; include #line directives; w=&lt;num&gt; wrap output lines at &lt;num&gt; columns (zero means no
-wrap) (see <a href="#p_e_l_c_wEXnumY_">p{e,l,c,w=&lt;num&gt;}</a>)
+<dd>preprocess file only, sending output to standard output
+<br><dd>&quot;c&quot; include comments
+<br><dd>&quot;e&quot; encrypt identifiers (C++ only)
+<br><dd>&quot;l&quot; include #line directives
+<br><dd>&quot;w=&lt;num&gt;&quot; wrap output lines at &lt;num&gt; columns (zero means no wrap) (see <a href="#p_e_l_c_wEXnumY_">p{e,l,c,w=&lt;num&gt;}</a>)
 <dt>q
 <dd>operate quietly (see <a href="#q">q</a>)
 <dt>r
@@ -1616,9 +1623,9 @@ target macros are described in the section entitled <a href="#Open_Watcom_CDCPP_
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __FOO__</tt>
 <br><br>and prevent it from defining<tt> MSDOS</tt> ,<tt> _DOS</tt> and<tt> __DOS__</tt> if the compiler was being run under
 DOS,<tt> __OS2__</tt> if using the OS/2 hosted compiler,<tt> __NT__</tt> if using the Windows NT or Windows 95 hosted compiler,<tt>
-__QNX__</tt> and<tt> __UNIX__</tt> if using the QNX hosted version.&nbsp; or<tt> __LINUX__</tt> and<tt> __UNIX__</tt> if using
-the Linux hosted version.&nbsp; Any string consisting of letters, digits, and the underscore character may be used for the
-target name.
+__QNX__</tt> and<tt> __UNIX__</tt> if using the QNX hosted version or<tt> __LINUX__</tt> and<tt> __UNIX__</tt> if using the
+Linux hosted version.&nbsp; Any string consisting of letters, digits, and the underscore character may be used for the target
+name.
 <br><br>The compiler will also construct an environment variable called<b> &lt;os&gt;_INCLUDE</b> and see if it has been defined.
 &nbsp;If the environment variable is defined then each directory listed in it is searched (in the order that they were specified).
 &nbsp;For example, the environment variable<b> WINDOWS_INCLUDE</b> will be searched if<b> bt=WINDOWS</b> option was specified.

@@ -389,10 +389,10 @@ conventions
 <dd>generate calls to floating-point library
 <dt>fpi
 <dd>(16-bit only) generate in-line 80x87 instructions with emulation (default)
-<br><br>(32-bit only) generate in-line 387 instructions with emulation (default)
+<br><dd>(32-bit only) generate in-line 387 instructions with emulation (default)
 <dt>fpi87
 <dd>(16-bit only) generate in-line 80x87 instructions
-<br><br>(32-bit only) generate in-line 387 instructions
+<br><dd>(32-bit only) generate in-line 387 instructions
 <dt>fp2
 <dd>generate in-line 80x87 instructions
 <dt>fp3
@@ -428,8 +428,14 @@ conventions
 <dt>k
 <dd>(C++ only) continue processing files (ignore errors)
 <dt>m{f,s,m,c,l,h}
-<dd>memory model - mf=flat ms=small mm=medium mc=compact ml=large mh=huge (default is &quot;ms&quot; for 16-bit and Netware, &quot;mf&quot;
-for 32-bit)
+<dd>memory model
+<br><dd>mf=flat
+<br><dd>ms=small
+<br><dd>mm=medium
+<br><dd>mc=compact
+<br><dd>ml=large
+<br><dd>mh=huge
+<br><dd>(default is &quot;ms&quot; for 16-bit and Netware, &quot;mf&quot; for 32-bit)
 <dt>nc=&lt;name&gt;
 <dd>set name of the code class
 <dt>nd=&lt;name&gt;
@@ -443,9 +449,11 @@ for 32-bit)
 <dt>pil
 <dd>preprocessor ignores #line directives
 <dt>p{e,l,c,w=&lt;num&gt;}
-<dd>preprocess file only, sending output to standard output; &quot;c&quot; include comments; &quot;e&quot; encrypt identifiers
-(C++ only); &quot;l&quot; include #line directives; w=&lt;num&gt; wrap output lines at &lt;num&gt; columns (zero means no
-wrap)
+<dd>preprocess file only, sending output to standard output
+<br><dd>&quot;c&quot; include comments
+<br><dd>&quot;e&quot; encrypt identifiers (C++ only)
+<br><dd>&quot;l&quot; include #line directives
+<br><dd>&quot;w=&lt;num&gt;&quot; wrap output lines at &lt;num&gt; columns (zero means no wrap)
 <dt>q
 <dd>operate quietly
 <dt>r
@@ -594,11 +602,13 @@ for available system names.&nbsp; This is equivalent to specifying -bt=&lt;syste
 <dd>link a program for the specified system.&nbsp; Among the supported systems are:
 <dl>
 <dt>286
-<dd>16-bit DOS executables (synonym for &quot;DOS&quot;) under DOS and NT hosted platforms; 16-bit OS/2 executables (synonym for
-&quot;OS2&quot;) under 32-bit OS/2 hosted OS/2 session.
+<dd>16-bit DOS executables (synonym for &quot;DOS&quot;) under DOS, NT and Linux
+<br><dd>16-bit OS/2 executables (synonym for &quot;OS2&quot;) under 32-bit OS/2 hosted OS/2 session
 <dt>386
-<dd>32-bit DOS executables (synonym for &quot;DOS4G&quot;) under DOS; 32-bit NT character-mode executables (synonym for &quot;NT&quot;)
-under Windows NT; 32-bit OS/2 executables (synonym for &quot;OS2V2&quot;) under 32-bit OS/2 hosted OS/2 session.
+<dd>32-bit DOS executables (synonym for &quot;DOS4G&quot;) under DOS
+<br><dd>32-bit NT character-mode executables (synonym for &quot;NT&quot;) under Windows NT
+<br><dd>32-bit OS/2 executables (synonym for &quot;OS2V2&quot;) under 32-bit OS/2 hosted OS/2 session
+<br><dd>32-bit Linux executables (synonym for &quot;LINUX&quot;) under Linux
 <dt>COM
 <dd>16-bit DOS &quot;COM&quot; files
 <dt>DOS

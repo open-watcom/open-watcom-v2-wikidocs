@@ -558,6 +558,7 @@ Open Watcom OS/2 Help Compiler treats each tag.
 an application via a dynamic link library.
 <dt>Attributes
 <dd>
+<dl>
 <dt>dll='text'
 <dd>The name of the dynamic link library containing the code that controls the current viewer window.
 <dt>objectname='text'
@@ -574,6 +575,7 @@ an application via a dynamic link library.
 <dd>The width of the child window.&nbsp; May be absolute, relative, or dynamic.&nbsp; See <a href="#Units_of_Measure">Units of Measure</a>.
 <dt>vpcy=measurement
 <dd>The height of the child window.&nbsp; May be absolute, relative, or dynamic.&nbsp; See <a href="#Units_of_Measure">Units of Measure</a>.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -605,6 +607,7 @@ from the artwork tag.
 &nbsp;wipfc looks for images in the directories pointed to by the IPFCARTWORK environment variable (see <a href="#Environment_Variables">Environment Variables</a>).
 <dt>Attributes
 <dd>
+<dl>
 <dt>name='filename.ext'
 <dd>The name of the bitmap image file.&nbsp; This attribute is required.
 <dt>align=left | center | right
@@ -618,6 +621,7 @@ above and below.
 <dt>fit
 <dd>This flag causes the image to be scaled to fill the window.&nbsp; Note that this may distort the image if the aspect ratio
 of the window and image differ.
+</dl>
 <dt>Classification:
 <dd>In-line
 <dt>May contain:
@@ -634,8 +638,10 @@ by the contents enclosed by the caution tag block.
 <dd>The closing ecaution is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>text='message'
 <dd>Use 'message' instead of 'CAUTION:&nbsp; ' as the introductory text.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -665,12 +671,14 @@ allowed, mixing bold and normal fonts will throw the spacing off.
 or the next heading tag (h1 - h6) is reached.
 <dt>Attributes
 <dd>
+<dl>
 <dt>fc=default | black | blue | red | pink | green | cyan | yellow | neutral | brown (a synonym for neutral) | darkgray |
 darkblue | darkred | darkpink | darkgreen | darkcyan | palegray
 <dd>This sets the foreground color of the text.
 <dt>bc=default | black | blue | red | pink | green | cyan | yellow | neutral | brown (a synonym for neutral) | darkgray |
 darkblue | darkred | darkpink | darkgreen | darkcyan | palegray
 <dd>This sets the background color of the text.
+</dl>
 <dt>Classification:
 <dd>Formatting
 <dt>May contain:
@@ -685,6 +693,7 @@ in the control area of the cover window.&nbsp; For help windows, the default but
 Tutorial (if a tutorial is present).
 <dt>Attributes
 <dd>
+<dl>
 <dt>ctrlid=text
 <dd>Specifies the id by which this control group can be referenced.&nbsp; Alphanumeric.&nbsp; Duplicate ids are not allowed.
 <dt>controls='search print index contents esc back forward custom-id'
@@ -694,6 +703,7 @@ own button (using the pbutton tag), use the id from that tag as the custom-id.
 <dd>Put the buttons in the control area of a page.
 <dt>coverpage
 <dd>Put the buttons in the control area of the cover (main) page.
+</dl>
 <dt>Conditions
 <dd>The ctrl tag must be enclosed in a ctrldef block, and must follow all pbutton tags
 <dt>Classification:
@@ -722,8 +732,10 @@ own button (using the pbutton tag), use the id from that tag as the custom-id.
 <dd>Display dynamically formatted text in an application-controlled window.
 <dt>Attributes
 <dd>
+<dl>
 <dt>res=number
 <dd>The resource id number.&nbsp; Must be between 1 and 64000.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -739,6 +751,7 @@ own button (using the pbutton tag), use the id from that tag as the custom-id.
 <dd>The closing edl is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>compact
 <dd>Omit inserting a blank line between each term-description pair.
 <dt>tsize=number
@@ -748,6 +761,7 @@ own button (using the pbutton tag), use the id from that tag as the custom-id.
 the term, even if the length of the term exceeds &quot;tsize&quot; characters.&nbsp; If break is set to &quot;fit&quot;, descriptions
 are placed on the next line only if the length of the term exceeds &quot;tsize&quot; characters.&nbsp; If break is set to
 &quot;all&quot; descriptions are always placed on the next line.
+</dl>
 <dt>Conditions:
 <dd>The dthd and ddhd tags must occur before any dt and dd tags.&nbsp; Multiple consecutive dt tags are allowed (synonyms), but
 only one dd tag is allowed for each set of dt tags.
@@ -813,6 +827,7 @@ only one dd tag is allowed for each set of dt tags.
 pages, where controls are displayed.&nbsp; The tag must follow the userdoc tag and (if present) the title tag.
 <dt>Attributes
 <dd>
+<dl>
 <dt>toc=numbers
 <dd>Controls which heading levels are included in the table of contents.&nbsp; For example, '123' (the default) places headings
 defined by the h1, h2, and h3 tags in the table of contents.&nbsp; The numbers must be consecutive, beginning with 1.
@@ -826,6 +841,7 @@ defined by the h1, h2, and h3 tags in the table of contents.&nbsp; The numbers m
 <dd>Specifies where the control area that contains push buttons is located.&nbsp; If 'page' is specified, place the control area
 on the text window.&nbsp; If 'coverpage' is specified, place the control area on the cover page.&nbsp; If 'both' is specified,
 place the control are in both locations.&nbsp; If 'none' is specified, suppress the control area.
+</dl>
 <dt>Classification:
 <dd>Document Header
 <dt>May contain:
@@ -863,6 +879,7 @@ text is layed out as entered.&nbsp; If the text exceeds the current window dimen
 <dd>Change the font face, size, or encoding for the text in the page (fonts reset at the next header defining a new page).
 <dt>Attributes
 <dd>
+<dl>
 <dt>facename='text'
 <dd>Sets the name of the font to use.&nbsp; If set to 'default', resets the font to the default face and size.&nbsp; This attribute
 is required.
@@ -871,6 +888,7 @@ is required.
 attribute is required.&nbsp; The 'x' separating the numbers is required.
 <dt>codepage=number
 <dd>Sets the encoding of the displayed text.&nbsp; The value is a 3 digit number.
+</dl>
 <dt>Classification:
 <dd>Formatting
 <dt>May contain:
@@ -884,8 +902,10 @@ attribute is required.&nbsp; The 'x' separating the numbers is required.
 <dd>The closing efn is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>id=text
 <dd>Specifies a unique alphanumeric identifier used as the target of a link tag.&nbsp; This attribute is required.
+</dl>
 <dt>Conditions:
 <dd>The index tags (i1, i2, icmd, isyn) are not allowed.&nbsp; Footnotes cannot be nested within other footnotes, nor can they
 contain headings (h1 - h6).&nbsp; The link to a footnote cannot appear in a child window.&nbsp; The text of footnotes is not
@@ -907,6 +927,7 @@ Heading tags must appear in consecutive ascending (but not descending) order.&nb
 an intervening h2, but you can go from h3 to h1.
 <dt>Attributes
 <dd>
+<dl>
 <dt>res=number
 <dd>Specify the resource id of the header.&nbsp; It must be in the range of 1 to 64000.&nbsp; This attribute is required for HLP
 files.
@@ -926,8 +947,6 @@ files.
 <dd>The width of the window in the parent window.&nbsp; See <a href="#Units_of_Measure">Units of Measure</a>.
 <dt>height=measurement
 <dd>The height of the window in the parent window.&nbsp; See <a href="#Units_of_Measure">Units of Measure</a>.
-<dt>Note:
-<dd>You cannot mix absolute units with dynamic or relative units when specifying x and width, or y and height.
 <dt>group=number
 <dd>The group number of the window (1 to 64000).&nbsp; All pages in the same group are displayed in the same window, one replacing
 the other.
@@ -957,6 +976,9 @@ on the text window.&nbsp; If 'none' is specified, suppress the control area on t
 in the docprof tag.
 <dt>ctrlrefid=text
 <dd>An alphanumeric identifier of the set of controls you wish to display.
+</dl>
+<dt>Note:
+<dd>You cannot mix absolute units with dynamic or relative units when specifying x and width, or y and height.
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -970,10 +992,12 @@ in the docprof tag.
 <dd>Link to a heading.&nbsp; The text of the link is &quot;Reference&quot;.
 <dt>Attributes
 <dd>
+<dl>
 <dt>res=number
 <dd>The resource id of the header tag.
 <dt>refid=text
 <dd>The id of the header tag.&nbsp; Alphanumeric.
+</dl>
 <dt>Classification:
 <dd>In-line
 <dt>May contain:
@@ -989,9 +1013,11 @@ in the docprof tag.
 <dd>The closing ehide is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>key='text'
 <dd>The key that will unhide the enclosed information.&nbsp; Multiple keys can be specified by enclosing each key in single quotes
 then concatenating them with the plus sign.&nbsp; So, 'key1'+'key2'+...&nbsp; wipfc will also accept 'key1+key2+...'
+</dl>
 <dt>Conditions:
 <dd>You cannot nest hide tags within each other.&nbsp; You cannot include a header tag with the 'res' attribute set (in other
 words, you cannot jump to hidden material).&nbsp; Note that the Open Watcom OS/2 Help Compiler does not check for this error.
@@ -1024,6 +1050,7 @@ tags are not additive:&nbsp; an hp1 (italic) inside hp2 (bold) does not make an 
 tags.
 <dt>Attributes
 <dd>
+<dl>
 <dt>id=text
 <dd>A cross-reference for use by a secondary index (i2) tag.
 <dt>global
@@ -1033,6 +1060,7 @@ tags.
 <dt>sortkey='key-text'.index-text
 <dd>Specify a string used to sort this entry in the index, and a string to use in its place.&nbsp; In other words, place index-text
 where key-text would sort in index.
+</dl>
 <dt>Conditions
 <dd>Cannot appear in a footnote (fn/efn block).
 <dt>Classification:
@@ -1049,6 +1077,7 @@ where key-text would sort in index.
 tags.
 <dt>Attributes
 <dd>
+<dl>
 <dt>refid=text
 <dd>The id of the primary index entry to which this belongs.
 <dt>global
@@ -1056,6 +1085,7 @@ tags.
 <dt>sortkey='key-text'.index-text
 <dd>Specify a string used to sort this entry in the index, and a string to use in its place.&nbsp; In other words, place index-text
 where key-text would sort in index.
+</dl>
 <dt>Conditions
 <dd>Cannot appear in a fn/efn footnote.&nbsp; If the global flag is set for the i1 tag, it must be set for the i2 tag.
 <dt>Classification:
@@ -1089,8 +1119,10 @@ in the index.&nbsp; The isyn tag can be placed on any page that contains related
 be on the same line as the tag and cannot contain other tags.
 <dt>Attributes
 <dd>
+<dl>
 <dt>root=text
 <dd>The root word for which the synonyms apply.&nbsp; This word will also appear in the 'roots' attribute of the i1 tag.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -1118,8 +1150,10 @@ the text as it was entered.&nbsp; The text can be left or right aligned, or cent
 <dd>The closing elines is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>align=left | center | right
 <dd>Left, center, or right align the block of text in the window.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -1136,6 +1170,7 @@ open a footnote, launch an application, or send a notification to another runnin
 <dd>The closing elink is required.&nbsp; Unless the link is contained in an artlink tag, or if reftype is 'inform'.
 <dt>Attributes
 <dd>
+<dl>
 <dt>reftype=hd | fn | launch | inform
 <dd>If reftype is 'hd', then it links to a heading and the refid attribute must be specified.&nbsp; If the heading is in an external
 file, the database must also be set and the heading must have its 'global' attribute set.&nbsp; If reftype is 'fn', the link
@@ -1193,6 +1228,7 @@ the other.
 <dd>The width of the active area of the graphic.&nbsp; Valid only if the link is in an artlink.
 <dt>cy=number
 <dd>The height of the active area of the graphic.&nbsp; Valid only if the link is in an artlink.
+</dl>
 <dt>Note:
 <dd>If the link is to contain an image, the link must be enclosed in an artlink tag block.
 <dt>Classification:
@@ -1208,9 +1244,11 @@ the other.
 <dd>Sets the left margin.&nbsp; The margin remains in effect until it is reset or until the end of the current page.
 <dt>Attributes
 <dd>
+<dl>
 <dt>margin=number
 <dd>The number of character spaces.&nbsp; If the tag appears more than 'margin' character spaces into a line of text, the margin
 becomes effective on the next line.
+</dl>
 <dt>Classification:
 <dd>Formatting
 <dt>May contain:
@@ -1237,8 +1275,10 @@ or bulleted.
 This text appears after the local-specific phrase (&quot;Note:&nbsp; &quot; in the en_US locale) and on the same line.
 <dt>Attributes
 <dd>
+<dl>
 <dt>text='text'
 <dd>Substitute 'text' for the default &quot;Note:&nbsp; &quot; phrase.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -1255,8 +1295,10 @@ The text begins with a local-specific phrase (&quot;Note:&nbsp; &quot; in the en
 <dd>The closing ent is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>text='text'
 <dd>Substitute 'text' for the default &quot;Note:&nbsp; &quot; phrase.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -1273,11 +1315,13 @@ The text begins with a local-specific phrase (&quot;Note:&nbsp; &quot; in the en
 <dd>The closing eol is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>compact
 <dd>Do not put blank lines between each list item.
 <dt>verycompact
 <dd>Do not put blank lines between each list item, and do not put blank lines before or after the list.&nbsp; An Open Watcom OS/2
 Help Compiler extension.
+</dl>
 <dt>Classification:
 <dd>List-block
 <dt>May contain:
@@ -1304,6 +1348,7 @@ allowed (synonyms), but only one pd tag is allowed for each set of pt tags.&nbsp
 a parameter table.
 <dt>Attributes
 <dd>
+<dl>
 <dt>tsize=number
 <dd>The width of the term column.&nbsp; The default is 10.
 <dt>break=all | fit | none
@@ -1312,6 +1357,7 @@ the description is on the same line as the term provided that the width of the t
 break is 'none' then the description is on the same line as the term.
 <dt>compact
 <dd>Do not add blank lines between each term/description pair.
+</dl>
 <dt>Classification:
 <dd>List-block
 <dt>May contain:
@@ -1345,6 +1391,7 @@ break is 'none' then the description is on the same line as the term.
 <dd>Defines a custom (author-defined) push button.
 <dt>Attributes
 <dd>
+<dl>
 <dt>id=text
 <dd>An alphanumeric identifier that will be referenced by the ctrl tag when using the button.
 <dt>res=number
@@ -1353,6 +1400,7 @@ reserved.
 <dt>text='text'
 <dd>The button text.&nbsp; May include spaces.&nbsp; May not include entity references.&nbsp; Must not conflict with any pre-defined
 buttons.
+</dl>
 <dt>Note:
 <dd>All pbutton tags must appear inside a ctrldef block and before any ctrl tags.
 <dt>Classification:
@@ -1368,9 +1416,11 @@ buttons.
 <dd>Sets the right margin.&nbsp; The margin remains in effect until it is reset or until the end of the current page.
 <dt>Attributes
 <dd>
+<dl>
 <dt>margin=number
 <dd>The number of character spaces.&nbsp; If the tag appears more than 'margin' character spaces into a line of text, the margin
 becomes effective on the next line.
+</dl>
 <dt>Classification:
 <dd>Formatting
 <dt>May contain:
@@ -1387,11 +1437,13 @@ becomes effective on the next line.
 <dd>The closing esl is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>compact
 <dd>Do not put blank lines between each list item.
 <dt>verycompact
 <dd>Do not put blank lines between each list item, and do not put blank lines before or after the list.&nbsp; An Open Watcom OS/2
 Help Compiler extension.
+</dl>
 <dt>Classification:
 <dd>List-block
 <dt>May contain:
@@ -1406,6 +1458,7 @@ Help Compiler extension.
 font (using the font tag) or change make the font bold, the spacing will be thrown off.
 <dt>Attributes
 <dd>
+<dl>
 <dt>cols='number number...'
 <dd>Specifies both the width of each column ('number') and the number of columns (the number of 'number's).
 <dt>rules=both | horiz | vert | none
@@ -1413,6 +1466,7 @@ font (using the font tag) or change make the font bold, the spacing will be thro
 place.&nbsp; The default is 'both'.
 <dt>frame=rule|box|none
 <dd>Specifies the frame around the table.&nbsp; If no frame is drawn, blank space appears in its place.&nbsp; The default is 'box'.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
@@ -1464,11 +1518,13 @@ paragraph (without numbering) by using the lp tag.
 <dd>The closing eul is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>compact
 <dd>Do not put blank lines between each list item.
 <dt>verycompact
 <dd>Do not put blank lines between each list item, and do not put blank lines before or after the list.&nbsp; An Open Watcom OS/2
 Help Compiler extension.
+</dl>
 <dt>Classification:
 <dd>List-block
 <dt>May contain:
@@ -1497,8 +1553,10 @@ enclosed by the warning tag block.
 <dd>The closing ewarning is required.
 <dt>Attributes
 <dd>
+<dl>
 <dt>text='message'
 <dd>Use 'message' instead of 'Warning:&nbsp; ' as the introductory text.
+</dl>
 <dt>Classification:
 <dd>Block
 <dt>May contain:
