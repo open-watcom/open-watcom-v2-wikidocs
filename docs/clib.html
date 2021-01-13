@@ -30233,14 +30233,15 @@ of<b> type</b> is 1,<tt> _mbbtype</tt> tests for a valid trail byte of a multiby
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbcicmp</tt> function compares one multibyte character from<b> s1</b> to one multibyte character from<b> s2</b> using
-a case-insensitive comparison.
+<dd>The function compares one multibyte character from<b> s1</b> to one multibyte character from<b> s2</b> using a case-insensitive
+comparison.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing
+the comparison.
 <br><br>The<tt> _fmbcicmp</tt> function is a data model independent form of the _mbcicmp function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _mbcicmp</tt> and<tt> _fmbcicmp</tt> functions return the following values.
+<dd>The function returns the following values.
 <dl>
 <dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
 <dt>&lt; 0
@@ -31824,16 +31825,17 @@ pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed me
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbsnbicmp</tt> lexicographically compares not more than<b> n</b> bytes from the string pointed to by<b> s1</b> to
-the string pointed to by<b> s2</b>.&nbsp; The comparison is insensitive to case.
+<dd>The function lexicographically compares not more than<b> n</b> bytes from the string pointed to by<b> s1</b> to the string
+pointed to by<b> s2</b>.&nbsp; The comparison is insensitive to case.&nbsp; All uppercase characters from<b> s1</b> and<b>
+s2</b> are mapped to lowercase for the purposes of doing the comparison.
 <br><br>The<tt> _fmbsnbicmp</tt> function is a data model independent form of the _mbsnbicmp function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _mbsnbicmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string
-pointed to by<b> s1</b> is less than, equal to, or greater than the string pointed to by<b> s2</b>.<tt>&nbsp; _mbsnbicmp</tt>
-is similar to <tt> _mbsncmp</tt>, except that<tt> _mbsnbicmp</tt> compares strings by bytes rather than by characters.
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+is less than, equal to, or greater than the string pointed to by<b> s2</b>.<tt>&nbsp; _mbsnbicmp</tt> is similar to <tt> _mbsncmp</tt>,
+except that<tt> _mbsnbicmp</tt> compares strings by length in bytes rather than by length in characters.
 </dl>
 <dl>
 <dt>See Also:
@@ -33155,16 +33157,17 @@ is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> memicmp</tt> function compares, with case insensitivity (upper- and lowercase characters are equivalent), the first<b>
-length</b> characters of the object pointed to by<b> s1</b> to the object pointed to by<b> s2</b>.
+<dd>The function compares, without case sensitivity (upper- and lowercase characters are equivalent), the first<b> length</b>
+characters of the object pointed to by<b> s1</b> to the object pointed to by<b> s2</b>.&nbsp; All uppercase characters from<b>
+s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing the comparison.
 <br><br>The<tt> _fmemicmp</tt> function is a data model independent form of the memicmp function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _memicmp</tt> function is identical to<tt> memicmp</tt>.&nbsp; Use<tt> _memicmp</tt> for ANSI naming conventions.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> memicmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the object pointed
-to by<b> s1</b> is less than, equal to, or greater than the object pointed to by<b> s2</b>.
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the object pointed to by<b> s1</b>
+is less than, equal to, or greater than the object pointed to by<b> s2</b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -48879,15 +48882,14 @@ floating-point operations.&nbsp; The description of this status is found in the<
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strcasecmp</tt> function compares, with case insensitivity, the string pointed to by<b> s1</b> to the string pointed
-to by<b> s2</b>.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing
-the comparison.
+<dd>The function compares, without case sensitivity, the string pointed to by<b> s1</b> to the string pointed to by<b> s2</b>.
+&nbsp;All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing the comparison.
 <br><br>The<tt> strcasecmp</tt> function is identical to the <tt> stricmp</tt> function.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> strcasecmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string
-pointed to by<b> s1</b> is, ignoring case, less than, equal to, or greater than the string pointed to by<b> s2</b>.
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+is, ignoring case, less than, equal to, or greater than the string pointed to by<b> s2</b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -49214,15 +49216,15 @@ to by<b> s1</b> is less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strcmpi</tt> function compares, with case insensitivity, the string pointed to by<b> s1</b> to the string pointed
-to by<b> s2</b>.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing
-the comparison.&nbsp; The<tt> strcmpi</tt> function is identical to the <tt> stricmp</tt> function.
+<dd>The function compares, without case sensitivity, the string pointed to by<b> s1</b> to the string pointed to by<b> s2</b>.
+&nbsp;All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing the comparison.
+&nbsp;The<tt> strcmpi</tt> function is identical to the <tt> stricmp</tt> function.
 <br><br>The<tt> wcscmpi</tt> function is a wide-character version of<tt> strcmpi</tt> that operates with wide-character strings.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> strcmpi</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string pointed
-to by<b> s1</b> is less than, equal to, or greater than the string pointed to by<b> s2</b>.
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+is less than, equal to, or greater than the string pointed to by<b> s2</b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -50124,9 +50126,8 @@ that has been detected.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> stricmp</tt> function compares, with case insensitivity, the string pointed to by<b> s1</b> to the string pointed
-to by<b> s2</b>.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing
-the comparison.
+<dd>The function compares, without case sensitivity, the string pointed to by<b> s1</b> to the string pointed to by<b> s2</b>.
+&nbsp;All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing the comparison.
 <br><br>The<tt> _stricmp</tt> function is identical to<tt> stricmp</tt>.&nbsp; Use<tt> _stricmp</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstricmp</tt> function is a data model independent form of the stricmp function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
@@ -50138,8 +50139,8 @@ arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> stricmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string pointed
-to by<b> s1</b> is less than, equal to, or greater than the string pointed to by<b> s2</b>.
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+is less than, equal to, or greater than the string pointed to by<b> s2</b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -50192,8 +50193,9 @@ to by<b> s1</b> is less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _stricoll</tt> function performs a case insensitive comparison of the string pointed to by<b> s1</b> to the string
-pointed to by<b> s2</b>.&nbsp; The comparison uses the current code page which can be selected by the <tt> _setmbcp</tt> function.
+<dd>The function performs a comparison without case sensitivity of the string pointed to by<b> s1</b> to the string pointed to
+by<b> s2</b>.&nbsp; The comparison uses the current code page which can be selected by the <tt> _setmbcp</tt> function.&nbsp;
+All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing the comparison.
 <br><br>The<tt> _wcsicoll</tt> function is a wide-character version of<tt> _stricoll</tt> that operates with wide-character
 strings.
 <br><br>The<tt> _mbsicoll</tt> function is a multibyte character version of<tt> _stricoll</tt> that operates with multibyte
@@ -50201,7 +50203,7 @@ character strings.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
 is less than, equal to, or greater than the string pointed to by<b> s2</b>, according to the collating sequence selected.
 </dl>
 <dl>
@@ -50650,14 +50652,15 @@ strings.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strncasecmp</tt> function compares, without case sensitivity, the string pointed to by<b> s1</b> to the string pointed
-to by<b> s2</b>, for at most<b> len</b> characters.
+<dd>The function compares, without case sensitivity, the string pointed to by<b> s1</b> to the string pointed to by<b> s2</b>,
+for at most<b> len</b> characters.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for
+the purposes of doing the comparison.
 <br><br>The<tt> strncasecmp</tt> function is identical to the <tt> strnicmp</tt> function.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> strncasecmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string
-pointed to by<b> s1</b> is, ignoring case, less than, equal to, or greater than the string pointed to by<b> s2</b>.
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+is, ignoring case, less than, equal to, or greater than the string pointed to by<b> s2</b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -51212,8 +51215,9 @@ is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strnicmp</tt> function compares, without case sensitivity, the string pointed to by<b> s1</b> to the string pointed
-to by<b> s2</b>, for at most<b> len</b> characters.
+<dd>The function compares, without case sensitivity, the string pointed to by<b> s1</b> to the string pointed to by<b> s2</b>,
+for at most<b> len</b> characters.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for
+the purposes of doing the comparison.
 <br><br>The<tt> _strnicmp</tt> function is identical to<tt> strnicmp</tt>.&nbsp; Use<tt> _strnicmp</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrnicmp</tt> function is a data model independent form of the strnicmp function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
@@ -51226,8 +51230,8 @@ arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> strnicmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string pointed
-to by<b> s1</b> is less than, equal to, or greater than the string pointed to by<b> s2</b>.
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+is less than, equal to, or greater than the string pointed to by<b> s2</b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -51284,9 +51288,10 @@ to by<b> s1</b> is less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>Description:
-<dd>These functions perform a case insensitive comparison of the first<b> count</b> characters of the string pointed to by<b>
-s1</b> to the string pointed to by<b> s2</b>.&nbsp; The comparison uses the current code page which can be selected by the
-<tt> _setmbcp</tt> function.
+<dd>The function performs a comparison without case sensitivity of the first<b> count</b> characters of the string pointed to
+by<b> s1</b> to the string pointed to by<b> s2</b>.&nbsp; The comparison uses the current code page which can be selected
+by the <tt> _setmbcp</tt> function.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for
+the purposes of doing the comparison.
 <br><br>The<tt> _wcsnicoll</tt> function is a wide-character version of<tt> _strnicoll</tt> that operates with wide-character
 strings.
 <br><br>The<tt> _mbsnicoll</tt> function is a multibyte character version of<tt> _strnicoll</tt> that operates with multibyte
@@ -51294,7 +51299,7 @@ character strings.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
+<dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
 is less than, equal to, or greater than the string pointed to by<b> s2</b>, according to the collating sequence selected.
 </dl>
 <dl>
