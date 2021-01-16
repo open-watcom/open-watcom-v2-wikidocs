@@ -30234,8 +30234,7 @@ of<b> type</b> is 1,<tt> _mbbtype</tt> tests for a valid trail byte of a multiby
 <dl>
 <dt>Description:
 <dd>The function compares one multibyte character from<b> s1</b> to one multibyte character from<b> s2</b> using a case-insensitive
-comparison.&nbsp; All uppercase characters from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing
-the comparison.
+comparison.&nbsp; Uppercase character from<b> s1</b> and<b> s2</b> are mapped to lowercase for the purposes of doing the comparison.
 <br><br>The<tt> _fmbcicmp</tt> function is a data model independent form of the _mbcicmp function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -31608,11 +31607,12 @@ arguments.&nbsp; It is most useful in mixed memory model applications.
 <dt>Returns:
 <dd>The<tt> _mbsnbcmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string pointed
 to by<b> s1</b> is less than, equal to, or greater than the string pointed to by<b> s2</b>.<tt>&nbsp; _mbsnbcmp</tt> is similar
-to <tt> _mbsncmp</tt>, except that<tt> _mbsnbcmp</tt> compares strings by bytes rather than by characters.
+to <tt> _mbsncmp</tt>, except that<tt> _mbsnbcmp</tt> compares strings by length in bytes rather than by length in characters.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbicmp">_mbsnbicmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>
+<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbicmp">_mbsnbicmp</a>, <a href="#_mbsncmp">_mbsncmp</a>, <a href="#_mbsnicmp">_mbsnicmp</a>,
+<a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -31834,12 +31834,13 @@ arguments.&nbsp; It is most useful in mixed memory model applications.
 <dl>
 <dt>Returns:
 <dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<b> s1</b>
-is less than, equal to, or greater than the string pointed to by<b> s2</b>.<tt>&nbsp; _mbsnbicmp</tt> is similar to <tt> _mbsncmp</tt>,
+is less than, equal to, or greater than the string pointed to by<b> s2</b>.<tt>&nbsp; _mbsnbicmp</tt> is similar to <tt> _mbsnicmp</tt>,
 except that<tt> _mbsnbicmp</tt> compares strings by length in bytes rather than by length in characters.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbcmp">_mbsnbcmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>
+<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbcmp">_mbsnbcmp</a>, <a href="#_mbsncmp">_mbsncmp</a>, <a href="#_mbsnicmp">_mbsnicmp</a>,
+<a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>
 </dl>
 <dl>
 <dt>Example:
