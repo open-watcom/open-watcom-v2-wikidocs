@@ -491,26 +491,26 @@ highlight the<b><i> Exit</i></b> item.&nbsp; Pressing the<b> ENTER</b> key selec
 <h2 id="What_is_a_Modal_Editor_"> What is a Modal Editor? </h2>
 <br>A modal editor is one where keystrokes have different meaning, depending on what mode you are in.&nbsp; Vi has two main
 modes,<b><i> command mode</i></b> and<b><i> text insertion mode</i></b>.
-<br><br>While in<b><i> command mode</i></b> , pressing a key on your keyboard can cause something different to happen.&nbsp;
+<br><br>While in<b><i> command mode</i></b>, pressing a key on your keyboard can cause something different to happen.&nbsp;
 For example, pressing the letter D (capital 'd') deletes all characters from the current cursor position to the end of the
-line.&nbsp; If the same letter 'D' (is pressed while in<b><i> text insertion mode</i></b> , the letter 'D' appears in your
+line.&nbsp; If the same letter 'D' (is pressed while in<b><i> text insertion mode</i></b>, the letter 'D' appears in your
 text (much as you would expect).
-<br><br>It is easy to tell what mode you are in while using Vi.&nbsp; When you are in<b><i> command mode</i></b> , the cursor
-is a thin line.&nbsp; When you are in<b><i> text insertion mode</i></b> , the cursor is much thicker:&nbsp; if you are inserting
+<br><br>It is easy to tell what mode you are in while using Vi.&nbsp; When you are in<b><i> command mode</i></b>, the cursor
+is a thin line.&nbsp; When you are in<b><i> text insertion mode</i></b>, the cursor is much thicker:&nbsp; if you are inserting
 text, the cursor is one half of a full block, and if you are overstriking text, the cursor is a full block.
 <br><br>The mode indicator on the menu bar at the top of your screen shows the current mode.&nbsp; While in<b><i> command
-mode</i></b> , you will see the following:
+mode</i></b>, you will see the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: command</tt>
-<br><br>While in<b><i> text insertion mode</i></b> , you will see either:
+<br><br>While in<b><i> text insertion mode</i></b>, you will see either:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: insert</tt>
 <br><br>or
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: overstrike</tt>
 <br><br>depending on whether you are inserting or overstriking text.
-<br><br>Vi is in<b><i> command mode</i></b> by default.&nbsp; There are numerous ways to enter<b><i> text insertion mode</i></b>
-, the easiest of which is to press the<b> Insert</b> key on your keyboard.
+<br><br>Vi is in<b><i> command mode</i></b> by default.&nbsp; There are numerous ways to enter<b><i> text insertion mode</i></b>,
+the easiest of which is to press the<b> Insert</b> key on your keyboard.
 <br><br>The<b> ESC</b> key is one of the more important keys in Vi.&nbsp; Pressing<b> ESC</b> once will stop whatever you
 are doing and return you to<b><i> command mode</i></b>.&nbsp; If you have started a<b><i> command mode</i></b> sequence, pressing<b>
 ESC</b> will cancel the command and return you to<b><i> command mode</i></b>.
@@ -548,7 +548,7 @@ saving your current file.
 commands, you will be able to accomplish all basic editing tasks.&nbsp; In later chapters, more sophisticated commands will
 be introduced which allow advanced tasks to be completed more quickly.
 <h3 id="Moving_Around"> Moving Around </h3>
-<br>When you are in<b><i> command mode</i></b> , you may move around in your text using various cursor keys.&nbsp; The basic
+<br>When you are in<b><i> command mode</i></b>, you may move around in your text using various cursor keys.&nbsp; The basic
 keys that you use to move around are:
 <dl>
 <dt>UP (up arrow key)
@@ -615,7 +615,7 @@ been modified, then the option will fail.
 <br>You have already learned that pressing the<b> INS</b> key while in<b><i> command mode</i></b> puts Vi into insert mode.
 &nbsp;Once you are in insert mode, you may enter whatever text you like.&nbsp; You may cursor around and modify your text
 in whatever way you choose.&nbsp; Once you are done, you may press the<b> ESC</b> key to return to<b><i> command mode</i></b>.
-<br><br>While you are in<b><i> text insertion mode</i></b> , the basic keys that allow you to move through the text are:
+<br><br>While you are in<b><i> text insertion mode</i></b>, the basic keys that allow you to move through the text are:
 <dl>
 <dt>UP (up arrow key)
 <dd>Cursor up through the text.
@@ -638,7 +638,7 @@ in whatever way you choose.&nbsp; Once you are done, you may press the<b> ESC</b
 <dt>CTRL_PAGEDOWN (Ctrl key + Page Down key)
 <dd>Move to the last character on the last line in the file.
 </dl>
-<br>These keys allow you to manipulate the text while in<b><i> text insertion mode</i></b> :
+<br>These keys allow you to manipulate the text while in<b><i> text insertion mode</i></b>:
 <dl>
 <dt>CTRL_DEL (Control-Delete)
 <dd>Deletes the current line.
@@ -653,7 +653,7 @@ BS.</b>
 <dd>Toggles between inserting and overstriking text.
 </dl>
 <br>Along with the<b> INS</b> key, there are a number of other keys that you can press in<b><i> command mode</i></b> that
-will place you in<b><i> text insertion mode</i></b> , where you can edit text.&nbsp; The difference between all of these commands
+will place you in<b><i> text insertion mode</i></b>, where you can edit text.&nbsp; The difference between all of these commands
 is where the cursor moves to before you start inputting text.&nbsp; The basic set of keys is:
 <dl>
 <dt>a
@@ -673,7 +673,7 @@ is where the cursor moves to before you start inputting text.&nbsp; The basic se
 <dt>INS
 <dd>Start inserting text at the current cursor position.
 </dl>
-<br>Remember, while in<b><i> text insertion mode</i></b> , the following mode indicator will appear on the menu bar:
+<br>Remember, while in<b><i> text insertion mode</i></b>, the following mode indicator will appear on the menu bar:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: insert</tt>
 <br><br>or
@@ -772,7 +772,7 @@ some simple ways of deleting text and moving it elsewhere.
 a line when inputting text.&nbsp; This same command can be used while in<b><i> command mode</i></b>.
 <br><br>If you want to delete more than one line at once, you may precede this delete command with a<b><i> repeat count.</i></b>
 &nbsp;You enter a repeat count simply by typing numbers before you press<b> CTRL_DEL</b>.&nbsp; As you type a number in<b><i>
-command mode</i></b> , it will appear in a special window, as follows:
+command mode</i></b>, it will appear in a special window, as follows:
 <br><br><tt><img src="vi008.bmp" align=middle></tt>
 <br><b><i>Figure 9.</i></b><b><i></i></b><b> Repeat Count Display</b>
 <br><br>The number that you are typing is displayed in the repeat count window.&nbsp; As with all<b><i> command mode</i></b>
@@ -803,9 +803,9 @@ may use the &quot;yank&quot; command.&nbsp; If you press the letter 'Y', or type
 <br><br>will copy 6 lines in your file.
 <br><br>Once you have yanked the lines, you may paste them in, as discussed above.
 <h3 id="Characters"> Characters </h3>
-<br>To delete characters while in<b><i> command mode</i></b> , you can press the<b> DEL</b> key or the 'x' key.&nbsp; The
-current character under the cursor will be deleted.&nbsp; You may type a repeat count before you type<b> DEL</b> or 'x', and
-that will delete a number of characters.&nbsp; For example, typing<tt> 3x</tt> when the cursor is on 'T' in the line
+<br>To delete characters while in<b><i> command mode</i></b>, you can press the<b> DEL</b> key or the 'x' key.&nbsp; The current
+character under the cursor will be deleted.&nbsp; You may type a repeat count before you type<b> DEL</b> or 'x', and that
+will delete a number of characters.&nbsp; For example, typing<tt> 3x</tt> when the cursor is on 'T' in the line
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Delete Test.</tt>
 <br><br>will leave you with
@@ -1079,7 +1079,7 @@ the text.
 <dt>Command line
 <dd>Gives help on all<b><i> command line</i></b> commands.
 <dt>Keystrokes
-<dd>Gives help on<b><i> command mode</i></b> and<b><i> text insertion mode</i></b>
+<dd>Gives help on<b><i> command mode</i></b> and<b><i> text insertion mode</i></b>.
 <dt>Regular expressions
 <dd>Gives help on the search and replace abilities of Vi's regular expressions.
 <dt>Scripts
@@ -1109,7 +1109,8 @@ Once you press<b> ENTER</b>, the command will be processed.
 &nbsp;This is your command<b><i> history</i></b>.&nbsp; Cursoring down will take you through the history from oldest to newest.
 &nbsp;This is very useful if you have typed a complicated command and did not get it quite right or if you just wish to execute
 the command again.
-<br><br>The chapter <a href="#Editor_Commands">Editor Commands</a> describes the<b><i> command line</i></b> in more detail.
+<br><br>The chapter <a href="#Editor_Commands">Editor Commands</a> describes the<b><i> command line</i></b> commands in more
+detail.
 <h3 id="Line_Numbers"> Line Numbers </h3>
 <br>Some<b><i> command line</i></b> commands accept a line address or a line range as a parameter.&nbsp; For example, when
 specifying the <a href="#WRITE">WRITE</a> command, you may specify
@@ -1137,14 +1138,13 @@ specifying the <a href="#WRITE">WRITE</a> command, you may specify
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .,$&nbsp;&nbsp;&nbsp;&nbsp; - current line in file to end line of file</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .-3,100 - the line 3 before the current to line 100</tt>
 <br><br>Line addresses are discussed in greater detail in the section <a href="#Line_Addresses">Line Addresses</a>.
-<br><br>If you just enter a line address on its own on the<b><i> command line</i></b> , then you will go directly to that
-line.
+<br><br>If you just enter a line address on its own on the<b><i> command line</i></b>, then you will go directly to that line.
 <br><br><b>Exercises</b>
 <ol>
 <li>Start up Vi, and try selecting the<b><i> File</i></b> menu, and then selecting the<b><i> Enter command</i></b> item.&nbsp;
 Notice how the window pops up.&nbsp; Try typing and cursoring around.&nbsp; When you are done, press the<b> ESC</b> key to
 cancel the command.
-<li>Make sure that you are in<b><i> command mode</i></b> , then press the colon (':') key.&nbsp; Once again, the command window
+<li>Make sure that you are in<b><i> command mode</i></b>, then press the colon (':') key.&nbsp; Once again, the command window
 pops up.&nbsp; Try typing and cursoring around.&nbsp; When you are done, press the<b> ESC</b> key to cancel the command.
 <li>Add 10 lines to your file.&nbsp; Then press the colon (':') key and enter the number 5.&nbsp; You will go to line 5.&nbsp;
 Try entering different numbers and see what happens.&nbsp; If you enter a line number that does not exist, you will see the
@@ -1156,8 +1156,8 @@ the commands that you have typed.
 </ol>
 <h2 id="Getting_a_File_for_Editing"> Getting a File for Editing </h2>
 <br>In the chapter <a href="#Basic_Usage">Basic Usage</a>, you saw that you could edit a file by either specifying the name
-on the<b><i> command line</i></b> when invoking Vi, or by selecting the<b><i> File</i></b> menu and picking the<b><i> Edit
-new file</i></b> option.
+on the command line when invoking Vi, or by selecting the<b><i> File</i></b> menu and picking the<b><i> Edit new file</i></b>
+option.
 <br><br>The general way to edit a new file is to use the<b><i> command line</i></b> command <a href="#EDIT">EDIT</a>.&nbsp;
 To enter this command, make sure that you are in<b><i> command mode</i></b> and press the colon (':') key.&nbsp; Once the
 command prompt is displayed, then simply type <a href="#EDIT">EDIT</a> (optionally followed by a file name or a list of files),
@@ -1188,15 +1188,15 @@ without any parameters (remember to press the colon (':') key first).&nbsp; You 
 <br><b><i>Figure 18.</i></b><b><i></i></b><b> File Selection display</b>
 <br><br>Try changing to other directories or drives with this list.&nbsp; When you are done, press the<b> ESC</b> key to cancel
 the selection list.
-<li>Try entering the following<b><i> command line</i></b>
+<li>Try entering the following<b><i> command line</i></b> command
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :e afile</tt>
 <br><br>This will cause Vi to start editing a new file called &quot;afile&quot;.
-<li>Try entering the command
+<li>Try entering the<b><i> command line</i></b> command
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :e bfile cfile</tt>
 <br><br>This will cause Vi to edit two new files, one named &quot;bfile&quot; and one named &quot;cfile&quot;.
-<li>Enter the command
+<li>Enter the<b><i> command line</i></b> command
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :e afile</tt>
 <br><br>This returns you to the first file (&quot;afile&quot;) that you were already editing.
@@ -1210,12 +1210,12 @@ and specifying the name of the file you wish to move to.
 function key moves you to the next file in the list of files that you are editing.
 <br><br>You may press the<b> F2</b> key while in<b><i> command mode</i></b> or<b><i> text insertion mode</i></b>.&nbsp; This
 function key moves you to the previous file in the list of files that you are editing.
-<br><br>The previous two function keys that you may use also have<b><i> command line</i></b> equivalents.&nbsp; The<b><i>
+<br><br>The previous two function keys that you may use also have<b><i> command line</i></b> command equivalents.&nbsp; The<b><i>
 command line</i></b> command <a href="#NEXT">NEXT</a> moves you to the next file in the list of files that you are editing.
 <br><br>The<b><i> command line</i></b> command <a href="#PREV">PREV</a> moves you to the previous file in the list of files
 that you are editing.
 <br><br>It is also possible to display a list of all files that you are currently editing.&nbsp; You may press the<b> F7</b>
-key in either<b><i> command mode</i></b> or<b><i> text insertion mode</i></b> , or enter the<b><i> command line</i></b> command
+key in either<b><i> command mode</i></b> or<b><i> text insertion mode</i></b>, or enter the<b><i> command line</i></b> command
 <a href="#FILES">FILES</a>.&nbsp; Doing any one of these things will cause a list of all files currently being edited to appear.
 &nbsp;An asterisk ('*') will precede files that have been modified.&nbsp; From this list, you may go to one of the files,
 quit one of the files, or save one of the files then quit it.
@@ -1228,7 +1228,7 @@ quit one of the files, or save one of the files then quit it.
 <br><br><tt><img src="vi017.bmp" align=middle></tt>
 <br><b><i>Figure 19.</i></b><b><i></i></b><b> Current File List</b>
 <br><br>Select the file<b> b</b>.&nbsp; That file will become the current file being edited.
-<li>Type the<b><i> command line</i></b>
+<li>Type the<b><i> command line</i></b> command
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :files</tt>
 <br><br>You will see the same result as you saw in the previous example.&nbsp; Press the<b> ESC</b> key to cancel this display.
@@ -1239,8 +1239,8 @@ opposite order than when you were pressing the<b> F1</b> key.
 files.&nbsp; These commands behave the same as pressing<b> F1</b> and<b> F2</b>.
 </ol>
 <h2 id="Moving_Around_in_a_File"> Moving Around in a File </h2>
-<br>You have already learned to use the cursor keys to move around through a file.&nbsp; When you are in<b><i> command mode</i></b>
-, there are a number of keys that also cause movement through the file.&nbsp; Many of these keys may be preceded with a repeat
+<br>You have already learned to use the cursor keys to move around through a file.&nbsp; When you are in<b><i> command mode</i></b>,
+there are a number of keys that also cause movement through the file.&nbsp; Many of these keys may be preceded with a repeat
 count.&nbsp; You enter the repeat count by typing a number (which will be echoed in a special window on the screen).
 <br><br>Once you have entered the repeat count, you may cancel it by pressing the<b> ESC</b> key, or you may follow it with
 a movement command.&nbsp; For example, if you type:
@@ -1328,7 +1328,7 @@ of the edit window.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is a test line.</tt>
 <br><br>Once you have done this, copy this line by pressing 'Y'.&nbsp; Press 'p' to paste in the copy.&nbsp; Press 'p' 28
 more times, so that you create a file with 30 lines in it (all just like the first line).
-<li>So that we can more easily see the results, type the following<b><i> command line</i></b> :
+<li>So that we can more easily see the results, type the following<b><i> command line</i></b> command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :%s/^/\# /</tt>
 <br><br>This is a substitution command.&nbsp; It will replace the start of each of your lines with the line number.&nbsp;
@@ -1521,10 +1521,10 @@ Multiple line selections always select complete lines.&nbsp; A portion of a sing
 by growing the selection left or right.&nbsp; A portion of a line is called a column region and a multiple line selection
 is called a line region.
 <br><br>You can select text with the mouse by holding down the right or left mouse button, and moving the mouse up and down
-or left and right.&nbsp; When using the right button, a selection menu will appear after the mouse button is released , from
+or left and right.&nbsp; When using the right button, a selection menu will appear after the mouse button is released, from
 which you choose what you wish to do with the selected text.
 <br><br>If you highlight a region by holding down the left button and moving the mouse, then releasing the button has no effect
-(the region simply remains highlighted).&nbsp; This region may then be operated on from the<b><i> command line</i></b> , using
+(the region simply remains highlighted).&nbsp; This region may then be operated on from the<b><i> command line</i></b>, using
 different<b><i> command mode</i></b> commands, or by right-clicking the mouse in the selected region.
 <br><br>If you click the right mouse button (right-click) while the mouse cursor is in a highlighted (selected) set of lines,
 then a selection menu for the lines appears.&nbsp; If you right-click in a selected group of characters on a single line (a
@@ -1587,7 +1587,7 @@ your selection.
 </ol>
 <h2 id="Joining_Text"> Joining Text </h2>
 <br>Vi has the ability to join two lines together.&nbsp; If you press the letter 'J' (capital 'j') while in<b><i> command
-mode</i></b> , then the next line will join to the end of the current line.&nbsp; All white space except for a single space
+mode</i></b>, then the next line will join to the end of the current line.&nbsp; All white space except for a single space
 will be removed.&nbsp; For example, typing 'J' while on the first line in these two lines:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is a line.</tt>
@@ -1675,11 +1675,11 @@ later on in this chapter).
 (remember to press colon (':') to bring up the command window)
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :mark z</tt>
-<li>Go to the top of the file (using CTRL_PAGEUP), and enter the<b><i> command line</i></b>
+<li>Go to the top of the file (using CTRL_PAGEUP), and enter the<b><i> command line</i></b> command
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :'z</tt>
 <br><br>This will return you to the last line of the file
-<li>Now, type the following<b><i> command line</i></b>
+<li>Now, type the following<b><i> command line</i></b> command
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :'a</tt>
 <br><br>This will take you back to line 1, where you set the mark 'a'.
@@ -1732,7 +1732,7 @@ encountered.
 <li>Press 'N'.&nbsp; You will move back to the '1' on line 21.
 </ol>
 <h2 id="Deleting__Copying__and_Pasting_Text"> Deleting, Copying, and Pasting Text </h2>
-<br>There are two useful commands in Vi for deleting and copying text.&nbsp; In<b><i> command mode</i></b> , you press the
+<br>There are two useful commands in Vi for deleting and copying text.&nbsp; In<b><i> command mode</i></b>, you press the
 'd' key to start the delete sub-mode.&nbsp; You press the 'y' key to start the yank (copy) sub-mode.&nbsp; Each of these sub-modes
 is indicated on the mode indicator on the menu bar:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1776,7 +1776,7 @@ by preceding it with double quotes (&quot;).&nbsp; For example:
 <br><br>The optional<b><i> copy buffer</i></b> is a place where deleted or yanked text resides.&nbsp; If you do not specify
 a buffer, then the active<b><i> copy buffer</i></b> is assumed.&nbsp; There are 9 numbered buffers (1-9) that may be selected
 as the active<b><i> copy buffer</i></b> (buffer 1 is the default active<b><i> copy buffer</i></b> ).&nbsp; When text enters
-the active<b><i> copy buffer</i></b> , the old contents of the active<b><i> copy buffer</i></b> spills into the next<b><i>
+the active<b><i> copy buffer</i></b>, the old contents of the active<b><i> copy buffer</i></b> spills into the next<b><i>
 copy buffer</i></b>.&nbsp; The contents of each<b><i> copy buffer</i></b> spills into the next, with the end<b><i> copy buffer</i></b>
 (9) losing its contents.
 <br><br>The active<b><i> copy buffer</i></b> may be selected by pressing<b> CTRL_F1</b> through<b> CTRL_F9</b> in<b><i> command
@@ -1784,7 +1784,7 @@ mode</i></b>.&nbsp; When you do this, a message appears showing you which buffer
 are in the buffer, and the first line of the buffer.
 <br><br>There are also 26 named buffers, 'a' through 'z'.&nbsp; The contents of these buffers is constant over the life of
 your editing session.&nbsp; They retain their contents until you update them.
-<br><br>For more information on<b><i> copy buffer</i></b> , see the section <a href="#Copy_Buffers">Copy Buffers</a> in the
+<br><br>For more information on<b><i> copy buffer</i></b>, see the section <a href="#Copy_Buffers">Copy Buffers</a> in the
 chapter <a href="#Modes">Modes</a>.
 <br><br>There is also a <a href="#DELETE">DELETE</a><b><i> command line</i></b> command and a <a href="#YANK">YANK</a><b><i>
 command line</i></b> command for deleting and yanking text.&nbsp; These commands only operate on line ranges.&nbsp; Their
@@ -1792,7 +1792,7 @@ syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;range&gt; delete &lt;&quot;?&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;range&gt; yank &lt;&quot;?&gt;</tt>
-<br><br>The<b> &lt;&quot;?&gt;</b> indicates a<b><i> copy buffer</i></b> , and<b> &lt;range&gt;</b> indicates a line range.
+<br><br>The<b> &lt;&quot;?&gt;</b> indicates a<b><i> copy buffer</i></b>, and<b> &lt;range&gt;</b> indicates a line range.
 &nbsp;If no line range is specified, then the current line is assumed.&nbsp; Some examples are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :1,5 delete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - delete lines 1 to 5</tt>
@@ -1807,8 +1807,8 @@ to paste before the current cursor position.
 the current line when you paste.&nbsp; If you deleted or yanked whole lines, then those lines are inserted around the current
 line when you paste.
 <br><br>The put (paste)<b><i> command line</i></b> commands accept a<b><i> copy buffer</i></b> as the buffer to paste out
-of.&nbsp; The default is the active<b><i> copy buffer</i></b> , but any buffer can be specified.&nbsp; Once again,<b> &lt;&quot;?&gt;</b>
-indicates a<b><i> copy buffer</i></b> :
+of.&nbsp; The default is the active<b><i> copy buffer</i></b>, but any buffer can be specified.&nbsp; Once again,<b> &lt;&quot;?&gt;</b>
+indicates a<b><i> copy buffer</i></b>:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;&quot;?&gt;p</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;&quot;?&gt;P</tt>
@@ -1874,7 +1874,7 @@ you deleted will be inserted before the 't':
 </ol>
 <h2 id="Altering_Text"> Altering Text </h2>
 <br>You could change text by deleting the text and then entering insert mode.&nbsp; However, Vi provides a special method
-for doing both of these things at once.&nbsp; By pressing the 'c' key in<b><i> command mode</i></b> , you enter the change
+for doing both of these things at once.&nbsp; By pressing the 'c' key in<b><i> command mode</i></b>, you enter the change
 sub-mode.&nbsp; You will see the mode line indicate:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: change</tt>
@@ -1999,7 +1999,7 @@ by a dot ('.').&nbsp; You will then see the message
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Memorize Mode started</tt>
 <br><br>From this point forward, every key that you type is memorized.&nbsp; When you are done memorizing, you can then press
-the dot ('.') key while in<b><i> command mode</i></b> , and this ends memorize mode.&nbsp; You will see the message:
+the dot ('.') key while in<b><i> command mode</i></b>, and this ends memorize mode.&nbsp; You will see the message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Memorize Mode ended</tt>
 <br><br>Once you have memorized a key sequence, you can re-execute it by pressing dot ('.').&nbsp; This will cause Vi to behave
@@ -2166,10 +2166,10 @@ the definition of a key.&nbsp; The syntax of these commands is as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; map &quot;!&quot; &lt;key&gt; &lt;string&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mapbase &lt;key&gt; &lt;string&gt;</tt>
 <br><br>Both commands remap the specified key<b> &lt;key&gt;</b> to execute the characters in<b> &lt;string&gt;</b>.&nbsp;
-Whenever the specified key is pressed while in<b><i> command mode</i></b> , it is equivalent to typing the characters in<b>
+Whenever the specified key is pressed while in<b><i> command mode</i></b>, it is equivalent to typing the characters in<b>
 &lt;string&gt;</b>.
 <br><br>In the <a href="#MAP">MAP</a> command, specifying the exclamation point ('!') causes the map to be for<b><i> text
-insertion mode</i></b> , rather than<b><i> command mode</i></b>.
+insertion mode</i></b>, rather than<b><i> command mode</i></b>.
 <br><br>It is possible for<b> &lt;string&gt;</b> to contain keys that are mapped themselves.&nbsp; If you want to do a key
 mapping that is in terms of the base definitions of the keys, then you should use the <a href="#MAPBASE">MAPBASE</a> command.
 <br><br>To remove the mapping of a key, the<b><i> command line</i></b> command <a href="#UNMAP">UNMAP</a> is used.&nbsp; The
@@ -2232,7 +2232,7 @@ commands did not get added to the history.
 <li>Enter the<b><i> command line</i></b> command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :map! F6 \edwi</tt>
-<br><br>Whenever you press<b> F6</b> in<b><i> text insertion mode</i></b> , you will exit insert mode (the \e is like pressing
+<br><br>Whenever you press<b> F6</b> in<b><i> text insertion mode</i></b>, you will exit insert mode (the \e is like pressing
 the<b> ESC</b> key), delete the current word, and then re-enter insert mode.&nbsp; Try entering<b><i> text insertion mode</i></b>
 and pressing<b> F6</b>.
 <li>Exit<b><i> text insertion mode</i></b> and press<b> F6</b>.&nbsp; You will notice that the date is still displayed, since
@@ -2379,16 +2379,16 @@ the lost files still remain in the backup directory, however.
 overwrite the original copy.
 <h1 id="Modes"> Modes </h1>
 <br>The Open Watcom Vi Editor is a modal editor.&nbsp; When you are in<b><i> command mode</i></b> (the default mode), there
-are a number of valid keys that may be pressed.&nbsp; To ensure that you are in<b><i> command mode</i></b> , press the<b>
-ESC</b> key until the mode indicator on the menu bar displays:
+are a number of valid keys that may be pressed.&nbsp; To ensure that you are in<b><i> command mode</i></b>, press the<b> ESC</b>
+key until the mode indicator on the menu bar displays:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: command</tt>
-<br><br>When in<b><i> text insertion mode</i></b> , text may be entered.&nbsp; There are two aspects to<b><i> text insertion
+<br><br>When in<b><i> text insertion mode</i></b>, text may be entered.&nbsp; There are two aspects to<b><i> text insertion
 mode</i></b> :<b><i>&nbsp; insert</i></b> and<b><i> overstrike</i></b>.<b><i>&nbsp; text insertion mode</i></b> is entered
-via a number of different commands from<b><i> command mode</i></b> , and is indicated by a larger cursor, along with a mode
+via a number of different commands from<b><i> command mode</i></b>, and is indicated by a larger cursor, along with a mode
 line indication.&nbsp; The types of cursor are controlled with the <a href="#commandcursortype">commandcursortype</a>, <a href="#insertcursortype">insertcursortype</a>,
 and <a href="#overstrikecursortype">overstrikecursortype</a> settings.
-<br><br>When Vi is in a<b><i> text insertion mode</i></b> , the mode indicator on the menu bar displays one of:
+<br><br>When Vi is in a<b><i> text insertion mode</i></b>, the mode indicator on the menu bar displays one of:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: insert</tt>
 <br><br>or
@@ -2400,8 +2400,7 @@ through the file.&nbsp; When you are finished adding text, the<b> ESC</b> key re
 <br><br>It should be remembered that an undo applies to changes caused by commands; so all changes made while in<b><i> text
 insertion mode</i></b> are part of a single undo record.&nbsp; For more information on undos, see the section <a href="#Undoing_Changes">Undoing Changes</a>
 later on in this chapter.
-<br><br>The following keys, when pressed in<b><i> command mode</i></b> , place you into<b><i> text insertion mode</i></b>
-:
+<br><br>The following keys, when pressed in<b><i> command mode</i></b>, place you into<b><i> text insertion mode</i></b> :
 <dl>
 <dt>a
 <dd>Starts appending (inserting) text after the current character in the edit buffer.
@@ -2435,7 +2434,7 @@ mode</i></b> is entered.
 <dd>Start inserting text at the current cursor position.
 </dl>
 <h3 id="Special_Keys"> Special Keys </h3>
-<br>While in<b><i> text insertion mode</i></b> , certain keys do special things.&nbsp; These keys are:
+<br>While in<b><i> text insertion mode</i></b>, certain keys do special things.&nbsp; These keys are:
 <dl>
 <dt>Arrow Keys
 <dd>
@@ -2520,7 +2519,7 @@ The number is not required; if it is not supplied, it is usually assumed that a 
 As long as the setting <a href="#repeatinfo">repeatinfo</a> is enabled, the number that is typed appears in a special window
 called the <a href="#COUNTWINDOW">COUNTWINDOW</a>.
 <br><br>Other commands may be preceded with a<b><i> copy buffer</i></b> name, which is indicated with a<b> &lt;&quot;?&gt;</b>.
-&nbsp;If you do not want the result of the operation to be copied into the active<b><i> copy buffer</i></b> , then an alternate
+&nbsp;If you do not want the result of the operation to be copied into the active<b><i> copy buffer</i></b>, then an alternate
 buffer may be specified.&nbsp; The double quotes (&quot;) are required (this indicates that an alternate buffer is being specified),
 and then a buffer '1'-'9' or 'a'-'z' is specified.&nbsp; See the section <a href="#Copy_Buffers">Copy Buffers</a> for more
 information.
@@ -2945,10 +2944,10 @@ of these buffers may be the active<b><i> copy buffer</i></b>.
 <br><br>The active<b><i> copy buffer</i></b> may be selected using function keys.&nbsp; CTRL_F1 through CTRL_F9 select buffers
 1 through 9 respectively.&nbsp; When a buffer is selected, information about its contents is displayed in the message window.
 &nbsp;This buffer becomes the active<b><i> copy buffer</i></b>.&nbsp; All yanked/deleted text is copied into this buffer.
-<br><br>When text is yanked/deleted into the active<b><i> copy buffer</i></b> , the contents of the the buffers are cascaded
+<br><br>When text is yanked/deleted into the active<b><i> copy buffer</i></b>, the contents of the the buffers are cascaded
 forward from the active buffer into the next one, with the last numbered<b><i> copy buffer</i></b> losing its contents.&nbsp;
 Any buffers that are before the active<b><i> copy buffer</i></b> have their contents preserved.&nbsp; For example, if buffer
-3 is the active<b><i> copy buffer</i></b> , then a deletion will cascade buffer 3 to buffer 4, buffer 4 to buffer 5, and so
+3 is the active<b><i> copy buffer</i></b>, then a deletion will cascade buffer 3 to buffer 4, buffer 4 to buffer 5, and so
 on, with the contents of buffer 9 being lost.&nbsp; Buffers 1 and 2 remain untouched, and buffer 3 gets a copy of the deleted
 text.
 <br><br>There are several<b><i> command mode</i></b> commands that add text to buffers; they are
@@ -3116,10 +3115,10 @@ text insertion mode</i></b> the user was in before leaving<b><i> text insertion 
 <dt>O 
 <dd>Opens a line before the current line, and enters<b><i> text insertion mode</i></b>.
 </dl>
-<br>Once you are in<b><i> text insertion mode</i></b> , you can toggle back and forth between insert and overstrike using
-the<b><i> INS</i></b> key.&nbsp; You exit<b><i> text insertion mode</i></b> by pressing the<b><i> ESC</i></b> key.&nbsp; See
-the previous section, <a href="#Text_Insertion_Mode">Text Insertion Mode</a>, for more information on manipulating text in<b><i>
-text insertion mode</i></b>.
+<br>Once you are in<b><i> text insertion mode</i></b>, you can toggle back and forth between insert and overstrike using the<b><i>
+INS</i></b> key.&nbsp; You exit<b><i> text insertion mode</i></b> by pressing the<b><i> ESC</i></b> key.&nbsp; See the previous
+section, <a href="#Text_Insertion_Mode">Text Insertion Mode</a>, for more information on manipulating text in<b><i> text insertion
+mode</i></b>.
 <h3 id="Replacing_Text"> Replacing Text </h3>
 <br>The following commands are used to replace text:
 <dl>
@@ -3242,8 +3241,8 @@ copy of the text is placed in the named buffer<b> c</b>.
 </dl>
 </dl>
 <h3 id="Copying_Text"> Copying Text </h3>
-<br>This section describes commands that are for yanking (copying) text.&nbsp; This text is placed into a<b><i> copy buffer</i></b>
-, see the section <a href="#Copy_Buffers">Copy Buffers</a> for more information.
+<br>This section describes commands that are for yanking (copying) text.&nbsp; This text is placed into a<b><i> copy buffer</i></b>,
+see the section <a href="#Copy_Buffers">Copy Buffers</a> for more information.
 <dl>
 <dt>&lt;n&gt;Y 
 <dd>Yank (copy) the current line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then<b> &lt;n&gt;</b> lines are copied.
@@ -3691,7 +3690,7 @@ memory and/or disk space is available.
 <br>This chapter describes the various editor commands that may be entered.&nbsp; A command is entered by pressing the colon
 (':') key while in<b><i> command mode</i></b>, or by selecting the<b><i> Enter command</i></b> option in the<b><i> File</i></b>
 menu.
-<br><br>To ensure that you are in<b><i> command mode</i></b> , press<b><i> ESC</i></b> until the mode indicator says
+<br><br>To ensure that you are in<b><i> command mode</i></b>, press<b><i> ESC</i></b> until the mode indicator says
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: command</tt>
 <br><br>Once you press the ':' key, the command entry window will appear:
@@ -3919,8 +3918,7 @@ key before returning to the editor.
 <dl>
 <dt>Description:
 <dd>Create an abbreviation of<b> &lt;short&gt;</b> for<b> &lt;long&gt;</b>Whenever<b> &lt;short&gt;</b> is typed as a word during<b><i>
-text insertion mode</i></b> , it is expanded to<b> &lt;long&gt;</b><a href="#UNABBREV">UNABBREV</a> is used to remove the
-abbreviation.
+text insertion mode</i></b>, it is expanded to<b> &lt;long&gt;</b><a href="#UNABBREV">UNABBREV</a> is used to remove the abbreviation.
 </dl>
 <dl>
 <dt>Example(s):
@@ -3940,14 +3938,14 @@ abbreviation.
 <dl>
 <dt>Description:
 <dd>Creates an<b><i> command line</i></b> alias of<b> &lt;alias&gt;</b> for<b> &lt;data&gt;</b>Whenever<b> &lt;alias&gt;</b> is
-typed on the<b><i> command line</i></b> , the full command<b> &lt;data&gt;</b> is substituted.&nbsp; <a href="#UNALIAS">UNALIAS</a>
+typed on the<b><i> command line</i></b>, the full command<b> &lt;data&gt;</b> is substituted.&nbsp; <a href="#UNALIAS">UNALIAS</a>
 is used to remove the abbreviation.
 </dl>
 <dl>
 <dt>Example(s):
 <dd>
 <br><br><tt>alias ai set autoindent</tt>
-<br><br>Whenever<b> ai</b> is entered on the<b><i> command line</i></b> , the command<b> set autoindent</b> is executed.
+<br><br>Whenever<b> ai</b> is entered on the<b><i> command line</i></b>, the command<b> set autoindent</b> is executed.
 </dl>
 <dl>
 <dt>See Also:
@@ -4629,21 +4627,21 @@ prevents the &quot;flashing&quot; of the command window as it is opened then clo
 <dt>Example(s):
 <dd>
 <br><br><tt>map K \x:next\n</tt>
-<br><br>Whenever K is pressed in<b><i> command mode</i></b> , the <a href="#NEXT">NEXT</a> command is executed.&nbsp; The
-command window will not be displayed, because of the<b> \x</b>.
+<br><br>Whenever K is pressed in<b><i> command mode</i></b>, the <a href="#NEXT">NEXT</a> command is executed.&nbsp; The command
+window will not be displayed, because of the<b> \x</b>.
 <br><br><tt>map CTRL_T \x:\hda\n</tt>
-<br><br>Whenever CTRL_T is pressed in<b><i> command mode</i></b> , the current date is displayed.&nbsp; The command window
+<br><br>Whenever CTRL_T is pressed in<b><i> command mode</i></b>, the current date is displayed.&nbsp; The command window
 will not be displayed, because of the<b> \x</b>.&nbsp; The command will not be added to the command history, because of the<b>
 \h</b>.
 <br><br><tt>map CTRL_W \x:fgrep \&lt;CTRL_W&gt;\n</tt>
-<br><br>Whenever CTRL_W is pressed in<b><i> command mode</i></b> , an fgrep command, searching for the current word, is executed.
+<br><br>Whenever CTRL_W is pressed in<b><i> command mode</i></b>, an fgrep command, searching for the current word, is executed.
 &nbsp;The<b> \x</b> keeps the command window from opening.<b>&nbsp; \&lt;CTRL_W&gt;</b> simulates CTRL_W being pressed, so
 the current word is inserted into the<b><i> command line</i></b>.
 <br><br><tt>map!&nbsp; CTRL_W \edwi</tt>
-<br><br>Whenever CTRL_W is pressed in<b><i> text insertion mode</i></b> ,<b><i> text insertion mode</i></b> is exited (\e
-simulates the ESC key being pressed), the current word is deleted, and<b><i> text insertion mode</i></b> is re-entered.&nbsp;
-This has the effect of deleting the current word in<b><i> text insertion mode</i></b> and appearing to remain in<b><i> text
-insertion mode</i></b>.
+<br><br>Whenever CTRL_W is pressed in<b><i> text insertion mode</i></b>,<b><i> text insertion mode</i></b> is exited (\e simulates
+the ESC key being pressed), the current word is deleted, and<b><i> text insertion mode</i></b> is re-entered.&nbsp; This has
+the effect of deleting the current word in<b><i> text insertion mode</i></b> and appearing to remain in<b><i> text insertion
+mode</i></b>.
 </dl>
 <dl>
 <dt>See Also:
@@ -5503,7 +5501,7 @@ the window to start setting properties.&nbsp; See the previous section for prope
 </dl>
 <dl>
 <dt>Description:
-<dd>This is the window that is displayed whenever Open Watcom Vi Editor is prompting for a<b><i> command line</i></b> , a search
+<dd>This is the window that is displayed whenever Open Watcom Vi Editor is prompting for a<b><i> command line</i></b>, a search
 string, a filter command or any other command or data.
 </dl>
 <h3 id="COUNTWINDOW"> COUNTWINDOW </h3>
@@ -6017,8 +6015,8 @@ you for the new value.&nbsp; This window may be cancelled by pressing the ESC ke
 </dl>
 <dl>
 <dt>Description:
-<dd>In<b><i> text insertion mode</i></b> , autoindent causes the cursor to move to start of previous line when a new line is started.
-&nbsp;In<b><i> command mode</i></b> , autoindent causes the cursor to go to the first non white-space when ENTER is pressed.
+<dd>In<b><i> text insertion mode</i></b>, autoindent causes the cursor to move to start of previous line when a new line is started.
+&nbsp;In<b><i> command mode</i></b>, autoindent causes the cursor to go to the first non white-space when ENTER is pressed.
 </dl>
 <h3 id="automessageclear"> automessageclear </h3>
 <dl>
@@ -6691,7 +6689,7 @@ is base 10.
 <dl>
 <dt>Description:
 <dd>Sets the number of spaces inserted/deleted by the shift operators ('&gt;' and '&lt;'), CTRL_D and CTRL_T in<b><i> text insertion
-mode</i></b> , and by <a href="#autoindent">autoindent</a> and <a href="#cmode">cmode</a> when they are indenting.
+mode</i></b>, and by <a href="#autoindent">autoindent</a> and <a href="#cmode">cmode</a> when they are indenting.
 </dl>
 <h3 id="stackk"> stackk </h3>
 <dl>
@@ -8474,7 +8472,7 @@ of the current block.
 <dt>Description:
 <dd>Exit the script, returning<b> &lt;rc&gt;</b>
 <br><br>If the script was invoked by another script, then this value becomes<b><i> lastrc</i></b>.
-<br><br>If the script was invoked at the<b><i> command line</i></b> , then this return code is reported as the appropriate
+<br><br>If the script was invoked at the<b><i> command line</i></b>, then this return code is reported as the appropriate
 error, if<b> &lt;rc&gt;</b> is not<b> ERR_NO_ERR</b>.
 <br><br>There are symbolic values for various error codes.&nbsp; These values are described in the appendix <a href="#Error_Code_Tokens">Error Code Tokens</a>.
 </dl>
@@ -8762,7 +8760,7 @@ parameters.
 <br><br> Adds the key 'i' to the keyboard buffer.&nbsp; Once the script exits, Vi will process this key as if the user had
 typed it.&nbsp; Thus, once the script is done, the user is left inserting text.
 <h1 id="Command_Mode_Key_Summary"> Command Mode Key Summary </h1>
-<br><br>The following is a list of all possible keys that may be pressed in<b><i> command mode</i></b> , and their default
+<br><br>The following is a list of all possible keys that may be pressed in<b><i> command mode</i></b>, and their default
 behaviour.
 <br><br>Commands preceded with a<b> &lt;n&gt;</b> take a repeat count.
 <br><br>Commands preceded with a<b> &lt;&quot;?&gt;</b> accept a<b><i> copy buffer</i></b> name.
