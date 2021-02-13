@@ -1602,8 +1602,8 @@ line.&nbsp; For example, typing
 <br><br>while on the first line of:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Line 1.</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Line 2.</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Line 3.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Line 2.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Line 3.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Line 4.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Line 5.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Line 6.</tt>
@@ -1614,8 +1614,8 @@ line.&nbsp; For example, typing
 <br><br>There is also a<b><i> command line</i></b> command called <a href="#JOIN">JOIN</a> that is used to join lines of text
 together.&nbsp; This command is used as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;linerange&gt; join</tt>
-<br><br>The lines in the specified range<b> &lt;linerange&gt;</b> are joined together.&nbsp; If a single line number is specified,
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;line_range&gt; join</tt>
+<br><br>The lines in the specified range &lt;<b>line_range</b>&gt; are joined together.&nbsp; If a single line number is specified,
 then the line after that line is joined to the specified line.&nbsp; If no line number is specified, then the line after the
 current line is joined to the current line.&nbsp; For example, the command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1638,8 +1638,8 @@ that you picked for the mark name.&nbsp; You can then return to the line or even
 is
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;line&gt; mark &lt;letter&gt;</tt>
-<br><br>You specify which line the mark is to be set on with<b> &lt;line&gt;</b>.&nbsp; If no line is specified, the current
-line is assumed.&nbsp; You specify the mark id ('a'-'z') with<b> &lt;letter&gt;</b>.
+<br><br>You specify which line the mark is to be set on with &lt;<b>line</b>&gt;.&nbsp; If no line is specified, the current
+line is assumed.&nbsp; You specify the mark id ('a'-'z') with &lt;<b>letter</b>&gt;.
 <br><br>For example, the following<b><i> command line</i></b> commands may be used to set marks:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mark a&nbsp;&nbsp; - sets the mark 'a' on the current line.</tt>
@@ -1755,7 +1755,7 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <br>Some examples are:
@@ -1792,7 +1792,7 @@ syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;range&gt; delete &lt;&quot;?&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;range&gt; yank &lt;&quot;?&gt;</tt>
-<br><br>The<b> &lt;&quot;?&gt;</b> indicates a<b><i> copy buffer</i></b>, and<b> &lt;range&gt;</b> indicates a line range.
+<br><br>The &lt;<b>&quot;?</b>&gt; indicates a<b><i> copy buffer</i></b>, and &lt;<b>range</b>&gt; indicates a line range.
 &nbsp;If no line range is specified, then the current line is assumed.&nbsp; Some examples are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :1,5 delete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - delete lines 1 to 5</tt>
@@ -1807,7 +1807,7 @@ to paste before the current cursor position.
 the current line when you paste.&nbsp; If you deleted or yanked whole lines, then those lines are inserted around the current
 line when you paste.
 <br><br>The put (paste)<b><i> command line</i></b> commands accept a<b><i> copy buffer</i></b> as the buffer to paste out
-of.&nbsp; The default is the active<b><i> copy buffer</i></b>, but any buffer can be specified.&nbsp; Once again,<b> &lt;&quot;?&gt;</b>
+of.&nbsp; The default is the active<b><i> copy buffer</i></b>, but any buffer can be specified.&nbsp; Once again, &lt;<b>&quot;?</b>&gt;
 indicates a<b><i> copy buffer</i></b>:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;&quot;?&gt;p</tt>
@@ -1816,11 +1816,11 @@ indicates a<b><i> copy buffer</i></b>:
 &nbsp;The syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;line&gt; put &lt;!&gt; &lt;&quot;?&gt;</tt>
-<br><br>If the line<b> &lt;line&gt;</b> is specified, then the buffer is pasted around the specified line instead of the current
+<br><br>If the line &lt;<b>line</b>&gt; is specified, then the buffer is pasted around the specified line instead of the current
 line.
 <br><br>If the exclamation mark is specified, then contents of the<b><i> copy buffer</i></b> are pasted before the specified
 line.&nbsp; Otherwise, the contents of the<b><i> copy buffer</i></b> are pasted after the specified line.
-<br><br>The<b> &lt;&quot;?&gt;</b> is an optional<b><i> copy buffer</i></b>.&nbsp; If it is not specified, then the active<b><i>
+<br><br>The &lt;<b>&quot;?</b>&gt; is an optional<b><i> copy buffer</i></b>.&nbsp; If it is not specified, then the active<b><i>
 copy buffer</i></b> is used.&nbsp; The double quotes (&quot;) must be specified.
 <br><br>Deleting text is discussed in more detail in the section <a href="#Deleting_Text">Deleting Text</a> in the chapter
 <a href="#Modes">Modes</a>.
@@ -1897,7 +1897,7 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <br>Some examples are:
@@ -2049,12 +2049,12 @@ meaning in a regular expression, they are:
 <br><br>For information on regular expressions, see <a href="#Regular_Expressions">Regular Expressions</a>.
 <br><br>The syntax of the <a href="#SUBSTITUTE">SUBSTITUTE</a> command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;linerange&gt; substitute /&lt;string&gt;/&lt;subs&gt;/&quot;g&quot;&quot;i&quot;</tt>
-<br><br>The line range<b> &lt;linerange&gt;</b> specifies the lines that the <a href="#SUBSTITUTE">SUBSTITUTE</a> command
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;line_range&gt; substitute /&lt;string&gt;/&lt;subs&gt;/&quot;g&quot;&quot;i&quot;</tt>
+<br><br>The line range &lt;<b>line_range</b>&gt; specifies the lines that the <a href="#SUBSTITUTE">SUBSTITUTE</a> command
 is to work on.&nbsp; If no line range is specified, then the current line is assumed.
-<br><br>The first occurrence of the search string<b> &lt;string&gt;</b> on each line is replaced with the string<b> &lt;subs&gt;</b>.
-<br><br>If the letter 'g' is specified at the end, then every occurrence of the search string<b> &lt;string&gt;</b> on each
-line is replaced with the string<b> &lt;subs&gt;</b>.
+<br><br>The first occurrence of the search string &lt;<b>string</b>&gt; on each line is replaced with the string &lt;<b>subs</b>&gt;.
+<br><br>If the letter 'g' is specified at the end, then every occurrence of the search string &lt;<b>string</b>&gt; on each
+line is replaced with the string &lt;<b>subs</b>&gt;.
 <br><br>If the letter 'i' is specified at the end, then the substitution is interactive.&nbsp; You will be prompted before
 each replacement to verify that you want it to be done.
 <br><br><b>Exercises</b>
@@ -2096,12 +2096,12 @@ meaning in a regular expression, they are:
 <br><br>For information on regular expressions, see <a href="#Regular_Expressions">Regular Expressions</a>.
 <br><br>The syntax of the <a href="#GLOBAL">GLOBAL</a> command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;linerange&gt; global &quot;!&quot; /&lt;string&gt;/ &lt;cmd&gt;</tt>
-<br><br>The line range<b> &lt;linerange&gt;</b> specifies the lines that the <a href="#GLOBAL">GLOBAL</a> command is to work
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;line_range&gt; global &quot;!&quot; /&lt;string&gt;/ &lt;cmd&gt;</tt>
+<br><br>The line range &lt;<b>line_range</b>&gt; specifies the lines that the <a href="#GLOBAL">GLOBAL</a> command is to work
 on.&nbsp; If no line range is specified, then all the lines in the file is assumed.
-<br><br>The<b><i> command line</i></b> command<b> &lt;cmd&gt;</b> will be executed on every line that has the string<b> &lt;string&gt;</b>.
-<br><br>If the exclamation mark ('!') is used, then the<b><i> command line</i></b> command<b> &lt;cmd&gt;</b> will be executed
-on every line that does not have the string<b> &lt;string&gt;</b>.
+<br><br>The<b><i> command line</i></b> command &lt;<b>cmd</b>&gt; will be executed on every line that has the string &lt;<b>string</b>&gt;.
+<br><br>If the exclamation mark ('!') is used, then the<b><i> command line</i></b> command &lt;<b>cmd</b>&gt; will be executed
+on every line that does not have the string &lt;<b>string</b>&gt;.
 <br><br><b>Exercises</b>
 <ol>
 <li>Edit the file &quot;atest&quot; created in the Exercises section of <a href="#Moving_Around_in_a_File">Moving Around in a File</a>
@@ -2132,7 +2132,7 @@ are <a href="#FGREP">FGREP</a> and <a href="#EGREP">EGREP</a>.
 <br><br>The <a href="#FGREP">FGREP</a> command is a fast search for a specified string.&nbsp; The syntax of this command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fgrep &quot;-c&quot; &quot;-i&quot; &lt;string&gt; &lt;files&gt;.</tt>
-<br><br>The file list<b> &lt;files&gt;</b> is searched for the string<b> &lt;string&gt;</b>.&nbsp; The file list may contain
+<br><br>The file list &lt;<b>files</b>&gt; is searched for the string &lt;<b>string</b>&gt;.&nbsp; The file list may contain
 wild cards.
 <br><br>If you wish to have spaces in your string, then you can enclose the string in either double quotes ('&quot;') or forward
 slashes ('/').
@@ -2144,7 +2144,7 @@ is made case insensitive.&nbsp; If neither of these options is specified, then c
 command.&nbsp; The syntax of this command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; egrep &lt;regexp&gt; &lt;files&gt;.</tt>
-<br><br>The file list<b> &lt;files&gt;</b> is searched for the regular expression<b> &lt;regexp&gt;</b>.&nbsp; The file list
+<br><br>The file list &lt;<b>files</b>&gt; is searched for the regular expression &lt;<b>regexp</b>&gt;.&nbsp; The file list
 may contain wild cards.
 <br><br>If you wish to have spaces in your regular expression, then you can enclose the string in either double quotes ('&quot;')
 or forward slashes ('/').
@@ -2165,21 +2165,20 @@ the definition of a key.&nbsp; The syntax of these commands is as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; map &quot;!&quot; &lt;key&gt; &lt;string&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mapbase &lt;key&gt; &lt;string&gt;</tt>
-<br><br>Both commands remap the specified key<b> &lt;key&gt;</b> to execute the characters in<b> &lt;string&gt;</b>.&nbsp;
-Whenever the specified key is pressed while in<b><i> command mode</i></b>, it is equivalent to typing the characters in<b>
-&lt;string&gt;</b>.
+<br><br>Both commands remap the specified key &lt;<b>key</b>&gt; to execute the characters in &lt;<b>string</b>&gt;.&nbsp;
+Whenever the specified key is pressed while in<b><i> command mode</i></b>, it is equivalent to typing the characters in &lt;<b>string</b>&gt;.
 <br><br>In the <a href="#MAP">MAP</a> command, specifying the exclamation point ('!') causes the map to be for<b><i> text
 insertion mode</i></b>, rather than<b><i> command mode</i></b>.
-<br><br>It is possible for<b> &lt;string&gt;</b> to contain keys that are mapped themselves.&nbsp; If you want to do a key
+<br><br>It is possible for &lt;<b>string</b>&gt; to contain keys that are mapped themselves.&nbsp; If you want to do a key
 mapping that is in terms of the base definitions of the keys, then you should use the <a href="#MAPBASE">MAPBASE</a> command.
 <br><br>To remove the mapping of a key, the<b><i> command line</i></b> command <a href="#UNMAP">UNMAP</a> is used.&nbsp; The
 syntax of this command is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unmap &lt;key&gt;</tt>
-<br><br>If you need to specify a special key (e.g.&nbsp; ENTER, F1, etc) for<b> &lt;key&gt;</b> you specify a symbolic name
+<br><br>If you need to specify a special key (e.g.&nbsp; ENTER, F1, etc) for &lt;<b>key</b>&gt; you specify a symbolic name
 for it.&nbsp; There are a number of pre-defined key symbols that are recognized when specifying which key is being mapped
 or unmapped.&nbsp; These are described in the Appendix <a href="#Symbolic_Keystrokes">Symbolic Keystrokes</a>.
-<br><br>If you need to use one or more special keys (e.g.&nbsp; ENTER, F1, etc) in<b> &lt;string&gt;</b> then you may enter:
+<br><br>If you need to use one or more special keys (e.g.&nbsp; ENTER, F1, etc) in &lt;<b>string</b>&gt; then you may enter:
 <dl>
 <dt>\&lt;&quot;key&quot;&gt;
 <dd>Any special key may be inserted for<b> &quot;key&quot;</b>.&nbsp; The angle brackets are required.&nbsp; There are a number
@@ -2410,7 +2409,7 @@ later on in this chapter.
 <dd>Changes text from the current position to the end of the current line.&nbsp; Deletes the text, and enters<b><i> text insertion
 mode</i></b>.
 <dt>&lt;n&gt;c&lt;oper&gt;
-<dd>Change command.&nbsp; Deletes the text in the range specified by<b> &lt;oper&gt;</b>, and enters<b><i> text insertion mode</i></b>.
+<dd>Change command.&nbsp; Deletes the text in the range specified by &lt;<b>oper</b>&gt;, and enters<b><i> text insertion mode</i></b>.
 <dt>g
 <dd>Starts inserting or overstriking text at the current cursor position, depending on how you were adding text the last time
 you were in<b><i> text insertion mode</i></b>.
@@ -2425,10 +2424,10 @@ you were in<b><i> text insertion mode</i></b>.
 <dt>R
 <dd>Starts overstriking text at the current character in the edit buffer.
 <dt>&lt;n&gt;s
-<dd>Substitute<b> &lt;n&gt;</b> characters.&nbsp; The first<b> &lt;n&gt;</b> characters from the current cursor position are deleted,
+<dd>Substitute &lt;<b>n</b>&gt; characters.&nbsp; The first &lt;<b>n</b>&gt; characters from the current cursor position are deleted,
 and<b><i> text insertion mode</i></b> is entered.
 <dt>&lt;n&gt;S
-<dd>Substitute lines of text.<b>&nbsp; &lt;n&gt;</b> lines from the current line forward are deleted, and<b><i> text insertion
+<dd>Substitute lines of text.&nbsp; &lt;<b>n</b>&gt; lines from the current line forward are deleted, and<b><i> text insertion
 mode</i></b> is entered.
 <dt>INS
 <dd>Start inserting text at the current cursor position.
@@ -2514,11 +2513,11 @@ file.&nbsp; Otherwise, spaces are inserted.
 <br>The following<b><i> command mode</i></b> command descriptions show items within angle brackets (&lt;&gt;).&nbsp; The angle
 brackets are there to indicate items that you may supply.&nbsp; You are not required to type the brackets.&nbsp; For example,
 &lt;n&gt; simply means that in the corresponding place in the command you can enter a number.
-<br><br>Many commands may be preceded with a repeat count, which is indicated by a<b> &lt;n&gt;</b> before a command.&nbsp;
+<br><br>Many commands may be preceded with a repeat count, which is indicated by a &lt;<b>n</b>&gt; before a command.&nbsp;
 The number is not required; if it is not supplied, it is usually assumed that a 1 was entered for the repeat count.&nbsp;
 As long as the setting <a href="#repeatinfo">repeatinfo</a> is enabled, the number that is typed appears in a special window
 called the <a href="#COUNTWINDOW">COUNTWINDOW</a>.
-<br><br>Other commands may be preceded with a<b><i> copy buffer</i></b> name, which is indicated with a<b> &lt;&quot;?&gt;</b>.
+<br><br>Other commands may be preceded with a<b><i> copy buffer</i></b> name, which is indicated with a &lt;<b>&quot;?</b>&gt;.
 &nbsp;If you do not want the result of the operation to be copied into the active<b><i> copy buffer</i></b>, then an alternate
 buffer may be specified.&nbsp; The double quotes (&quot;) are required (this indicates that an alternate buffer is being specified),
 and then a buffer '1'-'9' or 'a'-'z' is specified.&nbsp; See the section <a href="#Copy_Buffers">Copy Buffers</a> for more
@@ -2527,7 +2526,7 @@ information.
 <br>The following are<b><i> command mode</i></b> commands that cause movement in the current edit buffer.
 <dl>
 <dt>&lt;n&gt;| (or bar) 
-<dd>Move to the column number specified by<b> &lt;n&gt;</b>.
+<dd>Move to the column number specified by &lt;<b>n</b>&gt;.
 <dl>
 <dt>Example(s):
 <dd>
@@ -2537,7 +2536,7 @@ information.
 <br><br>Move to column 15 of the current line.
 </dl>
 <dt>`&lt;?&gt; (back quote) 
-<dd>Moves to the mark position (line and column) specified by<b> &lt;?&gt;</b> See the section <a href="#Marks">Marks</a> for
+<dd>Moves to the mark position (line and column) specified by &lt;<b>?</b>&gt; See the section <a href="#Marks">Marks</a> for
 more information.
 <br><br>Also see the<b><i> command line</i></b> command <a href="#MARK">MARK</a>.
 <dl>
@@ -2547,7 +2546,7 @@ more information.
 <br><br>Move to the line and column with mark<b> a</b>.
 </dl>
 <dt>'&lt;?&gt; (front quote) 
-<dd>Move to the start of line with the mark<b> &lt;?&gt;</b>.&nbsp; See the section <a href="#Marks">Marks</a> for more information.
+<dd>Move to the start of line with the mark &lt;<b>?</b>&gt;.&nbsp; See the section <a href="#Marks">Marks</a> for more information.
 <br><br>Also see the<b><i> command line</i></b> command <a href="#MARK">MARK</a>.
 <dl>
 <dt>Example(s):
@@ -2576,11 +2575,11 @@ the last movement command was a<b><i> t</i></b> then a<b><i> T</i></b> movement 
 <br><br>Similarly, if the last movement command was an<b><i> f</i></b> then an<b><i> F</i></b> movement command is executed.
 &nbsp;If the last movement command was a<b><i> t</i></b> then a<b><i> T</i></b> movement command is executed.
 <dt>&lt;n&gt;- (dash) 
-<dd>Moves the cursor to the start of the previous line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved
-up<b> &lt;n&gt;</b> lines.
+<dd>Moves the cursor to the start of the previous line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved
+up &lt;<b>n</b>&gt; lines.
 <dt>&lt;n&gt;+ (plus) 
-<dd>Moves the cursor to the start of the next line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved
-down<b> &lt;n&gt;</b> lines.
+<dd>Moves the cursor to the start of the next line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved
+down &lt;<b>n</b>&gt; lines.
 <dt>0 
 <dd>Moves the cursor the first character of the current line.
 <dt>CTRL_PAGEUP 
@@ -2588,59 +2587,59 @@ down<b> &lt;n&gt;</b> lines.
 <dt>CTRL_PAGEDOWN 
 <dd>Moves to the last character on the last line of the current edit buffer.
 <dt>&lt;n&gt;DOWN 
-<dd>Move the cursor down one line.<b>&nbsp; &lt;n&gt;</b> is specified, the cursor moves down<b> &lt;n&gt;</b> lines.
+<dd>Move the cursor down one line.&nbsp; &lt;<b>n</b>&gt; is specified, the cursor moves down &lt;<b>n</b>&gt; lines.
 <dt>END 
 <dd>Moves the cursor to the last character on the current line.
 <dt>&lt;n&gt;ENTER 
-<dd>Moves the cursor to the start of the next line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then the cursor is
-moved down<b> &lt;n&gt;</b> lines.
+<dd>Moves the cursor to the start of the next line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then the cursor is
+moved down &lt;<b>n</b>&gt; lines.
 <dt>HOME 
 <dd>Moves the cursor the first character of the current line.
 <dt>&lt;n&gt;LEFT 
-<dd>Move the cursor left one character.&nbsp; If<b> &lt;n&gt;</b> is specified, the cursor moves left<b> &lt;n&gt;</b> characters.
+<dd>Move the cursor left one character.&nbsp; If &lt;<b>n</b>&gt; is specified, the cursor moves left &lt;<b>n</b>&gt; characters.
 <dt>&lt;n&gt;PAGEDOWN 
-<dd>Moves forwards one page.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved ahead<b> &lt;n&gt;</b>
+<dd>Moves forwards one page.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved ahead &lt;<b>n</b>&gt;
 pages.&nbsp; The number of lines of context maintained is controlled by the <a href="#pagelinesexposed">pagelinesexposed</a>
 setting.
 <dt>&lt;n&gt;PAGEUP 
-<dd>Moves backwards one page.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved back<b> &lt;n&gt;</b>
+<dd>Moves backwards one page.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved back &lt;<b>n</b>&gt;
 pages.&nbsp; The number of lines of context maintained is controlled by the <a href="#pagelinesexposed">pagelinesexposed</a>
 setting.
 <dt>&lt;n&gt;RIGHT 
-<dd>Move the cursor right one character.&nbsp; If<b> &lt;n&gt;</b> is specified, the cursor moves right<b> &lt;n&gt;</b> characters.
+<dd>Move the cursor right one character.&nbsp; If &lt;<b>n</b>&gt; is specified, the cursor moves right &lt;<b>n</b>&gt; characters.
 <dt>&lt;n&gt;SHIFT_TAB 
-<dd>Moves the cursor left by <a href="#tabamount">tabamount</a> characters.&nbsp; A repeat count<b> &lt;n&gt;</b> multiplies this.
+<dd>Moves the cursor left by <a href="#tabamount">tabamount</a> characters.&nbsp; A repeat count &lt;<b>n</b>&gt; multiplies this.
 <dt>&lt;n&gt;TAB 
-<dd>Moves the cursor right by <a href="#tabamount">tabamount</a> characters.&nbsp; A repeat count<b> &lt;n&gt;</b> multiplies
+<dd>Moves the cursor right by <a href="#tabamount">tabamount</a> characters.&nbsp; A repeat count &lt;<b>n</b>&gt; multiplies
 this.
 <dt>&lt;n&gt;UP 
-<dd>Move the cursor up one line.<b>&nbsp; &lt;n&gt;</b> is specified, the cursor moves up<b> &lt;n&gt;</b> lines.
+<dd>Move the cursor up one line.&nbsp; &lt;<b>n</b>&gt; is specified, the cursor moves up &lt;<b>n</b>&gt; lines.
 <dt>&lt;n&gt;CTRL_B 
-<dd>Moves backwards one page.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved back<b> &lt;n&gt;</b>
+<dd>Moves backwards one page.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved back &lt;<b>n</b>&gt;
 pages.&nbsp; The number of lines of context maintained is controlled by the <a href="#pagelinesexposed">pagelinesexposed</a>
 setting.
 <dt>&lt;n&gt;CTRL_D 
-<dd>Move down a certain number of lines.&nbsp; The default is to move down half a page.&nbsp; If the repeat count<b> &lt;n&gt;</b>
+<dd>Move down a certain number of lines.&nbsp; The default is to move down half a page.&nbsp; If the repeat count &lt;<b>n</b>&gt;
 is specified, then that becomes the number of lines moved from then on.&nbsp; Also see the<b> CTRL_U</b> key.
 <dt>&lt;n&gt;CTRL_E 
 <dd>Expose the line below the last line in the current edit window, leaving the cursor on the same line if possible.&nbsp; If
-a repeat count<b> &lt;n&gt;</b> is specified, then that many lines are exposed.
+a repeat count &lt;<b>n</b>&gt; is specified, then that many lines are exposed.
 <dt>&lt;n&gt;CTRL_F 
-<dd>Moves forwards one page.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved ahead<b> &lt;n&gt;</b>
+<dd>Moves forwards one page.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved ahead &lt;<b>n</b>&gt;
 pages.&nbsp; The number of lines of context maintained is controlled by the <a href="#pagelinesexposed">pagelinesexposed</a>
 setting.
 <dt>&lt;n&gt;CTRL_N 
-<dd>Move the cursor to the next line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved down<b> &lt;n&gt;</b>
+<dd>Move the cursor to the next line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved down &lt;<b>n</b>&gt;
 lines.
 <dt>&lt;n&gt;CTRL_P 
-<dd>Move the cursor to the previous line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then you are moved up<b> &lt;n&gt;</b>
+<dd>Move the cursor to the previous line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then you are moved up &lt;<b>n</b>&gt;
 lines.
 <dt>&lt;n&gt;CTRL_U 
-<dd>Move up a certain number of lines.&nbsp; The default is to move up half a page.&nbsp; If the repeat count<b> &lt;n&gt;</b>
+<dd>Move up a certain number of lines.&nbsp; The default is to move up half a page.&nbsp; If the repeat count &lt;<b>n</b>&gt;
 is specified, then that becomes the number of lines moved from then on.&nbsp; Also see the<b><i> CTRL_D</i></b> key.
 <dt>&lt;n&gt;CTRL_Y 
 <dd>Expose the line above the first line in the current edit window, leaving the cursor on the same line if possible.&nbsp; If
-a repeat count<b> &lt;n&gt;</b> is specified, then that many lines are exposed.
+a repeat count &lt;<b>n</b>&gt; is specified, then that many lines are exposed.
 <dt>&lt;n&gt;B 
 <dd>Moves the cursor backwards to the start of previous space delimited word on the current line.
 <dl>
@@ -2712,8 +2711,8 @@ to be a word as well.
 <br><br>then the cursor moves to the left parenthesis<b> (</b>.
 </dl>
 <dt>&lt;n&gt;F&lt;?&gt; 
-<dd>Moves the cursor backwards from its current position to the character<b> &lt;?&gt;</b> on the current line.&nbsp; If a repeat
-count<b> &lt;n&gt;</b> is specified, then the nth occurrence of the character<b> &lt;?&gt;</b> is moved to.
+<dd>Moves the cursor backwards from its current position to the character &lt;<b>?</b>&gt; on the current line.&nbsp; If a repeat
+count &lt;<b>n</b>&gt; is specified, then the nth occurrence of the character &lt;<b>?</b>&gt; is moved to.
 <dl>
 <dt>Example(s):
 <dd>
@@ -2729,8 +2728,8 @@ count<b> &lt;n&gt;</b> is specified, then the nth occurrence of the character<b>
 <br><br>The the cursor is moved to the first<b> o</b> in<b> foo</b>.
 </dl>
 <dt>&lt;n&gt;f&lt;?&gt; 
-<dd>Moves the cursor forwards from its current position to the character<b> &lt;?&gt;</b> on the current line.&nbsp; If a repeat
-count<b> &lt;n&gt;</b> is specified, then the<b> nth</b> occurrence of the character<b> &lt;?&gt;</b> is moved to.
+<dd>Moves the cursor forwards from its current position to the character &lt;<b>?</b>&gt; on the current line.&nbsp; If a repeat
+count &lt;<b>n</b>&gt; is specified, then the<b> nth</b> occurrence of the character &lt;<b>?</b>&gt; is moved to.
 <dl>
 <dt>Example(s):
 <dd>
@@ -2746,7 +2745,7 @@ count<b> &lt;n&gt;</b> is specified, then the<b> nth</b> occurrence of the chara
 <br><br>The the cursor is moved to the second<b> o</b> in<b> foo</b>.
 </dl>
 <dt>&lt;n&gt;G 
-<dd>Goes to the line specified by the repeat count<b> &lt;n&gt;</b>.&nbsp; If no repeat count is specified, you move the the last
+<dd>Goes to the line specified by the repeat count &lt;<b>n</b>&gt;.&nbsp; If no repeat count is specified, you move the the last
 line in the current edit buffer.
 <dl>
 <dt>Example(s):
@@ -2757,7 +2756,7 @@ line in the current edit buffer.
 <br><br>Moves to the last line in the current edit buffer.
 </dl>
 <dt>&lt;n&gt;h 
-<dd>Move the cursor left one character.&nbsp; If<b> &lt;n&gt;</b> is specified, the cursor moves left<b> &lt;n&gt;</b> characters.
+<dd>Move the cursor left one character.&nbsp; If &lt;<b>n</b>&gt; is specified, the cursor moves left &lt;<b>n</b>&gt; characters.
 <dt>&lt;n&gt;H 
 <dd>Moves to the line at the top of the current file window.&nbsp; If a repeat count is specified, then you are moved to that
 line relative to the top of the current file window.
@@ -2770,9 +2769,9 @@ line relative to the top of the current file window.
 <br><br>Moves to the line at the top of the current file window.
 </dl>
 <dt>&lt;n&gt;j 
-<dd>Move the cursor down one line.<b>&nbsp; &lt;n&gt;</b> is specified, the cursor moves down<b> &lt;n&gt;</b> lines.
+<dd>Move the cursor down one line.&nbsp; &lt;<b>n</b>&gt; is specified, the cursor moves down &lt;<b>n</b>&gt; lines.
 <dt>&lt;n&gt;k 
-<dd>Move the cursor up one line.<b>&nbsp; &lt;n&gt;</b> is specified, the cursor moves up<b> &lt;n&gt;</b> lines.
+<dd>Move the cursor up one line.&nbsp; &lt;<b>n</b>&gt; is specified, the cursor moves up &lt;<b>n</b>&gt; lines.
 <dt>&lt;n&gt;L 
 <dd>Moves to the line at the bottom of the current file window.&nbsp; If a repeat count is specified, then you are moved to that
 line relative from the bottom of the current file window.
@@ -2785,13 +2784,13 @@ line relative from the bottom of the current file window.
 <br><br>Moves to the line at the bottom of the current file window.
 </dl>
 <dt>&lt;n&gt;l 
-<dd>Move the cursor right one character.&nbsp; If<b> &lt;n&gt;</b> is specified, the cursor moves right<b> &lt;n&gt;</b> characters.
+<dd>Move the cursor right one character.&nbsp; If &lt;<b>n</b>&gt; is specified, the cursor moves right &lt;<b>n</b>&gt; characters.
 <dt>M 
 <dd>Moves the cursor to the line in the middle of the current file window.
 <dt>&lt;n&gt;T&lt;?&gt; 
-<dd>Moves the cursor backwards from its current position to the character after the character<b> &lt;?&gt;</b> on the current
-line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then the the character after the nth occurrence of the character<b>
-&lt;?&gt;</b> is moved to.
+<dd>Moves the cursor backwards from its current position to the character after the character &lt;<b>?</b>&gt; on the current
+line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then the the character after the nth occurrence of the character
+&lt;<b>?</b>&gt; is moved to.
 <dl>
 <dt>Example(s):
 <dd>
@@ -2807,9 +2806,9 @@ line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then the the charac
 <br><br>The the cursor is moved to the second<b> o</b> in<b> foo</b>.
 </dl>
 <dt>&lt;n&gt;t&lt;?&gt; 
-<dd>Moves the cursor forwards from its current position to the character before the character<b> &lt;?&gt;</b> on the current
-line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then the the character before the nth occurrence of the character<b>
-&lt;?&gt;</b> is moved to.
+<dd>Moves the cursor forwards from its current position to the character before the character &lt;<b>?</b>&gt; on the current
+line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then the the character before the nth occurrence of the character
+&lt;<b>?</b>&gt; is moved to.
 <dl>
 <dt>Example(s):
 <dd>
@@ -2890,12 +2889,12 @@ line</i></b> command <a href="#MARK">MARK</a>.
 <br><br>Mark commands are:
 <dl>
 <dt>m&lt;?&gt; 
-<dd>Allows the setting of mark<b> &lt;?&gt;</b>.
-<br><br>If<b> &lt;?&gt;</b> is an exclamation mark ('!') instead of a letter, it clears all marks on the current line.
-<br><br>If<b> &lt;?&gt;</b> is a dot ('.') instead of a letter, it puts Vi in<b><i> memorize mode</i></b>.&nbsp; All characters
+<dd>Allows the setting of mark &lt;<b>?</b>&gt;.
+<br><br>If &lt;<b>?</b>&gt; is an exclamation mark ('!') instead of a letter, it clears all marks on the current line.
+<br><br>If &lt;<b>?</b>&gt; is a dot ('.') instead of a letter, it puts Vi in<b><i> memorize mode</i></b>.&nbsp; All characters
 typed are memorized until another dot ('.') is pressed.&nbsp; The memorized keystrokes may be repeated by pressing a dot ('.').
 &nbsp;See the dot ('.')<b><i> command mode</i></b> command later in this chapter.
-<br><br>If<b> &lt;?&gt;</b> is an equals sign ('=') instead of a letter, it puts Vi in alternate<b><i> memorize mode</i></b>.
+<br><br>If &lt;<b>?</b>&gt; is an equals sign ('=') instead of a letter, it puts Vi in alternate<b><i> memorize mode</i></b>.
 &nbsp;All characters typed are memorized until another equals sign ('=') is pressed.&nbsp; The memorized keystrokes may be
 repeated by pressing an equals sign ('=').&nbsp; See the equals sign ('=')<b><i> command mode</i></b> command later in this
 chapter.
@@ -2911,7 +2910,7 @@ chapter.
 <br><br>Clear any marks set on the current line.
 </dl>
 <dt>'&lt;?&gt; (front quote) 
-<dd>Move to the start of the line with the mark<b> &lt;?&gt;</b>.
+<dd>Move to the start of the line with the mark &lt;<b>?</b>&gt;.
 <dl>
 <dt>Example(s):
 <dd>
@@ -2921,7 +2920,7 @@ chapter.
 <br><br>Moves to the first column of line of the last position before the last non-linear movement command was issued.
 </dl>
 <dt>`&lt;?&gt; (back quote) 
-<dd>Move to the position in the edit buffer with the mark<b> &lt;?&gt;</b>.
+<dd>Move to the position in the edit buffer with the mark &lt;<b>?</b>&gt;.
 <dl>
 <dt>Example(s):
 <dd>
@@ -3133,8 +3132,8 @@ back and forth between overstrike and insert using the<b><i> INS</i></b> key.&nb
 by pressing the<b><i> ESC</i></b> key.&nbsp; See the previous section, <a href="#Text_Insertion_Mode">Text Insertion Mode</a>,
 for more information on manipulating text in<b><i> text insertion mode</i></b>.
 <dt>&lt;n&gt;r&lt;?&gt; 
-<dd>Replaces the current character with the next character typed,<b> &lt;?&gt;</b>.&nbsp; If a repeat count is specified, then
-the next<b> &lt;n&gt;</b> characters are replaced with the character<b> &lt;?&gt;</b>.
+<dd>Replaces the current character with the next character typed, &lt;<b>?</b>&gt;.&nbsp; If a repeat count is specified, then
+the next &lt;<b>n</b>&gt; characters are replaced with the character &lt;<b>?</b>&gt;.
 <dl>
 <dt>Example(s):
 <dd>
@@ -3194,8 +3193,8 @@ x</i></b>.
 <br><br>Delete the next 5 characters into the named buffer<b> a</b>.
 </dl>
 </dl>
-<br>The<b> &lt;oper&gt;</b> notation in the following command indicates some sort of operator that the command will act on.<b>
-&nbsp;&lt;oper&gt;</b> may be one of:
+<br>The &lt;<b>oper</b>&gt; notation in the following command indicates some sort of operator that the command will act on.
+&nbsp;&lt;<b>oper</b>&gt; may be one of:
 <ol>
 <li>A movement command.&nbsp; See the section <a href="#Movement">Movement</a> for a full description of all movement commands.
 &nbsp;If a movement command is specified, then the range that the command will act on is from the current position to the
@@ -3210,16 +3209,16 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <dl>
 <dt>&lt;n&gt;&lt;&quot;?&gt;d&lt;oper&gt; 
-<dd>Delete text from the current position in the file to the position specified by<b> &lt;oper&gt;</b>.&nbsp; A copy of the text
-is placed into the specified<b><i> copy buffer</i></b><b> &lt;&quot;?&gt;</b>.&nbsp; If no buffer is specified, then the text
-is placed into the active buffer.&nbsp; A repeat count<b> &lt;n&gt;</b> may precede the command, this causes<b> &lt;n&gt;</b>
-units of the<b> &lt;oper&gt;</b> command to be deleted.
-<br><br><b>&lt;oper&gt;</b> may be specified as<b> d</b>, which causes a single line to be deleted.
+<dd>Delete text from the current position in the file to the position specified by &lt;<b>oper</b>&gt;.&nbsp; A copy of the text
+is placed into the specified<b><i> copy buffer</i></b> &lt;<b>&quot;?</b>&gt;.&nbsp; If no buffer is specified, then the text
+is placed into the active buffer.&nbsp; A repeat count &lt;<b>n</b>&gt; may precede the command, this causes &lt;<b>n</b>&gt;
+units of the &lt;<b>oper</b>&gt; command to be deleted.
+<br><br>&lt;<b>oper</b>&gt; may be specified as<b> d</b>, which causes a single line to be deleted.
 <br><br>Also see the<b><i> command line</i></b> command <a href="#DELETE">DELETE</a>.
 <dl>
 <dt>Example(s):
@@ -3245,11 +3244,11 @@ copy of the text is placed in the named buffer<b> c</b>.
 see the section <a href="#Copy_Buffers">Copy Buffers</a> for more information.
 <dl>
 <dt>&lt;n&gt;Y 
-<dd>Yank (copy) the current line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then<b> &lt;n&gt;</b> lines are copied.
+<dd>Yank (copy) the current line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then &lt;<b>n</b>&gt; lines are copied.
 <br><br>This command is the same as typing<b> yy</b>.
 </dl>
-<br>The<b> &lt;oper&gt;</b> notation in the following command indicates some sort of operator that the command will act on.<b>
-&nbsp;&lt;oper&gt;</b> may be one of:
+<br>The &lt;<b>oper</b>&gt; notation in the following command indicates some sort of operator that the command will act on.
+&nbsp;&lt;<b>oper</b>&gt; may be one of:
 <ol>
 <li>A movement command.&nbsp; See the section <a href="#Movement">Movement</a> for a full description of all movement commands.
 &nbsp;If a movement command is specified, then the range that the command will act on is from the current position to the
@@ -3264,16 +3263,16 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <dl>
 <dt>&lt;n&gt;&lt;&quot;?&gt;y&lt;oper&gt; 
-<dd>Yanks (copies) text from the current position in the file to the position specified by<b> &lt;oper&gt;</b>.&nbsp; Text is
-placed into the specified<b><i> copy buffer</i></b><b> &lt;&quot;?&gt;</b>.&nbsp; If no buffer is specified, then the text
-is placed into the active buffer.&nbsp; A repeat count<b> &lt;n&gt;</b> may precede the command, this causes<b> &lt;n&gt;</b>
-units of the<b> &lt;oper&gt;</b> command to be copied.
-<br><br><b>&lt;oper&gt;</b> may be specified as<b> y</b>, which causes a single line to be yanked.
+<dd>Yanks (copies) text from the current position in the file to the position specified by &lt;<b>oper</b>&gt;.&nbsp; Text is
+placed into the specified<b><i> copy buffer</i></b> &lt;<b>&quot;?</b>&gt;.&nbsp; If no buffer is specified, then the text
+is placed into the active buffer.&nbsp; A repeat count &lt;<b>n</b>&gt; may precede the command, this causes &lt;<b>n</b>&gt;
+units of the &lt;<b>oper</b>&gt; command to be copied.
+<br><br>&lt;<b>oper</b>&gt; may be specified as<b> y</b>, which causes a single line to be yanked.
 <br><br>Also see the<b><i> command line</i></b> command <a href="#DELETE">DELETE</a>.
 <dl>
 <dt>Example(s):
@@ -3311,15 +3310,15 @@ is entered.
 <br><br>This command is the same as typing<b> c$</b>.
 <dt>&lt;n&gt;S 
 <dd>This command substitutes the current line with text.&nbsp; The text on the current line is deleted, and<b><i> text insertion
-mode</i></b> is entered.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then<b> &lt;n&gt;</b> lines are deleted.
+mode</i></b> is entered.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then &lt;<b>n</b>&gt; lines are deleted.
 <br><br>This command is the same as typing<b><i> cc</i></b>.
 <dt>&lt;n&gt;s 
-<dd>This command substitutes the current character with text.&nbsp; If<b> &lt;n&gt;</b> is specified, then<b> &lt;n&gt;</b> characters
+<dd>This command substitutes the current character with text.&nbsp; If &lt;<b>n</b>&gt; is specified, then &lt;<b>n</b>&gt; characters
 are substituted.
 <br><br>This command is the same as typing<b> cl</b>,<b> cRIGHT</b>, or<b> cSPACE</b>.
 </dl>
-<br>The<b> &lt;oper&gt;</b> notation in the following command indicates some sort of operator that the command will act on.<b>
-&nbsp;&lt;oper&gt;</b> may be one of:
+<br>The &lt;<b>oper</b>&gt; notation in the following command indicates some sort of operator that the command will act on.
+&nbsp;&lt;<b>oper</b>&gt; may be one of:
 <ol>
 <li>A movement command.&nbsp; See the section <a href="#Movement">Movement</a> for a full description of all movement commands.
 &nbsp;If a movement command is specified, then the range that the command will act on is from the current position to the
@@ -3334,14 +3333,14 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <dl>
 <dt>&lt;n&gt;c&lt;oper&gt; 
-<dd>Change text from the current position in the file to the position specified by<b> &lt;oper&gt;</b>.&nbsp; A repeat count<b>
-&lt;n&gt;</b> may precede the command, this causes<b> &lt;n&gt;</b> units of the<b> &lt;oper&gt;</b> command to be changed.
-<br><br><b>&lt;oper&gt;</b> may be specified as<b><i> c</i></b>, which causes a single line to be changed.
+<dd>Change text from the current position in the file to the position specified by &lt;<b>oper</b>&gt;.&nbsp; A repeat count &lt;<b>n</b>&gt;
+may precede the command, this causes &lt;<b>n</b>&gt; units of the &lt;<b>oper</b>&gt; command to be changed.
+<br><br>&lt;<b>oper</b>&gt; may be specified as<b><i> c</i></b>, which causes a single line to be changed.
 <dl>
 <dt>Example(s):
 <dd>
@@ -3364,9 +3363,9 @@ entered.
 </dl>
 </dl>
 <h3 id="Shifting_Text"> Shifting Text </h3>
-<br>The following commands are used to shift lines to the right or left, inserting or deleting leading whitespace.&nbsp; The<b>
-&lt;oper&gt;</b> notation in the following commands indicates some sort of operator that the command will act on.<b>&nbsp;
-&lt;oper&gt;</b> may be one of:
+<br>The following commands are used to shift lines to the right or left, inserting or deleting leading whitespace.&nbsp; The
+&lt;<b>oper</b>&gt; notation in the following commands indicates some sort of operator that the command will act on.&nbsp;
+&lt;<b>oper</b>&gt; may be one of:
 <ol>
 <li>A movement command.&nbsp; See the section <a href="#Movement">Movement</a> for a full description of all movement commands.
 &nbsp;If a movement command is specified, then the range that the command will act on is from the current position to the
@@ -3381,16 +3380,16 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <dl>
 <dt>&lt;n&gt;&gt;&lt;oper&gt; (right angle bracket) 
 <dd>This is the shift right command.&nbsp; It shifts the specified lines to the right <a href="#shiftwidth">shiftwidth</a> spaces,
 inserting necessary leading tabs if <a href="#realtabs">realtabs</a> is specified.
-<br><br>A repeat count<b> &lt;n&gt;</b> may precede the command, this causes<b> &lt;n&gt;</b> units of the<b> &lt;oper&gt;</b>
+<br><br>A repeat count &lt;<b>n</b>&gt; may precede the command, this causes &lt;<b>n</b>&gt; units of the &lt;<b>oper</b>&gt;
 command to be shifted to the right.
-<br><br><b>&lt;oper&gt;</b> may be specified as<b> &gt;</b>, which causes a single line to be shifted to the right.
+<br><br>&lt;<b>oper</b>&gt; may be specified as<b> &gt;</b>, which causes a single line to be shifted to the right.
 <br><br>Also see the<b><i> command line</i></b> command <a href="#Y">&gt;</a>.
 <dl>
 <dt>Example(s):
@@ -3405,9 +3404,9 @@ spaces.
 </dl>
 <dt>&lt;n&gt;&lt;&lt;oper&gt; (left angle bracket) 
 <dd>This is the shift left command.&nbsp; It shifts the specified lines to the left <a href="#shiftwidth">shiftwidth</a> spaces.
-<br><br>A repeat count<b> &lt;n&gt;</b> may precede the command, this causes<b> &lt;n&gt;</b> units of the<b> &lt;oper&gt;</b>
+<br><br>A repeat count &lt;<b>n</b>&gt; may precede the command, this causes &lt;<b>n</b>&gt; units of the &lt;<b>oper</b>&gt;
 command to be shifted to the left <a href="#shiftwidth">shiftwidth</a> spaces.
-<br><br><b>&lt;oper&gt;</b> may be specified as<b> &lt;</b>, which causes a single line to be shifted to the left <a href="#shiftwidth">shiftwidth</a>
+<br><br>&lt;<b>oper</b>&gt; may be specified as<b> &lt;</b>, which causes a single line to be shifted to the left <a href="#shiftwidth">shiftwidth</a>
 spaces.
 <br><br>Also see the<b><i> command line</i></b> command <a href="#X">&lt;</a>.
 <dl>
@@ -3430,8 +3429,8 @@ upper case.&nbsp; An example of its behaviour is changing the line
 <br><br>to
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tHIS iS a lINE oF tEXT.</tt>
-<br><br>The<b> &lt;oper&gt;</b> notation in the following command indicates some sort of operator that the command will act
-on.<b>&nbsp; &lt;oper&gt;</b> may be one of:
+<br><br>The &lt;<b>oper</b>&gt; notation in the following command indicates some sort of operator that the command will act
+on.&nbsp; &lt;<b>oper</b>&gt; may be one of:
 <ol>
 <li>A movement command.&nbsp; See the section <a href="#Movement">Movement</a> for a full description of all movement commands.
 &nbsp;If a movement command is specified, then the range that the command will act on is from the current position to the
@@ -3446,7 +3445,7 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <dl>
@@ -3455,10 +3454,10 @@ be achieved by using the search command.
 on.&nbsp; If<b><i> togglecaselikevi</i></b> is set, then pressing<b> ~</b> only changes the case of the current character,
 and advances the cursor to the next character.
 <br><br>However, if<b><i> togglecaselikevi</i></b> is not set, then this command toggles the case of the characters over the
-range specified by<b> &lt;oper&gt;</b>
-<br><br>A repeat count<b> &lt;n&gt;</b> may precede the command, this causes<b> &lt;n&gt;</b> units of the<b> &lt;oper&gt;</b>
+range specified by &lt;<b>oper</b>&gt;
+<br><br>A repeat count &lt;<b>n</b>&gt; may precede the command, this causes &lt;<b>n</b>&gt; units of the &lt;<b>oper</b>&gt;
 command to be case toggled.
-<br><br><b>&lt;oper&gt;</b> may be specified as<b> ~</b>, which causes a single line to be have its case toggled.
+<br><br>&lt;<b>oper</b>&gt; may be specified as<b> ~</b>, which causes a single line to be have its case toggled.
 <dl>
 <dt>Example(s):
 <dd>
@@ -3475,8 +3474,8 @@ line.
 </dl>
 <h3 id="Filters"> Filters </h3>
 <br>The<b><i> command mode</i></b> filter command has the same functionality as the<b><i> command line</i></b> command filter.
-&nbsp;The<b> &lt;oper&gt;</b> notation in the following command indicates some sort of operator that the command will act
-on.<b>&nbsp; &lt;oper&gt;</b> may be one of:
+&nbsp;The &lt;<b>oper</b>&gt; notation in the following command indicates some sort of operator that the command will act
+on.&nbsp; &lt;<b>oper</b>&gt; may be one of:
 <ol>
 <li>A movement command.&nbsp; See the section <a href="#Movement">Movement</a> for a full description of all movement commands.
 &nbsp;If a movement command is specified, then the range that the command will act on is from the current position to the
@@ -3491,15 +3490,15 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <dl>
 <dt>&lt;n&gt;!&lt;oper&gt; (exclamation mark) 
-<dd>Filter text.&nbsp; The line range specified by<b> &lt;oper&gt;</b> are run through a specified filter.&nbsp; A repeat count<b>
-&lt;n&gt;</b> may precede the command, this causes<b> &lt;n&gt;</b> units of the<b> &lt;oper&gt;</b> command to be run through
-the filter.
-<br><br><b>&lt;oper&gt;</b> may be specified as<b> !</b>, which causes a single line to be run through the filter.
+<dd>Filter text.&nbsp; The line range specified by &lt;<b>oper</b>&gt; are run through a specified filter.&nbsp; A repeat count
+&lt;<b>n</b>&gt; may precede the command, this causes &lt;<b>n</b>&gt; units of the &lt;<b>oper</b>&gt; command to be run
+through the filter.
+<br><br>&lt;<b>oper</b>&gt; may be specified as<b> !</b>, which causes a single line to be run through the filter.
 <br><br>The lines specified are run through a specified system command (filter).&nbsp; Once the filter range has been specified,
 a window is displayed, prompting for a system command:
 <br><br><tt><img src="vi025.bmp" align=middle></tt>
@@ -3536,22 +3535,22 @@ region could look as follows:
 <br><br>If region is already selected, then cancel the selected region.
 <dt>&lt;n&gt;SHIFT_UP 
 <dd>Starts selection (if not already started) and moves up to the previous line.&nbsp; The previous line and the current line
-are selected.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then the cursor moves up<b> &lt;n&gt;</b> lines, and
+are selected.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then the cursor moves up &lt;<b>n</b>&gt; lines, and
 all the lines between the starting and ending position are selected.
 <dt>&lt;n&gt;SHIFT_DOWN 
 <dd>Starts selection (if not already started) and moves down to the next line.&nbsp; The next line and the current line are selected.
-&nbsp;If a repeat count<b> &lt;n&gt;</b> is specified, then the cursor moves down<b> &lt;n&gt;</b> lines, and all the lines
+&nbsp;If a repeat count &lt;<b>n</b>&gt; is specified, then the cursor moves down &lt;<b>n</b>&gt; lines, and all the lines
 between the starting and ending position are selected.
 <dt>&lt;n&gt;SHIFT_LEFT 
 <dd>Starts selection (if not already started) and move left to the previous character.&nbsp; The current character and the previous
-character are selected.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then the cursor moves left<b> &lt;n&gt;</b>
+character are selected.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then the cursor moves left &lt;<b>n</b>&gt;
 characters, and all the characters between the starting and ending position are selected.
 <dt>&lt;n&gt;SHIFT_RIGHT 
 <dd>Starts selection (if not already started) and move right to the next character.&nbsp; The current character and the next character
-are selected.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, then the cursor moves right<b> &lt;n&gt;</b> characters,
+are selected.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, then the cursor moves right &lt;<b>n</b>&gt; characters,
 and all the characters between the starting and ending position are selected.
 <dt>&lt;&quot;?&gt;SHIFT_DEL 
-<dd>Deletes the currently selected region.&nbsp; If the<b><i> copy buffer</i></b><b> &lt;&quot;?&gt;</b> is specified, the region
+<dd>Deletes the currently selected region.&nbsp; If the<b><i> copy buffer</i></b> &lt;<b>&quot;?</b>&gt; is specified, the region
 is copied into that buffer, otherwise the data is copied into the active<b><i> copy buffer</i></b>.
 <dt>_ (underscore) 
 <dd>Simulates the right mouse being clicked at the current cursor position.&nbsp; If a region is not selected, then the current
@@ -3604,10 +3603,10 @@ is:
 <dd>Allows entry of a<b><i> command line</i></b>.&nbsp; See the chapter <a href="#Editor_Commands">Editor Commands</a> for full
 details on<b><i> command line</i></b> commands.
 <dt>@&lt;?&gt; (at sign) 
-<dd>This command executes the<b><i> copy buffer</i></b><b> &lt;?&gt;</b>.&nbsp; Vi behaves as if the contents of the buffer were
+<dd>This command executes the<b><i> copy buffer</i></b> &lt;<b>?</b>&gt;.&nbsp; Vi behaves as if the contents of the buffer were
 being typed at the keyboard.
 <dt>&lt;n&gt;J 
-<dd>Joins the next line to the current line.&nbsp; If a repeat count<b> &lt;n&gt;</b> is specified, the next<b> &lt;n&gt;</b>
+<dd>Joins the next line to the current line.&nbsp; If a repeat count &lt;<b>n</b>&gt; is specified, the next &lt;<b>n</b>&gt;
 lines are joined to the current line.&nbsp; (lines are concatenated one after another).
 <br><br>Also see the<b><i> command line</i></b> command <a href="#JOIN">JOIN</a>.
 <dl>
@@ -3630,7 +3629,7 @@ use the <a href="#VISUAL">VISUAL</a> command.
 <br><br>Finished with current edit buffer.
 </dl>
 <dt>&lt;n&gt;z&lt;?&gt; 
-<dd>Reorients the current screen position.&nbsp; The current line moves as follows, depending on the value of<b> &lt;?&gt;</b>:
+<dd>Reorients the current screen position.&nbsp; The current line moves as follows, depending on the value of &lt;<b>?</b>&gt;:
 <dl>
 <dt>ENTER
 <dd>Moves the current line to the top of the screen.
@@ -3639,7 +3638,7 @@ use the <a href="#VISUAL">VISUAL</a> command.
 <dt>- (dash)
 <dd>Moves the current line to the bottom of the screen.
 </dl>
-<br>If a repeat count<b> &lt;n&gt;</b> is specified, then<b> &lt;n&gt;</b> is made the current line.
+<br>If a repeat count &lt;<b>n</b>&gt; is specified, then &lt;<b>n</b>&gt; is made the current line.
 <dl>
 <dt>Example(s):
 <dd>
@@ -3917,8 +3916,9 @@ key before returning to the editor.
 </dl>
 <dl>
 <dt>Description:
-<dd>Create an abbreviation of<b> &lt;short&gt;</b> for<b> &lt;long&gt;</b>Whenever<b> &lt;short&gt;</b> is typed as a word during<b><i>
-text insertion mode</i></b>, it is expanded to<b> &lt;long&gt;</b><a href="#UNABBREV">UNABBREV</a> is used to remove the abbreviation.
+<dd>Create an abbreviation of<b> &lt;short&gt;</b> for<b> &lt;long&gt;</b>.&nbsp; Whenever<b> &lt;short&gt;</b> is typed as a
+word during<b><i> text insertion mode</i></b>, it is expanded to<b> &lt;long&gt;</b>.&nbsp; <a href="#UNABBREV">UNABBREV</a>
+is used to remove the abbreviation.
 </dl>
 <dl>
 <dt>Example(s):
@@ -3937,8 +3937,8 @@ text insertion mode</i></b>, it is expanded to<b> &lt;long&gt;</b><a href="#UNAB
 </dl>
 <dl>
 <dt>Description:
-<dd>Creates an<b><i> command line</i></b> alias of<b> &lt;alias&gt;</b> for<b> &lt;data&gt;</b>Whenever<b> &lt;alias&gt;</b> is
-typed on the<b><i> command line</i></b>, the full command<b> &lt;data&gt;</b> is substituted.&nbsp; <a href="#UNALIAS">UNALIAS</a>
+<dd>Creates an<b><i> command line</i></b> alias of<b> &lt;alias&gt;</b> for<b> &lt;data&gt;</b>.&nbsp; Whenever<b> &lt;alias&gt;</b>
+is typed on the<b><i> command line</i></b>, the full command<b> &lt;data&gt;</b> is substituted.&nbsp; <a href="#UNALIAS">UNALIAS</a>
 is used to remove the abbreviation.
 </dl>
 <dl>
@@ -3958,7 +3958,8 @@ is used to remove the abbreviation.
 </dl>
 <dl>
 <dt>Description:
-<dd>Appends source lines after line<b> &lt;line_num&gt;</b>Append is terminated when a line with nothing but a dot ('.') is entered.
+<dd>Appends source lines after line<b> &lt;line_num&gt;</b>.&nbsp; Append is terminated when a line with nothing but a dot ('.')
+is entered.
 <dl>
 <dt>Notes:
 <dd>Only valid in<b><i> EX mode</i></b>.
@@ -3989,7 +3990,7 @@ is used to remove the abbreviation.
 </dl>
 <dl>
 <dt>Description:
-<dd>Changes current working directory to<b> &lt;dir&gt;</b>If<b> &lt;dir&gt;</b> is not specified, then the current directory
+<dd>Changes current working directory to<b> &lt;dir&gt;</b>.&nbsp; If<b> &lt;dir&gt;</b> is not specified, then the current directory
 is displayed in the message window.<b>&nbsp; &lt;dir&gt;</b> may be specified with drive and path.
 </dl>
 <dl>
@@ -4007,8 +4008,8 @@ is displayed in the message window.<b>&nbsp; &lt;dir&gt;</b> may be specified wi
 </dl>
 <dl>
 <dt>Description:
-<dd>Deletes the line range , and replaces the range with inputted source lines.&nbsp; The input of text is terminated when a line
-with nothing on it but a dot ('.') is entered.
+<dd>Deletes the line range<b> &lt;line_range&gt;</b>, and replaces the range with inputted source lines.&nbsp; The input of text
+is terminated when a line with nothing on it but a dot ('.') is entered.
 <dl>
 <dt>Notes:
 <dd>Only valid in<b><i> EX mode</i></b>.
@@ -4025,7 +4026,7 @@ with nothing on it but a dot ('.') is entered.
 </dl>
 <dl>
 <dt>Description:
-<dd>Compiles the editor script<b> &lt;script&gt;</b>
+<dd>Compiles the editor script<b> &lt;script&gt;</b>.
 <br><br>If<b> -a</b> is specified, all local variables are translated at compile time (rather than at run time) - this is
 useful for the<b><i> configuration script</i></b>.
 <br><br>If<b> -A</b> is specified, all variables (both local and global) are translated at compile time.
@@ -4064,7 +4065,7 @@ quoted string are not replaced with a tab.
 </dl>
 <dl>
 <dt>Description:
-<dd>Copies the specified range of lines<b> &lt;line_range&gt;</b> after the line<b> &lt;line_number&gt;</b>
+<dd>Copies the specified range of lines<b> &lt;line_range&gt;</b> after the line<b> &lt;line_number&gt;</b>.
 </dl>
 <dl>
 <dt>Example(s):
@@ -4090,7 +4091,7 @@ quoted string are not replaced with a tab.
 </dl>
 <dl>
 <dt>Description:
-<dd>Deletes the specified line range<b> &lt;line_range&gt;</b>
+<dd>Deletes the specified line range<b> &lt;line_range&gt;</b>.
 <br><br>If<b> &lt;buffer&gt;</b> is not specified, the text is deleted into the active<b><i> copy buffer</i></b>.
 <br><br>If<b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') is specified, the text is deleted into that<b><i> copy buffer</i></b>.
 <br><br>The <a href="#PUT">PUT</a> command may be used to place contents of a<b><i> copy buffer</i></b> into the file.
@@ -4138,7 +4139,7 @@ quoted string are not replaced with a tab.
 </dl>
 <dl>
 <dt>Description:
-<dd>Edits the specified files<b> &lt;files&gt; &lt;files&gt;</b> may be a single file or a list of files.
+<dd>Edits the specified files<b> &lt;files&gt;</b>.<b>&nbsp; &lt;files&gt;</b> may be a single file or a list of files.
 <br><br>Each file name may contain file regular expressions, see the section <a href="#File_Matching_Regular_Expressions">File Matching Regular Expressions</a>
 in the chapter <a href="#Regular_Expressions">Regular Expressions</a> for more information.
 <br><br>If<b> &quot;!&quot;</b> is specified, then the current file is discarded before editing the new file(s).
@@ -4194,7 +4195,7 @@ file size in bytes, the date and time of the last file update.&nbsp; Some sample
 </dl>
 <dl>
 <dt>Description:
-<dd>Searches the file list<b> &lt;files&gt;</b> for the regular expression<b> &lt;regexp&gt;</b>
+<dd>Searches the file list<b> &lt;files&gt;</b> for the regular expression<b> &lt;regexp&gt;</b>.
 <br><br><b>&lt;regexp&gt;</b> may be surrounded by double quotes (&quot;) or a forward slash (/) if it contains any spaces.
 <br><br><b>&lt;files&gt;</b> may be a single file, a directory, or a list of files.<b>&nbsp; &lt;files&gt;</b> may contain
 file regular expressions, see the section <a href="#File_Matching_Regular_Expressions">File Matching Regular Expressions</a>
@@ -4202,7 +4203,7 @@ in the chapter <a href="#Regular_Expressions">Regular Expressions</a> for more i
 <br><br>If<b> &lt;files&gt;</b> is not specified, it defaults to the setting of <a href="#grepdefault">grepdefault</a>.&nbsp;
 If a directory is specified for<b> &lt;files&gt;</b>, then the files in that directory are searched, based on the setting
 of <a href="#grepdefault">grepdefault</a>.
-<br><br>When all matches are found, a selection window is presented with all the files that contained<b> &lt;regexp&gt;</b>
+<br><br>When all matches are found, a selection window is presented with all the files that contained<b> &lt;regexp&gt;</b>.
 <br><br>If you are not using regular expressions, the <a href="#FGREP">FGREP</a> command is much faster.&nbsp; For more information
 on regular expressions, see the chapter <a href="#Regular_Expressions">Regular Expressions</a>.
 </dl>
@@ -4248,8 +4249,8 @@ of the rules for formulating the expression<b> &lt;expr&gt;</b>, see the chapter
 </dl>
 <dl>
 <dt>Description:
-<dd>Execute the string<b> &lt;str&gt;</b>This causes the editor to behave as if the string<b> &lt;str&gt;</b> was typed at the
-keyboard.
+<dd>Execute the string<b> &lt;str&gt;</b>.&nbsp; This causes the editor to behave as if the string<b> &lt;str&gt;</b> was typed
+at the keyboard.
 <br><br>Special keys in the string are indicated as follows:
 <dl>
 <dt>\&lt;&quot;key&quot;&gt;
@@ -4314,7 +4315,7 @@ prevents the &quot;flashing&quot; of the command window as it is opened then clo
 </dl>
 <dl>
 <dt>Description:
-<dd>Searches the file list<b> &lt;files&gt;</b> for the string<b> &lt;string&gt;</b>
+<dd>Searches the file list<b> &lt;files&gt;</b> for the string<b> &lt;string&gt;</b>.
 <br><br>The search is by default case insensitive, unless<b> -c</b> is specified, which forces the search to be case sensitive.
 &nbsp;Specifying<b> -u</b> causes the setting of <a href="#caseignore">caseignore</a> to determine whether or not to be case
 sensitive in the search.
@@ -4324,7 +4325,7 @@ see the section <a href="#File_Matching_Regular_Expressions">File Matching Regul
 for more information.
 <br><br>If<b> &lt;files&gt;</b> is not specified, it defaults to the setting of <a href="#grepdefault">grepdefault</a>.
 <br><br>While searching for the item, Vi displays a window that shows all files being searched.&nbsp; When all matches are
-found, a selection window is presented with all the files that contained<b> &lt;files&gt;</b>
+found, a selection window is presented with all the files that contained<b> &lt;files&gt;</b>.
 </dl>
 <dl>
 <dt>Example(s):
@@ -4397,7 +4398,7 @@ fit by opening at (50,20), it will try to open at all other corners of the strin
 </dl>
 <dl>
 <dt>Description:
-<dd>Writes the current editor configuration out to the file<b> &lt;filename&gt;</b>If<b> &lt;filename&gt;</b> is not specified,
+<dd>Writes the current editor configuration out to the file<b> &lt;filename&gt;</b>.&nbsp; If<b> &lt;filename&gt;</b> is not specified,
 then the file name &quot;ed.cfg&quot; is assumed.
 </dl>
 <h3 id="GLOBAL"> GLOBAL </h3>
@@ -4407,11 +4408,11 @@ then the file name &quot;ed.cfg&quot; is assumed.
 </dl>
 <dl>
 <dt>Description:
-<dd>For each line in the range<b> &lt;line_range&gt;</b> that matches the regular expression<b> &lt;regexp&gt;</b>, the editor
+<dd>For each line in the range<b> &lt;line_range&gt;</b> that matches the regular expression &lt;<b>regexp</b>&gt;, the editor
 command<b> &lt;cmd&gt;</b> is executed.<b>&nbsp; &lt;cmd&gt;</b> may contain replacement expressions, see the chapter <a href="#Regular_Expressions">Regular Expressions</a>
 for more information.
 <br><br>If<b> &quot;!&quot;</b> is specified, then the command<b> &lt;cmd&gt;</b> is executed on every line that does NOT
-match the regular expression<b> &lt;regexp&gt;</b>.
+match the regular expression &lt;<b>regexp</b>&gt;.
 <br><br>If<b> &lt;line_range&gt;</b> is not specified, then the<b><i> global</i></b> command operates on the entire line range
 of the current edit buffer.
 </dl>
@@ -4468,8 +4469,8 @@ will insert the characters abc at the start of the line).
 </dl>
 <dl>
 <dt>Description:
-<dd>Inserts text after a the specified line number<b> &lt;line_number&gt;</b>Insert is terminated when a line with nothing but
-a '.' is entered.
+<dd>Inserts text after a the specified line number<b> &lt;line_number&gt;</b>.&nbsp; Insert is terminated when a line with nothing
+but a '.' is entered.
 <dl>
 <dt>Notes:
 <dd>Only valid in<b><i> EX mode</i></b>.
@@ -4669,9 +4670,9 @@ base meaning that is, all key mappings are ignored and the keys have their defau
 </dl>
 <dl>
 <dt>Description:
-<dd>Sets the<b><i> text mark</i></b><b> &lt;markname&gt;</b> on the line<b> &lt;line_number&gt;</b>The mark name is a single letter
-from<b> a</b> to<b> z</b>.&nbsp; This mark may then be referred to on the<b><i> command line</i></b> or in<b><i> command mode</i></b>
-by using a front quote (') before the mark name, e.g.:
+<dd>Sets the<b><i> text mark</i></b><b> &lt;markname&gt;</b> on the line<b> &lt;line_number&gt;</b>.&nbsp; The mark name is a
+single letter from<b> a</b> to<b> z</b>.&nbsp; This mark may then be referred to on the<b><i> command line</i></b> or in<b><i>
+command mode</i></b> by using a front quote (') before the mark name, e.g.:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 'a</tt>
 </dl>
@@ -4695,8 +4696,8 @@ by using a front quote (') before the mark name, e.g.:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( ( i=foo( x ) ) ) return;</tt>
 <br><br>moves the cursor to the last ')' in the line.
-<br><br>This command allows you to extend what is matched to general regular expressions.<b>&nbsp; &lt;rx1&gt;</b> is the
-regular expression that opens a match,<b> &lt;rx2&gt;</b> is the regular expression that closes a match.
+<br><br>This command allows you to extend what is matched to general regular expressions.&nbsp; &lt;<b>rx1</b>&gt; is the
+regular expression that opens a match, &lt;<b>rx2</b>&gt; is the regular expression that closes a match.
 <br><br>Note that in the matching regular expressions, <a href="#magic">magic</a> is set (special characters automatically
 have their meaning, and do not need to be escaped).
 <br><br>For more information on regular expressions, see the chapter <a href="#Regular_Expressions">Regular Expressions</a>.
@@ -4744,7 +4745,7 @@ is moved to the corresponding<b> #endif</b> statement.
 </dl>
 <dl>
 <dt>Description:
-<dd>Deletes the specified range of lines<b> &lt;line_range&gt;</b> and places them after the line<b> &lt;line_number&gt;</b>
+<dd>Deletes the specified range of lines<b> &lt;line_range&gt;</b> and places them after the line<b> &lt;line_number&gt;</b>.
 </dl>
 <dl>
 <dt>Example(s):
@@ -4853,9 +4854,9 @@ edit buffer is associated with that file:
 </dl>
 <dl>
 <dt>Description:
-<dd>Puts (pastes) the<b><i> copy buffer</i></b><b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') after the line<b> &lt;line_number&gt;</b>
+<dd>Puts (pastes) the<b><i> copy buffer</i></b><b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') after the line<b> &lt;line_number&gt;</b>.
 <br><br>If<b> &lt;buffer&gt;</b> is not specified, the active<b><i> copy buffer</i></b> is assumed.
-<br><br>If<b> &quot;!&quot;</b> is specified, then the lines are put before the line<b> &lt;line_number&gt;</b>
+<br><br>If<b> &quot;!&quot;</b> is specified, then the lines are put before the line<b> &lt;line_number&gt;</b>.
 </dl>
 <dl>
 <dt>Example(s):
@@ -4923,7 +4924,7 @@ that you really want to discard the modified file(s).&nbsp; If you do not respon
 <dl>
 <dt>Description:
 <dd>Reads the text from file<b> &lt;file_name&gt;</b> into the current edit buffer.&nbsp; The lines are placed after line specified
-by<b> &lt;line_number&gt;</b>If<b> &lt;line_number&gt;</b> is not specified, the current line is assumed.
+by<b> &lt;line_number&gt;</b>.&nbsp; If<b> &lt;line_number&gt;</b> is not specified, the current line is assumed.
 <br><br>Line 0 may be specified as<b> &lt;line_number&gt;</b> in order to read a file in before the first line of the current
 edit buffer.
 <br><br>Each file name<b> &lt;file_name&gt;</b> may contain file regular expressions, see the section <a href="#File_Matching_Regular_Expressions">File Matching Regular Expressions</a>
@@ -4991,7 +4992,7 @@ dollar sign are treated as a file regular expression, which is used to read in t
 </dl>
 <dl>
 <dt>Description:
-<dd>Certain variables within Vi may be changed after Vi is executing.<b>&nbsp; &lt;value&gt;</b> is assigned to<b> &lt;variable&gt;</b>
+<dd>Certain variables within Vi may be changed after Vi is executing.<b>&nbsp; &lt;value&gt;</b> is assigned to<b> &lt;variable&gt;</b>.
 <br><br>If<b> &lt;variable&gt;</b> and<b> &lt;value&gt;</b> are not specified, the a window containing a list of all boolean
 values is displayed.
 <br><br>If<b> &lt;variable&gt;</b> is specified as a<b> 2</b>, then a window containing all other values is displayed.
@@ -5015,8 +5016,9 @@ values is displayed.
 </dl>
 <dl>
 <dt>Description:
-<dd>Set the color number<b> &lt;c&gt;</b> to have the RGB value<b> &lt;r&gt;</b>,<b> &lt;g&gt;</b>,<b> &lt;b&gt; &lt;c&gt;</b>
-may have a value of 0 to 15.<b>&nbsp; &lt;c&gt;</b>,<b> &lt;r&gt;</b>, and<b> &lt;g&gt;</b> may have values from 0 to 63.
+<dd>Set the color number<b> &lt;c&gt;</b> to have the RGB value<b> &lt;r&gt;</b>,<b> &lt;g&gt;</b>,<b> &lt;b&gt;</b>.<b>&nbsp;
+&lt;c&gt;</b> may have a value of 0 to 15.<b>&nbsp; &lt;c&gt;</b>,<b> &lt;r&gt;</b>, and<b> &lt;g&gt;</b> may have values
+from 0 to 63.
 <br><br>This command only has an affect under operating systems where it is possible to remap the colors in some way (DOS).
 </dl>
 <dl>
@@ -5069,8 +5071,8 @@ at (10,10).
 </dl>
 <dl>
 <dt>Description:
-<dd>Execute Vi source script file<b> &lt;script&gt;</b>Optional parameters<b> &lt;p1&gt;</b> to<b> &lt;pn&gt;</b> may be specified,
-these are passed to the specified script.
+<dd>Execute Vi source script file<b> &lt;script&gt;</b>.&nbsp; Optional parameters<b> &lt;p1&gt;</b> to<b> &lt;pn&gt;</b> may
+be specified, these are passed to the specified script.
 <br><br>If &quot;.&quot; is specified as the script name, the current file being edited is run as a script.
 <br><br>For information on editor scripts, see the chapter <a href="#Editor_Script_Language">Editor Script Language</a>.
 </dl>
@@ -5093,11 +5095,11 @@ these are passed to the specified script.
 </dl>
 <dl>
 <dt>Description:
-<dd>Over the line range<b> &lt;line_range&gt;</b>, replace each occurrence of regular expression<b> &lt;regexp&gt;</b> with the
-replacement expression<b> &lt;replexp&gt;</b>.
-<br><br>Only the first occurrence on each line is replaced, unless<b> &lt;g&gt;</b> is specified, in which case all occurrences
+<dd>Over the line range<b> &lt;line_range&gt;</b>, replace each occurrence of regular expression &lt;<b>regexp</b>&gt; with the
+replacement expression &lt;<b>replexp</b>&gt;.
+<br><br>Only the first occurrence on each line is replaced, unless &lt;<b>g</b>&gt; is specified, in which case all occurrences
 on a line are replaced.
-<br><br>If<b> &lt;i&gt;</b> is specified, each replacement is verified before it is performed.
+<br><br>If &lt;<b>i</b>&gt; is specified, each replacement is verified before it is performed.
 <br><br>See the chapter <a href="#Regular_Expressions">Regular Expressions</a> for more information on regular expression
 matching and substitution.
 </dl>
@@ -5124,10 +5126,10 @@ each change.&nbsp; The changes are only applied from the line containing mark<b>
 </dl>
 <dl>
 <dt>Description:
-<dd>Searches for the tag<b> &lt;tagname&gt;</b>Tags are kept in a special file, which must be located somewhere in your path.
-&nbsp;This file is controlled with the <a href="#tagfilename">tagfilename</a> setting; the default for this setting is<b>
-tags</b>.&nbsp; The tags file contains a collection of procedure names and typedefs, along with the file in which they are
-located and a search command/line number with which to exactly locate the tag.
+<dd>Searches for the tag<b> &lt;tagname&gt;</b>.&nbsp; Tags are kept in a special file, which must be located somewhere in your
+path.&nbsp; This file is controlled with the <a href="#tagfilename">tagfilename</a> setting; the default for this setting
+is<b> tags</b>.&nbsp; The tags file contains a collection of procedure names and typedefs, along with the file in which they
+are located and a search command/line number with which to exactly locate the tag.
 <br><br>See the appendix <a href="#CTAGS">CTAGS</a> for more information.
 </dl>
 <dl>
@@ -5177,7 +5179,7 @@ are used (this is the default tile grid).
 </dl>
 <dl>
 <dt>Description:
-<dd>Removes the abbreviation<b> &lt;abbrev&gt;</b>See the <a href="#ABBREV">ABBREV</a> command for how to set an abbreviation.
+<dd>Removes the abbreviation<b> &lt;abbrev&gt;</b>.&nbsp; See the <a href="#ABBREV">ABBREV</a> command for how to set an abbreviation.
 </dl>
 <dl>
 <dt>Example(s):
@@ -5196,8 +5198,8 @@ are used (this is the default tile grid).
 </dl>
 <dl>
 <dt>Description:
-<dd>Removes the<b><i> command line</i></b> alias<b> &lt;alias&gt;</b>See the <a href="#ALIAS">ALIAS</a> command for how to set
-a<b><i> command line</i></b> alias.
+<dd>Removes the<b><i> command line</i></b> alias<b> &lt;alias&gt;</b>.&nbsp; See the <a href="#ALIAS">ALIAS</a> command for how
+to set a<b><i> command line</i></b> alias.
 </dl>
 <dl>
 <dt>Example(s):
@@ -5231,8 +5233,8 @@ However, once you modify the file, you can longer undo the last undo.
 <dd>Removes the mapping of the key<b> &lt;key&gt;</b> for<b><i> command mode</i></b>.&nbsp; If<b> &quot;!&quot;</b> is specified,
 then the key mapping is removed for<b><i> text insertion mode</i></b>.&nbsp; See the <a href="#MAP">MAP</a> command for details
 on mapping keys.
-<br><br>There are a number of pre-defined symbols that are recognized for<b> &quot;!&quot;</b>These are described in the Appendix
-<a href="#Symbolic_Keystrokes">Symbolic Keystrokes</a>.
+<br><br>There are a number of pre-defined symbols that are recognized for<b> &quot;!&quot;</b>.&nbsp; These are described
+in the Appendix <a href="#Symbolic_Keystrokes">Symbolic Keystrokes</a>.
 </dl>
 <dl>
 <dt>Example(s):
@@ -5306,7 +5308,7 @@ is specified, this functions just like the <a href="#EDIT">EDIT</a> command.
 </dl>
 <dl>
 <dt>Description:
-<dd>Writes the specified range of lines<b> &lt;line_range&gt;</b> to the file<b> &lt;file_name&gt;</b>
+<dd>Writes the specified range of lines<b> &lt;line_range&gt;</b> to the file<b> &lt;file_name&gt;</b>.
 <br><br>If no line range is specified, then all lines are written.
 <br><br>If<b> &lt;file_name&gt;</b> is not specified, then the current file is written.&nbsp; If<b> &lt;file_name&gt;</b>
 exists, and is not the name of the file that you are writing, then the write will fail.
@@ -5345,7 +5347,7 @@ exists.
 </dl>
 <dl>
 <dt>Description:
-<dd>Yank (make a copy of) the specified line range<b> &lt;line_range&gt;</b>
+<dd>Yank (make a copy of) the specified line range<b> &lt;line_range&gt;</b>.
 <br><br>If<b> &lt;buffer&gt;</b> is not specified, the text is yanked (copied) into the active<b><i> copy buffer</i></b>.
 <br><br>If<b> &lt;buffer&gt;</b> ('1'-'9', or 'a'-'z') is specified, the text is yanked into that<b><i> copy buffer</i></b>.
 <br><br>The <a href="#PUT">PUT</a> command may be used to place the contents of a<b><i> copy buffer</i></b> into the file.
@@ -7038,8 +7040,8 @@ the <a href="#RESIZE">RESIZE</a> command).&nbsp; The attribute is composed of a 
 </dl>
 <dl>
 <dt>Description:
-<dd>Sets tile area<b> &lt;n&gt;</b> to have the foreground color<b> &lt;fg&gt;</b> and the background color<b> &lt;bg&gt;</b>.
-<br><br>The tile area<b> &lt;n&gt;</b> must be in the range 1 to <a href="#maxtilecolors">maxtilecolors</a>.
+<dd>Sets tile area &lt;<b>n</b>&gt; to have the foreground color &lt;<b>fg</b>&gt; and the background color &lt;<b>bg</b>&gt;.
+<br><br>The tile area &lt;<b>n</b>&gt; must be in the range 1 to <a href="#maxtilecolors">maxtilecolors</a>.
 <br><br>The colors may be in the range 0-15, or one of the previously defined color keywords.
 <br><br>This option is only valid with the character mode versions of the editor.
 </dl>
@@ -7176,7 +7178,7 @@ replacement string.
 <dt>\t
 <dd>Replaced with a tab (if <a href="#realtabs">realtabs</a> is set).
 <dt>\&lt;n&gt;
-<dd>Each instance of<b> &lt;n&gt;</b>, where<b> &lt;n&gt;</b> is a digit from 0 to 9, is replaced by the n'th sub-expression in
+<dd>Each instance of &lt;<b>n</b>&gt;, where &lt;<b>n</b>&gt; is a digit from 0 to 9, is replaced by the n'th sub-expression in
 the regular expression.
 <dt>\u
 <dd>The next item in replacement string is changed to upper case.
@@ -7191,7 +7193,7 @@ the regular expression.
 <dt>\E
 <dd>Terminate a<b> \U or \L</b>.
 <dt>\|&lt;n&gt;
-<dd>Substitutes spaces up to column<b> &lt;n&gt;</b>, so that the item that follows occurs at column<b> &lt;n&gt;</b>.
+<dd>Substitutes spaces up to column &lt;<b>n</b>&gt;, so that the item that follows occurs at column &lt;<b>n</b>&gt;.
 <dt>\#
 <dd>Substitutes current line number that the match occurred on.
 </dl>
@@ -7974,7 +7976,7 @@ that in the corresponding place in the command you may enter<b> -c</b>.
 <br><br>In the syntax model for each command, the upper-case characters represent the minimal truncation of the command.&nbsp;
 For example, in its syntax model, the ASSIGN command is specified as &quot;ASSIGN&quot;, indicating that all the letters are
 required (there are no abbreviations, only &quot;assign&quot; is accepted as the command).
-<br><br>The term<b> &lt;expr&gt;</b> is used to indicate an expression in the following commands.&nbsp; Expressions are discussed
+<br><br>The term &lt;<b>expr</b>&gt; is used to indicate an expression in the following commands.&nbsp; Expressions are discussed
 in full detail in the section <a href="#Script_Expressions">Script Expressions</a> of this chapter.
 <br><br>Script variables are used by some of the following commands.&nbsp; Variables are discussed in full detail in the section
 <a href="#Script_Variables">Script Variables</a>
@@ -7997,41 +7999,41 @@ the entire script can be eliminated with a single <a href="#UNDO_LcommandR">UNDO
 </dl>
 <dl>
 <dt>Description:
-<dd>This command is used to assign the value<b> &lt;val&gt;</b> to the variable<b> &lt;v1&gt;</b>
-<br><br>The forward slashes ('/') around<b> &lt;val&gt;</b> are only need if there are spaces in<b> &lt;val&gt;</b>, or if
+<dd>This command is used to assign the value &lt;<b>val</b>&gt; to the variable<b> &lt;v1&gt;</b>
+<br><br>The forward slashes ('/') around &lt;<b>val</b>&gt; are only need if there are spaces in &lt;<b>val</b>&gt;, or if
 one of the special flags<b> r</b>,<b> x</b>,<b> l</b>,<b> $</b> or<b> @</b> is required at the end.
 <br><br>The special flags have the following meaning:
 <dl>
 <dt>r
-<dd>When this flag is used,<b> &lt;val&gt;</b> may contain regular expression replacement strings (using the last regular expression
+<dd>When this flag is used, &lt;<b>val</b>&gt; may contain regular expression replacement strings (using the last regular expression
 searched for).&nbsp; For more information on regular expressions, see the chapter <a href="#Regular_Expressions">Regular Expressions</a>.
 <dt>l
-<dd>When this flag is used,<b> &lt;val&gt;</b> is assumed to be an expression that indicates a line number.&nbsp; The expression
+<dd>When this flag is used, &lt;<b>val</b>&gt; is assumed to be an expression that indicates a line number.&nbsp; The expression
 is evaluated, and the data on the corresponding line number is assigned to<b> &lt;v1&gt;</b>
 <dt>x
-<dd>When this flag is used,<b> &lt;val&gt;</b> is assumed to be an expression, and is evaluated.&nbsp; The result is assigned
+<dd>When this flag is used, &lt;<b>val</b>&gt; is assumed to be an expression, and is evaluated.&nbsp; The result is assigned
 to<b> &lt;v1&gt;</b>For another way of assigning expression results to a variable, see the <a href="#EXPR">EXPR</a> script
 command.
 <dt>$ (dollar sign)
-<dd>When this flag is used,<b> &lt;val&gt;</b> is assumed to be the name of an operating system environment variable, and the
+<dd>When this flag is used, &lt;<b>val</b>&gt; is assumed to be the name of an operating system environment variable, and the
 contents of that environment variable is what is assigned to<b> &lt;v1&gt;</b>
 <dt>@
-<dd>When this flag is used,<b> &lt;val&gt;</b> may be the name of one of the <a href="#SET">SET</a> command parameters.<b>&nbsp;
+<dd>When this flag is used, &lt;<b>val</b>&gt; may be the name of one of the <a href="#SET">SET</a> command parameters.<b>&nbsp;
 &lt;v1&gt;</b> will be given the current value of that parameter.
 </dl>
-<br><b>&lt;val&gt;</b> may be coded as a special operator.&nbsp; If<b> &lt;val&gt;</b> is coded this way, the forward slashes
+<br>&lt;<b>val</b>&gt; may be coded as a special operator.&nbsp; If &lt;<b>val</b>&gt; is coded this way, the forward slashes
 ('/') must NOT be used.&nbsp; The special operators are:
 <dl>
 <dt>strlen &lt;v&gt;
-<dd>Computes the length of the variable<b> &lt;v&gt;</b>.&nbsp; This value is assigned to<b> &lt;v1&gt;</b>
+<dd>Computes the length of the variable &lt;<b>v</b>&gt;.&nbsp; This value is assigned to<b> &lt;v1&gt;</b>
 <dt>strchr &lt;v&gt; &lt;c&gt;
-<dd>Computes the offset of the character<b> &lt;c&gt;</b> in the variable<b> &lt;v&gt;</b>.&nbsp; The offset is assigned to<b>
-&lt;v1&gt;</b>Note that the character<b> &lt;c&gt;</b> may be a variable, the value of which will be expanded before offset
+<dd>Computes the offset of the character &lt;<b>c</b>&gt; in the variable &lt;<b>v</b>&gt;.&nbsp; The offset is assigned to<b>
+&lt;v1&gt;</b>Note that the character &lt;<b>c</b>&gt; may be a variable, the value of which will be expanded before offset
 is computed.
 <dt>substr &lt;v&gt; &lt;n1&gt; &lt;n2&gt;
-<dd>Computes a substring of the string contained in the variable<b> &lt;v&gt;</b>.&nbsp; The substring is composed of characters
-from offset<b> &lt;n1&gt;</b> to offset<b> &lt;n2&gt;</b>.&nbsp; The substring is assigned to<b> &lt;v1&gt;</b>Note that the
-parameters<b> &lt;n1&gt;</b> and<b> &lt;n2&gt;</b> may be variables, the values of which will be expanded before the substring
+<dd>Computes a substring of the string contained in the variable &lt;<b>v</b>&gt;.&nbsp; The substring is composed of characters
+from offset &lt;<b>n1</b>&gt; to offset &lt;<b>n2</b>&gt;.&nbsp; The substring is assigned to<b> &lt;v1&gt;</b>Note that the
+parameters &lt;<b>n1</b>&gt; and &lt;<b>n2</b>&gt; may be variables, the values of which will be expanded before the substring
 is computed.
 </dl>
 </dl>
@@ -8765,8 +8767,8 @@ behaviour.
 <br><br>Commands preceded with a<b> &lt;n&gt;</b> take a repeat count.
 <br><br>Commands preceded with a<b> &lt;&quot;?&gt;</b> accept a<b><i> copy buffer</i></b> name.
 <br><br>Commands that accept mark letter ('a'-'z') have a<b> &lt;?&gt;</b> in their definition.
-<br><br>The<b> &lt;oper&gt;</b> notation in the following commands indicates some sort of operator that the command will act
-on.<b>&nbsp; &lt;oper&gt;</b> may be one of:
+<br><br>The &lt;<b>oper</b>&gt; notation in the following commands indicates some sort of operator that the command will act
+on.&nbsp; &lt;<b>oper</b>&gt; may be one of:
 <ol>
 <li>A movement command.&nbsp; See the section <a href="#Movement">Movement</a> for a full description of all movement commands.
 &nbsp;If a movement command is specified, then the range that the command will act on is from the current position to the
@@ -8781,7 +8783,7 @@ position that would be achieved by using the movement command.
 <br>See the section <a href="#Searching">Searching</a> for a full description of the searching commands.&nbsp; If a search
 command is specified, then the range that the command will act on is from the current position to the position that would
 be achieved by using the search command.
-<li>The current selected (highlighted) region.&nbsp; In this case,<b> &lt;oper&gt;</b> is the<b> r</b> key.
+<li>The current selected (highlighted) region.&nbsp; In this case, &lt;<b>oper</b>&gt; is the<b> r</b> key.
 <li>The same character as the command character.&nbsp; This causes the command to operate on the current line.
 </ol>
 <dl>
