@@ -391,7 +391,7 @@ different.&nbsp; Vi was designed with this in mind.&nbsp; Most features in Vi ar
 <li>powerful script language
 <ul>
 <li>local and global variables
-<li>structured constructs (loop, while, if/elseif/else )
+<li>structured constructs (loop, while, if/elseif/else)
 <li>arbitrary conditional expressions
 <li>file I/O
 </ul>
@@ -435,12 +435,12 @@ your screen.&nbsp; This is called the mouse cursor.
 <ul>
 <li>The top line of the screen is the<b><i> menu bar</i></b> which contains all of the menu choices, the current mode, and
 the current time.
-<li>The large window below the menu bar is the<b><i> edit window.</i></b>&nbsp; Since Vi is a multiple file editor, you may
+<li>The large window below the menu bar is the<b><i> edit window</i></b>.&nbsp; Since Vi is a multiple file editor, you may
 have more than one edit window.&nbsp; Other edit windows are usually covered by the current edit window, unless you change
 the size and position of the edit windows.
-<li>The lower left corner of the screen contains the<b><i> status window.</i></b>&nbsp; This window typically shows the current
+<li>The lower left corner of the screen contains the<b><i> status window</i></b>.&nbsp; This window typically shows the current
 row and column.
-<li>The majority of the bottom of the screen contains the<b><i> message window.</i></b>&nbsp; This window displays all errors
+<li>The majority of the bottom of the screen contains the<b><i> message window</i></b>.&nbsp; This window displays all errors
 and informational messages.
 </ul>
 <br>In the edit window will be a flashing line.&nbsp; This flashing line is the cursor, and it indicates which line you are
@@ -504,7 +504,7 @@ mode</i></b>, you will see the following:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: overstrike</tt>
 <br><br>depending on whether you are inserting or overstriking text.
 <br><br>Vi is in<b><i> command mode</i></b> by default.&nbsp; There are numerous ways to enter<b><i> text insertion mode</i></b>,
-the easiest of which is to press the<b> Insert</b> key on your keyboard.
+the easiest of which is to press the<b> INS</b> key on your keyboard.
 <br><br>The<b> ESC</b> key is one of the more important keys in Vi.&nbsp; Pressing<b> ESC</b> once will stop whatever you
 are doing and return you to<b><i> command mode</i></b>.&nbsp; If you have started a<b><i> command mode</i></b> sequence, pressing<b>
 ESC</b> will cancel the command and return you to<b><i> command mode</i></b>.
@@ -516,7 +516,7 @@ ESC</b> will cancel the command and return you to<b><i> command mode</i></b>.
 <br><br>You will see a screen that looks like the following:
 <br><br><tt><img src="vi001.bmp" align=middle></tt>
 <br><b><i>Figure 3.</i></b><b><i></i></b><b> The Vi screen</b>
-<br><br>Press the insert (<b> INS</b> ) key.&nbsp; The cursor will get larger and you will see the mode indicator change from
+<br><br>Press the<b> INS</b> key.&nbsp; The cursor will get larger and you will see the mode indicator change from
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: command</tt>
 <br><br>to
@@ -643,7 +643,7 @@ in whatever way you choose.&nbsp; Once you are done, you may press the<b> ESC</b
 BS.</b>
 <dt>ENTER
 <dd>Start a new line.
-<dt>INS
+<dt>INS (Insert key)
 <dd>Toggles between inserting and overstriking text.
 </dl>
 <br>Along with the<b> INS</b> key, there are a number of other keys that you can press in<b><i> command mode</i></b> that
@@ -764,7 +764,7 @@ some simple ways of deleting text and moving it elsewhere.
 <h3 id="Lines"> Lines </h3>
 <br>The section <a href="#Inputting_Text">Inputting Text</a> noted that pressing<b> CTRL_DEL</b> (control-delete) deleted
 a line when inputting text.&nbsp; This same command can be used while in<b><i> command mode</i></b>.
-<br><br>If you want to delete more than one line at once, you may precede this delete command with a<b><i> repeat count.</i></b>
+<br><br>If you want to delete more than one line at once, you may precede this delete command with a<b><i> repeat count</i></b>.
 &nbsp;You enter a repeat count simply by typing numbers before you press<b> CTRL_DEL</b>.&nbsp; As you type a number in<b><i>
 command mode</i></b>, it will appear in a special window, as follows:
 <br><br><tt><img src="vi008.bmp" align=middle></tt>
@@ -876,7 +876,7 @@ This will delete all three lines, and you will have an empty edit buffer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is a test line.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is another test line.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is a test line.</tt>
-<li>Go to the first line in the file, and to the first column (try pressing<b> CTRL_PAGEUP</b> ).&nbsp; Then press the 'x'
+<li>Go to the first line in the file, and to the first column (try pressing<b> CTRL_PAGEUP</b>).&nbsp; Then press the 'x'
 key.&nbsp; The first line should become:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; his is a test line.</tt>
@@ -1621,7 +1621,7 @@ have up to 26 marks in it (identified via the letters 'a' through 'z').&nbsp; Ma
 line</i></b> command <a href="#MARK">MARK</a>.
 <br><br>A mark is useful in that you do not have to remember a specific line number, you just need to remember the letter
 that you picked for the mark name.&nbsp; You can then return to the line or even the exact position on the line easily.
-<br><br>You may set a mark by pressing the letter 'm' (in<b><i> command mode</i></b> ) and pressing one of the letters from
+<br><br>You may set a mark by pressing the letter 'm' (in<b><i> command mode</i></b>) and pressing one of the letters from
 'a' to 'z'.&nbsp; For example, if you type
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ma</tt>
@@ -1769,7 +1769,7 @@ by preceding it with double quotes (&quot;).&nbsp; For example:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;zdd&nbsp; - delete 3 lines into buffer 'z'.</tt>
 <br><br>The optional<b><i> copy buffer</i></b> is a place where deleted or yanked text resides.&nbsp; If you do not specify
 a buffer, then the active<b><i> copy buffer</i></b> is assumed.&nbsp; There are 9 numbered buffers (1-9) that may be selected
-as the active<b><i> copy buffer</i></b> (buffer 1 is the default active<b><i> copy buffer</i></b> ).&nbsp; When text enters
+as the active<b><i> copy buffer</i></b> (buffer 1 is the default active<b><i> copy buffer</i></b>).&nbsp; When text enters
 the active<b><i> copy buffer</i></b>, the old contents of the active<b><i> copy buffer</i></b> spills into the next<b><i>
 copy buffer</i></b>.&nbsp; The contents of each<b><i> copy buffer</i></b> spills into the next, with the end<b><i> copy buffer</i></b>
 (9) losing its contents.
@@ -2377,7 +2377,7 @@ key until the mode indicator on the menu bar displays:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mode: command</tt>
 <br><br>When in<b><i> text insertion mode</i></b>, text may be entered.&nbsp; There are two aspects to<b><i> text insertion
-mode</i></b> :<b><i>&nbsp; insert</i></b> and<b><i> overstrike</i></b>.<b><i>&nbsp; text insertion mode</i></b> is entered
+mode</i></b>:<b><i>&nbsp; insert</i></b> and<b><i> overstrike</i></b>.<b><i>&nbsp; text insertion mode</i></b> is entered
 via a number of different commands from<b><i> command mode</i></b>, and is indicated by a larger cursor, along with a mode
 line indication.&nbsp; The types of cursor are controlled with the <a href="#commandcursortype">commandcursortype</a>, <a href="#insertcursortype">insertcursortype</a>,
 and <a href="#overstrikecursortype">overstrikecursortype</a> settings.
@@ -2393,7 +2393,7 @@ through the file.&nbsp; When you are finished adding text, the<b> ESC</b> key re
 <br><br>It should be remembered that an undo applies to changes caused by commands; so all changes made while in<b><i> text
 insertion mode</i></b> are part of a single undo record.&nbsp; For more information on undos, see the section <a href="#Undoing_Changes">Undoing Changes</a>
 later on in this chapter.
-<br><br>The following keys, when pressed in<b><i> command mode</i></b>, place you into<b><i> text insertion mode</i></b> :
+<br><br>The following keys, when pressed in<b><i> command mode</i></b>, place you into<b><i> text insertion mode</i></b>:
 <dl>
 <dt>a
 <dd>Starts appending (inserting) text after the current character in the edit buffer.
@@ -3085,8 +3085,7 @@ matches.&nbsp; Cursor keys may also be used, and so may the mouse.
 <br><b><i>Figure 27.</i></b><b><i></i></b><b> File Name Completion Window</b>
 </dl>
 <h3 id="Inserting_Text"> Inserting Text </h3>
-<br>The following commands cause Vi to go from<b><i> command mode</i></b> directly into<b><i> text insertion mode</i></b>
-:
+<br>The following commands cause Vi to go from<b><i> command mode</i></b> directly into<b><i> text insertion mode</i></b>:
 <dl>
 <dt>INS 
 <dd>Starts inserting text before the current character in the edit buffer.
@@ -3832,7 +3831,7 @@ For example, in its syntax model, the edit command is specified as &quot;Edit&qu
 &quot;edi&quot;, and &quot;edit&quot; are acceptable abbreviations (and that &quot;e&quot; is the shortest of them).
 <br><br>Some commands are noted as &quot;EX mode only&quot;.&nbsp; This means that the command is not available from the normal<b><i>
 command line</i></b> ; it may only be used from an editor<b><i> script</i></b> or from<b><i> EX mode</i></b> (which is entered
-by pressing 'Q' in<b><i> command mode</i></b> ).
+by pressing 'Q' in<b><i> command mode</i></b>).
 <h3 id="Y"> &gt; </h3>
 <dl>
 <dt>Syntax:
@@ -4361,7 +4360,7 @@ them.&nbsp; A file may be selected from this list either with the keyboard or wi
 <dt>Description:
 <dd>Activates the floating (popup) menu<b> &lt;id&gt;</b> (<b>&lt;id&gt;</b> may be 0, 1, 2 or 3).
 <br><br>The floating menus are defined using the<b><i> command line</i></b> command <a href="#MENU">MENU</a> (See the section
-<a href="#Menu_Commands">Menu Commands</a> ).
+<a href="#Menu_Commands">Menu Commands</a>).
 <br><br><b>&lt;x1&gt;</b>,<b> &lt;y1&gt;</b> specify the coordinates of the upper left hand corner of the floating menu.&nbsp;
 (0,0) specifies the upper left hand corner of the screen.
 <br><br><b>&lt;slen&gt;</b> defines the length of a string that the menu is around the floating menu will try to appear around
