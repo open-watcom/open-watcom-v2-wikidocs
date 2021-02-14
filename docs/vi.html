@@ -468,12 +468,6 @@ bar below the scroll thumb, you move one page down in the file.
 <br><br>at the command prompt.&nbsp; Try typing this.&nbsp; You will see something similar to the following:
 <br><br><tt><img src="vi001.bmp" align=middle></tt>
 <br><b><i>Figure 2.</i></b><b><i></i></b><b> The Vi screen</b>
-<br><br>If you are running DOS on a 386 (or higher) machine, then you can also use the<b><i> protected mode</i></b> version
-of Vi.&nbsp; This version of Vi runs as a native 386 application, which means that it has access to more memory and will do
-its processing more quickly.&nbsp; You can start this version by typing
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; vip</tt>
-<br><br>at the command prompt.
 <br><br>Vi also accepts one or more files as an optional parameter.&nbsp; Each file that you specify will be edited by Vi.
 &nbsp;For example, typing
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1994,19 +1988,19 @@ dot ('.') key.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 3dd</tt>
 <br><br>to delete 3 lines.&nbsp; If you press '.' after this, you will delete another 3 lines.
 <br><br>There are two useful extension to this as well.&nbsp; Vi has concepts known as<b><i> memorize mode</i></b> and<b><i>
-alternate memorize mode</i></b>.&nbsp; You enter memorize mode by pressing the letter 'm' (also used to set a mark) followed
-by a dot ('.').&nbsp; You will then see the message
+alternate memorize mode</i></b>.&nbsp; You enter<b><i> memorize mode</i></b> by pressing the letter 'm' (also used to set
+a mark) followed by a dot ('.').&nbsp; You will then see the message
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Memorize Mode started</tt>
 <br><br>From this point forward, every key that you type is memorized.&nbsp; When you are done memorizing, you can then press
-the dot ('.') key while in<b><i> command mode</i></b>, and this ends memorize mode.&nbsp; You will see the message:
+the dot ('.') key while in<b><i> command mode</i></b>, and this ends<b><i> memorize mode</i></b>.&nbsp; You will see the message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Memorize Mode ended</tt>
 <br><br>Once you have memorized a key sequence, you can re-execute it by pressing dot ('.').&nbsp; This will cause Vi to behave
 as if all the keys you memorized were being typed by you again.
 <br><br>The memorized sequence will be lost the next time you change the text other than with '.'.&nbsp; To memorize a sequence
-that will always be remembered, you can use<b><i> alternate memorize mode</i></b>.&nbsp; This mode is used the same way as
-memorize mode, only you use an equals sign ('=') instead of a dot ('.').
+that will always be remembered, you can use<b><i> alternate memorize mode</i></b>.&nbsp; This mode is used the same way as<b><i>
+memorize mode</i></b>, only you use an equals sign ('=') instead of a dot ('.').
 <br><br><b>Exercises</b>
 <ol>
 <li>Edit the file &quot;atest&quot; from the Exercises section of <a href="#Moving_Around_in_a_File">Moving Around in a File</a>.
@@ -2017,11 +2011,11 @@ memorize mode, only you use an equals sign ('=') instead of a dot ('.').
 <li>Move to the first column of the first line.&nbsp; Type the<b><i> command mode</i></b> command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; m.</tt>
-<br><br>This will start you in memorize mode.&nbsp; Now, type:
+<br><br>This will start you in<b><i> memorize mode</i></b>.&nbsp; Now, type:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dwjdwj.</tt>
 <br><br>This deletes the word on the first line, goes down to the next line, deletes another word on the next line, and goes
-down one more line.&nbsp; The final dot ('.') terminates memorize mode.
+down one more line.&nbsp; The final dot ('.') terminates<b><i> memorize mode</i></b>.
 <li>Now, press dot ('.').&nbsp; This will delete the first word of the next two lines.
 <li>Make sure you are in<b><i> command mode</i></b> and enter the<b><i> command line</i></b> command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -3666,21 +3660,21 @@ are stacked up, up to a maximum of <a href="#maxpush">maxpush</a>.
 <dd>Repeat the last<b><i> command mode</i></b> command that changed text in the edit buffer.&nbsp; It is also possible to memorize
 more than just one command for '.' by using<b><i> memorize mode</i></b>:
 <ol>
-<li>Type &quot;<b> m.</b>&quot;.&nbsp; (Vi enters memorize mode).
+<li>Type &quot;<b>m.</b>&quot; (Vi enters<b><i> memorize mode</i></b>).
 <li>Enter keystrokes.
-<li>Type &quot;<b> .</b>&quot;
+<li>Type &quot;<b>.</b>&quot;
 </ol>
 <br>Now, whenever you press dot ('.'), all the entered keystrokes will be executed.
 <dt>= (equals sign) 
 <dd>Performs the last alternate memorized command sequence.&nbsp; The<b><i> alternate memorize mode</i></b> is used as follows:
 <ol>
-<li>Type &quot;<b> m=</b>&quot;.&nbsp; (Vi enters<b><i> alternate memorize mode</i></b>).
+<li>Type &quot;<b>m=</b>&quot; (Vi enters<b><i> alternate memorize mode</i></b>).
 <li>Enter keystrokes.
-<li>Type &quot;<b> =</b>&quot;
+<li>Type &quot;<b>=</b>&quot;
 </ol>
 <br>Now, whenever you press the equals sign ('='), all the entered keystrokes will be executed as if you typed them again
 from the keyboard.
-<br><br>This memorized keystroke sequence will last until you memorize another, unlike using &quot;<b> m.</b>&quot;.
+<br><br>This memorized keystroke sequence will last until you memorize another, unlike using &quot;<b>m.</b>&quot;.
 <dt>ALT_M 
 <dd>Display current memory state.&nbsp; Shows the total amount of memory, the amount of memory for use by Vi, and how much extended
 memory and/or disk space is available.
@@ -4365,13 +4359,13 @@ them.&nbsp; A file may be selected from this list either with the keyboard or wi
 </dl>
 <dl>
 <dt>Description:
-<dd>Activates the floating (popup) menu<b> &lt;id&gt;</b> (<b> &lt;id&gt;</b> may be 0, 1, 2 or 3).
+<dd>Activates the floating (popup) menu<b> &lt;id&gt;</b> (<b>&lt;id&gt;</b> may be 0, 1, 2 or 3).
 <br><br>The floating menus are defined using the<b><i> command line</i></b> command <a href="#MENU">MENU</a> (See the section
 <a href="#Menu_Commands">Menu Commands</a> ).
 <br><br><b>&lt;x1&gt;</b>,<b> &lt;y1&gt;</b> specify the coordinates of the upper left hand corner of the floating menu.&nbsp;
 (0,0) specifies the upper left hand corner of the screen.
 <br><br><b>&lt;slen&gt;</b> defines the length of a string that the menu is around the floating menu will try to appear around
-the string (<b> &lt;id&gt;</b> may be 0).&nbsp; This is useful if you wish to pop up a menu around some selected characters
+the string (<b>&lt;id&gt;</b> may be 0).&nbsp; This is useful if you wish to pop up a menu around some selected characters
 on a line, for example.
 <br><br>If<b> &lt;slen&gt;</b> is non-zero, then the coordinates is assumed to be the lower right-hand side of the string
 that the menu is popping up around.
@@ -5049,8 +5043,8 @@ from 0 to 63.
 </dl>
 <dl>
 <dt>Description:
-<dd>Resizes the current edit buffer window to have upper left-hand corner at (<b> &lt;x1&gt;</b>,<b> &lt;y1&gt;</b>) and lower
-right-hand corner at (<b> &lt;x2&gt;</b>,<b> &lt;y2&gt;</b>).
+<dd>Resizes the current edit buffer window to have upper left-hand corner at (<b>&lt;x1&gt;</b>,<b>&lt;y1&gt;</b>) and lower right-hand
+corner at (<b>&lt;x2&gt;</b>,<b>&lt;y2&gt;</b>).
 </dl>
 <dl>
 <dt>Example(s):
@@ -5152,8 +5146,8 @@ The or bars ('|') in the command syntax indicate that only one of the options ma
 are used (this is the default tile grid).
 <br><br>If<b> &quot;h&quot;</b> is specified, then files are tiled horizontally (as many as will fit).
 <br><br>If<b> &quot;v&quot;</b> is specified, then files are tiled vertically (as many as will fit).
-<br><br>Specifying<b> &lt;x&gt; &lt;y&gt;</b> overrides the default tile grid.&nbsp; As a special case, specifying<b> &lt;x&gt;
-&lt;y&gt;</b> as 1 1 causes all windows to be restored.
+<br><br>Specifying<b> &lt;x&gt;&lt;y&gt;</b> overrides the default tile grid.&nbsp; As a special case, specifying<b> &lt;x&gt;&lt;y&gt;</b>
+as 1 1 causes all windows to be restored.
 </dl>
 <dl>
 <dt>Example(s):
@@ -5434,7 +5428,7 @@ of -1.
 </dl>
 <dl>
 <dt>Description:
-<dd>(<b> &lt;x1&gt;</b>,<b> &lt;y1&gt;</b>) specifies the coordinates of the upper left-hand corner of the window, and (<b> &lt;x2&gt;</b>,<b>
+<dd>(<b>&lt;x1&gt;</b>,<b> &lt;y1&gt;</b>) specifies the coordinates of the upper left-hand corner of the window, and (<b>&lt;x2&gt;</b>,<b>
 &lt;y2&gt;</b>) specifies the coordinates of the lower right-hand corner of the window.
 <br><br>Open Watcom Vi Editor editor automatically senses the number of lines and columns available.&nbsp; The global variables
 %(SW) (screen width) and %(SH) (screen height) are always set.&nbsp; These are useful for coding dimensions that are relative
@@ -8764,9 +8758,9 @@ typed it.&nbsp; Thus, once the script is done, the user is left inserting text.
 <h1 id="Command_Mode_Key_Summary"> Command Mode Key Summary </h1>
 <br><br>The following is a list of all possible keys that may be pressed in<b><i> command mode</i></b>, and their default
 behaviour.
-<br><br>Commands preceded with a<b> &lt;n&gt;</b> take a repeat count.
-<br><br>Commands preceded with a<b> &lt;&quot;?&gt;</b> accept a<b><i> copy buffer</i></b> name.
-<br><br>Commands that accept mark letter ('a'-'z') have a<b> &lt;?&gt;</b> in their definition.
+<br><br>Commands preceded with a &lt;<b>n</b>&gt; take a repeat count.
+<br><br>Commands preceded with a &lt;<b>&quot;?</b>&gt; accept a<b><i> copy buffer</i></b> name.
+<br><br>Commands that accept mark letter ('a'-'z') have a &lt;<b>?</b>&gt; in their definition.
 <br><br>The &lt;<b>oper</b>&gt; notation in the following commands indicates some sort of operator that the command will act
 on.&nbsp; &lt;<b>oper</b>&gt; may be one of:
 <ol>
@@ -8902,7 +8896,7 @@ be achieved by using the search command.
 <dt>_
 <dd>Simulate right-mouse button press.
 <dt>`&lt;?&gt;
-<dd>Go to the line and column with the mark<b> &lt;?&gt;</b>.
+<dd>Go to the line and column with the mark &lt;<b>?</b>&gt;.
 <dt>a
 <dd>Start inserting text at the character after the current cursor position.
 <dt>&lt;n&gt;b
@@ -8914,7 +8908,7 @@ be achieved by using the search command.
 <dt>&lt;n&gt;e
 <dd>Move to the end of the current word.
 <dt>&lt;n&gt;f&lt;?&gt;
-<dd>Move forward to the character<b> &lt;?&gt;</b> on the current line.
+<dd>Move forward to the character &lt;<b>?</b>&gt; on the current line.
 <dt>&lt;n&gt;h
 <dd>Move left.
 <dt>i
@@ -8926,7 +8920,7 @@ be achieved by using the search command.
 <dt>&lt;n&gt;l
 <dd>Move right.
 <dt>m&lt;?&gt;
-<dd>Set the mark<b> &lt;?&gt;</b>.
+<dd>Set the mark &lt;<b>?</b>&gt;.
 <dt>n
 <dd>Repeat the last find command.
 <dt>o
@@ -8938,7 +8932,7 @@ be achieved by using the search command.
 <dt>&lt;n&gt;s
 <dd>Substitute the current character with text.
 <dt>&lt;n&gt;t&lt;?&gt;
-<dd>Move up to the character before the character<b> &lt;?&gt;</b> on the current line.
+<dd>Move up to the character before the character &lt;<b>?</b>&gt; on the current line.
 <dt>u
 <dd>Undo the last change.
 <dt>&lt;n&gt;w
