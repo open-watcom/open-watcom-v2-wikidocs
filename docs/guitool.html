@@ -2489,7 +2489,7 @@ Targets menu appears.&nbsp; If your cursor is positioned over a source file, the
 <br><br>Refer to the appropriate sections in this manual for detailed information on using the various applications.
 <h2 id="Invoking_DOS_Applications_from_the_IDE_under_OSD2"> Invoking DOS Applications from the IDE under OS/2 </h2>
 <br>There are occasions where you may wish to change the default DOS or WIN-OS/2 settings when running a DOS/Windows application
-from the IDE.&nbsp; The mechanism which we provide is through the use of a special<b> IDE_DOS_SETTINGS</b> environment variable.
+from the IDE.&nbsp; The mechanism which we provide is through the use of a special <b> IDE_DOS_SETTINGS</b> environment variable.
 &nbsp;For example, to set the DPMI memory limit to 16 and to enable DOS BREAK, you can set the environment variable as follows:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set ide_dos_settings=dpmi_memory_limit#16;dos_break#1</tt>
@@ -3578,9 +3578,9 @@ spent executing in DOS code may be determined.
 </dl>
 <h3 id="Using_the_Sampler_with_DOSD4GW_or_DOSD4G"> Using the Sampler with DOS/4GW or DOS/4G </h3>
 <br>This version of the sampler uses one of DOS/4GW or DOS/4G to run the sampler in 32-bit protected mode.&nbsp; One of DOS4GW.EXE
-or DOS4G.EXE must be located in the path specified in<b> DOS4GPATH</b> or<b> PATH.</b>&nbsp; The sampler will, in turn, invoke
-the program with any arguments specified on the command line.&nbsp; The following options are available.&nbsp; For a further
-description of options, see <a href="#Sampler_Command_Line_Options">Sampler Command Line Options</a>.
+or DOS4G.EXE must be located in the path specified in <b> DOS4GPATH</b> or <b> PATH.</b>&nbsp; The sampler will, in turn,
+invoke the program with any arguments specified on the command line.&nbsp; The following options are available.&nbsp; For
+a further description of options, see <a href="#Sampler_Command_Line_Options">Sampler Command Line Options</a>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wsamprsi &#91;wsample_options&#93; program &#91;arguments&#93;</tt>
 <dl>
@@ -3934,9 +3934,9 @@ or palettes that allow you to make choices and then simply drag them to the elem
 <br><b><i>Figure 57.</i></b><b><i></i></b><b> The Open Watcom Editor</b>
 <h2 id="Startup_Options"> Startup Options </h2>
 <br>When the Editor is started under Windows, a set of default options are used.&nbsp; To find out what options are available,
-modify the &quot;Command Line:&quot; of<b><i> Program Item Properties</i></b> dialog by adding &quot;-?&quot; after the program
-name and then start the Editor.&nbsp; Alternatively, you can use the Program Manager<b><i> Run</i></b> dialogue to start the
-Editor, specifying &quot;-?&quot; after the program name.
+modify the &quot;Command Line:&quot; of <b><i> Program Item Properties</i></b> dialog by adding &quot;-?&quot; after the program
+name and then start the Editor.&nbsp; Alternatively, you can use the Program Manager <b><i> Run</i></b> dialogue to start
+the Editor, specifying &quot;-?&quot; after the program name.
 <h2 id="Using_Menus"> Using Menus </h2>
 <br>The Editor follows standard Windows conventions for its menus.&nbsp; A brief description of each menu item appears in
 the status bar on the bottom right of the screen when you select it.
@@ -4316,7 +4316,7 @@ as well as all numbers, and upper and lower case letters.
 <h4 id="General_Options___FilenamesDPaths"> General Options :&nbsp; Filenames/Paths </h4>
 <br>Use the Filenames/Paths option to define the default directory to which the Editor writes temporary files and the Editor's
 history file.
-<br><br>The Temp Directory is set, by default, from the<b> TMPDIR</b> environment variable if it is defined.
+<br><br>The Temp Directory is set, by default, from the <b> TMPDIR</b> environment variable if it is defined.
 <br><br>Autosave files are written to the Temp Directory.
 <h4 id="General_Options___Miscellaneous"> General Options :&nbsp; Miscellaneous </h4>
 <br>Use the miscellaneous options to set:
@@ -4466,7 +4466,7 @@ inside the brackets, then any characters NOT in the string are matched
 then /.
 <li>All regular expressions following an at sign (@) are treated as case sensitive
 <li>All regular expressions following a tilde (~) are to be treated as case insensitive
-<li>If an exclamation point (!) occurs as the first character in a regular expression, it causes the ignoring of the<b><i>
+<li>If an exclamation point (!) occurs as the first character in a regular expression, it causes the ignoring of the <b><i>
 magic</i></b> setting; that is, all magic characters are treated as magical.&nbsp; An exclamation point (!) is treated as
 a regular character if it occurs anywhere but at the very start of the regular expression.
 </ul>
@@ -4515,7 +4515,7 @@ expression.
 <dt>char
 <dd>Any character.
 <dt>\char
-<dd>Forces \char to be accepted as char (no special meaning) except \t matches a tab character if<b><i> realtabs</i></b> is set.
+<dd>Forces \char to be accepted as char (no special meaning) except \t matches a tab character if <b><i> realtabs</i></b> is set.
 </dl>
 <h2 id="File_Matching_Regular_Expressions"> File Matching Regular Expressions </h2>
 <br>When specifying a file name in the Editor, it is possible to use a file matching regular expression.&nbsp; This expression
@@ -4560,7 +4560,7 @@ function.
 <dt>\n
 <dd>Replace with a new line
 <dt>\t
-<dd>Replace with a tab (if<b><i> realtabs</i></b> is set)
+<dd>Replace with a tab (if <b><i> realtabs</i></b> is set)
 <dt>\&lt;n&gt;
 <dd>Replace each instance of &lt;<b> n</b> &gt;, where &lt;<b> n</b> &gt; is a digit from 0 to 9, with the n'th sub-expression
 in the regular expression
@@ -4582,10 +4582,10 @@ in the regular expression
 <h2 id="Controlling_Magic_Characters"> Controlling Magic Characters </h2>
 <br>By default, all special characters in a regular expression are magical; that is, if a special character is used, it has
 a special meaning.&nbsp; To use a special character, like (, you must escape it (\().
-<br><br>However, it is possible to change this using the<b><i> magic</i></b> setting in the General Options dialog.&nbsp;
-If<b><i> magic</i></b> is turned on, then all special characters are magical.&nbsp; If<b><i> magic</i></b> is turned off,
+<br><br>However, it is possible to change this using the <b><i> magic</i></b> setting in the General Options dialog.&nbsp;
+If <b><i> magic</i></b> is turned on, then all special characters are magical.&nbsp; If <b><i> magic</i></b> is turned off,
 then any special characters listed in<b> Magic String Edit Control</b> in the General Options dialog lose their special meaning
-and are treated as regular characters.&nbsp; If<b><i> magic</i></b> is turned off and you want to use the characters in their
+and are treated as regular characters.&nbsp; If <b><i> magic</i></b> is turned off and you want to use the characters in their
 magical way, you must escape them with a \.
 <h1 id="The_Open_Watcom_Resource_Editor"> The Open Watcom Resource Editor </h1>
 <br><br>The Open Watcom Resource Editor is a full-featured editor that enables you to easily create and edit resources and
@@ -7329,7 +7329,7 @@ Win32 or OS/2.&nbsp; This option affects pass two only.
 <dd>Specifies the name of an additional input resource file.&nbsp; The option affects pass one only.&nbsp; This option may be
 specified multiple times.
 <dt>-i=path
-<dd>Specifies an include path.&nbsp; This include path is searched before the directories specified in the<b> INCLUDE</b> environment
+<dd>Specifies an include path.&nbsp; This include path is searched before the directories specified in the <b> INCLUDE</b> environment
 variable.&nbsp; This option affects pass one only.
 <dt>-k
 <dd>Disables the segment sorting feature (load optimization).&nbsp; If this option is not specified, the Open Watcom Resource
@@ -7368,8 +7368,8 @@ This option has no effect with Windows 3.1, Win32 or OS/2.&nbsp; This option aff
 <dt>-v2
 <dd>This is a debugging option.&nbsp; It causes WRC to print both tokens and grammar rules while pass one is performed.
 <dt>-x
-<dd>This option causes WRC to ignore the<b> INCLUDE</b> environment variable.&nbsp; Normally, the Open Watcom Resource Compiler
-searches the directories specified in the<b> INCLUDE</b> environment variable for files specified in a #include directive
+<dd>This option causes WRC to ignore the <b> INCLUDE</b> environment variable.&nbsp; Normally, the Open Watcom Resource Compiler
+searches the directories specified in the <b> INCLUDE</b> environment variable for files specified in a #include directive
 in the<tt> .RC</tt> file.&nbsp; This option affects pass one only.
 <dt>-zk{0,1,2,3}
 <dd>Strings contained in resources in the<tt> .RC</tt> file are assumed to contain double byte characters from the appropriate

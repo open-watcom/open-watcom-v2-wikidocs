@@ -388,8 +388,8 @@ that you are about to attempt.&nbsp; Of course, you can add or remove features a
 of the other product, we do NOT recommend that you install the new product into the same directory as the old product.&nbsp;
 The Open Watcom C/C++ and Open Watcom FORTRAN 77 products are compatible at the same version number.&nbsp; However, the Open
 Watcom C/C++ and Open Watcom FORTRAN 77 products are usually NOT compatible across different version numbers.&nbsp; If this
-is the case, care must be exercised when switching between use of the two products.&nbsp; Environment variables such as<b>
-PATH</b> and<b> WATCOM</b> must be modified and/or corrected.&nbsp; System files such as<tt> CONFIG.SYS</tt> and<tt> SYSTEM.INI</tt>
+is the case, care must be exercised when switching between use of the two products.&nbsp; Environment variables such as <b>
+PATH</b> and <b> WATCOM</b> must be modified and/or corrected.&nbsp; System files such as<tt> CONFIG.SYS</tt> and<tt> SYSTEM.INI</tt>
 must be modified and/or corrected.
 <br><br>If you are installing both Open Watcom C/C++ 2.0 and Open Watcom FORTRAN 77 2.0, we recommend that you install both
 products under the same directory.&nbsp; This will eliminate duplication of files and, as a result, reduce the total required
@@ -504,8 +504,8 @@ You must ensure that EPM is installed in your OS/2 system if you are planning to
 the Enhanced Editor by running the OS/2 Setup and Installation program (Selective Install) and choosing &quot;Enhanced Editor&quot;
 from the &quot;Tools and Games&quot; detail page.
 <li>On some systems with limited memory that use the UNDELETE feature of OS/2, compile times may be slow because OS/2 is saving
-copies of compiler temporary files.&nbsp; You may start the BATSERV process using the OS/2<tt> STARTUP.CMD</tt> file with<b>
-DELDIR</b> turned off as illustrated below.
+copies of compiler temporary files.&nbsp; You may start the BATSERV process using the OS/2<tt> STARTUP.CMD</tt> file with
+<b> DELDIR</b> turned off as illustrated below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET OLD_DEL_DIR=%DELDIR%</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET DELDIR=</tt>
@@ -939,7 +939,7 @@ error messages, and debugging techniques.
 <h2 id="Accessing_OnMline_Documentation"> Accessing On-line Documentation </h2>
 <br>The following sections describe how to access the on-line help that is available for DOS, Windows and OS/2.
 <h3 id="OnMline_Documentation_under_DOS"> On-line Documentation under DOS </h3>
-<br>The Open Watcom Help program,<b><i> WHELP</i></b> , may be used under DOS to access on-line documentation.&nbsp; The Open
+<br>The Open Watcom Help program, <b><i> WHELP</i></b>, may be used under DOS to access on-line documentation.&nbsp; The Open
 Watcom Help command line syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WHELP help_file &#91;topic_name&#93;</tt>
@@ -1716,8 +1716,8 @@ been added to the IDE.
 <h2 id="Changes_in_1_4_that_may_Require_Recompilation"> Changes in 1.4 that may Require Recompilation </h2>
 <dl>
 <dt>stat()
-<dd>The<b><i> stat</i></b> function now uses a slightly different<b><i> struct stat</i></b> argument.&nbsp; Source code that uses
-the<b><i> stat</i></b> function or references<b><i> struct stat</i></b> must be recompiled before linking the application
+<dd>The <b><i> stat</i></b> function now uses a slightly different <b><i> struct stat</i></b> argument.&nbsp; Source code that
+uses the <b><i> stat</i></b> function or references <b><i> struct stat</i></b> must be recompiled before linking the application
 with new libraries.
 </dl>
 <h2 id="Differences_from_Open_Watcom_Version_1_2"> Differences from Open Watcom Version 1.2 </h2>
@@ -1895,10 +1895,10 @@ helpful when calling OS API functions and using case sensitive link step (now de
 <br>A number of problems has been corrected in Open Watcom C/C++ 1.1.
 <ul>
 <li>Using the -ol option (loop optimization) sometimes resulted in generation of incorrect code.
-<li>The<b><i> printf()</i></b> function could access too much data when formatting strings, causing page faults.
+<li>The <b><i> printf()</i></b> function could access too much data when formatting strings, causing page faults.
 <li>NANs, INFs and denormals were not handled correctly by the math emulation library.
 <li>The assembler did not generate implicit segment override prefixes when accessing data in code segment.
-<li>The<b><i> clock()</i></b> function sometimes produced incorrect results on OS/2 if the<tt> TZ</tt> environment variable
+<li>The <b><i> clock()</i></b> function sometimes produced incorrect results on OS/2 if the<tt> TZ</tt> environment variable
 was set.
 <li>The Open Watcom editor (vi/viw) has been changed to store temporary files in directory designated by the<tt> TMP</tt>
 environment variable, instead of using the<tt> TMPDIR</tt> environment variable.
@@ -1912,7 +1912,7 @@ that may require you to change your source and/or makefiles or project files.
 on code that was previously compiling cleanly but contained mismatches between function prototypes and actual definitions.
 &nbsp;The C++ compiler did not have this problem.
 <li>The linker now defaults to case sensitive symbol resolution.&nbsp; In most cases this is not a problem and may in fact
-avoid certain problems.&nbsp; If your project relies on case insensitive linking, please add<b><i> OPTION NOCASEEX</i></b>
+avoid certain problems.&nbsp; If your project relies on case insensitive linking, please add <b><i> OPTION NOCASEEX</i></b>
 to your linker directives.
 <li>Default windowing support has been removed from the runtime libraries.
 <li>Components of the Win32 SDK and OS/2 Toolkits are no longer supplied.
@@ -1926,8 +1926,8 @@ you have old object code.&nbsp; If you have undefined references to<tt> __wcpp_4
 code.
 <dl>
 <dt>clock()
-<dd>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i> CLOCKS_PER_SEC</i></b>
-has changed).&nbsp; Source code that uses the<b><i> clock</i></b> function and<b><i> CLOCKS_PER_SEC</i></b> in its calculations
+<dd>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i> CLOCKS_PER_SEC</i></b>
+has changed).&nbsp; Source code that uses the <b><i> clock</i></b> function and <b><i> CLOCKS_PER_SEC</i></b> in its calculations
 must be recompiled before linking the application with new libraries.
 </dl>
 <h2 id="Major_Differences_from_Version_10_6"> Major Differences from Version 10.6 </h2>
@@ -2074,7 +2074,7 @@ and spawn the equivalent Open Watcom tools.
 <dt>multi-byte functions
 <dd>
 </dl>
-<li>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i>
+<li>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i>
 CLOCKS_PER_SEC</i></b> has changed).
 <li>A &quot;commit&quot; flag (&quot;c&quot;) was added to the fopen()<b> mode</b> argument.
 <li>The global translation mode flag default is &quot;text&quot; unless you explicitly link your program with<tt> BINMODE.OBJ.</tt>
@@ -2083,10 +2083,10 @@ that when a precision is specified, the &quot;0&quot; flag is ignored.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%09.3lf\n&quot;, 1.34242 ); // &quot;0&quot; flag is ignored</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%09lf\n&quot;, 1.34242 ); // &quot;0&quot; flag is not ignored</tt>
-<li>Support for printing<b> __int64</b> values was added to<b><i> printf</i></b> and related functions.
-<li>Support for scanning<b> __int64</b> values was added to<b><i> scanf</i></b> and related functions.
-<li>The Win32<b><i> _osver</i></b> variable was added to the library.
-<li>The Win32<b><i> _winmajor</i></b> ,<b><i> _winminor</i></b> and<b><i> _winver</i></b> variables were added to the library.
+<li>Support for printing<b> __int64</b> values was added to <b><i> printf</i></b> and related functions.
+<li>Support for scanning<b> __int64</b> values was added to <b><i> scanf</i></b> and related functions.
+<li>The Win32 <b><i> _osver</i></b> variable was added to the library.
+<li>The Win32 <b><i> _winmajor</i></b>, <b><i> _winminor</i></b> and <b><i> _winver</i></b> variables were added to the library.
 </ul>
 <h3 id="Changes_to_the_DOS_Graphics_Library_for_11_0"> Changes to the DOS Graphics Library for 11.0 </h3>
 <ul>
@@ -2115,8 +2115,8 @@ NT.&nbsp; The 16-bit version of Visual Programmer is no longer included in the p
 <dd>The struct members of the _diskfree_t structure has been changed from UNSIGNED SHORTs to UNSIGNED INTs.&nbsp; This is to deal
 with possible HPFS partitions whose size will overflow a short, as well as Microsoft compatibility.
 <dt>clock()
-<dd>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i> CLOCKS_PER_SEC</i></b>
-has changed).&nbsp; Source code that uses the<b><i> clock</i></b> function and<b><i> CLOCKS_PER_SEC</i></b> in its calculations
+<dd>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i> CLOCKS_PER_SEC</i></b>
+has changed).&nbsp; Source code that uses the <b><i> clock</i></b> function and <b><i> CLOCKS_PER_SEC</i></b> in its calculations
 must be recompiled before linking the application with new libraries.
 </dl>
 <h2 id="Major_Differences_from_Version_10_5"> Major Differences from Version 10.5 </h2>
@@ -2163,7 +2163,7 @@ in the definition.&nbsp; (Note:&nbsp; This is required by the OS/2 Warp SDK samp
 <dt>_putw
 <dd>write int to stream file
 </dl>
-<br>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i>
+<br>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i>
 CLOCKS_PER_SEC</i></b> has changed).
 <h3 id="Changes_in_Microsoft_Foundation_Classes_Support_for_10_6"> Changes in Microsoft Foundation Classes Support for 10.6 </h3>
 <ul>
@@ -2617,8 +2617,8 @@ them, the target window may say &quot;Obsolete Form:&nbsp; rename target type&qu
 have been added.&nbsp; Using the old files will cause problems.
 <br><br>The C++ compiler calling conventions have changed.&nbsp; Any program that passes a &quot;data only&quot; class or
 struct as a parameter, or returns a C++ object will need to be recompiled.&nbsp; We recommend that you recompile your application.
-<br><br>The C++ compiler now supports the use of the<b><i> __export</i></b> ,<b><i> __cdecl</i></b> ,<b><i> __pascal</i></b>
-,<b><i> __stdcall</i></b> and<b><i> __syscall</i></b> keyword on class definitions.&nbsp; These keywords will affect all members
+<br><br>The C++ compiler now supports the use of the <b><i> __export</i></b>, <b><i> __cdecl</i></b>, <b><i> __pascal</i></b>,
+<b><i> __stdcall</i></b> and <b><i> __syscall</i></b> keyword on class definitions.&nbsp; These keywords will affect all members
 of the defined class.
 <h2 id="Major_Differences_from_Watcom_C9_5_D386"> Major Differences from Watcom C9.5 /386 </h2>
 <ul>

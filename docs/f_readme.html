@@ -320,8 +320,8 @@ installation steps.
 of the other product, we do NOT recommend that you install the new product into the same directory as the old product.&nbsp;
 The Open Watcom C/C++ and Open Watcom FORTRAN 77 products are compatible at the same version number.&nbsp; However, the Open
 Watcom C/C++ and Open Watcom FORTRAN 77 products are usually NOT compatible across different version numbers.&nbsp; If this
-is the case, care must be exercised when switching between use of the two products.&nbsp; Environment variables such as<b>
-PATH</b> and<b> WATCOM</b> must be modified and/or corrected.&nbsp; System files such as<tt> CONFIG.SYS</tt> and<tt> SYSTEM.INI</tt>
+is the case, care must be exercised when switching between use of the two products.&nbsp; Environment variables such as <b>
+PATH</b> and <b> WATCOM</b> must be modified and/or corrected.&nbsp; System files such as<tt> CONFIG.SYS</tt> and<tt> SYSTEM.INI</tt>
 must be modified and/or corrected.
 <br><br>If you are installing both Open Watcom C/C++ 2.0 and Open Watcom FORTRAN 77 2.0, we recommend that you install both
 products under the same directory.&nbsp; This will eliminate duplication of files and, as a result, reduce the total required
@@ -436,8 +436,8 @@ You must ensure that EPM is installed in your OS/2 system if you are planning to
 the Enhanced Editor by running the OS/2 Setup and Installation program (Selective Install) and choosing &quot;Enhanced Editor&quot;
 from the &quot;Tools and Games&quot; detail page.
 <li>On some systems with limited memory that use the UNDELETE feature of OS/2, compile times may be slow because OS/2 is saving
-copies of compiler temporary files.&nbsp; You may start the BATSERV process using the OS/2<tt> STARTUP.CMD</tt> file with<b>
-DELDIR</b> turned off as illustrated below.
+copies of compiler temporary files.&nbsp; You may start the BATSERV process using the OS/2<tt> STARTUP.CMD</tt> file with
+<b> DELDIR</b> turned off as illustrated below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET OLD_DEL_DIR=%DELDIR%</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET DELDIR=</tt>
@@ -838,7 +838,7 @@ display graphical images such as lines and circles upon the screen.&nbsp; Functi
 <h2 id="Accessing_OnMline_Documentation"> Accessing On-line Documentation </h2>
 <br>The following sections describe how to access the on-line help that is available for DOS, Windows and OS/2.
 <h3 id="OnMline_Documentation_under_DOS"> On-line Documentation under DOS </h3>
-<br>The Open Watcom Help program,<b><i> WHELP</i></b> , may be used under DOS to access on-line documentation.&nbsp; The Open
+<br>The Open Watcom Help program, <b><i> WHELP</i></b>, may be used under DOS to access on-line documentation.&nbsp; The Open
 Watcom Help command line syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WHELP help_file &#91;topic_name&#93;</tt>
@@ -977,8 +977,8 @@ to the compiler and related tools.&nbsp; You should check the next section to de
 or with the libraries provided in this release.
 <dl>
 <dt>clock()
-<dd>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i> CLOCKS_PER_SEC</i></b>
-has changed).&nbsp; Source code that uses the<b><i> clock</i></b> function and<b><i> CLOCKS_PER_SEC</i></b> in its calculations
+<dd>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i> CLOCKS_PER_SEC</i></b>
+has changed).&nbsp; Source code that uses the <b><i> clock</i></b> function and <b><i> CLOCKS_PER_SEC</i></b> in its calculations
 must be recompiled before linking the application with new libraries.
 </dl>
 <h2 id="Major_Differences_from_Version_10_6"> Major Differences from Version 10.6 </h2>
@@ -1026,7 +1026,7 @@ and spawn the equivalent Open Watcom tools.
 <ul>
 <li>We have added multi-byte and wide character (including UNICODE) support to the libraries.
 <li>We have added Multi-media Extensions (MMX) support to the libraries.
-<li>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i>
+<li>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i>
 CLOCKS_PER_SEC</i></b> has changed).
 </ul>
 <h3 id="Changes_to_the_DOS_Graphics_Library_for_11_0"> Changes to the DOS Graphics Library for 11.0 </h3>
@@ -1044,8 +1044,8 @@ is intended to broaden the number of graphics cards that are supported.
 <dd>The struct members of the _diskfree_t structure has been changed from UNSIGNED SHORTs to UNSIGNED INTs.&nbsp; This is to deal
 with possible HPFS partitions whose size will overflow a short, as well as Microsoft compatibility.
 <dt>clock()
-<dd>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i> CLOCKS_PER_SEC</i></b>
-has changed).&nbsp; Source code that uses the<b><i> clock</i></b> function and<b><i> CLOCKS_PER_SEC</i></b> in its calculations
+<dd>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i> CLOCKS_PER_SEC</i></b>
+has changed).&nbsp; Source code that uses the <b><i> clock</i></b> function and <b><i> CLOCKS_PER_SEC</i></b> in its calculations
 must be recompiled before linking the application with new libraries.
 </dl>
 <h2 id="Major_Differences_from_Version_10_5"> Major Differences from Version 10.5 </h2>
@@ -1060,7 +1060,7 @@ must be recompiled before linking the application with new libraries.
 <dt>_putw
 <dd>write int to stream file
 </dl>
-<br>The<b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e.,<b><i>
+<br>The <b><i> clock</i></b> function accuracy has changed from 100 ticks per second to 1000 ticks per second (i.e., <b><i>
 CLOCKS_PER_SEC</i></b> has changed).
 <h3 id="Changes_to_the_Image_Editor"> Changes to the Image Editor </h3>
 <ul>

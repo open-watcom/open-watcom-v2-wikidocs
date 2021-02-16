@@ -1580,7 +1580,7 @@ code (reference to the<tt> __DLLstart_</tt> symbol) and, if required, special ve
 DLLs.&nbsp; The presence of<tt> main/wmain</tt> or<tt> WinMain/wWinMain</tt> in the source code does not influence the selection
 of startup code.&nbsp; Only<tt> LibMain</tt> and<tt> DLLMain</tt> are significant (see <a href="#bc">bc</a>).&nbsp; If you
 are building a DLL with statically linked C runtime (the default), it is recommended that you compile at least one of its
-object files with the &quot;bd&quot; switch to ensure that the DLL's C runtime is properly initialized.&nbsp; The macro<tt>
+object files with the &quot;bd&quot; switch to ensure that the DLL's C runtime is properly initialized.&nbsp; The macro <tt>
 __SW_BD</tt> will be predefined if &quot;bd&quot; is selected.
 <h4 id="bg"> bg </h4>
 <br>(OS/2, Win16/32 only) This option causes the compiler to emit into the object file references to the appropriate startup
@@ -1589,13 +1589,13 @@ code does not influence the selection of startup code.&nbsp; Only<tt> WinMain</t
 <a href="#bc">bc</a>).
 <h4 id="bm"> bm </h4>
 <br>(Netware, OS/2, Win32 only) This option causes the compiler to emit into the object file references to the appropriate
-multi-threaded library name(s).&nbsp; The macros<tt> _MT</tt> and<tt> __SW_BM</tt> will be predefined if &quot;bm&quot; is
-selected.
+multi-threaded library name(s).&nbsp; The macros <tt> _MT</tt> and <tt> __SW_BM</tt> will be predefined if &quot;bm&quot;
+is selected.
 <h4 id="br"> br </h4>
 <br>(OS/2, Win32 only) This option causes the compiler to emit into the object file references to the run-time DLL library
 name(s).&nbsp; The run-time DLL libraries are special subsets of the Open Watcom C/C++ run-time libraries that are available
 as DLLs.&nbsp; When you use this option with an OS/2 application, you must also specify the &quot;CASEEXACT&quot; option to
-the Open Watcom Linker.&nbsp; The macros<tt> _DLL</tt> and<tt> __SW_BR</tt> will be predefined if &quot;br&quot; is selected.
+the Open Watcom Linker.&nbsp; The macros <tt> _DLL</tt> and <tt> __SW_BR</tt> will be predefined if &quot;br&quot; is selected.
 <h4 id="btUEXosYV"> bt&#91;=&lt;os&gt;&#93; </h4>
 <br>This option causes the compiler to define the &quot;build&quot; target.&nbsp; This option is used for cross-development
 work.&nbsp; It prevents the compiler from defining the default build target (which is based on the host system the compiler
@@ -1621,14 +1621,15 @@ target macros are described in the section entitled <a href="#Open_Watcom_CDCPP_
 <br><br>would cause the compiler to define the macro
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __FOO__</tt>
-<br><br>and prevent it from defining<tt> MSDOS</tt> ,<tt> _DOS</tt> and<tt> __DOS__</tt> if the compiler was being run under
-DOS,<tt> __OS2__</tt> if using the OS/2 hosted compiler,<tt> __NT__</tt> if using the Windows NT or Windows 95 hosted compiler,<tt>
-__QNX__</tt> and<tt> __UNIX__</tt> if using the QNX hosted version, or<tt> __LINUX__</tt> and<tt> __UNIX__</tt> if using the
-Linux hosted version.&nbsp; Any string consisting of letters, digits, and the underscore character may be used for the target
-name.
-<br><br>The compiler will also construct an environment variable called<b> &lt;os&gt;_INCLUDE</b> and see if it has been defined.
-&nbsp;If the environment variable is defined then each directory listed in it is searched (in the order that they were specified).
-&nbsp;For example, the environment variable<b> WINDOWS_INCLUDE</b> will be searched if<b> bt=WINDOWS</b> option was specified.
+<br><br>and prevent it from defining <tt> MSDOS</tt>, <tt> _DOS</tt> and <tt> __DOS__</tt> if the compiler was being run under
+DOS, <tt> __OS2__</tt> if using the OS/2 hosted compiler, <tt> __NT__</tt> if using the Windows NT or Windows 95 hosted compiler,
+<tt> __QNX__</tt> and <tt> __UNIX__</tt> if using the QNX hosted version, or <tt> __LINUX__</tt> and <tt> __UNIX__</tt> if
+using the Linux hosted version.&nbsp; Any string consisting of letters, digits, and the underscore character may be used for
+the target name.
+<br><br>The compiler will also construct an environment variable called <b> &lt;os&gt;_INCLUDE</b> and see if it has been
+defined.&nbsp; If the environment variable is defined then each directory listed in it is searched (in the order that they
+were specified).&nbsp; For example, the environment variable <b> WINDOWS_INCLUDE</b> will be searched if<b> bt=WINDOWS</b>
+option was specified.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set windows_include=\watcom\h\win</tt>
 <br><br>Include file processing is described in the section entitled <a href="#Open_Watcom_CDCPP__include_File_Processing">Open Watcom C/C++ #include File Processing</a>.
@@ -1637,24 +1638,23 @@ name.
 <dt>Target name
 <dd>Additional operation
 <dt>DOS
-<dd>Defines the macros<tt> _DOS</tt> and<tt> MSDOS</tt> .
+<dd>Defines the macros <tt> _DOS</tt> and <tt> MSDOS</tt>.
 <dt>WINDOWS
-<dd>Same as specifying one of the &quot;zw&quot; options.&nbsp; Defines the macros<tt> _WINDOWS</tt> (16-bit only) and<tt> __WINDOWS_386__</tt>
+<dd>Same as specifying one of the &quot;zw&quot; options.&nbsp; Defines the macros <tt> _WINDOWS</tt> (16-bit only) and <tt> __WINDOWS_386__</tt>
 (32-bit only).
 <dt>NETWARE
-<dd>(32-bit only) Causes the compiler to use stack-based calling conventions.&nbsp; Also defines the macro<tt> __NETWARE_386__</tt>
-.
+<dd>(32-bit only) Causes the compiler to use stack-based calling conventions.&nbsp; Also defines the macro <tt> __NETWARE_386__</tt>.
 <dt>QNX
-<dd>Defines the macro<tt> __UNIX__</tt> .
+<dd>Defines the macro <tt> __UNIX__</tt>.
 <dt>LINUX
-<dd>Defines the macro<tt> __UNIX__</tt> .
+<dd>Defines the macro <tt> __UNIX__</tt>.
 </dl>
 <br>Specifying &quot;bt&quot; with no target name following restores the default target name.
 <h4 id="bw"> bw </h4>
 <br>(Win16 only) This option causes the compiler to import a special symbol so that the default windowing library code is
 linked into your application.&nbsp; The presence of<tt> LibMain/DLLMain</tt> in the source code does not influence the selection
 of startup code.&nbsp; Only<tt> main</tt>,<tt> wmain</tt>,<tt> WinMain</tt> and<tt> wWinMain</tt> are significant (see <a href="#bc">bc</a>).
-&nbsp;The macro<tt> __SW_BW</tt> will be predefined if &quot;bw&quot; is selected.
+&nbsp;The macro <tt> __SW_BW</tt> will be predefined if &quot;bw&quot; is selected.
 <h4 id="of"> of </h4>
 <br>This option selects the generation of traceable stack frames for those functions that contain calls or require stack frame
 setup.
@@ -1685,7 +1685,7 @@ stack is a short address (16-bit offset) or long address (32-bit segment:offset)
 functions.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;</tt><b>compiler_name</b><tt> toaster -of</tt>
-<br><br>The macro<tt> __SW_OF</tt> will be predefined if &quot;of&quot; is selected.
+<br><br>The macro <tt> __SW_OF</tt> will be predefined if &quot;of&quot; is selected.
 <h4 id="ofP"> of+ </h4>
 <br>This option selects the generation of traceable stack frames for all functions regardless of whether they contain calls
 or require stack frame setup.&nbsp; This option is intended for developers of embedded systems (ROM-based applications).
@@ -1740,7 +1740,7 @@ starts.&nbsp; If no &quot;commit stack=&quot; directive is used, it defaults to 
 stack size parameter to<tt> _beginthread()</tt> specifies how much stack is committed for a child thread.&nbsp; If the size
 is set to zero, the size of the primary thread stack is used for the child thread stack.&nbsp; When the child thread executes,
 the stack space is not otherwise restricted.
-<br><br>The macro<tt> __SW_SG</tt> will be predefined if &quot;sg&quot; is selected.
+<br><br>The macro <tt> __SW_SG</tt> will be predefined if &quot;sg&quot; is selected.
 <h4 id="st"> st </h4>
 <br>This option causes the code generator to ensure that the first reference to the stack in a function is to the stack &quot;bottom&quot;
 using the SS register.&nbsp; If the memory for this part of the stack is not mapped to the task, a memory fault will occur
@@ -1751,7 +1751,7 @@ When the &quot;st&quot; option is specified, the code generator will ensure that
 memory location with the lowest address.&nbsp; If a memory fault occurs, the operating system can determine that it was a
 stack reference (since the SS register is involved) and also how much additional stack space is required.
 <br><br>See the description of the &quot;sg&quot; option for a more general solution to the stack allocation problem.&nbsp;
-The macro<tt> __SW_ST</tt> will be predefined if &quot;st&quot; is selected.
+The macro <tt> __SW_ST</tt> will be predefined if &quot;st&quot; is selected.
 <h4 id="zw"> zw </h4>
 <br>(16-bit only) This option causes the compiler to generate the prologue/epilogue code sequences required for Microsoft
 Windows applications.&nbsp; The following &quot;fat&quot; prologue/epilogue sequence is generated for any functions declared
@@ -1775,9 +1775,9 @@ to be &quot;far _export&quot; or &quot;far pascal&quot;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pop BP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dec BP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retf n</tt>
-<br><br>The macro<tt> __WINDOWS__</tt> will be predefined if &quot;zw&quot; is selected.
+<br><br>The macro <tt> __WINDOWS__</tt> will be predefined if &quot;zw&quot; is selected.
 <br><br>(32-bit only) This option causes the compiler to generate any special code sequences required for 32-bit Microsoft
-Windows applications.&nbsp; The macro<tt> __WINDOWS__</tt> and<tt> __WINDOWS_386__</tt> will be predefined if &quot;zw&quot;
+Windows applications.&nbsp; The macro <tt> __WINDOWS__</tt> and <tt> __WINDOWS_386__</tt> will be predefined if &quot;zw&quot;
 is selected.
 <h4 id="zW_LoptimizedR"> zW (optimized) </h4>
 <br>(16-bit only) This option is similar to &quot;zw&quot; but causes the compiler to generate more efficient prologue/epilogue
@@ -1801,7 +1801,7 @@ code sequence described under the &quot;zw&quot; option.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pop BP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dec BP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retf n</tt>
-<br><br>The macro<tt> __WINDOWS__</tt> will be predefined if &quot;zW&quot; is selected.
+<br><br>The macro <tt> __WINDOWS__</tt> will be predefined if &quot;zW&quot; is selected.
 <h4 id="zWs"> zWs </h4>
 <br>(16-bit only) This option is similar to &quot;zW&quot; but causes the compiler to generate &quot;smart callbacks&quot;.
 &nbsp;This option may be used for Microsoft Windows user callback functions in executables only.&nbsp; It is not permitted
@@ -1916,8 +1916,8 @@ emitted as static out-of-line functions.&nbsp; This option can result in larger 
 or &quot;d3i&quot; (we are discussing both &quot;code&quot; and &quot;file&quot; size here).&nbsp; Link times are faster than
 &quot;d3i&quot; (fewer segment relocations) but executables are slightly larger.
 <h4 id="ee"> ee </h4>
-<br>This option causes the compiler to generate a call to<tt> __EPI</tt> in the epilogue sequence at the end of every function.
-&nbsp;This user-written routine can be used to collect/record profiling information.&nbsp; The macro<tt> __SW_EE</tt> will
+<br>This option causes the compiler to generate a call to <tt> __EPI</tt> in the epilogue sequence at the end of every function.
+&nbsp;This user-written routine can be used to collect/record profiling information.&nbsp; The macro <tt> __SW_EE</tt> will
 be predefined if &quot;ee&quot; is selected.
 <h4 id="en"> en </h4>
 <br>The compiler will emit the function name into the object code as a string of characters just before the function prologue
@@ -1933,13 +1933,13 @@ sequence is generated.&nbsp; The string is terminated by a byte count of the num
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret</tt>
 <br><br>This option is intended for developers of embedded systems (ROM-based applications).&nbsp; It may also be used in
-conjunction with the &quot;ep&quot; option for special user-written profiling applications.&nbsp; The macro<tt> __SW_EN</tt>
+conjunction with the &quot;ep&quot; option for special user-written profiling applications.&nbsp; The macro <tt> __SW_EN</tt>
 will be predefined if &quot;en&quot; is selected.
 <h4 id="epUXnumberYV"> ep&#91;&lt;number&gt;&#93; </h4>
-<br>This option causes the compiler to generate a call to a user-written<tt> __PRO</tt> routine in the prologue sequence at
-the start of every function.&nbsp; This routine can be used to collect/record profiling information.&nbsp; The optional argument<b>
-&lt;number&gt;</b> can be used to cause the compiler to allocate that many bytes on the stack as a place for<tt> __PRO</tt>
-to store information.&nbsp; The macro<tt> __SW_EP</tt> will be predefined if &quot;ep&quot; is selected.
+<br>This option causes the compiler to generate a call to a user-written <tt> __PRO</tt> routine in the prologue sequence
+at the start of every function.&nbsp; This routine can be used to collect/record profiling information.&nbsp; The optional
+argument<b> &lt;number&gt;</b> can be used to cause the compiler to allocate that many bytes on the stack as a place for <tt>
+__PRO</tt> to store information.&nbsp; The macro <tt> __SW_EP</tt> will be predefined if &quot;ep&quot; is selected.
 <h4 id="et"> et </h4>
 <br>(Pentium only) This option causes the compiler to generate code into the prolog of each function to count exactly how
 much time is spent within that function, in clock ticks.&nbsp; This option is valid only for Pentium compatible processors
@@ -1976,7 +1976,7 @@ Open Watcom Linker User's Guide</i></b> for more information.
 <h4 id="s"> s </h4>
 <br>Stack overflow checking is omitted from the generated code.&nbsp; By default, the compiler will emit code at the beginning
 of every function that checks for the &quot;stack overflow&quot; condition.&nbsp; This option can be used to disable this
-feature.&nbsp; The macro<tt> __SW_S</tt> will be predefined if &quot;s&quot; is selected.
+feature.&nbsp; The macro <tt> __SW_S</tt> will be predefined if &quot;s&quot; is selected.
 <h3 id="Preprocessor"> Preprocessor </h3>
 <br>This group of options deals with the compiler preprocessor.
 <h4 id="dXnameYUEtextV"> d&lt;name&gt;&#91;=text&#93; </h4>
@@ -2104,7 +2104,7 @@ code for use in overlays.
 <br>This option sets the warning level to its maximum setting.
 <h4 id="za"> za </h4>
 <br>This option helps to ensure that the module to be compiled conforms to the ISO/ANSI C or C++ programming language specification
-(depending on the compiler which is selected).&nbsp; The macro<tt> NO_EXT_KEYS</tt> (no extended keywords) will be predefined
+(depending on the compiler which is selected).&nbsp; The macro <tt> NO_EXT_KEYS</tt> (no extended keywords) will be predefined
 if &quot;za&quot; is selected.&nbsp; The &quot;ou&quot; option will be enabled (see <a href="#ou">ou</a>).&nbsp; This option
 also suppress all predefined macros which name is not ISO/ANSI C/C++ standard compliant.&nbsp; See also the description of
 the &quot;ze&quot; option.
@@ -2260,7 +2260,7 @@ fo=d:\proj\obj</tt> then the dependency file would be called<tt> d:\proj\obj.obj
 from the source file name and the extension &quot;.mbr&quot;.
 <h4 id="ez"> ez </h4>
 <br>(32-bit only) The compiler will generate an object file in Phar Lap Easy OMF-386 (object module format) instead of the
-default Microsoft OMF.&nbsp; The macro<tt> __SW_EZ</tt> will be predefined if &quot;ez&quot; is selected.
+default Microsoft OMF.&nbsp; The macro <tt> __SW_EZ</tt> will be predefined if &quot;ez&quot; is selected.
 <h4 id="fcEXfile_nameY"> fc=&lt;file_name&gt; </h4>
 <br>(C++ only) The specified &quot;batch&quot; file contains a list of command lines to be processed.&nbsp; This enables the
 processing of a number of source files together with options for each file with one single invocation of the compiler.&nbsp;
@@ -2337,12 +2337,12 @@ above).
 <br>(C++ only) This option can be used to stop the compiler from automatically adding extensions to include files.&nbsp; The
 default behaviour of the compiler is to search for the specified file, then to try known extensions if the file specifier
 does not have an extension.&nbsp; Thus, #include &lt;string&gt; could be matched by 'string', 'string.h' or 'string.hpp' (see
-&quot;fzs&quot; below).&nbsp; The macro<tt> __SW_FZH</tt> will be defined when this switch is used.
+&quot;fzs&quot; below).&nbsp; The macro <tt> __SW_FZH</tt> will be defined when this switch is used.
 <h4 id="fzs"> fzs </h4>
 <br>(C++ only) This option can be used to stop the compiler from automatically adding extensions to source files.&nbsp; The
 default behaviour of the compiler is to search for the specified file, then to try known extensions if the file specifier
 does not have an extension.&nbsp; Thus, 'src_file' could be matched by 'src_file', 'src_file.cpp' or 'src_file.cc' (see &quot;fzh&quot;
-above).&nbsp; The macro<tt> __SW_FZS</tt> will be defined when this switch is used.
+above).&nbsp; The macro <tt> __SW_FZS</tt> will be defined when this switch is used.
 <h4 id="iEXdirectoryY"> i=&lt;directory&gt; </h4>
 <br>where &quot;&lt;directory&gt;&quot; takes the form
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2359,7 +2359,7 @@ multiple source files.
 &quot;.def&quot;.&nbsp; The &quot;definitions&quot; file may be used as an &quot;include&quot; file when compiling other modules
 in order to take advantage of the compiler's function and argument type checking.
 <h4 id="x"> x </h4>
-<br>The compiler ignores the<b> INCLUDE</b> and<b> &lt;os&gt;_INCLUDE</b> environment variables, if they exist, when searching
+<br>The compiler ignores the <b> INCLUDE</b> and <b> &lt;os&gt;_INCLUDE</b> environment variables, if they exist, when searching
 for include files.&nbsp; See the section entitled <a href="#Open_Watcom_CDCPP__include_File_Processing">Open Watcom C/C++ #include File Processing</a>
 for information on directory searching.
 <h4 id="xx"> xx </h4>
@@ -2455,14 +2455,14 @@ that is inserted into any object file that has a DllMain() function defined with
 <br>set default calling convention to __watcall (default)
 <h4 id="ei"> ei </h4>
 <br>This option can be used to force the compiler to allocate at least an &quot;int&quot; for all enumerated types.&nbsp;
-The macro<tt> __SW_EI</tt> will be predefined if &quot;ei&quot; is selected.
+The macro <tt> __SW_EI</tt> will be predefined if &quot;ei&quot; is selected.
 <h4 id="em"> em </h4>
 <br>This option can be used to force the compiler to allocate the smallest storage unit required to hold all possible values
-given for an enumerated list.&nbsp; This option is the default for the x86 architecture.&nbsp; The macro<tt> __SW_EM</tt>
+given for an enumerated list.&nbsp; This option is the default for the x86 architecture.&nbsp; The macro <tt> __SW_EM</tt>
 will be predefined if &quot;em&quot; is selected.
 <h4 id="j"> j </h4>
-<br>The default<tt> char</tt> type is changed from an unsigned to a signed quantity.&nbsp; The macros<tt> __CHAR_SIGNED__</tt>
-and<tt> __SW_J</tt> will be predefined if &quot;j&quot; is selected.
+<br>The default <tt> char</tt> type is changed from an unsigned to a signed quantity.&nbsp; The macros <tt> __CHAR_SIGNED__</tt>
+and <tt> __SW_J</tt> will be predefined if &quot;j&quot; is selected.
 <h4 id="ri"> ri </h4>
 <br>Functions declared to return integral types such as chars and shorts are promoted to returning ints.&nbsp; This allows
 non-ISO-conforming source code which does not properly declare the return types of functions to work properly.&nbsp; The use
@@ -2485,7 +2485,7 @@ an exception) if used on a class instance that was not compiled with the &quot;x
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *birds&#91; 3 &#93; = { &quot;robin&quot;, &quot;finch&quot;, &quot;wren&quot; };</tt>
 <br><br>In the above example,<tt> cvar</tt> and<tt> ctable</tt> and the strings<tt> &quot;robin&quot;</tt>,<tt> &quot;finch&quot;</tt>,
 etc.&nbsp; are placed in the code segment.&nbsp; This option is supported in large data or flat memory models only, or if
-the item is explicitly &quot;far&quot;.&nbsp; The macro<tt> __SW_ZC</tt> will be predefined if &quot;zc&quot; is selected.
+the item is explicitly &quot;far&quot;.&nbsp; The macro <tt> __SW_ZC</tt> will be predefined if &quot;zc&quot; is selected.
 <h4 id="zp_1_2_4_8_16_"> zp{1,2,4,8,16} </h4>
 <br>The &quot;zp&quot; option allows you to specify the alignment of members in a structure.&nbsp; The default is &quot;zp2&quot;
 for the 16-bit compiler and &quot;zp8&quot; for 32-bit compiler.&nbsp; The alignment of structure members is described in
@@ -2607,13 +2607,13 @@ of the structure or it can be forced by use of the &quot;zp&quot; option.
 <br>The &quot;data threshold&quot; option is used to set the maximum size for data objects to be included in the default data
 segment.&nbsp; This option can be used with the compact, large, and huge (16-bit) memory models only.&nbsp; These are memory
 models where there can be more than one data segment.&nbsp; Normally, all data objects whose size is less than or equal to
-the threshold value are placed in the default data segment &quot;_DATA&quot; unless they are specifically declared to be<tt>
+the threshold value are placed in the default data segment &quot;_DATA&quot; unless they are specifically declared to be <tt>
 far</tt> items.&nbsp; When there is a large amount of static data, it is often useful to set the data threshold size so that
 all objects larger than this size are placed in another (far) data segment.&nbsp; For example, the option &quot;zt100&quot;
-causes all data objects larger than 100 bytes in size to be implicitly declared as<tt> far</tt> and grouped in other data
+causes all data objects larger than 100 bytes in size to be implicitly declared as <tt> far</tt> and grouped in other data
 segments.
 <br>The default data threshold value is 32767.&nbsp; Thus, by default, all objects greater than 32767 bytes in size are implicitly
-declared as<tt> far</tt> and will be placed in other data segments.&nbsp; If the &quot;zt&quot; option is specified without
+declared as <tt> far</tt> and will be placed in other data segments.&nbsp; If the &quot;zt&quot; option is specified without
 a size, the data threshold value is 256.&nbsp; The largest value that can be specified is 32767 (a larger value will result
 in 256 being selected).
 <br><br>If the &quot;zt&quot; option is used to compile any module in a program, then you must compile all the other modules
@@ -2755,7 +2755,7 @@ This option should be used for any of the following reasons:
 <li>Speed of floating-point emulation is favoured over code size.
 <li>An application containing floating-point operations is to be stored in ROM and an 80x87 will not be present in the system.
 </ol>
-<br>The macro<tt> __SW_FPC</tt> will be predefined if &quot;fpc&quot; is selected.
+<br>The macro <tt> __SW_FPC</tt> will be predefined if &quot;fpc&quot; is selected.
 <hr>
 <br><b><i>&nbsp; Note:</i></b>&nbsp; When any module in an application is compiled with the &quot;fpc&quot; option, then all
 modules must be compiled with the &quot;fpc&quot; option.
@@ -2779,8 +2779,8 @@ also include the<tt> WEMU387.386</tt> file in the<tt> &#91;386enh&#93;</tt> sect
 <br><br>Note that the<tt> WDEBUG.386</tt> file which is installed by the Open Watcom Installation software contains the emulation
 support found in the<tt> WEMU387.386</tt> file.
 <br><br>Thus, a math coprocessor need not be present at run-time.&nbsp; This is the default floating-point option if none
-is specified.&nbsp; The macros<tt> __FPI__</tt> and<tt> __SW_FPI</tt> will be predefined if &quot;fpi&quot; is selected.&nbsp;
-
+is specified.&nbsp; The macros <tt> __FPI__</tt> and <tt> __SW_FPI</tt> will be predefined if &quot;fpi&quot; is selected.
+&nbsp;
 <hr>
 <br><b><i>&nbsp; Note:</i></b>&nbsp; When any module in an application is compiled with a particular &quot;floating-point&quot;
 option, then all modules must be compiled with the same option.
@@ -2799,7 +2799,7 @@ will generate 8087 compatible instructions.
 <br>(32-bit only) The compiler will generate in-line 387-compatible numeric data processor instructions into the object code
 for floating-point operations.&nbsp; When the &quot;fpi87&quot; option is used exclusively, coprocessor emulation software
 is not included in the application when it is linked.&nbsp; A 387 or compatible math coprocessor must be present at run-time.
-<br><br>The macros<tt> __FPI__</tt> and<tt> __SW_FPI87</tt> will be predefined if &quot;fpi87&quot; is selected.&nbsp; See
+<br><br>The macros <tt> __FPI__</tt> and <tt> __SW_FPI87</tt> will be predefined if &quot;fpi87&quot; is selected.&nbsp; See
 Note with description of &quot;fpi&quot; option.
 <h4 id="fp2"> fp2 </h4>
 <br>The compiler will generate in-line 80x87 numeric data processor instructions into the object code for floating-point operations.
@@ -2807,25 +2807,25 @@ Note with description of &quot;fpi&quot; option.
 option if you wish to support those few 386 systems that are equipped with a 287 numeric data processor (&quot;fp3&quot; is
 the default for Open Watcom compilers generating 32-bit code).&nbsp; However, for 32-bit applications, the use of this option
 will reduce execution performance.&nbsp; Use this option in conjunction with the &quot;fpi&quot; or &quot;fpi87&quot; options.
-&nbsp;The macro<tt> __SW_FP2</tt> will be predefined if &quot;fp2&quot; is selected.
+&nbsp;The macro <tt> __SW_FP2</tt> will be predefined if &quot;fp2&quot; is selected.
 <h4 id="fp3"> fp3 </h4>
 <br>The compiler will generate in-line 387-compatible numeric data processor instructions into the object code for floating-point
 operations.&nbsp; For 16-bit applications, the use of this option will limit the range of systems on which the application
 will run but there are execution performance improvements.&nbsp; For Open Watcom compilers generating 32-bit code, this option
-is the default.&nbsp; Use this option in conjunction with the &quot;fpi&quot; or &quot;fpi87&quot; options.&nbsp; The macro<tt>
-__SW_FP3</tt> will be predefined if &quot;fp3&quot; is selected.
+is the default.&nbsp; Use this option in conjunction with the &quot;fpi&quot; or &quot;fpi87&quot; options.&nbsp; The macro
+<tt> __SW_FP3</tt> will be predefined if &quot;fp3&quot; is selected.
 <h4 id="fp5"> fp5 </h4>
 <br>The compiler will generate in-line 80x87 numeric data processor instructions into the object code for floating-point operations.
 &nbsp;The sequence of floating-point instructions will be optimized for greatest possible performance on the Intel Pentium
 processor.&nbsp; For 16-bit applications, the use of this option will limit the range of systems on which the application
 will run but there are execution performance improvements.&nbsp; Use this option in conjunction with the &quot;fpi&quot; or
-&quot;fpi87&quot; options.&nbsp; The macro<tt> __SW_FP5</tt> will be predefined if &quot;fp5&quot; is selected.
+&quot;fpi87&quot; options.&nbsp; The macro <tt> __SW_FP5</tt> will be predefined if &quot;fp5&quot; is selected.
 <h4 id="fp6"> fp6 </h4>
 <br>The compiler will generate in-line 80x87 numeric data processor instructions into the object code for floating-point operations.
 &nbsp;The sequence of floating-point instructions will be optimized for greatest possible performance on the Intel Pentium
 Pro processor.&nbsp; For 16-bit applications, the use of this option will limit the range of systems on which the application
 will run but there are execution performance improvements.&nbsp; Use this option in conjunction with the &quot;fpi&quot; or
-&quot;fpi87&quot; options.&nbsp; The macro<tt> __SW_FP6</tt> will be predefined if &quot;fp6&quot; is selected.
+&quot;fpi87&quot; options.&nbsp; The macro <tt> __SW_FP6</tt> will be predefined if &quot;fp6&quot; is selected.
 <h4 id="fpd"> fpd </h4>
 <br>A subtle problem was detected in the FDIV instruction of Intel's original Pentium CPU.&nbsp; In certain rare cases, the
 result of a floating-point divide could have less precision than it should.&nbsp; Contact Intel directly for more information
@@ -2845,7 +2845,7 @@ if on, calls the software workaround code in the math libraries.&nbsp; If the bi
 be performed as before.
 </ol>
 <br>If you know that your application will never run on a defective Pentium CPU, or your analysis shows that the FDIV problem
-will not affect your results, you need not use the &quot;fpd&quot; option.&nbsp; The macro<tt> __SW_FPD</tt> will be predefined
+will not affect your results, you need not use the &quot;fpd&quot; option.&nbsp; The macro <tt> __SW_FPD</tt> will be predefined
 if &quot;fpd&quot; is selected.
 <h3 id="SegmentsDModules"> Segments/Modules </h3>
 <br>This group of options deals with object file data structures that are generated by the compiler.
@@ -2858,7 +2858,7 @@ name will be &quot;&lt;codegroup&gt;_TEXT&quot; but this can be overridden by th
 <br><br>This is useful when compiling applications for small code models where the total application will contain more than
 64 kilobytes of code.&nbsp; Each group can contain up to 64 kilobytes of code.&nbsp; The application follows a &quot;mixed&quot;
 code model since it contains a mix of small and large code (intra-segment and inter-segment calls).&nbsp; Memory models are
-described in the chapter entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a>.&nbsp; The<tt> far</tt> keyword
+described in the chapter entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a>.&nbsp; The <tt> far</tt> keyword
 is used to describe routines that are referenced from one group/segment but are defined in another group/segment.
 <br><br>For small code models, the &quot;s&quot; option should be used in conjunction with the &quot;g&quot; option to prevent
 the generation of calls to the C run-time &quot;stack overflow check&quot; routine (<tt> __STK</tt> ).&nbsp; You must also
@@ -2901,14 +2901,14 @@ in the &quot;CONST&quot; segment.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int var1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int array1&#91; 400 &#93;;</tt>
-<br><br>Other data segments containing data, specifically declared to be<tt> far</tt> or exceeding the data threshold (see
+<br><br>Other data segments containing data, specifically declared to be <tt> far</tt> or exceeding the data threshold (see
 &quot;zt&quot; option), are named either &quot;module_nameN_DATA&quot; when using the C compiler or &quot;module_name_DATAN&quot;
 when using the C++ compiler where &quot;N&quot; is some integral number.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int far array2&#91;400&#93;;</tt>
 <br><br>In the above example,<tt> array2</tt> is placed in the segment &quot;report11_DATA&quot; (C) or &quot;report_DATA11&quot;
 (C++) provided that the module name is &quot;report&quot;.
-<br><br>The macro<tt> __SW_ND</tt> will be predefined if &quot;nd&quot; is selected.
+<br><br>The macro <tt> __SW_ND</tt> will be predefined if &quot;nd&quot; is selected.
 <h4 id="nmEXnameY"> nm=&lt;name&gt; </h4>
 <br>By default, the object file name and the module name that is placed within it are constructed from the source file name.
 &nbsp;When the &quot;nm&quot; option is used, the module name that is placed into the object file is &quot;&lt;name&gt;&quot;.
@@ -2992,7 +2992,7 @@ between them) must reside in a single code segment.
 </ol>
 <br>This option can be used in paging environments where special segment ordering may be employed.&nbsp; The &quot;alloc_text&quot;
 pragma is often used in conjunction with this option to place functions into specific segments.
-<br><br>The macro<tt> __SW_ZM</tt> will be predefined if &quot;zm&quot; is selected.
+<br><br>The macro <tt> __SW_ZM</tt> will be predefined if &quot;zm&quot; is selected.
 <h4 id="zmf"> zmf </h4>
 <br>(C++ only) This option is identical to the &quot;zm&quot; option (see <a href="#zm">zm</a>) except for the following large
 code model consideration.
@@ -3017,36 +3017,36 @@ functions that can be placed in the segment, the restriction is only on a &quot;
 <br>This group of options deals with the 80x86 run-time environment.
 <h4 id="0"> 0 </h4>
 <br>(16-bit only) The compiler will make use of only 8086 instructions in the generated object code.&nbsp; This is the default.
-&nbsp;The resulting code will run on 8086 and all upward compatible processors.&nbsp; The macro<tt> __SW_0</tt> will be predefined
+&nbsp;The resulting code will run on 8086 and all upward compatible processors.&nbsp; The macro <tt> __SW_0</tt> will be predefined
 if &quot;0&quot; is selected.
 <h4 id="1"> 1 </h4>
 <br>(16-bit only) The compiler will make use of 186 instructions in the generated object code whenever possible.&nbsp; The
 resulting code probably will not run on 8086 compatible processors but it will run on 186 and upward compatible processors.
-&nbsp;The macro<tt> __SW_1</tt> will be predefined if &quot;1&quot; is selected.
+&nbsp;The macro <tt> __SW_1</tt> will be predefined if &quot;1&quot; is selected.
 <h4 id="2"> 2 </h4>
 <br>(16-bit only) The compiler will make use of 286 instructions in the generated object code whenever possible.&nbsp; The
 resulting code probably will not run on 8086 or 186 compatible processors but it will run on 286 and upward compatible processors.
-&nbsp;The macro<tt> __SW_2</tt> will be predefined if &quot;2&quot; is selected.
+&nbsp;The macro <tt> __SW_2</tt> will be predefined if &quot;2&quot; is selected.
 <h4 id="3"> 3 </h4>
 <br>(16-bit only) The compiler will make use of some 386 instructions and FS or GS (if &quot;zff&quot; or &quot;zgf&quot;
 options are used) in the generated object code whenever possible.&nbsp; The code will be optimized for 386 processors.&nbsp;
 The resulting code probably will not run on 8086, 186 or 286 compatible processors but it will run on 386 and upward compatible
-processors.&nbsp; The macro<tt> __SW_3</tt> will be predefined if &quot;3&quot; is selected.
+processors.&nbsp; The macro <tt> __SW_3</tt> will be predefined if &quot;3&quot; is selected.
 <h4 id="4"> 4 </h4>
 <br>(16-bit only) The compiler will make use of some 386 instructions and FS or GS (if &quot;zff&quot; or &quot;zgf&quot;
 options are used) in the generated object code whenever possible.&nbsp; The code will be optimized for 486 processors.&nbsp;
 The resulting code probably will not run on 8086, 186 or 286 compatible processors but it will run on 386 and upward compatible
-processors.&nbsp; The macro<tt> __SW_4</tt> will be predefined if &quot;4&quot; is selected.
+processors.&nbsp; The macro <tt> __SW_4</tt> will be predefined if &quot;4&quot; is selected.
 <h4 id="5"> 5 </h4>
 <br>(16-bit only) The compiler will make use of some 386 instructions and FS or GS (if &quot;zff&quot; or &quot;zgf&quot;
 options are used) in the generated object code whenever possible.&nbsp; The code will be optimized for the Intel Pentium processor.
 &nbsp;The resulting code probably will not run on 8086, 186 or 286 compatible processors but it will run on 386 and upward
-compatible processors.&nbsp; The macro<tt> __SW_5</tt> will be predefined if &quot;5&quot; is selected.
+compatible processors.&nbsp; The macro <tt> __SW_5</tt> will be predefined if &quot;5&quot; is selected.
 <h4 id="6"> 6 </h4>
 <br>(16-bit only) The compiler will make use of some 386 instructions and FS or GS (if &quot;zff&quot; or &quot;zgf&quot;
 options are used) in the generated object code whenever possible.&nbsp; The code will be optimized for the Intel Pentium Pro
 processor.&nbsp; The resulting code probably will not run on 8086, 186 or 286 compatible processors but it will run on 386
-and upward compatible processors.&nbsp; The macro<tt> __SW_6</tt> will be predefined if &quot;6&quot; is selected.
+and upward compatible processors.&nbsp; The macro <tt> __SW_6</tt> will be predefined if &quot;6&quot; is selected.
 <h4 id="3_r_s_"> 3{r|s} </h4>
 <br>(32-bit only) The compiler will generate 386 instructions based on 386 instruction timings (see &quot;4&quot;, &quot;5&quot;
 and &quot;6&quot; below).
@@ -3079,120 +3079,120 @@ are prefixed or suffixed to the symbol name.
 </ul>
 <br>The &quot;s&quot; conventions are similar to those used by the MetaWare High C 386 compiler.
 <br><br>By default, &quot;r&quot; is selected if neither &quot;r&quot; nor &quot;s&quot; is specified.
-<br><br>The macro<tt> __SW_3</tt> will be predefined if &quot;3&quot; is selected.&nbsp; The macro<tt> __SW_3R</tt> will be
-predefined if &quot;r&quot; is selected (or defaulted).&nbsp; The macro<tt> __SW_3S</tt> will be predefined if &quot;s&quot;
+<br><br>The macro <tt> __SW_3</tt> will be predefined if &quot;3&quot; is selected.&nbsp; The macro <tt> __SW_3R</tt> will
+be predefined if &quot;r&quot; is selected (or defaulted).&nbsp; The macro <tt> __SW_3S</tt> will be predefined if &quot;s&quot;
 is selected.
 <h4 id="4_r_s_"> 4{r|s} </h4>
 <br>(32-bit only) This option is identical to &quot;3{r|s}&quot; except that the compiler will generate 386 instructions based
 on 486 instruction timings.&nbsp; The code is optimized for 486 processors rather than 386 processors.&nbsp; By default, &quot;r&quot;
-is selected if neither &quot;r&quot; nor &quot;s&quot; is specified.&nbsp; The macro<tt> __SW_4</tt> will be predefined if
-&quot;4&quot; is selected.&nbsp; The macro<tt> __SW_3R</tt> will be predefined if &quot;r&quot; is selected (or defaulted).
-&nbsp;The macro<tt> __SW_3S</tt> will be predefined if &quot;s&quot; is selected.
+is selected if neither &quot;r&quot; nor &quot;s&quot; is specified.&nbsp; The macro <tt> __SW_4</tt> will be predefined if
+&quot;4&quot; is selected.&nbsp; The macro <tt> __SW_3R</tt> will be predefined if &quot;r&quot; is selected (or defaulted).
+&nbsp;The macro <tt> __SW_3S</tt> will be predefined if &quot;s&quot; is selected.
 <h4 id="5_r_s_"> 5{r|s} </h4>
 <br>(32-bit only) This option is identical to &quot;3{r|s}&quot; except that the compiler will generate 386 instructions based
 on Intel Pentium instruction timings.&nbsp; This is the default.&nbsp; The code is optimized for Intel Pentium processors
 rather than 386 processors.&nbsp; By default, &quot;r&quot; is selected if neither &quot;r&quot; nor &quot;s&quot; is specified.
-&nbsp;The macro<tt> __SW_5</tt> will be predefined if &quot;5&quot; is selected.&nbsp; The macro<tt> __SW_3R</tt> will be
-predefined if &quot;r&quot; is selected (or defaulted).&nbsp; The macro<tt> __SW_3S</tt> will be predefined if &quot;s&quot;
+&nbsp;The macro <tt> __SW_5</tt> will be predefined if &quot;5&quot; is selected.&nbsp; The macro <tt> __SW_3R</tt> will be
+predefined if &quot;r&quot; is selected (or defaulted).&nbsp; The macro <tt> __SW_3S</tt> will be predefined if &quot;s&quot;
 is selected.
 <h4 id="6_r_s_"> 6{r|s} </h4>
 <br>(32-bit only) This option is identical to &quot;3{r|s}&quot; except that the compiler will generate 386 instructions based
 on Intel Pentium Pro instruction timings.&nbsp; The code is optimized for Intel Pentium Pro processors rather than 386 processors.
-&nbsp;By default, &quot;r&quot; is selected if neither &quot;r&quot; nor &quot;s&quot; is specified.&nbsp; The macro<tt> __SW_6</tt>
-will be predefined if &quot;6&quot; is selected.&nbsp; The macro<tt> __SW_3R</tt> will be predefined if &quot;r&quot; is selected
-(or defaulted).&nbsp; The macro<tt> __SW_3S</tt> will be predefined if &quot;s&quot; is selected.
+&nbsp;By default, &quot;r&quot; is selected if neither &quot;r&quot; nor &quot;s&quot; is specified.&nbsp; The macro <tt>
+__SW_6</tt> will be predefined if &quot;6&quot; is selected.&nbsp; The macro <tt> __SW_3R</tt> will be predefined if &quot;r&quot;
+is selected (or defaulted).&nbsp; The macro <tt> __SW_3S</tt> will be predefined if &quot;s&quot; is selected.
 <h4 id="mf"> mf </h4>
 <br>(32-bit only) The &quot;flat&quot; memory model (code and data up to 4 gigabytes) is selected.&nbsp; By default, the 32-bit
 compiler will select this memory model unless the target system is Netware in which case &quot;small&quot; is selected.&nbsp;
 The following macros will be predefined.&nbsp; 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MF</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MF</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __FLAT__</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386FM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_386FM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <h4 id="ms"> ms </h4>
 <br>The &quot;small&quot; memory model (small code, small data) is selected.&nbsp; By default, the 16-bit compiler will select
 this memory model.&nbsp; When the target system is Netware, the 32-bit compiler will select this memory model.&nbsp; The following
 macros will be predefined.&nbsp; 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MS</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MS</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SMALL__</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 16-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86SM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86SM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_I86SM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 32-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386SM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386SM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_386SM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <h4 id="mm"> mm </h4>
 <br>The &quot;medium&quot; memory model (big code, small data) is selected.&nbsp; The following macros will be predefined.
 &nbsp;
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __MEDIUM__</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 16-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86MM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86MM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_I86MM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 32-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386MM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386MM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_386MM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <h4 id="mc"> mc </h4>
 <br>The &quot;compact&quot; memory model (small code, big data) is selected.&nbsp; The following macros will be predefined.
 &nbsp;
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MC</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MC</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __COMPACT__</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 16-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86CM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86CM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_I86CM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 32-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386CM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386CM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_386CM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <h4 id="ml"> ml </h4>
 <br>The &quot;large&quot; memory model (big code, big data) is selected.&nbsp; The following macros will be predefined.&nbsp;
 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_ML</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_ML</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LARGE__</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 16-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86LM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86LM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_I86LM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>additional for 32-bit compiler 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386LM</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_386LM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_386LM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <h4 id="mh"> mh </h4>
 <br>(16-bit only) The &quot;huge&quot; memory model (big code, huge data) is selected.&nbsp; The following macros will be
 predefined.&nbsp; 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MH</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __SW_MH</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __HUGE__</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; M_I86HM</tt>
 <br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_I86HM</tt>
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>Memory models are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a> and
 <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.&nbsp; Other architectural aspects of the Intel 86 family such as
 pointer size are discussed in the sections entitled <a href="#16Mbit__Sizes_of_Predefined_Types">16-bit:&nbsp; Sizes of Predefined Types</a>
@@ -3203,8 +3203,8 @@ in the chapter entitled <a href="#16Mbit_Assembly_Language_Considerations">16-bi
 This is the default in the 16-bit compact, large, and huge memory models (except for 16-bit Windows applications).
 <br>The &quot;zdp&quot; option informs the code generator that the DS register must always point to &quot;DGROUP&quot; This
 is the default in the 16-bit small and medium memory models, all of the 16-bit Windows memory models, and the 32-bit small
-and flat memory models.&nbsp; The macro<tt> __SW_ZDF</tt> will be predefined if &quot;zdf&quot; is selected.&nbsp; The macro<tt>
-__SW_ZDP</tt> will be predefined if &quot;zdp&quot; is selected.
+and flat memory models.&nbsp; The macro <tt> __SW_ZDF</tt> will be predefined if &quot;zdf&quot; is selected.&nbsp; The macro
+<tt> __SW_ZDP</tt> will be predefined if &quot;zdp&quot; is selected.
 <h4 id="zdl"> zdl </h4>
 <br>(32-bit only) The &quot;zdl&quot; option causes generation of code to load the DS register directly from DGROUP (rather
 than the default run-time call).&nbsp; This option causes the generation of a segment relocation.&nbsp; This option is used
@@ -3216,26 +3216,26 @@ option should be avoided.
 <h4 id="zf_f_p_"> zf{f,p} </h4>
 <br>The &quot;zff&quot; option allows the code generator to use the FS register (default for all but flat memory model).&nbsp;
 The &quot;zfp&quot; option informs the code generator that the FS register must not be used (default in flat memory model).
-&nbsp;The macro<tt> __SW_ZFF</tt> will be predefined if &quot;zff&quot; is selected.&nbsp; The macro<tt> __SW_ZFP</tt> will
+&nbsp;The macro <tt> __SW_ZFF</tt> will be predefined if &quot;zff&quot; is selected.&nbsp; The macro <tt> __SW_ZFP</tt> will
 be predefined if &quot;zfp&quot; is selected.
 <h4 id="zfw"> zfw </h4>
 <br>The &quot;zfw&quot; option turns on generation of FWAIT instructions on 386 and later CPUs.&nbsp; Note that when targeting
 286 and earlier, this option has no effect because FWAITs are always required for synchronization between CPU and FPU.
 <br>This option generates larger and slower code and should only be used when restartable floating-point exceptions are required.
-<br><br>The macro<tt> __SW_ZFW</tt> will be predefined if &quot;zfw&quot; is selected.
+<br><br>The macro <tt> __SW_ZFW</tt> will be predefined if &quot;zfw&quot; is selected.
 <h4 id="zg_f_p_"> zg{f,p} </h4>
 <br>The &quot;zgf&quot; option allows the code generator to use the GS register (default for all memory models).&nbsp; The
-&quot;zgp&quot; option informs the code generator that the GS register must not be used.&nbsp; The macro<tt> __SW_ZGF</tt>
-will be predefined if &quot;zgf&quot; is selected.&nbsp; The macro<tt> __SW_ZGP</tt> will be predefined if &quot;zgp&quot;
+&quot;zgp&quot; option informs the code generator that the GS register must not be used.&nbsp; The macro <tt> __SW_ZGF</tt>
+will be predefined if &quot;zgf&quot; is selected.&nbsp; The macro <tt> __SW_ZGP</tt> will be predefined if &quot;zgp&quot;
 is selected.
 <h4 id="zri"> zri </h4>
 <br>(32-bit only) The &quot;zri&quot; option inlines the code for floating point rounding.&nbsp; Normally a function call
 is generated for each float to int conversion which may not be desirable.
-<br>The macro<tt> __SW_ZRI</tt> will be predefined if &quot;zri&quot; is selected.
+<br>The macro <tt> __SW_ZRI</tt> will be predefined if &quot;zri&quot; is selected.
 <h4 id="zro"> zro </h4>
 <br>The &quot;zro&quot; option omits the code for floating point rounding.&nbsp; This results in non-conformant code - the
 rounding mode is not ISO/ANSI C compliant - but the code generated is very fast.
-<br>The macro<tt> __SW_ZRO</tt> will be predefined if &quot;zro&quot; is selected.
+<br>The macro <tt> __SW_ZRO</tt> will be predefined if &quot;zro&quot; is selected.
 <h4 id="zu"> zu </h4>
 <br>The &quot;zu&quot; option relaxes the restriction that the SS register contains the base address of the default data segment,
 &quot;DGROUP&quot;.&nbsp; Normally, all data items are placed into the group &quot;DGROUP&quot; and the SS register contains
@@ -3244,7 +3244,7 @@ point to another segment) and any global data references require loading a segme
 of &quot;DGROUP&quot;.
 <br>(16-bit only) This option is useful when compiling routines that are to be placed in a Dynamic Link Library (DLL) since
 the SS register points to the stack segment of the calling application upon entry to the function.
-<br><br>The macro<tt> __SW_ZU</tt> will be predefined if &quot;zu&quot; is selected.
+<br><br>The macro <tt> __SW_ZU</tt> will be predefined if &quot;zu&quot; is selected.
 <h3 id="Optimizations"> Optimizations </h3>
 <br>When specified on the command line, optimization options may be specified individually (oa, oi) or the letters may be
 string together (oailt).
@@ -3270,7 +3270,7 @@ the above situation does not arise.&nbsp; Rarely would we reference the same var
 a pointer in the same routine.&nbsp; The &quot;oa&quot; option instructs the code generator that such cases do not arise in
 the module to be compiled.&nbsp; The code generator will be able to produce more efficient code when it does not have to worry
 about the alias &quot;problem&quot;.
-<br><br>The macro<tt> __SW_OA</tt> will be predefined if &quot;oa&quot; is selected.
+<br><br>The macro <tt> __SW_OA</tt> will be predefined if &quot;oa&quot; is selected.
 <h4 id="ob"> ob </h4>
 <br>When the &quot;ob&quot; option is specified, the code generator will try to order the blocks of code emitted such that
 the &quot;expected&quot; execution path (as determined by a set of simple heuristics) will be straight through, with other
@@ -3282,14 +3282,14 @@ changed into a &quot;JMP&quot; (jump) instruction.
 <br>(16-bit only) This option is required if you wish to link an overlayed program using the Microsoft DOS Overlay Linker.
 &nbsp;The Microsoft DOS Overlay Linker will create overlay calls for a &quot;CALL&quot; instruction only.&nbsp; This option
 is not required when using the Open Watcom Linker.
-<br><br>The macro<tt> __SW_OC</tt> will be predefined if &quot;oc&quot; is selected.
+<br><br>The macro <tt> __SW_OC</tt> will be predefined if &quot;oc&quot; is selected.
 <h4 id="od"> od </h4>
 <br>Non-optimized code sequences are generated.&nbsp; The resulting code will be much easier to debug when using the Open
 Watcom Debugger.&nbsp; By default, the compiler will select &quot;od&quot; if &quot;d2&quot; is specified.&nbsp; If &quot;d2&quot;
 is followed by one of the other &quot;o?&quot; options then &quot;od&quot; is overridden.
 <br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;</tt><b>compiler_name</b><tt> report -d2 -os</tt>
-<br><br>The macro<tt> __SW_OD</tt> will be predefined if &quot;od&quot; is selected.
+<br><br>The macro <tt> __SW_OD</tt> will be predefined if &quot;od&quot; is selected.
 <h4 id="oeEXnumY"> oe=&lt;num&gt; </h4>
 <br>Certain user functions are expanded in-line.&nbsp; The criteria for which functions are selected for in-line expansion
 is based on the &quot;size&quot; of the function in terms of the number of &quot;tree nodes&quot; generated by the function.
@@ -3317,7 +3317,7 @@ for the desired function so that it will be generated in-line.&nbsp; The functio
 strcmp (1) strcpy&nbsp;&nbsp;&nbsp;&nbsp; strlen&nbsp;&nbsp;&nbsp; </tt>
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; *1 16-bit only
 <br>&nbsp;&nbsp;&nbsp;&nbsp; *2 32-bit only
-<br><br>The macros<tt> __INLINE_FUNCTIONS__</tt> and<tt> __SW_OI</tt> will be predefined if &quot;oi&quot; is selected.
+<br><br>The macros <tt> __INLINE_FUNCTIONS__</tt> and <tt> __SW_OI</tt> will be predefined if &quot;oi&quot; is selected.
 <h4 id="oiP"> oi+ </h4>
 <br>(C++ only) This option encompasses &quot;oi&quot; but also sets<b> inline_depth</b> to its maximum (255).&nbsp; By default,<b>
 inline_depth</b> is 3.&nbsp; The<b> inline_depth</b> can also be changed by using the C++<tt> inline_depth</tt> pragma.
@@ -3326,11 +3326,11 @@ inline_depth</b> is 3.&nbsp; The<b> inline_depth</b> can also be changed by usin
 register save/restores will not be executed when it is not necessary (as can be the case when a function consists of an if-else
 construct with a simple part that does little and a more complex part that does a lot).
 <h4 id="ol"> ol </h4>
-<br>Loop optimizations are performed.&nbsp; This includes moving loop-invariant expressions outside the loops.&nbsp; The macro<tt>
-__SW_OL</tt> will be predefined if &quot;ol&quot; is selected.
+<br>Loop optimizations are performed.&nbsp; This includes moving loop-invariant expressions outside the loops.&nbsp; The macro
+<tt> __SW_OL</tt> will be predefined if &quot;ol&quot; is selected.
 <h4 id="olP"> ol+ </h4>
 <br>Loop optimizations are performed including loop unrolling.&nbsp; This includes moving loop-invariant expressions outside
-the loops and turning some loops into straight-line code.&nbsp; The macro<tt> __SW_OL</tt> will be predefined if &quot;ol+&quot;
+the loops and turning some loops into straight-line code.&nbsp; The macro <tt> __SW_OL</tt> will be predefined if &quot;ol+&quot;
 is selected.
 <h4 id="om"> om </h4>
 <br>Generate in-line 80x87 code for math functions like sin, cos, tan, etc.&nbsp; If this option is selected, it is the programmer's
@@ -3338,37 +3338,37 @@ responsibility to make sure that arguments to these functions are within the ran
 etc.&nbsp; instructions since no run-time check is made.&nbsp; For 16-bit, you must also include the &quot;fp3&quot; option
 to get in-line 80x87 code (except for fabs).&nbsp; The functions that can be generated in-line are:
 <br><tt>atan&nbsp; cos&nbsp;&nbsp; exp&nbsp;&nbsp; fabs&nbsp; log10 log&nbsp;&nbsp; sin&nbsp;&nbsp; sqrt&nbsp; tan&nbsp; </tt>
-<br><br>The macro<tt> __SW_OM</tt> will be predefined if &quot;om&quot; is selected.
+<br><br>The macro <tt> __SW_OM</tt> will be predefined if &quot;om&quot; is selected.
 <h4 id="on"> on </h4>
 <br>This option allows the compiler to replace floating-point divisions with multiplications by the reciprocal.&nbsp; This
 generates faster code, but the result may not be the same because the reciprocal may not be exactly representable.&nbsp; The
-macro<tt> __SW_ON</tt> will be predefined if &quot;on&quot; is selected.
+macro <tt> __SW_ON</tt> will be predefined if &quot;on&quot; is selected.
 <h4 id="oo"> oo </h4>
 <br>By default, the compiler will abort compilation if it runs low on memory.&nbsp; This option forces the compiler to continue
-compilation even when low on memory, however, this can result in very poor code being generated.&nbsp; The macro<tt> __SW_OO</tt>
+compilation even when low on memory, however, this can result in very poor code being generated.&nbsp; The macro <tt> __SW_OO</tt>
 will be predefined if &quot;oo&quot; is selected.
 <h4 id="op"> op </h4>
 <br>This option causes the compiler to store intermediate floating-point results into memory in order to generate consistent
-floating-point results rather than keeping values in the 80x87 registers where they have more precision.&nbsp; The macro<tt>
+floating-point results rather than keeping values in the 80x87 registers where they have more precision.&nbsp; The macro <tt>
 __SW_OP</tt> will be predefined if &quot;op&quot; is selected.
 <h4 id="or"> or </h4>
 <br>This option enables reordering of instructions (instruction scheduling) to achieve better performance on pipelined architectures
 such as the Intel 486 and Pentium processors.&nbsp; This option is essential for generating fast code for the Intel Pentium
 processor.&nbsp; Selecting this option will make it slightly more difficult to debug because the assembly language instructions
-generated for a source statement may be intermixed with instructions generated for surrounding statements.&nbsp; The macro<tt>
-__SW_OR</tt> will be predefined if &quot;or&quot; is selected.
+generated for a source statement may be intermixed with instructions generated for surrounding statements.&nbsp; The macro
+<tt> __SW_OR</tt> will be predefined if &quot;or&quot; is selected.
 <h4 id="os"> os </h4>
 <br>Space is favoured over time when generating code (smaller code but possibly slower execution).&nbsp; By default, the compiler
-selects a balance between &quot;space&quot; and &quot;time&quot;.&nbsp; The macro<tt> __SW_OS</tt> will be predefined if &quot;os&quot;
-is selected.
+selects a balance between &quot;space&quot; and &quot;time&quot;.&nbsp; The macro <tt> __SW_OS</tt> will be predefined if
+&quot;os&quot; is selected.
 <h4 id="ot"> ot </h4>
 <br>Time is favoured over space when generating code (faster execution but possibly larger code).&nbsp; By default, the compiler
-selects a balance between &quot;space&quot; and &quot;time&quot;.&nbsp; The macro<tt> __SW_OT</tt> will be predefined if &quot;ot&quot;
-is selected.
+selects a balance between &quot;space&quot; and &quot;time&quot;.&nbsp; The macro <tt> __SW_OT</tt> will be predefined if
+&quot;ot&quot; is selected.
 <h4 id="ou"> ou </h4>
 <br>This option forces the compiler to make sure that all function labels are unique.&nbsp; Thus the compiler will not place
 two function labels at the same address even if the code for the two functions are identical.&nbsp; This option is automatically
-selected if the &quot;za&quot; option is specified.&nbsp; The macro<tt> __SW_OU</tt> will be predefined if &quot;ou&quot;
+selected if the &quot;za&quot; option is specified.&nbsp; The macro <tt> __SW_OU</tt> will be predefined if &quot;ou&quot;
 is selected.
 <h4 id="ox"> ox </h4>
 <br>The &quot;obmiler&quot; and &quot;s&quot; (no stack overflow checking) options are selected.
@@ -3397,15 +3397,15 @@ omits NULL pointer checks on pointer conversions when it is safe to do so.&nbsp;
 no offset adjustment is allowed for a NULL pointer).&nbsp; However, the first executable statement implies that<tt> p</tt>
 is not NULL since, in most operating environments, the executing program would crash at the first executable statement if<tt>
 p</tt> was NULL.&nbsp; The &quot;oz&quot; option will prevent the compiler from omitting the check for a NULL pointer.
-<br><br>The macro<tt> __SW_OZ</tt> will be predefined if &quot;oz&quot; is selected.
+<br><br>The macro <tt> __SW_OZ</tt> will be predefined if &quot;oz&quot; is selected.
 <br><br>When &quot;ox&quot; is combined with the &quot;on&quot;, &quot;oa&quot; and &quot;ot&quot; options (&quot;onatx&quot;)
 and the &quot;zp4&quot; option, the code generator will attempt to give you the fastest executing code possible irrespective
 of architecture.&nbsp; Other options can give you architecture specific optimizations to further improve the speed of your
 code.&nbsp; Note that specifying &quot;onatx&quot; is equivalent to specifying &quot;onatblimer&quot; and &quot;s&quot;.&nbsp;
 See the section entitled <a href="#Benchmarking_Hints">Benchmarking Hints</a> for more information on generating fast code.
 <h3 id="CPP_Exception_Handling"> C++ Exception Handling </h3>
-<br>The &quot;xd...&quot; options disable exception handling.&nbsp; Consequently, it is not possible to use<b><i> throw</i></b>
-,<b><i> try</i></b> , or<b><i> catch</i></b> statements, or to specify a function exception specification.&nbsp; If your program
+<br>The &quot;xd...&quot; options disable exception handling.&nbsp; Consequently, it is not possible to use <b><i> throw</i></b>,
+<b><i> try</i></b>, or <b><i> catch</i></b> statements, or to specify a function exception specification.&nbsp; If your program
 (or a library which it includes) throws exceptions, then one of the &quot;xs...&quot; options should be used to compile all
 the modules in your program; otherwise, any active objects created within the module will not be destructed during exception
 processing.
@@ -3469,7 +3469,7 @@ character.
 <dd>This option causes the compiler to process strings using the current code page.&nbsp; If the local character set includes
 double-byte characters then string processing will check for lead bytes.
 </dl>
-<br>The macro<tt> __SW_ZK</tt> will be predefined if any &quot;zk&quot; option is selected.
+<br>The macro <tt> __SW_ZK</tt> will be predefined if any &quot;zk&quot; option is selected.
 <h4 id="zk0u"> zk0u </h4>
 <br>This option causes the compiler to process strings for Japanese double-byte characters (range 0x81 - 0x9F and 0xE0 - 0xFC).
 &nbsp;The characters in the range A0 - DF are single-byte Katakana.&nbsp; All characters, including Kanji, in wide characters
@@ -3480,7 +3480,7 @@ as a &quot;\&quot; or quote (&quot;) character.
 <h4 id="zkuEXcodepageY"> zku=&lt;codepage&gt; </h4>
 <br>Characters in wide characters (L'c') and wide strings (L&quot;string&quot;) are translated to UNICODE.&nbsp; The UNICODE
 translate table for the specified code page is loaded from a file.&nbsp; The compiler locates this file by searching the paths
-listed in the<b> PATH</b> environment variable.&nbsp; The following table lists the supported code pages.
+listed in the <b> PATH</b> environment variable.&nbsp; The following table lists the supported code pages.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; codepage | character set&nbsp;&nbsp; | file name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------------------------</tt>
@@ -3495,9 +3495,9 @@ listed in the<b> PATH</b> environment variable.&nbsp; The following table lists 
 <br>The &quot;vc&quot; option prefix is used to introduce a set of Microsoft Visual C++ compatibility options.&nbsp; At present,
 there is only one:&nbsp; vcap.
 <h4 id="vcap"> vcap </h4>
-<br>This options tells the compiler to allow<b><i> _alloca()</i></b> to be used in a parameter list.&nbsp; The optimizer has
-to do extra work to allow this but since it is rare (and easily worked around if you can), you have to ask the optimizer to
-handle this case.&nbsp; You also may get less efficient code in some cases.
+<br>This options tells the compiler to allow <b><i> _alloca()</i></b> to be used in a parameter list.&nbsp; The optimizer
+has to do extra work to allow this but since it is rare (and easily worked around if you can), you have to ask the optimizer
+to handle this case.&nbsp; You also may get less efficient code in some cases.
 <h3 id="Compatibility_with_Older_Versions_of_the_80x86_Compilers"> Compatibility with Older Versions of the 80x86 Compilers </h3>
 <br>This group of options deals with compatibility with older versions of Open Watcom's 80x86 compilers.
 <h4 id="r"> r </h4>
@@ -3506,7 +3506,7 @@ registers that are modified by the function.&nbsp; Caution should be exercised w
 of the segment register being restored matches the value of a segment that was freed within the function, a general protection
 fault will occur in protected-mode environments.&nbsp; When this option is used, the compiler also assumes that called functions
 save and restore segment registers.&nbsp; By default, the compiler does not generate code to save and restore segment registers.
-&nbsp;This option is provided for compatibility with the version 8.0 release.&nbsp; The macro<tt> __SW_R</tt> will be predefined
+&nbsp;This option is provided for compatibility with the version 8.0 release.&nbsp; The macro <tt> __SW_R</tt> will be predefined
 if &quot;r&quot; is selected.
 <h4 id="fpr"> fpr </h4>
 <br>Use this option if you want to generate floating-point instructions that will be compatible with version 9.0 or earlier
@@ -3695,7 +3695,7 @@ definition of the routine<tt> gopengks</tt> as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>For a small code model, the routine<tt> gopengks</tt> must be defined in this file as<tt> far</tt> since it is placed
+<br><br>For a small code model, the routine<tt> gopengks</tt> must be defined in this file as <tt> far</tt> since it is placed
 in another group.&nbsp; The &quot;s&quot; option is also specified to prevent a run-time call to the stack overflow check
 routine which will be placed in a different code segment at link time.&nbsp; The<tt> gopengks</tt> routine must be prototyped
 by C routines in other groups as
@@ -3812,7 +3812,7 @@ a way as to introduce some errors.
 <br><br>and
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; return( y );</tt>
-<br><br>and changed the keyword<tt> void</tt> to<tt> int</tt> .
+<br><br>and changed the keyword <tt> void</tt> to <tt> int</tt>.
 <br><br>We compile the program with the &quot;warning&quot; option.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;</tt><b>compiler_name</b><tt> hello -w3</tt>
@@ -3869,7 +3869,7 @@ of the parent file is searched next.&nbsp; This search continues recursively thr
 until the original source file's directory is searched.
 <li>Next, if the file specification enclosed in quotation marks (&quot;file-spec&quot;) or in angle brackets (&lt;file-spec&gt;),
 each directory listed in the &quot;i&quot; path is searched (in the order that they were specified).
-<li>Next, if the &quot;x&quot; option was not specified, each directory listed in the<b> &lt;os&gt;_INCLUDE</b> environment
+<li>Next, if the &quot;x&quot; option was not specified, each directory listed in the <b> &lt;os&gt;_INCLUDE</b> environment
 variable is searched (in the order that they were specified).&nbsp; The environment variable name is constructed from the
 current build target name.&nbsp; The default build targets are:
 <dl>
@@ -3884,24 +3884,24 @@ current build target name.&nbsp; The default build targets are:
 <dt>LINUX
 <dd>when the host operating system is Linux.
 </dl>
-<br>For example, the environment variable<b> OS2_INCLUDE</b> will be searched if the build target is &quot;OS2&quot;.&nbsp;
+<br>For example, the environment variable <b> OS2_INCLUDE</b> will be searched if the build target is &quot;OS2&quot;.&nbsp;
 The build target would be OS/2 if:
 <ol>
 <li>the host operating system is OS/2 and the &quot;bt&quot; option was not specified, or
 <li>the &quot;bt=OS2&quot; option was explicitly specified.
 </ol>
-<li>Next, if the &quot;x&quot; option was not specified, each directory listed in the<b> INCLUDE</b> environment variable
+<li>Next, if the &quot;x&quot; option was not specified, each directory listed in the <b> INCLUDE</b> environment variable
 is searched (in the order that they were specified).
 <li>Finally, if the &quot;xx&quot; option was not specified and the file specification is enclosed in quotation marks then
 an adjacent &quot;H&quot; directory (i.e.,<tt> ..\h</tt>) is searched if it exists.
 </ol>
 <br>In the above example,<tt> &lt;stdio.h&gt;</tt> and<tt> &quot;stdio.h&quot;</tt> could refer to two different files if
 there is a<tt> stdio.h</tt> in the current directory and one in the Open Watcom C/C++ include file directory<tt> (\WATCOM\H)</tt>
-and the current directory is not listed in an &quot;i&quot; path or the<b> INCLUDE</b> environment variable.
+and the current directory is not listed in an &quot;i&quot; path or the <b> INCLUDE</b> environment variable.
 <br><br>The compiler will search the directories listed in &quot;i&quot; paths (see description of the &quot;i&quot; option)
-and the<b> INCLUDE</b> environment variable in a manner analogous to that which the operating system shell will use when searching
-for programs by using the<b> PATH</b> environment variable.
-<br><br>The &quot;SET&quot; command is used to define an<b> INCLUDE</b> environment variable that contains a list of directories.
+and the <b> INCLUDE</b> environment variable in a manner analogous to that which the operating system shell will use when
+searching for programs by using the <b> PATH</b> environment variable.
+<br><br>The &quot;SET&quot; command is used to define an <b> INCLUDE</b> environment variable that contains a list of directories.
 &nbsp;A command of the form
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET INCLUDE=&#91;d:&#93;path;&#91;d:&#93;path...</tt>
@@ -3933,11 +3933,11 @@ following commands to compile the application.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;rem -- Now compile application specifying a</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;rem&nbsp;&nbsp;&nbsp; third location for include files</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;</tt><b>compiler_name</b><tt> report -fo=..\obj\ -i=..\source</tt>
-<br><br>In the above example, the &quot;SET&quot; command is used to define the<b> INCLUDE</b> environment variable.&nbsp;
+<br><br>In the above example, the &quot;SET&quot; command is used to define the <b> INCLUDE</b> environment variable.&nbsp;
 It specifies that the<tt> \watcom\h</tt> directory (of the &quot;C&quot; disk) and the<tt> \headers</tt> directory (a directory
 of the &quot;B&quot; disk) are to be searched.
 <br><br>The Open Watcom C/C++ &quot;i&quot; option defines a third place to search for include files.&nbsp; The advantage
-of the<b> INCLUDE</b> environment variable is that it need not be specified each time the compiler is run.
+of the <b> INCLUDE</b> environment variable is that it need not be specified each time the compiler is run.
 <h2 id="Open_Watcom_CDCPP_Preprocessor"> Open Watcom C/C++ Preprocessor </h2>
 <br>The Open Watcom C/C++ preprocessor forms an integral part of Open Watcom C/C++.&nbsp; When any form of the &quot;p&quot;
 option is specified, only the preprocessor is invoked.&nbsp; No code is generated and no object file is produced.&nbsp; The
@@ -3999,12 +3999,12 @@ are defined for 16-bit and 32-bit target systems.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _M_IX86&nbsp;&nbsp;&nbsp;&nbsp; _M_IX86</tt>
 <br><br><b>Notes:</b>
 <ol>
-<li>The<tt> __X86__</tt> identifies the target as an Intel environment.
-<li>The<tt> __I86__</tt> ,<tt> M_I86</tt> and<tt> _M_I86</tt> macros identify the target as a 16-bit Intel environment.
-<li>The<tt> __386__</tt> ,<tt> M_I386</tt> and<tt> _M_I386</tt> macros identify the target as a 32-bit Intel environment.
-<li>The<tt> _M_IX86</tt> macro is identically equal to 100 times the architecture compiler option value (-0, -1, -2, -3, -4,
--5, etc.).&nbsp; If &quot;-5&quot; (Pentium instruction timings) was specified as a compiler option, then the value of<tt>
-_M_IX86</tt> would be 500.
+<li>The <tt> __X86__</tt> identifies the target as an Intel environment.
+<li>The <tt> __I86__</tt>, <tt> M_I86</tt> and <tt> _M_I86</tt> macros identify the target as a 16-bit Intel environment.
+<li>The <tt> __386__</tt>, <tt> M_I386</tt> and <tt> _M_I386</tt> macros identify the target as a 32-bit Intel environment.
+<li>The <tt> _M_IX86</tt> macro is identically equal to 100 times the architecture compiler option value (-0, -1, -2, -3,
+-4, -5, etc.).&nbsp; If &quot;-5&quot; (Pentium instruction timings) was specified as a compiler option, then the value of
+<tt> _M_IX86</tt> would be 500.
 </ol>
 <br>The Open Watcom C/C++ compilers support application development for a variety of operating systems.&nbsp; The following
 macros are defined for particular target operating systems.&nbsp; 
@@ -4020,23 +4020,23 @@ macros are defined for particular target operating systems.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Linux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __LINUX__, __UNIX__</tt>
 <br><br><b>Notes:</b>
 <ol>
-<li>The<tt> __DOS__</tt> ,<tt> _DOS</tt> and<tt> MSDOS</tt> macros are defined when the build target is &quot;DOS&quot; (16-bit
-DOS or 32-bit extended DOS).
-<li>The<tt> __OS2__</tt> macro is defined when the build target is &quot;OS2&quot; (16-bit or 32-bit OS/2).
-<li>The<tt> __QNX__</tt> and<tt> __UNIX__</tt> macros are defined when the build target is &quot;QNX&quot; (16-bit or 32-bit
+<li>The <tt> __DOS__</tt>, <tt> _DOS</tt> and <tt> MSDOS</tt> macros are defined when the build target is &quot;DOS&quot;
+(16-bit DOS or 32-bit extended DOS).
+<li>The <tt> __OS2__</tt> macro is defined when the build target is &quot;OS2&quot; (16-bit or 32-bit OS/2).
+<li>The <tt> __QNX__</tt> and <tt> __UNIX__</tt> macros are defined when the build target is &quot;QNX&quot; (16-bit or 32-bit
 QNX).
-<li>The<tt> __NETWARE__</tt> and<tt> __NETWARE_386__</tt> macros are defined when the build target is &quot;NETWARE&quot;
+<li>The <tt> __NETWARE__</tt> and <tt> __NETWARE_386__</tt> macros are defined when the build target is &quot;NETWARE&quot;
 (Novell NetWare).
-<li>The<tt> __NT__</tt> macro is defined when the build target is &quot;NT&quot; (Windows NT and Windows 95).
-<li>The<tt> __WINDOWS__</tt> macro is defined when the build target is &quot;WINDOWS&quot; or one of the &quot;zw&quot;, &quot;zW&quot;,
-&quot;zWs&quot; options is specified (identifies the target operating system as 16-bit Windows or 32-bit extended Windows
-but not Windows NT or Windows 95).
-<li>The<tt> _WINDOWS</tt> macro is defined when the build target is &quot;WINDOWS&quot; or one of the &quot;zw&quot;, &quot;zW&quot;,
+<li>The <tt> __NT__</tt> macro is defined when the build target is &quot;NT&quot; (Windows NT and Windows 95).
+<li>The <tt> __WINDOWS__</tt> macro is defined when the build target is &quot;WINDOWS&quot; or one of the &quot;zw&quot;,
+&quot;zW&quot;, &quot;zWs&quot; options is specified (identifies the target operating system as 16-bit Windows or 32-bit extended
+Windows but not Windows NT or Windows 95).
+<li>The <tt> _WINDOWS</tt> macro is defined when the build target is &quot;WINDOWS&quot; or one of the &quot;zw&quot;, &quot;zW&quot;,
 &quot;zWs&quot; options is specified and you are using a 16-bit compiler (identifies the target operating system as 16-bit
 Windows).
-<li>The<tt> __WINDOWS_386__</tt> macro is defined when the build target is &quot;WINDOWS&quot; or the &quot;zw&quot; option
+<li>The <tt> __WINDOWS_386__</tt> macro is defined when the build target is &quot;WINDOWS&quot; or the &quot;zw&quot; option
 is specified and you are using a 32-bit compiler (identifies the target operating system as 32-bit extended Windows).
-<li>The<tt> __LINUX__</tt> and<tt> __UNIX__</tt> macros are defined when the build target is &quot;LINUX&quot; (32-bit Linux).
+<li>The <tt> __LINUX__</tt> and <tt> __UNIX__</tt> macros are defined when the build target is &quot;LINUX&quot; (32-bit Linux).
 </ol>
 <br>The following macros are defined for the indicated options.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -4075,14 +4075,14 @@ _M_386LM&nbsp; M_386LM</tt>
 <br><br>The following macros indicate which compiler is compiling the C/C++ source code.
 <dl>
 <dt>__cplusplus
-<dd>Open Watcom C++ predefines the macro<tt> __cplusplus</tt> to identify the compiler as a C++ compiler.
+<dd>Open Watcom C++ predefines the macro <tt> __cplusplus</tt> to identify the compiler as a C++ compiler.
 <dt>__WATCOMC__
-<dd>Open Watcom C/C++ predefines the macro<tt> __WATCOMC__</tt> to identify the compiler as one of the Open Watcom C/C++ compilers.
+<dd>Open Watcom C/C++ predefines the macro <tt> __WATCOMC__</tt> to identify the compiler as one of the Open Watcom C/C++ compilers.
 <br><br>The value of the macro depends on the version number of the compiler.&nbsp; The value is 100 times the version number
 (version 8.5 yields 850, version 9.0 yields 900, etc.).&nbsp; Note that for Open Watcom 1.0, the value of this macro is 1200,
 for Open Watcom 1.1 it is 1210 etc.
 <dt>__WATCOM_CPLUSPLUS__
-<dd>Open Watcom C++ predefines the macro<tt> __WATCOM_CPLUSPLUS__</tt> to identify the compiler as one of the Open Watcom C++
+<dd>Open Watcom C++ predefines the macro <tt> __WATCOM_CPLUSPLUS__</tt> to identify the compiler as one of the Open Watcom C++
 compilers.
 <br><br>The value of the macro depends on the version number of the compiler.&nbsp; The value is 100 times the version number
 (version 10.0 yields 1000, version 10.5 yields 1050, etc.).&nbsp; Note that for Open Watcom 1.0, the value of this macro is
@@ -4091,20 +4091,20 @@ compilers.
 <br>The following macros are defined for compatibility with Microsoft.
 <dl>
 <dt>__CPPRTTI
-<dd>Open Watcom C++ predefines the<tt> __CPPRTTI</tt> macro to indicate that C++ Run-Time Type Information (RTTI) is in force.
+<dd>Open Watcom C++ predefines the <tt> __CPPRTTI</tt> macro to indicate that C++ Run-Time Type Information (RTTI) is in force.
 &nbsp;This macro is predefined if the Open Watcom C++ &quot;xr&quot; compile option is specified and is not defined otherwise.
 <dt>__CPPUNWIND
-<dd>Open Watcom C++ predefines the<tt> __CPPUNWIND</tt> macro to indicate that C++ exceptions supported.&nbsp; This macro is predefined
-if any of the Open Watcom C++ &quot;xs&quot;, &quot;xss&quot; or &quot;xst&quot; compile options are specified and is not
-defined otherwise.
+<dd>Open Watcom C++ predefines the <tt> __CPPUNWIND</tt> macro to indicate that C++ exceptions supported.&nbsp; This macro is
+predefined if any of the Open Watcom C++ &quot;xs&quot;, &quot;xss&quot; or &quot;xst&quot; compile options are specified
+and is not defined otherwise.
 <dt>_INTEGRAL_MAX_BITS
-<dd>Open Watcom C/C++ predefines the<tt> _INTEGRAL_MAX_BITS</tt> macro to indicate that maximum number of bits supported in an
+<dd>Open Watcom C/C++ predefines the <tt> _INTEGRAL_MAX_BITS</tt> macro to indicate that maximum number of bits supported in an
 integral type (see the description of the &quot;__int64&quot; keyword in the next section).&nbsp; Its value is 64 currently.
 <dt>_PUSHPOP_SUPPORTED
-<dd>Open Watcom C/C++ predefines the<tt> _PUSHPOP_SUPPORTED</tt> macro to indicate that<tt> #pragma pack(push)</tt> and<tt> #pragma
+<dd>Open Watcom C/C++ predefines the <tt> _PUSHPOP_SUPPORTED</tt> macro to indicate that<tt> #pragma pack(push)</tt> and<tt> #pragma
 pack(pop)</tt> are supported.
 <dt>_STDCALL_SUPPORTED
-<dd>Open Watcom C/C++ predefines the<tt> _STDCALL_SUPPORTED</tt> macro to indicate that the standard 32-bit Win32 calling convention
+<dd>Open Watcom C/C++ predefines the <tt> _STDCALL_SUPPORTED</tt> macro to indicate that the standard 32-bit Win32 calling convention
 is supported.
 </dl>
 <br>The following table summarizes the predefined macros supported by the compilers and the values that the respective compilers
@@ -4290,47 +4290,49 @@ prefix with these keywords.&nbsp; To support compatibility with other C/C++ comp
 also supported through predefined macros.
 <dl>
 <dt>__near
-<dd>Open Watcom C/C++ supports the<tt> __near</tt> keyword to describe functions and other object names that are in near memory
+<dd>Open Watcom C/C++ supports the <tt> __near</tt> keyword to describe functions and other object names that are in near memory
 and pointers to near objects.
-<br><br>Open Watcom C/C++ predefines the macros<tt> near</tt> and<tt> _near</tt> to be equivalent to the<tt> __near</tt> keyword.
-<dt>__far
-<dd>Open Watcom C/C++ supports the<tt> __far</tt> keyword to describe functions and other object names that are in far memory
-and pointers to far objects.
-<br><br>Open Watcom C/C++ predefines the macros<tt> far</tt> ,<tt> _far</tt> and<tt> SOMDLINK</tt> (16-bit only) to be equivalent
-to the<tt> __far</tt> keyword.
-<dt>__huge
-<dd>Open Watcom C/C++ supports the<tt> __huge</tt> keyword to describe functions and other object names that are in huge memory
-and pointers to huge objects.&nbsp; The 32-bit compilers treat these as equivalent to far objects.
-<br><br>Open Watcom C/C++ predefines the macros<tt> huge</tt> and<tt> _huge</tt> to be equivalent to the<tt> __huge</tt> keyword.
-<dt>__based
-<dd>Open Watcom C/C++ supports the<tt> __based</tt> keyword to describe pointers to objects that appear in other segments or the
-objects themselves.&nbsp; See the section entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of the<tt>
-__based</tt> keyword.
-<br><br>Open Watcom C/C++ predefines the macro<tt> _based</tt> to be equivalent to the<tt> __based</tt> keyword.
-<dt>__segment
-<dd>Open Watcom C/C++ supports the<tt> __segment</tt> keyword which is used when describing objects of type segment.&nbsp; See
-the section entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of the<tt> __segment</tt> keyword.
-<br><br>Open Watcom C/C++ predefines the macro<tt> _segment</tt> to be equivalent to the<tt> __segment</tt> keyword.
-<dt>__segname
-<dd>Open Watcom C/C++ supports the<tt> __segname</tt> keyword which is used when describing segname constant based pointers or
-objects.&nbsp; See the section entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of the<tt> __segname</tt>
+<br><br>Open Watcom C/C++ predefines the macros <tt> near</tt> and <tt> _near</tt> to be equivalent to the <tt> __near</tt>
 keyword.
-<br><br>Open Watcom C/C++ predefines the macro<tt> _segname</tt> to be equivalent to the<tt> __segname</tt> keyword.
+<dt>__far
+<dd>Open Watcom C/C++ supports the <tt> __far</tt> keyword to describe functions and other object names that are in far memory
+and pointers to far objects.
+<br><br>Open Watcom C/C++ predefines the macros <tt> far</tt>, <tt> _far</tt> and <tt> SOMDLINK</tt> (16-bit only) to be equivalent
+to the <tt> __far</tt> keyword.
+<dt>__huge
+<dd>Open Watcom C/C++ supports the <tt> __huge</tt> keyword to describe functions and other object names that are in huge memory
+and pointers to huge objects.&nbsp; The 32-bit compilers treat these as equivalent to far objects.
+<br><br>Open Watcom C/C++ predefines the macros <tt> huge</tt> and <tt> _huge</tt> to be equivalent to the <tt> __huge</tt>
+keyword.
+<dt>__based
+<dd>Open Watcom C/C++ supports the <tt> __based</tt> keyword to describe pointers to objects that appear in other segments or
+the objects themselves.&nbsp; See the section entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of
+the <tt> __based</tt> keyword.
+<br><br>Open Watcom C/C++ predefines the macro <tt> _based</tt> to be equivalent to the <tt> __based</tt> keyword.
+<dt>__segment
+<dd>Open Watcom C/C++ supports the <tt> __segment</tt> keyword which is used when describing objects of type segment.&nbsp; See
+the section entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of the <tt> __segment</tt> keyword.
+<br><br>Open Watcom C/C++ predefines the macro <tt> _segment</tt> to be equivalent to the <tt> __segment</tt> keyword.
+<dt>__segname
+<dd>Open Watcom C/C++ supports the <tt> __segname</tt> keyword which is used when describing segname constant based pointers or
+objects.&nbsp; See the section entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of the <tt> __segname</tt>
+keyword.
+<br><br>Open Watcom C/C++ predefines the macro <tt> _segname</tt> to be equivalent to the <tt> __segname</tt> keyword.
 <dt>__self
-<dd>Open Watcom C/C++ supports the<tt> __self</tt> keyword which is used when describing self based pointers.&nbsp; See the section
-entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of the<tt> __self</tt> keyword.
-<br><br>Open Watcom C/C++ predefines the macro<tt> _self</tt> to be equivalent to the<tt> __self</tt> keyword.
+<dd>Open Watcom C/C++ supports the <tt> __self</tt> keyword which is used when describing self based pointers.&nbsp; See the section
+entitled <a href="#Based_Pointers">Based Pointers</a> for an explanation of the <tt> __self</tt> keyword.
+<br><br>Open Watcom C/C++ predefines the macro <tt> _self</tt> to be equivalent to the <tt> __self</tt> keyword.
 <dt>__restrict
-<dd>Open Watcom C/C++ provides the<b><i> __restrict</i></b> type qualifier as an alternative to the ISO C99<b><i> restrict</i></b>
+<dd>Open Watcom C/C++ provides the <b><i> __restrict</i></b> type qualifier as an alternative to the ISO C99 <b><i> restrict</i></b>
 keyword; it is supported even when C99 keywords aren't visible.&nbsp; This type qualifier is used as an optimization hint.
-&nbsp;Any object accessed through a<b><i> restrict</i></b> qualified pointer may only be accessed through that pointer and
+&nbsp;Any object accessed through a <b><i> restrict</i></b> qualified pointer may only be accessed through that pointer and
 the compiler may assume that there will be no aliasing.
 <dt>_Packed
-<dd>Open Watcom C/C++ supports the<tt> _Packed</tt> keyword which is used when describing a structure.&nbsp; If specified before
-the<b><i> struct</i></b> keyword, the compiler will force the structure to be packed (no alignment, no gaps) regardless of
-the setting of the command-line option or the<b><i> #pragma</i></b> controlling the alignment of members.
+<dd>Open Watcom C/C++ supports the <tt> _Packed</tt> keyword which is used when describing a structure.&nbsp; If specified before
+the <b><i> struct</i></b> keyword, the compiler will force the structure to be packed (no alignment, no gaps) regardless of
+the setting of the command-line option or the <b><i> #pragma</i></b> controlling the alignment of members.
 <dt>__cdecl
-<dd>Open Watcom C/C++ supports the<tt> __cdecl</tt> keyword to describe C functions that are called using a special convention.
+<dd>Open Watcom C/C++ supports the <tt> __cdecl</tt> keyword to describe C functions that are called using a special convention.
 <br><br><b>Notes:</b>
 <ol>
 <li>All symbols are preceded by an underscore character.
@@ -4342,21 +4344,21 @@ returns a pointer in register AX/EAX to the return value which is stored in the 
 made.
 <li>For the 32-bit compiler, registers EAX, ECX and EDX are not saved and restored when a call is made.
 </ol>
-<br>Open Watcom C/C++ predefines the macros<tt> cdecl</tt> ,<tt> _cdecl</tt> ,<tt> _Cdecl</tt> and<tt> SOMLINK</tt> (16-bit
-only) to be equivalent to the<tt> __cdecl</tt> keyword.
+<br>Open Watcom C/C++ predefines the macros <tt> cdecl</tt>, <tt> _cdecl</tt>, <tt> _Cdecl</tt> and <tt> SOMLINK</tt> (16-bit
+only) to be equivalent to the <tt> __cdecl</tt> keyword.
 <dt>__pascal
-<dd>Open Watcom C/C++ supports the<tt> __pascal</tt> keyword to describe Pascal functions that are called using a special convention
+<dd>Open Watcom C/C++ supports the <tt> __pascal</tt> keyword to describe Pascal functions that are called using a special convention
 described by a pragma in the &quot;stddef.h&quot; header file.
-<br><br>Open Watcom C/C++ predefines the macros<tt> pascal</tt> ,<tt> _pascal</tt> and<tt> _Pascal</tt> to be equivalent to
-the<tt> __pascal</tt> keyword.
+<br><br>Open Watcom C/C++ predefines the macros <tt> pascal</tt>, <tt> _pascal</tt> and <tt> _Pascal</tt> to be equivalent
+to the <tt> __pascal</tt> keyword.
 <dt>__fortran
-<dd>Open Watcom C/C++ supports the<tt> __fortran</tt> keyword to describe functions that are called from FORTRAN.&nbsp; It converts
+<dd>Open Watcom C/C++ supports the <tt> __fortran</tt> keyword to describe functions that are called from FORTRAN.&nbsp; It converts
 the name to uppercase letters and suppresses the &quot;_&quot; which is appended to the function name for certain calling
 conventions.
-<br><br>Open Watcom C/C++ predefines the macros<tt> fortran</tt> and<tt> _fortran</tt> to be equivalent to the<tt> __fortran</tt>
+<br><br>Open Watcom C/C++ predefines the macros <tt> fortran</tt> and <tt> _fortran</tt> to be equivalent to the <tt> __fortran</tt>
 keyword.
 <dt>__interrupt
-<dd>Open Watcom C/C++ supports the<tt> __interrupt</tt> keyword to describe a function that is an interrupt handler.
+<dd>Open Watcom C/C++ supports the <tt> __interrupt</tt> keyword to describe a function that is an interrupt handler.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;i86.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void __interrupt int10( union INTPACK r )</tt>
@@ -4370,23 +4372,23 @@ order so that they may be referenced using the &quot;INTPACK&quot; union as show
 generator will emit instructions to establish addressability to the program's data segment since the DS segment register contents
 are unpredictable.&nbsp; The function will return using an &quot;IRET&quot; (16-bit) or &quot;IRETD&quot; (32-bit) (interrupt
 return) instruction.
-<br><br>Open Watcom C/C++ predefines the macros<tt> interrupt</tt> and<tt> _interrupt</tt> to be equivalent to the<tt> __interrupt</tt>
-keyword.
+<br><br>Open Watcom C/C++ predefines the macros <tt> interrupt</tt> and <tt> _interrupt</tt> to be equivalent to the <tt>
+__interrupt</tt> keyword.
 <dt>__declspec( modifier )
-<dd>Open Watcom C/C++ supports the<tt> __declspec</tt> keyword for compatibility with Microsoft C++.&nbsp; The<tt> __declspec</tt>
+<dd>Open Watcom C/C++ supports the <tt> __declspec</tt> keyword for compatibility with Microsoft C++.&nbsp; The <tt> __declspec</tt>
 keyword is used to modify storage-class attributes of functions and/or data.&nbsp; There are several modifiers that can be
-specified with the<tt> __declspec</tt> keyword:<tt>&nbsp; thread</tt> ,<tt> naked</tt> ,<tt> noreturn</tt> ,<tt> farss</tt>
-,<tt> dllimport</tt> ,<tt> dllexport</tt> ,<tt> __pragma( &quot;string&quot; )</tt> ,<tt> __cdecl</tt> ,<tt> __pascal</tt>
-,<tt> __fortran</tt> ,<tt> __stdcall</tt> , and<tt> __syscall</tt> .&nbsp; These attributes are a property only of the declaration
-of the object or function to which they are applied.&nbsp; Unlike the<tt> __near</tt> and<tt> __far</tt> keywords, which actually
-affect the type of object or function (in this case, 2- and 4-byte addresses), these storage-class attributes do not redefine
-the type attributes of the object itself.&nbsp; The<tt> __pragma</tt> modifier is supported by Open Watcom C++ only.&nbsp;
-The<tt> thread</tt> attribute affects data and objects only.&nbsp; The<tt> naked</tt> ,<tt> noreturn</tt> ,<tt> farss</tt>
-,<tt> __pragma</tt> ,<tt> __cdecl</tt> ,<tt> __pascal</tt> ,<tt> __fortran</tt> ,<tt> __stdcall</tt> , and<tt> __syscall</tt>
-attributes affect functions only.&nbsp; The<tt> dllimport</tt> and<tt> dllexport</tt> attributes affect functions, data, and
-objects.&nbsp; For more information on the<tt> __declspec</tt> keyword, please see the section entitled <a href="#The___declspec_Keyword">The __declspec Keyword</a>.
+specified with the <tt> __declspec</tt> keyword:&nbsp; <tt> thread</tt>, <tt> naked</tt>, <tt> noreturn</tt>, <tt> farss</tt>,
+<tt> dllimport</tt>, <tt> dllexport</tt>, <tt> __pragma( &quot;string&quot; )</tt>, <tt> __cdecl</tt>, <tt> __pascal</tt>,
+<tt> __fortran</tt>, <tt> __stdcall</tt>, and <tt> __syscall</tt>.&nbsp; These attributes are a property only of the declaration
+of the object or function to which they are applied.&nbsp; Unlike the <tt> __near</tt> and <tt> __far</tt> keywords, which
+actually affect the type of object or function (in this case, 2- and 4-byte addresses), these storage-class attributes do
+not redefine the type attributes of the object itself.&nbsp; The <tt> __pragma</tt> modifier is supported by Open Watcom C++
+only.&nbsp; The <tt> thread</tt> attribute affects data and objects only.&nbsp; The <tt> naked</tt>, <tt> noreturn</tt>, <tt>
+farss</tt>, <tt> __pragma</tt>, <tt> __cdecl</tt>, <tt> __pascal</tt>, <tt> __fortran</tt>, <tt> __stdcall</tt>, and <tt>
+__syscall</tt> attributes affect functions only.&nbsp; The <tt> dllimport</tt> and <tt> dllexport</tt> attributes affect functions,
+data, and objects.&nbsp; For more information on the <tt> __declspec</tt> keyword, please see the section entitled <a href="#The___declspec_Keyword">The __declspec Keyword</a>.
 <dt>__export
-<dd>Open Watcom C/C++ supports the<tt> __export</tt> keyword to describe functions and other object names that are to be exported
+<dd>Open Watcom C/C++ supports the <tt> __export</tt> keyword to describe functions and other object names that are to be exported
 from a Microsoft Windows DLL, OS/2 DLL, or Netware NLM.&nbsp; See also the description of the &quot;zu&quot; option.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void __export _Setcolor( int color )</tt>
@@ -4395,9 +4397,9 @@ from a Microsoft Windows DLL, OS/2 DLL, or Netware NLM.&nbsp; See also the descr
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>Open Watcom C/C++ predefines the macro<tt> _export</tt> to be equivalent to the<tt> __export</tt> keyword.
+<br><br>Open Watcom C/C++ predefines the macro <tt> _export</tt> to be equivalent to the <tt> __export</tt> keyword.
 <dt>__loadds
-<dd>Open Watcom C/C++ supports the<tt> __loadds</tt> keyword to describe functions that require specific loading of the DS register
+<dd>Open Watcom C/C++ supports the <tt> __loadds</tt> keyword to describe functions that require specific loading of the DS register
 to establish addressability to the function's data segment.&nbsp; This keyword is useful in describing a function that will
 be placed in a Microsoft Windows or OS/2 1.x Dynamic Link Library (DLL).&nbsp; See also the description of the &quot;nd&quot;
 and &quot;zu&quot; options.
@@ -4410,13 +4412,13 @@ and &quot;zu&quot; options.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>If the function in an OS/2 1.x Dynamic Link Library requires access to private data, the data segment register must
 be loaded with an appropriate value since it will contain the DS value of the calling application upon entry to the function.
-<br><br>Open Watcom C/C++ predefines the macro<tt> _loadds</tt> to be equivalent to the<tt> __loadds</tt> keyword.
+<br><br>Open Watcom C/C++ predefines the macro <tt> _loadds</tt> to be equivalent to the <tt> __loadds</tt> keyword.
 <dt>__saveregs
-<dd>Open Watcom C/C++ recognizes the<tt> __saveregs</tt> keyword which is an attribute used by C/C++ compilers to describe a function
-that must save and restore all registers.
-<br><br>Open Watcom C/C++ predefines the macro<tt> _saveregs</tt> to be equivalent to the<tt> __saveregs</tt> keyword.
+<dd>Open Watcom C/C++ recognizes the <tt> __saveregs</tt> keyword which is an attribute used by C/C++ compilers to describe a
+function that must save and restore all registers.
+<br><br>Open Watcom C/C++ predefines the macro <tt> _saveregs</tt> to be equivalent to the <tt> __saveregs</tt> keyword.
 <dt>__stdcall
-<dd>(32-bit only) The<tt> __stdcall</tt> keyword may be used with function definitions, and indicates that the 32-bit Win32 calling
+<dd>(32-bit only) The <tt> __stdcall</tt> keyword may be used with function definitions, and indicates that the 32-bit Win32 calling
 convention is to be used.
 <br><br><b>Notes:</b>
 <ol>
@@ -4432,7 +4434,7 @@ address of the space allocated for the return value.&nbsp; Floating-point values
 <li>Registers EAX, ECX and EDX are not saved and restored when a call is made.
 </ol>
 <dt>__syscall
-<dd>(32-bit only) The<tt> __syscall</tt> keyword may be used with function definitions, and indicates that the calling convention
+<dd>(32-bit only) The <tt> __syscall</tt> keyword may be used with function definitions, and indicates that the calling convention
 used is compatible with functions provided by 32-bit OS/2.
 <br><br><b>Notes:</b>
 <ol>
@@ -4444,15 +4446,15 @@ pushed on the stack immediately before the call instruction.&nbsp; Upon returnin
 address of the space allocated for the return value.&nbsp; Floating-point values are returned in 80x87 register ST(0).
 <li>Registers EAX, ECX and EDX are not saved and restored when a call is made.
 </ol>
-<br>Open Watcom C/C++ predefines the macros<tt> _syscall</tt> ,<tt> _System</tt> ,<tt> SOMLINK</tt> (32-bit only) and<tt>
-SOMDLINK</tt> (32-bit only) to be equivalent to the<tt> __syscall</tt> keyword.
+<br>Open Watcom C/C++ predefines the macros <tt> _syscall</tt>, <tt> _System</tt>, <tt> SOMLINK</tt> (32-bit only) and <tt>
+SOMDLINK</tt> (32-bit only) to be equivalent to the <tt> __syscall</tt> keyword.
 <dt>__far16
-<dd>(32-bit only) Open Watcom C/C++ recognizes the<tt> __far16</tt> keyword which can be used to define far 16-bit (far16) pointers
+<dd>(32-bit only) Open Watcom C/C++ recognizes the <tt> __far16</tt> keyword which can be used to define far 16-bit (far16) pointers
 (16-bit selector with 16-bit offset) or far 16-bit function prototypes.&nbsp; This keyword can be used under 32-bit OS/2 to
 call 16-bit functions from your 32-bit flat model program.&nbsp; Integer arguments will automatically be converted to 16-bit
 integers, and 32-bit pointers will be converted to far16 pointers before calling a special thunking layer to transfer control
 to the 16-bit function.
-<br><br>Open Watcom C/C++ predefines the macros<tt> _far16</tt> and<tt> _Far16</tt> to be equivalent to the<tt> __far16</tt>
+<br><br>Open Watcom C/C++ predefines the macros <tt> _far16</tt> and <tt> _Far16</tt> to be equivalent to the <tt> __far16</tt>
 keyword.&nbsp; This keyword is compatible with Microsoft C.
 <br><br>In the OS/2 operating system (version 2.0 or higher), the first 512 megabytes of the 4 gigabyte segment referenced
 by the DS register is divided into 8192 areas of 64K bytes each.&nbsp; A far16 pointer consists of a 16-bit selector referring
@@ -4464,12 +4466,12 @@ will generate the necessary code to convert between the far16 pointer and a &quo
 <br><br>For example, the declaration,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char __far16 *bufptr;</tt>
-<br><br>declares the object<tt> bufptr</tt> to be a far16 pointer to<b><i> char</i></b> .
+<br><br>declares the object<tt> bufptr</tt> to be a far16 pointer to <b><i> char</i></b>.
 <br><br>A function declared as,
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; &#91;type&#93; __far16 func( &#91;arg_list&#93; );
 <br><br>declares a 16-bit function.&nbsp; Any calls to such a function from the 32-bit environment will cause the compiler
-to convert any 32-bit pointer arguments to far16 pointers, and any<b><i> int</i></b> arguments from 32 bits to 16 bits.&nbsp;
-(In the 16-bit environment, an object of type<b><i> int</i></b> is only 16 bits.) Any return value from the function will
+to convert any 32-bit pointer arguments to far16 pointers, and any <b><i> int</i></b> arguments from 32 bits to 16 bits.&nbsp;
+(In the 16-bit environment, an object of type <b><i> int</i></b> is only 16 bits.) Any return value from the function will
 have its return value converted in an appropriate manner.
 <br><br>For example, the declaration,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -4480,21 +4482,21 @@ as<tt> char __far *.</tt>&nbsp; The<tt> len</tt> argument will be converted from
 The<tt> err</tt> argument will be passed unchanged.&nbsp; Upon returning, the far16 pointer (far pointer in the 16-bit environment)
 will be converted to a 32-bit pointer which describes the equivalent location in the 32-bit address space.
 <dt>_Seg16
-<dd>(32-bit only) Open Watcom C/C++ recognizes the<tt> _Seg16</tt> keyword which has a similar but not identical function as the<tt>
-__far16</tt> keyword described above.&nbsp; This keyword is compatible with IBM C Set/2 and IBM VisualAge C++.
+<dd>(32-bit only) Open Watcom C/C++ recognizes the <tt> _Seg16</tt> keyword which has a similar but not identical function as
+the <tt> __far16</tt> keyword described above.&nbsp; This keyword is compatible with IBM C Set/2 and IBM VisualAge C++.
 <br><br>In the OS/2 operating system (version 2.0 or higher), the first 512 megabytes of the 4 gigabyte segment referenced
 by the DS register is divided into 8192 areas of 64K bytes each.&nbsp; A far16 pointer consists of a 16-bit selector referring
 to one of the 64K byte areas, and a 16-bit offset into that area.
-<br><br>Note that<tt> _Seg16</tt> is<b> not</b> interchangeable with<tt> __far16</tt> .
+<br><br>Note that <tt> _Seg16</tt> is<b> not</b> interchangeable with <tt> __far16</tt>.
 <br><br>A pointer declared as,
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; &#91;type&#93; * _Seg16 name;
-<br><br>defines an object that is a far16 pointer.&nbsp; Note that the<tt> _Seg16</tt> appears on the right side of the<tt>
-*</tt> which is opposite to the<tt> __far16</tt> keyword described above.
+<br><br>defines an object that is a far16 pointer.&nbsp; Note that the <tt> _Seg16</tt> appears on the right side of the<tt>
+*</tt> which is opposite to the <tt> __far16</tt> keyword described above.
 <br><br>For example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char * _Seg16 bufptr;</tt>
-<br><br>declares the object<tt> bufptr</tt> to be a far16 pointer to<b><i> char</i></b> (the same as above).
-<br><br>The<tt> _Seg16</tt> keyword may not be used to describe a 16-bit function.&nbsp; A<b><i> #pragma</i></b> directive
+<br><br>declares the object<tt> bufptr</tt> to be a far16 pointer to <b><i> char</i></b> (the same as above).
+<br><br>The <tt> _Seg16</tt> keyword may not be used to describe a 16-bit function.&nbsp; A <b><i> #pragma</i></b> directive
 must be used instead.&nbsp; A function declared as,
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; &#91;type&#93; * _Seg16 func( &#91;parm_list&#93; );
 <br><br>declares a 32-bit function that returns a far16 pointer.
@@ -4504,7 +4506,7 @@ must be used instead.&nbsp; A function declared as,
 <br><br>declares the 32-bit function<tt> Scan.</tt>&nbsp; No conversion of the argument list will take place.&nbsp; The return
 value is a far16 pointer.
 <dt>__pragma
-<dd>Open Watcom C++ supports the<tt> __pragma</tt> keyword to support in-lining of member functions.&nbsp; The<tt> __pragma</tt>
+<dd>Open Watcom C++ supports the <tt> __pragma</tt> keyword to support in-lining of member functions.&nbsp; The <tt> __pragma</tt>
 keyword must be followed by parentheses containing a string that names an auxiliary pragma.&nbsp; Here is a simplified example
 showing usage and syntax.
 <br><br><b>Example:</b>
@@ -4525,23 +4527,23 @@ showing usage and syntax.
 <br><br>See the chapters entitled <a href="#16Mbit_Pragmas">16-bit Pragmas</a> and <a href="#32Mbit_Pragmas">32-bit Pragmas</a>
 for more information on pragmas.
 <dt>__int8
-<dd>Open Watcom C/C++ supports the<tt> __int8</tt> keyword to define 8-bit integer data objects.
+<dd>Open Watcom C/C++ supports the <tt> __int8</tt> keyword to define 8-bit integer data objects.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static __int8 smallInt;</tt>
-<br><br>Also supported are signed and unsigned 8-bit integer constants.&nbsp; The<tt> __int8</tt> data type will be unsigned
+<br><br>Also supported are signed and unsigned 8-bit integer constants.&nbsp; The <tt> __int8</tt> data type will be unsigned
 by default if the compiler is invoked with the -j switch.
 <dt>__int16
-<dd>Open Watcom C/C++ supports the<tt> __int16</tt> keyword to define 16-bit integer data objects.
+<dd>Open Watcom C/C++ supports the <tt> __int16</tt> keyword to define 16-bit integer data objects.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static __int16 shortInt;</tt>
 <br><br>Also supported are signed and unsigned 16-bit integer constants.
 <dt>__int32
-<dd>Open Watcom C/C++ supports the<tt> __int32</tt> keyword to define 32-bit integer data objects.
+<dd>Open Watcom C/C++ supports the <tt> __int32</tt> keyword to define 32-bit integer data objects.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static __int32 longInt;</tt>
 <br><br>Also supported are signed and unsigned 32-bit integer constants.
 <dt>__int64
-<dd>Open Watcom C/C++ supports the<tt> __int64</tt> keyword to define 64-bit integer data objects.
+<dd>Open Watcom C/C++ supports the <tt> __int64</tt> keyword to define 64-bit integer data objects.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static __int64 bigInt;</tt>
 <br><br>Also supported are signed and unsigned 64-bit integer constants.
@@ -4557,7 +4559,7 @@ by default if the compiler is invoked with the -j switch.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 12345Ui64</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 12345uI64</tt>
 </dl>
-<br>The run-time library supports formatting of<tt> __int64</tt> items (see the description of the<tt> printf</tt> library
+<br>The run-time library supports formatting of <tt> __int64</tt> items (see the description of the <tt> printf</tt> library
 function).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
@@ -4578,7 +4580,7 @@ function).
 <dt>Restrictions
 <dd>
 <dt>switch
-<dd>An<tt> __int64</tt> expression cannot be used in a<b> switch</b> statement.
+<dd>An <tt> __int64</tt> expression cannot be used in a<b> switch</b> statement.
 <dt>bit fields
 <dd>More than 32 bits in a 64-bit bitfield is not supported.
 </dl>
@@ -4613,8 +4615,8 @@ a valid pointer.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _NULLSEG</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _NULLOFF</tt>
-<br><br>They are used in a manner similar to<tt> NULL</tt> , but are used with objects declared as<tt> __segment</tt> and<tt>
-__based</tt> respectively.
+<br><br>They are used in a manner similar to <tt> NULL</tt>, but are used with objects declared as <tt> __segment</tt> and
+<tt> __based</tt> respectively.
 <h3 id="Segment_Constant_Based_Pointers_and_Objects"> Segment Constant Based Pointers and Objects </h3>
 <br>A segment constant based pointer or object has its segment value based on a specific, named segment.&nbsp; A segment constant
 based object is specified as:
@@ -4650,8 +4652,8 @@ Nothing is implicitly created during the execution of the program.)
 <br>A segment object based pointer derives its segment value from another named object.&nbsp; A segment object based pointer
 is specified as follows:
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; &#91;type&#93; __based( segment ) *name;
-<br><br>where<tt> segment</tt> is an object defined as type<tt> __segment</tt> .
-<br><br>An object of type<tt> __segment</tt> may contain a segment value.&nbsp; Such an object is particularly designed for
+<br><br>where<tt> segment</tt> is an object defined as type <tt> __segment</tt>.
+<br><br>An object of type <tt> __segment</tt> may contain a segment value.&nbsp; Such an object is particularly designed for
 use with segment object based pointers.
 <br><br>The following example illustrates a segment object based pointer:
 <br><br><b>Example:</b>
@@ -4662,8 +4664,8 @@ a character, the actual pointer value will be made up of the segment value found
 in<tt> cptr</tt>.&nbsp; The object<tt> seg</tt> might be assigned values such as the following:
 <ul>
 <li>a constant value (e.g., the segment containing screen memory),
-<li>the result of the library function<b><i> _bheapseg</i></b> ,
-<li>the segment portion of another pointer value, by casting it to the type<tt> __segment</tt> .
+<li>the result of the library function <b><i> _bheapseg</i></b>,
+<li>the segment portion of another pointer value, by casting it to the type <tt> __segment</tt>.
 </ul>
 <h3 id="Void_Based_Pointers"> Void Based Pointers </h3>
 <br>A void based pointer must be explicitly combined with a segment value to produce a reference to a memory location.&nbsp;
@@ -4686,7 +4688,7 @@ could be used:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The general form of the<tt> :&gt;</tt> operator is:
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; segment :&gt; offset
-<br><br>where<tt> segment</tt> is an expression of type<tt> __segment</tt> , and<tt> offset</tt> is an expression of type<tt>
+<br><br>where<tt> segment</tt> is an expression of type <tt> __segment</tt>, and<tt> offset</tt> is an expression of type<tt>
 __based( void ) *</tt>.
 <h3 id="Self_Based_Pointers"> Self Based Pointers </h3>
 <br>A self based pointer infers its segment value from itself.&nbsp; It is particularly useful for structures such as linked
@@ -4738,7 +4740,7 @@ stored in<tt> seg</tt>.&nbsp; If<tt> next</tt> had not been declared using<tt> _
 operation would refer to the offset value found in the<tt> next</tt> member, but with the default data segment (DGROUP), which
 may or may not be the same segment as stored in<tt> seg</tt>.
 <h2 id="The___declspec_Keyword"> The __declspec Keyword </h2>
-<br>Open Watcom C/C++ supports the<tt> __declspec</tt> keyword for compatibility with Microsoft C++.&nbsp; The<tt> __declspec</tt>
+<br>Open Watcom C/C++ supports the <tt> __declspec</tt> keyword for compatibility with Microsoft C++.&nbsp; The <tt> __declspec</tt>
 keyword is used to modify storage-class attributes of functions and/or data.
 <dl>
 <dt>__declspec( thread )
@@ -4747,12 +4749,12 @@ storage for thread-specific data.&nbsp; In standard multithreaded programs, data
 whereas thread local storage is the mechanism for allocating per-thread data.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __declspec(thread) static int tls_data = 0;</tt>
-<br><br>The following rules apply to the use of the<tt> thread</tt> attribute.
+<br><br>The following rules apply to the use of the <tt> thread</tt> attribute.
 <ul>
-<li>The<tt> thread</tt> attribute can be used with data and objects only.
-<li>You can specify the<tt> thread</tt> attribute only on data items with static storage duration.&nbsp; This includes global
-data objects (both<tt> static</tt> and<tt> extern</tt> ), local static objects, and static data members of classes.&nbsp;
-Automatic data objects cannot be declared with the<tt> thread</tt> attribute.&nbsp; The following example illustrates this
+<li>The <tt> thread</tt> attribute can be used with data and objects only.
+<li>You can specify the <tt> thread</tt> attribute only on data items with static storage duration.&nbsp; This includes global
+data objects (both <tt> static</tt> and <tt> extern</tt>), local static objects, and static data members of classes.&nbsp;
+Automatic data objects cannot be declared with the <tt> thread</tt> attribute.&nbsp; The following example illustrates this
 error:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define TLS __declspec( thread )</tt>
@@ -4765,13 +4767,13 @@ error:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return tls_data;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<li>The<tt> thread</tt> attribute must be used for both the declaration and the definition of a thread local object, whether
+<li>The <tt> thread</tt> attribute must be used for both the declaration and the definition of a thread local object, whether
 the declaration and definition occur in the same file or separate files.&nbsp; The following example illustrates this error:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define TLS __declspec( thread )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int tls_data;&nbsp;&nbsp;&nbsp; // This generates an error, because the</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TLS&nbsp;&nbsp;&nbsp; int tls_data;&nbsp;&nbsp;&nbsp; // declaration and the definition differ.</tt>
-<li>Classes cannot use the<tt> thread</tt> attribute.&nbsp; However, you can instantiate class objects with the<tt> thread</tt>
+<li>Classes cannot use the <tt> thread</tt> attribute.&nbsp; However, you can instantiate class objects with the <tt> thread</tt>
 attribute, as long as the objects do not need to be constructed or destructed.&nbsp; For example, the following code generates
 an error:
 <br><br><b>Example:</b>
@@ -4781,7 +4783,7 @@ an error:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Code</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; A AObject;</tt>
-<br><br>Because the declaration of objects that use the<tt> thread</tt> attribute is permitted, these two examples are semantically
+<br><br>Because the declaration of objects that use the <tt> thread</tt> attribute is permitted, these two examples are semantically
 equivalent:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define TLS __declspec( thread )</tt>
@@ -4804,12 +4806,12 @@ involving a reference to itself, this type of initialization is not permitted wi
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int j = j;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Okay in C++; C error</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TLS int tls_k = sizeof( tls_k );&nbsp; // Okay in C and C++</tt>
-<br><br>Note that a<tt> sizeof</tt> expression that includes the object being initialized does not constitute a reference
+<br><br>Note that a <tt> sizeof</tt> expression that includes the object being initialized does not constitute a reference
 to itself and is allowed in C and C++.
 </ul>
 <dt>__declspec( naked )
 <dd>indicates to the code generator that no prologue or epilogue sequence is to be generated for a function.&nbsp; Any statements
-other than &quot;_asm&quot; directives or auxiliary pragmas are not compiled.<b><i>&nbsp; _asm</i></b> Essentially, the compiler
+other than &quot;_asm&quot; directives or auxiliary pragmas are not compiled.&nbsp; <b><i> _asm</i></b> Essentially, the compiler
 will emit a &quot;label&quot; with the specified function name into the code.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
@@ -4828,9 +4830,9 @@ will emit a &quot;label&quot; with the specified function name into the code.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, foo( 1 ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The following rules apply to the use of the<tt> naked</tt> attribute.
+<br><br>The following rules apply to the use of the <tt> naked</tt> attribute.
 <ul>
-<li>The<tt> naked</tt> attribute cannot be used in a data declaration.&nbsp; The following declaration would be flagged in
+<li>The <tt> naked</tt> attribute cannot be used in a data declaration.&nbsp; The following declaration would be flagged in
 error.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __declspec(naked) static int data_object = 0;</tt>
@@ -4851,9 +4853,9 @@ error.
 <br><br><tt>foo</tt> is defined to be a function that does not return.&nbsp; For example, it call<tt> exit</tt> to return
 to the system.&nbsp; In this case, Open Watcom C/C++ generates a &quot;jmp&quot; instruction instead of a &quot;call&quot;
 instruction to invoke<tt> foo</tt>.
-<br><br>The following rules apply to the use of the<tt> noreturn</tt> attribute.
+<br><br>The following rules apply to the use of the <tt> noreturn</tt> attribute.
 <ul>
-<li>The<tt> noreturn</tt> attribute cannot be used in a data declaration.&nbsp; The following declaration would be flagged
+<li>The <tt> noreturn</tt> attribute cannot be used in a data declaration.&nbsp; The following declaration would be flagged
 in error.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __declspec(noreturn) static int data_object = 0;</tt>
@@ -4863,9 +4865,9 @@ in error.
 on the stack.&nbsp; It is alternative to -zu compiler option and can be used per function.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __declspec( farss ) char * foo( char *s );</tt>
-<br><br>The following rules apply to the use of the<tt> farss</tt> attribute.
+<br><br>The following rules apply to the use of the <tt> farss</tt> attribute.
 <ul>
-<li>The<tt> farss</tt> attribute cannot be used in a data declaration.
+<li>The <tt> farss</tt> attribute cannot be used in a data declaration.
 </ul>
 <dt>__declspec( dllimport )
 <dd>is used to declare functions, data and objects imported from a DLL.
@@ -4873,15 +4875,15 @@ on the stack.&nbsp; It is alternative to -zu compiler option and can be used per
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define DLLImport __declspec(dllimport)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DLLImport void dll_func();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DLLImport int&nbsp; dll_data;</tt>
-<br><br>Functions, data and objects are exported from a DLL by use of<tt> __declspec(dllexport)</tt> , the<tt> __export</tt>
-keyword (for which<tt> __declspec(dllexport)</tt> is the replacement), or through linker &quot;EXPORT&quot; directives.
-<br><br>Note:&nbsp; When calling functions imported from other modules, it is not strictly necessary to use the<tt> __declspec(dllimport)</tt>
+<br><br>Functions, data and objects are exported from a DLL by use of <tt> __declspec(dllexport)</tt>, the <tt> __export</tt>
+keyword (for which <tt> __declspec(dllexport)</tt> is the replacement), or through linker &quot;EXPORT&quot; directives.
+<br><br>Note:&nbsp; When calling functions imported from other modules, it is not strictly necessary to use the <tt> __declspec(dllimport)</tt>
 modifier to declare the functions.&nbsp; This modifier however must always be used when importing data or objects to ensure
 correct behavior.
 <dt>__declspec( dllexport )
-<dd>is used to declare functions, data and objects exported from a DLL.&nbsp; Declaring functions as<tt> dllexport</tt> eliminates
-the need for linker &quot;EXPORT&quot; directives.&nbsp; The<tt> __declspec(dllexport)</tt> attribute is a replacement for
-the<tt> __export</tt> keyword.
+<dd>is used to declare functions, data and objects exported from a DLL.&nbsp; Declaring functions as <tt> dllexport</tt> eliminates
+the need for linker &quot;EXPORT&quot; directives.&nbsp; The <tt> __declspec(dllexport)</tt> attribute is a replacement for
+the <tt> __export</tt> keyword.
 <dt>__declspec( __pragma( &quot;string&quot; ) )
 <dd>is used to declare functions which adhere to the conventions described by the pragma identified by &quot;string&quot;.
 <br><br><b>Example:</b>
@@ -4930,7 +4932,7 @@ the<tt> __export</tt> keyword.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int __cdecl method_c( void ) = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>In this example, any calls generated to the virtual methods 'method_a' or 'method_b' will use the THISCALL ( my_thiscall
-) calling convention.&nbsp; Calls generated to 'method_c' will use the prefefined<b><i> __cdecl</i></b> calling convention.
+) calling convention.&nbsp; Calls generated to 'method_c' will use the prefefined <b><i> __cdecl</i></b> calling convention.
 <br><br>It is also possible to forward define the class with modifiers for occasions where you do not want to change original
 source code.
 <br><br><b>Example:</b>
@@ -4946,13 +4948,13 @@ source code.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int method_b( void ) = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int __cdecl method_c( void ) = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br>The<b><i> __pragma</i></b> modifier is supported by Open Watcom C++ only.
+<br><br>The <b><i> __pragma</i></b> modifier is supported by Open Watcom C++ only.
 <dt>__declspec( __cdecl )
 <dd>is used to declare functions which conform to the Microsoft compiler calling convention.
 <dt>__declspec( __pascal )
 <dd>is used to declare functions which conform to the OS/2 1.x and Windows 3.x calling convention.
 <dt>__declspec( __fortran )
-<dd>is used to declare functions which conform to the<b><i> __fortran</i></b> calling convention.
+<dd>is used to declare functions which conform to the <b><i> __fortran</i></b> calling convention.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define DLLFunc __declspec(dllimport __fortran)</tt>
@@ -4982,7 +4984,7 @@ source code.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%d %d\n&quot;, dll_func( 1,2,3 ), dll_data );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <dt>__declspec( __syscall )
-<dd>is used to declare functions which conform to the 32-bit OS/2<b><i> __syscall</i></b> calling convention.
+<dd>is used to declare functions which conform to the 32-bit OS/2 <b><i> __syscall</i></b> calling convention.
 </dl>
 <h2 id="The_Open_Watcom_Code_Generator"> The Open Watcom Code Generator </h2>
 <br>The Open Watcom Code Generator performs such optimizations as common subexpression elimination, global flow analysis,
@@ -4994,7 +4996,7 @@ is indicated when a
 <br><br>message appears on the screen as the source program is compiled.&nbsp; In such an event, you may wish to make more
 memory available to the code generator.
 <br><br>A special environment variable may be used to obtain memory usage information or set memory usage limits on the code
-generator.&nbsp; The<b> WCGMEMORY</b> environment variable may be used to request a report of the amount of memory used by
+generator.&nbsp; The <b> WCGMEMORY</b> environment variable may be used to request a report of the amount of memory used by
 the compiler's code generator for its work area.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set WCGMEMORY=?</tt>
@@ -5010,7 +5012,7 @@ code.
 the code generator, the more optimal code it will generate.&nbsp; Thus, for two personal computers with different amounts
 of memory, the code generator may produce different (although correct) object code.&nbsp; If you have a software quality assurance
 requirement that the same results (i.e., code) be produced on two different machines then you should use this feature.&nbsp;
-To generate identical code on two personal computers with different memory configurations, you must ensure that the<b> WCGMEMORY</b>
+To generate identical code on two personal computers with different memory configurations, you must ensure that the <b> WCGMEMORY</b>
 environment variable is set identically on both machines.
 <br><br>The second reason where this feature is useful is on virtual memory paging systems (e.g., OS/2) where an unlimited
 amount of memory can be used by the code generator.&nbsp; If a very large module is being compiled, it may take a very long
@@ -5335,7 +5337,7 @@ when linking the application.
 <br><br>The 80x87 emulator is contained in<tt> emu387.lib.</tt>&nbsp; Use<tt> noemu387.lib</tt> in place of<tt> emu387.lib</tt>
 when the emulator is not wanted.
 </ol>
-<br>Normally, the compiler and linker will automatically take care of this.&nbsp; Simply ensure that the<b> WATCOM</b> environment
+<br>Normally, the compiler and linker will automatically take care of this.&nbsp; Simply ensure that the <b> WATCOM</b> environment
 variable includes the location of the Open Watcom C/C++ libraries.
 <h2 id="Open_Watcom_CDCPP_80x87_Math_Libraries"> Open Watcom C/C++ 80x87 Math Libraries </h2>
 <br>One of the following Math libraries must be used if any of the modules of your application were compiled with one of the
@@ -5366,7 +5368,7 @@ option)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NT\EMU387.LIB (Windows NT dependent)</tt>
 <br><br>The &quot;fpi&quot; option causes an 80x87 numeric data processor emulator to be linked into your application in addition
 to any 80x87 math routines that were referenced.&nbsp; This emulator will decode and emulate 80x87 instructions when an 80x87
-is not present in the system or if the environment variable<b> NO87</b> has been set (this variable is described below).
+is not present in the system or if the environment variable <b> NO87</b> has been set (this variable is described below).
 <br><br>For 32-bit Open Watcom Windows-extender applications or 32-bit applications run in Windows 3.1 DOS boxes, you must
 also include the<tt> WEMU387.386</tt> file in the<tt> &#91;386enh&#93;</tt> section of the<tt> SYSTEM.INI</tt> file.
 <br><br><b>Example:</b>
@@ -5396,12 +5398,12 @@ option)</tt>
 option)</tt>
 <br><br>Applications which are linked with one of these libraries do not require a numeric data processor for floating-point
 operations.&nbsp; If one is present in the system, it will be used; otherwise floating-point operations are simulated in software.
-&nbsp;The numeric data processor will not be used if the environment variable<b> NO87</b> has been set (this variable is described
-below).
+&nbsp;The numeric data processor will not be used if the environment variable <b> NO87</b> has been set (this variable is
+described below).
 <h2 id="The_NO87_Environment_Variable"> The NO87 Environment Variable </h2>
 <br>If you have a numeric data processor (math coprocessor) in your system but you wish to test a version of your application
-that will use floating-point emulation (&quot;fpi&quot; option) or simulation (&quot;fpc&quot; option), you can define the<b>
-NO87</b> environment variable.&nbsp; 
+that will use floating-point emulation (&quot;fpi&quot; option) or simulation (&quot;fpc&quot; option), you can define the
+<b> NO87</b> environment variable.&nbsp; 
 <br><br>(16-bit only) The application must be compiled using the &quot;fpc&quot; (floating-point calls) option and linked
 with the appropriate<tt> math?.lib</tt> library or the &quot;fpi&quot; option (default) and linked with the appropriate<tt>
 math87?.lib</tt> and<tt> emu87.lib</tt> libraries.
@@ -5416,7 +5418,7 @@ command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;SET NO87=</tt>
 <h2 id="The_LFN_Environment_Variable"> The LFN Environment Variable </h2>
-<br>If you have the application compiled and linked to use DOS Long file name support (LFN) then you can define the<b> LFN</b>
+<br>If you have the application compiled and linked to use DOS Long file name support (LFN) then you can define the <b> LFN</b>
 environment variable to suppress usage of DOS LFN on run-time.
 <br><br>Using the &quot;SET&quot; command, define the environment variable as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -5569,13 +5571,13 @@ instead of an EXE file.&nbsp; For more information, see the section entitled &qu
 in this chapter.
 <h2 id="Mixed_16Mbit_Memory_Model"> Mixed 16-bit Memory Model </h2>
 <br>A mixed memory model application combines elements from the various code and data models.&nbsp; A mixed memory model application
-might be characterized as one that uses the<b><i> near</i></b> ,<b><i> far</i></b> , or<b><i> huge</i></b> keywords when describing
-some of its functions or data objects.
+might be characterized as one that uses the <b><i> near</i></b>, <b><i> far</i></b>, or <b><i> huge</i></b> keywords when
+describing some of its functions or data objects.
 <br><br>For example, a medium memory model application that uses some far pointers to data can be described as a mixed memory
 model.&nbsp; In an application such as this, most of the data is in a 64K segment (DGROUP) and hence can be referenced with
 near pointers relative to the segment value in segment register DS.&nbsp; This results in more efficient code being generated
 and better execution times than one can expect from a big data model.&nbsp; Data objects outside of the DGROUP segment are
-described with the<b><i> far</i></b> keyword.
+described with the <b><i> far</i></b> keyword.
 <h2 id="Linking_Applications_for_the_Various_16Mbit_Memory_Models"> Linking Applications for the Various 16-bit Memory Models </h2>
 <br>Each memory model requires different run-time and floating-point libraries.&nbsp; Each library assumes a particular memory
 model and should be linked only with modules that have been compiled with the same memory model.&nbsp; The following table
@@ -6364,13 +6366,13 @@ level.&nbsp; The code generator can use this information to generate more effici
 <li>Any sequence of in-line machine language instructions, including DOS and BIOS function calls, can be generated in the
 object code.
 </ul>
-<br>Pragmas are specified in the source file using the<b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,<b><i>
-_Pragma</i></b> ( string-literal ) is an alternative method of specifying<b><i> pragma</i></b> directives.
+<br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,
+<b><i> _Pragma</i></b> ( string-literal ) is an alternative method of specifying <b><i> pragma</i></b> directives.
 <br><br>For example, the following two statements are equivalent.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _Pragma( &quot;library (\&quot;kernel32.lib\&quot;)&quot; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;kernel32.lib&quot;)</tt>
-<br><br>The<b><i> _Pragma</i></b> operator can be used in macro definition.
+<br><br>The <b><i> _Pragma</i></b> operator can be used in macro definition.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define LIBRARY(X) PRAGMA(library (#X))</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define PRAGMA(X) _Pragma(#X)</tt>
@@ -6714,7 +6716,7 @@ the form of the &quot;error&quot; pragma.
 <dt>&quot;error text&quot;
 <dd>is the text of the message that you wish to display.
 </dl>
-<br>You should use the ISO<b><i> #error</i></b> directive rather than this pragma.&nbsp; This pragma is provided for compatibility
+<br>You should use the ISO <b><i> #error</i></b> directive rather than this pragma.&nbsp; This pragma is provided for compatibility
 with legacy code.&nbsp; The following is an example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__386__)</tt>
@@ -7318,7 +7320,7 @@ id)</b>
 <dt>id
 <dd>is any valid C/C++ identifier.
 <dt>fpinst
-<dd>is a sequence of bytes that forms a valid 80x87 instruction.&nbsp; The keyword<b><i> float</i></b> must precede<tt> fpinst</tt>
+<dd>is a sequence of bytes that forms a valid 80x87 instruction.&nbsp; The keyword <b><i> float</i></b> must precede<tt> fpinst</tt>
 so that special fixups are applied to the 80x87 instruction.
 <dt>seg
 <dd>specifies the segment of the symbol<tt> id</tt>.
@@ -8402,13 +8404,13 @@ DS, SS and ES point to the same linear address space (this does not imply that t
 a flat model operates as if there were no segments.
 <h2 id="Mixed_32Mbit_Memory_Model"> Mixed 32-bit Memory Model </h2>
 <br>A mixed memory model application combines elements from the various code and data models.&nbsp; A mixed memory model application
-might be characterized as one that uses the<b><i> near</i></b> ,<b><i> far</i></b> , or<b><i> huge</i></b> keywords when describing
-some of its functions or data objects.
+might be characterized as one that uses the <b><i> near</i></b>, <b><i> far</i></b>, or <b><i> huge</i></b> keywords when
+describing some of its functions or data objects.
 <br><br>For example, a medium memory model application that uses some far pointers to data can be described as a mixed memory
 model.&nbsp; In an application such as this, most of the data is in a 4GB segment (DGROUP) and hence can be referenced with
 near pointers relative to the segment value in segment register DS.&nbsp; This results in more efficient code being generated
 and better execution times than one can expect from a big data model.&nbsp; Data objects outside of the DGROUP segment are
-described with the<b><i> far</i></b> keyword.
+described with the <b><i> far</i></b> keyword.
 <h2 id="Linking_Applications_for_the_Various_32Mbit_Memory_Models"> Linking Applications for the Various 32-bit Memory Models </h2>
 <br>Each memory model requires different run-time and floating-point libraries.&nbsp; Each library assumes a particular memory
 model and should be linked only with modules that have been compiled with the same memory model.&nbsp; The following table
@@ -9392,13 +9394,13 @@ level.&nbsp; The code generator can use this information to generate more effici
 <li>Any sequence of in-line machine language instructions, including DOS and BIOS function calls, can be generated in the
 object code.
 </ul>
-<br>Pragmas are specified in the source file using the<b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,<b><i>
-_Pragma</i></b> ( string-literal ) is an alternative method of specifying<b><i> pragma</i></b> directives.
+<br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,
+<b><i> _Pragma</i></b> ( string-literal ) is an alternative method of specifying <b><i> pragma</i></b> directives.
 <br><br>For example, the following two statements are equivalent.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _Pragma( &quot;library (\&quot;kernel32.lib\&quot;)&quot; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;kernel32.lib&quot;)</tt>
-<br><br>The<b><i> _Pragma</i></b> operator can be used in macro definition.
+<br><br>The <b><i> _Pragma</i></b> operator can be used in macro definition.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define LIBRARY(X) PRAGMA(library (#X))</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define PRAGMA(X) _Pragma(#X)</tt>
@@ -9742,7 +9744,7 @@ the form of the &quot;error&quot; pragma.
 <dt>&quot;error text&quot;
 <dd>is the text of the message that you wish to display.
 </dl>
-<br>You should use the ISO<b><i> #error</i></b> directive rather than this pragma.&nbsp; This pragma is provided for compatibility
+<br>You should use the ISO <b><i> #error</i></b> directive rather than this pragma.&nbsp; This pragma is provided for compatibility
 with legacy code.&nbsp; The following is an example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__386__)</tt>
@@ -10136,13 +10138,13 @@ of the alias name as well as the attributes specified by the additional auxiliar
 <dt>alias
 <dd>is the alias name and is any valid C/C++ identifier.
 </dl>
-<br>The<tt> __far16</tt> attribute should only be used on systems that permit the calling of 16-bit code from 32-bit code.
+<br>The <tt> __far16</tt> attribute should only be used on systems that permit the calling of 16-bit code from 32-bit code.
 &nbsp;Currently, the only supported operating system that allows this is 32-bit OS/2.&nbsp; If you have any libraries of functions
 or APIs that are only available as 16-bit code and you wish to access these functions and APIs from 32-bit code, you must
-specify the<tt> __far16</tt> attribute.&nbsp; If the<tt> __far16</tt> attribute is specified, the compiler will generate special
-code which allows the 16-bit code to be called from 32-bit code.&nbsp; Note that a<tt> __far16</tt> function must be a function
-whose attributes are those specified by one of the alias names<tt> __cdecl</tt> or<tt> __pascal</tt> .&nbsp; These alias names
-will be described in a later section.
+specify the <tt> __far16</tt> attribute.&nbsp; If the <tt> __far16</tt> attribute is specified, the compiler will generate
+special code which allows the 16-bit code to be called from 32-bit code.&nbsp; Note that a <tt> __far16</tt> function must
+be a function whose attributes are those specified by one of the alias names <tt> __cdecl</tt> or <tt> __pascal</tt>.&nbsp;
+These alias names will be described in a later section.
 <br><br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93; ;</tt>
@@ -10219,7 +10221,7 @@ in your source code, it would assume the attributes specified in the pragma for<
 <dt>__syscall
 <dd><tt> __syscall</tt> or <tt> syscall</tt> defines the calling convention used by the 32-bit OS/2 API functions.
 <dt>__system
-<dd><tt> __system</tt> or <tt> system</tt> are identical to<tt> __syscall</tt> .
+<dd><tt> __system</tt> or <tt> system</tt> are identical to <tt> __syscall</tt>.
 <dt>__watcall
 <dd><tt> __watcall</tt> or <tt> watcall</tt> defines the calling convention used by Open Watcom compilers.
 </dl>
@@ -11905,8 +11907,8 @@ variables in this manner causes them to be marked as volatile and the optimizer 
 references to these variables.
 <h2 id="InMline_Assembly_Language_using__asm"> In-line Assembly Language using _asm </h2>
 <br>There is an alternative to Open Watcom's auxiliary pragma method for creating in-line assembly code.&nbsp; You can use
-one of the<b><i> _asm</i></b> or<b><i> __asm</i></b> keywords to imbed assembly code into the generated code.&nbsp; The following
-is a revised example of the cursor positioning example introduced above.
+one of the <b><i> _asm</i></b> or <b><i> __asm</i></b> keywords to imbed assembly code into the generated code.&nbsp; The
+following is a revised example of the cursor positioning example introduced above.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
@@ -12353,12 +12355,12 @@ block and the &quot;termination&quot; block.&nbsp; The termination code is guara
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The<b><i> _finally</i></b> block of code is guaranteed to be executed no matter how the guarded block is exited (<b><i>
-break</i></b> ,<b><i> continue</i></b> ,<b><i> return</i></b> ,<b><i> goto</i></b> , or<b><i> longjmp</i></b> ).&nbsp; Exceptions
-to this are calls to<b><i> abort</i></b> ,<b><i> exit</i></b> or<b><i> _exit</i></b> which terminate the execution of the
-process.
+<br><br>The <b><i> _finally</i></b> block of code is guaranteed to be executed no matter how the guarded block is exited (
+<b><i> break</i></b>, <b><i> continue</i></b>, <b><i> return</i></b>, <b><i> goto</i></b>, or <b><i> longjmp</i></b>).&nbsp;
+Exceptions to this are calls to <b><i> abort</i></b>, <b><i> exit</i></b> or <b><i> _exit</i></b> which terminate the execution
+of the process.
 <br><br>There can be no intervening code between<b> try</b> and<b> finally</b> blocks.
-<br><br>The following is a contrived example of the use of<b><i> _try</i></b> and<b><i> _finally</i></b> .
+<br><br>The following is a contrived example of the use of <b><i> _try</i></b> and <b><i> _finally</i></b>.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdlib.h&gt;</tt>
@@ -12406,7 +12408,7 @@ opened.&nbsp; It simply tests whether a file can be opened and quits if it canno
 that the files are closed if they were opened, releasing the resources associated with open files.&nbsp; This simple example
 could have been written in C without the use of SEH.
 <br><br>There are two ways to enter the<b> finally</b> block.&nbsp; One way is to exit the<b> try</b> block using a statement
-like<b><i> return</i></b> .&nbsp; The other way is to fall through the end of the<b> try</b> block and into the<b> finally</b>
+like <b><i> return</i></b>.&nbsp; The other way is to fall through the end of the<b> try</b> block and into the<b> finally</b>
 block (the normal execution flow for this program).&nbsp; Any code following the<b> finally</b> block is only executed in
 the second case.&nbsp; You can think of the<b> finally</b> block as a special function that is invoked whenever an exit (other
 than falling out the bottom) is attempted from a corresponding<b> try</b> block.
@@ -12424,8 +12426,8 @@ extension to the C language.&nbsp; You start out with the assumption that a cert
 introduce statements into the code that test your hypothesis.&nbsp; The<b> try</b> block consists of the code that you assume,
 under normal conditions, will succeed.&nbsp; Statements like<b> if ...&nbsp; return</b> can be used as tests.&nbsp; Execution
 begins with the statements in the<b> try</b> block.&nbsp; If a condition is detected which indicates that the assumption of
-a normal state of affairs is wrong, a<b><i> return</i></b> statement may be executed to cause control to be passed to the
-statements in the<b> finally</b> block.&nbsp; If the<b> try</b> block completes execution without executing a<b><i> return</i></b>
+a normal state of affairs is wrong, a <b><i> return</i></b> statement may be executed to cause control to be passed to the
+statements in the<b> finally</b> block.&nbsp; If the<b> try</b> block completes execution without executing a <b><i> return</i></b>
 statement (i.e., all statements are executed up to the final brace), then control is passed to the first statement following
 the<b> try</b> block (i.e., the first statement in the<b> finally</b> block).
 <br><br>In the following example, two sets of codes and letters are read in and some simple sequence checking is performed.
@@ -12484,15 +12486,15 @@ and another pair of numbers is read.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;processing pair %c,%c\n&quot;, x, y );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The above example attempts to read a code and letter.&nbsp; If an end of file occurs then the loop is terminated by
-the<b><i> break</i></b> statement.
+the <b><i> break</i></b> statement.
 <br><br>If the code is not 1 then we did not get what we expected and an error condition has arisen.&nbsp; Control is passed
-to the first statement in the<b> finally</b> block by the<b><i> return</i></b> statement.&nbsp; An error message is printed
+to the first statement in the<b> finally</b> block by the <b><i> return</i></b> statement.&nbsp; An error message is printed
 and the open file is closed.
 <br><br>If the code is 1 then a second code and number are read.&nbsp; If an end of file occurs then we are missing a complete
 set of data and an error condition has arisen.&nbsp; Control is passed to the first statement in the<b> finally</b> block
-by the<b><i> return</i></b> statement.&nbsp; An error message is printed and the open file is closed.
+by the <b><i> return</i></b> statement.&nbsp; An error message is printed and the open file is closed.
 <br><br>Similarly if the expected code is not 2 an error condition has arisen.&nbsp; The same error handling procedure occurs.
-<br><br>If the second code is 2, the values of variables<tt> x</tt> and<tt> y</tt> are processed (printed).&nbsp; The<b><i>
+<br><br>If the second code is 2, the values of variables<tt> x</tt> and<tt> y</tt> are processed (printed).&nbsp; The <b><i>
 for</i></b> loop is repeated again.
 <br><br>The above example illustrates the point that all the information required to test an assumption (that the file contains
 valid pairs of data) is not available from the start.&nbsp; We write our code with the assumption that the data values are
@@ -12523,10 +12525,10 @@ we reject the hypothesis.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>At the top of the loop, the value of<tt> ctr</tt> is 0.&nbsp; The next time we reach the top of the loop, the value
 of<tt> ctr</tt> is 2 (having been incremented twice, once by the<b> finally</b> block and once at the bottom of the loop).
-&nbsp;When<tt> ctr</tt> has the value 2, the<b><i> continue</i></b> statement will cause the<b> finally</b> block to be executed
-(resulting in<tt> ctr</tt> being incremented to 3), after which execution continues at the top of the<b><i> while</i></b>
-loop.&nbsp; When<tt> ctr</tt> has the value 3, the<b><i> break</i></b> statement will cause the<b> finally</b> block to be
-executed (resulting in<tt> ctr</tt> being incremented to 4), after which execution continues after the<b><i> while</i></b>
+&nbsp;When<tt> ctr</tt> has the value 2, the <b><i> continue</i></b> statement will cause the<b> finally</b> block to be executed
+(resulting in<tt> ctr</tt> being incremented to 3), after which execution continues at the top of the <b><i> while</i></b>
+loop.&nbsp; When<tt> ctr</tt> has the value 3, the <b><i> break</i></b> statement will cause the<b> finally</b> block to be
+executed (resulting in<tt> ctr</tt> being incremented to 4), after which execution continues after the <b><i> while</i></b>
 loop.&nbsp; Thus the output is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 0</tt>
@@ -12534,7 +12536,7 @@ loop.&nbsp; Thus the output is:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 3</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 4</tt>
 <br><br>The point of this exercise was that after the<b> finally</b> block is executed, the normal flow of execution is resumed
-at the<b><i> break</i></b> ,<b><i> continue</i></b> ,<b><i> return</i></b> , etc.&nbsp; statement and the normal behaviour
+at the <b><i> break</i></b>, <b><i> continue</i></b>, <b><i> return</i></b>, etc.&nbsp; statement and the normal behaviour
 for that statement occurs.&nbsp; It is as if the compiler had inserted a function call just before the statement that exits
 the<b> try</b> block.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -12542,8 +12544,8 @@ the<b> try</b> block.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( ctr == 2 ) invoke_finally_block() continue;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( ctr == 3 ) invoke_finally_block() break;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>There is some overhead associated with local unwinds such as that incurred by the use of<b><i> break</i></b> ,<b><i>
-continue</i></b> ,<b><i> return</i></b> , etc.&nbsp; To avoid this overhead, a new transfer keyword called<b><i> _leave</i></b>
+<br><br>There is some overhead associated with local unwinds such as that incurred by the use of <b><i> break</i></b>, <b><i>
+continue</i></b>, <b><i> return</i></b>, etc.&nbsp; To avoid this overhead, a new transfer keyword called <b><i> _leave</i></b>
 can be used.&nbsp; The use of this keyword causes a jump to the end of the<b> try block.</b>&nbsp; Consider the following
 modified version of an earlier example.
 <br><br><b>Example:</b>
@@ -12599,9 +12601,9 @@ modified version of an earlier example.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;processing pair %c,%c\n&quot;, x, y );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>There are two ways to enter the<b> finally</b> block.&nbsp; One way is caused by unwinds - either local (by the use
-of<b><i> break</i></b> ,<b><i> continue</i></b> ,<b><i> return</i></b> , or<b><i> goto</i></b> ) or global (more on global
+of <b><i> break</i></b>, <b><i> continue</i></b>, <b><i> return</i></b>, or <b><i> goto</i></b>) or global (more on global
 unwinds later).&nbsp; The other way is through the normal flow of execution (i.e., simply by falling through the bottom of
-the<b> try</b> block).&nbsp; There is a function called<b><i> AbnormalTermination</i></b> that can be used to determine which
+the<b> try</b> block).&nbsp; There is a function called <b><i> AbnormalTermination</i></b> that can be used to determine which
 of these two methods was used to enter the<b> finally</b> block.&nbsp; If the function returns<tt> TRUE</tt> (1) then the<b>
 finally</b> block was entered using the first method; if the function returns<tt> FALSE</tt> (0) then the<b> finally</b> block
 was entered using the second method.&nbsp; This information may be useful in some circumstances.&nbsp; For example, you may
@@ -12655,12 +12657,12 @@ line );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;processing pair %c,%c\n&quot;, x, y );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>In the above example, we reverted back to the use of the<b><i> return</i></b> statement since the execution of a<b><i>
-_leave</i></b> statement is considered part of the normal flow of execution and is not considered an &quot;abnormal termination&quot;
-of the<b> try</b> block.&nbsp; Note that since it is not possible to determine whether the<b> finally</b> block is executing
-as the result of a local or global unwind, it may not be appropriate to use the<b><i> AbnormalTermination</i></b> function
-as a way to determine what has gone on.&nbsp; However, in our simple example, we expect that nothing could go wrong in the
-&quot;processing&quot; routine.
+<br><br>In the above example, we reverted back to the use of the <b><i> return</i></b> statement since the execution of a
+<b><i> _leave</i></b> statement is considered part of the normal flow of execution and is not considered an &quot;abnormal
+termination&quot; of the<b> try</b> block.&nbsp; Note that since it is not possible to determine whether the<b> finally</b>
+block is executing as the result of a local or global unwind, it may not be appropriate to use the <b><i> AbnormalTermination</i></b>
+function as a way to determine what has gone on.&nbsp; However, in our simple example, we expect that nothing could go wrong
+in the &quot;processing&quot; routine.
 <h2 id="Exception_Filters_and_Exception_Handlers"> Exception Filters and Exception Handlers </h2>
 <br>We would all like to create flawless software but situations arise for which we did not plan.&nbsp; An event that we did
 not expect which causes the software to cease to function properly is called an exception.&nbsp; The computer can generate
@@ -12674,7 +12676,7 @@ look at software exceptions in more detail later on.
 <br><br>Given that exceptions are generally very difficult to avoid in large software projects, we can acknowledge that they
 are a fact of life and prepare for them.&nbsp; A mechanism similar to<b> try/finally</b> has been devised that makes it possible
 to gain control when an exception occurs and to execute procedures to handle the situation.
-<br><br>The exception handling mechanism involves the pairing up of a<b><i> _try</i></b> block with an<b><i> _except</i></b>
+<br><br>The exception handling mechanism involves the pairing up of a <b><i> _try</i></b> block with an <b><i> _except</i></b>
 block.&nbsp; This is illustrated in the following example.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
@@ -12695,7 +12697,7 @@ block.&nbsp; This is illustrated in the following example.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>In this example, any exception that occurs while executing &quot;inside&quot; the<b> try</b> block will cause the<b>
 except</b> block to execute.&nbsp; Unlike the<b> finally</b> block, execution of the<b> except</b> block occurs only when
-an exception is generated and only when the expression after the<b><i> _except</i></b> keyword evaluates to <tt> EXCEPTION_EXECUTE_HANDLER</tt>.
+an exception is generated and only when the expression after the <b><i> _except</i></b> keyword evaluates to <tt> EXCEPTION_EXECUTE_HANDLER</tt>.
 &nbsp;The expression can be quite complex and can involve the execution of a function that returns one of the permissible
 values.&nbsp; The expression is called the exception &quot;filter&quot; since it determines whether or not the exception is
 to be handled by the<b> except</b> block.&nbsp; The permissible result values for the exception filer are:
@@ -12881,7 +12883,7 @@ except</b> filter that evaluated to<tt> EXCEPTION_EXECUTE_HANDLER</tt>.&nbsp; It
 try/finally</b> blocks of<tt> func_level4</tt>,<tt> func_level3</tt>,<tt> func_level2</tt>, and<tt> func_level1</tt> were
 executed.&nbsp; After this, the exception handler in<tt> func_level0</tt> did its thing and execution resumed in<tt> func_level0</tt>
 which returned back to<tt> main</tt> which returned to the run-time system for normal program termination.&nbsp; Note the
-use of the built-in<b><i> AbnormalTermination</i></b> function in the<b> finally</b> blocks of each function.
+use of the built-in <b><i> AbnormalTermination</i></b> function in the<b> finally</b> blocks of each function.
 <br><br>This sequence of events permits each function to do any cleaning up that it deems necessary before it is wiped off
 the execution stack.
 <h2 id="Refining_Exception_Handling"> Refining Exception Handling </h2>
@@ -13271,7 +13273,7 @@ extra code to be linked into your application to decode and emulate the 80x87 in
 <br><br>In the Open Watcom C/C++ software development package, a number of environment variables are used.&nbsp; This appendix
 summarizes their use with a particular component of the package.
 <h2 id="FORCE"> FORCE </h2>
-<br>The<b> FORCE</b> environment variable identifies a file that is to be included as part of the source input stream.&nbsp;
+<br>The <b> FORCE</b> environment variable identifies a file that is to be included as part of the source input stream.&nbsp;
 This variable is used by Open Watcom C/C++.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET FORCE=&#91;d:&#93;&#91;path&#93;filename&#91;.ext&#93;</tt>
@@ -13282,19 +13284,19 @@ This variable is used by Open Watcom C/C++.&nbsp;
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set force=\watcom\h\common.cnv</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcc report</tt>
-<br><br>The<b> FORCE</b> environment variable can be overridden by use of the Open Watcom C/C++ &quot;fi&quot; option.
+<br><br>The <b> FORCE</b> environment variable can be overridden by use of the Open Watcom C/C++ &quot;fi&quot; option.
 <h2 id="INCLUDE"> INCLUDE </h2>
-<br>The<b> INCLUDE</b> environment variable describes the location of the C and C++ header files (files with the &quot;.h&quot;
+<br>The <b> INCLUDE</b> environment variable describes the location of the C and C++ header files (files with the &quot;.h&quot;
 filename extension).&nbsp; This variable is used by Open Watcom C/C++.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET include=&#91;d:&#93;&#91;path&#93;;&#91;d:&#93;&#91;path&#93;...</tt>
-<br><br>The<b> INCLUDE</b> environment string is like the<b> PATH</b> string in that you can specify one or more directories
+<br><br>The <b> INCLUDE</b> environment string is like the <b> PATH</b> string in that you can specify one or more directories
 separated by semicolons (&quot;;&quot;).
 <h2 id="LFN"> LFN </h2>
-<br>The<b> LFN</b> environment variable is checked by the Open Watcom run-time C libraries and it is used to control DOS LFN
-(DOS Long File Name) support.&nbsp; Normally, these libraries will use DOS LFN support if it is available on host OS.&nbsp;
-If you don't wish to use DOS LFN support, you can define the<b> LFN</b> environment variable and setup it's value to 'N'.
-&nbsp;Using the &quot;SET&quot; command, define the environment variable as follows:
+<br>The <b> LFN</b> environment variable is checked by the Open Watcom run-time C libraries and it is used to control DOS
+LFN (DOS Long File Name) support.&nbsp; Normally, these libraries will use DOS LFN support if it is available on host OS.
+&nbsp;If you don't wish to use DOS LFN support, you can define the <b> LFN</b> environment variable and setup it's value to
+'N'.&nbsp; Using the &quot;SET&quot; command, define the environment variable as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET LFN=N</tt>
 <br><br>Now, when you run your application, the DOS LFN support will be ignored.&nbsp; To undefine the environment variable,
@@ -13302,68 +13304,68 @@ enter the command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET LFN=</tt>
 <h2 id="LIB"> LIB </h2>
-<br>The use of the<b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
+<br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
 over the use of this environment variable.
-<br><br>The<b> LIB</b> environment variable is used to select the libraries that will be used when the application is linked.
-&nbsp;This variable is used by the Open Watcom Linker (WLINK.EXE).&nbsp; The<b> LIB</b> environment string is like the<b>
+<br><br>The <b> LIB</b> environment variable is used to select the libraries that will be used when the application is linked.
+&nbsp;This variable is used by the Open Watcom Linker (WLINK.EXE).&nbsp; The <b> LIB</b> environment string is like the <b>
 PATH</b> string in that you can specify one or more directories separated by semicolons (&quot;;&quot;).
 <br><br>If you have the 286 development system, 16-bit applications can be linked for DOS, Microsoft Windows, OS/2, and QNX
 depending on which libraries are selected.&nbsp; If you have the 386 development system, 32-bit applications can be linked
 for DOS Extender systems, Microsoft Windows and QNX.
 <h2 id="LIBDOS"> LIBDOS </h2>
-<br>The use of the<b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
+<br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
 over the use of this environment variable.
-<br><br>If you are developing a DOS application, the<b> LIBDOS</b> environment variable must include the location of the 16-bit
-Open Watcom C/C++ DOS library files (files with the &quot;.lib&quot; filename extension).&nbsp; This variable is used by the
-Open Watcom Linker (WLINK.EXE).&nbsp; The default installation directory for the 16-bit Open Watcom C/C++ DOS libraries is<tt>
-\WATCOM\LIB286\DOS.</tt>&nbsp; The<b> LIBDOS</b> environment variable must also include the location of the 16-bit Open Watcom
-C/C++ math library files.&nbsp; The default installation directory for the 16-bit Open Watcom C/C++ math libraries is<tt>
-\WATCOM\LIB286.</tt>
+<br><br>If you are developing a DOS application, the <b> LIBDOS</b> environment variable must include the location of the
+16-bit Open Watcom C/C++ DOS library files (files with the &quot;.lib&quot; filename extension).&nbsp; This variable is used
+by the Open Watcom Linker (WLINK.EXE).&nbsp; The default installation directory for the 16-bit Open Watcom C/C++ DOS libraries
+is<tt> \WATCOM\LIB286\DOS.</tt>&nbsp; The <b> LIBDOS</b> environment variable must also include the location of the 16-bit
+Open Watcom C/C++ math library files.&nbsp; The default installation directory for the 16-bit Open Watcom C/C++ math libraries
+is<tt> \WATCOM\LIB286.</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libdos=c:\watcom\lib286\dos;c:\watcom\lib286</tt>
 <h2 id="LIBWIN"> LIBWIN </h2>
-<br>The use of the<b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
+<br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
 over the use of this environment variable.
-<br><br>If you are developing a 16-bit Microsoft Windows application, the<b> LIBWIN</b> environment variable must include
+<br><br>If you are developing a 16-bit Microsoft Windows application, the <b> LIBWIN</b> environment variable must include
 the location of the 16-bit Open Watcom C/C++ Windows library files (files with the &quot;.lib&quot; filename extension).&nbsp;
 This variable is used by the Open Watcom Linker (WLINK.EXE).&nbsp; If you are developing a 32-bit Microsoft Windows application,
-see the description of the<b> LIBPHAR</b> environment variable.&nbsp; The default installation directory for the 16-bit Open
-Watcom C/C++ Windows libraries is<tt> \WATCOM\LIB286\WIN.</tt>&nbsp; The<b> LIBWIN</b> environment variable must also include
+see the description of the <b> LIBPHAR</b> environment variable.&nbsp; The default installation directory for the 16-bit Open
+Watcom C/C++ Windows libraries is<tt> \WATCOM\LIB286\WIN.</tt>&nbsp; The <b> LIBWIN</b> environment variable must also include
 the location of the 16-bit Open Watcom C/C++ math library files.&nbsp; The default installation directory for the 16-bit Open
 Watcom C/C++ math libraries is<tt> \WATCOM\LIB286.</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libwin=c:\watcom\lib286\win;c:\watcom\lib286</tt>
 <h2 id="LIBOS2"> LIBOS2 </h2>
-<br>The use of the<b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
+<br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
 over the use of this environment variable.
-<br><br>If you are developing an OS/2 application, the<b> LIBOS2</b> environment variable must include the location of the
+<br><br>If you are developing an OS/2 application, the <b> LIBOS2</b> environment variable must include the location of the
 16-bit Open Watcom C/C++ OS/2 library files (files with the &quot;.lib&quot; filename extension).&nbsp; This variable is used
 by the Open Watcom Linker (WLINK.EXE).&nbsp; The default installation directory for the 16-bit Open Watcom C/C++ OS/2 libraries
-is<tt> \WATCOM\LIB286\OS2.</tt>&nbsp; The<b> LIBOS2</b> environment variable must also include the directory of the OS/2<tt>
-DOSCALLS.LIB</tt> file which is usually<tt> \OS2.</tt>&nbsp; The<b> LIBOS2</b> environment variable must also include the
+is<tt> \WATCOM\LIB286\OS2.</tt>&nbsp; The <b> LIBOS2</b> environment variable must also include the directory of the OS/2<tt>
+DOSCALLS.LIB</tt> file which is usually<tt> \OS2.</tt>&nbsp; The <b> LIBOS2</b> environment variable must also include the
 location of the 16-bit Open Watcom C/C++ math library files.&nbsp; The default installation directory for the 16-bit Open
 Watcom C/C++ math libraries is<tt> \WATCOM\LIB286.</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libos2=c:\watcom\lib286\os2;c:\watcom\lib286;c:\os2</tt>
 <h2 id="LIBPHAR"> LIBPHAR </h2>
-<br>The use of the<b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
+<br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
 over the use of this environment variable.
-<br><br>If you are developing a 32-bit Windows or DOS Extender application, the<b> LIBPHAR</b> environment variable must include
-the location of the 32-bit Open Watcom C/C++ DOS Extender library files or the 32-bit Open Watcom C/C++ Windows library files
-(files with the &quot;.lib&quot; filename extension).&nbsp; This variable is used by the Open Watcom Linker (WLINK.EXE).&nbsp;
-The default installation directory for the 32-bit Open Watcom C/C++ DOS Extender libraries is<tt> \WATCOM\LIB386\DOS.</tt>
+<br><br>If you are developing a 32-bit Windows or DOS Extender application, the <b> LIBPHAR</b> environment variable must
+include the location of the 32-bit Open Watcom C/C++ DOS Extender library files or the 32-bit Open Watcom C/C++ Windows library
+files (files with the &quot;.lib&quot; filename extension).&nbsp; This variable is used by the Open Watcom Linker (WLINK.EXE).
+&nbsp;The default installation directory for the 32-bit Open Watcom C/C++ DOS Extender libraries is<tt> \WATCOM\LIB386\DOS.</tt>
 &nbsp;The default installation directory for the 32-bit Open Watcom C/C++ Windows libraries is<tt> \WATCOM\LIB386\WIN.</tt>
-&nbsp;The<b> LIBPHAR</b> environment variable must also include the location of the 32-bit Open Watcom C/C++ math library
+&nbsp;The <b> LIBPHAR</b> environment variable must also include the location of the 32-bit Open Watcom C/C++ math library
 files.&nbsp; The default installation directory for the 32-bit Open Watcom C/C++ math libraries is<tt> \WATCOM\LIB386.</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libphar=c:\watcom\lib386\dos;c:\watcom\lib386</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libphar=c:\watcom\lib386\win;c:\watcom\lib386</tt>
 <h2 id="NO87"> NO87 </h2>
-<br>The<b> NO87</b> environment variable is checked by the Open Watcom run-time math libraries that include floating-point
+<br>The <b> NO87</b> environment variable is checked by the Open Watcom run-time math libraries that include floating-point
 emulation support.&nbsp; Normally, these libraries will detect the presence of a numeric data processor (80x87) and use it.
 &nbsp;If you have a numeric data processor in your system but you wish to test a version of your application that will use
-floating-point emulation, you can define the<b> NO87</b> environment variable.&nbsp; Using the &quot;SET&quot; command, define
+floating-point emulation, you can define the <b> NO87</b> environment variable.&nbsp; Using the &quot;SET&quot; command, define
 the environment variable as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET NO87=1</tt>
@@ -13372,10 +13374,10 @@ command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET NO87=</tt>
 <h2 id="PATH"> PATH </h2>
-<br>The<b> PATH</b> environment variable is used by DOS &quot;COMMAND.COM&quot; or OS/2 &quot;CMD.EXE&quot; to locate programs.
+<br>The <b> PATH</b> environment variable is used by DOS &quot;COMMAND.COM&quot; or OS/2 &quot;CMD.EXE&quot; to locate programs.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PATH &#91;d:&#93;&#91;path&#93;;&#91;d:&#93;&#91;path&#93;...</tt>
-<br><br>The<b> PATH</b> environment variable should include the disk and directory of the Open Watcom C/C++ binary program
+<br><br>The <b> PATH</b> environment variable should include the disk and directory of the Open Watcom C/C++ binary program
 files when using Open Watcom C/C++ and its related tools.
 <br><br><b>If your host system is DOS:</b>
 <br><br>The default installation directory for 16-bit Open Watcom C/C++ and 32-bit Open Watcom C/C++ DOS binaries is called<tt>
@@ -13392,33 +13394,33 @@ files when using Open Watcom C/C++ and its related tools.
 are called<tt> \WATCOM\BINNT</tt> and<tt> \WATCOM\BINW.</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;path c:\watcom\binnt;c:\watcom\binw</tt>
-<br><br>The<b> PATH</b> environment variable is also used by the following programs in the described manner.
+<br><br>The <b> PATH</b> environment variable is also used by the following programs in the described manner.
 <ol>
 <li>Open Watcom Compile and Link to locate the 16-bit Open Watcom C/C++ and 32-bit Open Watcom C/C++ compilers and the Open
 Watcom Linker.
 <li>&quot;WD.EXE&quot; to locate programs and debugger command files.
 </ol>
 <h2 id="TMP"> TMP </h2>
-<br>The<b> TMP</b> environment variable describes the location (disk and path) for temporary files created by the 16-bit Open
-Watcom C/C++ and 32-bit Open Watcom C/C++ compilers and the Open Watcom Linker.
+<br>The <b> TMP</b> environment variable describes the location (disk and path) for temporary files created by the 16-bit
+Open Watcom C/C++ and 32-bit Open Watcom C/C++ compilers and the Open Watcom Linker.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET TMP=&#91;d:&#93;&#91;path&#93;</tt>
 <br><br>Normally, Open Watcom C/C++ will create temporary spill files in the current directory.&nbsp; However, by defining
-the<b> TMP</b> environment variable to be a certain disk and directory, you can tell Open Watcom C/C++ where to place its
+the <b> TMP</b> environment variable to be a certain disk and directory, you can tell Open Watcom C/C++ where to place its
 temporary files.&nbsp; The same is true of the Open Watcom Linker temporary file.
-<br><br>Consider the following definition of the<b> TMP</b> environment variable.
+<br><br>Consider the following definition of the <b> TMP</b> environment variable.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set tmp=d:\watcom\tmp</tt>
 <br><br>The Open Watcom C/C++ compiler and Open Watcom Linker will create its temporary files in<tt> d:\watcom\tmp.</tt>
 <h2 id="WATCOM"> WATCOM </h2>
 <br>In order for the Open Watcom Linker to locate the 16-bit Open Watcom C/C++ and 32-bit Open Watcom C/C++ library files,
-the<b> WATCOM</b> environment variable should be defined.&nbsp; The<b> WATCOM</b> environment variable is used to locate the
-libraries that will be used when the application is linked.&nbsp; The default directory for 16-bit Open Watcom C/C++ and 32-bit
-Open Watcom C/C++ files is &quot;\WATCOM&quot;.
+the <b> WATCOM</b> environment variable should be defined.&nbsp; The <b> WATCOM</b> environment variable is used to locate
+the libraries that will be used when the application is linked.&nbsp; The default directory for 16-bit Open Watcom C/C++ and
+32-bit Open Watcom C/C++ files is &quot;\WATCOM&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set watcom=c:\watcom</tt>
 <h2 id="WCC"> WCC </h2>
-<br>The<b> WCC</b> environment variable can be used to specify commonly-used options for the 16-bit C compiler.
+<br>The <b> WCC</b> environment variable can be used to specify commonly-used options for the 16-bit C compiler.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WCC=-option1 -option2 ...</tt>
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
@@ -13426,10 +13428,10 @@ default options to be &quot;d1&quot; (include line number debug information in t
 for maximum number of code optimizations).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcc=-d1 -ox</tt>
-<br><br>Once the<b> WCC</b> environment variable has been defined, those options listed become the default each time the<b><i>
-WCC</i></b> command is used.
+<br><br>Once the <b> WCC</b> environment variable has been defined, those options listed become the default each time the
+<b><i> WCC</i></b> command is used.
 <h2 id="WCC386"> WCC386 </h2>
-<br>The<b> WCC386</b> environment variable can be used to specify commonly-used options for the 32-bit C compiler.
+<br>The <b> WCC386</b> environment variable can be used to specify commonly-used options for the 32-bit C compiler.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WCC386=-option1 -option2 ...</tt>
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
@@ -13437,10 +13439,10 @@ default options to be &quot;d1&quot; (include line number debug information in t
 for maximum number of code optimizations).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcc386=-d1 -ox</tt>
-<br><br>Once the<b> WCC386</b> environment variable has been defined, those options listed become the default each time the<b><i>
-WCC386</i></b> command is used.
+<br><br>Once the <b> WCC386</b> environment variable has been defined, those options listed become the default each time the
+<b><i> WCC386</i></b> command is used.
 <h2 id="WCL"> WCL </h2>
-<br>The<b> WCL</b> environment variable can be used to specify commonly-used WCL options.
+<br>The <b> WCL</b> environment variable can be used to specify commonly-used WCL options.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WCL=-option1 -option2 ...</tt>
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
@@ -13448,10 +13450,10 @@ default options to be &quot;mm&quot; (compile code for medium memory model), &qu
 in the object file), and &quot;ox&quot; (compile for maximum number of code optimizations).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl=-mm -d1 -ox</tt>
-<br><br>Once the<b> WCL</b> environment variable has been defined, those options listed become the default each time the WCL
-command is used.
+<br><br>Once the <b> WCL</b> environment variable has been defined, those options listed become the default each time the
+WCL command is used.
 <h2 id="WCL386"> WCL386 </h2>
-<br>The<b> WCL386</b> environment variable can be used to specify commonly-used WCL386 options.
+<br>The <b> WCL386</b> environment variable can be used to specify commonly-used WCL386 options.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WCL386=-option1 -option2 ...</tt>
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
@@ -13459,10 +13461,10 @@ default options to be &quot;3s&quot; (compile code for stack-based argument pass
 number debug information in the object file), and &quot;ox&quot; (compile for maximum number of code optimizations).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl386=-3s -d1 -ox</tt>
-<br><br>Once the<b> WCL386</b> environment variable has been defined, those options listed become the default each time the
+<br><br>Once the <b> WCL386</b> environment variable has been defined, those options listed become the default each time the
 WCL386 command is used.
 <h2 id="WCGMEMORY"> WCGMEMORY </h2>
-<br>The<b> WCGMEMORY</b> environment variable may be used to request a report of the amount of memory used by the compiler's
+<br>The <b> WCGMEMORY</b> environment variable may be used to request a report of the amount of memory used by the compiler's
 code generator for its work area.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set WCGMEMORY=?</tt>
@@ -13478,7 +13480,7 @@ code.
 the code generator, the more optimal code it will generate.&nbsp; Thus, for two personal computers with different amounts
 of memory, the code generator may produce different (although correct) object code.&nbsp; If you have a software quality assurance
 requirement that the same results (i.e., code) be produced on two different machines then you should use this feature.&nbsp;
-To generate identical code on two personal computers with different memory configurations, you must ensure that the<b> WCGMEMORY</b>
+To generate identical code on two personal computers with different memory configurations, you must ensure that the <b> WCGMEMORY</b>
 environment variable is set identically on both machines.
 <br><br>The second reason where this feature is useful is on virtual memory paging systems (e.g., OS/2) where an unlimited
 amount of memory can be used by the code generator.&nbsp; If a very large module is being compiled, it may take a very long
@@ -13486,7 +13488,7 @@ time to compile it.&nbsp; The code generator will continue to allocate more and 
 of paging.&nbsp; By restricting the amount of memory that the code generator can use, you can reduce the amount of time required
 to compile a routine.
 <h2 id="WD"> WD </h2>
-<br>The<b> WD</b> environment variable can be used to specify commonly-used Open Watcom Debugger options.&nbsp; This environment
+<br>The <b> WD</b> environment variable can be used to specify commonly-used Open Watcom Debugger options.&nbsp; This environment
 variable is not used by the Windows version of the debugger, WDW.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WD=-option1 -option2 ...</tt>
@@ -13495,10 +13497,10 @@ default options to be &quot;noinvoke&quot; (do not execute the<tt> profile.dbg</
 to 10 register sets while tracing).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wd=-noinvoke -reg#10</tt>
-<br><br>Once the<b> WD</b> environment variable has been defined, those options listed become the default each time the WD
+<br><br>Once the <b> WD</b> environment variable has been defined, those options listed become the default each time the WD
 command is used.
 <h2 id="WDW"> WDW </h2>
-<br>The<b> WDW</b> environment variable can be used to specify commonly-used Open Watcom Debugger options.&nbsp; This environment
+<br>The <b> WDW</b> environment variable can be used to specify commonly-used Open Watcom Debugger options.&nbsp; This environment
 variable is used by the Windows version of the debugger, WDW.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WDW=-option1 -option2 ...</tt>
@@ -13507,10 +13509,10 @@ the default options to be &quot;noinvoke&quot; (do not execute the<tt> profile.d
 up to 10 register sets while tracing).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wdw=-noinvoke -reg#10</tt>
-<br><br>Once the<b> WDW</b> environment variable has been defined, those options listed become the default each time the WDW
-command is used.
+<br><br>Once the <b> WDW</b> environment variable has been defined, those options listed become the default each time the
+WDW command is used.
 <h2 id="WLANG"> WLANG </h2>
-<br>The<b> WLANG</b> environment variable can be used to control which language is used to display diagnostic and program
+<br>The <b> WLANG</b> environment variable can be used to control which language is used to display diagnostic and program
 usage messages by various Open Watcom software tools.&nbsp; The two currently-supported values for this variable are &quot;English&quot;
 or &quot;Japanese&quot;.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -13520,9 +13522,9 @@ or &quot;Japanese&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wlang=0</tt>
 <br><br>By default, Japanese messages are displayed when the current codepage is 932 and English messages are displayed otherwise.
-&nbsp;Normally, use of the<b> WLANG</b> environment variable should not be required.
+&nbsp;Normally, use of the <b> WLANG</b> environment variable should not be required.
 <h2 id="WPP"> WPP </h2>
-<br>The<b> WPP</b> environment variable can be used to specify commonly-used options for the 16-bit C++ compiler.
+<br>The <b> WPP</b> environment variable can be used to specify commonly-used options for the 16-bit C++ compiler.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WPP=-option1 -option2 ...</tt>
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
@@ -13530,10 +13532,10 @@ default options to be &quot;d1&quot; (include line number debug information in t
 for maximum number of code optimizations).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wpp=-d1 -ox</tt>
-<br><br>Once the<b> WPP</b> environment variable has been defined, those options listed become the default each time the<b><i>
-WPP</i></b> command is used.
+<br><br>Once the <b> WPP</b> environment variable has been defined, those options listed become the default each time the
+<b><i> WPP</i></b> command is used.
 <h2 id="WPP386"> WPP386 </h2>
-<br>The<b> WPP386</b> environment variable can be used to specify commonly-used options for the 32-bit C++ compiler.
+<br>The <b> WPP386</b> environment variable can be used to specify commonly-used options for the 32-bit C++ compiler.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WPP386=-option1 -option2 ...</tt>
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
@@ -13541,8 +13543,8 @@ default options to be &quot;d1&quot; (include line number debug information in t
 for maximum number of code optimizations).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wpp386=-d1 -ox</tt>
-<br><br>Once the<b> WPP386</b> environment variable has been defined, those options listed become the default each time the<b><i>
-WPP386</i></b> command is used.
+<br><br>Once the <b> WPP386</b> environment variable has been defined, those options listed become the default each time the
+<b><i> WPP386</i></b> command is used.
 <h1 id="Open_Watcom_CDCPP_RunMTime_Messages"> Open Watcom C/C++ Run-Time Messages </h1>
 <br>The following is a list of error messages produced by the Open Watcom C/C++ run-time library.&nbsp; These messages can
 only appear during the execution of an application built with one of the C run-time libraries.

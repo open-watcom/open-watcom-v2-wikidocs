@@ -451,8 +451,8 @@ Open Watcom C/C++ libraries).&nbsp; It is<tt> hello.exe</tt> that is run by DOS 
 section, the &quot;hello&quot; program was compiled with default compile and link options.&nbsp; When debugging an application,
 it is useful to refer to the symbolic names of routines and variables.&nbsp; It is also convenient to debug at the source
 line level rather than the machine language level.&nbsp; To do this, we must direct both the compiler and linker to include
-additional debugging information in the object and executable files.&nbsp; Using the<b><i> WCL</i></b> command, this is fairly
-straightforward.<b><i>&nbsp; WCL</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and will create
+additional debugging information in the object and executable files.&nbsp; Using the <b><i> WCL</i></b> command, this is fairly
+straightforward.&nbsp; <b><i> WCL</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and will create
 the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
@@ -483,7 +483,7 @@ be issued.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; searching libraries</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; creating a DOS executable</tt>
 <br><br>The &quot;d2&quot; option requests the maximum amount of debugging information that can be provided by the Open Watcom
-C/C++ compiler.<b><i>&nbsp; WCL</i></b> will make sure that this debugging information is included in the executable file
+C/C++ compiler.&nbsp; <b><i> WCL</i></b> will make sure that this debugging information is included in the executable file
 that is produced by the linker.
 <br><br>The &quot;Code size&quot; value is larger than in the previous example since selection of the &quot;d2&quot; option
 results in fewer code optimizations by default.&nbsp; You can request more optimization by specifying the appropriate options.
@@ -559,8 +559,8 @@ command.
 section, the &quot;hello&quot; program was compiled with default compile and link options.&nbsp; When debugging an application,
 it is useful to refer to the symbolic names of routines and variables.&nbsp; It is also convenient to debug at the source
 line level rather than the machine language level.&nbsp; To do this, we must direct both the compiler and linker to include
-additional debugging information in the object and executable files.&nbsp; Using the<b><i> WCL386</i></b> command, this is
-fairly straightforward.<b><i>&nbsp; WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
+additional debugging information in the object and executable files.&nbsp; Using the <b><i> WCL386</i></b> command, this is
+fairly straightforward.&nbsp; <b><i> WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
 will create the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
@@ -591,7 +591,7 @@ be issued.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; searching libraries</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; creating a Phar Lap simple executable</tt>
 <br><br>The &quot;d2&quot; option requests the maximum amount of debugging information that can be provided by the Open Watcom
-C/C++ compiler.<b><i>&nbsp; WCL386</i></b> will make sure that this debugging information is included in the executable file
+C/C++ compiler.&nbsp; <b><i> WCL386</i></b> will make sure that this debugging information is included in the executable file
 that is produced by the linker.
 <br><br>The &quot;Code size&quot; value is larger than in the previous example since selection of the &quot;d2&quot; option
 results in fewer code optimizations by default.&nbsp; You can request more optimization by specifying the appropriate options.
@@ -666,8 +666,8 @@ Open Watcom C/C++ libraries).&nbsp; It is<tt> hello.exe</tt> that is run by DOS 
 section, the &quot;hello&quot; program was compiled with default compile and link options.&nbsp; When debugging an application,
 it is useful to refer to the symbolic names of routines and variables.&nbsp; It is also convenient to debug at the source
 line level rather than the machine language level.&nbsp; To do this, we must direct both the compiler and linker to include
-additional debugging information in the object and executable files.&nbsp; Using the<b><i> WCL386</i></b> command, this is
-fairly straightforward.<b><i>&nbsp; WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
+additional debugging information in the object and executable files.&nbsp; Using the <b><i> WCL386</i></b> command, this is
+fairly straightforward.&nbsp; <b><i> WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
 will create the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
@@ -698,7 +698,7 @@ be issued.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; searching libraries</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; creating a DOS/4G executable</tt>
 <br><br>The &quot;d2&quot; option requests the maximum amount of debugging information that can be provided by the Open Watcom
-C/C++ compiler.<b><i>&nbsp; WCL386</i></b> will make sure that this debugging information is included in the executable file
+C/C++ compiler.&nbsp; <b><i> WCL386</i></b> will make sure that this debugging information is included in the executable file
 that is produced by the linker.
 <br><br>The &quot;Code size&quot; value is larger than in the previous example since selection of the &quot;d2&quot; option
 results in fewer code optimizations by default.&nbsp; You can request more optimization by specifying the appropriate options.
@@ -1926,17 +1926,17 @@ on the right.
 <br><br>The 1KB label in the diagram indicates the top of the real-mode interrupt vectors.&nbsp; 4KB marks the end of the
 first page.
 <h1 id="DOSD4GW__Configuring_DOSD4GW"> DOS/4GW:&nbsp; Configuring DOS/4GW </h1>
-<br>This chapter explains various options that can be specified with the<b> DOS4G</b> environment variable including how to
-suppress the banner that is displayed by<b> DOS/4GW</b> at startup.&nbsp; It also explains how to use the<b> DOS16M</b> environment
-variable to select the switch mode setting, if necessary, and to specify the range of extended memory in which<b> DOS/4GW</b>
-will operate.<b>&nbsp; DOS/4GW</b> is based on Tenberry Software's DOS/16M 16-bit Protected-Mode support; hence the<b> DOS16M</b>
-environment variable name remains unchanged.
+<br>This chapter explains various options that can be specified with the <b> DOS4G</b> environment variable including how
+to suppress the banner that is displayed by<b> DOS/4GW</b> at startup.&nbsp; It also explains how to use the <b> DOS16M</b>
+environment variable to select the switch mode setting, if necessary, and to specify the range of extended memory in which<b>
+DOS/4GW</b> will operate.<b>&nbsp; DOS/4GW</b> is based on Tenberry Software's DOS/16M 16-bit Protected-Mode support; hence
+the <b> DOS16M</b> environment variable name remains unchanged.
 <h2 id="DOSD4GW__The_DOS4G_Environment_Variable"> DOS/4GW:&nbsp; The DOS4G Environment Variable </h2>
-<br>A number of options can be selected by setting the<b> DOS4G</b> environment variable.&nbsp; The syntax for setting options
+<br>A number of options can be selected by setting the <b> DOS4G</b> environment variable.&nbsp; The syntax for setting options
 is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4G=option1,option2,...</tt>
-<br><br>Do not insert a space between<b> DOS4G</b> and the equal sign.&nbsp; A space to the right of the equal sign is optional.
+<br><br>Do not insert a space between <b> DOS4G</b> and the equal sign.&nbsp; A space to the right of the equal sign is optional.
 <dl>
 <dt>Options:
 <dd>
@@ -1967,14 +1967,14 @@ distribute to others.
 <h2 id="DOSD4GW__Changing_the_Switch_Mode_Setting"> DOS/4GW:&nbsp; Changing the Switch Mode Setting </h2>
 <br>In almost all cases,<b> DOS/4GW</b> programs can detect the type of machine that is running and automatically choose an
 appropriate real- to protected-mode switch technique.&nbsp; For the few cases in which this default setting does not work
-we provide the<b> DOS16M</b> DOS environment variable, which overrides the default setting.
+we provide the <b> DOS16M</b> DOS environment variable, which overrides the default setting.
 <br><br>Change the switch mode settings by issuing the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=value</tt>
-<br><br>Do not insert a space between<b> DOS16M</b> and the equal sign.&nbsp; A space to the right of the equal sign is optional.
+<br><br>Do not insert a space between <b> DOS16M</b> and the equal sign.&nbsp; A space to the right of the equal sign is optional.
 <br><br>The table below lists the machines and the settings you would use with them.&nbsp; Many settings have mnemonics, listed
-in the column &quot;Alternate Name&quot;, that you can use instead of the number.&nbsp; Settings that you must set with the<b>
-DOS16M</b> variable have the notation<b> req'd</b> in the first column.&nbsp; Settings you may use are marked<b> option,</b>
+in the column &quot;Alternate Name&quot;, that you can use instead of the number.&nbsp; Settings that you must set with the
+<b> DOS16M</b> variable have the notation<b> req'd</b> in the first column.&nbsp; Settings you may use are marked<b> option,</b>
 and settings that will automatically be set are marked<b> auto.</b>
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2024,8 +2024,8 @@ automatically for PS/2
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>The following procedure shows you how to test the switch mode setting.
 <ol>
-<li>If you have one of the machines listed below, set the<b> DOS16M</b> environment variable to the value shown for that machine
-and specify a range of extended memory.&nbsp; For example, if your machine is a NEC 98-series, set<tt> DOS16M=1 @2M-4M.</tt>
+<li>If you have one of the machines listed below, set the <b> DOS16M</b> environment variable to the value shown for that
+machine and specify a range of extended memory.&nbsp; For example, if your machine is a NEC 98-series, set<tt> DOS16M=1 @2M-4M.</tt>
 &nbsp;See the section entitled <a href="#DOSD4GW__Fine_Control_of_Memory_Usage">DOS/4GW:&nbsp; Fine Control of Memory Usage</a>
 in this chapter for more information about setting the memory range.
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Machine&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2049,11 +2049,11 @@ and PMINFO does, check the CPU type reported on the first line of the display.
 <br><br>You are authorized (and encouraged) to distribute PMINFO to your customers.&nbsp; You may also include a copy of this
 section in your documentation.
 <h2 id="DOSD4GW__Fine_Control_of_Memory_Usage"> DOS/4GW:&nbsp; Fine Control of Memory Usage </h2>
-<br>In addition to setting the switch mode as described above, the<b> DOS16M</b> environment variable enables you to specify
+<br>In addition to setting the switch mode as described above, the <b> DOS16M</b> environment variable enables you to specify
 which portion of extended memory<b> DOS/4GW</b> will use.&nbsp; The variable also allows you to instruct<b> DOS/4GW</b> to
 search for extra memory and use it if it is present.
 <h3 id="DOSD4GW__Specifying_a_Range_of_Extended_Memory"> DOS/4GW:&nbsp; Specifying a Range of Extended Memory </h3>
-<br>Normally, you don't need to specify a range of memory with the<b> DOS16M</b> variable.&nbsp; You must use the variable,
+<br>Normally, you don't need to specify a range of memory with the <b> DOS16M</b> variable.&nbsp; You must use the variable,
 however, in the following cases:
 <ul>
 <li>You are running on a Fujitsu FMR-series, NEC 98-series, OKI if800-series or Hitachi B-series machine.
@@ -2102,7 +2102,7 @@ as it does for memory managed under other protocols.
 <br>Some machines contain extra non-extended, non-conventional memory just below 16MB.&nbsp; When<b> DOS/4GW</b> runs on a
 Compaq 386, it automatically uses this memory because the memory is allocated according to a certain protocol, which<b> DOS/4GW</b>
 follows.&nbsp; Other machines have no protocol for allocating this memory.&nbsp; To use the extra memory that may exist on
-these machines, set<b> DOS16M</b> with the + option.
+these machines, set <b> DOS16M</b> with the + option.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=+</tt>
 <br><br>Setting the + option causes<b> DOS/4GW</b> to search for memory in the range from FA0000 to FFFFFF and determine whether
@@ -2111,13 +2111,13 @@ In some cases, this memory is mapped for DOS or BIOS usage, or for other system 
 memory that is mapped this way, and is not marked read-only, it will write into that memory.&nbsp; This will cause a crash,
 but won't have any other effect on your system.
 <h2 id="DOSD4GW__Setting_Runtime_Options"> DOS/4GW:&nbsp; Setting Runtime Options </h2>
-<br>The<b> DOS16M</b> environment variable sets certain runtime options for all<b> DOS/4GW</b> programs running on the same
+<br>The <b> DOS16M</b> environment variable sets certain runtime options for all<b> DOS/4GW</b> programs running on the same
 system.
 <br><br>To set the environment variable, the syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=&#91;switch_mode_setting&#93;^options.</tt>
 <br><br><b>Note:</b>&nbsp; Some command line editing TSRs, such as CED, use the caret (^) as a delimiter.&nbsp; If you want
-to set<b> DOS16M</b> using the syntax above while one of these TSRs is resident, modify the TSR to use a different delimiter.
+to set <b> DOS16M</b> using the syntax above while one of these TSRs is resident, modify the TSR to use a different delimiter.
 <br><br>These are the options:
 <dl>
 <dt>0x01
@@ -2158,7 +2158,7 @@ through the range.&nbsp; Use this option to find references to<b> stale</b> sele
 or freed.
 </dl>
 <h2 id="DOSD4GW__Controlling_Address_Line_20"> DOS/4GW:&nbsp; Controlling Address Line 20 </h2>
-<br>This section explains how<b> DOS/4GW</b> uses address line 20 (A20) and describes the related<b> DOS16M</b> environment
+<br>This section explains how<b> DOS/4GW</b> uses address line 20 (A20) and describes the related <b> DOS16M</b> environment
 variable settings.&nbsp; It is unlikely that you will need to use these settings.
 <br><br>Because the 8086 and 8088 chips have 20-bit address spaces, their highest addressable memory location is one byte
 below 1MB.&nbsp; If you specify an address at 1MB or over, which would require a twenty-first bit to set, the address wraps
@@ -2173,23 +2173,23 @@ line to the setting it had when<b> DOS/4GW</b> switched to protected mode.&nbsp;
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=A20</tt>
 <br><br>To specify more than one option on the command line, separate the options with spaces.
-<br><br>The<b> DOS16M</b> variable also lets you to specify the length of the delay between a<b> DOS/4GW</b> instruction to
-change the status of the A20 line and the next<b> DOS/4GW</b> operation.&nbsp; By default, this delay is 1 loop instruction
+<br><br>The <b> DOS16M</b> variable also lets you to specify the length of the delay between a<b> DOS/4GW</b> instruction
+to change the status of the A20 line and the next<b> DOS/4GW</b> operation.&nbsp; By default, this delay is 1 loop instruction
 when<b> DOS/4GW</b> is running on a 386 machine.&nbsp; In some cases, you may need to specify a longer delay for a machine
-that will run<b> DOS/4GW</b> but is not truly AT-compatible.&nbsp; To change the delay, set<b> DOS16M</b> to the desired number
-of loop instructions, preceded by a comma:&nbsp; 
+that will run<b> DOS/4GW</b> but is not truly AT-compatible.&nbsp; To change the delay, set <b> DOS16M</b> to the desired
+number of loop instructions, preceded by a comma:&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=,loops</tt>
 <h1 id="DOSD4GW__VMM"> DOS/4GW:&nbsp; VMM </h1>
 <br>The Virtual Memory Manager (VMM) uses a swap file on disk to augment RAM.&nbsp; With VMM you can use more memory than
 your machine actually has.&nbsp; When RAM is not sufficient, part of your program is swapped out to the disk file until it
 is needed again.&nbsp; The combination of the swap file and available RAM is the<b> virtual memory.</b>
-<br><br>Your program can use VMM if you set the DOS environment variable,<b> DOS4GVM</b> , as follows.&nbsp; To set the<b>
+<br><br>Your program can use VMM if you set the DOS environment variable, <b> DOS4GVM</b>, as follows.&nbsp; To set the <b>
 DOS4GVM</b> environment variable, use the format shown below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM= &#91;option&#91;#value&#93;&#93; &#91;option&#91;#value&#93;&#93;</tt>
 <br><br>A &quot;#&quot; is used with options that take values since the DOS command shell will not accept &quot;=&quot;.
-<br><br>If you set<b> DOS4GVM</b> equal to 1, the default parameters are used for all options.
+<br><br>If you set <b> DOS4GVM</b> equal to 1, the default parameters are used for all options.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set DOS4GVM=1</tt>
 <h2 id="DOSD4GW__VMM_Default_Parameters"> DOS/4GW:&nbsp; VMM Default Parameters </h2>
@@ -2216,10 +2216,10 @@ is quicker if the file is not deleted.
 <h2 id="DOSD4GW__Changing_the_Defaults"> DOS/4GW:&nbsp; Changing the Defaults </h2>
 <br>You can change the defaults in two ways.
 <ol>
-<li>Specify different parameter values as arguments to the<b> DOS4GVM</b> environment variable, as shown in the example below.
+<li>Specify different parameter values as arguments to the <b> DOS4GVM</b> environment variable, as shown in the example below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM=deleteswap maxmem#8192</tt>
-<li>Create a configuration file with the filetype extension &quot;.VMC&quot;, and use that as an argument to the<b> DOS4GVM</b>
+<li>Create a configuration file with the filetype extension &quot;.VMC&quot;, and use that as an argument to the <b> DOS4GVM</b>
 environment variable, as shown below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM=@NEW4G.VMC</tt>
@@ -3779,9 +3779,9 @@ can occur per second, and the time for a single round-trip switch, broken out in
 <dt>Notes:
 <dd>This program may be distributed to your users.
 <br><br>Without PRIVATXM, a<b> DOS/4GW</b> program that starts up while another<b> DOS/4GW</b> program is active uses the
-pool of memory built by the first program.&nbsp; The new program cannot change the parameters of this memory pool, so setting<b>
-DOS16M</b> to increase the size of the pool has no effect.&nbsp; To specify that the two programs use different pools of memory,
-use PRIVATXM.
+pool of memory built by the first program.&nbsp; The new program cannot change the parameters of this memory pool, so setting
+<b> DOS16M</b> to increase the size of the pool has no effect.&nbsp; To specify that the two programs use different pools
+of memory, use PRIVATXM.
 <br><br>PRIVATXM marks the active<b> DOS/4GW</b> programs as private, preventing subsequent<b> DOS/4GW</b> programs from using
 the same memory pool.&nbsp; The first<b> DOS/4GW</b> program to start after PRIVATXM sets up a new pool of memory for itself
 and any subsequent<b> DOS/4GW</b> programs.&nbsp; To release the memory used by the private programs, use the PRIVATXM<tt>
@@ -5026,8 +5026,8 @@ Open Watcom C/C++ libraries).
 section, the &quot;hello&quot; program was compiled with default compile and link options.&nbsp; When debugging an application,
 it is useful to refer to the symbolic names of routines and variables.&nbsp; It is also convenient to debug at the source
 line level rather than the machine language level.&nbsp; To do this, we must direct both the compiler and linker to include
-additional debugging information in the object and executable files.&nbsp; Using the<b><i> WCL</i></b> command, this is fairly
-straightforward.<b><i>&nbsp; WCL</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and will create
+additional debugging information in the object and executable files.&nbsp; Using the <b><i> WCL</i></b> command, this is fairly
+straightforward.&nbsp; <b><i> WCL</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and will create
 the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
@@ -5058,7 +5058,7 @@ be issued.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; searching libraries</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; creating a Windows 16-bit executable</tt>
 <br><br>The &quot;d2&quot; option requests the maximum amount of debugging information that can be provided by the Open Watcom
-C/C++ compiler.<b><i>&nbsp; WCL</i></b> will make sure that this debugging information is included in the executable file
+C/C++ compiler.&nbsp; <b><i> WCL</i></b> will make sure that this debugging information is included in the executable file
 that is produced by the linker.
 <br><br>The &quot;Code size&quot; value is larger than in the previous example since selection of the &quot;d2&quot; option
 results in fewer code optimizations by default.&nbsp; You can request more optimization by specifying the appropriate options.
@@ -5152,8 +5152,8 @@ application.
 section, the &quot;hello&quot; program was compiled with default compile and link options.&nbsp; When debugging an application,
 it is useful to refer to the symbolic names of routines and variables.&nbsp; It is also convenient to debug at the source
 line level rather than the machine language level.&nbsp; To do this, we must direct both the compiler and linker to include
-additional debugging information in the object and executable files.&nbsp; Using the<b><i> WCL</i></b> command, this is fairly
-straightforward.<b><i>&nbsp; WCL</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and will create
+additional debugging information in the object and executable files.&nbsp; Using the <b><i> WCL</i></b> command, this is fairly
+straightforward.&nbsp; <b><i> WCL</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and will create
 the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
@@ -5184,7 +5184,7 @@ be issued.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; searching libraries</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; creating a Windows 16-bit executable</tt>
 <br><br>The &quot;d2&quot; option requests the maximum amount of debugging information that can be provided by the Open Watcom
-C/C++ compiler.<b><i>&nbsp; WCL</i></b> will make sure that this debugging information is included in the executable file
+C/C++ compiler.&nbsp; <b><i> WCL</i></b> will make sure that this debugging information is included in the executable file
 that is produced by the linker.
 <br><br>The &quot;Code size&quot; value is larger than in the previous example since selection of the &quot;d2&quot; option
 results in fewer code optimizations by default.&nbsp; You can request more optimization by specifying the appropriate options.
@@ -5320,8 +5320,8 @@ with the same name as the &quot;.rex&quot; file.
 <dd>requests that WBIND run in quiet mode (no informational messages are displayed).
 <dt>-s supervisor
 <dd>specifies the path and name of the Windows supervisor to be bound with the application.&nbsp; If not specified, a search of
-the paths listed in the<b> PATH</b> environment variable is performed.&nbsp; If this search is not successful and the<b> WATCOM</b>
-environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory is searched.
+the paths listed in the <b> PATH</b> environment variable is performed.&nbsp; If this search is not successful and the <b>
+WATCOM</b> environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory is searched.
 <dt>-R rc_options
 <dd>all options after -R are passed to the resource compiler.
 </dl>
@@ -5332,8 +5332,8 @@ environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory is searche
 W386DLL.EXT</tt> file (if you are building a DLL).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wbind hello -n -s c:\watcom\binw\win386.ext</tt>
-<br><br>If the &quot;s&quot; option is not specified, then the<b> WATCOM</b> environment variable must be defined or the &quot;BINW&quot;
-directory must be listed in your<b> PATH</b> environment variable.
+<br><br>If the &quot;s&quot; option is not specified, then the <b> WATCOM</b> environment variable must be defined or the
+&quot;BINW&quot; directory must be listed in your <b> PATH</b> environment variable.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set watcom=c:\watcom</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
@@ -5344,8 +5344,8 @@ directory must be listed in your<b> PATH</b> environment variable.
 section, the &quot;hello&quot; program was compiled with default compile and link options.&nbsp; When debugging an application,
 it is useful to refer to the symbolic names of routines and variables.&nbsp; It is also convenient to debug at the source
 line level rather than the machine language level.&nbsp; To do this, we must direct both the compiler and linker to include
-additional debugging information in the object and executable files.&nbsp; Using the<b><i> WCL386</i></b> command, this is
-fairly straightforward.<b><i>&nbsp; WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
+additional debugging information in the object and executable files.&nbsp; Using the <b><i> WCL386</i></b> command, this is
+fairly straightforward.&nbsp; <b><i> WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
 will create the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
@@ -5376,7 +5376,7 @@ be issued.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; searching libraries</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; creating a Windows 32-bit executable</tt>
 <br><br>The &quot;d2&quot; option requests the maximum amount of debugging information that can be provided by the Open Watcom
-C/C++ compiler.<b><i>&nbsp; WCL386</i></b> will make sure that this debugging information is included in the executable file
+C/C++ compiler.&nbsp; <b><i> WCL386</i></b> will make sure that this debugging information is included in the executable file
 that is produced by the linker.
 <br><br>The &quot;Code size&quot; value is larger than in the previous example since selection of the &quot;d2&quot; option
 results in fewer code optimizations by default.&nbsp; You can request more optimization by specifying the appropriate options.
@@ -5491,8 +5491,8 @@ with the same name as the &quot;.rex&quot; file.
 <dd>requests that WBIND run in quiet mode (no informational messages are displayed).
 <dt>-s supervisor
 <dd>specifies the path and name of the Windows supervisor to be bound with the application.&nbsp; If not specified, a search of
-the paths listed in the<b> PATH</b> environment variable is performed.&nbsp; If this search is not successful and the<b> WATCOM</b>
-environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory is searched.
+the paths listed in the <b> PATH</b> environment variable is performed.&nbsp; If this search is not successful and the <b>
+WATCOM</b> environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory is searched.
 <dt>-R rc_options
 <dd>all options after -R are passed to the resource compiler.
 </dl>
@@ -5503,8 +5503,8 @@ environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory is searche
 W386DLL.EXT</tt> file (if you are building a DLL).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wbind hello -n -s c:\watcom\binw\win386.ext</tt>
-<br><br>If the &quot;s&quot; option is not specified, then the<b> WATCOM</b> environment variable must be defined or the &quot;BINW&quot;
-directory must be listed in your<b> PATH</b> environment variable.
+<br><br>If the &quot;s&quot; option is not specified, then the <b> WATCOM</b> environment variable must be defined or the
+&quot;BINW&quot; directory must be listed in your <b> PATH</b> environment variable.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set watcom=c:\watcom</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
@@ -5516,8 +5516,8 @@ application.
 section, the &quot;hello&quot; program was compiled with default compile and link options.&nbsp; When debugging an application,
 it is useful to refer to the symbolic names of routines and variables.&nbsp; It is also convenient to debug at the source
 line level rather than the machine language level.&nbsp; To do this, we must direct both the compiler and linker to include
-additional debugging information in the object and executable files.&nbsp; Using the<b><i> WCL386</i></b> command, this is
-fairly straightforward.<b><i>&nbsp; WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
+additional debugging information in the object and executable files.&nbsp; Using the <b><i> WCL386</i></b> command, this is
+fairly straightforward.&nbsp; <b><i> WCL386</i></b> recognizes the Open Watcom C/C++ compiler &quot;debug&quot; options and
 will create the appropriate debug directives for the Open Watcom Linker.
 <br><br>For example, to compile and link the &quot;hello&quot; program with debugging information, the following command may
 be issued.
@@ -5548,7 +5548,7 @@ be issued.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; searching libraries</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; creating a Windows 32-bit executable</tt>
 <br><br>The &quot;d2&quot; option requests the maximum amount of debugging information that can be provided by the Open Watcom
-C/C++ compiler.<b><i>&nbsp; WCL386</i></b> will make sure that this debugging information is included in the executable file
+C/C++ compiler.&nbsp; <b><i> WCL386</i></b> will make sure that this debugging information is included in the executable file
 that is produced by the linker.
 <br><br>The &quot;Code size&quot; value is larger than in the previous example since selection of the &quot;d2&quot; option
 results in fewer code optimizations by default.&nbsp; You can request more optimization by specifying the appropriate options.
@@ -5616,25 +5616,25 @@ The local heap resides within the supervisor as well.
 Windows environment.&nbsp; However, because of the nature of the Windows API and its implicit dependencies on a 16-bit environment,
 some source changes are necessary.&nbsp; These source changes are minimal, and are backwards compatible with the 16-bit environment.
 <h2 id="Windows__Pointers"> Windows:&nbsp; Pointers </h2>
-<br>Throughout this document, there will be references to both<b><i> near</i></b> and<b><i> far</i></b> , and<b><i> 16-bit</i></b>
-and<b><i> 32-bit</i></b> pointers.&nbsp; Since this can rapidly become confusing, some initial explanations will be given
+<br>Throughout this document, there will be references to both <b><i> near</i></b> and <b><i> far</i></b>, and <b><i> 16-bit</i></b>
+and <b><i> 32-bit</i></b> pointers.&nbsp; Since this can rapidly become confusing, some initial explanations will be given
 here.
-<br><br>A<b><i> far pointer</i></b> is a pointer that is composed of both a selector and an offset.&nbsp; A selector determines
-a specific region of memory, and the offset is relative to the start of this region.&nbsp; A<b><i> near pointer</i></b> is
+<br><br>A <b><i> far pointer</i></b> is a pointer that is composed of both a selector and an offset.&nbsp; A selector determines
+a specific region of memory, and the offset is relative to the start of this region.&nbsp; A <b><i> near pointer</i></b> is
 a pointer that has an offset only, the selector is automatically assumed by the CPU.
 <br><br>The problem with far pointers is the selector overhead.&nbsp; Using a far pointer is much more expensive than using
 a near pointer.&nbsp; This is the advantage of the 32-bit flat memory model - all pointers within the program are near, and
 yet you can address up to 4 gigabytes of memory.
-<br><br>A<b><i> 16-bit near pointer</i></b> occupies 2 bytes of memory (i.e., the offset is 16 bits long).&nbsp; This pointer
+<br><br>A <b><i> 16-bit near pointer</i></b> occupies 2 bytes of memory (i.e., the offset is 16 bits long).&nbsp; This pointer
 can reference up to 64K of data.
-<br><br>A<b><i> 16-bit far pointer</i></b> occupies 4 bytes of memory.&nbsp; There is a 16-bit selector and a 16-bit offset.
+<br><br>A <b><i> 16-bit far pointer</i></b> occupies 4 bytes of memory.&nbsp; There is a 16-bit selector and a 16-bit offset.
 &nbsp;This pointer can reference up to 64K of data.
-<br><br>A<b><i> 32-bit near pointer</i></b> occupies 4 bytes of memory (i.e., the offset is 32 bits long).&nbsp; This pointer
+<br><br>A <b><i> 32-bit near pointer</i></b> occupies 4 bytes of memory (i.e., the offset is 32 bits long).&nbsp; This pointer
 can reference up to 4 gigabytes of data.
-<br><br>A<b><i> 32-bit far pointer</i></b> occupies 6 bytes of memory.&nbsp; There is a 16-bit selector and a 32-bit offset.
+<br><br>A <b><i> 32-bit far pointer</i></b> occupies 6 bytes of memory.&nbsp; There is a 16-bit selector and a 32-bit offset.
 &nbsp;This pointer can reference up to 4 gigabytes of data.
 <br><br>Windows, in general, uses 16-bit far pointers to pass information around.&nbsp; These 16-bit far pointers can also
-be used by a 32-bit Windows application.&nbsp; Using a special macro,<b><i> MK_FP32</i></b> , the offset of the 16-bit far
+be used by a 32-bit Windows application.&nbsp; Using a special macro, <b><i> MK_FP32</i></b>, the offset of the 16-bit far
 pointer is extended from 16 bits to 32 bits, and the pointer becomes a 32-bit far pointer.&nbsp; The 32-bit far pointer is
 then used by the application to access the data (note that offsets still must be less than 64K, since the selector is still
 for a 64K data area).
@@ -5642,12 +5642,12 @@ for a 64K data area).
 <br>This section provides an overview of the issues that require consideration when creating a 32-bit Windows application
 for a 16-bit Windows environment.
 <br><br>First, all modules have to be recompiled for the 32-bit flat memory model with a compiler capable of generating 32-bit
-instructions.&nbsp; Many Windows API functions take<b><i> int</i></b> as a parameter.&nbsp; This<b><i> int</i></b> is from
-the 16-bit world, and is 2 bytes long.&nbsp; In the 32-bit world, this<b><i> int</i></b> becomes 4 bytes long.&nbsp; Since
-Windows is only expecting two bytes of data, all occurrences of<b><i> int</i></b> have to be changed to<b><i> short</i></b>
+instructions.&nbsp; Many Windows API functions take <b><i> int</i></b> as a parameter.&nbsp; This <b><i> int</i></b> is from
+the 16-bit world, and is 2 bytes long.&nbsp; In the 32-bit world, this <b><i> int</i></b> becomes 4 bytes long.&nbsp; Since
+Windows is only expecting two bytes of data, all occurrences of <b><i> int</i></b> have to be changed to <b><i> short</i></b>
 in<tt> WINDOWS.H.</tt>
 <br><br>Pointers to data passed to Windows are all far pointers.&nbsp; We will be passing pointers to data in our 32-bit flat
-address space, and these pointers are near pointers.&nbsp; By simply getting rid of all<b><i> far</i></b> keywords in<tt>
+address space, and these pointers are near pointers.&nbsp; By simply getting rid of all <b><i> far</i></b> keywords in<tt>
 WINDOWS.H,</tt> all pointers will now be passed as 32-bit near pointers.&nbsp; As well, notice that these 32-bit near pointers
 are the same size as as their 16-bit far pointer counterparts (4 bytes).&nbsp; This is good, since all data structures containing
 pointers will remain the same size.
@@ -5741,9 +5741,9 @@ This header file contains only the following lines:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <br><br>The file<tt> WIN16.H</tt> is the regular 16-bit Windows header file, and is only conditionally included for 16-bit
 Windows applications.&nbsp; The file<tt> _WIN386.H</tt> contains all the prototypes and macros for the 32-bit environment,
-as well as including and modifying<tt> WIN16.H.</tt>&nbsp; These modifications are changing int to short, and changing the<b><i>
-far</i></b> keyword to nothing.&nbsp; These changes (that ONLY apply to things defined in<tt> WIN16.H</tt>) cause all integers
-to be 16-bit integers, and all LP...&nbsp; pointer types to be near pointers.
+as well as including and modifying<tt> WIN16.H.</tt>&nbsp; These modifications are changing int to short, and changing the
+<b><i> far</i></b> keyword to nothing.&nbsp; These changes (that ONLY apply to things defined in<tt> WIN16.H</tt>) cause all
+integers to be 16-bit integers, and all LP...&nbsp; pointer types to be near pointers.
 <br><br>Other include files for Windows must be specifically requested by defining macros before including<tt> WINDOWS.H.</tt>
 &nbsp;This is required so that the same changes made to the primary Windows header file will apply to routines declared in
 the other header files.
@@ -5783,8 +5783,8 @@ the other header files.
 </dl>
 <h2 id="Windows__Environment_Notes"> Windows:&nbsp; Environment Notes </h2>
 <ul>
-<li>The Windows functions<b><i> Catch</i></b> and<b><i> Throw</i></b> save only the 16-bit state.&nbsp; Instead of these functions,
-use the<b><i> setjmp</i></b> and<b><i> longjmp</i></b> functions.
+<li>The Windows functions <b><i> Catch</i></b> and <b><i> Throw</i></b> save only the 16-bit state.&nbsp; Instead of these
+functions, use the <b><i> setjmp</i></b> and <b><i> longjmp</i></b> functions.
 <li>The 32-bit Windows Supervisor uses the first 256 bytes of the 32-bit application's stack to save state information.&nbsp;
 If this is corrupted, your application will abnormally terminate.
 <li>The 32-bit Windows Supervisor provides resources for up to 512 callback routines.&nbsp; Note that this restriction is
@@ -5838,7 +5838,7 @@ of accomplishing this is as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hInstance,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NULL</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );</tt>
-<br><br>The variable<b><i> class</i></b> contains a unique name based on the instance of the application.
+<br><br>The variable <b><i> class</i></b> contains a unique name based on the instance of the application.
 <h2 id="Windows__Pointer_Handling"> Windows:&nbsp; Pointer Handling </h2>
 <br>Windows 3.x is a 16-bit operating system.&nbsp; Function pointers that Windows deals with are 16-bit far pointers, and
 any data you communicate to Windows with are 16-bit far pointers.&nbsp; 16-bit far pointers occupy 4 bytes of data, and are
@@ -5869,8 +5869,8 @@ Rather, a 16-bit thunking layer that transfers control from the 16-bit environme
 &nbsp;This thunking layer is provided by the Supervisor.
 <h3 id="Windows__When_To_Convert_Incoming_Pointers"> Windows:&nbsp; When To Convert Incoming Pointers </h3>
 <br>Whenever you wish to use a pointer passed to you by Windows, you must convert it to a 32-bit far pointer.&nbsp; If you
-are passed a 16-bit far pointer, the macro<b><i> MK_FP32</i></b> can be used to convert it to a 32-bit far pointer.&nbsp;
-If you are passed a 16-bit near pointer (e.g., from<b><i> LocalLock</i></b> ), then the macro<b><i> MK_LOCAL32</i></b> can
+are passed a 16-bit far pointer, the macro <b><i> MK_FP32</i></b> can be used to convert it to a 32-bit far pointer.&nbsp;
+If you are passed a 16-bit near pointer (e.g., from <b><i> LocalLock</i></b>), then the macro <b><i> MK_LOCAL32</i></b> can
 be used to convert it to a 32-bit far pointer.
 <br><br>Some places where pointer conversion may be required are:
 <ul>
@@ -5883,26 +5883,26 @@ be used to convert it to a 32-bit far pointer.
 handles all 32-bit to 16-bit translations for you, in the case of the regular Windows API functions.&nbsp; However, if you
 are passing a 32-bit pointer to some other 16-bit application in the Windows environment, then pointer conversions must by
 done.&nbsp; There are two types of &quot;outgoing&quot; pointers:&nbsp; data pointers and function pointers.
-<br><br>Function pointers (to callback routines) must have a thunking layer provided, using the<b><i> GetProc16</i></b> function
+<br><br>Function pointers (to callback routines) must have a thunking layer provided, using the <b><i> GetProc16</i></b> function
 (this is explained in detail in a later section).
-<br><br>Data pointers can be translated from 32-bit to 16-bit using the<b><i> AllocAlias16</i></b> and<b><i> AllocHugeAlias16</i></b>
+<br><br>Data pointers can be translated from 32-bit to 16-bit using the <b><i> AllocAlias16</i></b> and <b><i> AllocHugeAlias16</i></b>
 functions.&nbsp; These functions create 16-bit far pointers that have the same linear address as the 32-bit near pointer that
 was converted.
 <br><br>It is important to remember that when passing a pointer to a data structure in this fashion, any pointers in the data
 structure must also be converted.
 <br><br>The Supervisor will convert any pointers that it knows about; but there are some complications created by the fact
 that Windows allows you to pass pointers in functions that are prototyped to take a long integer.
-<br><br>The Windows API functions<b><i> SendMessage</i></b> and<b><i> SendDlgItemMessage</i></b> rely on other fields determining
+<br><br>The Windows API functions <b><i> SendMessage</i></b> and <b><i> SendDlgItemMessage</i></b> rely on other fields determining
 the nature of the long data item that they accept; this is discussed in detail in the next section.
 <h4 id="Windows__SendMessage_and_SendDlgItemMessage"> Windows:&nbsp; SendMessage and SendDlgItemMessage </h4>
-<br><b><i>SendMessage</i></b> and<b><i> SendDlgItemMessage</i></b> have special cover functions that determine when the long
-integer is really a pointer and needs to be converted.&nbsp; These cover functions are used automatically, unless the macro<b><i>
-NOCOVERSENDS</i></b> is defined before including <tt> WINDOWS.H</tt> as in the following example.
+<br><b><i> SendMessage</i></b> and <b><i> SendDlgItemMessage</i></b> have special cover functions that determine when the
+long integer is really a pointer and needs to be converted.&nbsp; These cover functions are used automatically, unless the
+macro <b><i> NOCOVERSENDS</i></b> is defined before including <tt> WINDOWS.H</tt> as in the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define NOCOVERSENDS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;windows.h&gt;</tt>
-<br><br><b><i>SendMessage</i></b> and<b><i> SendDlgItemMessage</i></b> will do pointer conversions automatically using<b><i>
-AllocAlias16</i></b> and<b><i> FreeAlias16</i></b> (unless<b><i> NOCOVERSENDS</i></b> is defined) for the following message
+<br><br><b><i> SendMessage</i></b> and <b><i> SendDlgItemMessage</i></b> will do pointer conversions automatically using <b><i>
+AllocAlias16</i></b> and <b><i> FreeAlias16</i></b> (unless <b><i> NOCOVERSENDS</i></b> is defined) for the following message
 types:
 <ul>
 <li>combo boxes (CB_ messages)
@@ -5910,7 +5910,7 @@ types:
 <li>list boxes (LB_ messages)
 <li>certain windows messages (WM_ messages);
 </ul>
-<br>The messages that are intercepted by the cover functions for<b><i> SendMessage</i></b> and<b><i> SendDlgItemMessage</i></b>
+<br>The messages that are intercepted by the cover functions for <b><i> SendMessage</i></b> and <b><i> SendDlgItemMessage</i></b>
 are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CB_ADDSTRING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CB_DIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5928,7 +5928,7 @@ are:
 LB_SELECTSTRING</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LB_SETTABSTOPS</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WM_MDICREATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WM_NCCALCSIZE</tt>
-<br><br>Note that for<b><i> SendMessage</i></b> and<b><i> SendDlgItemMessage</i></b> , some of the messages may NOT require
+<br><br>Note that for <b><i> SendMessage</i></b> and <b><i> SendDlgItemMessage</i></b>, some of the messages may NOT require
 pointer conversion:
 <ul>
 <li>CB_ADDSTRING, CB_FINDSTRING, CB_FINDSTRINGEXACT, CB_INSERTSTRING will not need a conversion if the combo box was created
@@ -5936,7 +5936,7 @@ as owner-draw style without CBS_HASSTRINGS style.
 <li>LB_ADDSTRING, LB_FINDSTRING, LB_FINDSTRINGEXACT, LB_INSERTSTRING will not need a conversion if the list box was created
 as owner-draw style without LBS_HASSTRINGS style.
 </ul>
-<br>The macro<b><i> NOCOVERSENDS</i></b> should be defined in modules where messages like these are being sent.&nbsp; With
+<br>The macro <b><i> NOCOVERSENDS</i></b> should be defined in modules where messages like these are being sent.&nbsp; With
 these messages, the lParam data item does not contain a pointer, and the automatic pointer conversion would be incorrect.
 &nbsp;By doing
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -5944,24 +5944,24 @@ these messages, the lParam data item does not contain a pointer, and the automat
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &quot;windows.h&quot;</tt>
 <br><br>modules that send messages like the above will not have the pointer conversion performed.
 <h3 id="Windows__GlobalAlloc_and_LocalAlloc"> Windows:&nbsp; GlobalAlloc and LocalAlloc </h3>
-<br>The functions<b><i> GlobalAlloc</i></b> and<b><i> LocalAlloc</i></b> are the typical way of allocating memory in the 16-bit
-Windows environment.&nbsp; In the 32-bit environment, there is no need to use these functions.&nbsp; The only time<b><i> GlobalAlloc</i></b>
-is needed is when allocating shared memory, i.e.,<b><i> GMEM_DDESHARE</i></b> .
-<br><br>The C runtime functions<b><i> malloc</i></b> and<b><i> free</i></b> manipulate your 32-bit near heap for you.&nbsp;
+<br>The functions <b><i> GlobalAlloc</i></b> and <b><i> LocalAlloc</i></b> are the typical way of allocating memory in the
+16-bit Windows environment.&nbsp; In the 32-bit environment, there is no need to use these functions.&nbsp; The only time
+<b><i> GlobalAlloc</i></b> is needed is when allocating shared memory, i.e., <b><i> GMEM_DDESHARE</i></b>.
+<br><br>The C runtime functions <b><i> malloc</i></b> and <b><i> free</i></b> manipulate your 32-bit near heap for you.&nbsp;
 By using these functions to allocate memory, you may create data objects as large as the enhanced mode Windows memory manager
 will permit.
 <h3 id="Windows__Callback_Function_Pointers"> Windows:&nbsp; Callback Function Pointers </h3>
-<br>To access a callback function, an instance of it must be created using<b><i> MakeProcInstance</i></b> .&nbsp; This creates
+<br>To access a callback function, an instance of it must be created using <b><i> MakeProcInstance</i></b>.&nbsp; This creates
 a &quot;thunk&quot; (a special piece of code) that automatically puts the application's data segment into the AX register,
 and then calls the specified callback function.
-<br><br>In Windows 3.x, it is not possible to do a<b><i> MakeProcInstance</i></b> directly on a 32-bit callback routine, since
-Windows 3.x does not understand 32-bit applications.&nbsp; Therefore, it is necessary to use a 16-bit callback routine that
-passes control to the 32-bit callback routine.&nbsp; This 16-bit callback routine is automatically created by the Supervisor
+<br><br>In Windows 3.x, it is not possible to do a <b><i> MakeProcInstance</i></b> directly on a 32-bit callback routine,
+since Windows 3.x does not understand 32-bit applications.&nbsp; Therefore, it is necessary to use a 16-bit callback routine
+that passes control to the 32-bit callback routine.&nbsp; This 16-bit callback routine is automatically created by the Supervisor
 when using any of the standard Windows API functions that accept a callback routine.
 <br><br>The 16-bit callback routine for a 32-bit application is a special layer that transfers the parameters from a 16-bit
 stack to the 32-bit stack, and then passes control to 32-bit code.&nbsp; These 16-bit callback routines are found in the Supervisor.
-&nbsp;The function<b><i> GetProc16</i></b> provides pointers to these 16-bit callback routines.
-<br><br>However, it is not often necessary to use the<b><i> GetProc16</i></b> function to obtain a 16-bit/32-bit callback
+&nbsp;The function <b><i> GetProc16</i></b> provides pointers to these 16-bit callback routines.
+<br><br>However, it is not often necessary to use the <b><i> GetProc16</i></b> function to obtain a 16-bit/32-bit callback
 interface function.
 <br><br>In the general case, one would have to write code as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6034,19 +6034,19 @@ functions will automatically allocate the correct 16-bit/32-bit callback interfa
 </ul>
 <br>If you need to get a callback that is not used by one of the above functions, then you must code the general case.&nbsp;
 Typically, this is required when a DLL needs a callback routine.&nbsp; In modules where this is necessary, you define the
-macro<b><i> NOAUTOPROCS</i></b> before you include<tt> WINDOWS.H</tt> as in the following example.
+macro <b><i> NOAUTOPROCS</i></b> before you include<tt> WINDOWS.H</tt> as in the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define NOAUTOPROCS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;windows.h&gt;</tt>
-<br><br>Be careful of the following when using<b><i> NOAUTOPROCS</i></b> .
+<br><br>Be careful of the following when using <b><i> NOAUTOPROCS</i></b>.
 <ol>
-<li>The call to<b><i> MakeProcInstance</i></b> and<b><i> FreeProcInstance</i></b> for the callback function occurs in a module
-with<b><i> NOAUTOPROCS</i></b> defined.
-<li>No Windows API functions (listed above) are used in the module with<b><i> NOAUTOPROCS</i></b> defined.&nbsp; If they are,
-you must code the general case to use them.
+<li>The call to <b><i> MakeProcInstance</i></b> and <b><i> FreeProcInstance</i></b> for the callback function occurs in a
+module with <b><i> NOAUTOPROCS</i></b> defined.
+<li>No Windows API functions (listed above) are used in the module with <b><i> NOAUTOPROCS</i></b> defined.&nbsp; If they
+are, you must code the general case to use them.
 </ol>
-<br>Note that<b><i> NOAUTOPROCS</i></b> is in effect on a module-to-module basis only.
-<br><br>You can avoid using<b><i> NOAUTOPROCS</i></b> on a call-by-call basis, if you do the following:
+<br>Note that <b><i> NOAUTOPROCS</i></b> is in effect on a module-to-module basis only.
+<br><br>You can avoid using <b><i> NOAUTOPROCS</i></b> on a call-by-call basis, if you do the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #undef &lt;function&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &lt;function&gt;</tt>
@@ -6106,15 +6106,15 @@ code used in the 16-bit environment.&nbsp; A simple example is:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetWindowLong( hControl, GWL_WNDPROC, (LONG) fpOldProc );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FreeProcInstance( fp );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>Note that<b><i> SetWindowLong</i></b> is covered to recognize<b><i> GWL_WNDPROC</i></b> and automatically creates
+<br><br>Note that <b><i> SetWindowLong</i></b> is covered to recognize <b><i> GWL_WNDPROC</i></b> and automatically creates
 a 16-bit callback for the 32-bit callback.&nbsp; When replacing the callback routine with the original 16-bit routine, the
-covered version of<b><i> SetWindowLong</i></b> recognizes that the function is not a 32-bit callback, and so passes the pointer
+covered version of <b><i> SetWindowLong</i></b> recognizes that the function is not a 32-bit callback, and so passes the pointer
 right through to Windows unchanged.
 <h2 id="Windows__Calling_16Mbit_DLLs"> Windows:&nbsp; Calling 16-bit DLLs </h2>
-<br>A 16-bit function in a DLL can be called using the<b><i> _Call16</i></b> function.&nbsp; The first argument to<b><i> _Call16</i></b>
-is the address of the 16-bit function.&nbsp; This address is usually obtained by calling<b><i> GetProcAddress</i></b> with
-the name of the desired function.&nbsp; The second argument to<b><i> _Call16</i></b> is a string identifying the types of
-the parameters to be passed to the 16-bit function.
+<br>A 16-bit function in a DLL can be called using the <b><i> _Call16</i></b> function.&nbsp; The first argument to <b><i>
+_Call16</i></b> is the address of the 16-bit function.&nbsp; This address is usually obtained by calling <b><i> GetProcAddress</i></b>
+with the name of the desired function.&nbsp; The second argument to <b><i> _Call16</i></b> is a string identifying the types
+of the parameters to be passed to the 16-bit function.
 <dl>
 <dt>Character
 <dd>Parameter Type
@@ -6131,13 +6131,13 @@ the parameters to be passed to the 16-bit function.
 <dt>p
 <dd>32-bit flat pointer (converted to 16:16 far pointer)
 </dl>
-<br>The 16-bit function must use either the<b><i> PASCAL</i></b> or<b><i> CDECL</i></b> calling convention.<b><i>&nbsp; PASCAL</i></b>
-calling convention is the default.&nbsp; If the function uses the<b><i> CDECL</i></b> calling convention, then you must specify
-the letter &quot;c&quot; as the first character of the argument type string.
+<br>The 16-bit function must use either the <b><i> PASCAL</i></b> or <b><i> CDECL</i></b> calling convention.&nbsp; <b><i>
+PASCAL</i></b> calling convention is the default.&nbsp; If the function uses the <b><i> CDECL</i></b> calling convention,
+then you must specify the letter &quot;c&quot; as the first character of the argument type string.
 <br><br>Pointer types will automatically be converted from 32-bit near pointers to 16-bit far pointers before the function
 is invoked.&nbsp; Note that this pointer is only valid over the period of the call; after control returns to the 32-bit application,
 the 16-bit pointer created by the Supervisor is no longer valid.
-<br><br>The return value from<b><i> _Call16</i></b> is a<b><i> DWORD</i></b> .
+<br><br>The return value from <b><i> _Call16</i></b> is a <b><i> DWORD</i></b>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;windows.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HANDLE hDrv;</tt>
@@ -6183,7 +6183,7 @@ the 16-bit pointer created by the Supervisor is no longer valid.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Call16( DoStuffAddr, &quot;wp&quot;, (HWND)win_hld, (LPVOID)data )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define Finish( void )&nbsp; _Call16( FinishAddr, &quot;&quot; )</tt>
 <br><br>The header file fragment gives external references for the function addresses for each function, and sets up macros
-do a<b><i> _Call16</i></b> for each of the functions.
+do a <b><i> _Call16</i></b> for each of the functions.
 <br><br>At start up, you would call the following function:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*</tt>
@@ -6222,7 +6222,7 @@ the header file with all the macros in it, you can code calls to the DLL functio
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="Windows__Far_Pointer_Manipulation"> Windows:&nbsp; Far Pointer Manipulation </h2>
 <br>The following C library functions are available for manipulating far data.&nbsp; These are useful when using pointers
-obtained by<b><i> MK_FP32</i></b> and<b><i> MK_LOCAL32</i></b> .
+obtained by <b><i> MK_FP32</i></b> and <b><i> MK_LOCAL32</i></b>.
 <br><br>Memory manipulation:
 <ul>
 <li>_fmemccpy
@@ -6285,8 +6285,8 @@ This applies to both data and function pointers.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _lclose( file );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>This example reads the contents of a file into the buffer of an edit window.&nbsp; Because the edit window's memory
-is located in the local heap, which is the Supervisor's heap, the<b><i> MK_LOCAL32</i></b> function is needed to access the
-data.&nbsp; The<b><i> MK_FP16</i></b> macro compresses the 32-bit far pointer into a 16-bit far pointer, which can then be
+is located in the local heap, which is the Supervisor's heap, the <b><i> MK_LOCAL32</i></b> function is needed to access the
+data.&nbsp; The <b><i> MK_FP16</i></b> macro compresses the 32-bit far pointer into a 16-bit far pointer, which can then be
 used by the _16_lread function.
 <h1 id="Windows__Windows_32MBit_Dynamic_Link_Libraries"> Windows:&nbsp; Windows 32-Bit Dynamic Link Libraries </h1>
 <br>Open Watcom C/C++ allows the creation of 32-bit Dynamic Link Libraries (DLL).&nbsp; In fact, 32-bit DLLs are simpler to
@@ -6625,9 +6625,9 @@ how to bring up the general declarations screen, how to create command buttons, 
 &nbsp;You must use Visual Basic 3.0 or later.&nbsp; Visual Basic Version 2.x will not work because of a deficiency in this
 product regarding the calling of functions in DLLs.
 <br><br>For the purposes of the following discussion, you should have installed both the 16-bit and 32-bit versions of Open
-Watcom C/C++, as well as version 3.0 or later of Visual Basic.&nbsp; Ensure that the<b> PATH,</b> <b> INCLUDE</b> and<b> WINDOWS_INCLUDE</b>
-environment variables are defined to include at least the directories indicated.&nbsp; We have assumed that Open Watcom C/C++
-is installed in the<tt> c:\watcom</tt> directory, and Visual Basic is in the<tt> c:\vb</tt> directory:
+Watcom C/C++, as well as version 3.0 or later of Visual Basic.&nbsp; Ensure that the <b> PATH,</b> <b> INCLUDE</b> and <b>
+WINDOWS_INCLUDE</b> environment variables are defined to include at least the directories indicated.&nbsp; We have assumed
+that Open Watcom C/C++ is installed in the<tt> c:\watcom</tt> directory, and Visual Basic is in the<tt> c:\vb</tt> directory:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set path=c:\watcom\binw;c:\vb;c:\dos;c:\windows</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set include=c:\watcom\h</tt>
@@ -6847,8 +6847,8 @@ be compiled with one of the big data models.
 <li>The &quot;bd&quot; option indicates that a DLL will be created from the object files.
 <li>The &quot;bt&quot; option selects the &quot;windows&quot; target.&nbsp; This option causes the C or C++ compiler to generate
 Windows prologue/epilogue code sequences which are required for Microsoft Windows applications.&nbsp; It also causes the compiler
-to use the<b> WINDOWS_INCLUDE</b> environment variable for header file searches.&nbsp; It also causes the compiler to define
-the macro<tt> __WINDOWS__</tt> and, for the 32-bit C or C++ compiler only, the macro<tt> __WINDOWS_386__</tt> .
+to use the <b> WINDOWS_INCLUDE</b> environment variable for header file searches.&nbsp; It also causes the compiler to define
+the macro <tt> __WINDOWS__</tt> and, for the 32-bit C or C++ compiler only, the macro <tt> __WINDOWS_386__</tt>.
 <li>The &quot;zu&quot; option is used when compiling 16-bit code that is to be placed in a Dynamic Link Library (DLL) since
 the SS register points to the stack segment of the calling application upon entry to the function.
 <li>The &quot;d2&quot; option is used to disable optimizations and include debugging information in the object file and DLL.
@@ -8634,8 +8634,8 @@ were not called, it would be possible for two threads to extract the value of<tt
 occurred.
 </ol>
 <br>Let us assume that the file<tt> mthread.c</tt> contains the above example.&nbsp; Before compiling the file, make sure
-that the<b> WATCOM</b> environment variable is set to the directory in which you installed Open Watcom C/C++.&nbsp; Also,
-the<b> INCLUDE</b> environment variable must include the<tt> \watcom\h\nt</tt> and<tt> \watcom\h</tt> directories (&quot;\WATCOM&quot;
+that the <b> WATCOM</b> environment variable is set to the directory in which you installed Open Watcom C/C++.&nbsp; Also,
+the <b> INCLUDE</b> environment variable must include the<tt> \watcom\h\nt</tt> and<tt> \watcom\h</tt> directories (&quot;\WATCOM&quot;
 is the directory in which Open Watcom C/C++ was installed).
 <br><br>We can now compile and link the application by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -9367,8 +9367,8 @@ not called, it would be possible for two threads to extract the value of<tt> Num
 occurred.
 </ol>
 <br>Let us assume that the file<tt> mthread.c</tt> contains the above example.&nbsp; Before compiling the file, make sure
-that the<b> WATCOM</b> environment variable is set to the directory in which you installed Open Watcom C/C++.&nbsp; Also,
-the<b> INCLUDE</b> environment variable must include the<tt> \watcom\h\os2</tt> and<tt> \watcom\h</tt> directories (&quot;\WATCOM&quot;
+that the <b> WATCOM</b> environment variable is set to the directory in which you installed Open Watcom C/C++.&nbsp; Also,
+the <b> INCLUDE</b> environment variable must include the<tt> \watcom\h\os2</tt> and<tt> \watcom\h</tt> directories (&quot;\WATCOM&quot;
 is the directory in which Open Watcom C/C++ was installed).
 <br><br>We can now compile and link the application by issuing the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -9996,16 +9996,16 @@ supplied by Novell.&nbsp; Contact Novell for more information.
 <ul>
 <li>use the small memory model instead of the flat memory model,
 <li>use stack-based calling conventions,
-<li>search the<b> NETWARE_INCLUDE</b> environment variable before searching the<b> INCLUDE</b> environment variable, and
+<li>search the <b> NETWARE_INCLUDE</b> environment variable before searching the <b> INCLUDE</b> environment variable, and
 <li>reference a special startup symbol, <tt> __WATCOM_Prelude</tt>, in the libraries.
 </ul>
 <li>You must compile your source files with the small memory model option (&quot;ms&quot;).&nbsp; This is accomplished by
 specifying the &quot;-bt=NETWARE&quot; option.
 <li>You must compile your source files with one of the stack-based calling convention options (&quot;3s&quot;, &quot;4s&quot;
 or &quot;5s&quot;).&nbsp; This is accomplished by specifying the &quot;-bt=NETWARE&quot; option.
-<li>You must set the<b> NETWARE_INCLUDE</b> environment variable to point to the<tt> \WATCOM\NOVH</tt> directory.&nbsp; This
+<li>You must set the <b> NETWARE_INCLUDE</b> environment variable to point to the<tt> \WATCOM\NOVH</tt> directory.&nbsp; This
 environment variable will be searched first when you compile with the &quot;-bt=NETWARE&quot; option.&nbsp; Alternatively,
-you can set the<b> INCLUDE</b> environment variable to include<tt> \WATCOM\NOVH</tt> before other include directories.
+you can set the <b> INCLUDE</b> environment variable to include<tt> \WATCOM\NOVH</tt> before other include directories.
 <li>If you are using the compile and link utility WCL386, you must use the following options:&nbsp; &quot;-l=NETWARE -bt=NETWARE&quot;.
 <li>You must specify
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -10614,7 +10614,7 @@ yourself from any surprises.
 (through an error message) that it is unable to locate the file<tt> STDIO.H</tt>, we have forgotten something.&nbsp; There
 are two ways to indicate to the Open Watcom C/C++ compiler the location of the standard header files.
 <ol>
-<li>use the<b> INCLUDE</b> environment variable
+<li>use the <b> INCLUDE</b> environment variable
 <li>use the &quot;i&quot; option (Open Watcom C/C++, Open Watcom Compile and Link)
 </ol>
 <br>The use of the environment variable is the simplest way to ensure that the include files will be found.&nbsp; For instance,
@@ -10631,11 +10631,11 @@ option is another way to give the directory name of the standard include files.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wpp myfile.cpp -ic:\watcom\h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wpp386 myfile.cpp -ic:\watcom\h</tt>
-<br><br>The usual manner that these methods are combined is as follows.&nbsp; The<b> INCLUDE</b> environment variable is used
-to give the location of the standard C library header files.&nbsp; Any directories of header files local to a specific programming
-project are often candidates for the &quot;i&quot; option method.&nbsp; See the &quot;Open Watcom C/C++ #include File Processing&quot;
-section of the chapter entitled &quot;The Open Watcom C/C++ Compilers&quot; in the<b><i> Open Watcom C/C++ User's Guide</i></b>
-for more details.
+<br><br>The usual manner that these methods are combined is as follows.&nbsp; The <b> INCLUDE</b> environment variable is
+used to give the location of the standard C library header files.&nbsp; Any directories of header files local to a specific
+programming project are often candidates for the &quot;i&quot; option method.&nbsp; See the &quot;Open Watcom C/C++ #include
+File Processing&quot; section of the chapter entitled &quot;The Open Watcom C/C++ Compilers&quot; in the<b><i> Open Watcom
+C/C++ User's Guide</i></b> for more details.
 <h2 id="Resolving_an__Undefined_Reference__linker_error"> Resolving an &quot;Undefined Reference&quot; linker error </h2>
 <br>The Open Watcom Linker builds an executable file by a process of resolving references to functions or data items that
 are declared in other source files.&nbsp; Certain conditions arise that cause the linker to generate an &quot;Undefined Reference&quot;
@@ -10648,14 +10648,14 @@ that require some explanation.
 <dd>The unresolved reference for <tt> _cstart_</tt> indicates that the linker cannot find the C/C++ run-time libraries.&nbsp;
 The 16-bit C run-time libraries for the small memory model are<tt> clibs.lib</tt> and, either<tt> maths.lib,</tt> or<tt> math87s.lib.</tt>
 &nbsp;The 32-bit C run-time libraries for the flat memory model compiled for the register-based argument passing model are<tt>
-clib3r.lib</tt> and, either<tt> math3r.lib,</tt> or<tt> math387r.lib.</tt>&nbsp; Ensure that the<b> WATCOM</b> environment
+clib3r.lib</tt> and, either<tt> math3r.lib,</tt> or<tt> math387r.lib.</tt>&nbsp; Ensure that the <b> WATCOM</b> environment
 variable is set to the directory that Open Watcom C/C++ was installed in.&nbsp; 
 <dt>_fltused_
 <dd>The<tt> _fltused_</tt> undefined reference indicates that floating-point arithmetic has been used in the modules that exhibit
 this error.&nbsp; The remedy is to ensure that the linker can find the appropriate math library.&nbsp; For the 16-bit small
 memory model, it is either<tt> maths.lib,</tt> or<tt> math87s.lib</tt> For the 32-bit register-based argument passing model,
 it is either<tt> math3r.lib,</tt> or<tt> math387r.lib</tt> depending on which floating-point option is used.&nbsp; Ensure
-that the<b> WATCOM</b> environment variable is set to the directory that Open Watcom C/C++ was installed in.&nbsp; 
+that the <b> WATCOM</b> environment variable is set to the directory that Open Watcom C/C++ was installed in.&nbsp; 
 <dt>_small_code_
 <dd>If this undefined reference occurs when you are trying to create a 16-bit application, we have saved you many hours of debugging!
 &nbsp;The reason for this undefined reference is that the &quot;main&quot; entry point has been compiled for a big code model

@@ -580,16 +580,16 @@ libraries.
 files that you can edit.&nbsp; These files are called<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt>.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
 Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
-in one of the paths specified in the<b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be located
-in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory on
-DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
+in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
+located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
+on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
 systems, and the<tt> \watcom\binnt</tt> directory on Windows 95 or Windows NT-hosted systems.&nbsp; Note that the file<tt>
 wlink.lnk</tt> includes the file<tt> wlsystem.lnk</tt> which is located in the<tt> \watcom\binw</tt> directory on DOS, OS/2,
 or Windows-hosted systems and the<tt> /etc</tt> directory on QNX-hosted systems.
-<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the<b> WATCOM</b> environment variable which must
+<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the <b> WATCOM</b> environment variable which must
 be set to the directory in which you installed your software.
-<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the<b> WLINK_LNK</b> environment
-variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the<b> WLINK_LNK</b>
+<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the <b> WLINK_LNK</b> environment
+variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the <b> WLINK_LNK</b>
 environment variable is defined as follows
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set WLINK_LNK=my.lnk</tt>
@@ -715,7 +715,7 @@ for more information on creating specific types of applications.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; name&nbsp;&nbsp;&nbsp;&nbsp; app_name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file&nbsp;&nbsp;&nbsp;&nbsp; obj1, obj2, ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; library&nbsp; lib1, lib2, ...</tt>
-<br><br>If the system is<b><i> x32r</i></b> , a FlashTek executable file is created for an application using the register
+<br><br>If the system is <b><i> x32r</i></b>, a FlashTek executable file is created for an application using the register
 calling convention.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; system&nbsp;&nbsp; x32rv</tt>
@@ -723,7 +723,7 @@ calling convention.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; name&nbsp;&nbsp;&nbsp;&nbsp; app_name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file&nbsp;&nbsp;&nbsp;&nbsp; obj1, obj2, ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; library&nbsp; lib1, lib2, ...</tt>
-<br><br>If the system is<b><i> x32rv</i></b> , a virtual-memory FlashTek executable file is created for an application using
+<br><br>If the system is <b><i> x32rv</i></b>, a virtual-memory FlashTek executable file is created for an application using
 the register calling convention.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; system&nbsp;&nbsp; x32s</tt>
@@ -930,22 +930,22 @@ the Open Watcom Linker which object files are to be included in the program, whi
 references, and the name of the executable file.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
 Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
-in one of the paths specified in the<b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be located
-in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory on
-DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
+in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
+located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
+on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
 systems, and the<tt> \watcom\binnt</tt> directory on Windows 95 or Windows NT-hosted systems.&nbsp; Note that the file<tt>
 wlink.lnk</tt> includes the file<tt> wlsystem.lnk</tt> which is located in the<tt> \watcom\binw</tt> directory on DOS, OS/2,
 or Windows-hosted systems and the<tt> /etc</tt> directory on QNX-hosted systems.
-<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the<b> WATCOM</b> environment variable which must
+<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the <b> WATCOM</b> environment variable which must
 be set to the directory in which you installed your software.
-<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the<b> WLINK_LNK</b> environment
-variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the<b> WLINK_LNK</b>
+<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the <b> WLINK_LNK</b> environment
+variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the <b> WLINK_LNK</b>
 environment variable is defined as follows
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set WLINK_LNK=my.lnk</tt>
 <br><br>then the Open Watcom Linker will attempt to use a<tt> my.lnk</tt> directive file, and if that file cannot be opened,
 the linker will revert to using the default<tt> wlink.lnk</tt> file.
-<br><br>It is also possible to use environment variables when specifying a directive.&nbsp; For example, if the<b> LIBDIR</b>
+<br><br>It is also possible to use environment variables when specifying a directive.&nbsp; For example, if the <b> LIBDIR</b>
 environment variable is defined as follows,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set libdir=\test</tt>
@@ -1228,16 +1228,16 @@ is as follows.
 if required.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
 Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
-in one of the paths specified in the<b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be located
-in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory on
-DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
+in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
+located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
+on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
 systems, and the<tt> \watcom\binnt</tt> directory on Windows 95 or Windows NT-hosted systems.&nbsp; Note that the file<tt>
 wlink.lnk</tt> includes the file<tt> wlsystem.lnk</tt> which is located in the<tt> \watcom\binw</tt> directory on DOS, OS/2,
 or Windows-hosted systems and the<tt> /etc</tt> directory on QNX-hosted systems.
-<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the<b> WATCOM</b> environment variable which must
+<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the <b> WATCOM</b> environment variable which must
 be set to the directory in which you installed your software.
-<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the<b> WLINK_LNK</b> environment
-variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the<b> WLINK_LNK</b>
+<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the <b> WLINK_LNK</b> environment
+variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the <b> WLINK_LNK</b>
 environment variable is defined as follows
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set WLINK_LNK=my.lnk</tt>
@@ -1490,7 +1490,7 @@ is placed in the executable file.
 <br>The NetWare operating system has a built-in debugger that can be used to debug programs.&nbsp; When &quot;DEBUG NOVELL&quot;
 is specified, the Open Watcom Linker will generate global symbol information that can be used by the NetWare debugger.&nbsp;
 Note that any line numbering, local symbol, and typing information generated in the executable file will not be recognized
-by the NetWare debugger.&nbsp; Also,<b><i> WSTRIP</i></b> cannot be used to remove this form of global symbol information
+by the NetWare debugger.&nbsp; Also, <b><i> WSTRIP</i></b> cannot be used to remove this form of global symbol information
 from the executable file.
 <h3 id="The_ONLYEXPORTS_Debugging_Option"> The ONLYEXPORTS Debugging Option </h3>
 <br>The &quot;ONLYEXPORTS&quot; option (short form &quot;ONL&quot;) restricts the generation of global symbol information
@@ -1535,9 +1535,9 @@ the debugging information that is to appear in the executable file.
 file you must specify &quot;DEBUG WATCOM ALL&quot; before any &quot;FILE&quot; and &quot;LIBRARY&quot; directives.
 <hr>
 <h3 id="Removing_Debugging_Information_from_an_Executable_File"> Removing Debugging Information from an Executable File </h3>
-<br>A utility called<b><i> WSTRIP</i></b> has been provided which takes as input an executable file and removes the debugging
+<br>A utility called <b><i> WSTRIP</i></b> has been provided which takes as input an executable file and removes the debugging
 information placed in the executable file by the Open Watcom Linker.&nbsp; Note that global symbol information generated using
-&quot;DEBUG NOVELL&quot; cannot be removed by<b><i> WSTRIP</i></b> .
+&quot;DEBUG NOVELL&quot; cannot be removed by <b><i> WSTRIP</i></b>.
 <br><br>For more information on this utility, see the chapter entitled &quot;The Open Watcom Strip Utility&quot; in the<b><i>
 Open Watcom C/C++ Tools User's Guide</i></b> or<b><i> Open Watcom FORTRAN 77 Tools User's Guide.</i></b>
 <h2 id="The_DESCRIPTION_Option"> The DESCRIPTION Option </h2>
@@ -1788,7 +1788,7 @@ the default export name is<tt> sym.</tt>
 considered when specifying<b> entry_name</b> and<b> internal_name</b> in an &quot;EXPORT&quot; directive.
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 export 'myfunc@8'</tt>).
-<li>If the<b><i> __export</i></b> declspec modifier is used in the source code, it is the equivalent of using the following
+<li>If the <b><i> __export</i></b> declspec modifier is used in the source code, it is the equivalent of using the following
 linker directive:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; EXPORT entry_name RESIDENT</tt>
@@ -1841,16 +1841,16 @@ option (short form &quot;NOFAR&quot;) is as follows.
 if required.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
 Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
-in one of the paths specified in the<b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be located
-in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory on
-DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
+in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
+located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
+on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
 systems, and the<tt> \watcom\binnt</tt> directory on Windows 95 or Windows NT-hosted systems.&nbsp; Note that the file<tt>
 wlink.lnk</tt> includes the file<tt> wlsystem.lnk</tt> which is located in the<tt> \watcom\binw</tt> directory on DOS, OS/2,
 or Windows-hosted systems and the<tt> /etc</tt> directory on QNX-hosted systems.
-<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the<b> WATCOM</b> environment variable which must
+<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the <b> WATCOM</b> environment variable which must
 be set to the directory in which you installed your software.
-<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the<b> WLINK_LNK</b> environment
-variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the<b> WLINK_LNK</b>
+<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the <b> WLINK_LNK</b> environment
+variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the <b> WLINK_LNK</b>
 environment variable is defined as follows
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set WLINK_LNK=my.lnk</tt>
@@ -3155,7 +3155,7 @@ applications only.&nbsp; The format of the &quot;NOAUTODATA&quot; option (short 
 <br><br>Special object module records that specify default libraries are placed in object files generated by Open Watcom compilers.
 &nbsp;These libraries reflect the memory and floating-point model that a source file was compiled for and are automatically
 searched by the Open Watcom Linker when unresolved symbols are detected.&nbsp; These libraries can exist in the current directory,
-in one of the paths specified in &quot;LIBPATH&quot; directives, or in one of the paths specified in the<b> LIB</b> environment
+in one of the paths specified in &quot;LIBPATH&quot; directives, or in one of the paths specified in the <b> LIB</b> environment
 variable.
 <br><br>Note that all library files that appear in a &quot;LIBRARY&quot; directive are searched before default libraries.
 &nbsp;The &quot;NODEFAULTLIBS&quot; option instructs the Open Watcom Linker to ignore default libraries.&nbsp; That is, only
@@ -3199,7 +3199,7 @@ is not required unless your application is running at privilege level 0.
 </dl>
 <h2 id="The_NOSTDCALL_Option"> The NOSTDCALL Option </h2>
 <br>Formats:&nbsp; Win32 
-<br><br>The &quot;NOSTDCALL&quot; option specifies that the characters unique to the<b><i> __stdcall</i></b> calling convention
+<br><br>The &quot;NOSTDCALL&quot; option specifies that the characters unique to the <b><i> __stdcall</i></b> calling convention
 be trimmed from all of the symbols that are exported from the DLL being created.&nbsp; The format of the &quot;NOSTDCALL&quot;
 option (short form &quot;NOSTDC&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -3214,15 +3214,15 @@ option (short form &quot;NOSTDC&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; short PASCAL __export Function2( long varlong,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; short var2 );</tt>
-<br><br>Under ordinary circumstances, these<b><i> __stdcall</i></b> symbols are mapped to &quot;_Function1@12&quot; and &quot;_Function2@8&quot;
+<br><br>Under ordinary circumstances, these <b><i> __stdcall</i></b> symbols are mapped to &quot;_Function1@12&quot; and &quot;_Function2@8&quot;
 respectively.&nbsp; The &quot;@12&quot; and &quot;@8&quot; reflect the number of bytes in the argument list (short is passed
 as int).&nbsp; When the &quot;NOSTDCALL&quot; option is specified, these symbols are stripped of the &quot;_&quot; and &quot;@xx&quot;
 adornments.&nbsp; Thus they are exported from the DLL as &quot;Function1&quot; and &quot;Function2&quot;.
 <br><br>This option makes it easier to access functions exported from DLLs, especially when using other software languages
-such as FORTRAN which do not add on the<b><i> __stdcall</i></b> adornments.
+such as FORTRAN which do not add on the <b><i> __stdcall</i></b> adornments.
 <hr>
 <br><b><i>&nbsp; Note:</i></b>&nbsp; Use the &quot;IMPLIB&quot; option to create an import library for the DLL which can be
-used with software languages that add on the<b><i> __stdcall</i></b> adornments.
+used with software languages that add on the <b><i> __stdcall</i></b> adornments.
 <hr>
 <h2 id="The_NOSTUB_Option"> The NOSTUB Option </h2>
 <br>Formats:&nbsp; OS/2, Win16, Win32 
@@ -4461,7 +4461,7 @@ is executed under DOS.&nbsp; The format of the &quot;STUB&quot; option is as fol
 <dd>is a file specification for the name of the stub executable file.&nbsp; If no file extension is specified, a file extension
 of &quot;EXE&quot; is assumed.
 </dl>
-<br>The Open Watcom Linker will search all paths specified in the<b> PATH</b> environment variable for the stub executable
+<br>The Open Watcom Linker will search all paths specified in the <b> PATH</b> environment variable for the stub executable
 file.&nbsp; The stub executable file specified by the &quot;STUB&quot; option must not be the same as the executable file
 being generated.
 <h2 id="The_SYMFILE_Option"> The SYMFILE Option </h2>
@@ -4608,16 +4608,16 @@ DOS), rather than the previously defined &quot;at_dos&quot; system (AT-compatibl
 and<tt> wlsystem.lnk</tt> files.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
 Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
-in one of the paths specified in the<b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be located
-in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory on
-DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
+in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
+located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
+on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
 systems, and the<tt> \watcom\binnt</tt> directory on Windows 95 or Windows NT-hosted systems.&nbsp; Note that the file<tt>
 wlink.lnk</tt> includes the file<tt> wlsystem.lnk</tt> which is located in the<tt> \watcom\binw</tt> directory on DOS, OS/2,
 or Windows-hosted systems and the<tt> /etc</tt> directory on QNX-hosted systems.
-<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the<b> WATCOM</b> environment variable which must
+<br><br>The files<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt> reference the <b> WATCOM</b> environment variable which must
 be set to the directory in which you installed your software.
-<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the<b> WLINK_LNK</b> environment
-variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the<b> WLINK_LNK</b>
+<br><br>The default name of the linker directive file (<tt>wlink.lnk</tt>) can be overridden by the <b> WLINK_LNK</b> environment
+variable.&nbsp; If the specified file can't be opened, the default file name will be used.&nbsp; For example, if the <b> WLINK_LNK</b>
 environment variable is defined as follows
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set WLINK_LNK=my.lnk</tt>

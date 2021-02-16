@@ -109,7 +109,7 @@ language programmers.
 <br><br>Users compiling with WCL386 need to add the switch -l=CauseWay to the command line.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WCL386 -l=CauseWay myprog.c</tt>
-<br><br>This switch can be automated by adding -l#CauseWay to the<b> WCL386</b> environment variable, making CauseWay the
+<br><br>This switch can be automated by adding -l#CauseWay to the <b> WCL386</b> environment variable, making CauseWay the
 default when compiling via WCL386.
 <br><br>Open Watcom users linking with WLINK should add the statement<tt> system CauseWay</tt> to the link command.
 <br><br><b>Example:</b>
@@ -127,20 +127,20 @@ extender bound to the application EXE, if any, with the CauseWay DOS extender ve
 line option.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WD -tr=cw myprog</tt>
-<br><br>This process can be automated by adding<tt> -tr#cw</tt> to your<b> WD</b> environment variable.&nbsp; Use the<tt>
+<br><br>This process can be automated by adding<tt> -tr#cw</tt> to your <b> WD</b> environment variable.&nbsp; Use the<tt>
 set WD=tr#cw</tt> command.
 <br><br>By default, CauseWay uses a Ctrl-Alt keypress to interrupt the WD debugger, rather than the Print-Screen key.&nbsp;
 This can be changed to any two, three, or four keypress value by modifying the ASCII file<tt> CWHELP.CFG</tt> at the BreakKeys
 line.&nbsp; See comments in this file for further detail.&nbsp; Note that a single keypress value will not work properly.
 <h2 id="Operational_Considerations_When_Using_CauseWay"> Operational Considerations When Using CauseWay </h2>
-<br>The<b> TEMP</b> ,<b> TMP</b> and<b> CAUSEWAY=SWAP</b> environment variables are used by CauseWay to determine where to
-build its virtual memory swap file when an application is not operating under Windows or OS/2 (Windows and OS/2 provide their
-own virtual memory management).&nbsp; Since CauseWay has integrated virtual memory, disk space is considered part of total
-memory.&nbsp; If you use the<b> TEMP</b> ,<b> TMP</b> or<b> SWAP</b> environment variable to point to a small RAM sk or almost
-full disk, free memory will be affected accordingly.&nbsp; If virtual (disk-based) memory is less than physical (installed
-on machine) memory, Cause Way turns off virtual memory.&nbsp; On the other hand, if you have a disk 300MB free, CauseWay will
-have no problem reporting 300MB free memory to your program, provided that virtual memory is not inhibited or limited by the<b>
-CAUSEWAY</b> environment variable memory settings.
+<br>The <b> TEMP</b>, <b> TMP</b> and <b> CAUSEWAY=SWAP</b> environment variables are used by CauseWay to determine where
+to build its virtual memory swap file when an application is not operating under Windows or OS/2 (Windows and OS/2 provide
+their own virtual memory management).&nbsp; Since CauseWay has integrated virtual memory, disk space is considered part of
+total memory.&nbsp; If you use the <b> TEMP</b>, <b> TMP</b> or <b> SWAP</b> environment variable to point to a small RAM
+sk or almost full disk, free memory will be affected accordingly.&nbsp; If virtual (disk-based) memory is less than physical
+(installed on machine) memory, Cause Way turns off virtual memory.&nbsp; On the other hand, if you have a disk 300MB free,
+CauseWay will have no problem reporting 300MB free memory to your program, provided that virtual memory is not inhibited or
+limited by the <b> CAUSEWAY</b> environment variable memory settings.
 <br><br>Memory operates differently under Windows and OS/2.&nbsp; With OS/2, the DPMI setting for the session determines available
 memory.&nbsp; With Windows, available memory is the total of physical memory plus the swap file size less any memory already
 in use by Windows or another Windows application.
@@ -148,7 +148,8 @@ in use by Windows or another Windows application.
 of priority.&nbsp; CauseWay then works through the list until one of the entries provides both a valid drive and path specification
 and sufficient free space to being operation.&nbsp; The first entry to succeed becomes the swap file drive with no further
 processing of the list.&nbsp; If CauseWay reaches the end of the list without finding a valid drive, it disables the virtual
-memory manager.&nbsp; The order of priority is<b> CAUSEWAY=SWAP</b> ,<b> TEMP</b> ,<b> TMP</b> and application execution path.
+memory manager.&nbsp; The order of priority is <b> CAUSEWAY=SWAP</b>, <b> TEMP</b>, <b> TMP</b> and application execution
+path.
 <br><br>If end users reboot the system or turn off power while executing a CauseWay application under DOS, a temporary file
 will be left on the system by CauseWay.&nbsp; This will usually be a zero length file unless the application was large enough
 to exceed physical memory and CauseWay had started using its virtual memory manager.&nbsp; The temporary file name is requested
@@ -163,27 +164,27 @@ which have not been recently requested.&nbsp; After startup is complete, the pro
 from virtual memory as necessary.
 <br><br>CauseWay automatically sets aside 32KB of low DOS memory for allocation and use by developer routines via the GetMemDOS
 API function.&nbsp; The 32K memory block is available even if CauseWay needs to use virtual memory just to load an application.
-&nbsp;The set-aside amount can be increased by using the<b> CAUSEWAY</b> environment variable LOWMEM option, although the
+&nbsp;The set-aside amount can be increased by using the <b> CAUSEWAY</b> environment variable LOWMEM option, although the
 additional set-aside goal is not guaranteed to be reached if too little conventional memory is left for CauseWay's operating
 requirements.
 <h2 id="Environment_Variables"> Environment Variables </h2>
-<br>CauseWay can make use of three environment variables at runtime:<b>&nbsp; TEMP</b> ,<b> TMP</b> and<b> CAUSEWAY</b> 
+<br>CauseWay can make use of three environment variables at runtime:&nbsp; <b> TEMP</b>, <b> TMP</b> and <b> CAUSEWAY</b>
 <h3 id="TEMP_and_TMP_Environment_Variables"> TEMP and TMP Environment Variables </h3>
-<br>The<b> TEMP</b> and<b> TMP</b> environment variables specify the directory and drive where a swap file is built by CauseWay's
+<br>The <b> TEMP</b> and <b> TMP</b> environment variables specify the directory and drive where a swap file is built by CauseWay's
 virtual memory manager (VMM) when operating under DOS.&nbsp; Windows and OS/2 provide their own memory management functions
-which override CauseWay's use of the<b> TEMP</b> and<b> TMP</b> environment variables.&nbsp; The path indicated by<b> TEMP</b>
-will be used under DOS if both<b> TEMP</b> and<b> TMP</b> environment variables exist.&nbsp; Both settings are superseded
-by the<b> CAUSEWAY=SWAP</b> environment variable setting.
+which override CauseWay's use of the <b> TEMP</b> and <b> TMP</b> environment variables.&nbsp; The path indicated by <b> TEMP</b>
+will be used under DOS if both <b> TEMP</b> and <b> TMP</b> environment variables exist.&nbsp; Both settings are superseded
+by the <b> CAUSEWAY=SWAP</b> environment variable setting.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET TMP=C:\SWAP</tt>
 <br><br>The example above directs the CauseWay DOS extender to create its swap file, if any, in the C:\SWAP directory.
-<br><br>If no<b> TEMP</b> ,<b> TMP</b> and<b> CAUSEWAY=SWAP</b> settings are present or are invalid, the current drive is
+<br><br>If no <b> TEMP</b>, <b> TMP</b> and <b> CAUSEWAY=SWAP</b> settings are present or are invalid, the current drive is
 used when creating a swap file.&nbsp; If free drive space is less than physical memory (extended and conventional) available
 at startup, then the DOS extender VMM is disabled, no swap file is created, and virtual memory is not available to the application.
 <h3 id="CAUSEWAY_Environment_Variable"> CAUSEWAY Environment Variable </h3>
-<br>The<b> CAUSEWAY</b> environment variable controls operation of the DOS extender at application runtime.&nbsp; Eleven (11)
-options are supported, although they are ignored in a Windows or OS/2 DPMI environment.&nbsp; Use any combination of the options
-in the following format:
+<br>The <b> CAUSEWAY</b> environment variable controls operation of the DOS extender at application runtime.&nbsp; Eleven
+(11) options are supported, although they are ignored in a Windows or OS/2 DPMI environment.&nbsp; Use any combination of
+the options in the following format:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET CAUSEWAY=&#91;&lt;setting_1&gt;;&#93;&#91;&lt;setting_2&gt;;&#93;&#91;&lt;setting_n&gt;;&#93;</tt>
 <br><br>Items in square brackets (&#91; &#93;) are optional.&nbsp; Do not actually type the brackets if you use the optional
@@ -234,7 +235,7 @@ rather than kilobytes used in the LOWMEM and HIMEM options.
 <dt>NAME:&lt;filename&gt;
 <dd>
 <br><br>Set a name, without a pathspec, to use the virtual memory temporary swap file.&nbsp; To set a path for the swap file,
-use the<b> CAUSEWAY=SWAP</b> ,<b> TEMP</b> , or<b> TMP</b> environment variable.&nbsp; The filename must be valid, 12 characters
+use the <b> CAUSEWAY=SWAP</b>, <b> TEMP</b>, or <b> TMP</b> environment variable.&nbsp; The filename must be valid, 12 characters
 or less.&nbsp; Additional characters are truncated or invalidate the filename, depending upon how DOS handles it (e.g., multiple
 periods make an invalid file name whereas a five-character extension is truncated to three).&nbsp; If the filename specified
 is invalid, CauseWay shuts off virtual memory.&nbsp; It makes no further attempts for a temporary file name.&nbsp; If a pre-existing
@@ -275,7 +276,7 @@ and beyond what was pre-allocated.
 <dt>SWAP:&lt;path&gt;
 <dd>
 <br><br>Set CauseWay's virtual memory manager swap file path.&nbsp; This path takes precedence for choosing the location of
-a swap file over the<b> TEMP</b> and<b> TMP</b> environment variables.
+a swap file over the <b> TEMP</b> and <b> TMP</b> environment variables.
 </dl>
 <h1 id="Using_the_flat_memory_model"> Using the flat memory model </h1>
 <br>Flat model is a non-segmented memory model that allows accessing data and executing code anywhere within the 4GB linear
@@ -377,14 +378,14 @@ performance.&nbsp; However completely disabling disk cache will usually noticeab
 optimal cache size depends on the particular application and computer system (amount of physical memory, disk I/O speed etc.)
 and there are no generally applicable &quot;best&quot; settings.
 <br><br>If your program uses virtual memory, CauseWay's VMM creates a temporary swap file.&nbsp; If you have more than one
-disk drive, then you may wish to direct creation of the swap file to the faster disk drive on your system using the<b> CAUSEWAY=SWAP</b>
-,<b> TEMP</b> or<b> TMP</b> environment variables.&nbsp; Do not create a RAM disk if this will lower your physical memory
+disk drive, then you may wish to direct creation of the swap file to the faster disk drive on your system using the <b> CAUSEWAY=SWAP</b>
+, <b> TEMP</b> or <b> TMP</b> environment variables.&nbsp; Do not create a RAM disk if this will lower your physical memory
 because this is less efficient than allowing CauseWay to use physical memory itself.
 <br><br>Remember that virtual memory is part of total memory when using CauseWay.&nbsp; If your default drive, or the drive
-pointed to by the<b> TEMP</b> or<b> TMP</b> environment variables has little free space, this will be reflected in total memory
-available to the CauseWay application.&nbsp; If disk free space is less than physical memory, then CauseWay shuts off all
-use of virtual memory.&nbsp; Windows and OS/2 handle virtual memory internally and supply it through the swap file and DPMI
-settings for the application.
+pointed to by the <b> TEMP</b> or <b> TMP</b> environment variables has little free space, this will be reflected in total
+memory available to the CauseWay application.&nbsp; If disk free space is less than physical memory, then CauseWay shuts off
+all use of virtual memory.&nbsp; Windows and OS/2 handle virtual memory internally and supply it through the swap file and
+DPMI settings for the application.
 <h2 id="Open_Watcom_CDCPP_kbhitLR_replacement"> Open Watcom C/C++ kbhit() replacement </h2>
 <br>Two optimized replacement versions of the Open Watcom C++ runtime library kbhit() function are provided.&nbsp; The files
 are KBHITR.OBJ and KBHITS.OBJ for, respectively, register-based and stack-based calling conventions.&nbsp; Simply link in

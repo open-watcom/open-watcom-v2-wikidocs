@@ -1004,8 +1004,8 @@ that can be assigned to a variable.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a = 12345678901234567890;</tt>
 <h2 id="003_missing_return_value"> 003 missing return value </h2>
-<br>A function has been declared with a non-void return type, but no<b><i> return</i></b> statement was found in the function.
-&nbsp;Either add a<b><i> return</i></b> statement or change the function return type to<b><i> void.</i></b>&nbsp; 
+<br>A function has been declared with a non-void return type, but no <b><i> return</i></b> statement was found in the function.
+&nbsp;Either add a <b><i> return</i></b> statement or change the function return type to <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1014,7 +1014,7 @@ that can be assigned to a variable.
 <br><br>The message will be issued at the end of the function.
 <h2 id="004_base_class___T__does_not_have_a_virtual_destructor"> 004 base class '%T' does not have a virtual destructor </h2>
 <br>A virtual destructor has been declared in a class with base classes.&nbsp; However, one of those base classes does not
-have a virtual destructor.&nbsp; A<b><i> delete</i></b> of a pointer cast to such a base class will not function properly
+have a virtual destructor.&nbsp; A <b><i> delete</i></b> of a pointer cast to such a base class will not function properly
 in all circumstances.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Base {</tt>
@@ -1027,7 +1027,7 @@ in all circumstances.
 having virtual destructors.
 <h2 id="005_pointer_or_reference_truncated"> 005 pointer or reference truncated </h2>
 <br>The expression contains a transfer of a pointer value to another pointer value of smaller size.&nbsp; This can be caused
-by<b><i> __near</i></b> or<b><i> __far</i></b> qualifiers (i.e., assigning a<b><i> far</i></b> pointer to a<b><i> near</i></b>
+by <b><i> __near</i></b> or <b><i> __far</i></b> qualifiers (i.e., assigning a <b><i> far</i></b> pointer to a <b><i> near</i></b>
 pointer).&nbsp; Function pointers can also have a different size than data pointers in certain memory models.&nbsp; This message
 indicates that some information is being lost so check the code carefully.
 <br><br><b>Example:</b>
@@ -1087,7 +1087,7 @@ that statement.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *p = 6;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The statement following the<b><i> return</i></b> statement cannot be reached.
+<br><br>The statement following the <b><i> return</i></b> statement cannot be reached.
 <h2 id="014_no_reference_to_symbol___S_"> 014 no reference to symbol '%S' </h2>
 <br>There are no references to the declared variable.&nbsp; The declaration for the variable can be deleted.&nbsp; If the
 variable is a parameter to a function, all calls to the function must also have the value for that parameter deleted.
@@ -1109,8 +1109,8 @@ comments are not allowed in ISO/ANSI C.&nbsp; You may be missing the<tt> */</tt>
 <h2 id="018_no_reference_to_anonymous_union_member___S_"> 018 no reference to anonymous union member '%S' </h2>
 <br>The declaration for the anonymous member can be safely deleted without any effect.
 <h2 id="019__break__may_only_appear_in_a_for__do__while__or_switch_statement"> 019 'break' may only appear in a for, do, while, or switch statement </h2>
-<br>A<b><i> break</i></b> statement has been found in an illegal place in the program.&nbsp; You may be missing an opening
-brace<tt> {</tt> for a<b><i> while,</i></b> <b><i> do,</i></b> <b><i> for</i></b> or<b><i> switch</i></b> statement.
+<br>A <b><i> break</i></b> statement has been found in an illegal place in the program.&nbsp; You may be missing an opening
+brace<tt> {</tt> for a <b><i> while,</i></b> <b><i> do,</i></b> <b><i> for</i></b> or <b><i> switch</i></b> statement.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a, int b )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1118,7 +1118,7 @@ brace<tt> {</tt> for a<b><i> while,</i></b> <b><i> do,</i></b> <b><i> for</i></b
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return a+b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="020__case__may_only_appear_in_a_switch_statement"> 020 'case' may only appear in a switch statement </h2>
-<br>A<b><i> case</i></b> label has been found that is not inside a<b><i> switch</i></b> statement.
+<br>A <b><i> case</i></b> label has been found that is not inside a <b><i> switch</i></b> statement.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a, int b )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1126,9 +1126,9 @@ brace<tt> {</tt> for a<b><i> while,</i></b> <b><i> do,</i></b> <b><i> for</i></b
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return a+b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="021__continue__may_only_appear_in_a_for__do__or_while_statement"> 021 'continue' may only appear in a for, do, or while statement </h2>
-<br>The<b><i> continue</i></b> statement must be inside a<b><i> while,</i></b> <b><i> do</i></b> or<b><i> for</i></b> statement.
-&nbsp;You may have too many<tt> }</tt> between the<b><i> while,</i></b> <b><i> do</i></b> or<b><i> for</i></b> statement and
-the<b><i> continue</i></b> statement.
+<br>The <b><i> continue</i></b> statement must be inside a <b><i> while,</i></b> <b><i> do</i></b> or <b><i> for</i></b> statement.
+&nbsp;You may have too many<tt> }</tt> between the <b><i> while,</i></b> <b><i> do</i></b> or <b><i> for</i></b> statement
+and the <b><i> continue</i></b> statement.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a, int b )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1136,8 +1136,8 @@ the<b><i> continue</i></b> statement.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return a+b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="022__default__may_only_appear_in_a_switch_statement"> 022 'default' may only appear in a switch statement </h2>
-<br>A<b><i> default</i></b> label has been found that is not inside a<b><i> switch</i></b> statement.&nbsp; You may have too
-many<tt> }</tt> between the start of the<b><i> switch</i></b> and the<b><i> default</i></b> label.
+<br>A <b><i> default</i></b> label has been found that is not inside a <b><i> switch</i></b> statement.&nbsp; You may have
+too many<tt> }</tt> between the start of the <b><i> switch</i></b> and the <b><i> default</i></b> label.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a, int b )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1147,7 +1147,7 @@ many<tt> }</tt> between the start of the<b><i> switch</i></b> and the<b><i> defa
 <h2 id="023_misplaced_____or_missing_earlier____"> 023 misplaced '}' or missing earlier '{' </h2>
 <br>An extra<tt> }</tt> has been found which cannot be matched up with an earlier<tt> {.</tt>
 <h2 id="024_misplaced__elif_directive"> 024 misplaced #elif directive </h2>
-<br>The<b><i> #elif</i></b> directive must be inside an<b><i> #if</i></b> preprocessing group and before the<b><i> #else</i></b>
+<br>The <b><i> #elif</i></b> directive must be inside an <b><i> #if</i></b> preprocessing group and before the <b><i> #else</i></b>
 directive if present.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a;</tt>
@@ -1156,10 +1156,10 @@ directive if present.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #elif IN_IF</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
-<br><br>The<b><i> #else,</i></b> <b><i> #elif,</i></b> and<b><i> #endif</i></b> statements are all illegal because there is
-no<b><i> #if</i></b> that corresponds to them.
+<br><br>The <b><i> #else,</i></b> <b><i> #elif,</i></b> and <b><i> #endif</i></b> statements are all illegal because there
+is no <b><i> #if</i></b> that corresponds to them.
 <h2 id="025_misplaced__else_directive"> 025 misplaced #else directive </h2>
-<br>The<b><i> #else</i></b> directive must be inside an<b><i> #if</i></b> preprocessing group and follow all<b><i> #elif</i></b>
+<br>The <b><i> #else</i></b> directive must be inside an <b><i> #if</i></b> preprocessing group and follow all <b><i> #elif</i></b>
 directives if present.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a;</tt>
@@ -1168,11 +1168,11 @@ directives if present.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #elif IN_IF</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
-<br><br>The<b><i> #else,</i></b> <b><i> #elif,</i></b> and<b><i> #endif</i></b> statements are all illegal because there is
-no<b><i> #if</i></b> that corresponds to them.
+<br><br>The <b><i> #else,</i></b> <b><i> #elif,</i></b> and <b><i> #endif</i></b> statements are all illegal because there
+is no <b><i> #if</i></b> that corresponds to them.
 <h2 id="026_misplaced__endif_directive"> 026 misplaced #endif directive </h2>
-<br>A<b><i> #endif</i></b> preprocessing directive has been found without a matching<b><i> #if</i></b> directive.&nbsp; You
-either have an extra<b><i> #endif</i></b> or you are missing an<b><i> #if</i></b> directive earlier in the file.
+<br>A <b><i> #endif</i></b> preprocessing directive has been found without a matching <b><i> #if</i></b> directive.&nbsp;
+You either have an extra <b><i> #endif</i></b> or you are missing an <b><i> #if</i></b> directive earlier in the file.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
@@ -1180,10 +1180,10 @@ either have an extra<b><i> #endif</i></b> or you are missing an<b><i> #if</i></b
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #elif IN_IF</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
-<br><br>The<b><i> #else,</i></b> <b><i> #elif,</i></b> and<b><i> #endif</i></b> statements are all illegal because there is
-no<b><i> #if</i></b> that corresponds to them.
+<br><br>The <b><i> #else,</i></b> <b><i> #elif,</i></b> and <b><i> #endif</i></b> statements are all illegal because there
+is no <b><i> #if</i></b> that corresponds to them.
 <h2 id="027_only_one__default__per_switch_statement_is_allowed"> 027 only one 'default' per switch statement is allowed </h2>
-<br>You cannot have more than one<b><i> default</i></b> label in a<b><i> switch</i></b> statement.
+<br>You cannot have more than one <b><i> default</i></b> label in a <b><i> switch</i></b> statement.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int translate( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1204,7 +1204,7 @@ no<b><i> #if</i></b> that corresponds to them.
 <br>A syntax error has been detected.&nbsp; The tokens displayed in the message should help you to determine the problem.
 <h2 id="029_symbol___N__has_not_been_declared"> 029 symbol '%N' has not been declared </h2>
 <br>The compiler has found a symbol which has not been previously declared.&nbsp; The symbol may be spelled differently than
-the declaration, or you may need to<b><i> #include</i></b> a header file that contains the declaration.
+the declaration, or you may need to <b><i> #include</i></b> a header file that contains the declaration.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a = b;&nbsp; // b has not been declared</tt>
 <h2 id="030_left_expression_must_be_a_function_or_a_function_pointer"> 030 left expression must be a function or a function pointer </h2>
@@ -1234,7 +1234,7 @@ to it.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The second label is illegal.
 <h2 id="033_label___s__is_not_defined_in_function"> 033 label '%s' is not defined in function </h2>
-<br>A<b><i> goto</i></b> statement has referenced a label that is not defined in the function.&nbsp; Add the necessary label
+<br>A <b><i> goto</i></b> statement has referenced a label that is not defined in the function.&nbsp; Add the necessary label
 or check the spelling of the label(s) in the function.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void bar( int *p )</tt>
@@ -1243,7 +1243,7 @@ or check the spelling of the label(s) in the function.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *p = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto label;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The label referenced in the<b><i> goto</i></b> is not defined.
+<br><br>The label referenced in the <b><i> goto</i></b> is not defined.
 <h2 id="034_dimension_cannot_be_zero"> 034 dimension cannot be zero </h2>
 <br>The dimension of an array must be non-zero.
 <br><br><b>Example:</b>
@@ -1258,7 +1258,7 @@ can declared as &quot;&#91;&#93;&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int array&#91;&#93;&#91;&#93;;&nbsp;&nbsp; // not allowed</tt>
 <h2 id="037_invalid_storage_class_for_function"> 037 invalid storage class for function </h2>
-<br>If a storage class is given for a function, it must be<b><i> static</i></b> or<b><i> extern.</i></b>&nbsp; 
+<br>If a storage class is given for a function, it must be <b><i> static</i></b> or <b><i> extern.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; auto void foo()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1276,7 +1276,7 @@ can declared as &quot;&#91;&#93;&quot;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *p2 = &amp; (c+1); // not allowed</tt>
 <h2 id="040_expression_for_____must_be_a_class__struct_or_union"> 040 expression for '.' must be a class, struct or union </h2>
 <br>The compiler has encountered the pattern &quot;expression&quot; &quot;.&quot; &quot;field_name&quot; where the expression
-is not a<b><i> class,</i></b> <b><i> struct</i></b> or<b><i> union</i></b> type.
+is not a <b><i> class,</i></b> <b><i> struct</i></b> or <b><i> union</i></b> type.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1286,7 +1286,7 @@ is not a<b><i> class,</i></b> <b><i> struct</i></b> or<b><i> union</i></b> type.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a = fun().a;</tt>
 <h2 id="041_expression_for__MY__must_be_pointer_to_class__struct_or_union"> 041 expression for '-&gt;' must be pointer to class, struct or union </h2>
 <br>The compiler has encountered the pattern &quot;expression&quot; &quot;-&gt;&quot; &quot;field_name&quot; where the expression
-is not a pointer to<b><i> class,</i></b> <b><i> struct</i></b> or<b><i> union</i></b> type.
+is not a pointer to <b><i> class,</i></b> <b><i> struct</i></b> or <b><i> union</i></b> type.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1300,21 +1300,21 @@ is not a pointer to<b><i> class,</i></b> <b><i> struct</i></b> or<b><i> union</i
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char a = 2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char a = 2; // not allowed</tt>
 <h2 id="043_static_function___S__has_not_been_defined"> 043 static function '%S' has not been defined </h2>
-<br>A prototype has been found for a<b><i> static</i></b> function, but a definition for the<b><i> static</i></b> function
+<br>A prototype has been found for a <b><i> static</i></b> function, but a definition for the <b><i> static</i></b> function
 has not been found in the file.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int fun( void );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = fun();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // fun not defined by end of program</tt>
 <h2 id="044_expecting_label_for_goto_statement"> 044 expecting label for goto statement </h2>
-<br>The<b><i> goto</i></b> statement requires the name of a label.
+<br>The <b><i> goto</i></b> statement requires the name of a label.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int fun( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="045_duplicate_case_value___s__found"> 045 duplicate case value '%s' found </h2>
-<br>Every case value in a<b><i> switch</i></b> statement must be unique.
+<br>Every case value in a <b><i> switch</i></b> statement must be unique.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int fun( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1351,8 +1351,8 @@ has not been found in the file.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned bitfield :-10; // cannot be negative</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="049_bitMfield_base_type_must_be_an_integral_type"> 049 bit-field base type must be an integral type </h2>
-<br>The types allowed for bit fields are<b><i> signed</i></b> or<b><i> unsigned</i></b> varieties of<b><i> char,</i></b> <b><i>
-short</i></b> and<b><i> int.</i></b>&nbsp; 
+<br>The types allowed for bit fields are <b><i> signed</i></b> or <b><i> unsigned</i></b> varieties of <b><i> char,</i></b>
+<b><i> short</i></b> and <b><i> int.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1374,7 +1374,7 @@ short</i></b> and<b><i> int.</i></b>&nbsp;
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #i_goofed&nbsp;&nbsp; // not valid</tt>
 <h2 id="054_invalid__include_directive"> 054 invalid #include directive </h2>
-<br>A syntax error has been encountered in a<b><i> #include</i></b> directive.
+<br>A syntax error has been encountered in a <b><i> #include</i></b> directive.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include&nbsp;&nbsp;&nbsp; // no header file</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include stdio.h</tt>
@@ -1385,8 +1385,8 @@ short</i></b> and<b><i> int.</i></b>&nbsp;
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define mac(a,b) a+b</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = mac(123);&nbsp;&nbsp; // needs 2 parameters</tt>
 <h2 id="056_not_expecting_a_return_value"> 056 not expecting a return value </h2>
-<br>The specified function is declared as a<b><i> void</i></b> function.&nbsp; Delete the<b><i> return</i></b> value, or change
-the type of the function.
+<br>The specified function is declared as a <b><i> void</i></b> function.&nbsp; Delete the <b><i> return</i></b> value, or
+change the type of the function.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fun()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1405,17 +1405,17 @@ the type of the function.
 <br>The compiler expects a constant expression.&nbsp; This message can occur during static initialization if you are trying
 to initialize a non-pointer type with an address expression.
 <h2 id="059_unable_to_open___s_"> 059 unable to open '%s' </h2>
-<br>The file specified in an<b><i> #include</i></b> directive could not be located.&nbsp; Make sure that the file name is
-spelled correctly, or that the appropriate path for the file is included in the list of paths specified in the<b> INCLUDE</b>
-or<b> INCLUDE</b> environment variables or in the &quot;i=&quot; option on the command line.
+<br>The file specified in an <b><i> #include</i></b> directive could not be located.&nbsp; Make sure that the file name is
+spelled correctly, or that the appropriate path for the file is included in the list of paths specified in the <b> INCLUDE</b>
+or <b> INCLUDE</b> environment variables or in the &quot;i=&quot; option on the command line.
 <h2 id="060_too_many_parameters_given_for_macro___s_"> 060 too many parameters given for macro '%s' </h2>
 <br>You have supplied too many parameters for the specified macro.&nbsp; The extra parameters are ignored.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define mac(a,b) a+b</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = mac(1,2,3); // needs 2 parameters</tt>
 <h2 id="061_cannot_use___based_or___far16_pointers_in_this_context"> 061 cannot use __based or __far16 pointers in this context </h2>
-<br>The use of<b><i> __based</i></b> and<b><i> __far16</i></b> pointers is prohibited in<b><i> throw</i></b> expressions and<b><i>
-catch</i></b> statements.
+<br>The use of <b><i> __based</i></b> and <b><i> __far16</i></b> pointers is prohibited in <b><i> throw</i></b> expressions
+and <b><i> catch</i></b> statements.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int __based( __segname( &quot;myseg&quot; ) ) *pi;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void bad()</tt>
@@ -1426,7 +1426,7 @@ catch</i></b> statements.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *p16 = 87;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>Both the<b><i> throw</i></b> expression and<b><i> catch</i></b> statements cause this error to be diagnosed.
+<br><br>Both the <b><i> throw</i></b> expression and <b><i> catch</i></b> statements cause this error to be diagnosed.
 <h2 id="062_only_one_type_is_allowed_in_declaration_specifiers"> 062 only one type is allowed in declaration specifiers </h2>
 <br>Only one type is allowed for the first part of a declaration.&nbsp; A common cause of this message is that there may be
 a missing semi-colon (';') after a class definition.
@@ -1439,7 +1439,7 @@ a missing semi-colon (';') after a class definition.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo() { return 7; }</tt>
 <h2 id="063_out_of_memory"> 063 out of memory </h2>
 <br>The compiler has run out of memory to store information about the file being compiled.&nbsp; Try reducing the number of
-data declarations and or the size of the file being compiled.&nbsp; Do not<b><i> #include</i></b> header files that are not
+data declarations and or the size of the file being compiled.&nbsp; Do not <b><i> #include</i></b> header files that are not
 required.
 <h2 id="064_invalid_character_constant"> 064 invalid character constant </h2>
 <br>This message is issued for an improperly formed character constant.
@@ -1447,9 +1447,8 @@ required.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char c = '12345';</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char d = ''';</tt>
 <h2 id="065_taking_address_of_variable_with_storage_class__register_"> 065 taking address of variable with storage class 'register' </h2>
-<br>You can take the address of a<b><i> register</i></b> variable in C++ (but not in ISO/ANSI C).&nbsp; If there is a chance
-that the source will be compiled using a C compiler, change the storage class from<b><i> register</i></b> to<b><i> auto.</i></b>
-&nbsp;
+<br>You can take the address of a <b><i> register</i></b> variable in C++ (but not in ISO/ANSI C).&nbsp; If there is a chance
+that the source will be compiled using a C compiler, change the storage class from <b><i> register</i></b> to <b><i> auto.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int foo( char* );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int bar()</tt>
@@ -1458,8 +1457,8 @@ that the source will be compiled using a C compiler, change the storage class fr
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return foo( &amp;c );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="066__delete__expression_size_is_not_allowed"> 066 'delete' expression size is not allowed </h2>
-<br>The C++ language has evolved to the point where the<b><i> delete</i></b> expression size is no longer required for a correct
-deletion of an array.
+<br>The C++ language has evolved to the point where the <b><i> delete</i></b> expression size is no longer required for a
+correct deletion of an array.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn( unsigned n, char *p ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; delete &#91;n&#93; p;</tt>
@@ -1513,9 +1512,9 @@ just a semicolon (&quot;;&quot;).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // needs statement following</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="074_statement_required_after__do_"> 074 statement required after 'do' </h2>
-<br>A statement is required between the<b><i> do</i></b> and<b><i> while</i></b> keywords.
+<br>A statement is required between the <b><i> do</i></b> and <b><i> while</i></b> keywords.
 <h2 id="075_statement_required_after__case_"> 075 statement required after 'case' </h2>
-<br>The C language definition requires a statement following a<b><i> case</i></b> label.&nbsp; You can use a null statement
+<br>The C language definition requires a statement following a <b><i> case</i></b> label.&nbsp; You can use a null statement
 which consists of just a semicolon (&quot;;&quot;).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a )</tt>
@@ -1528,7 +1527,7 @@ which consists of just a semicolon (&quot;;&quot;).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 18;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="076_statement_required_after__default_"> 076 statement required after 'default' </h2>
-<br>The C language definition requires a statement following a<b><i> default</i></b> label.&nbsp; You can use a null statement
+<br>The C language definition requires a statement following a <b><i> default</i></b> label.&nbsp; You can use a null statement
 which consists of just a semicolon (&quot;;&quot;).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a )</tt>
@@ -1542,7 +1541,7 @@ which consists of just a semicolon (&quot;;&quot;).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 18;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="077_missing_matching__endif_directive"> 077 missing matching #endif directive </h2>
-<br>You are missing a<b><i> #endif</i></b> to terminate a<b><i> #if,</i></b> <b><i> #ifdef</i></b> or<b><i> #ifndef</i></b>
+<br>You are missing a <b><i> #endif</i></b> to terminate a <b><i> #if,</i></b> <b><i> #ifdef</i></b> or <b><i> #ifndef</i></b>
 preprocessing directive.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if 1</tt>
@@ -1559,7 +1558,7 @@ preprocessing directive.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define mac( a, b) a+b</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int d = mac( 1, 2</tt>
 <h2 id="080__s"> 080 %s </h2>
-<br>This is a user message generated with the<b><i> #error</i></b> preprocessing directive.
+<br>This is a user message generated with the <b><i> #error</i></b> preprocessing directive.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #error my very own error message</tt>
 <h2 id="081_cannot_define_an_array_of_functions"> 081 cannot define an array of functions </h2>
@@ -1582,9 +1581,9 @@ preprocessing directive.
 is a restriction in the C++ language that allows compilers to automatically instantiate functions purely from the argument
 types of calls.
 <h2 id="085_maximum_class_size_has_been_exceeded"> 085 maximum class size has been exceeded </h2>
-<br>The 16-bit compiler limits the size of a<b><i> struct</i></b> or<b><i> union</i></b> to 64K so that the compiler can represent
-the offset of a member in a 16-bit register.&nbsp; This error also occurs if the size of a structure overflows the size of
-an<b><i> unsigned</i></b> integer.
+<br>The 16-bit compiler limits the size of a <b><i> struct</i></b> or <b><i> union</i></b> to 64K so that the compiler can
+represent the offset of a member in a 16-bit register.&nbsp; This error also occurs if the size of a structure overflows the
+size of an <b><i> unsigned</i></b> integer.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1595,7 +1594,7 @@ an<b><i> unsigned</i></b> integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="086_definition_of_macro___s__not_identical_to_previous_definition"> 086 definition of macro '%s' not identical to previous definition </h2>
 <br>If a macro is defined more than once, the definitions must be identical.&nbsp; If you want to redefine a macro to have
-a different definition, you must<b><i> #undef</i></b> it before you can define it with a new definition.
+a different definition, you must <b><i> #undef</i></b> it before you can define it with a new definition.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define CON 123</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define CON 124&nbsp;&nbsp;&nbsp;&nbsp; // not same as previous</tt>
@@ -1705,19 +1704,19 @@ manner) cannot be done if storage is overlaid.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual int vf( int );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="110_union_cannot_be_used_as_a_base_class"> 110 union cannot be used as a base class </h2>
-<br>This restriction prevents C++ programmers from viewing a<b><i> union</i></b> as an encapsulation unit.&nbsp; If it is
-necessary, one can encapsulate the union into a<b><i> class</i></b> and achieve the same effect.
+<br>This restriction prevents C++ programmers from viewing a <b><i> union</i></b> as an encapsulation unit.&nbsp; If it is
+necessary, one can encapsulate the union into a <b><i> class</i></b> and achieve the same effect.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; union U { int a; int b; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class S : public U { int s; };</tt>
 <h2 id="111_union_cannot_have_a_base_class"> 111 union cannot have a base class </h2>
-<br>This restriction prevents C++ programmers from viewing a<b><i> union</i></b> as an encapsulation unit.&nbsp; If it is
-necessary, one can encapsulate the union into a<b><i> class</i></b> and inherit the base classes normally.
+<br>This restriction prevents C++ programmers from viewing a <b><i> union</i></b> as an encapsulation unit.&nbsp; If it is
+necessary, one can encapsulate the union into a <b><i> class</i></b> and inherit the base classes normally.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class S { public: int s; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; union U : public S { int a; int b; };</tt>
 <h2 id="112_cannot_inherit_an_undefined_base_class___T_"> 112 cannot inherit an undefined base class '%T' </h2>
-<br>The storage requirements for a<b><i> class</i></b> type must be known when inheritance is involved because the layout
+<br>The storage requirements for a <b><i> class</i></b> type must be known when inheritance is involved because the layout
 of the final class depends on knowing the complete contents of all base classes.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class Undefined;</tt>
@@ -1748,8 +1747,8 @@ attempts to prevent such errors.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern &quot;APL&quot; void AplFunc( int* );</tt>
 <h2 id="117_too_many_storage_class_specifiers"> 117 too many storage class specifiers </h2>
 <br>This message is a result of duplicating a previous storage class or having a different storage class.&nbsp; You can only
-have one of the following storage classes,<b><i> extern,</i></b> <b><i> static,</i></b> <b><i> auto,</i></b> <b><i> register,</i></b>
-or<b><i> typedef.</i></b>&nbsp; 
+have one of the following storage classes, <b><i> extern,</i></b> <b><i> static,</i></b> <b><i> auto,</i></b> <b><i> register,</i></b>
+or <b><i> typedef.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern typedef int (*fn)( void );</tt>
 <h2 id="118_nameless_declaration_is_not_allowed"> 118 nameless declaration is not allowed </h2>
@@ -1782,7 +1781,7 @@ before another template can be declared.
 <br>The expression contains too many levels of nested parentheses.&nbsp; Divide the expression up into two or more sub-expressions.
 <h2 id="125_invalid_redefinition_of_the_typedef_name___S_"> 125 invalid redefinition of the typedef name '%S' </h2>
 <br>Redefinition of typedef names is only allowed if you are redefining a typedef name to itself.&nbsp; Any other redefinition
-is illegal.&nbsp; You should delete the duplicate<b><i> typedef</i></b> definition.
+is illegal.&nbsp; You should delete the duplicate <b><i> typedef</i></b> definition.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef int TD;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef float TD;&nbsp;&nbsp; // illegal</tt>
@@ -1851,7 +1850,7 @@ reaches the limit the above message is issued.&nbsp; This limit can be changed v
 <br>An extra parameter passing description has been found in the aux pragma text.&nbsp; Only one parameter passing description
 is allowed.
 <h2 id="135__friend____virtual__or__inline__modifiers_may_only_be_used_on_functions"> 135 'friend', 'virtual' or 'inline' modifiers may only be used on functions </h2>
-<br>This message indicates that you are trying to declare a strange entity like an<b><i> inline</i></b> variable.&nbsp; These
+<br>This message indicates that you are trying to declare a strange entity like an <b><i> inline</i></b> variable.&nbsp; These
 qualifiers can only be used on function declarations and definitions.
 <h2 id="136_more_than_one_calling_convention_has_been_specified"> 136 more than one calling convention has been specified </h2>
 <br>A function cannot have more than one #pragma modifier applied to it.&nbsp; Combine the pragmas into one pragma and apply
@@ -1885,7 +1884,7 @@ class specifier to correct the code.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; extern unsigned bitf :10;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="141_bitMfield_declaration_must_have_a_base_type_specified"> 141 bit-field declaration must have a base type specified </h2>
-<br>A bit-field cannot make use of a default integer type.&nbsp; Specify the type<b><i> int</i></b> to correct the code.
+<br>A bit-field cannot make use of a default integer type.&nbsp; Specify the type <b><i> int</i></b> to correct the code.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -1893,7 +1892,7 @@ class specifier to correct the code.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bitf :10;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="142_illegal_qualification_of_a_bitMfield_declaration"> 142 illegal qualification of a bit-field declaration </h2>
-<br>A bit-field can only be declared<b><i> const</i></b> or<b><i> volatile.</i></b>&nbsp; Qualifications like<b><i> friend</i></b>
+<br>A bit-field can only be declared <b><i> const</i></b> or <b><i> volatile.</i></b>&nbsp; Qualifications like <b><i> friend</i></b>
 are not allowed.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
@@ -1903,7 +1902,7 @@ are not allowed.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>All three declarations of bit-fields are illegal.
 <h2 id="143_duplicate_base_qualifier"> 143 duplicate base qualifier </h2>
-<br>The compiler has found a repetition of base qualifiers like<b><i> protected</i></b> or<b><i> virtual.</i></b>&nbsp; 
+<br>The compiler has found a repetition of base qualifiers like <b><i> protected</i></b> or <b><i> virtual.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Base { int b; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Derived : public public Base { int d; };</tt>
@@ -1914,11 +1913,11 @@ the other, remove the unwanted access specifier to correct the code.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Base { int b; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Derived : public protected Base { int d; };</tt>
 <h2 id="145_unexpected_type_qualifier_found"> 145 unexpected type qualifier found </h2>
-<br>Type specifiers cannot have<b><i> const</i></b> or<b><i> volatile</i></b> qualifiers.&nbsp; This shows up in<b><i> new</i></b>
-expressions because one cannot allocate a<b><i> const</i></b> object.
+<br>Type specifiers cannot have <b><i> const</i></b> or <b><i> volatile</i></b> qualifiers.&nbsp; This shows up in <b><i>
+new</i></b> expressions because one cannot allocate a <b><i> const</i></b> object.
 <h2 id="146_unexpected_storage_class_specifier_found"> 146 unexpected storage class specifier found </h2>
-<br>Type specifiers cannot have<b><i> auto</i></b> or<b><i> static</i></b> storage class specifiers.&nbsp; This shows up in<b><i>
-new</i></b> expressions because one cannot allocate a<b><i> static</i></b> object.
+<br>Type specifiers cannot have <b><i> auto</i></b> or <b><i> static</i></b> storage class specifiers.&nbsp; This shows up
+in <b><i> new</i></b> expressions because one cannot allocate a <b><i> static</i></b> object.
 <h2 id="147_access_to___S__is_not_allowed_because_it_is_ambiguous"> 147 access to '%S' is not allowed because it is ambiguous </h2>
 <br>There are two ways that this error can show up in C++ code.&nbsp; The first way a member can be ambiguous is that the
 same name can be used in two different classes.&nbsp; If these classes are combined with multiple inheritance, accesses of
@@ -1954,7 +1953,7 @@ class.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = b.foo();&nbsp;&nbsp;&nbsp; // foo is private</tt>
 <h2 id="149_access_to_protected_member___S__is_not_allowed"> 149 access to protected member '%S' is not allowed </h2>
 <br>The indicated member is being accessed by an expression that does not have permission to access protected members of the
-class.&nbsp; The compiler also requires that<b><i> protected</i></b> members be accessed through a derived class to ensure
+class.&nbsp; The compiler also requires that <b><i> protected</i></b> members be accessed through a derived class to ensure
 that an unrelated base class cannot be quietly modified.&nbsp; This is a fairly recent change to the C++ language that may
 cause Open Watcom C++ to not accept older C++ code.&nbsp; See Section 11.5 in the ARM for a discussion of protected access.
 <br><br><b>Example:</b>
@@ -2073,7 +2072,7 @@ for data is near.
 <br>This message was produced by earlier versions of the Open Watcom C++ compiler.&nbsp; Support for default template arguments
 was added in version 1.3 and this message was removed at that time.
 <h2 id="163_attempt_to_delete_a_far_object_when_the_data_model_is_near"> 163 attempt to delete a far object when the data model is near </h2>
-<br><b><i>delete</i></b> cannot be used to deallocate objects which are stored in far memory when the default memory model
+<br><b><i> delete</i></b> cannot be used to deallocate objects which are stored in far memory when the default memory model
 for data is near.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Obj</tt>
@@ -2086,7 +2085,7 @@ for data is near.
 <br><br>The second last line causes this error to be displayed when the memory model is small (switch -ms), since the memory
 model for data is near.
 <h2 id="164_first_operand_is_not_a_class__struct_or_union"> 164 first operand is not a class, struct or union </h2>
-<br>The<b><i> offsetof</i></b> operation can only be performed on a type that can have members.&nbsp; It is meaningless for
+<br>The <b><i> offsetof</i></b> operation can only be performed on a type that can have members.&nbsp; It is meaningless for
 any other type.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
@@ -2126,7 +2125,8 @@ associated with the union.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int c;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="169_invalid_storage_class_for_a_member"> 169 invalid storage class for a member </h2>
-<br>A class member cannot be declared with<b><i> auto,</i></b> <b><i> register,</i></b> or<b><i> extern</i></b> storage class.
+<br>A class member cannot be declared with <b><i> auto,</i></b> <b><i> register,</i></b> or <b><i> extern</i></b> storage
+class.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2160,7 +2160,7 @@ is too large.
 with another class template of the same name.
 <h2 id="175_range_of_enum_constants_cannot_be_represented"> 175 range of enum constants cannot be represented </h2>
 <br>If one integral type cannot be chosen to represent all values of an enumeration, the values cannot be used reliably in
-the generated code.&nbsp; Shrink the range of enumerator values used in the<b><i> enum</i></b> declaration.
+the generated code.&nbsp; Shrink the range of enumerator values used in the <b><i> enum</i></b> declaration.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; enum E</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp; e1 = 0xFFFFFFFF</tt>
@@ -2170,7 +2170,7 @@ the generated code.&nbsp; Shrink the range of enumerator values used in the<b><i
 <br>A class template name must be unique across the entire C++ program.&nbsp; Any other use of a name cannot be in the same
 scope as the class template.
 <h2 id="177_invalid_storage_class_in_file_scope"> 177 invalid storage class in file scope </h2>
-<br>A declaration in file scope cannot have a storage class of<b><i> auto</i></b> or<b><i> register.</i></b>&nbsp; 
+<br>A declaration in file scope cannot have a storage class of <b><i> auto</i></b> or <b><i> register.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; auto int a;</tt>
 <h2 id="178_const_object_must_be_initialized"> 178 const object must be initialized </h2>
@@ -2186,8 +2186,7 @@ been named.
 <h2 id="181_class_template___M__is_already_defined"> 181 class template '%M' is already defined </h2>
 <br>A class template cannot have its definition repeated regardless of whether it is identical to the previous definition.
 <h2 id="182_invalid_storage_class_for_an_argument"> 182 invalid storage class for an argument </h2>
-<br>An argument declaration cannot have a storage class of<b><i> extern,</i></b> <b><i> static,</i></b> or<b><i> typedef.</i></b>
-&nbsp;
+<br>An argument declaration cannot have a storage class of <b><i> extern,</i></b> <b><i> static,</i></b> or <b><i> typedef.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( extern int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2222,7 +2221,7 @@ the constant nature of the type.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *(int*)&amp;con = 13;&nbsp;&nbsp; // ok</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="187__offsetof__is_not_allowed_for_a_bitMfield"> 187 'offsetof' is not allowed for a bit-field </h2>
-<br>A bit-field cannot have a simple offset so it cannot be referenced in an<b><i> offsetof</i></b> expression.
+<br>A bit-field cannot have a simple offset so it cannot be referenced in an <b><i> offsetof</i></b> expression.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
@@ -2233,9 +2232,9 @@ the constant nature of the type.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = offsetof( S, b2 );</tt>
 <h2 id="188_base_class_is_inherited_with_private_access"> 188 base class is inherited with private access </h2>
-<br>This warning indicates that the base class was originally declared as a<b><i> class</i></b> as opposed to a<b><i> struct.</i></b>
-&nbsp;Furthermore, no access was specified so the base class defaults to<b><i> private</i></b> inheritance.&nbsp; Add the<b><i>
-private</i></b> or<b><i> public</i></b> access specifier to prevent this message depending on the intended access.
+<br>This warning indicates that the base class was originally declared as a <b><i> class</i></b> as opposed to a <b><i> struct.</i></b>
+&nbsp;Furthermore, no access was specified so the base class defaults to <b><i> private</i></b> inheritance.&nbsp; Add the
+<b><i> private</i></b> or <b><i> public</i></b> access specifier to prevent this message depending on the intended access.
 <h2 id="189_overloaded_function_cannot_be_selected_for_arguments_used_in_call"> 189 overloaded function cannot be selected for arguments used in call </h2>
 <br>Either conversions were not possible for an argument to the function or a function with the right number of arguments
 was not available.
@@ -2264,22 +2263,22 @@ constant.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int *p = ( a &gt; 7 ) ? &amp;a : 12;</tt>
 <h2 id="192_left_expression_pointer_type_cannot_be_incremented_or_decremented"> 192 left expression pointer type cannot be incremented or decremented </h2>
 <br>The expression requires that the scaling size of the pointer be known.&nbsp; Pointers to functions, arrays of unknown
-size, or<b><i> void</i></b> cannot be incremented because there is no size defined for functions, arrays of unknown size,
-or<b><i> void.</i></b>&nbsp; 
+size, or <b><i> void</i></b> cannot be incremented because there is no size defined for functions, arrays of unknown size,
+or <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *q = p + 2;</tt>
 <h2 id="193_right_expression_pointer_type_cannot_be_incremented_or_decremented"> 193 right expression pointer type cannot be incremented or decremented </h2>
 <br>The expression requires that the scaling size of the pointer be known.&nbsp; Pointers to functions, arrays of unknown
-size, or<b><i> void</i></b> cannot be incremented because there is no size defined for functions, arrays of unknown size,
-or<b><i> void.</i></b>&nbsp; 
+size, or <b><i> void</i></b> cannot be incremented because there is no size defined for functions, arrays of unknown size,
+or <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *q = 2 + p;</tt>
 <h2 id="194_expression_pointer_type_cannot_be_incremented_or_decremented"> 194 expression pointer type cannot be incremented or decremented </h2>
 <br>The expression requires that the scaling size of the pointer be known.&nbsp; Pointers to functions, arrays of unknown
-size, or<b><i> void</i></b> cannot be incremented because there is no size defined for functions, arrays of unknown size,
-or<b><i> void.</i></b>&nbsp; 
+size, or <b><i> void</i></b> cannot be incremented because there is no size defined for functions, arrays of unknown size,
+or <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *q = ++p;</tt>
@@ -2289,12 +2288,12 @@ or<b><i> void.</i></b>&nbsp;
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef int FT( int );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned y = sizeof( FT );</tt>
 <h2 id="196__sizeof__is_not_allowed_for_type_void"> 196 'sizeof' is not allowed for type void </h2>
-<br>The type<b><i> void</i></b> has no size defined for it by the C++ language specification.
+<br>The type <b><i> void</i></b> has no size defined for it by the C++ language specification.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned size = sizeof( *p );</tt>
 <h2 id="197_type_cannot_be_defined_in_this_context"> 197 type cannot be defined in this context </h2>
-<br>A type cannot be defined in certain contexts.&nbsp; For example, a new type cannot be defined in an argument list, a<b><i>
+<br>A type cannot be defined in certain contexts.&nbsp; For example, a new type cannot be defined in an argument list, a <b><i>
 new</i></b> expression, a conversion function identifier, or a catch handler.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int goop();</tt>
@@ -2314,7 +2313,7 @@ integral expressions and addresses.&nbsp; Any symbols must have external linkage
 <br>The compiler expects more source code at this point.&nbsp; This can be due to missing parentheses (')') or missing closing
 braces ('}').
 <h2 id="200_duplicate_case_value___s__after_conversion_to_type_of_switch_expression"> 200 duplicate case value '%s' after conversion to type of switch expression </h2>
-<br>A duplicate<b><i> case</i></b> value has been found.&nbsp; Keep in mind that all case values must be converted to the
+<br>A duplicate <b><i> case</i></b> value has been found.&nbsp; Keep in mind that all case values must be converted to the
 type of the switch expression.&nbsp; Constants that may be different initially may convert to the same value.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; enum E { e1, e2 };</tt>
@@ -2356,7 +2355,7 @@ declared in the declaration.&nbsp; Although the code is legal it may not be what
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int b = 14;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="204__this__pointer_is_not_defined"> 204 'this' pointer is not defined </h2>
-<br>The<b><i> this</i></b> value can only be used from within non-static member functions.
+<br>The <b><i> this</i></b> value can only be used from within non-static member functions.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *fn()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2383,8 +2382,8 @@ declared in the declaration.&nbsp; Although the code is legal it may not be what
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="207_declaration_statement_cannot_follow_a_for_statement"> 207 declaration statement cannot follow a for statement </h2>
 <br>There are implicit scopes created for most control structures.&nbsp; Because of this, no code can access any of the names
-declared in the declaration.&nbsp; Although the code is legal it may not be what the programmer intended.&nbsp; A<b><i> for</i></b>
-loop with an initial declaration is allowed to be used within another<b><i> for</i></b> loop, so this code is legal C++:
+declared in the declaration.&nbsp; Although the code is legal it may not be what the programmer intended.&nbsp; A <b><i> for</i></b>
+loop with an initial declaration is allowed to be used within another <b><i> for</i></b> loop, so this code is legal C++:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn( int **a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2415,8 +2414,8 @@ loop with an initial declaration is allowed to be used within another<b><i> for<
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>When the small memory model (-ms switch) is selected, the<b><i> throw</i></b> expression is diagnosed as erroneous.
-&nbsp;Similarly, only near pointers can be specified in<b><i> catch</i></b> statements when the data memory model is near.
+<br><br>When the small memory model (-ms switch) is selected, the <b><i> throw</i></b> expression is diagnosed as erroneous.
+&nbsp;Similarly, only near pointers can be specified in <b><i> catch</i></b> statements when the data memory model is near.
 <h2 id="210_returning_reference_to_function_argument_or_to_auto_or_register_variable"> 210 returning reference to function argument or to auto or register variable </h2>
 <br>The storage for the automatic variable will be destroyed immediately upon function return.&nbsp; Returning a reference
 effectively allows the caller to modify storage which does not exist.
@@ -2438,7 +2437,7 @@ effectively allows the caller to modify storage which does not exist.
 &nbsp;A warning is issued since this usually indicates an attribute is being set twice (or more) in an inconsistent way.&nbsp;
 The warning can also occur when the default attribute is changed between two pragmas for the same object.
 <h2 id="212_function_arguments_cannot_be_of_type_void"> 212 function arguments cannot be of type void </h2>
-<br>Having more than one<b><i> void</i></b> argument is not allowed.&nbsp; The special case of one<b><i> void</i></b> argument
+<br>Having more than one <b><i> void</i></b> argument is not allowed.&nbsp; The special case of one <b><i> void</i></b> argument
 indicates that the function accepts no parameters.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn1( void )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // OK</tt>
@@ -2452,8 +2451,8 @@ indicates that the function accepts no parameters.
 <h2 id="214_class_template___M__requires_fewer_parameters_for_instantiation"> 214 class template '%M' requires fewer parameters for instantiation </h2>
 <br>The class template instantiation has too many parameters supplied so the class cannot be instantiated properly.
 <h2 id="215_no_declared__operator_new__has_arguments_that_match"> 215 no declared 'operator new' has arguments that match </h2>
-<br>An<b><i> operator new</i></b> could not be found to match the<b><i> new</i></b> expression.&nbsp; Supply the correct arguments
-for special<b><i> operator new</i></b> functions that are defined with the placement syntax.
+<br>An <b><i> operator new</i></b> could not be found to match the <b><i> new</i></b> expression.&nbsp; Supply the correct
+arguments for special <b><i> operator new</i></b> functions that are defined with the placement syntax.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
@@ -2465,12 +2464,12 @@ for special<b><i> operator new</i></b> functions that are defined with the place
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="216_wide_character_string_concatenated_with_a_simple_character_string"> 216 wide character string concatenated with a simple character string </h2>
 <br>There are no semantics defined for combining a wide character string with a simple character string.&nbsp; To correct
-the problem, make the simple character string a wide character string by prefixing it with a<b><i> L.</i></b>&nbsp; 
+the problem, make the simple character string a wide character string by prefixing it with a <b><i> L.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *p = &quot;1234&quot; L&quot;5678&quot;;</tt>
 <h2 id="217__offsetof__is_not_allowed_for_a_static_member"> 217 'offsetof' is not allowed for a static member </h2>
-<br>A<b><i> static</i></b> member does not have an offset like simple data members.&nbsp; If this is required, use the address
-of the<b><i> static</i></b> member.
+<br>A <b><i> static</i></b> member does not have an offset like simple data members.&nbsp; If this is required, use the address
+of the <b><i> static</i></b> member.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
@@ -2482,8 +2481,8 @@ of the<b><i> static</i></b> member.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int size_1 = offsetof( C, stat );&nbsp;&nbsp; // not allowed</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int size_2 = offsetof( C, memb );&nbsp;&nbsp; // ok</tt>
 <h2 id="218_cannot_define_an_array_of_void"> 218 cannot define an array of void </h2>
-<br>Since the<b><i> void</i></b> type has no size and there are no values of<b><i> void</i></b> type, one cannot declare an
-array of<b><i> void.</i></b>&nbsp; 
+<br>Since the <b><i> void</i></b> type has no size and there are no values of <b><i> void</i></b> type, one cannot declare
+an array of <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void array&#91;24&#93;;</tt>
 <h2 id="219_cannot_define_an_array_of_references"> 219 cannot define an array of references </h2>
@@ -2492,8 +2491,8 @@ of references is currently not allowed in the C++ language.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int&amp; array&#91;24&#93;;</tt>
 <h2 id="220_cannot_define_a_reference_to_void"> 220 cannot define a reference to void </h2>
-<br>One cannot create a reference to a<b><i> void</i></b> because there can be no<b><i> void</i></b> variables to supply for
-initializing the reference.
+<br>One cannot create a reference to a <b><i> void</i></b> because there can be no <b><i> void</i></b> variables to supply
+for initializing the reference.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void&amp; ref;</tt>
 <h2 id="221_cannot_define_a_reference_to_another_reference"> 221 cannot define a reference to another reference </h2>
@@ -2507,7 +2506,7 @@ to a reference is currently not allowed in the C++ language.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&amp; *ptr;</tt>
 <h2 id="223_cannot_initialize_array_with__operator_new_"> 223 cannot initialize array with 'operator new' </h2>
-<br>The initialization of arrays created with<b><i> operator new</i></b> can only be done with default constructors.&nbsp;
+<br>The initialization of arrays created with <b><i> operator new</i></b> can only be done with default constructors.&nbsp;
 The capability of using another constructor with arguments is currently not allowed in the C++ language.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
@@ -2516,9 +2515,9 @@ The capability of using another constructor with arguments is currently not allo
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; S *p = new S&#91;10&#93; ( 12 );</tt>
 <h2 id="224___N__is_a_variable_of_type_void"> 224 '%N' is a variable of type void </h2>
-<br>A variable cannot be of type<b><i> void.</i></b>&nbsp; The<b><i> void</i></b> type can only be used in restricted circumstances
-because it has no size.&nbsp; For instance, a function returning<b><i> void</i></b> means that it does not return any value.
-&nbsp;A pointer to<b><i> void</i></b> is used as a generic pointer but it cannot be dereferenced.
+<br>A variable cannot be of type <b><i> void.</i></b>&nbsp; The <b><i> void</i></b> type can only be used in restricted circumstances
+because it has no size.&nbsp; For instance, a function returning <b><i> void</i></b> means that it does not return any value.
+&nbsp;A pointer to <b><i> void</i></b> is used as a generic pointer but it cannot be dereferenced.
 <h2 id="225_cannot_define_a_member_pointer_to_a_reference"> 225 cannot define a member pointer to a reference </h2>
 <br>References are not objects, they are simply a way of creating an efficient alias to another name.&nbsp; Creating a member
 pointer to a reference is currently not allowed in the C++ language.
@@ -2545,7 +2544,7 @@ function overloads involving the function's argument types will be ambiguous.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int foo( short );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = foo( 4 );</tt>
 <h2 id="228_declared__operator_new__is_ambiguous_for_arguments_used"> 228 declared 'operator new' is ambiguous for arguments used </h2>
-<br>The compiler could not find an unambiguous choice for<b><i> operator new.</i></b>&nbsp; 
+<br>The compiler could not find an unambiguous choice for <b><i> operator new.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdlib.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Der</tt>
@@ -2585,15 +2584,15 @@ conversion is implicit in the name of the user-defined conversion.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int operator char = 9;</tt>
 <h2 id="233_userMdefined_conversion_has_an_argument_list"> 233 user-defined conversion has an argument list </h2>
 <br>A user-defined conversion cannot have an argument list.&nbsp; Since user-defined conversions can only be non-static member
-functions, they have an implicit<b><i> this</i></b> argument.
+functions, they have an implicit <b><i> this</i></b> argument.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator int( S&amp; ); // cannot have arguments</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="234_destructor_cannot_have_a_return_type"> 234 destructor cannot have a return type </h2>
-<br>A destructor cannot have a return type (even<b><i> void</i></b> ).&nbsp; The destructor is a special member function that
-is not required to be identical in form to all other member functions.&nbsp; This allows different implementations to have
-different uses for any return values.
+<br>A destructor cannot have a return type (even <b><i> void</i></b> ).&nbsp; The destructor is a special member function
+that is not required to be identical in form to all other member functions.&nbsp; This allows different implementations to
+have different uses for any return values.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void* ~S();</tt>
@@ -2607,14 +2606,14 @@ the destructor style of names.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="236_destructor_has_an_argument_list"> 236 destructor has an argument list </h2>
 <br>A destructor cannot have an argument list.&nbsp; Since destructors can only be non-static member functions, they have
-an implicit<b><i> this</i></b> argument.
+an implicit <b><i> this</i></b> argument.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~S( S&amp; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="237___N__must_be_a_function"> 237 '%N' must be a function </h2>
-<br>The<b><i> operator</i></b> style of name is reserved for declaring operator functions.&nbsp; Variable names cannot make
-use of the<b><i> operator</i></b> style of names.
+<br>The <b><i> operator</i></b> style of name is reserved for declaring operator functions.&nbsp; Variable names cannot make
+use of the <b><i> operator</i></b> style of names.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int operator+;&nbsp; // illegal</tt>
@@ -2644,8 +2643,8 @@ requires that 'A' be a class type, and 'B' be a nested class within the scope of
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int A::B::b = 2;&nbsp;&nbsp;&nbsp; // B nested in A</tt>
 <h2 id="240_enum___s__has_not_been_declared"> 240 enum '%s' has not been declared </h2>
-<br>An elaborated reference to an<b><i> enum</i></b> could not be satisfied.&nbsp; All enclosing scopes have been searched
-for an<b><i> enum</i></b> name.&nbsp; Visible variable declarations do not affect the search.
+<br>An elaborated reference to an <b><i> enum</i></b> could not be satisfied.&nbsp; All enclosing scopes have been searched
+for an <b><i> enum</i></b> name.&nbsp; Visible variable declarations do not affect the search.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct D {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int i;</tt>
@@ -2655,7 +2654,7 @@ for an<b><i> enum</i></b> name.&nbsp; Visible variable declarations do not affec
 <h2 id="241_class_or_namespace___s__has_not_been_declared"> 241 class or namespace '%s' has not been declared </h2>
 <br>The construct &quot;A::B::C&quot; requires that 'A' be a class type or a namespace, and 'B' be a nested class or namespace
 within the scope of 'A'.&nbsp; The reference to 'A' could not be satisfied.&nbsp; All enclosing scopes have been searched
-for a<b><i> class</i></b> or<b><i> namespace</i></b> name.&nbsp; Visible variable declarations do not affect the search.
+for a <b><i> class</i></b> or <b><i> namespace</i></b> name.&nbsp; Visible variable declarations do not affect the search.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct A{ int a; };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int b;</tt>
@@ -2673,7 +2672,7 @@ Error!</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="243_default_arguments_are_not_part_of_a_function_s_type"> 243 default arguments are not part of a function's type </h2>
 <br>This message indicates that a declaration has been found that requires default arguments to be part of a function's type.
-&nbsp;Either declaring a function<b><i> typedef</i></b> or a pointer to a function with default arguments are examples of
+&nbsp;Either declaring a function <b><i> typedef</i></b> or a pointer to a function with default arguments are examples of
 incorrect declarations.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef int TD( int, int a = 14 );</tt>
@@ -2684,8 +2683,8 @@ incorrect declarations.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn( int = 1, int, int = 3 );</tt>
 <h2 id="245_overloaded_operator_cannot_have_default_arguments"> 245 overloaded operator cannot have default arguments </h2>
 <br>Preventing overloaded operators from having default arguments enforces the property that binary operators will only be
-called from a use of a binary operator.&nbsp; Allowing default arguments would allow a binary<b><i> operator +</i></b> to
-function as a unary<b><i> operator +.</i></b>&nbsp; 
+called from a use of a binary operator.&nbsp; Allowing default arguments would allow a binary <b><i> operator +</i></b> to
+function as a unary <b><i> operator +.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2737,7 +2736,7 @@ next argument.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn2( int&nbsp;&nbsp;&nbsp; , int&nbsp;&nbsp;&nbsp;&nbsp; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn2( int = 2, int&nbsp;&nbsp;&nbsp;&nbsp; );&nbsp;&nbsp; // Error!</tt>
 <h2 id="251_enum_references_must_have_an_identifier"> 251 enum references must have an identifier </h2>
-<br>There is no way to reference an anonymous<b><i> enum.</i></b>&nbsp; If all enums are named, the cause of this message
+<br>There is no way to reference an anonymous <b><i> enum.</i></b>&nbsp; If all enums are named, the cause of this message
 is most likely a missing identifier.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; enum&nbsp;&nbsp; { X, Y, Z }; // anonymous enum</tt>
@@ -2754,7 +2753,7 @@ is most likely a missing identifier.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;~S();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="253______qualifier_cannot_be_used_in_this_context"> 253 '::' qualifier cannot be used in this context </h2>
-<br>Qualified identifiers in a class context are allowed for declaring<b><i> friend</i></b> member functions.&nbsp; The Open
+<br>Qualified identifiers in a class context are allowed for declaring <b><i> friend</i></b> member functions.&nbsp; The Open
 Watcom C++ compiler also allows code that is qualified with its own class so that declarations can be moved in and out of
 class definitions easily.
 <br><br><b>Example:</b>
@@ -2808,8 +2807,8 @@ must diagnose all default arguments that depend on other arguments.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="257_access_declarations_may_only_be__public__or__protected_"> 257 access declarations may only be 'public' or 'protected' </h2>
-<br>Access declarations are used to increase access.&nbsp; A<b><i> private</i></b> access declaration is useless because there
-is no access level for which<b><i> private</i></b> is an increase in access.
+<br>Access declarations are used to increase access.&nbsp; A <b><i> private</i></b> access declaration is useless because
+there is no access level for which <b><i> private</i></b> is an increase in access.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class Base</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2939,7 +2938,7 @@ the operator function is treated in a special manner by the compiler.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static operator =( C&amp;, int );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="267___N__must_have_one_argument"> 267 '%N' must have one argument </h2>
-<br>The operator function in the message is only allowed to have one argument.&nbsp; An operator like<b><i> operator ~</i></b>
+<br>The operator function in the message is only allowed to have one argument.&nbsp; An operator like <b><i> operator ~</i></b>
 is one such example because it represents a unary operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
@@ -2948,7 +2947,7 @@ is one such example because it represents a unary operator.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&amp; operator~( const C&amp;, int );</tt>
 <h2 id="268___N__must_have_two_arguments"> 268 '%N' must have two arguments </h2>
-<br>The operator function in the message must have two arguments.&nbsp; An operator like<b><i> operator +=</i></b> is one
+<br>The operator function in the message must have two arguments.&nbsp; An operator like <b><i> operator +=</i></b> is one
 such example because it represents a binary operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
@@ -2957,7 +2956,7 @@ such example because it represents a binary operator.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&amp; operator += ( const C&amp; );</tt>
 <h2 id="269___N__must_have_either_one_argument_or_two_arguments"> 269 '%N' must have either one argument or two arguments </h2>
-<br>The operator function in the message must have either one argument or two arguments.&nbsp; An operator like<b><i> operator
+<br>The operator function in the message must have either one argument or two arguments.&nbsp; An operator like <b><i> operator
 +</i></b> is one such example because it represents either a unary or a binary operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
@@ -2966,9 +2965,9 @@ such example because it represents a binary operator.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&amp; operator+( const C&amp;, int, float );</tt>
 <h2 id="270___N__must_have_at_least_one_argument"> 270 '%N' must have at least one argument </h2>
-<br>The<b><i> operator new</i></b> and<b><i> operator new &#91;&#93;</i></b> member functions must have at least one argument
+<br>The <b><i> operator new</i></b> and <b><i> operator new &#91;&#93;</i></b> member functions must have at least one argument
 for the size of the allocation.&nbsp; After that, any arguments are up to the programmer.&nbsp; The extra arguments can be
-supplied in a<b><i> new</i></b> expression via the placement syntax.
+supplied in a <b><i> new</i></b> expression via the placement syntax.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
@@ -2979,8 +2978,8 @@ supplied in a<b><i> new</i></b> expression via the placement syntax.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S *p = new ('a') S;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="271___N__must_have_a_return_type_of_void"> 271 '%N' must have a return type of void </h2>
-<br>The C++ language requires that<b><i> operator delete</i></b> and<b><i> operator delete &#91;&#93;</i></b> have a return
-type of<b><i> void.</i></b>&nbsp; 
+<br>The C++ language requires that <b><i> operator delete</i></b> and <b><i> operator delete &#91;&#93;</i></b> have a return
+type of <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -2990,7 +2989,7 @@ type of<b><i> void.</i></b>&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C* operator delete &#91;&#93;( void* );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="272___N__must_have_a_return_type_of_pointer_to_void"> 272 '%N' must have a return type of pointer to void </h2>
-<br>The C++ language requires that both<b><i> operator new</i></b> and<b><i> operator new &#91;&#93;</i></b> have a return
+<br>The C++ language requires that both <b><i> operator new</i></b> and <b><i> operator new &#91;&#93;</i></b> have a return
 type of<tt> void *.</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
@@ -3002,7 +3001,7 @@ type of<tt> void *.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C* operator new &#91;&#93;( size_t size );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="273_the_first_argument_of___N__must_be_of_type_size_t"> 273 the first argument of '%N' must be of type size_t </h2>
-<br>The C++ language requires that the first argument for<b><i> operator new</i></b> and<b><i> operator new &#91;&#93;</i></b>
+<br>The C++ language requires that the first argument for <b><i> operator new</i></b> and <b><i> operator new &#91;&#93;</i></b>
 be of the type &quot;size_t&quot;.&nbsp; The definition for &quot;size_t&quot; can be included by using the standard header
 file &lt;stddef.h&gt;.
 <br><br><b>Example:</b>
@@ -3011,15 +3010,15 @@ file &lt;stddef.h&gt;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *operator new &#91;&#93;( int size );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *operator new &#91;&#93;( double size, char c );</tt>
 <h2 id="274_the_first_argument_of___N__must_be_of_type_pointer_to_void"> 274 the first argument of '%N' must be of type pointer to void </h2>
-<br>The C++ language requires that the first argument for<b><i> operator delete</i></b> and<b><i> operator delete &#91;&#93;</i></b>
+<br>The C++ language requires that the first argument for <b><i> operator delete</i></b> and <b><i> operator delete &#91;&#93;</i></b>
 be a<tt> void *.</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void operator delete( C* );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void operator delete &#91;&#93;( C* );</tt>
 <h2 id="275_the_second_argument_of___N__must_be_of_type_size_t"> 275 the second argument of '%N' must be of type size_t </h2>
-<br>The C++ language requires that the second argument for<b><i> operator delete</i></b> and<b><i> operator delete &#91;&#93;</i></b>
-be of type &quot;size_t&quot;.&nbsp; The two argument form of<b><i> operator delete</i></b> and<b><i> operator delete &#91;&#93;</i></b>
+<br>The C++ language requires that the second argument for <b><i> operator delete</i></b> and <b><i> operator delete &#91;&#93;</i></b>
+be of type &quot;size_t&quot;.&nbsp; The two argument form of <b><i> operator delete</i></b> and <b><i> operator delete &#91;&#93;</i></b>
 is optional and it can only be present inside of a class declaration.&nbsp; The definition for &quot;size_t&quot; can be included
 by using the standard header file &lt;stddef.h&gt;.
 <br><br><b>Example:</b>
@@ -3028,9 +3027,9 @@ by using the standard header file &lt;stddef.h&gt;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void operator delete &#91;&#93;( void *, char );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="276_the_second_argument_of__operator_PP__or__operator_MM__must_be_int"> 276 the second argument of 'operator ++' or 'operator --' must be int </h2>
-<br>The C++ language requires that the second argument for<b><i> operator ++</i></b> be<b><i> int.</i></b>&nbsp; The two argument
-form of<b><i> operator ++</i></b> is used to overload the postfix operator &quot;++&quot;.&nbsp; The postfix operator &quot;--&quot;
-can be overloaded similarly.
+<br>The C++ language requires that the second argument for <b><i> operator ++</i></b> be <b><i> int.</i></b>&nbsp; The two
+argument form of <b><i> operator ++</i></b> is used to overload the postfix operator &quot;++&quot;.&nbsp; The postfix operator
+&quot;--&quot; can be overloaded similarly.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; public:</tt>
@@ -3038,9 +3037,9 @@ can be overloaded similarly.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&amp; operator ++( C&amp;, unsigned );</tt>
 <h2 id="277_return_type_of___S__must_allow_the__MY__operator_to_be_applied"> 277 return type of '%S' must allow the '-&gt;' operator to be applied </h2>
-<br>This restriction is a result of the transformation that the compiler performs when the<b><i> operator -&gt;</i></b> is
+<br>This restriction is a result of the transformation that the compiler performs when the <b><i> operator -&gt;</i></b> is
 overloaded.&nbsp; The transformation involves transforming the expression to invoke the operator with &quot;-&gt;&quot; applied
-to the result of<b><i> operator -&gt;.</i></b>&nbsp; 
+to the result of <b><i> operator -&gt;.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int a;</tt>
@@ -3107,7 +3106,7 @@ an enum type in order for the C++ compiler to distinguish the operator from the 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static int S;&nbsp;&nbsp; // Error!</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="287_constructor_cannot_have_a_return_type"> 287 constructor cannot have a return type </h2>
-<br>A constructor cannot have a return type (even<b><i> void</i></b> ).&nbsp; The constructor is a special member function
+<br>A constructor cannot have a return type (even <b><i> void</i></b> ).&nbsp; The constructor is a special member function
 that is not required to be identical in form to all other member functions.&nbsp; This allows different implementations to
 have different uses for any return values.
 <br><br><b>Example:</b>
@@ -3133,8 +3132,8 @@ to prepare its arguments.&nbsp; Unfortunately, this would be calling itself sinc
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S( S const &amp; );&nbsp;&nbsp; // copy constructor</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="290_constructor_cannot_be_declared_const_or_volatile"> 290 constructor cannot be declared const or volatile </h2>
-<br>A constructor must be able to operate on all instances of classes regardless of whether they are<b><i> const</i></b> or<b><i>
-volatile.</i></b>&nbsp; 
+<br>A constructor must be able to operate on all instances of classes regardless of whether they are <b><i> const</i></b>
+or <b><i> volatile.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; public:</tt>
@@ -3180,15 +3179,15 @@ are two common types so the compiler cannot decide which one it should choose, h
 <h2 id="294_feature_not_implemented"> 294 feature not implemented </h2>
 <br>The compiler does not support the indicated feature.
 <h2 id="295_invalid_friend_declaration"> 295 invalid friend declaration </h2>
-<br>This message indicates that the compiler found extra declaration specifiers like<b><i> auto,</i></b> <b><i> float,</i></b>
-or<b><i> const</i></b> in the friend declaration.
+<br>This message indicates that the compiler found extra declaration specifiers like <b><i> auto,</i></b> <b><i> float,</i></b>
+or <b><i> const</i></b> in the friend declaration.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; friend float;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="296_friend_declarations_may_only_be_declared_in_a_class"> 296 friend declarations may only be declared in a class </h2>
-<br>This message indicates that a<b><i> friend</i></b> declaration was found outside a class scope (i.e., a class definition).
+<br>This message indicates that a <b><i> friend</i></b> declaration was found outside a class scope (i.e., a class definition).
 &nbsp;Friends are only meaningful for class types.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void foo();</tt>
@@ -3307,8 +3306,8 @@ for C++ translators to provide a correct implementation of external linkage anon
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="310_anonymous_structDunion_cannot_have_storage_class_in_this_context"> 310 anonymous struct/union cannot have storage class in this context </h2>
-<br>Anonymous unions (or structs) declared in class scopes cannot be<b><i> static.</i></b>&nbsp; Any other storage class is
-also disallowed.
+<br>Anonymous unions (or structs) declared in class scopes cannot be <b><i> static.</i></b>&nbsp; Any other storage class
+is also disallowed.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static union {</tt>
@@ -3317,7 +3316,7 @@ also disallowed.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="311_union_contains_a_protected_member"> 311 union contains a protected member </h2>
-<br>A union cannot have a<b><i> protected</i></b> member because a union cannot be a base class.
+<br>A union cannot have a <b><i> protected</i></b> member because a union cannot be a base class.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static union {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int iv;</tt>
@@ -3325,7 +3324,7 @@ also disallowed.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned sv;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } u;</tt>
 <h2 id="312_anonymous_structDunion_contains_a_private_member___S_"> 312 anonymous struct/union contains a private member '%S' </h2>
-<br>An anonymous union (or struct) cannot have member functions or friends so it cannot have<b><i> private</i></b> members
+<br>An anonymous union (or struct) cannot have member functions or friends so it cannot have <b><i> private</i></b> members
 since no code could access them.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static union {</tt>
@@ -3431,8 +3430,8 @@ chosen in favour of more freedom with possibly subtle restrictions.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="321_anonymous_union_in_a_function_may_only_be_static_or_auto"> 321 anonymous union in a function may only be static or auto </h2>
-<br>The current C++ language definition only allows<b><i> auto</i></b> anonymous unions.&nbsp; The Open Watcom C++ compiler
-allows<b><i> static</i></b> anonymous unions.&nbsp; Any other storage class is not allowed.
+<br>The current C++ language definition only allows <b><i> auto</i></b> anonymous unions.&nbsp; The Open Watcom C++ compiler
+allows <b><i> static</i></b> anonymous unions.&nbsp; Any other storage class is not allowed.
 <h2 id="322_static_data_members_are_not_allowed_in_a_local_class"> 322 static data members are not allowed in a local class </h2>
 <br>Static data members are not allowed in a local class because there is no way to define the static member in file scope.
 <br><br><b>Example:</b>
@@ -3468,7 +3467,7 @@ any meaning for the intended return type.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="325_function_cannot_return_a_pointer_based_on___self"> 325 function cannot return a pointer based on __self </h2>
-<br>A function cannot return a pointer that is based on<b><i> __self.</i></b>&nbsp; 
+<br>A function cannot return a pointer that is based on <b><i> __self.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void __based(__self) *fn( unsigned );</tt>
 <h2 id="326_defining___S__is_not_possible_because_its_type_has_unknown_size"> 326 defining '%S' is not possible because its type has unknown size </h2>
@@ -3477,12 +3476,12 @@ any meaning for the intended return type.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class S;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; S sv;</tt>
 <h2 id="327_typedef_cannot_be_initialized"> 327 typedef cannot be initialized </h2>
-<br>Initializing a<b><i> typedef</i></b> is meaningless in the C++ language.
+<br>Initializing a <b><i> typedef</i></b> is meaningless in the C++ language.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef int INT = 15;</tt>
 <h2 id="328_storage_class_of___S__conflicts_with_previous_declaration"> 328 storage class of '%S' conflicts with previous declaration </h2>
-<br>The symbol declaration conflicts with a previous declaration with regard to storage class.&nbsp; A symbol cannot be both<b><i>
-static</i></b> and<b><i> extern.</i></b>&nbsp; 
+<br>The symbol declaration conflicts with a previous declaration with regard to storage class.&nbsp; A symbol cannot be both
+<b><i> static</i></b> and <b><i> extern.</i></b>
 <h2 id="329_modifiers_of___S__conflict_with_previous_declaration"> 329 modifiers of '%S' conflict with previous declaration </h2>
 <br>The symbol declaration conflicts with a previous declaration with regard to modifiers.&nbsp; Correct the program by using
 the same modifiers for both declarations.
@@ -3545,7 +3544,7 @@ declaration specifiers.&nbsp; This error also shows up when a typedef name decla
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef int;</tt>
 <h2 id="337_static_function_declared_in_block_scope"> 337 static function declared in block scope </h2>
 <br>The C++ language does not allow static functions to be declared in block scope.&nbsp; This error can be triggered when
-the intent is to define a<b><i> static</i></b> variable.&nbsp; Due to the complexities of parsing C++, statements that appear
+the intent is to define a <b><i> static</i></b> variable.&nbsp; Due to the complexities of parsing C++, statements that appear
 to be variable definitions may actually parse as function prototypes.&nbsp; A work-around for this problem is contained in
 the example.
 <br><br><b>Example:</b>
@@ -3613,8 +3612,8 @@ succeed so the conversion is not allowed.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return fp - ip;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>In the example, a diagnostic results from the attempt to subtract a pointer to an<b><i> int</i></b> object from a
-pointer to a<b><i> float</i></b> object.
+<br><br>In the example, a diagnostic results from the attempt to subtract a pointer to an <b><i> int</i></b> object from a
+pointer to a <b><i> float</i></b> object.
 <h2 id="345_private_base_class_accessed_to_convert_to_common_pointer_type"> 345 private base class accessed to convert to common pointer type </h2>
 <br>A conversion involving the inheritance hierarchy required access to a private base class.&nbsp; The access check did not
 succeed so the conversion is not allowed.
@@ -3687,7 +3686,7 @@ not succeed so the conversion is not allowed.
 <br>A non-type parameter (e.g., an address or a constant expression) has been supplied for a template type argument.&nbsp;
 A type should be used instead.
 <h2 id="351_type_parameter_supplied_for_a_nonMtype_argument"> 351 type parameter supplied for a non-type argument </h2>
-<br>A type parameter (e.g.,<b><i> int</i></b> ) has been supplied for a template non-type argument.&nbsp; An address or a
+<br>A type parameter (e.g., <b><i> int</i></b> ) has been supplied for a template non-type argument.&nbsp; An address or a
 constant expression should be used instead.
 <h2 id="352_cannot_access_enclosing_function_s_auto_variable___S_"> 352 cannot access enclosing function's auto variable '%S' </h2>
 <br>A local class member function cannot access its enclosing function's automatic variables.
@@ -3746,8 +3745,8 @@ qualification of a virtual function's name.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f = 9;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="358___T__referenced_as_a_union"> 358 '%T' referenced as a union </h2>
-<br>A class type defined as a<b><i> class</i></b> or<b><i> struct</i></b> has been referenced as a<b><i> union</i></b> (i.e.,
-union S).
+<br>A class type defined as a <b><i> class</i></b> or <b><i> struct</i></b> has been referenced as a <b><i> union</i></b>
+(i.e., union S).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -3755,8 +3754,8 @@ union S).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; union S var;</tt>
 <h2 id="359_union___T__referenced_as_a_class"> 359 union '%T' referenced as a class </h2>
-<br>A class type defined as a<b><i> union</i></b> has been referenced as a<b><i> struct</i></b> or a<b><i> class</i></b> (i.e.,
-class S).
+<br>A class type defined as a <b><i> union</i></b> has been referenced as a <b><i> struct</i></b> or a <b><i> class</i></b>
+(i.e., class S).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; union S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -3764,8 +3763,8 @@ class S).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S var;</tt>
 <h2 id="360_typedef___N__defined_without_an_explicit_type"> 360 typedef '%N' defined without an explicit type </h2>
-<br>The typedef declaration was found to not have an explicit type in the declaration.&nbsp; If<b><i> int</i></b> is the desired
-type, use an explicit<b><i> int</i></b> keyword to specify the type.
+<br>The typedef declaration was found to not have an explicit type in the declaration.&nbsp; If <b><i> int</i></b> is the
+desired type, use an explicit <b><i> int</i></b> keyword to specify the type.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef T;</tt>
 <h2 id="361_member_function_was_not_defined_in_its_class"> 361 member function was not defined in its class </h2>
@@ -3857,7 +3856,7 @@ may contain a comparison of an unsigned value against zero (e.g., unsigned integ
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return b;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="369_selection_expression_in_switch_statement_is_a_constant_value"> 369 selection expression in switch statement is a constant value </h2>
-<br>The expression in the<b><i> switch</i></b> statement is a constant.&nbsp; This means that only one case label will be
+<br>The expression in the <b><i> switch</i></b> statement is a constant.&nbsp; This means that only one case label will be
 executed.&nbsp; If this is not the expected behaviour, check the switch expression.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define TEST 0</tt>
@@ -3921,9 +3920,9 @@ the class is required.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return p-&gt;operator double();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="376_virtual_function_must_be_a_nonMstatic_member_function"> 376 virtual function must be a non-static member function </h2>
-<br>A member function cannot be both a<b><i> static</i></b> function and a<b><i> virtual</i></b> function.&nbsp; A static
-member function does not have a<b><i> this</i></b> argument whereas a<b><i> virtual</i></b> function must have a<b><i> this</i></b>
-argument so that the virtual function table can be accessed in order to call it.
+<br>A member function cannot be both a <b><i> static</i></b> function and a <b><i> virtual</i></b> function.&nbsp; A static
+member function does not have a <b><i> this</i></b> argument whereas a <b><i> virtual</i></b> function must have a <b><i>
+this</i></b> argument so that the virtual function table can be accessed in order to call it.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -3960,12 +3959,12 @@ succeed so the conversion is not allowed.
 <br><br>The last line is erroneous since the constructor is private.
 <h2 id="379_delete_expression_will_invoke_a_nonMvirtual_destructor"> 379 delete expression will invoke a non-virtual destructor </h2>
 <br>In C++, it is possible to assign a base class pointer the value of a derived class pointer so that code that makes use
-of base class virtual functions can be used.&nbsp; A problem that occurs is that a<b><i> delete</i></b> has to know the correct
-size of the type in some instances (i.e., when a two argument version of<b><i> operator delete</i></b> is defined for a class).
-&nbsp;This problem is solved by requiring that a destructor be defined as<b><i> virtual</i></b> if polymorphic deletes must
-work.&nbsp; The<b><i> delete</i></b> expression will virtually call the correct destructor, which knows the correct size of
-the complete object.&nbsp; This message informs you that the class you are deleting has virtual functions but it has a non-virtual
-destructor.&nbsp; This means that the delete will not work correctly in all circumstances.
+of base class virtual functions can be used.&nbsp; A problem that occurs is that a <b><i> delete</i></b> has to know the correct
+size of the type in some instances (i.e., when a two argument version of <b><i> operator delete</i></b> is defined for a class).
+&nbsp;This problem is solved by requiring that a destructor be defined as <b><i> virtual</i></b> if polymorphic deletes must
+work.&nbsp; The <b><i> delete</i></b> expression will virtually call the correct destructor, which knows the correct size
+of the complete object.&nbsp; This message informs you that the class you are deleting has virtual functions but it has a
+non-virtual destructor.&nbsp; This means that the delete will not work correctly in all circumstances.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct B {</tt>
@@ -4008,7 +4007,7 @@ destructor.&nbsp; This means that the delete will not work correctly in all circ
 object code but due to some problem (e.g., out of memory, no file handles) could not initialize itself.&nbsp; Try changing
 the compilation environment to eliminate this error.
 <h2 id="383__offsetof__is_not_allowed_for_an_undefined_type"> 383 'offsetof' is not allowed for an undefined type </h2>
-<br>The class type used in<b><i> offsetof</i></b> must be completely defined, otherwise data member offsets will not be known.
+<br>The class type used in <b><i> offsetof</i></b> must be completely defined, otherwise data member offsets will not be known.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stddef.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
@@ -4097,7 +4096,7 @@ an error or warning diagnostic for the symbol in question.
 the warning, the informational message indicates the line at which 'a' was declared.
 <h2 id="393_included_from__sL_uR"> 393 included from %s(%u) </h2>
 <br>This informational message indicates the line number of the file including the file in which an error or warning was diagnosed.
-&nbsp;A number of such messages will allow you to trace back through the<b><i> #include</i></b> directives which are currently
+&nbsp;A number of such messages will allow you to trace back through the <b><i> #include</i></b> directives which are currently
 being processed.
 <h2 id="394_reference_object_must_be_initialized"> 394 reference object must be initialized </h2>
 <br>A reference cannot be set except through initialization.&nbsp; Also references cannot be 0 so they must always be initialized.
@@ -4112,19 +4111,19 @@ being processed.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int main();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int main( int );</tt>
 <h2 id="397__new__expression_cannot_allocate_a_void"> 397 'new' expression cannot allocate a void </h2>
-<br>Since the<b><i> void</i></b> type has no size and there are no values of<b><i> void</i></b> type, one cannot allocate
-an instance of<b><i> void.</i></b>&nbsp; 
+<br>Since the <b><i> void</i></b> type has no size and there are no values of <b><i> void</i></b> type, one cannot allocate
+an instance of <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void *p = new void;</tt>
 <h2 id="398__new__expression_cannot_allocate_a_function"> 398 'new' expression cannot allocate a function </h2>
-<br>A function type cannot be allocated since there is no meaningful size that can be used.&nbsp; The<b><i> new</i></b> expression
+<br>A function type cannot be allocated since there is no meaningful size that can be used.&nbsp; The <b><i> new</i></b> expression
 can allocate a pointer to a function.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef int tdfun( int );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; tdfun *tdv = new tdfun;</tt>
 <h2 id="399__new__expression_allocates_a_const_or_volatile_object"> 399 'new' expression allocates a const or volatile object </h2>
-<br>The pool of raw memory cannot be guaranteed to support<b><i> const</i></b> or<b><i> volatile</i></b> semantics.&nbsp;
-Usually<b><i> const</i></b> and<b><i> volatile</i></b> are used for statically allocated objects.
+<br>The pool of raw memory cannot be guaranteed to support <b><i> const</i></b> or <b><i> volatile</i></b> semantics.&nbsp;
+Usually <b><i> const</i></b> and <b><i> volatile</i></b> are used for statically allocated objects.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef const int con_int;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; con_int* p = new con_int;</tt>
@@ -4196,18 +4195,18 @@ can only be overloaded based on argument types.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; template &lt;class T&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T bar( int * );</tt>
 <h2 id="410_destructor_cannot_be_declared_const_or_volatile"> 410 destructor cannot be declared const or volatile </h2>
-<br>A destructor must be able to operate on all instances of classes regardless of whether they are<b><i> const</i></b> or<b><i>
-volatile.</i></b>&nbsp; 
+<br>A destructor must be able to operate on all instances of classes regardless of whether they are <b><i> const</i></b> or
+<b><i> volatile.</i></b>
 <h2 id="411_static_member_function_cannot_be_declared_const_or_volatile"> 411 static member function cannot be declared const or volatile </h2>
-<br>A static member function does not have an implicit<b><i> this</i></b> argument so the<b><i> const</i></b> and<b><i> volatile</i></b>
-function qualifiers cannot be used.
+<br>A static member function does not have an implicit <b><i> this</i></b> argument so the <b><i> const</i></b> and <b><i>
+volatile</i></b> function qualifiers cannot be used.
 <h2 id="412_only_member_functions_can_be_declared_const_or_volatile"> 412 only member functions can be declared const or volatile </h2>
-<br>A non-member function does not have an implicit<b><i> this</i></b> argument so the<b><i> const</i></b> and<b><i> volatile</i></b>
+<br>A non-member function does not have an implicit <b><i> this</i></b> argument so the <b><i> const</i></b> and <b><i> volatile</i></b>
 function qualifiers cannot be used.
 <h2 id="413__const__or__volatile__modifiers_are_not_part_of_a_function_s_type"> 413 'const' or 'volatile' modifiers are not part of a function's type </h2>
-<br>The<b><i> const</i></b> and<b><i> volatile</i></b> qualifiers for a function cannot be used in typedefs or pointers to
-functions.&nbsp; The trailing qualifiers are used to change the type of the implicit<b><i> this</i></b> argument so that member
-functions that do not modify the object can be declared accurately.
+<br>The <b><i> const</i></b> and <b><i> volatile</i></b> qualifiers for a function cannot be used in typedefs or pointers
+to functions.&nbsp; The trailing qualifiers are used to change the type of the implicit <b><i> this</i></b> argument so that
+member functions that do not modify the object can be declared accurately.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // const is illegal</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef void (*baddcl)() const;</tt>
@@ -4266,7 +4265,7 @@ that must consist of virtual functions because the functions are required to be 
 language.
 <h2 id="419_cannot_call_nonMconst_function_for_a_constant_object"> 419 cannot call non-const function for a constant object </h2>
 <br>A function that does not promise to not modify an object cannot be called for a constant object.&nbsp; A function can
-declare its intention to not modify an object by using the<b><i> const</i></b> qualifier.
+declare its intention to not modify an object by using the <b><i> const</i></b> qualifier.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void fn();</tt>
@@ -4293,7 +4292,7 @@ declare its intention to not modify an object by using the<b><i> const</i></b> q
 <br>This message indicates that the member does not exist in the qualified class.&nbsp; This usually occurs in the context
 of access declarations.
 <h2 id="428_constDreference_member___S__must_have_an_initializer"> 428 const/reference member '%S' must have an initializer </h2>
-<br>The<b><i> const</i></b> or reference member does not have an initializer so the constructor is not completely defined.
+<br>The <b><i> const</i></b> or reference member does not have an initializer so the constructor is not completely defined.
 &nbsp;The member initialization list is the only way to initialize these types of members.
 <h2 id="429_abstract_class___T__cannot_be_used_as_an_argument_type"> 429 abstract class '%T' cannot be used as an argument type </h2>
 <br>An abstract class can only exist as a base class of another class.&nbsp; The C++ language does not allow an abstract class
@@ -4329,10 +4328,10 @@ this message.
 <br>A non-huge data item is larger than 64k bytes in size.&nbsp; This message only occurs during 16-bit compilation of C++
 code.
 <h2 id="441_function_attribute_has_been_repeated"> 441 function attribute has been repeated </h2>
-<br>A function attribute (like the<b><i> __export</i></b> attribute) has been repeated.&nbsp; Remove the extra attribute to
-correct the declaration.
+<br>A function attribute (like the <b><i> __export</i></b> attribute) has been repeated.&nbsp; Remove the extra attribute
+to correct the declaration.
 <h2 id="442_modifier_has_been_repeated"> 442 modifier has been repeated </h2>
-<br>A modifier (like the<b><i> far</i></b> modifier) has been repeated.&nbsp; Remove the extra modifier to correct the declaration.
+<br>A modifier (like the <b><i> far</i></b> modifier) has been repeated.&nbsp; Remove the extra modifier to correct the declaration.
 <h2 id="443_illegal_combination_of_memory_model_modifiers"> 443 illegal combination of memory model modifiers </h2>
 <br>Memory model modifiers must be used individually because they cannot be combined meaningfully.
 <h2 id="444_argument_name___N__has_already_been_used"> 444 argument name '%N' has already been used </h2>
@@ -4348,7 +4347,7 @@ correct the declaration.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator B();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="447_userMdefined_conversion_cannot_convert_to_void"> 447 user-defined conversion cannot convert to void </h2>
-<br>A user-defined conversion cannot be declared as a conversion to<b><i> void.</i></b>&nbsp; 
+<br>A user-defined conversion cannot be declared as a conversion to <b><i> void.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator void();</tt>
@@ -4438,7 +4437,7 @@ succeed so the conversion is not allowed.
 not succeed so the conversion is not allowed.
 <h2 id="461_maximum_size_of_DGROUP_has_been_exceeded_for___S__in_segment___s_"> 461 maximum size of DGROUP has been exceeded for '%S' in segment '%s' </h2>
 <br>The indicated symbol's size has caused the DGROUP contribution of this module to exceed 64k.&nbsp; Changing memory models
-or declaring some data as<b><i> far</i></b> data are two ways of fixing this problem.
+or declaring some data as <b><i> far</i></b> data are two ways of fixing this problem.
 <h2 id="462_type_of_return_value_is_not_the_enumeration_type_of_function"> 462 type of return value is not the enumeration type of function </h2>
 <br>The return value does not have the proper enumeration type.&nbsp; Keep in mind that integral values are not automatically
 converted to enum types like the C language.
@@ -4454,9 +4453,9 @@ declaration if it is used.
 &quot;main&quot;.&nbsp; This can occur if an implementation has to generate special code in &quot;main&quot; to construct
 all of the statically allocated classes.
 <h2 id="467_cannot_call_a_nonMvolatile_function_for_a_volatile_object"> 467 cannot call a non-volatile function for a volatile object </h2>
-<br>A function that does not promise to not modify an object using<b><i> volatile</i></b> semantics cannot be called for a
-volatile object.&nbsp; A function can declare its intention to modify an object only through<b><i> volatile</i></b> semantics
-by using the<b><i> volatile</i></b> qualifier.
+<br>A function that does not promise to not modify an object using <b><i> volatile</i></b> semantics cannot be called for
+a volatile object.&nbsp; A function can declare its intention to modify an object only through <b><i> volatile</i></b> semantics
+by using the <b><i> volatile</i></b> qualifier.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void fn();</tt>
@@ -4506,13 +4505,13 @@ quantity.&nbsp; This message occurs when a non-overloaded function is invoked an
 <br>The expression on the right cannot be assigned to the indicated class object.
 <h2 id="476_argument_count_is__d_since_there_is_an_implicit__this__argument"> 476 argument count is %d since there is an implicit 'this' argument </h2>
 <br>This informational message indicates the number of arguments for the function mentioned in the error message.&nbsp; The
-function is a member function with a<b><i> this</i></b> argument so it may have one more argument than expected.
+function is a member function with a <b><i> this</i></b> argument so it may have one more argument than expected.
 <h2 id="477_argument_count_is__d_since_there_is_no_implicit__this__argument"> 477 argument count is %d since there is no implicit 'this' argument </h2>
 <br>This informational message indicates the number of arguments for the function mentioned in the error message.&nbsp; The
-function is a member function without a<b><i> this</i></b> argument so it may have one less argument than expected.
+function is a member function without a <b><i> this</i></b> argument so it may have one less argument than expected.
 <h2 id="478_argument_count_is__d_for_a_nonMmember_function"> 478 argument count is %d for a non-member function </h2>
 <br>This informational message indicates the number of arguments for the function mentioned in the error message.&nbsp; The
-function is not a member function but it could be declared as a<b><i> friend</i></b> function.
+function is not a member function but it could be declared as a <b><i> friend</i></b> function.
 <h2 id="479_conversion_ambiguity__multiple_copy_constructors_to_copy_array___S_"> 479 conversion ambiguity:&nbsp; multiple copy constructors to copy array '%S' </h2>
 <br>More than one constructor to copy the indicated array exists.
 <h2 id="480_variableDfunction_has_the_same_name_as_the_classDenum___S_"> 480 variable/function has the same name as the class/enum '%S' </h2>
@@ -4585,8 +4584,7 @@ Initialize a properly-typed temporary with the appropriate function and use the 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int (*temp)( char ) = &amp;foo;&nbsp; // introduce temporary</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = ellip_fun( 14, temp );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ok</tt>
 <h2 id="488___N__cannot_be_overloaded"> 488 '%N' cannot be overloaded </h2>
-<br>The indicated function cannot be overloaded.&nbsp; Functions that fall into this category include<b><i> operator delete.</i></b>
-&nbsp;
+<br>The indicated function cannot be overloaded.&nbsp; Functions that fall into this category include <b><i> operator delete.</i></b>
 <h2 id="489_symbol___S__has_already_been_initialized"> 489 symbol '%S' has already been initialized </h2>
 <br>The indicated symbol has already been initialized.&nbsp; It cannot be initialized twice even if the initialization value
 is identical.
@@ -4601,8 +4599,8 @@ is identical.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; delete &#91;&#93; q;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="492_delete_expression_is_not_a_pointer_to_data"> 492 delete expression is not a pointer to data </h2>
-<br>A<b><i> delete</i></b> expression can only delete pointers.&nbsp; For example, trying to delete an<b><i> int</i></b> is
-not allowed in the C++ language.
+<br>A <b><i> delete</i></b> expression can only delete pointers.&nbsp; For example, trying to delete an <b><i> int</i></b>
+is not allowed in the C++ language.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -4668,7 +4666,7 @@ object of the class is required.
 cause of the syntax error.
 <h2 id="505_implementation_restriction__cannot_generate_thunk_from___S_"> 505 implementation restriction:&nbsp; cannot generate thunk from '%S' </h2>
 <br>This implementation restriction is due to the use of a shared code generator between Open Watcom compilers.&nbsp; The
-virtual<b><i> this</i></b> adjustment thunks are generated as functions linked into the virtual function table.&nbsp; The
+virtual <b><i> this</i></b> adjustment thunks are generated as functions linked into the virtual function table.&nbsp; The
 functions rely on knowing the correct number of arguments to pass on to the overriding virtual function but in the case of
 ellipsis (...) functions, the number of arguments cannot be known when the thunk function is being generated by the compiler.
 &nbsp;The target symbol is listed in a diagnostic message.&nbsp; The work around for this problem is to recode the source
@@ -4828,10 +4826,10 @@ class.
 <br>A member pointer can only be converted from a base class to a derived class.&nbsp; This is the opposite of the conversion
 rule for pointers.
 <h2 id="528_form_is___pragma_inline_recursion_en__where__en__is__on__or__off_"> 528 form is '#pragma inline_recursion en' where 'en' is 'on' or 'off' </h2>
-<br>This<b><i> pragma</i></b> indicates whether inline expansion will occur for an inline function which is called (possibly
+<br>This <b><i> pragma</i></b> indicates whether inline expansion will occur for an inline function which is called (possibly
 indirectly) a subsequent time during an inline expansion.&nbsp; Either 'on' or 'off' must be specified.
 <h2 id="529_expression_for_number_of_array_elements_must_be_integral"> 529 expression for number of array elements must be integral </h2>
-<br>The expression for the number of elements in a<b><i> new</i></b> expression must be integral because it is used to calculate
+<br>The expression for the number of elements in a <b><i> new</i></b> expression must be integral because it is used to calculate
 the size of the allocation (which is an integral quantity).&nbsp; The compiler will not automatically convert to an integer
 because of rounding and truncation issues with floating-point values.
 <h2 id="530_function_accessed_with___T__or__MYT__can_only_be_called"> 530 function accessed with '.*' or '-&gt;*' can only be called </h2>
@@ -4886,16 +4884,16 @@ safety.
 <h2 id="542_operand_must_be_pointer_to_class_or_struct"> 542 operand must be pointer to class or struct </h2>
 <br>The left hand operand of a '-&gt;*' operator must be a pointer to a class.&nbsp; This is a restriction in the C++ language.
 <h2 id="543_expression_must_have_void_type"> 543 expression must have void type </h2>
-<br>If one operand of the ':' operator has<b><i> void</i></b> type, then the other operand must also have<b><i> void</i></b>
+<br>If one operand of the ':' operator has <b><i> void</i></b> type, then the other operand must also have <b><i> void</i></b>
 type.
 <h2 id="544_expression_types_do_not_match_for_____operator"> 544 expression types do not match for ':' operator </h2>
 <br>The compiler could not bring both operands to a common type.&nbsp; This is necessary because the result of the conditional
 operator must be a unique type.
 <h2 id="545_cannot_create_an_undefined_type_with__operator_new_"> 545 cannot create an undefined type with 'operator new' </h2>
-<br>A<b><i> new</i></b> expression cannot allocate an undefined type because it must know how large an allocation is required
+<br>A <b><i> new</i></b> expression cannot allocate an undefined type because it must know how large an allocation is required
 and it must also know whether there are any constructors to execute.
 <h2 id="546_delete_of_a_pointer_to_an_undefined_type"> 546 delete of a pointer to an undefined type </h2>
-<br>A<b><i> delete</i></b> expression cannot safely deallocate an undefined type because it must know whether there are any
+<br>A <b><i> delete</i></b> expression cannot safely deallocate an undefined type because it must know whether there are any
 destructors to execute.&nbsp; In spite of this, the ISO/ANSI C++ Working Paper requires that an implementation support this
 usage.
 <br><br><b>Example:</b>
@@ -4976,9 +4974,9 @@ functions are listed as informational messages.
 <br>An incorrect module initialization priority has been provided.&nbsp; Check the User's Guide for the correct format of
 the priority directive.
 <h2 id="572_previous_case_label_defined__L"> 572 previous case label defined %L </h2>
-<br>This informational message indicates where a preceding<b><i> case</i></b> label is defined.
+<br>This informational message indicates where a preceding <b><i> case</i></b> label is defined.
 <h2 id="573_previous_default_label_defined__L"> 573 previous default label defined %L </h2>
-<br>This informational message indicates where a preceding<b><i> default</i></b> label is defined.
+<br>This informational message indicates where a preceding <b><i> default</i></b> label is defined.
 <h2 id="574_label_defined__L"> 574 label defined %L </h2>
 <br>This informational message indicates where a label is defined.
 <h2 id="575_label_referenced__L"> 575 label referenced %L </h2>
@@ -4996,19 +4994,19 @@ the priority directive.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw object;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The<b><i> throw</i></b> will cause an error to be displayed because an object of type &quot;derived&quot; cannot be
-converted to an object of type &quot;ambiguous&quot;.
+<br><br>The <b><i> throw</i></b> will cause an error to be displayed because an object of type &quot;derived&quot; cannot
+be converted to an object of type &quot;ambiguous&quot;.
 <h2 id="578_form_is___pragma_inline_depth_level__where__level__is_0_to_255"> 578 form is '#pragma inline_depth level' where 'level' is 0 to 255 </h2>
-<br>This<b><i> pragma</i></b> sets the number of times inline expansion will occur for an inline function which contains calls
-to inline functions.&nbsp; The level must be a number from zero to 255.&nbsp; When the level is zero, no inline expansion
+<br>This <b><i> pragma</i></b> sets the number of times inline expansion will occur for an inline function which contains
+calls to inline functions.&nbsp; The level must be a number from zero to 255.&nbsp; When the level is zero, no inline expansion
 occurs.
 <h2 id="579_pointer_or_reference_truncated_by_cast"> 579 pointer or reference truncated by cast </h2>
 <br>The cast expression causes a conversion of a pointer value to another pointer value of smaller size.&nbsp; This can be
-caused by<b><i> __near</i></b> or<b><i> __far</i></b> qualifiers (i.e., casting a<b><i> far</i></b> pointer to a<b><i> near</i></b>
-pointer).&nbsp; Function pointers can also have a different size than data pointers in certain memory models.&nbsp; Because
-this message indicates that some information is being lost, check the code carefully.
+caused by <b><i> __near</i></b> or <b><i> __far</i></b> qualifiers (i.e., casting a <b><i> far</i></b> pointer to a <b><i>
+near</i></b> pointer).&nbsp; Function pointers can also have a different size than data pointers in certain memory models.
+&nbsp;Because this message indicates that some information is being lost, check the code carefully.
 <h2 id="580_cannot_find_a_constructor_for_given_initializer_argument_list"> 580 cannot find a constructor for given initializer argument list </h2>
-<br>The initializer list provided for the<b><i> new</i></b> expression does not uniquely identify a single constructor.
+<br>The initializer list provided for the <b><i> new</i></b> expression does not uniquely identify a single constructor.
 <h2 id="581_variable___N__can_only_be_based_on_a_string_in_this_context"> 581 variable '%N' can only be based on a string in this context </h2>
 <br>All of the based modifiers can only be applied to pointer types.&nbsp; The only based modifier that can be applied to
 non-pointer types is the '__based(__segname(&quot;WATCOM&quot;))' style.
@@ -5144,7 +5142,7 @@ overloaded, a new method of referencing pragmas has been introduced.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>In the example,<b><i> class</i></b> <tt> S1</tt> occurs ambiguously for an object or pointer to an object of type<tt>
+<br><br>In the example, <b><i> class</i></b><tt> S1</tt> occurs ambiguously for an object or pointer to an object of type<tt>
 S3.</tt>&nbsp; A pointer to an<tt> S3</tt> object cannot be converted to a pointer to an<tt> S1</tt> object.
 <h2 id="609_pragma_name___s__is_not_defined"> 609 pragma name '%s' is not defined </h2>
 <br>Pragmas are defined with the #pragma aux syntax.&nbsp; See the User's Guide for the details of defining a pragma name.
@@ -5182,12 +5180,12 @@ the last handler.
 <br><br>The call to &quot;bar&quot; causes a warning, since the structure S contains information associated with the virtual
 function for that class.
 <h2 id="614_previous_try_block_defined__L"> 614 previous try block defined %L </h2>
-<br>This informational message indicates where a preceding<b><i> try</i></b> block is defined.
+<br>This informational message indicates where a preceding <b><i> try</i></b> block is defined.
 <h2 id="615_previous_catch_block_defined__L"> 615 previous catch block defined %L </h2>
-<br>This informational message indicates where a preceding<b><i> catch</i></b> block is defined.
+<br>This informational message indicates where a preceding <b><i> catch</i></b> block is defined.
 <h2 id="616_catch_handler_can_never_be_invoked"> 616 catch handler can never be invoked </h2>
-<br>Because the handlers for a<b><i> try</i></b> block are tried in order of appearance, the type specified in a preceding<b><i>
-catch</i></b> can ensure that the current handler will never be invoked.&nbsp; This occurs when a base class (or reference)
+<br>Because the handlers for a <b><i> try</i></b> block are tried in order of appearance, the type specified in a preceding
+<b><i> catch</i></b> can ensure that the current handler will never be invoked.&nbsp; This occurs when a base class (or reference)
 precedes a derived class (or reference); when a pointer to a base class (or reference to the pointer) precedes a pointer to
 a derived class (or reference to the pointer); or, when &quot;void*&quot; or &quot;void*&amp;&quot; precedes a pointer or
 a reference to the pointer.
@@ -5247,7 +5245,7 @@ that must absolutely be pegged.
 to be virtual.&nbsp; A derived class must be able to call the base class destructor so a pure virtual destructor must be defined
 in a C++ program.
 <h2 id="622_jump_into_try_block"> 622 jump into try block </h2>
-<br>Jumps cannot enter<b><i> try</i></b> blocks.
+<br>Jumps cannot enter <b><i> try</i></b> blocks.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; foo( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -5263,7 +5261,7 @@ in a C++ program.
 <br><br>All the preceding goto's are illegal.&nbsp; The error is detected at the label for forward jumps and at the goto's
 for backward jumps.
 <h2 id="623_jump_into_catch_handler"> 623 jump into catch handler </h2>
-<br>Jumps cannot enter<b><i> catch</i></b> handlers.
+<br>Jumps cannot enter <b><i> catch</i></b> handlers.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; foo( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -5278,7 +5276,7 @@ for backward jumps.
 <br><br>All the preceding goto's are illegal.&nbsp; The error is detected at the label for forward jumps and at the goto's
 for backward jumps.
 <h2 id="624_catch_block_does_not_immediately_follow_try_block"> 624 catch block does not immediately follow try block </h2>
-<br>At least one<b><i> catch</i></b> handler must immediately follow the &quot;}&quot; of a<b><i> try</i></b> block.
+<br>At least one <b><i> catch</i></b> handler must immediately follow the &quot;}&quot; of a <b><i> try</i></b> block.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void goop();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void foo()</tt>
@@ -5287,16 +5285,16 @@ for backward jumps.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goop();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // a catch block should follow!</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>In the example, there were no catch blocks after the<b><i> try</i></b> block.
+<br><br>In the example, there were no catch blocks after the <b><i> try</i></b> block.
 <h2 id="625_exceptions_must_be_enabled_to_use_feature_Luse__xs__optionR"> 625 exceptions must be enabled to use feature (use 'xs' option) </h2>
 <br>Exceptions are enabled by specifying the 'xs' option when the compiler is invoked.&nbsp; The error message indicates that
-a feature such as<b><i> try,</i></b> <b><i> catch,</i></b> <b><i> throw,</i></b> or function exception specification has been
-used without enabling exceptions.
+a feature such as <b><i> try,</i></b> <b><i> catch,</i></b> <b><i> throw,</i></b> or function exception specification has
+been used without enabling exceptions.
 <h2 id="626_IDO_error_reading___s____s_"> 626 I/O error reading '%s':&nbsp; %s&quot; </h2>
 <br>When attempting to read data from a source or header file, the indicated system error occurred.&nbsp; Likely there is
 a hardware problem, or the file system has become corrupt.
 <h2 id="627_text_following_preMprocessor_directive"> 627 text following pre-processor directive </h2>
-<br>A<b><i> #else</i></b> or<b><i> #endif</i></b> directive was found which had tokens following it rather than an end of
+<br>A <b><i> #else</i></b> or <b><i> #endif</i></b> directive was found which had tokens following it rather than an end of
 line.&nbsp; Some UNIX style preprocessors allowed this, but it is not legal under standard C or C++.&nbsp; Make the tokens
 into a comment.
 <h2 id="628_expression_is_not_meaningful"> 628 expression is not meaningful </h2>
@@ -5309,7 +5307,7 @@ is invoked, when an assignment or initialization is performed, or when the expre
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="629_expression_has_no_side_effect"> 629 expression has no side effect </h2>
 <br>The indicated expression does not cause a side effect.&nbsp; A side effect is caused by invoking a function, by an assignment
-or an initialization, or by reading a<b><i> volatile</i></b> variable.
+or an initialization, or by reading a <b><i> volatile</i></b> variable.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void foo( int i, int j )</tt>
@@ -5322,9 +5320,9 @@ or an initialization, or by reading a<b><i> volatile</i></b> variable.
 <h2 id="631_target_conversion_type_is___T_"> 631 target conversion type is '%T' </h2>
 <br>This informational message indicates the target type of the conversion, for the preceding conversion diagnostic.
 <h2 id="632_redeclaration_of___S__has_different_attributes"> 632 redeclaration of '%S' has different attributes </h2>
-<br>A function cannot be made<b><i> virtual</i></b> or pure<b><i> virtual</i></b> in a subsequent declaration.&nbsp; All properties
-of a function should be described in the first declaration of a function.&nbsp; This is especially important for member functions
-because the properties of a class are affected by its member functions.
+<br>A function cannot be made <b><i> virtual</i></b> or pure <b><i> virtual</i></b> in a subsequent declaration.&nbsp; All
+properties of a function should be described in the first declaration of a function.&nbsp; This is especially important for
+member functions because the properties of a class are affected by its member functions.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void fun();</tt>
@@ -5363,7 +5361,7 @@ an error or warning diagnostic for the class in question.
 <br><br>The variable<tt> p</tt> is a pointer to an undefined class and so will cause an error to be generated.&nbsp; Following
 the error, the informational message indicates the line at which the class S was declared.
 <h2 id="639_form_is___pragma_template_depth_level__where__level__is_a_nonMzero_number"> 639 form is '#pragma template_depth level' where 'level' is a non-zero number </h2>
-<br>This<b><i> pragma</i></b> sets the number of times templates will be instantiated for nested instantiations.&nbsp; The
+<br>This <b><i> pragma</i></b> sets the number of times templates will be instantiated for nested instantiations.&nbsp; The
 depth check prevents infinite compile times for incorrect programs.
 <h2 id="640_possible_nonMterminating_template_instantiation_Luse___pragma_template_depth__d__to_increase_depthR"> 640 possible non-terminating template instantiation (use &quot;#pragma template_depth %d&quot; to increase depth) </h2>
 <br>This message indicates that a large number of expansions were required to complete a template class or template function
@@ -5372,7 +5370,7 @@ more depth, try using the suggested #pragma in the error message to increase the
 the previous value.
 <h2 id="641_cannot_inherit_a_partially_defined_base_class___T_"> 641 cannot inherit a partially defined base class '%T' </h2>
 <br>This message indicates that the base class was in the midst of being defined when it was inherited.&nbsp; The storage
-requirements for a<b><i> class</i></b> type must be known when inheritance is involved because the layout of the final class
+requirements for a <b><i> class</i></b> type must be known when inheritance is involved because the layout of the final class
 depends on knowing the complete contents of all base classes.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct Partial {</tt>
@@ -5387,15 +5385,15 @@ depends on knowing the complete contents of all base classes.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int amb( unsigned char );&nbsp;&nbsp; // will be ambiguous</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int amb( char, char );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = amb( 14 );</tt>
-<br><br>The constant value 14 has an<b><i> int</i></b> type and so the attempt to invoke the function<tt> amb</tt> is ambiguous.
+<br><br>The constant value 14 has an <b><i> int</i></b> type and so the attempt to invoke the function<tt> amb</tt> is ambiguous.
 &nbsp;The first two functions are ambiguous (and will be displayed); the third is not considered (nor displayed) since it
 is declared to have a different number of arguments.
 <h2 id="643_cannot_convert_argument__d_defined__L"> 643 cannot convert argument %d defined %L </h2>
 <br>This informational message indicates the first argument which could not be converted to the corresponding type for the
 declared function.&nbsp; It is displayed when there is exactly one function declared with the indicated name.
 <h2 id="644__this__cannot_be_converted"> 644 'this' cannot be converted </h2>
-<br>This informational message indicates the<b><i> this</i></b> pointer for the function which could not be converted to the
-type of the<b><i> this</i></b> pointer for the declared function.&nbsp; It is displayed when there is exactly one function
+<br>This informational message indicates the <b><i> this</i></b> pointer for the function which could not be converted to
+the type of the <b><i> this</i></b> pointer for the declared function.&nbsp; It is displayed when there is exactly one function
 declared with the indicated name.
 <h2 id="645_rejected_function___F_defined__L"> 645 rejected function:&nbsp; %F defined %L </h2>
 <br>This informational message shows the overloaded functions which were rejected from consideration during function-overload
@@ -5416,7 +5414,7 @@ operands of the type indicated in the message.
 message indicates that the first is possible.
 <h2 id="647_cannot__undef___s_"> 647 cannot #undef '%s' </h2>
 <br>The predefined macros<tt> __cplusplus, __DATE__, __FILE__, __LINE__, __STDC__, __TIME__, __FUNCTION__</tt> and<tt> __func__</tt>
-cannot be undefined using the<b><i> #undef</i></b> directive.
+cannot be undefined using the <b><i> #undef</i></b> directive.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #undef __cplusplus</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #undef __DATE__</tt>
@@ -5429,7 +5427,7 @@ cannot be undefined using the<b><i> #undef</i></b> directive.
 <br><br>All of the preceding directives are not permitted.
 <h2 id="648_cannot__define___s_"> 648 cannot #define '%s' </h2>
 <br>The predefined macros<tt> __cplusplus, __DATE__, __FILE__, __LINE__, __STDC__,</tt> and<tt> __TIME__</tt> cannot be defined
-using the<b><i> #define</i></b> directive.
+using the <b><i> #define</i></b> directive.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define __cplusplus&nbsp;&nbsp;&nbsp;&nbsp; 1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define __DATE__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</tt>
@@ -5520,7 +5518,7 @@ had an empty function body.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int k = routine( ovload );</tt>
 <br><br>The first argument for the function<tt> routine</tt> cannot be converted, resulting in the informational message.
 <h2 id="659_expression_cannot_have_void_type"> 659 expression cannot have void type </h2>
-<br>The indicated expression cannot have a<b><i> void</i></b> type.
+<br>The indicated expression cannot have a <b><i> void</i></b> type.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main( int argc, char* argv )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -5530,7 +5528,7 @@ had an empty function body.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 9;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>Conditional expressions, such as the one illustrated in the<b><i> if</i></b> statement cannot have a<b><i> void</i></b>
+<br><br>Conditional expressions, such as the one illustrated in the <b><i> if</i></b> statement cannot have a <b><i> void</i></b>
 type.
 <h2 id="660_cannot_reference_a_bit_field"> 660 cannot reference a bit field </h2>
 <br>The smallest addressable unit is a byte.&nbsp; You cannot reference a bit field.
@@ -5610,7 +5608,7 @@ useful as a prototype or if the function is designed to ignore all of its argume
 <h2 id="668__va_start__macro_will_not_work_with_a_reference_argument_before______"> 668 'va_start' macro will not work with a reference argument before '...' </h2>
 <br>The warning indicates that taking the address of the argument before the &quot;...&quot; argument, which 'va_start' does
 in order to access the variable list of arguments, will not give the expected result.&nbsp; The arguments will have to be
-rearranged so that an acceptable argument is declared before the &quot;...&quot; argument or a dummy<b><i> int</i></b> argument
+rearranged so that an acceptable argument is declared before the &quot;...&quot; argument or a dummy <b><i> int</i></b> argument
 can be inserted after the reference argument with the corresponding adjustments made to the callers of the function.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdarg.h&gt;</tt>
@@ -5627,8 +5625,8 @@ can be inserted after the reference argument with the corresponding adjustments 
 <br>This warning is specific to C++ compilers that quietly convert class arguments to class reference arguments.&nbsp; The
 warning indicates that taking the address of the argument before the &quot;...&quot; argument, which 'va_start' does in order
 to access the variable list of arguments, will not give the expected result.&nbsp; The arguments will have to be rearranged
-so that an acceptable argument is declared before the &quot;...&quot; argument or a dummy<b><i> int</i></b> argument can be
-inserted after the class argument with the corresponding adjustments made to the callers of the function.
+so that an acceptable argument is declared before the &quot;...&quot; argument or a dummy <b><i> int</i></b> argument can
+be inserted after the class argument with the corresponding adjustments made to the callers of the function.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdarg.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
@@ -5692,7 +5690,7 @@ class is abstract.
 <br>The indicated function may be called by the C++ run-time system using the standard calling convention.&nbsp; The calling
 convention specified for the function is incompatible with the standard convention.&nbsp; This message may result when<tt>
 __pascal</tt> is specified for a default constructor, a copy constructor, or a destructor.&nbsp; It may also result when<tt>
-parm reverse</tt> is specified in a<b><i> #pragma</i></b> for the function.
+parm reverse</tt> is specified in a <b><i> #pragma</i></b> for the function.
 <h2 id="676_number_of_arguments_in_function_call_is_incorrect"> 676 number of arguments in function call is incorrect </h2>
 <br>The number of arguments in the function call does not match the number declared for the function type.
 <br><br><b>Example:</b>
@@ -5763,7 +5761,7 @@ for optimization purposes.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char a&#91;&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="684_cannot_catch_abstract_class_object"> 684 cannot catch abstract class object </h2>
-<br>C++ does not allow abstract classes to be instantiated and so an abstract class object cannot be specified in a<b><i>
+<br>C++ does not allow abstract classes to be instantiated and so an abstract class object cannot be specified in a <b><i>
 catch</i></b> clause.&nbsp; It is permissible to catch a reference to an abstract class.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; class Abstract {</tt>
@@ -5842,11 +5840,11 @@ unless there is an explicit cast.&nbsp; The<tt> return</tt> statements in the fo
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Derived&amp; ReturnRef() { return (Derived&amp;)b; }</tt>
 <h2 id="687_expression_for__while__is_always_true"> 687 expression for 'while' is always true </h2>
 <br>The compiler has detected that the expression will always be true.&nbsp; Consequently, the loop will execute infinitely
-unless there is a<b><i> break</i></b> statement within the loop or a<b><i> throw</i></b> statement is executed while executing
+unless there is a <b><i> break</i></b> statement within the loop or a <b><i> throw</i></b> statement is executed while executing
 within the loop.&nbsp; If such an infinite loop is required, it can be coded as<tt> for(</tt> ; ) without causing warnings.
 <h2 id="688_testing_expression_for__for__is_always_true"> 688 testing expression for 'for' is always true </h2>
 <br>The compiler has detected that the expression will always be true.&nbsp; Consequently, the loop will execute infinitely
-unless there is a<b><i> break</i></b> statement within the loop or a<b><i> throw</i></b> statement is executed while executing
+unless there is a <b><i> break</i></b> statement within the loop or a <b><i> throw</i></b> statement is executed while executing
 within the loop.&nbsp; If such an infinite loop is required, it can be coded as<tt> for(</tt> ; ) without causing warnings.
 <h2 id="689_conditional_expression_is_always_true_LnonMzeroR"> 689 conditional expression is always true (non-zero) </h2>
 <br>The indicated expression is a non-zero constant and so will always be true.
@@ -5880,7 +5878,7 @@ C++ declaration syntax can make this error hard to identify visually.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw abstract_class( 17 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br>The<b><i> throw</i></b> expression is illegal since it specifies an abstract class.
+<br><br>The <b><i> throw</i></b> expression is illegal since it specifies an abstract class.
 <h2 id="693_cannot_create_preMcompiled_header_file___s_"> 693 cannot create pre-compiled header file '%s' </h2>
 <br>The compiler has detected a problem while trying to open the pre-compiled header file for write access.
 <h2 id="694_error_occurred_while_writing_preMcompiled_header_file"> 694 error occurred while writing pre-compiled header file </h2>
@@ -5894,7 +5892,7 @@ to the compiler.&nbsp; A new version of the pre-compiled header file will be cre
 <br>The compiler has detected that the command line options have changed enough so the contents of the pre-compiled header
 file cannot be used.&nbsp; A new version of the pre-compiled header file will be created.
 <h2 id="698_preMcompiled_header_file_being_recreated_Ldifferent__include_fileR"> 698 pre-compiled header file being recreated (different #include file) </h2>
-<br>The compiler has detected that the first<b><i> #include</i></b> file name is different so the contents of the pre-compiled
+<br>The compiler has detected that the first <b><i> #include</i></b> file name is different so the contents of the pre-compiled
 header file cannot be used.&nbsp; A new version of the pre-compiled header file will be created.
 <h2 id="699_preMcompiled_header_file_being_recreated_Ldifferent_current_directoryR"> 699 pre-compiled header file being recreated (different current directory) </h2>
 <br>The compiler has detected that the working directory is different so the contents of the pre-compiled header file cannot
@@ -5967,18 +5965,18 @@ within the body of the constructor.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arr&#91;2&#93; = 3;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="710_file___s__will__include_itself_forever"> 710 file '%s' will #include itself forever </h2>
-<br>The compiler has detected that the file in the message has been<b><i> #include</i></b> from within itself without protecting
-against infinite inclusion.&nbsp; This can happen if<b><i> #ifndef</i></b> and<b><i> #define</i></b> header file protection
+<br>The compiler has detected that the file in the message has been <b><i> #include</i></b> from within itself without protecting
+against infinite inclusion.&nbsp; This can happen if <b><i> #ifndef</i></b> and <b><i> #define</i></b> header file protection
 has not been used properly.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include __FILE__</tt>
 <h2 id="711__mutable__may_only_be_used_for_nonMstatic_class_members"> 711 'mutable' may only be used for non-static class members </h2>
-<br>A declaration in file scope or block scope cannot have a storage class of<b><i> mutable.</i></b>&nbsp; 
+<br>A declaration in file scope or block scope cannot have a storage class of <b><i> mutable.</i></b>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mutable int a;</tt>
 <h2 id="712__mutable__member_cannot_also_be_const"> 712 'mutable' member cannot also be const </h2>
-<br>A<b><i> mutable</i></b> member can be modified even if its class object is<b><i> const.</i></b>&nbsp; Due to the semantics
-of<b><i> mutable,</i></b> the programmer must decide whether a member will be<b><i> const</i></b> or<b><i> mutable</i></b>
+<br>A <b><i> mutable</i></b> member can be modified even if its class object is <b><i> const.</i></b>&nbsp; Due to the semantics
+of <b><i> mutable,</i></b> the programmer must decide whether a member will be <b><i> const</i></b> or <b><i> mutable</i></b>
 because it cannot be both at the same time.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
@@ -5986,7 +5984,7 @@ because it cannot be both at the same time.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mutable int * const q;&nbsp; // error</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="713_left_operand_cannot_be_of_type_bool"> 713 left operand cannot be of type bool </h2>
-<br>The left hand side of an assignment operator cannot be of type<b><i> bool</i></b> except for simple assignment.&nbsp;
+<br>The left hand side of an assignment operator cannot be of type <b><i> bool</i></b> except for simple assignment.&nbsp;
 This is a restriction required in the C++ language.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bool q;</tt>
@@ -5995,7 +5993,7 @@ This is a restriction required in the C++ language.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; q += 1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="714_operand_cannot_be_of_type_bool"> 714 operand cannot be of type bool </h2>
-<br>The operand of both postfix and prefix &quot;--&quot; operators cannot be of type<b><i> bool.</i></b>&nbsp; This is a
+<br>The operand of both postfix and prefix &quot;--&quot; operators cannot be of type <b><i> bool.</i></b>&nbsp; This is a
 restriction required in the C++ language.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bool q;</tt>
@@ -6047,7 +6045,7 @@ because the number of parameters is not known.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtual D *fn( int, ... );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="722___declspecL___N__R_is_not_supported"> 722 __declspec( '%N' ) is not supported </h2>
-<br>The identifier used in the<b><i> __declspec</i></b> declaration modifier is not supported by Open Watcom C++.
+<br>The identifier used in the <b><i> __declspec</i></b> declaration modifier is not supported by Open Watcom C++.
 <h2 id="723_attempt_to_construct_a_far_object_when_the_data_model_is_near"> 723 attempt to construct a far object when the data model is near </h2>
 <br>Constructors cannot be applied to objects which are stored in far memory when the default memory model for data is near.
 <br><br><b>Example:</b>
@@ -6059,9 +6057,9 @@ because the number of parameters is not known.
 <br><br>The last line causes this error to be displayed when the memory model is small (switch -ms), since the memory model
 for data is near.
 <h2 id="724_Mzo_is_an_obsolete_switch_Lhas_no_effectR"> 724 -zo is an obsolete switch (has no effect) </h2>
-<br>The<b><i> -zo</i></b> option was required in an earlier version of the compiler but is no longer used.
+<br>The <b><i> -zo</i></b> option was required in an earlier version of the compiler but is no longer used.
 <h2 id="725___s_"> 725 &quot;%s&quot; </h2>
-<br>This is a user message generated with the<b><i> #pragma</i></b> <b><i> message</i></b> preprocessing directive.
+<br>This is a user message generated with the <b><i> #pragma</i></b> <b><i> message</i></b> preprocessing directive.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma message( &quot;my very own warning&quot; );</tt>
 <h2 id="726_no_reference_to_formal_parameter___S_"> 726 no reference to formal parameter '%S' </h2>
@@ -6078,7 +6076,7 @@ the name from the argument declaration.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return a + c;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="727_cannot_dereference_a_pointer_to_void"> 727 cannot dereference a pointer to void </h2>
-<br>A pointer to<b><i> void</i></b> is used as a generic pointer but it cannot be dereferenced.
+<br>A pointer to <b><i> void</i></b> is used as a generic pointer but it cannot be dereferenced.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void fn( void *p )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -6104,9 +6102,9 @@ by any hexadecimal digits.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned i = 0x;&nbsp;&nbsp;&nbsp;&nbsp; // invalid hex constant</tt>
 <h2 id="730_return_type_of__operator_MY__will_not_allow__MY__to_be_applied"> 730 return type of 'operator -&gt;' will not allow '-&gt;' to be applied </h2>
-<br>This restriction is a result of the transformation that the compiler performs when the<b><i> operator -&gt;</i></b> is
+<br>This restriction is a result of the transformation that the compiler performs when the <b><i> operator -&gt;</i></b> is
 overloaded.&nbsp; The transformation involves transforming the expression to invoke the operator with &quot;-&gt;&quot; applied
-to the result of<b><i> operator -&gt;.</i></b>&nbsp; This warning indicates that the<b><i> operator -&gt;</i></b> can never
+to the result of <b><i> operator -&gt;.</i></b>&nbsp; This warning indicates that the <b><i> operator -&gt;</i></b> can never
 be used as an overloaded operator.&nbsp; The only way the operator can be used is to explicitly call it by name.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
@@ -6158,9 +6156,9 @@ at the end of the line, make sure that the backslash character is not the last c
 <h2 id="736_cannot_open_file___s__for_write_access"> 736 cannot open file '%s' for write access </h2>
 <br>The compiler has detected a problem while trying to open the indicated file for write access.
 <h2 id="737_implicit_conversion_of_pointers_to_integral_types_of_same_size"> 737 implicit conversion of pointers to integral types of same size </h2>
-<br>According to the ISO/ANSI Draft Working Paper, a string literal is an array of<b><i> char.</i></b>&nbsp; Consequently,
-it is illegal to initialize or assign the pointer resulting from that literal to a pointer of either<b><i> unsigned char</i></b>
-or<b><i> signed char,</i></b> since these pointers point at objects of a different type.
+<br>According to the ISO/ANSI Draft Working Paper, a string literal is an array of <b><i> char.</i></b>&nbsp; Consequently,
+it is illegal to initialize or assign the pointer resulting from that literal to a pointer of either <b><i> unsigned char</i></b>
+or <b><i> signed char,</i></b> since these pointers point at objects of a different type.
 <h2 id="738_option_requires_a_number"> 738 option requires a number </h2>
 <br>The specified option is not recognized by the compiler since there was no number after it (i.e., &quot;-w=1&quot;).&nbsp;
 Numbers must be non-negative decimal numbers.
@@ -6200,14 +6198,14 @@ using the -fc option).
 <br>This informational message indicates a class which was not defined.&nbsp; This is noted following an error or warning
 message because it often helps to a user to determine the cause of that diagnostic.
 <h2 id="748_cannot_catch_undefined_class_object"> 748 cannot catch undefined class object </h2>
-<br>C++ does not allow abstract classes to be copied and so an undefined class object cannot be specified in a<b><i> catch</i></b>
+<br>C++ does not allow abstract classes to be copied and so an undefined class object cannot be specified in a <b><i> catch</i></b>
 clause.&nbsp; It is permissible to catch a reference to an undefined class.
 <h2 id="749_class___T__cannot_be_used_since_its_definition_has_errors"> 749 class '%T' cannot be used since its definition has errors </h2>
 <br>The analysis of the expression could not continue due to previous errors diagnosed in the class definition.
 <h2 id="750_function_prototype_in_block_scope_missing__extern_"> 750 function prototype in block scope missing 'extern' </h2>
 <br>This warning can be triggered when the intent is to define a variable with a constructor.&nbsp; Due to the complexities
 of parsing C++, statements that appear to be variable definitions may actually parse as a function prototype.&nbsp; A work-around
-for this problem is contained in the example.&nbsp; If a prototype is desired, add the<b><i> extern</i></b> storage class
+for this problem is contained in the example.&nbsp; If a prototype is desired, add the <b><i> extern</i></b> storage class
 to remove this warning.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct C {</tt>
@@ -6281,16 +6279,16 @@ a function that calls it.&nbsp; This would cause a linker error followed by an e
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return near_fn( y * 2 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="756__pragma_extref__symbol___N__not_declared"> 756 #pragma extref:&nbsp; symbol '%N' not declared </h2>
-<br>This error message indicates that the symbol referenced by<b><i> #pragma extref</i></b> has not been declared in the context
-where the pragma was encountered.
+<br>This error message indicates that the symbol referenced by <b><i> #pragma extref</i></b> has not been declared in the
+context where the pragma was encountered.
 <h2 id="757__pragma_extref__overloaded_function___S__cannot_be_used"> 757 #pragma extref:&nbsp; overloaded function '%S' cannot be used </h2>
 <br>An external reference can be emitted only for external functions which are not overloaded.
 <h2 id="758__pragma_extref____N__is_not_a_function_or_data"> 758 #pragma extref:&nbsp; '%N' is not a function or data </h2>
-<br>This error message indicates that the symbol referenced by<b><i> #pragma extref</i></b> cannot have an external reference
+<br>This error message indicates that the symbol referenced by <b><i> #pragma extref</i></b> cannot have an external reference
 emitted for it because the referenced symbol is neither a function nor a data item.&nbsp; An external reference can be emitted
 only for external functions which are not overloaded and for external data items.
 <h2 id="759__pragma_extref____S__is_not_external"> 759 #pragma extref:&nbsp; '%S' is not external </h2>
-<br>This error message indicates that the symbol referenced by<b><i> #pragma extref</i></b> cannot have an external reference
+<br>This error message indicates that the symbol referenced by <b><i> #pragma extref</i></b> cannot have an external reference
 emitted for it because the symbol is not external.&nbsp; An external reference can be emitted only for external functions
 which are not overloaded and for external data items.
 <h2 id="760_preMcompiled_header_file_being_recreated_Ldebugging_info_may_changeR"> 760 pre-compiled header file being recreated (debugging info may change) </h2>
@@ -6341,30 +6339,30 @@ type.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="778_only_constructors_can_be_declared_explicit"> 778 only constructors can be declared explicit </h2>
-<br>Currently, only constructors can be declared with the<b><i> explicit</i></b> keyword.
+<br>Currently, only constructors can be declared with the <b><i> explicit</i></b> keyword.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int explicit fn( int x ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x + 1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="779_const_cast_type_must_be_pointer__member_pointer__or_reference"> 779 const_cast type must be pointer, member pointer, or reference </h2>
-<br>The type specified in a<b><i> const_cast</i></b> operator must be a pointer, a pointer to a member of a class, or a reference.
+<br>The type specified in a <b><i> const_cast</i></b> operator must be a pointer, a pointer to a member of a class, or a reference.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int const *p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long lp = const_cast&lt;long&gt;( p );</tt>
 <h2 id="780_const_cast_expression_must_be_pointer_to_same_kind_of_object"> 780 const_cast expression must be pointer to same kind of object </h2>
-<br>Ignoring<b><i> const</i></b> and<b><i> volatile</i></b> qualification, the expression must be a pointer to the same type
-of object as that specified in the<b><i> const_cast</i></b> operator.
+<br>Ignoring <b><i> const</i></b> and <b><i> volatile</i></b> qualification, the expression must be a pointer to the same
+type of object as that specified in the <b><i> const_cast</i></b> operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int const * ip;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long* lp = const_cast&lt;long*&gt;( ip );</tt>
 <h2 id="781_const_cast_expression_must_be_lvalue_of_the_same_kind_of_object"> 781 const_cast expression must be lvalue of the same kind of object </h2>
-<br>Ignoring<b><i> const</i></b> and<b><i> volatile</i></b> qualification, the expression must be an lvalue or reference to
-the same type of object as that specified in the<b><i> const_cast</i></b> operator.
+<br>Ignoring <b><i> const</i></b> and <b><i> volatile</i></b> qualification, the expression must be an lvalue or reference
+to the same type of object as that specified in the <b><i> const_cast</i></b> operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int const i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long&amp; lr = const_cast&lt;long&amp;&gt;( i );</tt>
 <h2 id="782_expression_must_be_pointer_to_member_from_same_class_in_const_cast"> 782 expression must be pointer to member from same class in const_cast </h2>
-<br>The expression must be a pointer to member from the same class as that specified in the<b><i> const_cast</i></b> operator.
+<br>The expression must be a pointer to member from the same class as that specified in the <b><i> const_cast</i></b> operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct B {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int ib;</tt>
@@ -6374,8 +6372,8 @@ the same type of object as that specified in the<b><i> const_cast</i></b> operat
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int const B::* imb;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int D::* imd const_cast&lt;int D::*&gt;( imb );</tt>
 <h2 id="783_expression_must_be_member_pointer_to_same_type_as_specified_in_const_cast"> 783 expression must be member pointer to same type as specified in const_cast </h2>
-<br>Ignoring<b><i> const</i></b> and<b><i> volatile</i></b> qualification, the expression must be a pointer to member of the
-same type as that specified in the<b><i> const_cast</i></b> operator.
+<br>Ignoring <b><i> const</i></b> and <b><i> volatile</i></b> qualification, the expression must be a pointer to member of
+the same type as that specified in the <b><i> const_cast</i></b> operator.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct B {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int ib;</tt>
@@ -6383,14 +6381,14 @@ same type as that specified in the<b><i> const_cast</i></b> operator.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int D::* imd const_cast&lt;int D::*&gt;( &amp;B::lb );</tt>
 <h2 id="784_reinterpret_cast_expression_must_be_pointer_or_integral_object"> 784 reinterpret_cast expression must be pointer or integral object </h2>
-<br>When a pointer type is specified in the<b><i> reinterpret_cast</i></b> operator, the expression must be a pointer or an
-integer.
+<br>When a pointer type is specified in the <b><i> reinterpret_cast</i></b> operator, the expression must be a pointer or
+an integer.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern float fval;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long* lp = const_cast&lt;long*&gt;( fval );</tt>
-<br><br>The expression has<b><i> float</i></b> type and so is illegal.
+<br><br>The expression has <b><i> float</i></b> type and so is illegal.
 <h2 id="785_reinterpret_cast_expression_cannot_be_casted_to_reference_type"> 785 reinterpret_cast expression cannot be casted to reference type </h2>
-<br>When a reference type is specified in the<b><i> reinterpret_cast</i></b> operator, the expression must be an lvalue (or
+<br>When a reference type is specified in the <b><i> reinterpret_cast</i></b> operator, the expression must be an lvalue (or
 have reference type).&nbsp; Additionally, constness cannot be casted away.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern long f;</tt>
@@ -6400,7 +6398,7 @@ have reference type).&nbsp; Additionally, constness cannot be casted away.
 <br><br>Both initializations are illegal.&nbsp; The first cast expression is not an lvalue.&nbsp; The second cast expression
 attempts to cast away constness.
 <h2 id="786_reinterpret_cast_expression_cannot_be_casted_to_pointer_to_member"> 786 reinterpret_cast expression cannot be casted to pointer to member </h2>
-<br>When a pointer to member type is specified in the<b><i> reinterpret_cast</i></b> operator, the expression must be a pointer
+<br>When a pointer to member type is specified in the <b><i> reinterpret_cast</i></b> operator, the expression must be a pointer
 to member.&nbsp; Additionally, constness cannot be casted away.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern long f;</tt>
@@ -6417,13 +6415,13 @@ cast expression attempts to cast away constness.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void* p;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float f = reinterpret_cast&lt;float&gt;( p );</tt>
-<br><br>The cast is illegal because<b><i> float</i></b> type is specified.
+<br><br>The cast is illegal because <b><i> float</i></b> type is specified.
 <h2 id="788_only_integral_arithmetic_types_can_be_used_with_reinterpret_cast"> 788 only integral arithmetic types can be used with reinterpret_cast </h2>
 <br>Only integral arithmetic types can be casted to pointer types.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float flt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void* p = reinterpret_cast&lt;void*&gt;( flt );</tt>
-<br><br>The cast is illegal because<tt> flt</tt> has<b><i> float</i></b> type which is not integral.
+<br><br>The cast is illegal because<tt> flt</tt> has <b><i> float</i></b> type which is not integral.
 <h2 id="789_cannot_cast_away_constness"> 789 cannot cast away constness </h2>
 <br>A cast or implicit conversion is illegal because a conversion to the target type would remove constness from a pointer,
 reference, or pointer to member.
@@ -6443,7 +6441,7 @@ reference, or pointer to member.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int x;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char p = reinterpret_cast&lt;char&gt;( &amp;x );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char q = (char)( &amp;x );</tt>
-<br><br>Both casts are illegal since a<b><i> char</i></b> is smaller than a pointer.
+<br><br>Both casts are illegal since a <b><i> char</i></b> is smaller than a pointer.
 <h2 id="791_type_cannot_be_used_in_reinterpret_cast"> 791 type cannot be used in reinterpret_cast </h2>
 <br>The type specified with reinterpret_cast must be an integral type, a pointer type, a pointer to a member of a class, or
 a reference type.
@@ -6467,7 +6465,7 @@ a reference type.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void* q = ( reinterpret_cast&lt;void*&gt;( x ), p );</tt>
 <br><br>The casts specify illegal types.
 <h2 id="794_static_cast_cannot_convert_the_expression"> 794 static_cast cannot convert the expression </h2>
-<br>The indicated expression cannot be converted to the type specified with the<b><i> static_cast</i></b> operator.&nbsp;
+<br>The indicated expression cannot be converted to the type specified with the <b><i> static_cast</i></b> operator.&nbsp;
 Perhaps reinterpret_cast or dynamic_cast should be used instead;
 <h2 id="795_static_cast_cannot_be_used_with_the_type_specified"> 795 static_cast cannot be used with the type specified </h2>
 <br>A static cast cannot be used with a function type or array type.
@@ -6526,22 +6524,22 @@ derived class to the base class.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The cast fails since<tt> Base</tt> is an ambiguous base class for<tt> Derived.</tt>
 <h2 id="802_can_only_static_cast_integers_to_enumeration_type"> 802 can only static_cast integers to enumeration type </h2>
-<br>When an enumeration type is specified with<b><i> static_cast,</i></b> the expression must be an integer.
+<br>When an enumeration type is specified with <b><i> static_cast,</i></b> the expression must be an integer.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; enum sex { male, female };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; sex father = static_cast&lt;sex&gt;( 1.0 );</tt>
 <br><br>The cast is illegal because the expression is not an integer.
 <h2 id="803_dynamic_cast_cannot_be_used_with_the_type_specified"> 803 dynamic_cast cannot be used with the type specified </h2>
-<br>A dynamic cast can only specify a reference to a class or a pointer to a class or<b><i> void.</i></b>&nbsp; When a class
+<br>A dynamic cast can only specify a reference to a class or a pointer to a class or <b><i> void.</i></b>&nbsp; When a class
 is referenced, it must have virtual functions defined within that class or a base class of that class.
 <h2 id="804_dynamic_cast_cannot_convert_the_expression"> 804 dynamic_cast cannot convert the expression </h2>
-<br>The indicated expression cannot be converted to the type specified with the<b><i> dynamic_cast</i></b> operator.&nbsp;
+<br>The indicated expression cannot be converted to the type specified with the <b><i> dynamic_cast</i></b> operator.&nbsp;
 Only a pointer or reference to a class object can be converted.&nbsp; When a class object is referenced, it must have virtual
 functions defined within that class or a base class of that class.
 <h2 id="805_dynamic_cast_requires_class___T__to_have_virtual_functions"> 805 dynamic_cast requires class '%T' to have virtual functions </h2>
 <br>The indicated class must have virtual functions defined within that class or a base class of that class.
 <h2 id="806_base_class_for_type_in_dynamic_cast_is_ambiguous_Lwill_failR"> 806 base class for type in dynamic_cast is ambiguous (will fail) </h2>
-<br>The type in the<b><i> dynamic_cast</i></b> is a pointer or reference to an ambiguous base class.
+<br>The type in the <b><i> dynamic_cast</i></b> is a pointer or reference to an ambiguous base class.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct A { virtual void f(){}; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct D1 : A { };</tt>
@@ -6552,7 +6550,7 @@ functions defined within that class or a base class of that class.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( dynamic_cast&lt; A* &gt;( p ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="807_base_class_for_type_in_dynamic_cast_is_private_Lmay_failR"> 807 base class for type in dynamic_cast is private (may fail) </h2>
-<br>The type in the<b><i> dynamic_cast</i></b> is a pointer or reference to a private base class.
+<br>The type in the <b><i> dynamic_cast</i></b> is a pointer or reference to a private base class.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct V { virtual void f(){}; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct A : private virtual V { };</tt>
@@ -6563,7 +6561,7 @@ functions defined within that class or a base class of that class.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( dynamic_cast&lt; V* &gt;( p ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="808_base_class_for_type_in_dynamic_cast_is_protected_Lmay_failR"> 808 base class for type in dynamic_cast is protected (may fail) </h2>
-<br>The type in the<b><i> dynamic_cast</i></b> is a pointer or reference to a protected base class.
+<br>The type in the <b><i> dynamic_cast</i></b> is a pointer or reference to a protected base class.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct V { virtual void f(){}; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct A : protected virtual V { };</tt>
@@ -6728,19 +6726,19 @@ base classes.
 <h2 id="832_function_being_overridden_is___S_"> 832 function being overridden is '%S' </h2>
 <br>This informational message indicates a function which cannot be overridden by a virtual function which has ellipsis parameters.
 <h2 id="833_name_does_not_reference_a_namespace"> 833 name does not reference a namespace </h2>
-<br>A<b><i> namespace</i></b> alias definition must reference a<b><i> namespace</i></b> definition.
+<br>A <b><i> namespace</i></b> alias definition must reference a <b><i> namespace</i></b> definition.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef int T;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace a = T;</tt>
 <h2 id="834_namespace_alias_cannot_be_changed"> 834 namespace alias cannot be changed </h2>
-<br>A<b><i> namespace</i></b> alias definition cannot change which<b><i> namespace</i></b> it is referencing.
+<br>A <b><i> namespace</i></b> alias definition cannot change which <b><i> namespace</i></b> it is referencing.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace ns1 { int x; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace ns2 { int x; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace a = ns1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace a = ns2;</tt>
 <h2 id="835_cannot_throw_undefined_class_object"> 835 cannot throw undefined class object </h2>
-<br>C++ does not allow undefined classes to be copied and so an undefined class object cannot be specified in a<b><i> throw</i></b>
+<br>C++ does not allow undefined classes to be copied and so an undefined class object cannot be specified in a <b><i> throw</i></b>
 expression.
 <h2 id="836_symbol_has_different_type_than_previous_symbol_in_same_declaration"> 836 symbol has different type than previous symbol in same declaration </h2>
 <br>This warning indicates that two symbols in the same declaration have different types.&nbsp; This may be intended but it
@@ -6766,15 +6764,15 @@ can be fixed quickly and easily.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="840___N__cannot_be_declared_in_a_namespace"> 840 '%N' cannot be declared in a namespace </h2>
-<br>A<b><i> namespace</i></b> cannot contain declarations or definitions of<b><i> operator new</i></b> or<b><i> operator delete</i></b>
-since they will never be called implicitly in a<b><i> new</i></b> or<b><i> delete</i></b> expression.
+<br>A <b><i> namespace</i></b> cannot contain declarations or definitions of <b><i> operator new</i></b> or <b><i> operator
+delete</i></b> since they will never be called implicitly in a <b><i> new</i></b> or <b><i> delete</i></b> expression.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace N {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void *operator new( unsigned );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void operator delete( void * );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="841_namespace_cannot_be_defined_in_a_nonMnamespace_scope"> 841 namespace cannot be defined in a non-namespace scope </h2>
-<br>A<b><i> namespace</i></b> can only be defined in either the global namespace scope (file scope) or a namespace scope.
+<br>A <b><i> namespace</i></b> can only be defined in either the global namespace scope (file scope) or a namespace scope.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; namespace N {</tt>
@@ -6782,7 +6780,7 @@ since they will never be called implicitly in a<b><i> new</i></b> or<b><i> delet
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="842_namespace______qualifier_cannot_be_used_in_this_context"> 842 namespace '::' qualifier cannot be used in this context </h2>
-<br>Qualified identifiers in a class context are allowed for declaring<b><i> friend</i></b> functions.&nbsp; A<b><i> namespace</i></b>
+<br>Qualified identifiers in a class context are allowed for declaring <b><i> friend</i></b> functions.&nbsp; A <b><i> namespace</i></b>
 qualified name can only be declared in a namespace scope that encloses the qualified name's namespace.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace M {</tt>
@@ -6852,7 +6850,7 @@ call.
 to be used in this context.&nbsp; As an extension, the WATCOM compiler supports the conversion since substantial legacy code
 would not compile without the extension.
 <h2 id="848_useless_using_directive_ignored"> 848 useless using directive ignored </h2>
-<br>This warning indicates that for most purposes, the<b><i> using namespace</i></b> directive can be removed.
+<br>This warning indicates that for most purposes, the <b><i> using namespace</i></b> directive can be removed.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace A {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using namespace A;&nbsp; // useless</tt>
@@ -6950,7 +6948,7 @@ C++ working paper.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern PrivateBase&amp; rb;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Derived* pd = static_cast&lt;Derived*&gt;( pb );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Derived&amp; rd = static_cast&lt;Derived&amp;&gt;( rb );</tt>
-<br><br>The last two statements are erroneous since they would involve a<b><i> static_cast</i></b> from a private base class.
+<br><br>The last two statements are erroneous since they would involve a <b><i> static_cast</i></b> from a private base class.
 <h2 id="860_attempt_to_static_cast_from_a_protected_base_class"> 860 attempt to static_cast from a protected base class </h2>
 <br>An attempt was made to static_cast a pointer or reference to a protected base class to a derived class.
 <br><br><b>Example:</b>
@@ -6962,7 +6960,8 @@ C++ working paper.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern ProtectedBase&amp; rb;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Derived* pd = static_cast&lt;Derived*&gt;( pb );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Derived&amp; rd = static_cast&lt;Derived&amp;&gt;( rb );</tt>
-<br><br>The last two statements are erroneous since they would involve a<b><i> static_cast</i></b> from a protected base class.
+<br><br>The last two statements are erroneous since they would involve a <b><i> static_cast</i></b> from a protected base
+class.
 <h2 id="861_qualified_symbol_cannot_be_defined_in_this_scope"> 861 qualified symbol cannot be defined in this scope </h2>
 <br>This message indicates that the scope of the symbol is not nested in the current scope.&nbsp; This is a restriction in
 the C++ language.
@@ -6988,8 +6987,8 @@ the C++ language.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="862_using_declaration_references_nonMmember"> 862 using declaration references non-member </h2>
-<br>This message indicates that the entity referenced by the<b><i> using</i></b> declaration is not a class member even though
-the<b><i> using</i></b> declaration is in class scope.
+<br>This message indicates that the entity referenced by the <b><i> using</i></b> declaration is not a class member even though
+the <b><i> using</i></b> declaration is in class scope.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace B {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int x;</tt>
@@ -6998,8 +6997,8 @@ the<b><i> using</i></b> declaration is in class scope.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using B::x;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="863_using_declaration_references_class_member"> 863 using declaration references class member </h2>
-<br>This message indicates that the entity referenced by the<b><i> using</i></b> declaration is a class member even though
-the<b><i> using</i></b> declaration is not in class scope.
+<br>This message indicates that the entity referenced by the <b><i> using</i></b> declaration is a class member even though
+the <b><i> using</i></b> declaration is not in class scope.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct B {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int m;</tt>
@@ -7019,7 +7018,7 @@ the<b><i> using</i></b> declaration is not in class scope.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0i64,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="865_class_in_using_declaration_L__T_R_must_be_a_base_class"> 865 class in using declaration ('%T') must be a base class </h2>
-<br>A<b><i> using</i></b> declaration declared in a class scope can only reference entities in a base class.
+<br>A <b><i> using</i></b> declaration declared in a class scope can only reference entities in a base class.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct B {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int f;</tt>
@@ -7031,7 +7030,7 @@ the<b><i> using</i></b> declaration is not in class scope.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B::f;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="866_name_in_using_declaration_is_already_in_scope"> 866 name in using declaration is already in scope </h2>
-<br>A<b><i> using</i></b> declaration can only reference entities in other scopes.&nbsp; It cannot reference entities within
+<br>A <b><i> using</i></b> declaration can only reference entities in other scopes.&nbsp; It cannot reference entities within
 its own scope.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace B {</tt>
@@ -7039,7 +7038,7 @@ its own scope.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using B::f;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="867_conflict_with_a_previous_usingMdecl___S_"> 867 conflict with a previous using-decl '%S' </h2>
-<br>A<b><i> using</i></b> declaration can only reference entities in other scopes.&nbsp; It cannot reference entities within
+<br>A <b><i> using</i></b> declaration can only reference entities in other scopes.&nbsp; It cannot reference entities within
 its own scope.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace B {</tt>
@@ -7047,7 +7046,7 @@ its own scope.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using B::f;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="868_conflict_with_current_usingMdecl___S_"> 868 conflict with current using-decl '%S' </h2>
-<br>A<b><i> using</i></b> declaration can only reference entities in other scopes.&nbsp; It cannot reference entities within
+<br>A <b><i> using</i></b> declaration can only reference entities in other scopes.&nbsp; It cannot reference entities within
 its own scope.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; namespace B {</tt>
@@ -7063,19 +7062,19 @@ can involve using the &quot;-bm&quot; option or selecting multi-threaded applica
 <h2 id="871_implementation_restriction__cannot_use_64Mbit_value_in_case_statement"> 871 implementation restriction:&nbsp; cannot use 64-bit value in case statement </h2>
 <br>The use of 64-bit values in case statements has not been implemented.
 <h2 id="872_implementation_restriction__cannot_use___int64_as_bitMfield_base_type"> 872 implementation restriction:&nbsp; cannot use __int64 as bit-field base type </h2>
-<br>The use of<b><i> __int64</i></b> for the base type of a bit-field has not been implemented.
+<br>The use of <b><i> __int64</i></b> for the base type of a bit-field has not been implemented.
 <h2 id="873_based_function_object_cannot_be_placed_in_nonMcode_segment___s__"> 873 based function object cannot be placed in non-code segment &quot;%s&quot;. </h2>
-<br>Use<b><i> __segname</i></b> with the default code segment &quot;_CODE&quot;, or a code segment with the appropriate suffix
+<br>Use <b><i> __segname</i></b> with the default code segment &quot;_CODE&quot;, or a code segment with the appropriate suffix
 (indicated by informational message).
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __based(__segname(&quot;foo&quot;)) f() {return 1;}</tt>
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int __based(__segname(&quot;_CODE&quot;)) f() {return 1;}</tt>
 <h2 id="874_Use_a_segment_name_ending_in___s___or_the_default_code_segment___CODE__"> 874 Use a segment name ending in &quot;%s&quot;, or the default code segment &quot;_CODE&quot;. </h2>
-<br>This informational message explains how to use<b><i> __segname</i></b> to name a code segment.
+<br>This informational message explains how to use <b><i> __segname</i></b> to name a code segment.
 <h2 id="875_RTTI_must_be_enabled_to_use_feature_Luse__xr__optionR"> 875 RTTI must be enabled to use feature (use 'xr' option) </h2>
 <br>RTTI must be enabled by specifying the 'xr' option when the compiler is invoked.&nbsp; The error message indicates that
-a feature such as<b><i> dynamic_cast,</i></b> or<b><i> typeid</i></b> has been used without enabling RTTI.
+a feature such as <b><i> dynamic_cast,</i></b> or <b><i> typeid</i></b> has been used without enabling RTTI.
 <h2 id="876__typeid__class_type_must_be_defined"> 876 'typeid' class type must be defined </h2>
 <br>The compile-time type of the expression or type must be completely defined if it is a class type.
 <br><br><b>Example:</b>
@@ -7099,7 +7098,7 @@ is an explicit cast between sufficiently unrelated types of member pointers that
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C1mp fmp = (C1mp)&amp;D1::poo;</tt>
 <br><br>The cast on the last line of the example would be diagnosed.
 <h2 id="878_unexpected_type_modifier_found"> 878 unexpected type modifier found </h2>
-<br>A<b><i> __declspec</i></b> modifier was found that could not be applied to an object or could not be used in this context.
+<br>A <b><i> __declspec</i></b> modifier was found that could not be applied to an object or could not be used in this context.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __declspec(thread) struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
@@ -7169,7 +7168,7 @@ be passed.&nbsp; Correct the problem by deciding on one calling convention and c
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void foo( int, int );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <h2 id="885__endif_matches__if_in_different_source_file"> 885 #endif matches #if in different source file </h2>
-<br>This warning may indicate a<b><i> #endif</i></b> nesting problem since the traditional usage of<b><i> #if</i></b> directives
+<br>This warning may indicate a <b><i> #endif</i></b> nesting problem since the traditional usage of <b><i> #if</i></b> directives
 is confined to the same source file.&nbsp; This warning may often come before an error and it is hoped will provide information
 to solve a preprocessing directive problem.
 <h2 id="886_preprocessing_directive_found__L"> 886 preprocessing directive found %L </h2>
@@ -7187,7 +7186,7 @@ operator.&nbsp; The work-around for the warning is to cast the unary minus opera
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="888_trigraph_expansion_produced___c_"> 888 trigraph expansion produced '%c' </h2>
 <br>Trigraph expansion occurs at a very low-level so it can affect string literals that contain question marks.&nbsp; This
-warning can be disabled via the command line or<b><i> #pragma warning</i></b> directive.
+warning can be disabled via the command line or <b><i> #pragma warning</i></b> directive.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // string expands to &quot;(?&#93;?~????&quot;!</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *e = &quot;(???)???-????&quot;;</tt>
@@ -7214,10 +7213,10 @@ environments where all macros will be defined.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int y = '\x1a';</tt>
 <h2 id="892_promotion_of_unadorned_char_type_to_int"> 892 promotion of unadorned char type to int </h2>
 <br>This message is enabled by the hidden -jw option.&nbsp; The warning may be used to locate all places where an unadorned
-char type (i.e., a type that is specified as<b><i> char</i></b> and neither<b><i> signed char</i></b> nor<b><i> unsigned char</i></b>
-).&nbsp; This may cause portability problems since compilers have freedom to specify whether the unadorned char type is to
-be signed or unsigned.&nbsp; The promotion to<b><i> int</i></b> will have different values, depending on the choice being
-made.
+char type (i.e., a type that is specified as <b><i> char</i></b> and neither <b><i> signed char</i></b> nor <b><i> unsigned
+char</i></b> ).&nbsp; This may cause portability problems since compilers have freedom to specify whether the unadorned char
+type is to be signed or unsigned.&nbsp; The promotion to <b><i> int</i></b> will have different values, depending on the choice
+being made.
 <h2 id="893_switch_statement_has_no_case_labels"> 893 switch statement has no case labels </h2>
 <br>The switch statement referenced in the warning did not have any case labels.&nbsp; Without case labels, a switch statement
 will always jump to the default case code.
@@ -7328,7 +7327,7 @@ can provide any meaning for the intended cast.
 <h2 id="909_Invalid_register_name___s__in__pragma"> 909 Invalid register name '%s' in #pragma </h2>
 <br>The register name is invalid/unknown.
 <h2 id="910_Archaic_syntax__classDstruct_missing_in_explicit_template_instantiation"> 910 Archaic syntax:&nbsp; class/struct missing in explicit template instantiation </h2>
-<br>Archaic syntax has been used.&nbsp; The standard requires a<b><i> class</i></b> or<b><i> struct</i></b> keyword to be
+<br>Archaic syntax has been used.&nbsp; The standard requires a <b><i> class</i></b> or <b><i> struct</i></b> keyword to be
 used.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; template&lt; class T &gt;</tt>
@@ -7337,10 +7336,10 @@ used.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; template class MyTemplate&lt; int &gt;;</tt>
 <h2 id="911_destructor_for_type_void_cannot_be_called"> 911 destructor for type void cannot be called </h2>
-<br>Since the<b><i> void</i></b> type has no size and there are no values of<b><i> void</i></b> type, one cannot destruct
-an instance of<b><i> void.</i></b>&nbsp; 
+<br>Since the <b><i> void</i></b> type has no size and there are no values of <b><i> void</i></b> type, one cannot destruct
+an instance of <b><i> void.</i></b>
 <h2 id="912__typename__keyword_used_outside_template"> 912 'typename' keyword used outside template </h2>
-<br>The<b><i> typename</i></b> keyword is only allowed inside templates.
+<br>The <b><i> typename</i></b> keyword is only allowed inside templates.
 <h2 id="913___N__does_not_have_a_return_type_specified"> 913 '%N' does not have a return type specified </h2>
 <br>In C++, functions must have an explicit return type specified, default int type is no longer assumed.
 <br><br><b>Example:</b>
@@ -7469,13 +7468,13 @@ dynamic_cast and reinterpret_cast.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; A&lt; int &gt;::A( )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; { }</tt>
 <h2 id="935_form_is___pragma_enable_messageL_msgnum_R_"> 935 form is '#pragma enable_message( msgnum )' </h2>
-<br>This<b><i> pragma</i></b> enables the specified warning message.
+<br>This <b><i> pragma</i></b> enables the specified warning message.
 <h2 id="936_form_is___pragma_disable_messageL_msgnum_R_"> 936 form is '#pragma disable_message( msgnum )' </h2>
-<br>This<b><i> pragma</i></b> disables the specified warning message.
+<br>This <b><i> pragma</i></b> disables the specified warning message.
 <h2 id="937_option_requires_a_character"> 937 option requires a character </h2>
 <br>The specified option is not recognized by the compiler since there was no character after it (i.e., &quot;-p#@&quot; ).
 <h2 id="938__auto__is_no_longer_a_storage_specifier_in_CPP11_mode"> 938 'auto' is no longer a storage specifier in C++11 mode </h2>
-<br>When C++11 is enabled, the<b><i> auto</i></b> can no longer appear as a storage specifier.
+<br>When C++11 is enabled, the <b><i> auto</i></b> can no longer appear as a storage specifier.
 <h2 id="939_Implicit_conversion_from__decltypeLnullptrR__to__bool__"> 939 Implicit conversion from 'decltype(nullptr)' to 'bool'. </h2>
 <br>When C++11 is enabled, an implicit conversion from std::nullptr_t to bool is suspicious.
 </body>

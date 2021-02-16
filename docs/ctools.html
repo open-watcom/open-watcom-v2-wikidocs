@@ -675,8 +675,8 @@ and these may be specified as an argument to the &quot;l=&quot; option.&nbsp; Th
 <dd>allows use of any linker directive
 </dl>
 <h2 id="WCLDWCL386_Environment_Variables"> WCL/WCL386 Environment Variables </h2>
-<br>The<b> WCL</b> environment variable can be used to specify commonly used<b><i> WCL</i></b> options.&nbsp; The<b> WCL386</b>
-environment variable can be used to specify commonly used<b><i> WCL386</i></b> options.&nbsp; These options are processed
+<br>The <b> WCL</b> environment variable can be used to specify commonly used <b><i> WCL</i></b> options.&nbsp; The <b> WCL386</b>
+environment variable can be used to specify commonly used <b><i> WCL386</i></b> options.&nbsp; These options are processed
 before options specified on the command line.&nbsp; 
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl=-d1 -ot</tt>
@@ -685,21 +685,21 @@ before options specified on the command line.&nbsp;
 object file), and &quot;ot&quot; (favour time optimizations over size optimizations).
 <br><br>Whenever you wish to specify an option that requires the use of an &quot;=&quot; character, you can use the &quot;#&quot;
 character in its place.&nbsp; This is required by the syntax of the &quot;SET&quot; command.
-<br><br>Once the appropriate environment variable has been defined, those options listed become the default each time the<b><i>
-WCL</i></b> or<b><i> WCL386</i></b> command is used.
-<br><br>The<b> WCL</b> environment variable is used by<b><i> WCL</i></b> only.&nbsp; The<b> WCL386</b> environment variable
-is used by<b><i> WCL386</i></b> only.&nbsp; Both<b><i> WCL</i></b> and<b><i> WCL386</i></b> pass the relevant options to the
-Open Watcom C/C++ compiler and linker.&nbsp; This environment variable is not examined by the Open Watcom C/C++ compiler or
-the linker when invoked directly.
-<br><br><b><i>Hint:</i></b>&nbsp; If you are running DOS and you use the same<b><i> WCL</i></b> or<b><i> WCL386</i></b> options
-all the time, you may find it handy to place the &quot;SET WCL&quot; or &quot;SET WCL386&quot; command in your DOS system
-initialization file,<tt> AUTOEXEC.BAT.</tt>&nbsp; If you are running OS/2 and you use the same<b><i> WCL</i></b> or<b><i>
-WCL386</i></b> options all the time, you may find it handy to place the &quot;SET WCL&quot; or &quot;SET WCL386&quot; command
-in your OS/2 system initialization file,<tt> CONFIG.SYS.</tt>
+<br><br>Once the appropriate environment variable has been defined, those options listed become the default each time the
+<b><i> WCL</i></b> or <b><i> WCL386</i></b> command is used.
+<br><br>The <b> WCL</b> environment variable is used by <b><i> WCL</i></b> only.&nbsp; The <b> WCL386</b> environment variable
+is used by <b><i> WCL386</i></b> only.&nbsp; Both <b><i> WCL</i></b> and <b><i> WCL386</i></b> pass the relevant options to
+the Open Watcom C/C++ compiler and linker.&nbsp; This environment variable is not examined by the Open Watcom C/C++ compiler
+or the linker when invoked directly.
+<br><br><b><i>Hint:</i></b>&nbsp; If you are running DOS and you use the same <b><i> WCL</i></b> or <b><i> WCL386</i></b>
+options all the time, you may find it handy to place the &quot;SET WCL&quot; or &quot;SET WCL386&quot; command in your DOS
+system initialization file,<tt> AUTOEXEC.BAT.</tt>&nbsp; If you are running OS/2 and you use the same <b><i> WCL</i></b> or
+<b><i> WCL386</i></b> options all the time, you may find it handy to place the &quot;SET WCL&quot; or &quot;SET WCL386&quot;
+command in your OS/2 system initialization file,<tt> CONFIG.SYS.</tt>
 <h2 id="WCLDWCL386_Command_Line_Examples"> WCL/WCL386 Command Line Examples </h2>
-<br>For most small applications, the<b><i> WCL</i></b> or<b><i> WCL386</i></b> command will suffice.&nbsp; We have only scratched
-the surface in describing the capabilities of the<b><i> WCL</i></b> and<b><i> WCL386</i></b> commands.&nbsp; The following
-examples describe the<b><i> WCL</i></b> and<b><i> WCL386</i></b> commands in more detail.
+<br>For most small applications, the <b><i> WCL</i></b> or <b><i> WCL386</i></b> command will suffice.&nbsp; We have only
+scratched the surface in describing the capabilities of the <b><i> WCL</i></b> and <b><i> WCL386</i></b> commands.&nbsp; The
+following examples describe the <b><i> WCL</i></b> and <b><i> WCL386</i></b> commands in more detail.
 <br><br>Suppose that your application is contained in three files called<tt> apdemo.c</tt>,<tt> aputils.c</tt>, and<tt> apdata.c.</tt>
 &nbsp;We can compile and link all three files with one command.
 <br><br><b>Example 1:</b>
@@ -712,10 +712,10 @@ file.
 <br><br><b>Example 2:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -d2 *.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -d2 *.c</tt>
-<br><br><b><i>WCL</i></b> or<b><i> WCL386</i></b> will locate all files with the &quot;.c&quot; filename extension and compile
+<br><br><b><i> WCL</i></b> or <b><i> WCL386</i></b> will locate all files with the &quot;.c&quot; filename extension and compile
 each of them.&nbsp; The name of the executable file will depend on which of the C/C++ source files is found first.&nbsp; Since
-this is a somewhat haphazard approach to naming the executable file,<b><i> WCL</i></b> and<b><i> WCL386</i></b> have an option,
-&quot;fe&quot;, which will allow you to specify the name to be used.
+this is a somewhat haphazard approach to naming the executable file, <b><i> WCL</i></b> and <b><i> WCL386</i></b> have an
+option, &quot;fe&quot;, which will allow you to specify the name to be used.
 <br><br><b>Example 3:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -d2 -fe=apdemo *.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -d2 -fe=apdemo *.c</tt>
@@ -745,8 +745,8 @@ demo.exe.</tt>&nbsp;
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl386=-d1 -ox -k4096</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -fe=grdemo gr*.c graph.lib -fd=grdemo</tt>
 <br><br>All C/C++ source files beginning with the letters &quot;gr&quot; are compiled and then linked with<tt> graph.lib</tt>
-to generate<tt> grdemo.exe</tt> which uses a 4K stack.&nbsp; The temporary linker directive file that is created by<b><i>
-WCL</i></b> or<b><i> WCL386</i></b> will be kept and renamed to<tt> grdemo.lnk.</tt>&nbsp; 
+to generate<tt> grdemo.exe</tt> which uses a 4K stack.&nbsp; The temporary linker directive file that is created by <b><i>
+WCL</i></b> or <b><i> WCL386</i></b> will be kept and renamed to<tt> grdemo.lnk.</tt>&nbsp; 
 <br><br><b>Example 8:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libos2=c:\watcom\lib286\os2;c:\os2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set lib=c:\watcom\lib286\dos;c:\watcom\lib286</tt>
@@ -756,10 +756,10 @@ WCL</i></b> or<b><i> WCL386</i></b> will be kept and renamed to<tt> grdemo.lnk.<
 phapi.lib</tt> to generate<tt> grdemo1.exe</tt> which is to be used with Phar Lap's 286 DOS Extender.&nbsp; The &quot;lp&quot;
 option indicates that an OS/2 format executable is to be created.&nbsp; The file<tt> graphp.obj</tt> in the directory &quot;\WATCOM\LIB286\OS2&quot;
 contains special initialization code for Phar Lap's 286 DOS Extender.&nbsp; The file<tt> phapi.lib</tt> is part of the Phar
-Lap 286 DOS Extender package.&nbsp; The<b> LIBOS2</b> environment variable must include the location of the OS/2 libraries
-and the<b> LIB</b> environment variable must include the location of the DOS libraries (in order to locate<tt> graph.lib</tt>).
-&nbsp;The<b> LIBOS2</b> environment variable must also include the location of the OS/2 file<tt> doscalls.lib</tt> which is
-usually &quot;C:\OS2&quot;.
+Lap 286 DOS Extender package.&nbsp; The <b> LIBOS2</b> environment variable must include the location of the OS/2 libraries
+and the <b> LIB</b> environment variable must include the location of the DOS libraries (in order to locate<tt> graph.lib</tt>).
+&nbsp;The <b> LIBOS2</b> environment variable must also include the location of the OS/2 file<tt> doscalls.lib</tt> which
+is usually &quot;C:\OS2&quot;.
 <br><br>For more complex applications, you should use the &quot;Make&quot; utility.
 <h1 id="The_Open_Watcom_CDCPP_POSIXMlike_Compiler_Driver"> The Open Watcom C/C++ POSIX-like Compiler Driver </h1>
 <br>The Open Watcom C/C++ POSIX-like Compiler Driver is designed for generating applications, simply and quickly, using a
@@ -1156,8 +1156,8 @@ and these may be specified as an argument to the &quot;l=&quot; option.&nbsp; Th
 linker's @ directive to pull in directives from &lt;file&gt;
 </dl>
 <h2 id="owcc_Command_Line_Examples"> owcc Command Line Examples </h2>
-<br>For most small applications, the<b><i> owcc</i></b> command will suffice.&nbsp; We have only scratched the surface in
-describing the capabilities of the<b><i> owcc</i></b> command.&nbsp; The following examples describe the<b><i> owcc</i></b>
+<br>For most small applications, the <b><i> owcc</i></b> command will suffice.&nbsp; We have only scratched the surface in
+describing the capabilities of the <b><i> owcc</i></b> command.&nbsp; The following examples describe the <b><i> owcc</i></b>
 commands in more detail.
 <br><br>Suppose that your application is contained in three files called<tt> apdemo.c</tt>,<tt> aputils.c</tt>, and<tt> apdata.c.</tt>
 &nbsp;We can compile and link all three files with one command.
@@ -1168,10 +1168,10 @@ debug option.&nbsp; Debugging information is included in the executable file.
 <br><br>We can issue a simpler command if the current directory contains only our three C/C++ source files.
 <br><br><b>Example 2:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -g *.c</tt>
-<br><br><b><i>owcc</i></b> will locate all files with the &quot;.c&quot; filename extension and compile each of them.&nbsp;
+<br><br><b><i> owcc</i></b> will locate all files with the &quot;.c&quot; filename extension and compile each of them.&nbsp;
 The default name of the executable file will be<tt> a.out.</tt>&nbsp; Since it is only possible to have one executable with
-the name<tt> a.out</tt> in a directory,<b><i> owcc</i></b> has an option, &quot;o&quot;, which will allow you to specify the
-name to be used.
+the name<tt> a.out</tt> in a directory, <b><i> owcc</i></b> has an option, &quot;o&quot;, which will allow you to specify
+the name to be used.
 <br><br><b>Example 3:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -g -o apdemo *.c</tt>
 <br><br>By using the &quot;o&quot; option, the executable file will always be called<tt> apdemo.</tt>
@@ -1189,7 +1189,7 @@ linking the application.&nbsp; The &quot;.obj&quot; filename extension indicates
 <br><br><b>Example 6:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -o demo *.c utility.obj</tt>
 <br><br>All of the C/C++ source files in the current directory are compiled and then linked with<tt> utility.obj</tt> to generate<tt>
-demo.</tt>&nbsp; The temporary linker directive file that is created by<b><i> owcc</i></b> will be kept and renamed to<tt>
+demo.</tt>&nbsp; The temporary linker directive file that is created by <b><i> owcc</i></b> will be kept and renamed to<tt>
 grdemo.lnk.</tt>
 <br><br>For more complex applications, you should use a &quot;Make&quot; utility.
 <h1 id="The_Open_Watcom_Assembler"> The Open Watcom Assembler </h1>
@@ -3532,7 +3532,7 @@ in any order.&nbsp; The possible options are:
 &nbsp;The patch may be applied by typing the command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bpatch wlink.a</tt>
-<br><br>The Open Watcom Patch Utility locates the file<tt> C:\WATCOM\BINW\WLINK.EXE</tt> using the<b> PATH</b> environment
+<br><br>The Open Watcom Patch Utility locates the file<tt> C:\WATCOM\BINW\WLINK.EXE</tt> using the <b> PATH</b> environment
 variable.&nbsp; The actual name of the executable file is extracted from the file<tt> wlink.a.</tt>&nbsp; It then verifies
 that the file to be patched is the correct one by comparing the size of the file to be patched to the expected size.&nbsp;
 If the file sizes match, the program responds with:
@@ -4875,12 +4875,12 @@ output.obj</tt>
 <br><br>Notice the ampersand (&quot;&amp;&quot;) at the end of the macro definition for &quot;object_files&quot;.&nbsp; The
 ampersand indicates that the macro definition continues on the next line.&nbsp; In general, if you want to continue a line
 in a makefile, use an ampersand (&quot;&amp;&quot;) at the end of the line.
-<br><br>There are special macros provided by Make to access environment variable names.&nbsp; To access the<b> PATH</b> environment
+<br><br>There are special macros provided by Make to access environment variable names.&nbsp; To access the <b> PATH</b> environment
 variable in a makefile, we use the macro identifier &quot;%path&quot;.&nbsp; For example, if we have the following line in
 a command list:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(%path)</tt>
-<br><br>it will print out the current value of the<b> PATH</b> environment variable when it is executed.
+<br><br>it will print out the current value of the <b> PATH</b> environment variable when it is executed.
 <br><br>There are two other special environment macros that are predefined by Make.&nbsp; The macro identifier &quot;%cdrive&quot;
 will expand into one letter representing the current drive.&nbsp; Note that it is operating system dependent whether the cd
 command changes the current drive.&nbsp; The macro identifier &quot;%cwd&quot; will expand into the current working directory.
@@ -6182,8 +6182,8 @@ compiler.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
-<br><br>The first &quot;set&quot; command will set up the<b> INCLUDE</b> environment variable so that the Open Watcom C/C++
-compiler may find header files.&nbsp; Notice that the old value of the<b> INCLUDE</b> environment variable is used in setting
+<br><br>The first &quot;set&quot; command will set up the <b> INCLUDE</b> environment variable so that the Open Watcom C/C++
+compiler may find header files.&nbsp; Notice that the old value of the <b> INCLUDE</b> environment variable is used in setting
 the new value.
 <br><br>The second &quot;set&quot; command indicates to the Open Watcom Linker that libraries may be found in the indicated
 directories.

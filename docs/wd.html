@@ -503,7 +503,7 @@ system and your video card.&nbsp; If your system does not support the requested 
 <dt>/Invoke=file
 <dd>may be used to specify an alternate name for the debugger configuration file which is to be used at start-up time.&nbsp; The
 default file name is &quot;WD.DBG&quot;.&nbsp; Debugger configuration files are found in the current directory or one of the
-directories in your<b> PATH</b> .
+directories in your <b> PATH</b>.
 <dt>/NOInvoke
 <dd>specifies that the default debugger configuration file is not to be invoked.
 <dt>/NOMouse
@@ -549,8 +549,8 @@ it will check the timestamp, and if the file is up-to-date, it doesn't bother re
 source files and debugger files on the remote machine.&nbsp; When<b> remotefiles</b> is specified, all debugger files (except
 &quot;trap&quot; files) and application source files are opened on the task machine rather than the debugger machine.&nbsp;
 The trap file must be located on the debugger machine.
-<br><br>The<b> PATH</b> environment variable on the task machine is always used in locating executable image files.&nbsp;
-When<b> remotefiles</b> is specified, the debugger also uses the task machine's<b> PATH</b> environment variable to locate
+<br><br>The <b> PATH</b> environment variable on the task machine is always used in locating executable image files.&nbsp;
+When<b> remotefiles</b> is specified, the debugger also uses the task machine's <b> PATH</b> environment variable to locate
 debugger command files.&nbsp; See the section entitled <a href="#Remote_Debugging">Remote Debugging</a> for an explanation
 of remote debugging.&nbsp; See the section entitled <a href="#Specifying_Files_on_Remote_and_Local_Machines">Specifying Files on Remote and Local Machines</a>
 for an explanation of remote and local file names.
@@ -691,8 +691,8 @@ features will be disabled.
 <dd>specifies a set of X Windows configuration options to pass to<b> xqsh</b>.
 </dl>
 <h2 id="Environment_Variables"> Environment Variables </h2>
-<br>You can use the<b> WD</b> environment variable to specify default options to be used by the debugger.&nbsp; Once you have
-defined the environment variable, those options are used each time you start the debugger.
+<br>You can use the <b> WD</b> environment variable to specify default options to be used by the debugger.&nbsp; Once you
+have defined the environment variable, those options are used each time you start the debugger.
 <h3 id="WD_Environment_Variable"> WD Environment Variable </h3>
 <br>If the specification of an option involves the use of an &quot;=&quot; character, use the &quot;#&quot; character in its
 place.&nbsp; This is required by the syntax of the &quot;SET&quot; command.&nbsp; Options found in the environment variable
@@ -2074,7 +2074,7 @@ with any substring, for example &quot;IMAGE&quot;, &quot;IMAGE.DLL&quot; or &quo
 in the image names.&nbsp; 
 <dt>On Debug Message
 <dd>When checked, cause program execution to stop whenever Windows 3.1, Windows NT, or Windows 95 prints a debug string.&nbsp;
-A debug string is printed whenever the application or debug Kernel calls the<b><i> OutputDebugString</i></b> function.&nbsp;
+A debug string is printed whenever the application or debug Kernel calls the <b><i> OutputDebugString</i></b> function.&nbsp;
 This option is toggled each time it is selected from the<b><i> Break</i></b> menu.&nbsp; 
 <dt>View All
 <dd>Open the breakpoint window.&nbsp; This window will show a list of all breakpoints.&nbsp; You can use the window to create,
@@ -2501,7 +2501,7 @@ locally.
 a communication link and the debugger will refuse to start.
 <br><br>It is important to realize that the application to be debugged must reside on the debug server machine.&nbsp; It must
 be possible for the debug server to locate the application to be debugged.&nbsp; It can be in the current working directory
-of the debugger server machine, or in the<b> PATH,</b> or a path to locate the application on the debug server machine can
+of the debugger server machine, or in the <b> PATH,</b> or a path to locate the application on the debug server machine can
 be specified on the debugger command line.&nbsp; Alternatively, you can ask the debugger to download the application to the
 debug server machine if the application resides on the debugger machine.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2679,15 +2679,15 @@ the other DOS extenders (e.g., &quot;CW&quot; for CauseWay).&nbsp; Do not forget
 <dl>
 <dt>CW
 <dd>Both &quot;CWSTUB.EXE&quot; and the loader help file &quot;CWHELP.EXE&quot; must also be located in one of the directories
-listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_CauseWay_32Mbit_DOS_Extender_Applications">Debugging CauseWay 32-bit DOS Extender Applications</a>
+listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_CauseWay_32Mbit_DOS_Extender_Applications">Debugging CauseWay 32-bit DOS Extender Applications</a>
 for more information on debugging applications that use the CauseWay DOS extender.
 <dt>RSI
 <dd>Both &quot;DOS4GW.EXE&quot; and the loader help file &quot;RSIHELP.EXP&quot; must also be located in one of the directories
-listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_DOSD4GLWR_32Mbit_DOS_Extender_Applications">Debugging DOS/4G(W) 32-bit DOS Extender Applications</a>
+listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_DOSD4GLWR_32Mbit_DOS_Extender_Applications">Debugging DOS/4G(W) 32-bit DOS Extender Applications</a>
 for more information on debugging applications that use the DOS/4GW DOS extender.
 <dt>PLS
 <dd>One or more of &quot;RUN386.EXE&quot; (or &quot;TNT.EXE&quot;), &quot;DBGLIB.REX&quot;, &quot;PLSHELP.EXP&quot;, and &quot;PEDHELP.EXP&quot;
-must be located in one of the directories listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled
+must be located in one of the directories listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled
 <a href="#Debugging_Phar_Lap_32Mbit_DOS_Extender_Applications">Debugging Phar Lap 32-bit DOS Extender Applications</a> for
 more information on debugging applications that use the Phar Lap DOS extender.
 </dl>
@@ -2740,15 +2740,15 @@ the other DOS extenders (e.g., &quot;CW&quot; for CauseWay).&nbsp; Do not forget
 <dl>
 <dt>CW
 <dd>Both &quot;CWSTUB.EXE&quot; and the loader help file &quot;CWHELP.EXE&quot; must also be located in one of the directories
-listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_CauseWay_32Mbit_DOS_Extender_Applications">Debugging CauseWay 32-bit DOS Extender Applications</a>
+listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_CauseWay_32Mbit_DOS_Extender_Applications">Debugging CauseWay 32-bit DOS Extender Applications</a>
 for more information on debugging applications that use the CauseWay DOS extender.
 <dt>RSI
 <dd>Both &quot;DOS4GW.EXE&quot; and the loader help file &quot;RSIHELP.EXP&quot; must also be located in one of the directories
-listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_DOSD4GLWR_32Mbit_DOS_Extender_Applications">Debugging DOS/4G(W) 32-bit DOS Extender Applications</a>
+listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_DOSD4GLWR_32Mbit_DOS_Extender_Applications">Debugging DOS/4G(W) 32-bit DOS Extender Applications</a>
 for more information on debugging applications that use the DOS/4GW DOS extender.
 <dt>PLS
 <dd>One or more of &quot;RUN386.EXE&quot; (or &quot;TNT.EXE&quot;), &quot;DBGLIB.REX&quot;, &quot;PLSHELP.EXP&quot;, and &quot;PEDHELP.EXP&quot;
-must be located in one of the directories listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled
+must be located in one of the directories listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled
 <a href="#Debugging_Phar_Lap_32Mbit_DOS_Extender_Applications">Debugging Phar Lap 32-bit DOS Extender Applications</a> for
 more information on debugging applications that use the Phar Lap DOS extender.
 </dl>
@@ -2780,15 +2780,15 @@ the other DOS extenders (e.g., &quot;CW&quot; for CauseWay).&nbsp; Do not forget
 <dl>
 <dt>CW
 <dd>Both &quot;CWSTUB.EXE&quot; and the loader help file &quot;CWHELP.EXE&quot; must also be located in one of the directories
-listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_CauseWay_32Mbit_DOS_Extender_Applications">Debugging CauseWay 32-bit DOS Extender Applications</a>
+listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_CauseWay_32Mbit_DOS_Extender_Applications">Debugging CauseWay 32-bit DOS Extender Applications</a>
 for more information on debugging applications that use the CauseWay DOS extender.
 <dt>RSI
 <dd>Both &quot;DOS4GW.EXE&quot; and the loader help file &quot;RSIHELP.EXP&quot; must also be located in one of the directories
-listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_DOSD4GLWR_32Mbit_DOS_Extender_Applications">Debugging DOS/4G(W) 32-bit DOS Extender Applications</a>
+listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled <a href="#Debugging_DOSD4GLWR_32Mbit_DOS_Extender_Applications">Debugging DOS/4G(W) 32-bit DOS Extender Applications</a>
 for more information on debugging applications that use the DOS/4GW DOS extender.
 <dt>PLS
 <dd>One or more of &quot;RUN386.EXE&quot; (or &quot;TNT.EXE&quot;), &quot;DBGLIB.REX&quot;, &quot;PLSHELP.EXP&quot;, and &quot;PEDHELP.EXP&quot;
-must be located in one of the directories listed in the DOS<b> PATH</b> environment variable.&nbsp; See the section entitled
+must be located in one of the directories listed in the DOS <b> PATH</b> environment variable.&nbsp; See the section entitled
 <a href="#Debugging_Phar_Lap_32Mbit_DOS_Extender_Applications">Debugging Phar Lap 32-bit DOS Extender Applications</a> for
 more information on debugging applications that use the Phar Lap DOS extender.
 </dl>
@@ -3043,12 +3043,12 @@ is customized for use with Open Watcom C/C++(32) and Open Watcom FORTRAN 77/32 a
 </dl>
 <h3 id="Debugging_CauseWay_32Mbit_DOS_Extender_Applications"> Debugging CauseWay 32-bit DOS Extender Applications </h3>
 <br>When using the CauseWay DOS extender, the &quot;CWSTUB.EXE&quot; file must be located in one of the directories listed
-in the DOS<b> PATH</b> environment variable.&nbsp; The &quot;CWSTUB.EXE&quot; file will usually be stored in the &quot;BINW&quot;
+in the DOS <b> PATH</b> environment variable.&nbsp; The &quot;CWSTUB.EXE&quot; file will usually be stored in the &quot;BINW&quot;
 directory of the Open Watcom compiler package.&nbsp; You must also use the<b> TRap=CW</b> option.&nbsp; The &quot;CW.TRP&quot;
 file will usually be stored in the &quot;BINW&quot; directory of the Open Watcom compiler package.&nbsp; You should ensure
-that this &quot;BINW&quot; directory is included in the DOS<b> PATH</b> environment variable.&nbsp; Otherwise, you must specify
+that this &quot;BINW&quot; directory is included in the DOS <b> PATH</b> environment variable.&nbsp; Otherwise, you must specify
 the full path name for the trap file.
-<br><br>The help file &quot;CWHELP.EXE&quot; must also be located in one of the directories listed in the DOS<b> PATH</b>
+<br><br>The help file &quot;CWHELP.EXE&quot; must also be located in one of the directories listed in the DOS <b> PATH</b>
 environment variable.&nbsp; It will usually be stored in the &quot;BINW&quot; directory of the Open Watcom compiler package.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wd /trap=cw hello</tt>
@@ -3057,12 +3057,12 @@ environment variable.&nbsp; It will usually be stored in the &quot;BINW&quot; di
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wd hello</tt>
 <h3 id="Debugging_DOSD4GLWR_32Mbit_DOS_Extender_Applications"> Debugging DOS/4G(W) 32-bit DOS Extender Applications </h3>
 <br>When using the Tenberry Software DOS extender, the &quot;DOS4GW.EXE&quot; or &quot;DOS4G.EXE&quot; file must be located
-in one of the directories listed in the DOS<b> PATH</b> environment variable.&nbsp; The &quot;DOS4GW.EXE&quot; file will usually
-be stored in the &quot;BINW&quot; directory of the Open Watcom compiler package.&nbsp; You must also use the<b> TRap=RSI</b>
+in one of the directories listed in the DOS <b> PATH</b> environment variable.&nbsp; The &quot;DOS4GW.EXE&quot; file will
+usually be stored in the &quot;BINW&quot; directory of the Open Watcom compiler package.&nbsp; You must also use the<b> TRap=RSI</b>
 option.&nbsp; The &quot;RSI.TRP&quot; file will usually be stored in the &quot;BINW&quot; directory of the Open Watcom compiler
-package.&nbsp; You should ensure that this &quot;BINW&quot; directory is included in the DOS<b> PATH</b> environment variable.
+package.&nbsp; You should ensure that this &quot;BINW&quot; directory is included in the DOS <b> PATH</b> environment variable.
 &nbsp;Otherwise, you must specify the full path name for the trap file.
-<br><br>The help file &quot;RSIHELP.EXP&quot; must also be located in one of the directories listed in the DOS<b> PATH</b>
+<br><br>The help file &quot;RSIHELP.EXP&quot; must also be located in one of the directories listed in the DOS <b> PATH</b>
 environment variable.&nbsp; It will usually be stored in the &quot;BINW&quot; directory of the Open Watcom compiler package.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wd /trap=rsi hello</tt>
@@ -3071,10 +3071,10 @@ environment variable.&nbsp; It will usually be stored in the &quot;BINW&quot; di
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wd hello</tt>
 <h3 id="Debugging_Phar_Lap_32Mbit_DOS_Extender_Applications"> Debugging Phar Lap 32-bit DOS Extender Applications </h3>
 <br>When using the Phar Lap Software, Inc.&nbsp; DOS extender, the &quot;RUN386.EXE&quot; (or &quot;TNT.EXE&quot;), &quot;DBGLIB.REX&quot;,
-&quot;PLSHELP.EXP&quot;, and &quot;PEDHELP.EXP&quot; files must be located in one of the directories listed in the DOS<b>
+&quot;PLSHELP.EXP&quot;, and &quot;PEDHELP.EXP&quot; files must be located in one of the directories listed in the DOS <b>
 PATH</b> environment variable.&nbsp; You must also use the<b> TRap=PLS</b> option.&nbsp; The &quot;PLS.TRP&quot;, &quot;PLSHELP.EXP&quot;
 and &quot;PEDHELP.EXP&quot; files will usually be stored in the &quot;BINW&quot; directory of the Open Watcom compiler package.
-&nbsp;You should ensure that this &quot;BINW&quot; directory is included in the DOS<b> PATH</b> environment variable.&nbsp;
+&nbsp;You should ensure that this &quot;BINW&quot; directory is included in the DOS <b> PATH</b> environment variable.&nbsp;
 Otherwise, you must specify the full path name for the trap file.
 <br><br>Parameters are passed to the &quot;RUN386&quot; or &quot;TNT&quot; DOS extender using the<b> TRap</b> option.&nbsp;
 The entire parameter must be placed within braces.&nbsp; The following example illustrates how to debug a Phar Lap application
@@ -3175,8 +3175,8 @@ of Debug Registers.&nbsp; The following example illustrates the specification of
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wd /trap=std;d calendar</tt>
 <h2 id="Debugging_Under_Linux"> Debugging Under Linux </h2>
 <br>When the debugger starts up, it will attempt to open the initialization file<tt> .wdrc</tt> provided that you have not
-specified the<b> Invoke</b> command line option.&nbsp; It looks for this file in all the usual places (<b> CWD,</b> <b> WD_PATH,</b>
-<tt> /opt/watcom/wd</tt>).&nbsp; This file normally contains your customization commands.&nbsp; If it is found, it is processed
+specified the<b> Invoke</b> command line option.&nbsp; It looks for this file in all the usual places ( <b> CWD,</b> <b> WD_PATH,</b><tt>
+/opt/watcom/wd</tt>).&nbsp; This file normally contains your customization commands.&nbsp; If it is found, it is processed
 as the default configuration file.&nbsp; You would normally place this file in your home directory.
 <br><br>If the file does not exist, the debugger then looks for the<tt> wd.dbg</tt> file.
 <br><br>If you do not want the debugger to use the<tt> .wdrc</tt> file then you can do one of two things - make sure that
@@ -3201,8 +3201,8 @@ describes the search order for debugger files under Linux.
 <br>The search order for Open Watcom Debugger support files is as follows:
 <ol>
 <li>the current directory,
-<li>the paths listed in the<b> WD_PATH</b> environment variable,
-<li>the path listed in the<b> HOME</b> environment variable
+<li>the paths listed in the <b> WD_PATH</b> environment variable,
+<li>the path listed in the <b> HOME</b> environment variable
 <li>the directory where Open Watcom Debugger was started from
 <li>&quot;../wd&quot; directory relative to the directory where Open Watcom Debugger was started from, and, finally,
 <li>the &quot;/opt/watcom/wd&quot; directory.
@@ -3212,9 +3212,9 @@ option is specified, the debugger also attempts to locate the Open Watcom Debugg
 etc.) on the task machine.
 <h2 id="Debugging_Under_QNX"> Debugging Under QNX </h2>
 <br>When the debugger starts up, it will attempt to open the initialization file<tt> .wdrc</tt> provided that you have not
-specified the<b> Invoke</b> command line option.&nbsp; It looks for this file in all the usual places (<b> CWD,</b> <b> WD_PATH,</b>
-<tt> /usr/watcom/&lt;ver&gt;/wd, /usr/watcom/wd</tt>).&nbsp; This file normally contains your customization commands.&nbsp;
-If it is found, it is processed as the default configuration file.&nbsp; You would normally place this file in your home directory.
+specified the<b> Invoke</b> command line option.&nbsp; It looks for this file in all the usual places ( <b> CWD,</b> <b> WD_PATH,</b><tt>
+/usr/watcom/&lt;ver&gt;/wd, /usr/watcom/wd</tt>).&nbsp; This file normally contains your customization commands.&nbsp; If
+it is found, it is processed as the default configuration file.&nbsp; You would normally place this file in your home directory.
 <br><br>If the file does not exist, the debugger then looks for the<tt> wd.dbg</tt> file.
 <br><br>If you do not want the debugger to use the<tt> .wdrc</tt> file then you can do one of two things - make sure that
 it cannot be located (e.g., delete it) or use the<b> Invoke</b> command line option (you could specify the<tt> wd.dbg</tt>
@@ -3301,8 +3301,8 @@ Run</i></b> menu to restore the register contents to their original postmortem s
 <br>The search order for Open Watcom Debugger support files is as follows:
 <ol>
 <li>the current directory,
-<li>the paths listed in the<b> WD_PATH</b> environment variable,
-<li>the path listed in the<b> HOME</b> environment variable, and, finally,
+<li>the paths listed in the <b> WD_PATH</b> environment variable,
+<li>the path listed in the <b> HOME</b> environment variable, and, finally,
 <li>the &quot;/usr/watcom/wd&quot; directory.
 </ol>
 <br>You should note the following when using the remote debugging feature of the Open Watcom Debugger.&nbsp; When the<b> REMotefiles</b>
@@ -3319,14 +3319,14 @@ of the language that is currently established.&nbsp; The Open Watcom Debugger su
 &nbsp;For example, part of an application may be written in C, another part in C++, and another part in FORTRAN 77.&nbsp;
 The modules must have been compiled by one of the Open Watcom C, C++ or FORTRAN 77 compilers.&nbsp; When tracing into a module
 written in one of these languages, the debugger will automatically select the appropriate grammar.&nbsp; In addition to this
-automatic selection, a particular grammar may be selected using the debugger<b><i> Set LAnguage</i></b> command.&nbsp; The
-language currently selected can be determined using the<b><i> SHow Set LAnguage</i></b> command.
+automatic selection, a particular grammar may be selected using the debugger <b><i> Set LAnguage</i></b> command.&nbsp; The
+language currently selected can be determined using the <b><i> SHow Set LAnguage</i></b> command.
 <h2 id="General_Rules_of_Expression_Handling"> General Rules of Expression Handling </h2>
 <br>The debugger handles two types of expressions.&nbsp; The difference between the two types of expressions is quite subtle.
 &nbsp;One is called an &quot;expression&quot; and things operate as you would normally expect.&nbsp; This type of expression
 is used for all &quot;higher&quot; level operations such as adding items to the Watches window.&nbsp; The other type is called
 an &quot;address expression&quot;.&nbsp; It is used whenever the debugger prompts for an address and in lower level commands
-such<b><i> Examine</i></b> and<b><i> Modify</i></b> .&nbsp; If the notation for a particular command argument is &lt;address&gt;,
+such <b><i> Examine</i></b> and <b><i> Modify</i></b>.&nbsp; If the notation for a particular command argument is &lt;address&gt;,
 it is an address expression.&nbsp; If it ends in just &quot;expr&quot; then it is a normal expression.&nbsp; The difference
 between the two forms lies in how they treat symbol names.&nbsp; In a normal expression the value of a symbol is its<b> rvalue,</b>
 or contents.&nbsp; In an address expression, the value of a symbol is (sometimes) its<b> lvalue,</b> or address.
@@ -3543,7 +3543,7 @@ of the complex constant, followed by a right parenthesis.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( 1423.34E12, 3 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ( +345, 4 )</tt>
 <br><br>Complex constants will be accepted when the debugger's currently established language is FORTRAN.&nbsp; The language
-currently selected can be determined using the<b><i> SHow Set LAnguage</i></b> command.
+currently selected can be determined using the <b><i> SHow Set LAnguage</i></b> command.
 <h4 id="Character_Constant_LC_OnlyR"> Character Constant (C Only) </h4>
 <br>In the C and C++ programming languages, a<b> character constant</b> consists of an apostrophe followed by a single character
 followed by an apostrophe.&nbsp; The apostrophes are not part of the datum.&nbsp; An apostrophe in a character datum represents
@@ -3554,7 +3554,7 @@ one character, namely the apostrophe.&nbsp; A character constant must have lengt
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 'e'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; '''</tt>
 <br><br>The C/C++ form of a character constant will be accepted when the debugger's currently established language is C or
-C++.&nbsp; The language currently selected can be determined using the<b><i> SHow Set LAnguage</i></b> command.
+C++.&nbsp; The language currently selected can be determined using the <b><i> SHow Set LAnguage</i></b> command.
 <h4 id="Character_String_Constant_LFORTRAN_OnlyR"> Character String Constant (FORTRAN Only) </h4>
 <br>In the FORTRAN 77 programming language, a<b> character constant</b> consists of an apostrophe followed by any string of
 characters followed by an apostrophe.&nbsp; The apostrophes are not part of the datum.&nbsp; If an apostrophe is to appear
@@ -3853,13 +3853,13 @@ the syntax of &quot;type_name&quot;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (int) 3.1415926</tt>
 <dt>&#91;type_name&#93; unary_expression
 <dd>You can force the debugger to treat a memory reference as a particular type of value by using a type coercion operator.&nbsp;
-A type specification is placed inside brackets as shown above.&nbsp; The basic types are<b><i> char</i></b> (character, 8
-bits),<b><i> short</i></b> (short integer, 16 bits),<b><i> long</i></b> (long integer, 32 bits),<b><i> float</i></b> (single-precision
-floating-point, 32 bits), and<b><i> double</i></b> (double-precision floating-point, 64 bits).&nbsp; Unless qualified by the<b><i>
-short</i></b> or<b><i> long</i></b> keyword, the<b><i> int</i></b> type will be 16 bits in 16-bit applications and 32 bits
-in 32-bit applications (386, 486 and Pentium systems).&nbsp; The character, short integer and long integer types may be treated
-as<b><i> signed</i></b> or<b><i> unsigned</i></b> items.&nbsp; The default for the character type is unsigned.&nbsp; The default
-for the integer types is signed.
+A type specification is placed inside brackets as shown above.&nbsp; The basic types are <b><i> char</i></b> (character, 8
+bits), <b><i> short</i></b> (short integer, 16 bits), <b><i> long</i></b> (long integer, 32 bits), <b><i> float</i></b> (single-precision
+floating-point, 32 bits), and <b><i> double</i></b> (double-precision floating-point, 64 bits).&nbsp; Unless qualified by
+the <b><i> short</i></b> or <b><i> long</i></b> keyword, the <b><i> int</i></b> type will be 16 bits in 16-bit applications
+and 32 bits in 32-bit applications (386, 486 and Pentium systems).&nbsp; The character, short integer and long integer types
+may be treated as <b><i> signed</i></b> or <b><i> unsigned</i></b> items.&nbsp; The default for the character type is unsigned.
+&nbsp;The default for the integer types is signed.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;char&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; (default unsigned)</tt>
@@ -3880,7 +3880,7 @@ for the integer types is signed.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;unsigned long int&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;float&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;double&#93;</tt>
-<br><br>Note that it is unnecessary to specify the<b><i> int</i></b> keyword when<b><i> short</i></b> or<b><i> long</i></b>
+<br><br>Note that it is unnecessary to specify the <b><i> int</i></b> keyword when <b><i> short</i></b> or <b><i> long</i></b>
 are specified.
 <dt>?
 <dd>Existence test:&nbsp; The &quot;?&quot; unary operator may be used to test for the existence of a symbol.

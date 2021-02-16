@@ -610,8 +610,8 @@ and these may be specified as an argument to the &quot;l=&quot; option.&nbsp; Th
 <dd>
 </dl>
 <h2 id="WFLDWFL386_Environment_Variables"> WFL/WFL386 Environment Variables </h2>
-<br>The<b> WFL</b> environment variable can be used to specify commonly used<b><i> WFL</i></b> options.&nbsp; The<b> WFL386</b>
-environment variable can be used to specify commonly used<b><i> WFL386</i></b> options.&nbsp; These options are processed
+<br>The <b> WFL</b> environment variable can be used to specify commonly used <b><i> WFL</i></b> options.&nbsp; The <b> WFL386</b>
+environment variable can be used to specify commonly used <b><i> WFL386</i></b> options.&nbsp; These options are processed
 before options specified on the command line.&nbsp; 
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfl=-d1 -ot</tt>
@@ -620,21 +620,21 @@ before options specified on the command line.&nbsp;
 object file), and &quot;ot&quot; (favour time optimizations over size optimizations).
 <br><br>Whenever you wish to specify an option that requires the use of an &quot;=&quot; character, you can use the &quot;#&quot;
 character in its place.&nbsp; This is required by the syntax of the &quot;SET&quot; command.
-<br><br>Once the appropriate environment variable has been defined, those options listed become the default each time the<b><i>
-WFL</i></b> or<b><i> WFL386</i></b> command is used.
-<br><br>The<b> WFL</b> environment variable is used by<b><i> WFL</i></b> only.&nbsp; The<b> WFL386</b> environment variable
-is used by<b><i> WFL386</i></b> only.&nbsp; Both<b><i> WFL</i></b> and<b><i> WFL386</i></b> pass the relevant options to the
-Open Watcom F77 compiler and linker.&nbsp; This environment variable is not examined by the Open Watcom F77 compiler or the
-linker when invoked directly.
-<br><br><b><i>Hint:</i></b>&nbsp; If you are running DOS and you use the same<b><i> WFL</i></b> or<b><i> WFL386</i></b> options
-all the time, you may find it handy to place the &quot;SET WFL&quot; or &quot;SET WFL386&quot; command in your DOS system
-initialization file,<tt> AUTOEXEC.BAT.</tt>&nbsp; If you are running OS/2 and you use the same<b><i> WFL</i></b> or<b><i>
-WFL386</i></b> options all the time, you may find it handy to place the &quot;SET WFL&quot; or &quot;SET WFL386&quot; command
-in your OS/2 system initialization file,<tt> CONFIG.SYS.</tt>
+<br><br>Once the appropriate environment variable has been defined, those options listed become the default each time the
+<b><i> WFL</i></b> or <b><i> WFL386</i></b> command is used.
+<br><br>The <b> WFL</b> environment variable is used by <b><i> WFL</i></b> only.&nbsp; The <b> WFL386</b> environment variable
+is used by <b><i> WFL386</i></b> only.&nbsp; Both <b><i> WFL</i></b> and <b><i> WFL386</i></b> pass the relevant options to
+the Open Watcom F77 compiler and linker.&nbsp; This environment variable is not examined by the Open Watcom F77 compiler or
+the linker when invoked directly.
+<br><br><b><i>Hint:</i></b>&nbsp; If you are running DOS and you use the same <b><i> WFL</i></b> or <b><i> WFL386</i></b>
+options all the time, you may find it handy to place the &quot;SET WFL&quot; or &quot;SET WFL386&quot; command in your DOS
+system initialization file,<tt> AUTOEXEC.BAT.</tt>&nbsp; If you are running OS/2 and you use the same <b><i> WFL</i></b> or
+<b><i> WFL386</i></b> options all the time, you may find it handy to place the &quot;SET WFL&quot; or &quot;SET WFL386&quot;
+command in your OS/2 system initialization file,<tt> CONFIG.SYS.</tt>
 <h2 id="WFLDWFL386_Command_Line_Examples"> WFL/WFL386 Command Line Examples </h2>
-<br>For most small applications, the<b><i> WFL</i></b> or<b><i> WFL386</i></b> command will suffice.&nbsp; We have only scratched
-the surface in describing the capabilities of the<b><i> WFL</i></b> and<b><i> WFL386</i></b> commands.&nbsp; The following
-examples describe the<b><i> WFL</i></b> and<b><i> WFL386</i></b> commands in more detail.
+<br>For most small applications, the <b><i> WFL</i></b> or <b><i> WFL386</i></b> command will suffice.&nbsp; We have only
+scratched the surface in describing the capabilities of the <b><i> WFL</i></b> and <b><i> WFL386</i></b> commands.&nbsp; The
+following examples describe the <b><i> WFL</i></b> and <b><i> WFL386</i></b> commands in more detail.
 <br><br>Suppose that your application is contained in three files called<tt> apdemo.for</tt>,<tt> aputils.for</tt>, and<tt>
 apdata.for.</tt>&nbsp; We can compile and link all three files with one command.
 <br><br><b>Example 1:</b>
@@ -647,10 +647,10 @@ file.
 <br><br><b>Example 2:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfl -d2 *.for</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfl386 -d2 *.for</tt>
-<br><br><b><i>WFL</i></b> or<b><i> WFL386</i></b> will locate all files with the &quot;.for&quot; filename extension and compile
-each of them.&nbsp; The name of the executable file will depend on which of the FORTRAN 77 source files is found first.&nbsp;
-Since this is a somewhat haphazard approach to naming the executable file,<b><i> WFL</i></b> and<b><i> WFL386</i></b> have
-an option, &quot;fe&quot;, which will allow you to specify the name to be used.
+<br><br><b><i> WFL</i></b> or <b><i> WFL386</i></b> will locate all files with the &quot;.for&quot; filename extension and
+compile each of them.&nbsp; The name of the executable file will depend on which of the FORTRAN 77 source files is found first.
+&nbsp;Since this is a somewhat haphazard approach to naming the executable file, <b><i> WFL</i></b> and <b><i> WFL386</i></b>
+have an option, &quot;fe&quot;, which will allow you to specify the name to be used.
 <br><br><b>Example 3:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfl -d2 -fe=apdemo *.for</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfl386 -d2 -fe=apdemo *.for</tt>
@@ -680,8 +680,8 @@ to generate<tt> demo.exe.</tt>&nbsp;
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfl386=-d1 -op -k=4096</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfl386 -fe=grdemo gr*.for graph.lib -fd=grdemo</tt>
 <br><br>All FORTRAN 77 source files beginning with the letters &quot;gr&quot; are compiled and then linked with<tt> graph.lib</tt>
-to generate<tt> grdemo.exe</tt> which uses a 4K stack.&nbsp; The temporary linker directive file that is created by<b><i>
-WFL</i></b> or<b><i> WFL386</i></b> will be kept and renamed to<tt> grdemo.lnk.</tt>&nbsp; 
+to generate<tt> grdemo.exe</tt> which uses a 4K stack.&nbsp; The temporary linker directive file that is created by <b><i>
+WFL</i></b> or <b><i> WFL386</i></b> will be kept and renamed to<tt> grdemo.lnk.</tt>&nbsp; 
 <br><br><b>Example 8:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libos2=c:\watcom\lib286\os2;c:\os2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set lib=c:\watcom\lib286\dos</tt>
@@ -691,10 +691,10 @@ WFL</i></b> or<b><i> WFL386</i></b> will be kept and renamed to<tt> grdemo.lnk.<
 phapi.lib</tt> to generate<tt> grdemo1.exe</tt> which is to be used with Phar Lap's 286 DOS Extender.&nbsp; The &quot;lp&quot;
 option indicates that an OS/2 format executable is to be created.&nbsp; The file<tt> graphp.obj</tt> in the directory &quot;\WATCOM\LIB286\OS2&quot;
 contains special initialization code for Phar Lap's 286 DOS Extender.&nbsp; The file<tt> phapi.lib</tt> is part of the Phar
-Lap 286 DOS Extender package.&nbsp; The<b> LIBOS2</b> environment variable must include the location of the OS/2 libraries
-and the<b> LIB</b> environment variable must include the location of the DOS libraries (in order to locate<tt> graph.lib</tt>).
-&nbsp;The<b> LIBOS2</b> environment variable must also include the location of the OS/2 file<tt> doscalls.lib</tt> which is
-usually &quot;C:\OS2&quot;.
+Lap 286 DOS Extender package.&nbsp; The <b> LIBOS2</b> environment variable must include the location of the OS/2 libraries
+and the <b> LIB</b> environment variable must include the location of the DOS libraries (in order to locate<tt> graph.lib</tt>).
+&nbsp;The <b> LIBOS2</b> environment variable must also include the location of the OS/2 file<tt> doscalls.lib</tt> which
+is usually &quot;C:\OS2&quot;.
 <br><br>For more complex applications, you should use the &quot;Make&quot; utility.
 <h1 id="The_Open_Watcom_Assembler"> The Open Watcom Assembler </h1>
 <br><br>This chapter describes the Open Watcom Assembler.&nbsp; It takes as input an assembler source file (a file with extension
@@ -2852,7 +2852,7 @@ in any order.&nbsp; The possible options are:
 &nbsp;The patch may be applied by typing the command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bpatch wlink.a</tt>
-<br><br>The Open Watcom Patch Utility locates the file<tt> C:\WATCOM\BINW\WLINK.EXE</tt> using the<b> PATH</b> environment
+<br><br>The Open Watcom Patch Utility locates the file<tt> C:\WATCOM\BINW\WLINK.EXE</tt> using the <b> PATH</b> environment
 variable.&nbsp; The actual name of the executable file is extracted from the file<tt> wlink.a.</tt>&nbsp; It then verifies
 that the file to be patched is the correct one by comparing the size of the file to be patched to the expected size.&nbsp;
 If the file sizes match, the program responds with:
@@ -4194,12 +4194,12 @@ output.obj</tt>
 <br><br>Notice the ampersand (&quot;&amp;&quot;) at the end of the macro definition for &quot;object_files&quot;.&nbsp; The
 ampersand indicates that the macro definition continues on the next line.&nbsp; In general, if you want to continue a line
 in a makefile, use an ampersand (&quot;&amp;&quot;) at the end of the line.
-<br><br>There are special macros provided by Make to access environment variable names.&nbsp; To access the<b> PATH</b> environment
+<br><br>There are special macros provided by Make to access environment variable names.&nbsp; To access the <b> PATH</b> environment
 variable in a makefile, we use the macro identifier &quot;%path&quot;.&nbsp; For example, if we have the following line in
 a command list:
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(%path)</tt>
-<br><br>it will print out the current value of the<b> PATH</b> environment variable when it is executed.
+<br><br>it will print out the current value of the <b> PATH</b> environment variable when it is executed.
 <br><br>There are two other special environment macros that are predefined by Make.&nbsp; The macro identifier &quot;%cdrive&quot;
 will expand into one letter representing the current drive.&nbsp; Note that it is operating system dependent whether the cd
 command changes the current drive.&nbsp; The macro identifier &quot;%cwd&quot; will expand into the current working directory.
@@ -5465,8 +5465,8 @@ compiler.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
-<br><br>The first &quot;set&quot; command will set up the<b> FINCLUDE</b> environment variable so that the Open Watcom F77
-compiler may find header files.&nbsp; Notice that the old value of the<b> FINCLUDE</b> environment variable is used in setting
+<br><br>The first &quot;set&quot; command will set up the <b> FINCLUDE</b> environment variable so that the Open Watcom F77
+compiler may find header files.&nbsp; Notice that the old value of the <b> FINCLUDE</b> environment variable is used in setting
 the new value.
 <br><br>The second &quot;set&quot; command indicates to the Open Watcom Linker that libraries may be found in the indicated
 directories.

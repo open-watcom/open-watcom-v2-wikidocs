@@ -762,11 +762,11 @@ kind, which is a C source file.&nbsp; The overall structure is as follows:
 </ul>
 <br>As you can see, nothing fancy.&nbsp; Many programmers prefer to order functions so as to minimize forward declarations,
 ie.&nbsp; a<tt> main()</tt> function would be located at the end and every function fully defined before it is first used.
-<br><br>You can use<b><i> extern</i></b> declarations but you should be very careful.&nbsp; It is strongly encouraged that
+<br><br>You can use <b><i> extern</i></b> declarations but you should be very careful.&nbsp; It is strongly encouraged that
 all declarations of external functions and variable be located in header files which are included in modules that use them
 as well as modules that define them.&nbsp; The reason is simple - this way the compiler will tell you if you change the definition
-but not the header file.&nbsp; If you use ad-hoc<b><i> extern</i></b> declarations, you better make sure they're in sync with
-the actual definitions.
+but not the header file.&nbsp; If you use ad-hoc <b><i> extern</i></b> declarations, you better make sure they're in sync
+with the actual definitions.
 <h2 id="Help_the_compiler_and_it_will_help_you"> Help the compiler and it will help you </h2>
 <br>While the compiler is a rather sophisticated piece of software, it cannot divine your intentions.&nbsp; Hence you have
 to help it a bit by giving hints here and there.&nbsp; And if you help the compiler in this way, it will be better able to
@@ -774,41 +774,41 @@ help you.
 <br><br>First of all, always compile with maximum warning level.&nbsp; Just because a message is called a warning and not
 error doesn't mean you can ignore it.&nbsp; In fact many projects treat warnings as errors and will not build if any warnings
 are present.&nbsp; That is a Good Thing.
-<br><br>Use the<b><i> static</i></b> keyword often because it is good.&nbsp; This is a multi-faceted keyword and its exact
+<br><br>Use the <b><i> static</i></b> keyword often because it is good.&nbsp; This is a multi-faceted keyword and its exact
 semantics depend on where it is applied:
 <dl>
 <dt>globals
-<dd>here the<b><i> static</i></b> modifier does not change the storage class but makes the variables local to the module where
+<dd>here the <b><i> static</i></b> modifier does not change the storage class but makes the variables local to the module where
 they are defined, that is they won't be visible from other modules.&nbsp; If a variable needs to be global but doesn't have
 to be accessed from other modules, you should definitely make it static.&nbsp; That way you will not needlessly pollute the
 global namespace (reducing the chance of name clashes) and if you stop using the variable, the compiler will warn you.&nbsp;
 If you have a non-static global variable that is unused, the compiler cannot warn you as it has to assume that it is used
 from other modules.
 <dt>locals
-<dd>in this case the<b><i> static</i></b> keyword changes the storage class and the variable will be stored in data segment instead
+<dd>in this case the <b><i> static</i></b> keyword changes the storage class and the variable will be stored in data segment instead
 of on stack.&nbsp; If you need a variable that has global lifetime but only needs to be accessible from one function, making
 it local and static is a good choice.
 <dt>functions
-<dd>the effect of the<b><i> static</i></b> keyword here is similar to the global variables.&nbsp; The function will not be visible
+<dd>the effect of the <b><i> static</i></b> keyword here is similar to the global variables.&nbsp; The function will not be visible
 from other modules.&nbsp; Again, the compiler will warn you if you stop using such a function.&nbsp; But declaring a function
 static also helps the optimizer.&nbsp; For instance if the optimizer inlines a static function, it can completely remove the
 non-inlined version.&nbsp; If the function weren't static, the non-inlined version always has to be present for potential
 external callers.
 </dl>
-<br>Similar in vein to the<b><i> static</i></b> keyword is the<b><i> const</i></b> keyword.&nbsp; Again it can be applied
+<br>Similar in vein to the <b><i> static</i></b> keyword is the <b><i> const</i></b> keyword.&nbsp; Again it can be applied
 in various ways and it helps the compiler and optimizer by giving it hints about how you intend to use a particular variable
 or argument.&nbsp; Saying that a variable is constant is essentially the same as saying that it's read-only.&nbsp; The compiler/linker
-might place such variable in a read-only segment.&nbsp; While it is possible to circumvent the<b><i> const</i></b> modifier
+might place such variable in a read-only segment.&nbsp; While it is possible to circumvent the <b><i> const</i></b> modifier
 by taking the address of a constant variable and modifying it through a pointer, this is a bad thing to do and it may not
 work at all because the variable might be not be physically writable.&nbsp; It is perhaps worthwhile to remark that there
-are three possible outomes of applying the<b><i> const</i></b> modifier to a pointer:
+are three possible outomes of applying the <b><i> const</i></b> modifier to a pointer:
 <ul>
 <li>a constant pointer, that is the value of the pointer is constant but the data it points to isn't
 <li>a pointer to a constant, that is the pointer itself is not constant but the value it points to cannot be modified through
 it
 <li>a constant pointer to a constant, that is both the pointer itself and the value it points to are constant.
 </ul>
-<br>The<b><i> const</i></b> keyword is especially useful when used in function declarations.&nbsp; Consider the following
+<br>The <b><i> const</i></b> keyword is especially useful when used in function declarations.&nbsp; Consider the following
 typical declaration:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *strcpy( char *s1, const char *s2 );</tt>
