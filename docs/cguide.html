@@ -850,7 +850,7 @@ conventions (see <a href="#6_r_s_">6{r|s}</a>)
 <dt>d2t
 <dd>(C++ only) full symbolic debugging information, without type names (see <a href="#d2t">d2t</a>)
 <dt>d3
-<dd>full symbolic debugging with unreferenced type names (see <a href="#d3">d3</a>) ,*
+<dd>full symbolic debugging with unreferenced type names (see <a href="#d3">d3</a>)
 <dt>d3i
 <dd>(C++ only) d3 plus debug inlines; emit inlines as external out-of-line functions (see <a href="#d3i">d3i</a>)
 <dt>d3s
@@ -1608,7 +1608,7 @@ is running on).&nbsp; The default build targets are:
 <dt>NT
 <dd>when the host operating system is Windows NT (including Windows 95),
 <dt>QNX
-<dd>when the host operating system is QNX.&nbsp; or
+<dd>when the host operating system is QNX, or
 <dt>LINUX
 <dd>when the host operating system is Linux.
 </dl>
@@ -1623,7 +1623,7 @@ target macros are described in the section entitled <a href="#Open_Watcom_CDCPP_
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __FOO__</tt>
 <br><br>and prevent it from defining<tt> MSDOS</tt> ,<tt> _DOS</tt> and<tt> __DOS__</tt> if the compiler was being run under
 DOS,<tt> __OS2__</tt> if using the OS/2 hosted compiler,<tt> __NT__</tt> if using the Windows NT or Windows 95 hosted compiler,<tt>
-__QNX__</tt> and<tt> __UNIX__</tt> if using the QNX hosted version or<tt> __LINUX__</tt> and<tt> __UNIX__</tt> if using the
+__QNX__</tt> and<tt> __UNIX__</tt> if using the QNX hosted version, or<tt> __LINUX__</tt> and<tt> __UNIX__</tt> if using the
 Linux hosted version.&nbsp; Any string consisting of letters, digits, and the underscore character may be used for the target
 name.
 <br><br>The compiler will also construct an environment variable called<b> &lt;os&gt;_INCLUDE</b> and see if it has been defined.
@@ -2483,8 +2483,8 @@ an exception) if used on a class instance that was not compiled with the &quot;x
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int var = 2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; const int ctable&#91; 5 &#93; = { 1, 2, 3, 4, 5 };</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *birds&#91; 3 &#93; = { &quot;robin&quot;, &quot;finch&quot;, &quot;wren&quot; };</tt>
-<br><br>In the above example,<tt> cvar</tt> and<tt> ctable</tt> and the strings<tt> &quot;robin&quot;</tt>,<tt> &quot;finch&quot;</tt>
-, etc.&nbsp; are placed in the code segment.&nbsp; This option is supported in large data or flat memory models only, or if
+<br><br>In the above example,<tt> cvar</tt> and<tt> ctable</tt> and the strings<tt> &quot;robin&quot;</tt>,<tt> &quot;finch&quot;</tt>,
+etc.&nbsp; are placed in the code segment.&nbsp; This option is supported in large data or flat memory models only, or if
 the item is explicitly &quot;far&quot;.&nbsp; The macro<tt> __SW_ZC</tt> will be predefined if &quot;zc&quot; is selected.
 <h4 id="zp_1_2_4_8_16_"> zp{1,2,4,8,16} </h4>
 <br>The &quot;zp&quot; option allows you to specify the alignment of members in a structure.&nbsp; The default is &quot;zp2&quot;
@@ -3878,9 +3878,9 @@ current build target name.&nbsp; The default build targets are:
 <dt>OS2
 <dd>when the host operating system is OS/2,
 <dt>NT
-<dd>when the host operating system is Windows NT/95, or
+<dd>when the host operating system is Windows NT/95,
 <dt>QNX
-<dd>when the host operating system is QNX.
+<dd>when the host operating system is QNX, or
 <dt>LINUX
 <dd>when the host operating system is Linux.
 </dl>
@@ -4873,7 +4873,7 @@ on the stack.&nbsp; It is alternative to -zu compiler option and can be used per
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define DLLImport __declspec(dllimport)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DLLImport void dll_func();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DLLImport int&nbsp; dll_data;</tt>
-<br><br>Functions, data and objects are exported from a DLL by use of<tt> __declspec(dllexport)</tt> ct , the<tt> __export</tt>
+<br><br>Functions, data and objects are exported from a DLL by use of<tt> __declspec(dllexport)</tt> , the<tt> __export</tt>
 keyword (for which<tt> __declspec(dllexport)</tt> is the replacement), or through linker &quot;EXPORT&quot; directives.
 <br><br>Note:&nbsp; When calling functions imported from other modules, it is not strictly necessary to use the<tt> __declspec(dllimport)</tt>
 modifier to declare the functions.&nbsp; This modifier however must always be used when importing data or objects to ensure

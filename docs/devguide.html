@@ -525,13 +525,13 @@ than exception - only dedicated build servers usually have all necessary files i
 comment in the main makefile of the dependant project.&nbsp; Hopefully, this main makefile should be called<b> master.mif</b>
 and be in the root directory, or a mif subdirectory thereof, of the project.
 <br><br>Also, it is suggested that the object file directory name be a combination of the<tt> host_os</tt> followed by the<tt>
-host_cpu</tt> , if convenient.&nbsp; For example, NT versions for the PPC should be genned into a ntppc directory.&nbsp; If
+host_cpu</tt>, if convenient.&nbsp; For example, NT versions for the PPC should be genned into a ntppc directory.&nbsp; If
 a directory structure which is different than this is used for some reason, then comments explaining exactly what is built
 where would be nice in the<b> master.mif</b> file.
 <br><br>Things get more interesting if cross compilers are thrown into the mix.&nbsp; In that case three components are required
 in the name:&nbsp; for instance a<b> ntaxp.386</b> directory can hold the Alpha AXP NT compiler producing 386 code.
 <br><br>This is also why the macro names are somewhat counterintuitive - most people would think of the<tt> host_os</tt> and<tt>
-host_cpu</tt> , as target OS and CPU.&nbsp; However, the 'target' designation is reserved for the target architecture of the
+host_cpu</tt>, as target OS and CPU.&nbsp; However, the 'target' designation is reserved for the target architecture of the
 generated binary.&nbsp; In the above case of a compiler that runs on Alpha AXP NT and produces 386 code, the makefile contains:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; host_os&nbsp;&nbsp;&nbsp; = nt</tt>

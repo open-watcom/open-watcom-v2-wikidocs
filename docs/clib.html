@@ -49410,7 +49410,7 @@ strcpy_s</tt> will return a non-zero value to indicate an error, or the runtime-
 &nbsp;s1max</b> shall not equal zero.<b>&nbsp; s1max</b> shall be greater than<b> strnlen_s(s2, s1max)</b>.&nbsp; Copying
 shall not take place between objects that overlap.
 <br><br>If there is a runtime-constraint violation, then if<b> s1</b> is not a null pointer and<b> s1max</b> is greater than
-zero and not greater than <tt> RSIZE_MAX</tt> , then <tt> strcpy_s</tt> sets<b> s1&#91;0&#93;</b> to the null character.
+zero and not greater than <tt> RSIZE_MAX</tt>, then <tt> strcpy_s</tt> sets<b> s1&#91;0&#93;</b> to the null character.
 </dl>
 <dl>
 <dt>Description:
@@ -52212,7 +52212,7 @@ such a character is found, it is overwritten by a null character, which terminat
 function saves a pointer to the following character, from which the next search for a token will start when the first argument
 is a NULL pointer.
 <br><br>Because<tt> strtok</tt> may modify the original string, that string should be duplicated if the string is to be re-used.
-<br><br>The reentrant form of this function, <tt> strtok_r</tt> , also requires a pointer to a string pointer to be passed.
+<br><br>The reentrant form of this function, <tt> strtok_r</tt>, also requires a pointer to a string pointer to be passed.
 &nbsp;This pointer is used internally by the function for subsequent calls to perform tokenizing without relying on internal
 state within the function.
 <br><br>The<tt> _fstrtok</tt> function is a data model independent form of the strtok function.&nbsp; It accepts far pointer

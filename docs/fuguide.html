@@ -2680,7 +2680,7 @@ argument.&nbsp; The type must be<tt> INTEGER</tt>.
 <li>The second argument is an<tt> INTEGER</tt> array of ten elements.
 </ol>
 <br>When<tt> FINTR</tt> and<tt> FINTRF</tt> are called, the array contains the values to be assigned to the registers prior
-to issuing the software interrupt.&nbsp; When control is returned from<tt> FINTR</tt> or<tt> FINTRF</tt> , it contains the
+to issuing the software interrupt.&nbsp; When control is returned from<tt> FINTR</tt> or<tt> FINTRF</tt>, it contains the
 values of the registers after the software interrupt has completed.&nbsp; The registers are mapped onto the array<tt> REGS</tt>
 as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2903,7 +2903,7 @@ then the program could not be run.&nbsp; If the value is positive then the value
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the<b> FINCLUDE</b>
 environment variable so that the compiler can locate the include file.
-<li>The INTEGER function<tt> FSYSTEM</tt> , which is described in a later section, implements a more general form of the example
+<li>The INTEGER function<tt> FSYSTEM</tt>, which is described in a later section, implements a more general form of the example
 given above.&nbsp; We recommend its use.
 </ol>
 <h2 id="INTEGER_Function_FSYSTEM"> INTEGER Function FSYSTEM </h2>
@@ -2960,7 +2960,7 @@ environment variable so that the compiler can locate the include file.
 <h2 id="Subroutine_GETDAT"> Subroutine GETDAT </h2>
 <br>The subroutine<tt> GETDAT</tt> allows an application to obtain the current date.
 <br><br>The subroutine<tt> GETDAT</tt> has three arguments of type<tt> INTEGER*2</tt>.&nbsp; When control is returned from<tt>
-GETDAT</tt> , they contain the year, month and day of the current date.
+GETDAT</tt>, they contain the year, month and day of the current date.
 <br><br>The following program prints the current date in the form &quot;YY-MM-DD&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
@@ -2979,7 +2979,7 @@ environment variable so that the compiler can locate the include file.
 <h2 id="Subroutine_GETTIM"> Subroutine GETTIM </h2>
 <br>The subroutine<tt> GETTIM</tt> allows an application to obtain the current time.
 <br><br>The subroutine<tt> GETTIM</tt> has four arguments of type<tt> INTEGER*2</tt>.&nbsp; When control is returned from<tt>
-GETTIM</tt> , they contain the hours, minutes, seconds, and hundredths of seconds of the current time.
+GETTIM</tt>, they contain the hours, minutes, seconds, and hundredths of seconds of the current time.
 <br><br>The following program prints the current time in the form &quot;HH:MM:SS.TT&quot;.
 <br><br><b>Example:</b>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
@@ -3230,7 +3230,7 @@ integer value.<tt>&nbsp; URAND</tt> returns a REAL value which is a pseudo-rando
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br><b>Notes:</b>
 <ol>
-<li>Upon each invocation of<tt> URAND</tt> , the seed argument is updated by the random number generator.&nbsp; Therefore,
+<li>Upon each invocation of<tt> URAND</tt>, the seed argument is updated by the random number generator.&nbsp; Therefore,
 the argument must not be a constant and, once the seed value has been set, it must<b> not</b> be modified by the programmer.
 </ol>
 <h2 id="Default_Windowing_Functions"> Default Windowing Functions </h2>

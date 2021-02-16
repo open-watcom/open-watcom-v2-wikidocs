@@ -6495,7 +6495,7 @@ to the DLL.
 trying to use the DLL.
 <br><br>Create a library of cover functions for each of the entry points.&nbsp; Each library entry would call the 32-bit DLL
 using the appropriate index number.
-<br><br>For example, assume we have 3 functions in our DLL,<tt> Initialize</tt>,<tt> DoStuff</tt> , and<tt> Finish</tt>.&nbsp;
+<br><br>For example, assume we have 3 functions in our DLL,<tt> Initialize</tt>,<tt> DoStuff</tt>, and<tt> Finish</tt>.&nbsp;
 Assume<tt> Initialize</tt> takes an integer,<tt> DoStuff</tt> takes an integer and a pointer, and<tt> Finish</tt> takes nothing.
 &nbsp;We could build a 16-bit library as follows:
 <br><br><b>Example:</b>
@@ -6655,7 +6655,7 @@ in any 32-bit extended DLL with a 16-bit integer as the first and third argument
 <ol>
 <li>Use the Visual Basic &quot;Alias&quot; attribute to declare<tt> Win386LibEntry</tt> differently for each DLL routine.
 &nbsp;Reference the different DLL routines using these aliases.
-<li>Use the specific entry point, one of<tt> DLL1</tt> through<tt> DLL128</tt> , corresponding to the DLL routine that you
+<li>Use the specific entry point, one of<tt> DLL1</tt> through<tt> DLL128</tt>, corresponding to the DLL routine that you
 want to call.&nbsp; Each entry point can be described to take different arguments.&nbsp; We can still use the &quot;Alias&quot;
 attribute to make the link between the name we use in the Visual Basic function and the name in the 32-bit extended DLL.&nbsp;
 This is the method that we will use in the &quot;Direct Call&quot; technique discussed below.&nbsp; It is simpler to use since
@@ -8026,14 +8026,14 @@ your 32-bit application.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (void FAR*)dwAlias);
 &nbsp;&nbsp; // lpCreateParams</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FreeAlias16( dwAlias );</tt>
-<br><br>When I get the<tt> lpCreateParams</tt> parameter in<tt> WM_CREATE</tt> , I don't get the original<tt> dwAlias</tt>
+<br><br>When I get the<tt> lpCreateParams</tt> parameter in<tt> WM_CREATE</tt>, I don't get the original<tt> dwAlias</tt>
 but something else which looks like another alias to me.&nbsp; So the question is:&nbsp; Must the<tt> CreateWindowEx</tt>
 parameter<tt> lpCreateParams</tt> be &quot;thunked&quot; or is this done automatically by the supervisor?
 <br><br>Thunks are always created for function pointers.&nbsp; Aliases are always created for data pointers.&nbsp; There are
 3 data pointer parameters in the<tt> CreateWindowEx</tt> function call.&nbsp; Aliases are created for all three pointers.
 &nbsp;The<tt> lpCreateParams</tt> argument is a pointer to a struct which contains 3 pointers.&nbsp; Aliases are not created
 for the 3 pointers inside the struct.&nbsp; If you need to have this done, then you will have to create the aliases yourself.
-&nbsp;If you create aliases for the parameters to<tt> CreateWindowEx</tt> , then you must call the<tt> _16CreateWindowEx</tt>
+&nbsp;If you create aliases for the parameters to<tt> CreateWindowEx</tt>, then you must call the<tt> _16CreateWindowEx</tt>
 function which will not create any aliases.
 <br><br>Here is some further information on thunks (which are created for function pointers).&nbsp; There is code in the supervisor
 that<b> trys</b> (note the word<b> trys</b>) to determine if the user has already created a thunk and, if so, avoids creating
@@ -8810,7 +8810,7 @@ has been called during process termination.
 function, <tt> LoadLibrary</tt> returns NULL.
 <br><br>If the return value is FALSE (0) when <tt> LibMain</tt> is called during process initialization, the process terminates
 with an error.&nbsp; To get extended error information, call <tt> GetLastError</tt>.
-<br><br>When the system calls <tt> LibMain</tt> with any value other than<tt> DLL_PROCESS_ATTACH</tt> , the return value is
+<br><br>When the system calls <tt> LibMain</tt> with any value other than<tt> DLL_PROCESS_ATTACH</tt>, the return value is
 ignored.
 </dl>
 <br>Assume the above example is contained in the file<tt> dllsamp.c.</tt>&nbsp; We can compile the file using the following
