@@ -2155,28 +2155,27 @@ a pointer type which is as small as and almost as efficient as a near pointer, b
 a valid pointer.
 </ul>
 <br>To support based pointers, the following keywords are provided:
-<br><br><tt>&nbsp; __based </tt>
-<br><tt>&nbsp; __segment </tt>
-<br><tt>&nbsp; __segname </tt>
-<br><tt>&nbsp; __self </tt>
+<br><br>&nbsp;&nbsp; <tt> __based</tt>
+<br>&nbsp;&nbsp; <tt> __segment</tt>
+<br>&nbsp;&nbsp; <tt> __segname</tt>
+<br>&nbsp;&nbsp; <tt> __self</tt>
 <br>The following operator is also provided:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :&gt;</tt>
 <br><br>These keywords and operator are described in the following sections.
-<br><br>Two macros, defined in <tt> &lt;malloc.h&gt;</tt> are also provided:&nbsp; 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _NULLSEG</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _NULLOFF</tt>
-<br><br>They are used in a similar manner to <tt> NULL</tt>, but are used with objects declared as <tt> __segment</tt> and
-<tt> __based</tt> respectively.
+<br><br>Two macros, defined in <tt> &lt;malloc.h&gt;</tt> are also provided:
+<br><br>&nbsp;&nbsp; <tt> _NULLSEG</tt>
+<br>&nbsp;&nbsp; <tt> _NULLOFF</tt>
+<br>They are used in a similar manner to <tt> NULL</tt>, but are used with objects declared as <tt> __segment</tt> and <tt>
+__based</tt> respectively.
 <h4 id="Segment_Constant_Based_Pointers_and_Objects"> Segment Constant Based Pointers and Objects </h4>
 <br>A segment constant based pointer or object has its segment value based on a specific, named segment.&nbsp; A segment constant
 based object is specified as:
-<br><br><b>&nbsp; type</b><tt> __based( __segname( &quot;</tt><b>segment</b><tt>&quot; ) )</tt><b> object-name</b><tt>;</tt>
-<br><br>and a segment constant based pointer is specified as:
-<br><br><b>&nbsp; type</b><tt> __based( __segname( &quot;</tt><b>segment</b><tt>&quot; ) ) *</tt><b> object-name</b><tt>;</tt>
-<br><br>where<b> segment</b> is the name of the segment in which the pointer or object is based.&nbsp; As shown above, the
-segment name is always specified as a string.&nbsp; There are three special segment names recognized by the compiler:
+<br><br>&nbsp;&nbsp; type<tt> __based( __segname( &quot;</tt>segment<tt>&quot; ) )</tt> object-name<tt>;</tt>
+<br>and a segment constant based pointer is specified as:
+<br><br>&nbsp;&nbsp; type<tt> __based( __segname( &quot;</tt>segment<tt>&quot; ) ) *</tt> object-name<tt>;</tt>
+<br>where<b> segment</b> is the name of the segment in which the pointer or object is based.&nbsp; As shown above, the segment
+name is always specified as a string.&nbsp; There are three special segment names recognized by the compiler:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;_CODE&quot;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &quot;_CONST&quot;</tt>
@@ -4095,42 +4094,46 @@ string literals are concatenated.
 compilation directives span multiple lines.
 <br><br>A preprocessor directive is not terminated by a semi-colon.
 <h2 id="The_Null_Directive"> The Null Directive </h2>
-<br>A preprocessing directive of the form, 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
-<br><br>(with no other tokens on the same line) has no effect and is discarded.
+<br>A preprocessing directive of the form,
+<br><br>&nbsp;&nbsp; ix #
+<br><br>&nbsp;&nbsp; ix null
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
+<br><br>&nbsp;&nbsp; (with no other tokens on the same line) has no effect and is discarded.
 <h2 id="Including_Headers_and_Source_Files"> Including Headers and Source Files </h2>
 <br>A directive of the form, 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br>&nbsp;&nbsp; ix #include
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;name&gt;</tt>
-<br><br>will search a sequence of places defined by the implementation for the <b> header</b> identified by<tt> name.</tt>
-&nbsp;A header declares a set of library functions and any necessary types or macros needed for their use.&nbsp; Headers are
-usually provided by the compiler, or by a library provided for use with the compiler.
-<br><br><tt>name</tt> may not contain a<tt> &gt;</tt> character.&nbsp; If the header is found, the entire directive is replaced
-by the contents of the header.&nbsp; If the header is not found, an error will occur.
-<br><br>A directive of the form,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &quot;name&quot;</tt>
-<br><br>will search for the source file identified by<tt> name.&nbsp; name</tt> may not contain a<tt> &quot;</tt> (double-quote)
-character.&nbsp; If the source file identified by<tt> name</tt> is found, then the entire directive is replaced by the contents
-of the file.&nbsp; Otherwise, the directive is processed as if the,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;name&gt;</tt>
-<br><br>form had been used.
-<br><br>A third form of <tt> #include</tt> directive is also supported.&nbsp; A directive of the form,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include tokens</tt>
-<br><br>causes all macro substitutions (described below) to take place on<tt> tokens.</tt>&nbsp; After substitution, the directive
-must match either the<tt> &lt;name&gt;</tt> or<tt> &quot;name&quot;</tt> forms described above (including<tt> &lt;</tt> and<tt>
-&gt;</tt>, or quotes), in which case the <tt> #include</tt> is processed in the corresponding manner.
-<br><br>See the User's Guide for details about how the compiler searches for included files.
-<br><br><tt> #include</tt> directives may be nested.&nbsp; Each implementation may allow different depths of nesting, but
-all must allow at least 8 levels.&nbsp; (In other words, a source file may include another file, which includes another file,
-and so on, up to a depth of eight files.)
-<br><br><b>&nbsp; The operating system may further limit the number of files that may be open at one time.&nbsp; See the appropriate
-operating system manual for details.</b>
+<br><br>&nbsp;&nbsp; will search a sequence of places defined by the implementation for the <b> header</b> identified by<tt>
+name.</tt>&nbsp; A header declares a set of library functions and any necessary types or macros needed for their use.&nbsp;
+Headers are usually provided by the compiler, or by a library provided for use with the compiler.
+<br><br><tt>&nbsp;&nbsp; name</tt> may not contain a<tt> &gt;</tt> character.&nbsp; If the header is found, the entire directive
+is replaced by the contents of the header.&nbsp; If the header is not found, an error will occur.
+<br><br>&nbsp;&nbsp; A directive of the form,
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &quot;name&quot;</tt>
+<br><br>&nbsp;&nbsp; will search for the source file identified by<tt> name.&nbsp; name</tt> may not contain a<tt> &quot;</tt>
+(double-quote) character.&nbsp; If the source file identified by<tt> name</tt> is found, then the entire directive is replaced
+by the contents of the file.&nbsp; Otherwise, the directive is processed as if the,
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;name&gt;</tt>
+<br><br>&nbsp;&nbsp; form had been used.
+<br><br>&nbsp;&nbsp; A third form of <tt> #include</tt> directive is also supported.&nbsp; A directive of the form,
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include tokens</tt>
+<br><br>&nbsp;&nbsp; causes all macro substitutions (described below) to take place on<tt> tokens.</tt>&nbsp; After substitution,
+the directive must match either the<tt> &lt;name&gt;</tt> or<tt> &quot;name&quot;</tt> forms described above (including<tt>
+&lt;</tt> and<tt> &gt;</tt>, or quotes), in which case the <tt> #include</tt> is processed in the corresponding manner.
+<br><br>&nbsp;&nbsp; See the User's Guide for details about how the compiler searches for included files.
+<br><br>&nbsp;&nbsp; <tt> #include</tt> directives may be nested.&nbsp; Each implementation may allow different depths of
+nesting, but all must allow at least 8 levels.&nbsp; (In other words, a source file may include another file, which includes
+another file, and so on, up to a depth of eight files.)
+<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; The operating system may further limit the number of files that may be open at one time.
+&nbsp;See the appropriate operating system manual for details.</b>
 <h2 id="Conditionally_Including_Source_Lines"> Conditionally Including Source Lines </h2>
 <br>A directive of the form, 
+<br><br>&nbsp;&nbsp; ix #if
 <br><br><b>&nbsp; </b><tt> #if</tt><b> constant-expression</b>
 <br><b>&nbsp; body of </b><tt> #if</tt>
 <br><b>&nbsp; </b><tt> #endif</tt>
@@ -4160,7 +4163,7 @@ unary expression is not expanded.&nbsp; The above expressions evaluate to 1 if t
 otherwise they evaluate to 0.
 <br><br>As discussed above, if the<b> constant-expression</b> of the <tt> #if</tt> evaluates to zero, the preprocessor looks
 for a corresponding <tt> #elif</tt>.&nbsp; This directive means &quot;else if&quot;, and has a similar form as <tt> #if</tt>:
-&nbsp;
+<br><br>&nbsp;&nbsp; ix #elif
 <br><br><b>&nbsp; </b><tt> #elif</tt><b> constant-expression</b>
 <br><b>&nbsp; body of </b><tt> #elif</tt>
 <br><br>An <tt> #elif</tt> may only be placed inside the body of an <tt> #if</tt>.&nbsp; The body of the <tt> #elif</tt> is
@@ -4168,7 +4171,8 @@ processed only if the<b> constant-expression</b> evaluates to a non-zero value a
 <tt> #if</tt> and (preceding) <tt> #elif</tt> statements evaluated to zero.&nbsp; Otherwise the body is not processed, and
 the preprocessor skips to the next corresponding <tt> #elif</tt> or <tt> #else</tt>, or to the <tt> #endif</tt> if neither
 of these directives is present.
-<br><br>The <tt> #else</tt> directive has the form, 
+<br><br>The <tt> #else</tt> directive has the form,
+<br><br>&nbsp;&nbsp; ix #else
 <br><br><b>&nbsp; </b><tt> #else</tt>
 <br>&nbsp; body of <tt> #else</tt>
 <br><br>The body of the <tt> #else</tt> is processed only if the constant expressions of the corresponding <tt> #if</tt> and
@@ -4208,28 +4212,31 @@ string<tt> &quot;filename&quot;.</tt>
 and<tt> OPSYS.</tt>&nbsp; The indentation of the directives clearly illustrates the flow between various conditions and levels
 of directives.
 <h3 id="The__ifdef_and__ifndef_Directives"> The #ifdef and #ifndef Directives </h3>
-<br>The <tt> #ifdef</tt> directive is used to check if an identifier is currently defined as a macro.&nbsp; For example, the
-directive,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br>The
+<br><br>&nbsp;&nbsp; ix #ifdef <tt> #ifdef</tt> directive is used to check if an identifier is currently defined as a macro.
+&nbsp;For example, the directive,
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef xyz</tt>
-<br><br>processes the body of the <tt> #ifdef</tt> only if the identifier<tt> xyz</tt> is currently a macro.&nbsp; This example
-is equivalent to,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined xyz</tt>
-<br><br>or
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined( xyz )</tt>
-<br><br>In a similar manner, the directive, 
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifndef xyz</tt>
-<br><br>is equivalent to,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if !defined xyz</tt>
-<br><br>or
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if !defined( xyz )</tt>
+<br><br>&nbsp;&nbsp; processes the body of the <tt> #ifdef</tt> only if the identifier<tt> xyz</tt> is currently a macro.
+&nbsp;This example is equivalent to,
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if defined xyz</tt>
+<br><br>&nbsp;&nbsp; or
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if defined( xyz )</tt>
+<br><br>&nbsp;&nbsp; In a similar manner, the directive,
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ix #ifndef
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #ifndef xyz</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is equivalent to,
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if !defined xyz</tt>
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if !defined( xyz )</tt>
 <h2 id="Macro_Replacement"> Macro Replacement </h2>
-<br>A directive of the form, 
+<br>A directive of the form,
+<br><br>&nbsp;&nbsp; ix #define
 <br><br><tt>&nbsp; #define</tt><b> identifier replacement-list</b>
 <br><br>defines a <b> macro</b> with the name<b> identifier.</b>&nbsp; This particular form of macro is called an <b> object-like</b>
 macro, because it is used like an object (as opposed to a function).&nbsp; Any source line that contains a token matching
@@ -4255,7 +4262,8 @@ and the precedence rules for expression evaluation cause the multiply to be done
 for<tt> TOTAL_COUNT</tt> should be defined as:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define TOTAL_COUNT (COUNT1+COUNT2)</tt>
-<br><br>A directive of the form, 
+<br><br>A directive of the form,
+<br><br>&nbsp;&nbsp; ix #define
 <br><br><b>&nbsp; </b><tt> #define</tt><b> identifier</b><tt>(</tt><b> identifier-list</b><tt> )</tt><b> replacement-list</b>
 <br><br>is called a <b> function-like</b> macro, because it is used like a function call.&nbsp; No space may appear between<b>
 identifier</b> and the left parenthesis in the macro definition.&nbsp; Any source line(s) that contains what looks like a
@@ -4308,7 +4316,8 @@ and<tt> (t=0, t=strlen(srcptr))</tt> respectively.
 <br><br>may be used.&nbsp; When the module or program is recompiled using this new definition for<tt> alive</tt>, all of the
 calls to <tt> printf</tt> made as a result of the macro replacement will disappear, without the necessity of deleting the
 appropriate lines in each module.
-<br><br>A directive of the form, 
+<br><br>A directive of the form,
+<br><br>&nbsp;&nbsp; ix #undef 
 <br><br><b>&nbsp; </b><tt> #undef</tt><b> identifier</b>
 <br><br>causes the macro definition for<b> identifier</b> to be thrown away.&nbsp; No error is reported if no macro definition
 for<b> identifier</b> exists.
@@ -4613,7 +4622,8 @@ tokens does not matter, unless one definition has no spaces, and the other has s
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define FN_LIKE(b)&nbsp;&nbsp; ( b )</tt>
 <br><br>&nbsp;&nbsp;&nbsp; The parameter is a different name.
 <h2 id="Changing_the_Line_Numbering_and_File_Name"> Changing the Line Numbering and File Name </h2>
-<br>A directive of the form, 
+<br>A directive of the form,
+<br><br>&nbsp;&nbsp; ix #line
 <br><br><b>&nbsp; </b><tt> #line</tt><b> number</b>
 <br><br>sets the line number that the compiler associates with the current line in the source file to the specified number.
 <br><br>A directive of the form,
@@ -4624,14 +4634,17 @@ read to the name contained in the string.
 possible) on the tokens on the line, and another attempt is made.&nbsp; If the directive still does not match one of the two
 forms, an error is reported.
 <h2 id="Displaying_a_Diagnostic_Message"> Displaying a Diagnostic Message </h2>
-<br>A directive of the form, 
+<br>A directive of the form,
+<br><br>&nbsp;&nbsp; ix #error
 <br><br><b>&nbsp; </b><tt> #error</tt><b> tokens</b>
 <br><br>causes the compiler to display a diagnostic message containing the tokens from the directive.
 <h2 id="Providing_Other_Information_to_the_Compiler"> Providing Other Information to the Compiler </h2>
-<br>A directive of the form, 
+<br>A directive of the form,
+<br><br>&nbsp;&nbsp; ix #pragma
 <br><br><b>&nbsp; </b><tt> #pragma</tt><b> tokens</b>
 <br><br>informs the compiler about some aspect of the compilation, in an implementation-defined manner.
-<br><br>A pragma operator of the form, 
+<br><br>A pragma operator of the form,
+<br><br>&nbsp;&nbsp; ix _Pragma
 <br><br><b>&nbsp; </b><tt> _Pragma</tt><b> ( string-literal )</b>
 <br><br>is an alternative method of specifying #pragma directives.&nbsp; For example, the following two statements are equivalent.
 <br><br><b>&nbsp; _Pragma( &quot;library (\&quot;kernel32.lib\&quot;)&quot; )</b>
