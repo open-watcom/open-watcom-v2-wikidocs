@@ -7,14 +7,14 @@
 <dt>- # -
 <dd><a href="#The__ifdef_and__ifndef_Directives">The #ifdef and #ifndef Directives</a>
 <dt>- _ -
-<dd><a href="#The____far_Keyword_for_Open_Watcom_CD16">The _ _far Keyword for Open Watcom C/16</a>
-<br><a href="#The____far_Keyword_for_Open_Watcom_CD32">The _ _far Keyword for Open Watcom C/32</a>
-<br><a href="#___far_____near_and____huge_Declarations">_ _far, _ _near and _ _huge Declarations</a>
-<br><a href="#The____far16_and__Seg16_Keywords">The _ _far16 and _Seg16 Keywords</a>
-<br><a href="#The____huge_Keyword_for_Open_Watcom_CD16">The _ _huge Keyword for Open Watcom C/16</a>
-<br><a href="#___interrupt_Declarations">_ _interrupt Declarations</a>
-<br><a href="#The____near_Keyword_for_Open_Watcom_CD16">The _ _near Keyword for Open Watcom C/16</a>
-<br><a href="#The____near_Keyword_for_Open_Watcom_CD32">The _ _near Keyword for Open Watcom C/32</a>
+<dd><a href="#The___far_Keyword_for_Open_Watcom_CD16">The __far Keyword for Open Watcom C/16</a>
+<br><a href="#The___far_Keyword_for_Open_Watcom_CD32">The __far Keyword for Open Watcom C/32</a>
+<br><a href="#__far____near_and___huge_Declarations">__far, __near and __huge Declarations</a>
+<br><a href="#The___far16_and__Seg16_Keywords">The __far16 and _Seg16 Keywords</a>
+<br><a href="#The___huge_Keyword_for_Open_Watcom_CD16">The __huge Keyword for Open Watcom C/16</a>
+<br><a href="#__interrupt_Declarations">__interrupt Declarations</a>
+<br><a href="#The___near_Keyword_for_Open_Watcom_CD16">The __near Keyword for Open Watcom C/16</a>
+<br><a href="#The___near_Keyword_for_Open_Watcom_CD32">The __near Keyword for Open Watcom C/32</a>
 <dt>- A -
 <dd><a href="#Additive_Operators">Additive Operators</a>
 <br><a href="#AddressMof_and_Indirection_Operators">Address-of and Indirection Operators</a>
@@ -1891,7 +1891,7 @@ as fast.
 <br><br>With either small or big data, each object is restricted in size to a maximum of 64K bytes.&nbsp; However, an object
 may be declared as<b> huge,</b> allowing the object to be bigger than 64K bytes.&nbsp; Pointers to huge objects are the least
 efficient because of extra code required to handle them, especially when doing pointer arithmetic.&nbsp; Huge objects are
-discussed in the section &quot;The _ _huge Keyword&quot;.
+discussed in the section &quot;The __huge Keyword&quot;.
 <br><br>When the big data option is being used, the program still retains one region up to 64K in size in which objects can
 be referred to using 16-bit pointers, regardless of the code group being executed.&nbsp; These objects are said to be <b>
 near.</b>&nbsp; Objects outside this region can still be referenced, but must be referred to using a 32-bit value.&nbsp; These
@@ -1909,7 +1909,7 @@ that 99% of the data structures can reside within the 64K limit, and the remaini
 it may be desirable to have only a few functions that don't fit within the 64K limit.
 <br><br>When overriding the current memory model, it is<b> very</b> important to declare each type properly.
 <br><br>The following sections describe how to override the current memory model.
-<h4 id="The____far_Keyword_for_Open_Watcom_CD16"> The _ _far Keyword for Open Watcom C/16 </h4>
+<h4 id="The___far_Keyword_for_Open_Watcom_CD16"> The __far Keyword for Open Watcom C/16 </h4>
 <br>When the big code memory model is in effect, functions are<b> far</b> and pointers to functions are declared automatically
 to be pointers to<b> far</b> functions.&nbsp; Similarly, the big data model causes all pointers to objects (other than functions)
 to be pointers to<b> far</b> objects.&nbsp; However, when either the small code or small data model is being used, the keyword
@@ -1960,7 +1960,7 @@ pointer to a far function that returns a <tt> float</tt>.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int AdjustLeft( struct symbol * __far symptr );</tt>
 <br><br>&nbsp;&nbsp;&nbsp; is an invalid declaration, since it attempts to declare<tt> symptr</tt> to be far.&nbsp; All parameters
 must be near, since they reside in the 64K data area that is always near.
-<h4 id="The____near_Keyword_for_Open_Watcom_CD16"> The _ _near Keyword for Open Watcom C/16 </h4>
+<h4 id="The___near_Keyword_for_Open_Watcom_CD16"> The __near Keyword for Open Watcom C/16 </h4>
 <br>When the small code memory model is in effect, functions are<b> near,</b> and pointers to functions are automatically
 declared to be pointers to<b> near</b> functions.&nbsp; Similarly, the small data model causes all pointers to objects (other
 than functions) to be pointers to<b> near</b> objects.&nbsp; However, when either the big code or big data model is being
@@ -1994,7 +1994,7 @@ structure.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct symbol __near * __near NNSymAlloc( void );</tt>
 <br><br>&nbsp;&nbsp;&nbsp; declares the function<tt> NNSymAlloc</tt> to be near, and returns a pointer to a near<tt> symbol</tt>
 structure.
-<h4 id="The____huge_Keyword_for_Open_Watcom_CD16"> The _ _huge Keyword for Open Watcom C/16 </h4>
+<h4 id="The___huge_Keyword_for_Open_Watcom_CD16"> The __huge Keyword for Open Watcom C/16 </h4>
 <br>Even using the big data model, each object is restricted in size to 64K.&nbsp; Some applications will need to get beyond
 this limitation.&nbsp; The Open Watcom C/16 compiler provides the keyword <tt> __huge</tt> to describe those objects that
 exceed 64K in size.&nbsp; The code generated for these objects is less efficient than for <tt> __far</tt> objects.
@@ -2035,7 +2035,7 @@ and segment may be used interchangeably.
 <br><br>Like the 16-bit compiler, the Open Watcom C/32 compiler supports the small, compact, medium and large memory models.
 &nbsp;Throughout the discussions in the following sections, it is assumed that the small memory model is being used, since
 it is the most likely to be used.
-<h4 id="The____far_Keyword_for_Open_Watcom_CD32"> The _ _far Keyword for Open Watcom C/32 </h4>
+<h4 id="The___far_Keyword_for_Open_Watcom_CD32"> The __far Keyword for Open Watcom C/32 </h4>
 <br>The <tt> __far</tt> keyword is a type qualifier that modifies the token that follows it.&nbsp; If <tt> __far</tt> precedes<tt>
 *</tt> (as in<tt> __far *</tt>), then the pointer points to something that is far (not in the normal data region).&nbsp; Otherwise,
 if <tt> __far</tt> precedes the identifier of the object or function being declared (as in<tt> __far x</tt>), then the object
@@ -2079,7 +2079,7 @@ pointer to a far function that returns a <tt> char</tt>.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int StoreSysTbl( struct systbl * __far sysptr );</tt>
 <br><br>&nbsp;&nbsp;&nbsp; is an invalid declaration, since it attempts to declare<tt> sysptr</tt> to be far.&nbsp; All parameters
 must be near, since they reside in the normal data area that is always near.
-<h4 id="The____near_Keyword_for_Open_Watcom_CD32"> The _ _near Keyword for Open Watcom C/32 </h4>
+<h4 id="The___near_Keyword_for_Open_Watcom_CD32"> The __near Keyword for Open Watcom C/32 </h4>
 <br>The <tt> __near</tt> keyword is a type qualifier that modifies the token that follows it.&nbsp; If <tt> __near</tt> precedes<tt>
 *</tt> (as in<tt> __near *</tt>), then the pointer points to something that is near (in the normal data region).&nbsp; Otherwise,
 if <tt> __near</tt> precedes the identifier of the object or function being declared (as in<tt> __near x</tt>), then the object
@@ -2088,7 +2088,7 @@ or function is near.
 *</tt>.
 <br><br>For programmers using the small memory model, the <tt> __near</tt> keyword is not required, but may be useful for
 making the program more readable.
-<h4 id="The____far16_and__Seg16_Keywords"> The _ _far16 and _Seg16 Keywords </h4>
+<h4 id="The___far16_and__Seg16_Keywords"> The __far16 and _Seg16 Keywords </h4>
 <br>With the 80386 processor, a far pointer consists of a 16-bit selector and a 32-bit offset.&nbsp; Open Watcom C/32 also
 supports a special kind of far pointer which consists of a 16-bit selector and a 16-bit offset.&nbsp; These pointers, referred
 to as <b> far16</b> pointers, allow 32-bit code to access code and data running in 16-bit mode.
@@ -7055,7 +7055,7 @@ of<tt> (5)</tt>pointers to<tt> (6)</tt>functions returning an<tt> (7)</tt>intege
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp; 7&nbsp; 5 312&nbsp; 4&nbsp; 6</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>F</tt> is a<tt> (2)</tt>function returning a<tt> (3)</tt>pointer to an<tt> (4)</tt>array
 of<tt> (5)</tt>pointers to<tt> (6)</tt>functions returning a<tt> (7)</tt>pointer to an<tt> (8)</tt>integer.
-<h2 id="___far_____near_and____huge_Declarations"> _ _far, _ _near and _ _huge Declarations </h2>
+<h2 id="__far____near_and___huge_Declarations"> __far, __near and __huge Declarations </h2>
 <br>The following examples illustrate the use of the <tt> __far</tt> and <tt> __huge</tt> keywords.
 <br><br>The use of the <tt> __near</tt> keyword is symmetrical with the use of the <tt> __far</tt> keyword, so no examples
 of <tt> __near</tt> are shown.
@@ -7132,7 +7132,7 @@ an<tt> (5)</tt>integer.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp; 3 1 4</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; (1)</tt><tt>x</tt> is a<tt> (2)</tt>far<tt> (3)</tt>pointer to a<tt> (4)</tt>function returning
 a<tt> (5)</tt>far<tt> (6)</tt>pointer to an<tt> (7)</tt>integer.
-<h2 id="___interrupt_Declarations"> _ _interrupt Declarations </h2>
+<h2 id="__interrupt_Declarations"> __interrupt Declarations </h2>
 <br>The following example illustrates the use of the <tt> __interrupt</tt> keyword.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void __interrupt __far F();</tt>
