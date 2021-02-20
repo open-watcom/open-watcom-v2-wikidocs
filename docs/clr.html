@@ -1915,8 +1915,8 @@ to be pointers to<b> far</b> functions.&nbsp; Similarly, the big data model caus
 to be pointers to<b> far</b> objects.&nbsp; However, when either the small code or small data model is being used, the keyword
 <tt> __far</tt> may be used to override to the big model.
 <br><br>The <tt> __far</tt> keyword is a type qualifier that modifies the token that follows it.&nbsp; If <tt> __far</tt>
-precedes<tt> *</tt> (as in<tt> __far *</tt>), then the pointer points to something far.&nbsp; Otherwise, if <tt> __far</tt>
-precedes the identifier of the object or function being declared (as in<tt> __far x)</tt>, then the object itself is far.
+precedes<tt> *</tt> (as in <tt> __far</tt> *), then the pointer points to something far.&nbsp; Otherwise, if <tt> __far</tt>
+precedes the identifier of the object or function being declared (as in <tt> __far</tt> x), then the object itself is far.
 <br><br>The keyword <tt> __far</tt> can only be applied to function and object names and the indirection (pointer) symbol<tt>
 *</tt>.&nbsp; Parameters to functions may<b> not</b> be declared as <tt> __far</tt> since they are always in the 64K data
 area that is near.
@@ -1966,8 +1966,8 @@ declared to be pointers to<b> near</b> functions.&nbsp; Similarly, the small dat
 than functions) to be pointers to<b> near</b> objects.&nbsp; However, when either the big code or big data model is being
 used, the keyword <tt> __near</tt> may be used to override to the small model.
 <br><br>The <tt> __near</tt> keyword is a type qualifier that modifies the token that follows it.&nbsp; If <tt> __near</tt>
-precedes<tt> *</tt> (as in<tt> __near *</tt>), then the pointer points to something near.&nbsp; Otherwise, if <tt> __near</tt>
-precedes the identifier of the object or function being declared (as in<tt> __near x)</tt>, then the object itself is near.
+precedes<tt> *</tt> (as in <tt> __near</tt> *), then the pointer points to something near.&nbsp; Otherwise, if <tt> __near</tt>
+precedes the identifier of the object or function being declared (as in <tt> __near</tt> x), then the object itself is near.
 <br><br>The keyword <tt> __near</tt> can only be applied to function and object names and the indirection (pointer) symbol<tt>
 *.</tt>
 <br><br><b>&nbsp; Open Watcom C/16 provides the predefined macros </b><tt> near</tt><b> and </b><tt> _near</tt><b> for convenience
@@ -2037,9 +2037,9 @@ and segment may be used interchangeably.
 it is the most likely to be used.
 <h4 id="The___far_Keyword_for_Open_Watcom_CD32"> The __far Keyword for Open Watcom C/32 </h4>
 <br>The <tt> __far</tt> keyword is a type qualifier that modifies the token that follows it.&nbsp; If <tt> __far</tt> precedes<tt>
-*</tt> (as in<tt> __far *</tt>), then the pointer points to something that is far (not in the normal data region).&nbsp; Otherwise,
-if <tt> __far</tt> precedes the identifier of the object or function being declared (as in<tt> __far x</tt>), then the object
-or function is far.
+*</tt> (as in <tt> __far</tt> *), then the pointer points to something that is far (not in the normal data region).&nbsp;
+Otherwise, if <tt> __far</tt> precedes the identifier of the object or function being declared (as in <tt> __far</tt> x),
+then the object or function is far.
 <br><br>The keyword <tt> __far</tt> can only be applied to function and object names and the indirection (pointer) symbol<tt>
 *</tt>.&nbsp; Parameters to functions may<b> not</b> be declared as <tt> __far</tt>, since they are always in the normal data
 region.
@@ -2081,9 +2081,9 @@ pointer to a far function that returns a <tt> char</tt>.
 must be near, since they reside in the normal data area that is always near.
 <h4 id="The___near_Keyword_for_Open_Watcom_CD32"> The __near Keyword for Open Watcom C/32 </h4>
 <br>The <tt> __near</tt> keyword is a type qualifier that modifies the token that follows it.&nbsp; If <tt> __near</tt> precedes<tt>
-*</tt> (as in<tt> __near *</tt>), then the pointer points to something that is near (in the normal data region).&nbsp; Otherwise,
-if <tt> __near</tt> precedes the identifier of the object or function being declared (as in<tt> __near x</tt>), then the object
-or function is near.
+*</tt> (as in <tt> __near</tt> *), then the pointer points to something that is near (in the normal data region).&nbsp; Otherwise,
+if <tt> __near</tt> precedes the identifier of the object or function being declared (as in <tt> __near</tt> x), then the
+object or function is near.
 <br><br>The keyword <tt> __near</tt> can only be applied to function and object names and the indirection (pointer) symbol<tt>
 *</tt>.
 <br><br>For programmers using the small memory model, the <tt> __near</tt> keyword is not required, but may be useful for
@@ -4076,7 +4076,7 @@ then the value returned is undefined.
 <br><br>The <tt> exit</tt> library function may be used to terminate the program at any point.&nbsp; The value of the argument
 to <tt> exit</tt> is returned as if<tt> main</tt> had returned the value.
 <h1 id="The_Preprocessor"> The Preprocessor </h1>
-<br>The<b> preprocessor,</b> as its name suggests, is that part of the C compiler which processes certain directives embedded
+<br>The<b> preprocessor</b>, as its name suggests, is that part of the C compiler which processes certain directives embedded
 in the source file(s) in advance of the actual compilation of the program.&nbsp; Specifically, the preprocessor allows a source
 file to,
 <ul>
@@ -4742,7 +4742,7 @@ C compiler, even though most of these macros do not begin with an underscore (_)
 <br><tt> _M_IX86</tt>
 <br><br>&nbsp;&nbsp;&nbsp; The program is being compiled for a specific target architecture.&nbsp; The macro is identically
 equal to 100 times the architecture compiler option value (-0, -1, -2, -3, -4, -5, etc.).&nbsp; If &quot;-5&quot; (Pentium
-instruction timings) was specified as a compiler option, then the value of<tt> _M_IX86</tt> would be 500.
+instruction timings) was specified as a compiler option, then the value of <tt> _M_IX86</tt> would be 500.
 <br><tt> M_I86</tt>
 <br><br>&nbsp;&nbsp;&nbsp; The program is being compiled for use on the Intel 80x86 processor.
 <br><tt> M_I386</tt>
@@ -5594,7 +5594,7 @@ and C/32 provide the predefined macros <tt> fortran</tt> and <tt> _fortran</tt> 
 Microsoft C compiler.&nbsp; They may be used in place of <tt> __fortran</tt>.
 <br><br>The <tt> __pascal</tt> and <tt> _Pascal</tt> keywords may be used with function definitions, and indicates that the
 calling convention for the function is suitable for calling a function written in Pascal.&nbsp; All parameters are pushed
-onto the stack, but in reverse order to the order specified by<tt> __cdecl</tt>.&nbsp; This calling convention may be controlled
+onto the stack, but in reverse order to the order specified by <tt> __cdecl</tt>.&nbsp; This calling convention may be controlled
 by a <tt> #pragma</tt> directive.&nbsp; See the User's Guide.&nbsp; Open Watcom C/16 and C/32 provide the predefined macros
 <tt> pascal</tt> and <tt> _pascal</tt> for convenience and compatibility with the Microsoft C compiler.&nbsp; They may be
 used in place of <tt> __pascal</tt>.
@@ -5614,15 +5614,15 @@ User's Guide.
 objects) and with functions, and describes that object or function as being a known object or entry point within a Dynamic
 Link Library in OS/2 or Microsoft Windows.&nbsp; The object or function must also be declared as having external linkage (using
 the <tt> extern</tt> keyword).&nbsp; In addition, any<b> call back</b> function whose address is passed to Windows (and which
-Windows will &quot;call back&quot;) must be defined with the<tt> __export</tt> keyword, otherwise the call will fail and cause
-unpredictable results.&nbsp; The<tt> __export</tt> keyword may be omitted if the object or function is exported by an option
-specified using the linker.&nbsp; See the Open Watcom Linker User's Guide.&nbsp; Open Watcom C/16 and C/32 provide the predefined
-macro <tt> _export</tt> for convenience and compatibility with the Microsoft C compiler.&nbsp; It may be used in place of
-<tt> __export</tt>.
+Windows will &quot;call back&quot;) must be defined with the <tt> __export</tt> keyword, otherwise the call will fail and
+cause unpredictable results.&nbsp; The <tt> __export</tt> keyword may be omitted if the object or function is exported by
+an option specified using the linker.&nbsp; See the Open Watcom Linker User's Guide.&nbsp; Open Watcom C/16 and C/32 provide
+the predefined macro <tt> _export</tt> for convenience and compatibility with the Microsoft C compiler.&nbsp; It may be used
+in place of <tt> __export</tt>.
 <br><br>The <tt> __interrupt</tt> keyword may be used with function definitions for functions that handle computer interrupts.
 &nbsp;All registers are saved before the function begins execution and restored prior to returning from the interrupt.&nbsp;
 The machine language return instruction for the function is changed to<tt> iret</tt> (interrupt return).&nbsp; Functions written
-using<tt> __interrupt</tt> are suitable for attaching to the interrupt vector using the library function <tt> _dos_setvect</tt>.
+using <tt> __interrupt</tt> are suitable for attaching to the interrupt vector using the library function <tt> _dos_setvect</tt>.
 &nbsp;Open Watcom C/16 and C/32 provide the predefined macros <tt> interrupt</tt> and <tt> _interrupt</tt> for convenience
 and compatibility with the Microsoft C compiler.&nbsp; They may be used in place of <tt> __interrupt</tt>.
 <br><br>The <tt> __loadds</tt> keyword may be used with functions, and causes the compiler to generate code that will force
