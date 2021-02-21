@@ -446,7 +446,7 @@ and informational messages.
 <br>In the edit window will be a flashing line.&nbsp; This flashing line is the cursor, and it indicates which line you are
 on and the position within the line.
 <br><br>On the border of the edit window are a number of special symbols.&nbsp; These special symbols are referred to as<b><i>
-gadgets</i></b>
+gadgets</i></b>:
 <ul>
 <li>In the top left corner of the edit window is the gadget character that opens up the menu for the window.
 <li>In the lower right corner of the edit window is the resize gadget character.&nbsp; When you click on this gadget character
@@ -822,8 +822,8 @@ line, whereas when you paste lines, the lines are pasted above or below the curr
 <br><br>If you press<b> SHIFT_INS</b> (shift insert), the character(s) you deleted will be pasted in after the current cursor
 position on the current line.&nbsp; If you press<b> CTRL_INS</b> (control insert), the character(s) you deleted will be pasted
 in before the current cursor position on the current line.
-<br><br>There are two other keys for pasting, the letters<b> p and P</b> (small p and capital p).&nbsp; Small p pastes the
-character(s) you deleted after the current cursor position on the current line, just like<b> SHIFT_INS</b>.&nbsp; Capital
+<br><br>There are two other keys for pasting, the letters<b> p</b> and<b> P</b> (small p and capital p).&nbsp; Small p pastes
+the character(s) you deleted after the current cursor position on the current line, just like<b> SHIFT_INS</b>.&nbsp; Capital
 p ('P') pastes the character(s) you deleted before the cursor position on the current line, just like<b> CTRL_INS</b>.
 <br><br><b>Exercises</b>
 <br><br>Edit the file &quot;test&quot; created in the previous examples by typing:
@@ -944,7 +944,7 @@ an edit window with the mouse.&nbsp; Once you have done one of these, the follow
 <dd>Causes the window to become as small as possible.
 <dt>Open another view
 <dd>Creates a separate window that is editing the same copy of the current file.&nbsp; This is useful if you wish to be able to
-look at one part of a file while editing another part
+look at one part of a file while editing another part.
 <dt>Save
 <dd>Saves the current file.&nbsp; You remain editing the current file.
 <dt>Save and close
@@ -1588,7 +1588,8 @@ will be removed.&nbsp; For example, typing 'J' while on the first line in these 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is another line.</tt>
 <br><br>produces the line:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is a line. This is another line.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is a line.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is another line.</tt>
 <br><br>If you precede 'J' with a repeat count, then that many lines after the current line will be joined to the current
 line.&nbsp; For example, typing
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1715,7 +1716,7 @@ more detail.
 <ol>
 <li>Edit the file &quot;atest&quot; created in the Exercises section of <a href="#Moving_Around_in_a_File">Moving Around in a File</a>.
 &nbsp;Press the forward slash ('/') key, and enter the string &quot;this&quot;.&nbsp; The word &quot;This&quot; on the first
-line will be highlighted, and your cursor will be on the 'T'.&nbsp; (notice that the search is case insensitive).
+line will be highlighted, and your cursor will be on the 'T' (notice that the search is case insensitive).
 <li>Now press, the 'n' key.&nbsp; You will move to the word &quot;This&quot; on the second line.
 <li>Press 'n' two more times.&nbsp; You will now be on the word &quot;This&quot; on the fourth line.
 <li>Press 'N'.&nbsp; You will move to the word &quot;This&quot; on the third line.
@@ -1918,7 +1919,8 @@ to normal, and nothing will happen.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 01 This is a test line.</tt>
 <br><br>will now be:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is new text. This is a test line.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is new text.</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; This is a test line.</tt>
 <li>Type '2cc'.&nbsp; The first two lines will be deleted, and you will enter<b><i> text insertion mode</i></b>.&nbsp; Type
 the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2211,7 +2213,7 @@ command:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :map F6 :date\n</tt>
 <br><br>Press<b> F6</b>.&nbsp; The time and date will be displayed in the message window.&nbsp; You will notice that the command
 window flashes as you push<b> F6</b>.
-<li>
+<li>Enter the<b><i> command line</i></b> command
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; :map F6 \x:date\n</tt>
 <br><br>Press<b> F6</b>.&nbsp; The time and date will be displayed in the message window.&nbsp; You will notice that the command
@@ -2328,15 +2330,15 @@ setting.
 <dd>Execute the string<b> keys</b> as if they were typed from the keyboard.&nbsp; These keystrokes are processed once Vi is initialized
 and all files have been read in.
 <dt>-s &lt;scr&gt;
-<dd>Runs the startup script<b> &lt;scr&gt;</b> once Vi is initialized and all files have been read in.&nbsp; Up to 10 startup
+<dd>Runs the startup script &lt;<b>scr</b>&gt; once Vi is initialized and all files have been read in.&nbsp; Up to 10 startup
 scripts may be specified.
 <dt>-p &quot;parms&quot;
 <dd>Specify the parameters<b> parms</b> for each startup script.&nbsp; Multiple parms may be specified as long as they are in
 double quotes.&nbsp; The parameters are associated with the most recently specified startup script.
 <dt>-t &lt;tag&gt;
-<dd>Edits the file containing the tag<b> &lt;tag&gt;</b>.
+<dd>Edits the file containing the tag &lt;<b>tag</b>&gt;.
 <dt>-c &lt;cfg&gt;
-<dd>Runs the configuration script<b> &lt;cfg&gt;</b>, instead of the default<tt> ed.cfg</tt>.
+<dd>Runs the configuration script &lt;<b>cfg</b>&gt;, instead of the default<tt> ed.cfg</tt>.
 </dl>
 <h2 id="Lost_File_Recovery"> Lost File Recovery </h2>
 <br>Vi has an autosave feature that periodically makes a backup copy of the current edit buffer.&nbsp; This backup is kept
@@ -2432,7 +2434,7 @@ mode</i></b> is entered.
 <dt>Arrow Keys
 <dd>
 <dl>
-<dt>Up
+<dt>UP
 <dd>Cursor up through the text.
 <dt>DOWN
 <dd>Cursor down through the text.
@@ -5427,8 +5429,8 @@ of -1.
 </dl>
 <dl>
 <dt>Description:
-<dd>(<b>&lt;x1&gt;</b>,<b> &lt;y1&gt;</b>) specifies the coordinates of the upper left-hand corner of the window, and (<b>&lt;x2&gt;</b>,<b>
-&lt;y2&gt;</b>) specifies the coordinates of the lower right-hand corner of the window.
+<dd>(<b>&lt;x1&gt;</b>,<b>&lt;y1&gt;</b>) specifies the coordinates of the upper left-hand corner of the window, and (<b>&lt;x2&gt;</b>,<b>&lt;y2&gt;</b>)
+specifies the coordinates of the lower right-hand corner of the window.
 <br><br>Open Watcom Vi Editor editor automatically senses the number of lines and columns available.&nbsp; The global variables
 %(SW) (screen width) and %(SH) (screen height) are always set.&nbsp; These are useful for coding dimensions that are relative
 to the size of the screen.&nbsp; All parameters may be coded as expressions.
@@ -5788,7 +5790,8 @@ that it was told to.
 </dl>
 <dl>
 <dt>Description:
-<dd>Adds a new item to a previously created menu<b> &lt;menuname&gt;</b>The item<b> &lt;itemname&gt;</b> is added to the menu.
+<dd>Adds a new item to a previously created menu<b> &lt;menuname&gt;</b>.&nbsp; The item<b> &lt;itemname&gt;</b> is added to the
+menu.
 <br><br>This command is similar to the<b><i> command line</i></b> command <a href="#MENUITEM">MENUITEM</a>, only the <a href="#MENUITEM">MENUITEM</a>
 command is used when first defining a menu.
 <br><br><b>&lt;menuname&gt;</b> may be a quoted string, if the parameter contains spaces.&nbsp; If<b> &lt;menuname&gt;</b>
@@ -5809,7 +5812,7 @@ the item is selected.
 </dl>
 <dl>
 <dt>Description:
-<dd>Destroys menu with name<b> &lt;menuname&gt;</b>
+<dd>Destroys menu with name<b> &lt;menuname&gt;</b>.
 </dl>
 <h3 id="DELETEMENUITEM"> DELETEMENUITEM </h3>
 <dl>
@@ -5818,7 +5821,8 @@ the item is selected.
 </dl>
 <dl>
 <dt>Description:
-<dd>Deletes item number<b> &lt;index&gt;</b> from menu<b> &lt;menuname&gt;</b>The item number<b> &lt;index&gt;</b> is 0 based.
+<dd>Deletes item number<b> &lt;index&gt;</b> from menu<b> &lt;menuname&gt;</b>.&nbsp; The item number<b> &lt;index&gt;</b> is
+0 based.
 <br><br>If<b> &lt;index&gt;</b> is specified as -1, then the last item is removed from the menu.
 </dl>
 <h3 id="ENDMENU"> ENDMENU </h3>
@@ -5841,9 +5845,9 @@ the item is selected.
 </dl>
 <dl>
 <dt>Description:
-<dd>Starts the creation of a new menu<b> &lt;menuname&gt;</b>If a menu exists with the name already, it is destroyed and re-created.
-&nbsp;A character preceded with an ampersand ('&amp;') will be the hot key for activating the menu, e.g.&nbsp; &amp;Control
-would have 'C' as the hot key.
+<dd>Starts the creation of a new menu<b> &lt;menuname&gt;</b>.&nbsp; If a menu exists with the name already, it is destroyed and
+re-created.&nbsp; A character preceded with an ampersand ('&amp;') will be the hot key for activating the menu, e.g.&nbsp;
+&amp;Control would have 'C' as the hot key.
 <br><br><b>&lt;menuname&gt;</b> may be a reserved name:&nbsp; windowgadget, float0, float1, float2, or float3
 </dl>
 <dl>
@@ -7182,9 +7186,9 @@ the regular expression.
 <dt>\L
 <dd>All items following<b> \L</b> in the replacement string are changed to lower case, until a<b> \E</b> or<b> \e</b> is encountered
 <dt>\e
-<dd>Terminate a<b> \U or \L</b>
+<dd>Terminate a<b> \U</b> or<b> \L</b>
 <dt>\E
-<dd>Terminate a<b> \U or \L</b>.
+<dd>Terminate a<b> \U</b> or<b> \L</b>.
 <dt>\|&lt;n&gt;
 <dd>Substitutes spaces up to column &lt;<b>n</b>&gt;, so that the item that follows occurs at column &lt;<b>n</b>&gt;.
 <dt>\#
@@ -9240,12 +9244,12 @@ but you did not specify any characters at all for the string.
 <dd>You attempted to add characters to a line, and the resulting line would be longer than the setting of &quot;maxlinelen&quot;.
 <dt>Not that many words
 <dd>You attempted a command mode command that tried to access more words than were on the current line.
-<dt>Not valid while in ex mode
+<dt>Not valid while in EX mode
 <dd>You attempted to use a command from EX mode that was not allowed:&nbsp; an &quot;edit&quot; command line command with no parameter,
 or a &quot;read&quot; command line command with no parameter.
 <dt>Nothing to match
 <dd>You used the command mode percent ('%') keystroke, but there was nothing on the current line that could be matched.
-<dt>Only valid in ex mode
+<dt>Only valid in EX mode
 <dd>You attempted to use an EX mode only command from the command line:&nbsp; &quot;append&quot;, &quot;change&quot;, &quot;insert&quot;,
 or &quot;list&quot;.
 <dt>Out of memory
