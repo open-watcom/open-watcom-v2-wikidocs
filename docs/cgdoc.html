@@ -5,7 +5,7 @@
 <h1 id="Introduction"> Introduction </h1>
 <br>The code generator (back end) interface is a set of procedure calls.&nbsp; These are divided into following category of
 routines.
-<ul>
+<ul style="list-style-type:none;">
 <li>Code Generation (CG)
 <li>Data Generation (DG)
 <li>Miscellaneous Back End (BE)
@@ -142,7 +142,7 @@ still be needed for accurate exception reporting.
 <dd>Set when SEH (Structured Exception Handling) is used.
 </dl>
 <br>The supported proc_revision CPU values are:
-<ul>
+<ul style="list-style-type:none;">
 <li>CPU_86
 <li>CPU_186
 <li>CPU_286
@@ -151,7 +151,7 @@ still be needed for accurate exception reporting.
 <li>CPU_586
 </ul>
 <br>The supported proc_revision FPU values are:
-<ul>
+<ul style="list-style-type:none;">
 <li>FPU_NONE
 <li>FPU_87
 <li>FPU_387
@@ -162,7 +162,7 @@ still be needed for accurate exception reporting.
 <li>FPU_E586
 </ul>
 <br>The supported proc_revision WEITEK values are:
-<ul>
+<ul style="list-style-type:none;">
 <li>WTK_NONE
 <li>WTK_1167
 <li>WTK_3167
@@ -1101,7 +1101,7 @@ be considered when determining how to produce code.
 <dd>The value we are selecting.
 <dt>allowed
 <dd>The allowed methods of generating code.&nbsp; Must be a combination (non-empty) of the following bits:
-<ul>
+<ul style="list-style-type:none;">
 <li>CG_SWITCH_SCAN
 <li>CG_SWITCH_BSEARCH
 <li>CG_SWITCH_TABLE
@@ -1972,7 +1972,7 @@ of an address.
 be manipulated using the following macros.&nbsp; A parameter<b> c</b>,<b> c1</b>,<b> c2</b>, etc.&nbsp; indicate a register
 constant such as HW_EAX must be used.&nbsp; Anything else must be a variable of type<b> hw_reg_set</b>.
 <br><br>The following are used for static initialization.
-<ul>
+<ul style="list-style-type:none;">
 <li>HW_D_1( c1 )
 <li>HW_NotD_1( c1 )
 <li>HW_D_2( c1, c2 )
@@ -2189,7 +2189,7 @@ routines are defined to be lexical level 0.
 </dl>
 <h1 id="PreMdefined_macros"> Pre-defined macros </h1>
 <br>The following macros are defined by the code generator include files.
-<ul>
+<ul style="list-style-type:none;">
 <li>HW_D
 <li>HW_D_1
 <li>HW_D_2
@@ -2351,7 +2351,7 @@ routines are defined to be lexical level 0.
 </ul>
 <h1 id="Register_constants"> Register constants </h1>
 <br>The following register constants are defined for x86 targets.
-<ul>
+<ul style="list-style-type:none;">
 <li>HW_AH
 <li>HW_AL
 <li>HW_BH
@@ -2392,7 +2392,7 @@ routines are defined to be lexical level 0.
 <li>HW_EBP
 </ul>
 <br>The following registers are defined for the Alpha AXP target.
-<ul>
+<ul style="list-style-type:none;">
 <li>HW_R0-HW_R31
 <li>HW_D0-HW_D31
 <li>HW_W0-HW_W31
@@ -2400,7 +2400,7 @@ routines are defined to be lexical level 0.
 <li>HW_F0-HW_F31
 </ul>
 <br>The following registers are defined for the PowerPC target.
-<ul>
+<ul style="list-style-type:none;">
 <li>HW_R0-HW_R31
 <li>HW_Q3-HW_Q29
 <li>HW_D0-HW_D31
@@ -2409,7 +2409,7 @@ routines are defined to be lexical level 0.
 <li>HW_F0-HW_F31
 </ul>
 <br>The following registers are defined for the MIPS32 target.
-<ul>
+<ul style="list-style-type:none;">
 <li>HW_R0-HW_R31
 <li>HW_Q2-HW_Q24
 <li>HW_D0-HW_D31
