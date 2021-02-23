@@ -7996,7 +7996,7 @@ the entire script can be eliminated with a single <a href="#UNDO_LcommandR">UNDO
 </dl>
 <dl>
 <dt>Description:
-<dd>This command is used to assign the value &lt;<b>val</b>&gt; to the variable<b> &lt;v1&gt;</b>
+<dd>This command is used to assign the value &lt;<b>val</b>&gt; to the variable<b> &lt;v1&gt;</b>.
 <br><br>The forward slashes ('/') around &lt;<b>val</b>&gt; are only need if there are spaces in &lt;<b>val</b>&gt;, or if
 one of the special flags<b> r</b>,<b> x</b>,<b> l</b>,<b> $</b> or<b> @</b> is required at the end.
 <br><br>The special flags have the following meaning:
@@ -8006,14 +8006,14 @@ one of the special flags<b> r</b>,<b> x</b>,<b> l</b>,<b> $</b> or<b> @</b> is r
 searched for).&nbsp; For more information on regular expressions, see the chapter <a href="#Regular_Expressions">Regular Expressions</a>.
 <dt>l
 <dd>When this flag is used, &lt;<b>val</b>&gt; is assumed to be an expression that indicates a line number.&nbsp; The expression
-is evaluated, and the data on the corresponding line number is assigned to<b> &lt;v1&gt;</b>
+is evaluated, and the data on the corresponding line number is assigned to<b> &lt;v1&gt;</b>.
 <dt>x
 <dd>When this flag is used, &lt;<b>val</b>&gt; is assumed to be an expression, and is evaluated.&nbsp; The result is assigned
-to<b> &lt;v1&gt;</b>For another way of assigning expression results to a variable, see the <a href="#EXPR">EXPR</a> script
-command.
+to<b> &lt;v1&gt;</b>.&nbsp; For another way of assigning expression results to a variable, see the <a href="#EXPR">EXPR</a>
+script command.
 <dt>$ (dollar sign)
 <dd>When this flag is used, &lt;<b>val</b>&gt; is assumed to be the name of an operating system environment variable, and the
-contents of that environment variable is what is assigned to<b> &lt;v1&gt;</b>
+contents of that environment variable is what is assigned to<b> &lt;v1&gt;</b>.
 <dt>@
 <dd>When this flag is used, &lt;<b>val</b>&gt; may be the name of one of the <a href="#SET">SET</a> command parameters.<b>&nbsp;
 &lt;v1&gt;</b> will be given the current value of that parameter.
@@ -8022,16 +8022,16 @@ contents of that environment variable is what is assigned to<b> &lt;v1&gt;</b>
 ('/') must NOT be used.&nbsp; The special operators are:
 <dl>
 <dt>strlen &lt;v&gt;
-<dd>Computes the length of the variable &lt;<b>v</b>&gt;.&nbsp; This value is assigned to<b> &lt;v1&gt;</b>
+<dd>Computes the length of the variable &lt;<b>v</b>&gt;.&nbsp; This value is assigned to<b> &lt;v1&gt;</b>.
 <dt>strchr &lt;v&gt; &lt;c&gt;
 <dd>Computes the offset of the character &lt;<b>c</b>&gt; in the variable &lt;<b>v</b>&gt;.&nbsp; The offset is assigned to<b>
-&lt;v1&gt;</b>Note that the character &lt;<b>c</b>&gt; may be a variable, the value of which will be expanded before offset
-is computed.
+&lt;v1&gt;</b>.&nbsp; Note that the character &lt;<b>c</b>&gt; may be a variable, the value of which will be expanded before
+offset is computed.
 <dt>substr &lt;v&gt; &lt;n1&gt; &lt;n2&gt;
 <dd>Computes a substring of the string contained in the variable &lt;<b>v</b>&gt;.&nbsp; The substring is composed of characters
-from offset &lt;<b>n1</b>&gt; to offset &lt;<b>n2</b>&gt;.&nbsp; The substring is assigned to<b> &lt;v1&gt;</b>Note that the
-parameters &lt;<b>n1</b>&gt; and &lt;<b>n2</b>&gt; may be variables, the values of which will be expanded before the substring
-is computed.
+from offset &lt;<b>n1</b>&gt; to offset &lt;<b>n2</b>&gt;.&nbsp; The substring is assigned to<b> &lt;v1&gt;</b>.&nbsp; Note
+that the parameters &lt;<b>n1</b>&gt; and &lt;<b>n2</b>&gt; may be variables, the values of which will be expanded before
+the substring is computed.
 </dl>
 </dl>
 <dl>
@@ -8171,7 +8171,7 @@ statements are true, the code following the<b><i> else</i></b> command is execut
 </dl>
 <dl>
 <dt>Description:
-<dd>Assigns the expression<b> &lt;expr&gt;</b> to the variable<b> &lt;v1&gt;</b>
+<dd>Assigns the expression<b> &lt;expr&gt;</b> to the variable<b> &lt;v1&gt;</b>.
 <br><br>Any variables contained in<b> &lt;expr&gt;</b> are expanded before the expression is evaluated.
 </dl>
 <dl>
@@ -8212,7 +8212,7 @@ statements are true, the code following the<b><i> else</i></b> command is execut
 </dl>
 <dl>
 <dt>Description:
-<dd>This command opens file<b> &lt;name&gt;</b>, assigning it file handle<b> &lt;n&gt;</b>
+<dd>This command opens file<b> &lt;name&gt;</b>, assigning it file handle<b> &lt;n&gt;</b>.
 <br><br><b>&lt;n&gt;</b> may be a value from 1 to 9.&nbsp; This number is used to identify the file for future <a href="#FREAD">FREAD</a>,
 <a href="#FWRITE">FWRITE</a> or <a href="#FCLOSE">FCLOSE</a> script commands.
 <br><br><b>&lt;how&gt;</b> specifies the method that the file is opened.&nbsp; Methods are:
@@ -8260,7 +8260,7 @@ statements are true, the code following the<b><i> else</i></b> command is execut
 </dl>
 <dl>
 <dt>Description:
-<dd>Reads a line from the file identified by handle<b> &lt;n&gt;</b>The line is stored in the variable<b> &lt;v1&gt;</b>
+<dd>Reads a line from the file identified by handle<b> &lt;n&gt;</b>.&nbsp; The line is stored in the variable<b> &lt;v1&gt;</b>.
 </dl>
 <dl>
 <dt>Returns:
@@ -8291,7 +8291,7 @@ statements are true, the code following the<b><i> else</i></b> command is execut
 </dl>
 <dl>
 <dt>Description:
-<dd>Writes the contents of the variable<b> &lt;v1&gt;</b> to the file identified by handle<b> &lt;n&gt;</b>
+<dd>Writes the contents of the variable<b> &lt;v1&gt;</b> to the file identified by handle<b> &lt;n&gt;</b>.
 </dl>
 <dl>
 <dt>Returns:
@@ -8320,7 +8320,7 @@ statements are true, the code following the<b><i> else</i></b> command is execut
 </dl>
 <dl>
 <dt>Description:
-<dd>Waits for the user to type a single keystroke, and then assigns the keystroke into variable<b> &lt;v1&gt;</b>
+<dd>Waits for the user to type a single keystroke, and then assigns the keystroke into variable<b> &lt;v1&gt;</b>.
 </dl>
 <dl>
 <dt>Example(s):
@@ -8369,7 +8369,7 @@ is false, control goes to the next <a href="#ELSEIF">ELSEIF</a>, <a href="#ELSE"
 <dl>
 <dt>Description:
 <dd>Open a window (the <a href="#COMMANDWINDOW">COMMANDWINDOW</a>) and get a string from the user.&nbsp; The string is assigned
-to the variable<b> &lt;v1&gt;</b>
+to the variable<b> &lt;v1&gt;</b>.
 <br><br>If<b> &lt;v1&gt;</b> was assigned a value before the<b><i> input</i></b> script command was executed, then that value
 is used as a prompt string in the input window.
 </dl>
@@ -8434,8 +8434,8 @@ or <a href="#UNTIL">UNTIL</a> control returns to the instruction after the<b><i>
 </dl>
 <dl>
 <dt>Description:
-<dd>Remove the next space-delimited word from the variable<b> &lt;srcvar&gt;</b>The word is placed in the variable specified by<b>
-&lt;srcvar&gt;</b>Both<b> &lt;srcvar&gt;</b> and<b> &lt;resvar&gt;</b> must be variables only.
+<dd>Remove the next space-delimited word from the variable<b> &lt;srcvar&gt;</b>.&nbsp; The word is placed in the variable specified
+by<b> &lt;srcvar&gt;</b>.&nbsp; Both<b> &lt;srcvar&gt;</b> and<b> &lt;resvar&gt;</b> must be variables only.
 </dl>
 <dl>
 <dt>Example(s):
@@ -8469,7 +8469,7 @@ of the current block.
 </dl>
 <dl>
 <dt>Description:
-<dd>Exit the script, returning<b> &lt;rc&gt;</b>
+<dd>Exit the script, returning<b> &lt;rc&gt;</b>.
 <br><br>If the script was invoked by another script, then this value becomes<b><i> lastrc</i></b>.
 <br><br>If the script was invoked at the<b><i> command line</i></b>, then this return code is reported as the appropriate
 error, if<b> &lt;rc&gt;</b> is not<b> ERR_NO_ERR</b>.
