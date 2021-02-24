@@ -1760,7 +1760,7 @@ directive described in <a href="#The_ANONYMOUSEXPORT_Directive">The ANONYMOUSEXP
 <dd>(OS/2 only) is required for functions that execute with I/O privilege.<b>&nbsp; iopl_bytes</b> specifies the total size of
 the function's arguments in bytes.&nbsp; When such a function is executed, the specified number of bytes is copied from the
 caller's stack to the I/O-privileged function's stack.&nbsp; Note that the processor copies<b> words</b> rather than bytes
-and can copy up to 31 words.&nbsp; Thus the maximum number of<b> bytes</b> allowed is 62, and must even.
+and can copy up to 31 words.&nbsp; Thus the number of<b> bytes</b> allowed is up to 62, and must be even.
 <dt>lbc_file
 <dd>is a file specification for the name of a librarian command file.&nbsp; If no file extension is specified, a file extension
 of &quot;lbc&quot; is assumed.&nbsp; The linker will process the librarian command file and look for commands to the librarian
