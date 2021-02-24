@@ -70,6 +70,7 @@
 <br><a href="#1170_directive__s_can_only_occur_once">1170 directive %s can only occur once</a>
 <br><a href="#1171_locally_defined_symbol__s_imported">1171 locally defined symbol %s imported</a>
 <br><a href="#1172_stack_size_is_less_than__d_bytes_">1172 stack size is less than %d bytes.</a>
+<br><a href="#1174_IOPL_bytes_in_EXPORT_directive_odd__ignoring_low_bit">1174 IOPL bytes in EXPORT directive odd, ignoring low bit</a>
 <dt>- 2 -
 <dd><a href="#2002_TT_internal_TT_M__s">2002 ** internal ** - %s</a>
 <br><a href="#2008_cannot_open__s1____s2">2008 cannot open %s1 :&nbsp; %s2</a>
@@ -1756,9 +1757,10 @@ in the resident names table.
 <br><br>If you do not want an entry name to appear in either the resident or non-resident names table, you can use the &quot;ANONYMOUSEXPORT&quot;
 directive described in <a href="#The_ANONYMOUSEXPORT_Directive">The ANONYMOUSEXPORT Directive</a>.
 <dt>iopl_bytes
-<dd>(OS/2 only) is required for functions that execute with I/O privilege.<b>&nbsp; iopl_bytes</b> specifies that total size of
+<dd>(OS/2 only) is required for functions that execute with I/O privilege.<b>&nbsp; iopl_bytes</b> specifies the total size of
 the function's arguments in bytes.&nbsp; When such a function is executed, the specified number of bytes is copied from the
-caller's stack to the I/O-privileged function's stack.&nbsp; The maximum number of bytes allowed is 63.
+caller's stack to the I/O-privileged function's stack.&nbsp; Note that the processor copies<b> words</b> rather than bytes
+and can copy up to 31 words.&nbsp; Thus the maximum number of<b> bytes</b> allowed is 62, and must even.
 <dt>lbc_file
 <dd>is a file specification for the name of a librarian command file.&nbsp; If no file extension is specified, a file extension
 of &quot;lbc&quot; is assumed.&nbsp; The linker will process the librarian command file and look for commands to the librarian
@@ -7654,7 +7656,7 @@ the range 0 to 65535.
 <br>The specified ordinal in the &quot;EXPORT&quot; directive is incorrect (e.g., -1).&nbsp; An ordinal number must be in
 the range 0 to 65535.
 <h2 id="2042_too_many_IOPL_words_in_EXPORT_directive"> 2042 too many IOPL words in EXPORT directive </h2>
-<br>The maximum number of IOPL words for a 16-bit executable is 63.
+<br>The maximum number of IOPL words for an OS/2 executable is 31, i.e.&nbsp; 62 bytes.
 <h2 id="1043_duplicate_exported_ordinal"> 1043 duplicate exported ordinal </h2>
 <br>This message is issued for ordinal numbers specified in an &quot;EXPORT&quot; directive for symbols belonging to DLLs.
 &nbsp;This message is issued if an ordinal number is assigned to two different symbols.&nbsp; A warning is issued and the
@@ -7987,4 +7989,7 @@ the program will not work correctly.&nbsp; Consider specifying a greater stack s
 <br>The default data segment size in a NE format executable (16-bit OS/2 or Windows) exceeds the maximum allowed size.&nbsp;
 The default data segment includes the data segment plus default stack size plus default heap size.&nbsp; The total size must
 be 64K or less for OS/2 executables and 65,533 bytes or less for Windows executables.
+<h2 id="1174_IOPL_bytes_in_EXPORT_directive_odd__ignoring_low_bit"> 1174 IOPL bytes in EXPORT directive odd, ignoring low bit </h2>
+<br>The EXPORT directive accepts the number of IOPL bytes, but the OS/2 executable formats, as well as the CPU, only work
+with the number of words.&nbsp; If the specified number of IOPL bytes is an odd number, the lowest bit will be ignored.
 </body>
