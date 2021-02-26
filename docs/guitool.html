@@ -7331,6 +7331,8 @@ specified multiple times.
 <dt>-i=path
 <dd>Specifies an include path.&nbsp; This include path is searched before the directories specified in the <b> INCLUDE</b> environment
 variable.&nbsp; This option affects pass one only.
+<br><br>Note:&nbsp; to be host platform independent the form like -i=&quot;../h&quot; (quoted path and forward slash separator)
+is recommended.
 <dt>-k
 <dd>Disables the segment sorting feature (load optimization).&nbsp; If this option is not specified, the Open Watcom Resource
 Compiler arranges all pre-load segments and resources so that they are at the start of the executable.&nbsp; This option has

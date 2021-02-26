@@ -953,7 +953,9 @@ conventions (see <a href="#6_r_s_">6{r|s}</a>)
 <dt>h{w,d,c}
 <dd>set debug output format (Open Watcom, Dwarf, Codeview) (see <a href="#h_w_d_c_">h{w,d,c}</a>)
 <dt>i=&lt;directory&gt;
-<dd>add directory to list of include directories (see <a href="#iEXdirectoryY">i=&lt;directory&gt;</a>)
+<dd>add directory to list of include directories
+<br><br>Note:&nbsp; to be host platform independent the form like i=&quot;../h&quot; (quoted path and forward slash separator)
+is recommended.&nbsp; (see <a href="#iEXdirectoryY">i=&lt;directory&gt;</a>)
 <dt>j
 <dd>change char default from unsigned to signed (see <a href="#j">j</a>)
 <dt>k
@@ -2350,6 +2352,8 @@ above).&nbsp; The macro <tt> __SW_FZS</tt> will be defined when this switch is u
 <br><br>The specified paths are added to the list of directories in which the compiler will search for &quot;include&quot;
 files.&nbsp; See the section entitled <a href="#Open_Watcom_CDCPP__include_File_Processing">Open Watcom C/C++ #include File Processing</a>
 for information on directory searching.
+<br><br>Note:&nbsp; to be host platform independent the form like i=&quot;../h&quot; (quoted path and forward slash separator)
+is recommended.
 <h4 id="k"> k </h4>
 <br>(C++ only) This option instructs the compiler to continue processing subsequent source files after an error has been diagnosed
 in the current source file.&nbsp; See the option <a href="#fcEXfile_nameY">fc=&lt;file_name&gt;</a> for information on compiling
