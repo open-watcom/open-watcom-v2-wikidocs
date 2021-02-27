@@ -5644,8 +5644,9 @@ keyword is normally used with functions written for Dynamic Link Libraries in Wi
 C/32 provide the predefined macro <tt> _loadds</tt> for convenience and compatibility with the Microsoft C compiler.&nbsp;
 It may be used in place of <tt> __loadds</tt>.
 <br><br>The <tt> __saveregs</tt> keyword may be used with functions.&nbsp; It is provided for compatibility with Microsoft
-C, and has no effect in Open Watcom C/16 and C/32.&nbsp; Open Watcom C/16 and C/32 provide the predefined macro <tt> _saveregs</tt>
-for convenience and compatibility with the Microsoft C compiler.&nbsp; It may be used in place of <tt> __saveregs</tt>.
+C, and is used to save and restore all segment registers in Open Watcom C/16 and C/32.&nbsp; Open Watcom C/16 and C/32 provide
+the predefined macro <tt> _saveregs</tt> for convenience and compatibility with the Microsoft C compiler.&nbsp; It may be
+used in place of <tt> __saveregs</tt>.
 <br><br>The <tt> __try</tt> , <tt> _Try</tt> , <tt> __except</tt> , <tt> _Except</tt> , <tt> __finally</tt> , <tt> _Finally</tt>
 , <tt> __leave</tt> and <tt> _Leave</tt> keywords may be used for exception handling, See the &quot;Structured Exception Handling&quot;
 in User's Guide.&nbsp; Open Watcom C/16 and C/32 provide the predefined macro <tt> _try</tt> for convenience and compatibility
