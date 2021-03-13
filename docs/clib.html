@@ -10942,6 +10942,7 @@ Prefix which is stored in the variable <tt> _psp</tt>.&nbsp; The value of<b> ret
 <br><tt>&nbsp;&nbsp;&nbsp; /*</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now terminate and keep resident</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the non-transient portion</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note: following calculation only works in .COM files</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; _dos_keep( 0, (FP_OFF( transient ) + 15) &gt;&gt; 4 );</tt>
 <br><tt>&nbsp; }</tt>
