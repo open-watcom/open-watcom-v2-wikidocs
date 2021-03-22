@@ -14,7 +14,7 @@
 <br><a href="#07_Unable_to_control_A20_">07 Unable to control A20.</a>
 <br><a href="#08_Selector_allocation_error_">08 Selector allocation error.</a>
 <br><a href="#09_Unrecoverable_exception__Program_terminated_">09 Unrecoverable exception.&nbsp; Program terminated.</a>
-<dt>- 1 -
+<dt><br>- 1 -
 <dd><a href="#10_Unable_to_find_application_to_load_">10 Unable to find application to load.</a>
 <br><a href="#11_DOS_reported_error_while_accessing_application_">11 DOS reported error while accessing application.</a>
 <br><a href="#12_Not_enough_memory_to_load_application_">12 Not enough memory to load application.</a>
@@ -22,51 +22,51 @@
 <br><a href="#14_Memory_structures_destroyed__Program_terminated_">14 Memory structures destroyed.&nbsp; Program terminated.</a>
 <br><a href="#15_DOS_reported_an_error_while_accessing_swap_file__Program_terminated_">15 DOS reported an error while accessing swap file.&nbsp; Program terminated.</a>
 <br><a href="#16_Unsupported_DOS_function_call__Program_terminated_">16 Unsupported DOS function call.&nbsp; Program terminated.</a>
-<dt>- A -
+<dt><br>- A -
 <dd><a href="#API_functions_Lalphabetical_orderR">API functions (alphabetical order)</a>
 <br><a href="#API_functions_Lnumerical_indexR">API functions (numerical index)</a>
 <br><a href="#API_Memory_Allocation">API Memory Allocation</a>
 <br><a href="#API_Notes">API Notes</a>
-<dt>- C -
+<dt><br>- C -
 <dd><a href="#CauseWay_API">CauseWay API</a>
 <br><a href="#CAUSEWAY_Environment_Variable">CAUSEWAY Environment Variable</a>
 <br><a href="#CauseWay_Memory_Requirements">CauseWay Memory Requirements</a>
 <br><a href="#CauseWay_Services">CauseWay Services</a>
 <br><a href="#CW_ERR_File_Information_Format">CW.ERR File Information Format</a>
-<dt>- D -
+<dt><br>- D -
 <dd><a href="#Debugging_Using_WD">Debugging Using WD</a>
 <br><a href="#Default_API">Default API</a>
 <br><a href="#DOS_API_Buffer_Size">DOS API Buffer Size</a>
 <br><a href="#DOS_Extender_Error_Messages_and_Return_Values">DOS Extender Error Messages and Return Values</a>
-<dt>- E -
+<dt><br>- E -
 <dd><a href="#Environment_Variables">Environment Variables</a>
 <br><a href="#Extended_or_Altered_Interrupt_Services">Extended or Altered Interrupt Services</a>
-<dt>- F -
+<dt><br>- F -
 <dd><a href="#First_Steps">First Steps</a>
 <br><a href="#Functions">Functions</a>
-<dt>- I -
+<dt><br>- I -
 <dd><a href="#Internal_Operation">Internal Operation</a>
 <br><a href="#Introduction">Introduction</a>
-<dt>- M -
+<dt><br>- M -
 <dd><a href="#Memory_Size">Memory Size</a>
 <br><a href="#Minimum_System_Requirements">Minimum System Requirements</a>
-<dt>- O -
+<dt><br>- O -
 <dd><a href="#Open_Watcom_CDCPP_kbhitLR_replacement">Open Watcom C/C++ kbhit() replacement</a>
 <br><a href="#Operating_CauseWay">Operating CauseWay</a>
 <br><a href="#Operational_Considerations_When_Using_CauseWay">Operational Considerations When Using CauseWay</a>
 <br><a href="#Overview">Overview</a>
-<dt>- P -
+<dt><br>- P -
 <dd><a href="#Performance_Considerations">Performance Considerations</a>
-<dt>- Q -
+<dt><br>- Q -
 <dd><a href="#Quick_Reference_Guide">Quick Reference Guide</a>
-<dt>- R -
+<dt><br>- R -
 <dd><a href="#Rules_For_Protected_Mode_Operation">Rules For Protected Mode Operation</a>
-<dt>- S -
+<dt><br>- S -
 <dd><a href="#Sequence">Sequence</a>
 <br><a href="#Stack_Frames">Stack Frames</a>
-<dt>- T -
+<dt><br>- T -
 <dd><a href="#TEMP_and_TMP_Environment_Variables">TEMP and TMP Environment Variables</a>
-<dt>- U -
+<dt><br>- U -
 <dd><a href="#Using_DLLs_with_Open_Watcom_CDCPP">Using DLLs with Open Watcom C/C++</a>
 <br><a href="#Using_the_flat_memory_model">Using the flat memory model</a>
 </dl>
@@ -193,48 +193,48 @@ is a description of the valid settings:
 <dl>
 <dt>BIG1
 <dd>
-<br><br>Force CauseWay to use an alternate method to determine available extended memory under RAW memory environments (no
-DPMI host, no HIMEM.SYS loaded), allowing CauseWay to see more than 64MB of memory on machines which do not support more than
-64MB under original INT 15h method.&nbsp; This method uses INT 15h function 0e801h to determine available extended memory,
-falling back to the original function if 0e801h fails.&nbsp; Note that old machines may not support this function and there
-is a slight chance that some older machines may not work if this setting is used.
-<dt>DPMI
+<br>Force CauseWay to use an alternate method to determine available extended memory under RAW memory environments (no DPMI
+host, no HIMEM.SYS loaded), allowing CauseWay to see more than 64MB of memory on machines which do not support more than 64MB
+under original INT 15h method.&nbsp; This method uses INT 15h function 0e801h to determine available extended memory, falling
+back to the original function if 0e801h fails.&nbsp; Note that old machines may not support this function and there is a slight
+chance that some older machines may not work if this setting is used.
+<dt><br>DPMI
 <dd>
-<br><br>Force DPMI rather than default VCPI usage whenever possible (recommended for 386Max and BlueMax users).&nbsp; The
-memory manager must support DPMI or else this setting is ignored.
-<dt>EXTALL
+<br>Force DPMI rather than default VCPI usage whenever possible (recommended for 386Max and BlueMax users).&nbsp; The memory
+manager must support DPMI or else this setting is ignored.
+<dt><br>EXTALL
 <dd>
-<br><br>Force CauseWay to use all extended memory and sub-allocate memory from the bottom up instead of the default top-down
-approach.&nbsp; This setting is most useful for processor intensive environments which have a small hardware cache that does
-not cover the entire physical address range.&nbsp; Use of this setting means that no extended memory will be available for
-other programs while the application is loaded (including shelling to DOS).
-<dt>HIMEM:&lt;nnn&gt;
+<br>Force CauseWay to use all extended memory and sub-allocate memory from the bottom up instead of the default top-down approach.
+&nbsp;This setting is most useful for processor intensive environments which have a small hardware cache that does not cover
+the entire physical address range.&nbsp; Use of this setting means that no extended memory will be available for other programs
+while the application is loaded (including shelling to DOS).
+<dt><br>HIMEM:&lt;nnn&gt;
 <dd>
-<br><br>Set maximum physical (conventional plus extended) memory that can be consumed by CauseWay where<tt> &lt;nnn&gt;</tt>
-is the decimal number of kilobytes that can be consumed.&nbsp; If memory allocation requests exceed this figure, CauseWay
-will use virtual memory, even if additional physical memory is present.&nbsp; If the HIMEM memory value exceeds available
-physical memory, then memory allocations operate normally.&nbsp; For example, HIMEM:2048 on a 4MB machine would force virtual
-memory use after 2MB of memory allocations (including loading the executable file).&nbsp; The remaining 2MB of memory could
-be used by other applications while the CauseWay application is active.
-<dt>LOWMEM:&lt;nnn&gt;
+<br>Set maximum physical (conventional plus extended) memory that can be consumed by CauseWay where<tt> &lt;nnn&gt;</tt> is
+the decimal number of kilobytes that can be consumed.&nbsp; If memory allocation requests exceed this figure, CauseWay will
+use virtual memory, even if additional physical memory is present.&nbsp; If the HIMEM memory value exceeds available physical
+memory, then memory allocations operate normally.&nbsp; For example, HIMEM:2048 on a 4MB machine would force virtual memory
+use after 2MB of memory allocations (including loading the executable file).&nbsp; The remaining 2MB of memory could be used
+by other applications while the CauseWay application is active.
+<dt><br>LOWMEM:&lt;nnn&gt;
 <dd>
-<br><br>Set DOS (conventional) memory to restrict it from use by CauseWay.&nbsp; This memory is in addition to the default
-32KB low DOS memory block reserved by CauseWay for use by any applications which need to allocate DOS memory.<tt>&nbsp; &lt;nnn&gt;</tt>
+<br>Set DOS (conventional) memory to restrict it from use by CauseWay.&nbsp; This memory is in addition to the default 32KB
+low DOS memory block reserved by CauseWay for use by any applications which need to allocate DOS memory.<tt>&nbsp; &lt;nnn&gt;</tt>
 is the decimal number of kilobytes to reserve.&nbsp; If there is not enough conventional memory to satisfy the<tt> &lt;nnn&gt;</tt>
 request value, then CauseWay will leave all conventional memory free that is not required by the extender to operate.&nbsp;
 Note that this option does not guarantee the amount of free DOS memory, just how much needs to be free before CauseWay will
 consume DOS memory after exhausting all extended memory.&nbsp; For example, LOWMEM:200 will attempt to reserve 200KB of DOS
 memory, even if CauseWay has exhausted all extended memory and is using conventional memory to fill memory allocation requests.
-<dt>MAXMEM:&lt;nn&gt;
+<dt><br>MAXMEM:&lt;nn&gt;
 <dd>
-<br><br>Set maximum linear address space provided by CauseWay where<tt> &lt;nn&gt;</tt> is the decimal number of megabytes
-of linear address space.&nbsp; This setting is similar to HIMEM except that it includes any virtual memory.&nbsp; For example,
+<br>Set maximum linear address space provided by CauseWay where<tt> &lt;nn&gt;</tt> is the decimal number of megabytes of
+linear address space.&nbsp; This setting is similar to HIMEM except that it includes any virtual memory.&nbsp; For example,
 MAXMEM:32 on a 16MB memory system restricts VMM disk space usage to 32MB, even if more disk space is present.&nbsp; MAXMEM:8
 on the same system would restrict the application to 8MB of memory (all physical).&nbsp; Note that the setting is in megabytes,
 rather than kilobytes used in the LOWMEM and HIMEM options.
-<dt>NAME:&lt;filename&gt;
+<dt><br>NAME:&lt;filename&gt;
 <dd>
-<br><br>Set a name, without a pathspec, to use the virtual memory temporary swap file.&nbsp; To set a path for the swap file,
+<br>Set a name, without a pathspec, to use the virtual memory temporary swap file.&nbsp; To set a path for the swap file,
 use the <b> CAUSEWAY=SWAP</b>, <b> TEMP</b>, or <b> TMP</b> environment variable.&nbsp; The filename must be valid, 12 characters
 or less.&nbsp; Additional characters are truncated or invalidate the filename, depending upon how DOS handles it (e.g., multiple
 periods make an invalid file name whereas a five-character extension is truncated to three).&nbsp; If the filename specified
@@ -245,24 +245,24 @@ due to reset/reboot, but the leftover temporary file can be forced to a known na
 prior to running the application or leave it as a &quot;permanent&quot; swap file for CauseWay.
 <br><br>Note:&nbsp; In a multi-user or muti-CauseWay application situation, do not use the NAME setting unless it generates
 a unique file for each user and application.&nbsp; Otherwise, applications will be stepping on others' temporary files.
-<dt>NOEX
+<dt><br>NOEX
 <dd>
-<br><br>Force CauseWay to not patch the INT 21h, function 4bh (EXEC) vector to turn off CauseWay's INT 31h extensions when
-the EXEC function is called.&nbsp; CauseWay normally turns off support of its INT 31h extensions with an EXEC call to be well
+<br>Force CauseWay to not patch the INT 21h, function 4bh (EXEC) vector to turn off CauseWay's INT 31h extensions when the
+EXEC function is called.&nbsp; CauseWay normally turns off support of its INT 31h extensions with an EXEC call to be well
 behaved and avoid conflicts with other extenders or programs which may add their own extensions to INT 31h.&nbsp; However,
 if your CauseWay extended application shells out to DOS and passes the shelled-to application a callback address pointing
 to a routine within the parent CauseWay application, the callback will not work properly if the protected mode code uses the
 CauseWay extensions.&nbsp; With the NOEX setting present, CauseWay still supports its INT 31h extensions for those users who
 need to operate with callbacks in this fashion.&nbsp; Be aware that when the NOEX setting is present, CauseWay is less &quot;well-behaved&quot;
 about other programs which might add their own INT 31h extensions.
-<dt>NOVM
+<dt><br>NOVM
 <dd>
-<br><br>Disable all virtual memory use by CauseWay.&nbsp; If physical memory is exhausted, CauseWay will fail further memory
-allocation requests.
-<dt>PRE:&lt;nnn&gt;
+<br>Disable all virtual memory use by CauseWay.&nbsp; If physical memory is exhausted, CauseWay will fail further memory allocation
+requests.
+<dt><br>PRE:&lt;nnn&gt;
 <dd>
-<br><br>Pre-allocates a swap file size, under non-DPMI environments, at start-up, where<tt> &lt;nnn&gt;</tt> is file size
-in megabytes, not kilobytes (same as MAXMEM).
+<br>Pre-allocates a swap file size, under non-DPMI environments, at start-up, where<tt> &lt;nnn&gt;</tt> is file size in megabytes,
+not kilobytes (same as MAXMEM).
 <br>There are at least two uses for this feature.&nbsp; First, to pre-allocate a virtual memory file size for applications
 with a total memory allocation (including EXE image) that does not exceed the set size.&nbsp; For example:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -273,10 +273,10 @@ file to find and erase.&nbsp; If virtual memory usage exceeds 4MB, then SCANDISK
 and beyond what was pre-allocated.
 <br><br>Secondly, PRE can be used to allow your application to stake a claim to disk space before it needs it.
 <br><br>PRE may be used in conjunction with MAXMEM to ensure that virtual memory does not exceed the pre-allocation setting.
-<dt>SWAP:&lt;path&gt;
+<dt><br>SWAP:&lt;path&gt;
 <dd>
-<br><br>Set CauseWay's virtual memory manager swap file path.&nbsp; This path takes precedence for choosing the location of
-a swap file over the <b> TEMP</b> and <b> TMP</b> environment variables.
+<br>Set CauseWay's virtual memory manager swap file path.&nbsp; This path takes precedence for choosing the location of a
+swap file over the <b> TEMP</b> and <b> TMP</b> environment variables.
 </dl>
 <h1 id="Using_the_flat_memory_model"> Using the flat memory model </h1>
 <br>Flat model is a non-segmented memory model that allows accessing data and executing code anywhere within the 4GB linear
@@ -322,7 +322,7 @@ Watcom Linker documentation for a description of these commands.
 <dl>
 <dt>where
 <dd><b>description</b>
-<dt>function_name
+<dt><br>function_name
 <dd>allows you to make a symbol (function name) available to other modules.&nbsp; It must be declared as a public symbol so that
 the linker can export it.
 </dl>
@@ -332,29 +332,29 @@ the linker can export it.
 <dl>
 <dt>where
 <dd><b>description</b>
-<dt>local_name
+<dt><br>local_name
 <dd>is an optional parameter.&nbsp; It is the symbol which the importing program references the function by, i.e.&nbsp; the symbol
 declared as external.&nbsp; If no local name is specified, then<b> function_name</b> is used.
-<dt>module_name
+<dt><br>module_name
 <dd>is the name of the module that contains the function.&nbsp; It is not the file name.&nbsp; IMPORT module names are resolved
 by searching DLL and EXE files for the correct module name.
-<dt>function_name
+<dt><br>function_name
 <dd>is the symbol by which the function is known in the EXPORTing module, i.e.&nbsp; the symbol that is declared as public.
-<dt>ordinal_number
+<dt><br>ordinal_number
 <dd>functions can also be imported by number.&nbsp; This is the entry number in decimal, starting at 1, in the EXPORTing module's
 export table to link to.<b>&nbsp; local_name</b> must be specified when using ordinals, otherwise there is no symbolic reference
 to internally resolve.
-<br><br>In the DLL calling code,<b> local_name</b> and<b> function_name</b> need to be declared as external.
+<br>In the DLL calling code,<b> local_name</b> and<b> function_name</b> need to be declared as external.
 </dl>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NAME&nbsp;&nbsp; module_name</tt>
 <dl>
 <dt>where
 <dd><b>description</b>
-<dt>module_name
+<dt><br>module_name
 <dd>is a symbol by which the module should be identified when resolving IMPORT records in a calling program.
-<br><br>IMPORTed module names can contain a partial path.&nbsp; For example, DLL\spelling_checker would instruct the loader
-to look in &lt;execution path&gt;\DLL for a module with a name of spelling_checker.
+<br>IMPORTed module names can contain a partial path.&nbsp; For example, DLL\spelling_checker would instruct the loader to
+look in &lt;execution path&gt;\DLL for a module with a name of spelling_checker.
 <br><br>Notes:
 <br><br>You must take the responsibility to make sure that the IMPORTed function or module calling conventions match the calling
 code.&nbsp; For example, the loader will load a 16-bit module to resolve an IMPORT in a 32-bit program without complaint.
@@ -533,19 +533,19 @@ stack and this display can show which parameters were passed.
 <dl>
 <dt>where
 <dd><b>description</b>
-<dt>sel
+<dt><br>sel
 <dd>Selector value.
-<dt>base
+<dt><br>base
 <dd>Linear base address of selector.
-<dt>limit
+<dt><br>limit
 <dd>Limit of selector.
-<dt>type
+<dt><br>type
 <dd>CODE or DATA.
-<dt>D
+<dt><br>D
 <dd>16 or 32 to signify segment D bit.
-<dt>mem
+<dt><br>mem
 <dd>Y or N to indicate if the selector has a memory block associated with it.
-<dt>count
+<dt><br>count
 <dd>segment count in MAP file, xxxx if dynamically allocated.
 </dl>
 <br>The selector list is finished off with a display of the total number of selectors allocated to the program.&nbsp; For
@@ -558,11 +558,11 @@ example:
 <dl>
 <dt>where
 <dd><b>description</b>
-<dt>handle
+<dt><br>handle
 <dd>Linear memory &#91;de&#93;allocation uses handles to control the blocks.&nbsp; This field is the block's handle.
-<dt>base
+<dt><br>base
 <dd>Linear base address of the memory block.
-<dt>length
+<dt><br>length
 <dd>Length of the block in bytes.
 </dl>
 <br>The linear memory list ends with a display of the total linear memory allocated to the program, the real (rounded to 4KB
@@ -577,9 +577,9 @@ list.
 <dl>
 <dt>where
 <dd><b>description</b>
-<dt>base
+<dt><br>base
 <dd>Linear base of the locked region.
-<dt>limit
+<dt><br>limit
 <dd>Length of the locked region.
 </dl>
 <br>Note:&nbsp; These values are passed by the program but the actual values have the base rounded down a page and the length
@@ -591,11 +591,11 @@ format to make it easier to cross reference this list to the other lists in CW.E
 <dl>
 <dt>where
 <dd><b>description</b>
-<dt>No
+<dt><br>No
 <dd>Vector number.
-<dt>sel
+<dt><br>sel
 <dd>Selector value for handler.
-<dt>offset
+<dt><br>offset
 <dd>Offset value for handler.
 </dl>
 <br>This information allows a cross-reference with the other lists to ensure CauseWay application installed handlers have
@@ -677,117 +677,117 @@ compatibility with CauseWay's near memory model.&nbsp; This model is now obsolet
 <dl>
 <dt>FF00 Info
 <dd>Get system selectors/flags
-<dt>FF01 IntXX
+<dt><br>FF01 IntXX
 <dd>Simulate real mode interrupt
-<dt>FF02 FarCallReal
+<dt><br>FF02 FarCallReal
 <dd>Simulate real mode far call
-<dt>FF03 GetSel
+<dt><br>FF03 GetSel
 <dd>Allocate a new selector
-<dt>FF04 RelSel
+<dt><br>FF04 RelSel
 <dd>Release a selector
-<dt>FF05 CodeSel
+<dt><br>FF05 CodeSel
 <dd>Make a selector execute/read type
-<dt>FF06 AliasSel
+<dt><br>FF06 AliasSel
 <dd>Create a read/write data selector from source selector
-<dt>FF07 GetSelDet
+<dt><br>FF07 GetSelDet
 <dd>Get selector linear base and limit
-<dt>FF08 GetSelDet32
+<dt><br>FF08 GetSelDet32
 <dd>Get selector linear base and limit
-<dt>FF09 SetSelDet
+<dt><br>FF09 SetSelDet
 <dd>Set selector linear base and limit
-<dt>FF0A SetSelDet32
+<dt><br>FF0A SetSelDet32
 <dd>Set selector linear base and limit
-<dt>FF0B GetMem
+<dt><br>FF0B GetMem
 <dd>Allocate a block of memory
-<dt>FF0C GetMem32
+<dt><br>FF0C GetMem32
 <dd>Allocate a block of memory
-<dt>FF0D ResMem
+<dt><br>FF0D ResMem
 <dd>Resize a previously allocated block of memory
-<dt>FF0E ResMem32
+<dt><br>FF0E ResMem32
 <dd>Resize a previously allocated block of memory
-<dt>FF0F RelMem
+<dt><br>FF0F RelMem
 <dd>Release memory allocated by either GetMem or GetMem32
-<dt>FF10 GetMemLinear
+<dt><br>FF10 GetMemLinear
 <dd>Allocate a block of memory without a selector
-<dt>FF11 GetMemLinear32
+<dt><br>FF11 GetMemLinear32
 <dd>Allocate a block of memory without a selector
-<dt>FF12 ResMemLinear
+<dt><br>FF12 ResMemLinear
 <dd>Resize a previously allocated block of memory without a selector
-<dt>FF13 ResMemLinear32
+<dt><br>FF13 ResMemLinear32
 <dd>Resize a previously allocated block of memory without a selector
-<dt>FF14 RelMemLinear
+<dt><br>FF14 RelMemLinear
 <dd>Release previously allocated block of memory (linear address)
-<dt>FF15 RelMemLinear32
+<dt><br>FF15 RelMemLinear32
 <dd>Release previously allocated block of memory (linear address)
-<dt>FF16 GetMemNear
+<dt><br>FF16 GetMemNear
 <dd>Deprecated - Allocate an application relative block of memory
-<dt>FF17 ResMemNear
+<dt><br>FF17 ResMemNear
 <dd>Deprecated - Resize a previously allocated application relative block of memory
-<dt>FF18 RelMemNear
+<dt><br>FF18 RelMemNear
 <dd>Deprecated - Release previously allocated application relative block of memory
-<dt>FF19 Linear2Near
+<dt><br>FF19 Linear2Near
 <dd>Deprecated - Convert linear address to application relative address
-<dt>FF1A Near2Linear
+<dt><br>FF1A Near2Linear
 <dd>Deprecated - Convert application relative address to linear address
-<dt>FF1B LockMem
+<dt><br>FF1B LockMem
 <dd>Lock a region of memory
-<dt>FF1C LockMem32
+<dt><br>FF1C LockMem32
 <dd>Lock a region of memory
-<dt>FF1D UnLockMem
+<dt><br>FF1D UnLockMem
 <dd>Unlock a region of memory
-<dt>FF1E UnLockMem32
+<dt><br>FF1E UnLockMem32
 <dd>Unlock a region of memory
-<dt>FF1F LockMemNear
+<dt><br>FF1F LockMemNear
 <dd>Deprecated - Lock a region of memory using application relative address
-<dt>FF20 UnLockMemNear
+<dt><br>FF20 UnLockMemNear
 <dd>Deprecated - Unlock a region of memory using application relative address
-<dt>FF21 GetMemDOS
+<dt><br>FF21 GetMemDOS
 <dd>Allocate a region of DOS (conventional) memory
-<dt>FF22 ResMemDOS
+<dt><br>FF22 ResMemDOS
 <dd>Resize a block of DOS (conventional) memory allocated with GetMemDOS
-<dt>FF23 RelMemDOS
+<dt><br>FF23 RelMemDOS
 <dd>Release a block of DOS (conventional) memory allocated by GetMemDOS
-<dt>FF24 Exec
+<dt><br>FF24 Exec
 <dd>Run another CauseWay program directly
-<dt>FF25 GetDOSTrans
+<dt><br>FF25 GetDOSTrans
 <dd>Get current address and size of the buffer used for DOS memory transfers
-<dt>FF26 SetDOSTrans
+<dt><br>FF26 SetDOSTrans
 <dd>Set new address and size of the buffer used for DOS memory transfers
-<dt>FF27 GetMCBSize
+<dt><br>FF27 GetMCBSize
 <dd>Get current memory control block (MCB) memory allocation block size
-<dt>FF28 SetMCBSize
+<dt><br>FF28 SetMCBSize
 <dd>Set new MCB memory allocation block size
-<dt>FF29 GetSels
+<dt><br>FF29 GetSels
 <dd>Allocate multiple selectors
-<dt>FF2A cwLoad
+<dt><br>FF2A cwLoad
 <dd>Load another CauseWay program as an overlay
-<dt>FF2B cwcInfo
+<dt><br>FF2B cwcInfo
 <dd>Validate and get expanded length of a CWC'ed file
-<dt>FF2C GetMemSO
+<dt><br>FF2C GetMemSO
 <dd>Allocate a block of memory with selector:offset
-<dt>FF2D ResMemSO
+<dt><br>FF2D ResMemSO
 <dd>Resize a block of memory allocated via GetMemSO
-<dt>FF2E RelMemSO
+<dt><br>FF2E RelMemSO
 <dd>Release a block of memory allocated via GetMemSO
-<dt>FF2F UserDump
+<dt><br>FF2F UserDump
 <dd>Setup user-defined error buffer dump in CW.ERR
-<dt>FF30 SetDump
+<dt><br>FF30 SetDump
 <dd>Disable/enable error display and CW.ERR creation
-<dt>FF31 UserErrTerm
+<dt><br>FF31 UserErrTerm
 <dd>Call user error termination routine
-<dt>FF32 CWErrName
+<dt><br>FF32 CWErrName
 <dd>Change error file name, with optional drive/pathspec
-<dt>FFF9 ID
+<dt><br>FFF9 ID
 <dd>Get CauseWay identifier, PageDIRLinear and Page1stLinear info
-<dt>FFFA GetPatch
+<dt><br>FFFA GetPatch
 <dd>Get patch table address
-<dt>FFFB cwcLoad
+<dt><br>FFFB cwcLoad
 <dd>Load/Expand a CWC'ed data file into memory
-<dt>FFFC LinearCheck
+<dt><br>FFFC LinearCheck
 <dd>Check linear address of memory
-<dt>FFFD ExecDebug
+<dt><br>FFFD ExecDebug
 <dd>Load CauseWay program for debug
-<dt>FFFE CleanUp
+<dt><br>FFFE CleanUp
 <dd>Close all open file handles
 </dl>
 <h3 id="API_functions_Lalphabetical_orderR"> API functions (alphabetical order) </h3>
@@ -797,13 +797,13 @@ compatibility with CauseWay's near memory model.&nbsp; This model is now obsolet
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff06h
-<br><br>BX= Source selector
-<dt>Outputs:
+<br>BX= Source selector
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>AX= New data selector
-<dt>Errors:
+<br>AX= New data selector
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX, this function returns with carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>This function always creates a read/write data selector regardless of the source selector type.&nbsp; It can be used to provide
 write access to variables in a code segment.
 </dl>
@@ -813,9 +813,9 @@ write access to variables in a code segment.
 <dl>
 <dt>Inputs:
 <dd>AX= 0fffeh
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>None.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -824,13 +824,13 @@ write access to variables in a code segment.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff05h
-<br><br>BX= Selector
+<br>BX= Selector
 <br>CL= Default operation size.&nbsp; (0=16-bit,1=32-bit)
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX, this function returns with carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>This functions allows a selector to be converted to a type suitable for execution.
 </dl>
 <hr>
@@ -839,13 +839,13 @@ write access to variables in a code segment.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff2bh
-<br><br>BX= File handle.
-<dt>Outputs:
+<br>BX= File handle.
+<dt><br>Outputs:
 <dd>Carry set if not a CWC'd file, else
-<br><br>ECX= Expanded data size.
-<dt>Errors:
+<br>ECX= Expanded data size.
+<dt><br>Errors:
 <dd>None.
-<dt>Notes:
+<dt><br>Notes:
 <dd>The file pointer is not altered by this function.
 </dl>
 <hr>
@@ -854,18 +854,18 @@ write access to variables in a code segment.
 <dl>
 <dt>Inputs:
 <dd>AX= 0fffbh
-<br><br>BX= Source file handle.&nbsp; ES:EDI= Destination memory.
-<dt>Outputs:
+<br>BX= Source file handle.&nbsp; ES:EDI= Destination memory.
+<dt><br>Outputs:
 <dd>Carry set on error and EAX is error code, else
-<br><br>ECX= Expanded data length.
-<dt>Errors:
+<br>ECX= Expanded data length.
+<dt><br>Errors:
 <dd>1 - Error during file access.
-<br><br>2 - Bad data.
+<br>2 - Bad data.
 <br>3 - Not a CWC'ed file.
-<dt>Notes:
+<dt><br>Notes:
 <dd>The source file's file pointer doesn't have to be at zero.&nbsp; A single file might be several CWC'ed files lumped together,
 as long as the file pointer is moved to the right place before calling this function.
-<br><br>If error codes 1 or 2 are reported then the file pointer will be wherever it was last moved to by this function.&nbsp;
+<br>If error codes 1 or 2 are reported then the file pointer will be wherever it was last moved to by this function.&nbsp;
 For error code 3 the file pointer will be back at its original position on entry to this function.&nbsp; If no error occurs
 then the file pointer will be moved to whatever comes after the compressed data.
 </dl>
@@ -875,12 +875,12 @@ then the file pointer will be moved to whatever comes after the compressed data.
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff32h
-<br><br>CX:&#91;E&#93;DX = selector:offset of ASCIIZ error file name
-<dt>Outputs:
+<br>CX:&#91;E&#93;DX = selector:offset of ASCIIZ error file name
+<dt><br>Outputs:
 <dd>None
-<dt>Errors:
+<dt><br>Errors:
 <dd>None
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the error file name is invalid when a fault occurs, CauseWay defaults to using the standard CW.ERR file name in the current
 directory.&nbsp; The file name including any path and drive must not exceed 80 characters or it will be truncated.&nbsp; CX:EDX
 are not checked for validity and passing invalid values may cause a fault within the DOS extender.&nbsp; The ASCIIZ name pointed
@@ -892,23 +892,22 @@ to by CX:EDX is copied to an internal DOS extender location and may be safely mo
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff2ah
-<br><br>DS:EDX= File name.
-<dt>Outputs:
+<br>DS:EDX= File name.
+<dt><br>Outputs:
 <dd>Carry set on error and AX = error code, else
-<br><br>CX:EDX= Entry CS:EIP
+<br>CX:EDX= Entry CS:EIP
 <br>BX:EAX= Entry SS:ESP
 <br>SI= PSP.
-<dt>Errors:
+<dt><br>Errors:
 <dd>1 - DOS file access error.
-<br><br>2 - Not recognisable file format.
+<br>2 - Not recognisable file format.
 <br>3 - Not enough memory.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Program is loaded into memory, but not executed.
-<br><br>The PSP returned in SI can be passed to RelMem to release the loaded programs memory and selectors.&nbsp; Only the
-memory and selectors allocated during loading will be released, it is the programs responsability to release any additional
-memory etc allocated while the program is running.&nbsp; Alternatively, if you pass the PSP value to INT 21h, AH=50h before
-makeing additional memory requests and then reset to the origional PSP the memory allocated will be released when the PSP
-is released.
+<br>The PSP returned in SI can be passed to RelMem to release the loaded programs memory and selectors.&nbsp; Only the memory
+and selectors allocated during loading will be released, it is the programs responsability to release any additional memory
+etc allocated while the program is running.&nbsp; Alternatively, if you pass the PSP value to INT 21h, AH=50h before makeing
+additional memory requests and then reset to the origional PSP the memory allocated will be released when the PSP is released.
 </dl>
 <hr>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; Exec</b><tt> </tt>Run another CauseWay program directly.
@@ -916,17 +915,17 @@ is released.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff24h
-<br><br>DS:&#91;E&#93;DX= File name.
+<br>DS:&#91;E&#93;DX= File name.
 <br>ES:&#91;E&#93;SI= Command line.&nbsp; First byte is length, then real data.
 <br>CX= Environment selector, 0 to use existing copy.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error and AX = error code, else
-<br><br>AL=ErrorLevel.
-<dt>Errors:
+<br>AL=ErrorLevel.
+<dt><br>Errors:
 <dd>1 - DOS file access error.
-<br><br>2 - Not recognisable file format.
+<br>2 - Not recognisable file format.
 <br>3 - Not enough memory.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Only the first byte of the command line (length) has any significance to CauseWay so you are not restricted to ASCII values.
 &nbsp;It is still stored in the PSP at 80h though so the length is still limited to 127 bytes.
 </dl>
@@ -936,19 +935,19 @@ is released.
 <dl>
 <dt>Inputs:
 <dd>AX= 0fffdh
-<br><br>DS:EDX= File name.
+<br>DS:EDX= File name.
 <br>ES:ESI= Command line.&nbsp; First byte is length, then real data.
 <br>CX= Environment selector, 0 to use existing copy.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error and AX = error code, else
-<br><br>CX:EDX= Entry CS:EIP
+<br>CX:EDX= Entry CS:EIP
 <br>BX:EAX= Entry SS:ESP
 <br>SI= PSP.
 <br>DI= Auto DS.
 <br>EBP= Segment definition memory.
-<dt>Errors:
+<dt><br>Errors:
 <dd>1 - DOS file access error.
-<br><br>2 - Not recognisable file format.
+<br>2 - Not recognisable file format.
 <br>3 - Not enough memory.
 </dl>
 <hr>
@@ -957,12 +956,12 @@ is released.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff02h
-<br><br>ES:&#91;E&#93;DI= Real mode register list.
-<dt>Outputs:
+<br>ES:&#91;E&#93;DI= Real mode register list.
+<dt><br>Outputs:
 <dd>Register list updated.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
-<dt>Notes:
+<dt><br>Notes:
 <dd>This function works much the same as IntXX but provides a 16 bit FAR stack frame and the CS:IP values are used to pass control
 to the real mode code.
 </dl>
@@ -972,23 +971,23 @@ to the real mode code.
 <dl>
 <dt>Inputs:
 <dd>AX= 0303h
-<br><br>DS:&#91;E&#93;SI= Call address.
+<br>DS:&#91;E&#93;SI= Call address.
 <br>ES:&#91;E&#93;DI= Real mode register structure.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>CX:DX= Real mode address to trigger mode switch.
-<dt>Errors:
+<br>CX:DX= Real mode address to trigger mode switch.
+<dt><br>Errors:
 <dd>Callbacks are a limited resource.&nbsp; Normally only 16 are available per virtual machine.&nbsp; Use them carefully and release
 them as soon as they are no longer required.
-<dt>Callback:
+<dt><br>Callback:
 <dd>Interrupts disabled.
-<br><br>DS:&#91;E&#93;SI = Selector:Offset of real mode SS:SP.
+<br>DS:&#91;E&#93;SI = Selector:Offset of real mode SS:SP.
 <br>ES:&#91;E&#93;DI = Selector:Offset of real mode call structure.
 <br>SS:&#91;E&#93;SP = Locked protected mode stack.
 <br>All other registers undefined.
 <br>To return from callback procedure, execute an IRET to return.
 <br>ES:&#91;E&#93;DI = Selector:Offset of real mode call structure to restore.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Real mode callbacks provide a means of switching from real mode to protected mode.&nbsp; This function returns a unique real
 mode address that when given control in real mode, switches to protected mode and passes control to the protected mode routine
 supplied at entry to this function.&nbsp; On entry to the protected mode code the real mode register structure contains all
@@ -1000,13 +999,13 @@ the real mode register values.
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff25h
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>BX = Real mode segment of buffer.
-<br><br>DX = Protected mode selector for buffer.
+<br>DX = Protected mode selector for buffer.
 <br>ECX = Buffer size
-<dt>Errors:
+<dt><br>Errors:
 <dd>None
-<dt>Notes:
+<dt><br>Notes:
 <dd>This buffer is used by the INT API translation services, e.g., INT 21h, AH=40h (write to file).&nbsp; The default buffer is
 8K and uses memory that would otherwise be wasted.&nbsp; This default is sufficient for most file I/O but if you are writing
 a program that reads/writes large amounts of data you should consider allocating your own larger buffer and pass the buffer's
@@ -1018,11 +1017,11 @@ address to CauseWay to speed file I/O.
 <dl>
 <dt>Inputs:
 <dd>AX= 0202h
-<br><br>BL= Exception vector number.
-<dt>Outputs:
+<br>BL= Exception vector number.
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>CX:&#91;E&#93;DX= selector:offset of handler.
-<dt>Errors:
+<br>CX:&#91;E&#93;DX= selector:offset of handler.
+<dt><br>Errors:
 <dd>The number in BL must be in the range 0-1Fh.&nbsp; Anything outside this range returns carry set.
 </dl>
 <hr>
@@ -1031,11 +1030,11 @@ address to CauseWay to speed file I/O.
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff27h
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>ECX = Current threshold
-<dt>Errors:
+<dt><br>Errors:
 <dd>None
-<dt>Notes:
+<dt><br>Notes:
 <dd>See SetMCBMax
 </dl>
 <hr>
@@ -1044,15 +1043,15 @@ address to CauseWay to speed file I/O.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff0bh
-<br><br>CX:DX= Size of block required in bytes.&nbsp; (use -1:-1 to get maximum memory size)
-<dt>Outputs:
+<br>CX:DX= Size of block required in bytes.&nbsp; (use -1:-1 to get maximum memory size)
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>BX= Selector to access the block with or if CX:DX was -1,
+<br>BX= Selector to access the block with or if CX:DX was -1,
 <br>CX:DX= size of largest block available.
-<dt>Errors:
+<dt><br>Errors:
 <dd>The amount of memory available is limited by physical memory present and free disk space of the drive being used by the VMM.
 &nbsp;If CauseWay is unable to find a large enough block this function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>This function allocates a block of extended (application) memory and allocates a selector with a suitable base and limit.
 </dl>
 <hr>
@@ -1061,14 +1060,14 @@ address to CauseWay to speed file I/O.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff0ch
-<br><br>ECX= Size of block required in bytes.&nbsp; (-1 to get maximum memory size)
-<dt>Outputs:
+<br>ECX= Size of block required in bytes.&nbsp; (-1 to get maximum memory size)
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>BX= Selector to access the block with or if ECX was -1,
+<br>BX= Selector to access the block with or if ECX was -1,
 <br>ECX= size of largest block available.
-<dt>Errors:
+<dt><br>Errors:
 <dd>See GetMem
-<dt>Notes:
+<dt><br>Notes:
 <dd>This function allocates a block of extended (application) memory and allocates a selector with a suitable base and limit.
 </dl>
 <hr>
@@ -1077,15 +1076,15 @@ address to CauseWay to speed file I/O.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff21h
-<br><br>BX= Number of paragraphs (16 byte blocks) required.
-<dt>Outputs:
+<br>BX= Number of paragraphs (16 byte blocks) required.
+<dt><br>Outputs:
 <dd>Carry set on error and BX= largest block size,
-<br><br>AX=DOS error, else
+<br>AX=DOS error, else
 <br>AX= Initial real mode segment of allocated block
 <br>DX= Initial selector for allocated block
-<dt>Errors:
+<dt><br>Errors:
 <dd>If there are not enough selectors or memory available then this function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the size of the block requested is greater than 64KB bytes (BX &gt;1000h) then contiguous descriptors are allocated.&nbsp;
 If more than one descriptor is allowed under 32-bit applications, the limit of the first descriptor is set to the size of
 the entire block.&nbsp; All subsequent descriptors have a limit of 64KB except for the final descriptor which has a limit
@@ -1097,13 +1096,13 @@ of block size modulo 64KB.&nbsp; For 16-bit applications, always set the limit o
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff10h
-<br><br>CX:DX= Size of block required in bytes.
-<dt>Outputs:
+<br>CX:DX= Size of block required in bytes.
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>SI:DI= Linear address of block allocated.
-<dt>Errors:
+<br>SI:DI= Linear address of block allocated.
+<dt><br>Errors:
 <dd>If not enough memory is available to satisfy the request then this function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Addresses returned by this function may be above 16MB.
 </dl>
 <hr>
@@ -1112,13 +1111,13 @@ of block size modulo 64KB.&nbsp; For 16-bit applications, always set the limit o
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff11h
-<br><br>ECX= Size of block required in bytes.
-<dt>Outputs:
+<br>ECX= Size of block required in bytes.
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>ESI= Linear address of block allocated.
-<dt>Errors:
+<br>ESI= Linear address of block allocated.
+<dt><br>Errors:
 <dd>See GetMemLinear
-<dt>Notes:
+<dt><br>Notes:
 <dd>Addresses returned by this function may be above 16MB.
 </dl>
 <hr>
@@ -1127,13 +1126,13 @@ of block size modulo 64KB.&nbsp; For 16-bit applications, always set the limit o
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff2ch
-<br><br>CX:DX = Size of block required in bytes
-<dt>Outputs:
+<br>CX:DX = Size of block required in bytes
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>SI:DI = selector:offset of allocated memory
-<dt>Errors:
+<br>SI:DI = selector:offset of allocated memory
+<dt><br>Errors:
 <dd>See GetMem
-<dt>Notes:
+<dt><br>Notes:
 <dd>This function allocates a block of memory with an associated selector:offset.&nbsp; The allocation does not consume a selector
 on each call as does GetMem because a non-zero offset from an existing selector for this allocation type is returned.&nbsp;
 GetMemSO is useful for applications which make a large number of allocations where running out of selectors with GetMem could
@@ -1146,9 +1145,9 @@ selector is shared among several allocations.&nbsp; Also, resizing the block can
 <dl>
 <dt>Inputs:
 <dd>AX= 0fffah
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>EDX= Linear address of patch table.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -1157,10 +1156,10 @@ selector is shared among several allocations.&nbsp; Also, resizing the block can
 <dl>
 <dt>Inputs:
 <dd>AX= 0200h
-<br><br>BL= Interrupt vector number.
-<dt>Outputs:
+<br>BL= Interrupt vector number.
+<dt><br>Outputs:
 <dd>CX:DX= selector:offset of handler.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -1169,13 +1168,13 @@ selector is shared among several allocations.&nbsp; Also, resizing the block can
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff03h
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>BX= Selector.
-<dt>Errors:
+<br>BX= Selector.
+<dt><br>Errors:
 <dd>Approximately 8192 selectors are available initially.&nbsp; While this is a relatively large quantity, it is obviously possible
 to run out if the system is heavily loaded or selectors are being wasted.
-<dt>Notes:
+<dt><br>Notes:
 <dd>A selector is allocated and initialized with a base of 0, a limit of 0 and as read/write expand up data.&nbsp; Use SetSelDet
 to make the selector useful, setting an appropriate base and limit.
 </dl>
@@ -1185,12 +1184,12 @@ to make the selector useful, setting an appropriate base and limit.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff07h
-<br><br>BX= Selector
-<dt>Outputs:
+<br>BX= Selector
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>CX:DX= Linear base.
+<br>CX:DX= Linear base.
 <br>SI:DI= Byte granular limit.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX, this function returns with carry set.
 </dl>
 <hr>
@@ -1199,12 +1198,12 @@ to make the selector useful, setting an appropriate base and limit.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff08h
-<br><br>BX= Selector
-<dt>Outputs:
+<br>BX= Selector
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>EDX= Linear base.
+<br>EDX= Linear base.
 <br>ECX= Byte granular limit.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX, this function returns with carry set.
 </dl>
 <hr>
@@ -1213,12 +1212,12 @@ to make the selector useful, setting an appropriate base and limit.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff29h
-<br><br>CX= Number of selectors.
-<dt>Outputs:
+<br>CX= Number of selectors.
+<dt><br>Outputs:
 <dd>BX= Base selector.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
-<dt>Notes:
+<dt><br>Notes:
 <dd>The selectors are allocated and initialised with a base of 0, a limit of 0 and as read/write expand up data.&nbsp; Use SetSelDet
 to make the selectors useful.
 </dl>
@@ -1228,10 +1227,10 @@ to make the selectors useful.
 <dl>
 <dt>Inputs:
 <dd>AX= 0204h
-<br><br>BL= Interrupt vector number.
-<dt>Outputs:
+<br>BL= Interrupt vector number.
+<dt><br>Outputs:
 <dd>CX:&#91;E&#93;DX= selector:offset of handler.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -1240,11 +1239,11 @@ to make the selectors useful.
 <dl>
 <dt>Inputs:
 <dd>AX= 0fff9h
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>ECX:EDX= CauseWay identifies.
-<br><br>ESI= Linear address (PageDIRLinear)
+<br>ESI= Linear address (PageDIRLinear)
 <br>EDI= Linear address (Page1stLinear)
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -1253,9 +1252,9 @@ to make the selectors useful.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff00h
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>AX= Selector for real mode segment address of 00000h, 4GB limit.
-<br><br>BX= Selector for current PSP segment.&nbsp; 100h limit.
+<br>BX= Selector for current PSP segment.&nbsp; 100h limit.
 <br>&#91;E&#93;CX= DOS transfer buffer size.&nbsp; Always &lt;64KB.
 <br>DX= DOS transfer buffer real mode segment address.
 <br>ES:&#91;E&#93;SI= DOS transfer buffer address.
@@ -1268,15 +1267,15 @@ to make the selectors useful.
 <br>5 - VCPI available.
 <br>6 - No memory managers.
 <br>7 - Descriptor table type.&nbsp; 0 - GDT, 1 - LDT.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None
-<dt>Notes:
+<dt><br>Notes:
 <dd>Bits 1-2 of DI indicate the interface type being used by CauseWay.
-<br><br>Bits 4-5 indicate the interface types that are available.&nbsp; Bit 7 indicates the descriptor table being used to
-allocate selectors to the application when on a raw/VCPI system.&nbsp; The DOS transfer buffer is the area CauseWay uses to
-transfer data between conventional and extended memory during DOS interrupts.&nbsp; This memory can be used as temporary work
-space to access real mode code as long as you remember it may be overwritten the next time you issue an INT in protected mode
-that requires segment pointers.
+<br>Bits 4-5 indicate the interface types that are available.&nbsp; Bit 7 indicates the descriptor table being used to allocate
+selectors to the application when on a raw/VCPI system.&nbsp; The DOS transfer buffer is the area CauseWay uses to transfer
+data between conventional and extended memory during DOS interrupts.&nbsp; This memory can be used as temporary work space
+to access real mode code as long as you remember it may be overwritten the next time you issue an INT in protected mode that
+requires segment pointers.
 </dl>
 <hr>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; IntXX</b><tt> </tt>Simulate real mode interrupt.
@@ -1284,13 +1283,13 @@ that requires segment pointers.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff01h
-<br><br>BL= Interrupt number.
+<br>BL= Interrupt number.
 <br>ES:&#91;E&#93;DI= Real mode register list.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Register list updated.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
-<dt>Notes:
+<dt><br>Notes:
 <dd>The real mode register list referenced by ES:&#91;E&#93;DI should contain the register values you want passed to the real
 mode interrupt handler.&nbsp; CauseWay fills in the SS:SP and Flags values to ensure that legal values are used and the CS:IP
 entries are ignored.&nbsp; This function bypasses protected mode interrupt handlers and provides access to INT APIs that require
@@ -1302,10 +1301,10 @@ segment pointers.
 <dl>
 <dt>Inputs:
 <dd>AX= 0fffch
-<br><br>ESI= Linear address of memory.
-<dt>Outputs:
+<br>ESI= Linear address of memory.
+<dt><br>Outputs:
 <dd>Carry set on invalid memory address.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -1314,14 +1313,14 @@ segment pointers.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff1bh
-<br><br>BX:CX= Starting linear address of memory to lock.
+<br>BX:CX= Starting linear address of memory to lock.
 <br>SI:DI= Size of region to lock in bytes.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If any of the region specified is invalid or if not enough physical memory is available to fill the region specified, then
 none of the memory is locked and this function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Memory that is locked cannot be swapped to disk by the VMM.&nbsp; Locking applies to memory on page (4KB) boundaries.&nbsp;
 Therefore, areas of memory below and above the memory being locked are locked if the specified region is not aligned to a
 page boundary.
@@ -1332,13 +1331,13 @@ page boundary.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff1ch
-<br><br>ESI= Starting linear address of memory to lock.
+<br>ESI= Starting linear address of memory to lock.
 <br>ECX= Size of region to lock in bytes.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>See LockMem.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Memory that is locked cannot be swapped to disk by the VMM.&nbsp; Locking applies to memory on page (4KB) boundaries.&nbsp;
 Therefore, areas of memory below and above the memory being locked are locked if the specified region is not aligned to a
 page boundary.
@@ -1349,12 +1348,12 @@ page boundary.
 <dl>
 <dt>Inputs:
 <dd>AX= 0304h
-<br><br>CX:DX= Real mode address returned by GetCallBack
-<dt>Outputs:
+<br>CX:DX= Real mode address returned by GetCallBack
+<dt><br>Outputs:
 <dd>None.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Uspe this function to release callback addresses once they are no longer needed.
 </dl>
 <hr>
@@ -1363,10 +1362,10 @@ page boundary.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff0fh
-<br><br>BX= Selector for block to release.
-<dt>Outputs:
+<br>BX= Selector for block to release.
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX or the memory was not allocated via GetMem or GetMem32, this function returns carry
 set.
 </dl>
@@ -1376,12 +1375,12 @@ set.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff23h
-<br><br>DX= Selector of block to free.
-<dt>Outputs:
+<br>DX= Selector of block to free.
+<dt><br>Outputs:
 <dd>Carry set on error and AX= DOS error code.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid block is passed, this function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>All descriptors allocated for the memory block are automatically freed and therefore should not be accessed once the block
 is freed by this function.
 </dl>
@@ -1391,10 +1390,10 @@ is freed by this function.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff14h
-<br><br>SI:DI= Linear address of block to release.
-<dt>Outputs:
+<br>SI:DI= Linear address of block to release.
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If the address passed in SI:DI is not a valid memory block, this function returns carry set.
 </dl>
 <hr>
@@ -1403,10 +1402,10 @@ is freed by this function.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff15h
-<br><br>ESI= Linear address of block to release.
-<dt>Outputs:
+<br>ESI= Linear address of block to release.
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>See RelMemLinear
 </dl>
 <hr>
@@ -1415,10 +1414,10 @@ is freed by this function.
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff2eh
-<br><br>SI:DI = Selector:offset of block to release
-<dt>Outputs:
+<br>SI:DI = Selector:offset of block to release
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector:offset is passed in SI:DI or the memory was not allocated via GetMemSO, then this function returns
 carry set.
 </dl>
@@ -1428,12 +1427,12 @@ carry set.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff04h
-<br><br>BX= Selector.
-<dt>Outputs:
+<br>BX= Selector.
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX, this function returns with carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Use this function to release selectors allocated by GetSel or AliasSel.
 </dl>
 <hr>
@@ -1442,14 +1441,14 @@ carry set.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff0dh
-<br><br>BX= Selector for block.
+<br>BX= Selector for block.
 <br>CX:DX= New size of block required in bytes.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX or not enough memory is available when increasing the block size, then this function
 returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the memory block cannot be resized in its current location, but a free block of memory of the new size exists, the memory
 is copied to a new block and the old one is released.&nbsp; The application is not affected as long as only the selector originally
 allocated with GetMem accesses the memory.
@@ -1460,15 +1459,15 @@ allocated with GetMem accesses the memory.
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff2dh
-<br><br>SI:DI = Selector:offset of block to resize
+<br>SI:DI = Selector:offset of block to resize
 <br>CX:DX = New size of block required in bytes
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>SI:DI = selector:offset of new memory block address.
-<dt>Errors:
+<br>SI:DI = selector:offset of new memory block address.
+<dt><br>Errors:
 <dd>If an invalid selector:offset is passed in SI:DI or not enough memory is available when increasing the block size, then this
 function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the memory block cannot be resized in its current location, but a free block of memory of the new size exists, the memory
 is copied to a new block and the old one is released.&nbsp; The selector:offset will change if this occurs, so the SI:DI return
 value should be used to update all references and pointers to the memory block when this function is called.
@@ -1479,13 +1478,13 @@ value should be used to update all references and pointers to the memory block w
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff0eh
-<br><br>BX= Selector for block.
+<br>BX= Selector for block.
 <br>ECX= New size of block required in bytes.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>See ResMem
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the memory block cannot be resized in its current location, but a free block of memory of the new size exists, the memory
 is copied to a new block and the old one released.&nbsp; This is transparent to the application as long as only the selector
 originally allocated with GetMem is used to access the memory.
@@ -1496,14 +1495,14 @@ originally allocated with GetMem is used to access the memory.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff22h
-<br><br>BX= New block size in paragraphs
+<br>BX= New block size in paragraphs
 <br>DX= Selector of block to modify
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error, AX= DOS error code, BX= Maximum block size in paragraphs.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid block is passed or if not enough selectors or memory are available when expanding the block this function returns
 carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>Growing a memory block is often likely to fail since other DOS block allocations prevent increasing the size of the block.
 &nbsp;Also, if the size of a block grows past a 64KB boundary then the allocation fails if the next descriptor in the LDT
 is not free.
@@ -1514,14 +1513,14 @@ is not free.
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff12h
-<br><br>SI:DI= Linear address of block to resize.
+<br>SI:DI= Linear address of block to resize.
 <br>CX:DX= Size of block required in bytes.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>SI:DI= New linear address of block.
-<dt>Errors:
+<br>SI:DI= New linear address of block.
+<dt><br>Errors:
 <dd>If not enough memory is available when extending the block size this function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the memory block cannot be expanded to the desired size, and a free block of sufficient size exists, the existing memory
 is copied to the free block and released.&nbsp; The new block is allocated in place of the old.
 </dl>
@@ -1531,14 +1530,14 @@ is copied to the free block and released.&nbsp; The new block is allocated in pl
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff13h
-<br><br>ESI= Linear address of block to resize.
+<br>ESI= Linear address of block to resize.
 <br>ECX= Size of block required in bytes.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error, else
-<br><br>ESI= New linear address of block.
-<dt>Errors:
+<br>ESI= New linear address of block.
+<dt><br>Errors:
 <dd>See ResMemLinear
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the memory block cannot be expanded to the desired size, and a free block of sufficient size exists, the existing memory
 is copied to the free block and released.&nbsp; The new block is allocated in place of the old.
 </dl>
@@ -1548,18 +1547,18 @@ is copied to the free block and released.&nbsp; The new block is allocated in pl
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff26h
-<br><br>BX = Real mode segment of buffer.
+<br>BX = Real mode segment of buffer.
 <br>DX = Protected mode selector for buffer.
 <br>ECX = Buffer size (should be &lt;=64KB)
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>None
-<dt>Errors:
+<dt><br>Errors:
 <dd>None
-<dt>Notes:
+<dt><br>Notes:
 <dd>The buffer must be in conventional memory and only the first 64KB will be used even if a bigger buffer is specified.&nbsp;
 CauseWay will automatically restore the previous buffer setting when the application terminates but GetDOSTrans can be used
 to get the current buffer's settings if you only want the change to be temporary.
-<br><br>You can still use the default buffer for your own purposes even after setting a new address.
+<br>You can still use the default buffer for your own purposes even after setting a new address.
 </dl>
 <hr>
 <br><b>&nbsp;&nbsp;&nbsp;&nbsp; SetDump</b><tt> </tt>Disable/enable error display and CW.ERR creation.
@@ -1567,13 +1566,13 @@ to get the current buffer's settings if you only want the change to be temporary
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff30h
-<br><br>CL = 0 if disable error display and CW.ERR file
+<br>CL = 0 if disable error display and CW.ERR file
 <br>CL = nonzero if enable error display and CW.ERR file
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>None
-<dt>Errors:
+<dt><br>Errors:
 <dd>None
-<dt>Notes:
+<dt><br>Notes:
 <dd>By default, register dump display to screen and CW.ERR file creation are enabled on CPU faults.&nbsp; This option may be used
 to turn on and off CauseWay error processing output any number of times within an application.
 </dl>
@@ -1583,11 +1582,11 @@ to turn on and off CauseWay error processing output any number of times within a
 <dl>
 <dt>Inputs:
 <dd>AX= 0203h
-<br><br>BL= Exception vector number.
+<br>BL= Exception vector number.
 <br>CX:&#91;E&#93;DX= selector:offset of new handler.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>None
-<dt>Errors:
+<dt><br>Errors:
 <dd>The number in BL must be in the range 0-1Fh.&nbsp; Anything outside this range returns carry set.
 </dl>
 <hr>
@@ -1596,19 +1595,19 @@ to turn on and off CauseWay error processing output any number of times within a
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff28h
-<br><br>ECX = New value to set (&lt;=64KB)
-<dt>Outputs:
+<br>ECX = New value to set (&lt;=64KB)
+<dt><br>Outputs:
 <dd>None
-<dt>Errors:
+<dt><br>Errors:
 <dd>Carry set on error
-<dt>Notes:
+<dt><br>Notes:
 <dd>The maximum block size that will be allocated from MCB memory is 16 bytes less than the value set by this function.&nbsp;
 The default value is 16384.&nbsp; The maximum value is 65536.
-<br><br>The CauseWay API memory allocation functions allocate memory from two sources.&nbsp; Allocation requests below the
-value returned by this function are allocated from a memory pool controlled via conventional style MCB's.&nbsp; Requests above
-this value are allocated via the normal DPMI functions.&nbsp; Because DPMI memory is always allocated in multiples of pages
-(4KB) it can become very inefficient for any program that needs to allocate small blocks of memory.&nbsp; The value set by
-this function controls the size of memory chunks that will be allocated to and managed by the MCB system.
+<br>The CauseWay API memory allocation functions allocate memory from two sources.&nbsp; Allocation requests below the value
+returned by this function are allocated from a memory pool controlled via conventional style MCB's.&nbsp; Requests above this
+value are allocated via the normal DPMI functions.&nbsp; Because DPMI memory is always allocated in multiples of pages (4KB)
+it can become very inefficient for any program that needs to allocate small blocks of memory.&nbsp; The value set by this
+function controls the size of memory chunks that will be allocated to and managed by the MCB system.
 <br><br>A value of zero can be passed to this function to disable the MCB allocation system.
 <br><br>The value passed will be rounded up to the nearest page (4KB) boundary.
 </dl>
@@ -1618,11 +1617,11 @@ this function controls the size of memory chunks that will be allocated to and m
 <dl>
 <dt>Inputs:
 <dd>AX= 0201h
-<br><br>BL= Interrupt vector number.
+<br>BL= Interrupt vector number.
 <br>CX:DX= selector:offset of new handler.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>None.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -1631,12 +1630,12 @@ this function controls the size of memory chunks that will be allocated to and m
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff09h
-<br><br>BX= Selector.
+<br>BX= Selector.
 <br>CX:DX= Linear base.
 <br>SI:DI= Byte granular limit.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX, this function returns with carry set.
 </dl>
 <hr>
@@ -1645,12 +1644,12 @@ this function controls the size of memory chunks that will be allocated to and m
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff0ah
-<br><br>BX= Selector.
+<br>BX= Selector.
 <br>EDX= Linear base.
 <br>ECX= Byte granular limit.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If an invalid selector is passed in BX, this function returns with carry set.
 </dl>
 <hr>
@@ -1659,11 +1658,11 @@ this function controls the size of memory chunks that will be allocated to and m
 <dl>
 <dt>Inputs:
 <dd>AX= 0205h
-<br><br>BL= Interrupt vector number.
+<br>BL= Interrupt vector number.
 <br>CX:&#91;E&#93;DX= selector:offset of new handler.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>None.
-<dt>Errors:
+<dt><br>Errors:
 <dd>None.
 </dl>
 <hr>
@@ -1672,13 +1671,13 @@ this function controls the size of memory chunks that will be allocated to and m
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff1dh
-<br><br>BX:CX= Starting linear address of memory to unlock
+<br>BX:CX= Starting linear address of memory to unlock
 <br>SI:DI= Size of region to unlock in bytes
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>If any of the memory region specified is invalid this function returns carry set.
-<dt>Notes:
+<dt><br>Notes:
 <dd>This function allows the unlocked memory to be swapped to disk by the VMM if necessary.&nbsp; Areas below and above the specified
 memory to the nearest page (4KB) boundary are unlocked if the specified region is not aligned to a page boundary.
 </dl>
@@ -1688,13 +1687,13 @@ memory to the nearest page (4KB) boundary are unlocked if the specified region i
 <dl>
 <dt>Inputs:
 <dd>AX= 0ff1eh
-<br><br>ESI= Starting linear address of memory to unlock
+<br>ESI= Starting linear address of memory to unlock
 <br>ECX= Size of region to unlock in bytes
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on error.
-<dt>Errors:
+<dt><br>Errors:
 <dd>See UnLockMem
-<dt>Notes:
+<dt><br>Notes:
 <dd>This function allows the memory to be swapped to disk by the VMM if necessary.&nbsp; Areas below and above the specified memory
 to the nearest page (4KB) boundary are unlocked if the specified region is not aligned to a page boundary.
 </dl>
@@ -1704,18 +1703,18 @@ to the nearest page (4KB) boundary are unlocked if the specified region is not a
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff2fh
-<br><br>ES:&#91;E&#93;DI - user buffer to display in CW.ERR
+<br>ES:&#91;E&#93;DI - user buffer to display in CW.ERR
 <br>CX = count of bytes to display from buffer in CW.ERR
 <br>BL = 'A' if ASCII dump (non-binary display of bytes, control characters display as periods)
 <br>BH = nonzero if preset ASCII buffer to word value, ignored for non-ASCII
 <br>DX = word value to fill ASCII dump buffer if BH is nonzero, ignored for non-ASCII
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>Carry set on ASCII dump invalid buffer address.
-<dt>Errors:
+<dt><br>Errors:
 <dd>The user buffer must be a valid readable selector and offset value when this function is called or else the request is ignored
 and a carry flag condition is returned.&nbsp; If BH is set to nonzero to flag presetting the buffer bytes, the selector must
 be writable.&nbsp; Specifying a larger CX count than available buffer size will also return an error.
-<dt>Notes:
+<dt><br>Notes:
 <dd>If the fill ASCII buffer condition is specified, any values previously in the buffer will be overwritten when this call is
 made.
 </dl>
@@ -1725,21 +1724,21 @@ made.
 <dl>
 <dt>Inputs:
 <dd>AX = 0ff31h
-<br><br>CL = 0 if 16-bit termination routine
+<br>CL = 0 if 16-bit termination routine
 <br>CL = nonzero if 32-bit termination routine
 <br>DS:&#91;E&#93;SI = user termination routine address.&nbsp; If DS is zero, the user termination routine call is removed.
 <br>ES:&#91;E&#93;DI = Information dump buffer address, 104 bytes.&nbsp; If ES is zero, no information dump is performed.
-<dt>Outputs:
+<dt><br>Outputs:
 <dd>None
-<dt>Errors:
+<dt><br>Errors:
 <dd>None
-<dt>Notes:
+<dt><br>Notes:
 <dd>The user termination routine is responsible for returning to the CauseWay termination routines to allow proper shutdown of
 the application.&nbsp; The instruction must be the proper 16- or 32-bit return to match the CL register setting.&nbsp; For
 ease of use with high-level languages (specifically Watcom C and setting SS back to DGROUP), &#91;E&#93;SI equals the internal
 DOS extender stack ESP immediately prior to the 32- or 16-bit call to the termination routine.&nbsp; If an information dump
 buffer address is provided, register and other termination values are placed into it using the following format:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EBP;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EDI;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; dword&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ESI;</tt>

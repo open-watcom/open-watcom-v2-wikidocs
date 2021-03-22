@@ -7,18 +7,18 @@
 <dt>- B -
 <dd><a href="#Base_Types">Base Types</a>
 <br><a href="#Byte_Order">Byte Order</a>
-<dt>- C -
+<dt><br>- C -
 <dd><a href="#Core_Requests">Core Requests</a>
-<dt>- F -
+<dt><br>- F -
 <dd><a href="#File_IDO_requests">File I/O requests</a>
-<dt>- I -
+<dt><br>- I -
 <dd><a href="#The_Interface_Routines">The Interface Routines</a>
 <br><a href="#Introduction">Introduction</a>
-<dt>- O -
+<dt><br>- O -
 <dd><a href="#Overlay_requests">Overlay requests</a>
-<dt>- P -
+<dt><br>- P -
 <dd><a href="#Pointer_Sizes">Pointer Sizes</a>
-<dt>- R -
+<dt><br>- R -
 <dd><a href="#REQ_ADDR_INFO_L8R">REQ_ADDR_INFO (8)</a>
 <br><a href="#REQ_CHECKSUM_MEM_L9R">REQ_CHECKSUM_MEM (9)</a>
 <br><a href="#REQ_CLEAR_BREAK_L25R">REQ_CLEAR_BREAK (25)</a>
@@ -98,10 +98,10 @@
 <br><a href="#Request_Structure_">Request Structure.</a>
 <br><a href="#The_Requests">The Requests</a>
 <br><a href="#RFX_requests">RFX requests</a>
-<dt>- S -
+<dt><br>- S -
 <dd><a href="#Some_Definitions">Some Definitions</a>
 <br><a href="#System_Dependent_Aspects">System Dependent Aspects</a>
-<dt>- T -
+<dt><br>- T -
 <dd><a href="#Thread_requests">Thread requests</a>
 <br><a href="#Trap_Files_Under_DOS">Trap Files Under DOS</a>
 <br><a href="#Trap_Files_Under_Netware_386">Trap Files Under Netware 386</a>
@@ -153,39 +153,39 @@ In a 32-bit environment such as Windows NT the pointers are &quot;near&quot; 0:3
 <dl>
 <dt><b><i>Type</i></b>
 <dd><b><i>Definition</i></b>
-<dt>unsigned_8
+<dt><br>unsigned_8
 <dd>1 byte unsigned quantity
-<dt>unsigned_16
+<dt><br>unsigned_16
 <dd>2 byte unsigned quantity
-<dt>unsigned_32
+<dt><br>unsigned_32
 <dd>4 byte unsigned quantity
-<dt>access_req
+<dt><br>access_req
 <dd>The first field of every request is of this type.&nbsp; It is a 1 byte field which identifies the request to be performed.
-<dt>addr48_ptr
+<dt><br>addr48_ptr
 <dd>This type encapsulates the concept of a 16:32 pointer.&nbsp; All addresses in the debuggee memory are described with these.
 &nbsp;The debugger always acts as if the debuggee were in a 32-bit large model environment since the 32-bit flat model and
 all 16-bit memory models are subsets.&nbsp; The structure is defined as follows:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp; offset;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp; segment;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } addr48_ptr;</tt>
 <br><br>The<tt> segment</tt> field contains the segment of the address and the<tt> offset</tt> field stores the offset of
 the address.
-<dt>bytes
+<dt><br>bytes
 <dd>The type<tt> bytes</tt> is an array of unsigned_8.&nbsp; The length is provided by other means.&nbsp; Typically a field of
 type<tt> bytes</tt> is the last one in a request and the length is calculated from the total length of the request.
-<dt>string
+<dt><br>string
 <dd>The type<tt> string</tt> is actually an array of characters.&nbsp; The array is terminated by a null ('\0') character.&nbsp;
 The length is provided by other means.&nbsp; Typically a field of type<tt> string</tt> is the last one in a request and the
 length is calculated from the total length of the request.
-<dt>trap_error
+<dt><br>trap_error
 <dd>Some trap file requests return debuggee operating system error codes, notably the requests to perform file I/O on the remote
 system.&nbsp; These error codes are returned as an unsigned_32.&nbsp; The debugger considers the value zero to indicate no
 error.
-<dt>trap_phandle
+<dt><br>trap_phandle
 <dd>This is an<tt> unsigned_32</tt> which holds process (task) handle.&nbsp; A task handle is used to uniquely identify a debuggee
 process.
-<dt>trap_mhandle
+<dt><br>trap_mhandle
 <dd>This is an<tt> unsigned_32</tt> which holds a module handle.&nbsp; Typically the main executable will be one module, and on
 systems which support DLLs or shared libraries, each library will be identified by a unique module handle.
 </dl>
@@ -884,7 +884,7 @@ descriptions do not show that &quot;prefix&quot; to the request messages.
 <dl>
 <dt><b><i>Type</i></b>
 <dd><b><i>Definition</i></b>
-<dt>trap_fhandle
+<dt><br>trap_fhandle
 <dd>This is an<tt> unsigned_32</tt> which holds a debuggee file handle.
 </dl>
 <h3 id="REQ_FILE_GET_CONFIG_L0R"> REQ_FILE_GET_CONFIG (0) </h3>
@@ -1046,19 +1046,19 @@ do not show that &quot;prefix&quot; to the request messages.
 <dl>
 <dt><b><i>Type</i></b>
 <dd><b><i>Definition</i></b>
-<dt>addr32_ptr
+<dt><br>addr32_ptr
 <dd>This type encapsulates the concept of a 16:16 pointer into the debuggee's address space.&nbsp; Since overlays are only useful
 for 16-bit environments, using the addr48_ptr type would be inefficient.&nbsp; The structure is defined as follows:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp; offset;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp; segment;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } addr32_ptr;</tt>
 <br><br>The<tt> segment</tt> field contains the segment of the address and the<tt> offset</tt> field stores the offset of
 the address.
-<dt>ovl_address
+<dt><br>ovl_address
 <dd>This type contains the overlay address and the number of entries down in the overlay stack.&nbsp; The structure is defined
 as follows:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr32_ptr&nbsp; mach;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 sect_id;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } ovl_address;</tt>
@@ -1152,7 +1152,7 @@ to the request messages.
 <dl>
 <dt><b><i>Type</i></b>
 <dd><b><i>Definition</i></b>
-<dt>trap_thandle
+<dt><br>trap_thandle
 <dd>This is an<tt> unsigned_32</tt> which holds a thread handle.
 </dl>
 <h3 id="REQ_THREAD_GET_NEXT_L0R"> REQ_THREAD_GET_NEXT (0) </h3>

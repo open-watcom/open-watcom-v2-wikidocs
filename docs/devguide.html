@@ -6,52 +6,52 @@
 <dl>
 <dt>- 3 -
 <dd><a href="#32Mbit_Windows_runMtime_DLLs">32-bit Windows run-time DLLs</a>
-<dt>- B -
+<dt><br>- B -
 <dd><a href="#The_bld_directory">The bld directory</a>
 <br><a href="#Build_Architecture">Build Architecture</a>
 <br><a href="#Build_Process">Build Process</a>
 <br><a href="#Builder">Builder</a>
 <br><a href="#Building_Online_Help_Documentation">Building Online Help Documentation</a>
 <br><a href="#Building_PostScript_Documentation">Building PostScript Documentation</a>
-<dt>- C -
+<dt><br>- C -
 <dd><a href="#The_Clean_Target">The Clean Target</a>
 <br><a href="#Connecting_up">Connecting up</a>
-<dt>- D -
+<dt><br>- D -
 <dd><a href="#Diagnostic_Messages">Diagnostic Messages</a>
 <br><a href="#DLLs_and_Windowed_Apps">DLLs and Windowed Apps</a>
-<dt>- E -
+<dt><br>- E -
 <dd><a href="#Editing_the_Documentation">Editing the Documentation</a>
 <br><a href="#Executive_Summary">Executive Summary</a>
-<dt>- F -
+<dt><br>- F -
 <dd><a href="#First_Steps">First Steps</a>
-<dt>- G -
+<dt><br>- G -
 <dd><a href="#Gearing_up_for_Building">Gearing up for Building</a>
 <br><a href="#Guided_Tour">Guided Tour</a>
-<dt>- H -
+<dt><br>- H -
 <dd><a href="#Help_the_compiler_and_it_will_help_you">Help the compiler and it will help you</a>
 <br><a href="#History">History</a>
-<dt>- I -
+<dt><br>- I -
 <dd><a href="#Include_Paths">Include Paths</a>
-<dt>- M -
+<dt><br>- M -
 <dd><a href="#Makefiles">Makefiles</a>
 <br><a href="#Makeinit">Makeinit</a>
 <br><a href="#Memory_Trackers">Memory Trackers</a>
 <br><a href="#Misc_Conventions">Misc Conventions</a>
-<dt>- P -
+<dt><br>- P -
 <dd><a href="#Pmake">Pmake</a>
 <br><a href="#Pmake_Support">Pmake Support</a>
 <br><a href="#Producing_Documentation">Producing Documentation</a>
 <br><a href="#Programming_Style">Programming Style</a>
 <br><a href="#Project_Names">Project Names</a>
 <br><a href="#Project_Overview">Project Overview</a>
-<dt>- R -
+<dt><br>- R -
 <dd><a href="#Requirements_To_Build">Requirements To Build</a>
 <br><a href="#Running_the_tests">Running the tests</a>
 <br><a href="#The_Runtime_DLL_Libraries">The Runtime DLL Libraries</a>
-<dt>- S -
+<dt><br>- S -
 <dd><a href="#Setting_up">Setting up</a>
 <br><a href="#Source_file_structure">Source file structure</a>
-<dt>- T -
+<dt><br>- T -
 <dd><a href="#Testing">Testing</a>
 </dl>
 <h1 id="Project_Overview"> Project Overview </h1>
@@ -111,18 +111,18 @@ directory, for instance<tt> e:\ow</tt>.&nbsp; Long filenames are not recommended
 &nbsp;This file controls the operation of wmake and is the key to understanding of the build process.&nbsp; Since wmake looks
 for<b> makeinit</b> along the<tt> PATH</tt>, the<b> build</b> directory should be placed at or near the start of your<tt>
 PATH</tt> environment variable.
-<dt>build/bin
+<dt><br>build/bin
 <dd>contains binaries created during first build phase (bootstrap) and used during main building process (second build phase).
-<dt>build/mif
+<dt><br>build/mif
 <dd>contains all main make files (global).
-<dt>bld
+<dt><br>bld
 <dd>is<b> the</b> directory where it's at.&nbsp; It contains all the Open Watcom source code.&nbsp; It is so important (and huge)
 that it deserves its own section.
-<dt>docs
+<dt><br>docs
 <dd>contains source files for the Open Watcom documentation as well as binaries needed to translate the sources into PostScript,
 HTML or various online help formats.&nbsp; The source files of this document are stored under this directory.&nbsp; For more
 information please refer the the chapter entitled Documentation later in this manual.
-<dt>rel
+<dt><br>rel
 <dd>is the &quot;release&quot; directory is where the binaries and other files produced in the course of the build process end
 up.&nbsp; The structure of this directory mirrors the<b> WATCOM</b> directory of a typical Open Watcom installation.
 </dl>
@@ -132,184 +132,184 @@ up.&nbsp; The structure of this directory mirrors the<b> WATCOM</b> directory of
 <dl>
 <dt>as
 <dd>the Alpha AXP and PowerPC assembler.&nbsp; The x86 assembler lives separately.
-<dt>aui
+<dt><br>aui
 <dd>user interface library employed by the debugger and profiler.
-<dt>bdiff
+<dt><br>bdiff
 <dd>binary diff and patch utilities.
-<dt>bmp2eps
+<dt><br>bmp2eps
 <dd>a utility for converting Windows bitmap files into EPS format, used for building documentation.
-<dt>brinfo
+<dt><br>brinfo
 <dd>part of the C++ source browser.
-<dt>browser
+<dt><br>browser
 <dd>the GUI C++ source browser.
-<dt>builder
+<dt><br>builder
 <dd>builder tool controlled by those<b> builder.ctl</b> files that are all over the place.
-<dt>causeway
+<dt><br>causeway
 <dd>the popular CauseWay DOS extender, in a form buildable with Open Watcom tools.
-<dt>cc
+<dt><br>cc
 <dd>the C compiler front end.
-<dt>cfloat
+<dt><br>cfloat
 <dd>utility function for conversion between various floating point binary formats.
-<dt>cg
+<dt><br>cg
 <dd>Open Watcom code generators, the heart of the compilers.&nbsp; These are shared by all languages (C, C++, FORTRAN).&nbsp;
 Currently supported targets are 16-bit and 32-bit x86 as well as Alpha AXP.
-<dt>clib
+<dt><br>clib
 <dd>the C runtime library.&nbsp; Pretty big project in itself.
-<dt>cmdedit
+<dt><br>cmdedit
 <dd>command line editing utilities, pretty much obsolete.
-<dt>comp_cfg
+<dt><br>comp_cfg
 <dd>compiler configuration header files for various targets.
-<dt>cpp
+<dt><br>cpp
 <dd>a simple C style preprocessor used by several other projects.
-<dt>ctest
+<dt><br>ctest
 <dd>C compiler regression tests.&nbsp; Run them often.
-<dt>cvpack
+<dt><br>cvpack
 <dd>the CV pack utility (for CodeView style debugging information).
-<dt>diff
+<dt><br>diff
 <dd>Open Watcom version of the popular utility.
-<dt>dig
+<dt><br>dig
 <dd>files used primarily by the debugger - this directory contains files that are shared between debugger, profiler, trap files
 and Dr.&nbsp; Watcom.
-<dt>dip
+<dt><br>dip
 <dd>Debug Information Processors, used by debugger.&nbsp; The DIPs provide an interface between the debugger and various debug
 information formats.
-<dt>dmpobj
+<dt><br>dmpobj
 <dd>a simple OMF dump utility.
-<dt>dwarf
+<dt><br>dwarf
 <dd>library for reading and writing DWARF style debugging information.
-<dt>editdll
+<dt><br>editdll
 <dd>interface modules between the IDE and external editors.
-<dt>fpuemu
+<dt><br>fpuemu
 <dd>8087 and 80387 emulator library.
-<dt>f77
+<dt><br>f77
 <dd>FORTRAN 77 compiler front end, runtime library and samples.&nbsp; All the FORTRAN stuff is crowded in there.
-<dt>f77test
+<dt><br>f77test
 <dd>FORTRAN 77 compiler regression tests.
-<dt>fe_misc
+<dt><br>fe_misc
 <dd>miscellaneous compiler front-end stuff shared between projects.
-<dt>fmedit
+<dt><br>fmedit
 <dd>form edit library, part of the SDK tools.
-<dt>graphlib
+<dt><br>graphlib
 <dd>Open Watcom graphics library for DOS.
-<dt>gui
+<dt><br>gui
 <dd>GUI library used by IDE, debugger, source browser and other tools.
-<dt>hdr
+<dt><br>hdr
 <dd>source files of header files distributed with the compilers.
-<dt>help
+<dt><br>help
 <dd>character mode help viewer (WHELP).
-<dt>ide
+<dt><br>ide
 <dd>the Open Watcom IDE.
-<dt>idebatch
+<dt><br>idebatch
 <dd>batch processor for the IDE.
-<dt>idedemo
+<dt><br>idedemo
 <dd>IDE demo program.
-<dt>lib_misc
+<dt><br>lib_misc
 <dd>miscellaneous files shared between clib and other tools.
-<dt>mad
+<dt><br>mad
 <dd>Machine Architecture Description used by debugger.
-<dt>mathlib
+<dt><br>mathlib
 <dd>the math library.
-<dt>misc
+<dt><br>misc
 <dd>stuff that didn't fit anywhere else.&nbsp; Not much really.
-<dt>mstools
+<dt><br>mstools
 <dd>Microsoft clone tools, front ends for compilers and utilities.
-<dt>ncurses
+<dt><br>ncurses
 <dd>a version of the ncurses library used by Linux console tools.
-<dt>ndisasm
+<dt><br>ndisasm
 <dd>the disassembler supporting variety of file format and instruction sets.&nbsp; Very handy.
-<dt>nwlib
+<dt><br>nwlib
 <dd>the library manager.
-<dt>online
+<dt><br>online
 <dd>place for finished online help files and associated header files.
-<dt>orl
+<dt><br>orl
 <dd>Object Reader Library, reads OMF, COFF and ELF object files.
-<dt>os2api
+<dt><br>os2api
 <dd>headers and libraries for the OS/2 API (both 16-bit and 32-bit).
-<dt>owl
+<dt><br>owl
 <dd>Object Writer Library, brother of ORL.
-<dt>pgchart
+<dt><br>pgchart
 <dd>presentation graphics and chart library for DOS (part of the graph library).
-<dt>plusplus
+<dt><br>plusplus
 <dd>another huge directory containing all C++ stuff.&nbsp; Compiler, runtime libraries, all that.
-<dt>plustest
+<dt><br>plustest
 <dd>C++ regression test utilities.&nbsp; Extremely worthy of the attention of compiler developers.
-<dt>pmake
+<dt><br>pmake
 <dd>parallel make, tool used in the build process to roughly control what gets built.
-<dt>posix
+<dt><br>posix
 <dd>a bunch of POSIX utilites like cp, rm and so on.&nbsp; Not suffering from creeping featuritis but they do the job and they're
 portable.
-<dt>rcsdll
+<dt><br>rcsdll
 <dd>interface to various revision control systems, used by IDE and editor.
-<dt>re2c
+<dt><br>re2c
 <dd>regular expression to C converter, used in C++ compiler build.
-<dt>redist
+<dt><br>redist
 <dd>miscellaneous redistributable files.
-<dt>rtdll
+<dt><br>rtdll
 <dd>C, C++ and math runtime DLLs.
-<dt>sdk
+<dt><br>sdk
 <dd>SDK tools like resource editor, resource compiler or dialog editor.&nbsp; Also the home of wres library which is used by many
 other projects.
-<dt>setupgui
+<dt><br>setupgui
 <dd>source for the Open Watcom installer.
-<dt>src
+<dt><br>src
 <dd>sample source code distributed with the compiler, some of it is used in the documentation.
-<dt>ssl
+<dt><br>ssl
 <dd>internal tool used for debugger builds.
-<dt>techinfo
+<dt><br>techinfo
 <dd>ancient system information utility.
-<dt>trap
+<dt><br>trap
 <dd>trap files (both local and remote), the heart of the debugger containing platform specific debugging code.&nbsp; Heavy stuff.
-<dt>trmem
+<dt><br>trmem
 <dd>memory tracker library (good for discovering and plugging memory leaks).
-<dt>ui
+<dt><br>ui
 <dd>user interface library.
-<dt>vi
+<dt><br>vi
 <dd>Open Watcom vi editor, clone of the popular (or not) Unix editor.
-<dt>w16api
+<dt><br>w16api
 <dd>headers and libraries for the Windows 3.x API.
-<dt>w32api
+<dt><br>w32api
 <dd>headers and libraries for the Win32 API.
-<dt>wasm
+<dt><br>wasm
 <dd>the x86 assembler.&nbsp; Large parts of the source are shared between standalone wasm and inline assembler support for compilers
 targeting x86 platforms.
-<dt>wasmtest
+<dt><br>wasmtest
 <dd>the x86 assembler regression tests.
-<dt>watcom
+<dt><br>watcom
 <dd>contains internal headers and libraries shared by many projects.
-<dt>wclass
+<dt><br>wclass
 <dd>an Open Watcom C++ class library.
-<dt>wdisasm
+<dt><br>wdisasm
 <dd>old x86 disassembler, nearly obsolete.
-<dt>whpcvt
+<dt><br>whpcvt
 <dd>Watcom Help Converter used for producing online documentation.
-<dt>wic
+<dt><br>wic
 <dd>utility for converting include files between various languages.
-<dt>win386
+<dt><br>win386
 <dd>the Windows 386 extender.
-<dt>wl
+<dt><br>wl
 <dd>the Open Watcom linker, also contains the overlay manager library.
-<dt>wmake
+<dt><br>wmake
 <dd>the make utility.
-<dt>womp
+<dt><br>womp
 <dd>Watcom Object Module Processor, primarily for conversion between debug info formats.&nbsp; Some source files are shared with
 other projects.
-<dt>wpack
+<dt><br>wpack
 <dd>simple file compression/decompression utility.
-<dt>wpi
+<dt><br>wpi
 <dd>macros and helper functions for facilitating development of Windows and OS/2 GUI programs from single source code.
-<dt>wprof
+<dt><br>wprof
 <dd>the Open Watcom profiler.
-<dt>wsample
+<dt><br>wsample
 <dd>the execution sampler, companion tool to the profiler.
-<dt>wstrip
+<dt><br>wstrip
 <dd>strip utility for detaching or attaching debug information and/or resources.
-<dt>wstub
+<dt><br>wstub
 <dd>stub program for DOS/4GW.
-<dt>wtouch
+<dt><br>wtouch
 <dd>a touch utility.
-<dt>wv
+<dt><br>wv
 <dd>the debugger (used to be called WVIDEO, hence the name).
-<dt>yacc
+<dt><br>yacc
 <dd>Watcom's version of YACC used for building compilers/assemblers.
 </dl>
 <br>As you can see, there's a lot of stuff!&nbsp; Some of these projects contain specific documentation pertaining to them,
@@ -378,9 +378,9 @@ directory based on crystal-balls and what not.&nbsp; The makefile must define th
 <dl>
 <dt>host_os:
 <dd>os which the resulting executable code will run on
-<dt>host_cpu:
+<dt><br>host_cpu:
 <dd>architecture which the resulting executable code will run on.
-<dt>proj_name:
+<dt><br>proj_name:
 <dd>the project name
 </dl>
 <br>Valid values for<tt> host_cpu</tt> are 386, i86, axp, mps, ppc, x64.&nbsp; These should be self-explanatory.&nbsp; Valid
@@ -399,21 +399,21 @@ be brought to my attention):
 <dl>
 <dt>$(CC):
 <dd>The C compiler
-<dt>$(CPP):
+<dt><br>$(CPP):
 <dd>The C++ compiler
-<dt>$(LINKER):
+<dt><br>$(LINKER):
 <dd>The linker
-<dt>$(LIBRARIAN):
+<dt><br>$(LIBRARIAN):
 <dd>The librarian
-<dt>$(AS):
+<dt><br>$(AS):
 <dd>The assembler, if applicable
-<dt>$(RC):
+<dt><br>$(RC):
 <dd>The resource compiler
-<dt>$(EDIT):
+<dt><br>$(EDIT):
 <dd>Our VI editor
-<dt>$(YACC):
+<dt><br>$(YACC):
 <dd>Our version of yacc
-<dt>$(RE2C):
+<dt><br>$(RE2C):
 <dd>The regular-expression to C compiler
 </dl>
 <li>When referring to other projects, a makefile should use the<tt> X_dir</tt> macro, where X is the name of the project.
@@ -486,17 +486,17 @@ which should be used by the appropriate makefiles are:
 <dl>
 <dt>all
 <dd>is implicit in every makefile and does not need to be listed explicitly
-<dt>build
+<dt><br>build
 <dd>indicates that wmake should be run in this directory as part of the build process
-<dt>os_x
+<dt><br>os_x
 <dd>for each x in the list of the valid host_os tokens (os_nt, os_dos, etc)
-<dt>cpu_x
+<dt><br>cpu_x
 <dd>for each x in the list of the valid host_cpu tokens (cpu_386, cpu_ppc, etc)
-<dt>target_x
+<dt><br>target_x
 <dd>for each x in the list of valid host_cpu tokens (for compilers and targetted apps)
-<dt>tiny, small, compact, medium, large, huge, flat, nomodel
+<dt><br>tiny, small, compact, medium, large, huge, flat, nomodel
 <dd>the memory model
-<dt>inline, calls
+<dt><br>inline, calls
 <dd>whether an app uses inline 8087 stuff or fp calls
 </dl>
 <br>For example, an executable which is going to run on the PPC version of NT should have a pmake line which contains, at
@@ -628,9 +628,9 @@ logged to<b> build.log</b> in the current project directory and the previous<b> 
 <dl>
 <dt>builder build
 <dd>- build the software
-<dt>builder rel
+<dt><br>builder rel
 <dd>- build the software, and copy it into the &quot;rel&quot; release tree
-<dt>builder clean
+<dt><br>builder clean
 <dd>- erase object files, executables, etc.&nbsp; so you can build from scratch
 </dl>
 <h2 id="Pmake"> Pmake </h2>
@@ -692,45 +692,45 @@ are likely to bang together an automated test suite if that helps them avoid bab
 <dl>
 <dt>as
 <dd>In<b> bld\as\alpha\test</b> there are several tests exercising the Alpha AXP assembler, using C wrappers for infrastructure.
-<dt>aui
+<dt><br>aui
 <dd>Not a real test, nevertheless the sample programs in<b> bld\aui\sample</b> are useful in demonstrating and informally testing
 the user interface library.
-<dt>brinfo
+<dt><br>brinfo
 <dd>In<b> bld\brinfo\test</b> there is a simple browser information test program.
-<dt>browser
+<dt><br>browser
 <dd>Tests exercising the class browser are located in<b> bld\browser\test.</b>
-<dt>cg
+<dt><br>cg
 <dd>In<b> cg\test\far16</b> there is a test exercising the<tt> __far16</tt> keyword.&nbsp; Real code generator tests are found
 elsewhere.
-<dt>clib
+<dt><br>clib
 <dd>The C runtime library tests are located in<b> bld\clib\qa.</b>&nbsp; These tests are not terribly comprehensive but they do
 verify the basic C runtime functionality.
-<dt>gui
+<dt><br>gui
 <dd>Again not a real test, there is a GUI library sample in<b> bld\gui\sample.</b>
-<dt>ndisasm
+<dt><br>ndisasm
 <dd>Tests for the 'new' disassembler (not many at this point) are located in<b> bld\ndisasm\test.</b>
-<dt>orl
+<dt><br>orl
 <dd>The Object Reader Library tests are in<b> bld\orl\test.</b>
-<dt>plustest
+<dt><br>plustest
 <dd>This project holds<b> the</b> test suite.&nbsp; Ostensibly designed to exercise the C++ compiler, the tests also verify the
 functionality of the code generator and some are designed for the C compiler.&nbsp; Running these tests can take a while as
 there are over a thousand test cases.&nbsp; Highly recommended.
-<dt>ssl
+<dt><br>ssl
 <dd>In<b> bld\ssl\test</b> there are several simple test scripts for SSL.
-<dt>trmem
+<dt><br>trmem
 <dd>While the memory tracker is not a test, it bears mentioning here.&nbsp; This can be used for testing many other projects for
 memory leaks, memory overwrites and other cases of rude behaviour.
-<dt>viprdemo
+<dt><br>viprdemo
 <dd>Again not a test per se, the 'Viper demo' is a good way to verify basic IDE functionality.
-<dt>wasm
+<dt><br>wasm
 <dd>Extensive assembler test can be found (rather predictably) in<b> bld\wasmtest.</b>
-<dt>wdisasm
+<dt><br>wdisasm
 <dd>Tests for the 'old' disassembler are located in<b> bld\wdisasm\test.</b>
-<dt>wmake
+<dt><br>wmake
 <dd>Extensive make utility tests can be found in<b> bld\wmake\regress.</b>
-<dt>wprof
+<dt><br>wprof
 <dd>A profiler test program is located in<b> bld\wprof\test.</b>
-<dt>yacc
+<dt><br>yacc
 <dd>Several sample/test YACC input files are in<b> bld\yacc\y.</b>
 </dl>
 <h1 id="Programming_Style"> Programming Style </h1>
@@ -784,11 +784,11 @@ to be accessed from other modules, you should definitely make it static.&nbsp; T
 global namespace (reducing the chance of name clashes) and if you stop using the variable, the compiler will warn you.&nbsp;
 If you have a non-static global variable that is unused, the compiler cannot warn you as it has to assume that it is used
 from other modules.
-<dt>locals
+<dt><br>locals
 <dd>in this case the <b><i> static</i></b> keyword changes the storage class and the variable will be stored in data segment instead
 of on stack.&nbsp; If you need a variable that has global lifetime but only needs to be accessible from one function, making
 it local and static is a good choice.
-<dt>functions
+<dt><br>functions
 <dd>the effect of the <b><i> static</i></b> keyword here is similar to the global variables.&nbsp; The function will not be visible
 from other modules.&nbsp; Again, the compiler will warn you if you stop using such a function.&nbsp; But declaring a function
 static also helps the optimizer.&nbsp; For instance if the optimizer inlines a static function, it can completely remove the
@@ -954,17 +954,17 @@ unordered list.&nbsp; Every piece of text entered into the source file is identi
 <dl>
 <dt>Pentium Pro
 <dd>-oneatx -oh -oi+ -ei -zp8 -6 -fpi87 -fp6
-<dt>Pentium
+<dt><br>Pentium
 <dd>-oneatx -oh -oi+ -ei -zp8 -5 -fpi87 -fp5
-<dt>486
+<dt><br>486
 <dd>-oneatx -oh -oi+ -ei -zp8 -4 -fpi87 -fp3
-<dt>386
+<dt><br>386
 <dd>-oneatx -oh -oi+ -ei -zp8 -3 -fpi87 -fp3
-<dt>286
+<dt><br>286
 <dd>-oneatx -oh -oi+ -ei -zp8 -2 -fpi87 -fp2
-<dt>186
+<dt><br>186
 <dd>-oneatx -oh -oi+ -ei -zp8 -1 -fpi87
-<dt>8086
+<dt><br>8086
 <dd>-oneatx -oh -oi+ -ei -zp8 -0 -fpi87
 </dl>
 <br>The recommended options for generating the fastest 32-bit Intel code are:

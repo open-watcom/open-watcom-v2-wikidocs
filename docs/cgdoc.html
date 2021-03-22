@@ -18,15 +18,15 @@ routines.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>switches
+<dt><br>switches
 <dd>Select code generation options.&nbsp; The options are bits, so may be combined with the bit-wise operator |.&nbsp; Options
 apply to the entire compilation unit.&nbsp; The bit values are defined below.
-<dt>targ_switches
+<dt><br>targ_switches
 <dd>Target specific switches.&nbsp; The bit values are defined below.
-<dt>optsize
+<dt><br>optsize
 <dd>A number between 0 and 100.&nbsp; 0 means optimize for speed, 100 means optimize for size.&nbsp; Anything in between selects
 a compromise between speed and size.
-<dt>proc
+<dt><br>proc
 <dd>The target hardware configuration, defined below.
 </dl>
 <dl>
@@ -36,109 +36,109 @@ a compromise between speed and size.
 <dl>
 <dt><b><i>Switch</i></b>
 <dd><b><i>Definition</i></b>
-<dt>NO_OPTIMIZATION
+<dt><br>NO_OPTIMIZATION
 <dd>Turn off optimizations.
-<dt>DBG_NUMBERS
+<dt><br>DBG_NUMBERS
 <dd>Generate line number debugging information.
-<dt>FORTRAN_ALIASING
+<dt><br>FORTRAN_ALIASING
 <dd>Assume pointers are only used for parameter passing.
-<dt>DBG_DF
+<dt><br>DBG_DF
 <dd>Generate debugging information in DWARF format.
-<dt>DBG_CV
+<dt><br>DBG_CV
 <dd>Generate debugging information in CodeView format.&nbsp; If neither DBG_DF nor DBG_CV is set, debugging information (if any)
 is generated in the Watcom format.
-<dt>RELAX_ALIAS
+<dt><br>RELAX_ALIAS
 <dd>Assume that a static/extern variable and a pointer to that same variable are not used within the same routine.
-<dt>DBG_LOCALS
+<dt><br>DBG_LOCALS
 <dd>Generate local symbol information for use by a debugger.
-<dt>DBG_TYPES
+<dt><br>DBG_TYPES
 <dd>Generate typing information for use by a debugger.
-<dt>LOOP_UNROLLING
+<dt><br>LOOP_UNROLLING
 <dd>Turn on loop unrolling.
-<dt>LOOP_OPTIMIZATION
+<dt><br>LOOP_OPTIMIZATION
 <dd>Turn on loop optimizations.
-<dt>INS_SCHEDULING
+<dt><br>INS_SCHEDULING
 <dd>Turn on instruction scheduling.
-<dt>MEMORY_LOW_FAILS
+<dt><br>MEMORY_LOW_FAILS
 <dd>Allow the code generator to run out of memory without being able to generate object code (allows the 386 compiler to use EBP
 as a cache register).
-<dt>FP_UNSTABLE_OPTIMIZATION
+<dt><br>FP_UNSTABLE_OPTIMIZATION
 <dd>Allow the code generator to perform optimizations that are mathematically correct, but are numerically unstable.&nbsp; E.g.
 &nbsp;converting division by a constant to a multiplication by the reciprocal.
-<dt>NULL_DEREF_OK
+<dt><br>NULL_DEREF_OK
 <dd>NULL points to valid memory and may be dereferenced.
-<dt>FPU_ROUNDING_INLINE
+<dt><br>FPU_ROUNDING_INLINE
 <dd>Inline floating-point value rounding (actually truncation) routine when converting floating-point values to integers.
-<dt>FPU_ROUNDING_OMIT
+<dt><br>FPU_ROUNDING_OMIT
 <dd>Omit floating-point value rounding entirely and use FPU default.&nbsp; Results will not be ISO C compliant.
-<dt>ECHO_API_CALLS
+<dt><br>ECHO_API_CALLS
 <dd>Log each call to the code generator with its arguments and return value.&nbsp; Only available in debug builds.
-<dt>OBJ_ELF
+<dt><br>OBJ_ELF
 <dd>Emit ELF object files.
-<dt>OBJ_COFF
+<dt><br>OBJ_COFF
 <dd>Emit COFF object files.&nbsp; For Intel compilers, OMF object files will be emitted in the absence of either switch.
-<dt>OBJ_ENDIAN_BIG
+<dt><br>OBJ_ENDIAN_BIG
 <dd>Emit big-endian object files (COFF or ELF).&nbsp; If OBJ_ENDIAN_BIG is not set, little-endian objects will be generated.
 </dl>
 <dl>
 <dt><b><i>x86 Switch</i></b>
 <dd><b><i>Definition</i></b>
-<dt>I_MATH_INLINE
+<dt><br>I_MATH_INLINE
 <dd>Do not check arguments for operators like O_SQRT.&nbsp; This allows the compiler to use some specialty x87 instructions.
-<dt>EZ_OMF
+<dt><br>EZ_OMF
 <dd>Generate Phar Lap EZ-OMF object files.
-<dt>BIG_DATA
+<dt><br>BIG_DATA
 <dd>Use segmented pointers (16:16 or 16:32).&nbsp; This defines TY_POINTER to be equivalent to TY_HUGE_POINTER.
-<dt>BIG_CODE
+<dt><br>BIG_CODE
 <dd>Use inter segment (far) call and return instructions.
-<dt>CHEAP_POINTER
+<dt><br>CHEAP_POINTER
 <dd>Assume far objects are addressable by one segment value.&nbsp; This must be used in conjunction with BIG_DATA.&nbsp; It defines
 TY_POINTER to be equivalent to TY_FAR_POINTER.
-<dt>FLAT_MODEL
+<dt><br>FLAT_MODEL
 <dd>Assume all segment registers address the same base memory.
-<dt>FLOATING_FS
+<dt><br>FLOATING_FS
 <dd>Does FS float (or is it pegged to DGROUP).
-<dt>FLOATING_GS
+<dt><br>FLOATING_GS
 <dd>Does GS float (or is it pegged to DGROUP).
-<dt>FLOATING_ES
+<dt><br>FLOATING_ES
 <dd>Does ES float (or is it pegged to DGROUP).
-<dt>FLOATING_SS
+<dt><br>FLOATING_SS
 <dd>Does SS float (or is it pegged to DGROUP).
-<dt>FLOATING_DS
+<dt><br>FLOATING_DS
 <dd>Does DS float (or is it pegged to DGROUP).
-<dt>USE_32
+<dt><br>USE_32
 <dd>Generate code into a use32 segment (versus use16).
-<dt>INDEXED_GLOBALS
+<dt><br>INDEXED_GLOBALS
 <dd>Generate all global and static variable references as an offset past EBX.
-<dt>WINDOWS
+<dt><br>WINDOWS
 <dd>Generate windows prolog/epilog sequences for all routines.
-<dt>CHEAP_WINDOWS
+<dt><br>CHEAP_WINDOWS
 <dd>Generate windows prolog/epilog sequences assuming that call backs functions are defined as __export.
-<dt>NO_CALL_RET_TRANSFORM
+<dt><br>NO_CALL_RET_TRANSFORM
 <dd>Do not change a CALL followed by a RET into a JMP.&nbsp; This is used for some older overlay managers that cannot handle a
 JMP to an overlay.
-<dt>CONST_IN_CODE
+<dt><br>CONST_IN_CODE
 <dd>Generate all constant data into the code segment.&nbsp; This only applies to the internal code generator data, such as floating
 point constants.&nbsp; The front end decides where its data goes using BESetSeg().
-<dt>NEED_STACK_FRAME
+<dt><br>NEED_STACK_FRAME
 <dd>Generate a traceable stack frame.&nbsp; The first instructions will be<b> INC BP</b> if the routine uses a far return instruction,
 followed by<b> PUSH BP</b> and<b> MOV BP,SP</b>.&nbsp; (ESP and EBP for 386 targets).
-<dt>LOAD_DS_DIRECTLY
+<dt><br>LOAD_DS_DIRECTLY
 <dd>Generate code to load DS directly.&nbsp; By default, a call to __GETDS routine is generated.
-<dt>GEN_FWAIT_386
+<dt><br>GEN_FWAIT_386
 <dd>Generate FWAIT instructions on 386 and later CPUs.&nbsp; The 386 never needs FWAIT for data synchronization, but FWAIT may
 still be needed for accurate exception reporting.
 </dl>
 <dl>
 <dt><b><i>RISC Switch</i></b>
 <dd><b><i>Definition</i></b>
-<dt>ASM_OUTPUT
+<dt><br>ASM_OUTPUT
 <dd>Print final pseudo-assembly on the console.&nbsp; Debug builds only.
-<dt>OWL_LOGGING
+<dt><br>OWL_LOGGING
 <dd>Log calls to the Object Writer Library
-<dt>STACK_INIT
+<dt><br>STACK_INIT
 <dd>Pre-initialize stack variables to a known bit pattern.
-<dt>EXCEPT_FILTER_USED
+<dt><br>EXCEPT_FILTER_USED
 <dd>Set when SEH (Structured Exception Handling) is used.
 </dl>
 <br>The supported proc_revision CPU values are:
@@ -211,10 +211,10 @@ different values, providing CGPatchNode has been called and BEFiniPatch has not 
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>hdl
+<dt><br>hdl
 <dd>A patch_handle returned from an earlier invocation of BEPatch which has had a node allocated for it via CGPatchNode.&nbsp;
 If CGPatchNode has not been called with the handle given, the behaviour is undefined.
-<dt>value
+<dt><br>value
 <dd>A signed 32-bit integer value.&nbsp; This will be the new value of the node which has been associated with the patch handle.
 </dl>
 <h2 id="cg_name_BEFiniPatchL_patch_handle_hdl_R"> cg_name BEFiniPatch( patch_handle hdl ) </h2>
@@ -237,42 +237,42 @@ are allowed to define additional segments after BEStart if they are:
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>segid
+<dt><br>segid
 <dd>A non-negative integer used as an identifier for the segment.&nbsp; It is arbitrarily picked by the front end.
-<dt>attr
+<dt><br>attr
 <dd>Segment attribute bits, defined below.
-<dt>str
+<dt><br>str
 <dd>The name given to the segment.
-<dt>algn
+<dt><br>algn
 <dd>The segment alignment requirements.&nbsp; The code generator will pick the next larger alignment allowed by the object module
 format.&nbsp; For example, 9 would select paragraph alignment.
 </dl>
 <dl>
 <dt><b><i>Attribute</i></b>
 <dd><b><i>Definition</i></b>
-<dt>EXEC
+<dt><br>EXEC
 <dd>This is a code segment.
-<dt>GLOBAL
+<dt><br>GLOBAL
 <dd>The segment is accessible to other modules.&nbsp; (versus PRIVATE).
-<dt>INIT
+<dt><br>INIT
 <dd>The segment is statically initialized.
-<dt>ROM
+<dt><br>ROM
 <dd>The segment is read only.
-<dt>BACK
+<dt><br>BACK
 <dd>The code generator may put its data here.&nbsp; One segment must be marked with this attribute.&nbsp; It may not be a COMMON,
 PRIVATE or EXEC segment.&nbsp; If the front end requires code in the EXEC segment, the CONST_IN_CODE switch must be passed
 to BEInit().
-<dt>COMMON
+<dt><br>COMMON
 <dd>All occurrences of this segment will be overlayed.&nbsp; This is used for FORTRAN common blocks.
-<dt>PRIVATE
+<dt><br>PRIVATE
 <dd>The segment is non combinable.&nbsp; This is used for far data items.
-<dt>GIVEN_NAME
+<dt><br>GIVEN_NAME
 <dd>Normally, the back end feels free to prepend or append strings to the segment name passed in by the front end.&nbsp; This
 allows a naive front end to specify a constant set of segment names, and have the code generator mangle them in such a manner
 that they work properly in concert with the set of cg_switches that have been specified (e.g.&nbsp; prepending the module
 name to the code segments when BIG_CODE is specified on the x86).&nbsp; When GIVEN_NAME is specified, the back end outputs
 the segment name to the object file exactly as given.
-<dt>THREAD_LOCAL
+<dt><br>THREAD_LOCAL
 <dd>Segment contains thread local data.&nbsp; Such segments may need special handling in executable modules.
 </dl>
 <h2 id="segment_id_BESetSegL_segment_id_segid_R"> segment_id BESetSeg( segment_id segid ) </h2>
@@ -281,7 +281,7 @@ by FESegID when it is passed the routine symbol handle.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>segid
+<dt><br>segid
 <dd>Selects the current segment.
 </dl>
 <dl>
@@ -306,7 +306,7 @@ own symbol table which is thrown out at the end of the function).
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>segid
+<dt><br>segid
 <dd>The code segment id.
 </dl>
 <h1 id="Labels"> Labels </h1>
@@ -325,7 +325,7 @@ at some later stage.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>lbl
+<dt><br>lbl
 <dd>A label_handle
 </dl>
 <h1 id="Back_Handles"> Back Handles </h1>
@@ -358,7 +358,7 @@ freed after calling BEStop.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>The front end symbol handle to be associated with the back_handle.&nbsp; It may be NULL.
 </dl>
 <dl>
@@ -371,7 +371,7 @@ generator to free some memory at some later stage.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>bck
+<dt><br>bck
 <dd>A back_handle.
 </dl>
 <h2 id="void_BEFreeBackL_back_handle_bck_R"> void BEFreeBack( back_handle bck ) </h2>
@@ -379,7 +379,7 @@ generator to free some memory at some later stage.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>bck
+<dt><br>bck
 <dd>A back_handle.
 </dl>
 <h1 id="Type_definitions"> Type definitions </h1>
@@ -388,62 +388,62 @@ length.&nbsp; The base types are:
 <dl>
 <dt><b><i>Type</i></b>
 <dd><b><i>C type</i></b>
-<dt>TY_UINT_1
+<dt><br>TY_UINT_1
 <dd>unsigned char
-<dt>TY_INT_1
+<dt><br>TY_INT_1
 <dd>signed char
-<dt>TY_UINT_2
+<dt><br>TY_UINT_2
 <dd>unsigned short
-<dt>TY_INT_2
+<dt><br>TY_INT_2
 <dd>signed short
-<dt>TY_UINT_4
+<dt><br>TY_UINT_4
 <dd>unsigned long
-<dt>TY_INT_4
+<dt><br>TY_INT_4
 <dd>signed long
-<dt>TY_UINT_8
+<dt><br>TY_UINT_8
 <dd>unsigned long long
-<dt>TY_INT_8
+<dt><br>TY_INT_8
 <dd>signed long long
-<dt>TY_LONG_POINTER
+<dt><br>TY_LONG_POINTER
 <dd>far *
-<dt>TY_HUGE_POINTER
+<dt><br>TY_HUGE_POINTER
 <dd>huge *
-<dt>TY_NEAR_POINTER
+<dt><br>TY_NEAR_POINTER
 <dd>near *
-<dt>TY_LONG_CODE_PTR
+<dt><br>TY_LONG_CODE_PTR
 <dd>(far *)()
-<dt>TY_NEAR_CODE_PTR
+<dt><br>TY_NEAR_CODE_PTR
 <dd>(near *)()
-<dt>TY_SINGLE
+<dt><br>TY_SINGLE
 <dd>float
-<dt>TY_DOUBLE
+<dt><br>TY_DOUBLE
 <dd>double
-<dt>TY_LONG_DOUBLE
+<dt><br>TY_LONG_DOUBLE
 <dd>long double
-<dt>TY_INTEGER
+<dt><br>TY_INTEGER
 <dd>int
-<dt>TY_UNSIGNED
+<dt><br>TY_UNSIGNED
 <dd>unsigned int
-<dt>TY_POINTER
+<dt><br>TY_POINTER
 <dd>*
-<dt>TY_CODE_PTR
+<dt><br>TY_CODE_PTR
 <dd>(*)()
-<dt>TY_BOOLEAN
+<dt><br>TY_BOOLEAN
 <dd>The result of a comparison or flow operator.&nbsp; May also be used as an integer.
-<dt>TY_DEFAULT
+<dt><br>TY_DEFAULT
 <dd>Used to indicate default conversion
-<dt>TY_NEAR_INTEGER
+<dt><br>TY_NEAR_INTEGER
 <dd>The result of subtracting 2 near pointers
-<dt>TY_LONG_INTEGER
+<dt><br>TY_LONG_INTEGER
 <dd>The result of subtracting 2 far pointers
-<dt>TY_HUGE_INTEGER
+<dt><br>TY_HUGE_INTEGER
 <dd>The result of subtracting 2 huge pointers
 </dl>
 <br>There are two special constants.
 <dl>
 <dt>TY_FIRST_FREE
 <dd>The first user definable type
-<dt>TY_LAST_FREE
+<dt><br>TY_LAST_FREE
 <dd>The last user definable type.
 </dl>
 <h2 id="void_BEDefTypeL_cg_type_what__uint_align__unsigned_32_len_R"> void BEDefType( cg_type what, uint align, unsigned_32 len ) </h2>
@@ -451,11 +451,11 @@ length.&nbsp; The base types are:
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>what
+<dt><br>what
 <dd>An integral value greater than or equal to TY_FIRST_FREE and less then or equal to TY_LAST_FREE, used as the type identifier.
-<dt>align
+<dt><br>align
 <dd>Currently ignored.
-<dt>len
+<dt><br>len
 <dd>The length of the new type.
 </dl>
 <h2 id="void_BEAliasTypeL_cg_type_what__cg_type_to_R"> void BEAliasType( cg_type what, cg_type to ) </h2>
@@ -463,9 +463,9 @@ length.&nbsp; The base types are:
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>what
+<dt><br>what
 <dd>Will become an alias for an existing type.
-<dt>to
+<dt><br>to
 <dd>An existing type.
 </dl>
 <h2 id="unsigned_32_BETypeLengthL_cg_type_type_R"> unsigned_32 BETypeLength( cg_type type ) </h2>
@@ -473,7 +473,7 @@ length.&nbsp; The base types are:
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>type
+<dt><br>type
 <dd>A previously defined type.
 </dl>
 <dl>
@@ -485,7 +485,7 @@ length.&nbsp; The base types are:
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>type
+<dt><br>type
 <dd>A previously defined type.
 </dl>
 <dl>
@@ -498,9 +498,9 @@ length.&nbsp; The base types are:
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The front end symbol table entry for the procedure.&nbsp; A back_handle will be requested.
-<dt>type
+<dt><br>type
 <dd>The return type of the procedure.&nbsp; Use TY_INTEGER for void functions.
 </dl>
 <h2 id="void_CGParmDeclL_cg_sym_handle_name__cg_type_type_R"> void CGParmDecl( cg_sym_handle name, cg_type type ) </h2>
@@ -510,9 +510,9 @@ as defined by the procedure prototype.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The symbol table entry for the parameter.
-<dt>type
+<dt><br>type
 <dd>The type of the parameter.
 </dl>
 <h2 id="label_handle_CGLastParmLR"> label_handle CGLastParm() </h2>
@@ -525,9 +525,9 @@ but must be called before<b> name</b> is passed to CGFEName.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The symbol table entry for the variable.
-<dt>type
+<dt><br>type
 <dd>The type of the variable.
 </dl>
 <h2 id="temp_handle_CGTempL_cg_type_type_R"> temp_handle CGTemp( cg_type type ) </h2>
@@ -538,7 +538,7 @@ temporary results are handled by the expression trees.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>type
+<dt><br>type
 <dd>The type of the new temporary.
 </dl>
 <dl>
@@ -558,51 +558,51 @@ to get its value.&nbsp; The following operators are available:&nbsp;
 <dl>
 <dt><b><i>0-ary Operator</i></b>
 <dd><b><i>C equivalent</i></b>
-<dt>O_NOP
+<dt><br>O_NOP
 <dd>N/A
 </dl>
 <dl>
 <dt><b><i>Unary Operator</i></b>
 <dd><b><i>C equivalent</i></b>
-<dt>O_UMINUS
+<dt><br>O_UMINUS
 <dd>-x
-<dt>O_COMPLEMENT
+<dt><br>O_COMPLEMENT
 <dd>x
-<dt>O_POINTS
+<dt><br>O_POINTS
 <dd>(*x)
-<dt>O_CONVERT
+<dt><br>O_CONVERT
 <dd>x=y
-<dt>O_ROUND
+<dt><br>O_ROUND
 <dd>Do not use!
-<dt>O_LOG
+<dt><br>O_LOG
 <dd>log(x)
-<dt>O_COS
+<dt><br>O_COS
 <dd>cos(x)
-<dt>O_SIN
+<dt><br>O_SIN
 <dd>sin(x)
-<dt>O_TAN
+<dt><br>O_TAN
 <dd>tan(x)
-<dt>O_SQRT
+<dt><br>O_SQRT
 <dd>sqrt(x)
-<dt>O_FABS
+<dt><br>O_FABS
 <dd>fabs(x)
-<dt>O_ACOS
+<dt><br>O_ACOS
 <dd>acos(x)
-<dt>O_ASIN
+<dt><br>O_ASIN
 <dd>asin(x)
-<dt>O_ATAN
+<dt><br>O_ATAN
 <dd>atan(x)
-<dt>O_COSH
+<dt><br>O_COSH
 <dd>cosh(x)
-<dt>O_SINH
+<dt><br>O_SINH
 <dd>sinh(x)
-<dt>O_TANH
+<dt><br>O_TANH
 <dd>tanh(x)
-<dt>O_EXP
+<dt><br>O_EXP
 <dd>exp(x)
-<dt>O_LOG10
+<dt><br>O_LOG10
 <dd>log10(x)
-<dt>O_PARENTHESIS
+<dt><br>O_PARENTHESIS
 <dd>This operator represents the &quot;strong&quot; parenthesises of FORTRAN and C.&nbsp; It prevents the back end from performing
 certain mathematically correct, but floating point incorrect optimizations.&nbsp; E.g.&nbsp; in the expression &quot;(a*2.4)/2.0&quot;,
 the back end is not allowed constant fold the expression into &quot;a*1.2&quot;.
@@ -610,51 +610,51 @@ the back end is not allowed constant fold the expression into &quot;a*1.2&quot;.
 <dl>
 <dt><b><i>Binary Operator</i></b>
 <dd><b><i>C equivalent</i></b>
-<dt>O_PLUS
+<dt><br>O_PLUS
 <dd>+
-<dt>O_MINUS
+<dt><br>O_MINUS
 <dd>-
-<dt>O_TIMES
+<dt><br>O_TIMES
 <dd>*
-<dt>O_DIV
+<dt><br>O_DIV
 <dd>/
-<dt>O_MOD
+<dt><br>O_MOD
 <dd>%
-<dt>O_AND
+<dt><br>O_AND
 <dd>&amp;
-<dt>O_OR
+<dt><br>O_OR
 <dd>|
-<dt>O_XOR
+<dt><br>O_XOR
 <dd>^
-<dt>O_RSHIFT
+<dt><br>O_RSHIFT
 <dd>&gt;&gt;
-<dt>O_LSHIFT
+<dt><br>O_LSHIFT
 <dd>&lt;&lt;
-<dt>O_COMMA
+<dt><br>O_COMMA
 <dd>,
-<dt>O_TEST_TRUE
+<dt><br>O_TEST_TRUE
 <dd>( x &amp; y ) != 0
-<dt>O_TEST_FALSE
+<dt><br>O_TEST_FALSE
 <dd>( x &amp; y ) == 0
-<dt>O_EQ
+<dt><br>O_EQ
 <dd>==
-<dt>O_NE
+<dt><br>O_NE
 <dd>!=
-<dt>O_GT
+<dt><br>O_GT
 <dd>&gt;
-<dt>O_LE
+<dt><br>O_LE
 <dd>&lt;=
-<dt>O_LT
+<dt><br>O_LT
 <dd>&lt;
-<dt>O_GE
+<dt><br>O_GE
 <dd>&gt;=
-<dt>O_POW
+<dt><br>O_POW
 <dd>pow( x, y )
-<dt>O_ATAN2
+<dt><br>O_ATAN2
 <dd>atan2( x, y )
-<dt>O_FMOD
+<dt><br>O_FMOD
 <dd>fmod( x, y )
-<dt>O_CONVERT
+<dt><br>O_CONVERT
 <dd>See below.
 </dl>
 <br>The binary O_CONVERT operator is only available on the x86 code generator.&nbsp; It is used for based pointer operations
@@ -665,27 +665,27 @@ value for the symbol, or the segment value of the expression is used as the segm
 <dl>
 <dt><b><i>Short circuit operators</i></b>
 <dd><b><i>C equivalent</i></b>
-<dt>O_FLOW_AND
+<dt><br>O_FLOW_AND
 <dd>&amp;&amp;
-<dt>O_FLOW_OR
+<dt><br>O_FLOW_OR
 <dd>||
-<dt>O_FLOW_NOT
+<dt><br>O_FLOW_NOT
 <dd>!
 </dl>
 <dl>
 <dt><b><i>Control flow operators</i></b>
 <dd><b><i>C equivalent</i></b>
-<dt>O_GOTO
+<dt><br>O_GOTO
 <dd>goto label;
-<dt>O_LABEL
+<dt><br>O_LABEL
 <dd>label:;
-<dt>O_IF_TRUE
+<dt><br>O_IF_TRUE
 <dd>if( x ) goto label;
-<dt>O_IF_FALSE
+<dt><br>O_IF_FALSE
 <dd>if( !(x) ) goto label;
-<dt>O_INVOKE_LABEL
+<dt><br>O_INVOKE_LABEL
 <dd>GOSUB (Basic)
-<dt>O_LABEL_RETURN
+<dt><br>O_LABEL_RETURN
 <dd>RETURN (Basic)
 </dl>
 <br>The type passed into a CG routine is used by the back end as the type for the resulting node.&nbsp; If the node is an
@@ -701,9 +701,9 @@ convert the operands to TY_INT_4 before performing the addition.&nbsp; The resul
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>val
+<dt><br>val
 <dd>The integral value.
-<dt>type
+<dt><br>type
 <dd>An integral type.
 </dl>
 <h2 id="cg_name_CGInt64L_signed_64_val__cg_type_type_R"> cg_name CGInt64( signed_64 val, cg_type type ) </h2>
@@ -711,9 +711,9 @@ convert the operands to TY_INT_4 before performing the addition.&nbsp; The resul
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>val
+<dt><br>val
 <dd>The 64-bit integer value.
-<dt>type
+<dt><br>type
 <dd>An integral type.
 </dl>
 <h2 id="cg_name_CGFloatL_char_Tnum__cg_type_type_R"> cg_name CGFloat( char *num, cg_type type ) </h2>
@@ -721,9 +721,9 @@ convert the operands to TY_INT_4 before performing the addition.&nbsp; The resul
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>num
+<dt><br>num
 <dd>A NULL terminated E format string.&nbsp; (-1.23456E-102)
-<dt>type
+<dt><br>type
 <dd>A floating point type.
 </dl>
 <h2 id="cg_name_CGFENameL_cg_sym_handle_sym__cg_type_type_R"> cg_name CGFEName( cg_sym_handle sym, cg_type type ) </h2>
@@ -732,9 +732,9 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>The front end symbol.
-<dt>type
+<dt><br>type
 <dd>The type to be associated with the value of the symbol.
 </dl>
 <h2 id="cg_name_CGBackNameL_back_handle_bck__cg_type_type_R"> cg_name CGBackName( back_handle bck, cg_type type ) </h2>
@@ -742,9 +742,9 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>bck
+<dt><br>bck
 <dd>A back handle.
-<dt>type
+<dt><br>type
 <dd>The type to be associated with the<b> value</b> of the symbol.
 </dl>
 <h2 id="cg_name_CGTempNameL_temp_handle_temp__cg_type_type_R"> cg_name CGTempName( temp_handle temp, cg_type type ) </h2>
@@ -752,9 +752,9 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>temp
+<dt><br>temp
 <dd>A temp_handle.
-<dt>type
+<dt><br>type
 <dd>The type to be associated with the<b> value</b> of the symbol.
 </dl>
 <h1 id="Assignment_Operations"> Assignment Operations </h1>
@@ -763,11 +763,11 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>dest
+<dt><br>dest
 <dd>The destination address.
-<dt>src
+<dt><br>src
 <dd>The source value.
-<dt>type
+<dt><br>type
 <dd>The type to which the destination address points.
 </dl>
 <dl>
@@ -781,13 +781,13 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>op
+<dt><br>op
 <dd>The arithmetic operator to be used.
-<dt>dest
+<dt><br>dest
 <dd>The address of the destination.
-<dt>src
+<dt><br>src
 <dd>The value of the right hand side.
-<dt>type
+<dt><br>type
 <dd>The type to which the destination address points.
 </dl>
 <dl>
@@ -801,13 +801,13 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>op
+<dt><br>op
 <dd>The operator.
-<dt>dest
+<dt><br>dest
 <dd>The address of the destination
-<dt>src
+<dt><br>src
 <dd>The value of the increment.
-<dt>type
+<dt><br>type
 <dd>The type of the destination.
 </dl>
 <dl>
@@ -820,13 +820,13 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>op
+<dt><br>op
 <dd>The operator.
-<dt>left
+<dt><br>left
 <dd>The value of the left hand side.
-<dt>right
+<dt><br>right
 <dd>The value of the right hand side.
-<dt>type
+<dt><br>type
 <dd>The result type.
 </dl>
 <dl>
@@ -838,11 +838,11 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>op
+<dt><br>op
 <dd>The operator.
-<dt>name
+<dt><br>name
 <dd>The value of operand.
-<dt>type
+<dt><br>type
 <dd>The result type.
 </dl>
 <dl>
@@ -857,11 +857,11 @@ automatic variable or a parameter, CGAutoDecl or CGParmDecl must be called befor
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The address of the routine to call.
-<dt>type
+<dt><br>type
 <dd>The return type of the routine.
-<dt>aux_info
+<dt><br>aux_info
 <dd>A handle which the back end may passed to FEAuxInfo to determine the attributes of the call.
 </dl>
 <dl>
@@ -874,11 +874,11 @@ routine.&nbsp; Parameters should be added in right to left order, as defined by 
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>call
+<dt><br>call
 <dd>A call_handle.
-<dt>name
+<dt><br>name
 <dd>The value of the parameter.
-<dt>type
+<dt><br>type
 <dd>The type of the parameter.&nbsp; This type will be passed to FEParmType to determine the actual type to be used when passing
 the parameter.&nbsp; For instance, characters are usually passes as integers in C.
 </dl>
@@ -889,7 +889,7 @@ the function has no return value.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>call
+<dt><br>call
 <dd>A call_handle.
 </dl>
 <dl>
@@ -902,13 +902,13 @@ the function has no return value.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>op
+<dt><br>op
 <dd>The comparison operator.
-<dt>left
+<dt><br>left
 <dd>The value of the left hand side.
-<dt>right
+<dt><br>right
 <dd>The value of the right hand side.
-<dt>type
+<dt><br>type
 <dd>The type to which to convert the operands to before performing comparison.
 </dl>
 <dl>
@@ -921,11 +921,11 @@ the function has no return value.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>op
+<dt><br>op
 <dd>An operator.
-<dt>left
+<dt><br>left
 <dd>A TY_BOOLEAN or integral cg_name.
-<dt>right
+<dt><br>right
 <dd>A TY_BOOLEAN or integral cg_name, or NULL if op is O_FLOW_NOT.
 </dl>
 <dl>
@@ -937,13 +937,13 @@ the function has no return value.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sel
+<dt><br>sel
 <dd>A TY_BOOLEAN or integral cg_name used as the selector.
-<dt>n1
+<dt><br>n1
 <dd>The value to return if<b> sel</b> is non-zero.
-<dt>n2
+<dt><br>n2
 <dd>The value to return if<b> sel</b> is zero.
-<dt>type
+<dt><br>type
 <dd>The type to which convert the result.
 </dl>
 <dl>
@@ -955,12 +955,12 @@ the function has no return value.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>before
+<dt><br>before
 <dd>An arbitrary expression tree to be evaluated before<b> label</b> is called.&nbsp; This is used to assign values to statement
 function arguments, which are usually temporaries allocated with CGTemp.
-<dt>label
+<dt><br>label
 <dd>A label_handle to invoke via O_CALL_LABEL.
-<dt>after
+<dt><br>after
 <dd>An arbitrary expression tree to be evaluated after<b> label</b> is called.&nbsp; This is used to retrieve the statement function
 return value.
 </dl>
@@ -975,13 +975,13 @@ expr</b> is less than, equal to, or greater than zero.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>expr
+<dt><br>expr
 <dd>The selector value.
-<dt>lt
+<dt><br>lt
 <dd>A label_handle.
-<dt>eq
+<dt><br>eq
 <dd>A label_handle.
-<dt>gt
+<dt><br>gt
 <dd>A label_handle.
 </dl>
 <h2 id="void_CGControlL_cg_op_op__cg_name_expr__label_handle_lbl_R"> void CGControl( cg_op op, cg_name expr, label_handle lbl ) </h2>
@@ -989,11 +989,11 @@ expr</b> is less than, equal to, or greater than zero.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>op
+<dt><br>op
 <dd>a control flow operator.
-<dt>expr
+<dt><br>expr
 <dd>A TY_BOOLEAN expression if op is O_IF_TRUE or O_IF_FALSE.&nbsp; NULL otherwise.
-<dt>lbl
+<dt><br>lbl
 <dd>The target label.
 </dl>
 <h2 id="void_CGBigLabelL_back_handle_lbl_R"> void CGBigLabel( back_handle lbl ) </h2>
@@ -1002,7 +1002,7 @@ use this call unless you *really*, *really* need to.&nbsp; It kills a lot of opt
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>lbl
+<dt><br>lbl
 <dd>A back_handle.&nbsp; There must be a front end symbol associated with this back handle.
 </dl>
 <h2 id="void_CGBigGotoL_back_handle_value__int_level_R"> void CGBigGoto( back_handle value, int level ) </h2>
@@ -1010,9 +1010,9 @@ use this call unless you *really*, *really* need to.&nbsp; It kills a lot of opt
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>lbl
+<dt><br>lbl
 <dd>A back_handle.&nbsp; There must be a front end symbol associated with this back handle.
-<dt>level
+<dt><br>level
 <dd>The lexical level of the target label.
 </dl>
 <h1 id="Select_and_Switch_statements_"> Select and Switch statements. </h1>
@@ -1046,11 +1046,11 @@ case.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sel
+<dt><br>sel
 <dd>A sel_handle obtained from CGSelInit().
-<dt>lbl
+<dt><br>lbl
 <dd>The label to be associated with the case value.
-<dt>val
+<dt><br>val
 <dd>The case value.
 </dl>
 <h2 id="void_CGSelRangeL_sel_handle_s__signed_32_lo__signed_32_hi__label_handle_lbl_R"> void CGSelRange( sel_handle s, signed_32 lo, signed_32 hi, label_handle lbl ) </h2>
@@ -1059,13 +1059,13 @@ code, so lo and hi must have the same sign.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>s
+<dt><br>s
 <dd>A sel_handle obtained from CGSelInit().
-<dt>lo
+<dt><br>lo
 <dd>The lower bound of the case range.
-<dt>hi
+<dt><br>hi
 <dd>The upper bound of the case range.
-<dt>lbl
+<dt><br>lbl
 <dd>The label to be associated with the case value.
 </dl>
 <h2 id="void_CGSelOtherL_sel_handle_s__label_handle_lbl_R"> void CGSelOther( sel_handle s, label_handle lbl ) </h2>
@@ -1073,9 +1073,9 @@ code, so lo and hi must have the same sign.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>s
+<dt><br>s
 <dd>A sel_handle.
-<dt>lbl
+<dt><br>lbl
 <dd>The label to be associated with the otherwise case.
 </dl>
 <h2 id="void_CGSelectL_sel_handle_s__cg_name_expr_R"> void CGSelect( sel_handle s, cg_name expr ) </h2>
@@ -1084,9 +1084,9 @@ select statement.&nbsp; It invalidates the sel_handle.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>s
+<dt><br>s
 <dd>A sel_handle.
-<dt>expr
+<dt><br>expr
 <dd>The value we are selecting.
 </dl>
 <h2 id="void_CGSelectRestrictedL_sel_handle_s__cg_name_expr__cg_switch_type_allowed_R"> void CGSelectRestricted( sel_handle s, cg_name expr, cg_switch_type allowed ) </h2>
@@ -1095,11 +1095,11 @@ be considered when determining how to produce code.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>s
+<dt><br>s
 <dd>A sel_handle.
-<dt>expr
+<dt><br>expr
 <dd>The value we are selecting.
-<dt>allowed
+<dt><br>allowed
 <dd>The allowed methods of generating code.&nbsp; Must be a combination (non-empty) of the following bits:
 <ul style="list-style-type:none;">
 <li>CG_SWITCH_SCAN
@@ -1115,9 +1115,9 @@ call.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The value of the return value, or NULL.
-<dt>type
+<dt><br>type
 <dd>The type of the return value.&nbsp; Use TY_INTEGER for void functions.
 </dl>
 <h2 id="cg_name_CGEvalL_cg_name_name_R"> cg_name CGEval( cg_name name ) </h2>
@@ -1127,7 +1127,7 @@ This usually used to force the order of parameter evaluation.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The tree to be evaluated.
 </dl>
 <dl>
@@ -1141,7 +1141,7 @@ but must be passed to this routine to cause the tree to be generated.&nbsp; This
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The cg_name to be generated/discarded.
 </dl>
 <h2 id="void_CGTrashL_cg_name_name_R"> void CGTrash( cg_name name ) </h2>
@@ -1152,7 +1152,7 @@ invalid.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>A cg_name.
 </dl>
 <dl>
@@ -1164,7 +1164,7 @@ invalid.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The cg_name to be duplicated.
 </dl>
 <dl>
@@ -1178,13 +1178,13 @@ the destination of an assignment operation.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The address of the integral variable containing the bit field.
-<dt>start
+<dt><br>start
 <dd>The position of the least significant bit of the bit field.&nbsp; 0 indicates the least significant bit of the host data type.
-<dt>len
+<dt><br>len
 <dd>The length of the bit field in bits.
-<dt>type
+<dt><br>type
 <dd>The integral type of the value containing the bit field.
 </dl>
 <dl>
@@ -1204,7 +1204,7 @@ each time that address is used.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>name
+<dt><br>name
 <dd>The address of the volatile location.
 </dl>
 <dl>
@@ -1218,10 +1218,10 @@ of nodes in the instruction stream.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>func
+<dt><br>func
 <dd>This is a pointer to a function which is compatible with the C type &quot;void (*)(void *)&quot;.&nbsp; This function will
 be called with the second parameter to this function as it's only parameter sometime during the execution of the CGDone call.
-<dt>ptr
+<dt><br>ptr
 <dd>This will be a parameter to the function given as the first parameter.
 </dl>
 <h2 id="cg_name_CGPatchNodeL_patch_handle_hdl__cg_type_type_R"> cg_name CGPatchNode( patch_handle hdl, cg_type type ) </h2>
@@ -1230,9 +1230,9 @@ call by means of a BEPatchInteger() call.&nbsp; It is an error to insert a patch
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>hdl
+<dt><br>hdl
 <dd>A handle for a patch allocated with BEPatch().
-<dt>type
+<dt><br>type
 <dd>The actual type of the node.&nbsp; Must be an integer type.
 </dl>
 <h1 id="Data_Generation"> Data Generation </h1>
@@ -1243,7 +1243,7 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>bck
+<dt><br>bck
 <dd>A back_handle.
 </dl>
 <h2 id="void_DGBackPtrL_back_handle_bck__segment_id_segid__signed_32_offset__cg_type_type_R"> void DGBackPtr( back_handle bck, segment_id segid, signed_32 offset, cg_type type ) </h2>
@@ -1251,13 +1251,13 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>bck
+<dt><br>bck
 <dd>A back_handle.
-<dt>segid
+<dt><br>segid
 <dd>The segment_id of the segment in which the label for<b> bck</b> will be defined if it has not already been passed to DGLabel.
-<dt>offset
+<dt><br>offset
 <dd>A value to be added to the generated pointer value.
-<dt>type
+<dt><br>type
 <dd>The pointer type to be used.
 </dl>
 <h2 id="void_DGFEPtrL_cg_sym_handle_sym__cg_type_type__signed_32_offset_R"> void DGFEPtr( cg_sym_handle sym, cg_type type, signed_32 offset ) </h2>
@@ -1265,11 +1265,11 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>A cg_sym_handle.
-<dt>type
+<dt><br>type
 <dd>The pointer type to be used.
-<dt>offset
+<dt><br>offset
 <dd>A value to be added to the generated pointer value.
 </dl>
 <h2 id="void_DGIntegerL_unsigned_32_value__cg_type_type_R"> void DGInteger( unsigned_32 value, cg_type type ) </h2>
@@ -1277,9 +1277,9 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>value
+<dt><br>value
 <dd>An integral value.
-<dt>type
+<dt><br>type
 <dd>The integral type to be used.
 </dl>
 <h2 id="void_DGInteger64L_unsigned_64_value__cg_type_type_R"> void DGInteger64( unsigned_64 value, cg_type type ) </h2>
@@ -1287,9 +1287,9 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>value
+<dt><br>value
 <dd>An 64-bit integer value.
-<dt>type
+<dt><br>type
 <dd>The integral type to be used.
 </dl>
 <h2 id="void_DGFloatL_char_Tvalue__cg_type_type_R"> void DGFloat( char *value, cg_type type ) </h2>
@@ -1297,9 +1297,9 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>value
+<dt><br>value
 <dd>An E format string (ie:&nbsp; 1.2345e-134)
-<dt>type
+<dt><br>type
 <dd>The floating point type to be used.
 </dl>
 <h2 id="void_DGCharL_char_value_R"> void DGChar( char value ) </h2>
@@ -1307,7 +1307,7 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>value
+<dt><br>value
 <dd>A character value.
 </dl>
 <h2 id="void_DGStringL_char_Tvalue__uint_len_R"> void DGString( char *value, uint len ) </h2>
@@ -1315,9 +1315,9 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>value
+<dt><br>value
 <dd>Pointer to the characters to put into the segment.&nbsp; It is not necessarily a null terminated string.
-<dt>len
+<dt><br>len
 <dd>The length of the string.
 </dl>
 <h2 id="void_DGBytesL_unsigned_32_len__byte_Tsrc_R"> void DGBytes( unsigned_32 len, byte *src ) </h2>
@@ -1325,9 +1325,9 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>src
+<dt><br>src
 <dd>Pointer to the data.
-<dt>len
+<dt><br>len
 <dd>The length of the byte stream.
 </dl>
 <h2 id="void_DGIBytesL_unsigned_32_len__byte_pat_R"> void DGIBytes( unsigned_32 len, byte pat ) </h2>
@@ -1335,9 +1335,9 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>pat
+<dt><br>pat
 <dd>The pattern byte.
-<dt>len
+<dt><br>len
 <dd>The number of times to repeat the byte.
 </dl>
 <h2 id="void_DGUBytesL_unsigned_32_len_R"> void DGUBytes( unsigned_32 len ) </h2>
@@ -1345,7 +1345,7 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>len
+<dt><br>len
 <dd>The size by which to increase the segment.
 </dl>
 <h2 id="void_DGAlignL_uint_align_R"> void DGAlign( uint align ) </h2>
@@ -1353,7 +1353,7 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>align
+<dt><br>align
 <dd>The desired alignment boundary.
 </dl>
 <h2 id="unsigned_32_DGSeekL_unsigned_32_where_R"> unsigned_32 DGSeek( unsigned_32 where ) </h2>
@@ -1361,7 +1361,7 @@ current location by the size of the generated object.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>where
+<dt><br>where
 <dd>The location within the segment.
 </dl>
 <dl>
@@ -1387,7 +1387,7 @@ should maintain a state stack.&nbsp; It is up to the front end to prevent infini
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>The cg_sym_handle of the function to be generated.
 </dl>
 <h2 id="back_handle_FEBackL_cg_sym_handle_sym_R"> back_handle FEBack( cg_sym_handle sym ) </h2>
@@ -1395,7 +1395,7 @@ should maintain a state stack.&nbsp; It is up to the front end to prevent infini
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>
 </dl>
 <dl>
@@ -1409,7 +1409,7 @@ returned, the back end assumes that they are both defined in the same (unknown) 
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>A cg_sym_handle.
 </dl>
 <dl>
@@ -1443,17 +1443,17 @@ the level of the main program.&nbsp; Each nested procedures adds an additional l
 <dl>
 <dt>Returns
 <dd>A various kind in dependency on request parameter.
-<dt><b><i>Request parameter</i></b>
+<dt><br><b><i>Request parameter</i></b>
 <dd><b><i>Returns</i></b>
-<dt>EXTN_BASENAME
+<dt><br>EXTN_BASENAME
 <dd>NULL terminated character string which is the name of sym.&nbsp; A null string should be returned if the symbol has no name.
 &nbsp;NULL should never be returned.
-<dt>EXTN_PATTERN
+<dt><br>EXTN_PATTERN
 <dd>NULL terminated character string which is the pattern for symbol name decoration.&nbsp; '*' is replaced by symbol name.&nbsp;
 '^' is replaced by its upper case equivalent.&nbsp; '!' is replaced by its lower case equivalent.&nbsp; '#' is replaced by
 '@nnn' where nnn is decimal number representing total size of all function parameters.&nbsp; If an '\' is present, the character
 following is used literally.
-<dt>EXTN_PRMSIZE
+<dt><br>EXTN_PRMSIZE
 <dd>Returns int value which represent size of all parameters when symbol is function.
 </dl>
 <h2 id="cg_type_FEParmTypeL_cg_sym_handle_func__cg_sym_handle_parm__cg_type_type_R"> cg_type FEParmType( cg_sym_handle func, cg_sym_handle parm, cg_type type ) </h2>
@@ -1472,7 +1472,7 @@ type.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>size
+<dt><br>size
 <dd>is the amount of memory required
 </dl>
 <dl>
@@ -1489,38 +1489,38 @@ type.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>A cg_sym_handle.
 </dl>
 <dl>
 <dt><b><i>Return value</i></b>
 <dd><b><i> Definition</i></b>
-<dt>FE_PROC
+<dt><br>FE_PROC
 <dd>A procedure.
-<dt>FE_STATIC
+<dt><br>FE_STATIC
 <dd>A static or external symbol.
-<dt>FE_GLOBAL
+<dt><br>FE_GLOBAL
 <dd>Is a global (extern) symbol.
-<dt>FE_IMPORT
+<dt><br>FE_IMPORT
 <dd>Needs to be imported.
-<dt>FE_CONSTANT
+<dt><br>FE_CONSTANT
 <dd>The symbol is read only.
-<dt>FE_MEMORY
+<dt><br>FE_MEMORY
 <dd>This automatic variable needs a memory location.
-<dt>FE_VISIBLE
+<dt><br>FE_VISIBLE
 <dd>Accessible outside this procedure?
-<dt>FE_NOALIAS
+<dt><br>FE_NOALIAS
 <dd>No pointers point to this symbol.
-<dt>FE_UNIQUE
+<dt><br>FE_UNIQUE
 <dd>This symbol should have an address which is different from all other symbols with the FE_UNIQUE attribute.
-<dt>FE_COMMON
+<dt><br>FE_COMMON
 <dd>There might be multiple definitions of this symbol in a program, and it should be generated in such a way that all versions
 of the symbol are merged into one copy by the linker.
-<dt>FE_ADDR_TAKEN
+<dt><br>FE_ADDR_TAKEN
 <dd>The symbol has had it's address taken somewhere in the program (not necessarally visible to the code generator).
-<dt>FE_VOLATILE
+<dt><br>FE_VOLATILE
 <dd>The symbol is &quot;volatile&quot; (in the C language sense).
-<dt>FE_INTERNAL
+<dt><br>FE_INTERNAL
 <dd>The symbol is not at file scope.
 </dl>
 <h2 id="void_FEMessageL_msg_class_msg__void_Textra_R"> void FEMessage( msg_class msg, void *extra ) </h2>
@@ -1528,53 +1528,53 @@ of the symbol are merged into one copy by the linker.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>msg
+<dt><br>msg
 <dd>Defined below.
-<dt>extra
+<dt><br>extra
 <dd>Extra information.&nbsp; The type and meaning depends on the value of<b> msg</b> and is indicated below.
 </dl>
 <dl>
 <dt>MSG_INFO_FILE 
 <dd>Informational message about file.&nbsp; extra (void) is ignored.
-<dt>MSG_CODE_SIZE
+<dt><br>MSG_CODE_SIZE
 <dd>Code size.&nbsp; Extra (int) is the size of the generated code.
-<dt>MSG_DATA_SIZE
+<dt><br>MSG_DATA_SIZE
 <dd>Data size.&nbsp; Extra (int) is the size of the generated data.
-<dt>MSG_ERROR
+<dt><br>MSG_ERROR
 <dd>A back end error message.&nbsp; Extra (char *) is the error message.
-<dt>MSG_FATAL
+<dt><br>MSG_FATAL
 <dd>A fatal code generator error.&nbsp; Extra (char *) is the reason for the fatal error.&nbsp; The front end should issue this
 message and exit immediately to the system.
-<dt>MSG_INFO_PROC
+<dt><br>MSG_INFO_PROC
 <dd>Informational message about current procedure.&nbsp; Extra (char *) is a message.
-<dt>MSG_BAD_PARM_REGISTER
+<dt><br>MSG_BAD_PARM_REGISTER
 <dd>Invalid parameter register returned from FEAuxInfo.&nbsp; Extra (int) is position of the offending parameter.
-<dt>MSG_BAD_RETURN_REGISTER
+<dt><br>MSG_BAD_RETURN_REGISTER
 <dd>Invalid return register returned from FEAuxInfo.&nbsp; Extra (aux_handle) is the offending aux_handle.
-<dt>MSG_REGALLOC_DIED
+<dt><br>MSG_REGALLOC_DIED
 <dd>The register alloc ran out of memory.&nbsp; Extra (cg_sym_handle) is the procedure which was not fully optimized.
-<dt>MSG_SCOREBOARD_DIED
+<dt><br>MSG_SCOREBOARD_DIED
 <dd>The register scoreboard ran out of memory.&nbsp; Extra (cg_sym_handle) is the procedure which was not fully optimized.
-<dt>MSG_PEEPHOLE_FLUSHED
+<dt><br>MSG_PEEPHOLE_FLUSHED
 <dd>Peep hole optimizer flushed due to lack of memory.&nbsp; (void)
-<dt>MSG_BACK_END_ERROR
+<dt><br>MSG_BACK_END_ERROR
 <dd>BAD NEWS!&nbsp; Internal compiler error.&nbsp; Extra (int) is an internal error number.
-<dt>MSG_BAD_SAVE
+<dt><br>MSG_BAD_SAVE
 <dd>Invalid register modification information return from FEAuxInfo.&nbsp; Extra (aux_handle) is the offending aux_handle.
-<dt>MSG_WANT_MORE_DATA
+<dt><br>MSG_WANT_MORE_DATA
 <dd>The back end wants more data space.&nbsp; Extra (int) is amount of additional memory needed to run.&nbsp; (DOS real mode hosts
 only).
-<dt>MSG_BLIP
+<dt><br>MSG_BLIP
 <dd>Blip.&nbsp; Let the world know we're still alive by printing a dot on the screen.&nbsp; This is called approximately every
 4 seconds during code generation.&nbsp; (void)
-<dt>MSG_BAD_LINKAGE
+<dt><br>MSG_BAD_LINKAGE
 <dd>Cannot resolve linkage conventions.&nbsp; 370 only.&nbsp; (sym)
-<dt>MSG_SCHEDULER_DIED
+<dt><br>MSG_SCHEDULER_DIED
 <dd>Instruction scheduler ran out of memory.&nbsp; Extra (cg_sym_handle) is the procedure which was not fully optimized.
-<dt>MSG_NO_SEG_REGS
+<dt><br>MSG_NO_SEG_REGS
 <dd>(Only occurs in the x86 version).&nbsp; The cg_switches did not allow any segment registers to float, but the user has requested
 a far pointer indirection.&nbsp; Extra (cg_sym_handle) is the procedure which contained the far pointer usage.
-<dt>MSG_SYMBOL_TOO_LONG
+<dt><br>MSG_SYMBOL_TOO_LONG
 <dd>Given symbol is too long and is truncated to maximum permited length for current module output format.&nbsp; Extra (cg_sym_handle)
 is the symbol which was truncated.
 </dl>
@@ -1583,69 +1583,69 @@ is the symbol which was truncated.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>extra
+<dt><br>extra
 <dd>Extra information.&nbsp; Its type and meaning is determined by the value of class.
-<dt>class
+<dt><br>class
 <dd>Defined below.
 </dl>
 <dl>
 <dt><b><i>Parameters</i></b>
 <dd><b><i>Return Value</i></b>
-<dt>( cg_sym_handle, AUX_LOOKUP )
+<dt><br>( cg_sym_handle, AUX_LOOKUP )
 <dd>aux_handle - given a cg_sym_handle, return an aux_handle.
-<dt>( aux_handle, CALL_BYTES )
+<dt><br>( aux_handle, CALL_BYTES )
 <dd>byte_seq * - A pointer to bytes to be generated instead of a call, or NULL if a call is to be generated.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct byte_seq {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct byte_seq {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; length;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; data&#91; 1 &#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } byte_seq;</tt>
-<dt>( aux_handle, CALL_CLASS )
+<dt><br>( aux_handle, CALL_CLASS )
 <dd>call_class * - returns call_class of the given aux_handle.&nbsp; See definitions below.
-<dt>( short, FREE_SEGMENT )
+<dt><br>( short, FREE_SEGMENT )
 <dd>short - A free segment value which is free memory for the code generator to use.&nbsp; The first word at segment:0 is the
 size of the free memory in bytes.&nbsp; (DOS real mode host only)
-<dt>( NULL, OBJECT_FILE_NAME )
+<dt><br>( NULL, OBJECT_FILE_NAME )
 <dd>char * - The name of the object file to be generated.&nbsp; 
-<dt>( aux_handle, PARM_REGS )
+<dt><br>( aux_handle, PARM_REGS )
 <dd>hw_reg_set&#91;&#93; - The set of register to be used as parameters.
-<dt>( aux_handle, RETURN_REG )
+<dt><br>( aux_handle, RETURN_REG )
 <dd>hw_reg_set * - The return register.&nbsp; This is only called if the routine is declared to have the SPECIAL_RETURN call_class.
-<dt>( NULL, REVISION_NUMBER )
+<dt><br>( NULL, REVISION_NUMBER )
 <dd>int - Front end revision number.&nbsp; Must return II_REVISION.
-<dt>( aux_handle, SAVE_REGS )
+<dt><br>( aux_handle, SAVE_REGS )
 <dd>hw_reg_set * - Registers which are preserved by the routine.
-<dt>( cg_sym_handle, SHADOW_SYMBOL )
+<dt><br>( cg_sym_handle, SHADOW_SYMBOL )
 <dd>cg_sym_handle - An alternate handle for a symbol.&nbsp; Required for FORTRAN.&nbsp; Usually implemented by turning on the
 LSB of a pointer or MSB of an integer.
-<dt>( NULL, SOURCE_NAME )
+<dt><br>( NULL, SOURCE_NAME )
 <dd>char * - The name of the source file to be put into the object file.
-<dt>( cg_sym_handle, TEMP_LOC_NAME )
+<dt><br>( cg_sym_handle, TEMP_LOC_NAME )
 <dd>Return one of TEMP_LOC_NO, TEMP_LOC_YES, TEMP_LOC_QUIT.&nbsp; After the back end has assigned stack locations to those temporaries
 which were not placed in registers, it begins to call FEAuxInfo with this request and passes in the cg_sym_handle for each
 of those temporaries.&nbsp; If the front end responds with TEMP_LOC_QUIT the back end will stop making TEMP_LOC_NAME requests.
 &nbsp;If the front end responds with TEMP_LOC_YES the back end will then perform a TEMP_LOC_TELL request (see next).&nbsp;
 If the front end returns TEMP_LOC_NO the back end moves onto the next cg_sym_handle in its list.
-<dt>( int, TEMP_LOC_TELL )
+<dt><br>( int, TEMP_LOC_TELL )
 <dd>Returns nothing.&nbsp; The 'int' value passed in is the relative position on the stack for the temporary identified by the
 cg_sym_handle passed in from the previous TEMP_LOC_NAME.&nbsp; The value for an individual temporary has no meaning, but the
 difference between two of the values is the number of bytes between the addresses of the temporaries on the stack.
-<dt>( void *, NEXT_DEPENDENCY )
+<dt><br>( void *, NEXT_DEPENDENCY )
 <dd>Returns the handle of the next dependency file for which information is available.&nbsp; To start the list off, the back end
 passes in NULL for the dependency file handle.
-<dt>( void *, DEPENDENCY_TIMESTAMP )
+<dt><br>( void *, DEPENDENCY_TIMESTAMP )
 <dd>Given the dependency file handle from the last NEXT_DEPENDENCY request, return pointer to an unsigned long containing a timestamp
 value for the dependency file.
-<dt>( void *, DEPENDENCY_NAME )
+<dt><br>( void *, DEPENDENCY_NAME )
 <dd>Given the dependency file handle from the last NEXT_DEPENDENCY request, return a pointer to a string containing the name for
 the dependency file.
-<dt>( NULL, SOURCE_LANGUAGE )
+<dt><br>( NULL, SOURCE_LANGUAGE )
 <dd>Returns a pointer to a string which identifies the source language of the pointer.&nbsp; E.g.&nbsp; &quot;C&quot; for C, &quot;FORTRAN&quot;
 for FORTRAN, &quot;CPP&quot; for C++.
-<dt>( cg_sym_handle, DEFAULT_IMPORT_RESOLVE )
+<dt><br>( cg_sym_handle, DEFAULT_IMPORT_RESOLVE )
 <dd>Only called for imported symbols.&nbsp; Returns a cg_sym_handle for another imported symbol which the reference should be
 resolved to if certain conditions are met (see IMPORT_TYPE request).&nbsp; If NULL or the original cg_sym_handle is returned,
 there is no default import resolution symbol.
-<dt>( int, UNROLL_COUNT )
+<dt><br>( int, UNROLL_COUNT )
 <dd>Returns a user-specified unroll count, or 0 if the user did not specify an unroll count.&nbsp; The parameter is the nesting
 level of the loop for which the request is being made.&nbsp; Loops which are not contained inside of other loops are nesting
 level 1.&nbsp; If this function returns a non-zero value, the loop in question will be unrolled that many times (there will
@@ -1654,36 +1654,36 @@ be (count + 1) copies of the body).
 <dl>
 <dt><b><i>x86 Parameters</i></b>
 <dd><b><i>Return value</i></b>
-<dt>( NULL, CODE_GROUP )
+<dt><br>( NULL, CODE_GROUP )
 <dd>char * - The name of the code group.
-<dt>( aux_handle, STRETURN_REG )
+<dt><br>( aux_handle, STRETURN_REG )
 <dd>hw_reg_set * - The register which points to a structure return value.&nbsp; Only called if the routine has the SPECIAL_STRUCT_RETURN
 attribute.
-<dt>( void *, NEXT_IMPORT )
+<dt><br>( void *, NEXT_IMPORT )
 <dd>void * (See notes at end) - A handle for the next symbol to generate a reference to in the object file.
-<dt>( void*, IMPORT_NAME )
+<dt><br>( void*, IMPORT_NAME )
 <dd>char * - The EXTDEF name to generate given a handle
-<dt>( void *, NEXT_IMPORT_S )
+<dt><br>( void *, NEXT_IMPORT_S )
 <dd>void * (See notes at end) - A handle for the next symbol to generate a reference to in the object file.
-<dt>( void*, IMPORT_NAME_S )
+<dt><br>( void*, IMPORT_NAME_S )
 <dd>Returns a cg_sym_handle.&nbsp; The EXTDEF name symbol reference to generate given a handle.
-<dt>( void*, NEXT_LIBRARY )
+<dt><br>( void*, NEXT_LIBRARY )
 <dd>void * (See notes at end) - Handle for the next library required
-<dt>( void*, LIBRARY_NAME )
+<dt><br>( void*, LIBRARY_NAME )
 <dd>char * - The library name to generate given a handle
-<dt>( NULL, DATA_GROUP )
+<dt><br>( NULL, DATA_GROUP )
 <dd>char * - Used to name DGROUP exactly.&nbsp; NULL means use no group at all.
-<dt>( segment_id, CLASS_NAME )
+<dt><br>( segment_id, CLASS_NAME )
 <dd>NULL - Used to name the class of a segment.
-<dt>( NULL, USED_8087 )
+<dt><br>( NULL, USED_8087 )
 <dd>NULL - Indicate that 8087 instructions were generated.
-<dt>( NULL, STACK_SIZE_8087 )
+<dt><br>( NULL, STACK_SIZE_8087 )
 <dd>int - How many 8087 registers are reserved for stack.
-<dt>( NULL, CODE_LABEL_ALIGNMENT )
+<dt><br>( NULL, CODE_LABEL_ALIGNMENT )
 <dd>char * - An array x, such that x&#91;i&#93; is the label alignment requirements for labels nested within i loops.
-<dt>( NULL, PROEPI_DATA_SIZE )
+<dt><br>( NULL, PROEPI_DATA_SIZE )
 <dd>int - How much stack is reserved for the prolog hook routine.
-<dt>( cg_sym_handle, IMPORT_TYPE )
+<dt><br>( cg_sym_handle, IMPORT_TYPE )
 <dd>Returns IMPORT_IS_WEAK, IMPORT_IS_LAZY, IMPORT_IS_CONDITIONAL.&nbsp; If the DEFAULT_IMPORT_RESOLVE request returned a default
 resolution symbol the back end then performs an IMPORT_TYPE request to determine the type of the resolution.&nbsp; IMPORT_IS_WEAK
 generates a weak import (the symbol is not searched for in libraries).&nbsp; IMPORT_IS_LAZY generates a lazy import (the symbol
@@ -1691,26 +1691,26 @@ is searched for in libraries).&nbsp; IMPORT_IS_CONDITIONAL is used for eliminati
 symbol resolution is used if none of the conditional symbols are referenced/defined by the program.&nbsp; The back end is
 informed of the list of conditional symbols by the following three aux requests.&nbsp; IMPORT_IS_CONDITIONAL_PURE is used
 for eliminating unused pure virtual functions.
-<dt>( cg_sym_handle, CONDITIONAL_IMPORT )
+<dt><br>( cg_sym_handle, CONDITIONAL_IMPORT )
 <dd>Returns void *.&nbsp; Once the back end determines that it has a conditional import, it performs this request to get a conditional
 list handle which is the head of the list of conditional symbols.
-<dt>( void *, CONDITIONAL_SYMBOL )
+<dt><br>( void *, CONDITIONAL_SYMBOL )
 <dd>Returns a cg_sym_handle.&nbsp; Give an conditional list handle, return the front end symbol associated with it.
-<dt>( void *, NEXT_CONDITIONAL )
+<dt><br>( void *, NEXT_CONDITIONAL )
 <dd>Given an conditional list handle, return the next conditional list handle.&nbsp; Return NULL at the end of the list.
-<dt>( aux_handle, VIRT_FUNC_REFERENCE )
+<dt><br>( aux_handle, VIRT_FUNC_REFERENCE )
 <dd>Returns void *.&nbsp; When performing an indirect function call, the back end invokes FEAuxInfo passing the aux_handle supplied
 with the CGInitCall.&nbsp; If the indirect call is referencing a C++ virtual function, the front end should return a magic
 cookie which is the head of a list of virtual functions that might be invoked by this call.&nbsp; If it is not a virtual function
 invocation, return NULL.
-<dt>( void *, VIRT_FUNC_NEXT_REFERENCE )
+<dt><br>( void *, VIRT_FUNC_NEXT_REFERENCE )
 <dd>Returns void *.&nbsp; Given the magic cookie returned by the VIRT_FUNC_REFERENCE or a previous VIRT_FUNC_NEXT_REFRENCE, return
 the next magic cookie in the list of virtual functions that might be refrenced from this indirect call.&nbsp; Return NULL
 if at the end of the list.
-<dt>( void *, VIRT_FUNC_SYM )
+<dt><br>( void *, VIRT_FUNC_SYM )
 <dd>Returns cg_sym_handle.&nbsp; Given a magic cookie from a VIRT_FUNC_REFERENCE or VIRT_FUNC_NEXT_REFERENCE, return the cg_sym_handle
 for that entry in the list of virtual functions that might be invoked.
-<dt>( segment_id, PEGGED_REGISTER )
+<dt><br>( segment_id, PEGGED_REGISTER )
 <dd>Returns a pointer at a hw_reg_set or NULL.&nbsp; If the pointer is non-NULL and the hw_reg_set is not EMPTY, the hw_reg_set
 will indicate a segment register that is pegged (pointing) to the given segment_id.&nbsp; The code generator will use this
 segment register in any references to objects in the segment.&nbsp; If the pointer is NULL or the hw_reg_set is EMPTY, the
@@ -1720,65 +1720,65 @@ one.
 <dl>
 <dt><b><i>Call Class</i></b>
 <dd><b><i>Meaning</i></b> 
-<dt>REVERSE_PARMS
+<dt><br>REVERSE_PARMS
 <dd>Reverse the parameter list.
-<dt>SUICIDAL
+<dt><br>SUICIDAL
 <dd>Routine never returns.
-<dt>PARMS_BY_ADDRESS
+<dt><br>PARMS_BY_ADDRESS
 <dd>Pass parameters by reference.
-<dt>MAKE_CALL_INLINE
+<dt><br>MAKE_CALL_INLINE
 <dd>Call should be inline.&nbsp; FEGenProc will be called for code sequence when required.
 </dl>
 <dl>
 <dt><b><i>x86 Call Class</i></b>
 <dd><b><i>Meaning</i></b>
-<dt>FAR
+<dt><br>FAR
 <dd>Does routine require a far call/return.
-<dt>LOAD_DS_ON_CALL
+<dt><br>LOAD_DS_ON_CALL
 <dd>Load DS from DGROUP prior to call.
-<dt>CALLER_POPS
+<dt><br>CALLER_POPS
 <dd>Caller pops/removes parms from the stack.
-<dt>ROUTINE_RETURN
+<dt><br>ROUTINE_RETURN
 <dd>Routine allocates structure return memory.
-<dt>SPECIAL_RETURN
+<dt><br>SPECIAL_RETURN
 <dd>Routine has non-default return register.
-<dt>NO_MEMORY_CHANGED
+<dt><br>NO_MEMORY_CHANGED
 <dd>Routine modifies no visible statics.
-<dt>NO_MEMORY_READ
+<dt><br>NO_MEMORY_READ
 <dd>Routine reads no visible statics.
-<dt>MODIFY_EXACT
+<dt><br>MODIFY_EXACT
 <dd>Routine modifies no parameter registers.
-<dt>SPECIAL_STRUCT_RETURN
+<dt><br>SPECIAL_STRUCT_RETURN
 <dd>Routine has special struct return register.
-<dt>NO_STRUCT_REG_RETURNS
+<dt><br>NO_STRUCT_REG_RETURNS
 <dd>Pass 2/4/8 byte structs on stack, as opposed to registers.
-<dt>NO_FLOAT_REG_RETURNS
+<dt><br>NO_FLOAT_REG_RETURNS
 <dd>Return floats as structs.
-<dt>INTERRUPT
+<dt><br>INTERRUPT
 <dd>Routine is an interrupt routine.
-<dt>NO_8087_RETURNS
+<dt><br>NO_8087_RETURNS
 <dd>No return values in the 8087.
-<dt>LOAD_DS_ON_ENTRY
+<dt><br>LOAD_DS_ON_ENTRY
 <dd>Load ds with dgroup on entry.
-<dt>DLL_EXPORT
+<dt><br>DLL_EXPORT
 <dd>Is routine an OS/2 export symbol?
-<dt>FAT_WINDOWS_PROLOG
+<dt><br>FAT_WINDOWS_PROLOG
 <dd>Generate the real mode windows prolog code.
-<dt>GENERATE_STACK_FRAME
+<dt><br>GENERATE_STACK_FRAME
 <dd>Always generate a traceable prolog.
-<dt>EMIT_FUNCTION_NAME
+<dt><br>EMIT_FUNCTION_NAME
 <dd>Emit the function name in front of the function in the code segment.
-<dt>GROW_STACK
+<dt><br>GROW_STACK
 <dd>Emit a call to grow the stack on entry
-<dt>PROLOG_HOOKS
+<dt><br>PROLOG_HOOKS
 <dd>Generate a prolog hook call.
-<dt>EPILOG_HOOKS
+<dt><br>EPILOG_HOOKS
 <dd>Generate an epilog hook call.
-<dt>THUNK_PROLOG
+<dt><br>THUNK_PROLOG
 <dd>Generate a thunking prolog for routines calling 16 bit code.
-<dt>FAR16_CALL
+<dt><br>FAR16_CALL
 <dd>Performs a 16:16 call in the 386 compiler.
-<dt>TOUCH_STACK
+<dt><br>TOUCH_STACK
 <dd>Certain people (who shall remain nameless) have implemented an operating system (which shall remain nameless) that can't be
 bothered figuring out whether a page reference is in the stack or not.&nbsp; This attribute forces the first reference to
 the stack (after a routine prologue has grown it) to be through the SS register.
@@ -1790,7 +1790,7 @@ the stack (after a routine prologue has grown it) to be through the SS register.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>no
+<dt><br>no
 <dd>Is the current source line number.
 </dl>
 <h2 id="void_DBModSymL_cg_sym_handle_sym__cg_type_indirect_R"> void DBModSym( cg_sym_handle sym, cg_type indirect ) </h2>
@@ -1798,9 +1798,9 @@ the stack (after a routine prologue has grown it) to be through the SS register.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>is a front end symbol handle.
-<dt>indirect
+<dt><br>indirect
 <dd>is the type of indirection needed to obtain the value
 </dl>
 <h2 id="void_DBObjectL_dbg_type_tipe__dbg_loc_loc_R"> void DBObject( dbg_type tipe, dbg_loc loc ) </h2>
@@ -1809,9 +1809,9 @@ object being manipulated.&nbsp; This function may only be done after the DBModSy
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>tipe
+<dt><br>tipe
 <dd>is the debug type of the class that the function is a member of.
-<dt>loc
+<dt><br>loc
 <dd>is a location expression that evaluates to the address of the object being manipulated by the function (the contents of the
 'this' pointer in C++).&nbsp; This parameter is NULL if the routine is a static member function.
 </dl>
@@ -1824,11 +1824,11 @@ an aribitrary sequence of operations to locate the storage for the symbol.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>sym
+<dt><br>sym
 <dd>is a front end symbol handle.
-<dt>loc
+<dt><br>loc
 <dd>the location expression which is evaluated by the debugger to locate the lvalue of the symbol.
-<dt>scoped
+<dt><br>scoped
 <dd>whether the symbol is file scoped or not.
 </dl>
 <h2 id="void_DBBegBlockLR"> void DBBegBlock() </h2>
@@ -1871,13 +1871,13 @@ assume the the address of the base of the structure has already been pushed onto
 <dl>
 <dt><b><i>Attribute</i></b>
 <dd><b><i>Definition</i></b>
-<dt>FIELD_ATTR_INTERNAL
+<dt><br>FIELD_ATTR_INTERNAL
 <dd>the field is internally generated by the compiler and would not be normally visible to the user.
-<dt>FIELD_ATTR_PUBLIC
+<dt><br>FIELD_ATTR_PUBLIC
 <dd>the field has the C++ 'public' attribute.
-<dt>FIELD_ATTR_PROTECTED
+<dt><br>FIELD_ATTR_PROTECTED
 <dd>the field has the C++ 'protected' attribute.
-<dt>FIELD_ATTR_PRIVATE
+<dt><br>FIELD_ATTR_PRIVATE
 <dd>the field has the C++ 'private' attribute.
 </dl>
 <br>If the field being described is _not_ a bit field, the 'len' parameter should be set to zero.
@@ -1886,11 +1886,11 @@ assume the the address of the base of the structure has already been pushed onto
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt>st
+<dt><br>st
 <dd>the dbg_struct handle for the structure currently being defined.
-<dt>inherit
+<dt><br>inherit
 <dd>the dbg_type of a previously defined structure which is being inherited.
-<dt>adjust
+<dt><br>adjust
 <dd>a location expression which evaluates to a value which is the amount to adjust the field offsets by in the inherited structure
 to access them in the current structure.&nbsp; The base address of the symbol associated with the structure type is pushed
 onto the location expression stack before the expression is evaluated.
@@ -1941,23 +1941,23 @@ at run-time.&nbsp; The structure contains the array low bound (type<b> lo_bound_
 <dl>
 <dt><b><i>Operation</i></b>
 <dd><b><i>Definition</i></b>
-<dt>DB_OP_POINTS
+<dt><br>DB_OP_POINTS
 <dd>take the top of the expression stack and use it as the address in an indirection operation.&nbsp; The result type of the operation
 is given by the 'other' parameter which must be a cg_type which resolves to either an unsigned_16, unsigned_32, a 16-bit far
 pointer, or a 32-bit far pointer.
-<dt>DB_OP_ZEX
+<dt><br>DB_OP_ZEX
 <dd>zero extend the top of the stack.&nbsp; The 'other' parameter is a cg_type which is either 1 byte in size or 2 bytes in size.
 &nbsp;That size determines how much of the original top of stack value to leave untouched.
-<dt>DB_OP_XCHG
+<dt><br>DB_OP_XCHG
 <dd>exchange the top of stack value with the stack entry indexed by 'other'.
-<dt>DB_OP_MK_FP
+<dt><br>DB_OP_MK_FP
 <dd>take the top two entries on the stack.&nbsp; Make the second entry the segment value and the first entry the offset value
 of an address.
-<dt>DB_OP_ADD
+<dt><br>DB_OP_ADD
 <dd>add the top two stack entries together.
-<dt>DB_OP_DUP
+<dt><br>DB_OP_DUP
 <dd>duplicate the top stack entry.
-<dt>DB_OP_POP
+<dt><br>DB_OP_POP
 <dd>pop off (throw away) the top stack entry.
 </dl>
 <h2 id="void_DBLocFiniL_dbg_loc_loc_R"> void DBLocFini( dbg_loc loc ) </h2>
@@ -1996,33 +1996,33 @@ constant such as HW_EAX must be used.&nbsp; Anything else must be a variable of 
 <dl>
 <dt><b><i>Macro</i></b>
 <dd><b><i>Usage</i></b>
-<dt>HW_CEqual( a, c )
+<dt><br>HW_CEqual( a, c )
 <dd>Is<b> a</b> equal to<b> c</b>
-<dt>HW_COvlap( a, c )
+<dt><br>HW_COvlap( a, c )
 <dd>Does<b> a</b> overlap with<b> c</b>
-<dt>HW_CSubset( a, c )
+<dt><br>HW_CSubset( a, c )
 <dd>Is<b> a</b> subset of<b> c</b>
-<dt>HW_CAsgn( dst, c )
+<dt><br>HW_CAsgn( dst, c )
 <dd>Assign<b> c</b> to<b> dst</b>
-<dt>HW_CTurnOn( dst, c )
+<dt><br>HW_CTurnOn( dst, c )
 <dd>Turn on registers<b> c</b> in<b> dst</b>.
-<dt>HW_CTurnOff( dst, c )
+<dt><br>HW_CTurnOff( dst, c )
 <dd>Turn off registers<b> c</b> in<b> dst</b>.
-<dt>HW_COnlyOn( a, c )
+<dt><br>HW_COnlyOn( a, c )
 <dd>Turn off all registers except<b> c</b> in<b> dst</b>.
-<dt>HW_Equal( a, b )
+<dt><br>HW_Equal( a, b )
 <dd>Is<b> a</b> equal to<b> b</b>
-<dt>HW_Ovlap( a, b )
+<dt><br>HW_Ovlap( a, b )
 <dd>Does<b> a</b> overlap with<b> b</b>
-<dt>HW_Subset( a, b )
+<dt><br>HW_Subset( a, b )
 <dd>Is<b> a</b> subset of<b> b</b>
-<dt>HW_Asgn( dst, b )
+<dt><br>HW_Asgn( dst, b )
 <dd>Assign<b> b</b> to<b> dst</b>
-<dt>HW_TurnOn( dst, b )
+<dt><br>HW_TurnOn( dst, b )
 <dd>Turn on registers<b> b</b> in<b> dst</b>.
-<dt>HW_TurnOff( dst, b )
+<dt><br>HW_TurnOff( dst, b )
 <dd>Turn off registers<b> b</b> in<b> dst</b>.
-<dt>HW_OnlyOn( dst, b )
+<dt><br>HW_OnlyOn( dst, b )
 <dd>Turn off all registers except<b> b</b> in<b> dst</b>.
 </dl>
 <br>The following example selects the low order 16 bits of any register.&nbsp; that has a low part.
@@ -2042,9 +2042,9 @@ constant such as HW_EAX must be used.&nbsp; Anything else must be a variable of 
 <dl>
 <dt>HW_EMPTY
 <dd>The null register set.
-<dt>HW_UNUSED
+<dt><br>HW_UNUSED
 <dd>The set of unused register entries.
-<dt>HW_FULL
+<dt><br>HW_FULL
 <dd>All possible registers.
 </dl>
 <br>The following example yields the set of all valid machine registers.
@@ -2078,113 +2078,113 @@ routines are defined to be lexical level 0.
 <dl>
 <dt><b><i>Utility type</i></b>
 <dd><b><i>Definition</i></b>
-<dt>bool
+<dt><br>bool
 <dd>(unsigned char) 0 = false, non-0 = true.
-<dt>byte
+<dt><br>byte
 <dd>(unsigned char)
-<dt>int_8
+<dt><br>int_8
 <dd>(signed char)
-<dt>int_16
+<dt><br>int_16
 <dd>(signed short)
-<dt>int_32
+<dt><br>int_32
 <dd>(signed long)
-<dt>signed_8
+<dt><br>signed_8
 <dd>(signed char)
-<dt>signed_16
+<dt><br>signed_16
 <dd>(signed short)
-<dt>signed_32
+<dt><br>signed_32
 <dd>(signed long)
-<dt>uint
+<dt><br>uint
 <dd>(unsigned)
-<dt>uint_8
+<dt><br>uint_8
 <dd>(unsigned char)
-<dt>uint_16
+<dt><br>uint_16
 <dd>(unsigned short)
-<dt>uint_32
+<dt><br>uint_32
 <dd>(unsigned long)
-<dt>unsigned_8
+<dt><br>unsigned_8
 <dd>(unsigned char)
-<dt>unsigned_16
+<dt><br>unsigned_16
 <dd>(unsigned short)
-<dt>unsigned_32
+<dt><br>unsigned_32
 <dd>(unsigned long)
-<dt>real
+<dt><br>real
 <dd>(float)
-<dt>reallong
+<dt><br>reallong
 <dd>(double)
-<dt>pointer
+<dt><br>pointer
 <dd>(void*)
 </dl>
 <dl>
 <dt><b><i>Type</i></b>
 <dd><b><i>Definition</i></b>
-<dt>aux_class
+<dt><br>aux_class
 <dd>(enum) Passed as 2nd parameter to FEAuxInfo.
-<dt>aux_handle
+<dt><br>aux_handle
 <dd>(void*) A handle used as 1st parameter to FEAuxInfo.
-<dt>back_handle
+<dt><br>back_handle
 <dd>(void*) A handle for a back end symbol table entry.
-<dt>byte_seq
+<dt><br>byte_seq
 <dd>(struct) Passed to back end in response to CALL_BYTES FEAuxInfo request.
-<dt>call_class
+<dt><br>call_class
 <dd>(unsigned long) A set of combinable bits indicating the call attributes for a routine.
-<dt>call_handle
+<dt><br>call_handle
 <dd>(void*) A handle to be used in CGInitCall, CGAddParm and CGCall.
-<dt>cg_init_info
+<dt><br>cg_init_info
 <dd>(union) The return value of BEInit.
-<dt>cg_name
+<dt><br>cg_name
 <dd>(void*) A handle for a back end expression tree node.
-<dt>cg_op
+<dt><br>cg_op
 <dd>(enum) An operator to be used in building expressions.
-<dt>cg_switches
+<dt><br>cg_switches
 <dd>(unsigned_32) A set of combinable bits indicating the code generator options.
-<dt>cg_sym_handle
+<dt><br>cg_sym_handle
 <dd>(uint) A handle for a front end symbol table entry.
-<dt>cg_type
+<dt><br>cg_type
 <dd>(unsigned short) A code generator type.
-<dt>fe_attr
+<dt><br>fe_attr
 <dd>(enum) A set of combinable bits indicating symbol attributes.
-<dt>hw_reg_set
+<dt><br>hw_reg_set
 <dd>(struct hw_reg_set) A structure representing a hardware register.
-<dt>label_handle
+<dt><br>label_handle
 <dd>(void*) A handle for a code generator code label.
-<dt>linkage_regs
+<dt><br>linkage_regs
 <dd>(struct) For 370 linkage conventions.
-<dt>more_cg_types
+<dt><br>more_cg_types
 <dd>(enum)
-<dt>msg_class
+<dt><br>msg_class
 <dd>(enum) The 1st parameter to FEMessage.
-<dt>proc_revision
+<dt><br>proc_revision
 <dd>(enum) The 3rd parameter to BEInit.
-<dt>seg_attr
+<dt><br>seg_attr
 <dd>(enum) A set of combinable bits indicate the attributes of a segment.
-<dt>segment_id
+<dt><br>segment_id
 <dd>(int) A segment identifier.
-<dt>sel_handle
+<dt><br>sel_handle
 <dd>(void*) A handle to be used in the CGSel calls.
-<dt>temp_handle
+<dt><br>temp_handle
 <dd>(void*) A handle for a code generator temporary.
 </dl>
 <dl>
 <dt><b><i>Misc Type</i></b>
 <dd><b><i>Definition</i></b>
-<dt>HWT
+<dt><br>HWT
 <dd>hw_reg_part
-<dt>hw_reg_part
+<dt><br>hw_reg_part
 <dd>(unsigned)
-<dt>dbg_enum
+<dt><br>dbg_enum
 <dd>(void*)
-<dt>dbg_ftn_type
+<dt><br>dbg_ftn_type
 <dd>(enum)
-<dt>dbg_name
+<dt><br>dbg_name
 <dd>(void*)
-<dt>dbg_proc
+<dt><br>dbg_proc
 <dd>(void*)
-<dt>dbg_struct
+<dt><br>dbg_struct
 <dd>(void*)
-<dt>dbg_type
+<dt><br>dbg_type
 <dd>(unsigned short)
-<dt>predefined_cg_types
+<dt><br>predefined_cg_types
 <dd>(enum)
 </dl>
 <h1 id="PreMdefined_macros"> Pre-defined macros </h1>
