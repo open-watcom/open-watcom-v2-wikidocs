@@ -3634,9 +3634,9 @@ and in inline files.&nbsp; An inline file is introduced by &quot;&lt;&lt;&quot; 
 to insert into that file is placed (left-justified) in the command list.&nbsp; The data is terminated by &quot;&lt;&lt;&quot;
 in the first column.&nbsp; It is not possible to place a line which starts &quot;&lt;&lt;&quot; in an inline file.&nbsp; More
 than one inline file may be created in a command.&nbsp; Data for each is placed in order of reference in the command.
-<br>In building the Open Watcom system, it is sometimes necessary to do some text substitution with a program called vi.&nbsp;
-This needs a file of instructions.&nbsp; The following simplifies an example used to build Open Watcom so that inline files
-may be shown.&nbsp; Without inline files, this is done as:
+<br><br>In building the Open Watcom system, it is sometimes necessary to do some text substitution with a program called vi.
+&nbsp;This needs a file of instructions.&nbsp; The following simplifies an example used to build Open Watcom so that inline
+files may be shown.&nbsp; Without inline files, this is done as:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; $(dllname).imp : $(dllname).lbc ../../trimlbc.vi</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cp $(dllname).lbc $(dllname).imp</tt>
@@ -3669,7 +3669,7 @@ entitled <a href="#Command_List_Directives">Command List Directives</a> for a fu
 <h2 id="Ignoring_Dependent_Timestamps_L_ALWAYSR"> Ignoring Dependent Timestamps (.ALWAYS) </h2>
 <br>The<tt> .ALWAYS</tt> directive indicates to Make that the target should always be updated regardless of the timestamps
 of its dependents.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .always directive</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3708,7 +3708,7 @@ of its use.
 <br>The<tt> .CONTINUE</tt> directive and the &quot;b&quot; command line option are alternative controls to cause failing commands
 to be ignored.&nbsp; See the section entitled <a href="#Command_Line_Options">Command Line Options</a> for a full description
 of its use.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .continue example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3723,7 +3723,7 @@ of its use.
 <h2 id="Default_Command_List_L_DEFAULTR"> Default Command List (.DEFAULT) </h2>
 <br>The<tt> .DEFAULT</tt> directive provides a default command list for those targets which lack one.&nbsp; See the section
 entitled <a href="#Command_List_Directives">Command List Directives</a> for a full description of its use.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .default example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3753,7 +3753,7 @@ during the execution of the associated command list.&nbsp; No prompt is issued i
 <h2 id="Error_Action_L_ERRORR"> Error Action (.ERROR) </h2>
 <br>The<tt> .ERROR</tt> directive supplies a command list for error conditions.&nbsp; See the section entitled <a href="#Command_List_Directives">Command List Directives</a>
 for a full description of its use.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .error example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3764,7 +3764,7 @@ for a full description of its use.
 <h2 id="Ignoring_Target_Timestamp_L_EXISTSONLYR"> Ignoring Target Timestamp (.EXISTSONLY) </h2>
 <br>The<tt> .EXISTSONLY</tt> directive indicates to Make that the target should not be updated if it already exists, regardless
 of its timestamp.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .existsonly directive</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3775,7 +3775,7 @@ of its timestamp.
 <br>The<tt> .EXPLICIT</tt> directive may me used to specify a target that needs to be explicitly updated.&nbsp; Normally,
 the first target in a makefule will be implicitly updated if no target is specified on Make command line.&nbsp; The<tt> .EXPLICIT</tt>
 directive prevents this, and is useful for instance when creating files designed to be included for other make files.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .EXPLICIT example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3789,7 +3789,7 @@ one listed.
 <br>The<tt> .EXTENSIONS</tt> directive and its synonym, the<tt> .SUFFIXES</tt> directive declare which extensions are allowed
 to be used in implicit rules and how these extensions are ordered.<tt>&nbsp; .EXTENSIONS</tt> is the traditional Watcom name;<tt>
 .SUFFIXES</tt> is the corresponding POSIX name.&nbsp; The default<tt> .EXTENSIONS</tt> declaration is:
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS: .exe .nlm .dsk .lan .exp .lib .obj &amp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .i .asm .c
@@ -3882,7 +3882,7 @@ that processing should continue after a non-zero return code:
 <h2 id="Minimising_Target_Timestamp_L_JUST_ENOUGHR"> Minimising Target Timestamp (.JUST_ENOUGH) </h2>
 <br>The<tt> .JUST_ENOUGH</tt> directive is equivalent to the &quot;j&quot; command line option.&nbsp; The timestamps of created
 targets are set to be the same as those of their youngest dependendents.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .JUST_ENOUGH example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3897,7 +3897,7 @@ built.
 target once while processing a makefile.&nbsp; The<tt> .MULTIPLE</tt> directive is useful if a target needs to be updated
 more than once, for instance in case the target is destroyed during processing of other targets.&nbsp; Consider the following
 example:
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # example not using .multiple</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3961,7 +3961,7 @@ follows:
 executing.
 <h2 id="Name_Command_Sequence_L_PROCEDURER"> Name Command Sequence (.PROCEDURE) </h2>
 <br>The<tt> .PROCEDURE</tt> directive may be used to construct &quot;procedures&quot; in a makefile.
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .procedure example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
@@ -3972,7 +3972,7 @@ executing.
 <h2 id="ReMChecking_Target_Timestamp_L_RECHECKR"> Re-Checking Target Timestamp (.RECHECK) </h2>
 <br>Make will re-check the target's timestamp, rather than assuming it was updated by its command list.&nbsp; This is useful
 if the target is built by another make- style tool, as in the following example:
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # .RECHECK example</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #</tt>
