@@ -307,8 +307,8 @@ for more information.
 in more detail.&nbsp; This summary is displayed on the screen by simply entering the &quot;WFC&quot; or &quot;WFC386&quot;
 command with no arguments.
 <dl>
-<dt>Compiler options:
-<dd>Description:
+<dt><b><i>Compiler options:</i></b>
+<dd><b><i>Description:</i></b>
 <dt><br>0
 <dd>(16-bit only) assume 8088/8086 processor
 <dt><br>1
@@ -622,8 +622,8 @@ the following source line tells Open Watcom F77 to not issue any warning or exte
 <br><br>Note that only the first option must contain the &quot;*$&quot;, &quot;C$&quot;, or &quot;c$&quot; prefix.
 <br><br>Short forms are indicated by upper case letters.
 <dl>
-<dt>Option:
-<dd>Description:
+<dt><b><i>Option:</i></b>
+<dd><b><i>Description:</i></b>
 <dt><br>0
 <dd>(16-bit only) Open Watcom F77 will make use of only 8088/8086 instructions in the generated object code.&nbsp; The resulting
 code will run on 8086 and all upward compatible processors.&nbsp; This is the default option for the 16-bit compiler.
@@ -2246,8 +2246,8 @@ a unit and a file.&nbsp; The &quot;SET&quot; command is used to create, modify a
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET unit=file_spec</tt>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>unit
 <dd>is a FORTRAN unit number in the range 0 to 999.
 <br>If this form of the &quot;SET&quot; command is used then FORTRAN unit number<b> unit</b> is preconnected to the specified
@@ -2311,8 +2311,8 @@ connected at execution time.
 <li>The preconnection of units 5 and 6 may be overridden using preconnection specifications or the FORTRAN <b><i> OPEN</i></b>
 statement.&nbsp; The precedence of a connection between a unit number and a file is as follows:
 <dl>
-<dt>Precedence:
-<dd>User option:
+<dt><b><i>Precedence:</i></b>
+<dd><b><i>User option:</i></b>
 <dt><br>Lowest
 <dd>Preconnection Specifications
 <dt><br>Highest
@@ -2389,8 +2389,8 @@ for defining a logical file name is as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET name=file_spec</tt>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>name
 <dd>is any character string.&nbsp; The letters in &quot;name&quot; may be specified in upper or lower case.&nbsp; Lower case letters
 are treated as if they had been specified in upper case.&nbsp; Thus &quot;SYSINPUT&quot; and &quot;sysinput&quot; are equivalent.
@@ -2820,8 +2820,8 @@ environment variable so that the compiler can locate the include file.
 <h2 id="INTEGER_Function_FSIGNAL"> INTEGER Function FSIGNAL </h2>
 <br>The INTEGER function<tt> FSIGNAL</tt> allows your application to respond to certain events that occur during execution.
 <dl>
-<dt>Event
-<dd>Meaning
+<dt><b><i>Event</i></b>
+<dd><b><i>Meaning</i></b>
 <dt><br>SIGBREAK
 <dd>an interactive attention (Ctrl/Break on keyboard) is signalled
 <dt><br>SIGFPE
@@ -4889,8 +4889,8 @@ of the alias name as well as the attributes specified by the additional auxiliar
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux ( </tt><b>sym</b><tt>, </tt><b>alias</b><tt> ) </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is any valid FORTRAN 77 identifier.
 <dt><br>alias
@@ -4907,8 +4907,8 @@ to<tt> rtn</tt> are passed by value.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux ( </tt><b>alias</b><tt> ) </tt><b>sym</b><tt> </tt><b>aux_attrs</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>alias
 <dd>is the alias name and is any valid FORTRAN 77 identifier.
 <dt><br>sym
@@ -5013,8 +5013,8 @@ object form.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> </tt><b>obj_name</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is any valid FORTRAN 77 identifier.
 <dt><br>obj_name
@@ -5022,8 +5022,8 @@ object form.&nbsp;
 </dl>
 <br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>*
 <dd>is unmodified symbol name
 <dt><br>^
@@ -5070,8 +5070,8 @@ or &quot;MYVAR&quot; is placed in the object file.
 fpinst) }</b>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>const
@@ -5141,8 +5141,8 @@ of the default data segment before calling the specified subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm loadds </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5152,8 +5152,8 @@ address of the default data segment as part of the prologue sequence for the spe
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> loadds </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5165,8 +5165,8 @@ directive.&nbsp; An alternative method is to use the following form of the auxil
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> export </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5180,8 +5180,8 @@ prologue/epilogue sequence to be generated for a callback function when compiled
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> export </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a callback function name.
 </dl>
@@ -5208,8 +5208,8 @@ written in other programming languages.
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; pop_info ::=</b><tt> caller </tt><b>|</b><tt> routine</tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -5237,8 +5237,8 @@ entitled &quot;Assembly Language Considerations&quot;.
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; d_attr ::=</b><tt> </tt><b>&#91;</b><tt>far </tt><b>|</b><tt> near</tt><b>&#93;</b>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>REFERENCE
@@ -5306,8 +5306,8 @@ to a particular subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm </tt><b>{reg_set}</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -5470,8 +5470,8 @@ argument will be padded (to the left) with zeros.
 </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5497,8 +5497,8 @@ number of arguments, all pushed on the stack (an empty register set was specifie
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm reverse </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5524,8 +5524,8 @@ interfacing to functions that have been compiled by other compilers or functions
 </tt><b>(</b><tt>routine </tt><b>|</b><tt> caller</tt><b>)</b><tt> </tt><b>|</b><tt> </tt><b>reg_set}</b>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -5539,8 +5539,8 @@ value.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -5590,8 +5590,8 @@ return value.&nbsp;
 </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -5626,8 +5626,8 @@ point register SI to it.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct struct </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5641,8 +5641,8 @@ for the return value and point register SI to it.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct float </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -5657,8 +5657,8 @@ the &quot;fpc&quot; option.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value no8087 </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -5669,8 +5669,8 @@ or<b> DOUBLE PRECISION</b> are to be returned in ST(0) when compiling with the &
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value &#91;8087&#93; </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -5681,8 +5681,8 @@ or<b> DOUBLE PRECISION</b> are to be returned in ST(0) when compiling with the &
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> aborts </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5702,8 +5702,8 @@ appears in a common block defined by the caller.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> modify nomemory </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5810,8 +5810,8 @@ that does not reference any variable that appears in a common block defined by t
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm nomemory modify nomemory </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -5896,8 +5896,8 @@ myrtn</tt>.
 </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -5916,8 +5916,8 @@ modified by the called subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> modify exact </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -5960,8 +5960,8 @@ to subprograms.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm </tt><b>{reg_set}</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -6084,8 +6084,8 @@ ST(0).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -6100,8 +6100,8 @@ may be modified by the specified subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> modify </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -7061,8 +7061,8 @@ of the alias name as well as the attributes specified by the additional auxiliar
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux ( </tt><b>sym</b><tt>, </tt><b>alias</b><tt> ) </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is any valid FORTRAN 77 identifier.
 <dt><br>alias
@@ -7079,8 +7079,8 @@ to<tt> rtn</tt> are passed by value.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux ( </tt><b>alias</b><tt> ) </tt><b>sym</b><tt> </tt><b>aux_attrs</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>alias
 <dd>is the alias name and is any valid FORTRAN 77 identifier.
 <dt><br>sym
@@ -7243,8 +7243,8 @@ object form.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> </tt><b>obj_name</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is any valid FORTRAN 77 identifier.
 <dt><br>obj_name
@@ -7252,8 +7252,8 @@ object form.&nbsp;
 </dl>
 <br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>*
 <dd>is unmodified symbol name
 <dt><br>^
@@ -7301,8 +7301,8 @@ or &quot;MYVAR&quot; is placed in the object file.
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; in_line ::= { const | </b><tt>&quot;</tt><b>asm</b><tt>&quot;</tt><b> }</b>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>const
@@ -7371,8 +7371,8 @@ of the default data segment before calling the specified subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm loadds </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -7382,8 +7382,8 @@ address of the default data segment as part of the prologue sequence for the spe
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> loadds </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -7395,8 +7395,8 @@ directive.&nbsp; An alternative method is to use the following form of the auxil
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> export </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -7423,8 +7423,8 @@ written in other programming languages.
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; pop_info ::=</b><tt> caller </tt><b>|</b><tt> routine</tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -7452,8 +7452,8 @@ entitled &quot;Assembly Language Considerations&quot;.
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; d_attr ::=</b><tt> </tt><b>&#91;</b><tt>far </tt><b>|</b><tt> near</tt><b>&#93;</b>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>REFERENCE
@@ -7521,8 +7521,8 @@ to a particular subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm </tt><b>{reg_set}</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -7688,8 +7688,8 @@ argument will be padded (to the left) with zeros.
 </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -7715,8 +7715,8 @@ number of arguments, all pushed on the stack (an empty register set was specifie
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm reverse </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -7742,8 +7742,8 @@ interfacing to functions that have been compiled by other compilers or functions
 </tt><b>(</b><tt>routine </tt><b>|</b><tt> caller</tt><b>)</b><tt> </tt><b>|</b><tt> </tt><b>reg_set}</b>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -7757,8 +7757,8 @@ value.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -7812,8 +7812,8 @@ return value.&nbsp;
 </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -7846,8 +7846,8 @@ point register ESI to it.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct struct </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -7861,8 +7861,8 @@ for the return value and point register ESI to it.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct float </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7877,8 +7877,8 @@ option.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value no8087 </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7889,8 +7889,8 @@ or<b> DOUBLE PRECISION</b> are to be returned in ST(0) when compiling with the &
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value &#91;8087&#93; </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7901,8 +7901,8 @@ or<b> DOUBLE PRECISION</b> are to be returned in ST(0) when compiling with the &
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> aborts </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -7922,8 +7922,8 @@ appears in a common block defined by the caller.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> modify nomemory </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -8093,8 +8093,8 @@ that does not reference any variable that appears in a common block defined by t
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm nomemory modify nomemory </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
@@ -8179,8 +8179,8 @@ myrtn</tt>.
 </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -8199,8 +8199,8 @@ modified by the called subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> modify exact </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -8243,8 +8243,8 @@ to subprograms.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm </tt><b>{reg_set}</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -8367,8 +8367,8 @@ ST(0).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set
@@ -8383,8 +8383,8 @@ may be modified by the specified subprogram.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> modify </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
-<dt>where
-<dd><b>description</b>
+<dt><b><i>where</i></b>
+<dd><b><i></i></b><b> description</b>
 <dt><br>sym
 <dd>is a subprogram name.
 <dt><br>reg_set

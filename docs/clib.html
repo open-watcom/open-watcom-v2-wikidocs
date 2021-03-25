@@ -4259,7 +4259,7 @@ that the following DOS commands were issued:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; chdir c:\mydir</tt>
 <br><br>Then, the following path specifications are:
 <dl>
-<dt>Relative Path&nbsp;&nbsp;&nbsp;&nbsp; Absolute Path
+<dt><b><i>Relative Path&nbsp;&nbsp;&nbsp;&nbsp; Absolute Path</i></b>
 <dt>a:xxx\y
 <dd>a:\apps\payroll\xxx\y
 <dt><br>c:zzzzz
@@ -4303,7 +4303,7 @@ the section<b> DOS Devices</b> for a list of these reserved names.
 </dl>
 <br>Suppose that the current working directories are as follows:
 <dl>
-<dt>Drive&nbsp;&nbsp;&nbsp;&nbsp; Directory
+<dt><b><i>Drive&nbsp;&nbsp;&nbsp;&nbsp; Directory</i></b>
 <dt>A:
 <dd>\payroll
 <dt><br>B:
@@ -4314,7 +4314,7 @@ the section<b> DOS Devices</b> for a list of these reserved names.
 <br>and that the default disk drive is<tt> C:.</tt>&nbsp; Then, the following file designations will result in the indicated
 file references:
 <dl>
-<dt>Designation&nbsp;&nbsp;&nbsp;&nbsp; Actual File
+<dt><b><i>Designation&nbsp;&nbsp;&nbsp;&nbsp; Actual File</i></b>
 <dt>pgm.c
 <dd>C:\SOURCE\C\PGM.C
 <dt><br>\basic.dat
@@ -4628,7 +4628,7 @@ with the file permission given by<b> mode</b>.
 <br>When the value of<b> mode</b> is zero, only the existence of the file is verified.&nbsp; The read and/or write permission
 for the file can be determined when<b> mode</b> is a combination of the bits:
 <dl>
-<dt>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>R_OK
 <dd>test for read permission
 <dt><br>W_OK
@@ -4652,7 +4652,7 @@ Otherwise, -1 is returned and <tt> errno</tt> is set to indicate the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Access denied because the file's permission does not allow the specified access.
 <dt><br>ENOENT
@@ -6303,7 +6303,7 @@ of <tt> _NULLSEG</tt> is returned if the segment could not be allocated.
 service</b> is passed the <tt> diskinfo_t</tt> structure pointed to by<b> diskinfo</b>.&nbsp; The value for<b> service</b>
 can be one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_DISK_RESET
 <dd>Forces the disk controller to do a reset on the disk.&nbsp; This request does not use the<b> diskinfo</b> argument.
 <dt><br>_DISK_STATUS
@@ -6329,7 +6329,7 @@ depends on the type of disk drive.&nbsp; This service has no return value.
 <dd>The<tt> _bios_disk</tt> function returns status information in the high-order byte when<b> service</b> is _DISK_STATUS, _DISK_READ,
 _DISK_WRITE, or _DISK_VERIFY.&nbsp; The possible values are:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0x00
 <dd>Operation successful
 <dt><br>0x01
@@ -6418,7 +6418,7 @@ _DISK_WRITE, or _DISK_VERIFY.&nbsp; The possible values are:
 <dd>The<tt> _bios_equiplist</tt> function returns a set of bits indicating what is currently installed on the machine.&nbsp; Those
 bits are defined as follows:
 <dl>
-<dt>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bit 0
 <dd>Set to 1 if system boots from disk
 <dt><br>bit 1
@@ -6473,7 +6473,7 @@ bits are defined as follows:
 <dd>The<tt> _bios_keybrd</tt> function uses INT 0x16 to access the BIOS keyboard services.&nbsp; The possible values for<b> service</b>
 are the following constants:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_KEYBRD_READ
 <dd>Reads the next character from the keyboard.&nbsp; The function will wait until a character has been typed.
 <dt><br>_KEYBRD_READY
@@ -6499,7 +6499,7 @@ and the character's keyboard scan code in the high-order byte.
 otherwise it returns the same value returned by <tt> _KEYBRD_READ</tt> and <tt> _NKEYBRD_READ</tt>.
 <br><br>The shift status is returned in the low-order byte with one bit for each special key defined as follows:
 <dl>
-<dt>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bit 0 (0x01)
 <dd>Right SHIFT key is pressed
 <dt><br>bit 1 (0x02)
@@ -6599,7 +6599,7 @@ otherwise it returns the same value returned by <tt> _KEYBRD_READ</tt> and <tt> 
 <dd>The<tt> _bios_printer</tt> function uses INT 0x17 to perform printer output services to the printer specified by<b> port</b>.
 &nbsp;The values for service are:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_PRINTER_WRITE
 <dd>Sends the low-order byte of<b> data</b> to the printer specified by<b> port</b>.
 <dt><br>_PRINTER_INIT
@@ -6612,7 +6612,7 @@ otherwise it returns the same value returned by <tt> _KEYBRD_READ</tt> and <tt> 
 <dt>Returns:
 <dd>The<tt> _bios_printer</tt> function returns a printer status byte defined as follows:
 <dl>
-<dt>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bit 0 (0x01)
 <dd>Printer timed out
 <dt><br>bits 1-2
@@ -6665,7 +6665,7 @@ otherwise it returns the same value returned by <tt> _KEYBRD_READ</tt> and <tt> 
 <dd>The<tt> _bios_serialcom</tt> function uses INT 0x14 to provide serial communications services to the serial port specified
 by<b> serial_port</b>.&nbsp; 0 represents COM1, 1 represents COM2, etc.&nbsp; The values for service are:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_COM_INIT
 <dd>Initializes the serial port to the parameters specified in<b> data</b>.
 <dt><br>_COM_SEND
@@ -6678,7 +6678,7 @@ by<b> serial_port</b>.&nbsp; 0 represents COM1, 1 represents COM2, etc.&nbsp; Th
 <br>The value passed in<b> data</b> for the <tt> _COM_INIT</tt> service can be built using the appropriate combination of
 the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_COM_110
 <dd>110 baud
 <dt><br>_COM_150
@@ -6716,7 +6716,7 @@ the following values:
 <dd>The<tt> _bios_serialcom</tt> function returns a 16-bit value with the high-order byte containing status information defined
 as follows:
 <dl>
-<dt>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bit 15 (0x8000)
 <dd>Timed out
 <dt><br>bit 14 (0x4000)
@@ -6741,7 +6741,7 @@ the return value equals the byte sent.
 If there was an error, at least one of the high-order status bits will be set.
 <br><br>When<b> service</b> is _COM_INIT or _COM_STATUS the low-order bits are defined as follows:
 <dl>
-<dt>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bit 0 (0x01)
 <dd>Clear to send (CTS) changed
 <dt><br>bit 1 (0x02)
@@ -6792,7 +6792,7 @@ If there was an error, at least one of the high-order status bits will be set.
 <dd>The<tt> _bios_timeofday</tt> function uses INT 0x1A to get or set the current system clock value.&nbsp; The values for service
 are:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_TIME_GETCLOCK
 <dd>Places the current system clock value in the location pointed to by<b> timeval</b>.&nbsp; The function returns zero if midnight
 has not passed since the last time the system clock was read or set; otherwise, it returns 1.
@@ -7276,7 +7276,7 @@ to
 element is initialized to 0.
 <br>Each function allocates memory from a particular heap, as listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap</i></b>
 <dt>calloc
 <dd>Depends on data model of the program
 <dt><br>_bcalloc
@@ -7540,7 +7540,7 @@ the error, and the current working directory remains unchanged.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENOENT
 <dd>The specified<b> path</b> does not exist or<b> path</b> is an empty string.
 </dl>
@@ -7644,7 +7644,7 @@ by<b> permission</b>.&nbsp; The access permissions for the file or directory are
 in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 <br>The following bits define permissions for the owner.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXU
 <dd>Read, write, execute/search
 <dt><br>S_IRUSR
@@ -7656,7 +7656,7 @@ in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define permissions for the group.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXG
 <dd>Read, write, execute/search
 <dt><br>S_IRGRP
@@ -7668,7 +7668,7 @@ in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define permissions for others.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXO
 <dd>Read, write, execute/search
 <dt><br>S_IROTH
@@ -7680,7 +7680,7 @@ in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define miscellaneous permissions used by other implementations.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IREAD
 <dd>is equivalent to S_IRUSR (read permission)
 <dt><br>S_IWRITE
@@ -7701,7 +7701,7 @@ indicate the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Search permission is denied for a component of<b> path</b>.
 <dt><br>ENOENT
@@ -7772,7 +7772,7 @@ is set to indicate the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>The specified file is locked against access.
 <dt><br>EBADF
@@ -7894,7 +7894,7 @@ set <tt> errno</tt> to indicate the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENOMEM
 <dd>Not enough memory to allocate a control structure.
 </dl>
@@ -8106,7 +8106,7 @@ pointer.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> clockid</b> is invalid.
 </dl>
@@ -8147,7 +8147,7 @@ pointer.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> clockid</b> is invalid.
 </dl>
@@ -8199,7 +8199,7 @@ errno</tt> appropriately on failures.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINTR
 <dd>The sleep was interrupted by a signal.
 <dt><br>EINVAL
@@ -8246,7 +8246,7 @@ ts</b> pointer.&nbsp; Depending on the value of<b> clockid</b>, the function may
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> clockid</b> is invalid, or the value of<b> ts</b> exceeds the range of this clock.
 <dt><br>EPERM
@@ -8285,7 +8285,7 @@ process's new stack space.&nbsp; Because the stack will grow in the direction of
 argument should refer to the highest address in the allocated memory.
 <br><br>The<b> flags</b> argument may be one of the following values:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>CLONE_VM
 <dd>Virtual memory should be shared across processes
 <dt><br>CLONE_FS
@@ -8372,7 +8372,7 @@ the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBADF
 <dd>The<b> handle</b> argument is not a valid file handle.
 </dl>
@@ -8428,7 +8428,7 @@ filenames opened by <tt> _wopendir</tt>.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBADF
 <dd>The argument<b> dirp</b> does not refer to an open directory stream.
 </dl>
@@ -8964,7 +8964,7 @@ permissions for the file or directory are specified as a combination of bits (de
 file).
 <br><br>The following bits define permissions for the owner.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXU
 <dd>Read, write, execute/search
 <dt><br>S_IRUSR
@@ -8976,7 +8976,7 @@ file).
 </dl>
 <br>The following bits define permissions for the group.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXG
 <dd>Read, write, execute/search
 <dt><br>S_IRGRP
@@ -8988,7 +8988,7 @@ file).
 </dl>
 <br>The following bits define permissions for others.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXO
 <dd>Read, write, execute/search
 <dt><br>S_IROTH
@@ -9000,7 +9000,7 @@ file).
 </dl>
 <br>The following bits define miscellaneous permissions used by other implementations.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IREAD
 <dd>is equivalent to S_IRUSR (read permission)
 <dt><br>S_IWRITE
@@ -9020,7 +9020,7 @@ and <tt> errno</tt> is set to indicate the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Access denied because<b> path</b> specifies a directory or a volume ID, or a read-only file.
 <dt><br>EMFILE
@@ -9291,7 +9291,7 @@ _exit</tt> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>1
 <dd>Hard-error abort
 <dt><br>2
@@ -9350,7 +9350,7 @@ process.
 Win32, but is accepted for compatibility with OS/2 (although Microsoft handles the<b> status</b> value differently from OS/2!).
 &nbsp;The possible values are:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>WAIT_CHILD
 <dd>Wait until the specified child process has ended.
 <dt><br>WAIT_GRANDCHILD
@@ -9363,7 +9363,7 @@ Win32, but is accepted for compatibility with OS/2 (although Microsoft handles t
 <dd>The<tt> cwait</tt> function returns the (child's) process ID if the (child) process terminated normally.&nbsp; Otherwise,<tt>
 cwait</tt> returns -1 and sets <tt> errno</tt> to one of the following values:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>Invalid action code
 <dt><br>ECHILD
@@ -10027,7 +10027,7 @@ specified by<b> attribute</b>.&nbsp; The handle for the new file is returned in 
 If the file already exists, the contents will be erased, and the attributes of the file will remain unchanged.&nbsp; The possible
 values for<b> attribute</b> are:
 <dl>
-<dt>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_A_NORMAL
 <dd>Indicates a normal file.&nbsp; File can be read or written without any restrictions.
 <dt><br>_A_RDONLY
@@ -10091,7 +10091,7 @@ accordingly.
 specified by<b> attribute</b>.&nbsp; The handle for the new file is returned in the word pointed to by<b> handle</b>.&nbsp;
 If the file already exists, the create will fail.&nbsp; The possible values for<b> attribute</b> are:
 <dl>
-<dt>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_A_NORMAL
 <dd>Indicates a normal file.&nbsp; File can be read or written without any restrictions.
 <dt><br>_A_RDONLY
@@ -10107,7 +10107,7 @@ If the file already exists, the create will fail.&nbsp; The possible values for<
 <dd>The<tt> _dos_creatnew</tt> function returns zero if successful.&nbsp; Otherwise, it returns an OS error code and sets <tt>
 errno</tt>.&nbsp; Possible values and their interpretations:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Access denied because the directory is full, or the file exists and cannot be overwritten.
 <dt><br>EEXIST
@@ -10282,7 +10282,7 @@ match the<b> path</b> and<b> attributes</b> arguments.&nbsp; The information is 
 to by<b> buffer</b>.&nbsp; The<b> path</b> argument may contain wildcard characters ('?' and '*').&nbsp; The<b> attributes</b>
 argument may be any combination of the following constants:
 <dl>
-<dt>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_A_NORMAL
 <dd>Indicates a normal file.&nbsp; File can be read or written without any restrictions.
 <dt><br>_A_RDONLY
@@ -10625,7 +10625,7 @@ number is returned in the word pointed to by<b> drive</b>.&nbsp; A value of 1 is
 <dd>The<tt> _dos_getfileattr</tt> function uses system call 0x43 to get the current attributes of the file or directory that<b>
 path</b> points to.&nbsp; The possible attributes are:
 <dl>
-<dt>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_A_NORMAL
 <dd>Indicates a normal file.&nbsp; File can be read or written without any restrictions.
 <dt><br>_A_RDONLY
@@ -10704,7 +10704,7 @@ errno</tt> accordingly.
 <dd>The<tt> _dos_getftime</tt> function uses system call 0x57 to get the date and time that the file associated with<b> handle</b>
 was last modified.&nbsp; The date consists of the year, month and day packed into 16 bits as follows:
 <dl>
-<dt>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bits 0-4
 <dd>Day (1-31)
 <dt><br>bits 5-8
@@ -10714,7 +10714,7 @@ was last modified.&nbsp; The date consists of the year, month and day packed int
 </dl>
 <br>The time consists of the hour, minute and seconds/2 packed into 16 bits as follows:
 <dl>
-<dt>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bits 0-4
 <dd>Seconds/2 (0-29)
 <dt><br>bits 5-10
@@ -10968,7 +10968,7 @@ int *handle );</tt>
 file.&nbsp; The<b> mode</b> argument specifies the file's access, sharing and inheritance permissions.&nbsp; The access mode
 must be one of:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>O_RDONLY
 <dd>Read only
 <dt><br>O_WRONLY
@@ -10978,7 +10978,7 @@ must be one of:
 </dl>
 <br>The sharing permissions, if specified, must be one of:
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>SH_COMPAT
 <dd>Set compatibility mode.
 <dt><br>SH_DENYRW
@@ -10992,7 +10992,7 @@ must be one of:
 </dl>
 <br>The inheritance permission, if specified, is:
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>O_NOINHERIT
 <dd>File is not inherited by a child process
 </dl>
@@ -11002,7 +11002,7 @@ must be one of:
 <dd>The<tt> _dos_open</tt> function returns zero if successful.&nbsp; Otherwise, it returns an MS-DOS error code and sets <tt>
 errno</tt> to one of the following values:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Access denied because<b> path</b> specifies a directory or a volume ID, or opening a read-only file for write access
 <dt><br>EINVAL
@@ -11315,7 +11315,7 @@ set.
 <dd>The<tt> _dos_setfileattr</tt> function uses system call 0x43 to set the attributes of the file or directory that<b> path</b>
 points to.&nbsp; The possible attributes are:
 <dl>
-<dt>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_A_NORMAL
 <dd>Indicates a normal file.&nbsp; File can be read or written without any restrictions.
 <dt><br>_A_RDONLY
@@ -11394,7 +11394,7 @@ errno</tt> accordingly.
 <dd>The<tt> _dos_setftime</tt> function uses system call 0x57 to set the date and time that the file associated with<b> handle</b>
 was last modified.&nbsp; The date consists of the year, month and day packed into 16 bits as follows:
 <dl>
-<dt>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bits 0-4
 <dd>Day (1-31)
 <dt><br>bits 5-8
@@ -11404,7 +11404,7 @@ was last modified.&nbsp; The date consists of the year, month and day packed int
 </dl>
 <br>The time consists of the hour, minute and seconds/2 packed into 16 bits as follows:
 <dl>
-<dt>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bits&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bits 0-4
 <dd>Seconds/2 (0-29)
 <dt><br>bits 5-10
@@ -11693,7 +11693,7 @@ the other.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBADF
 <dd>The argument<b> handle</b> is not a valid open file handle.
 <dt><br>EMFILE
@@ -11767,7 +11767,7 @@ the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBADF
 <dd>The argument<b> handle</b> is not a valid open file handle or<b> handle2</b> is out of range.
 <dt><br>EMFILE
@@ -12853,7 +12853,7 @@ program, exec...&nbsp; returns -1 and <tt> errno</tt> is set to indicate the err
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>E2BIG
 <dd>The argument list exceeds 128 bytes, or the space required for the environment information exceeds 32K.
 <dt><br>EACCES
@@ -13232,7 +13232,7 @@ new desired size for the memory block.&nbsp; The contents of the memory block ar
 old sizes.
 <br>Each function expands the memory from a particular heap, as listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Expanded
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Expanded</i></b>
 <dt>_expand
 <dd>Depends on data model of the program
 <dt><br>_bexpand
@@ -14758,7 +14758,7 @@ values in<tt> &lt;io.h&gt;</tt> define the file handles that are associated with
 stdaux,</b> and<b> stdprn</b> files when the application is started.&nbsp; The<b> stdaux</b> and<b> stdprn</b> files are not
 available for Win32.
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>STDIN_FILENO
 <dd>Standard input file number,<b> stdin</b> (0)
 <dt><br>STDOUT_FILENO
@@ -14819,7 +14819,7 @@ occurs, a value of -1 is returned and <tt> errno</tt> is set to indicate the err
 <dd>If successful,<tt> _findclose</tt> returns 0; otherwise,<tt> _findclose</tt> and returns -1 and sets <tt> errno</tt> to one
 of the following values:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENOENT
 <dd>No matching files
 </dl>
@@ -14936,7 +14936,7 @@ strings.&nbsp; It differs from the<tt> _wfindfirsti64</tt> function in that it r
 specification, which can be used in a subsequent call to <tt> _findnext</tt> or to <tt> _findclose</tt>.&nbsp; Otherwise,<tt>
 _findfirst</tt> returns -1 and sets <tt> errno</tt> to one of the following values:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENOENT
 <dd>No matching files
 <dt><br>EINVAL
@@ -15049,7 +15049,7 @@ wide-character strings.&nbsp; It differs from the<tt> _wfindnexti64</tt> functio
 <dd>If successful,<tt> _findnext</tt> returns 0; otherwise,<tt> _findnext</tt> and returns -1 and sets <tt> errno</tt> to one
 of the following values:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENOENT
 <dd>No matching files
 </dl>
@@ -15518,7 +15518,7 @@ by the<b> pattern</b> argument.
 <br>The<b> flag</b> argument is a bitwise inclusive OR of the bits described below.&nbsp; It modifies the interpretation of<b>
 pattern</b> and<b> string</b>.
 <dl>
-<dt>Flag&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Flag&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>FNM_PATHNAME
 <dd>If set, a path separator in<b> string</b> is explicitly matched by a slash in<b> pattern</b>.&nbsp; It isn't matched by either
 the asterisk or question mark special characters, or by a bracket expression.
@@ -15632,7 +15632,7 @@ function.
 <dd>The<tt> fopen</tt> function opens the file whose name is the string pointed to by<b> filename</b>, and associates a stream
 with it.&nbsp; The argument<b> mode</b> points to a string beginning with one of the following sequences:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>&quot;r&quot;
 <dd>open file for reading
 <dt><br>&quot;w&quot;
@@ -15757,7 +15757,7 @@ fopen_s</tt> sets<b> *streamptr</b> to the null pointer.
 with it.&nbsp; The<b> mode</b> string shall be as described for fopen, with the addition that modes starting with the character
 'w' or 'a' may be preceded by the character 'u', see below:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>&quot;uw&quot;
 <dd>truncate to zero length or create text file for writing, default permissions
 <dt><br>&quot;ua&quot;
@@ -16002,7 +16002,7 @@ is based on the type of the argument.
 <br>The argument<b> x</b> must be an expression of real floating type.
 <br><br>The possible return values of<tt> fpclassify</tt> and their meanings are listed below.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>FP_INFINITE
 <dd>positive or negative infinity
 <dt><br>FP_NAN
@@ -16493,7 +16493,7 @@ through a call to the appropriate version of <tt> calloc</tt>, <tt> malloc</tt> 
 the freed block is available for allocation.
 <br>Each function deallocates memory from a particular heap, as listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap</i></b>
 <dt>free
 <dd>Depends on data model of the program
 <dt><br>_bfree
@@ -16964,7 +16964,7 @@ the character that will be read or written on the next I/O operation on the file
 returned by <tt> fopen</tt> or <tt> freopen</tt>.&nbsp; The argument<b> offset</b> is the position to seek to relative to
 one of three positions specified by the argument<b> where</b>.&nbsp; Allowable values for<b> where</b> are:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>SEEK_SET
 <dd>The new file position is computed relative to the start of the file.&nbsp; The value of<b> offset</b> must not be negative.
 <dt><br>SEEK_CUR
@@ -17085,7 +17085,7 @@ share );</tt>
 with it.&nbsp; The arguments<b> mode</b> and<b> share</b> control shared reading or writing.&nbsp; The argument<b> mode</b>
 points to a string beginning with one of the following sequences:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>&quot;r&quot;
 <dd>open file for reading; use default file translation
 <dt><br>&quot;w&quot;
@@ -17138,7 +17138,7 @@ call to a file positioning function, unless the read resulted in end-of-file.
 <br><br>The shared access for the file,<b> share</b>, is established by a combination of bits defined in the<tt> &lt;share.h&gt;</tt>
 header file.&nbsp; The following values may be set:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>SH_COMPAT
 <dd>Set compatibility mode.
 <dt><br>SH_DENYRW
@@ -17212,7 +17212,7 @@ has been detected.
 is placed in the structure located at the address indicated by<b> buf</b>.
 <br>The file<tt> &lt;sys/stat.h&gt;</tt> contains definitions for the structure <tt> stat</tt>.
 <dl>
-<dt>Field&nbsp;&nbsp;&nbsp;&nbsp; Type/Meaning
+<dt><b><i>Field&nbsp;&nbsp;&nbsp;&nbsp; Type/Meaning</i></b>
 <dt>st_dev
 <dd>(dev_t) the disk drive the file resides on
 <dt><br>st_ino
@@ -17256,7 +17256,7 @@ is placed in the structure located at the address indicated by<b> buf</b>.
 </dl>
 <br>At least the following macros are defined in the<tt> &lt;sys/stat.h&gt;</tt> header file.
 <dl>
-<dt>Macro&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Macro&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_ISFIFO(m)
 <dd>Test for FIFO.
 <dt><br>S_ISCHR(m)
@@ -17272,7 +17272,7 @@ is placed in the structure located at the address indicated by<b> buf</b>.
 The macro evaluates to a non-zero value if the test is true and zero if the test is false.
 <br><br>The following bits are encoded within the <tt> st_mode</tt> field of a <tt> stat</tt> structure.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Owner Permissions
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Owner Permissions</i></b>
 <dt>S_IRWXU
 <dd>Read, write, search (if a directory), or execute (otherwise)
 <dt><br>S_IRUSR
@@ -17290,7 +17290,7 @@ The macro evaluates to a non-zero value if the test is true and zero if the test
 </dl>
 <br><tt> S_IRWXU</tt> is the bitwise inclusive OR of <tt> S_IRUSR</tt>, <tt> S_IWUSR</tt>, and <tt> S_IXUSR</tt>.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Group Permissions (same as owner's on DOS, OS/2 or Windows)
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Group Permissions (same as owner's on DOS, OS/2 or Windows)</i></b>
 <dt>S_IRWXG
 <dd>Read, write, search (if a directory), or execute (otherwise)
 <dt><br>S_IRGRP
@@ -17302,7 +17302,7 @@ The macro evaluates to a non-zero value if the test is true and zero if the test
 </dl>
 <br><tt> S_IRWXG</tt> is the bitwise inclusive OR of <tt> S_IRGRP</tt>, <tt> S_IWGRP</tt>, and <tt> S_IXGRP</tt>.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Other Permissions (same as owner's on DOS, OS/2 or Windows)
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Other Permissions (same as owner's on DOS, OS/2 or Windows)</i></b>
 <dt>S_IRWXO
 <dd>Read, write, search (if a directory), or execute (otherwise)
 <dt><br>S_IROTH
@@ -17314,7 +17314,7 @@ The macro evaluates to a non-zero value if the test is true and zero if the test
 </dl>
 <br><tt> S_IRWXO</tt> is the bitwise inclusive OR of <tt> S_IROTH</tt>, <tt> S_IWOTH</tt>, and <tt> S_IXOTH</tt>.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_ISUID
 <dd>(Not supported by DOS, OS/2 or Windows) Set user ID on execution.&nbsp; The process's effective user ID shall be set to that
 of the owner of the file when the file is run as a program.&nbsp; On a regular file, this bit should be cleared on any write.
@@ -17336,7 +17336,7 @@ returned.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBADF
 <dd>The<b> handle</b> argument is not a valid file handle.
 </dl>
@@ -17409,7 +17409,7 @@ the error.&nbsp; If the<tt> fsync</tt> function fails, outstanding i/o operation
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBADF
 <dd>The<b> fd</b> argument is not a valid file handle.
 <dt><br>EINVAL
@@ -17613,7 +17613,7 @@ NULL</tt> is returned.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENOENT
 <dd>The current working directory could not be obtained.
 <dt><br>ENOMEM
@@ -18432,7 +18432,7 @@ an error occurs, in which case<tt> NULL</tt> is returned.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The argument<b> maxlen</b> is negative.
 <dt><br>ENOMEM
@@ -18503,7 +18503,7 @@ specified drive, unless an error occurs, in which case<tt> NULL</tt> is returned
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENODEV
 <dd>The drive cannot be accessed.
 <dt><br>ENOMEM
@@ -21993,7 +21993,7 @@ to open a file on a floppy disk when the drive door is open).&nbsp; The paramete
 *devhdr );</tt>
 <br><br>The low-order byte of<b> errcode</b> can be one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0x00
 <dd>Attempt to write to a write-protected disk
 <dt><br>0x01
@@ -22026,7 +22026,7 @@ the error occurred.&nbsp; Your error handler may inspect the information in this
 <br><br>If the error occurred on a disk device, bit 15 of the<b> deverror</b> argument will be 0 and the<b> deverror</b> argument
 will indicate the following:
 <dl>
-<dt>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Bit&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>bit 15
 <dd>0 indicates disk error
 <dt><br>bit 14
@@ -22040,7 +22040,7 @@ will indicate the following:
 <dt><br>bit 9,10
 <dd>location of error
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>00
 <dd>MS-DOS
 <dt><br>01
@@ -22060,7 +22060,7 @@ such as stream I/O and low-level I/O cannot be used by the handler.&nbsp; Consol
 <br><br>The handler must indicate what action to take by returning one of the following values or calling <tt> _hardresume</tt>
 with one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_HARDERR_IGNORE
 <dd>Ignore the error
 <dt><br>_HARDERR_RETRY
@@ -22220,7 +22220,7 @@ problems in programs.
 The consistency check determines whether all the heap entries are valid.&nbsp; Each function checks a particular heap, as
 listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Checked
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Checked</i></b>
 <dt>_heapchk
 <dd>Depends on data model of the program
 <dt><br>_bheapchk
@@ -22237,7 +22237,7 @@ data memory model, the<tt> _heapchk</tt> function is equivalent to the <tt> _fhe
 <dt>Returns:
 <dd>All four functions return one of the following manifest constants which are defined in<tt> &lt;malloc.h&gt;.</tt>
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_HEAPOK
 <dd>The heap appears to be consistent.
 <dt><br>_HEAPEMPTY
@@ -22419,7 +22419,7 @@ at the end of the heap back to the system.&nbsp; This can be used to free up as 
 system</tt> function or one of the <tt> spawn...</tt>&nbsp; functions.
 <br>The various<tt> _heapmin</tt> functions shrink the following heaps:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Minimized
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Minimized</i></b>
 <dt>_heapmin
 <dd>Depends on data model of the program
 <dt><br>_bheapmin
@@ -22483,7 +22483,7 @@ problems in programs.
 <tt> _heapchk</tt> does, and sets the heap's free entries with the<b> fill_char</b> value.
 <br><br>Each function checks and sets a particular heap, as listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Filled
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Filled</i></b>
 <dt>_heapset
 <dd>Depends on data model of the program
 <dt><br>_bheapset
@@ -22500,7 +22500,7 @@ data memory model, the<tt> _heapset</tt> function is equivalent to the <tt> _fhe
 <dt>Returns:
 <dd>The<tt> _heapset</tt> functions return one of the following manifest constants which are defined in<tt> &lt;malloc.h&gt;.</tt>
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_HEAPOK
 <dd>The heap appears to be consistent.
 <dt><br>_HEAPEMPTY
@@ -22573,7 +22573,7 @@ at the end of the heap back to the system.&nbsp; This can be used to free up as 
 system</tt> function or one of the <tt> spawn...</tt>&nbsp; functions.
 <br>The various<tt> _heapshrink</tt> functions shrink the following heaps:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Shrinked
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Shrinked</i></b>
 <dt>_heapshrink
 <dd>Depends on data model of the program
 <dt><br>_bheapshrink
@@ -22646,7 +22646,7 @@ with information on the next heap entry.&nbsp; The structure is defined in<tt> &
 the<b> _pentry</b> field with<tt> NULL</tt> to start the walk through the heap.
 <br><br>Each function walks a particular heap, as listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Walked
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Walked</i></b>
 <dt>_heapwalk
 <dd>Depends on data model of the program
 <dt><br>_bheapwalk
@@ -22663,7 +22663,7 @@ large data memory model, the<tt> _heapwalk</tt> function is equivalent to the <t
 <dt>Returns:
 <dd>These functions return one of the following manifest constants which are defined in<tt> &lt;malloc.h&gt;.</tt>
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_HEAPOK
 <dd>The heap is OK so far, and the <tt> _heapinfo</tt> structure contains information about the next entry in the heap.
 <dt><br>_HEAPEMPTY
@@ -23949,7 +23949,7 @@ returned.&nbsp; When an error has occurred, <tt> errno</tt> contains a value ind
 <dt>Description:
 <dd>The<tt> isblank</tt> function tests for the following blank characters:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Character
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Character</i></b>
 <dt>' '
 <dd>space
 <dt><br>'\t'
@@ -27373,7 +27373,7 @@ nor a wide character for which <tt> iswalnum</tt> is true.&nbsp; Otherwise, zero
 <dt>Description:
 <dd>The<tt> isspace</tt> function tests for the following white-space characters:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Character
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Character</i></b>
 <dt>' '
 <dd>space
 <dt><br>'\f'
@@ -27520,7 +27520,7 @@ iswpunct</tt>, or <tt> iswspace</tt> is true.&nbsp; Otherwise, zero is returned.
 &nbsp;Valid values of<b> desc</b> are defined by the use of the <tt> wctype</tt> function.
 <br>The twelve expressions listed below have a truth-value equivalent to a call to the wide character testing function shown.
 <dl>
-<dt>Expression&nbsp;&nbsp;&nbsp;&nbsp; Equivalent
+<dt><b><i>Expression&nbsp;&nbsp;&nbsp;&nbsp; Equivalent</i></b>
 <dt>iswctype(wc, wctype(&quot;alnum&quot;))
 <dd>iswalnum(wc)
 <dt><br>iswctype(wc, wctype(&quot;alpha&quot;))
@@ -28258,7 +28258,7 @@ rem</tt>, which are both of type<tt> long long int.</tt>
 the formatting of numeric quantities according to the current locale.&nbsp; The components of the <tt> struct lconv</tt> and
 their meanings are as follows:
 <dl>
-<dt>Component&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Component&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>char *decimal_point
 <dd>The decimal-point character used to format non-monetary quantities.
 <dt><br>char *thousands_sep
@@ -28306,7 +28306,7 @@ formatted monetary quantity.
 </dl>
 <br>The elements of <tt> grouping</tt> and <tt> mon_grouping</tt> are interpreted according to the following:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>CHAR_MAX
 <dd>No further grouping is to be performed.
 <dt><br>0
@@ -28317,7 +28317,7 @@ of the next group of digits to the left of the current group.
 </dl>
 <br>The value of <tt> p_sign_posn</tt> and <tt> n_sign_posn</tt> is interpreted as follows:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0
 <dd>Parentheses surround the quantity and <tt> currency_symbol</tt>.
 <dt><br>1
@@ -28623,7 +28623,7 @@ region of a file prevents other processes from reading or writing the locked reg
 The locking and unlocking takes place at the current file position.&nbsp; The argument<b> mode</b> specifies the action to
 be performed.&nbsp; The possible values for mode are:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_LK_LOCK, LK_LOCK
 <dd>Locks the specified region.&nbsp; The function will retry to lock the region after 1 second intervals until successful or
 until 10 attempts have been made.
@@ -28652,7 +28652,7 @@ the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Indicates a locking violation (file already locked or unlocked).
 <dt><br>EBADF
@@ -29161,7 +29161,7 @@ determined by the value of the argument<b> origin</b>.
 <br>The new file position is determined in a manner dependent upon the value of<b> origin</b> which may have one of three
 possible values (defined in the<tt> &lt;stdio.h&gt;</tt> header file):
 <dl>
-<dt>Origin&nbsp;&nbsp;&nbsp;&nbsp; Definition
+<dt><b><i>Origin&nbsp;&nbsp;&nbsp;&nbsp; Definition</i></b>
 <dt>SEEK_SET
 <dd>The new file position is computed relative to the start of the file.&nbsp; The value of<b> offset</b> must not be negative.
 <dt><br>SEEK_CUR
@@ -29211,7 +29211,7 @@ of the file.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBADF
 <dd>The<b> handle</b> argument is not a valid file handle.
 <dt><br>EINVAL
@@ -29483,7 +29483,7 @@ will apply.
 <br><br>The <tt> WinMain</tt> function is called by the system as the initial entry point for a Windows-based application.
 &nbsp;The <tt> wWinMain</tt> function is a wide-character version of <tt> WinMain</tt>.
 <dl>
-<dt>Parameters&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Parameters&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>hInstance
 <dd>Identifies the current instance of the application.
 <dt><br>hPrevInstance
@@ -29494,7 +29494,7 @@ NULL.
 <dt><br>nCmdShow
 <dd>Specifies how the window is to be shown.&nbsp; This parameter can be one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>SW_HIDE
 <dd>Hides the window and activates another window.
 <dt><br>SW_MINIMIZE
@@ -29710,7 +29710,7 @@ ext</b> is a NULL pointer or points to an empty string, no period will be placed
 argument has a value of zero.
 <br>Each function allocates memory from a particular heap, as listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap</i></b>
 <dt>malloc
 <dd>Depends on data model of the program
 <dt><br>_bmalloc
@@ -29796,7 +29796,7 @@ information about the error that has been detected:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The<tt> type</tt> field will contain one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>DOMAIN
 <dd>A domain error has occurred, such as<tt> sqrt(-1e0).</tt>
 <dt><br>SING
@@ -30090,7 +30090,7 @@ of<b> type</b> is 1,<tt> _mbbtype</tt> tests for a valid trail byte of a multiby
 <dt>Returns:
 <dd>The<tt> _mbccmp</tt> and<tt> _fmbccmp</tt> functions return the following values.
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>&lt; 0
 <dd>multibyte character at<b> s1</b> less than multibyte character at<b> s2</b>
 <dt><br>0
@@ -30231,7 +30231,7 @@ comparison.&nbsp; Uppercase character from<b> s1</b> and<b> s2</b> are mapped to
 <dt>Returns:
 <dd>The function returns the following values.
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>&lt; 0
 <dd>multibyte character at<b> s1</b> less than multibyte character at<b> s2</b>
 <dt><br>0
@@ -30429,7 +30429,7 @@ code is returned.
 <dd>If<b> ch</b> is a NULL pointer, the<tt> _mbclen</tt> function returns zero if multibyte character encodings do not have state-dependent
 encoding, and non-zero otherwise.&nbsp; If<b> ch</b> is not a NULL pointer, the<tt> _mbclen</tt> function returns:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0
 <dd>if<b> ch</b> points to the null character
 <dt><br>1
@@ -30948,7 +30948,7 @@ and returns a far pointer.&nbsp; It is most useful in mixed memory model applica
 <dd>If<b> s</b> is a NULL pointer, the<tt> mblen</tt> function returns zero if multibyte character encodings are not state dependent,
 and non-zero otherwise.&nbsp; If<b> s</b> is not a NULL pointer, the<tt> mblen</tt> function returns:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0
 <dd>if<b> s</b> points to the null character
 <dt><br>len
@@ -31131,7 +31131,7 @@ to the <tt> mbstate_t</tt> argument is ignored.
 <dd>The<tt> mbrlen</tt> function returns a value between -2 and<b> n</b>, inclusive.&nbsp; The<tt> mbrlen</tt> function returns
 the first of the following that applies:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0
 <dd>if the next<b> n</b> or fewer bytes form the multibyte character that corresponds to the null wide character.
 <dt><br>&gt;0
@@ -31266,7 +31266,7 @@ to the <tt> mbstate_t</tt> argument is ignored.
 state.&nbsp; The value returned will not be greater than that of the <tt> MB_CUR_MAX</tt> macro.
 <br>If<b> s</b> is not a null pointer, the<tt> mbrtowc</tt> function returns the first of the following that applies:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0
 <dd>if the next<b> n</b> or fewer bytes form the multibyte character that corresponds to the null wide character.
 <dt><br>&gt;0
@@ -32626,7 +32626,7 @@ is most useful in mixed memory model applications.
 <dd>If<b> s</b> is a NULL pointer, the<tt> mbtowc</tt> function returns zero if multibyte character encodings are not state dependent,
 and non-zero otherwise.&nbsp; If<b> s</b> is not a NULL pointer, the<tt> mbtowc</tt> function returns:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>0
 <dd>if<b> s</b> points to the null character
 <dt><br>len
@@ -33625,7 +33625,7 @@ to the current working directory or it can be an absolute path name.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Search permission is denied for a component of<b> path</b> or write permission is denied on the parent directory of the directory
 to be created.
@@ -33952,7 +33952,7 @@ until unlocked or the process terminates.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The argument<b> address</b> is not a multiple of the page size or the<b> len</b> is zero or causes an overflow
 <dt><br>ENOMEM
@@ -34002,7 +34002,7 @@ unlocked.&nbsp; The<b> flags</b> argument may be one or a combination of the fol
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The argument<b> flags</b> is zero or invalid
 <dt><br>ENOMEM
@@ -34081,7 +34081,7 @@ and errno will be set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> address</b> could not be read or the<b> len</b> is zero, or value of any argument was invalid
 <dt><br>ENOMEM
@@ -35566,7 +35566,7 @@ memory.
 and measuring<b> len</b> bytes based on the<b> flags</b> argument as specified.
 <br>The<b> flags</b> argument may be one or a combination of the following:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>PROT_NONE
 <dd>No protections
 <dt><br>PROT_READ
@@ -35586,7 +35586,7 @@ and measuring<b> len</b> bytes based on the<b> flags</b> argument as specified.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>The value of<b> flags</b> violates a the permissions that a process has to the mapped data.
 <dt><br>EAGAIN
@@ -37366,7 +37366,7 @@ memory.
 to the appropriate version of the <tt> calloc</tt>, <tt> malloc</tt>, or <tt> realloc</tt> functions.
 <br>You must use the correct<tt> _msize</tt> function as listed below depending on which heap the memory block belongs to.
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap</i></b>
 <dt>_msize
 <dd>Depends on data model of the program
 <dt><br>_bmsize
@@ -37427,7 +37427,7 @@ models (compact, large and huge memory models), _msize maps to <tt> _fmsize</tt>
 measuring<b> len</b> bytes.
 <br>The<b> flags</b> argument may be one or a combination of the following:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>MS_ASYNC
 <dd>Perform asynchronous writes
 <dt><br>MS_SYNC
@@ -37445,7 +37445,7 @@ measuring<b> len</b> bytes.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The argument<b> address</b> is not a multiple of the page size or the<b> flags</b> argument is invalid
 <dt><br>ENOMEM
@@ -37533,7 +37533,7 @@ of the number of prior calls to lock the referenced memory.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The argument<b> address</b> is not a multiple of the page size or the<b> len</b> is zero or causes an overflow
 <dt><br>ENOMEM
@@ -37601,7 +37601,7 @@ address space.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>Either one or both of the arguments was invalid.
 </dl>
@@ -37744,7 +37744,7 @@ address space.
 <dd>The<tt> nl_langinfo</tt> function retrieves language information, purportedly based on the current locale.&nbsp; The<b> item</b>
 argument specifies which language element to retrieve, and may be one of the following:
 <dl>
-<dt>Member&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Member&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>CODESET
 <dd>The character encoding supported by this locale
 <dt><br>D_T_FMT
@@ -38019,7 +38019,7 @@ for<b> path</b>.
 <br><br>The access mode is established by a combination of the bits defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp;
 The following bits may be set:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>O_RDONLY
 <dd>permit the file to be only read.
 <dt><br>O_WRONLY
@@ -38051,7 +38051,7 @@ the file permissions to be used for the new file.&nbsp; The access permissions f
 a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 <br><br>The following bits define permissions for the owner.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXU
 <dd>Read, write, execute/search
 <dt><br>S_IRUSR
@@ -38063,7 +38063,7 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define permissions for the group.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXG
 <dd>Read, write, execute/search
 <dt><br>S_IRGRP
@@ -38075,7 +38075,7 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define permissions for others.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXO
 <dd>Read, write, execute/search
 <dt><br>S_IROTH
@@ -38087,7 +38087,7 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define miscellaneous permissions used by other implementations.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IREAD
 <dd>is equivalent to S_IRUSR (read permission)
 <dt><br>S_IWRITE
@@ -38107,7 +38107,7 @@ for the file.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Access denied because<b> path</b> specifies a directory or a volume ID, or attempting to open a read-only file for writing
 <dt><br>EMFILE
@@ -38248,7 +38248,7 @@ NULL</tt> if<b> dirname</b> is not a valid pathname, or if there are no files ma
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Search permission is denied for a component of<b> dirname</b> or read permission is denied for<b> dirname</b>.
 <dt><br>ENOENT
@@ -38329,7 +38329,7 @@ to the<tt> _open_osfhandle</tt> function.
 <br>The access mode is established by a combination of the bits defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp;
 The following bits may be set:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>O_RDONLY
 <dd>permit the file to be only read.
 <dt><br>O_WRONLY
@@ -38806,7 +38806,7 @@ pclose</tt> returns (-1) with <tt> errno</tt> set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINTR
 <dd>The<tt> pclose</tt> function was interrupted by a signal while waiting for the child process to terminate.
 <dt><br>ECHILD
@@ -38850,7 +38850,7 @@ _pclose</tt> returns (-1) with <tt> errno</tt> set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINTR
 <dd>The<tt> _pclose</tt> function was interrupted by a signal while waiting for the child process to terminate.
 <dt><br>ECHILD
@@ -40501,7 +40501,7 @@ the error.
 any of the following conditions occur, the<tt> _pipe</tt> function shall return (-1) and set <tt> errno</tt> to the corresponding
 value:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EMFILE
 <dd>The calling process does not have at least 2 unused file descriptors available.
 <dt><br>ENFILE
@@ -40711,7 +40711,7 @@ and the executed command.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; execl(&quot;/bin/sh&quot;, &quot;sh&quot;, &quot;-c&quot;, command, (char *) NULL);</tt>
 <br><br>The<b> mode</b> argument to<tt> popen</tt> is a string that specifies an I/O mode for the pipe.
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>&quot;r&quot;
 <dd>The calling process will read from the standard output of the child process using the stream pointer returned by<tt> popen</tt>
 <dt><br>&quot;w&quot;
@@ -40728,7 +40728,7 @@ to create either the pipe or the subprocess, a<tt> NULL</tt> stream pointer is r
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The<b> mode</b> argument is invalid.
 </dl>
@@ -40789,7 +40789,7 @@ spawnl(&lt;shell_path&gt;, &lt;shell&gt;, &quot;-c&quot;, command, (char *)NULL)
 &quot;command.com&quot; (DOS, Windows 95) or &quot;cmd.exe&quot; (Windows NT/2000, OS/2).
 <br><br>The<b> mode</b> argument to<tt> _popen</tt> is a string that specifies an I/O mode for the pipe.
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>&quot;r&quot;
 <dd>The calling process will read from the standard output of the child process using the stream pointer returned by<tt> _popen</tt>
 <dt><br>&quot;w&quot;
@@ -40813,7 +40813,7 @@ to create either the pipe or the subprocess, a<tt> NULL</tt> stream pointer is r
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The<b> mode</b> argument is invalid.
 </dl>
@@ -42235,7 +42235,7 @@ to the old memory block.&nbsp; If<tt> buffer</tt> was your only pointer to the m
 to this memory.
 <br><br>Each function reallocates memory from a particular heap, as listed below:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap</i></b>
 <dt>realloc
 <dd>Depends on data model of the program
 <dt><br>_brealloc
@@ -43468,7 +43468,7 @@ set.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ESRCH
 <dd>The process ID<b> pid</b> is invalid or could not be found
 <dt><br>EPERM
@@ -43510,7 +43510,7 @@ the return value is -1 and <tt> errno</tt> is appropriately set.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> policy</b> does not represent a valid scheduling policy
 </dl>
@@ -43548,7 +43548,7 @@ the return value is -1 and <tt> errno</tt> is appropriately set.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> policy</b> does not represent a valid scheduling policy
 </dl>
@@ -43586,7 +43586,7 @@ the return value is -1 and <tt> errno</tt> is appropriately set.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ESRCH
 <dd>The process ID<b> pid</b> could not be found
 <dt><br>EINVAL
@@ -43632,7 +43632,7 @@ set.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ESRCH
 <dd>The process ID<b> pid</b> is invalid or could not be found
 <dt><br>EPERM
@@ -43673,7 +43673,7 @@ set.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ESRCH
 <dd>The process ID<b> pid</b> is invalid or could not be found
 <dt><br>EINVAL
@@ -43720,7 +43720,7 @@ fails, the return value is -1 and <tt> errno</tt> is appropriately set.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ESRCH
 <dd>The process ID<b> pid</b> could not be found
 <dt><br>EINVAL
@@ -44025,7 +44025,7 @@ appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EBUSY
 <dd>The semaphore is currently unavailable.
 </dl>
@@ -44064,7 +44064,7 @@ appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The pointer<b> value</b> is <tt> NULL</tt>
 </dl>
@@ -44104,7 +44104,7 @@ appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of the<b> value</b> argument exceeds <tt> SEM_VALUE_MAX</tt>
 <dt><br>ENOSYS
@@ -44145,7 +44145,7 @@ appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The pointer<b> semaphore</b> is <tt> NULL</tt>
 </dl>
@@ -44183,7 +44183,7 @@ be locked, the function returns -1 and <tt> errno</tt> is set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The pointer<b> semaphore</b> is <tt> NULL</tt>
 <dt><br>EAGAIN
@@ -44224,7 +44224,7 @@ be locked, the function returns -1 and <tt> errno</tt> is set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The pointer<b> semaphore</b> is <tt> NULL</tt>
 </dl>
@@ -45148,7 +45148,7 @@ and so invoking this function will have no effect upon the behavior of a program
 locale is supported for POSIX compatibility and equivalent to specifying the<tt> &quot;C&quot;</tt> locale.
 <br><br>The possible values for the argument<b> category</b> are as follows:
 <dl>
-<dt>Category&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Category&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>LC_ALL
 <dd>select entire environment
 <dt><br>LC_COLLATE
@@ -45240,7 +45240,7 @@ which contains information about the error that has been detected:
 <br><tt>};</tt>
 <br><br>The<tt> type</tt> field will contain one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>DOMAIN
 <dd>A domain error has occurred, such as<tt> sqrt(-1e0).</tt>
 <dt><br>SING
@@ -45360,7 +45360,7 @@ for<b> codepage</b>, the function returns -1 and the code page setting is unchan
 the file whose file handle is given by<b> handle</b>.&nbsp; The mode, defined in the<tt> &lt;fcntl.h&gt;</tt> header file,
 can be one of:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>O_TEXT
 <dd>On input, a carriage-return character that immediately precedes a linefeed character is removed from the data that is read.
 &nbsp;On output, a carriage-return character is inserted before each linefeed character.
@@ -45451,7 +45451,7 @@ may affect the return value from this function.
 <dd>The<tt> set_new_handler</tt> functions are used to transfer control to a user-defined error handler if the <tt> new</tt> operator
 fails to allocate memory.&nbsp; The argument<b> pNewHandler</b> is the name of a function of type <tt> PFV</tt> or <tt> PFU</tt>.
 <dl>
-<dt>Type&nbsp;&nbsp;&nbsp;&nbsp; Description
+<dt><b><i>Type&nbsp;&nbsp;&nbsp;&nbsp; Description</i></b>
 <dt>PFV
 <dd>Pointer to a function that returns <tt> void</tt> (i.e., returns nothing) and takes an argument of type <tt> void</tt> (i.e.,
 takes no argument).
@@ -46258,7 +46258,7 @@ When the window is full, the lines scroll upwards one line and then text is disp
 is used, it must be called after the file has been opened and before it has been read or written.&nbsp; The argument<b> mode</b>
 determines how the file<b> fp</b> will be buffered, as follows:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_IOFBF
 <dd>causes input/output to be fully buffered.
 <dt><br>_IOLBF
@@ -46740,7 +46740,7 @@ of the screen, and the point<tt> (1.0,1.0)</tt> at the upper right corner.
 <dd>The<tt> signal</tt> function is used to specify an action to take place when certain conditions are detected while a program
 executes.&nbsp; These conditions are defined to be:
 <dl>
-<dt>Condition&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Condition&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>SIGABRT
 <dd>abnormal termination, such as caused by the <tt> abort</tt> function
 <dt><br>SIGBREAK
@@ -47414,7 +47414,7 @@ is the file permissions to be used when <tt> O_CREAT</tt> flag is on in the<b> a
 <br><br>The access mode is established by a combination of the bits defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp;
 The following bits may be set:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>O_RDONLY
 <dd>permit the file to be only read.
 <dt><br>O_WRONLY
@@ -47446,7 +47446,7 @@ the file permissions to be used for the new file.&nbsp; The access permissions f
 a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 <br><br>The following bits define permissions for the owner.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXU
 <dd>Read, write, execute/search
 <dt><br>S_IRUSR
@@ -47458,7 +47458,7 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define permissions for the group.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXG
 <dd>Read, write, execute/search
 <dt><br>S_IRGRP
@@ -47470,7 +47470,7 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define permissions for others.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXO
 <dd>Read, write, execute/search
 <dt><br>S_IROTH
@@ -47482,7 +47482,7 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>The following bits define miscellaneous permissions used by other implementations.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IREAD
 <dd>is equivalent to S_IRUSR (read permission)
 <dt><br>S_IWRITE
@@ -47496,7 +47496,7 @@ for the file.
 <br><br>The shared access for the file,<b> share</b>, is established by a combination of bits defined in the<tt> &lt;share.h&gt;</tt>
 header file.&nbsp; The following values may be set:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>SH_COMPAT
 <dd>Set compatibility mode.
 <dt><br>SH_DENYRW
@@ -47520,7 +47520,7 @@ these sharing modes.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Access denied because<b> path</b> specifies a directory or a volume ID, or sharing mode denied due to a conflicting open.
 <dt><br>EMFILE
@@ -47721,7 +47721,7 @@ path */</tt>
 <dd>The<b> spawn...</b>&nbsp; functions create and execute a new child process, named by<b> pgm</b>.&nbsp; The value of<b> mode</b>
 determines how the program is loaded and how the invoking program will behave after the invoked program is initiated:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>P_WAIT
 <dd>The invoked program is loaded into available memory, is executed, and then the original program resumes execution.&nbsp; This
 option is supported under DOS, OS/2, Win32 and QNX.
@@ -47819,7 +47819,7 @@ lines.</tt>
 <dt>Returns:
 <dd>When the value of<b> mode</b> is:
 <dl>
-<dt>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mode&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>P_WAIT
 <dd>then the return value from<b> spawn...</b>&nbsp; is the exit status of the child process.
 <dt><br>P_NOWAIT
@@ -47841,7 +47841,7 @@ indicate the error.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>E2BIG
 <dd>The argument list exceeds 128 bytes, or the space required for the environment information exceeds 32K.
 <dt><br>EINVAL
@@ -48641,7 +48641,7 @@ conventions.
 is placed in the structure located at the address indicated by<b> buf</b>.
 <br>The file<tt> &lt;sys/stat.h&gt;</tt> contains definitions for the structure <tt> stat</tt>.
 <dl>
-<dt>Field&nbsp;&nbsp;&nbsp;&nbsp; Type/Meaning
+<dt><b><i>Field&nbsp;&nbsp;&nbsp;&nbsp; Type/Meaning</i></b>
 <dt>st_dev
 <dd>(dev_t) the disk drive the file resides on
 <dt><br>st_ino
@@ -48685,7 +48685,7 @@ is placed in the structure located at the address indicated by<b> buf</b>.
 </dl>
 <br>At least the following macros are defined in the<tt> &lt;sys/stat.h&gt;</tt> header file.
 <dl>
-<dt>Macro&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Macro&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_ISFIFO(m)
 <dd>Test for FIFO.
 <dt><br>S_ISCHR(m)
@@ -48701,7 +48701,7 @@ is placed in the structure located at the address indicated by<b> buf</b>.
 The macro evaluates to a non-zero value if the test is true and zero if the test is false.
 <br><br>The following bits are encoded within the <tt> st_mode</tt> field of a <tt> stat</tt> structure.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Owner Permissions
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Owner Permissions</i></b>
 <dt>S_IRWXU
 <dd>Read, write, search (if a directory), or execute (otherwise)
 <dt><br>S_IRUSR
@@ -48719,7 +48719,7 @@ The macro evaluates to a non-zero value if the test is true and zero if the test
 </dl>
 <br><tt> S_IRWXU</tt> is the bitwise inclusive OR of <tt> S_IRUSR</tt>, <tt> S_IWUSR</tt>, and <tt> S_IXUSR</tt>.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Group Permissions (same as owner's on DOS, OS/2 or Windows)
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Group Permissions (same as owner's on DOS, OS/2 or Windows)</i></b>
 <dt>S_IRWXG
 <dd>Read, write, search (if a directory), or execute (otherwise)
 <dt><br>S_IRGRP
@@ -48731,7 +48731,7 @@ The macro evaluates to a non-zero value if the test is true and zero if the test
 </dl>
 <br><tt> S_IRWXG</tt> is the bitwise inclusive OR of <tt> S_IRGRP</tt>, <tt> S_IWGRP</tt>, and <tt> S_IXGRP</tt>.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Other Permissions (same as owner's on DOS, OS/2 or Windows)
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Other Permissions (same as owner's on DOS, OS/2 or Windows)</i></b>
 <dt>S_IRWXO
 <dd>Read, write, search (if a directory), or execute (otherwise)
 <dt><br>S_IROTH
@@ -48743,7 +48743,7 @@ The macro evaluates to a non-zero value if the test is true and zero if the test
 </dl>
 <br><tt> S_IRWXO</tt> is the bitwise inclusive OR of <tt> S_IROTH</tt>, <tt> S_IWOTH</tt>, and <tt> S_IXOTH</tt>.
 <dl>
-<dt>Mask&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_ISUID
 <dd>(Not supported by DOS, OS/2 or Windows) Set user ID on execution.&nbsp; The process's effective user ID shall be set to that
 of the owner of the file when the file is run as a program.&nbsp; On a regular file, this bit should be cleared on any write.
@@ -49958,7 +49958,7 @@ a '%' character followed by a character that determines the substitution that is
 are copied unchanged into the array.&nbsp; No more than<b> maxsize</b> characters are placed in the array.&nbsp; The format
 directives %D, %h, %n, %r, %t, and %T are from POSIX.
 <dl>
-<dt>Directive&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Directive&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>%a
 <dd>locale's abbreviated weekday name
 <dt><br>%A
@@ -52953,7 +52953,7 @@ ordering.
 <dd>The<tt> sysconf</tt> function retrieves a current system configuration parameter depending on the value of system information
 from the kernel via the<b> name</b> passed.&nbsp; This implementation currently supports the following inputs:
 <dl>
-<dt>Member&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Member&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_SC_ARG_MAX
 <dd>The maximum number of arguments supported by<tt> execv</tt> and related arguments
 <dt><br>_SC_CHILD_MAX
@@ -53002,7 +53002,7 @@ set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> name</b> is unsupported on this implementation
 </dl>
@@ -53042,7 +53042,7 @@ set appropriately.
 <dd>The<tt> sysinfo</tt> function retrieves system information from the kernel via the<b> info</b> structure.&nbsp; The members
 of the structure are defined below:
 <dl>
-<dt>Member&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Member&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>uptime
 <dd>The number of seconds since the system booted
 <dt><br>loads
@@ -53078,7 +53078,7 @@ set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> info</b> is NULL
 <dt><br>EFAULT
@@ -53332,8 +53332,8 @@ any existing file.&nbsp; The<b> prefix</b> argument is the prefix to the filenam
 to allocate space for the filename; the program is responsible for freeing this space when it is no longer needed.<tt>&nbsp;
 _tempnam</tt> looks for the file with the given name in the following directories, listed in order of precedence.
 <dl>
-<dt>Directory Used
-<dd>Conditions
+<dt><b><i>Directory Used</i></b>
+<dd><b><i>Conditions</i></b>
 <dt><br>Directory specified by TMP
 <dd>The <tt> TMP</tt> environment variable must be set and the directory specified by <tt> TMP</tt> must exist.
 <dt><br>dir (function argument)
@@ -53519,7 +53519,7 @@ fails, the return value is -1, and <tt> errno</tt> will be set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> timerid</b> is NULL or an invalid<b> clockid</b> is specified
 <dt><br>EAGAIN
@@ -53559,7 +53559,7 @@ set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> timerid</b> is NULL or invalid
 </dl>
@@ -53608,7 +53608,7 @@ set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> timerid</b> is NULL or invalid
 </dl>
@@ -53670,7 +53670,7 @@ set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> timerid</b> is NULL or invalid
 </dl>
@@ -53708,7 +53708,7 @@ fails, the return value is -1, and <tt> errno</tt> will be set appropriately.
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EINVAL
 <dd>The value of<b> timerid</b> is NULL or invalid
 </dl>
@@ -54127,7 +54127,7 @@ letter when the argument is a wide-character lowercase letter; otherwise, the or
 values of<b> desc</b> are defined by the use of the <tt> wctrans</tt> function.
 <br>The two expressions listed below behave the same as a call to the wide character case mapping function shown.
 <dl>
-<dt>Expression&nbsp;&nbsp;&nbsp;&nbsp; Equivalent
+<dt><b><i>Expression&nbsp;&nbsp;&nbsp;&nbsp; Equivalent</i></b>
 <dt>towctrans(wc, wctrans(&quot;tolower&quot;))
 <dd>towlower(wc)
 <dt><br>towctrans(wc, wctrans(&quot;toupper&quot;))
@@ -54244,7 +54244,7 @@ the TTY.&nbsp; Upon failure, the <tt> ttyname_r</tt> function will return the er
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ENOTTY
 <dd>The value of<b> fd</b> does not refer to a TTY
 <dt><br>EACCES
@@ -54523,7 +54523,7 @@ value is disallowed.
 for the file or directory are specified as a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 <br><br>The following bits define permissions for the owner.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXU
 <dd>Read, write, execute/search
 <dt><br>S_IRUSR
@@ -54535,7 +54535,7 @@ for the file or directory are specified as a combination of bits (defined in the
 </dl>
 <br>The following bits define permissions for the group.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXG
 <dd>Read, write, execute/search
 <dt><br>S_IRGRP
@@ -54547,7 +54547,7 @@ for the file or directory are specified as a combination of bits (defined in the
 </dl>
 <br>The following bits define permissions for others.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IRWXO
 <dd>Read, write, execute/search
 <dt><br>S_IROTH
@@ -54559,7 +54559,7 @@ for the file or directory are specified as a combination of bits (defined in the
 </dl>
 <br>The following bits define miscellaneous permissions used by other implementations.
 <dl>
-<dt>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Permission&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>S_IREAD
 <dd>is equivalent to S_IRUSR (read permission)
 <dt><br>S_IWRITE
@@ -54913,7 +54913,7 @@ and the access and modification times of the file or directory are set to the va
 <dt>Errors:
 <dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>EACCES
 <dd>Search permission is denied for a component of<b> path</b> or the<b> times</b> argument is<tt> NULL</tt> and the effective
 user ID of the process does not match the owner of the file and write access is denied.
@@ -56632,7 +56632,7 @@ _exit</tt> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>1
 <dd>Hard-error abort
 <dt><br>2
@@ -56689,7 +56689,7 @@ value in a portable manner.
 <dd>The<tt> wait</tt> function returns the child's process ID if the child process terminated normally.&nbsp; Otherwise,<tt> wait</tt>
 returns -1 and sets <tt> errno</tt> to one of the following values:
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>ECHILD
 <dd>No child processes exist for the calling process.
 <dt><br>EINTR
@@ -57605,7 +57605,7 @@ is stored in the array pointed to by<b> s</b>.&nbsp; At most <tt> MB_CUR_MAX</tt
 <dd>If<b> s</b> is a NULL pointer, the<tt> wctomb</tt> function returns zero if multibyte character encodings are not state dependent,
 and non-zero otherwise.&nbsp; If<b> s</b> is not a NULL pointer, the<tt> wctomb</tt> function returns:
 <dl>
-<dt>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>-1
 <dd>if the value of<b> wc</b> does not correspond to a valid multibyte character
 <dt><br>len
@@ -57754,7 +57754,7 @@ identified by the string argument<b> property</b>.&nbsp; The constructed value i
 of the current locale; the constructed value becomes indeterminate if the category's setting is changed.
 <br>The two strings listed below are valid in all locales as<b> property</b> arguments to the<tt> wctrans</tt> function.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>tolower
 <dd>uppercase characters are mapped to lowercase
 <dt><br>toupper
@@ -57820,7 +57820,7 @@ by the string argument,<b> property</b>.&nbsp; The constructed value is affected
 current locale; the constructed value becomes indeterminate if the category's setting is changed.
 <br>The twelve strings listed below are valid in all locales as<b> property</b> arguments to the<tt> wctype</tt> function.
 <dl>
-<dt>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>alnum
 <dd>any wide character for which one of <tt> iswalpha</tt> or <tt> iswdigit</tt> is true
 <dt><br>alpha
@@ -58133,7 +58133,7 @@ if the expression is false.&nbsp; The diagnostic message has the following form:
 <br><b>The sets of characters tested for by the </b><tt> isalnum</tt><b>, </b><tt> isalpha</tt><b>, </b><tt> iscntrl</tt><b>,
 </b><tt> islower</tt><b>, </b><tt> isprint</tt><b>, and </b><tt> isupper</tt><b> functions (7.3.1).</b>
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Characters Tested For
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Characters Tested For</i></b>
 <dt>isalnum
 <dd>Characters 0-9, A-Z, a-z
 <dt><br>isalpha
@@ -58151,7 +58151,7 @@ if the expression is false.&nbsp; The diagnostic message has the following form:
 <br><b>The values returned by the mathematics functions on domain errors (7.5.1).</b>
 <br><br>When a domain error occurs, the listed values are returned by the following functions:
 <dl>
-<dt>Function&nbsp;&nbsp;&nbsp;&nbsp; Value returned
+<dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Value returned</i></b>
 <dt>acos
 <dd>0.0
 <dt><br>acosh
@@ -58286,7 +58286,7 @@ number is bad.&nbsp; The constants are defined in the<tt> &lt;errno.h&gt;</tt> h
 <br><b>The messages generated by the </b><tt> perror</tt><b> function (7.9.10.4).</b>
 <br><br>The <tt> perror</tt> function generates the following messages.
 <dl>
-<dt>Error&nbsp;&nbsp;&nbsp;&nbsp; Message
+<dt><b><i>Error&nbsp;&nbsp;&nbsp;&nbsp; Message</i></b>
 <dt>0
 <dd>&quot;Error 0&quot;
 <dt><br>1
@@ -58346,7 +58346,7 @@ environment variable to find the command interpreter and passes the argument str
 <br><b>The contents of the error message strings returned by the </b><tt> strerror</tt><b> function (7.11.6.2).</b>
 <br><br>The <tt> strerror</tt> function generates the following messages.
 <dl>
-<dt>Error&nbsp;&nbsp;&nbsp;&nbsp; Message
+<dt><b><i>Error&nbsp;&nbsp;&nbsp;&nbsp; Message</i></b>
 <dt>0
 <dd>&quot;Error 0&quot;
 <dt><br>1
