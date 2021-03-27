@@ -170,9 +170,9 @@ still be needed for accurate exception reporting.
 </ul>
 <br>The following example sets the processor revision information to indicate a 386 with 387 and Weitek 3167.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; proc_revision proc;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_CPU( p, CPU_386 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_FPU( p, FPU_387 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_WTK( p, WTK_3167 );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_CPU( proc, CPU_386 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_FPU( proc, FPU_387 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_WTK( proc, WTK_3167 );</tt>
 <br><br>The return value structure is defined as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef union&nbsp;&nbsp; cg_init_info {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct {</tt>
@@ -1534,7 +1534,7 @@ of the symbol are merged into one copy by the linker.
 <dd>Extra information.&nbsp; The type and meaning depends on the value of<b> msg</b> and is indicated below.
 </dl>
 <dl>
-<dt>MSG_INFO_FILE 
+<dt>MSG_INFO_FILE
 <dd>Informational message about file.&nbsp; extra (void) is ignored.
 <dt><br>MSG_CODE_SIZE
 <dd>Code size.&nbsp; Extra (int) is the size of the generated code.
