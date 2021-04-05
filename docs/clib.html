@@ -19225,30 +19225,21 @@ The routine will query the local database initially.&nbsp; If not found, the rou
 &quot;A&quot; records for the given host name.
 <br>The structure returned is defined as:
 <br><br><tt>struct hostent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *h_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-host official name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **h_aliases;&nbsp;&nbsp; /* host alternate names,
-up to 16,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *h_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* host official name&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **h_aliases;&nbsp;&nbsp; /* host alternate names, up to 16,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * terminated by a NULL pointer</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terminated by a NULL pointer&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; h_length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* address length in bytes
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **h_addr_list; /* array of pointers to network</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h_addrtype;&nbsp;&nbsp;&nbsp; /* address type
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h_length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-address length in bytes */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char **&nbsp;&nbsp;&nbsp;&nbsp; **h_addr_list; /* array of pointers to network</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addresses in network byte order,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * addresses in network byte</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * order, terminated by a NULL</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * pointer</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terminated by a NULL pointer&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>In the current Open Watcom implementation, this routine will only ever return IPv4 addresses, and all addresses will be
-of <tt> AF_INET</tt> address type.
+<br><br>In the current Open Watcom implementation, this routine will only ever return IPv4 addresses, and all addresses will
+be of <tt> AF_INET</tt> address type.
 <br><br>The pointer returned by<tt> gethostbyname</tt> points to a private location, and the user should free neither the
 pointer itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values
 changing.
@@ -19319,30 +19310,21 @@ either an error is encountered or no further entries exist.
 initially.&nbsp; By default, this will always return the first entry in the database.
 <br><br>The structure returned is defined as:
 <br><br><tt>struct hostent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *h_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-host official name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **h_aliases;&nbsp;&nbsp; /* host alternate names,
-up to 16,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *h_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* host official name&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **h_aliases;&nbsp;&nbsp; /* host alternate names, up to 16,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * terminated by a NULL pointer</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terminated by a NULL pointer&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; h_length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* address length in bytes
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **h_addr_list; /* array of pointers to network</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h_addrtype;&nbsp;&nbsp;&nbsp; /* address type
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h_length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-address length in bytes */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char **&nbsp;&nbsp;&nbsp;&nbsp; **h_addr_list; /* array of pointers to network</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addresses in network byte order,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * addresses in network byte</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * order, terminated by a NULL</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * pointer</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terminated by a NULL pointer&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>In the current Open Watcom implementation, this routine will only ever return IPv4 addresses, and all addresses will be
-of <tt> AF_INET</tt> address type.
+<br><br>In the current Open Watcom implementation, this routine will only ever return IPv4 addresses, and all addresses will
+be of <tt> AF_INET</tt> address type.
 <br><br>The pointer returned by<tt> gethostent</tt> points to a static location, and the user should free neither the pointer
 itself nor any of its consituent structure members.
 <br><br>This function is not thread-safe.&nbsp; Other calls to functions accessing the hostname database may affect the return
@@ -19626,13 +19608,16 @@ type</b> as <tt> AF_INET</tt>, <tt> AF_INET6</tt>, etc., and address matching th
 returns information about said network if a match is found.&nbsp; The routine will query the local database only.
 <br>The structure returned is defined as:
 <br><br><tt>struct netent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp; *n_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official network name
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp; **n_aliases;&nbsp;&nbsp; /* alias list */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n_addrtype;&nbsp;&nbsp;&nbsp; /* address type */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; uint32_t n_net;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* network number */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *n_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* official network name */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **n_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n_addrtype;&nbsp;&nbsp;&nbsp;&nbsp; /* address
+type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; uint32_t&nbsp;&nbsp;&nbsp; n_net;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* network
+number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getnetbyaddr</tt> points to a private location, and the user should free neither the pointer
+<br><br>The pointer returned by<tt> getnetbyaddr</tt> points to a private location, and the user should free neither the pointer
 itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname
 database may affect the return value from this function.
@@ -19670,13 +19655,16 @@ entry will never be NULL.
 network if a match is found.&nbsp; The routine will query the local database only.
 <br>The structure returned is defined as:
 <br><br><tt>struct netent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp; *n_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official network name
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp; **n_aliases;&nbsp;&nbsp; /* alias list */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n_addrtype;&nbsp;&nbsp;&nbsp; /* address type */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; uint32_t n_net;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* network number */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *n_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* official network name */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **n_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n_addrtype;&nbsp;&nbsp;&nbsp;&nbsp; /* address
+type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; uint32_t&nbsp;&nbsp;&nbsp; n_net;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* network
+number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getnetbyname</tt> points to a private location, and the user should free neither the pointer
+<br><br>The pointer returned by<tt> getnetbyname</tt> points to a private location, and the user should free neither the pointer
 itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname
 database may affect the return value from this function.
@@ -19715,13 +19703,16 @@ call to <tt> setnetent</tt>, the function will always return the first network i
 the local database only.
 <br>The structure returned is defined as:
 <br><br><tt>struct netent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp; *n_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official network name
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp; **n_aliases;&nbsp;&nbsp; /* alias list */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n_addrtype;&nbsp;&nbsp;&nbsp; /* address type */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; uint32_t n_net;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* network number */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *n_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* official network name */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **n_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n_addrtype;&nbsp;&nbsp;&nbsp;&nbsp; /* address
+type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; uint32_t&nbsp;&nbsp;&nbsp; n_net;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* network
+number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getnetent</tt> points to a private location, and the user should free neither the pointer
+<br><br>The pointer returned by<tt> getnetent</tt> points to a private location, and the user should free neither the pointer
 itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname
 database may affect the return value from this function.
@@ -20246,12 +20237,14 @@ both the official name and aliases.&nbsp; The routine will query the local datab
 <br><br><tt>struct protoent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *p_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official protocol
 name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **p_aliases;&nbsp;&nbsp;&nbsp; /* alias list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **p_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; p_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol number
-*/</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getprotobyname</tt> points to a private location, and the user should free neither the pointer
-itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
+<br><br>The pointer returned by<tt> getprotobyname</tt> points to a private location, and the user should free neither the
+pointer itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values
+changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the protocol
 database may affect the return value from this function.
 </dl>
@@ -20289,12 +20282,14 @@ argument.&nbsp; The routine will query the local database only.
 <br><br><tt>struct protoent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *p_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official protocol
 name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **p_aliases;&nbsp;&nbsp;&nbsp; /* alias list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **p_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; p_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol number
-*/</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getprotobynumber</tt> points to a private location, and the user should free neither the pointer
-itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
+<br><br>The pointer returned by<tt> getprotobynumber</tt> points to a private location, and the user should free neither the
+pointer itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values
+changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the protocol
 database may affect the return value from this function.
 </dl>
@@ -20333,11 +20328,12 @@ query the local database only.
 <br><br><tt>struct protoent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *p_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official protocol
 name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **p_aliases;&nbsp;&nbsp;&nbsp; /* alias list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **p_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; p_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol number
-*/</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getprotoent</tt> points to a private location, and the user should free neither the pointer
+<br><br>The pointer returned by<tt> getprotoent</tt> points to a private location, and the user should free neither the pointer
 itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the protocol
 database may affect the return value from this function.
@@ -20693,13 +20689,16 @@ protocol.&nbsp; The routine will query the local database only.
 <br><br><tt>struct servent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official service name
 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **s_aliases;&nbsp;&nbsp;&nbsp; /* alias list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **s_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; s_port;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* port number
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol to use */</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol to use&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getservbyname</tt> points to a private location, and the user should free neither the pointer
-itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
+<br><br>The pointer returned by<tt> getservbyname</tt> points to a private location, and the user should free neither the
+pointer itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values
+changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname
 database may affect the return value from this function.
 </dl>
@@ -20739,13 +20738,16 @@ only.
 <br><br><tt>struct servent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official service name
 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **s_aliases;&nbsp;&nbsp;&nbsp; /* alias list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **s_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; s_port;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* port number
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol to use */</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol to use&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getservbyport</tt> points to a private location, and the user should free neither the pointer
-itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
+<br><br>The pointer returned by<tt> getservbyport</tt> points to a private location, and the user should free neither the
+pointer itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values
+changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname
 database may affect the return value from this function.
 </dl>
@@ -20784,12 +20786,14 @@ the local database only.
 <br><br><tt>struct servent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official service name
 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **s_aliases;&nbsp;&nbsp;&nbsp; /* alias list */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **s_aliases;&nbsp;&nbsp;&nbsp; /* alias list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; s_port;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* port number
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol to use */</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_proto;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* protocol to use&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
-<br>The pointer returned by<tt> getservent</tt> points to a private location, and the user should free neither the pointer
+<br><br>The pointer returned by<tt> getservent</tt> points to a private location, and the user should free neither the pointer
 itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values changing.
 <br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname
 database may affect the return value from this function.
