@@ -6092,7 +6092,8 @@ code should use the ISO C function).
 <br><tt>#include &lt;malloc.h&gt;</tt>
 <br><br><tt>struct list {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; struct list __based(__self) *next;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value;</tt>
 <br><tt>};</tt>
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
@@ -6232,7 +6233,8 @@ of <tt> _NULLSEG</tt> is returned if the segment could not be allocated.
 <br><tt>#include &lt;malloc.h&gt;</tt>
 <br><br><tt>struct list {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; struct list __based(__self) *next;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value;</tt>
 <br><tt>};</tt>
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
@@ -6287,17 +6289,14 @@ of <tt> _NULLSEG</tt> is returned if the segment could not be allocated.
 <br><tt>unsigned short _bios_disk( unsigned service,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct diskinfo_t *diskinfo );</tt>
-<br><tt>struct&nbsp; diskinfo_t {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk parameters&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned drive;&nbsp;&nbsp;&nbsp;&nbsp; /* drive number&nbsp;&nbsp;&nbsp;
-&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned head;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* head number&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned track;&nbsp;&nbsp;&nbsp;&nbsp; /* track number&nbsp;&nbsp;&nbsp;
-&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned sector;&nbsp;&nbsp;&nbsp; /* sector number&nbsp;&nbsp;&nbsp;&nbsp;
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned nsectors;&nbsp; /* number of sectors */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void __far *buffer; /* buffer address&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>struct&nbsp; diskinfo_t {&nbsp;&nbsp;&nbsp;&nbsp; /* disk parameters&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp; drive;&nbsp;&nbsp;&nbsp; /* drive number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp; head;&nbsp;&nbsp;&nbsp;&nbsp; /* head number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp; track;&nbsp;&nbsp;&nbsp; /* track number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp; sector;&nbsp;&nbsp; /* sector number&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp; nsectors; /* number of sectors */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; void __far *buffer;&nbsp; /* buffer address&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -7229,7 +7228,7 @@ character representation of that character.
 <br><tt>#include &lt;math.h&gt;</tt>
 <br><tt>double cabs( struct complex value );</tt>
 <br><br><tt>struct _complex {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; double&nbsp; x;&nbsp; /* real part */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; double&nbsp; x;&nbsp; /* real part&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; double&nbsp; y;&nbsp; /* imaginary part */</tt>
 <br><tt>};</tt>
 </dl>
@@ -8098,8 +8097,8 @@ executing.&nbsp; This can be converted to seconds by dividing by the value of th
 <br><tt>#include &lt;time.h&gt;</tt>
 <br><tt>int clock_getres(clockid_t clockid, struct timespec *ts);</tt>
 <br><br><tt>struct timespec {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t tv_sec;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long tv_nsec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp; tv_sec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; tv_nsec;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -8140,8 +8139,8 @@ pointer.
 <br><tt>#include &lt;time.h&gt;</tt>
 <br><tt>int clock_gettime(clockid_t clockid, struct timespec *ts);</tt>
 <br><br><tt>struct timespec {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t tv_sec;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long tv_nsec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp; tv_sec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; tv_nsec;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -8185,8 +8184,8 @@ const struct timespec *request,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 struct timespec *remains);</tt>
 <br><br><tt>struct timespec {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t tv_sec;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long tv_nsec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp; tv_sec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; tv_nsec;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -8237,8 +8236,8 @@ errno</tt> appropriately on failures.
 <br><tt>#include &lt;time.h&gt;</tt>
 <br><tt>int clock_settime(clockid_t clockid, const struct timespec *ts);</tt>
 <br><br><tt>struct timespec {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t tv_sec;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long tv_nsec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp; tv_sec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; tv_nsec;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -9646,7 +9645,7 @@ of instructions are executed without any intervening interrupts occurring.
 <br><tt>#include &lt;i86.h&gt;</tt>
 <br><br><tt>struct list_entry {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; struct list_entry *next;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; data;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data;</tt>
 <br><tt>};</tt>
 <br><tt>volatile struct list_entry *ListHead = NULL;</tt>
 <br><tt>volatile struct list_entry *ListTail = NULL;</tt>
@@ -9747,7 +9746,7 @@ values:
 <br><tt>#include &lt;stdlib.h&gt;</tt>
 <br><tt>div_t div( int numer, int denom );</tt>
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int quot;&nbsp;&nbsp;&nbsp;&nbsp; /* quotient */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int quot;&nbsp;&nbsp;&nbsp;&nbsp; /* quotient&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int rem;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* remainder */</tt>
 <br><tt>} div_t;</tt>
 </dl>
@@ -10170,10 +10169,10 @@ errno</tt>.&nbsp; Possible values and their interpretations:
 <br><tt>#include &lt;dos.h&gt;</tt>
 <br><tt>int dosexterr( struct DOSERROR *err_info );</tt>
 <br><br><tt>struct _DOSERROR {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int exterror;&nbsp;&nbsp; /* contents of AX register */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char errclass;&nbsp; /* contents of BH register */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char action;&nbsp;&nbsp;&nbsp; /* contents of BL register */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char locus;&nbsp;&nbsp;&nbsp;&nbsp; /* contents of CH register */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; exterror; /* contents of AX register */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; errclass; /* contents of BH register */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; action;&nbsp;&nbsp; /* contents of BL register */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; locus;&nbsp;&nbsp;&nbsp; /* contents of CH register */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -10247,19 +10246,20 @@ Otherwise,<tt> dosexterr</tt> returns the number of the extended error.
 <br><tt>unsigned _dos_findnext(&nbsp; struct find_t *buffer );</tt>
 <br><tt>unsigned _dos_findclose( struct find_t *buffer );</tt>
 <br><br><tt>struct find_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char reserved&#91;21&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* reserved for use by DOS&nbsp;&nbsp;
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char attrib;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* attribute byte
-for file&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_time; /* time of last write to file*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_date; /* date of last write to file*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; size;&nbsp;&nbsp;&nbsp; /* length of file in bytes&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reserved&#91;21&#93;; /* reserved
+for use by DOS&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; attrib;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; /* attribute byte for file&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* time of last write to file */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_date;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* date of last write to file */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* length of file in
+bytes&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>#if defined(__OS2__) || defined(__NT__)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char name&#91;256&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* null-terminated filename
-&nbsp;*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;256&#93;;&nbsp;&nbsp;
+&nbsp;/* null-terminated filename&nbsp;&nbsp; */</tt>
 <br><tt>#else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char name&#91;13&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* null-terminated
-filename&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;13&#93;;&nbsp;&nbsp;
+&nbsp; /* null-terminated filename&nbsp;&nbsp; */</tt>
 <br><tt>#endif</tt>
 <br><tt>};</tt>
 <br><tt>unsigned _wdos_findfirst( const wchar_t *path,</tt>
@@ -10270,19 +10270,20 @@ filename&nbsp; */</tt>
 <br><tt>unsigned _wdos_findnext( struct _wfind_t *buffer );</tt>
 <br><tt>unsigned _wdos_findclose( struct _wfind_t *buffer );</tt>
 <br><br><tt>struct _wfind_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char reserved&#91;21&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* reserved for use by DOS&nbsp;&nbsp;
-&nbsp;*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char attrib;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* attribute byte
-for file&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_time; /* time of last write to file */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_date; /* date of last write to file */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; size;&nbsp;&nbsp;&nbsp; /* length of file in bytes&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reserved&#91;21&#93;; /* reserved
+for use by DOS&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; attrib;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; /* attribute byte for file&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* time of last write to file */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short wr_date;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* date of last write to file */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* length of file in
+bytes&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>#if defined(__OS2__) || defined(__NT__)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; wchar_t name&#91;256&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* null-terminated filename&nbsp;&nbsp;
-*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;256&#93;;&nbsp;&nbsp;&nbsp; /* null-terminated
+filename&nbsp;&nbsp; */</tt>
 <br><tt>#else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; wchar_t name&#91;13&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* null-terminated filename&nbsp;
-&nbsp;*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;13&#93;;&nbsp;&nbsp;&nbsp;&nbsp; /*
+null-terminated filename&nbsp;&nbsp; */</tt>
 <br><tt>#endif</tt>
 <br><tt>};</tt>
 </dl>
@@ -10322,16 +10323,18 @@ attribute is not supported on systems other than DOS (e.g.&nbsp; Win32, OS/2).
 <br>The format of the <tt> wr_time</tt> field is described by the following structure (this structure is not defined in any
 Open Watcom header file).
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; twosecs : 5;&nbsp;&nbsp;&nbsp; /* seconds / 2 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; twosecs : 5;&nbsp;&nbsp;&nbsp; /* seconds / 2&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; minutes : 6;&nbsp;&nbsp;&nbsp; /* minutes (0,59) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; hours&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* hours (0,23) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; hours&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* hours (0,23)&nbsp;&nbsp; */</tt>
 <br><tt>} ftime_t;</tt>
 <br>The format of the <tt> wr_date</tt> field is described by the following structure (this structure is not defined in any
 Open Watcom header file).
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; day&nbsp;&nbsp;&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* day (1,31) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; day&nbsp;&nbsp;&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* day (1,31)&nbsp;&nbsp;
+*/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; month&nbsp;&nbsp; : 4;&nbsp;&nbsp;&nbsp; /* month (1,12) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year&nbsp;&nbsp;&nbsp; : 7;&nbsp;&nbsp;&nbsp; /* 0 is 1980 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year&nbsp;&nbsp;&nbsp; : 7;&nbsp;&nbsp;&nbsp; /* 0 is 1980&nbsp;&nbsp;&nbsp;
+*/</tt>
 <br><tt>} fdate_t;</tt>
 <br>The <tt> _dos_findnext</tt> function uses system call 0x4F to return information on the next file whose name and attributes
 match the pattern supplied to the <tt> _dos_findfirst</tt> function.
@@ -10456,10 +10459,12 @@ errno</tt> accordingly.
 <br><tt>#include &lt;dos.h&gt;</tt>
 <br><tt>void _dos_getdate( struct dosdate_t *date );</tt>
 <br><br><tt>struct dosdate_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char day;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 1-31 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char month;&nbsp;&nbsp;&nbsp; /* 1-12 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short year;&nbsp;&nbsp;&nbsp; /* 1980-2099 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char dayofweek;/* 0-6 (0=Sunday) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp; day;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 1-31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp; month;&nbsp;&nbsp;&nbsp;&nbsp; /* 1-12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short year;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 1980-2099&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp; dayofweek; /* 0-6 (0=Sunday) */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -10516,10 +10521,10 @@ time.minute, time.second );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; struct diskfree_t *diskspace );</tt>
 <br><tt>struct diskfree_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short total_clusters;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short avail_clusters;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short sectors_per_cluster;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short bytes_per_sector;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; total_clusters;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; avail_clusters;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; sectors_per_cluster;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; bytes_per_sector;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -10794,10 +10799,13 @@ SECOND(time) );</tt>
 <br><tt>#include &lt;dos.h&gt;</tt>
 <br><tt>void _dos_gettime( struct dostime_t *time );</tt>
 <br><br><tt>struct dostime_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char hour;&nbsp;&nbsp;&nbsp;&nbsp; /* 0-23 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char minute;&nbsp;&nbsp; /* 0-59 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char second;&nbsp;&nbsp; /* 0-59 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char hsecond;&nbsp; /* 1/100 second; 0-99 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; hour;&nbsp;&nbsp;&nbsp;&nbsp; /* 0-23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; minute;&nbsp;&nbsp; /* 0-59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; second;&nbsp;&nbsp; /* 0-59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; hsecond;&nbsp; /* 1/100 second; 0-99 */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -11193,10 +11201,13 @@ maxsize, strerror( errno) );</tt>
 <br><tt>#include &lt;dos.h&gt;</tt>
 <br><tt>unsigned _dos_setdate( struct dosdate_t *date );</tt>
 <br><br><tt>struct dosdate_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char day;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 1-31 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char month;&nbsp;&nbsp;&nbsp; /* 1-12 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short year;&nbsp;&nbsp;&nbsp; /* 1980-2099 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char dayofweek;/* 0-6 (0=Sunday) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; day;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 1-31&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; month;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 1-12&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 1980-2099&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; dayofweek;&nbsp; /* 0-6 (0=Sunday) */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -11497,10 +11508,13 @@ SECOND(time) );</tt>
 <br><tt>#include &lt;dos.h&gt;</tt>
 <br><tt>unsigned _dos_settime( struct dostime_t *time );</tt>
 <br><tt>struct dostime_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char hour;&nbsp;&nbsp;&nbsp;&nbsp; /* 0-23 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char minute;&nbsp;&nbsp; /* 0-59 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char second;&nbsp;&nbsp; /* 0-59 */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char hsecond;&nbsp; /* 1/100 second; 0-99 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char hour;&nbsp;&nbsp;&nbsp;&nbsp; /* 0-23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char minute;&nbsp;&nbsp; /* 0-59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char second;&nbsp;&nbsp; /* 0-59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char hsecond;&nbsp; /* 1/100 second; 0-99 */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -12346,7 +12360,7 @@ of instructions are executed without any intervening interrupts occurring.
 <br><tt>#include &lt;i86.h&gt;</tt>
 <br><br><tt>struct list_entry {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; struct list_entry *next;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp; data;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data;</tt>
 <br><tt>};</tt>
 <br><tt>struct list_entry *ListHead = NULL;</tt>
 <br><tt>struct list_entry *ListTail = NULL;</tt>
@@ -13638,7 +13652,7 @@ were successfully cleared.&nbsp; Otherwise, it returns a nonzero value.
 <br><tt>#include &lt;fenv.h&gt;</tt>
 <br><br><tt>void main( void )</tt>
 <br><tt>{</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feclearexcept( FE_OVERFLOW|FE_UNDERFLOW );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; feclearexcept( FE_OVERFLOW|FE_UNDERFLOW );</tt>
 <br><tt>}</tt>
 </dl>
 <dl>
@@ -13856,7 +13870,7 @@ or a negative value if there is no such rounding direction macro or the current 
 <br><tt>&nbsp;&nbsp;&nbsp; int mode;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; mode = fegetround();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if ( mode == FE_TONEAREST )</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Nearest\n&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Nearest\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; else if ( mode == FE_DOWNWARD )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Down\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; else if ( mode == FE_TOWARDZERO )</tt>
@@ -13993,7 +14007,7 @@ were successfully raised.&nbsp; Otherwise, it returns a nonzero value.
 <br><tt>#include &lt;fenv.h&gt;</tt>
 <br><br><tt>void main( void )</tt>
 <br><tt>{</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feraiseexcept( FE_DIVBYZERO );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; feraiseexcept( FE_DIVBYZERO );</tt>
 <br><tt>}</tt>
 </dl>
 <dl>
@@ -14900,12 +14914,14 @@ The<b> filespec</b> argument may contain wildcard characters ('?' and '*').&nbsp
 structure pointed to by<b> fileinfo</b>.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _finddata_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp; size;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The _findfirsti64 function returns information on the first file whose name matches the<b> filespec</b> argument.
 &nbsp;It differs from the<tt> _findfirst</tt> function in that it returns a 64-bit file size.&nbsp; The<b> filespec</b> argument
@@ -14913,36 +14929,42 @@ may contain wildcard characters ('?' and '*').&nbsp; The information is returned
 to by<b> fileinfo</b>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _finddatai64_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-64-bit size info */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp;&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 64-bit size info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The<tt> _wfindfirsti64</tt> function is a wide-character version of<tt> _findfirst</tt> that operates with wide-character
 strings.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _wfinddata_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp; size;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The wide-character _wfindfirsti64 function is similar to the _findfirsti64 function but operates on wide-character
 strings.&nbsp; It differs from the<tt> _wfindfirsti64</tt> function in that it returns a 64-bit file size.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _wfinddatai64_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-64-bit size info */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp;&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 64-bit size info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 </dl>
 <dl>
@@ -15014,12 +15036,14 @@ was specified in a call to the <tt> _findfirst</tt> function.&nbsp; The<b> handl
 function.&nbsp; The information is returned in a <tt> _finddata_t</tt> structure pointed to by<b> fileinfo</b>.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _finddata_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp; size;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The<tt> _findnexti64</tt> function returns information on the next file whose name matches the<b> filespec</b> argument
 that was specified in a call to the <tt> _findfirsti64</tt> function.&nbsp; It differs from the<tt> _findnext</tt> function
@@ -15027,36 +15051,42 @@ in that it returns a 64-bit file size.&nbsp; The<b> handle</b> argument was retu
 &nbsp;The information is returned in a <tt> _finddatai64_t</tt> structure pointed to by<b> fileinfo</b>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _finddatai64_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-64-bit size info */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp;&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 64-bit size info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The<tt> _wfindnexti64</tt> function is a wide-character version of<tt> _findnext</tt> that operates with wide-character
 strings.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _wfinddata_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp; size;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 <br><br>The wide-character<tt> _wfindnexti64</tt> function is similar to the<tt> _findnexti64</tt> function but operates on
 wide-character strings.&nbsp; It differs from the<tt> _wfindnexti64</tt> function in that it returns a 64-bit file size.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _wfinddatai64_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp; attrib;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_create;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_access;&nbsp; /* -1 for FAT file systems */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp; time_write;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-64-bit size info */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_create;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_access;&nbsp;&nbsp;&nbsp;
+&nbsp;/* -1 for FAT file systems */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time_write;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __int64&nbsp;&nbsp;&nbsp;&nbsp; size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 64-bit size info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
 </dl>
 <dl>
@@ -16459,8 +16489,8 @@ type of error that has been detected.
 struct student_data</tt> declaration.
 <br><br><tt>#include &lt;stdio.h&gt;</tt>
 <br><br><tt>struct student_data {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp; student_id;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned char marks&#91;10&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; student_id;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; marks&#91;10&#93;;</tt>
 <br><tt>};</tt>
 <br><br><tt>size_t read_data( FILE *fp, struct student_data *p )</tt>
 <br><tt>&nbsp; {</tt>
@@ -17547,10 +17577,14 @@ of error that has been detected.
 <br><tt>#include &lt;sys/timeb.h&gt;</tt>
 <br><tt>int ftime( struct timeb *timeptr );</tt>
 <br><br><tt>struct timeb {</tt>
-<br><tt> time_t time;&nbsp; /* time in seconds since Jan 1, 1970 UTC */</tt>
-<br><tt> unsigned short millitm; /* milliseconds */</tt>
-<br><tt> short timezone; /* difference in minutes from UTC */</tt>
-<br><tt> short dstflag;&nbsp; /* nonzero if in daylight savings time */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time;&nbsp;&nbsp;&nbsp;&nbsp; /* time in
+seconds since Jan 1, 1970 UTC */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short millitm;&nbsp; /* milliseconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; short&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timezone; /* difference in minutes
+from UTC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; short&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dstflag;&nbsp; /* nonzero if in daylight
+savings time&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -17754,8 +17788,8 @@ a value indicating the type of error that has been detected.
 <dd>
 <br><tt>#include &lt;stdio.h&gt;</tt>
 <br><br><tt>struct student_data {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp; student_id;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned char marks&#91;10&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; student_id;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; marks&#91;10&#93;;</tt>
 <br><tt>};</tt>
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
@@ -18618,10 +18652,10 @@ ENOMEM.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; struct diskfree_t *diskspace );</tt>
 <br><tt>struct diskfree_t {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short total_clusters;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short avail_clusters;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short sectors_per_cluster;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short bytes_per_sector;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; total_clusters;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; avail_clusters;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; sectors_per_cluster;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; bytes_per_sector;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -20373,20 +20407,18 @@ call will return the first entry, and subsequent calls return subsequent entries
 an error is encountered or no further entries exist.
 <br>The structure returned is defined as:
 <br><br><tt>struct passwd {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-user's login name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_passwd;&nbsp;&nbsp;&nbsp;&nbsp; /* user's password
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* user's login name */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_passwd;&nbsp;&nbsp;&nbsp;&nbsp; /* user's password&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; uid_t&nbsp;&nbsp; pw_uid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* user ID number&nbsp;
 &nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; uid_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pw_uid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* user ID number&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; gid_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pw_gid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* group ID number&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_gecos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* real
-name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_dir;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* home directory&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_shell;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initial
-program&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; gid_t&nbsp;&nbsp; pw_gid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* group ID number&nbsp;
+&nbsp;*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_gecos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* real name&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_dir;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* home directory&nbsp;
+&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_shell;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initial program&nbsp;&nbsp;
+*/</tt>
 <br><tt>};</tt>
 <br>On most modern Linux implementations, the resulting password will simply be 'x' as passwords are not normally stored in
 the password database itself.
@@ -20440,20 +20472,18 @@ value from this function.
 &nbsp;If a matching entry is not found or an error occurs, a null pointer will be returned.
 <br>The structure returned is defined as:
 <br><br><tt>struct passwd {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-user's login name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_passwd;&nbsp;&nbsp;&nbsp;&nbsp; /* user's password
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* user's login name */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_passwd;&nbsp;&nbsp;&nbsp;&nbsp; /* user's password&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; uid_t&nbsp;&nbsp; pw_uid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* user ID number&nbsp;
 &nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; uid_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pw_uid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* user ID number&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; gid_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pw_gid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* group ID number&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_gecos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* real
-name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_dir;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* home directory&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_shell;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initial
-program&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; gid_t&nbsp;&nbsp; pw_gid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* group ID number&nbsp;
+&nbsp;*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_gecos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* real name&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_dir;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* home directory&nbsp;
+&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_shell;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initial program&nbsp;&nbsp;
+*/</tt>
 <br><tt>};</tt>
 <br>On most modern Linux implementations, the resulting password will simply be 'x' as passwords are not normally stored in
 the password database itself.
@@ -20508,20 +20538,18 @@ value from this function.
 &nbsp;If a matching entry is not found or an error occurs, a null pointer will be returned.
 <br>The structure returned is defined as:
 <br><br><tt>struct passwd {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
-user's login name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_passwd;&nbsp;&nbsp;&nbsp;&nbsp; /* user's password
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* user's login name */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_passwd;&nbsp;&nbsp;&nbsp;&nbsp; /* user's password&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; uid_t&nbsp;&nbsp; pw_uid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* user ID number&nbsp;
 &nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; uid_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pw_uid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* user ID number&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; gid_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pw_gid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* group ID number&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_gecos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* real
-name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_dir;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* home directory&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *pw_shell;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initial
-program&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; gid_t&nbsp;&nbsp; pw_gid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* group ID number&nbsp;
+&nbsp;*/</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_gecos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* real name&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_dir;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* home directory&nbsp;
+&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *pw_shell;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* initial program&nbsp;&nbsp;
+*/</tt>
 <br><tt>};</tt>
 <br>On most modern Linux implementations, the resulting password will simply be 'x' as passwords are not normally stored in
 the password database itself.
@@ -22655,8 +22683,10 @@ It is identical to the <tt> _heapmin</tt> function.
 <br><tt>int _fheapwalk( struct _heapinfo *entry );</tt>
 <br><tt>int _nheapwalk( struct _heapinfo *entry );</tt>
 <br><br><tt>struct _heapinfo {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; void __far *_pentry;&nbsp;&nbsp; /* heap pointer */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp; _size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* heap entry size */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; void __far *_pentry;&nbsp;&nbsp; /* heap pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp; _size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* heap entry size&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _useflag;&nbsp;&nbsp; /* heap entry 'in-use' flag
 */</tt>
 <br><tt>};</tt>
@@ -23081,7 +23111,7 @@ area used by the <tt> _getimage</tt> functions must be at least this large (in b
 <br><tt>#include &lt;stdlib.h&gt;</tt>
 <br><tt>imaxdiv_t imaxdiv( intmax_t numer, intmax_t denom );</tt>
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; intmax_t&nbsp;&nbsp;&nbsp; quot;&nbsp; /* quotient */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; intmax_t&nbsp;&nbsp;&nbsp; quot;&nbsp; /* quotient&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; intmax_t&nbsp;&nbsp;&nbsp; rem;&nbsp;&nbsp; /* remainder */</tt>
 <br><tt>} imaxdiv_t;</tt>
 </dl>
@@ -27907,7 +27937,7 @@ the size 17 bytes on 16-bit machines, and 33 bytes on 32-bit machines.&nbsp; The
 <br><tt>#include &lt;stdlib.h&gt;</tt>
 <br><tt>ldiv_t ldiv( long int numer, long int denom );</tt>
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long int quot;&nbsp;&nbsp;&nbsp;&nbsp; /* quotient */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long int quot;&nbsp;&nbsp;&nbsp;&nbsp; /* quotient&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; long int rem;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* remainder */</tt>
 <br><tt>} ldiv_t;</tt>
 </dl>
@@ -28226,7 +28256,7 @@ the current color.
 <br><tt>lldiv_t lldiv( long long int numer,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long long int denom );</tt>
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long long int quot; /* quotient */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long long int quot; /* quotient&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; long long int rem;&nbsp; /* remainder */</tt>
 <br><tt>} lldiv_t;</tt>
 </dl>
@@ -29283,8 +29313,7 @@ of the file.
 <br><tt>&nbsp;&nbsp;&nbsp; handle = open( &quot;file&quot;, O_RDONLY | O_TEXT );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if( handle != -1 ) {</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* read a piece of the text */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_read =</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; read_record( handle, 1, 80, buffer );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_read = read_record( handle, 1, 80, buffer );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* test for error */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( size_read == -1 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Error reading file\n&quot; );</tt>
@@ -38221,18 +38250,23 @@ the last part of<b> dirname</b> can contain the characters '?' and '*' for match
 <br><tt>#define NAME_MAX&nbsp; 12&nbsp;&nbsp;&nbsp; /* 8 chars + '.' +&nbsp; 3 chars */</tt>
 <br><tt>#endif</tt>
 <br><br><tt>struct dirent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_dta&#91; 21 &#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer
-area */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_attr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;/* file's attribute */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;&nbsp; /* file's time */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;&nbsp; /* file's date */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; d_size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;/* file's size */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_name&#91; NAME_MAX + 1 &#93;; /* file's name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short d_ino;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* serial number */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_first;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* flag for 1st time */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_dta&#91;21&#93;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer area */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_attr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's attribute&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; /* file's time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; /* file's date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_size;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_name&#91;NAME_MAX
++ 1&#93;; /* file's name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp;&nbsp;&nbsp;&nbsp; d_ino;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* serial number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_first;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* flag for 1st time&nbsp; */</tt>
 <br><tt>};</tt>
 <br>The file attribute field <tt> d_attr</tt> field is a set of bits representing the following attributes.
 <br><br><tt>_A_RDONLY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Read-only file */</tt>
@@ -38245,16 +38279,18 @@ area */</tt>
 <br><br>The format of the <tt> d_time</tt> field is described by the following structure (this structure is not defined in
 any Open Watcom header file).
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; twosecs : 5;&nbsp;&nbsp;&nbsp; /* seconds / 2 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; twosecs : 5;&nbsp;&nbsp;&nbsp; /* seconds / 2&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; minutes : 6;&nbsp;&nbsp;&nbsp; /* minutes (0,59) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; hours&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* hours (0,23) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; hours&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* hours (0,23)&nbsp;&nbsp; */</tt>
 <br><tt>} ftime_t;</tt>
 <br>The format of the <tt> d_date</tt> field is described by the following structure (this structure is not defined in any
 Open Watcom header file).
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; day&nbsp;&nbsp;&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* day (1,31) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; day&nbsp;&nbsp;&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* day (1,31)&nbsp;&nbsp;
+*/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; month&nbsp;&nbsp; : 4;&nbsp;&nbsp;&nbsp; /* month (1,12) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year&nbsp;&nbsp;&nbsp; : 7;&nbsp;&nbsp;&nbsp; /* 0 is 1980 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year&nbsp;&nbsp;&nbsp; : 7;&nbsp;&nbsp;&nbsp; /* 0 is 1980&nbsp;&nbsp;&nbsp;
+*/</tt>
 <br><tt>} fdate_t;</tt>
 <br>See the sample program below for an example of the use of these structures.
 <br><br>More than one directory can be read at the same time using the <tt> opendir</tt>, <tt> readdir</tt>, and <tt> closedir</tt>
@@ -38264,15 +38300,24 @@ and returns a pointer to a <tt> _wdirent</tt> structure that can be used with th
 functions.
 <br><br>The file<tt> &lt;direct.h&gt;</tt> contains definitions for the structure <tt> _wdirent</tt>.
 <br><br><tt>struct _wdirent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_dta&#91;21&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer area */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_attr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's attribute
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;/* file's time */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;/* file's date */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; d_size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's size */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; wchar_t d_name&#91;NAME_MAX+1&#93;;/* file's name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short d_ino;&nbsp;&nbsp; /* serial number (not used) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_first;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* flag for 1st time
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_dta&#91;21&#93;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer area&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_attr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* file's time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* file's date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_size;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_name&#91;NAME_MAX+1&#93;;
+/* file's name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp;&nbsp;&nbsp;&nbsp; d_ino;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; /* serial number (not used) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_first;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* flag for 1st time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 */</tt>
 <br><tt>};</tt>
 </dl>
@@ -42103,18 +42148,23 @@ called repeatedly to obtain the list of file names contained in the directory sp
 <br><tt>#define NAME_MAX&nbsp; 12&nbsp;&nbsp;&nbsp; /* 8 chars + '.' +&nbsp; 3 chars */</tt>
 <br><tt>#endif</tt>
 <br><br><tt>struct dirent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_dta&#91; 21 &#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer
-area */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_attr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;/* file's attribute */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;&nbsp; /* file's time */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;&nbsp; /* file's date */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; d_size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;/* file's size */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_name&#91; NAME_MAX + 1 &#93;; /* file's name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short d_ino;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* serial number */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_first;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-/* flag for 1st time */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_dta&#91;21&#93;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer area */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_attr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's attribute&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; /* file's time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; /* file's date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_size;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_name&#91;NAME_MAX
++ 1&#93;; /* file's name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp;&nbsp;&nbsp;&nbsp; d_ino;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* serial number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_first;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* flag for 1st time&nbsp; */</tt>
 <br><tt>};</tt>
 <br>The file attribute field <tt> d_attr</tt> field is a set of bits representing the following attributes.
 <br><br><tt>_A_RDONLY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Read-only file */</tt>
@@ -42127,31 +42177,42 @@ area */</tt>
 <br><br>The format of the <tt> d_time</tt> field is described by the following structure (this structure is not defined in
 any Open Watcom header file).
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; twosecs : 5;&nbsp;&nbsp;&nbsp; /* seconds / 2 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; twosecs : 5;&nbsp;&nbsp;&nbsp; /* seconds / 2&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; minutes : 6;&nbsp;&nbsp;&nbsp; /* minutes (0,59) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; hours&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* hours (0,23) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; hours&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* hours (0,23)&nbsp;&nbsp; */</tt>
 <br><tt>} ftime_t;</tt>
 <br>The format of the <tt> d_date</tt> field is described by the following structure (this structure is not defined in any
 Open Watcom header file).
 <br><br><tt>typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; day&nbsp;&nbsp;&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* day (1,31) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; day&nbsp;&nbsp;&nbsp;&nbsp; : 5;&nbsp;&nbsp;&nbsp; /* day (1,31)&nbsp;&nbsp;
+*/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; month&nbsp;&nbsp; : 4;&nbsp;&nbsp;&nbsp; /* month (1,12) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year&nbsp;&nbsp;&nbsp; : 7;&nbsp;&nbsp;&nbsp; /* 0 is 1980 */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year&nbsp;&nbsp;&nbsp; : 7;&nbsp;&nbsp;&nbsp; /* 0 is 1980&nbsp;&nbsp;&nbsp;
+*/</tt>
 <br><tt>} fdate_t;</tt>
 <br>See the sample program below for an example of the use of these structures.
 <br><br>The<tt> _wreaddir</tt> function is identical to<tt> readdir</tt> except that it reads a directory of wide-character
 filenames.
 <br><br>The file<tt> &lt;direct.h&gt;</tt> contains definitions for the structure <tt> _wdirent</tt>.
 <br><br><tt>struct _wdirent {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_dta&#91;21&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer area */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_attr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's attribute
-*/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;/* file's time */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;/* file's date */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; d_size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's size */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; wchar_t d_name&#91;NAME_MAX+1&#93;;/* file's name */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short d_ino;&nbsp;&nbsp; /* serial number (not used) */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; d_first;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* flag for 1st time
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_dta&#91;21&#93;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* disk transfer area&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_attr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* file's time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short int d_date;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* file's date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_size;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file's size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_name&#91;NAME_MAX+1&#93;;
+/* file's name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp;&nbsp;&nbsp;&nbsp; d_ino;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; /* serial number (not used) */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d_first;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* flag for 1st time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 */</tt>
 <br><tt>};</tt>
 </dl>
@@ -43653,8 +43714,8 @@ the return value is -1 and <tt> errno</tt> is appropriately set.
 <br><tt>#include &lt;time.h&gt;</tt>
 <br><tt>int sched_rr_get_interval(pid_t pid, struct timespec *ts);</tt>
 <br><br><tt>struct timespec {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t tv_sec;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long tv_nsec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp; tv_sec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; tv_nsec;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -53063,19 +53124,20 @@ set appropriately.
 <br><tt>#include &lt;sys/sysinfo.h&gt;</tt>
 <br><tt>int sysinfo( struct sysinfo *info );</tt>
 <br><br><tt>struct sysinfo {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long uptime;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long loads&#91;3&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long totalram;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long freeram;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long sharedram;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long bufferram;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long totalswap;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long freeswap;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned short procs, pad;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long totalhigh;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned long freehigh;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; unsigned mem_unit;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char __reserved&#91;&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; uptime;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; loads&#91;3&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; totalram;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; freeram;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; sharedram;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; bufferram;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; totalswap;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; freeswap;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short procs;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned short pad;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; totalhigh;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned long&nbsp; freehigh;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem_unit;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __reserved&#91;&#93;;</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -53626,8 +53688,8 @@ set appropriately.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct itimerspec
 *value );</tt>
 <br><br><tt>struct timespec {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t tv_sec;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long tv_nsec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp; tv_sec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; tv_nsec;</tt>
 <br><tt>};</tt>
 <br><br><tt>struct itimerspec {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; struct timespec it_interval;</tt>
@@ -53635,6 +53697,7 @@ set appropriately.
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; notify_type;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timer_type;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data;</tt>
+<br><tt>};</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -53678,8 +53741,8 @@ set appropriately.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct itimerspec
 *old_value );</tt>
 <br><br><tt>struct timespec {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t tv_sec;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; long tv_nsec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp; tv_sec;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp; tv_nsec;</tt>
 <br><tt>};</tt>
 <br><br><tt>struct itimerspec {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; struct timespec it_interval;</tt>
@@ -53687,6 +53750,7 @@ set appropriately.
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; notify_type;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timer_type;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data;</tt>
+<br><tt>};</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -54931,7 +54995,8 @@ The currently selected font is also unloaded.
 <br><tt>int _wutime( const wchar_t *path,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const struct utimbuf *times );</tt>
 <br><br><tt>struct utimbuf {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp; actime;&nbsp;&nbsp;&nbsp; /* access time */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp; actime;&nbsp;&nbsp;&nbsp; /* access time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+*/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp; modtime;&nbsp;&nbsp; /* modification time */</tt>
 <br><tt>};</tt>
 </dl>
