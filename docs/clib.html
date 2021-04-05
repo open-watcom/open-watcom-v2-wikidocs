@@ -4947,7 +4947,7 @@ of the x-coordinates or y-coordinates are equal), nothing is drawn.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -5039,7 +5039,7 @@ struct tm * timeptr);</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -21634,7 +21634,7 @@ struct tm *tmbuf );</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -21712,7 +21712,7 @@ Functions, <a href="#ctime_s">ctime_s</a>, <a href="#difftime">difftime</a>, <a 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -28473,7 +28473,7 @@ of the next group of digits to the left of the current group.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -28553,7 +28553,7 @@ Functions, <a href="#ctime_s">ctime_s</a>, <a href="#difftime">difftime</a>, <a 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -33938,7 +33938,7 @@ NULL if<b> template</b> is badly formed or no more unique names can be created f
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -50043,7 +50043,7 @@ string.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
 <br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag */</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>};</tt>
 </dl>
 <dl>
@@ -50072,39 +50072,39 @@ directives %D, %h, %n, %r, %t, and %T are from POSIX.
 <dt><br>%c
 <dd>locale's appropriate date and time representation
 <dt><br>%C
-<dd>is replaced by the year devided by 100 and truncated to an integer (00-99)
+<dd>is replaced by the year devided by 100 and truncated to an integer (0-99)
 <dt><br>%d
-<dd>day of the month as a decimal number (01-31)
+<dd>day of the month as a decimal number (1-31)
 <dt><br>%D
 <dd>date in the format mm/dd/yy (POSIX)
 <dt><br>%e
-<dd>day of the month as a decimal number ( 1-31), a single digit is preceded by a blank
+<dd>day of the month as a decimal number (1-31), a single digit is preceded by a blank
 <dt><br>%F
 <dd>is equivalent to '%Y-%m-%d' (the ISO 8601 date format)
 <dt><br>%g
-<dd>is replaced by the last 2 digits of the week-based year as a decimal number (00-99)
+<dd>is replaced by the last 2 digits of the week-based year as a decimal number (0-99)
 <dt><br>%G
 <dd>is replaced by the week-based year as a decimal number (e.g.&nbsp; 2006)
 <dt><br>%h
 <dd>locale's abbreviated month name (POSIX)
 <dt><br>%H
-<dd>hour (24-hour clock) as a decimal number (00-23)
+<dd>hour (24-hour clock) as a decimal number (0-23)
 <dt><br>%I
-<dd>hour (12-hour clock) as a decimal number (01-12)
+<dd>hour (12-hour clock) as a decimal number (1-12)
 <dt><br>%j
-<dd>day of the year as a decimal number (001-366)
+<dd>day of the year as a decimal number (1-366)
 <dt><br>%m
-<dd>month as a decimal number (01-12)
+<dd>month as a decimal number (1-12)
 <dt><br>%M
-<dd>minute as a decimal number (00-59)
+<dd>minute as a decimal number (0-59)
 <dt><br>%n
 <dd>newline character (POSIX)
 <dt><br>%p
 <dd>locale's equivalent of either AM or PM
 <dt><br>%r
-<dd>12-hour clock time (01-12) using the AM/PM notation in the format HH:MM:SS (AM|PM) (POSIX)
+<dd>12-hour clock time (1-12) using the AM/PM notation in the format HH:MM:SS (AM|PM) (POSIX)
 <dt><br>%S
-<dd>second as a decimal number (00-59)
+<dd>second as a decimal number (0-59)
 <dt><br>%t
 <dd>tab character (POSIX)
 <dt><br>%T
@@ -50112,19 +50112,19 @@ directives %D, %h, %n, %r, %t, and %T are from POSIX.
 <dt><br>%u
 <dd>is replaced by the ISO 8601 weekday as a decimal number (1-7), where Monday is 1
 <dt><br>%U
-<dd>week number of the year as a decimal number (00-52) where Sunday is the first day of the week
+<dd>week number of the year as a decimal number (0-52) where Sunday is the first day of the week
 <dt><br>%V
-<dd>is replaced by the ISO 8601 week number as a decimal number (01-53)
+<dd>is replaced by the ISO 8601 week number as a decimal number (1-53)
 <dt><br>%w
 <dd>weekday as a decimal number (0-6) where 0 is Sunday
 <dt><br>%W
-<dd>week number of the year as a decimal number (00-52) where Monday is the first day of the week
+<dd>week number of the year as a decimal number (0-52) where Monday is the first day of the week
 <dt><br>%x
 <dd>locale's appropriate date representation
 <dt><br>%X
 <dd>locale's appropriate time representation
 <dt><br>%y
-<dd>year without century as a decimal number (00-99)
+<dd>year without century as a decimal number (0-99)
 <dt><br>%Y
 <dd>year with century as a decimal number
 <dt><br>%z
