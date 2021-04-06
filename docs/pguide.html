@@ -6669,21 +6669,21 @@ button exits the Visual Basic application.
 <dl>
 <dt><b><i>To create a Visual Basic application:</i></b>
 <dd><b><i> </i></b>
-<dt><br>(1)
-<dd><b> Start up a new project folder</b> from the &quot;File&quot; menu.
-<dt><br>(2)
-<dd><b> Select &quot;View Form&quot;</b> from the &quot;Project&quot; window.
-<dt><br>(3)
-<dd><b> Draw three command buttons</b> on the form by selecting command buttons from the &quot;Toolbox&quot; window.
-<dt><br>(4)
-<dd><b> Change the caption on each button.</b>&nbsp; To do this, highlight the first button.&nbsp; Then, open the &quot;Properties&quot;
+<dt><br><b>(1)</b>
+<dd><b>Start up a new project folder</b> from the &quot;File&quot; menu.
+<dt><br><b>(2)</b>
+<dd><b>Select &quot;View Form&quot;</b> from the &quot;Project&quot; window.
+<dt><br><b>(3)</b>
+<dd><b>Draw three command buttons</b> on the form by selecting command buttons from the &quot;Toolbox&quot; window.
+<dt><br><b>(4)</b>
+<dd><b>Change the caption on each button.</b>&nbsp; To do this, highlight the first button.&nbsp; Then, open the &quot;Properties&quot;
 window.&nbsp; Double click on the &quot;Caption window&quot;, and change the caption to &quot;Direct call&quot;.&nbsp; Highlight
 the second button, and change its caption to &quot;Indirect call&quot;.&nbsp; Highlight the third, changing the caption to
 &quot;Exit&quot;.
 <br>Now, your Visual Basic application should have three push buttons, &quot;Direct call&quot;, &quot;Indirect call&quot;,
 and &quot;Exit&quot;.
-<dt><br>(5)
-<dd><b> Double click on the &quot;Direct Call&quot; button.</b>
+<dt><br><b>(5)</b>
+<dd><b>Double click on the &quot;Direct Call&quot; button.</b>
 <br>An edit window will pop up.&nbsp; Enter the following code:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Sub Command1_Click ()</tt>
@@ -6697,8 +6697,8 @@ and &quot;Exit&quot;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; worked = Add2(varlong, var2)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Print worked</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; End Sub</tt>
-<dt><br>(6)
-<dd><b> Double click on the &quot;Indirect Call&quot; button.</b>
+<dt><br><b>(6)</b>
+<dd><b>Double click on the &quot;Indirect Call&quot; button.</b>
 <br>Another edit window will pop up.&nbsp; Enter the following code:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Sub Command2_Click ()</tt>
@@ -6712,15 +6712,15 @@ and &quot;Exit&quot;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; worked = Function2( varlong, var2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Print worked</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; End Sub</tt>
-<dt><br>(7)
-<dd><b> Double click on the &quot;Exit&quot; command button</b> and enter the following code in the pop-up window:
+<dt><br><b>(7)</b>
+<dd><b>Double click on the &quot;Exit&quot; command button</b> and enter the following code in the pop-up window:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Sub Command3_Click ()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; End Sub</tt>
-<dt><br>(8)
-<dd><b> Select &quot;View Code&quot;</b> from the &quot;Project&quot; window.&nbsp; To interface these Visual Basic functions
-to the DLLs, the following code is needed in the
+<dt><br><b>(8)</b>
+<dd><b>Select &quot;View Code&quot;</b> from the &quot;Project&quot; window.&nbsp; To interface these Visual Basic functions to
+the DLLs, the following code is needed in the
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Object: &#91;general&#93; Proc: &#91;declarations&#93;</tt>
 <br><br>section of the code.&nbsp; This code assumes that<tt> VBDLL32.DLL</tt> and<tt> COVER16.DLL</tt> are in the<tt> c:\path</tt>
@@ -8546,7 +8546,7 @@ to create the thread.&nbsp; Do not use the<tt> CreateThread</tt> API function.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void *arglist);</tt>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>start_address
 <dd>is the address of the function that will be called when the newly created thread is executed.&nbsp; When the thread returns
 from that function, the thread will be terminated.&nbsp; Note that a call to the<tt> _endthread</tt> function will also terminate
@@ -9279,7 +9279,7 @@ to create the thread.&nbsp; Do not use the<tt> DosCreateThread</tt> API function
 &nbsp;&nbsp; void *arglist );</tt>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>start_address
 <dd>is the address of the function that will be called when the newly created thread is executed.&nbsp; When the thread returns
 from that function, the thread will be terminated.&nbsp; Note that a call to the<tt> _endthread</tt> function will also terminate

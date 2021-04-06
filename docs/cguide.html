@@ -6504,7 +6504,7 @@ of the symbol.&nbsp; The following describes the form of the &quot;alias&quot; p
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>alias
 <dd>is either a name or an identifier of the symbol to be aliased.
 <dt><br>subst
@@ -6530,7 +6530,7 @@ pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>seg_name
 <dd>is the name of the text segment.
 <dt><br>fn
@@ -6552,7 +6552,7 @@ functions is to be placed.&nbsp; The following describes the form of the &quot;c
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>seg_name
 <dd>is the name of the text segment optionally enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6589,7 +6589,7 @@ describes the form of the &quot;comment&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>comment_type
 <dd>specifies the type of comment record.&nbsp; The allowable comment types are:
 <dl>
@@ -6617,7 +6617,7 @@ The following describes the form of the &quot;data_seg&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>seg_name
 <dd>is the name of the data segment and may be enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6648,7 +6648,7 @@ pragma is as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>msg_num
 <dd>is the number of the diagnostic message.&nbsp; This number corresponds to the number issued by the compiler.&nbsp; Make sure
 to strip all leading zeroes from the message number (to avoid interpretation as an octal constant).
@@ -6676,7 +6676,7 @@ disabled.&nbsp; The form of the &quot;enable_message&quot; pragma is as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>msg_num
 <dd>is the number of the diagnostic message.&nbsp; This number corresponds to the number issued by the compiler.&nbsp; Make sure
 to strip all leading zeroes from the message number (to avoid interpretation as an octal constant).
@@ -6693,7 +6693,7 @@ forms of the &quot;enum&quot; pragma are as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>int
 <dd>Make<b> int</b> the underlying storage definition (same as the &quot;ei&quot; compiler option).
 <dt><br>minimum
@@ -6712,7 +6712,7 @@ the form of the &quot;error&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>&quot;error text&quot;
 <dd>is the text of the message that you wish to display.
 </dl>
@@ -6734,7 +6734,7 @@ the &quot;extref&quot; pragma is as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>name
 <dd>is the name of an external function or data item.&nbsp; It must be declared to be an external function or data item before
 the pragma is encountered.&nbsp; In C++, when<b> name</b> is a function, it must not be overloaded.
@@ -6758,7 +6758,7 @@ The &quot;function&quot; pragma can be used to remove the intrinsic attribute fo
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>fn
 <dd>is the name of a function.
 </dl>
@@ -6785,7 +6785,7 @@ systems that do not support long file names when building source code that refer
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>alias_name
 <dd>is the name referenced in include directives in source code.
 <dt><br>real_name
@@ -6814,7 +6814,7 @@ of static data in your program takes place has no dependencies, the &quot;initia
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is a number representing the priority and must be in the range 0-255.&nbsp; The larger the priority, the later the point at
 which initialization will occur.
@@ -6856,7 +6856,7 @@ pragma can be used to set the number of times this expansion of in-line function
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is the depth of expansion.&nbsp; If<tt> n</tt> is 0, no expansion will occur.&nbsp; If<tt> n</tt> is 1, only the original
 call is expanded.&nbsp; If<tt> n</tt> is 2, the original call and the in-line functions invoked by the original function will
@@ -6884,7 +6884,7 @@ specifying the &quot;oi&quot; option or using an &quot;intrinsic&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>fn
 <dd>is the name of a function.
 </dl>
@@ -6906,7 +6906,7 @@ compilation.&nbsp; The following describes the form of the &quot;message&quot; p
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>&quot;message text&quot;
 <dd>is the text of the message that you wish to display.
 </dl>
@@ -6946,7 +6946,7 @@ in memory.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is 1, 2, 4, 8 or 16 and specifies the method of alignment.
 </dl>
@@ -7022,7 +7022,7 @@ infinite expansion can be detected.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is the depth of expansion.&nbsp; If the value of<tt> n</tt> is less than 2, if will default to 2.&nbsp; If<tt> n</tt> is not
 specified, a warning message will be issued and the default value for<tt> n</tt> will be 100.
@@ -7043,7 +7043,7 @@ as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>msg_num
 <dd>is the number of the warning message.&nbsp; This number corresponds to the number issued by the compiler.&nbsp; If<tt> msg_num</tt>
 is &quot;*&quot;, the level of all warning messages is changed to the specified level.&nbsp; Make sure to strip all leading
@@ -7103,7 +7103,7 @@ of the alias name as well as the attributes specified by the additional auxiliar
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is any valid C/C++ identifier.
 <dt><br>alias
@@ -7132,7 +7132,7 @@ rtn2</tt> are of type<tt> func_type</tt>, arguments to either of those functions
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>alias
 <dd>is the alias name and is any valid C/C++ identifier.
 <dt><br>sym
@@ -7249,7 +7249,7 @@ object form.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is any valid C/C++ identifier.
 <dt><br>obj_name
@@ -7258,7 +7258,7 @@ object form.&nbsp;
 <br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>*
 <dd>is unmodified symbol name
 <dt><br>^
@@ -7312,7 +7312,7 @@ id)</b>
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>const
@@ -7409,7 +7409,7 @@ of the default data segment before calling the specified function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7420,7 +7420,7 @@ address of the default data segment as part of the prologue sequence for the spe
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7433,7 +7433,7 @@ directive.&nbsp; An alternative method is to use the following form of the auxil
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7447,7 +7447,7 @@ prologue/epilogue sequence to be generated for a callback function when compiled
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a callback function name.
 </dl>
@@ -7463,7 +7463,7 @@ the auxiliary pragma will force a stack frame to be generated under any circumst
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7479,7 +7479,7 @@ in other programming languages.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -7494,7 +7494,7 @@ to a particular function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -7643,7 +7643,7 @@ int</b>, the argument would be converted to<b> long int</b> before assigning it 
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7657,7 +7657,7 @@ is assumed unless the default has been changed in a previous auxiliary pragma, i
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7684,7 +7684,7 @@ interfacing to functions that have been compiled by other compilers or functions
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -7699,7 +7699,7 @@ value.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -7748,7 +7748,7 @@ return value.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -7784,7 +7784,7 @@ point register SI to it.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7799,7 +7799,7 @@ value and point register SI to it.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7815,7 +7815,7 @@ option.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7827,7 +7827,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7839,7 +7839,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -7862,7 +7862,7 @@ or static variables) that is used directly or indirectly by the caller.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -8010,7 +8010,7 @@ any memory (i.e., global or static variables) that is used directly or indirectl
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -8084,7 +8084,7 @@ was not necessary before calling<tt> myrtn</tt>.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -8104,7 +8104,7 @@ modified by the called function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -8185,7 +8185,7 @@ to functions.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -8311,7 +8311,7 @@ in an 80x87 floating-point register.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -8327,7 +8327,7 @@ may be modified by the specified function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -9532,7 +9532,7 @@ of the symbol.&nbsp; The following describes the form of the &quot;alias&quot; p
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>alias
 <dd>is either a name or an identifier of the symbol to be aliased.
 <dt><br>subst
@@ -9558,7 +9558,7 @@ pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>seg_name
 <dd>is the name of the text segment.
 <dt><br>fn
@@ -9580,7 +9580,7 @@ functions is to be placed.&nbsp; The following describes the form of the &quot;c
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>seg_name
 <dd>is the name of the text segment optionally enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -9617,7 +9617,7 @@ describes the form of the &quot;comment&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>comment_type
 <dd>specifies the type of comment record.&nbsp; The allowable comment types are:
 <dl>
@@ -9645,7 +9645,7 @@ The following describes the form of the &quot;data_seg&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>seg_name
 <dd>is the name of the data segment and may be enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -9676,7 +9676,7 @@ pragma is as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>msg_num
 <dd>is the number of the diagnostic message.&nbsp; This number corresponds to the number issued by the compiler.&nbsp; Make sure
 to strip all leading zeroes from the message number (to avoid interpretation as an octal constant).
@@ -9704,7 +9704,7 @@ disabled.&nbsp; The form of the &quot;enable_message&quot; pragma is as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>msg_num
 <dd>is the number of the diagnostic message.&nbsp; This number corresponds to the number issued by the compiler.&nbsp; Make sure
 to strip all leading zeroes from the message number (to avoid interpretation as an octal constant).
@@ -9721,7 +9721,7 @@ forms of the &quot;enum&quot; pragma are as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>int
 <dd>Make<b> int</b> the underlying storage definition (same as the &quot;ei&quot; compiler option).
 <dt><br>minimum
@@ -9740,7 +9740,7 @@ the form of the &quot;error&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>&quot;error text&quot;
 <dd>is the text of the message that you wish to display.
 </dl>
@@ -9762,7 +9762,7 @@ the &quot;extref&quot; pragma is as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>name
 <dd>is the name of an external function or data item.&nbsp; It must be declared to be an external function or data item before
 the pragma is encountered.&nbsp; In C++, when<b> name</b> is a function, it must not be overloaded.
@@ -9786,7 +9786,7 @@ The &quot;function&quot; pragma can be used to remove the intrinsic attribute fo
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>fn
 <dd>is the name of a function.
 </dl>
@@ -9813,7 +9813,7 @@ systems that do not support long file names when building source code that refer
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>alias_name
 <dd>is the name referenced in include directives in source code.
 <dt><br>real_name
@@ -9842,7 +9842,7 @@ of static data in your program takes place has no dependencies, the &quot;initia
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is a number representing the priority and must be in the range 0-255.&nbsp; The larger the priority, the later the point at
 which initialization will occur.
@@ -9884,7 +9884,7 @@ pragma can be used to set the number of times this expansion of in-line function
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is the depth of expansion.&nbsp; If<tt> n</tt> is 0, no expansion will occur.&nbsp; If<tt> n</tt> is 1, only the original
 call is expanded.&nbsp; If<tt> n</tt> is 2, the original call and the in-line functions invoked by the original function will
@@ -9912,7 +9912,7 @@ specifying the &quot;oi&quot; option or using an &quot;intrinsic&quot; pragma.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>fn
 <dd>is the name of a function.
 </dl>
@@ -9934,7 +9934,7 @@ compilation.&nbsp; The following describes the form of the &quot;message&quot; p
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>&quot;message text&quot;
 <dd>is the text of the message that you wish to display.
 </dl>
@@ -9974,7 +9974,7 @@ in memory.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is 1, 2, 4, 8 or 16 and specifies the method of alignment.
 </dl>
@@ -10050,7 +10050,7 @@ infinite expansion can be detected.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>n
 <dd>is the depth of expansion.&nbsp; If the value of<tt> n</tt> is less than 2, if will default to 2.&nbsp; If<tt> n</tt> is not
 specified, a warning message will be issued and the default value for<tt> n</tt> will be 100.
@@ -10071,7 +10071,7 @@ as follows.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>msg_num
 <dd>is the number of the warning message.&nbsp; This number corresponds to the number issued by the compiler.&nbsp; If<tt> msg_num</tt>
 is &quot;*&quot;, the level of all warning messages is changed to the specified level.&nbsp; Make sure to strip all leading
@@ -10132,7 +10132,7 @@ of the alias name as well as the attributes specified by the additional auxiliar
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is any valid C/C++ identifier.
 <dt><br>alias
@@ -10168,7 +10168,7 @@ rtn2</tt> are of type<tt> func_type</tt>, arguments to either of those functions
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>alias
 <dd>is the alias name and is any valid C/C++ identifier.
 <dt><br>sym
@@ -10350,7 +10350,7 @@ object form.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is any valid C/C++ identifier.
 <dt><br>obj_name
@@ -10359,7 +10359,7 @@ object form.&nbsp;
 <br>When specifying<tt> obj_name</tt>, some characters have a special meaning:
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>*
 <dd>is unmodified symbol name
 <dt><br>^
@@ -10413,7 +10413,7 @@ id)</b>
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>const
@@ -10499,7 +10499,7 @@ of the default data segment before calling the specified function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10510,7 +10510,7 @@ address of the default data segment as part of the prologue sequence for the spe
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10523,7 +10523,7 @@ directive.&nbsp; An alternative method is to use the following form of the auxil
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10536,7 +10536,7 @@ the auxiliary pragma will force a stack frame to be generated under any circumst
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10552,7 +10552,7 @@ in other programming languages.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -10567,7 +10567,7 @@ to a particular function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -10718,7 +10718,7 @@ the argument would be converted to<b> long int</b> before assigning it to regist
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10732,7 +10732,7 @@ is assumed unless the default has been changed in a previous auxiliary pragma, i
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10759,7 +10759,7 @@ interfacing to functions that have been compiled by other compilers or functions
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -10774,7 +10774,7 @@ value.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -10827,7 +10827,7 @@ return value.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -10861,7 +10861,7 @@ point register ESI to it.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10876,7 +10876,7 @@ value and point register ESI to it.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10892,7 +10892,7 @@ option.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10904,7 +10904,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10916,7 +10916,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -10939,7 +10939,7 @@ or static variables) that is used directly or indirectly by the caller.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -11085,7 +11085,7 @@ any memory (i.e., global or static variables) that is used directly or indirectl
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 </dl>
@@ -11158,7 +11158,7 @@ was not necessary before calling<tt> myrtn</tt>.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -11178,7 +11178,7 @@ modified by the called function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -11249,7 +11249,7 @@ to functions.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -11375,7 +11375,7 @@ in an 80x87 floating-point register.
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
@@ -11391,7 +11391,7 @@ may be modified by the specified function.&nbsp;
 <hr>
 <dl>
 <dt><b><i>where</i></b>
-<dd><b><i></i></b><b> description</b>
+<dd><b><i>description</i></b>
 <dt><br>sym
 <dd>is a function name.
 <dt><br>reg_set
