@@ -18,6 +18,7 @@
 <dd><a href="#Debugging_Information_Format">Debugging Information Format</a>
 <dt><br>- E -
 <dd><a href="#ENUMERATED_Lvalue_0x5_R">ENUMERATED (value 0x5?)</a>
+<br><a href="#Environment_requests">Environment requests</a>
 <br><a href="#Executable_file_structures">Executable file structures</a>
 <dt><br>- F -
 <dd><a href="#File_IDO_requests">File I/O requests</a>
@@ -54,14 +55,28 @@
 <br><a href="#Pointer_Sizes">Pointer Sizes</a>
 <br><a href="#PROCEDURE_Lvalue_0x7_R">PROCEDURE (value 0x7?)</a>
 <dt><br>- R -
-<dd><a href="#REQ_CHECKSUM_MEM">REQ_CHECKSUM_MEM</a>
+<dd><a href="#REQ_ASYNC_ADD_BREAK">REQ_ASYNC_ADD_BREAK</a>
+<br><a href="#REQ_ASYNC_GO">REQ_ASYNC_GO</a>
+<br><a href="#REQ_ASYNC_POLL">REQ_ASYNC_POLL</a>
+<br><a href="#REQ_ASYNC_REMOVE_BREAK">REQ_ASYNC_REMOVE_BREAK</a>
+<br><a href="#REQ_ASYNC_STEP">REQ_ASYNC_STEP</a>
+<br><a href="#REQ_ASYNC_STOP">REQ_ASYNC_STOP</a>
+<br><a href="#REQ_CAPABILITIES_GET_8B_BP">REQ_CAPABILITIES_GET_8B_BP</a>
+<br><a href="#REQ_CAPABILITIES_GET_EXACT_BP">REQ_CAPABILITIES_GET_EXACT_BP</a>
+<br><a href="#REQ_CAPABILITIES_SET_8B_BP">REQ_CAPABILITIES_SET_8B_BP</a>
+<br><a href="#REQ_CAPABILITIES_SET_EXACT_BP">REQ_CAPABILITIES_SET_EXACT_BP</a>
+<br><a href="#REQ_CHECKSUM_MEM">REQ_CHECKSUM_MEM</a>
 <br><a href="#REQ_CLEAR_BREAK">REQ_CLEAR_BREAK</a>
 <br><a href="#REQ_CLEAR_WATCH">REQ_CLEAR_WATCH</a>
 <br><a href="#REQ_CONNECT">REQ_CONNECT</a>
 <br><a href="#REQ_DISCONNECT">REQ_DISCONNECT</a>
+<br><a href="#REQ_ENV_GET_VAR">REQ_ENV_GET_VAR</a>
+<br><a href="#REQ_ENV_SET_VAR">REQ_ENV_SET_VAR</a>
 <br><a href="#REQ_FILE_CLOSE">REQ_FILE_CLOSE</a>
 <br><a href="#REQ_FILE_ERASE">REQ_FILE_ERASE</a>
 <br><a href="#REQ_FILE_GET_CONFIG">REQ_FILE_GET_CONFIG</a>
+<br><a href="#REQ_FILE_INFO_GET_DATE">REQ_FILE_INFO_GET_DATE</a>
+<br><a href="#REQ_FILE_INFO_SET_DATE">REQ_FILE_INFO_SET_DATE</a>
 <br><a href="#REQ_FILE_OPEN">REQ_FILE_OPEN</a>
 <br><a href="#REQ_FILE_READ">REQ_FILE_READ</a>
 <br><a href="#REQ_FILE_RUN_CMD">REQ_FILE_RUN_CMD</a>
@@ -110,6 +125,14 @@
 <br><a href="#REQ_RFX_SETDATETIME">REQ_RFX_SETDATETIME</a>
 <br><a href="#REQ_RFX_SETDRIVE">REQ_RFX_SETDRIVE</a>
 <br><a href="#REQ_RFX_SETFILEATTR">REQ_RFX_SETFILEATTR</a>
+<br><a href="#REQ_RUN_THREAD_GET_NAME">REQ_RUN_THREAD_GET_NAME</a>
+<br><a href="#REQ_RUN_THREAD_GET_NEXT">REQ_RUN_THREAD_GET_NEXT</a>
+<br><a href="#REQ_RUN_THREAD_GET_RUNTIME">REQ_RUN_THREAD_GET_RUNTIME</a>
+<br><a href="#REQ_RUN_THREAD_INFO">REQ_RUN_THREAD_INFO</a>
+<br><a href="#REQ_RUN_THREAD_POLL">REQ_RUN_THREAD_POLL</a>
+<br><a href="#REQ_RUN_THREAD_SET">REQ_RUN_THREAD_SET</a>
+<br><a href="#REQ_RUN_THREAD_SIGNAL_STOP">REQ_RUN_THREAD_SIGNAL_STOP</a>
+<br><a href="#REQ_RUN_THREAD_STOP">REQ_RUN_THREAD_STOP</a>
 <br><a href="#REQ_SET_BREAK">REQ_SET_BREAK</a>
 <br><a href="#REQ_SET_DEBUG_SCREEN">REQ_SET_DEBUG_SCREEN</a>
 <br><a href="#REQ_SET_USER_SCREEN">REQ_SET_USER_SCREEN</a>
@@ -2414,6 +2437,179 @@ from the previous REQ_FIND_NEXT or REQ_FIND_FIRST.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <br><br>If successful, the<tt> err</tt> field will be zero, otherwise the system error code will be returned.
+<h2 id="Environment_requests"> Environment requests </h2>
+<br>This section describes requests that deal with Environment on the target (debuggee) machine.&nbsp; These requests are
+actually performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following descriptions
+do not show that &quot;prefix&quot; to the request messages.
+<br><br>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;Environment&quot;.
+<h3 id="REQ_ENV_GET_VAR"> REQ_ENV_GET_VAR </h3>
+<br>Request to retreive Environment variable from the remote system.
+<br><br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value;</tt>
+<br><br>The<tt> value</tt> contains the value for<tt> name</tt> Environment variable from the remote system.
+<h3 id="REQ_ENV_SET_VAR"> REQ_ENV_SET_VAR </h3>
+<br>Request to set Environment variable on the remote system.
+<br><br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value;</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<br><br>The<tt> value</tt> contains the new value for Environment variable<tt> name</tt> on the remote system.
+<h2 id="File_Info_requests"> File Info requests </h2>
+<h3 id="REQ_FILE_INFO_GET_DATE"> REQ_FILE_INFO_GET_DATE </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_FILE_INFO_SET_DATE"> REQ_FILE_INFO_SET_DATE </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h2 id="Asynchronous_Debugging_requests"> Asynchronous Debugging requests </h2>
+<h3 id="REQ_ASYNC_GO"> REQ_ASYNC_GO </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_ASYNC_STEP"> REQ_ASYNC_STEP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_ASYNC_POLL"> REQ_ASYNC_POLL </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_ASYNC_STOP"> REQ_ASYNC_STOP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_ASYNC_ADD_BREAK"> REQ_ASYNC_ADD_BREAK </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_ASYNC_REMOVE_BREAK"> REQ_ASYNC_REMOVE_BREAK </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h2 id="NonMblocking_Thread_requests"> Non-blocking Thread requests </h2>
+<h3 id="REQ_RUN_THREAD_INFO"> REQ_RUN_THREAD_INFO </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_RUN_THREAD_GET_NEXT"> REQ_RUN_THREAD_GET_NEXT </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_RUN_THREAD_GET_RUNTIME"> REQ_RUN_THREAD_GET_RUNTIME </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_RUN_THREAD_POLL"> REQ_RUN_THREAD_POLL </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_RUN_THREAD_SET"> REQ_RUN_THREAD_SET </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_RUN_THREAD_GET_NAME"> REQ_RUN_THREAD_GET_NAME </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_RUN_THREAD_STOP"> REQ_RUN_THREAD_STOP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_RUN_THREAD_SIGNAL_STOP"> REQ_RUN_THREAD_SIGNAL_STOP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h2 id="Capabilities_requests"> Capabilities requests </h2>
+<h3 id="REQ_CAPABILITIES_GET_8B_BP"> REQ_CAPABILITIES_GET_8B_BP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_CAPABILITIES_SET_8B_BP"> REQ_CAPABILITIES_SET_8B_BP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_CAPABILITIES_GET_EXACT_BP"> REQ_CAPABILITIES_GET_EXACT_BP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<h3 id="REQ_CAPABILITIES_SET_EXACT_BP"> REQ_CAPABILITIES_SET_EXACT_BP </h3>
+<br>Request message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><br>Return message:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h1 id="System_Dependent_Aspects"> System Dependent Aspects </h1>
 <br>Every environment has a different method of loading the code for the trap file and locating the TrapInit, TrapRequest,
 and TrapFini routines.&nbsp; This section descibes how the Open Watcom debugger performs these operations for the various
@@ -2501,9 +2697,8 @@ about not being able to be run from the command line and then terminates.
 <br>The trap file routines are linked directly into the remote server code and TrapInit, TrapRequest, TrapFini are directly
 called.
 <h1 id="Overlay_manager_interface"> Overlay manager interface </h1>
-<br><br>For Open Watcom Debugger to be able to debug overlays, it must be able to make requests of the overlay manager for
-certain operations.&nbsp; The overlay manager must also be able to inform Open Watcom Debugger when a new overlay section
-is loaded.
+<br>For Open Watcom Debugger to be able to debug overlays, it must be able to make requests of the overlay manager for certain
+operations.&nbsp; The overlay manager must also be able to inform Open Watcom Debugger when a new overlay section is loaded.
 <br>When Open Watcom Debugger loads a DOS program, it looks at the initial CS:IP value for the following structure:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct ovl_header {</tt>
