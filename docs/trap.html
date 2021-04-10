@@ -193,22 +193,22 @@ all 16-bit memory models are subsets.&nbsp; The structure is defined as follows:
 <br><br>The<tt> segment</tt> field contains the segment of the address and the<tt> offset</tt> field stores the offset of
 the address.
 <dt><br>bytes
-<dd>The type<tt> bytes</tt> is an array of unsigned_8.&nbsp; The length is provided by other means.&nbsp; Typically a field of
-type<tt> bytes</tt> is the last one in a request and the length is calculated from the total length of the request.
+<dd>The type bytes is an array of unsigned_8.&nbsp; The length is provided by other means.&nbsp; Typically a field of type bytes
+is the last one in a request and the length is calculated from the total length of the request.
 <dt><br>string
-<dd>The type<tt> string</tt> is actually an array of characters.&nbsp; The array is terminated by a null ('\0') character.&nbsp;
-The length is provided by other means.&nbsp; Typically a field of type<tt> string</tt> is the last one in a request and the
-length is calculated from the total length of the request.
+<dd>The type string is actually an array of characters.&nbsp; The array is terminated by a null ('\0') character.&nbsp; The length
+is provided by other means.&nbsp; Typically a field of type string is the last one in a request and the length is calculated
+from the total length of the request.
 <dt><br>trap_error
 <dd>Some trap file requests return debuggee operating system error codes, notably the requests to perform file I/O on the remote
 system.&nbsp; These error codes are returned as an unsigned_32.&nbsp; The debugger considers the value zero to indicate no
 error.
 <dt><br>trap_phandle
-<dd>This is an<tt> unsigned_32</tt> which holds process (task) handle.&nbsp; A task handle is used to uniquely identify a debuggee
+<dd>This is an unsigned_32 type which holds process (task) handle.&nbsp; A task handle is used to uniquely identify a debuggee
 process.
 <dt><br>trap_mhandle
-<dd>This is an<tt> unsigned_32</tt> which holds a module handle.&nbsp; Typically the main executable will be one module, and on
-systems which support DLLs or shared libraries, each library will be identified by a unique module handle.
+<dd>This is an unsigned_32 type which holds a module handle.&nbsp; Typically the main executable will be one module, and on systems
+which support DLLs or shared libraries, each library will be identified by a unique module handle.
 </dl>
 <h1 id="The_Request_Interface"> The Request Interface </h1>
 <br>Next follow detailed description of interface elements.
@@ -218,10 +218,10 @@ the actual request code and whatever parameters that are required by the request
 of the operation is to be stored by the trap file.
 <br><br>The two sequences need not be contiguous.&nbsp; The sequences are described to the trap file through two arrays of
 message entry structures.&nbsp; This allows the debugger to avoid unnecessary packing and unpacking of messages, since<tt>
-mx_entry</tt>'s can be set to point directly at parameter/result buffers.
-<br><br>Multiple requests are<b> not</b> allowed in a single message.&nbsp; The<tt> mx_entry</tt>'s are only used to provide
+mx_entry</tt> can be set to point directly at parameter/result buffers.
+<br><br>Multiple requests are<b> not</b> allowed in a single message.&nbsp; The<tt> mx_entry</tt> is only used to provide
 scatter/gather capabilities for one request at a time.
-<br><br>The message entry structure is as follows (defined in<tt> trptypes.h</tt>):
+<br><br>The message entry structure is as follows (defined in<tt> trptypes.h</tt> ):
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -229,12 +229,12 @@ scatter/gather capabilities for one request at a time.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } mx_entry;</tt>
 <br><br>The<tt> ptr</tt> is pointing to a block of data for that message entry.&nbsp; The<tt> len</tt> field gives the length
-of that block.&nbsp; One array of<tt> mx_entry</tt>'s describes the request message.&nbsp; The second array describes the
-return message.
+of that block.&nbsp; One array of<tt> mx_entry</tt> describes the request message.&nbsp; The second array describes the return
+message.
 <br><br>It is not legal to split a message into arbitrary pieces with mx_entries.&nbsp; Each request documents where an<tt>
 mx_entry</tt> is allowed to start with a line of dashes.
 <h2 id="The_Interface_Routines"> The Interface Routines </h2>
-<br>The trap file interface must provide three routines:<tt>&nbsp; TrapInit</tt>,<tt> TrapRequest</tt>, and<tt> TrapFini</tt>.
+<br>The trap file interface must provide three routines:<tt>&nbsp; TrapInit</tt> ,<tt> TrapRequest</tt> , and<tt> TrapFini</tt>.
 &nbsp;How the debugger determines the address of these routines after loading a trap file, as well as the calling convention
 used, is system dependent and described later.&nbsp; These functions are prototyped in<tt> trpimp.h</tt>.
 <h3 id="TrapInit"> TrapInit </h3>
@@ -252,7 +252,7 @@ option are passed as the<tt> parm</tt>.&nbsp; For example:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wd /trap=nov;testing program</tt>
 <br><br>The<tt> parm</tt> would be &quot;testing&quot;.&nbsp; Any error message will be returned in<tt> error</tt>.&nbsp;
 The<tt> remote</tt> field is a zero if the Open Watcom debugger is loading the trap file and a one if a remote server is loading
-it.&nbsp; This function returns a structure<tt> trap_version</tt> of the following form (defined in<tt> trptypes.h</tt>):
+it.&nbsp; This function returns a structure<tt> trap_version</tt> of the following form (defined in<tt> trptypes.h</tt> ):
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; major;</tt>
@@ -315,7 +315,7 @@ the<tt> buffer</tt> variable.&nbsp; If less than 30 bytes is transfered, an erro
 access requests.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void TRAPENTRY TrapFini( void );</tt>
-<br><br>After calling<tt> TrapFini</tt>, it is illegal to call<tt> TrapRequest</tt> without calling<tt> TrapInit</tt> again.
+<br><br>After calling<tt> TrapFini</tt> , it is illegal to call<tt> TrapRequest</tt> without calling<tt> TrapInit</tt> again.
 <h1 id="The_Requests"> The Requests </h1>
 <br>This section descibes the individual requests, their parameters, and their return values.&nbsp; A line of dashes indicates
 where an<tt> mx_entry</tt> is allowed (but not required) to start.&nbsp; The debugger allows (via REQ_GET_SUPPLEMENTARY_SERVICE/REQ_PERFORM_SUPPLEMENTARY_SERVICE)
@@ -395,10 +395,9 @@ supplementary service.&nbsp; This string is case insensitive.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_shandle&nbsp;&nbsp;&nbsp; id;</tt>
-<br><br>The<tt> err</tt> field is non-zero if something went wrong in obtaining or initializing the service.<tt>&nbsp; Id</tt>
-is the identifier for a particular supplementary service.&nbsp; It need not be the same from one invocation of the trap file
-to another.&nbsp; If both it and the<tt> err</tt> field are zero, it means that the service is not available from this trap
-file.
+<br><br>The err field is non-zero if something went wrong in obtaining or initializing the service.<tt>&nbsp; Id</tt> is the
+identifier for a particular supplementary service.&nbsp; It need not be the same from one invocation of the trap file to another.
+&nbsp;If both it and the<tt> err</tt> field are zero, it means that the service is not available from this trap file.
 <br><br><b>NOTE:</b>&nbsp; integrated with the debugger.&nbsp; There would be two components, one to be added to the debugger
 and one to be added to the trap file.&nbsp; The two pieces could communicate with each other via the supplementary services
 mechanism.
@@ -471,7 +470,7 @@ include:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_P47 =&nbsp; 15&nbsp;&nbsp;&nbsp; - Pentium 4 integrated FPU</tt>
 <br><br>The<tt> osmajor</tt> and<tt> osminor</tt> contains the major and minor version number for the operating system of
 the remote machine.&nbsp; The type of operating system can be found in<tt> os</tt> field.&nbsp; The size of this field is
-unsigned_8.&nbsp; The OS can be :
+unsigned_8.&nbsp; The OS can be:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_IDUNNO&nbsp;&nbsp;&nbsp; =&nbsp; 0&nbsp;&nbsp; - Unknown operating system</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_DOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 1&nbsp;&nbsp; - DOS</tt>
@@ -884,7 +883,7 @@ MAD file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</tt>
 <br><br>The return message content is specific to the MAD in use and will contain a<tt> mad_registers</tt> union (defined
-in<tt> madtypes.h</tt>).
+in<tt> madtypes.h</tt> ).
 <h3 id="REQ_WRITE_REGS"> REQ_WRITE_REGS </h3>
 <br>Request to write CPU register contents.&nbsp; The data is target architecture specific.
 <br><br>Request message:
@@ -1006,7 +1005,7 @@ to be transmitted.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 data</tt>
 <br><br>If successful, the<tt> data</tt> returns the block of data.&nbsp; The length of returned data is given by the return
-value of TrapRequest minus 4 (to account for the size of<tt> err</tt>).&nbsp; The length will normally be equal to the<tt>
+value of TrapRequest minus 4 (to account for the size of<tt> err</tt> ).&nbsp; The length will normally be equal to the<tt>
 len</tt> field.&nbsp; If the end of file is encountered before the read completes, the return value will be less than the
 number of bytes requested.&nbsp; When an error has occurred, the<tt> err</tt> field contains a value indicating the type of
 error that has been detected.
@@ -1234,7 +1233,7 @@ to the request messages.
 <dt><b><i>Type</i></b>
 <dd><b><i>Definition</i></b>
 <dt><br>trap_thandle
-<dd>This is an<tt> unsigned_32</tt> which holds a thread handle.
+<dd>This is an unsigned_32 type which holds a thread handle.
 </dl>
 <h3 id="REQ_THREAD_GET_NEXT"> REQ_THREAD_GET_NEXT </h3>
 <br>Request to get next thread.
@@ -1318,7 +1317,7 @@ do not show that &quot;prefix&quot; to the request messages.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to_name</tt>
 <br><br>The file whose name is indicated by the field<tt> from_name</tt> will be renamed to the name given by the field<tt>
-to_name</tt>
+to_name</tt>.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -1487,7 +1486,7 @@ the files to list in the directory.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -----------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rfx_find&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info</tt>
 <br><br>If found, the<tt> err</tt> field will be zero.&nbsp; The location and information of about the first file will be
-in the structure<tt> info.</tt>&nbsp; Definition of the structure<tt> rfx_find</tt> is as follows:
+in the structure<tt> info</tt>.&nbsp; Definition of the structure<tt> rfx_find</tt> is as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct rfx_find {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1714,9 +1713,9 @@ information) is examined for the following structure:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; acc_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; fini_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } trap_header;</tt>
-<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>,<tt>
-acc_off</tt>, and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini routines
-repectively.
+<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>
+,<tt> acc_off</tt> , and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini
+routines repectively.
 <br><br>The starting address field of the EXE header should be set to point at some code which prints out a message about
 not being able to be run from the command line and then terminates.
 <h2 id="Trap_Files_Under_OSD2"> Trap Files Under OS/2 </h2>
@@ -1776,9 +1775,9 @@ for the following structure:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; acc_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; fini_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } trap_header;</tt>
-<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>,<tt>
-acc_off</tt>, and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini routines
-repectively.
+<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>
+,<tt> acc_off</tt> , and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini
+routines repectively.
 <br><br>The starting address field of the load image header should be set to point at some code which prints out a message
 about not being able to be run from the command line and then terminates.
 <h2 id="Trap_Files_Under_Netware_386_or_PenPoint"> Trap Files Under Netware 386 or PenPoint </h2>

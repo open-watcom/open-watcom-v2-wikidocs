@@ -192,8 +192,8 @@ in addition to the format described in this document.&nbsp; For the purposes of 
 &quot;WATCOM&quot; format.&nbsp; DWARF is now the primary format used by Open Watcom compilers.&nbsp; Support for generating
 the WATCOM format will probably remain but is only useful for debugging DOS overlays.
 <br><br>Before reading this document you should understand the Intel 8086 Object Module Format (OMF).&nbsp; This format is
-described in the Intel document<b> 8086 Relocatable Object Module Formats</b> and also the October 1985 issue of<b> PC Tech
-Journal</b>.
+described in the Intel document<b><i> 8086 Relocatable Object Module Formats</i></b> and also the October 1985 issue of<b><i>
+PC Tech Journal</i></b>.
 <br><br>Responsibility for the Intel/Microsoft OMF specification has been taken over by the Tools Interface Standards (TIS)
 Committee.&nbsp; The TIS standards (including the OMF spec) may be obtained by phoning the Intel literature center at 1-800-548-4725
 and asking for order number 241597.
@@ -381,7 +381,7 @@ was chosen before complex support was added.
 appropriate scope name in order for the Open Watcom Debugger to recognize it as a type name.&nbsp; This is useful for declaring
 C structure, union, and enum tag names.&nbsp; You declare SCOPE names of &quot;struct&quot;, &quot;union&quot;, and &quot;enum&quot;
 and then place the appropriate value in the<tt> scope_index</tt> field of the NAME record when declaring the tag.
-<br><br>NAME gives an arbitrary type a name.&nbsp; The field,<tt> scope_index</tt>, is either zero, which indicates an unrestricted
+<br><br>NAME gives an arbitrary type a name.&nbsp; The field,<tt> scope_index</tt> , is either zero, which indicates an unrestricted
 type name, or is the type index of a SCOPE definition, which means that the type name must be preceded by the given scope
 name in order to be recognized.
 <br><br>The next two records are kludges to allow OMF line numbers to refer to more than one source file.&nbsp; See the section
@@ -408,8 +408,8 @@ is used then the index type is an integer with the low bound of the array being 
 specified.
 <br><br>The DESC_INDEX form is used when the array bounds are not known at compile time.&nbsp; The<tt> bounds_32_pointer</tt>
 is a far pointer to a structure in memory.&nbsp; The type and size of the first field is given by the first<tt> scalar_type_byte</tt>
-and indicates the lower bound for the index.&nbsp; The second field's type and size is given by the second<tt> scalar_type_byte</tt>
-.&nbsp; This field gives the number of elements in the array.
+and indicates the lower bound for the index.&nbsp; The second field's type and size is given by the second<tt> scalar_type_byte</tt>.
+&nbsp;This field gives the number of elements in the array.
 <br><br>The DESC_INDEX_386 is the same as DESC_INDEX except that a 48-bit far pointer is used to locate the structure in memory.
 <h3 id="SUBRANGE_Lvalue_0x3_R"> SUBRANGE (value 0x3?) </h3>
 <br>This definition is used to define a subrange type.&nbsp; There are 3 sub-classes.
@@ -615,7 +615,7 @@ is used to tell the Open Watcom Debugger the next block to search for a symbol d
 &nbsp;The field is set to zero if there is no parent block.
 <br><br>NEAR_RTN and FAR_RTN are used to specify a routine definition.&nbsp; Notice that the first part is identical to a
 code block definition.&nbsp; The<tt> ret_addr_offset_word</tt> is the offset from BP (or EBP) that the return address is located
-on the stack.&nbsp; The<tt> #parms_byte</tt> and<tt> parm_location</tt>'s following are only for those parms which are passed
+on the stack.&nbsp; The<tt> #parms_byte</tt> and<tt> parm_location</tt> following are only for those parms which are passed
 in registers.&nbsp; The remainder of the parms are assumed to be passed on the stack.
 <br><br>The MEMBER_SCOPE record is used for C++ member functions.&nbsp; It introduces a scope where the the debugger looks
 up the fields of the class identified by<tt> class_type_index</tt> as if they were normal symbols.&nbsp; If the<tt> obj_ptr_type_byte</tt>
@@ -640,8 +640,8 @@ and only has access to static data members.
 <br>To use this record, the member function's<tt> parent_block_offset</tt> is pointed at the MEMBER_SCOPE record, and the
 MEMBER_SCOPE's<tt> parent_block_offset</tt> field is pointed at what the member function would normally be pointing at.&nbsp;
 In effect, a new block scope has been introduced.
-<br><br>The *_386 versions of the records are identical to their 286 counterparts excepts that the<tt> start_offset</tt>,<tt>
-size</tt>, and<tt> ret_addr_offset</tt> fields have been widened to 32 bits.
+<br><br>The *_386 versions of the records are identical to their 286 counterparts excepts that the<tt> start_offset</tt> ,<tt>
+size</tt> , and<tt> ret_addr_offset</tt> fields have been widened to 32 bits.
 <br><br><b>NOTE:</b>&nbsp; There should be a better mapping of parm number to parm location.&nbsp; There is no provision for
 Pascal calling conventions (reversed parm order) or other strangeness.
 <br><br>The BLOCK definition contains a<tt> start_offset_word</tt> (or<tt> start_offset_dword</tt> in a BLOCK_386).&nbsp;
@@ -750,7 +750,7 @@ version number placed in the master header should be the maximum of all the mino
 files.
 <br><br>The<tt> lang_size</tt> field contains the size of the source language table at the beginning of the debug information.
 &nbsp;The<tt> segment_size</tt> field informs the debugger of the size, in bytes, of the segment address table.&nbsp; The
-field,<tt> debug_size</tt>, gives the total size of the debugging information, including the size of the master header itself.
+field,<tt> debug_size</tt> , gives the total size of the debugging information, including the size of the master header itself.
 &nbsp;This allows the debugger to calculate the start of the debugging information by subtracting the value of the<tt> debug_size</tt>
 field from the location of the end of file.&nbsp; This gives the start of the source language and segment address tables,
 whose sizes are known from the master header.&nbsp; Once the location of the first section of debugging information is determined,
@@ -800,10 +800,10 @@ permanently loaded classes.&nbsp; The header structure is as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 section_size;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16 section_id;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br>The<tt> mod_offset</tt>,<tt> gbl_offset</tt>, and<tt> addr_offset</tt> fields are offsets, from the beginning of the
-section debug header to the module info, global symbol, and address info classes of debugging information.&nbsp; The<tt> section_size</tt>
-field is the size of the debugging information for the section, including the section header.&nbsp; The following conditions
-must hold true for the debugger to recognize the debugging information as valid:
+<br><br>The<tt> mod_offset</tt> ,<tt> gbl_offset</tt> , and<tt> addr_offset</tt> fields are offsets, from the beginning of
+the section debug header to the module info, global symbol, and address info classes of debugging information.&nbsp; The<tt>
+section_size</tt> field is the size of the debugging information for the section, including the section header.&nbsp; The
+following conditions must hold true for the debugger to recognize the debugging information as valid:
 <ol>
 <li>mod_offset &lt; gbl_offset
 <li>gbl_offset &lt; addr_offset
@@ -829,7 +829,7 @@ level array is the following structure:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>The<tt> segment</tt> field contains a offset, from the start of the address info class, to an addr_info structure
 (see the address info class description).&nbsp; This provides the segment value for the array of line_info's following.&nbsp;
-The next field,<tt> num</tt>, provides the number of line_info's in the array.&nbsp; The<tt> line</tt> is a variable size
+The next field,<tt> num</tt> , provides the number of line_info's in the array.&nbsp; The<tt> line</tt> is a variable size
 array containing the following structure:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct line_info {</tt>
@@ -841,11 +841,10 @@ line number is on, this line number refers to an entry in the special line numbe
 Number Table&quot; section for more details.&nbsp; The<tt> code_offset</tt> field contains the offset from the begining of
 the module for the first instruction associated with the line number.&nbsp; To get the true code address for the instruction
 you must add<tt> code_offset</tt> to the address given by the<tt> segment</tt> field in the line_segment structure.&nbsp;
-All the instructions up to the next element's<tt> code_offset</tt>, or the end of the object file's code for that segment
+All the instructions up to the next element's<tt> code_offset</tt> , or the end of the object file's code for that segment
 if there is no next<tt> code_offset</tt> are considered to be part of the<tt> line_number</tt> source line.&nbsp; Within each
-line_segment structure the line_info array is assumed to be sorted in order of ascending<tt> code_offset</tt>'s.&nbsp; The
-module structure for the object file contains fields which indicate the start and size of the line_segment array within the
-class.
+line_segment structure the line_info array is assumed to be sorted in order of ascending<tt> code_offset</tt>.&nbsp; The module
+structure for the object file contains fields which indicate the start and size of the line_segment array within the class.
 <br><br>Each line_segment structure may not exceed 60K, however the total amount of line information for a module may exceed
 60K with multiple line_segment structures and multiple entries in the demand link table (described in the module information
 section).
@@ -878,8 +877,8 @@ The table looks like this:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } file_name_index_entry; /* repeated file_count times */</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* file name table */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; A list of zero terminated source file names</tt>
-<br><br>To find the correct cue entry given the value in a<tt> line_number</tt>, search the<tt> cue_entry</tt> table for the
-cue which satisfies the following:
+<br><br>To find the correct cue entry given the value in a<tt> line_number</tt> , search the<tt> cue_entry</tt> table for
+the cue which satisfies the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; cue_entry&#91;entry&#93;.cue &lt;= (line_number &amp; 0x7fff) &lt; cue_entry&#91;entry+1&#93;.cue</tt>
 <br><br>Once you have the cue entry, you can extract the true line number by:
@@ -910,8 +909,8 @@ language for this module.&nbsp; The<tt> name</tt> field is a variable length arr
 the array being the length of the name.&nbsp; The remaining characters identify the source file the compiler used to generate
 the object file (e.g.&nbsp; &quot;C:\DEV\WV\C\DBGMAIN.C&quot;).&nbsp; The source file name is obtained from the THEADR record
 of the object file.&nbsp; the debugger uses the file name part of the file specification as its &quot;module name&quot;.&nbsp;
-The remaining fields,<tt> locals</tt>,<tt> types</tt>, and<tt> lines</tt> are a structure type which define the location and
-size of this module's demand loaded information from those classes.&nbsp; The structure contains these fields:
+The remaining fields,<tt> locals</tt> ,<tt> types</tt> , and<tt> lines</tt> are a structure type which define the location
+and size of this module's demand loaded information from those classes.&nbsp; The structure contains these fields:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct demand_info {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 offset;</tt>
@@ -1033,7 +1032,7 @@ segment.&nbsp; The<tt> size</tt> field identifies how large a piece of the segme
 to the module.&nbsp; The starting address of the segment piece is given by adding all the previous size fields in the<tt>
 sects</tt> array to the original starting address in the seg_info structure.
 <br><br>The size of a seg_info structure may not exceed 60K.&nbsp; If a single physical segment would have more<tt> sects</tt>
-than would fit into this restriction (<tt>num</tt> greater than 10238), it should be split into two separate seg_info structures.
+than would fit into this restriction (<tt> num</tt> greater than 10238), it should be split into two separate seg_info structures.
 <br><br>To identify the module that defines a location in memory, the debugger does the following:
 <ol>
 <li>Walk down the array of seg_info structures until one is found with the same segment address as the location that is being
@@ -1105,22 +1104,22 @@ all 16-bit memory models are subsets.&nbsp; The structure is defined as follows:
 <br><br>The<tt> segment</tt> field contains the segment of the address and the<tt> offset</tt> field stores the offset of
 the address.
 <dt><br>bytes
-<dd>The type<tt> bytes</tt> is an array of unsigned_8.&nbsp; The length is provided by other means.&nbsp; Typically a field of
-type<tt> bytes</tt> is the last one in a request and the length is calculated from the total length of the request.
+<dd>The type bytes is an array of unsigned_8.&nbsp; The length is provided by other means.&nbsp; Typically a field of type bytes
+is the last one in a request and the length is calculated from the total length of the request.
 <dt><br>string
-<dd>The type<tt> string</tt> is actually an array of characters.&nbsp; The array is terminated by a null ('\0') character.&nbsp;
-The length is provided by other means.&nbsp; Typically a field of type<tt> string</tt> is the last one in a request and the
-length is calculated from the total length of the request.
+<dd>The type string is actually an array of characters.&nbsp; The array is terminated by a null ('\0') character.&nbsp; The length
+is provided by other means.&nbsp; Typically a field of type string is the last one in a request and the length is calculated
+from the total length of the request.
 <dt><br>trap_error
 <dd>Some trap file requests return debuggee operating system error codes, notably the requests to perform file I/O on the remote
 system.&nbsp; These error codes are returned as an unsigned_32.&nbsp; The debugger considers the value zero to indicate no
 error.
 <dt><br>trap_phandle
-<dd>This is an<tt> unsigned_32</tt> which holds process (task) handle.&nbsp; A task handle is used to uniquely identify a debuggee
+<dd>This is an unsigned_32 type which holds process (task) handle.&nbsp; A task handle is used to uniquely identify a debuggee
 process.
 <dt><br>trap_mhandle
-<dd>This is an<tt> unsigned_32</tt> which holds a module handle.&nbsp; Typically the main executable will be one module, and on
-systems which support DLLs or shared libraries, each library will be identified by a unique module handle.
+<dd>This is an unsigned_32 type which holds a module handle.&nbsp; Typically the main executable will be one module, and on systems
+which support DLLs or shared libraries, each library will be identified by a unique module handle.
 </dl>
 <h1 id="The_Request_Interface"> The Request Interface </h1>
 <br>Next follow detailed description of interface elements.
@@ -1130,10 +1129,10 @@ the actual request code and whatever parameters that are required by the request
 of the operation is to be stored by the trap file.
 <br><br>The two sequences need not be contiguous.&nbsp; The sequences are described to the trap file through two arrays of
 message entry structures.&nbsp; This allows the debugger to avoid unnecessary packing and unpacking of messages, since<tt>
-mx_entry</tt>'s can be set to point directly at parameter/result buffers.
-<br><br>Multiple requests are<b> not</b> allowed in a single message.&nbsp; The<tt> mx_entry</tt>'s are only used to provide
+mx_entry</tt> can be set to point directly at parameter/result buffers.
+<br><br>Multiple requests are<b> not</b> allowed in a single message.&nbsp; The<tt> mx_entry</tt> is only used to provide
 scatter/gather capabilities for one request at a time.
-<br><br>The message entry structure is as follows (defined in<tt> trptypes.h</tt>):
+<br><br>The message entry structure is as follows (defined in<tt> trptypes.h</tt> ):
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1141,12 +1140,12 @@ scatter/gather capabilities for one request at a time.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } mx_entry;</tt>
 <br><br>The<tt> ptr</tt> is pointing to a block of data for that message entry.&nbsp; The<tt> len</tt> field gives the length
-of that block.&nbsp; One array of<tt> mx_entry</tt>'s describes the request message.&nbsp; The second array describes the
-return message.
+of that block.&nbsp; One array of<tt> mx_entry</tt> describes the request message.&nbsp; The second array describes the return
+message.
 <br><br>It is not legal to split a message into arbitrary pieces with mx_entries.&nbsp; Each request documents where an<tt>
 mx_entry</tt> is allowed to start with a line of dashes.
 <h2 id="The_Interface_Routines"> The Interface Routines </h2>
-<br>The trap file interface must provide three routines:<tt>&nbsp; TrapInit</tt>,<tt> TrapRequest</tt>, and<tt> TrapFini</tt>.
+<br>The trap file interface must provide three routines:<tt>&nbsp; TrapInit</tt> ,<tt> TrapRequest</tt> , and<tt> TrapFini</tt>.
 &nbsp;How the debugger determines the address of these routines after loading a trap file, as well as the calling convention
 used, is system dependent and described later.&nbsp; These functions are prototyped in<tt> trpimp.h</tt>.
 <h3 id="TrapInit"> TrapInit </h3>
@@ -1164,7 +1163,7 @@ option are passed as the<tt> parm</tt>.&nbsp; For example:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wd /trap=nov;testing program</tt>
 <br><br>The<tt> parm</tt> would be &quot;testing&quot;.&nbsp; Any error message will be returned in<tt> error</tt>.&nbsp;
 The<tt> remote</tt> field is a zero if the Open Watcom debugger is loading the trap file and a one if a remote server is loading
-it.&nbsp; This function returns a structure<tt> trap_version</tt> of the following form (defined in<tt> trptypes.h</tt>):
+it.&nbsp; This function returns a structure<tt> trap_version</tt> of the following form (defined in<tt> trptypes.h</tt> ):
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; major;</tt>
@@ -1227,7 +1226,7 @@ the<tt> buffer</tt> variable.&nbsp; If less than 30 bytes is transfered, an erro
 access requests.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void TRAPENTRY TrapFini( void );</tt>
-<br><br>After calling<tt> TrapFini</tt>, it is illegal to call<tt> TrapRequest</tt> without calling<tt> TrapInit</tt> again.
+<br><br>After calling<tt> TrapFini</tt> , it is illegal to call<tt> TrapRequest</tt> without calling<tt> TrapInit</tt> again.
 <h1 id="The_Requests"> The Requests </h1>
 <br>This section descibes the individual requests, their parameters, and their return values.&nbsp; A line of dashes indicates
 where an<tt> mx_entry</tt> is allowed (but not required) to start.&nbsp; The debugger allows (via REQ_GET_SUPPLEMENTARY_SERVICE/REQ_PERFORM_SUPPLEMENTARY_SERVICE)
@@ -1307,10 +1306,9 @@ supplementary service.&nbsp; This string is case insensitive.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_shandle&nbsp;&nbsp;&nbsp; id;</tt>
-<br><br>The<tt> err</tt> field is non-zero if something went wrong in obtaining or initializing the service.<tt>&nbsp; Id</tt>
-is the identifier for a particular supplementary service.&nbsp; It need not be the same from one invocation of the trap file
-to another.&nbsp; If both it and the<tt> err</tt> field are zero, it means that the service is not available from this trap
-file.
+<br><br>The err field is non-zero if something went wrong in obtaining or initializing the service.<tt>&nbsp; Id</tt> is the
+identifier for a particular supplementary service.&nbsp; It need not be the same from one invocation of the trap file to another.
+&nbsp;If both it and the<tt> err</tt> field are zero, it means that the service is not available from this trap file.
 <br><br><b>NOTE:</b>&nbsp; integrated with the debugger.&nbsp; There would be two components, one to be added to the debugger
 and one to be added to the trap file.&nbsp; The two pieces could communicate with each other via the supplementary services
 mechanism.
@@ -1383,7 +1381,7 @@ include:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_P47 =&nbsp; 15&nbsp;&nbsp;&nbsp; - Pentium 4 integrated FPU</tt>
 <br><br>The<tt> osmajor</tt> and<tt> osminor</tt> contains the major and minor version number for the operating system of
 the remote machine.&nbsp; The type of operating system can be found in<tt> os</tt> field.&nbsp; The size of this field is
-unsigned_8.&nbsp; The OS can be :
+unsigned_8.&nbsp; The OS can be:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_IDUNNO&nbsp;&nbsp;&nbsp; =&nbsp; 0&nbsp;&nbsp; - Unknown operating system</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_DOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 1&nbsp;&nbsp; - DOS</tt>
@@ -1796,7 +1794,7 @@ MAD file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</tt>
 <br><br>The return message content is specific to the MAD in use and will contain a<tt> mad_registers</tt> union (defined
-in<tt> madtypes.h</tt>).
+in<tt> madtypes.h</tt> ).
 <h3 id="REQ_WRITE_REGS"> REQ_WRITE_REGS </h3>
 <br>Request to write CPU register contents.&nbsp; The data is target architecture specific.
 <br><br>Request message:
@@ -1918,7 +1916,7 @@ to be transmitted.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 data</tt>
 <br><br>If successful, the<tt> data</tt> returns the block of data.&nbsp; The length of returned data is given by the return
-value of TrapRequest minus 4 (to account for the size of<tt> err</tt>).&nbsp; The length will normally be equal to the<tt>
+value of TrapRequest minus 4 (to account for the size of<tt> err</tt> ).&nbsp; The length will normally be equal to the<tt>
 len</tt> field.&nbsp; If the end of file is encountered before the read completes, the return value will be less than the
 number of bytes requested.&nbsp; When an error has occurred, the<tt> err</tt> field contains a value indicating the type of
 error that has been detected.
@@ -2146,7 +2144,7 @@ to the request messages.
 <dt><b><i>Type</i></b>
 <dd><b><i>Definition</i></b>
 <dt><br>trap_thandle
-<dd>This is an<tt> unsigned_32</tt> which holds a thread handle.
+<dd>This is an unsigned_32 type which holds a thread handle.
 </dl>
 <h3 id="REQ_THREAD_GET_NEXT"> REQ_THREAD_GET_NEXT </h3>
 <br>Request to get next thread.
@@ -2230,7 +2228,7 @@ do not show that &quot;prefix&quot; to the request messages.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to_name</tt>
 <br><br>The file whose name is indicated by the field<tt> from_name</tt> will be renamed to the name given by the field<tt>
-to_name</tt>
+to_name</tt>.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -2399,7 +2397,7 @@ the files to list in the directory.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -----------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rfx_find&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info</tt>
 <br><br>If found, the<tt> err</tt> field will be zero.&nbsp; The location and information of about the first file will be
-in the structure<tt> info.</tt>&nbsp; Definition of the structure<tt> rfx_find</tt> is as follows:
+in the structure<tt> info</tt>.&nbsp; Definition of the structure<tt> rfx_find</tt> is as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct rfx_find {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2626,9 +2624,9 @@ information) is examined for the following structure:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; acc_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; fini_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } trap_header;</tt>
-<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>,<tt>
-acc_off</tt>, and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini routines
-repectively.
+<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>
+,<tt> acc_off</tt> , and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini
+routines repectively.
 <br><br>The starting address field of the EXE header should be set to point at some code which prints out a message about
 not being able to be run from the command line and then terminates.
 <h2 id="Trap_Files_Under_OSD2"> Trap Files Under OS/2 </h2>
@@ -2688,9 +2686,9 @@ for the following structure:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; acc_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; fini_off;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } trap_header;</tt>
-<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>,<tt>
-acc_off</tt>, and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini routines
-repectively.
+<br><br>If the first 2 bytes contain the value 0xDEAF, the file is considered to be a valid trap file and the<tt> init_off</tt>
+,<tt> acc_off</tt> , and<tt> fini_off</tt> fields are used to obtain the offsets of the TrapInit, TrapRequest, and TrapFini
+routines repectively.
 <br><br>The starting address field of the load image header should be set to point at some code which prints out a message
 about not being able to be run from the command line and then terminates.
 <h2 id="Trap_Files_Under_Netware_386_or_PenPoint"> Trap Files Under Netware 386 or PenPoint </h2>
@@ -2724,9 +2722,9 @@ All register contents (including flags) should be preserved by the hook routine.
 <br><br>After initialization, the debugger hook routine is invoked with a far call every time a new overlay section is loaded
 into memory.&nbsp; In this case the AX register contains the section number that was just loaded.&nbsp; The DL register contains
 a zero or non-zero value if the overlay load was caused by a call or return, respectively.&nbsp; The CX:BX registers form
-a far pointer to the last byte of the call instruction that caused the overlay load (in the case of a overlay load being caused
+a far pointer to the last byte of the call instruction that caused the overlay load, in the case of a overlay load being caused
 by a return instruction (DL is non-zero) the far pointer is to the last byte of the call instruction that the return is returning
-from.)
+from.
 <br><br><b>NOTE:</b>&nbsp; may be loaded by the overlay manager before the hook routine is called.&nbsp; The current overlay
 manager also loads all of the ancestors of a section (See the WLINK documentation in the Users' Guide for a description of
 what an ancestor is).&nbsp; To find out what sections are really in memory the debugger should invoke the handler routine
@@ -2886,13 +2884,13 @@ with the size of the section in paragraphs.
 If an upwardly compatible change in the structures is made, the minor number will be incremented.&nbsp; If a non-upwardly
 compatible change to the structures is made, the major field will be incremented.&nbsp; The current major version is 3, the
 current minor version is 0.&nbsp; The<tt> start</tt> field contains a 32-bit far pointer to the &quot;actual&quot; starting
-address of the program.&nbsp; The overlay manager jumps to this address after it has finished initializing.&nbsp; (If a debugger/sampler
-is present then the overlay manager calls into the hook routine with this address on the return stack.) The<tt> delta</tt>
+address of the program.&nbsp; The overlay manager jumps to this address after it has finished initializing (If a debugger/sampler
+is present then the overlay manager calls into the hook routine with this address on the return stack).&nbsp; The<tt> delta</tt>
 field contains the value to be added to each of the segment relocations when a section is loaded into memory (it contains
-the segment value for the first segment in the program.) The<tt> ovl_size</tt> field contains the size of the overlay area.
-&nbsp;This is only used in the dynamic overlay manager.&nbsp; The final field,<tt> entries</tt>, is a variable sized array
-containing one entry for each overlay section in the program (e.g.&nbsp; the tenth element in the array describes overlay
-section 10.) Each entry has the following form:
+the segment value for the first segment in the program).&nbsp; The<tt> ovl_size</tt> field contains the size of the overlay
+area.&nbsp; This is only used in the dynamic overlay manager.&nbsp; The final field,<tt> entries</tt> , is a variable sized
+array containing one entry for each overlay section in the program (e.g.&nbsp; the tenth element in the array describes overlay
+section 10).&nbsp; Each entry has the following form:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct ovltab_entry {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flags_anc;</tt>
