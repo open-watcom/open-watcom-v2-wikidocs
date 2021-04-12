@@ -1798,16 +1798,16 @@ P to memory</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; ENDS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <h1 id="DOSD4GW__The_Tenberry_Software_DOSD4GW_DOS_Extender"> DOS/4GW:&nbsp; The Tenberry Software DOS/4GW DOS Extender </h1>
-<br><br>The chapters in this section describe the 32-bit Tenberry Software<b> DOS/4GW</b> DOS Extender which is provided with
-the Open Watcom C/C++ package.<b>&nbsp; DOS/4GW</b> is a subset of Tenberry Software's DOS/4G product.<b>&nbsp; DOS/4GW</b>
+<br><br>The chapters in this section describe the 32-bit Tenberry Software<i> DOS/4GW</i> DOS Extender which is provided with
+the Open Watcom C/C++ package.<i>&nbsp; DOS/4GW</i> is a subset of Tenberry Software's DOS/4G product.<i>&nbsp; DOS/4GW</i>
 is customized for use with the Open Watcom C/C++ package.&nbsp; Key differences are:
 <ul>
-<li><b> DOS/4GW</b> will only execute programs built with a Open Watcom 32-bit compiler such as Open Watcom C/C++ and linked
+<li><i> DOS/4GW</i> will only execute programs built with a Open Watcom 32-bit compiler such as Open Watcom C/C++ and linked
 with its run-time libraries.
-<li>The<b> DOS/4GW</b> virtual memory manager (VMM), included in the package, is restricted to 32MB of memory.
-<li><b> DOS/4GW</b> does not provide extra functionality such as TSR capability and VMM performance tuning enhancements.
+<li>The<i> DOS/4GW</i> virtual memory manager (VMM), included in the package, is restricted to 32MB of memory.
+<li><i> DOS/4GW</i> does not provide extra functionality such as TSR capability and VMM performance tuning enhancements.
 </ul>
-<br>If your application has requirements beyond those provided by<b> DOS/4GW</b>, you may wish to acquire DOS/4GW Professional
+<br>If your application has requirements beyond those provided by<i> DOS/4GW</i>, you may wish to acquire DOS/4GW Professional
 or DOS/4G from:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Tenberry Software, Inc.</tt>
@@ -1818,22 +1818,22 @@ or DOS/4G from:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Email:&nbsp; info@tenberry.com</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Phone:&nbsp; 1.480.767.8868</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Fax:&nbsp;&nbsp;&nbsp; 1.480.767.8709</tt>
-<br><br>Programs developed to use the restricted version of<b> DOS/4GW</b> which is included in the Open Watcom C/C++ package
+<br><br>Programs developed to use the restricted version of<i> DOS/4GW</i> which is included in the Open Watcom C/C++ package
 can be distributed on a royalty-free basis, subject to the licensing terms of the product.
 <h1 id="DOSD4GW__Linear_Executables"> DOS/4GW:&nbsp; Linear Executables </h1>
 <br>To build a linear executable, compile and link it as described in the chapter entitled &quot;Creating 32-bit DOS/4GW Executables&quot;.
 &nbsp;The resulting file will not run independently:&nbsp; you can run it under the Open Watcom Debugger, Tenberry Software
 Instant-D debugger, or with the standalone &quot;DOS4GW.EXE&quot;.
 <h2 id="DOSD4GW__The_Linear_Executable_Format"> DOS/4GW:&nbsp; The Linear Executable Format </h2>
-<br><b> DOS/4GW</b> works with files that use the Linear Executable (LE) file format.&nbsp; The format represents a protected-mode
+<br><i> DOS/4GW</i> works with files that use the Linear Executable (LE) file format.&nbsp; The format represents a protected-mode
 program in the context of a 32-bit 386 runtime environment with linear to physical address translation hardware enabled.&nbsp;
 It uses a flat address space.
 <br><br>This file format is similar to the Segmented Executable (NE) format used in OS/2 1.x and MS Windows.&nbsp; Both support
 Dynamic Linking, Resources, and are geared toward protected-mode programs.&nbsp; Both formats use tables of &quot;counted
 ASCII&quot; names, and they use similar relocation formats.
 <br><br>Both formats begin with a DOS style stub program that sophisticated loaders skip.&nbsp; This stub program executes
-when the<b> DOS/4GW</b> loader is not present, displaying the message,<b> This program cannot run in DOS mode.</b>
-<br><br>When the Open Watcom Linker is used to link a<b> DOS/4GW</b> application, it automatically replaces the default stub
+when the<i> DOS/4GW</i> loader is not present, displaying the message,<i> This program cannot run in DOS mode.</i>
+<br><br>When the Open Watcom Linker is used to link a<i> DOS/4GW</i> application, it automatically replaces the default stub
 program with one that calls DOS4GW.
 <h3 id="DOSD4GW__The_Stub_Program"> DOS/4GW:&nbsp; The Stub Program </h3>
 <br>The stub at the beginning of a linear executable is a real-mode program that you can modify as you like.&nbsp; For example,
@@ -1905,31 +1905,31 @@ DOS/4G Copyright banner */</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* indicate error */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="DOSD4GW__Memory_Use"> DOS/4GW:&nbsp; Memory Use </h2>
-<br>This section explains how a<b> DOS/4GW</b> application uses the memory on a 386-based PC/AT.&nbsp; The basic memory layout
+<br>This section explains how a<i> DOS/4GW</i> application uses the memory on a 386-based PC/AT.&nbsp; The basic memory layout
 of an AT machine consists of 640KB of DOS memory, 384KB of upper memory, and an undetermined amount of extended memory.&nbsp;
 DOS memory and upper memory together compose real memory, the memory that can be addressed when the processor is running in
 real mode.
 <br><br><tt><img src="mem1.bmp" align=middle></tt>
-<br><b><i>Figure 1.</i></b><b><i></i></b><b> Basic Memory Layout</b>
-<br><br>Under<b> DOS/4GW</b>, the first megabyte of physical memory - the real memory - is mapped as a shared linear address
+<br><b><i>Figure 1.</i></b><b><i></i></b><i> Basic Memory Layout</i>
+<br><br>Under<i> DOS/4GW</i>, the first megabyte of physical memory - the real memory - is mapped as a shared linear address
 space.&nbsp; This allows your application to use absolute addresses in real memory, to access video RAM or BIOS ROM, for example.
 &nbsp;Because the real memory is available to all processes, you are not guaranteed to be able to allocate a particular area
 in real memory:&nbsp; another process may have allocated it already.
 <br><br>Most code and data is placed in a paged linear address space starting at 4MB.&nbsp; The linear address space starts
 at 4MB, the first address in the second page table, to avoid conflicts with VCPI system software.
 <br><br>This split mapping - an executable that is linked to start at 4MB in the linear address space, with the first MB in
-the address space mapped to the first MB of physical memory - is called a<b> split flat model.</b>
+the address space mapped to the first MB of physical memory - is called a<i> split flat model.</i>
 <br><br>The illustration below shows the layout of physical memory on the left, and the layout of the linear address space
 on the right.
 <br><br><tt><img src="mem2.bmp" align=middle></tt>
-<br><b><i>Figure 2.</i></b><b><i></i></b><b> Physical Memory/Linear Address Space</b>
+<br><b><i>Figure 2.</i></b><b><i></i></b><i> Physical Memory/Linear Address Space</i>
 <br><br>The 1KB label in the diagram indicates the top of the real-mode interrupt vectors.&nbsp; 4KB marks the end of the
 first page.
 <h1 id="DOSD4GW__Configuring_DOSD4GW"> DOS/4GW:&nbsp; Configuring DOS/4GW </h1>
 <br>This chapter explains various options that can be specified with the <b> DOS4G</b> environment variable including how
-to suppress the banner that is displayed by<b> DOS/4GW</b> at startup.&nbsp; It also explains how to use the <b> DOS16M</b>
-environment variable to select the switch mode setting, if necessary, and to specify the range of extended memory in which<b>
-DOS/4GW</b> will operate.<b>&nbsp; DOS/4GW</b> is based on Tenberry Software's DOS/16M 16-bit Protected-Mode support; hence
+to suppress the banner that is displayed by<i> DOS/4GW</i> at startup.&nbsp; It also explains how to use the <b> DOS16M</b>
+environment variable to select the switch mode setting, if necessary, and to specify the range of extended memory in which<i>
+DOS/4GW</i> will operate.<i>&nbsp; DOS/4GW</i> is based on Tenberry Software's DOS/16M 16-bit Protected-Mode support; hence
 the <b> DOS16M</b> environment variable name remains unchanged.
 <h2 id="DOSD4GW__The_DOS4G_Environment_Variable"> DOS/4GW:&nbsp; The DOS4G Environment Variable </h2>
 <br>A number of options can be selected by setting the <b> DOS4G</b> environment variable.&nbsp; The syntax for setting options
@@ -1941,8 +1941,8 @@ is:
 <dt><b><i>Options:</i></b>
 <dd><b><i> </i></b>
 <dt><br>QUIET
-<dd>Use this option to suppress the<b> DOS/4GW</b> banner.
-<br>The banner that is displayed by<b> DOS/4GW</b> at startup can be suppressed by issuing the following command:
+<dd>Use this option to suppress the<i> DOS/4GW</i> banner.
+<br>The banner that is displayed by<i> DOS/4GW</i> at startup can be suppressed by issuing the following command:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4G=quiet</tt>
 <br><br><b><i>Note:</i></b>&nbsp; Use of the quiet switch is only permitted pursuant to the terms and conditions of the WATCOM
@@ -1962,10 +1962,10 @@ distribute to others.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4G=nullp</tt>
 </dl>
 <br>To select a combination of options, list them with commas as separators.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4G=nullp,verbose</tt>
 <h2 id="DOSD4GW__Changing_the_Switch_Mode_Setting"> DOS/4GW:&nbsp; Changing the Switch Mode Setting </h2>
-<br>In almost all cases,<b> DOS/4GW</b> programs can detect the type of machine that is running and automatically choose an
+<br>In almost all cases,<i> DOS/4GW</i> programs can detect the type of machine that is running and automatically choose an
 appropriate real- to protected-mode switch technique.&nbsp; For the few cases in which this default setting does not work
 we provide the <b> DOS16M</b> DOS environment variable, which overrides the default setting.
 <br><br>Change the switch mode settings by issuing the following command:
@@ -1974,8 +1974,8 @@ we provide the <b> DOS16M</b> DOS environment variable, which overrides the defa
 <br><br>Do not insert a space between <b> DOS16M</b> and the equal sign.&nbsp; A space to the right of the equal sign is optional.
 <br><br>The table below lists the machines and the settings you would use with them.&nbsp; Many settings have mnemonics, listed
 in the column &quot;Alternate Name&quot;, that you can use instead of the number.&nbsp; Settings that you must set with the
-<b> DOS16M</b> variable have the notation<b> req'd</b> in the first column.&nbsp; Settings you may use are marked<b> option,</b>
-and settings that will automatically be set are marked<b> auto.</b>
+<b> DOS16M</b> variable have the notation<i> req'd</i> in the first column.&nbsp; Settings you may use are marked<i> option,</i>
+and settings that will automatically be set are marked<i> auto.</i>
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Alternate
@@ -2038,19 +2038,19 @@ in this chapter for more information about setting the memory range.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OKI if800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<br><br>Before running<b> DOS/4GW</b> applications, check the switch mode setting by following this procedure:
+<br><br>Before running<i> DOS/4GW</i> applications, check the switch mode setting by following this procedure:
 <li>Run PMINFO and note the switch setting reported on the last line of the display.&nbsp; (PMINFO, which reports on the protected-mode
 resources available to your programs, is described in more detail in the chapter entitled <a href="#DOSD4GW__Utilities">DOS/4GW:&nbsp; Utilities</a>)
 <br><br>If PMINFO runs, the setting is usable on your machine.
 <li>If you changed the switch setting, add the new setting to your AUTOEXEC.BAT file.
 </ol>
-<br><b>Note:</b>&nbsp; PMINFO will run successfully on 286 machines.&nbsp; If your<b> DOS/4GW</b> application does not run,
+<br><b>Note:</b>&nbsp; PMINFO will run successfully on 286 machines.&nbsp; If your<i> DOS/4GW</i> application does not run,
 and PMINFO does, check the CPU type reported on the first line of the display.
 <br><br>You are authorized (and encouraged) to distribute PMINFO to your customers.&nbsp; You may also include a copy of this
 section in your documentation.
 <h2 id="DOSD4GW__Fine_Control_of_Memory_Usage"> DOS/4GW:&nbsp; Fine Control of Memory Usage </h2>
 <br>In addition to setting the switch mode as described above, the <b> DOS16M</b> environment variable enables you to specify
-which portion of extended memory<b> DOS/4GW</b> will use.&nbsp; The variable also allows you to instruct<b> DOS/4GW</b> to
+which portion of extended memory<i> DOS/4GW</i> will use.&nbsp; The variable also allows you to instruct<i> DOS/4GW</i> to
 search for extra memory and use it if it is present.
 <h3 id="DOSD4GW__Specifying_a_Range_of_Extended_Memory"> DOS/4GW:&nbsp; Specifying a Range of Extended Memory </h3>
 <br>Normally, you don't need to specify a range of memory with the <b> DOS16M</b> variable.&nbsp; You must use the variable,
@@ -2058,7 +2058,7 @@ however, in the following cases:
 <ul>
 <li>You are running on a Fujitsu FMR-series, NEC 98-series, OKI if800-series or Hitachi B-series machine.
 <li>You have older programs that use extended memory but don't follow one of the standard disciplines.
-<li>You want to shell out of<b> DOS/4GW</b> to use another program that requires extended memory.
+<li>You want to shell out of<i> DOS/4GW</i> to use another program that requires extended memory.
 </ul>
 <br>If none of these conditions applies to you, you can skip this section.
 <br><br>The general syntax is:
@@ -2069,9 +2069,9 @@ or in hexadecimal (hex requires a<tt> 0x</tt> prefix).&nbsp; The number may end 
 kilobytes, or an M to indicate megabytes.&nbsp; If no suffix is given, the address or size is assumed to be in kilobytes.
 &nbsp;If both a size and a range are specified, the more restrictive interpretation is used.
 <br><br>The most flexible strategy is to specify only a size.&nbsp; However, if you are running with other software that does
-not follow a convention for indicating its use of extended memory, and these other programs start before<b> DOS/4GW</b>, you
-will need to calculate the range of memory used by the other programs and specify a range for<b> DOS/4GW</b> programs to use.
-<br><br><b>DOS/4GW</b> ignores specifications (or parts of specifications) that conflict with other information about extended
+not follow a convention for indicating its use of extended memory, and these other programs start before<i> DOS/4GW</i>, you
+will need to calculate the range of memory used by the other programs and specify a range for<i> DOS/4GW</i> programs to use.
+<br><br><i>DOS/4GW</i> ignores specifications (or parts of specifications) that conflict with other information about extended
 memory use.&nbsp; Below are some examples of memory usage control:
 <dl>
 <dt>set DOS16M= 1 @2m-4m
@@ -2085,33 +2085,33 @@ memory use.&nbsp; Below are some examples of memory usage control:
 <dt><br>set DOS16M= :0
 <dd>Use no extended memory.
 </dl>
-<br>As a default condition<b> DOS/4GW</b> applications take all extended memory that is not otherwise in use.&nbsp; Multiple<b>
-DOS/4GW</b> programs that execute simultaneously will share the reserved range of extended memory.&nbsp; Any non-<b>DOS/4GW</b>
-programs started while<b> DOS/4GW</b> programs are executing will find that extended memory above the start of the<b> DOS/4GW</b>
+<br>As a default condition<i> DOS/4GW</i> applications take all extended memory that is not otherwise in use.&nbsp; Multiple<i>
+DOS/4GW</i> programs that execute simultaneously will share the reserved range of extended memory.&nbsp; Any non-<i>DOS/4GW</i>
+programs started while<i> DOS/4GW</i> programs are executing will find that extended memory above the start of the<i> DOS/4GW</i>
 range is unavailable, so they may not be able to run.&nbsp; This is very safe.&nbsp; There will be a conflict only if the
 other program does not check the BIOS configuration call (Interrupt 15H function 88H, get extended memory size).
-<br><br>To create a private pool of extended memory for your<b> DOS/4GW</b> application, use the PRIVATXM program, described
+<br><br>To create a private pool of extended memory for your<i> DOS/4GW</i> application, use the PRIVATXM program, described
 in the chapter entitled <a href="#DOSD4GW__Utilities">DOS/4GW:&nbsp; Utilities</a>.
 <br><br>The default memory allocation strategy is to use extended memory if available, and overflow into DOS (low) memory.
-<br><br>In a VCPI or DPMI environment, the<tt> start_address</tt> and<tt> end_address</tt> arguments are not meaningful.<b>
-&nbsp;DOS/4GW</b> memory under these protocols is not allocated according to specific addresses because VCPI and DPMI automatically
+<br><br>In a VCPI or DPMI environment, the<tt> start_address</tt> and<tt> end_address</tt> arguments are not meaningful.<i>
+&nbsp;DOS/4GW</i> memory under these protocols is not allocated according to specific addresses because VCPI and DPMI automatically
 prevent address conflicts between extended memory programs.&nbsp; You can specify a<tt> size</tt> for memory managed by VCPI
-or DPMI, but<b> DOS/4GW</b> will not necessarily allocate this memory from the highest available extended memory address,
+or DPMI, but<i> DOS/4GW</i> will not necessarily allocate this memory from the highest available extended memory address,
 as it does for memory managed under other protocols.
 <h3 id="DOSD4GW__Using_Extra_Memory"> DOS/4GW:&nbsp; Using Extra Memory </h3>
-<br>Some machines contain extra non-extended, non-conventional memory just below 16MB.&nbsp; When<b> DOS/4GW</b> runs on a
-Compaq 386, it automatically uses this memory because the memory is allocated according to a certain protocol, which<b> DOS/4GW</b>
+<br>Some machines contain extra non-extended, non-conventional memory just below 16MB.&nbsp; When<i> DOS/4GW</i> runs on a
+Compaq 386, it automatically uses this memory because the memory is allocated according to a certain protocol, which<i> DOS/4GW</i>
 follows.&nbsp; Other machines have no protocol for allocating this memory.&nbsp; To use the extra memory that may exist on
 these machines, set <b> DOS16M</b> with the + option.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=+</tt>
-<br><br>Setting the + option causes<b> DOS/4GW</b> to search for memory in the range from FA0000 to FFFFFF and determine whether
-the memory is usable.<b>&nbsp; DOS/4GW</b> does this by writing into the extra memory and reading what it has written.&nbsp;
-In some cases, this memory is mapped for DOS or BIOS usage, or for other system uses.&nbsp; If<b> DOS/4GW</b> finds extra
+<br><br>Setting the + option causes<i> DOS/4GW</i> to search for memory in the range from FA0000 to FFFFFF and determine whether
+the memory is usable.<i>&nbsp; DOS/4GW</i> does this by writing into the extra memory and reading what it has written.&nbsp;
+In some cases, this memory is mapped for DOS or BIOS usage, or for other system uses.&nbsp; If<i> DOS/4GW</i> finds extra
 memory that is mapped this way, and is not marked read-only, it will write into that memory.&nbsp; This will cause a crash,
 but won't have any other effect on your system.
 <h2 id="DOSD4GW__Setting_Runtime_Options"> DOS/4GW:&nbsp; Setting Runtime Options </h2>
-<br>The <b> DOS16M</b> environment variable sets certain runtime options for all<b> DOS/4GW</b> programs running on the same
+<br>The <b> DOS16M</b> environment variable sets certain runtime options for all<i> DOS/4GW</i> programs running on the same
 system.
 <br><br>To set the environment variable, the syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2121,76 +2121,76 @@ to set <b> DOS16M</b> using the syntax above while one of these TSRs is resident
 <br><br>These are the options:
 <dl>
 <dt>0x01
-<dd><b> check A20 line --</b> This option forces<b> DOS/4GW</b> to wait until the A20 line is enabled before switching to protected
-mode.&nbsp; When<b> DOS/4GW</b> switches to real mode, this option suspends your program's execution until the A20 line is
+<dd><i> check A20 line --</i> This option forces<i> DOS/4GW</i> to wait until the A20 line is enabled before switching to protected
+mode.&nbsp; When<i> DOS/4GW</i> switches to real mode, this option suspends your program's execution until the A20 line is
 disabled, unless an XMS manager (such as HIMEM.SYS) is active.&nbsp; If an XMS manager is running, your program's execution
 is suspended until the A20 line is restored to the state it had when the CPU was last in real mode.&nbsp; Specify this option
-if you have a machine that runs<b> DOS/4GW</b> but is not truly AT-compatible.&nbsp; For more information on the A20 line,
+if you have a machine that runs<i> DOS/4GW</i> but is not truly AT-compatible.&nbsp; For more information on the A20 line,
 see the section entitled <a href="#DOSD4GW__Controlling_Address_Line_20">DOS/4GW:&nbsp; Controlling Address Line 20</a>.
 <dt><br>0x02
-<dd><b> prevent initialization of VCPI --</b> By default,<b> DOS/4GW</b> searches for a VCPI server and, if one is present, forces
+<dd><i> prevent initialization of VCPI --</i> By default,<i> DOS/4GW</i> searches for a VCPI server and, if one is present, forces
 it on.&nbsp; This option is useful if your application does not use EMS explicitly, is not a resident program, and may be
 used with 386-based EMS simulator software.
 <dt><br>0x04
-<dd><b> directly pass down keyboard status calls --</b> When this option is set, status requests are passed down immediately and
+<dd><i> directly pass down keyboard status calls --</i> When this option is set, status requests are passed down immediately and
 unconditionally.&nbsp; When disabled, pass-downs are limited so the 8042 auxiliary processor does not become overloaded by
 keyboard polling loops.
 <dt><br>0x10
-<dd><b> restore only changed interrupts --</b> Normally, when a<b> DOS/4GW</b> program terminates, all interrupts are restored
-to the values they had at the time of program startup.&nbsp; When you use this option, only the interrupts changed by the<b>
-DOS/4GW</b> program are restored.
+<dd><i> restore only changed interrupts --</i> Normally, when a<i> DOS/4GW</i> program terminates, all interrupts are restored
+to the values they had at the time of program startup.&nbsp; When you use this option, only the interrupts changed by the<i>
+DOS/4GW</i> program are restored.
 <dt><br>0x20
-<dd><b> set new memory to 00 --</b> When<b> DOS/4GW</b> allocates a new segment or increases the size of a segment, the memory
+<dd><i> set new memory to 00 --</i> When<i> DOS/4GW</i> allocates a new segment or increases the size of a segment, the memory
 is zeroed.&nbsp; This can help you find bugs having to do with uninitialized memory.&nbsp; You can also use it to provide
 a consistent working environment regardless of what programs were run earlier.&nbsp; This option only affects segment allocations
-or expansions that are made through the<b> DOS/4GW</b> kernel (with DOS function 48H or 4AH).&nbsp; This option does not affect
+or expansions that are made through the<i> DOS/4GW</i> kernel (with DOS function 48H or 4AH).&nbsp; This option does not affect
 memory allocated with a compiler's<tt> malloc</tt> function.
 <dt><br>0x40
-<dd><b> set new memory to FF --</b> When<b> DOS/4GW</b> allocates a new segment or increases the size of a segment, the memory
+<dd><i> set new memory to FF --</i> When<i> DOS/4GW</i> allocates a new segment or increases the size of a segment, the memory
 is set to 0xFF bytes.&nbsp; This is helpful in making reproducible cases of bugs caused by using uninitialized memory.&nbsp;
-This option only affects segment allocations or expansions that are made through the<b> DOS/4GW</b> kernel (with DOS function
+This option only affects segment allocations or expansions that are made through the<i> DOS/4GW</i> kernel (with DOS function
 48H or 4AH).&nbsp; This option does not affect memory allocated with a compiler's<tt> malloc</tt> function.
 <dt><br>0x80
-<dd><b> new selector rotation --</b> When<b> DOS/4GW</b> allocates a new selector, it usually looks for the first available (unused)
+<dd><i> new selector rotation --</i> When<i> DOS/4GW</i> allocates a new selector, it usually looks for the first available (unused)
 selector in numerical order starting with the highest selector used when the program was loaded.&nbsp; When this option is
 set, the new selector search begins after the last selector that was allocated.&nbsp; This causes new selectors to rotate
-through the range.&nbsp; Use this option to find references to<b> stale</b> selectors, i.e., segments that have been cancelled
+through the range.&nbsp; Use this option to find references to<i> stale</i> selectors, i.e., segments that have been cancelled
 or freed.
 </dl>
 <h2 id="DOSD4GW__Controlling_Address_Line_20"> DOS/4GW:&nbsp; Controlling Address Line 20 </h2>
-<br>This section explains how<b> DOS/4GW</b> uses address line 20 (A20) and describes the related <b> DOS16M</b> environment
+<br>This section explains how<i> DOS/4GW</i> uses address line 20 (A20) and describes the related <b> DOS16M</b> environment
 variable settings.&nbsp; It is unlikely that you will need to use these settings.
 <br><br>Because the 8086 and 8088 chips have 20-bit address spaces, their highest addressable memory location is one byte
 below 1MB.&nbsp; If you specify an address at 1MB or over, which would require a twenty-first bit to set, the address wraps
 back to zero.&nbsp; Some parts of DOS depend on this wrap, so on the 286 and 386, the twenty-first address bit is disabled.
-&nbsp;To address extended memory,<b> DOS/4GW</b> enables the twenty-first address bit (the A20 line).&nbsp; The A20 line must
+&nbsp;To address extended memory,<i> DOS/4GW</i> enables the twenty-first address bit (the A20 line).&nbsp; The A20 line must
 be enabled for the CPU to run in protected mode, but it may be either enabled or disabled in real mode.
-<br><br>By default, when<b> DOS/4GW</b> returns to real mode, it disables the A20 line.&nbsp; Some software depends on the
-line being enabled.<b>&nbsp; DOS/4GW</b> recognizes the most common software in this class, the XMS managers (such as HIMEM.SYS),
+<br><br>By default, when<i> DOS/4GW</i> returns to real mode, it disables the A20 line.&nbsp; Some software depends on the
+line being enabled.<i>&nbsp; DOS/4GW</i> recognizes the most common software in this class, the XMS managers (such as HIMEM.SYS),
 and enables the A20 line when it returns to real mode if an XMS manager is present.&nbsp; For other software that requires
-the A20 line to be enabled, use the<tt> A20</tt> option.&nbsp; The<tt> A20</tt> option makes<b> DOS/4GW</b> restore the A20
-line to the setting it had when<b> DOS/4GW</b> switched to protected mode.&nbsp; Set the environment variable as follows:
+the A20 line to be enabled, use the<tt> A20</tt> option.&nbsp; The<tt> A20</tt> option makes<i> DOS/4GW</i> restore the A20
+line to the setting it had when<i> DOS/4GW</i> switched to protected mode.&nbsp; Set the environment variable as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=A20</tt>
 <br><br>To specify more than one option on the command line, separate the options with spaces.
-<br><br>The <b> DOS16M</b> variable also lets you to specify the length of the delay between a<b> DOS/4GW</b> instruction
-to change the status of the A20 line and the next<b> DOS/4GW</b> operation.&nbsp; By default, this delay is 1 loop instruction
-when<b> DOS/4GW</b> is running on a 386 machine.&nbsp; In some cases, you may need to specify a longer delay for a machine
-that will run<b> DOS/4GW</b> but is not truly AT-compatible.&nbsp; To change the delay, set <b> DOS16M</b> to the desired
+<br><br>The <b> DOS16M</b> variable also lets you to specify the length of the delay between a<i> DOS/4GW</i> instruction
+to change the status of the A20 line and the next<i> DOS/4GW</i> operation.&nbsp; By default, this delay is 1 loop instruction
+when<i> DOS/4GW</i> is running on a 386 machine.&nbsp; In some cases, you may need to specify a longer delay for a machine
+that will run<i> DOS/4GW</i> but is not truly AT-compatible.&nbsp; To change the delay, set <b> DOS16M</b> to the desired
 number of loop instructions, preceded by a comma:&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS16M=,loops</tt>
 <h1 id="DOSD4GW__VMM"> DOS/4GW:&nbsp; VMM </h1>
 <br>The Virtual Memory Manager (VMM) uses a swap file on disk to augment RAM.&nbsp; With VMM you can use more memory than
 your machine actually has.&nbsp; When RAM is not sufficient, part of your program is swapped out to the disk file until it
-is needed again.&nbsp; The combination of the swap file and available RAM is the<b> virtual memory.</b>
+is needed again.&nbsp; The combination of the swap file and available RAM is the<i> virtual memory.</i>
 <br><br>Your program can use VMM if you set the DOS environment variable, <b> DOS4GVM</b>, as follows.&nbsp; To set the <b>
 DOS4GVM</b> environment variable, use the format shown below.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set DOS4GVM= &#91;option&#91;#value&#93;&#93; &#91;option&#91;#value&#93;&#93;</tt>
 <br><br>A &quot;#&quot; is used with options that take values since the DOS command shell will not accept &quot;=&quot;.
 <br><br>If you set <b> DOS4GVM</b> equal to 1, the default parameters are used for all options.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set DOS4GVM=1</tt>
 <h2 id="DOSD4GW__VMM_Default_Parameters"> DOS/4GW:&nbsp; VMM Default Parameters </h2>
 <br>VMM parameters control the options listed below.
@@ -2241,30 +2241,30 @@ bytes of RAM is required.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; !To store the swap file in a directory called SWAPFILE, add</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; !swapname = c:\swapfile\dos4gvm.swp</tt>
 <h1 id="DOSD4GW__Interrupt_21H_Functions"> DOS/4GW:&nbsp; Interrupt 21H Functions </h1>
-<br>When you call an Interrupt 21H function under<b> DOS/4GW</b>, the 32-bit registers in which you pass values are translated
+<br>When you call an Interrupt 21H function under<i> DOS/4GW</i>, the 32-bit registers in which you pass values are translated
 into the appropriate 16-bit registers, since DOS works only with 16 bits.&nbsp; However, you can use 32-bit values in your
-DOS calls.&nbsp; You can allocate blocks of memory larger than 64KB or use an address with a 32-bit offset, and<b> DOS/4GW</b>
+DOS calls.&nbsp; You can allocate blocks of memory larger than 64KB or use an address with a 32-bit offset, and<i> DOS/4GW</i>
 will translate the call appropriately, to use 16-bit registers.&nbsp; When the Interrupt 21H function returns, the value is
 widened - placed in a 32-bit register, with the high order bits zeroed.
-<br><br><b>DOS/4GW</b> uses the following rules to manage registers:
+<br><br><i>DOS/4GW</i> uses the following rules to manage registers:
 <ul>
 <li>When you pass a parameter to an Interrupt 21H function that expects a 16-bit quantity in a general register (for example,
 AX), pass a 32-bit quantity in the corresponding extended register (for example, EAX).&nbsp; When a DOS function returns a
 16-bit quantity in a general register, expect to receive it (with high-order zero bits) in the corresponding extended register.
 <li>When an Interrupt 21H function expects to receive a 16:16 pointer in a segment:general register pair (for example, ES:BX),
-supply a 16:32 pointer using the same segment register and the corresponding extended general register (ES:EBX).<b>&nbsp;
-DOS/4GW</b> will copy data and translate pointers so that DOS ultimately receives a 16:16 real-mode pointer in the correct
+supply a 16:32 pointer using the same segment register and the corresponding extended general register (ES:EBX).<i>&nbsp;
+DOS/4GW</i> will copy data and translate pointers so that DOS ultimately receives a 16:16 real-mode pointer in the correct
 registers.
-<li>When DOS returns a 16:16 real-mode pointer,<b> DOS/4GW</b> translates the segment value into an appropriate protected-mode
+<li>When DOS returns a 16:16 real-mode pointer,<i> DOS/4GW</i> translates the segment value into an appropriate protected-mode
 selector and generates a 32-bit offset that results in a 16:32 pointer to the same location in the linear address space.
-<li>Many DOS functions return an error code in AX if the function fails.<b>&nbsp; DOS/4GW</b> checks the status of the carry
+<li>Many DOS functions return an error code in AX if the function fails.<i>&nbsp; DOS/4GW</i> checks the status of the carry
 flag, and if it is set, indicating an error, zero-extends the code for EAX.&nbsp; It does not change any other registers.
-<li>If the value is passed or returned in an 8-bit register (AL or AH, for example),<b> DOS/4GW</b> puts the value in the
+<li>If the value is passed or returned in an 8-bit register (AL or AH, for example),<i> DOS/4GW</i> puts the value in the
 appropriate location and leaves the upper half of the 32-bit register untouched.
 </ul>
 <br>The table below lists all the Interrupt 21h functions.&nbsp; For each, it shows the registers that are widened or narrowed.
 &nbsp;Footnotes provide additional information about some of the interrupts that require special handling.&nbsp; Following
-the table is a section that provides a detailed explanation of interrupt handling under<b> DOS/4GW.</b>
+the table is a section that provides a detailed explanation of interrupt handling under<i> DOS/4GW.</i>
 <br><br> Function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Purpose&nbsp; Managed
 Registers
@@ -2497,35 +2497,35 @@ Setup&nbsp;
 &nbsp;All Rights Reserved.
 <ol>
 <li>For Function 29H, DS:ESI and ES:EDI contain pointer values that are not changed by the call.
-<li>You can read and write quantities larger than 64KB with Functions 3FH and 40H.<b>&nbsp; DOS/4GW</b> breaks your request
+<li>You can read and write quantities larger than 64KB with Functions 3FH and 40H.<i>&nbsp; DOS/4GW</i> breaks your request
 into chunks smaller than 64KB, and calls the DOS function once for each chunk.
-<li>You can't transfer more than 64KB using Function 44h, subfunctions 02H, 03H, 04H, or 05H.<b>&nbsp; DOS/4GW</b> does not
+<li>You can't transfer more than 64KB using Function 44h, subfunctions 02H, 03H, 04H, or 05H.<i>&nbsp; DOS/4GW</i> does not
 break larger requests into DOS-sized chunks, as it does for Functions 3FH and 40H.
-<li>When you call Function 4B under<b> DOS/4GW</b>, you pass it a data structure that contains 16:32 bit pointers.<b>&nbsp;
-DOS/4GW</b> translates these into 16:16 bit pointers in the structure it passes to DOS.
+<li>When you call Function 4B under<i> DOS/4GW</i>, you pass it a data structure that contains 16:32 bit pointers.<i>&nbsp;
+DOS/4GW</i> translates these into 16:16 bit pointers in the structure it passes to DOS.
 </ol>
 <h2 id="DOSD4GW__Functions_25H_and_35H__Interrupt_Handling_in_Protected_Mode"> DOS/4GW:&nbsp; Functions 25H and 35H:&nbsp; Interrupt Handling in Protected Mode </h2>
-<br>By default, interrupts that occur in protected mode are passed down:&nbsp; the entry in the IDT points to code in<b> DOS/4GW</b>
+<br>By default, interrupts that occur in protected mode are passed down:&nbsp; the entry in the IDT points to code in<i> DOS/4GW</i>
 that switches the CPU to real mode and resignals the interrupt.&nbsp; If you install an interrupt handler using Interrupt
 21H, Function 25H, that handler will get control of any interrupts that occur while the processor is in protected mode.&nbsp;
-If the interrupt for which you installed the handler is in the<b> autopassup range,</b> your handler will also get control
+If the interrupt for which you installed the handler is in the<i> autopassup range,</i> your handler will also get control
 of interrupts signalled in real mode.
 <br><br>The autopassup range runs from 08H to 2EH inclusive, but excluding 21H.&nbsp; If the interrupt is in the autopassup
-range, the real-mode vector will be modified when you install the protected-mode handler to point to code in the<b> DOS/4GW</b>
+range, the real-mode vector will be modified when you install the protected-mode handler to point to code in the<i> DOS/4GW</i>
 kernel.&nbsp; This code switches the processor to protected mode and resignals the interrupt-where your protected-mode handler
 will get control.
 <h3 id="DOSD4GW__32MBit_Gates"> DOS/4GW:&nbsp; 32-Bit Gates </h3>
-<br>The<b> DOS/4GW</b> kernel always assigns a 32-bit gate for the interrupt handlers it installs.&nbsp; It does not distinguish
+<br>The<i> DOS/4GW</i> kernel always assigns a 32-bit gate for the interrupt handlers it installs.&nbsp; It does not distinguish
 between 16-bit and 32-bit handlers for consistency with DPMI.
-<br><br>This 32-bit gate points into the<b> DOS/4GW</b> kernel.&nbsp; When<b> DOS/4GW</b> handles the interrupt, it switches
+<br><br>This 32-bit gate points into the<i> DOS/4GW</i> kernel.&nbsp; When<i> DOS/4GW</i> handles the interrupt, it switches
 to its own 16-bit stack, and from there it calls the interrupt handler (yours or the default).&nbsp; This translation is transparent
 to the handler, with one exception:&nbsp; since the current stack is not the one on which the interrupt occurred, the handler
 cannot look up the stack for the address at which the interrupt occurred.
 <h3 id="DOSD4GW__Chaining_16Mbit_and_32Mbit_Handlers"> DOS/4GW:&nbsp; Chaining 16-bit and 32-bit Handlers </h3>
 <br>If your program hooks an interrupt, write a normal service routine that either handles the interrupt and IRETs or chains
 to the previous handler.&nbsp; As part of handling the interrupt, your handler can PUSHF/CALL to the previous handler.&nbsp;
-The handler<b> must</b> IRET (or IRETD) or chain.
-<br><br>For each protected-mode interrupt,<b> DOS/4GW</b> maintains separate chains of 16-bit and 32-bit handlers.&nbsp; If
+The handler<i> must</i> IRET (or IRETD) or chain.
+<br><br>For each protected-mode interrupt,<i> DOS/4GW</i> maintains separate chains of 16-bit and 32-bit handlers.&nbsp; If
 your 16-bit handler chains, the previous handler is a 16-bit program.&nbsp; If your 32-bit handler chains, the previous handler
 is a 32-bit program.
 <br><br>If a 16-bit program hooks a given interrupt before any 32-bit programs hook it, the 16-bit chain is executed first.
@@ -2536,16 +2536,16 @@ outstanding, the 32-bit handlers will be executed first.
 <br>When you signal Interrupt 21H, Function 35, it always returns a non-null address even if no other program of your bitness
 (i.e., 16-bit or 32-bit) has hooked the interrupt.&nbsp; The address points to a dummy handler that looks to you as though
 it does an IRET to end the chain.&nbsp; This means that you can't find an unused interrupt by looking for a NULL pointer.
-&nbsp;Since this technique is most frequently used by programs that are looking for an unclaimed<b> real-mode</b> interrupt
+&nbsp;Since this technique is most frequently used by programs that are looking for an unclaimed<i> real-mode</i> interrupt
 on which to install a TSR, it shouldn't cause you problems.
 <h1 id="DOSD4GW__Interrupt_31H_DPMI_Functions"> DOS/4GW:&nbsp; Interrupt 31H DPMI Functions </h1>
-<br>When a<b> DOS/4GW</b> application runs under a DPMI host, such as Windows 3.1 in enhanced mode, an OS/2 virtual DOS machine,
-386Max (with DEBUG=DPMIXCOPY), or QEMM/QDPMI (with EXTCHKOFF), the DPMI host provides the DPMI services, not<b> DOS/4GW</b>.
+<br>When a<i> DOS/4GW</i> application runs under a DPMI host, such as Windows 3.1 in enhanced mode, an OS/2 virtual DOS machine,
+386Max (with DEBUG=DPMIXCOPY), or QEMM/QDPMI (with EXTCHKOFF), the DPMI host provides the DPMI services, not<i> DOS/4GW</i>.
 &nbsp;The DPMI host also provides virtual memory, if any.&nbsp; Performance (speed and memory use) under different DPMI hosts
 varies greatly due to the quality of the DPMI implementation.
 <br><br>DPMI services are accessed using Interrupt 31H.
-<br><br>The following describes the services provided by<b> DOS/4GW</b> and DOS/4GW Professional in the absence of a DPMI
-host.<b>&nbsp; DOS/4GW</b> supports many of the common DPMI system services.&nbsp; Not all of the services described below
+<br><br>The following describes the services provided by<i> DOS/4GW</i> and DOS/4GW Professional in the absence of a DPMI
+host.<i>&nbsp; DOS/4GW</i> supports many of the common DPMI system services.&nbsp; Not all of the services described below
 are supported by other DPMI hosts.
 <br><br>Some of the information in this chapter was obtained from the the DOS Protected-Mode Interface (DPMI) specification.
 &nbsp;It is no longer in print; however the DPMI 1.0 specification can be obtained from the Intel ftp site.&nbsp; Here is
@@ -2567,7 +2567,7 @@ calls clear the carry flag.&nbsp; Only memory management and interrupt flag mana
 <br>The flag and register information for each call is listed in the following descriptions of supported Interrupt 31H function
 calls.
 <h2 id="DOSD4GW__Int31H_Function_Calls"> DOS/4GW:&nbsp; Int31H Function Calls </h2>
-<br>The Interrupt 31H subfunction calls supported by<b> DOS/4GW</b> are listed below by category:
+<br>The Interrupt 31H subfunction calls supported by<i> DOS/4GW</i> are listed below by category:
 <ul>
 <li>Local Descriptor Table (LDT) management services
 <li>DOS memory management services
@@ -2699,10 +2699,10 @@ in BX is invalid, the call fails.&nbsp; The call also fails if the access rights
 the requirements shown in the figures below.
 <br><br>The access rights/type byte passed in CL has the format shown in the figure below.
 <br><br><tt><img src="mem3.bmp" align=middle></tt>
-<br><b><i>Figure 3.</i></b><b><i></i></b><b> Access Rights/Type</b>
+<br><b><i>Figure 3.</i></b><b><i></i></b><i> Access Rights/Type</i>
 <br><br>The extended access rights/type byte passed in CH has the following format.
 <br><br><tt><img src="mem4.bmp" align=middle></tt>
-<br><b><i>Figure 4.</i></b><b><i></i></b><b> Extended Access Rights/Type</b>
+<br><b><i>Figure 4.</i></b><b><i></i></b><i> Extended Access Rights/Type</i>
 <dt><br>Function 000AH
 <dd>This function creates an alias to a code segment.&nbsp; This function creates a data descriptor that has the same base and
 limit as the specified code segment descriptor.&nbsp; Pass the following information:
@@ -2747,7 +2747,7 @@ passed in BX is invalid.
 <br>The type byte, byte 5, has the same format and requirements as the access rights/type byte passed to Function 0009H in
 CL.&nbsp; The format is shown in the first figure presented with the description of Function 0009H.
 <br><br>The extended type byte, byte 6, has the same format and requirements as the extended access rights/type byte passed
-to Function 0009H in CH, except that the limit field can have any value, and the low order bits marked<b> reserved</b> are
+to Function 0009H in CH, except that the limit field can have any value, and the low order bits marked<i> reserved</i> are
 used to set the upper 4 bits of the descriptor limit.&nbsp; The format is shown in the second figure presented with the description
 of Function 0009H.
 <dt><br>Function 000DH
@@ -3031,7 +3031,7 @@ must execute a FAR return when it completes.&nbsp; Pass the following informatio
 <br>If the call succeeds, the carry flag is clear and ES:EDI contains the<tt> selector:offset</tt> of modified real-mode call
 structure.
 <br><br>If the call fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The CS:IP in the real-mode call structure specifies the address of the real-mode procedure to call.
 <li>The real-mode procedure must execute a FAR return when it has completed.
@@ -3059,7 +3059,7 @@ must execute an<tt> iret</tt> when it completes.&nbsp; Pass the following inform
 <br>If the call succeeds, the carry flag is clear and ES:EDI contains the<tt> selector:offset</tt> of modified real-mode call
 structure.
 <br><br>If the call fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The CS:IP in the real-mode call structure specifies the address of the real-mode procedure to call.
 <li>The real-mode procedure must execute an<tt> iret</tt> when it has completed.
@@ -3103,7 +3103,7 @@ callback to intercept the mouse driver calls.&nbsp; Pass the following informati
 <br>&nbsp;&nbsp;&nbsp;&nbsp; ES:EDI =&nbsp; selector:offset of real-mode call structure
 <br>&nbsp;&nbsp;&nbsp;&nbsp; to restore (see note)
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>Since the real-mode call structure is static, you must be careful when writing code that may be reentered.&nbsp; The simplest
 method of avoiding reentrancy is to leave interrupts disabled throughout the entire call.&nbsp; However, if the amount of
@@ -3242,7 +3242,7 @@ callback address service.&nbsp; Pass the following information:
 <dd>
 </dl>
 <br>If the call succeeds, the carry flag is clear; if it fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Real-mode callbacks are a limited resource.&nbsp; Your code should free any break point that it is no longer using.
 </ol>
@@ -3337,7 +3337,7 @@ partition, in pages
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><br>Only the first field of the structure is guaranteed to contain a valid value.&nbsp; Any field that is not returned
-by<b> DOS/4GW</b> is set to -1 (0FFFFFFFFH).
+by<i> DOS/4GW</i> is set to -1 (0FFFFFFFFH).
 <dt><br>Function 0501H
 <dd>This function allocates and commits linear memory.&nbsp; Pass the following information:
 <dl>
@@ -3450,7 +3450,7 @@ Pass the following information:
 <dd>
 </dl>
 <br>If the call succeeds, the carry flag is clear; if it fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>This function does not force the pages to be swapped to disk immediately.
 <li>Partial pages will not be discarded.
@@ -3469,7 +3469,7 @@ in this memory will be lost.&nbsp; Pass the following information:
 <dd>
 </dl>
 <br>If the call succeeds, the carry flag is clear; if it fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Partial pages will not be discarded.
 </ol>
@@ -3495,7 +3495,7 @@ This call should only be used by programs that absolutely require direct access 
 </dl>
 <br>If the call succeeds, the carry flag is clear and BX:CX = Linear Address that can be used to access the physical memory.
 <br><br>If the call fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Under DPMI implementations that do not use the 80386 paging mechanism, the call will always succeed and the address returned
 will be equal to the physical address parameter passed into this function.
@@ -3512,7 +3512,7 @@ region).
 <dd>
 </dl>
 <br>If the call succeeds, the carry flag is clear; if it fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The client should call this function when it is finished using a device previously mapped to linear addresses with the
 Physical Address Mapping function (Function 0800H).
@@ -3556,7 +3556,7 @@ the previous state of the virtual interrupt flag.&nbsp; Pass the following infor
 <br>After the call, the carry flag is clear (this function always succeeds) and virtual interrupts are disabled.
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; AL = 0 if virtual interrupts were previously disabled.
 <br>&nbsp;&nbsp;&nbsp;&nbsp; AL = 1 if virtual interrupts were previously enabled.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>AH will not be changed by this procedure.&nbsp; Therefore, to restore the previous state, simply execute an Int 31h.
 </ol>
@@ -3570,7 +3570,7 @@ return the previous state of the virtual interrupt flag.&nbsp; Pass the followin
 <br>After the call, the carry flag is clear (this function always succeeds) and virtual interrupts are enabled.
 <br><br>&nbsp;&nbsp;&nbsp;&nbsp; AL = 0 if virtual interrupts were previously disabled.
 <br>&nbsp;&nbsp;&nbsp;&nbsp; AL = 1 if virtual interrupts were previously enabled.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>AH will not be changed by this procedure.&nbsp; Therefore, to restore the previous state, simply execute an Int 31h.
 </ol>
@@ -3601,7 +3601,7 @@ vendor name or some other unique identifier to obtain the specific extension ent
 <br>If the call succeeds, the carry flag is clear and ES:EDI = Extended API entry point.&nbsp; DS, FS, GS, EAX, EBX, ECX,
 EDX, ESI, and EBP may be modified.
 <br><br>If the call fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Execute a far call to call the API entry point.
 <li>All extended API parameters are specified by the vendor.
@@ -3647,7 +3647,7 @@ EDX, ESI, and EBP may be modified.
 <dd>Not applicable.
 </dl>
 <br>If the call fails, the carry flag is set.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the real EM (EMr) bit is set, the host is supplying or is capable of supplying floating-point emulation.
 <li>If the MPv bit is not set, the host may not need to save the coprocessor state for this virtual machine to improve system
@@ -3686,14 +3686,14 @@ presence or absence of a coprocessor based on the CPU type alone.
 <br>If the call succeeds, the carry flag is clear; if it fails, the carry flag is set.
 </dl>
 <h1 id="DOSD4GW__Utilities"> DOS/4GW:&nbsp; Utilities </h1>
-<br>This chapter describes the Tenberry Software<b> DOS/4GW</b> utility programs provided with the Open Watcom C/C++ package.
+<br>This chapter describes the Tenberry Software<i> DOS/4GW</i> utility programs provided with the Open Watcom C/C++ package.
 &nbsp;Each program is described using the following format:
 <dl>
 <dt>Purpose:
 <dd>This is a brief statement of what the utility program does.&nbsp; More specific information is provided under &quot;Notes&quot;.
 <dt><br>Syntax:
 <dd>This shows the syntax of the program.&nbsp; The fixed portion of each command is in a<tt> typewriter font,</tt> while variable
-parts of the command are in<b> italics.</b>&nbsp; Optional parts are enclosed in &#91;brackets&#93;.
+parts of the command are in<i> italics.</i>&nbsp; Optional parts are enclosed in &#91;brackets&#93;.
 <dt><br>Notes:
 <dd>These are explanatory remarks noting major features and possible pitfalls.&nbsp; We explain anything special that you might
 need to know about the program.
@@ -3702,14 +3702,14 @@ need to know about the program.
 <dt><br>Example:
 <dd>You'll find one or more sample uses of the utility program with an explanation of what the program is doing.
 </dl>
-<br>Some of the utilities are<b> DOS/4GW</b>-based, protected-mode programs.&nbsp; To determine which programs run in protected
-mode and which in real, run the program.&nbsp; If you see the<b> DOS/4GW</b> banner, the program runs in protected mode.
+<br>Some of the utilities are<i> DOS/4GW</i>-based, protected-mode programs.&nbsp; To determine which programs run in protected
+mode and which in real, run the program.&nbsp; If you see the<i> DOS/4GW</i> banner, the program runs in protected mode.
 <h2 id="DOSD4GW__DOS4GW"> DOS/4GW:&nbsp; DOS4GW </h2>
 <dl>
 <dt>Purpose:
 <dd>Loads and executes linear executables.
 <dt><br>Syntax:
-<dd><b> linear_executable</b>
+<dd><i> linear_executable</i>
 <dt><br>Notes:
 <dd>The stub program at the beginning of the linear executable invokes this program, which loads the linear executable and starts
 up the DOS extender.&nbsp; The stub program must be able to find DOS4GW:&nbsp; make sure it is in the path.
@@ -3749,14 +3749,14 @@ Software, Inc. 1987 - 1993</tt>
 <hr>
 <br>The top information line shows that the CPU performance is equivalent to a 67.0 MHz 80486.&nbsp; Below are the configuration
 and timings for both the DOS memory and extended memory.&nbsp; If the computer is not equipped with extended memory, or none
-is available for<b> DOS/4GW</b>, the extended memory measurements may be omitted (&quot;--&quot;).
+is available for<i> DOS/4GW</i>, the extended memory measurements may be omitted (&quot;--&quot;).
 <br><br>The line &quot;according to BIOS&quot; shows the information provided by the BIOS (interrupts 12h and 15h function
 88h).&nbsp; The line &quot;SETUP&quot;, if displayed, is the configuration obtained directly from the CMOS RAM as set by the
 computer's setup program.&nbsp; It is displayed only if the numbers are different from those in the BIOS line.&nbsp; They
 will be different for computers where the BIOS has reserved memory for itself or if another program has allocated some memory
 and is intercepting the BIOS configuration requests to report less memory available than is physically configured.&nbsp; The
-&quot;DOS/16M memory range&quot;, if displayed, shows the low and high addresses available to<b> DOS/4GW</b> in extended memory.
-<br><br>Below the configuration information is information on the memory speed<b> (transfer rate).</b>&nbsp; PMINFO tries
+&quot;DOS/16M memory range&quot;, if displayed, shows the low and high addresses available to<i> DOS/4GW</i> in extended memory.
+<br><br>Below the configuration information is information on the memory speed<i> (transfer rate).</i>&nbsp; PMINFO tries
 to determine the memory architecture.&nbsp; Some architectures will perform well under some circumstances and poorly under
 others; PMINFO will show both the best and worst cases.&nbsp; The architectures detected are cache, interleaved, page-mode
 (or static column), and direct.&nbsp; Measurements are made using 32-bit accesses and reported as the number of megabytes
@@ -3773,22 +3773,22 @@ can occur per second, and the time for a single round-trip switch, broken out in
 <h2 id="DOSD4GW__PRIVATXM"> DOS/4GW:&nbsp; PRIVATXM </h2>
 <dl>
 <dt>Purpose:
-<dd>Creates a private pool of memory for<b> DOS/4GW</b> programs.
+<dd>Creates a private pool of memory for<i> DOS/4GW</i> programs.
 <dt><br>Syntax:
 <dd><tt> PRIVATXM &#91;-r&#93;</tt>
 <dt><br>Notes:
 <dd>This program may be distributed to your users.
-<br>Without PRIVATXM, a<b> DOS/4GW</b> program that starts up while another<b> DOS/4GW</b> program is active uses the pool
+<br>Without PRIVATXM, a<i> DOS/4GW</i> program that starts up while another<i> DOS/4GW</i> program is active uses the pool
 of memory built by the first program.&nbsp; The new program cannot change the parameters of this memory pool, so setting <b>
 DOS16M</b> to increase the size of the pool has no effect.&nbsp; To specify that the two programs use different pools of memory,
 use PRIVATXM.
-<br><br>PRIVATXM marks the active<b> DOS/4GW</b> programs as private, preventing subsequent<b> DOS/4GW</b> programs from using
-the same memory pool.&nbsp; The first<b> DOS/4GW</b> program to start after PRIVATXM sets up a new pool of memory for itself
-and any subsequent<b> DOS/4GW</b> programs.&nbsp; To release the memory used by the private programs, use the PRIVATXM<tt>
+<br><br>PRIVATXM marks the active<i> DOS/4GW</i> programs as private, preventing subsequent<i> DOS/4GW</i> programs from using
+the same memory pool.&nbsp; The first<i> DOS/4GW</i> program to start after PRIVATXM sets up a new pool of memory for itself
+and any subsequent<i> DOS/4GW</i> programs.&nbsp; To release the memory used by the private programs, use the PRIVATXM<tt>
 -r</tt> option.
 <br><br>PRIVATXM is a TSR that requires less than 500 bytes of memory.&nbsp; It is not supported under DPMI.
 <dt><br>Example:
-<dd>The following example creates a 512KB memory pool that is shared by two<b> DOS/4GW</b> TSRs.&nbsp; Subsequent<b> DOS/4GW</b>
+<dd>The following example creates a 512KB memory pool that is shared by two<i> DOS/4GW</i> TSRs.&nbsp; Subsequent<i> DOS/4GW</i>
 programs use a different memory pool.
 <dl>
 <dt>C&gt;set DOS16M= :512
@@ -3798,7 +3798,7 @@ programs use a different memory pool.
 <dt><br>C&gt;TSR2
 <dd>This TSR shares the pool built by TSR1.
 <dt><br>C&gt;PRIVATXM
-<dd>Makes subsequent<b> DOS/4GW</b> programs use a new memory pool.
+<dd>Makes subsequent<i> DOS/4GW</i> programs use a new memory pool.
 <dt><br>C&gt;set DOS16M=
 <dd>Specifies an unlimited size for the new pool.
 <dt><br>C&gt;PROGRAM3
@@ -3816,8 +3816,8 @@ is released.)
 <dd><tt> RMINFO.EXE</tt>
 <dt><br>Notes:
 <dd>This program may be distributed to your users.
-<br>RMINFO starts up<b> DOS/4GW</b>, but stops your machine just short of switching from real mode to protected mode and displays
-configuration information about your computer.&nbsp; The information shown by RMINFO can help determine why<b> DOS/4GW</b>
+<br>RMINFO starts up<i> DOS/4GW</i>, but stops your machine just short of switching from real mode to protected mode and displays
+configuration information about your computer.&nbsp; The information shown by RMINFO can help determine why<i> DOS/4GW</i>
 applications won't run on a particular machine.&nbsp; Run RMINFO if PMINFO does not run to completion.
 <dt><br>Example:
 <dd>The following example shows the output of the RMINFO program on an 386 AT-compatible machine.
@@ -3928,8 +3928,8 @@ disabled</tt>
 <h1 id="DOSD4GW__Error_Messages"> DOS/4GW:&nbsp; Error Messages </h1>
 <br>The following lists DOS/4G error messages, with descriptions of the circumstances in which the error is most likely to
 occur, and suggestions for remedying the problem.&nbsp; Some error messages pertaining to features - like DLLs - that are
-not supported in<b> DOS/4GW</b> will not arise with that product.&nbsp; In the following descriptions, references to DOS/4G,
-DOS4G, or DOS4G.EXE may be replaced by DOS/4GW, DOS4GW, or DOS4GW.EXE should the error message arise when using<b> DOS/4GW</b>.
+not supported in<i> DOS/4GW</i> will not arise with that product.&nbsp; In the following descriptions, references to DOS/4G,
+DOS4G, or DOS4G.EXE may be replaced by DOS/4GW, DOS4GW, or DOS4GW.EXE should the error message arise when using<i> DOS/4GW</i>.
 <h2 id="DOSD4GW__Kernel_Error_Messages"> DOS/4GW:&nbsp; Kernel Error Messages </h2>
 <br>This section describes error messages from the DOS/16M kernel embedded in DOS/4G.&nbsp; Kernel error messages may occur
 because of severe resource shortages, corruption of DOS4GW.EXE, corruption of memory, operating system incompatibilities,
@@ -5081,12 +5081,12 @@ a simple Windows 3.x Graphical User Interface (GUI) application.
 application.&nbsp; This is achieved by our default windowing system.&nbsp; The following sections describe the default windowing
 system.
 <h2 id="16Mbit_Windows__Console_Device_in_a_Windowed_Environment"> 16-bit Windows:&nbsp; Console Device in a Windowed Environment </h2>
-<br>In a C/C++ application that runs under DOS,<b> stdin (C++ cin)</b> and<b> stdout (C++ cout)</b> are connected to the standard
+<br>In a C/C++ application that runs under DOS,<i> stdin (C++ cin)</i> and<i> stdout (C++ cout)</i> are connected to the standard
 input and standard output devices respectively.&nbsp; It is not a recommended practice to read directly from the standard
 input device or write to the standard output device when running in a windowed environment.&nbsp; For this reason, a default
-windowing environment is created for C/C++ applications that read from<b> stdin (C++ cin)</b> or write to<b> stdout (C++ cout).</b>
-&nbsp;When your application is started, a window is created in which output to<b> stdout (C++ cout)</b> is displayed and input
-from<b> stdin (C++ cin)</b> is requested.
+windowing environment is created for C/C++ applications that read from<i> stdin (C++ cin)</i> or write to<i> stdout (C++ cout).</i>
+&nbsp;When your application is started, a window is created in which output to<i> stdout (C++ cout)</i> is displayed and input
+from<i> stdin (C++ cin)</i> is requested.
 <br><br>In addition to the standard I/O device, it is also possible to perform I/O to the console by explicitly opening a
 file whose name is &quot;CON&quot;.&nbsp; When this occurs, another window is created and displayed.&nbsp; This window is
 different from the one created for standard input and standard output.&nbsp; In fact, every time you open the console device
@@ -5328,11 +5328,11 @@ WATCOM</b> environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wbind hello -n</tt>
 <br><br>If the &quot;s&quot; option is specified, it must identify the location of the<tt> WIN386.EXT</tt> file or the<tt>
 W386DLL.EXT</tt> file (if you are building a DLL).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wbind hello -n -s c:\watcom\binw\win386.ext</tt>
 <br><br>If the &quot;s&quot; option is not specified, then the <b> WATCOM</b> environment variable must be defined or the
 &quot;BINW&quot; directory must be listed in your <b> PATH</b> environment variable.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set watcom=c:\watcom</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;path c:\watcom\binw;c:\dos;c:\windows</tt>
@@ -5401,12 +5401,12 @@ a simple Windows 3.x Graphical User Interface (GUI) application.
 application.&nbsp; This is achieved by our default windowing system.&nbsp; The following sections describe the default windowing
 system.
 <h2 id="32Mbit_Windows__Console_Device_in_a_Windowed_Environment"> 32-bit Windows:&nbsp; Console Device in a Windowed Environment </h2>
-<br>In a C/C++ application that runs under DOS,<b> stdin (C++ cin)</b> and<b> stdout (C++ cout)</b> are connected to the standard
+<br>In a C/C++ application that runs under DOS,<i> stdin (C++ cin)</i> and<i> stdout (C++ cout)</i> are connected to the standard
 input and standard output devices respectively.&nbsp; It is not a recommended practice to read directly from the standard
 input device or write to the standard output device when running in a windowed environment.&nbsp; For this reason, a default
-windowing environment is created for C/C++ applications that read from<b> stdin (C++ cin)</b> or write to<b> stdout (C++ cout).</b>
-&nbsp;When your application is started, a window is created in which output to<b> stdout (C++ cout)</b> is displayed and input
-from<b> stdin (C++ cin)</b> is requested.
+windowing environment is created for C/C++ applications that read from<i> stdin (C++ cin)</i> or write to<i> stdout (C++ cout).</i>
+&nbsp;When your application is started, a window is created in which output to<i> stdout (C++ cout)</i> is displayed and input
+from<i> stdin (C++ cin)</i> is requested.
 <br><br>In addition to the standard I/O device, it is also possible to perform I/O to the console by explicitly opening a
 file whose name is &quot;CON&quot;.&nbsp; When this occurs, another window is created and displayed.&nbsp; This window is
 different from the one created for standard input and standard output.&nbsp; In fact, every time you open the console device
@@ -5499,11 +5499,11 @@ WATCOM</b> environment variable is defined, the<tt> %WATCOM%\BINW</tt> directory
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wbind hello -n</tt>
 <br><br>If the &quot;s&quot; option is specified, it must identify the location of the<tt> WIN386.EXT</tt> file or the<tt>
 W386DLL.EXT</tt> file (if you are building a DLL).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wbind hello -n -s c:\watcom\binw\win386.ext</tt>
 <br><br>If the &quot;s&quot; option is not specified, then the <b> WATCOM</b> environment variable must be defined or the
 &quot;BINW&quot; directory must be listed in your <b> PATH</b> environment variable.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set watcom=c:\watcom</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;path c:\watcom\binw;c:\dos;c:\windows</tt>
@@ -5670,9 +5670,9 @@ is needed.&nbsp; This interface would switch into the 16-bit environment, and th
 detail in later sections.
 <h2 id="Windows__System_Structure"> Windows:&nbsp; System Structure </h2>
 <br><tt><img src="struct.bmp" align=middle></tt>
-<br><b><i>Figure 5.</i></b><b><i></i></b><b> WIN386 Structure</b>
+<br><b><i>Figure 5.</i></b><b><i></i></b><i> WIN386 Structure</i>
 <br><br><tt><img src="struct2.bmp" align=middle></tt>
-<br><b><i>Figure 6.</i></b><b><i></i></b><b> 32-bit Application Structure</b>
+<br><b><i>Figure 6.</i></b><b><i></i></b><i> 32-bit Application Structure</i>
 <h2 id="Windows__System_Overview"> Windows:&nbsp; System Overview </h2>
 <ul>
 <li><tt> WIN386.EXT</tt> is the key component of a 32-bit Windows application.&nbsp; It is a 16-bit Windows application which
@@ -6337,7 +6337,7 @@ entitled <a href="#Windows__Creating_and_Debugging_Dynamic_Link_Libraries">Windo
 &nbsp;The code for this DLL can be compiled with the 16-bit compiler to produce a 16-bit DLL and it can can be compiled with
 the 32-bit compiler to produce a 32-bit DLL.&nbsp; The example illustrates the fundamental differences between the two types
 of DLLs.&nbsp; The 32-bit DLL has a<tt> WinMain</tt> routine and the 16-bit DLL has a<tt> LibMain</tt> routine.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp; DLL.C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
@@ -6411,12 +6411,12 @@ DLL_ENDLIST ) ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <br><br>To create a 16-bit DLL from this code, the following steps must be performed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcc dll /mc /bt=windows /zu /fo=dll16</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wlink system windows_dll file dll16</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wlib -n dll16 +dll16.dll</tt>
 <br><br>To create a 32-bit DLL from this code, the following steps must be performed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcc386 dll /bt=windows /fo=dll32</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wlink system win386 file dll32</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wbind -n -d dll32</tt>
@@ -6430,7 +6430,7 @@ only two arguments are used.<tt>&nbsp; hInstance</tt> is the DLL handle and<tt> 
 to the DLL.
 <h2 id="Windows__Calling_Functions_in_a_32Mbit_DLL_from_a_16Mbit_Application"> Windows:&nbsp; Calling Functions in a 32-bit DLL from a 16-bit Application </h2>
 <br>The following is a 16-bit Windows program that demonstrates how to call the two routines defined in our DLL example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp; EXE16.C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
@@ -6485,7 +6485,7 @@ to the DLL.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>Note that the last argument of a call to the 32-bit DLL routine is the index number of the 32-bit DLL routine to use.
 &nbsp;To create the 16-bit sample Windows executable from this code, the following steps must be performed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcc exe16 /bt=windows</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wlink system windows file exe16 library dll16</tt>
 <h2 id="Windows__Writing_a_16Mbit_Cover_for_the_32Mbit_DLL"> Windows:&nbsp; Writing a 16-bit Cover for the 32-bit DLL </h2>
@@ -6496,7 +6496,7 @@ using the appropriate index number.
 <br><br>For example, assume we have 3 functions in our DLL,<tt> Initialize</tt>,<tt> DoStuff</tt>, and<tt> Finish</tt>.&nbsp;
 Assume<tt> Initialize</tt> takes an integer,<tt> DoStuff</tt> takes an integer and a pointer, and<tt> Finish</tt> takes nothing.
 &nbsp;We could build a 16-bit library as follows:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;windows.h&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef long (FAR PASCAL *FPROC)();</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern long FAR PASCAL Win386LibEntry();</tt>
@@ -6548,7 +6548,7 @@ described in this chapter are located in the directory<tt> \WATCOM\SAMPLES\DLL.<
 </dl>
 <h3 id="Windows__Building_the_Applications"> Windows:&nbsp; Building the Applications </h3>
 <br>To create the DLLs and test applications, we will use the WATCOM Open Watcom Make utility and the supplied makefile.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake -f makefile</tt>
 <h3 id="Windows__Installing_the_Examples_under_Windows"> Windows:&nbsp; Installing the Examples under Windows </h3>
 <br>Start up Microsoft Windows 3.x if you have not already done so.&nbsp; Add the<tt> EXE16.EXE</tt> file to one of your Window
@@ -6558,7 +6558,7 @@ groups using the Microsoft Program Manager.
 <li>Select &quot;Program Item&quot; from the &quot;New Program Object&quot; window and press the &quot;OK&quot; button.
 <li>Enter &quot;DLL Test&quot; as a description for the EXE16 program.&nbsp; Enter the full path to the EXE16 program as a
 command line.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Description:&nbsp;&nbsp;&nbsp; Test</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Command Line:&nbsp;&nbsp; c:\work\dll\exe16.exe</tt>
 </ol>
@@ -6570,7 +6570,7 @@ are being obtained.&nbsp; Click on the &quot;OK&quot; button as each of them are
 <br>The Open Watcom Debugger can be used to debug a DLL.&nbsp; To debug a 32-bit DLL, a &quot;breakpoint&quot; instruction
 must be inserted into the source code for the DLL at the &quot;WinMain&quot; entry point.&nbsp; This is done using the &quot;pragma&quot;
 compiler directive.&nbsp; We have already added the breakpoint to the source code for the 32-bit DLL.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void BreakPoint( void );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux BreakPoint = 0xcc;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int PASCAL WinMain( HANDLE hInstance,</tt>
@@ -6643,7 +6643,7 @@ in a 32-bit extended DLL function.&nbsp; The reason is that this function takes 
 as well as the index number of the called function.&nbsp; After the 32-bit flat model has been set up,<tt> Win386LibEntry</tt>
 then calls this function.&nbsp; In Visual Basic, once a function is declared as having certain arguments, it cannot be redeclared.
 &nbsp;For example, suppose we have a declaration as follows:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Declare Function Win386LibEntry Lib &quot;c:\path\vbdll32.dll&quot;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; =&gt; (ByVal v1 As Integer, ByVal v2 As Long, ByVal</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; =&gt; v3 As Integer, ByVal I As Integer) As Long</tt>
@@ -6838,7 +6838,7 @@ is in your current directory):
 are in your current directory):
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wcl cover16 -mc -bt=windows -bd -zu -d2 -l=windows_dll</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The &quot;mc&quot; option selects the compact memory model (small code, big data).&nbsp; The code for 16-bit DLLs must
 be compiled with one of the big data models.
@@ -6865,7 +6865,7 @@ This declaration is not included in your program; only the header file(s) should
 the argument is shown with <tt> const</tt> before the argument.&nbsp; For example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; const char *string</tt>
-<br><br>indicates that the array pointed at by<b> string</b> is not changed.
+<br><br>indicates that the array pointed at by<i> string</i> is not changed.
 <dt><br>Description:
 <dd>This subsection is a description of the function or macro.
 <dt><br>Returns:
@@ -6945,7 +6945,7 @@ passed this way.
 </dl>
 <dl>
 <dt>Description:
-<dd>The AllocHugeAlias16 function obtains a 16-bit far pointer to a 32-bit memory object that is<b> size</b> bytes in size.&nbsp;
+<dd>The AllocHugeAlias16 function obtains a 16-bit far pointer to a 32-bit memory object that is<i> size</i> bytes in size.&nbsp;
 This is similar to the function <tt> AllocAlias16</tt>, except that <tt> AllocAlias16</tt> will only give 16-bit far pointers
 to 32-bit memory objects of up to 64K in size.&nbsp; To get 16-bit far pointers to 32-bit memory objects larger than 64K,
 <tt> AllocHugeAlias16</tt> should be used.
@@ -6985,7 +6985,7 @@ to 32-bit memory objects of up to 64K in size.&nbsp; To get 16-bit far pointers 
 <dl>
 <dt>Description:
 <dd>The _Call16 function performs the same function as <tt> GetIndirectFunctionHandle</tt>, <tt> InvokeIndirectFunctionHandle</tt>
-and <tt> FreeIndirectFunctionHandle</tt> but is much easier to use.&nbsp; The first argument<b> lpFunc</b> is the address
+and <tt> FreeIndirectFunctionHandle</tt> but is much easier to use.&nbsp; The first argument<i> lpFunc</i> is the address
 of the 16-bit function to be called.&nbsp; This address is usually obtained by calling <tt> GetProcAddress</tt> with the name
 of the desired function.&nbsp; The second argument<tt> fmt</tt> is a string identifying the types of the parameters to be
 passed to the 16-bit function.
@@ -7063,9 +7063,9 @@ the 16-bit pointer created by the Supervisor is no longer valid.
 </dl>
 <dl>
 <dt>Description:
-<dd>The DefineDLLEntry function defines an<b> index</b> number for the 32-bit DLL procedure<b> routine</b>.&nbsp; The parameter<b>
-index</b> defines the index number that must be used in order to invoke the 32-bit FAR procedure<b> routine</b>.&nbsp; The
-variable argument list defines the types of parameters that will be received by the 32-bit DLL<b> routine</b>.&nbsp; Valid
+<dd>The DefineDLLEntry function defines an<i> index</i> number for the 32-bit DLL procedure<i> routine</i>.&nbsp; The parameter<i>
+index</i> defines the index number that must be used in order to invoke the 32-bit FAR procedure<i> routine</i>.&nbsp; The
+variable argument list defines the types of parameters that will be received by the 32-bit DLL<i> routine</i>.&nbsp; Valid
 parameter types are:
 <dl>
 <dt>DLL_PTR
@@ -7120,11 +7120,11 @@ DLL_WORD, DLL_ENDLIST );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The DefineUserProc16 function defines the arguments accepted by the user defined callback procedure<b> routine</b>.&nbsp;
-There may be up to 32 user defined callbacks.&nbsp; The parameter<b> typ</b> indicates which one of <tt> GETPROC_USERDEFINED_1</tt>
+<dd>The DefineUserProc16 function defines the arguments accepted by the user defined callback procedure<i> routine</i>.&nbsp;
+There may be up to 32 user defined callbacks.&nbsp; The parameter<i> typ</i> indicates which one of <tt> GETPROC_USERDEFINED_1</tt>
 through <tt> GETPROC_USERDEFINED_32</tt> is being defined (see <tt> GetProc16</tt>).&nbsp; The callback routine must be declared
 as FAR PASCAL, or as FAR cdecl.&nbsp; The variable argument list defines the types of parameters that will be received by
-the user defined callback procedure<b> routine</b>.&nbsp; Valid parameter types are:
+the user defined callback procedure<i> routine</i>.&nbsp; Valid parameter types are:
 <dl>
 <dt>UDP16_PTR
 <dd>16-bit far pointer
@@ -7359,7 +7359,7 @@ space in the local descriptor table).
 <dt>Description:
 <dd>The GetIndirectFunctionHandle function gets a handle for a 16-bit procedure that is to be invoked indirectly.&nbsp; The procedure
 is assumed to have PASCAL calling convention, unless the <tt> INDIR_CDECL</tt> parameter is used, to indicate that Microsoft
-C calling convention is to be used.&nbsp; The 16-bit far pointer<b> prc</b> is supplied to GetIndirectFunctionHandle, and
+C calling convention is to be used.&nbsp; The 16-bit far pointer<i> prc</i> is supplied to GetIndirectFunctionHandle, and
 a list of the type of each parameter (in the order that they will be passed to the 16-bit function).&nbsp; The parameter types
 are:
 <dl>
@@ -7452,7 +7452,7 @@ use one of the <tt> FreeIndirectFunctionHandle</tt> or <tt> free</tt> functions.
 <dl>
 <dt>Description:
 <dd>The GetProc16 function returns a 16-bit far function pointer suitable for use as a Windows callback function.&nbsp; This callback
-function will invoke the 32-bit far procedure specified by<b> fcn</b>.&nbsp; The types of callback functions that may be allocated
+function will invoke the 32-bit far procedure specified by<i> fcn</i>.&nbsp; The types of callback functions that may be allocated
 are:
 <dl>
 <dt>GETPROC_CALLBACK
@@ -7867,7 +7867,7 @@ function is used.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The PASS_WORD_AS_POINTER returns a 32-bit &quot;near&quot; pointer, that is really the parameter<b> dw</b>.
+<dd>The PASS_WORD_AS_POINTER returns a 32-bit &quot;near&quot; pointer, that is really the parameter<i> dw</i>.
 </dl>
 <dl>
 <dt>Example:
@@ -7987,7 +7987,7 @@ for a list of the &quot;_16...&quot; API functions.
 <h2 id="Windows__What_about_pointers_in_structures_"> Windows:&nbsp; What about pointers in structures? </h2>
 <br>Pointers in structures will be converted if the Windows API function actually takes a pointer to that structure (i.e.,
 if it is possible for the supervisor to identify that structure).&nbsp; There are few functions that accept pointers to structures
-containing pointers.&nbsp; One such function is<b> RegisterClass</b> which accepts a pointer to a WNDCLASS structure.
+containing pointers.&nbsp; One such function is<i> RegisterClass</i> which accepts a pointer to a WNDCLASS structure.
 <br><br>If Windows has you passing a pointer to a structure through a 32-bit integer argument, then it is not possible for
 the supervisor to identify that as a pointer that needs conversion.&nbsp; It is also not possible for the supervisor to convert
 any pointers contained in the structure, since it is not aware that it is a structure (as far as the supervisor is concerned,
@@ -8034,7 +8034,7 @@ for the 3 pointers inside the struct.&nbsp; If you need to have this done, then 
 &nbsp;If you create aliases for the parameters to<tt> CreateWindowEx</tt>, then you must call the<tt> _16CreateWindowEx</tt>
 function which will not create any aliases.
 <br><br>Here is some further information on thunks (which are created for function pointers).&nbsp; There is code in the supervisor
-that<b> trys</b> (note the word<b> trys</b>) to determine if the user has already created a thunk and, if so, avoids creating
+that<i> trys</i> (note the word<i> trys</i>) to determine if the user has already created a thunk and, if so, avoids creating
 a double thunk which will always generate a GPF.&nbsp; The best policy is to let the supervisor automatically create all thunks
 for you unless you have a very specific reason not to, in which case you should call the _16 version of the function.
 <br><br>Here is some further information on aliases (which are created for data pointers).&nbsp; There is no way for the supervisor
@@ -8623,7 +8623,7 @@ of thread %d failed\n&quot;, i );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DeleteCriticalSection( &amp;CriticalSection );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( 0 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><b>Note:</b>
+<br><br><i>Note:</i>
 <ol>
 <li>In the function<tt> a_thread</tt>,<tt> EnterCriticalSection</tt> and<tt> LeaveCriticalSection</tt> are called when we
 modify the variable<tt> NumThreads</tt>.&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt>
@@ -8823,7 +8823,7 @@ to create the dynamic link library.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; export dll_entry_1_</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; export dll_entry_2_</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file dllsamp</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The &quot;SYSTEM&quot; directive specifies that we are creating a Windows NT dynamic link library.
 <li>When a dynamic link library uses the Open Watcom C/C++ run-time libraries, an automatic data segment is created each time
@@ -8952,7 +8952,7 @@ compile option to instruct the Open Watcom compiler not to include references to
 </ol>
 <br>To illustrate the creation of a POSIX application, we will use a simple example.&nbsp; This program displays an identifying
 banner and then displays its arguments one at a time.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;POSIXSMP.C&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;unistd.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // The Win32 SDK doesn't provide a complete set of</tt>
@@ -8984,7 +8984,7 @@ banner and then displays its arguments one at a time.
 <br><br>The example program illustrates some of the special considerations required for using the Microsoft POSIX libraries
 rather than the Open Watcom libraries.&nbsp; There are also some special link time issues and these are addressed in the following
 sample &quot;makefile&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;MAKEFILE&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; posixsmp.exe : posixsmp.c posix.add makefile.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set nt_include=</tt>
@@ -9117,7 +9117,7 @@ results in fewer code optimizations by default.&nbsp; You can request more optim
 code and the original source language code.
 <br><br>For OS/2, you should also include the<tt> BINP\DLL</tt> directory in the &quot;LIBPATH&quot; directive of the system
 configuration file<tt> CONFIG.SYS.</tt>&nbsp; It contains the Open Watcom Debugger Dynamic Link Libraries (DLLs).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; libpath=c:\watcom\binp\dll</tt>
 <br><br>To request the Open Watcom Debugger to assist in debugging the application, the following command may be issued.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -9356,7 +9356,7 @@ of thread %d failed\n&quot;, i );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( 0 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><b>Note:</b>
+<br><br><i>Note:</i>
 <ol>
 <li>In the function<tt> a_thread</tt>,<tt> DosEnterCritSec</tt> and<tt> DosExitCritSec</tt> are called when we modify the
 variable<tt> NumThreads</tt>.&nbsp; This ensures that the action of extracting the value of<tt> NumThreads</tt> from memory,
@@ -9489,7 +9489,7 @@ to create the dynamic link library.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; export dll_entry_1_</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; export dll_entry_2_</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file dllsamp</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The &quot;SYSTEM&quot; directive specifies that we are creating a 32-bit OS/2 dynamic link library.
 <li>The &quot;MANYAUTODATA&quot; option specifies that the automatic data segment is allocated for every instance of the dynamic
@@ -9969,7 +9969,7 @@ timer.&nbsp; DosSleep is used solely as a convenient method of displaying the ca
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TIMER program_name &#91;program_args&#93;</tt>
 <br><br>For example, to time an OS/2 Directory command, issue the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; timer cmd /c dir c:</tt>
 <h1 id="Creating_NetWare_386_NLM_Applications"> Creating NetWare 386 NLM Applications </h1>
 <br>Open Watcom C/C++ supports version 4.0 of the Netware 386 API.&nbsp; We include the following components:
@@ -10011,7 +10011,7 @@ you can set the <b> INCLUDE</b> environment variable to include<tt> \WATCOM\NOVH
 <br><br>when linking an NLM.&nbsp; This is automatic if you are using WCL386 and the &quot;-l=NETWARE&quot; option.
 <li>If you are using other Netware APIs such as NWSNUT, then you must include <tt> module</tt> and <tt> import</tt> statements
 as input to the Open Watcom Linker.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; module nwsnut</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; import @%WATCOM%\novi\nwsnut.imp</tt>
 <br><br>This is done automatically for the C Library (CLIB.IMP).&nbsp; The following import lists have been provided for Netware
@@ -10074,7 +10074,7 @@ following FORTRAN auxiliary pragma:
 <br>In general, C uses call-by-value (passes argument values) while FORTRAN uses call-by-reference (passes pointers to argument
 values).&nbsp; This implies that to pass arguments to a FORTRAN subprogram we must pass the addresses of arguments rather
 than their values.&nbsp; C uses the &quot;&amp;&quot; character to signify &quot;address of&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; result = ftnname( &amp;arg );</tt>
 <br><br>When calling a C function from FORTRAN, the pragma used to correct the naming conventions must also instruct the compiler
 that the C function is expecting values, not addresses.
@@ -10106,7 +10106,7 @@ are being used.&nbsp; The byte sizes are as follows:
 <li>SHORT - 2 bytes
 </ol>
 <br>Since FORTRAN uses a default of 4 bytes, we should specify the &quot;long&quot; keyword in C for integer types.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; long int ftnname( long int *, long int *, long int * );</tt>
 <br><br>In this case, &quot;ftnname&quot; takes three &quot;pointers to long ints&quot; as arguments, and returns a &quot;long
 int&quot;.&nbsp; By specifying that the arguments are pointers, and not values, and by specifying &quot;long int&quot; for
@@ -10249,7 +10249,7 @@ back a string.</tt>
 is being passed a string descriptor address, then it is very similar to the above example.&nbsp; If the C function is expecting
 normal C-type strings, then a FORTRAN pragma can be used to pass the string correctly.&nbsp; When the Open Watcom FORTRAN
 77 compiler pragma to pass by value is used for strings, then just a pointer to the string is passed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux cname &quot;!_&quot; parm (value)</tt>
 <br><br>The following example FORTRAN mainline defines a string, and passes it to a C function that prints it out.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -10345,8 +10345,8 @@ printf</tt> function to print the value 47 on the screen.
 47 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br>For more information on the pragmas that are used extensively during inter-language programming, please refer to the
-chapter entitled &quot;Pragmas&quot; in both the<b> Open Watcom C/C++ User's Guide</b> and the<b> Open Watcom FORTRAN 77 User's
-Guide.</b>
+chapter entitled &quot;Pragmas&quot; in both the<i> Open Watcom C/C++ User's Guide</i> and the<i> Open Watcom FORTRAN 77 User's
+Guide.</i>
 <h1 id="Commonly_Asked_Questions_and_Answers"> Commonly Asked Questions and Answers </h1>
 <br>As with any sophisticated piece of software, there are topics that are not directly addressed by the descriptive portions
 of the manuals.&nbsp; The purpose of this chapter is to anticipate common questions concerning Open Watcom C/C++.&nbsp; It
@@ -10381,7 +10381,7 @@ files.&nbsp; This information proves to be very useful when reporting a problem 
 Watcom software has been installed.&nbsp; TECHINFO will pause after each screenful of information.&nbsp; The output is also
 placed in the file<tt> TECHINFO.OUT.</tt>
 <br><br>Below is an example of some partial output produced by running the TECHINFO utility:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WATCOM's Techinfo Utility, Version 1.4</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Current Time: Thu Oct 27 15:58:34 1994</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WATCOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -10441,7 +10441,7 @@ pointers.
 with Open Watcom C/C++ much more portable.&nbsp; For instance, if the Open Watcom C/C++ compiler complains about your usage
 of the &quot;malloc&quot; memory allocation function then you probably forgot to include &quot;&lt;stdlib.h&gt;&quot; which
 contains the prototype of the &quot;malloc&quot; function.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void *malloc( unsigned );</tt>
 <br><br>The Open Watcom C/C++ compiler was complaining about you trying to assign an integer (the value returned by &quot;malloc&quot;)
 to a pointer.&nbsp; By including the header file with the correct prototype, the Open Watcom C/C++ compiler can validate that
@@ -10451,7 +10451,7 @@ you are in fact assigning a pointer value to a pointer.
 all the argument handling to be handled by the caller of the function.&nbsp; With the advent of the ANSI (and later ISO) standard,
 which forced all functions expecting a variable number of arguments to be declared properly, compilers can generate smaller
 code for routines that did not require a variable number of arguments.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* function accepting two arguments */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern FILE *fopen( char *, char * );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* function accepting a variable number of arguments */</tt>
@@ -10553,8 +10553,8 @@ Watcom C/C++ convention.&nbsp; If there are only a few accesses to DGROUP data, 
 which points to DGROUP in the large memory model.&nbsp; 
 <li>The assembly function could be described using a pragma that states that DS should point to &quot;DGROUP&quot; before
 calling the function.&nbsp; 
-<br><br><b>#pragma aux _Setcolor __parm __loadds</b>
-<br><br>In the above example,<b> _Setcolor</b> is the sample function being described.
+<br><br><i>#pragma aux _Setcolor __parm __loadds</i>
+<br><br>In the above example,<i> _Setcolor</i> is the sample function being described.
 <li>The final alternative would be the use of the &quot;zdp&quot; compiler option.&nbsp; The &quot;zdp&quot; option informs
 the code generator that the DS register must always point to &quot;DGROUP&quot;.&nbsp; This is the default in the small, medium
 and flat memory models.&nbsp; Note that &quot;flat&quot; is a 32-bit memory model only.
@@ -10621,7 +10621,7 @@ if you include the following line in your system initialization file,<tt> AUTOEX
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set include=c:\watcom\h</tt>
 <br><br>the Open Watcom C/C++ compiler will be able to find the standard include files.&nbsp; The use of the &quot;i&quot;
 option is another way to give the directory name of the standard include files.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcc myfile.c -ic:\watcom\h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcc386 myfile.c -ic:\watcom\h</tt>
@@ -10815,7 +10815,7 @@ techniques will reduce the amount of stack space required but there still may be
 is insufficient.&nbsp; The Open Watcom Linker (WLINK) allows the user to set the amount of stack space at link-time through
 the directive &quot;OPTION STACK=size&quot; where size may be specified in bytes with an optional &quot;k&quot; suffix for
 kilobytes (1024 bytes).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option stack=9k</tt>
 <br><br>Debugging a program that reports a stack overflow error can be accomplished with the following sequence.
 <ol>
@@ -10829,7 +10829,7 @@ that led up to the stack overflow situation.
 <h2 id="Why_redefinition_errors_are_issued_from_WLINK"> Why redefinition errors are issued from WLINK </h2>
 <br>This question comes up often in discussions about porting old UNIX or Microsoft C programs.&nbsp; The problem stems from
 the forgiving nature of early UNIX linkers.&nbsp; In early C code, it was common to define header files like this:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* define global variables */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int line_count;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int word_count;</tt>
@@ -10840,7 +10840,7 @@ development of the ANSI C standard made this practice non-conforming.&nbsp; The 
 and as such, is not required to support this obsolete behavior.&nbsp; The effect is that WLINK will report redefinition errors.
 &nbsp;The header file must be coded in such a way that the variables are defined in one module.&nbsp; One way to do this is
 as follows:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef DEFINE_HERE</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define GLOBAL</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
@@ -10851,14 +10851,14 @@ as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GLOBAL int word_count;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GLOBAL int char_count;</tt>
 <br><br>In most modules, the macro &quot;DEFINE_HERE&quot; will not be defined so the file will be equivalent to:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* define global variables */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int line_count;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int word_count;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int char_count;</tt>
 <br><br>In one module, the macro &quot;DEFINE_HERE&quot; must be defined before the header file is included.&nbsp; This can
 be done by defining the macro on the command line or by coding like this:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define DEFINE_HERE</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &quot;globals.h&quot;</tt>
 <h2 id="How_more_than_20_files_at_a_time_can_be_opened"> How more than 20 files at a time can be opened </h2>
@@ -10866,8 +10866,8 @@ be done by defining the macro on the command line or by coding like this:
 by the application developer.&nbsp; To change the number of file handles allowed with Open Watcom C/C++, follow the steps
 outlined below.
 <ol>
-<li>Let<tt> n</tt> represent the number of files the application developer wishes to have open.&nbsp; Ensure that the<b> stdin,
-stdout, stderr, stdaux,</b> and<b> stdprn</b> files are included in the count.
+<li>Let<tt> n</tt> represent the number of files the application developer wishes to have open.&nbsp; Ensure that the<i> stdin,
+stdout, stderr, stdaux,</i> and<i> stdprn</i> files are included in the count.
 <li>Change the<tt> CONFIG.SYS</tt> file to include &quot;files=n&quot; where &quot;n&quot; is the number of file handles required
 by the application plus an additional 5 handles for the standard files (this applies to DOS 5.0).&nbsp; The number &quot;n&quot;
 may vary depending on your operating system and version.&nbsp; If you are running a network such as Novell's NetWare, this
@@ -10876,7 +10876,7 @@ the &quot;files=n&quot; statement.
 <li>Add a call to<tt> _grow_handles</tt> in your application.
 </ol>
 <br>The following example illustrates the use of<tt> _grow_handles</tt>.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /*</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp; HANDLES.C</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp; This C program grows the number of file handles so</tt>

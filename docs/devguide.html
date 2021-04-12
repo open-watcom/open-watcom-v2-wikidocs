@@ -107,16 +107,16 @@ directory, for instance<tt> e:\ow</tt>.&nbsp; Long filenames are not recommended
 <br><br>The main subdirectories in the Open Watcom root are the following:
 <dl>
 <dt>build
-<dd>contains main builder control files and other useful files.&nbsp; One extremely important file lives here:<b>&nbsp; makeinit.</b>
+<dd>contains main builder control files and other useful files.&nbsp; One extremely important file lives here:<i>&nbsp; makeinit.</i>
 &nbsp;This file controls the operation of wmake and is the key to understanding of the build process.&nbsp; Since wmake looks
-for<b> makeinit</b> along the<tt> PATH</tt>, the<b> build</b> directory should be placed at or near the start of your<tt>
+for<i> makeinit</i> along the<tt> PATH</tt>, the<i> build</i> directory should be placed at or near the start of your<tt>
 PATH</tt> environment variable.
 <dt><br>build/bin
 <dd>contains binaries created during first build phase (bootstrap) and used during main building process (second build phase).
 <dt><br>build/mif
 <dd>contains all main make files (global).
 <dt><br>bld
-<dd>is<b> the</b> directory where it's at.&nbsp; It contains all the Open Watcom source code.&nbsp; It is so important (and huge)
+<dd>is<i> the</i> directory where it's at.&nbsp; It contains all the Open Watcom source code.&nbsp; It is so important (and huge)
 that it deserves its own section.
 <dt><br>docs
 <dd>contains source files for the Open Watcom documentation as well as binaries needed to translate the sources into PostScript,
@@ -124,7 +124,7 @@ HTML or various online help formats.&nbsp; The source files of this document are
 information please refer the the chapter entitled Documentation later in this manual.
 <dt><br>rel
 <dd>is the &quot;release&quot; directory is where the binaries and other files produced in the course of the build process end
-up.&nbsp; The structure of this directory mirrors the<b> WATCOM</b> directory of a typical Open Watcom installation.
+up.&nbsp; The structure of this directory mirrors the<i> WATCOM</i> directory of a typical Open Watcom installation.
 </dl>
 <h2 id="The_bld_directory"> The bld directory </h2>
 <br>Following is a brief description of all subdirectories of bld.&nbsp; Each subdirectory roughly corresponds to one &quot;project&quot;.
@@ -143,7 +143,7 @@ up.&nbsp; The structure of this directory mirrors the<b> WATCOM</b> directory of
 <dt><br>browser
 <dd>the GUI C++ source browser.
 <dt><br>builder
-<dd>builder tool controlled by those<b> builder.ctl</b> files that are all over the place.
+<dd>builder tool controlled by those<i> builder.ctl</i> files that are all over the place.
 <dt><br>causeway
 <dd>the popular CauseWay DOS extender, in a form buildable with Open Watcom tools.
 <dt><br>cc
@@ -325,23 +325,23 @@ source archives can be found at the Open Watcom web site,<tt> http://www.openwat
 on Perforce setup.&nbsp; You will generally need a working installation of the previous release of Open Watcom C/C++ and some
 free disk space to burn (one gigabyte should do).
 <br><br>The Open Watcom source tree can be located in any directory on any drive.&nbsp; After extracting the source archive
-you will find a very important batch file called<b> setvars</b> in your Open Watcom root directory.&nbsp; This will set up
+you will find a very important batch file called<i> setvars</i> in your Open Watcom root directory.&nbsp; This will set up
 a bunch of necessary environment variables but first you'll have to edit it to reflect your directory structure etc.&nbsp;
 It also contains the necessary Perforce settings.
 <br><br>Now is the time to connect to Perforce.&nbsp; Again, most uptodate information can be found on the Open Watcom web
 site.&nbsp; If you followed the instructions correctly, no servers are down and no other unpredictable (or maybe predictable)
 things happened, you will have brought your source tree to the latest revision (aka tip or head revision).
 <h2 id="Gearing_up_for_Building"> Gearing up for Building </h2>
-<br>Before you start building the Open Watcom tools proper, you will need to build several helper tools:<b>&nbsp; builder,
-pmake, cdsay</b> and a few others.&nbsp; These tools have to be built manually because the build process won't work without
+<br>Before you start building the Open Watcom tools proper, you will need to build several helper tools:<i>&nbsp; builder,
+pmake, cdsay</i> and a few others.&nbsp; These tools have to be built manually because the build process won't work without
 them.
-<br><br>The tools can be found in appropriately named subdirectory of the<b> bld</b> directory, which is named<b> builder</b>
+<br><br>The tools can be found in appropriately named subdirectory of the<i> bld</i> directory, which is named<i> builder</i>
 (showing complete lack of imagination).
-<br><br>To build the required executables, go to a subdirectory of the project<b> builder</b> directory which sounds like
-it would be appropriate for your host platform and run<b> wmake.</b>&nbsp; If you set up everything correctly, you will end
-up with working binaries that were automatically copied into the right subdirectory of the<b> build</b> directory, and that
+<br><br>To build the required executables, go to a subdirectory of the project<i> builder</i> directory which sounds like
+it would be appropriate for your host platform and run<i> wmake.</i>&nbsp; If you set up everything correctly, you will end
+up with working binaries that were automatically copied into the right subdirectory of the<i> build</i> directory, and that
 directory is already on the<tt> PATH</tt>.&nbsp; If not, it's back to square one - the most likely source of problems is incorrectly
-set up<b> setvars</b> batch file.
+set up<i> setvars</i> batch file.
 <br><br>If you've got this far - congratulations, you've finished the one-time steps.&nbsp; You shouldn't need to redo them
 unless you decide to start from scratch, your harddrive decides to die or some similarly catastrophic event occurs.
 <br><br>You should now read the next chapter that describes the build architecture and also lists the magic incantations necessary
@@ -353,10 +353,10 @@ conventions as far as makefile layout is concerned.&nbsp; This section describes
 makefiles, as well as the steps needed to get projects to compile.
 <br>For those who do not desire a lecture on the preparation and maintenance of makefiles, feel free to skip straight to the
 Executive Summary at the end.
-<br><br>Every development and build machine must have the mif project (<b> build\mif</b> ) installed.&nbsp; That is taken
+<br><br>Every development and build machine must have the mif project (<i> build\mif</i> ) installed.&nbsp; That is taken
 care of by uncompressing the Open Watcom source archive and/or syncing up with Perforce.
 <h2 id="Makeinit"> Makeinit </h2>
-<br>All the magic starts with<b> makeinit.</b>&nbsp; Every development machine must have a<b> makeinit</b> file with the following
+<br>All the magic starts with<i> makeinit.</i>&nbsp; Every development machine must have a<i> makeinit</i> file with the following
 defined therein:
 <dl>
 <dt>mif_dir:
@@ -366,7 +366,7 @@ defined therein:
 the project.&nbsp; That is, if you want the code generator on your machine (and who wouldn't?), it is officially named cg
 (see Project Names below) and so you would define<tt> cg_dir</tt>.
 <br>Alternatively, if all of your projects are in directories which correspond to their project names under a common directory,
-you can set dev_dir and<b> !include cdirs.mif</b> in your<b> makeinit.</b>&nbsp; This is the recommended setup and default
+you can set dev_dir and<i> !include cdirs.mif</i> in your<i> makeinit.</i>&nbsp; This is the recommended setup and default
 for Open Watcom.&nbsp; You do not have to take any extra action to use it.
 <br><br>Alternatively, you can do the above and then redefine<tt> X_dir</tt> for any projects which are not under the<tt>
 dev_dir</tt>.
@@ -387,11 +387,11 @@ directory based on crystal-balls and what not.&nbsp; The makefile must define th
 values for<tt> host_os</tt> are dos, nt, os2, nov, qnx, win, osi, linux.&nbsp; These should be self-explanatory for the most
 part, with one possible exception:&nbsp; osi stands for OS Independent, the executables can run on multiple OSes if appropriate
 loader stub is provided.
-<br><br>The makefile must then include<b> cproj.mif.</b>&nbsp; This will define all sorts of make variables, which can then
+<br><br>The makefile must then include<i> cproj.mif.</i>&nbsp; This will define all sorts of make variables, which can then
 be used to build the project.&nbsp; A list of the most important of these variables and what they can be used for is included
 below.
-<br><br>A makefile should also include<b> defrule.mif,</b> which has the default build rules for C, C++ and assembly sources,
-and<b> deftarg.mif,</b> for definition of the required clean target.
+<br><br>A makefile should also include<i> defrule.mif,</i> which has the default build rules for C, C++ and assembly sources,
+and<i> deftarg.mif,</i> for definition of the required clean target.
 <br><br>A makefile is free to override these defaults as long as it follows the following conventions:
 <ol>
 <li>Tools which have macros defined for them must be referred to by the macros - these are currently (any additions should
@@ -426,21 +426,21 @@ be brought to my attention):
 <li>the mif project is uptodate and make knows to look for .mif files in there
 <li>all depended upon projects are uptodate and have<tt> $(proj_name)_dir</tt> set correctly
 <li>all depended upon projects have been built
-<li>any required executables from under<b> build/bin</b> are in the path
+<li>any required executables from under<i> build/bin</i> are in the path
 </ul>
 <br>Note that there are no other requirements here - it is very annoying when a project requires you to define handles for
 tools, create directories in which it can deposit stuff, scrounge up obscure tools from who knows where or pretend to be Jim
 Welch in order to get a debuggable version of the executable.
 <br><br>There is more than one way to switch between development and release build.&nbsp; A<tt> OWDEBUGBUILD</tt> environment
 variable provides global control.&nbsp; When set to 1, debug builds are produced, otherwise release builds are created.&nbsp;
-When building individual projects with wmake, it is also possible to give the<b> release</b> macro on the wmake command line
+When building individual projects with wmake, it is also possible to give the<i> release</i> macro on the wmake command line
 (0 means debug build, 1 means release build).
 <br><br>Perhaps it should be noted that &quot;releasable&quot; build still contains debugging information, but only at the
 -d1 level and in a separate .sym file.&nbsp; In case of crashes or other highly unusual behaviour, release build should be
 enough to point you in the right direction but usually not sufficient to fully diagnose and rectify the problem.
 <br><br>Now, if you wish to allow certain abberant behaviours based upon cryptic make variables, that is fine, as long as
 the project can build both a debuggable (ie full -d2) version as well as a release (ie no -d2, -d1 only and no memory tracker)
-version without these things being set.&nbsp; That is, if you want stupid stuff in your<b> makeinit</b> - fine, but don't
+version without these things being set.&nbsp; That is, if you want stupid stuff in your<i> makeinit</i> - fine, but don't
 require others to do this in order to build the project.
 <br><br>Any non-standard makefile variables which you do use should be prepended by the name of your project and an underscore,
 to prevent namespace clutter and clashes.
@@ -463,11 +463,11 @@ easy to spot memory leaks and helping to pinpoint heap corruption or other unsoc
 our code.
 <br><br>If the memory tracker is an optional part of your project, and independant of the release mode, it is suggested that
 you enable it if<tt> $(proj_name)_trmem</tt> is set to 1, and disable it otherwise.
-<br><br>The source to the memory tracker can be found in<b> bld\trmem.</b>
+<br><br>The source to the memory tracker can be found in<i> bld\trmem.</i>
 <h2 id="The_Clean_Target"> The Clean Target </h2>
 <br>Each makefile should support a clean target.&nbsp; This should not be part of the default target list, and should delete
 every makefile generated file.&nbsp; Which means that after running &quot;wmake clean&quot;, the directory should look exactly
-like a new installation of the project on a bare drive.&nbsp; !including<b> deftarg.mif</b> should do for most people who
+like a new installation of the project on a bare drive.&nbsp; !including<i> deftarg.mif</i> should do for most people who
 do not get creative with file extensions or generated source files.&nbsp; If you do get creative, you may still use the default
 clean rule if you define the<tt> additional_cleanup</tt> macro that will identify your fancy file names and/or extensions.
 <br><br>Do not underestimate the importance of proper cleanup.&nbsp; It guarantees that every part of a project can be built
@@ -476,8 +476,8 @@ you had a generated file hanging around and never discovered that it can no long
 <h2 id="Pmake_Support"> Pmake Support </h2>
 <br>Every makefile should contain a pmake line at the top.&nbsp; Pmake is a tool which was invented in order to make life
 easier with the clib project - most people are not interested in building all 40+ versions of the clib when they're working
-on just one version.&nbsp; Pmake, when run from a root directory, crawls down all subdirectories looking for files called<b>
-makefile.</b>&nbsp; When it finds one, it checks to see if there is a wmake comment which looks like:
+on just one version.&nbsp; Pmake, when run from a root directory, crawls down all subdirectories looking for files called<i>
+makefile.</i>&nbsp; When it finds one, it checks to see if there is a wmake comment which looks like:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pmake: &lt;some identifiers&gt;</tt>
 <br><br>If there is such a comment, and any identifiers in the list given to pmake appear in the list after the colon, then
@@ -508,7 +508,7 @@ colon (:) like so:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pmake/50: build os_nt cpu_ppc</tt>
 <br><br>Makefiles with lower priority are visited first.&nbsp; The default priority if not explicitly specified is 100.&nbsp;
-Pmake will visit subdirectories in depth first traversal order unless changed by the<b> -r</b> option or the<b> priority</b>
+Pmake will visit subdirectories in depth first traversal order unless changed by the<i> -r</i> option or the<i> priority</i>
 value.
 <br><br>You are free to add as many mnemonic identifiers as you want, of course, but anything which you feel is an abstract
 classification that would apply to other projects, please bring to our collective attention and if deemed useful, it will
@@ -522,14 +522,14 @@ cannot run some or all of the platform specific tools required during builds.&nb
 than exception - only dedicated build servers usually have all necessary files in place.
 <h2 id="Misc_Conventions"> Misc Conventions </h2>
 <br>To make it easy to see what projects are required to make a given project, all needed projects should be listed in a makefile
-comment in the main makefile of the dependant project.&nbsp; Hopefully, this main makefile should be called<b> master.mif</b>
+comment in the main makefile of the dependant project.&nbsp; Hopefully, this main makefile should be called<i> master.mif</i>
 and be in the root directory, or a mif subdirectory thereof, of the project.
 <br><br>Also, it is suggested that the object file directory name be a combination of the<tt> host_os</tt> followed by the<tt>
 host_cpu</tt>, if convenient.&nbsp; For example, NT versions for the PPC should be genned into a ntppc directory.&nbsp; If
 a directory structure which is different than this is used for some reason, then comments explaining exactly what is built
-where would be nice in the<b> master.mif</b> file.
+where would be nice in the<i> master.mif</i> file.
 <br><br>Things get more interesting if cross compilers are thrown into the mix.&nbsp; In that case three components are required
-in the name:&nbsp; for instance a<b> ntaxp.386</b> directory can hold the Alpha AXP NT compiler producing 386 code.
+in the name:&nbsp; for instance a<i> ntaxp.386</i> directory can hold the Alpha AXP NT compiler producing 386 code.
 <br><br>This is also why the macro names are somewhat counterintuitive - most people would think of the<tt> host_os</tt> and<tt>
 host_cpu</tt>, as target OS and CPU.&nbsp; However, the 'target' designation is reserved for the target architecture of the
 generated binary.&nbsp; In the above case of a compiler that runs on Alpha AXP NT and produces 386 code, the makefile contains:
@@ -542,20 +542,20 @@ generated binary.&nbsp; In the above case of a compiler that runs on Alpha AXP N
 = 1.&nbsp; If creating a DLL, set<tt> sys_dll</tt> = 1.&nbsp; Delightfully simple.
 <h2 id="Include_Paths"> Include Paths </h2>
 <br>The<tt> inc_path</tt> macro is composed of several other variables.&nbsp; Projects are able to hook any of these variables
-by redefining them after<b> cproj.mif</b> is included.&nbsp; The current structure looks like this:
+by redefining them after<i> cproj.mif</i> is included.&nbsp; The current structure looks like this:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; inc_path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = inc_dirs | inc_dirs_$(host_os) | inc_dirs_sys</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; inc_dirs_sys&nbsp; = inc_dirs_lang | inc_dirs_sys_$(host_os)</tt>
 <br><br>$(inc_dirs_lang) contains headers delivered with the compiler.
 <br><br>$(inc_dirs_sys_$(host_os)) contains OS specific headers typically delivered by OS vendor.
-<br><br>So, a project should put any include directories it needs into<b> inc_dirs</b> - note that this does not include<tt>
+<br><br>So, a project should put any include directories it needs into<i> inc_dirs</i> - note that this does not include<tt>
 $(watcom_dir)\h</tt> which is part of the default include directory set.
 <br><br>If it needs to, a project can override any and all of these - for instance, the clib needs to be built with the next
 release header files, and so would redefine<tt> inc_dirs_lang</tt>.
 <br><br>Any OS-specific header files needed by the project can be set in<tt> inc_dirs_$(host_os)</tt> - again, this should
 not include the standard system header files, which will be defined in<tt> inc_dirs_sys_$(host_os)</tt>.
-<br><br>Note that the build system previously used to set the<tt> INCLUDE</tt> environment variable to hold the contents of<b>
-inc_dirs</b> macro.&nbsp; This mechanism is now considered obsolete and should no longer used.&nbsp; Instead, include paths
+<br><br>Note that the build system previously used to set the<tt> INCLUDE</tt> environment variable to hold the contents of<i>
+inc_dirs</i> macro.&nbsp; This mechanism is now considered obsolete and should no longer used.&nbsp; Instead, include paths
 are passed directly on the command line.&nbsp; This also means that all include paths must be prepended with a -I switch,
 for example:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -565,12 +565,12 @@ for example:
 <ol>
 <li>Create an object file directory for each combination of host_os/host_cpu under your project.
 <li>Give your project a name, for instance Foo.
-<li>Create a<b> master.mif</b> in the root of your project.
-<li>Put all the normal makefile gear in this<b> master.mif.</b>
+<li>Create a<i> master.mif</i> in the root of your project.
+<li>Put all the normal makefile gear in this<i> master.mif.</i>
 <li>Add<tt> proj_name</tt> = Foo to the top of master.mif
-<li>Include the following files (in this order)<b> cproj.mif, defrule.mif, deftarg.mif</b> in<b> master.mif</b>
+<li>Include the following files (in this order)<i> cproj.mif, defrule.mif, deftarg.mif</i> in<i> master.mif</i>
 <li>Add<tt> inc_dirs</tt> = {list of directories, separated by spaces and each prepended with -I, which your project needs
-in include path - this does not include OS-specific includes (ie<b> \lang\h\win</b> )}
+in include path - this does not include OS-specific includes (ie<i> \lang\h\win</i> )}
 <li>Add<tt> extra_c_flags</tt> = {list of c flags, not including optimization, -w4, -zq.&nbsp; -we and memory model info,
 needed to compile your application} These should be host_os/host_cpu independent.
 <li>Add<tt> extra_l_flags</tt> = {list of linker directives, not incuding system or debug directives} Should be host_os/host_cpu
@@ -610,19 +610,19 @@ DLL.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 0x6ff00000&nbsp; mtxxxx.dll&nbsp;&nbsp;&nbsp; (run-time DLL math library)</tt>
 <br><br>You shouldn't use these addresses for your own DLLs.
 <h1 id="Build_Process"> Build Process </h1>
-<br>We use the (Open) Watcom C/C++ compilers and Watcom<b> wmake</b> to build our tools, but at the top level we have a custom
+<br>We use the (Open) Watcom C/C++ compilers and Watcom<i> wmake</i> to build our tools, but at the top level we have a custom
 tool which oversees traversing the build tree, deciding which projects to build for what platforms, logging the results to
 a file, and copying the finished software into the release tree (rel), making fully automated builds a possibility.&nbsp;
 If nothing goes wrong that is.
 <h2 id="Builder"> Builder </h2>
-<br>This wondrous tool is called<b> builder.</b>&nbsp; You can see<b> bld\builder\builder.doc</b> for detailed info on the
+<br>This wondrous tool is called<i> builder.</i>&nbsp; You can see<i> bld\builder\builder.doc</i> for detailed info on the
 tool and/or look at the source if the documentation doesn't satisfy you.
-<br><br>So how does builder work?&nbsp; Each project has a<b> lang.ctl</b> builder script file.&nbsp; If you go to a project
-directory and run builder, it will make only that project; if you go to<b> bld</b> and run builder, it will build everything
-under the sun.&nbsp; The overall build uses<b> bat\lang.ctl</b> which includes all of the individual project<b> lang.ctl</b>
-files that we use.&nbsp; Note that if you run builder, it will traverse directories upwards until it finds a<b> lang.ctl</b>
+<br><br>So how does builder work?&nbsp; Each project has a<i> lang.ctl</i> builder script file.&nbsp; If you go to a project
+directory and run builder, it will make only that project; if you go to<i> bld</i> and run builder, it will build everything
+under the sun.&nbsp; The overall build uses<i> bat\lang.ctl</i> which includes all of the individual project<i> lang.ctl</i>
+files that we use.&nbsp; Note that if you run builder, it will traverse directories upwards until it finds a<i> lang.ctl</i>
 (or it hits the root and still doesn't find anything, but then you must have surely done something wrong).&nbsp; Results are
-logged to<b> build.log</b> in the current project directory and the previous<b> build.log</b> file is copied to<b> build.lo1.</b>
+logged to<i> build.log</i> in the current project directory and the previous<i> build.log</i> file is copied to<i> build.lo1.</i>
 &nbsp;The log file contains captured console output (both stdout and stderr).
 <br><br>Common commands:
 <dl>
@@ -634,14 +634,14 @@ logged to<b> build.log</b> in the current project directory and the previous<b> 
 <dd>- erase object files, executables, etc.&nbsp; so you can build from scratch
 </dl>
 <h2 id="Pmake"> Pmake </h2>
-<br>Many of the projects use the &quot;pmake&quot; features of builder (see<b> builder.doc</b> ) or standalone pmake tool.
-&nbsp;If you want to see its guts, the<b> pmake</b> source is in<b> bld\pmake.</b>
-<br><br>Each makefile has a comment line at the top of the file which is read by<b> pmake.</b>&nbsp; Most of our<b> lang.ctl</b>
+<br>Many of the projects use the &quot;pmake&quot; features of builder (see<i> builder.doc</i> ) or standalone pmake tool.
+&nbsp;If you want to see its guts, the<i> pmake</i> source is in<i> bld\pmake.</i>
+<br><br>Each makefile has a comment line at the top of the file which is read by<i> pmake.</i>&nbsp; Most of our<i> lang.ctl</i>
 files will have a line similar to this:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pmake -d build -h ...</tt>
-<br><br>this will cause<b> wmake</b> to be run in every subdirectory where the makefile contains<tt> &quot;build&quot;</tt>
-on the<tt> #pmake</tt> line.&nbsp; See for instance the C compiler makefiles (in<b> bld\cc)</b> for an example.
+<br><br>this will cause<i> wmake</i> to be run in every subdirectory where the makefile contains<tt> &quot;build&quot;</tt>
+on the<tt> #pmake</tt> line.&nbsp; See for instance the C compiler makefiles (in<i> bld\cc)</i> for an example.
 <br><br>You can also specify more parmeters to build a smaller subset of files.&nbsp; This is especially useful if you do
 not have all required tools/headers/libraries for all target platforms.
 <br><br>For example:
@@ -650,10 +650,10 @@ not have all required tools/headers/libraries for all target platforms.
 <br><br>will (generally) build only the NT version of the tools.
 <br><br>A word of warning:&nbsp; running a full build may take upwards of two hours on a 1GHz machine.&nbsp; There is a LOT
 to build!&nbsp; This is not your ol' OS kernel or a single-host, single-target C/C++ compiler.
-<br><br>It is generally possible to build specific binaries/libraries by going to their directory and running<b> wmake.</b>
-&nbsp;For instance to build the OS/2 version of<b> wlink</b> you can go to<b> bld\wl\os2386</b> and run<b> wmake</b> there
+<br><br>It is generally possible to build specific binaries/libraries by going to their directory and running<i> wmake.</i>
+&nbsp;For instance to build the OS/2 version of<i> wlink</i> you can go to<i> bld\wl\os2386</i> and run<i> wmake</i> there
 (note that the process won't successfully finish unless several required libraries had been built).&nbsp; Builder is useful
-for making full &quot;release&quot; builds while running<b> wmake</b> in the right spot is the thing to do during development.
+for making full &quot;release&quot; builds while running<i> wmake</i> in the right spot is the thing to do during development.
 <br><br>Happy Building!
 <h1 id="Testing"> Testing </h1>
 <br>There is undoubtedly a question on your mind:&nbsp; Now that I have the Open Watcom compilers, libraries and tools built,
@@ -691,47 +691,47 @@ Note that not all of the tests are automated, the really extensive tests are how
 are likely to bang together an automated test suite if that helps them avoid babysitting the tests.
 <dl>
 <dt>as
-<dd>In<b> bld\as\alpha\test</b> there are several tests exercising the Alpha AXP assembler, using C wrappers for infrastructure.
+<dd>In<i> bld\as\alpha\test</i> there are several tests exercising the Alpha AXP assembler, using C wrappers for infrastructure.
 <dt><br>aui
-<dd>Not a real test, nevertheless the sample programs in<b> bld\aui\sample</b> are useful in demonstrating and informally testing
+<dd>Not a real test, nevertheless the sample programs in<i> bld\aui\sample</i> are useful in demonstrating and informally testing
 the user interface library.
 <dt><br>brinfo
-<dd>In<b> bld\brinfo\test</b> there is a simple browser information test program.
+<dd>In<i> bld\brinfo\test</i> there is a simple browser information test program.
 <dt><br>browser
-<dd>Tests exercising the class browser are located in<b> bld\browser\test.</b>
+<dd>Tests exercising the class browser are located in<i> bld\browser\test.</i>
 <dt><br>cg
-<dd>In<b> cg\test\far16</b> there is a test exercising the<tt> __far16</tt> keyword.&nbsp; Real code generator tests are found
+<dd>In<i> cg\test\far16</i> there is a test exercising the<tt> __far16</tt> keyword.&nbsp; Real code generator tests are found
 elsewhere.
 <dt><br>clib
-<dd>The C runtime library tests are located in<b> bld\clib\qa.</b>&nbsp; These tests are not terribly comprehensive but they do
+<dd>The C runtime library tests are located in<i> bld\clib\qa.</i>&nbsp; These tests are not terribly comprehensive but they do
 verify the basic C runtime functionality.
 <dt><br>gui
-<dd>Again not a real test, there is a GUI library sample in<b> bld\gui\sample.</b>
+<dd>Again not a real test, there is a GUI library sample in<i> bld\gui\sample.</i>
 <dt><br>ndisasm
-<dd>Tests for the 'new' disassembler (not many at this point) are located in<b> bld\ndisasm\test.</b>
+<dd>Tests for the 'new' disassembler (not many at this point) are located in<i> bld\ndisasm\test.</i>
 <dt><br>orl
-<dd>The Object Reader Library tests are in<b> bld\orl\test.</b>
+<dd>The Object Reader Library tests are in<i> bld\orl\test.</i>
 <dt><br>plustest
-<dd>This project holds<b> the</b> test suite.&nbsp; Ostensibly designed to exercise the C++ compiler, the tests also verify the
+<dd>This project holds<i> the</i> test suite.&nbsp; Ostensibly designed to exercise the C++ compiler, the tests also verify the
 functionality of the code generator and some are designed for the C compiler.&nbsp; Running these tests can take a while as
 there are over a thousand test cases.&nbsp; Highly recommended.
 <dt><br>ssl
-<dd>In<b> bld\ssl\test</b> there are several simple test scripts for SSL.
+<dd>In<i> bld\ssl\test</i> there are several simple test scripts for SSL.
 <dt><br>trmem
 <dd>While the memory tracker is not a test, it bears mentioning here.&nbsp; This can be used for testing many other projects for
 memory leaks, memory overwrites and other cases of rude behaviour.
 <dt><br>viprdemo
 <dd>Again not a test per se, the 'Viper demo' is a good way to verify basic IDE functionality.
 <dt><br>wasm
-<dd>Extensive assembler test can be found (rather predictably) in<b> bld\wasmtest.</b>
+<dd>Extensive assembler test can be found (rather predictably) in<i> bld\wasmtest.</i>
 <dt><br>wdisasm
-<dd>Tests for the 'old' disassembler are located in<b> bld\wdisasm\test.</b>
+<dd>Tests for the 'old' disassembler are located in<i> bld\wdisasm\test.</i>
 <dt><br>wmake
-<dd>Extensive make utility tests can be found in<b> bld\wmake\regress.</b>
+<dd>Extensive make utility tests can be found in<i> bld\wmake\regress.</i>
 <dt><br>wprof
-<dd>A profiler test program is located in<b> bld\wprof\test.</b>
+<dd>A profiler test program is located in<i> bld\wprof\test.</i>
 <dt><br>yacc
-<dd>Several sample/test YACC input files are in<b> bld\yacc\y.</b>
+<dd>Several sample/test YACC input files are in<i> bld\yacc\y.</i>
 </dl>
 <h1 id="Programming_Style"> Programming Style </h1>
 <br>Programming style is, unfortunately, a religious matter.&nbsp; Many holy wars have been fought over it with no clear result

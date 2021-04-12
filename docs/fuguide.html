@@ -617,7 +617,7 @@ source input stream.&nbsp; The compiler recognizes these special comments as com
 can appear on the command line only.&nbsp; We also indicate what the default is for an option or group of options.
 <br><br>When specifying options in the source file, it is possible to specify more than one option on a line.&nbsp; For example,
 the following source line tells Open Watcom F77 to not issue any warning or extension messages.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$nowarn noext</tt>
 <br><br>Note that only the first option must contain the &quot;*$&quot;, &quot;C$&quot;, or &quot;c$&quot; prefix.
 <br><br>Short forms are indicated by upper case letters.
@@ -763,12 +763,12 @@ default Microsoft OMF.&nbsp; The default option is &quot;noez&quot;.
 <dt><br>FO=&lt;obj_default&gt;
 <dd>By default, the object file name is constructed from the source file name.&nbsp; Using the &quot;fo&quot; option, the default
 object file drive, path, file name and extension can be specified.
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report /fo=d:\programs\obj\</tt>
 <br><br>A trailing &quot;\&quot; must be specified for directory names.&nbsp; If, for example, the option was specified as
 &quot;/fo=d:\programs\obj&quot; then the object file would be called<tt> D:\PROGRAMS\OBJ.OBJ.</tt>
 <br><br>A default extension must be preceded by a period (&quot;.&quot;).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report /fo=d:\programs\obj\.dbo</tt>
 <dt><br>&#91;NO&#93;FORmat
 <dd>The &quot;format&quot; option suppresses the run-time checking that ensures that the type of an input/output list item matches
@@ -796,14 +796,14 @@ compatible instructions.
 <br>(32-bit only) Open Watcom F77 will generate in-line 80x87 numeric data processor instructions into the object code for
 floating-point operations.&nbsp; When the &quot;fpi87&quot; option is used exclusively, coprocessor emulation software is
 not included in the application when it is linked.&nbsp; A 80x87 coprocessor must be present at run-time.&nbsp; 
-<br><br><b>16-bit Notes:</b>
+<br><br><i>16-bit Notes:</i>
 <ol>
 <li>When any module in an application is compiled with a particular &quot;floating-point&quot; option, then all modules must
 be compiled with the same option.
 <li>Different math libraries are provided for applications which have been compiled with a particular floating-point option.
 &nbsp;See the chapter entitled <a href="#The_Open_Watcom_FORTRAN_77_Libraries">The Open Watcom FORTRAN 77 Libraries</a>.
 </ol>
-<br><b>32-bit Notes:</b>
+<br><i>32-bit Notes:</i>
 <ol>
 <li>When any module in an application is compiled with the &quot;fpc&quot; option, then all modules must be compiled with
 the &quot;fpc&quot; option.
@@ -890,7 +890,7 @@ before those in the <b> FINCLUDE</b> environment variable.
 <dt><br>&#91;NO&#93;IPromote
 <dd>The &quot;ipromote&quot; option causes the compiler to promote the INTEGER*1 and INTEGER*2 arguments of some INTEGER*4 intrinsics
 without issuing an error diagnostic.&nbsp; This allows code such as the following to be compiled without error:
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER I*1, J*2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I = 1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; J = 2</tt>
@@ -932,7 +932,7 @@ to be created while &quot;nolist&quot; requests that no listing file be created.
 disables the listing of the source lines that follow.&nbsp; This option cannot appear on the same source line with other options.
 <dt><br>&#91;NO&#93;MAngle
 <dd>This option is used to alter COMMON block segment and class names.
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL R, S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMMON /BLK/ R, S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
@@ -987,7 +987,7 @@ only.&nbsp; This option is not required when using the Open Watcom Linker.&nbsp;
 <dd>Optimized DO-loop iteration code is generated.&nbsp; Caution should be exercised with the use of this option since the case
 of an iterating value overflowing is assumed to never occur.&nbsp; The following example should not be compiled with this
 option since the terminal value of<tt> IX</tt> wraps from a positive integer to a negative integer.
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER*2 IX</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO IX=32766,32767</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
@@ -1000,21 +1000,21 @@ value) and it never exceeds the terminal value.
 <dd>This option selects the generation of traceable stack frames for those functions that contain calls or require stack frame
 setup.&nbsp; To use Open Watcom's &quot;Dynamic Overlay Manager&quot; (DOS only), you must compile all modules using the &quot;of&quot;
 option.&nbsp; For near functions, the following function prologue sequence is generated.
-<br><b>16-bit:</b>
+<br><i>16-bit:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push BP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp; BP,SP</tt>
-<br><br><b>32-bit:</b>
+<br><br><i>32-bit:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push EBP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp; EBP,ESP</tt>
 <br><br>For far functions, the following function prologue sequence is generated.
-<br><br><b>16-bit:</b>
+<br><br><i>16-bit:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inc&nbsp; BP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push BP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp; BP,SP</tt>
-<br><br><b>32-bit:</b>
+<br><br><i>32-bit:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inc&nbsp; EBP</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push EBP</tt>
@@ -1063,7 +1063,7 @@ mantissa whereas single and double-precision variables use fewer bits of precisi
 option will force the result to be stored in memory after each FORTRAN statement is executed.&nbsp; This will produce less
 accurate but more predictable floating-point results.&nbsp; The code produced will also be less efficient when the &quot;op&quot;
 option is used.
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; XMAX = X + Y / Z</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; YMAX = XMAX + Q</tt>
 <br><br>When the &quot;op&quot; option is used in conjunction with the &quot;fpi&quot; or &quot;fpi87&quot; option, the compiler's
@@ -1122,7 +1122,7 @@ code will be larger than that which is generated for the register method of pass
 <dt><br>&#91;NO&#93;SEpcomma
 <dd>The &quot;sepcomma&quot; option allows the comma (&quot;,&quot;) to be used as field separator in formatted input.&nbsp; Thus
 the following code would work with the input described.
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL R, S</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; READ(5,21) R, S</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, R, S</tt>
@@ -1242,7 +1242,7 @@ option taking precedence over any conflicting options specified to its left.
 <br>The <b> WFC</b> environment variable can be used to specify commonly used WFC options.&nbsp; The <b> WFC386</b> environment
 variable can be used to specify commonly used WFC386 options.&nbsp; These options are processed before options specified on
 the command line.&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc=-d1 -ot</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc386=-d1 -ot</tt>
 <br><br>The above example defines the default options to be &quot;d1&quot; (include line number debugging information in the
@@ -1262,32 +1262,32 @@ it handy to define the environment variable in your DOS system initialization fi
 variable in your OS/2 system initialization file,<tt> CONFIG.SYS.</tt>
 <h2 id="Open_Watcom_FORTRAN_77_Command_Line_Examples"> Open Watcom FORTRAN 77 Command Line Examples </h2>
 <br>The following are some examples of using Open Watcom FORTRAN 77 to compile FORTRAN 77 source programs.
-<br><br><b>Example 1:</b>
+<br><br><i>Example 1:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report /d1 /stack</tt>
 <br><br>The 32-bit Open Watcom F77 compiler processes<tt> REPORT.FOR</tt> producing an object file which contains source line
 number information.&nbsp; Stack overflow checking code is included in the object code.
-<br><br><b>Example 2:</b>
+<br><br><i>Example 2:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc kwikdraw /2 /fpi87</tt>
 <br><br>The 16-bit Open Watcom F77 compiler processes<tt> KWIKDRAW.FOR</tt> producing object code for an Intel 286 system
 equipped with an Intel 287 numeric data processor (or any upward compatible 386/387, 486 or Intel Pentium system).&nbsp; While
 the choice of these options narrows the number of microcomputer systems where this code will execute, the resulting code will
 be highly optimized for this type of system.
-<br><br><b>Example 3:</b>
+<br><br><i>Example 3:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc ..\source\modabs /d2</tt>
 <br><br>The 16-bit Open Watcom F77 compiler processes<tt> ..\SOURCE\MODABS.FOR</tt> (a file in a directory which is adjacent
 to the current one).&nbsp; The object file is placed in the current directory.&nbsp; Included with the object code and data
 is information on local symbols and data types.&nbsp; The code generated is straight-forward, unoptimized code which can be
 readily debugged with Open Watcom Debugger.&nbsp; 
-<br><br><b>Example 4:</b>
+<br><br><i>Example 4:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 /mf calc</tt>
 <br><br>The 32-bit Open Watcom F77 compiler compiles<tt> CALC.FOR</tt> for the &quot;flat&quot; memory model.&nbsp; 32-bit
 memory models are described in the chapter entitled <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.&nbsp; 32-bit
 argument passing conventions are described in the chapter entitled <a href="#32Mbit_Assembly_Language_Considerations">32-bit Assembly Language Considerations</a>.
-<br><br><b>Example 5:</b>
+<br><br><i>Example 5:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 kwikdraw /fpi87</tt>
 <br><br>The 32-bit Open Watcom F77 compiler processes<tt> KWIKDRAW.FOR</tt> producing object code for an Intel 386 system
 equipped with an Intel 80x87 numeric data processor.
-<br><br><b>Example 6:</b>
+<br><br><i>Example 6:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc=/short /d2 /fo#*.dbj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc ..\source\modabs</tt>
 <br><br>The options<tt> /short</tt>,<tt> /d2</tt> and<tt> /fo=*.dbj</tt> are established as defaults using the <b> WFC</b>
@@ -1409,8 +1409,8 @@ place in the source line where an error has been detected.
 <br>For information on include file processing, see the section entitled <a href="#The_INCLUDE_Compiler_Directive">The INCLUDE Compiler Directive</a>
 in the chapter entitled <a href="#Open_Watcom_FORTRAN_77_Compiler_Directives">Open Watcom FORTRAN 77 Compiler Directives</a>.
 <h1 id="The_Open_Watcom_FORTRAN_77_Libraries"> The Open Watcom FORTRAN 77 Libraries </h1>
-<br>The Open Watcom FORTRAN 77 library routines (intrinsic functions) are described in the<b> Open Watcom FORTRAN 77 Language
-Reference</b> manual.&nbsp; Additional run-time routines are described in the chapter entitled <a href="#The_Open_Watcom_F77_Subprogram_Library">The Open Watcom F77 Subprogram Library</a>.
+<br>The Open Watcom FORTRAN 77 library routines (intrinsic functions) are described in the<i> Open Watcom FORTRAN 77 Language
+Reference</i> manual.&nbsp; Additional run-time routines are described in the chapter entitled <a href="#The_Open_Watcom_F77_Subprogram_Library">The Open Watcom F77 Subprogram Library</a>.
 &nbsp;Since Open Watcom FORTRAN 77 supports two major architectures, the 286 architecture (which includes the 8088) and the
 386 architecture (which includes the 486 and Pentium processors), libraries are grouped under two major directories.
 <br><br>For the 286 architecture, the processor dependent libraries are placed under the<tt> \WATCOM\LIB286</tt> directory.
@@ -1481,7 +1481,7 @@ memory models (big code, big data or huge data).&nbsp;
 (stack calling conventions).
 </dl>
 <br>The 16-bit Open Watcom FORTRAN 77 libraries are listed below by directory.
-<br><br><b>Under</b><tt> \WATCOM\LIB286\DOS</tt>
+<br><br><i>Under</i><tt> \WATCOM\LIB286\DOS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIBM.LIB&nbsp;&nbsp; (DOS medium model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7M.LIB&nbsp; (DOS medium model, in-line 80x87)</tt>
@@ -1490,7 +1490,7 @@ memory models (big code, big data or huge data).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIBM.LIB&nbsp;&nbsp; (DOS i/o system medium model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIBL.LIB&nbsp;&nbsp; (DOS i/o system large/huge model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GRAPH.LIB&nbsp;&nbsp; (DOS graphics support)</tt>
-<br><br><b>Under</b><tt> \WATCOM\LIB286\WIN</tt>
+<br><br><i>Under</i><tt> \WATCOM\LIB286\WIN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIBM.LIB&nbsp;&nbsp; (Windows medium model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7M.LIB&nbsp; (Windows medium model, in-line 80x87)</tt>
@@ -1499,7 +1499,7 @@ memory models (big code, big data or huge data).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIBM.LIB&nbsp;&nbsp; (Windows i/o system medium model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIBL.LIB&nbsp;&nbsp; (Windows i/o system large/huge model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WINDOWS.LIB (Windows API library)</tt>
-<br><br><b>Under</b><tt> \WATCOM\LIB286\OS2</tt> 
+<br><br><i>Under</i><tt> \WATCOM\LIB286\OS2</tt> 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIBM.LIB&nbsp;&nbsp; (OS/2 medium model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7M.LIB&nbsp; (OS/2 medium model, in-line 80x87)</tt>
@@ -1510,7 +1510,7 @@ memory models (big code, big data or huge data).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DOSPMM.LIB&nbsp; (Phar Lap 286 PM medium model)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DOSPML.LIB&nbsp; (Phar Lap 286 PM large/huge model)</tt>
 <br><br>The 32-bit Open Watcom FORTRAN 77 libraries are listed below.
-<br><br><b>Under</b><tt> \WATCOM\LIB386\DOS</tt>
+<br><br><i>Under</i><tt> \WATCOM\LIB386\DOS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB.LIB&nbsp;&nbsp;&nbsp;&nbsp; (floating-point calls)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7.LIB&nbsp;&nbsp;&nbsp; (in-line 80x87)</tt>
@@ -1520,7 +1520,7 @@ memory models (big code, big data or huge data).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIB3S.LIB&nbsp;&nbsp; (i/o system, stack conventions)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GRAPH.LIB&nbsp;&nbsp;&nbsp; (DOS graphics support)</tt>
 <br><br>The graphics library<tt> GRAPH.LIB</tt> is independent of the argument passing conventions or floating-point model.
-<br><br><b>Under</b><tt> \WATCOM\LIB386\WIN</tt>
+<br><br><i>Under</i><tt> \WATCOM\LIB386\WIN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB.LIB&nbsp;&nbsp;&nbsp;&nbsp; (floating-point calls)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7.LIB&nbsp;&nbsp;&nbsp; (in-line 80x87)</tt>
@@ -1529,7 +1529,7 @@ memory models (big code, big data or huge data).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIB3R.LIB&nbsp;&nbsp; (i/o system)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIB3S.LIB&nbsp;&nbsp; (i/o system, stack conventions)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WIN386.LIB&nbsp;&nbsp; (32-bit Windows API)</tt>
-<br><br><b>Under</b><tt> \WATCOM\LIB386\OS2</tt>
+<br><br><i>Under</i><tt> \WATCOM\LIB386\OS2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB.LIB&nbsp;&nbsp;&nbsp;&nbsp; (floating-point calls)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7.LIB&nbsp;&nbsp;&nbsp; (in-line 80x87)</tt>
@@ -1537,7 +1537,7 @@ memory models (big code, big data or huge data).&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7S.LIB&nbsp;&nbsp; (in-line 80x87, stack conventions)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIB3R.LIB&nbsp;&nbsp; (i/o system)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CLIB3S.LIB&nbsp;&nbsp; (i/o system, stack conventions)</tt>
-<br><br><b>Under</b><tt> \WATCOM\LIB386\NT</tt>
+<br><br><i>Under</i><tt> \WATCOM\LIB386\NT</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB.LIB&nbsp;&nbsp;&nbsp;&nbsp; (floating-point calls)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FLIB7.LIB&nbsp;&nbsp;&nbsp; (in-line 80x87)</tt>
@@ -1548,13 +1548,13 @@ memory models (big code, big data or huge data).&nbsp;
 <h2 id="Open_Watcom_FORTRAN_77_80x87_Emulator_Libraries"> Open Watcom FORTRAN 77 80x87 Emulator Libraries </h2>
 <br>One of the following libraries must be used if any of the modules of your application were compiled with the &quot;fpi&quot;
 option.
-<br><br><b>16-bit Libraries</b>
+<br><br><i>16-bit Libraries</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NOEMU87.LIB</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DOS\EMU87.LIB (DOS dependent)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WIN\EMU87.LIB (Windows dependent)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS2\EMU87.LIB (OS/2 dependent)</tt>
-<br><br><b>32-bit Libraries</b>
+<br><br><i>32-bit Libraries</i>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NOEMU387.LIB</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DOS\EMU387.LIB (DOS dependent)</tt>
@@ -1617,7 +1617,7 @@ way.&nbsp; The following lists these options.
 file that is created by the compiler when the &quot;list&quot; compiler option is specified.&nbsp; In the following example,
 a form-feed character will be generated immediately before the source for subroutine<tt> sub2</tt> and immediately before
 the source for subroutine<tt> sub3</tt>.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subroutine sub1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! source code</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
@@ -1632,7 +1632,7 @@ the source for subroutine<tt> sub3</tt>.
 <h2 id="The_INCLUDE_Compiler_Directive"> The INCLUDE Compiler Directive </h2>
 <br>The <b><i> INCLUDE</i></b> compiler directive or <b><i> INCLUDE</i></b> statement may be used to imbed source code into
 the file being compiled.&nbsp; Either form may be used.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$INCLUDE DOS.FI</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'DOS.FI'</tt>
 <br><br>When the <b><i> INCLUDE</i></b> statement is used the name of the file must be placed inside single quotes (apostrophes).
@@ -1694,18 +1694,18 @@ the source code to be independent of the disk/directory structure of your comput
 <br>This compiler directive is described in the chapters entitled <a href="#16Mbit__16Mbit_Pragmas">16-bit:&nbsp; 16-bit Pragmas</a>
 and <a href="#32Mbit__32Mbit_Pragmas">32-bit:&nbsp; 32-bit Pragmas</a>.
 <h2 id="The_DEFINE_Compiler_Directive"> The DEFINE Compiler Directive </h2>
-<br>The DEFINE compiler directive sets the definition status of a<b> macro</b> to defined.&nbsp; If a macro does not appear
+<br>The DEFINE compiler directive sets the definition status of a<i> macro</i> to defined.&nbsp; If a macro does not appear
 in a DEFINE directive, its definition status is undefined.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$define debug</tt>
 <br><br>In the above example, the macro<tt> debug</tt> is defined.
 <br><br>The DEFINE compiler option can also be used to define a macro.&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc /define=debug test</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 /define=debug test</tt>
 <h2 id="The_UNDEFINE_Compiler_Directive"> The UNDEFINE Compiler Directive </h2>
-<br>The UNDEFINE compiler directive sets the definition status of a<b> macro</b> to undefined.
-<br><br><b>Example:</b>
+<br>The UNDEFINE compiler directive sets the definition status of a<i> macro</i> to undefined.
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$undefine debug</tt>
 <br><br>In the above example, the definition status of the macro<tt> debug</tt> is set to undefined.
 <h2 id="The_IFDEF__IFNDEF_and_ENDIF_Compiler_Directive"> The IFDEF, IFNDEF and ENDIF Compiler Directive </h2>
@@ -1713,7 +1713,7 @@ in a DEFINE directive, its definition status is undefined.
 directive is defined or the macro appearing in an IFNDEF directive is not defined, then all source code up to the corresponding
 ENDIF compiler directive will be compiled.&nbsp; Otherwise, it will be ignored.
 <br><br>In the following example, the FORTRAN 77 statements represented by<tt> &lt;debugging_statements&gt;</tt> will be compiled.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$define debug</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef debug</tt>
@@ -1721,14 +1721,14 @@ ENDIF compiler directive will be compiled.&nbsp; Otherwise, it will be ignored.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$endif</tt>
 <br><br>In the following example, the FORTRAN 77 statements represented by<tt> &lt;debugging_statements&gt;</tt> will not
 be compiled.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$undefine debug</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef debug</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;debugging_statements&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$endif</tt>
 <br><br>In the following example, the FORTRAN 77 statements represented by<tt> &lt;debugging_statements&gt;</tt> will be compiled.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$undefine debug</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifndef debug</tt>
@@ -1742,7 +1742,7 @@ was not satisfied, then all source code between the ELSE compiler directive and 
 will be compiled.
 <br><br>In the following example, the FORTRAN 77 statements represented by<tt> &lt;debugging_level_2_statements&gt;</tt> will
 be compiled.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$undefine debug_level_1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef debug_level_1</tt>
@@ -1760,7 +1760,7 @@ the macro appearing in the ELSEIFNDEF compiler directive is not defined, then al
 ELSE or ENDIF compiler directive will be compiled.
 <br><br>In the following example, the FORTRAN 77 statements represented by<tt> &lt;debugging_level_2_statements&gt;</tt> will
 be compiled.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$define debug_level_2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef debug_level_1</tt>
@@ -1774,16 +1774,16 @@ on the definition status of the macro<tt> __debug__.</tt>&nbsp; Statements that 
 column 1 are called debugging statements.&nbsp; If the<tt> __debug__</tt> macro is defined, the line will be compiled; otherwise
 it will be ignored.&nbsp; The<tt> __debug__</tt> macro can be defined by using the DEFINE compiler directive or the &quot;define&quot;
 option.&nbsp; In the following example, the &quot;define&quot; option is used to force compilation of debugging statements.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc /def=__debug__ test</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 /def=__debug__ test</tt>
 <h2 id="General_Notes_About_Compiler_Directives"> General Notes About Compiler Directives </h2>
 <ol>
 <li>Compiler directives must not contain embedded blanks.&nbsp; The following is not a valid ENDIF compiler directive.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$end if</tt>
 <li>Nesting is allowed up to a maximum of 16 levels.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef sym1</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;statements&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef sym2</tt>
@@ -1803,15 +1803,15 @@ options is specified:&nbsp; &quot;fpi&quot; or &quot;fpi87&quot;.
 A debugging statement is one that contains the character &quot;D&quot; or &quot;d&quot; in column one.
 </ol>
 <h1 id="Open_Watcom_FORTRAN_77_File_Handling"> Open Watcom FORTRAN 77 File Handling </h1>
-<br>This chapter describes the file handling and naming conventions of Open Watcom F77.&nbsp; We discuss<b> files</b> and<b>
-devices</b> which are used to store, retrieve and display data.&nbsp; For example, a disk can be used to store a file of student
+<br>This chapter describes the file handling and naming conventions of Open Watcom F77.&nbsp; We discuss<i> files</i> and<i>
+devices</i> which are used to store, retrieve and display data.&nbsp; For example, a disk can be used to store a file of student
 marks.&nbsp; This file is accessible by other programs in order to produce summaries of the data such as marks reports.&nbsp;
 A device such as a printer can also be treated as if it were a file, although it is only useful for displaying data; an attempt
 to read information from this device is invalid.
 <br><br>In the following sections, we shall describe:
 <ol>
-<li>the techniques that Open Watcom F77 adopts for implementing<b> FORMATTED</b> and<b> UNFORMATTED</b> records and<b> SEQUENTIAL</b>
-and<b> DIRECT</b> access to these records,
+<li>the techniques that Open Watcom F77 adopts for implementing<i> FORMATTED</i> and<i> UNFORMATTED</i> records and<i> SEQUENTIAL</i>
+and<i> DIRECT</i> access to these records,
 <li>the handling of &quot;print&quot; files,
 <li>file naming conventions,
 <li>logical file names,
@@ -1838,7 +1838,7 @@ files connected for direct access.
 <br><br>In describing these two formats, we also refer to the two methods of record access, &quot;SEQUENTIAL&quot; and &quot;DIRECT&quot;,
 which are supported by Open Watcom F77.
 <h3 id="FORMATTED_Records"> FORMATTED Records </h3>
-<br>A<b> FORMATTED</b> record is one that contains an arbitrary number of ASCII characters.&nbsp; The end of a record is marked
+<br>A<i> FORMATTED</i> record is one that contains an arbitrary number of ASCII characters.&nbsp; The end of a record is marked
 by an ASCII &quot;LF&quot; (line feed) character optionally preceded by an ASCII &quot;CR&quot; (carriage return) character.
 &nbsp;Thus this special sequence may not appear in the middle of a record.
 <br><br>FORMATTED records may vary in length.&nbsp; If all the records in the file have the same length then the records may
@@ -1853,7 +1853,7 @@ of the FORTRAN <b><i> OPEN</i></b> statement.&nbsp; The specified length must no
 not form part of the record.&nbsp; The length is used to allocate a record buffer for sequential access.&nbsp; If the record
 length is not specified, a default maximum length of 1024 characters is assumed.
 <h3 id="UNFORMATTED_Records"> UNFORMATTED Records </h3>
-<br>An<b> UNFORMATTED</b> record is one that contains an arbitrary number of binary storage units.&nbsp; The interpretation
+<br>An<i> UNFORMATTED</i> record is one that contains an arbitrary number of binary storage units.&nbsp; The interpretation
 of the data in such a record depends on the FORTRAN program that is processing the record.&nbsp; An UNFORMATTED record may
 contain integers, real numbers, character strings, or any other type of FORTRAN data.
 <br><br>UNFORMATTED records may also vary in length.&nbsp; If all records in the file have the same length then the records
@@ -1928,40 +1928,40 @@ information about the type of records in the file.&nbsp; This specifier is an ex
 <dt>TEXT
 <dd>indicates that the file contains variable-length or fixed-length records of ASCII characters separated by an ASCII &quot;LF&quot;
 (line feed) character optionally preceded with an ASCII &quot;CR&quot; (carriage return) character.&nbsp; By default, the
-Open Watcom F77 run-time system assumes that <b><i> FORMATTED</i></b> records are of <b><i> TEXT</i></b> format in both the<b>
-sequential</b> and<b> direct</b> access modes.
+Open Watcom F77 run-time system assumes that <b><i> FORMATTED</i></b> records are of <b><i> TEXT</i></b> format in both the<i>
+sequential</i> and<i> direct</i> access modes.
 <br>By default, the Open Watcom F77 run-time system uses variable-length record <b><i> TEXT</i></b> files to implement <b><i>
-FORMATTED</i></b> records in the<b> sequential</b> access mode.&nbsp; Of course, all records may be the same length.&nbsp;
+FORMATTED</i></b> records in the<i> sequential</i> access mode.&nbsp; Of course, all records may be the same length.&nbsp;
 The record separator is not included in calculating the maximum size of records in the file.
 <br><br>By default, the Open Watcom F77 run-time system uses fixed-length record <b><i> TEXT</i></b> files to implement <b><i>
-FORMATTED</i></b> records in the<b> direct</b> access mode.&nbsp; Each record must be the same length.&nbsp; The record separator
+FORMATTED</i></b> records in the<i> direct</i> access mode.&nbsp; Each record must be the same length.&nbsp; The record separator
 is not included in calculating the size of records in the file.
 <dt><br>VARIABLE
 <dd>indicates that the file contains variable-length or fixed-length records in which special descriptors are employed to describe
 the length of each record.&nbsp; The length of each record is contained in a doubleword (INTEGER*4 item) at the beginning
 and end of the record.&nbsp; These descriptors determine the bounds of the records.
 <br>By default, the Open Watcom F77 run-time system uses <b><i> VARIABLE</i></b> format files to implement <b><i> UNFORMATTED</i></b>
-records in the<b> sequential</b> access mode.&nbsp; The length descriptors are required to support the FORTRAN <b><i> BACKSPACE</i></b>
+records in the<i> sequential</i> access mode.&nbsp; The length descriptors are required to support the FORTRAN <b><i> BACKSPACE</i></b>
 statement since no other method exists for determining the bounds of a variable-length unformatted record in a file.
 <dt><br>FIXED
 <dd>indicates that the file contains no extra information that determines the record structure.&nbsp; If the file is a direct
 access file, the value specified by the <b><i> RECL=</i></b> specifier determines the size of each record in the file.
 <br>By default, the Open Watcom F77 run-time system uses <b><i> FIXED</i></b> format files to implement <b><i> UNFORMATTED</i></b>
-records in the<b> direct</b> access mode.
+records in the<i> direct</i> access mode.
 <br><br>If you specify <b><i> FIXED</i></b> with an unformatted sequential file, the size of the records is determined by
 the items in the input/output list.
 </dl>
 <h3 id="Record_Size"> Record Size </h3>
-<br>When access is<b> direct,</b> the record length must be specified in the <b><i> RECL=</i></b> specifier of the FORTRAN
+<br>When access is<i> direct,</i> the record length must be specified in the <b><i> RECL=</i></b> specifier of the FORTRAN
 <b><i> OPEN</i></b> statement.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=1, FILE='TEST.DAT', ACCESS='DIRECT', RECL=size, ... )</tt>
-<br><br>As an extension to the FORTRAN 77 language standard, the record length may also be specified when the access is<b>
-sequential.</b>&nbsp; This should be done whenever access is &quot;sequential&quot; and the maximum record length is greater
+<br><br>As an extension to the FORTRAN 77 language standard, the record length may also be specified when the access is<i>
+sequential.</i>&nbsp; This should be done whenever access is &quot;sequential&quot; and the maximum record length is greater
 than the default.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=1, FILE='TEST.DAT', ACCESS='SEQUENTIAL', RECL=size, ... )</tt>
-<br><br>The record length specified by<b> size</b> should not include record separators such as CR and LF, nor should it include
+<br><br>The record length specified by<i> size</i> should not include record separators such as CR and LF, nor should it include
 record length descriptors when sequentially accessing a file containing unformatted records.&nbsp; However, for all files,
 records longer than the size specified will be truncated.&nbsp; The default record size is 1024.&nbsp; The maximum record
 size is 65535 for the 16-bit run-time system.&nbsp; Since record buffers are allocated in the dynamic storage region, the
@@ -2055,7 +2055,7 @@ will be discussed in a later section.&nbsp; File naming conventions are used to 
 <dt>&#91;&#93;
 <dd>The square brackets denote items which are optional.&nbsp; 
 <dt><br>d:
-<dd>is the<b> drive name.</b>&nbsp; If omitted, the default drive is assumed.
+<dd>is the<i> drive name.</i>&nbsp; If omitted, the default drive is assumed.
 <br>Examples of drive names are:<tt>&nbsp; a:</tt>,<tt> b:</tt>,<tt> c:</tt>, and<tt> d:</tt>.&nbsp; 
 <dt><br>path
 <dd>is called a &quot;path&quot; specification.&nbsp; The path may be used to refer to files that are stored in sub-directories
@@ -2072,7 +2072,7 @@ them, how to specify a path, etc.&nbsp;
 used, only the first 8 are meaningful.&nbsp; For example, &quot;COUNTRIES&quot; and &quot;COUNTRIE&quot; are treated as the
 same name for a file.&nbsp; 
 <dt><br>ext
-<dd>is an optional<b> extension</b> consisting of 1 to 3 characters (e.g., DOC).&nbsp; If an extension is specified, it is separated
+<dd>is an optional<i> extension</i> consisting of 1 to 3 characters (e.g., DOC).&nbsp; If an extension is specified, it is separated
 from the filename by a period.&nbsp; Extensions are normally used to indicate the type of information stored in the file.
 &nbsp;For example, a file extension of<tt> for</tt> is a common convention for FORTRAN programs.
 </dl>
@@ -2220,7 +2220,7 @@ generally mean the keyboard of the personal computer but input can be redirected
 we generally mean the screen of the personal computer but output can be redirected to a file using the standard output redirector
 &quot;&gt;&quot; on the command line).
 <br><br>For all other allowable units, a default preconnection between unit number &quot;nnn&quot; and the file<tt> FORnnn</tt>
-is assumed when no connection between a unit and a file has been established.<b>&nbsp; nnn</b> is a three-digit FORTRAN unit
+is assumed when no connection between a unit and a file has been established.<i>&nbsp; nnn</i> is a three-digit FORTRAN unit
 number.&nbsp; Unit 0 is &quot;000&quot;, unit 1 is &quot;001&quot;, unit 2 is &quot;002&quot;, and so on.&nbsp; There is no
 file extension in this case.&nbsp; In other words, a default file name is constructed for any unit number for which no other
 connection has been established.&nbsp; Input/output statements of the following forms refer to these units.
@@ -2250,13 +2250,13 @@ a unit and a file.&nbsp; The &quot;SET&quot; command is used to create, modify a
 <dd><b><i>description</i></b>
 <dt><br>unit
 <dd>is a FORTRAN unit number in the range 0 to 999.
-<br>If this form of the &quot;SET&quot; command is used then FORTRAN unit number<b> unit</b> is preconnected to the specified
+<br>If this form of the &quot;SET&quot; command is used then FORTRAN unit number<i> unit</i> is preconnected to the specified
 file.&nbsp; FORTRAN input/output statements which refer to the unit number will access the records in the specified file.
 <dt><br>file_spec
 <dd>is the file specification of the preconnected file.
 </dl>
 <br>Here are some sample &quot;SET&quot; commands.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 1=input.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 2=output.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 3=d:\database\customer.fil</tt>
@@ -2267,12 +2267,12 @@ file.&nbsp; FORTRAN input/output statements which refer to the unit number will 
 <li>Between unit 3 and the file<tt> d:\database\customer.fil</tt> which resides (or will reside) in another disk and directory.
 </ol>
 <br>Any FORTRAN input/output statements which refer to units 1, 2 or 3 will act upon one of these 3 data files.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The &quot;SET&quot; command must be issued before running the program.
 <li>No spaces should be placed before or after the &quot;=&quot; in the &quot;SET&quot; command.&nbsp; The following two examples
 are quite distinct from each other:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 55=testbed.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 55 = testbed.dat</tt>
 <br><br>To verify this, simply enter the two commands and then enter the &quot;SET&quot; command again with no arguments.
@@ -2280,7 +2280,7 @@ are quite distinct from each other:
 for &quot;55 &quot;.
 <li>Since the number in front of the &quot;=&quot; is simply a character string, you should not specify any leading zeroes
 either.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 01=input.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 1=input.dat</tt>
 <br><br>In this case, we again have two distinct environment variables.&nbsp; The variable &quot;01&quot; will be ignored
@@ -2294,10 +2294,10 @@ form.
 <br><br>By omitting the character string after the &quot;=&quot;, the environment variable will be removed.&nbsp; For example,
 to remove the environment variable &quot;01&quot; from the list, reenter the &quot;SET&quot; command specifying everything
 up to and including the &quot;=&quot; character.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 01=</tt>
 <li>Any time you wish to see the current list of environment strings, simply enter the &quot;SET&quot; command with no arguments.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PROMPT=$d $t $p$_$n$g</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; COMSPEC=d:\dos\command.com</tt>
@@ -2337,7 +2337,7 @@ WRITE</i></b> statement will write records to a file connected to unit 6.&nbsp; 
 <br><br>What file will be read when the <b><i> READ</i></b> statement refers to unit 1?&nbsp; By default, we know that it
 will read a file called<tt> for001</tt>.&nbsp; However, suppose the data was actually stored in the file called<tt> numbers.dat</tt>.
 &nbsp;We can direct the program to read the data in this file by using a &quot;SET&quot; command before running the program.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 1=numbers.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;iodemo</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.40&nbsp; 2.50&nbsp; 3.90</tt>
@@ -2349,7 +2349,7 @@ will read a file called<tt> for001</tt>.&nbsp; However, suppose the data was act
 <br><br>Suppose that we now wish to write the output from the above program to a disk file instead of the screen.&nbsp; We
 can do this without modifying the program.&nbsp; Since we know that the <b><i> WRITE</i></b> statement refers to unit 6, we
 can alter the default preconnection of unit 6 to the screen by issuing another &quot;SET&quot; command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 6=numbers.rpt</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;iodemo</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;type numbers.rpt</tt>
@@ -2361,7 +2361,7 @@ can alter the default preconnection of unit 6 to the screen by issuing another &
 <br><br>Now any time a program writes or prints to unit 6, the output will be written to the disk file<tt> numbers.rpt</tt>.
 &nbsp;If you are going to run other programs, it would be wise to remove the connection between unit 6 and this file so that
 it is not accidentally overwritten.&nbsp; This can be done by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set 6=</tt>
 <br><br>You should also do the same for unit 1.
 <br><br><b>Exhibit 3:</b>
@@ -2398,11 +2398,11 @@ are treated as if they had been specified in upper case.&nbsp; Thus &quot;SYSINP
 <dt><br>file_spec
 <dd>is the file specification of logical file.
 </dl>
-<br><b>Notes and Examples:</b>
+<br><i>Notes and Examples:</i>
 <ol>
 <li>A logical file name may be used in the <b><i> FILE=</i></b> specifier of the FORTRAN <b><i> OPEN</i></b> and <b><i> INQUIRE</i></b>
 statements.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * File 'iodemo.for'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPEN( 1, FILE='SYSINPUT' )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp; READ( 1, *, END=99 ) X1, X2</tt>
@@ -2411,7 +2411,7 @@ statements.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp; FORMAT( 3F6.2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 99&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>In the following example, we define the logical file name &quot;SYSINPUT&quot; to correspond to the file<tt> numbers.dat</tt>.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set sysinput=numbers.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;iodemo</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.40&nbsp; 2.50&nbsp; 3.90</tt>
@@ -2421,11 +2421,11 @@ statements.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.20&nbsp; 3.50 11.70</tt>
 <li>If the name in a <b><i> FILE=</i></b> specifier is not included in one of the environment variable names then it is assumed
 to be the actual name of a file.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( 2, FILE='SYSOUT' )</tt>
 <li>The logical file name feature can also be used to provide additional information regarding the file name at execution
 time.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * File 'iodemo.for'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPEN( 1, FILE='numbers.dat' )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp; READ( 1, *, END=99 ) X1, X2</tt>
@@ -2435,15 +2435,15 @@ time.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 99&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>In the following example, the actual location (and name) of the file<tt> numbers.dat</tt> is described through the
 use of an environment variable.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set numbers.dat=b:\data\input.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;iodemo</tt>
 <br><br>As you can see, a logical file name can resemble an actual file name.
 <br><br>Of course, the entire file name could have been specified in the FORTRAN program.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( 1, FILE='b:\data\input.dat' )</tt>
 <li>Only one level of lookup is performed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; * File 'iodemo.for'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPEN( 1, FILE='sysinput' )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp; READ( 1, *, END=99 ) X1, X2</tt>
@@ -2452,7 +2452,7 @@ use of an environment variable.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp; FORMAT( 3F6.2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 99&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>This is illustrated by the following commands.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set sysinput=datafile</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set datafile=input.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;iodemo</tt>
@@ -2460,18 +2460,18 @@ use of an environment variable.
 
 <li>Logical file names can be used to direct output normally intended for one device to another device.&nbsp; Consider the
 following examples.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set lpt1=lpt2</tt>
 <br><br>If the FORTRAN program specifies the name &quot;LPT1&quot; in an <b><i> OPEN</i></b> or <b><i> INQUIRE</i></b> statement,
 the Open Watcom F77 run-time system will map this name to &quot;LPT2&quot;.&nbsp; In an <b><i> INQUIRE</i></b> statement,
 the <b><i> NAME=</i></b> specifier will return the name &quot;LPT2&quot;.
 <li>As we mentioned earlier, the case of the name does not matter.&nbsp; Upper or lower case can be used interchangeably.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set sysinput=b:\data\input.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set SYSINPUT=b:\data\input.dat</tt>
 <li>No spaces should be placed before or after the &quot;=&quot; in the &quot;SET&quot; command.&nbsp; The following two examples
 are considered quite distinct from each other:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set sysinput=testbed.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set sysinput = testbed.dat</tt>
 <br><br>This example will define two variables, &quot;SYSINPUT&quot; and &quot;SYSINPUT &quot;.
@@ -2479,10 +2479,10 @@ are considered quite distinct from each other:
 To remove an environment variable from the list, reenter the &quot;SET&quot; command specifying everything up to and including
 the &quot;=&quot; character.&nbsp; For example, to remove the definition for &quot;SYSINPUT&quot;, the following command can
 be issued.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set sysinput=</tt>
 <li>Any time you wish to see the current list of environment strings, simply enter the &quot;SET&quot; command with no arguments.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PROMPT=$d $t $p$_$n$g</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; COMSPEC=d:\dos\command.com</tt>
@@ -2513,26 +2513,26 @@ specifier are the following.
 </dl>
 <br>To open the console device under Win32, you must specify whether you are going to &quot;READ&quot; or &quot;WRITE&quot;
 to the file.&nbsp; If you wish to do both reading and writing, then you must use two separate units.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=1, FILE='CON', ACTION='READ')</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=2, FILE='CON', ACTION='WRITE')</tt>
 <br><br>The console can be treated as a carriage control device.&nbsp; This is requested by using the<tt> CARRIAGECONTROL='YES'</tt>
 specifier of the FORTRAN <b><i> OPEN</i></b> statement.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=1, FILE='con', CARRIAGECONTROL='YES' )</tt>
 <br><br>Carriage control handling is described in the section entitled <a href="#Print_File_Attributes">Print File Attributes</a>.
 <br><br>The console is not capable of supporting carriage control in a fashion identical to a printer.&nbsp; For example,
 overprinting of records on the console is destructive in that the previous characters are erased.
 <br><br>End of file is signalled by first pressing the Ctrl/Z key combination and then the line entering key.&nbsp; End of
 file may be handled by using the <b><i> END=</i></b> specification of the FORTRAN <b><i> READ</i></b> statement.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; READ( UNIT=*, FMT=*, END=100 ) X, Y</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 100&nbsp;&nbsp;&nbsp; code to handle &quot;End of File&quot;</tt>
 <br><br>End of file may also be handled by using the <b><i> IOSTAT=</i></b> specifier of the FORTRAN <b><i> READ</i></b> statement.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; READ( UNIT=*, FMT=*, IOSTAT=IOS ) X, Y</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; IF( IOS .NE. 0 )THEN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code to handle &quot;End of File&quot;</tt>
@@ -2547,7 +2547,7 @@ Several device names may be used:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; lpt3</tt>
 <br><br>The printer can be treated as a carriage control device.&nbsp; This is requested by using the<tt> CARRIAGECONTROL='YES'</tt>
 specifier of the FORTRAN <b><i> OPEN</i></b> statement.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=1, FILE='prn', CARRIAGECONTROL='YES' )</tt>
 <br><br>Carriage control handling is described in the section entitled <a href="#Print_File_Attributes">Print File Attributes</a>.
 <h2 id="Serial_Device_Support"> Serial Device Support </h2>
@@ -2559,17 +2559,17 @@ Three device names may be used:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; com2</tt>
 <br><br>The serial device can be treated as a carriage control device.&nbsp; This is requested by using the<tt> CARRIAGECONTROL='YES'</tt>
 specifier of the FORTRAN <b><i> OPEN</i></b> statement.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=1, FILE='com1', CARRIAGECONTROL='YES' )</tt>
 <br><br>Carriage control handling is described in the section entitled <a href="#Print_File_Attributes">Print File Attributes</a>.
 <br><br>To set serial characteristics such as speed, parity, and word length, the &quot;MODE&quot; command may be used.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;mode com1:9600,n,8,1</tt>
 <br><br>The above example sets serial port 1 to a speed of 9600 BAUD with no parity, a word length of 8 and 1 stop bit.
 <h2 id="File_Handling_Defaults"> File Handling Defaults </h2>
 <br>The following defaults apply to file specifications:
 <ul>
-<li>The following table indicates the default<b> record type</b> for the allowable access methods and forms.
+<li>The following table indicates the default<i> record type</i> for the allowable access methods and forms.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; Form</tt>
@@ -2582,16 +2582,16 @@ specifier of the FORTRAN <b><i> OPEN</i></b> statement.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-----------+-----------+</tt>
 <br><br>Unless the record type of the file does not correspond to the default assumed by Open Watcom F77, the record type
 attribute should not be specified.
-<li>Unless otherwise stated, the default<b> record length</b> for a file is 1024 characters.&nbsp; When access is &quot;direct&quot;,
+<li>Unless otherwise stated, the default<i> record length</i> for a file is 1024 characters.&nbsp; When access is &quot;direct&quot;,
 the record length must be specified in the <b><i> RECL=</i></b> specifier of the FORTRAN <b><i> OPEN</i></b> statement.&nbsp;
 The record length may also be specified when the access is &quot;sequential&quot;.&nbsp; This should be done whenever access
 is &quot;sequential&quot; and the maximum record length is greater than the default.
-<li>The default<b> record access</b> is &quot;sequential&quot;.
+<li>The default<i> record access</i> is &quot;sequential&quot;.
 <li>When reading from or writing to a unit for which no preconnection has been specified or no &quot;FILE=&quot; form of the
-FORTRAN <b><i> OPEN</i></b> statement has been executed, the default<b> file name</b> takes the form:
+FORTRAN <b><i> OPEN</i></b> statement has been executed, the default<i> file name</i> takes the form:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FORnnn</tt>
-<br><br><b>nnn</b> is a three-digit FORTRAN unit number.&nbsp; Unit 0 is &quot;000&quot;, unit 1 is &quot;001&quot;, unit
+<br><br><i>nnn</i> is a three-digit FORTRAN unit number.&nbsp; Unit 0 is &quot;000&quot;, unit 1 is &quot;001&quot;, unit
 2 is &quot;002&quot;, and so on.&nbsp; There is no file extension in this case.
 <li>If the connection between a unit number and a file is discontinued through use of the FORTRAN <b><i> CLOSE</i></b> statement,
 the same rule for constructing a file name will apply on the next attempt to read from or write to the specified unit.
@@ -2602,11 +2602,11 @@ F77.&nbsp; The following sections describe these subprograms.
 <h2 id="Subroutine_FEXIT"> Subroutine FEXIT </h2>
 <br>The subroutine<tt> FEXIT</tt> allows an application to terminate execution with a return code.&nbsp; It requires one argument
 of type INTEGER that represents the value to be returned to the system.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALL FEXIT( -1 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2615,7 +2615,7 @@ environment variable so that the compiler can locate the include file.
 <h2 id="INTEGER_Function_FGETCMD"> INTEGER Function FGETCMD </h2>
 <br>The INTEGER function<tt> FGETCMD</tt> allows an application to obtain the command line from within an executing program.
 <br><br>The function<tt> FGETCMD</tt> requires one argument of type CHARACTER and returns the length of the command line.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER CMDLEN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER*128 CMDLIN</tt>
@@ -2623,7 +2623,7 @@ environment variable so that the compiler can locate the include file.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Command length = ', CMDLEN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Command line&nbsp;&nbsp; = ', CMDLIN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2636,7 +2636,7 @@ executing program.
 <br><br>The function<tt> FGETENV</tt> requires two arguments of type CHARACTER.&nbsp; The first argument is the character
 string to look for.<tt>&nbsp; FGETENV</tt> places the associated environment string value in the second argument and returns
 the length of the environment string.&nbsp; If no such string is defined, the length returned is zero.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER STRLEN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER*80 STRVAL</tt>
@@ -2644,7 +2644,7 @@ the length of the environment string.&nbsp; If no such string is defined, the le
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Environment string length = ', STRLEN</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Environment string value&nbsp; = ', STRVAL</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2656,12 +2656,12 @@ environment variable so that the compiler can locate the include file.
 unit.
 <br><br>The function<tt> FILESIZE</tt> requires one argument of type INTEGER, the unit number and returns the size, in bytes,
 of the file.&nbsp; If no file is connected to the specified unit, a value of -1 is returned.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPEN( UNIT=1, FILE='sample.fil' )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, FILESIZE( 1 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2766,7 +2766,7 @@ perform input/output to a FORTRAN file.
 value representing the return code of the input/output operation.&nbsp; A return value of 0 indicates success; otherwise an
 error occurred.
 <br><br>The following example will flush the contents of the internal input/output buffer for unit 7.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER ISTAT</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ISTAT = FLUSHUNIT( 7 )</tt>
@@ -2774,7 +2774,7 @@ error occurred.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Error in FLUSHUNIT'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END IF</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2786,7 +2786,7 @@ from the specified unit.
 <br><br>The function<tt> FNEXTRECL</tt> requires one argument, the unit number, of type INTEGER.&nbsp; It returns an INTEGER
 value representing the size of the next record to be read.
 <br><br>The following example creates an unformatted file and then reads the records in the file sequentially.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER*80 INPUT</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPEN(UNIT=2, FILE='UNFORM.TXT', FORM='UNFORMATTED',</tt>
@@ -2811,7 +2811,7 @@ value representing the size of the next record to be read.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, INPUT(1:I)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLOSE( UNIT=2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2847,7 +2847,7 @@ of the events described above.&nbsp; The second argument, called the handler, is
 <li>the value SIG_IGN, causing the event to be ignored
 </ol>
 <br><tt>FSIGNAL</tt> returns SIG_ERR if the request could not be processed, or the previous event handler.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSIGNAL.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXTERNAL BREAK_HANDLER</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOGICAL BREAK_FLAG</tt>
@@ -2862,7 +2862,7 @@ of the events described above.&nbsp; The second argument, called the handler, is
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMMON BREAK_FLAG</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BREAK_FLAG = .TRUE.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsignal.fi</tt> contains typing and calling information for<tt> FSIGNAL</tt> and should be
 included when using this function.&nbsp; This file is located in the<tt> \watcom\src\fortran</tt> directory.&nbsp; The<tt>
@@ -2885,7 +2885,7 @@ is the string &quot;HELLO&quot; then the first character would be CHAR(5) and th
 (see the example below).
 <br><br><tt>FSPAWN</tt> returns an INTEGER value representing the status of subprocess execution.&nbsp; If the value is negative
 then the program could not be run.&nbsp; If the value is positive then the value represents the program's return code.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER CMDLEN, STATUS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER CMD*128, CMDLIN*128</tt>
@@ -2897,7 +2897,7 @@ then the program could not be run.&nbsp; If the value is positive then the value
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATUS = FSPAWN( CMD, CMDLIN )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Program status = ', STATUS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2913,7 +2913,7 @@ the status of subprocess execution.&nbsp; If the value is negative, the operatin
 not be run (an attempt is made to invoke the system command interpreter to run the program).&nbsp; If the value is positive,
 the value represents the program's return code.
 <br><br>In the following example, a &quot;COPY&quot; command is executed and then a hypothetical sorting program is run.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER STATUS</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATUS = FSYSTEM( 'COPY *.FOR \BACKUP\FOR\SRC' )</tt>
@@ -2921,7 +2921,7 @@ the value represents the program's return code.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATUS = FSYSTEM( 'SORTFILE/IN=INP.DAT/OUT=OUT.DAT' )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Status of SORT program = ', STATUS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2933,7 +2933,7 @@ be compiled with the &quot;DEBUG&quot; or &quot;TRACE&quot; option.&nbsp; It is 
 in an application and provide an informative report of where the problem occurred in the application.
 <br><br>The<tt> FTRACEBACK</tt> subroutine requires no arguments.&nbsp; The<tt> FTRACEBACK</tt> subroutine does not terminate
 program execution.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUBROUTINE READREC( UN )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER UN</tt>
@@ -2950,7 +2950,7 @@ program execution.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, INPUT(1:RLEN)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENDIF</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2961,14 +2961,14 @@ environment variable so that the compiler can locate the include file.
 <br><br>The subroutine<tt> GETDAT</tt> has three arguments of type<tt> INTEGER*2</tt>.&nbsp; When control is returned from<tt>
 GETDAT</tt>, they contain the year, month and day of the current date.
 <br><br>The following program prints the current date in the form &quot;YY-MM-DD&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER*2 YEAR, MONTH, DAY</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALL GETDAT( YEAR, MONTH, DAY )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT 100, YEAR, MONTH, DAY</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 100&nbsp;&nbsp; FORMAT( 1X, I4, '-', I2.2, '-', I2.2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -2980,14 +2980,14 @@ environment variable so that the compiler can locate the include file.
 <br><br>The subroutine<tt> GETTIM</tt> has four arguments of type<tt> INTEGER*2</tt>.&nbsp; When control is returned from<tt>
 GETTIM</tt>, they contain the hours, minutes, seconds, and hundredths of seconds of the current time.
 <br><br>The following program prints the current time in the form &quot;HH:MM:SS.TT&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER*2 HRS, MINS, SECS, HSECS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CALL GETTIM( HRS, MINS, SECS, HSECS )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT 100, HRS, MINS, SECS, HSECS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 100&nbsp;&nbsp; FORMAT( 1X, I2.2, ':', I2.2, ':', I2.2, '.', I2.2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -3000,12 +3000,12 @@ environment variable so that the compiler can locate the include file.
 INTEGER value representing the actual limit.&nbsp; The actual limit may differ from the specified limit.&nbsp; For example,
 memory constraints or system parameters may be such that the request cannot be satisfied.
 <br><br>The following example attempts to increase the limit on the number of open files to sixty-four.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER NEW_LIMIT</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NEW_LIMIT = GROWHANDLES( 64 )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -3018,7 +3018,7 @@ to invoke the program.&nbsp; The function<tt> IGETARG</tt> can be used to retrie
 first argument, etc.&nbsp; The function<tt> IGETARG</tt> requires two arguments.&nbsp; The first argument is the index of
 the argument to retrieve and is of type INTEGER.&nbsp; The second argument is of type CHARACTER and is used to return the
 argument.&nbsp; The size of the argument (number of characters) is returned.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHARACTER*128 ARG</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER ARGC, ARGLEN</tt>
@@ -3033,7 +3033,7 @@ argument.&nbsp; The size of the argument (number of characters) is returned.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ARG(1:ARGLEN)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END DO</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -3098,7 +3098,7 @@ indicates that the function call failed.
 <br><br>This function is particularly useful for applications that wish to change the input/output position for a file connected
 to a unit.
 <br><br>The following example will set the current input/output position of the file connected to the specified unit.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXTERNAL SEEKUNIT</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER SEEKUNIT</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER SEEK_SET, SEEK_CUR</tt>
@@ -3115,7 +3115,7 @@ RECORDTYPE='FIXED' )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, RECORD</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENDIF</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -3132,7 +3132,7 @@ which called<tt> SETJMP</tt> must still be active (it cannot have returned to th
 is used to save the current environment.&nbsp; The return value is an integer and is zero when initially called.&nbsp; It
 is non-zero if the return is the result of a call to the<tt> LONGJMP</tt> subroutine.&nbsp; An <b><i> IF</i></b> statement
 is often used to handle these two cases.&nbsp; This is demonstrated in the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; include 'fsignal.fi'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; include 'setjmp.fi'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; record /jmp_buf/ jmp_buf</tt>
@@ -3158,7 +3158,7 @@ rc</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; common jmp_buf</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call longjmp( jmp_buf, -1 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> setjmp.fi</tt> contains typing and calling information for<tt> SETJMP</tt> and<tt> LONGJMP</tt>
 and must be included.&nbsp; Similarly,<tt> fsignal.fi</tt> must be included when using the<tt> FSIGNAL</tt> function.&nbsp;
@@ -3173,7 +3173,7 @@ returned value of -1 indicates that the function call failed and 0 indicates tha
 <br><br>This function is particularly useful for applications that wish to set the system file handle for a unit.&nbsp; The
 system file handle may have been obtained from a non-FORTRAN subroutine or function.
 <br><br>The following example will set the system file handle for a paricular unit.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER STDIN, STDOUT</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PARAMETER (STDIN=0, STDOUT=1)</tt>
@@ -3186,7 +3186,7 @@ system file handle may have been obtained from a non-FORTRAN subroutine or funct
 to UNIT 8 which is stdout'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENDIF</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -3201,12 +3201,12 @@ value representing the system file handle.
 <br><br>This function is particularly useful for applications that wish to pass the system file handle to non-FORTRAN subroutines
 or functions that wish to perform input/output to a FORTRAN 77 file.
 <br><br>The following example will print the system file handles for the standard input and standard output devices.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Unit 5 file handle is', SYSHANDLE( 5 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, 'Unit 6 file handle is', SYSHANDLE( 6 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The FORTRAN include file<tt> fsublib.fi</tt>, located in the<tt> \watcom\src\fortran</tt> directory, contains typing and
 calling information for this subprogram.&nbsp; The<tt> \watcom\src\fortran</tt> directory should be included in the <b> FINCLUDE</b>
@@ -3219,7 +3219,7 @@ environment variable so that the compiler can locate the include file.
 <br><br>The function<tt> URAND</tt> requires one argument of type INTEGER, the initial seed.&nbsp; The seed can contain any
 integer value.<tt>&nbsp; URAND</tt> returns a REAL value which is a pseudo-random number in the range (0.0,1.0).
 <br><br>In the following example, 100 random numbers are printed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; REAL URAND</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER SEED</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SEED = 75347</tt>
@@ -3227,10 +3227,10 @@ integer value.<tt>&nbsp; URAND</tt> returns a REAL value which is a pseudo-rando
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT *, URAND( SEED )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENDDO</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Upon each invocation of<tt> URAND</tt>, the seed argument is updated by the random number generator.&nbsp; Therefore,
-the argument must not be a constant and, once the seed value has been set, it must<b> not</b> be modified by the programmer.
+the argument must not be a constant and, once the seed value has been set, it must<i> not</i> be modified by the programmer.
 </ol>
 <h2 id="Default_Windowing_Functions"> Default Windowing Functions </h2>
 <br>The functions described in the following sections provide the capability to manipulate attributes of various windows created
@@ -3262,7 +3262,7 @@ closed.&nbsp; The argument<tt> unit</tt> is the unit number associated with the 
 <br><br>This function is one of the support functions that can be called from an application using Open Watcom's default windowing
 support.
 <br><br>The dwfDeleteOnClose function returns 1 if it was successful and 0 if not.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PROGRAM main</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER rc</tt>
@@ -3298,7 +3298,7 @@ is CHAR(0), then the current text in the &quot;About&quot; box will not be repla
 <br><br>This function is one of the support functions that can be called from an application using Open Watcom's default windowing
 support.
 <br><br>The dwfSetAboutDlg function returns 1 if it was successful and 0 if not.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PROGRAM main</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER rc</tt>
@@ -3330,7 +3330,7 @@ that will replace the current title.
 <br><br>This function is one of the support functions that can be called from an application using Open Watcom's default windowing
 support.
 <br><br>The dwfSetAppTitle function returns 1 if it was successful and 0 if not.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PROGRAM main</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER rc</tt>
@@ -3364,7 +3364,7 @@ character string that will replace the current title.
 <br><br>This function is one of the support functions that can be called from an application using Open Watcom's default windowing
 support.
 <br><br>The dwfSetConTitle function returns 1 if it was successful and 0 if not.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PROGRAM main</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER rc</tt>
@@ -3397,7 +3397,7 @@ output may cause unpredictable results.
 <br><br>This function is one of the support functions that can be called from an application using Open Watcom's default windowing
 support.
 <br><br>The dwfShutDown function returns 1 if it was successful and 0 if not.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PROGRAM main</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER rc</tt>
@@ -3432,7 +3432,7 @@ support.
 <br><br>This function is one of the support functions that can be called from an application using Open Watcom's default windowing
 support.
 <br><br>The dwfYield function returns 1 if it was successful and 0 if not.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PROGRAM main</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE 'FSUBLIB.FI'</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEGER rc</tt>
@@ -3511,18 +3511,18 @@ following table summarizes these data types.
 <br>An item of type<b> LOGICAL</b> or<b> LOGICAL*4</b> occupies 4 bytes of storage.&nbsp; It can only have two values, namely
 .TRUE.&nbsp; (a value of 1) and .FALSE.&nbsp; (a value of 0).
 <h2 id="INTEGERT1_Data_Type"> INTEGER*1 Data Type </h2>
-<br>An item of type<b> INTEGER*1</b> occupies 1 byte of storage.&nbsp; Its value is in the following range.&nbsp; An integer<b>
-n</b> can be represented in 1 byte if
+<br>An item of type<b> INTEGER*1</b> occupies 1 byte of storage.&nbsp; Its value is in the following range.&nbsp; An integer<i>
+n</i> can be represented in 1 byte if
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -128 &lt;= n &lt;= 127</tt>
 <h2 id="INTEGERT2_Data_Type"> INTEGER*2 Data Type </h2>
-<br>An item of type<b> INTEGER*2</b> occupies 2 bytes of storage.&nbsp; An integer<b> n</b> can be represented in 2 bytes
+<br>An item of type<b> INTEGER*2</b> occupies 2 bytes of storage.&nbsp; An integer<i> n</i> can be represented in 2 bytes
 if
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -32768 &lt;= n &lt;= 32767</tt>
 <h2 id="INTEGER_and_INTEGERT4_Data_Types"> INTEGER and INTEGER*4 Data Types </h2>
-<br>An item of type<b> INTEGER</b> or<b> INTEGER*4</b> occupies 4 bytes of storage (one numeric storage unit).&nbsp; An integer<b>
-n</b> can be represented in 4 bytes if
+<br>An item of type<b> INTEGER</b> or<b> INTEGER*4</b> occupies 4 bytes of storage (one numeric storage unit).&nbsp; An integer<i>
+n</i> can be represented in 4 bytes if
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -2147483648 &lt;= n &lt;= 2147483647</tt>
 <h2 id="REAL_and_REALT4_Data_Types"> REAL and REAL*4 Data Types </h2>
@@ -3616,9 +3616,9 @@ parts of a complex number is the same degree of approximation used for items of 
 <h2 id="CHARACTER_Data_Type"> CHARACTER Data Type </h2>
 <br>An item of type<b> CHARACTER</b> represents a sequence of characters.&nbsp; Each character occupies 1 byte of storage
 (1 character storage unit).&nbsp; The length of an item of type<b> CHARACTER</b> is the number of characters it contains.
-&nbsp;Each character is assigned an integer that represents its position.&nbsp; Characters are numbered from 1 to<b> n</b>
-starting from the left,<b> n</b> being the number of characters.
-<br><br>Items of type<b> CHARACTER</b> are represented by a<b> string descriptor.</b>&nbsp; A string descriptor has the following
+&nbsp;Each character is assigned an integer that represents its position.&nbsp; Characters are numbered from 1 to<i> n</i>
+starting from the left,<i> n</i> being the number of characters.
+<br><br>Items of type<b> CHARACTER</b> are represented by a<i> string descriptor.</i>&nbsp; A string descriptor has the following
 format.
 <br><br>&nbsp;&nbsp; Offset
 <br><br>&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointer to data
@@ -3651,7 +3651,7 @@ that is supported on the x86 platform.
 <br><br>Some FORTRAN 77 compilers extend the precision of single-precision constants in DATA statement initialization lists
 when the corresponding variable is double precision.&nbsp; This is permitted by the FORTRAN 77 Standard.&nbsp; Open Watcom
 FORTRAN 77, however, does not do this.&nbsp; This is illustrated by the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double precision pi1, pi2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data pi1 /3.141592653589793/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data pi2 /3.141592653589793d0/</tt>
@@ -3670,7 +3670,7 @@ bottom 29 bits of the mantissa in<tt> PI1</tt> are all zero.
 <br><br>To be on the safe side, the rule is always use double precision constants (even in DATA statements) if you want as
 much accuracy as possible.
 <br><br>This behaviour treats DATA statement initialization as equivalent to simple assignment as shown in the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double precision pi1, pi2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pi1 = 3.141592653589793</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pi2 = 3.141592653589793d0</tt>
@@ -4012,11 +4012,11 @@ by two properties; the code model used to implement subprogram calls and the dat
 <li>the small code model and
 <li>the big code model.
 </ol>
-<br>A small code model is one in which all calls to subprograms are made with<b> near calls.</b>&nbsp; In a near call, the
+<br>A small code model is one in which all calls to subprograms are made with<i> near calls.</i>&nbsp; In a near call, the
 destination address is 16 bits and is relative to the segment value in segment register CS.&nbsp; Hence, in a small code model,
 all code comprising your program, including library subprograms, must be less than 64K.&nbsp; Open Watcom F77 does not support
 the small code model.
-<br><br>A big code model is one in which all calls to subprograms are made with<b> far calls.</b>&nbsp; In a far call, the
+<br><br>A big code model is one in which all calls to subprograms are made with<i> far calls.</i>&nbsp; In a far call, the
 destination address is 32 bits (a segment value and an offset relative to the segment value).&nbsp; This model allows the
 size of the code comprising your program to exceed 64K.
 <h2 id="16Mbit_Data_Models"> 16-bit Data Models </h2>
@@ -4026,21 +4026,21 @@ size of the code comprising your program to exceed 64K.
 <li>the big data model and
 <li>the huge data model.
 </ol>
-<br>A small data model is one in which all references to data are made with<b> near pointers.</b>&nbsp; Near pointers are
+<br>A small data model is one in which all references to data are made with<i> near pointers.</i>&nbsp; Near pointers are
 16 bits; all data references are made relative to the segment value in segment register DS.&nbsp; Hence, in a small data model,
 all data comprising your program must be less than 64K.
-<br><br>A big data model is one in which all references to data are made with<b> far pointers.</b>&nbsp; Far pointers are
+<br><br>A big data model is one in which all references to data are made with<i> far pointers.</i>&nbsp; Far pointers are
 32 bits (a segment value and an offset relative to the segment value).&nbsp; This removes the 64K limitation on data size
 imposed by the small data model.&nbsp; However, when a far pointer is incremented, only the offset is adjusted.&nbsp; Open
 Watcom F77 assumes that the offset portion of a far pointer will not be incremented beyond 64K.&nbsp; The compiler will assign
 an object to a new segment if the grouping of data in a segment will cause the object to cross a segment boundary.&nbsp; Implicit
 in this is the requirement that no individual object exceed 64K bytes.&nbsp; For example, an array containing 40,000 integers
-does not fit into the big data model.&nbsp; An object such as this should be described as<b> huge.</b>
+does not fit into the big data model.&nbsp; An object such as this should be described as<i> huge.</i>
 <br><br>A huge data model is one in which all references to data are made with far pointers.&nbsp; This is similar to the
-big data model.&nbsp; However, in the huge data model, incrementing a far pointer will adjust the offset<b> and</b> the segment
+big data model.&nbsp; However, in the huge data model, incrementing a far pointer will adjust the offset<i> and</i> the segment
 if necessary.&nbsp; The limit on the size of an object pointed to by a far pointer imposed by the big data model is removed
 in the huge data model.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The huge data model has the same characteristics as the big data model, but formal array arguments are assumed to exceed
 64K bytes.&nbsp; You should use the huge data model whenever any arrays in your application exceed 64K bytes in size.
@@ -4354,7 +4354,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <li>The address of the fourth argument will be passed on the stack.
 </ol>
 <br>The following is an assembly language subprogram which implements<tt> GETTIM</tt>.
-<br><br><b>Large Memory Model (big code, big data)</b>
+<br><br><i>Large Memory Model (big code, big data)</i>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GETTIM_TEXT segment byte public 'CODE'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assume&nbsp; CS:GETTIM_TEXT</tt>
@@ -4441,14 +4441,14 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GETTIM&nbsp; endp</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GETTIM_TEXT ends</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Two arguments were passed on the stack so a &quot;ret 8&quot; instruction is used to return to the caller.
 <li>Registers AX, BX, CX and DX were not saved and restored since they were used to pass arguments.&nbsp; However, registers
 DS, ES, DI and BP were modified in the subprogram and hence must be saved and restored.
 </ol>
 <br>Let us look at the stack upon entry to<tt> GETTIM</tt>.
-<br><br><b>Large Model (big code, big data)</b>
+<br><br><i>Large Model (big code, big data)</i>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Offset</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; +----------------+ &lt;- SP points here</tt>
@@ -4462,7 +4462,7 @@ DS, ES, DI and BP were modified in the subprogram and hence must be saved and re
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12&nbsp;&nbsp;&nbsp;&nbsp; +----------------+</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The top element of the stack is a segment/offset pair forming a 32-bit return address.&nbsp; Hence, the third argument
 will be at offset 4 from the top of the stack and the fourth argument at offset 8.
@@ -4471,7 +4471,7 @@ will be at offset 4 from the top of the stack and the fourth argument at offset 
 to address arguments on the stack.&nbsp; Upon entry to the subroutine, registers that are modified (except those used to pass
 arguments) are saved and register BP is set to point to the stack.&nbsp; After performing this prologue sequence, the stack
 looks like this.
-<br><br><b>Large Model (big code, big data)</b>
+<br><br><i>Large Model (big code, big data)</i>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Offset</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; +----------------+ &lt;- BP and SP point
@@ -4744,7 +4744,7 @@ REAL*8</b> need to be modified.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; R8_DATA ends</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 </ol>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>The &quot;.8087&quot; pseudo-op must be specified so that all floating-point constants are generated in 8087 format.
 <li>When returning values on the stack, remember to use a segment override to the stack segment (SS).
@@ -4806,15 +4806,15 @@ numeric value supplied by the programmer.
 syntactical notation is used.
 <dl>
 <dt>&#91;abc&#93;
-<dd>The item<b> abc</b> is optional.
+<dd>The item<i> abc</i> is optional.
 <dt><br>{abc}
-<dd>The item<b> abc</b> may be repeated zero or more times.
+<dd>The item<i> abc</i> may be repeated zero or more times.
 <dt><br>a|b|c
-<dd>One of<b> a, b</b> or<b> c</b> may be specified.
+<dd>One of<i> a, b</i> or<i> c</i> may be specified.
 <dt><br>a ::= b
-<dd>The item<b> a</b> is defined in terms of<b> b.</b>
+<dd>The item<i> a</i> is defined in terms of<i> b.</i>
 <dt><br>(a)
-<dd>Item<b> a</b> is evaluated first.
+<dd>Item<i> a</i> is evaluated first.
 </dl>
 </dl>
 <br>The following classes of pragmas are supported.
@@ -4959,7 +4959,7 @@ your source code, it would assume the attributes specified in the pragma for<tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct float struct routine
 &#91;ax&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;ax bx cx dx es&#93;</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>All symbols are preceded by an underscore character.
 <li>Arguments are pushed on the stack from right to left.&nbsp; That is, the last argument is pushed first.&nbsp; The calling
@@ -4976,7 +4976,7 @@ allocates space for the return value and returns a pointer to the return value i
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct float struct caller
 &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;ax bx cx dx es&#93;</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>All symbols are mapped to upper case.
 <li>Arguments are pushed on the stack in reverse order.&nbsp; That is, the first argument is pushed first, the second argument
@@ -4992,7 +4992,7 @@ space on the stack.&nbsp; The address of the allocated space will be pushed on t
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm routine &#91;ax bx cx
 dx&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct caller</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Symbol names are followed by an underscore character.
 <li>Arguments are processed from left to right.&nbsp; The leftmost arguments are passed in registers and the rightmost arguments
@@ -5260,7 +5260,7 @@ model used at compile-time.
 &nbsp;Instead of passing a pointer to a string descriptor, a pointer to the actual character data is passed.&nbsp; See the
 chapter entitled &quot;Assembly Language Considerations&quot; for a description of a string descriptor.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>Arrays and subprograms are always passed by reference, regardless of the argument attribute specified.
 <li>When character arguments are passed by reference, the address of a string descriptor is passed.&nbsp; The string descriptor
@@ -5365,7 +5365,7 @@ are then assigned registers as if they were 2-byte arguments.
 Once an argument has been assigned a position on the stack, all remaining arguments will be assigned a position on the stack
 even if all register sets have not yet been exhausted.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>The default register set is &#91;AX BX CX DX&#93;.
 <li>Specifying registers AH and AL is equivalent to specifying register AX.&nbsp; Specifying registers DH and DL is equivalent
@@ -5403,7 +5403,7 @@ type<b> INTEGER</b>.&nbsp; Note that all arguments are passed by value.
 even if all registers from the original register set have not been exhausted.
 <br><br>An empty register set is permitted.&nbsp; All subsequent register sets appearing after an empty register set are ignored;
 all remaining arguments are pushed on the stack.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If a single empty register set is specified, all arguments are passed on the stack.
 <li>If no register set is specified, the default register set &#91;AX BX CX DX&#93; is used.
@@ -5548,7 +5548,7 @@ value.&nbsp;
 </dl>
 <br>Note that the method described below for returning values of type<b> REAL</b> or<b> DOUBLE PRECISION</b> is supported
 only when the &quot;fpc&quot; option is used.
-<br><br>Depending on the type of the return value, only certain registers are allowed in<b> reg_set.</b>
+<br><br>Depending on the type of the return value, only certain registers are allowed in<i> reg_set.</i>
 <dl>
 <dt>1-byte
 <dd>For 1-byte return values, only the following registers are allowed:&nbsp; AL, AH, DL, DH, BL, BH, CL or CH.&nbsp; If no register
@@ -5570,7 +5570,7 @@ ES:DI, ES:SI, ES:BX or ES:AX.&nbsp; If no register set is specified, the registe
 allowed:&nbsp; AX:BX:CX:DX.&nbsp; If no register set is specified, the registers AX:BX:CX:DX will be used.&nbsp; This form
 of the auxiliary pragma is legal for functions of type<b> DOUBLE PRECISION</b> when using the &quot;fpc&quot; option only.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>An empty register set is not allowed.
 <li>If you are compiling for a memory model which has a small data model, any of the above register combinations containing
@@ -5582,7 +5582,7 @@ data segment.
 the stack for the return value and sets register SI to point to it.&nbsp; The called routine then places the return value
 at the location pointed to by register SI.
 <br><br>Complex numbers are not scalars but rather an ordered pair of real numbers.&nbsp; One can also view complex numbers
-as a<b> structure</b> containing two real numbers.
+as a<i> structure</i> containing two real numbers.
 <br><br>The following form of the auxiliary pragma can be used to specify the register that is to be used to point to the
 return value.&nbsp; 
 <hr>
@@ -5815,7 +5815,7 @@ that does not reference any variable that appears in a common block defined by t
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>You must specify both &quot;parm nomemory&quot; and &quot;modify nomemory&quot;.
 </ol>
@@ -5931,7 +5931,7 @@ arguments.
 listed in the<tt> exact</tt> register set.&nbsp; In the following example, the code generator will not generate code to save
 and restore the value of the stack pointer register since we have told it that &quot;GetSP&quot; does not modify any register
 whatsoever.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef __386__</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux GetSP = value &#91;esp&#93; modify exact &#91;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$else</tt>
@@ -5967,7 +5967,7 @@ to subprograms.&nbsp;
 <dt><br>reg_set
 <dd>is a register set.&nbsp; The register set can contain 80x86 registers and/or the string &quot;8087&quot;.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If an empty register set is specified, all arguments, including floating-point arguments, will be passed on the 80x86
 stack.
@@ -6118,10 +6118,10 @@ by two properties; the code model used to implement subprogram calls and the dat
 <li>the small code model and
 <li>the big code model.
 </ol>
-<br>A small code model is one in which all calls to subprograms are made with<b> near calls.</b>&nbsp; In a near call, the
+<br>A small code model is one in which all calls to subprograms are made with<i> near calls.</i>&nbsp; In a near call, the
 destination address is 32 bits and is relative to the segment value in segment register CS.&nbsp; Hence, in a small code model,
 all code comprising your program, including library subprograms, must be less than 4GB.
-<br><br>A big code model is one in which all calls to subprograms are made with<b> far calls.</b>&nbsp; In a far call, the
+<br><br>A big code model is one in which all calls to subprograms are made with<i> far calls.</i>&nbsp; In a far call, the
 destination address is 48 bits (a 16-bit segment value and a 32-bit offset relative to the segment value).&nbsp; This model
 allows the size of the code comprising your program to exceed 4GB.
 <hr>
@@ -6135,10 +6135,10 @@ processed faster by the CPU.
 <li>the small data model and
 <li>the big data model.
 </ol>
-<br>A small data model is one in which all references to data are made with<b> near pointers.</b>&nbsp; Near pointers are
+<br>A small data model is one in which all references to data are made with<i> near pointers.</i>&nbsp; Near pointers are
 32 bits; all data references are made relative to the segment value in segment register DS.&nbsp; Hence, in a small data model,
 all data comprising your program must be less than 4GB.
-<br><br>A big data model is one in which all references to data are made with<b> far pointers.</b>&nbsp; Far pointers are
+<br><br>A big data model is one in which all references to data are made with<i> far pointers.</i>&nbsp; Far pointers are
 48 bits (a 16-bit segment value and a 32-bit offset relative to the segment value).&nbsp; This removes the 4GB limitation
 on data size imposed by the small data model.&nbsp; However, when a far pointer is incremented, only the offset is adjusted.
 &nbsp;Open Watcom F77 assumes that the offset portion of a far pointer will not be incremented beyond 4GB.&nbsp; The compiler
@@ -6482,7 +6482,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <li>The address of the fourth argument will be passed in register ECX.
 </ol>
 <br>The following is an assembly language subprogram which implements<tt> GETTIM</tt>.
-<br><br><b>Small or Flat Memory Model (small code, small data)</b>
+<br><br><i>Small or Flat Memory Model (small code, small data)</i>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; segment byte public 'CODE'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assume&nbsp; CS:_TEXT</tt>
@@ -6525,7 +6525,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GETTIM&nbsp; endp</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; ends</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>No arguments were passed on the stack so a simple &quot;ret&quot; instruction is used to return to the caller.&nbsp; If
 a single argument was passed on the stack, a &quot;ret 4&quot; instruction would be required to return to the caller.
@@ -6563,7 +6563,7 @@ If you wish to write assembly language subprograms for the big code model, you m
 &nbsp;The arguments are passed by reference so that the subroutine can return the hour, minute, seconds and hundredths of
 a second for the current time.&nbsp; These arguments will be passed to<tt> GETTIM</tt> on the stack.
 <br><br>The following is an assembly language subprogram which implements<tt> GETTIM</tt>.
-<br><br><b>Small or Flat Memory Model (small code, small data)</b>
+<br><br><i>Small or Flat Memory Model (small code, small data)</i>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; segment byte public 'CODE'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assume&nbsp; CS:_TEXT</tt>
@@ -6614,7 +6614,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GETTIM&nbsp; endp</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _TEXT&nbsp;&nbsp; ends</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The four arguments that were passed on the stack will be removed by the caller.
 <li>Registers ESI and EBP were saved and restored since they were used in<tt> GETTIM</tt>.
@@ -6639,7 +6639,7 @@ a second for the current time.&nbsp; These arguments will be passed to<tt> GETTI
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp;&nbsp; +----------------+</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The top element of the stack is a the 32-bit return address.&nbsp; The first argument is at offset 4 from the top of the
 stack, the second argument at offset 8, the third argument at offset 12, and the fourth argument at offset 16.
@@ -6884,7 +6884,7 @@ ptr StructVal+4</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 </ol>
 <br>If you are using an 80x87 to return floating-point values, only<b> REAL*4</b> and<b> REAL*8</b> assembly language functions
-need to be modified.&nbsp; <b> Remember, this does not apply if you are using the stack-based calling convention.</b>
+need to be modified.&nbsp; <i> Remember, this does not apply if you are using the stack-based calling convention.</i>
 <ol>
 <li>A<b> REAL*4</b> function using an 80x87.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6978,15 +6978,15 @@ numeric value supplied by the programmer.
 syntactical notation is used.
 <dl>
 <dt>&#91;abc&#93;
-<dd>The item<b> abc</b> is optional.
+<dd>The item<i> abc</i> is optional.
 <dt><br>{abc}
-<dd>The item<b> abc</b> may be repeated zero or more times.
+<dd>The item<i> abc</i> may be repeated zero or more times.
 <dt><br>a|b|c
-<dd>One of<b> a, b</b> or<b> c</b> may be specified.
+<dd>One of<i> a, b</i> or<i> c</i> may be specified.
 <dt><br>a ::= b
-<dd>The item<b> a</b> is defined in terms of<b> b.</b>
+<dd>The item<i> a</i> is defined in terms of<i> b.</i>
 <dt><br>(a)
-<dd>Item<b> a</b> is evaluated first.
+<dd>Item<i> a</i> is evaluated first.
 </dl>
 </dl>
 <br>The following classes of pragmas are supported.
@@ -7133,7 +7133,7 @@ your source code, it would assume the attributes specified in the pragma for<tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct float struct routine
 &#91;eax&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx&#93;</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>All symbols are preceded by an underscore character.
 <li>Arguments are pushed on the stack from right to left.&nbsp; That is, the last argument is pushed first.&nbsp; The calling
@@ -7150,7 +7150,7 @@ allocates space for the return value and returns a pointer to the return value i
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct float struct caller
 &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;eax ebx ecx edx&#93;</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>All symbols are mapped to upper case.
 <li>Arguments are pushed on the stack in reverse order.&nbsp; That is, the first argument is pushed first, the second argument
@@ -7167,7 +7167,7 @@ space on the stack.&nbsp; The address of the allocated space will be pushed on t
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct struct caller
 &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx&#93;</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>All symbols are preceded by an underscore character.
 <li>All C symbols (extern &quot;C&quot; symbols in C++) are suffixed by &quot;@nnn&quot; where &quot;nnn&quot; is the sum
@@ -7187,7 +7187,7 @@ address of the space allocated for the return value.&nbsp; Floating-point values
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct struct caller
 &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx&#93;</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Symbols names are not modified, that is, they are not adorned with leading or trailing underscores.
 <li>Arguments are pushed on the stack from right to left.&nbsp; That is, the last argument is pushed first.&nbsp; The calling
@@ -7203,7 +7203,7 @@ address of the space allocated for the return value.&nbsp; Floating-point values
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm routine &#91;eax ebx ecx
 edx&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct caller</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Symbol names are followed by an underscore character.
 <li>Arguments are processed from left to right.&nbsp; The leftmost arguments are passed in registers and the rightmost arguments
@@ -7224,7 +7224,7 @@ EAX will contain address of the space allocated for the return value.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value no8087 struct caller
 \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx 8087&#93;</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>All symbols appear in object form as they do in source form.
 <li>Arguments are pushed on the stack from right to left.&nbsp; That is, the last argument is pushed first.&nbsp; The calling
@@ -7475,7 +7475,7 @@ model used at compile-time.
 &nbsp;Instead of passing a pointer to a string descriptor, a pointer to the actual character data is passed.&nbsp; See the
 chapter entitled &quot;Assembly Language Considerations&quot; for a description of a string descriptor.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>Arrays and subprograms are always passed by reference, regardless of the argument attribute specified.
 <li>When character arguments are passed by reference, the address of a string descriptor is passed.&nbsp; The string descriptor
@@ -7574,7 +7574,7 @@ structures when passed by value) are promoted to 4 bytes and are then assigned r
 Once an argument has been assigned a position on the stack, all remaining arguments will be assigned a position on the stack
 even if all register sets have not yet been exhausted.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>The default register set is &#91;EAX EBX ECX EDX&#93;.
 <li>Specifying registers AH and AL is equivalent to specifying register AX.&nbsp; Specifying registers DH and DL is equivalent
@@ -7621,7 +7621,7 @@ type<b> DOUBLE PRECISION</b>.&nbsp; Note that all arguments are passed by value.
 even if all registers from the original register set have not been exhausted.
 <br><br>An empty register set is permitted.&nbsp; All subsequent register sets appearing after an empty register set are ignored;
 all remaining arguments are pushed on the stack.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If a single empty register set is specified, all arguments are passed on the stack.
 <li>If no register set is specified, the default register set &#91;EAX EBX ECX EDX&#93; is used.
@@ -7766,7 +7766,7 @@ value.&nbsp;
 </dl>
 <br>Note that the method described below for returning values of type<b> REAL</b> or<b> DOUBLE PRECISION</b> is supported
 only when the &quot;fpc&quot; option is used.
-<br><br>Depending on the type of the return value, only certain registers are allowed in<b> reg_set.</b>
+<br><br>Depending on the type of the return value, only certain registers are allowed in<i> reg_set.</i>
 <dl>
 <dt>1-byte
 <dd>For 1-byte return values, only the following registers are allowed:&nbsp; AL, AH, DL, DH, BL, BH, CL or CH.&nbsp; If no register
@@ -7789,7 +7789,7 @@ ES:EBX or ES:EAX.&nbsp; If no register set is specified, the registers DX:EAX wi
 ESI:EBX or EBX:EAX.&nbsp; If no register set is specified, the registers EDX:EAX will be used.&nbsp; This form of the auxiliary
 pragma is legal for functions of type<b> DOUBLE PRECISION</b> when using the &quot;fpc&quot; option only.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>An empty register set is not allowed.
 <li>If you are compiling for a memory model which has a small data model, any of the above register combinations containing
@@ -7804,7 +7804,7 @@ must remain unchanged.
 the stack for the return value and sets register ESI to point to it.&nbsp; The called routine then places the return value
 at the location pointed to by register ESI.
 <br><br>Complex numbers are not scalars but rather an ordered pair of real numbers.&nbsp; One can also view complex numbers
-as a<b> structure</b> containing two real numbers.
+as a<i> structure</i> containing two real numbers.
 <br><br>The following form of the auxiliary pragma can be used to specify the register that is to be used to point to the
 return value.&nbsp; 
 <hr>
@@ -8098,7 +8098,7 @@ that does not reference any variable that appears in a common block defined by t
 <dt><br>sym
 <dd>is a subprogram name.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>You must specify both &quot;parm nomemory&quot; and &quot;modify nomemory&quot;.
 </ol>
@@ -8214,7 +8214,7 @@ arguments.
 listed in the<tt> exact</tt> register set.&nbsp; In the following example, the code generator will not generate code to save
 and restore the value of the stack pointer register since we have told it that &quot;GetSP&quot; does not modify any register
 whatsoever.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$ifdef __386__</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux GetSP = value &#91;esp&#93; modify exact &#91;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$else</tt>
@@ -8250,7 +8250,7 @@ to subprograms.&nbsp;
 <dt><br>reg_set
 <dd>is a register set.&nbsp; The register set can contain 80x86 registers and/or the string &quot;8087&quot;.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If an empty register set is specified, all arguments, including floating-point arguments, will be passed on the 80x86
 stack.
@@ -8429,7 +8429,7 @@ over the use of this environment variable.
 16-bit Open Watcom F77 DOS library files (files with the &quot;.lib&quot; filename extension).&nbsp; This variable is used
 by the Open Watcom Linker (WLINK.EXE).&nbsp; The default installation directory for the 16-bit Open Watcom F77 DOS libraries
 is<tt> \WATCOM\LIB286\DOS.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libdos=c:\watcom\lib286\dos</tt>
 <h2 id="LIBWIN"> LIBWIN </h2>
 <br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
@@ -8439,7 +8439,7 @@ the location of the 16-bit Open Watcom F77 Windows library files (files with the
 This variable is used by the Open Watcom Linker (WLINK.EXE).&nbsp; If you are developing a 32-bit Microsoft Windows application,
 see the description of the <b> LIBPHAR</b> environment variable.&nbsp; The default installation directory for the 16-bit Open
 Watcom F77 Windows libraries is<tt> \WATCOM\LIB286\WIN.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libwin=c:\watcom\lib286\win</tt>
 <h2 id="LIBOS2"> LIBOS2 </h2>
 <br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
@@ -8449,7 +8449,7 @@ over the use of this environment variable.
 by the Open Watcom Linker (WLINK.EXE).&nbsp; The default installation directory for the 16-bit Open Watcom F77 OS/2 libraries
 is<tt> \WATCOM\LIB286\OS2.</tt>&nbsp; The <b> LIBOS2</b> environment variable must also include the directory of the OS/2<tt>
 DOSCALLS.LIB</tt> file which is usually<tt> \OS2.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libos2=c:\watcom\lib286\os2;c:\os2</tt>
 <h2 id="LIBPHAR"> LIBPHAR </h2>
 <br>The use of the <b> WATCOM</b> environment variable and the Open Watcom Linker &quot;SYSTEM&quot; directive is recommended
@@ -8459,7 +8459,7 @@ include the location of the 32-bit Open Watcom F77 DOS Extender library files or
 files (files with the &quot;.lib&quot; filename extension).&nbsp; This variable is used by the Open Watcom Linker (WLINK.EXE).
 &nbsp;The default installation directory for the 32-bit Open Watcom F77 DOS Extender libraries is<tt> \WATCOM\LIB386\DOS.</tt>
 &nbsp;The default installation directory for the 32-bit Open Watcom F77 Windows libraries is<tt> \WATCOM\LIB386\WIN.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libphar=c:\watcom\lib386\dos</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libphar=c:\watcom\lib386\win</tt>
@@ -8481,20 +8481,20 @@ command:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PATH &#91;d:&#93;&#91;path&#93;;&#91;d:&#93;&#91;path&#93;...</tt>
 <br><br>The <b> PATH</b> environment variable should include the disk and directory of the Open Watcom FORTRAN 77 binary program
 files when using Open Watcom FORTRAN 77 and its related tools.
-<br><br><b>If your host system is DOS:</b>
+<br><br><i>If your host system is DOS:</i>
 <br><br>The default installation directory for 16-bit Open Watcom F77 and 32-bit Open Watcom F77 DOS binaries is called<tt>
 \WATCOM\BINW.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;path c:\watcom\binw;c:\dos;c:\windows</tt>
-<br><br><b>If your host system is OS/2:</b>
+<br><br><i>If your host system is OS/2:</i>
 <br><br>The default installation directories for 16-bit Open Watcom F77 and 32-bit Open Watcom F77 OS/2 binaries are called<tt>
 \WATCOM\BINP</tt> and<tt> \WATCOM\BINW.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;C:\&#93;path c:\watcom\binp;c:\watcom\binw</tt>
-<br><br><b>If your host system is Windows NT:</b>
+<br><br><i>If your host system is Windows NT:</i>
 <br><br>The default installation directories for 16-bit Open Watcom F77 and 32-bit Open Watcom F77 Windows NT binaries are
 called<tt> \WATCOM\BINNT</tt> and<tt> \WATCOM\BINW.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;path c:\watcom\binnt;c:\watcom\binw</tt>
 <br><br>The <b> PATH</b> environment variable is also used by the following programs in the described manner.
 <ol>
@@ -8511,7 +8511,7 @@ Open Watcom F77 and 32-bit Open Watcom F77 compilers and the Open Watcom Linker.
 the <b> TMP</b> environment variable to be a certain disk and directory, you can tell Open Watcom FORTRAN 77 where to place
 its temporary files.&nbsp; The same is true of the Open Watcom Linker temporary file.
 <br><br>Consider the following definition of the <b> TMP</b> environment variable.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set tmp=d:\watcom\tmp</tt>
 <br><br>The Open Watcom FORTRAN 77 compiler and Open Watcom Linker will create its temporary files in<tt> d:\watcom\tmp.</tt>
 <h2 id="WATCOM"> WATCOM </h2>
@@ -8519,7 +8519,7 @@ its temporary files.&nbsp; The same is true of the Open Watcom Linker temporary 
 <b> WATCOM</b> environment variable should be defined.&nbsp; The <b> WATCOM</b> environment variable is used to locate the
 libraries that will be used when the application is linked.&nbsp; The default directory for 16-bit Open Watcom F77 and 32-bit
 Open Watcom F77 files is &quot;\WATCOM&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set watcom=c:\watcom</tt>
 <h2 id="WCL"> WCL </h2>
 <br>The <b> WCL</b> environment variable can be used to specify commonly-used WFL options.
@@ -8528,7 +8528,7 @@ Open Watcom F77 files is &quot;\WATCOM&quot;.
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
 default options to be &quot;mm&quot; (compile code for medium memory model), &quot;d1&quot; (include line number debug information
 in the object file), and &quot;ox&quot; (compile for maximum number of code optimizations).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl=-mm -d1 -ox</tt>
 <br><br>Once the <b> WCL</b> environment variable has been defined, those options listed become the default each time the
 WFL command is used.
@@ -8539,19 +8539,19 @@ WFL command is used.
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
 default options to be &quot;3s&quot; (compile code for stack-based argument passing convention), &quot;d1&quot; (include line
 number debug information in the object file), and &quot;ox&quot; (compile for maximum number of code optimizations).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl386=-3s -d1 -ox</tt>
 <br><br>Once the <b> WCL386</b> environment variable has been defined, those options listed become the default each time the
 WFL386 command is used.
 <h2 id="WCGMEMORY"> WCGMEMORY </h2>
 <br>The <b> WCGMEMORY</b> environment variable may be used to request a report of the amount of memory used by the compiler's
 code generator for its work area.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set WCGMEMORY=?</tt>
 <br><br>When the memory amount is &quot;?&quot; then the code generator will report how much memory was used to generate the
 code.
 <br><br>It may also be used to instruct the compiler's code generator to allocate a fixed amount of memory for a work area.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set WCGMEMORY=128</tt>
 <br><br>When the memory amount is &quot;nnn&quot; then exactly &quot;nnnK&quot; bytes will be used.&nbsp; In the above example,
 128K bytes is requested.&nbsp; If less than &quot;nnnK&quot; is available then the compiler will quit with a fatal error message.
@@ -8575,7 +8575,7 @@ variable is not used by the Windows version of the debugger, WDW.
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
 default options to be &quot;noinvoke&quot; (do not execute the<tt> profile.dbg</tt> file) and &quot;reg=10&quot; (retain up
 to 10 register sets while tracing).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wd=-noinvoke -reg#10</tt>
 <br><br>Once the <b> WD</b> environment variable has been defined, those options listed become the default each time the WD
 command is used.
@@ -8587,7 +8587,7 @@ variable is used by the Windows version of the debugger, WDW.
 <br><br>These options are processed before options specified in the WDW prompt dialogue box.&nbsp; The following example defines
 the default options to be &quot;noinvoke&quot; (do not execute the<tt> profile.dbg</tt> file) and &quot;reg=10&quot; (retain
 up to 10 register sets while tracing).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wdw=-noinvoke -reg#10</tt>
 <br><br>Once the <b> WDW</b> environment variable has been defined, those options listed become the default each time the
 WDW command is used.
@@ -8598,7 +8598,7 @@ WDW command is used.
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
 default options to be &quot;d1&quot; (include line number debug information in the object file) and &quot;om&quot; (compile
 with math optimizations).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc=-d1 -om</tt>
 <br><br>Once the <b> WFC</b> environment variable has been defined, those options listed become the default each time the
 WFC command is used.
@@ -8609,7 +8609,7 @@ WFC command is used.
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
 default options to be &quot;d1&quot; (include line number debug information in the object file) and &quot;om&quot; (compile
 with math optimizations).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc386=-d1 -om</tt>
 <br><br>Once the <b> WFC386</b> environment variable has been defined, those options listed become the default each time the
 WFC386 command is used.
@@ -8620,7 +8620,7 @@ WFC386 command is used.
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
 default options to be &quot;mm&quot; (compile code for medium memory model), &quot;d1&quot; (include line number debug information
 in the object file), and &quot;ox&quot; (default optimizations).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfl=-mm -d1 -ox</tt>
 <br><br>Once the <b> WFL</b> environment variable has been defined, those options listed become the default each time the
 WFL command is used.
@@ -8631,7 +8631,7 @@ WFL command is used.
 <br><br>These options are processed before options specified on the command line.&nbsp; The following example defines the
 default options to be &quot;mf&quot; (flat memory model), &quot;d1&quot; (include line number debug information in the object
 file), and &quot;ox&quot; (default optimizations).
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfl386=-mf -d1 -ox</tt>
 <br><br>Once the <b> WFL386</b> environment variable has been defined, those options listed become the default each time the
 WFL386 command is used.
@@ -8643,7 +8643,7 @@ or &quot;Japanese&quot;.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WLANG=English</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET WLANG=Japanese</tt>
 <br><br>Alternatively, a numeric value of 0 (for English) or 1 (for Japanese) can be specified.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wlang=0</tt>
 <br><br>By default, Japanese messages are displayed when the current codepage is 932 and English messages are displayed otherwise.
 &nbsp;Normally, use of the <b> WLANG</b> environment variable should not be required.

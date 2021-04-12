@@ -480,7 +480,7 @@ file formats.
 <br><br>where<b><i> directive</i></b> is a series of Open Watcom Linker directives specified on the command line or in one
 or more files.&nbsp; If the directives are contained within a file, the &quot;@&quot; character is used to reference that
 file.&nbsp; If no file extension is specified, a file extension of &quot;lnk&quot; is assumed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink name testprog @first @second option map</tt>
 <br><br>In the above example, directives are specified on the command line (e.g., &quot;name testprog&quot; and &quot;option
 map&quot;) and in files (e.g.,<tt> first.lnk</tt> and<tt> second.lnk</tt>).
@@ -920,11 +920,11 @@ and options in alphabetical order.&nbsp; Not all directives and options are supp
 a directive or option applies only to a subset of the executable formats that the linker can generate, the supporting formats
 are noted.&nbsp; In the following example, the notation indicates that the directive or option is supported for all executable
 formats.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Formats: All</tt>
 <br><br>In the following example, the notation indicates that the directive or option is supported for OS/2, 16-bit Windows
 and 32-bit Windows executable formats only.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Formats: OS/2, Win16, Win32</tt>
 <br><br>Directives tell the Open Watcom Linker how to create your program.&nbsp; For example, using directives you can tell
 the Open Watcom Linker which object files are to be included in the program, which library files to search to resolve undefined
@@ -977,15 +977,15 @@ example, the &quot;FILE&quot; directive can take a list of object file names as 
 <dt>ABC
 <dd>All items in upper case are required.
 <dt><br>&#91;abc&#93;
-<dd>The item<b> abc</b> is optional.
+<dd>The item<i> abc</i> is optional.
 <dt><br>{abc}
-<dd>The item<b> abc</b> may be repeated zero or more times.
+<dd>The item<i> abc</i> may be repeated zero or more times.
 <dt><br>{abc}+
-<dd>The item<b> abc</b> may be repeated one or more times.
+<dd>The item<i> abc</i> may be repeated one or more times.
 <dt><br>a|b|c
-<dd>One of<b> a, b</b> or<b> c</b> may be specified.
+<dd>One of<i> a, b</i> or<i> c</i> may be specified.
 <dt><br>a ::= b
-<dd>The item<b> a</b> is defined in terms of<b> b.</b>
+<dd>The item<i> a</i> is defined in terms of<i> b.</i>
 </dl>
 <br>Certain characters have special meaning to the linker.&nbsp; When a special character must appear in a name, you can imbed
 the string that makes up the name inside apostrophes (e.g., 'name@8').&nbsp; This prevents the linker from interpreting the
@@ -1048,18 +1048,18 @@ the &quot;ALIGNMENT&quot; option (short form &quot;A&quot;) is as follows.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the alignment for segments in the executable file and must be a power of 2.
+<br><i>n</i> specifies the alignment for segments in the executable file and must be a power of 2.
 <br><br>In 16-bit applications, segments in the executable file are pointed to by a segment table.&nbsp; An entry in the segment
 table contains a 16-bit value which is a multiple of the alignment value.&nbsp; Together they form the offset of the segment
-from the start of the segment table.&nbsp; Note that the smaller the value of<b> n</b> the smaller the executable file.
-<br><br>By default, the Open Watcom Linker will automatically choose the smallest value of<b> n</b> possible.&nbsp; You need
+from the start of the segment table.&nbsp; Note that the smaller the value of<i> n</i> the smaller the executable file.
+<br><br>By default, the Open Watcom Linker will automatically choose the smallest value of<i> n</i> possible.&nbsp; You need
 not specify this option unless you want padding between segments in the executable file.
 <h2 id="The_ANONYMOUSEXPORT_Directive"> The ANONYMOUSEXPORT Directive </h2>
 <br>Formats:&nbsp; Win16, Win32 
@@ -1105,10 +1105,10 @@ the default export name is<tt> sym.</tt>
 </dl>
 <br>All other librarian commands will be ignored.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>By default, the Open Watcom C and C++ compilers append an underscore ('_') to all function names.&nbsp; This should be
-considered when specifying<b> entry_name</b> and<b> internal_name</b> in an &quot;ANONYMOUSEXPORT&quot; directive.
+considered when specifying<i> entry_name</i> and<i> internal_name</i> in an &quot;ANONYMOUSEXPORT&quot; directive.
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 anonymousexport 'myfunc@8'</tt>).
 <li>The symbol associated with the entry name will not appear in either the resident or the non-resident names table.&nbsp;
@@ -1125,11 +1125,11 @@ the dynamic overlay manager.&nbsp; The format of the &quot;AREA&quot; option (sh
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
 <br>The default size of the memory pool for a given application is selected by the Open Watcom Linker and is equal to twice
@@ -1158,7 +1158,7 @@ the &quot;DYNAMIC&quot; option.&nbsp; For more information on the dynamic overla
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>INTO
-<dd>specifies that all overlays are to be placed into a file, namely<b> ovl_file.</b>&nbsp; If &quot;INTO&quot; (short form &quot;IN&quot;)
+<dd>specifies that all overlays are to be placed into a file, namely<i> ovl_file.</i>&nbsp; If &quot;INTO&quot; (short form &quot;IN&quot;)
 is not specified, the overlays are placed in the executable file.
 <dt><br>ovl_file
 <dd>is the file specification for the name of an overlay file.&nbsp; If no file extension is specified, a file extension of &quot;ovl&quot;
@@ -1297,11 +1297,11 @@ or committed to the application.&nbsp; Any part of the stack and heap that is no
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 <br><br><tt>n</tt> represents the amout of stack or heap that is initially committed to the application.&nbsp; The short form
 for &quot;STACK&quot; is &quot;ST&quot; and the short form for &quot;HEAP&quot; is &quot;H&quot;.
@@ -1371,7 +1371,7 @@ file will contain DWARF debugging information.
 <dt><br>WATCOM
 <dd>(short form &quot;W&quot;) specifies that all object files contain Watcom format debugging information and that the executable
 file will contain Watcom debugging information.&nbsp; This format permits the selection of specific classes of debugging information
-(<b> dblist</b>) which are described below.
+(<i> dblist</i>) which are described below.
 <dt><br>CODEVIEW
 <dd>(short form &quot;C&quot;) specifies that all object files contain CodeView (CV4) format debugging information and that the
 executable file will contain CodeView debugging information.
@@ -1420,7 +1420,7 @@ debugging information is included in the executable file.
 </dl>
 <hr>
 <br><b><i>&nbsp; Note:</i></b>&nbsp; The position of the &quot;DEBUG&quot; directive is important.&nbsp; The level of debugging
-information specified in a &quot;DEBUG&quot; directive only applies to object files and libraries that appear in<b> subsequent</b>
+information specified in a &quot;DEBUG&quot; directive only applies to object files and libraries that appear in<i> subsequent</i>
 &quot;FILE&quot; or &quot;LIBRARY&quot; directives.&nbsp; For example, if &quot;DEBUG WATCOM ALL&quot; was the only &quot;DEBUG&quot;
 directive specified and was also the last linker directive, no debugging information would appear in the executable file.
 <hr>
@@ -1757,10 +1757,10 @@ in the resident names table.
 <br><br>If you do not want an entry name to appear in either the resident or non-resident names table, you can use the &quot;ANONYMOUSEXPORT&quot;
 directive described in <a href="#The_ANONYMOUSEXPORT_Directive">The ANONYMOUSEXPORT Directive</a>.
 <dt><br>iopl_bytes
-<dd>(OS/2 only) is required for functions that execute with I/O privilege.<b>&nbsp; iopl_bytes</b> specifies the total size of
+<dd>(OS/2 only) is required for functions that execute with I/O privilege.<i>&nbsp; iopl_bytes</i> specifies the total size of
 the function's arguments in bytes.&nbsp; When such a function is executed, the specified number of bytes is copied from the
-caller's stack to the I/O-privileged function's stack.&nbsp; Note that the processor copies<b> words</b> rather than bytes
-and can copy up to 31 words.&nbsp; Thus the number of<b> bytes</b> allowed is up to 62, and must be even.
+caller's stack to the I/O-privileged function's stack.&nbsp; Note that the processor copies<i> words</i> rather than bytes
+and can copy up to 31 words.&nbsp; Thus the number of<i> bytes</i> allowed is up to 62, and must be even.
 <dt><br>lbc_file
 <dd>is a file specification for the name of a librarian command file.&nbsp; If no file extension is specified, a file extension
 of &quot;lbc&quot; is assumed.&nbsp; The linker will process the librarian command file and look for commands to the librarian
@@ -1784,10 +1784,10 @@ the default export name is<tt> sym.</tt>
 </dl>
 <br>All other librarian commands will be ignored.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>By default, the Open Watcom C and C++ compilers append an underscore ('_') to all function names.&nbsp; This should be
-considered when specifying<b> entry_name</b> and<b> internal_name</b> in an &quot;EXPORT&quot; directive.
+considered when specifying<i> entry_name</i> and<i> internal_name</i> in an &quot;EXPORT&quot; directive.
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 export 'myfunc@8'</tt>).
 <li>If the <b><i> __export</i></b> declspec modifier is used in the source code, it is the equivalent of using the following
@@ -1806,10 +1806,10 @@ executables.&nbsp; The format of the &quot;EXPORT&quot; directive (short form &q
 <dt><br>entry_name
 <dd>is the name of the exported symbol.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>By default, the Open Watcom C and C++ compilers append an underscore ('_') to all function names.&nbsp; This should be
-considered when specifying<b> entry_name</b> in an &quot;EXPORT&quot; directive.
+considered when specifying<i> entry_name</i> in an &quot;EXPORT&quot; directive.
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 export 'myfunc@8'</tt>).
 </ol>
@@ -1824,7 +1824,7 @@ NLMs.&nbsp; The format of the &quot;EXPORT&quot; directive (short form &quot;EXP
 <dt><br>entry_name
 <dd>is the name of the exported symbol.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 export 'myfunc@8'</tt>).
@@ -1883,7 +1883,7 @@ library are included (whether required or not).
 <dd>is the name of an object module defined in an object or library file.
 </dl>
 <br>Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os f \math\sin, mycos</tt>
 <br><br>The Open Watcom Linker is instructed to process the following object files:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1891,22 +1891,22 @@ library are included (whether required or not).
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mycos.obj</tt>
 <br><br>The object file &quot;mycos.obj&quot; is located in the current directory since no path was specified.
 <br><br>More than one &quot;FILE&quot; directive may be used.&nbsp; The following example is equivalent to the preceding one.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os f \math\sin f mycos</tt>
 <br><br>Thus, other directives may be placed between lists of object files.
 <br><br>The &quot;FILE&quot; directive can also specify object modules from a library file or object file.&nbsp; Consider
 the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os f \math\math.lib(sin)</tt>
 <br><br>The Open Watcom Linker is instructed to process the object module &quot;sin&quot; contained in the library file &quot;math.lib&quot;
 in the directory &quot;\math&quot;.
 <br><br>In the following example, the Open Watcom Linker will process the object module &quot;sin&quot; contained in the object
 file &quot;math.obj&quot; in the directory &quot;\math&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os f \math\math(sin)</tt>
 <br><br>In the following example, the Open Watcom Linker will include all object modules contained in the library file &quot;math.lib&quot;
 in the directory &quot;\math&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os f \math\math.lib</tt>
 <h2 id="The_FILLCHAR_Option"> The FILLCHAR Option </h2>
 <br>Formats:&nbsp; All 
@@ -1918,17 +1918,17 @@ image.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the value to be used in blank areas of the output image.&nbsp; The value must be in the range of 0
+<br><i>n</i> specifies the value to be used in blank areas of the output image.&nbsp; The value must be in the range of 0
 to 255, inclusive.
 <br><br>This option is most useful for raw binary output that will be programmed into an (E)EPROM where a value of 255 (0xff)
-is preferred.&nbsp; The default value of<b> n</b> is zero.
+is preferred.&nbsp; The default value of<i> n</i> is zero.
 <h2 id="The_FIXEDLIB_Directive"> The FIXEDLIB Directive </h2>
 <br>Formats:&nbsp; DOS 
 <br><br>The &quot;FIXEDLIB&quot; directive can be used to explicitly place the modules from a library file in the overlay
@@ -2304,7 +2304,7 @@ used to force the header size to 64 bytes, plus the size of relocation records.&
 option (short form &quot;FULLH&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION FULLHEADER</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>This option may be useful when creating a 16-bit executable which is to be used as a stub program for a non-DOS executable.
 <li>This option is not required when using the Open Watcom Linker.&nbsp; It is only needed when the non-DOS executable is
@@ -2320,16 +2320,16 @@ created using a third-party linker which does not automatically extend the heade
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the size of the heap.&nbsp; The default heap size is 0 bytes.&nbsp; The maximum value of<b> n</b> is
+<br><i>n</i> specifies the size of the heap.&nbsp; The default heap size is 0 bytes.&nbsp; The maximum value of<i> n</i> is
 65536 (64K) for 16-bit applications and 4G for 32-bit applications which is the maximum size of a physical segment.&nbsp;
-Actually, for a particular application, the maximum value of<b> n</b> is 64K or 4G less the size of group &quot;DGROUP&quot;.
+Actually, for a particular application, the maximum value of<i> n</i> is 64K or 4G less the size of group &quot;DGROUP&quot;.
 <h2 id="The_HELP_Option"> The HELP Option </h2>
 <br>Formats:&nbsp; NetWare 
 <br><br>The &quot;HELP&quot; option specifies the file name of an internationalized help file whose language corresponds to
@@ -2353,21 +2353,21 @@ The format of the &quot;HSHIFT&quot; option is as follows.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the number of digits to right shift a 32-bit value containing a segment address in its upper 16 bits
-in order to convert it to part of a linear address.&nbsp; In more conventional terms, (16 -<b> n</b> ) is the amount to shift
+<br><i>n</i> specifies the number of digits to right shift a 32-bit value containing a segment address in its upper 16 bits
+in order to convert it to part of a linear address.&nbsp; In more conventional terms, (16 -<i> n</i> ) is the amount to shift
 a segment value left in order to convert it to part of a linear address.
 <br><br>The &quot;HSHIFT&quot; Option is useful for non-standard segmented architectures that have different alignment between
 segments and linear addresses, such as the IP cores by ARC, Inc.&nbsp; These cores support a 24-bit addressing mode where
-segment addresses are shifted 8 bits to form part of the linear address.&nbsp; The<b> n</b> value and its semantics match
+segment addresses are shifted 8 bits to form part of the linear address.&nbsp; The<i> n</i> value and its semantics match
 the analogous variable used by the compiler for computing addresses in the huge memory model.
-<br><br>The default value of<b> n</b> is 12, representing the 4-bit shift used in conventional x86 CPUs.
+<br><br>The default value of<i> n</i> is 12, representing the 4-bit shift used in conventional x86 CPUs.
 <h2 id="The_IMPFILE_Option"> The IMPFILE Option </h2>
 <br>Formats:&nbsp; NetWare, OS/2, Win16, Win32 
 <br><br>The &quot;IMPFILE&quot; option requests the linker to produce a Open Watcom Library Manager command file that can
@@ -2451,10 +2451,10 @@ the Dynamic Link Library was created.
 <dd>is the ordinal value of the function.&nbsp; The ordinal number is an alternate method that can be used to reference a function
 in a Dynamic Link Library.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>By default, the Open Watcom C and C++ compilers append an underscore ('_') to all function names.&nbsp; This should be
-considered when specifying<b> internal_name</b> and<b> entry_name</b> in an &quot;IMPORT&quot; directive.
+considered when specifying<i> internal_name</i> and<i> entry_name</i> in an &quot;IMPORT&quot; directive.
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 import 'myfunc@8'</tt>).
 </ol>
@@ -2473,10 +2473,10 @@ libraries.
 <dt><br>external_name
 <dd>is the name of the external symbol.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>By default, the Open Watcom C and C++ compilers append an underscore ('_') to all function names.&nbsp; This should be
-considered when specifying<b> external_name</b> in an &quot;IMPORT&quot; directive.
+considered when specifying<i> external_name</i> in an &quot;IMPORT&quot; directive.
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 import 'myfunc@8'</tt>).
 </ol>
@@ -2491,7 +2491,7 @@ import 'myfunc@8'</tt>).
 <dt><br>external_name
 <dd>is the name of the external symbol.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If the name contains characters that are special to the linker then the name may be placed inside apostrophes (e.g.,<tt>
 import 'myfunc@8'</tt>).
@@ -2544,7 +2544,7 @@ file can also include other linker directive files.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; export window_function</tt>
 </dl>
 <br>Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @memos</tt>
 <br><br>The Open Watcom Linker is instructed to process the contents of the directive file &quot;memos.lnk&quot;.&nbsp; The
 executable image file will be called &quot;memos.exe&quot;.&nbsp; The following object files will be loaded from the current
@@ -2558,7 +2558,7 @@ directory.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; memmgr.obj</tt>
 <br><br>If any unresolved symbol references remain after all object files have been processed, the library files &quot;screen.lib&quot;
 and &quot;keyboard.lib&quot; in the directory &quot;\termio&quot; will be searched (in the order listed).
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>In the above example, we did not provide the file extension when the directive file was specified.&nbsp; The Open Watcom
 Linker assumes a file extension of &quot;lnk&quot; if none is present.
@@ -2765,7 +2765,7 @@ is as follows.
 is assumed.
 </dl>
 <br>Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os file trig lib \math\trig, \cmplx\trig</tt>
 <br><br>The Open Watcom Linker is instructed to process the following object file:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2777,7 +2777,7 @@ will be searched:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; \cmplx\trig.lib</tt>
 <br><br>More than one &quot;LIBRARY&quot; directive may be used.&nbsp; The following example is equivalent to the preceding
 one.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os f trig lib \math\trig lib \cmplx\trig</tt>
 <br><br>Thus other directives may be placed between lists of library files.
 <h3 id="Searching_for_Libraries_Specified_in_Environment_Variables"> Searching for Libraries Specified in Environment Variables </h3>
@@ -2797,7 +2797,7 @@ Watcom Linker will resolve these references by searching the following libraries
 <li>the library file &quot;\graphics\lib\graph.lib&quot;
 <li>the library file &quot;\utility\graph.lib&quot;
 </ol>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If a library file specified in a &quot;LIBRARY&quot; directive contains an absolute path specification, the Open Watcom
 Linker will not search any of the paths specified in the &quot;LIB&quot; environment string for the library file.&nbsp; Under
@@ -2905,15 +2905,15 @@ file and call it &quot;myprog.map&quot; regardless of the name of the executable
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the maximum number of bytes, in addition to the memory required by executable image, that may be allocated
-by 386|DOS-Extender at the end of the loaded executable image.&nbsp; No more than<b> n</b> bytes will be allocated.
+<br><i>n</i> specifies the maximum number of bytes, in addition to the memory required by executable image, that may be allocated
+by 386|DOS-Extender at the end of the loaded executable image.&nbsp; No more than<i> n</i> bytes will be allocated.
 <br><br>If the &quot;MAXDATA&quot; option is not specified, a default value of hexadecimal ffffffff is assumed.&nbsp; This
 means that 386|DOS-Extender will allocate all available memory to the program at load time.
 <h2 id="The_MAXERRORS_Option"> The MAXERRORS Option </h2>
@@ -2953,15 +2953,15 @@ allows the same NLM to display messages in different languages by switching mess
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the minimum number of bytes, in addition to the memory required by executable image, that must be allocated
-by 386|DOS-Extender at the end of the loaded executable image.&nbsp; If<b> n</b> bytes are not available, the program will
+<br><i>n</i> specifies the minimum number of bytes, in addition to the memory required by executable image, that must be allocated
+by 386|DOS-Extender at the end of the loaded executable image.&nbsp; If<i> n</i> bytes are not available, the program will
 not be executed.
 <br><br>If the &quot;MINDATA&quot; option is not specified, a default value of zero is assumed.&nbsp; This means that 386|DOS-Extender
 will load the program as long as there is enough memory for the load image; no extra memory is required.
@@ -2986,7 +2986,7 @@ option (short form &quot;MODN&quot;) is as follows.
 <dt><br>module_name
 <dd>is the name of a Dynamic Link Library.
 </dl>
-<br>Once a module has been loaded (whether it be a program module or a Dynamic Link Library),<b> mod_name</b> is the name
+<br>Once a module has been loaded (whether it be a program module or a Dynamic Link Library),<i> mod_name</i> is the name
 of the module known to the operating system.&nbsp; If the &quot;MODNAME&quot; option is not used to specify a module name,
 the default module name is the name of the executable file without the file extension.
 <h2 id="The_MODFILE_Directive"> The MODFILE Directive </h2>
@@ -3021,7 +3021,7 @@ is as follows.
 <dd>is the name of an object module defined in an object or library file.
 </dl>
 <br>The information is displayed in the map file.&nbsp; Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os op map file test lib math modt trig</tt>
 <br><br>If the module &quot;trig&quot; defines the symbols &quot;sin&quot; and &quot;cos&quot;, the Open Watcom Linker will
 list, in the map file, all modules that reference the symbols &quot;sin&quot; and &quot;cos&quot;.
@@ -3064,12 +3064,12 @@ specified, no file extension is appended.&nbsp; In all other cases, a file exten
 format is appended if no file extension is specified.
 </dl>
 <br>Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os name myprog file test, test2, test3</tt>
 <br><br>The linker is instructed to generate an executable file called &quot;myprog.exe&quot; if you are running a DOS, OS/2
 or Windows-hosted version of the linker.&nbsp; If you are running a UNIX-hosted version of the linker, or the &quot;NOEXTENSION&quot;
 option was specified, an executable file called &quot;myprog&quot; will be generated.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>No file extension was given when the executable file name was specified.&nbsp; The linker assumes a file extension that
 depends on the format of the executable file being generated.&nbsp; If you are running a UNIX-hosted version of the linker,
@@ -3093,11 +3093,11 @@ The warning message will state that a symbol has been defined more than once.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
 <br>Some computer systems, for example, require that all global symbols be uniquely identified in 8 characters.&nbsp; By specifying
@@ -3128,8 +3128,8 @@ is as follows.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; newsegment</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file file4</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file file5</tt>
-<br><br>Code segments from<b> file1, file2</b> and<b> file3</b> will be grouped into one physical segment.&nbsp; Code segments
-from<b> file4</b> and<b> file5</b> will be grouped into another physical segment.
+<br><br>Code segments from<i> file1, file2</i> and<i> file3</i> will be grouped into one physical segment.&nbsp; Code segments
+from<i> file4</i> and<i> file5</i> will be grouped into another physical segment.
 <br><br>Note that code segments extracted from library files will be grouped into physical segments as well.&nbsp; The size
 of these physical segments is determined by the &quot;PACKCODE&quot; option and is 64k by default.
 <h2 id="The_NLMFLAGS_Option"> The NLMFLAGS Option </h2>
@@ -3206,7 +3206,7 @@ option (short form &quot;NOSTDC&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION NOSTDCALL</tt>
 <br><br>Considering the following declarations.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; short PASCAL __export Function1( short var1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long varlong,</tt>
@@ -3254,9 +3254,9 @@ for a description of ancestor.
 an overlay vector for that symbol will be generated.
 </ol>
 <br>Note that in the latter case, more overlay vectors may be generated that necessary.&nbsp; Suppose section A contains three
-global functions,<b> f, g</b> and<b> h.</b>&nbsp; Function<b> f</b> passes the address of function<b> g</b> to function<b>
-h</b> who can then calls function<b> g</b> indirectly.&nbsp; Also, suppose function<b> g</b> is only called from sections
-that are ancestors of section A.&nbsp; The linker will generate an overlay vector for function<b> g</b> even though none is
+global functions,<i> f, g</i> and<i> h.</i>&nbsp; Function<i> f</i> passes the address of function<i> g</i> to function<i>
+h</i> who can then calls function<i> g</i> indirectly.&nbsp; Also, suppose function<i> g</i> is only called from sections
+that are ancestors of section A.&nbsp; The linker will generate an overlay vector for function<i> g</i> even though none is
 required.&nbsp; In such a case, the &quot;NOVECTOR&quot; directive can be used to remove the overhead associated with calling
 a function through an overlay vector.
 <h2 id="The_OBJALIGN_Option"> The OBJALIGN Option </h2>
@@ -3269,11 +3269,11 @@ a function through an overlay vector.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 <br><br><tt>n</tt> must be a value that is a power of 2 and is between 16 bytes and 256 megabytes inclusive.&nbsp; The default
 is 64k.
@@ -3310,16 +3310,16 @@ option (short form &quot;OFF&quot;) is as follows.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the offset at which the output image will be located.&nbsp; The following describes a use of the &quot;OFFSET&quot;
+<br><i>n</i> specifies the offset at which the output image will be located.&nbsp; The following describes a use of the &quot;OFFSET&quot;
 option.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option offset=0xc0000000</tt>
 <br><br>The image will be virtually/physically located to the linear address 0xc0000000.
 <h3 id="OFFSET_M_OSD2__Win32__ELF_only"> OFFSET - OS/2, Win32, ELF only </h3>
@@ -3335,11 +3335,11 @@ a different location which will increase the load time since a relocation phase 
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
 <br>The &quot;OFFSET&quot; option is used to specify the base linear address (in bytes) at which the program is loaded and
@@ -3356,18 +3356,18 @@ loaded.&nbsp; The format of the &quot;OFFSET&quot; option (short form &quot;OFF&
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the offset (in bytes) at which the program is loaded and must be a multiple of 4K.&nbsp; The Open Watcom
+<br><i>n</i> specifies the offset (in bytes) at which the program is loaded and must be a multiple of 4K.&nbsp; The Open Watcom
 Linker will round the value up to a multiple of 4K if it is not already a multiple of 4K.
 <br><br>It is possible to detect NULL pointer references by linking the program at an offset which is a multiple of 4K.&nbsp;
 Usually an offset of 4K is sufficient.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option offset=4k</tt>
 <br><br>When the program is loaded by 386|DOS-Extender, the pages skipped by the &quot;OFFSET&quot; option are not mapped.
 &nbsp;Any reference to an unmapped area (such as a NULL pointer) will cause a page fault preventing the NULL reference from
@@ -3382,19 +3382,19 @@ form &quot;OFF&quot;) is as follows.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the offset (in bytes) at which the program is loaded and must be a multiple of 4K.&nbsp; The Open Watcom
+<br><i>n</i> specifies the offset (in bytes) at which the program is loaded and must be a multiple of 4K.&nbsp; The Open Watcom
 Linker will round the value up to a multiple of 4K if it is not already a multiple of 4K.&nbsp; The following describes a
 use of the &quot;OFFSET&quot; option.
 <br><br>It is possible to detect NULL pointer references by linking the program at an offset which is a multiple of 4K.&nbsp;
 Usually an offset of 4K is sufficient.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option offset=4k</tt>
 <br><br>When the program is loaded, the pages skipped by the &quot;OFFSET&quot; option are not mapped.&nbsp; Any reference
 to an unmapped area (such as a NULL pointer) will cause a page fault preventing the NULL reference from corrupting the program.
@@ -3443,7 +3443,7 @@ is assumed.
 <br>This directive is similar to the &quot;LIBRARY&quot; directive except that the linker will not issue a warning message
 if the library file cannot be found.
 <br><br>Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os file trig optlib \math\trig, \cmplx\trig</tt>
 <br><br>The Open Watcom Linker is instructed to process the following object file:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -3455,7 +3455,7 @@ will be searched:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; \cmplx\trig.lib</tt>
 <br><br>More than one &quot;OPTLIB&quot; directive may be used.&nbsp; The following example is equivalent to the preceding
 one.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os f trig optlib \math\trig optlib \cmplx\trig</tt>
 <br><br>Thus other directives may be placed between lists of library files.
 <h3 id="Searching_for_Optional_Libraries_Specified_in_Environment_Variables"> Searching for Optional Libraries Specified in Environment Variables </h3>
@@ -3475,7 +3475,7 @@ Watcom Linker will resolve these references by searching the following libraries
 <li>the library file &quot;\graphics\lib\graph.lib&quot;
 <li>the library file &quot;\utility\graph.lib&quot;
 </ol>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If a library file specified in a &quot;OPTLIB&quot; directive contains an absolute path specification, the Open Watcom
 Linker will not search any of the paths specified in the &quot;LIB&quot; environment string for the library file.&nbsp; On
@@ -3503,15 +3503,15 @@ form &quot;ORD&quot;) is as follows.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 <dt><br>class_name
-<dd>is the name of a class defined in one or more object files.&nbsp; If the class is not defined in an object file, the<b> class_name</b>
-and all associated options are ignored.&nbsp; Note that the &quot;ORDER&quot; directive does<b> not</b> create classes or
+<dd>is the name of a class defined in one or more object files.&nbsp; If the class is not defined in an object file, the<i> class_name</i>
+and all associated options are ignored.&nbsp; Note that the &quot;ORDER&quot; directive does<i> not</i> create classes or
 segments.&nbsp; Classes specified with &quot;CLNAME&quot; keywords will be placed in the output image in the order listed.
 &nbsp;Any classes that are not listed will be placed after the listed ones.
 <dt><br>SEGADDR=n
@@ -3533,7 +3533,7 @@ are placed in the executable consecutively, possibly with a small gap in between
 the class.&nbsp; If &quot;SEGADDR&quot; is specified without corresponding &quot;OFFSET&quot;, the offset portion of the address
 defaults to 0.
 <dt><br>COPY
-<dd>(short form &quot;CO&quot;) indicates that the data from the segment named<b> source_class_name</b> is to be used in this
+<dd>(short form &quot;CO&quot;) indicates that the data from the segment named<i> source_class_name</i> is to be used in this
 segment.
 <dt><br>NOEMIT
 <dd>(short form &quot;NOE&quot;) indicates that the data in this segment should not be placed in the executable.
@@ -3614,7 +3614,7 @@ by the linker.&nbsp; The format of the &quot;OSNAME&quot; option (short form &qu
 <dt><br>string
 <dd>is any sequence of characters.
 </dl>
-<br>The information specified by the &quot;OSNAME&quot; option will be displayed in the<b> creating a ?&nbsp; executable</b>
+<br>The information specified by the &quot;OSNAME&quot; option will be displayed in the<i> creating a ?&nbsp; executable</i>
 message.&nbsp; This is the last line of output produced by the linker, provided the &quot;QUIET&quot; option is not specified.
 &nbsp;Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -3656,11 +3656,11 @@ is as follows.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 <dt><br>RAW
 <dd>specifies the output file to be a raw binary and will contain an absolute image of the executable's code and data.&nbsp; Default
@@ -3669,13 +3669,13 @@ file extension is &quot;bin&quot;.
 <dd>specifies the output file to contain a representation of the absolute image of the code and data using the Intel standard
 hex file format.&nbsp; Default file extension is &quot;hex&quot;.
 <dt><br>OFFSET=n
-<dd>(short form &quot;OFF&quot;) specifies that linear addresses below<b> n</b> should be skipped when outputting the executable
+<dd>(short form &quot;OFF&quot;) specifies that linear addresses below<i> n</i> should be skipped when outputting the executable
 image.&nbsp; This option does not affect address calculations and is intended to avoid unwanted padding when writing executable
 images that do not start at linear address zero.
 <dt><br>HSHIFT
-<dd>defines the relationship between segment values for type 02 records and linear addresses.&nbsp; The value<b> n</b> is the
+<dd>defines the relationship between segment values for type 02 records and linear addresses.&nbsp; The value<i> n</i> is the
 number of digits to right shift a 32-bit value containing a segment address in its upper 16 bits in order to convert it to
-part of a linear address.&nbsp; In more conventional terms, (16 -<b> n</b> ) is the amount to shift a segment value left in
+part of a linear address.&nbsp; In more conventional terms, (16 -<i> n</i> ) is the amount to shift a segment value left in
 order to convert it to part of a linear address.
 <dt><br>STARTREC
 <dd>(short form &quot;ST&quot;) specifies that a Starting Address record will be included in Intel Hex output.&nbsp; This option
@@ -3698,7 +3698,7 @@ specified through &quot;OPTION HSHIFT&quot; to determine the relationship betwee
 can work with any 16:16 segmented architecture regardless of the segment alignment.&nbsp; The default shift value is 12, representing
 the conventional 8086 architecture.&nbsp; This is not to be confused with the optional &quot;OUTPUT HSHIFT&quot; value discussed
 below.
-<br><br>Of course, PROM programmers or third-party tools probably were<b> not</b> designed to work with unconventional shift
+<br><br>Of course, PROM programmers or third-party tools probably were<i> not</i> designed to work with unconventional shift
 values, hence for cases where code for a 24-bit (or other non-standard) target needs to be programmed into a PROM or processed
 by a third-party tool, the &quot;OUTPUT HSHIFT&quot; option can be used to override the &quot;OPTION HSHIFT&quot; value.&nbsp;
 This would usually be of the form &quot;OUTPUT HSHIFT=12&quot; to restore the industry standard setting.&nbsp; The default
@@ -3749,7 +3749,7 @@ must not be modified.
 data segment, it should not assume it contains that value if it is invoked again.&nbsp; The data may have been overwritten
 by another overlay.
 <hr>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>You should not specify a class in an &quot;OVERLAY&quot; directive that belongs to the group &quot;DGROUP&quot;.&nbsp;
 These classes are &quot;BEGDATA&quot;, &quot;DATA&quot;, &quot;BSS&quot; and &quot;STACK&quot;.
@@ -3757,7 +3757,7 @@ These classes are &quot;BEGDATA&quot;, &quot;DATA&quot;, &quot;BSS&quot; and &qu
 <br>If you are linking object files generated by a compiler that uses a class name that does not end with &quot;CODE&quot;
 for segments containing executable code, the &quot;OVERLAY&quot; directive can be used to identify the classes that belong
 to the overlay structure.&nbsp; Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; overlay code1, code2</tt>
 <br><br>Any segment belonging to the class called &quot;CODE1&quot; or &quot;CODE2&quot; is placed in the overlay structure.
 &nbsp;Segments belonging to a class whose name ends with &quot;CODE&quot; will no longer be placed in the overlay structure.
@@ -3772,17 +3772,17 @@ the physical segment.&nbsp; The format of the &quot;PACKCODE&quot; option (short
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the size of the physical segments into which code segments are packed.&nbsp; The default value of<b>
-n</b> is 64K for 16-bit applications.&nbsp; Note that this is also the maximum size of a physical segment.&nbsp; To suppress
-automatic grouping of code segments, specify a value of 0 for<b> n.</b>
-<br><br><b>Notes:</b>
+<br><i>n</i> specifies the size of the physical segments into which code segments are packed.&nbsp; The default value of<i>
+n</i> is 64K for 16-bit applications.&nbsp; Note that this is also the maximum size of a physical segment.&nbsp; To suppress
+automatic grouping of code segments, specify a value of 0 for<i> n.</i>
+<br><br><i>Notes:</i>
 <ol>
 <li>Only adjacent segments are packed into a physical segment.
 <li>Segments belonging to the same group are packed in a physical segment.&nbsp; Segments belonging to different groups are
@@ -3800,17 +3800,17 @@ of the physical segment.&nbsp; The format of the &quot;PACKDATA&quot; option (sh
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><b>n</b> specifies the size of the physical segments into which far data segments are packed.&nbsp; The default value
-of<b> n</b> is 64K for 16-bit applications.&nbsp; Note that this is also the maximum size of a physical segment.&nbsp; To
-suppress automatic grouping of far data segments, specify a value of 0 for<b> n.</b>
-<br><br><b>Notes:</b>
+<br><i>n</i> specifies the size of the physical segments into which far data segments are packed.&nbsp; The default value
+of<i> n</i> is 64K for 16-bit applications.&nbsp; Note that this is also the maximum size of a physical segment.&nbsp; To
+suppress automatic grouping of far data segments, specify a value of 0 for<i> n.</i>
+<br><br><i>Notes:</i>
 <ol>
 <li>Only adjacent segments are packed into a physical segment.
 <li>Segments belonging to the same group are packed in a physical segment.&nbsp; Segments belonging to different groups are
@@ -3873,11 +3873,11 @@ The format of the &quot;PRIVILEGE&quot; option (short form &quot;PRIV&quot;) is 
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
 <br>The default privilege level is 0.
@@ -4054,24 +4054,24 @@ execution of the program.&nbsp; The format of the &quot;RUNTIME&quot; directive 
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 <dt><br>symbol_name
 <dd>is a symbol name.
 <dt><br>MINREAL
 <dd>(short form &quot;MINR&quot;) specifies the minimum number of bytes of conventional memory required to be free after a program
 is loaded by 386|DOS-Extender.&nbsp; Note that this memory is no longer available to the executing program.&nbsp; The default
-value of<b> n</b> is 0 in which case 386|DOS-Extender allocates all conventional memory for the executing program.&nbsp; The
-Open Watcom Linker truncates the specified value to a multiple of 16.<b>&nbsp; n</b> must be less than or equal to hexadecimal
+value of<i> n</i> is 0 in which case 386|DOS-Extender allocates all conventional memory for the executing program.&nbsp; The
+Open Watcom Linker truncates the specified value to a multiple of 16.<i>&nbsp; n</i> must be less than or equal to hexadecimal
 100000 (64K*16).
 <dt><br>MAXREAL
 <dd>(short form &quot;MAXR&quot;) specifies the maximum number of bytes of conventional memory than can be left free after a program
 is loaded by 386|DOS-Extender.&nbsp; Note that this memory is not available to the executing program.&nbsp; The default value
-of<b> n</b> is 0 in which case 386|DOS-Extender allocates all conventional memory for the executing program.<b>&nbsp; n</b>
+of<i> n</i> is 0 in which case 386|DOS-Extender allocates all conventional memory for the executing program.<i>&nbsp; n</i>
 must be less than or equal to hexadecimal ffff0.&nbsp; The Open Watcom Linker truncates the specified value to a multiple
 of 16.
 <dt><br>CALLBUFS
@@ -4080,33 +4080,33 @@ and real mode.&nbsp; This buffer is used for communicating information between r
 &nbsp;The buffer address is obtained at run-time with a 386|DOS-Extender system call.&nbsp; The size returned is the size
 of the buffer in kilobytes and is less than or equal to 64.
 <br>The default buffer size is zero unless changed using the &quot;CALLBUFS&quot; option.&nbsp; The Open Watcom Linker truncates
-the specified value to a multiple of 1024.<b>&nbsp; n</b> must be less than or equal to 64K.&nbsp; Note that<b> n</b> is the
+the specified value to a multiple of 1024.<i>&nbsp; n</i> must be less than or equal to 64K.&nbsp; Note that<i> n</i> is the
 number of bytes, not kilobytes.
 <dt><br>MINIBUF
 <dd>(short form &quot;MINIB&quot;) specifies the minimum size of the data buffer that is used when DOS and BIOS functions are
 called.&nbsp; The size of this buffer is particularly important for file I/O.&nbsp; If your program reads or writes large
-amounts of data, a large value of<b> n</b> should be specified.<b>&nbsp; n</b> represents the number of bytes and must be
-less than or equal to 64K.&nbsp; The default value of<b> n</b> is 1K.&nbsp; The Open Watcom Linker truncates the specified
+amounts of data, a large value of<i> n</i> should be specified.<i>&nbsp; n</i> represents the number of bytes and must be
+less than or equal to 64K.&nbsp; The default value of<i> n</i> is 1K.&nbsp; The Open Watcom Linker truncates the specified
 value to a multiple of 1024.
 <dt><br>MAXIBUF
 <dd>(short form &quot;MAXIB&quot;) specifies the maximum size of the data buffer that is used when DOS and BIOS functions are
 called.&nbsp; The size of this buffer is particularly important for file I/O.&nbsp; If your program reads or writes large
-amounts of data, a large value of<b> n</b> should be specified.<b>&nbsp; n</b> represents the number of bytes and must be
-less than or equal to 64K.&nbsp; The default value of<b> n</b> is 4K.&nbsp; The Open Watcom Linker truncates the specified
+amounts of data, a large value of<i> n</i> should be specified.<i>&nbsp; n</i> represents the number of bytes and must be
+less than or equal to 64K.&nbsp; The default value of<i> n</i> is 4K.&nbsp; The Open Watcom Linker truncates the specified
 value to a multiple of 1024.
 <dt><br>NISTACK
 <dd>(short form &quot;NIST&quot;) specifies the number of stack buffers to be allocated for use by 386|DOS-Extender when switching
-from 32-bit protected mode to real mode.&nbsp; By default, 4 stack buffers are allocated.<b>&nbsp; n</b> must be greater than
+from 32-bit protected mode to real mode.&nbsp; By default, 4 stack buffers are allocated.<i>&nbsp; n</i> must be greater than
 or equal to 4.
 <dt><br>ISTKSIZE
 <dd>(short form &quot;ISTK&quot;) specifies the size of the stack buffers allocated for use by 386|DOS-Extender when switching
-from 32-bit protected mode to real mode.&nbsp; By default, the size of a stack buffer is 1K.&nbsp; The value of<b> n</b> must
+from 32-bit protected mode to real mode.&nbsp; By default, the size of a stack buffer is 1K.&nbsp; The value of<i> n</i> must
 be greater than or equal to 1K and less than or equal to 64K.&nbsp; The Open Watcom Linker truncates the specified value to
 a multiple of 1024.
 <dt><br>REALBREAK
 <dd>(short form &quot;REALB&quot;) specifies how much of the program must be loaded into conventional memory so that it can be
-accessed and/or executed in real mode.&nbsp; If<b> n</b> is specified, the first<b> n</b> bytes of the program must be loaded
-into conventional memory.&nbsp; If<b> symbol</b> is specified, all bytes up to but not including the symbol must be loaded
+accessed and/or executed in real mode.&nbsp; If<i> n</i> is specified, the first<i> n</i> bytes of the program must be loaded
+into conventional memory.&nbsp; If<i> symbol</i> is specified, all bytes up to but not including the symbol must be loaded
 into conventional memory.
 <dt><br>PRIVILEGED
 <dd>(short form &quot;PRIV&quot;) specifies that the executable is to run at Ring 0 privilege level.
@@ -4167,7 +4167,7 @@ when an NLM is loaded).&nbsp; The format of the &quot;SCREENNAME&quot; option (s
 <dt><br>name
 <dd>specifies the screen name.
 </dl>
-<br>If the &quot;SCREENNAME&quot; option is not specified, the<b> description</b> text specified in the &quot;FORMAT&quot;
+<br>If the &quot;SCREENNAME&quot; option is not specified, the<i> description</i> text specified in the &quot;FORMAT&quot;
 directive is used as the screen name.
 <h2 id="The_SECTION_Directive"> The SECTION Directive </h2>
 <br>Formats:&nbsp; DOS 
@@ -4180,7 +4180,7 @@ The format of the &quot;SECTION&quot; directive (short form &quot;S&quot;) is as
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>INTO
-<dd>specifies that the overlay is to be placed into a separate file, namely<b> ovl_file.</b>&nbsp; If &quot;INTO&quot; (short
+<dd>specifies that the overlay is to be placed into a separate file, namely<i> ovl_file.</i>&nbsp; If &quot;INTO&quot; (short
 form &quot;IN&quot;) is not specified, the overlay is placed in the executable file.&nbsp; Note that more than one overlay
 can be placed in the same file by specifying the same file name in multiple &quot;SECTION&quot; directives.
 <dt><br>ovl_file
@@ -4396,11 +4396,11 @@ option (short form &quot;ST&quot;) is as follows.
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
-<dd>represents a value.&nbsp; The complete form of<b> n</b> is the following.
+<dd>represents a value.&nbsp; The complete form of<i> n</i> is the following.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;0x&#93;d{d}&#91;k|m&#93;</tt>
-<br><br><b>d</b> represents a decimal digit.&nbsp; If<b> 0x</b> is specified, the string of digits represents a hexadecimal
-number.&nbsp; If<b> k</b> is specified, the value is multiplied by 1024.&nbsp; If<b> m</b> is specified, the value is multiplied
+<br><br><i>d</i> represents a decimal digit.&nbsp; If<i> 0x</i> is specified, the string of digits represents a hexadecimal
+number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
 <br>The default stack size varies for both 16-bit and protected-mode 32-bit applications depending on the executable format.
@@ -4408,7 +4408,7 @@ by 1024*1024.
 (&quot;OPTION MAP&quot;).&nbsp; During execution of your program, you may get an error message indicating your stack has overflowed.
 &nbsp;If you encounter such an error, you must link your application again, this time specifying a larger stack size using
 the &quot;STACK&quot; option.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option stack=8192</tt>
 <h2 id="The_STANDARD_Option"> The STANDARD Option </h2>
 <br>Formats:&nbsp; DOS 
@@ -4492,7 +4492,7 @@ file and call it &quot;myprog.sym&quot; regardless of the name of the executable
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option symf=myprog</tt>
 <br><br>You can also specify a path and/or file extension when using the &quot;SYMFILE=&quot; form of the &quot;SYMFILE&quot;
 option.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>This option should be used to debug a DOS &quot;COM&quot; executable file.&nbsp; A DOS &quot;COM&quot; executable file
 must not contain any additional information other than the executable information itself since DOS uses the size of the file
@@ -4516,7 +4516,7 @@ the specified symbols.&nbsp; The format of the &quot;SYMTRACE&quot; directive (s
 <dd>is the name of a symbol.
 </dl>
 <br>The information is displayed in the map file.&nbsp; Consider the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink system my_os op map file test lib math symt sin, cos</tt>
 <br><br>The Open Watcom Linker will list, in the map file, all modules that reference the symbols &quot;sin&quot; and &quot;cos&quot;.
 <h2 id="The_SYNCHRONIZE_Option"> The SYNCHRONIZE Option </h2>
@@ -4530,7 +4530,7 @@ the other NLMs are loading during the startup procedure.&nbsp; The format of the
 <br>Formats:&nbsp; All 
 <br><br>There are three forms of the &quot;SYSTEM&quot; directive.
 <br><br>The first form of the &quot;SYSTEM&quot; directive (short form &quot;SYS&quot;) is called a system definition directive.
-&nbsp;It allows you to associate a set of linker directives with a specified name called the<b> system name.</b>&nbsp; This
+&nbsp;It allows you to associate a set of linker directives with a specified name called the<i> system name.</i>&nbsp; This
 set of linker directives is called a system definition block.&nbsp; The format of a system definition directive is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SYSTEM BEGIN system_name {directive} END</tt>
@@ -4544,7 +4544,7 @@ set of linker directives is called a system definition block.&nbsp; The format o
 </dl>
 <br>A system definition directive cannot be specified within another system definition directive.
 <br><br>The second form of the &quot;SYSTEM&quot; directive is called a system deletion directive.&nbsp; It allows you to
-remove the association of a set of linker directives with a<b> system name.</b>&nbsp; The format of a system deletion directive
+remove the association of a set of linker directives with a<i> system name.</i>&nbsp; The format of a system deletion directive
 is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SYSTEM DELETE system_name</tt>
@@ -4566,7 +4566,7 @@ is as follows.
 <br>When this form of the &quot;SYSTEM&quot; directive is encountered, all directives specified in the system definition block
 identified by<tt> system_name</tt> will be processed.
 <br><br>Let us consider an example that demonstrates the use of the &quot;SYSTEM&quot; directive.&nbsp; The following linker
-directives define a system called<b> statistics.</b>
+directives define a system called<i> statistics.</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; system begin statistics</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; format dos</tt>
@@ -4574,11 +4574,11 @@ directives define a system called<b> statistics.</b>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; library stats, graphics</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option stack=8k</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br>They specify that a<b> statistics</b> application is to be created by using the libraries &quot;stats.lib&quot; and
+<br><br>They specify that a<i> statistics</i> application is to be created by using the libraries &quot;stats.lib&quot; and
 &quot;graphics.lib&quot;.&nbsp; These library files are located in the directory &quot;\libs&quot;.&nbsp; The application
 requires a stack size of 8k and the specified format of executable will be generated.
 <br><br>Suppose the linker directives in the above example are contained in the file &quot;stats.lnk&quot;.&nbsp; If we wish
-to create a<b> statistics</b> application, we can issue the following command.
+to create a<i> statistics</i> application, we can issue the following command.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @stats system statistics file myappl</tt>
 <br><br>As demonstrated by the above example, the &quot;SYSTEM&quot; directive can be used to localize the common attributes
@@ -4652,8 +4652,8 @@ format of the &quot;THREADNAME&quot; option (short form &quot;THR&quot;) is as f
 <dt><br>thread_name
 <dd>specifies the pattern used for generating thread names and must be a string of 1 to 5 characters.
 </dl>
-<br>The first thread name is generated by appending &quot;0&quot; to<b> thread_name,</b> the second by appending &quot;1&quot;
-to<b> thread_name,</b> etc.&nbsp; If the &quot;THREADNAME&quot; option is not specified, the first 5 characters of the description
+<br>The first thread name is generated by appending &quot;0&quot; to<i> thread_name,</i> the second by appending &quot;1&quot;
+to<i> thread_name,</i> etc.&nbsp; If the &quot;THREADNAME&quot; option is not specified, the first 5 characters of the description
 specified in the &quot;FORMAT&quot; directive are used as the pattern for generating thread names.
 <h2 id="The_TOGGLERELOCS_Option"> The TOGGLERELOCS Option </h2>
 <br>Formats:&nbsp; OS/2 
@@ -4730,7 +4730,7 @@ the &quot;VFREMOVAL&quot; option (short form &quot;VFR&quot;) is as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPTION VFREMOVAL</tt>
 <br><br>If the &quot;VFREMOVAL&quot; option is specified, the linker will attempt to eliminate unused virtual functions.&nbsp;
-In order for the linker to do this, the Open Watcom C++ &quot;zv&quot; compiler option must be used for<b> all</b> object
+In order for the linker to do this, the Open Watcom C++ &quot;zv&quot; compiler option must be used for<i> all</i> object
 files in the executable.&nbsp; The &quot;VFREMOVAL&quot; option works best in concert with the &quot;ELIMINATE&quot; option.
 <h2 id="The_XDCDATA_Option"> The XDCDATA Option </h2>
 <br>Formats:&nbsp; NetWare 
@@ -4891,7 +4891,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to DOS executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? dos</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -4937,7 +4937,7 @@ variable.
 <br><br>The Open Watcom Linker will create the temporary file in the directory &quot;\tmp&quot;.
 <h2 id="DOS__Using_Overlays"> DOS:&nbsp; Using Overlays </h2>
 <br>Overlays are used primarily for large programs where memory requirements do not permit all portions of the program to
-reside in memory at the same time.&nbsp; An overlayed program consists of a<b> root</b> and a number of<b> overlay areas.</b>
+reside in memory at the same time.&nbsp; An overlayed program consists of a<i> root</i> and a number of<i> overlay areas.</i>
 <br><br>The root always resides in memory.&nbsp; The root usually contains routines that are frequently used.&nbsp; For example,
 a floating-point library might be placed in the root.&nbsp; Also, any modules extracted from a library file during the linking
 process are placed in the root unless the &quot;DISTRIBUTE&quot; option is specified.&nbsp; This option tells the Open Watcom
@@ -4945,9 +4945,9 @@ Linker to distribute modules extracted from libraries throughout the overlay str
 for information on how these object modules are distributed.&nbsp; Libraries can also be placed in the overlay structure by
 using the &quot;FIXEDLIB&quot; directive.&nbsp; See the section entitled <a href="#The_FIXEDLIB_Directive">The FIXEDLIB Directive</a>
 for information on how to use this directive.
-<br><br>An<b> overlay area</b> is a piece of memory shared by various parts of a program.&nbsp; Each overlay area has a structure
+<br><br>An<i> overlay area</i> is a piece of memory shared by various parts of a program.&nbsp; Each overlay area has a structure
 associated with it.&nbsp; This structure defines where in the overlay area sections of a program are loaded.&nbsp; Sections
-of a program that are loaded into an overlay area are called<b> overlays.</b>
+of a program that are loaded into an overlay area are called<i> overlays.</i>
 <br><br>The Open Watcom Linker supports two overlay managers:&nbsp; the standard overlay manager and the dynamic overlay manager.
 &nbsp;The standard overlay manager requires the user to create an overlay structure that defines the &quot;call&quot; relationship
 between the object modules that comprise an application.&nbsp; It is the responsibility of the user to define an optimal overlay
@@ -5009,9 +5009,9 @@ option and a big code memory model.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; +-----------+-----------+-----------+</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
-<li>The 3 overlays are all loaded at the same memory location.&nbsp; Such overlays are called <b> parallel.</b>
+<li>The 3 overlays are all loaded at the same memory location.&nbsp; Such overlays are called <i> parallel.</i>
 </ol>
 <br>In the previous example, only one overlay area was defined.&nbsp; It is possible to define more than one overlay area
 as demonstrated by the following example.
@@ -5198,7 +5198,7 @@ be ignored and each overlay will be loaded into a single overlay area.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; section file file6</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The root contains<tt> file0</tt> and<tt> file1</tt>.
 <li>Four overlays are defined.&nbsp; The first overlay (overlay #1) contains<tt> file2</tt>, the second overlay (overlay #2)
@@ -5240,11 +5240,11 @@ start of overlay</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; +-----------+-----------+-----------+</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>Overlay #1 and overlay #2 are parallel overlays.&nbsp; Overlay #3 and overlay #4 are also parallel overlays.
-<li>Overlay #3 and overlay #4 are loaded in memory following overlay #2.&nbsp; In this case, overlay #2 is called an <b> ancestor</b>
-of overlay #3 and overlay #4.&nbsp; Conversely, overlay #3 and overlay #4 are <b> descendants</b> of overlay #2.
+<li>Overlay #3 and overlay #4 are loaded in memory following overlay #2.&nbsp; In this case, overlay #2 is called an <i> ancestor</i>
+of overlay #3 and overlay #4.&nbsp; Conversely, overlay #3 and overlay #4 are <i> descendants</i> of overlay #2.
 <li>The root is an ancestor of all overlays.
 </ol>
 <br>Nested overlays are particularly useful when the routines that make up one overlay are used only by a few other overlays.
@@ -5276,11 +5276,11 @@ program and less to the way it was coded.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; |</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; +-----------+-----------+</tt>
-<br><br>Function<b> f</b> passes the address of<b> static</b> function<b> g</b> to function<b> h.</b>&nbsp; Function<b> h</b>
-then calls function<b> g</b> indirectly.&nbsp; Function<b> f</b> and function<b> g</b> are defined in<b> modulea</b> and function<b>
-h</b> is defined in<b> moduleb.</b>&nbsp; Furthermore, suppose that<b> modulea</b> and<b> moduleb</b> are parallel overlays.
-&nbsp;The linker will not generate an overlay vector for function<b> g</b> since it is static so when function<b> h</b> calls
-function<b> g</b> indirectly, unpredictable results may occur.&nbsp; Note that if<b> g</b> is a global function, an overlay
+<br><br>Function<i> f</i> passes the address of<i> static</i> function<i> g</i> to function<i> h.</i>&nbsp; Function<i> h</i>
+then calls function<i> g</i> indirectly.&nbsp; Function<i> f</i> and function<i> g</i> are defined in<i> modulea</i> and function<i>
+h</i> is defined in<i> moduleb.</i>&nbsp; Furthermore, suppose that<i> modulea</i> and<i> moduleb</i> are parallel overlays.
+&nbsp;The linker will not generate an overlay vector for function<i> g</i> since it is static so when function<i> h</i> calls
+function<i> g</i> indirectly, unpredictable results may occur.&nbsp; Note that if<i> g</i> is a global function, an overlay
 vector will be generated and the program will execute correctly.
 <li>You should organize the overlay structure to minimize the number of times overlays have to be loaded into memory.&nbsp;
 Consider a loop calling two routines, each routine in a different overlay.&nbsp; If the overlay structure is such that the
@@ -5289,7 +5289,7 @@ into memory.&nbsp; This will significantly increase execution time if the loop i
 <li>If a number of overlays have a number of common routines that they all reference, the common routines will most likely
 be placed in an ancestor overlay of the overlays that reference them.&nbsp; For this reason, whenever an overlay is loaded,
 all its ancestors are also loaded.
-<li>In an overlayed program, the<b> overlay loader</b> is included in the executable file.&nbsp; If we are dealing with relatively
+<li>In an overlayed program, the<i> overlay loader</i> is included in the executable file.&nbsp; If we are dealing with relatively
 small programs, the size of the overlay loader may be larger than the amount of memory saved by overlaying the program.&nbsp;
 In a larger application, the size of the overlayed version would be smaller than the size of the non-overlayed version.&nbsp;
 Note that overlaying a program results in a larger executable file but the memory requirements are less.
@@ -5352,14 +5352,14 @@ an executable file.&nbsp; The resulting output can be redirected to a disk file 
 Watcom Linker to produce an executable file.
 <br><br>Suppose you have a Microsoft linker response file called &quot;test.rsp&quot;.&nbsp; You can convert this file to
 a Open Watcom Linker directive file by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp &gt;test.lnk</tt>
 <br><br>You can now use the Open Watcom Linker to link your program by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @test</tt>
 <br><br>An alternative way to link your application with the Open Watcom Linker from a Microsoft response file is to issue
 the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp | wlink</tt>
 <br><br>Since the Open Watcom Linker gets its input from the standard input device, you do not have to create a Open Watcom
 Linker directive file to link your application.
@@ -5475,7 +5475,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to ZDOS executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? zdos</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -5530,14 +5530,14 @@ an executable file.&nbsp; The resulting output can be redirected to a disk file 
 Watcom Linker to produce an executable file.
 <br><br>Suppose you have a Microsoft linker response file called &quot;test.rsp&quot;.&nbsp; You can convert this file to
 a Open Watcom Linker directive file by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp &gt;test.lnk</tt>
 <br><br>You can now use the Open Watcom Linker to link your program by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @test</tt>
 <br><br>An alternative way to link your application with the Open Watcom Linker from a Microsoft response file is to issue
 the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp | wlink</tt>
 <br><br>Since the Open Watcom Linker gets its input from the standard input device, you do not have to create a Open Watcom
 Linker directive file to link your application.
@@ -5654,7 +5654,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to RAW executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? raw</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -5709,14 +5709,14 @@ an executable file.&nbsp; The resulting output can be redirected to a disk file 
 Watcom Linker to produce an executable file.
 <br><br>Suppose you have a Microsoft linker response file called &quot;test.rsp&quot;.&nbsp; You can convert this file to
 a Open Watcom Linker directive file by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp &gt;test.lnk</tt>
 <br><br>You can now use the Open Watcom Linker to link your program by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @test</tt>
 <br><br>An alternative way to link your application with the Open Watcom Linker from a Microsoft response file is to issue
 the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp | wlink</tt>
 <br><br>Since the Open Watcom Linker gets its input from the standard input device, you do not have to create a Open Watcom
 Linker directive file to link your application.
@@ -5846,7 +5846,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to ELF executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? elf</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -6033,7 +6033,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to NetWare executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? nov</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -6312,7 +6312,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to OS/2 executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? os2</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -6403,14 +6403,14 @@ an executable file.&nbsp; The resulting output can be redirected to a disk file 
 Watcom Linker to produce an executable file.
 <br><br>Suppose you have a Microsoft linker response file called &quot;test.rsp&quot;.&nbsp; You can convert this file to
 a Open Watcom Linker directive file by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp &gt;test.lnk</tt>
 <br><br>You can now use the Open Watcom Linker to link your program by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @test</tt>
 <br><br>An alternative way to link your application with the Open Watcom Linker from a Microsoft response file is to issue
 the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp | wlink</tt>
 <br><br>Since the Open Watcom Linker gets its input from the standard input device, you do not have to create a Open Watcom
 Linker directive file to link your application.
@@ -6540,7 +6540,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to Phar Lap 386|DOS-Extender executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? phar</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -6748,7 +6748,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to QNX executable files by simply typing the following:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? qnx</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file<tt> /etc/wlink.hlp</tt> exists, the contents of that file will be displayed when the following command is
 issued.
@@ -6939,7 +6939,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to Win16 executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? win</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -7056,14 +7056,14 @@ an executable file.&nbsp; The resulting output can be redirected to a disk file 
 Watcom Linker to produce an executable file.
 <br><br>Suppose you have a Microsoft linker response file called &quot;test.rsp&quot;.&nbsp; You can convert this file to
 a Open Watcom Linker directive file by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp &gt;test.lnk</tt>
 <br><br>You can now use the Open Watcom Linker to link your program by issuing the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @test</tt>
 <br><br>An alternative way to link your application with the Open Watcom Linker from a Microsoft response file is to issue
 the following command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp | wlink</tt>
 <br><br>Since the Open Watcom Linker gets its input from the standard input device, you do not have to create a Open Watcom
 Linker directive file to link your application.
@@ -7200,7 +7200,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to WinVxD executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? win vxd</tt>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -7396,7 +7396,7 @@ strings.&nbsp; The Open Watcom Linker command line format is as follows.
 <br>You can view all the directives specific to Win32 executable files by simply typing the following:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? nt</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If the file &quot;wlink.hlp&quot; is located in one of the paths specified in the &quot;PATH&quot; environment variable,
 the contents of that file will be displayed when the following command is issued.
@@ -7781,8 +7781,8 @@ data must be less than 64K since only a single physical segment is allowed in a 
 the size of your program or generate a DOS &quot;EXE&quot; file.
 <h2 id="1090_redefinition_of__s_by__s_ignored"> 1090 redefinition of %s by %s ignored </h2>
 <br>The symbol &quot;%s1&quot; has been redefined by module &quot;%s2&quot;.&nbsp; This message is issued when the size specified
-in the &quot;NAMELEN&quot; option has caused two symbols to map to the same symbol.&nbsp; For example, if the symbols<b> routine1</b>
-and<b> routine2</b> are encountered and &quot;OPTION NAMELEN=7&quot; is specified, then this message will be issued since
+in the &quot;NAMELEN&quot; option has caused two symbols to map to the same symbol.&nbsp; For example, if the symbols<i> routine1</i>
+and<i> routine2</i> are encountered and &quot;OPTION NAMELEN=7&quot; is specified, then this message will be issued since
 the first seven characters of the two symbols are identical.
 <h2 id="2091_group__s_is_in_more_than_one_overlay"> 2091 group %s is in more than one overlay </h2>
 <br>A group that spans more than one section in a 16-bit DOS executable has been detected.

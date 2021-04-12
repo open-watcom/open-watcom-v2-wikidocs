@@ -678,7 +678,7 @@ and these may be specified as an argument to the &quot;l=&quot; option.&nbsp; Th
 <br>The <b> WCL</b> environment variable can be used to specify commonly used <b><i> WCL</i></b> options.&nbsp; The <b> WCL386</b>
 environment variable can be used to specify commonly used <b><i> WCL386</i></b> options.&nbsp; These options are processed
 before options specified on the command line.&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl=-d1 -ot</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl386=-d1 -ot</tt>
 <br><br>The above example defines the default options to be &quot;d1&quot; (include line number debugging information in the
@@ -702,44 +702,44 @@ scratched the surface in describing the capabilities of the <b><i> WCL</i></b> a
 following examples describe the <b><i> WCL</i></b> and <b><i> WCL386</i></b> commands in more detail.
 <br><br>Suppose that your application is contained in three files called<tt> apdemo.c</tt>,<tt> aputils.c</tt>, and<tt> apdata.c.</tt>
 &nbsp;We can compile and link all three files with one command.
-<br><br><b>Example 1:</b>
+<br><br><i>Example 1:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -d2 apdemo.c aputils.c apdata.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -d2 apdemo.c aputils.c apdata.c</tt>
 <br><br>The executable program will be stored in<tt> apdemo.exe</tt> since<tt> apdemo</tt> appeared first in the list.&nbsp;
 Each of the three files is compiled with the &quot;d2&quot; debug option.&nbsp; Debugging information is included in the executable
 file.
 <br><br>We can issue a simpler command if the current directory contains only our three C/C++ source files.
-<br><br><b>Example 2:</b>
+<br><br><i>Example 2:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -d2 *.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -d2 *.c</tt>
 <br><br><b><i> WCL</i></b> or <b><i> WCL386</i></b> will locate all files with the &quot;.c&quot; filename extension and compile
 each of them.&nbsp; The name of the executable file will depend on which of the C/C++ source files is found first.&nbsp; Since
 this is a somewhat haphazard approach to naming the executable file, <b><i> WCL</i></b> and <b><i> WCL386</i></b> have an
 option, &quot;fe&quot;, which will allow you to specify the name to be used.
-<br><br><b>Example 3:</b>
+<br><br><i>Example 3:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -d2 -fe=apdemo *.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -d2 -fe=apdemo *.c</tt>
 <br><br>By using the &quot;fe&quot; option, the executable file will always be called<tt> apdemo.exe</tt> regardless of the
 order of the C/C++ source files in the directory.
 <br><br>If the directory contains other C/C++ source files which are not part of the application then other tricks may be
 used to identify a subset of the files to be compiled and linked.
-<br><br><b>Example 4:</b>
+<br><br><i>Example 4:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -d2 -fe=apdemo ap*.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -d2 -fe=apdemo ap*.c</tt>
 <br><br>Here we compile only those C/C++ source files that begin with the letters &quot;ap&quot;.
 <br><br>In our examples, we have recompiled all the source files each time.&nbsp; In general, we will only compile one of
 them and include the object code for the others.
-<br><br><b>Example 5:</b>
+<br><br><i>Example 5:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -d2 -fe=apdemo aputils.c ap*.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -d2 -fe=apdemo aputils.c ap*.obj</tt>
 <br><br>The source file<tt> aputils.c</tt> is recompiled and<tt> apdemo.obj</tt> and<tt> apdata.obj</tt> are included when
 linking the application.&nbsp; The &quot;.obj&quot; filename extension indicates that this file need not be compiled.
-<br><br><b>Example 6:</b>
+<br><br><i>Example 6:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -fe=demo *.c utility.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl386 -fe=demo *.c utility.obj</tt>
 <br><br>All of the C/C++ source files in the current directory are compiled and then linked with<tt> utility.obj</tt> to generate<tt>
 demo.exe.</tt>&nbsp; 
-<br><br><b>Example 7:</b>
+<br><br><i>Example 7:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl=-mm -d1 -ox -k4096</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wcl -fe=grdemo gr*.c graph.lib -fd=grdemo</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl386=-d1 -ox -k4096</tt>
@@ -747,7 +747,7 @@ demo.exe.</tt>&nbsp;
 <br><br>All C/C++ source files beginning with the letters &quot;gr&quot; are compiled and then linked with<tt> graph.lib</tt>
 to generate<tt> grdemo.exe</tt> which uses a 4K stack.&nbsp; The temporary linker directive file that is created by <b><i>
 WCL</i></b> or <b><i> WCL386</i></b> will be kept and renamed to<tt> grdemo.lnk.</tt>&nbsp; 
-<br><br><b>Example 8:</b>
+<br><br><i>Example 8:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set libos2=c:\watcom\lib286\os2;c:\os2</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set lib=c:\watcom\lib286\dos;c:\watcom\lib286</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wcl=-mm -lp</tt>
@@ -1161,32 +1161,32 @@ describing the capabilities of the <b><i> owcc</i></b> command.&nbsp; The follow
 commands in more detail.
 <br><br>Suppose that your application is contained in three files called<tt> apdemo.c</tt>,<tt> aputils.c</tt>, and<tt> apdata.c.</tt>
 &nbsp;We can compile and link all three files with one command.
-<br><br><b>Example 1:</b>
+<br><br><i>Example 1:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -g apdemo.c aputils.c apdata.c</tt>
 <br><br>The executable program will be stored in<tt> a.out.</tt>&nbsp; Each of the three files is compiled with the &quot;g&quot;
 debug option.&nbsp; Debugging information is included in the executable file.
 <br><br>We can issue a simpler command if the current directory contains only our three C/C++ source files.
-<br><br><b>Example 2:</b>
+<br><br><i>Example 2:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -g *.c</tt>
 <br><br><b><i> owcc</i></b> will locate all files with the &quot;.c&quot; filename extension and compile each of them.&nbsp;
 The default name of the executable file will be<tt> a.out.</tt>&nbsp; Since it is only possible to have one executable with
 the name<tt> a.out</tt> in a directory, <b><i> owcc</i></b> has an option, &quot;o&quot;, which will allow you to specify
 the name to be used.
-<br><br><b>Example 3:</b>
+<br><br><i>Example 3:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -g -o apdemo *.c</tt>
 <br><br>By using the &quot;o&quot; option, the executable file will always be called<tt> apdemo.</tt>
 <br><br>If the directory contains other C/C++ source files which are not part of the application then other tricks may be
 used to identify a subset of the files to be compiled and linked.
-<br><br><b>Example 4:</b>
+<br><br><i>Example 4:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -g -o apdemo ap*.c</tt>
 <br><br>Here we compile only those C/C++ source files that begin with the letters &quot;ap&quot;.
 <br><br>In our examples, we have recompiled all the source files each time.&nbsp; In general, we will only compile one of
 them and include the object code for the others.
-<br><br><b>Example 5:</b>
+<br><br><i>Example 5:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -g -o apdemo aputils.c ap*.obj</tt>
 <br><br>The source file<tt> aputils.c</tt> is recompiled and<tt> apdemo.obj</tt> and<tt> apdata.obj</tt> are included when
 linking the application.&nbsp; The &quot;.obj&quot; filename extension indicates that this file need not be compiled.
-<br><br><b>Example 6:</b>
+<br><br><i>Example 6:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;owcc -o demo *.c utility.obj</tt>
 <br><br>All of the C/C++ source files in the current directory are compiled and then linked with<tt> utility.obj</tt> to generate<tt>
 demo.</tt>&nbsp; The temporary linker directive file that is created by <b><i> owcc</i></b> will be kept and renamed to<tt>
@@ -1247,7 +1247,7 @@ from &quot;USE16&quot; to &quot;USE32&quot;)
 <dt><br>add s
 <dd>defines &quot;__STACK__&quot;
 </dl>
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -3p&nbsp;&nbsp;&nbsp;&nbsp; -4pr&nbsp;&nbsp;&nbsp; -5p</tt>
 <dt><br>bt=&lt;os&gt;
 <dd>defines &quot;__&lt;os&gt;__&quot; and checks the &quot;&lt;os&gt;_INCLUDE&quot; environment variable for include files
@@ -1821,7 +1821,7 @@ name mangler</tt>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '^'</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PASCAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '^'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '^'</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>In STDCALL procedures name 'nn' is overall parametrs size in bytes.&nbsp; '@nn' is suppressed when -zz command line option
 is used (WATCOM 10.0 compatibility).
@@ -1861,7 +1861,7 @@ stack&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left to right&nbsp;&nbsp;&nbsp; yes</t
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left to right&nbsp;&nbsp;&nbsp; yes</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PASCAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stack
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left to right&nbsp;&nbsp;&nbsp; yes</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If any parameter is passed on the stack then WASM automaticaly cleanup caller stack.
 <li>For STDCALL procedures WASM automaticaly cleanup caller stack, except case when vararg parameter is used.
@@ -2306,7 +2306,7 @@ of the Open Watcom Library Manager and must be preceded by a &quot;/&quot; chara
 be used as an option delimiter for options following the library file name since it will be interpreted as a delete command.
 <dt><br>cmd_list
 <dd>is a list of commands to the Open Watcom Library Manager specifying what operations are to be performed.&nbsp; Each command
-in<b> cmd_list</b> is separated by a space.
+in<i> cmd_list</i> is separated by a space.
 </dl>
 <br>The following is a summary of valid options.&nbsp; Items enclosed in square brackets &quot;&#91;&#93;&quot; are optional.
 &nbsp;Items separated by an or-bar &quot;|&quot; and enclosed in parentheses &quot;()&quot; indicate that one of the items
@@ -2399,7 +2399,7 @@ specification for an object file.&nbsp; If you are using a DOS, OS/2 or Windows-
 Manager, a file extension of &quot;obj&quot; is assumed if none is specified.&nbsp; If you are using a UNIX-hosted version
 of the Open Watcom Library Manager, a file extension of &quot;o&quot; is assumed if none is specified.&nbsp; If the library
 file does not exist, a warning message will be issued and the library file will be created.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib +myobj</tt>
 <br><br>In the above example, the object file &quot;myobj&quot; is added to the library file &quot;mylib.lib&quot;.
 <br><br>When a module is added to a library, the Open Watcom Library Manager will issue a warning if a symbol redefinition
@@ -2407,19 +2407,19 @@ occurs.&nbsp; This will occur if a symbol in the module being added is already d
 in the library file.&nbsp; Note that the module will be added to the library in any case.
 <br><br>It is also possible to combine two library files together.&nbsp; The following example adds all modules in the library
 &quot;newlib.lib&quot; to the library &quot;mylib.lib&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib +newlib.lib</tt>
 <br><br>Note that you must specify the &quot;lib&quot; file extension.&nbsp; Otherwise, the Open Watcom Library Manager will
 assume you are adding an object file.
 <h2 id="Deleting_Modules_from_a_Library_File"> Deleting Modules from a Library File </h2>
 <br>A module can be deleted from a library file by specifying a<b> -mod_name</b> command where<b> mod_name</b> is the file
 name of the object file when it was added to the library with the directory and file extension removed.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib -myobj</tt>
 <br><br>In the above example, the Open Watcom Library Manager is instructed to delete the module &quot;myobj&quot; from the
 library file &quot;mylib.lib&quot;.
 <br><br>It is also possible to specify a library file instead of a module name.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib -oldlib.lib</tt>
 <br><br>In the above example, all modules in the library file &quot;oldlib.lib&quot; are removed from the library file &quot;mylib.lib&quot;.
 &nbsp;Note that you must specify the &quot;lib&quot; file extension.&nbsp; Otherwise, the Open Watcom Library Manager will
@@ -2427,11 +2427,11 @@ assume you are removing an object module.
 <h2 id="Replacing_Modules_in_a_Library_File"> Replacing Modules in a Library File </h2>
 <br>A module can be replaced by specifying a<b> -+mod_name</b> or<b> +-mod_name</b> command.&nbsp; The module<b> mod_name</b>
 is deleted from the library.&nbsp; The object file &quot;mod_name&quot; is then added to the library.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib -+myobj</tt>
 <br><br>In the above example, the module &quot;myobj&quot; is replaced by the object file &quot;myobj&quot;.
 <br><br>It is also possible to merge two library files.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib -+updlib.lib</tt>
 <br><br>In the above example, all modules in the library file &quot;updlib.lib&quot; replace the corresponding modules in
 the library file &quot;mylib.lib&quot;.&nbsp; Any module in the library &quot;updlib.lib&quot; not in library &quot;mylib.lib&quot;
@@ -2444,7 +2444,7 @@ UNIX-hosted version of the Open Watcom Library Manager.&nbsp; The module<b> mod_
 disk file.&nbsp; If<b> mod_name</b> is preceded by a path specification, the output file will be placed in the directory identified
 by the path specification.&nbsp; If<b> mod_name</b> is followed by a file extension, the output file will contain the specified
 file extension.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib *myobj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOS, OS/2 or Windows-hosted</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib :myobj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UNIX-hosted</tt>
@@ -2452,14 +2452,14 @@ file extension.
 file with file name &quot;myobj&quot;.&nbsp; If you are running a DOS, OS/2 or Windows-hosted version of the Open Watcom Library
 Manager, a file extension of &quot;obj&quot; will be used.&nbsp; If you are running a UNIX-hosted version of the Open Watcom
 Library Manager, a file extension of &quot;o&quot; will be used.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib *myobj.out&nbsp;&nbsp;&nbsp; DOS, OS/2 or Windows-hosted</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib :myobj.out&nbsp;&nbsp;&nbsp; UNIX-hosted</tt>
 <br><br>In the above example, the module &quot;myobj&quot; will be extracted from the library file &quot;mylib.lib&quot; and
 placed in the file &quot;myobj.out&quot;
 <br><br>The following form of the extract command can be used if the module name is not the same as the output file name.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib *myobj=newmyobj.out&nbsp;&nbsp;&nbsp; DOS, OS/2 or Windows-hosted</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib :myobj=newmyobj.out&nbsp;&nbsp;&nbsp; UNIX-hosted</tt>
@@ -2467,7 +2467,7 @@ placed in the file &quot;myobj.out&quot;
 command for a DOS, OS/2 or Windows-hosted version of the Open Watcom Library Manager or a<b> :-mod_name</b> command for a
 UNIX-hosted version of the Open Watcom Library Manager.&nbsp; The following example performs the same operations as in the
 previous example but, in addition, the module is deleted from the library file.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib *-myobj.out&nbsp;&nbsp; DOS, OS/2 or Windows-hosted</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib :-myobj.out&nbsp;&nbsp; UNIX-hosted</tt>
@@ -2475,7 +2475,7 @@ previous example but, in addition, the module is deleted from the library file.
 <h2 id="Creating_Import_Libraries"> Creating Import Libraries </h2>
 <br>The Open Watcom Library Manager can also be used to create import libraries from Dynamic Link Libraries.&nbsp; Import
 libraries are used when linking OS/2, Win16 or Win32 applications.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib implib +dynamic.dll</tt>
 <br><br>In the above example, the following actions are performed.&nbsp; For each external symbol in the specified Dynamic
 Link Library, a special object module is created that identifies the external symbol and the actual name of the Dynamic Link
@@ -2502,7 +2502,7 @@ the default export name is<tt> sym.</tt>
 <dt><br>ordinal
 <dd>is the ordinal value that can be used to identify<tt> sym</tt> instead of using the name<tt> export_name.</tt>
 </dl>
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib math ++__sin.trig.sin.1</tt>
 <br><br>In the above example, an import library entry will be created for symbol<tt> sin</tt> and added to the library &quot;math.lib&quot;.
 &nbsp;The symbol<tt> sin</tt> is defined in the Dynamic Link Library called &quot;trig.dll&quot; as<tt> __sin.</tt>&nbsp;
@@ -2514,7 +2514,7 @@ sin.</tt>
 the<b> @name</b> command where<b> name</b> is a file specification for the command file or the name of an environment variable.
 &nbsp;A file extension of &quot;lbc&quot; is assumed for files if none is specified.&nbsp; The commands must be one of those
 previously described.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib @mycmd</tt>
 <br><br>In the above example, all commands in the environment variable &quot;mycmd&quot; or file &quot;mycmd.lbc&quot; are
 processed by the Open Watcom Library Manager.
@@ -2523,7 +2523,7 @@ processed by the Open Watcom Library Manager.
 <h3 id="Suppress_Creation_of_Backup_File_M__b__Option"> Suppress Creation of Backup File - &quot;b&quot; Option </h3>
 <br>The &quot;b&quot; option tells the Open Watcom Library Manager to not create a backup library file.&nbsp; In the following
 example, the object file identified by &quot;new&quot; will be added to the library file &quot;mylib.lib&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -b mylib +new</tt>
 <br><br>If the library file &quot;mylib.lib&quot; already exits, no backup library file (&quot;mylib.bak&quot;) will be created.
 <h3 id="Case_Sensitive_Symbol_Names_M__c__Option"> Case Sensitive Symbol Names - &quot;c&quot; Option </h3>
@@ -2538,7 +2538,7 @@ placed.&nbsp; The default is to place all extracted modules in the current direc
 If you are running a DOS, OS/2 or Windows-hosted version of the Open Watcom Library Manager, the module will be placed in
 the file &quot;\obj\mymod.obj&quot;.&nbsp; If you are running a UNIX-hosted version of the Open Watcom Library Manager, the
 module will be placed in the file &quot;/o/mymod.o&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -d=\obj mymod&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOS, OS/2 or Windows-hosted</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -d=/o mymod&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UNIX-hosted</tt>
@@ -2590,7 +2590,7 @@ is the default.
 <dt><br>inn
 <dd>Specifying &quot;inn&quot; causes imports for names in the non-resident names table to be imported by name.
 </dl>
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -iro -inn implib +dynamic.dll</tt>
 <br><br>Note that you must specify the &quot;dll&quot; file extension for the Dynamic Link Library.&nbsp; Otherwise an object
 file will be assumed.
@@ -2598,19 +2598,19 @@ file will be assumed.
 <br>The &quot;l&quot; (lower case &quot;L&quot;) option instructs the Open Watcom Library Manager to produce a list of the
 names of all symbols that can be found in the library file to a listing file.&nbsp; The file name of the listing file is the
 same as the file name of the library file.&nbsp; The file extension of the listing file is &quot;lst&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -l mylib</tt>
 <br><br>In the above example, the Open Watcom Library Manager is instructed to list the contents of the library file &quot;mylib.lib&quot;
 and produce the output to a listing file called &quot;mylib.lst&quot;.
 <br><br>An alternate form of this option is<tt> -l=list_file.</tt>&nbsp; With this form, you can specify the name of the listing
 file.&nbsp; When specifying a listing file name, a file extension of &quot;lst&quot; is assumed if none is specified.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -l=mylib.out mylib</tt>
 <br><br>In the above example, the Open Watcom Library Manager is instructed to list the contents of the library file &quot;mylib.lib&quot;
 and produce the output to a listing file called &quot;mylib.out&quot;.
 <br><br>You can get a listing of the contents of a library file to the terminal by specifying only the library name on the
 command line as demonstrated by the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib mylib</tt>
 <h3 id="Display_CPP_Mangled_Names_M__m__Option"> Display C++ Mangled Names - &quot;m&quot; Option </h3>
 <br>The &quot;m&quot; option instructs the Open Watcom Library Manager to display C++ mangled names rather than displaying
@@ -2621,7 +2621,7 @@ form.
 file already exists, a backup copy is made (unless the &quot;b&quot; option was specified).&nbsp; The original contents of
 the library are discarded and a new library is created.&nbsp; If the &quot;n&quot; option was not specified, the existing
 library would be updated.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -n mylib +myobj</tt>
 <br><br>In the above example, a library file called &quot;mylib.lib&quot; is created.&nbsp; It will contain a single object
 module, namely &quot;myobj&quot;, regardless of the contents of &quot;mylib.lib&quot; prior to issuing the above command.
@@ -2629,7 +2629,7 @@ module, namely &quot;myobj&quot;, regardless of the contents of &quot;mylib.lib&
 <h3 id="Specifying_an_Output_File_Name_M__o__Option"> Specifying an Output File Name - &quot;o&quot; Option </h3>
 <br>The &quot;o&quot; option can be used to specify the output library file name if you want the original library to remain
 unchanged and a new library created.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -o=newlib lib1 +lib2.lib</tt>
 <br><br>In the above example, the modules from &quot;lib1.lib&quot; and &quot;lib2.lib&quot; are added to the library &quot;newlib.lib&quot;.
 &nbsp;Note that since the original library remains unchanged, no backup copy is created.&nbsp; Also, if the &quot;l&quot;
@@ -2643,13 +2643,13 @@ default record size is 256 bytes.
 &nbsp;The offset is 16 bits and is a multiple of the record size.&nbsp; Since the default record size is 256, the maximum
 size of a library file for a record size of 256 is 256*64K.&nbsp; If the size of the library file increases beyond this size,
 you must increase the record size.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -p=512 lib1 +lib2.lib</tt>
 <br><br>In the above example, the Open Watcom Library Manager is instructed to create/update the library file &quot;lib1.lib&quot;
 by adding the modules from the library file &quot;lib2.lib&quot;.&nbsp; The record size of the resulting library file is 512
 bytes.
 <br><br>The &quot;pa&quot; option specifies the record size is determined automaticaly to be minimal in size.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -pa lib1 +lib2.lib</tt>
 <br><br>In the above example, the Open Watcom Library Manager is instructed to create/update the library file &quot;lib1.lib&quot;
 by adding the modules from the library file &quot;lib2.lib&quot;.&nbsp; The record size of the resulting library file is optimal
@@ -2657,25 +2657,25 @@ by adding the modules from the library file &quot;lib2.lib&quot;.&nbsp; The reco
 <h3 id="Operate_Quietly_M__q__Option"> Operate Quietly - &quot;q&quot; Option </h3>
 <br>The &quot;q&quot; option suppressing the banner and copyright notice that is normally displayed when the Open Watcom Library
 Manager is invoked.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -q -l mylib</tt>
 <h3 id="Strip_Line_Number_Records_M__s__Option"> Strip Line Number Records - &quot;s&quot; Option </h3>
 <br>The &quot;s&quot; option tells the Open Watcom Library Manager to remove line number records from object files that are
 being added to a library.&nbsp; Line number records are generated in the object file if the &quot;d1&quot; option is specified
 when compiling the source code.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -s mylib +myobj</tt>
 <h3 id="Trim_Module_Name_M__t__Option"> Trim Module Name - &quot;t&quot; Option </h3>
 <br>The &quot;t&quot; option tells the Open Watcom Library Manager to remove path information from the module name specified
 in THEADR records in object files that are being added to a library.&nbsp; The module name is created from the file name by
 the compiler and placed in the THEADR record of the object file.&nbsp; The module name will contain path information if the
 file name given to the compiler contains path information.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -t mylib +myobj</tt>
 <h3 id="Operate_Verbosely_M__v__Option"> Operate Verbosely - &quot;v&quot; Option </h3>
 <br>The &quot;v&quot; option enables the display of the banner and copyright notice when the Open Watcom Library Manager is
 invoked.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -v -l mylib</tt>
 <h3 id="Explode_Library_File_M__x__Option"> Explode Library File - &quot;x&quot; Option </h3>
 <br>The &quot;x&quot; option tells the Open Watcom Library Manager to extract all modules from the library.&nbsp; Note that
@@ -2683,13 +2683,13 @@ the modules are not deleted from the library.&nbsp; Object modules will be place
 option is used to specify an alternate directory.
 <br><br>In the following example all modules will be extracted from the library &quot;mylib.lib&quot; and placed in the current
 directory.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -x mylib</tt>
 <br><br>In the following example, all modules will be extracted from the library &quot;mylib.lib&quot;.&nbsp; If you are running
 a DOS, OS/2 or Windows-hosted version of the Open Watcom Library Manager, the module will be placed in the &quot;\obj&quot;
 directory.&nbsp; If you are running a UNIX-hosted version of the Open Watcom Library Manager, the module will be placed in
 the file &quot;/o&quot; directory.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -x -d=\obj mylib&nbsp;&nbsp;&nbsp; DOS, OS/2 or Windows-hosted</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlib -x -d=/o mylib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UNIX-hosted</tt>
@@ -2826,19 +2826,19 @@ in any order.
 take the form &quot;Ln&quot; where &quot;n&quot; is one or more digits.&nbsp; The default character &quot;L&quot; can be changed
 using the &quot;i&quot; option.&nbsp; The replacement character must be a letter (a-z, A-Z).&nbsp; A lowercase letter is converted
 to uppercase.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis calendar -i=x</tt>
 <h2 id="The_Assembly_Format_Option_M__a_"> The Assembly Format Option - &quot;a&quot; </h2>
 <br>The &quot;a&quot; option controls the format of the output produced to the listing file.&nbsp; When specified, the Open
 Watcom Disassembler will produce a listing file that can be used as input to an assembler.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis calendar -a -l=calendar.asm</tt>
 <br><br>In the above example, the Open Watcom Disassembler is instructed to disassemble the contents of the file<tt> calendar.obj</tt>
 and produce the output to the file<tt> calendar.asm</tt> so that it can be assembled by an assembler.
 <h2 id="The_External_Symbols_Option_M__e_"> The External Symbols Option - &quot;e&quot; </h2>
 <br>The &quot;e&quot; option controls the amount of information produced in the listing file.&nbsp; When specified, a list
 of all externally defined symbols is produced in the listing file.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis calendar -e</tt>
 <br><br>In the above example, the Open Watcom Disassembler is instructed to disassemble the contents of the file<tt> calendar.obj</tt>
 and produce the output, with a list of all external symbols, on the screen.&nbsp; A sample list of external symbols is shown
@@ -2896,20 +2896,20 @@ characters.&nbsp; The default is to display them in lowercase characters.
 <br>By default, the Open Watcom Disassembler produces its output to the terminal.&nbsp; The &quot;l&quot; (lowercase L) option
 instructs the Open Watcom Disassembler to produce the output to a listing file.&nbsp; The default file name of the listing
 file is the same as the file name of the object file.&nbsp; The default file extension of the listing file is<tt> .lst.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis calendar -l</tt>
 <br><br>In the above example, the Open Watcom Disassembler is instructed to disassemble the contents of the file<tt> calendar.obj</tt>
 and produce the output to a listing file called<tt> calendar.lst.</tt>
 <br><br>An alternate form of this option is &quot;l=&lt;list_file&gt;&quot;.&nbsp; With this form, you can specify the name
 of the listing file.&nbsp; When specifying a listing file, a file extension of<tt> .lst</tt> is assumed if none is specified.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis calendar -l=calendar.lis</tt>
 <br><br>In the above example, the Open Watcom Disassembler is instructed to disassemble the contents of the file<tt> calendar.obj</tt>
 and produce the output to a listing file called<tt> calendar.lis.</tt>
 <h2 id="The_Public_Symbols_Option_M__p_"> The Public Symbols Option - &quot;p&quot; </h2>
 <br>The &quot;p&quot; option controls the amount of information produced in the listing file.&nbsp; When specified, a list
 of all public symbols is produced in the listing file.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis calendar -p</tt>
 <br><br>In the above example, the Open Watcom Disassembler is instructed to disassemble the contents of the file<tt> calendar.obj</tt>
 and produce the output, with a list of all exported symbols, to the screen.&nbsp; A sample list of public symbols is shown
@@ -2987,13 +2987,13 @@ object file, the &quot;s&quot; option is ignored.
 </ol>
 <br>In the following example, we have compiled the source file<tt> mysrc.c</tt> with &quot;d1&quot; debugging information.
 &nbsp;We then disassemble it as follows:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis mysrc -s -l</tt>
 <br><br>In the above example, the Open Watcom Disassembler is instructed to disassemble the contents of the file<tt> mysrc.obj</tt>
 and produce the output to the listing file<tt> mysrc.lst.</tt>&nbsp; The source lines are extracted from the file<tt> mysrc.c.</tt>
 <br><br>An alternate form of this option is &quot;s=&lt;source_file&gt;&quot;.&nbsp; With this form, you can specify the name
 of the source file.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wdis mysrc -s=myprog.c -l</tt>
 <br><br>The above example produces the same result as in the previous example except the source lines are extracted from the
 file<tt> myprog.c.</tt>
@@ -3268,7 +3268,7 @@ of the following sequences of code.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; call&nbsp;&nbsp; near label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push&nbsp;&nbsp; cs</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; nop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call&nbsp;&nbsp; near label</tt>
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>The<b> nop</b> or<b> seg ss</b> instruction is present since a<b> call far label</b> instruction is five bytes.&nbsp;
 The<b> push cs</b> instruction is one byte and the<b> call near label</b> instruction is three bytes.&nbsp; The<b> seg ss</b>
@@ -3335,11 +3335,11 @@ the following format.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; seg_name start-end</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; seg_name start:length</tt>
-<br><br><b>seg_name</b> is the name of a segment.<b>&nbsp; start</b> is an offset into the specified segment defining the
-start of the range.<b>&nbsp; end</b> is an offset into the specified segment defining the end of the range.<b>&nbsp; length</b>
-is the number of bytes from<b> start</b> to be included in the range.&nbsp; All values are assumed to be hexadecimal.
+<br><br><i>seg_name</i> is the name of a segment.<i>&nbsp; start</i> is an offset into the specified segment defining the
+start of the range.<i>&nbsp; end</i> is an offset into the specified segment defining the end of the range.<i>&nbsp; length</i>
+is the number of bytes from<i> start</i> to be included in the range.&nbsp; All values are assumed to be hexadecimal.
 </dl>
-<br><b>Notes:</b>
+<br><i>Notes:</i>
 <ol>
 <li>If more than one class list or segment list is specified, only the last one is used.&nbsp; A class or segment list applies
 to all object and library files regardless of their position relative to the class or segment list.
@@ -3347,18 +3347,18 @@ to all object and library files regardless of their position relative to the cla
 more than one module, the range list will only apply to the first module in the object file.
 </ol>
 <br>The following examples illustrate the use of the Open Watcom Far Call Optimization Enabling Utility.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fcenable -c code *.obj</tt>
 <br><br>In the above example, the far call optimization will be enabled for all segments belonging to the &quot;code&quot;
 class.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fcenable -s _text *.obj</tt>
 <br><br>In the above example, the far call optimization will be enabled for all segments with name &quot;_text&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fcenable -x special 0:400 asmfile.obj</tt>
 <br><br>In the above example, the far call optimization will be disabled for the first 1k bytes of the segment named &quot;special&quot;
 in the object file &quot;asmfile&quot;.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fcenable -x special 0-ffffffff asmfile.obj</tt>
 <br><br>In the above example, the far call optimization will be disabled for the entire segment named &quot;special&quot;
 in the object file &quot;asmfile&quot;.
@@ -3414,7 +3414,7 @@ of &quot;.exe&quot; is assumed.&nbsp; Wild card specifiers may not be used.
 <dd>is an optional file specification for a binary output file.&nbsp; If no file name is given, the extension of the input file
 is replaced by &quot;bin&quot; and taken as the name for the binary output file.
 </dl>
-<br><b>Description:</b>
+<br><i>Description:</i>
 <ol>
 <li>If are any relocations in the input file, the -l option becomes mandatory (and is useless otherwise).
 <li>If exe2bin is called without the -x option, certain restrictions to the input file apply (apart from being a valid DOS
@@ -3433,12 +3433,12 @@ exe2bin skips another 0x100 bytes following the header (in addition to the latte
 com&quot;</tt> ).
 </ol>
 <br>The examples below illustrate the use of Open Watcom Exe2bin.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; exe2bin prog.exe</tt>
 <br><br>Strips off the executable header from<tt> prog.exe</tt> and writes the binary part to<tt> prog.bin.</tt>&nbsp; If
 there are any relocations in<tt> prog.exe</tt> or if the input file violates any of the restrictions listed above, the execution
 of exe2bin fails.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; exe2bin -x prog.exe</tt>
 <br><br>Same as above but the<tt> &quot;-x&quot;</tt> option relaxes certain restrictions.
 <hr>
@@ -3446,10 +3446,10 @@ of exe2bin fails.
 examples (i.e.&nbsp; with vs.&nbsp; without -x) the output files may differ.&nbsp; This happens when cs:ip = 0x0000:0x0100
 causes exe2bin to skip additional 0x100 bytes from the input file, if the user did not specify -x.
 <hr>
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; exe2bin -h prog.exe test.bin</tt>
 <br><br>Displays the header of<tt> prog.exe</tt>, strips it off and copies the binary part to<tt> test.bin.</tt>
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; exe2bin -h -r -x -l=0xE000 bios.exe bios.rom</tt>
 <br><br>Displays the header and the relocations (if any) of<tt> bios.exe</tt> strips the header and applies any fixups to
 (i.e.&nbsp; relocates)<tt> bios.exe</tt> as if it were to be loaded at 0xE000:0x0000.&nbsp; The result will be written to<tt>
@@ -3544,7 +3544,7 @@ If the file sizes match, the program responds with:
 BPATCH aborts.&nbsp; Once the patch has been applied the resulting file is verified.&nbsp; First the file size is checked
 to make sure it matches the expected file size.&nbsp; If the file size matches, a check-sum is computed and compared to the
 expected check-sum.
-<br><br><b>Notes:</b>
+<br><br><i>Notes:</i>
 <ol>
 <li>If an error message is issued during the patch process, the file that you specified to be patched will remain unchanged.
 <li>If a sequence of patch files exist, such as &quot;wlink.a&quot;, &quot;wlink.b&quot; and &quot;wlink.c&quot;, the patches
@@ -3660,16 +3660,16 @@ be used.
 <dd>is an optional file specification for the file in which the debugging or resource information is to be stored (when removing
 information) or read (when adding information).&nbsp; If no file extension is specified, a file extension of &quot;sym&quot;
 is assumed for debugging information and &quot;res&quot; for resource information.&nbsp; To specify the name of the information
-file but not the name of an output file, a &quot;.&quot; may be specified in place of<b> output_file.</b>
+file but not the name of an output file, a &quot;.&quot; may be specified in place of<i> output_file.</i>
 </dl>
-<br><b>Description:</b>
+<br><i>Description:</i>
 <ol>
 <li>If the &quot;r&quot; (resource) option is not specified then the default action is to add/remove symbolic debugging information.
 <li>If the &quot;a&quot; (add) option is not specified then the default action is to remove information.
-<li>If<b> output_file</b> is not specified, the debugging or resource information is added to or removed from<b> input_file.</b>
-<li>If<b> output_file</b> is specified,<b> input_file</b> is copied to<b> output_file</b> and the debugging or resource information
-is added to or removed from<b> output_file.&nbsp; input_file</b> remains unchanged.
-<li>If<b> info_file</b> is specified then the debugging or resource information that is added to or removed from the executable
+<li>If<i> output_file</i> is not specified, the debugging or resource information is added to or removed from<i> input_file.</i>
+<li>If<i> output_file</i> is specified,<i> input_file</i> is copied to<i> output_file</i> and the debugging or resource information
+is added to or removed from<i> output_file.&nbsp; input_file</i> remains unchanged.
+<li>If<i> info_file</i> is specified then the debugging or resource information that is added to or removed from the executable
 file is read from or written to this file.&nbsp; The debugging or resource information may be appended to the executable by
 specifying the &quot;a&quot; (add) option.&nbsp; Also, the debugging information may be appended to the executable by concatenating
 the debugging information file to the end of the executable file (the files must be treated as binary files).
@@ -3763,7 +3763,7 @@ NMAKE mode.&nbsp;
 <h3 id="Open_Watcom_Make_Options_Summary"> Open Watcom Make Options Summary </h3>
 <br>In this section, we present a terse summary of the Open Watcom Make options.&nbsp; This summary is displayed on the screen
 by simply entering &quot;WMAKE ?&quot; on the command line.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake ?</tt>
 <dl>
 <dt>-a
@@ -3847,7 +3847,7 @@ in a makefile.
 <br>The &quot;f&quot; option specifies that the next parameter on the command line is the name of a makefile which must be
 processed.&nbsp; If the &quot;f&quot; option is specified then the search for the default makefile named &quot;MAKEFILE&quot;
 is not done.&nbsp; Any number of makefiles may be processed with the &quot;f&quot; option.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake /f myfile</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake /f myfile1 /f myfile2</tt>
 <h4 id="h"> h </h4>
@@ -3882,7 +3882,7 @@ NMAKE is a backslash (&quot;\&quot;) at the end of the line.
 <br>The &quot;n&quot; option will print out what commands should be executed to update the application without actually executing
 them.&nbsp; Combined with the &quot;h&quot; option, a batch file could be produced which would contain the commands necessary
 to update the application.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake /h /n &gt;update.bat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; update</tt>
 <br><br>This is useful for applications which require all available resources (memory and devices) for executing the updating
@@ -3899,7 +3899,7 @@ definitions.
 <br>query mode - check targets without updating them
 <br>The &quot;q&quot; option will cause Make to return a status of 1 if the application requires updating; it will return
 a status of 0 otherwise.&nbsp; Here is a example batch file using the &quot;q&quot; option:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake /q</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; if errorstatus 0 goto noupdate</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake /q /h /n &gt;\tmp\update.bat</tt>
@@ -4105,7 +4105,7 @@ options.
 </dl>
 <br>The next three tables contain macros that are valid during execution of command lists for explicit rules, implicit rules,
 and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the following example:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; a:\dir\target.ext : b:\dir1\dep1.ex1 c:\dir2\dep2.ex2</tt>
 <dl>
 <dt><b><i>Macro</i></b>
@@ -4153,11 +4153,11 @@ and the<tt> .ERROR</tt> directive.&nbsp; The expansion is presented for the foll
 <br>In order for Open Watcom Make to be effective, a list of file dependencies must be declared.&nbsp; The declarations may
 be entered into a text file of any name but Make will read a file called &quot;MAKEFILE&quot; by default if it is invoked
 as follows:&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake</tt>
 <br><br>If you want to use a file that is not called &quot;MAKEFILE&quot; then the command line option &quot;f&quot; will
 cause Make to read the specified file instead of the default &quot;MAKEFILE&quot;.&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake /f myfile</tt>
 <br><br>We will now go through an example to illustrate how Make may be used for a simple application.&nbsp; Suppose we have
 an input file, a report file, and a report generator program then we may declare a dependency as follows:&nbsp; 
@@ -4169,9 +4169,9 @@ an input file, a report file, and a report generator program then we may declare
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; balance.lst : ledger.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doreport</tt>
 <br><br>Note that the dependency declaration starts at the beginning of a line while commands always have at least one blank
-or tab before them.&nbsp; This form of a dependency declaration is called an<b> explicit rule.</b>&nbsp; The file &quot;BALANCE.LST&quot;
-is called the<b> target</b> of the rule.&nbsp; The<b> dependent</b> of the rule is the file &quot;LEDGER.DAT&quot; while &quot;DOREPORT&quot;
-forms one line of the<b> rule command list.</b>&nbsp; The dependent is separated from the target by a colon.
+or tab before them.&nbsp; This form of a dependency declaration is called an<i> explicit rule.</i>&nbsp; The file &quot;BALANCE.LST&quot;
+is called the<i> target</i> of the rule.&nbsp; The<i> dependent</i> of the rule is the file &quot;LEDGER.DAT&quot; while &quot;DOREPORT&quot;
+forms one line of the<i> rule command list.</i>&nbsp; The dependent is separated from the target by a colon.
 <br><br><b><i>Hint:</i></b>&nbsp; A good habit to develop is to always put spaces around the colon so that it will not be
 confused with drive specifications (e.g., a:).
 <br><br>The explicit rule declaration indicates to Make that the program &quot;DOREPORT&quot; should be executed if &quot;LEDGER.DAT&quot;
@@ -4179,8 +4179,8 @@ is younger than &quot;BALANCE.LST&quot; or if &quot;BALANCE.LST&quot; does not y
 file has a more recent modification date and time than the target file then Open Watcom Make will execute the specified command.
 &nbsp;
 <hr>
-<br><b><i>&nbsp; Note:</i></b>&nbsp; The terminology employed here is used by S.I.Feldman of Bell Laboratories in<b> Make
-- A Program for Maintaining Computer Programs.</b>&nbsp; http://www.softlab.ntua.gr/facilities/documentation/unix/docs/make.txt
+<br><b><i>&nbsp; Note:</i></b>&nbsp; The terminology employed here is used by S.I.Feldman of Bell Laboratories in<i> Make
+- A Program for Maintaining Computer Programs.</i>&nbsp; http://www.softlab.ntua.gr/facilities/documentation/unix/docs/make.txt
 has a copy of this seminal article.&nbsp; Confusion often arises from the use of the word &quot;dependent&quot;.&nbsp; In
 this context, it means &quot;a subordinate part&quot;.&nbsp; In the example, &quot;LEDGER.DAT&quot; is a subordinate part
 of the report &quot;BALANCE.LST&quot;.
@@ -4214,7 +4214,7 @@ a result of modification to the dependent files, we could change the rule as fol
 targets are listed in the makefile, Make will, by default, process only the first target it encounters.&nbsp; In the example,
 Make will check the date and time of &quot;BALANCE.LST&quot; against its dependents since this is the first target listed.
 <br><br>To indicate that some other target should be processed, the target is specified as an argument to the Make command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake summary.lst</tt>
 <br><br>There are a number of interesting points to consider:
 <ol>
@@ -4831,7 +4831,7 @@ and &quot;compile_options&quot; could be referenced by:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; main.obj : main.c defs.h globals.h</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $compiler main $compile_options</tt>
 <br><br>Certain ambiguities may arise with this form of macro reference.&nbsp; For instance, examine this makefile fragment:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; temporary_dir = \tmp\</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; temporary_file = $temporary_dirtmp000.tmp</tt>
 <br><br>The intention of the declarations is to have a macro that will expand into a file specification for a temporary file.
@@ -4880,7 +4880,7 @@ in a makefile, use an ampersand (&quot;&amp;&quot;) at the end of the line.
 <br><br>There are special macros provided by Make to access environment variable names.&nbsp; To access the <b> PATH</b> environment
 variable in a makefile, we use the macro identifier &quot;%path&quot;.&nbsp; For example, if we have the following line in
 a command list:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(%path)</tt>
 <br><br>it will print out the current value of the <b> PATH</b> environment variable when it is executed.
 <br><br>There are two other special environment macros that are predefined by Make.&nbsp; The macro identifier &quot;%cdrive&quot;
@@ -4901,7 +4901,7 @@ use of these macros is illustrated by the following example makefile.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(dir1)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(dir2)</tt>
 <br><br>Which would produce the following output if the current working directory is C:\WATCOM\SOURCE\EXAMPLE:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (command output only)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C:\WATCOM\SOURCE</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C:\WATCOM\SOURCE\EXAMPLE</tt>
@@ -4925,7 +4925,7 @@ and combining this with the $+ and $- special macros, similar looking macros may
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(data_files)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(listing_files)</tt>
 <br><br>This makefile would produce the following output:
-<br><b>Example:</b>
+<br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file1.dat file2.dat file3.dat file4.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file1.lst file2.lst file3.lst file4.lst</tt>
 <br><br>Adding more text to a macro can also be done with the $+ and $- special macros.&nbsp; 
@@ -4939,7 +4939,7 @@ and combining this with the $+ and $- special macros, similar looking macros may
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; example : .SYMBOLIC</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(objs)</tt>
 <br><br>This makefile would produce the following output:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file1.obj file2.obj file3.obj file4.obj file5.obj</tt>
 <br><br>Make provides a shorthand notation for this type of macro operation.&nbsp; Text can be added to a macro by using the
 &quot;+=&quot; macro assignment.&nbsp; The previous makefile can be written as:&nbsp; 
@@ -4974,7 +4974,7 @@ to one or more macros.&nbsp; The previous makefile is adapted to show the usage:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(objs14)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $(objs15)</tt>
 <br><br>This makefile would produce the following output:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file1.obj file2.obj file3.obj file4.obj file5.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file1.obj file2.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file1.obj file2.obj file3.obj</tt>
@@ -5165,7 +5165,7 @@ with the implicit rule is executed and processing of the makefile continues.
 <br><br>Other implicit rules for the target extension are searched in a similar fashion.&nbsp; The order in which the dependent
 extensions are checked becomes important if there is more than one implicit rule declaration for a target extension.&nbsp;
 If we have the following makefile fragment:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .pas.obj:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (command list)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .c.obj:</tt>
@@ -5180,7 +5180,7 @@ to our makefile fragment:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (command list)</tt>
 <br><br>and our target file &quot;TEST.OBJ&quot;, we know that the<tt> .EXTENSIONS</tt> list determines in what order the
 dependents &quot;TEST.PAS&quot; and &quot;TEST.C&quot; will be tried.&nbsp; If the .EXTENSIONS declaration is:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS: .exe .obj .asm .pas .c .cpp .for .cob</tt>
 <br><br>we can see that the dependent file &quot;TEST.PAS&quot; will be tried first as a possible dependent with &quot;TEST.C&quot;
@@ -5530,12 +5530,12 @@ programs affected by changes in header files.&nbsp; Forcing Make to compile prog
 (not recommended), deleting object files, or using the &quot;a&quot; option and targets on the command line.&nbsp; Here is
 how the files &quot;INPUT.OBJ&quot; and &quot;MAIN.OBJ&quot; may be recompiled if a change in some header file affects both
 files.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; del input.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; del main.obj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake</tt>
 <br><br>or using the &quot;a&quot; option
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake /a input.obj main.obj</tt>
 <br><br>The possibility of introducing bugs into programs is present when using this makefile technique because it does not
 protect the programmer completely from object modules becoming out-of-date.&nbsp; The use of implicit rules without header
@@ -5662,7 +5662,7 @@ options</tt>
 <br><br>Notice that changes that affect all the memory models may be made in one file, namely &quot;WINDOW.MIF&quot;.&nbsp;
 Any changes that are specific to a memory model may be made to the &quot;MAKEFILE&quot; in the object directory.&nbsp; To
 update the medium memory model library, the following commands may be executed:&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;cd \window\bcsd</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake</tt>
 <br><br>A DOS &quot;.BAT&quot; or OS/2 &quot;.CMD&quot; file may be used to update all the different memory models.&nbsp;
@@ -5681,7 +5681,7 @@ we may update all the libraries.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wmake %1 %2 %3 %4 %5 %6 %7 %8 %9</tt>
 <br><br>The batch file parameters are useful if you want to specify options to Make.&nbsp; For instance, a global recompile
 may be done by executing:&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;makeall /a</tt>
 <br><br>The<tt> !include</tt> preprocessing directive is a good way to partition common information so that it may be maintained
 easily.
@@ -5724,16 +5724,16 @@ may be regenerated so that subsequent invocations of WMAKE benefit from the new 
 even contains the command to regenerate the file &quot;WMKMK.MIF&quot;.&nbsp; The symbolic target &quot;make&quot; has an
 associated command list that will regenerate the file &quot;WMKMK.MIF&quot;.&nbsp; The command list can be executed by typing
 the following command:&nbsp; 
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake make</tt>
 <br><br>The use of the<tt> !include</tt> preprocessing directive is a simple way to reduce maintenance of related makefiles.
 <br><br><b><i>Hint:</i></b>&nbsp; Macros are expanded on<tt> !include</tt> preprocessor control lines.&nbsp; This allows many
 benefits like:
-<br><br><b>!include $(%env_var)</b>
+<br><br><i>!include $(%env_var)</i>
 <br><br>so that the files that Make will process can be controlled through many different avenues like internal macros, command
 line macros, and environment variables.
 <br><br>Another way to access files is through the suffix path feature of Make.&nbsp; A definition like
-<br><br><b>.mif :&nbsp; c:\mymifs;d:\some\more\mifs</b>
+<br><br><i>.mif :&nbsp; c:\mymifs;d:\some\more\mifs</i>
 <br><br>will cause Make to search different paths for any make include files.
 <h3 id="Conditional_Processing"> Conditional Processing </h3>
 <br>Open Watcom Make has conditional preprocessing directives available that allow different declarations to be processed.
@@ -5749,14 +5749,14 @@ line macros, and environment variables.
 </ol>
 <br>The conditional preprocessing directives allow a makefile to adapt to different external conditions based on the values
 of macros or environment variables.&nbsp; We can define macros on the WMAKE command line as shown in the following example.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake &quot;macro=some text with spaces in it&quot;</tt>
 <br><br>Alternatively, we can include a makefile that defines the macros if all the macros cannot fit on the command line.
 &nbsp;This is shown in the following example:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake /f macdef.mif /f makefile</tt>
 <br><br>Also, environment variables can be set before WMAKE is invoked.&nbsp; This is shown in the following example:
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set macro=some text with spaces in it</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wmake</tt>
 <br><br>Now that we know how to convey information to Make through either macros or environment variables, we will look at
@@ -6663,7 +6663,7 @@ card characters &quot;*&quot; and &quot;?&quot; may be used.
 are not affected by this operation.&nbsp; If the specified file does not exist, it will be created as an empty file.&nbsp;
 This behaviour may be altered with the &quot;c&quot; option so that if the file is not present, a new empty file will not
 be created.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (will not create myfile.dat)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wtouch /c myfile.dat</tt>
 <br><br>If a wild card file specification is used and no files match the pattern, no files will have their time-stamps altered.
@@ -6672,12 +6672,12 @@ be created.
 <li>The current date and time is used as a default value.
 <li>A time-stamp from an &quot;age file&quot; may replace the current date and time.&nbsp; The &quot;f&quot; option is used
 to specify the file that will supply the time-stamp.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (use the date and time from file &quot;last.tim&quot;)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wtouch /f last.tim file*.dat</tt>
 <li>The date and/or time may be specified from the command line to override a part of the time-stamp that will be used.&nbsp;
 The &quot;d&quot; and &quot;t&quot; options are used to override the date and time respectively.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (use current date but use different time)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wtouch /t 2:00p file*.dat</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; (completely specify date and time)</tt>

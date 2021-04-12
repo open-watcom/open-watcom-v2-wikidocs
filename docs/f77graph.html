@@ -688,7 +688,7 @@ of the x-coordinates or y-coordinates are equal), nothing is drawn.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _clearscreen</tt> routine clears the indicated<b> area</b> and fills it with the background color.&nbsp; The<b> area</b>
+<dd>The<tt> _clearscreen</tt> routine clears the indicated<i> area</i> and fills it with the background color.&nbsp; The<i> area</i>
 argument must be one of the following values:
 <dl>
 <dt>_GCLEARSCREEN
@@ -738,8 +738,8 @@ argument must be one of the following values:
 <dl>
 <dt>Description:
 <dd>The<tt> _displaycursor</tt> routine is used to establish whether the text cursor is to be displayed when graphics routines
-complete.&nbsp; On entry to a graphics routine, the text cursor is turned off.&nbsp; When the routine completes, the<b> mode</b>
-setting determines whether the cursor is turned back on.&nbsp; The<b> mode</b> argument can have one of the following values:
+complete.&nbsp; On entry to a graphics routine, the text cursor is turned off.&nbsp; When the routine completes, the<i> mode</i>
+setting determines whether the cursor is turned back on.&nbsp; The<i> mode</i> argument can have one of the following values:
 <dl>
 <dt>_GCURSORON
 <dd>the cursor will be displayed
@@ -749,7 +749,7 @@ setting determines whether the cursor is turned back on.&nbsp; The<b> mode</b> a
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _displaycursor</tt> routine returns the previous setting for<b> mode</b>.
+<dd>The<tt> _displaycursor</tt> routine returns the previous setting for<i> mode</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -806,7 +806,7 @@ setting determines whether the cursor is turned back on.&nbsp; The<b> mode</b> a
 <dd>The<tt> _ellipse</tt> routines draw ellipses.&nbsp; The<tt> _ellipse</tt> routine uses the view coordinate system.&nbsp; The<tt>
 _ellipse_w</tt> and<tt> _ellipse_wxy</tt> routines use the window coordinate system.
 <br>The center of the ellipse is the center of the rectangle established by the points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>
-<br><br>The argument<b> fill</b> determines whether the ellipse is filled in or has only its outline drawn.&nbsp; The argument
+<br><br>The argument<i> fill</i> determines whether the ellipse is filled in or has only its outline drawn.&nbsp; The argument
 can have one of two values:
 <dl>
 <dt>_GFILLINTERIOR
@@ -868,10 +868,10 @@ system.&nbsp; The<tt> _floodfill_w</tt> routine uses the window coordinate syste
 <br>The filling starts at the point<tt> (x,y)</tt> and continues in all directions:&nbsp; when a pixel is filled, the neighbouring
 pixels (horizontally and vertically) are then considered for filling.&nbsp; Filling is done using the current color and fill
 mask.&nbsp; No filling will occur if the point<tt> (x,y)</tt> lies outside the clipping region.
-<br><br>If the argument<b> stop_color</b> is a valid pixel value, filling will occur in each direction until a pixel is encountered
-with a pixel value of<b> stop_color</b>.&nbsp; The filled area will be the area around<tt> (x,y),</tt> bordered by<b> stop_color</b>.
-&nbsp;No filling will occur if the point<tt> (x,y)</tt> has the pixel value<b> stop_color</b>.
-<br><br>If<b> stop_color</b> has the value (-1), filling occurs until a pixel is encountered with a pixel value different
+<br><br>If the argument<i> stop_color</i> is a valid pixel value, filling will occur in each direction until a pixel is encountered
+with a pixel value of<i> stop_color</i>.&nbsp; The filled area will be the area around<tt> (x,y),</tt> bordered by<i> stop_color</i>.
+&nbsp;No filling will occur if the point<tt> (x,y)</tt> has the pixel value<i> stop_color</i>.
+<br><br>If<i> stop_color</i> has the value (-1), filling occurs until a pixel is encountered with a pixel value different
 from the pixel value of the starting point<tt> (x,y).</tt>&nbsp; No filling will occur if the pixel value of the point<tt>
 (x,y)</tt> is the current color.
 </dl>
@@ -983,8 +983,8 @@ video page is 0.
 <dl>
 <dt>Description:
 <dd>The<tt> _getarcinfo</tt> routine returns information about the arc most recently drawn by the <tt> _arc</tt> or <tt> _pie</tt>
-routines.&nbsp; The arguments<b> start_pt</b> and<b> end_pt</b> are set to contain the endpoints of the arc.&nbsp; The argument<b>
-inside_pt</b> will contain the coordinates of a point within the pie.&nbsp; The points are all specified in the view coordinate
+routines.&nbsp; The arguments<i> start_pt</i> and<i> end_pt</i> are set to contain the endpoints of the arc.&nbsp; The argument<i>
+inside_pt</i> will contain the coordinates of a point within the pie.&nbsp; The points are all specified in the view coordinate
 system.
 <br>The endpoints of the arc can be used to connect other lines to the arc.&nbsp; The interior point can be used to fill the
 pie.
@@ -1223,7 +1223,7 @@ text output can be set by use of the <tt> _settextposition</tt> routine.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _getfillmask</tt> routine copies the current fill mask into the area located by the argument<b> mask</b>.&nbsp; The
+<dd>The<tt> _getfillmask</tt> routine copies the current fill mask into the area located by the argument<i> mask</i>.&nbsp; The
 fill mask is used by the <tt> _ellipse</tt>, <tt> _floodfill</tt>, <tt> _pie</tt>, <tt> _polygon</tt> and <tt> _rectangle</tt>
 routines that fill an area of the screen.
 <br>The fill mask is an eight-byte array which is interpreted as a square pattern (8 by 8) of 64 bits.&nbsp; Each bit in the
@@ -1277,8 +1277,8 @@ current color.
 <dl>
 <dt>Description:
 <dd>The<tt> _getfontinfo</tt> routine returns information about the currently selected font.&nbsp; Fonts are selected with the
-<tt> _setfont</tt> routine.&nbsp; The font information is returned in the<tt> _fontinfo</tt> structure indicated by the argument<b>
-info</b>.&nbsp; The structure contains the following fields:
+<tt> _setfont</tt> routine.&nbsp; The font information is returned in the<tt> _fontinfo</tt> structure indicated by the argument<i>
+info</i>.&nbsp; The structure contains the following fields:
 <dl>
 <dt>type
 <dd>1 for a vector font, 0 for a bit-mapped font
@@ -1343,7 +1343,7 @@ is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _getgtextextent</tt> routine returns the length in pixels of the argument<b> text</b> as it would be displayed in
+<dd>The<tt> _getgtextextent</tt> routine returns the length in pixels of the argument<i> text</i> as it would be displayed in
 the current font by the routine <tt> _outgtext</tt>.&nbsp; Note that the text is not displayed on the screen, only its length
 is determined.
 </dl>
@@ -1448,11 +1448,11 @@ vector.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _getimage</tt> routines store a copy of an area of the screen into the buffer indicated by the<b> image</b> argument.
+<dd>The<tt> _getimage</tt> routines store a copy of an area of the screen into the buffer indicated by the<i> image</i> argument.
 &nbsp;The<tt> _getimage</tt> routine uses the view coordinate system.&nbsp; The<tt> _getimage_w</tt> and<tt> _getimage_wxy</tt>
 routines use the window coordinate system.
-<br>The screen image is the rectangular area defined by the points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>&nbsp; The buffer<b>
-image</b> must be large enough to contain the image (the size of the image can be determined by using the <tt> _imagesize</tt>
+<br>The screen image is the rectangular area defined by the points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>&nbsp; The buffer<i>
+image</i> must be large enough to contain the image (the size of the image can be determined by using the <tt> _imagesize</tt>
 routine).&nbsp; The image may be displayed upon the screen at some later time by using the <tt> _putimage</tt> routines.
 </dl>
 <dl>
@@ -1672,11 +1672,11 @@ of the original and the supplied pixel values.
 <dt>_GPSET
 <dd>replace the original screen pixel value with the supplied pixel value
 <dt><br>_GAND
-<dd>replace the original screen pixel value with the<b> bitwise and</b> of the original pixel value and the supplied pixel value
+<dd>replace the original screen pixel value with the<i> bitwise and</i> of the original pixel value and the supplied pixel value
 <dt><br>_GOR
-<dd>replace the original screen pixel value with the<b> bitwise or</b> of the original pixel value and the supplied pixel value
+<dd>replace the original screen pixel value with the<i> bitwise or</i> of the original pixel value and the supplied pixel value
 <dt><br>_GXOR
-<dd>replace the original screen pixel value with the<b> bitwise exclusive-or</b> of the original pixel value and the supplied
+<dd>replace the original screen pixel value with the<i> bitwise exclusive-or</i> of the original pixel value and the supplied
 pixel value.&nbsp; Performing this operation twice will restore the original screen contents, providing an efficient method
 to produce animated effects.
 </dl>
@@ -1829,9 +1829,9 @@ the<tt> _gettextcursor</tt> routine.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _gettextextent</tt> routine simulates the effect of using the <tt> _grtext</tt> routine to display the text string<b>
-text</b> at the position<tt> (x,y),</tt> using the current text settings.&nbsp; The concatenation point is returned in the
-argument<b> concat</b>.&nbsp; The text extent parallelogram is returned in the array<b> extent</b>.
+<dd>The<tt> _gettextextent</tt> routine simulates the effect of using the <tt> _grtext</tt> routine to display the text string<i>
+text</i> at the position<tt> (x,y),</tt> using the current text settings.&nbsp; The concatenation point is returned in the
+argument<i> concat</i>.&nbsp; The text extent parallelogram is returned in the array<i> extent</i>.
 <br>The concatenation point is the position to use to output text after the given string.&nbsp; The text extent parallelogram
 outlines the area where the text string would be displayed.&nbsp; The four points are returned in counter-clockwise order,
 starting at the upper-left corner.
@@ -1927,8 +1927,8 @@ graphics output can be set by use of the <tt> _moveto</tt> routine.
 <dl>
 <dt>Description:
 <dd>The<tt> _gettextsettings</tt> routine returns information about the current text settings used when text is displayed by the
-<tt> _grtext</tt> routine.&nbsp; The information is stored in the<tt> textsettings</tt> structure indicated by the argument<b>
-settings</b>.&nbsp; The structure contains the following fields (all are<tt> integer*2</tt> fields):
+<tt> _grtext</tt> routine.&nbsp; The information is stored in the<tt> textsettings</tt> structure indicated by the argument<i>
+settings</i>.&nbsp; The structure contains the following fields (all are<tt> integer*2</tt> fields):
 <dl>
 <dt>basevectorx
 <dd>x-component of the current base vector
@@ -2037,7 +2037,7 @@ of the text window is placed in<tt> (row2,col2).</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> _getvideoconfig</tt> routine returns information about the current video mode and the hardware configuration.&nbsp;
-The information is returned in the<tt> videoconfig</tt> structure indicated by the argument<b> config</b>.&nbsp; The structure
+The information is returned in the<tt> videoconfig</tt> structure indicated by the argument<i> config</i>.&nbsp; The structure
 contains the following fields (all are<tt> integer*2</tt> fields):
 <dl>
 <dt>numxpixels
@@ -2406,7 +2406,7 @@ uindex=2
 <dt>Description:
 <dd>The<tt> _grtext</tt> routines display a character string.&nbsp; The<tt> _grtext</tt> routine uses the view coordinate system.
 &nbsp;The<tt> _grtext_w</tt> routine uses the window coordinate system.
-<br>The character string<b> text</b> is displayed at the point<tt> (x,y).</tt>&nbsp; The string must be terminated by a null
+<br>The character string<i> text</i> is displayed at the point<tt> (x,y).</tt>&nbsp; The string must be terminated by a null
 character (char(0)).&nbsp; The text is displayed in the current color using the current text settings.
 <br><br>The graphics library can display text in three different ways.
 <ol>
@@ -2627,7 +2627,7 @@ text output can be set by use of the <tt> _settextposition</tt> routine.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _outgtext</tt> routine displays the character string indicated by the argument<b> text</b>.&nbsp; The string must
+<dd>The<tt> _outgtext</tt> routine displays the character string indicated by the argument<i> text</i>.&nbsp; The string must
 be terminated by a null character (char(0)).
 <br>The string is displayed starting at the current position (see the <tt> _moveto</tt> routine) in the current color and
 in the currently selected font (see the <tt> _setfont</tt> routine).&nbsp; The current position is updated to follow the displayed
@@ -2689,7 +2689,7 @@ supported; the size and type of text depends on the fonts that are available.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _outmem</tt> routine displays the character string indicated by the argument<b> text</b>.&nbsp; The argument<b> length</b>
+<dd>The<tt> _outmem</tt> routine displays the character string indicated by the argument<i> text</i>.&nbsp; The argument<i> length</i>
 specifies the number of characters to be displayed.&nbsp; Unlike the <tt> _outtext</tt> routine,<tt> _outmem</tt> will display
 the graphical representation of characters such as ASCII 10 and 0, instead of interpreting them as control characters.
 <br>The text is displayed using the current text color (see the <tt> _settextcolor</tt> routine), starting at the current
@@ -2745,7 +2745,7 @@ supported; the size and type of text depends on the fonts that are available.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _outtext</tt> routine displays the character string indicated by the argument<b> text</b>.&nbsp; The string must be
+<dd>The<tt> _outtext</tt> routine displays the character string indicated by the argument<i> text</i>.&nbsp; The string must be
 terminated by a null character (char(0)).&nbsp; When a line-feed character (char(10)) is encountered in the string, the characters
 following will be displayed on the next row of the screen.
 <br>The text is displayed using the current text color (see the <tt> _settextcolor</tt> routine), starting at the current
@@ -2811,11 +2811,11 @@ supported; the size and type of text depends on the fonts that are available.
 <dd>The<tt> _pg_analyzechart</tt> routines analyze either a single-series or a multi-series bar, column or line chart.&nbsp; These
 routines calculate default values for chart elements without actually displaying the chart.
 <br>The<tt> _pg_analyzechart</tt> routine analyzes a single-series bar, column or line chart.&nbsp; The chart environment
-structure<b> env</b> is filled with default values based on the type of chart and the values of the<b> cat</b> and<b> values</b>
+structure<i> env</i> is filled with default values based on the type of chart and the values of the<i> cat</i> and<i> values</i>
 arguments.&nbsp; The arguments are the same as for the <tt> _pg_chart</tt> routine.
 <br><br>The<tt> _pg_analyzechartms</tt> routine analyzes a multi-series bar, column or line chart.&nbsp; The chart environment
-structure<b> env</b> is filled with default values based on the type of chart and the values of the<b> cat</b>,<b> values</b>
-and<b> labels</b> arguments.&nbsp; The arguments are the same as for the <tt> _pg_chartms</tt> routine.
+structure<i> env</i> is filled with default values based on the type of chart and the values of the<i> cat</i>,<i> values</i>
+and<i> labels</i> arguments.&nbsp; The arguments are the same as for the <tt> _pg_chartms</tt> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -2891,8 +2891,8 @@ and<b> labels</b> arguments.&nbsp; The arguments are the same as for the <tt> _p
 <dt>Description:
 <dd>The<tt> _pg_analyzepie</tt> routine analyzes a pie chart.&nbsp; This routine calculates default values for chart elements
 without actually displaying the chart.
-<br>The chart environment structure<b> env</b> is filled with default values based on the values of the<b> cat</b>,<b> values</b>
-and<b> explode</b> arguments.&nbsp; The arguments are the same as for the <tt> _pg_chartpie</tt> routine.
+<br>The chart environment structure<i> env</i> is filled with default values based on the values of the<i> cat</i>,<i> values</i>
+and<i> explode</i> arguments.&nbsp; The arguments are the same as for the <tt> _pg_chartpie</tt> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -2978,11 +2978,11 @@ labels )</tt>
 <dt>Description:
 <dd>The<tt> _pg_analyzescatter</tt> routines analyze either a single-series or a multi-series scatter chart.&nbsp; These routines
 calculate default values for chart elements without actually displaying the chart.
-<br>The<tt> _pg_analyzescatter</tt> routine analyzes a single-series scatter chart.&nbsp; The chart environment structure<b>
-env</b> is filled with default values based on the values of the<b> x</b> and<b> y</b> arguments.&nbsp; The arguments are
+<br>The<tt> _pg_analyzescatter</tt> routine analyzes a single-series scatter chart.&nbsp; The chart environment structure<i>
+env</i> is filled with default values based on the values of the<i> x</i> and<i> y</i> arguments.&nbsp; The arguments are
 the same as for the <tt> _pg_chartscatter</tt> routine.
-<br><br>The<tt> _pg_analyzescatterms</tt> routine analyzes a multi-series scatter chart.&nbsp; The chart environment structure<b>
-env</b> is filled with default values based on the values of the<b> x</b>,<b> y</b> and<b> labels</b> arguments.&nbsp; The
+<br><br>The<tt> _pg_analyzescatterms</tt> routine analyzes a multi-series scatter chart.&nbsp; The chart environment structure<i>
+env</i> is filled with default values based on the values of the<i> x</i>,<i> y</i> and<i> labels</i> arguments.&nbsp; The
 arguments are the same as for the <tt> _pg_chartscatterms</tt> routine.
 </dl>
 <dl>
@@ -3065,18 +3065,18 @@ _PG_SCATTERCHART, _PG_POINTANDLINE )</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> _pg_chart</tt> routines display either a single-series or a multi-series bar, column or line chart.&nbsp; The type
-of chart displayed and other chart options are contained in the<b> env</b> argument.&nbsp; The argument<b> cat</b> is an array
-of addresses of strings.&nbsp; These strings describe the categories against which the data in the<b> values</b> array is
+of chart displayed and other chart options are contained in the<i> env</i> argument.&nbsp; The argument<i> cat</i> is an array
+of addresses of strings.&nbsp; These strings describe the categories against which the data in the<i> values</i> array is
 charted.
-<br>The<tt> _pg_chart</tt> routine displays a bar, column or line chart from the single series of data contained in the<b>
-values</b> array.&nbsp; The argument<b> n</b> specifies the number of values to chart.
-<br><br>The<tt> _pg_chartms</tt> routine displays a multi-series bar, column or line chart.&nbsp; The argument<b> nseries</b>
-specifies the number of series of data to chart.&nbsp; The argument<b> values</b> is assumed to be a two-dimensional array
+<br>The<tt> _pg_chart</tt> routine displays a bar, column or line chart from the single series of data contained in the<i>
+values</i> array.&nbsp; The argument<i> n</i> specifies the number of values to chart.
+<br><br>The<tt> _pg_chartms</tt> routine displays a multi-series bar, column or line chart.&nbsp; The argument<i> nseries</i>
+specifies the number of series of data to chart.&nbsp; The argument<i> values</i> is assumed to be a two-dimensional array
 defined as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; real values( nseries, dim )</tt>
-<br><br>The number of values used from each series is given by the argument<b> n</b>, where<b> n</b> is less than or equal
-to<b> dim</b>.&nbsp; The argument<b> labels</b> is an array of addresses of strings.&nbsp; These strings describe each of
+<br><br>The number of values used from each series is given by the argument<i> n</i>, where<i> n</i> is less than or equal
+to<i> dim</i>.&nbsp; The argument<i> labels</i> is an array of addresses of strings.&nbsp; These strings describe each of
 the series and are used in the chart legend.
 </dl>
 <dl>
@@ -3143,12 +3143,12 @@ the series and are used in the chart legend.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _pg_chartpie</tt> routine displays a pie chart.&nbsp; The chart is displayed using the options specified in the<b>
-env</b> argument.
-<br>The pie chart is created from the data contained in the<b> values</b> array.&nbsp; The argument<b> n</b> specifies the
+<dd>The<tt> _pg_chartpie</tt> routine displays a pie chart.&nbsp; The chart is displayed using the options specified in the<i>
+env</i> argument.
+<br>The pie chart is created from the data contained in the<i> values</i> array.&nbsp; The argument<i> n</i> specifies the
 number of values to chart.
-<br><br>The argument<b> cat</b> is an array of addresses of strings.&nbsp; These strings describe each of the pie slices and
-are used in the chart legend.&nbsp; The argument<b> explode</b> is an array of values corresponding to each of the pie slices.
+<br><br>The argument<i> cat</i> is an array of addresses of strings.&nbsp; These strings describe each of the pie slices and
+are used in the chart legend.&nbsp; The argument<i> explode</i> is an array of values corresponding to each of the pie slices.
 &nbsp;For each non-zero element in the array, the corresponding pie slice is drawn &quot;exploded&quot;, or slightly offset
 from the rest of the pie.
 </dl>
@@ -3226,16 +3226,16 @@ from the rest of the pie.
 <dl>
 <dt>Description:
 <dd>The<tt> _pg_chartscatter</tt> routines display either a single-series or a multi-series scatter chart.&nbsp; The chart is
-displayed using the options specified in the<b> env</b> argument.
-<br>The<tt> _pg_chartscatter</tt> routine displays a scatter chart from the single series of data contained in the arrays<b>
-x</b> and<b> y</b>.&nbsp; The argument<b> n</b> specifies the number of values to chart.
-<br><br>The<tt> _pg_chartscatterms</tt> routine displays a multi-series scatter chart.&nbsp; The argument<b> nseries</b> specifies
-the number of series of data to chart.&nbsp; The arguments<b> x</b> and<b> y</b> are assumed to be two-dimensional arrays
+displayed using the options specified in the<i> env</i> argument.
+<br>The<tt> _pg_chartscatter</tt> routine displays a scatter chart from the single series of data contained in the arrays<i>
+x</i> and<i> y</i>.&nbsp; The argument<i> n</i> specifies the number of values to chart.
+<br><br>The<tt> _pg_chartscatterms</tt> routine displays a multi-series scatter chart.&nbsp; The argument<i> nseries</i> specifies
+the number of series of data to chart.&nbsp; The arguments<i> x</i> and<i> y</i> are assumed to be two-dimensional arrays
 defined as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; real x( nseries, dim )</tt>
-<br><br>The number of values used from each series is given by the argument<b> n</b>, where<b> n</b> is less than or equal
-to<b> dim</b>.&nbsp; The argument<b> labels</b> is an array of addresses of strings.&nbsp; These strings describe each of
+<br><br>The number of values used from each series is given by the argument<i> n</i>, where<i> n</i> is less than or equal
+to<i> dim</i>.&nbsp; The argument<i> labels</i> is an array of addresses of strings.&nbsp; These strings describe each of
 the series and are used in the chart legend.
 </dl>
 <dl>
@@ -3303,10 +3303,10 @@ _PG_SCATTERCHART, _PG_POINTANDLINE )</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _pg_defaultchart</tt> routine initializes the chart structure<b> env</b> to contain default values before a chart
+<dd>The<tt> _pg_defaultchart</tt> routine initializes the chart structure<i> env</i> to contain default values before a chart
 is drawn.&nbsp; All values in the chart structure are initialized, including blanking of all titles.&nbsp; The chart type
-in the structure is initialized to the value<b> type</b>, and the chart style is initialized to<b> style</b>.
-<br>The argument<b> type</b> can have one of the following values:
+in the structure is initialized to the value<i> type</i>, and the chart style is initialized to<i> style</i>.
+<br>The argument<i> type</i> can have one of the following values:
 <dl>
 <dt>_PG_BARCHART
 <dd>Bar chart (horizontal bars)
@@ -3319,7 +3319,7 @@ in the structure is initialized to the value<b> type</b>, and the chart style is
 <dt><br>_PG_PIECHART
 <dd>Pie chart
 </dl>
-<br>Each type of chart can be drawn in one of two styles.&nbsp; For each chart type the argument<b> style</b> can have one
+<br>Each type of chart can be drawn in one of two styles.&nbsp; For each chart type the argument<i> style</i> can have one
 of the following values:&nbsp; uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Style 1&nbsp;&nbsp;
@@ -3396,8 +3396,8 @@ to be displayed beside each of the pie slices.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _pg_getchardef</tt> routine retrieves the current bit-map definition for the character<b> ch</b>.&nbsp; The bit-map
-is placed in the array<b> def</b>.&nbsp; The current font must be an 8-by-8 bit-mapped font.
+<dd>The<tt> _pg_getchardef</tt> routine retrieves the current bit-map definition for the character<i> ch</i>.&nbsp; The bit-map
+is placed in the array<i> def</i>.&nbsp; The current font must be an 8-by-8 bit-mapped font.
 </dl>
 <dl>
 <dt>Returns:
@@ -3464,7 +3464,7 @@ _PG_SCATTERCHART, _PG_POINTANDLINE )</tt>
 <dt>Description:
 <dd>The<tt> _pg_getpalette</tt> routine retrieves the internal palette of the presentation graphics system.&nbsp; The palette
 controls the colors, line styles, fill patterns and plot characters used to display each series of data in a chart.
-<br>The argument<b> pal</b> is an array of palette structures that will contain the palette.&nbsp; Each element of the palette
+<br>The argument<i> pal</i> is an array of palette structures that will contain the palette.&nbsp; Each element of the palette
 is a structure containing the following fields:
 <dl>
 <dt>color
@@ -3553,7 +3553,7 @@ is a structure containing the following fields:
 <dl>
 <dt>Description:
 <dd>The<tt> _pg_getstyleset</tt> routine retrieves the internal style-set of the presentation graphics system.&nbsp; The style-set
-is a set of line styles used for drawing window borders and grid-lines.&nbsp; The argument<b> style</b> is an array that will
+is a set of line styles used for drawing window borders and grid-lines.&nbsp; The argument<i> style</i> is an array that will
 contain the style-set.
 </dl>
 <dl>
@@ -3625,9 +3625,9 @@ contain the style-set.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _pg_hlabelchart</tt> routine displays the text string<b> label</b> on the chart described by the<b> env</b> chart
+<dd>The<tt> _pg_hlabelchart</tt> routine displays the text string<i> label</i> on the chart described by the<i> env</i> chart
 structure.&nbsp; The string is displayed horizontally starting at the point<tt> (x,y),</tt> relative to the upper left corner
-of the chart.&nbsp; The<b> color</b> specifies the palette color used to display the string.
+of the chart.&nbsp; The<i> color</i> specifies the palette color used to display the string.
 </dl>
 <dl>
 <dt>Returns:
@@ -3903,8 +3903,8 @@ The palette controls the colors, line styles, fill patterns and plot characters 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _pg_setchardef</tt> routine sets the current bit-map definition for the character<b> ch</b>.&nbsp; The bit-map is
-contained in the array<b> def</b>.&nbsp; The current font must be an 8-by-8 bit-mapped font.
+<dd>The<tt> _pg_setchardef</tt> routine sets the current bit-map definition for the character<i> ch</i>.&nbsp; The bit-map is
+contained in the array<i> def</i>.&nbsp; The current font must be an 8-by-8 bit-mapped font.
 </dl>
 <dl>
 <dt>Returns:
@@ -3971,7 +3971,7 @@ _PG_SCATTERCHART, _PG_POINTANDLINE )</tt>
 <dt>Description:
 <dd>The<tt> _pg_setpalette</tt> routine sets the internal palette of the presentation graphics system.&nbsp; The palette controls
 the colors, line styles, fill patterns and plot characters used to display each series of data in a chart.
-<br>The argument<b> pal</b> is an array of palette structures containing the new palette.&nbsp; Each element of the palette
+<br>The argument<i> pal</i> is an array of palette structures containing the new palette.&nbsp; Each element of the palette
 is a structure containing the following fields:
 <dl>
 <dt>color
@@ -4060,7 +4060,7 @@ is a structure containing the following fields:
 <dl>
 <dt>Description:
 <dd>The<tt> _pg_setstyleset</tt> routine retrieves the internal style-set of the presentation graphics system.&nbsp; The style-set
-is a set of line styles used for drawing window borders and grid-lines.&nbsp; The argument<b> style</b> is an array containing
+is a set of line styles used for drawing window borders and grid-lines.&nbsp; The argument<i> style</i> is an array containing
 the new style-set.
 </dl>
 <dl>
@@ -4132,9 +4132,9 @@ the new style-set.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _pg_vlabelchart</tt> routine displays the text string<b> label</b> on the chart described by the<b> env</b> chart
+<dd>The<tt> _pg_vlabelchart</tt> routine displays the text string<i> label</i> on the chart described by the<i> env</i> chart
 structure.&nbsp; The string is displayed vertically starting at the point<tt> (x,y),</tt> relative to the upper left corner
-of the chart.&nbsp; The<b> color</b> specifies the palette color used to display the string.
+of the chart.&nbsp; The<i> color</i> specifies the palette color used to display the string.
 </dl>
 <dl>
 <dt>Returns:
@@ -4232,7 +4232,7 @@ end points are defined.
 <br><br><img src="pic2.bmp" align=middle>
 <br>When the coordinates<tt> (x1,y1)</tt> and<tt> (x2,y2)</tt> establish a line or a point (this happens when one or more
 of the x-coordinates or y-coordinates are equal), nothing is drawn.
-<br><br>The argument<b> fill</b> determines whether the figure is filled in or has only its outline drawn.&nbsp; The argument
+<br><br>The argument<i> fill</i> determines whether the figure is filled in or has only its outline drawn.&nbsp; The argument
 can have one of two values:
 <dl>
 <dt>_GFILLINTERIOR
@@ -4297,8 +4297,8 @@ style
 <dt>Description:
 <dd>The<tt> _polygon</tt> routines draw polygons.&nbsp; The<tt> _polygon</tt> routine uses the view coordinate system.&nbsp; The<tt>
 _polygon_w</tt> and<tt> _polygon_wxy</tt> routines use the window coordinate system.
-<br>The polygon is defined as containing<b> numpts</b> points whose coordinates are given in the array<b> points</b>.
-<br><br>The argument<b> fill</b> determines whether the polygon is filled in or has only its outline drawn.&nbsp; The argument
+<br>The polygon is defined as containing<i> numpts</i> points whose coordinates are given in the array<i> points</i>.
+<br><br>The argument<i> fill</i> determines whether the polygon is filled in or has only its outline drawn.&nbsp; The argument
 can have one of two values:
 <dl>
 <dt>_GFILLINTERIOR
@@ -4358,12 +4358,12 @@ style
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _putimage</tt> routines display the screen image indicated by the argument<b> image</b>.&nbsp; The<tt> _putimage</tt>
+<dd>The<tt> _putimage</tt> routines display the screen image indicated by the argument<i> image</i>.&nbsp; The<tt> _putimage</tt>
 routine uses the view coordinate system.&nbsp; The<tt> _putimage_w</tt> routine uses the window coordinate system.
 <br>The image is displayed upon the screen with its top left corner located at the point with coordinates<tt> (x,y).</tt>
 &nbsp;The image was previously saved using the <tt> _getimage</tt> routines.&nbsp; The image is displayed in a rectangle whose
 size is the size of the rectangular image saved by the <tt> _getimage</tt> routines.
-<br><br>The image can be displayed in a number of ways, depending upon the value of the<b> mode</b> argument.&nbsp; This argument
+<br><br>The image can be displayed in a number of ways, depending upon the value of the<i> mode</i> argument.&nbsp; This argument
 can have the following values:
 <dl>
 <dt>_GPSET
@@ -4443,7 +4443,7 @@ image, _GXOR )</tt>
 <dd>The<tt> _rectangle</tt> routines draw rectangles.&nbsp; The<tt> _rectangle</tt> routine uses the view coordinate system.&nbsp;
 The<tt> _rectangle_w</tt> and<tt> _rectangle_wxy</tt> routines use the window coordinate system.
 <br>The rectangle is defined with opposite corners established by the points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>
-<br><br>The argument<b> fill</b> determines whether the rectangle is filled in or has only its outline drawn.&nbsp; The argument
+<br><br>The argument<i> fill</i> determines whether the rectangle is filled in or has only its outline drawn.&nbsp; The argument
 can have one of two values:
 <dl>
 <dt>_GFILLINTERIOR
@@ -4496,7 +4496,7 @@ style
 <dt>Description:
 <dd>The<tt> _registerfonts</tt> routine initializes the font graphics system.&nbsp; Fonts must be registered, and a font selected,
 before text can be displayed with the <tt> _outgtext</tt> routine.
-<br>The argument<b> path</b> specifies the location of the font files.&nbsp; This argument is a file specification, and can
+<br>The argument<i> path</i> specifies the location of the font files.&nbsp; This argument is a file specification, and can
 contain drive and directory components and may contain wildcard characters.&nbsp; The<tt> _registerfonts</tt> routine opens
 each of the font files specified and reads the font information.&nbsp; Memory is allocated to store the characteristics of
 the font.&nbsp; These font characteristics are used by the <tt> _setfont</tt> routine when selecting a font.
@@ -4551,9 +4551,9 @@ a negative number is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> _remapallpalette</tt> routine sets (or remaps) all of the colors in the palette.&nbsp; The color values in the palette
-are replaced by the array of color values given by the argument<b> colors</b>.&nbsp; This routine is supported in all video
+are replaced by the array of color values given by the argument<i> colors</i>.&nbsp; This routine is supported in all video
 modes, but only works with EGA, MCGA and VGA adapters.
-<br>The array<b> colors</b> must contain at least as many elements as there are supported colors.&nbsp; The newly mapped palette
+<br>The array<i> colors</i> must contain at least as many elements as there are supported colors.&nbsp; The newly mapped palette
 will cause the complete screen to change color wherever there is a pixel value of a changed color in the palette.
 <br><br>The representation of colors depends upon the hardware being used.&nbsp; The number of colors in the palette can be
 determined by using the <tt> _getvideoconfig</tt> routine.
@@ -4614,17 +4614,17 @@ x * 160, y * 120,</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _remappalette</tt> routine sets (or remaps) the palette color<b> pixval</b> to be the color<b> color</b>.&nbsp; This
+<dd>The<tt> _remappalette</tt> routine sets (or remaps) the palette color<i> pixval</i> to be the color<i> color</i>.&nbsp; This
 routine is supported in all video modes, but only works with EGA, MCGA and VGA adapters.
-<br>The argument<b> pixval</b> is an index in the color palette of the current video mode.&nbsp; The argument<b> color</b>
-specifies the actual color displayed on the screen by pixels with pixel value<b> pixval</b>.&nbsp; Color values are selected
+<br>The argument<i> pixval</i> is an index in the color palette of the current video mode.&nbsp; The argument<i> color</i>
+specifies the actual color displayed on the screen by pixels with pixel value<i> pixval</i>.&nbsp; Color values are selected
 by specifying the red, green and blue intensities that make up the color.&nbsp; Each intensity can be in the range from 0
 to 63, resulting in 262144 possible different colors.&nbsp; A given color value can be conveniently specified as a value of
 type<tt> integer*4</tt>.&nbsp; The color value is of the form<tt> '00bbggrr'x,</tt> where<tt> bb</tt> is the blue intensity,<tt>
 gg</tt> is the green intensity and<tt> rr</tt> is the red intensity of the selected color.&nbsp; The file<tt> graph.fi</tt>
 defines constants containing the color intensities of each of the 16 default colors.
 <br><br>The<tt> _remappalette</tt> routine takes effect immediately.&nbsp; All pixels on the complete screen which have a
-pixel value equal to the value of<b> pixval</b> will now have the color indicated by the argument<b> color</b>.
+pixel value equal to the value of<i> pixval</i> will now have the color indicated by the argument<i> color</i>.
 </dl>
 <dl>
 <dt>Returns:
@@ -4674,7 +4674,7 @@ otherwise, (-1) is returned.
 <dt>Description:
 <dd>The<tt> _scrolltextwindow</tt> routine scrolls the lines in the current text window.&nbsp; A text window is defined with the
 <tt> _settextwindow</tt> routine.&nbsp; By default, the text window is the entire screen.
-<br>The argument<b> rows</b> specifies the number of rows to scroll.&nbsp; A positive value means to scroll the text window
+<br>The argument<i> rows</i> specifies the number of rows to scroll.&nbsp; A positive value means to scroll the text window
 up or towards the top of the screen.&nbsp; A negative value means to scroll the text window down or towards the bottom of
 the screen.&nbsp; Specifying a number of rows greater than the height of the text window is equivalent to clearing the text
 window with the <tt> _clearscreen</tt> routine.
@@ -4730,7 +4730,7 @@ window with the <tt> _clearscreen</tt> routine.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _selectpalette</tt> routine selects the palette indicated by the argument<b> palnum</b> from the color palettes available.
+<dd>The<tt> _selectpalette</tt> routine selects the palette indicated by the argument<i> palnum</i> from the color palettes available.
 &nbsp;This routine is only supported by the video modes<tt> _MRES4COLOR</tt> and<tt> _MRESNOCOLOR.</tt>
 <br>Mode<tt> _MRES4COLOR</tt> supports four palettes of four colors.&nbsp; In each palette, color 0, the background color,
 can be any of the 16 possible colors.&nbsp; The color values associated with the other three pixel values, (1, 2 and 3), are
@@ -4801,7 +4801,7 @@ x * 160, y * 100,</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> _setactivepage</tt> routine selects the page (in memory) to which graphics output is written.&nbsp; The page to be
-selected is given by the<b> pagenum</b> argument.
+selected is given by the<i> pagenum</i> argument.
 <br>Only some combinations of video modes and hardware allow multiple pages of graphics to exist.&nbsp; When multiple pages
 are supported, the active page may differ from the visual page.&nbsp; The graphics information in the visual page determines
 what is displayed upon the screen.&nbsp; Animation may be accomplished by alternating the visual page.&nbsp; A graphics page
@@ -4865,11 +4865,11 @@ a negative number is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setbkcolor</tt> routine sets the current background color to be that of the<b> color</b> argument.&nbsp; In text
+<dd>The<tt> _setbkcolor</tt> routine sets the current background color to be that of the<i> color</i> argument.&nbsp; In text
 modes, the background color controls the area behind each individual character.&nbsp; In graphics modes, the background refers
 to the entire screen.&nbsp; The default background color is 0.
-<br>When the current video mode is a graphics mode, any pixels with a zero pixel value will change to the color of the<b>
-color</b> argument.&nbsp; When the current video mode is a text mode, nothing will immediately change; only subsequent output
+<br>When the current video mode is a graphics mode, any pixels with a zero pixel value will change to the color of the<i>
+color</i> argument.&nbsp; When the current video mode is a text mode, nothing will immediately change; only subsequent output
 is affected.
 </dl>
 <dl>
@@ -4921,9 +4921,9 @@ is affected.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setcharsize</tt> routines set the character height and width to the values specified by the arguments<b> height</b>
-and<b> width</b>.&nbsp; For the<tt> _setcharsize</tt> routine, the arguments<b> height</b> and<b> width</b> represent a number
-of pixels.&nbsp; For the<tt> _setcharsize_w</tt> routine, the arguments<b> height</b> and<b> width</b> represent lengths along
+<dd>The<tt> _setcharsize</tt> routines set the character height and width to the values specified by the arguments<i> height</i>
+and<i> width</i>.&nbsp; For the<tt> _setcharsize</tt> routine, the arguments<i> height</i> and<i> width</i> represent a number
+of pixels.&nbsp; For the<tt> _setcharsize_w</tt> routine, the arguments<i> height</i> and<i> width</i> represent lengths along
 the y-axis and x-axis in the window coordinate system.
 <br>These sizes are used when displaying text with the <tt> _grtext</tt> routine.&nbsp; The default character sizes are dependent
 on the graphics mode selected, and can be determined by the <tt> _gettextsettings</tt> routine.
@@ -4970,9 +4970,9 @@ on the graphics mode selected, and can be determined by the <tt> _gettextsetting
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setcharspacing</tt> routines set the current character spacing to have the value of the argument<b> space</b>.&nbsp;
-For the<tt> _setcharspacing</tt> routine,<b> space</b> represents a number of pixels.&nbsp; For the<tt> _setcharspacing_w</tt>
-routine,<b> space</b> represents a length along the x-axis in the window coordinate system.
+<dd>The<tt> _setcharspacing</tt> routines set the current character spacing to have the value of the argument<i> space</i>.&nbsp;
+For the<tt> _setcharspacing</tt> routine,<i> space</i> represents a number of pixels.&nbsp; For the<tt> _setcharspacing_w</tt>
+routine,<i> space</i> represents a length along the x-axis in the window coordinate system.
 <br>The character spacing specifies the additional space to leave between characters when a text string is displayed with
 the <tt> _grtext</tt> routine.&nbsp; A negative value can be specified to cause the characters to be drawn closer together.
 &nbsp;The default value of the character spacing is 0.
@@ -5056,7 +5056,7 @@ whose opposite corners are established by the physical points<tt> (x1,y1)</tt> a
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setcolor</tt> routine sets the pixel value for the current color to be that indicated by the<b> pixval</b> argument.
+<dd>The<tt> _setcolor</tt> routine sets the pixel value for the current color to be that indicated by the<i> pixval</i> argument.
 &nbsp;The current color is only used by the routines that produce graphics output; text output with <tt> _outtext</tt> uses
 the current text color (see the <tt> _settextcolor</tt> routine).&nbsp; The default color value is one less than the maximum
 number of colors in the current video mode.
@@ -5105,7 +5105,7 @@ number of colors in the current video mode.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setfillmask</tt> routine sets the current fill mask to the value of the argument<b> mask</b>.
+<dd>The<tt> _setfillmask</tt> routine sets the current fill mask to the value of the argument<i> mask</i>.
 <br>The fill mask is an eight-byte array which is interpreted as a square pattern (8 by 8) of 64 bits.&nbsp; Each bit in the
 mask corresponds to a pixel.&nbsp; When a region is filled, each point in the region is mapped onto the fill mask.&nbsp; When
 a bit from the mask is one, the pixel value of the corresponding point is set using the current plotting action with the current
@@ -5162,7 +5162,7 @@ current color.&nbsp; By default, no fill mask is set.
 <dd>The<tt> _setfont</tt> routine selects a font from the list of registered fonts (see the <tt> _registerfonts</tt> routine).
 &nbsp;The font selected becomes the current font and is used whenever text is displayed with the <tt> _outgtext</tt> routine.
 &nbsp;The routine will fail if no fonts have been registered, or if a font cannot be found that matches the given characteristics.
-<br>The argument<b> opt</b> is a string of characters specifying the characteristics of the desired font.&nbsp; These characteristics
+<br>The argument<i> opt</i> is a string of characters specifying the characteristics of the desired font.&nbsp; These characteristics
 determine which font is selected.&nbsp; The options may be separated by blanks and are not case-sensitive.&nbsp; Any number
 of options may be specified and in any order.&nbsp; The available options are:
 <dl>
@@ -5311,7 +5311,7 @@ vector.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setlinestyle</tt> routine sets the current line-style mask to the value of the<b> style</b> argument.
+<dd>The<tt> _setlinestyle</tt> routine sets the current line-style mask to the value of the<i> style</i> argument.
 <br>The line-style mask determines the style by which lines and arcs are drawn.&nbsp; The mask is treated as an array of 16
 bits.&nbsp; As a line is drawn, a pixel at a time, the bits in this array are cyclically tested.&nbsp; When a bit in the array
 is 1, the pixel value for the current point is set using the current color according to the current plotting action; otherwise,
@@ -5422,7 +5422,7 @@ at the point in question.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setplotaction</tt> routine sets the current plotting action to the value of the<b> action</b> argument.
+<dd>The<tt> _setplotaction</tt> routine sets the current plotting action to the value of the<i> action</i> argument.
 <br>The drawing routines cause pixels to be set with a pixel value.&nbsp; By default, the value to be set is obtained by replacing
 the original pixel value with the supplied pixel value.&nbsp; Alternatively, the replaced value may be computed as a function
 of the original and the supplied pixel values.
@@ -5431,11 +5431,11 @@ of the original and the supplied pixel values.
 <dt>_GPSET
 <dd>replace the original screen pixel value with the supplied pixel value
 <dt><br>_GAND
-<dd>replace the original screen pixel value with the<b> bitwise and</b> of the original pixel value and the supplied pixel value
+<dd>replace the original screen pixel value with the<i> bitwise and</i> of the original pixel value and the supplied pixel value
 <dt><br>_GOR
-<dd>replace the original screen pixel value with the<b> bitwise or</b> of the original pixel value and the supplied pixel value
+<dd>replace the original screen pixel value with the<i> bitwise or</i> of the original pixel value and the supplied pixel value
 <dt><br>_GXOR
-<dd>replace the original screen pixel value with the<b> bitwise exclusive-or</b> of the original pixel value and the supplied
+<dd>replace the original screen pixel value with the<i> bitwise exclusive-or</i> of the original pixel value and the supplied
 pixel value.&nbsp; Performing this operation twice will restore the original screen contents, providing an efficient method
 to produce animated effects.
 </dl>
@@ -5487,8 +5487,8 @@ to produce animated effects.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _settextalign</tt> routine sets the current text alignment to the values specified by the arguments<b> horiz</b> and<b>
-vert</b>.&nbsp; When text is displayed with the <tt> _grtext</tt> routine, it is aligned (justified) horizontally and vertically
+<dd>The<tt> _settextalign</tt> routine sets the current text alignment to the values specified by the arguments<i> horiz</i> and<i>
+vert</i>.&nbsp; When text is displayed with the <tt> _grtext</tt> routine, it is aligned (justified) horizontally and vertically
 about the given point according to the current text alignment settings.
 <br>The horizontal component of the alignment can have one of the following values:
 <dl>
@@ -5558,11 +5558,11 @@ the text path is<tt> _PATH_UP</tt>, in which case<tt> _BOTTOM</tt> alignment is 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _settextcolor</tt> routine sets the current text color to be the color indicated by the pixel value of the<b> pixval</b>
+<dd>The<tt> _settextcolor</tt> routine sets the current text color to be the color indicated by the pixel value of the<i> pixval</i>
 argument.&nbsp; This is the color value used for displaying text with the <tt> _outtext</tt> and <tt> _outmem</tt> routines.
 &nbsp;Use the <tt> _setcolor</tt> routine to change the color of graphics output.&nbsp; The default text color value is set
 to 7 whenever a new video mode is selected.
-<br>The pixel value<b> pixval</b> is a number in the range 0-31.&nbsp; Colors in the range 0-15 are displayed normally.&nbsp;
+<br>The pixel value<i> pixval</i> is a number in the range 0-31.&nbsp; Colors in the range 0-15 are displayed normally.&nbsp;
 In text modes, blinking colors are specified by adding 16 to the normal color values.&nbsp; The following table specifies
 the default colors in color text modes.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -5633,10 +5633,10 @@ the default colors in color text modes.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _settextcursor</tt> routine sets the attribute, or shape, of the cursor in text modes.&nbsp; The argument<b> cursor</b>
+<dd>The<tt> _settextcursor</tt> routine sets the attribute, or shape, of the cursor in text modes.&nbsp; The argument<i> cursor</i>
 specifies the new cursor shape.&nbsp; The cursor shape is selected by specifying the top and bottom rows in the character
-matrix.&nbsp; The high byte of<b> cursor</b> specifies the top row of the cursor; the low byte specifies the bottom row.
-<br>Some typical values for<b> cursor</b> are:
+matrix.&nbsp; The high byte of<i> cursor</i> specifies the top row of the cursor; the low byte specifies the bottom row.
+<br>Some typical values for<i> cursor</i> are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Cursor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shape</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; '0607'x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; normal underline cursor</tt>
@@ -5731,7 +5731,7 @@ routine.&nbsp; The default text orientation, for normal left-to-right text, is t
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _settextpath</tt> routine sets the current text path to have the value of the<b> path</b> argument.&nbsp; The text
+<dd>The<tt> _settextpath</tt> routine sets the current text path to have the value of the<i> path</i> argument.&nbsp; The text
 path specifies the writing direction of the text displayed by the <tt> _grtext</tt> routine.&nbsp; The argument can have one
 of the following values:
 <dl>
@@ -5832,9 +5832,9 @@ graphics output can be set by use of the <tt> _moveto</tt> routine.
 <dl>
 <dt>Description:
 <dd>The<tt> _settextrows</tt> routine selects the number of rows of text displayed on the screen.&nbsp; The number of rows is
-specified by the argument<b> rows</b>.&nbsp; Computers equipped with EGA, MCGA and VGA adapters can support different numbers
+specified by the argument<i> rows</i>.&nbsp; Computers equipped with EGA, MCGA and VGA adapters can support different numbers
 of text rows.&nbsp; The number of rows that can be selected depends on the current video mode and the type of monitor attached.
-<br>If the argument<b> rows</b> has the value<b> _MAXTEXTROWS</b>, the maximum number of text rows will be selected for the
+<br>If the argument<i> rows</i> has the value<i> _MAXTEXTROWS</i>, the maximum number of text rows will be selected for the
 current video mode and hardware configuration.&nbsp; In text modes the maximum number of rows is 43 for EGA adapters, and
 50 for MCGA and VGA adapters.&nbsp; Some graphics modes will support 43 rows for EGA adapters and 60 rows for MCGA and VGA
 adapters.
@@ -5944,8 +5944,8 @@ When the window is full, the lines scroll upwards one line and then text is disp
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setvideomode</tt> routine sets the video mode according to the value of the<b> mode</b> argument.&nbsp; The value
-of<b> mode</b> can be one of the following:&nbsp; uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2
+<dd>The<tt> _setvideomode</tt> routine sets the video mode according to the value of the<i> mode</i> argument.&nbsp; The value
+of<i> mode</i> can be one of the following:&nbsp; uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2
 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2 uindex=2
 uindex=2 uindex=2 uindex=2 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6087,8 +6087,8 @@ vc.numypixels,</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> _setvideomoderows</tt> routine selects a video mode and the number of rows of text displayed on the screen.&nbsp;
-The video mode is specified by the argument<b> mode</b> and is selected with the <tt> _setvideomode</tt> routine.&nbsp; The
-number of rows is specified by the argument<b> rows</b> and is selected with the <tt> _settextrows</tt> routine.
+The video mode is specified by the argument<i> mode</i> and is selected with the <tt> _setvideomode</tt> routine.&nbsp; The
+number of rows is specified by the argument<i> rows</i> and is selected with the <tt> _settextrows</tt> routine.
 <br>Computers equipped with EGA, MCGA and VGA adapters can support different numbers of text rows.&nbsp; The number of rows
 that can be selected depends on the video mode and the type of monitor attached.
 </dl>
@@ -6225,7 +6225,7 @@ are established by the physical points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> _setvisualpage</tt> routine selects the page (in memory) from which graphics output is displayed.&nbsp; The page to
-be selected is given by the<b> pagenum</b> argument.
+be selected is given by the<i> pagenum</i> argument.
 <br>Only some combinations of video modes and hardware allow multiple pages of graphics to exist.&nbsp; When multiple pages
 are supported, the active page may differ from the visual page.&nbsp; The graphics information in the visual page determines
 what is displayed upon the screen.&nbsp; Animation may be accomplished by alternating the visual page.&nbsp; A graphics page
@@ -6294,7 +6294,7 @@ a negative number is returned.
 <dd>The<tt> _setwindow</tt> routine defines a window for the window coordinate system.&nbsp; Window coordinates are specified
 as a user-defined range of values.&nbsp; This allows for consistent pictures regardless of the video mode.
 <br>The window is defined as the region with opposite corners established by the points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>
-&nbsp;The argument<b> invert</b> specifies the direction of the y-axis.&nbsp; If the value is<tt> .TRUE.,</tt> the y values
+&nbsp;The argument<i> invert</i> specifies the direction of the y-axis.&nbsp; If the value is<tt> .TRUE.,</tt> the y values
 increase from the bottom of the screen to the top, otherwise, the y values increase as you move down the screen.
 <br><br>The window defined by the<tt> _setwindow</tt> routine is displayed in the current viewport.&nbsp; A viewport is defined
 by the <tt> _setviewport</tt> routine.
@@ -6403,7 +6403,7 @@ The currently selected font is also unloaded.
 <dl>
 <dt>Description:
 <dd>The<tt> _wrapon</tt> routine is used to control the display of text when the text output reaches the right side of the text
-window.&nbsp; This is text displayed with the <tt> _outtext</tt> and <tt> _outmem</tt> routines.&nbsp; The<b> wrap</b> argument
+window.&nbsp; This is text displayed with the <tt> _outtext</tt> and <tt> _outmem</tt> routines.&nbsp; The<i> wrap</i> argument
 can take one of the following values:
 <dl>
 <dt>_GWRAPON

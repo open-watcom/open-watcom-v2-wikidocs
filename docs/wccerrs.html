@@ -309,7 +309,7 @@ are issued during compilation and execution.
 They represent strings that are substituted by the Open Watcom C compilers to make the error message more exact.<tt>&nbsp;
 %d</tt> and<tt> %u</tt> represent a string of digits;<tt> %s</tt> a string, usually a symbolic name.
 <br><br>Consider the following program, named<tt> err.c</tt>, which contains errors.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -412,7 +412,7 @@ literal string, or increase the dimension of the array to hold all of the charac
 <br>The compiler has detected a line continuation during the processing of a C++ style comment (&quot;//&quot;).&nbsp; The
 warning can be removed by switching to a C style comment (&quot;/**/&quot;).&nbsp; If you require the comment to be terminated
 at the end of the line, make sure that the backslash character is not the last character in the line.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define XX 23 // comment start \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; comment \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
@@ -428,7 +428,7 @@ to see if it is &gt;= 0 or &lt; 0 is redundant.&nbsp; Check to see if the expres
 <h2 id="W127_trigraph_found_in_string"> W127 trigraph found in string </h2>
 <br>Trigraph expansion occurs inside a string literal.&nbsp; This warning can be disabled via the command line or <b><i> #pragma
 warning</i></b> directive.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // string expands to &quot;(?&#93;?????&quot;!</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char *e = &quot;(???)???-????&quot;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; // possible work-arounds</tt>
@@ -443,22 +443,22 @@ to solve a preprocessing directive problem.
 <h2 id="W130_Possible_loss_of_precision"> W130 Possible loss of precision </h2>
 <br>This warning indicates that you may be converting a argument of one size to another, different size.&nbsp; For instance,
 you may be losing precision by passing a long argument to a function that takes a short.&nbsp; This warning is initially disabled.
-&nbsp;It must be explicitly enabled with<b> #pragma enable_message(130)</b> or option &quot;-wce=130&quot;.&nbsp; It can be
-disabled later by using<b> #pragma disable_message(130).</b>
+&nbsp;It must be explicitly enabled with<i> #pragma enable_message(130)</i> or option &quot;-wce=130&quot;.&nbsp; It can be
+disabled later by using<i> #pragma disable_message(130).</i>
 <h2 id="W131_No_prototype_found_for_function___s_"> W131 No prototype found for function '%s' </h2>
 <br>A reference for a function appears in your program, but you do not have a prototype for that function defined.&nbsp; Implicit
 prototype will be used, but this will cause problems if the assumed prototype does not match actual function definition.
 <h2 id="W132_No_storage_class_or_type_specified"> W132 No storage class or type specified </h2>
 <br>When declaring a data object, either storage class or data type must be given.&nbsp; If no type is specified, <b><i> int</i></b>
-is assumed.&nbsp; If no storage class is specified, the default depends on scope (see the<b> C Language Reference</b> for
+is assumed.&nbsp; If no storage class is specified, the default depends on scope (see the<i> C Language Reference</i> for
 details).&nbsp; For instance
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; auto i;</tt>
 <br><br>is a valid declaration, as is
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; short i;</tt>
 <br><br>However,
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; i;</tt>
 <br><br>is not a correctly formed declaration.
 <h2 id="W133_Symbol_name_truncated_for___s_"> W133 Symbol name truncated for '%s' </h2>
@@ -466,13 +466,13 @@ details).&nbsp; For instance
 for OMF and 1024 characters for COFF or ELF object files.
 <h2 id="W134_Shift_amount_negative"> W134 Shift amount negative </h2>
 <br>The right operand of a left or right shift operator is a negative value.&nbsp; The result of the shift operation is undefined.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a = 1 &lt;&lt; -2;</tt>
 <br><br>The value of 'a' in the above example is undefined.
 <h2 id="W135_Shift_amount_too_large"> W135 Shift amount too large </h2>
 <br>The right operand of a left or right shift operator is a value greater than or equal to the width in bits of the type
 of the promoted left operand.&nbsp; The result of the shift operation is undefined.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int a = 1 &gt;&gt; 123;</tt>
 <br><br>The value of 'a' in the above example is undefined.
 <h2 id="W136_Comparison_equivalent_to__unsigned_EE_0_"> W136 Comparison equivalent to 'unsigned == 0' </h2>
@@ -481,7 +481,7 @@ the expression should be signed instead of unsigned.
 <h2 id="W137_Extern_function___s__redeclared_as_static"> W137 Extern function '%s' redeclared as static </h2>
 <br>The specified function was either explicitly or implicitly declared as <b><i> extern</i></b> and later redeclared as <b><i>
 static.</i></b>&nbsp; This is not allowed in ISO C and may produce unexpected results with ISO compliant compilers.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int bar( void );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void foo( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -497,7 +497,7 @@ newline was found, it will be automatically inserted.
 <h2 id="W139_Divisor_for_modulo_or_division_operation_is_zero"> W139 Divisor for modulo or division operation is zero </h2>
 <br>The right operand of a division or modulo operation is zero.&nbsp; The result of this operation is undefined and you should
 rewrite the offending code to avoid divisions by zero.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( 7 / 0 );</tt>
@@ -520,7 +520,7 @@ ignore all cases where the warning shows up.
 <h2 id="W202_Symbol___s__has_been_defined__but_not_referenced"> W202 Symbol '%s' has been defined, but not referenced </h2>
 <br>There are no references to the declared variable.&nbsp; The declaration for the variable can be deleted.
 <br><br>In some cases, there may be a valid reason for retaining the variable.&nbsp; You can prevent the message from being
-issued through use of<b> #pragma off(unreferenced).</b>
+issued through use of<i> #pragma off(unreferenced).</i>
 <h2 id="W203_Preprocessing_symbol___s__has_not_been_declared"> W203 Preprocessing symbol '%s' has not been declared </h2>
 <br>The symbol has been used in a preprocessor expression.&nbsp; The compiler assumes the symbol has a value of 0 and continues.
 &nbsp;A<tt> #define</tt> may be required for the symbol, or you may have forgotten to include the file which contains a<tt>
@@ -537,17 +537,17 @@ it also contains a side-effect, such as ++, --, or a function call.
 <br>There are no references to the declared parameter.&nbsp; The declaration for the parameter can be deleted.&nbsp; Since
 it is a parameter to a function, all calls to the function must also have the value for that parameter deleted.
 <br><br>In some cases, there may be a valid reason for retaining the parameter.&nbsp; You can prevent the message from being
-issued through use of<b> #pragma off(unreferenced).</b>
-<br><br>This warning is initially disabled.&nbsp; It must be specifically enabled with<b> #pragma enable_message(303)</b>
-or option &quot;-wce=303&quot;.&nbsp; It can be disabled later by using<b> #pragma disable_message(303).</b>
+issued through use of<i> #pragma off(unreferenced).</i>
+<br><br>This warning is initially disabled.&nbsp; It must be specifically enabled with<i> #pragma enable_message(303)</i>
+or option &quot;-wce=303&quot;.&nbsp; It can be disabled later by using<i> #pragma disable_message(303).</i>
 <h2 id="W304_Return_type__int__assumed_for_function___s_"> W304 Return type 'int' assumed for function '%s' </h2>
 <br>If a function is declared without specifying return type, such as
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; foo( void );</tt>
 <br><br>then its return type will be assumed to be <b><i> int</i></b>
 <h2 id="W305_Type__int__assumed_in_declaration_of___s_"> W305 Type 'int' assumed in declaration of '%s' </h2>
 <br>If an object is declared without specifying its type, such as
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; register count;</tt>
 <br><br>then its type will be assumed to be <b><i> int</i></b>
 <h2 id="W306_Assembler_warning____s_"> W306 Assembler warning:&nbsp; '%s' </h2>
@@ -555,12 +555,12 @@ or option &quot;-wce=303&quot;.&nbsp; It can be disabled later by using<b> #prag
 <h2 id="W307_Obsolete_nonMprototype_declarator"> W307 Obsolete non-prototype declarator </h2>
 <br>Function parameter declarations containing only empty parentheses, that is, non-prototype declarations, are an obsolescent
 language feature.&nbsp; Their use is dangerous and discouraged.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int func();</tt>
 <h2 id="W308_The_function___s__without_prototyped_parameters_called"> W308 The function '%s' without prototyped parameters called </h2>
 <br>A call to an unprototyped function was made, preventing the compiler from checking the number of function arguments and
 their types.&nbsp; Use of unprototyped functions is obsolescent, dangerous and discouraged.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int func();</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void bar( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -570,7 +570,7 @@ mismatch */</tt>
 <h2 id="W309_The_function_without_prototyped_parameters_indirectly_called"> W309 The function without prototyped parameters indirectly called </h2>
 <br>An indirect call to an unprototyped function was made, preventing the compiler from checking the number of function arguments
 and their types.&nbsp; Use of unprototyped functions is obsolescent, dangerous and discouraged.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int (*func)();</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void bar( void )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -579,7 +579,7 @@ mismatch */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <h2 id="W310_Pointer_truncated_during_cast"> W310 Pointer truncated during cast </h2>
 <br>A far pointer is being cast to a near pointer, losing segment information in the process.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char __near *foo( char __far *fs )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( (char __near *)fs );</tt>
@@ -588,7 +588,7 @@ mismatch */</tt>
 <br>Array subscript expression is of plain char type.&nbsp; Such expression may be interpreted as either signed or unsigned,
 depending on compiler settings.&nbsp; A different type should be chosen instead of char.&nbsp; A cast may be used in cases
 when the value of the expression is known to never fall outside the 0-127 range.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int arr&#91;&#93;, char c )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( arr&#91;c&#93; );</tt>
@@ -597,7 +597,7 @@ when the value of the expression is known to never fall outside the 0-127 range.
 <br>The ISO C/C++ standard requires that undefined macros evaluate to zero during preprocessor expression evaluation.&nbsp;
 This default behaviour can often mask incorrectly spelled macro references.&nbsp; The warning is useful when used in critical
 environments where all macros will be defined.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if _PRODUCTI0N // should be _PRODUCTION</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h2 id="E1000_BREAK_must_appear_in_while__do__for_or_switch_statement"> E1000 BREAK must appear in while, do, for or switch statement </h2>
@@ -780,7 +780,7 @@ or before the end of the source file.
 <h2 id="E1071_Type_of_parameter__d_does_not_agree_with_previous_definition"> E1071 Type of parameter %d does not agree with previous definition </h2>
 <br>The type of the specified parameter is incompatible with the prototype for that function.&nbsp; The following example
 illustrates a problem that can arise when the sequence of declarations is in the wrong order.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* Uncommenting the following line will</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eliminate the error */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* struct foo; */</tt>
@@ -814,7 +814,7 @@ which selects the Small, Medium, Compact, Large, Huge or Flat memory model.
 <br>The type of a switch expression must be integral.
 <h2 id="E1079_Expression_must_be_integral"> E1079 Expression must be integral </h2>
 <br>An integral expression is required.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int foo( int a, float b, int *p )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch( a ) {</tt>
@@ -933,9 +933,9 @@ other helpful details about the program being compiled to compiler developers so
 <h2 id="E1121_Procedure___s__has_invalid_return_register_in__pragma"> E1121 Procedure '%s' has invalid return register in #pragma </h2>
 <br>The size of the return register does not match the size of the result returned by the function.
 <h2 id="E1122_Illegal_register_modified_by___s___pragma"> E1122 Illegal register modified by '%s' #pragma </h2>
-<br><b>For the 16-bit C compiler:</b>&nbsp; The BP, CS, DS, and SS registers cannot be modified in small data models.&nbsp;
+<br><i>For the 16-bit C compiler:</i>&nbsp; The BP, CS, DS, and SS registers cannot be modified in small data models.&nbsp;
 The BP, CS, and SS registers cannot be modified in large data models.
-<br><br><b>For the 32-bit C compiler:</b>&nbsp; The EBP, CS, DS, ES, and SS registers cannot be modified in flat memory models.
+<br><br><i>For the 32-bit C compiler:</i>&nbsp; The EBP, CS, DS, ES, and SS registers cannot be modified in flat memory models.
 &nbsp;The EBP, CS, DS, and SS registers cannot be modified in small data models.&nbsp; The EBP, CS, and SS registers cannot
 be modified in large data models.
 <h2 id="E1123_File_must_contain_at_least_one_external_definition"> E1123 File must contain at least one external definition </h2>
@@ -1012,7 +1012,7 @@ to have a variable number of parameters, then you are missing the &quot;, ...&qu
 <h2 id="E1152_Segment_name_required"> E1152 Segment name required </h2>
 <br>A segment name must be supplied in the form of a literal string to the __segname() directive.
 <h2 id="E1153_Invalid___based_declaration"> E1153 Invalid __based declaration </h2>
-<br>The compiler could not recognize one of the allowable forms of __based declarations.&nbsp; See the<b> C Language Reference</b>
+<br>The compiler could not recognize one of the allowable forms of __based declarations.&nbsp; See the<i> C Language Reference</i>
 document for description of all the allowable forms of __based declarations.
 <h2 id="E1154_Variable_for___based_declaration_must_be_of_type___segment_or_pointer"> E1154 Variable for __based declaration must be of type __segment or pointer </h2>
 <br>A based pointer declaration must be based on a simple variable of type __segment or pointer.
@@ -1045,7 +1045,7 @@ displayed in the message.
 <br>The compiler found a constant expression containing a division or remainder by zero.
 <h2 id="E1168_Cannot_end_string_literal_with_backslash"> E1168 Cannot end string literal with backslash </h2>
 <br>The argument to a macro that uses the stringize operator '#' on that argument must not end in a backslash character.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define str(x) #x</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; str(@#\)</tt>
 <h2 id="E1169_Invalid___declspec_declaration"> E1169 Invalid __declspec declaration </h2>
@@ -1092,12 +1092,12 @@ program.
 or <b><i> register</i></b>
 <h2 id="E1187_No_type_specified_in_declaration"> E1187 No type specified in declaration </h2>
 <br>A declaration specifier must include a type specifier.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; auto i;</tt>
 <h2 id="E1188_Symbol___s__declared_in__for__statement_must_be_object"> E1188 Symbol '%s' declared in 'for' statement must be object </h2>
 <br>Any identifier declared in the optional declaration part of a <b><i> for</i></b> statement must denote an object.&nbsp;
 Functions, structures, or enumerations may not be declared in this context.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; for( int i = 0, j( void ); i &lt; 5; ++i ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
@@ -1105,14 +1105,14 @@ Functions, structures, or enumerations may not be declared in this context.
 <br>Within a function body, in C99 mode a declaration is only allowed in a compound statement and in the opening clause of
 a <b><i> for</i></b> loop.&nbsp; Declarations are not allowed after <b><i> if,</i></b> <b><i> while,</i></b> or <b><i> switch</i></b>
 statement, etc.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void foo( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( a &gt; 0 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int j = 3;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>In C89 mode, declarations within a function body are only allowed at the beginning of a compound statement.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void foo( int a )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ++a;</tt>
@@ -1127,12 +1127,12 @@ statement, etc.
 <h2 id="E1193_floatingMpoint_constant_too_small_to_represent"> E1193 floating-point constant too small to represent </h2>
 <br>The Open Watcom C compiler cannot represent the floating-point constant because the magnitude of the negative exponent
 is too large.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float f = 1.2e-78965;</tt>
 <h2 id="E1194_floatingMpoint_constant_too_large_to_represent"> E1194 floating-point constant too large to represent </h2>
 <br>The Open Watcom C compiler cannot represent the floating-point constant because the magnitude of the positive exponent
 is too large.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; float f = 1.2e78965;</tt>
 <h2 id="E1195_unmatched_left_parenthesis__L_"> E1195 unmatched left parenthesis '(' </h2>
 <br>The expression contains a left parenthesis &quot;(&quot; without a matching right parenthesis.
@@ -1172,7 +1172,7 @@ code from one compile to the next unless the available memory is exactly the sam
 <h2 id="I2002___s__defined_in___sL_uR"> I2002 '%s' defined in:&nbsp; %s(%u) </h2>
 <br>This informational message indicates where the symbol in question was defined.&nbsp; The message is displayed following
 an error or warning diagnostic for the symbol in question.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int a = 9;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int b = 89;</tt>
 <br><br>The variable 'a' is not referenced in the preceding example and so will cause a warning to be generated.&nbsp; Following

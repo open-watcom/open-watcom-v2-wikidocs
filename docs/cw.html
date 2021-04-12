@@ -107,12 +107,12 @@ overhead.
 <br>When using CauseWay, simply follow the standard edit-compile/assemble-link programming cycle familiar to C and assembly
 language programmers.
 <br><br>Users compiling with WCL386 need to add the switch -l=CauseWay to the command line.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WCL386 -l=CauseWay myprog.c</tt>
 <br><br>This switch can be automated by adding -l#CauseWay to the <b> WCL386</b> environment variable, making CauseWay the
 default when compiling via WCL386.
 <br><br>Open Watcom users linking with WLINK should add the statement<tt> system CauseWay</tt> to the link command.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WLINK system CauseWay file myprog.obj</tt>
 <br><br>When running the DOS-extended application, DOS first loads the CauseWay DOS extender in conventional memory.&nbsp;
 CauseWay establishes the protected mode environment, retrieves the application from the executable file - loading it first
@@ -125,7 +125,7 @@ extender bound to the application EXE, if any, with the CauseWay DOS extender ve
 <h2 id="Debugging_Using_WD"> Debugging Using WD </h2>
 <br>To debug CauseWay programs with the Open Watcom debugger after installing the CauseWay files, simply use the -tr=cw command
 line option.
-<br><br><b>Example:</b>
+<br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WD -tr=cw myprog</tt>
 <br><br>This process can be automated by adding<tt> -tr#cw</tt> to your <b> WD</b> environment variable.&nbsp; Use the<tt>
 set WD=tr#cw</tt> command.
@@ -334,7 +334,7 @@ the linker can export it.
 <dd><b><i>description</i></b>
 <dt><br>local_name
 <dd>is an optional parameter.&nbsp; It is the symbol which the importing program references the function by, i.e.&nbsp; the symbol
-declared as external.&nbsp; If no local name is specified, then<b> function_name</b> is used.
+declared as external.&nbsp; If no local name is specified, then<i> function_name</i> is used.
 <dt><br>module_name
 <dd>is the name of the module that contains the function.&nbsp; It is not the file name.&nbsp; IMPORT module names are resolved
 by searching DLL and EXE files for the correct module name.
@@ -342,9 +342,9 @@ by searching DLL and EXE files for the correct module name.
 <dd>is the symbol by which the function is known in the EXPORTing module, i.e.&nbsp; the symbol that is declared as public.
 <dt><br>ordinal_number
 <dd>functions can also be imported by number.&nbsp; This is the entry number in decimal, starting at 1, in the EXPORTing module's
-export table to link to.<b>&nbsp; local_name</b> must be specified when using ordinals, otherwise there is no symbolic reference
+export table to link to.<i>&nbsp; local_name</i> must be specified when using ordinals, otherwise there is no symbolic reference
 to internally resolve.
-<br>In the DLL calling code,<b> local_name</b> and<b> function_name</b> need to be declared as external.
+<br>In the DLL calling code,<i> local_name</i> and<i> function_name</i> need to be declared as external.
 </dl>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NAME&nbsp;&nbsp; module_name</tt>
