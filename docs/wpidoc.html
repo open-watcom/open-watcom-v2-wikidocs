@@ -60,7 +60,7 @@ WPI.&nbsp; It notes situations which are similar to Windows code and some which 
 <h2 id="What_is_WPI_"> What is WPI? </h2>
 <br>WPI is a combination of macros and library routines.&nbsp; The WPI project is in ./bld/wpi and contains subdirectories
 for source code, header files, and libraries.&nbsp; The header file wpi.h includes the type header file wpitypes.h and either
-wpi_win.h or wpi_os2.h — depending on the platform for which you wish to compile.&nbsp; The header files wpi_os2.h and wpi_win.h
+wpi_win.h or wpi_os2.h depending on the platform for which you wish to compile.&nbsp; The header files wpi_os2.h and wpi_win.h
 contain the macros and prototypes for functions which correspond to Windows API calls when compiling under the Windows platform
 and PM API calls when compiling for the OS2 platform.&nbsp; It should be noted that these files are not necessarily complete.
 &nbsp;These files will constantly be modified and further macros will no doubt be added as their need arises.&nbsp; Therefore,
@@ -578,8 +578,8 @@ is return) and will not be freed until a call to _wpi_getoldbitmap.
 <br>This will select the old bitmap into the presentation space.&nbsp; For PM this frees the memory associated with the old
 bitmap.
 </dl>
-<br>This again, is merely a subset of the bitmap functions available in WPI—many other Windows APIs have been converted to
-WPI.&nbsp; If the desired function is not present in this list then search wpi_os2.h.
+<br>This again, is merely a subset of the bitmap functions available in WPI.&nbsp; Many other Windows APIs have been converted
+to WPI.&nbsp; If the desired function is not present in this list then search wpi_os2.h.
 <br>Mention should be made here of how monochrome bitmaps are converted to colour bitmaps.&nbsp; The user should read the
 section on BitBlt (Windows) and GpiBitBlt (PM) to find out how the conversion is done for each platform.&nbsp; Unfortunately
 Windows and PM perform in the opposite manner.&nbsp; Windows converts all white pixels (1's) in the monochrome bitmap to the
