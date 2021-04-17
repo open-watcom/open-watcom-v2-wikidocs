@@ -7348,9 +7348,9 @@ than one line.&nbsp; The<b> :evalue</b> tag delimits the end of a value section,
 in the line.
 <h4 id="FONTVALUE_Section"> FONTVALUE Section </h4>
 <br>The<b> fontvalue</b> section is used to perform font initialization, and is started with the<b> :fontvalue</b> tag.&nbsp;
-Device functions are then entered after the :fontvalue tag, and may be specified on more than one line.&nbsp; WATCOM Script/GML
-selects the fonts being used in the document.&nbsp; For each of the selected fonts, the fontvalue section is evaluated.&nbsp;
-Device functions, such %default_width, will return the values appropriate for the selected font.&nbsp; The<b> :efontvalue</b>
+Device functions are then entered after the<b> :fontvalue</b> tag, and may be specified on more than one line.&nbsp; WATCOM
+Script/GML selects the fonts being used in the document.&nbsp; For each of the selected fonts, the fontvalue section is evaluated.
+&nbsp;Device functions, such %default_width, will return the values appropriate for the selected font.&nbsp; The<b> :efontvalue</b>
 tag delimits the end of a fontvalue section, and must be the first non-space characters in the line.&nbsp; The fontvalue section
 may be specified more than once, and may precede and/or follow a value section.
 <h3 id="FINISH_Block"> FINISH Block </h3>
@@ -7561,16 +7561,16 @@ block when a font pause method is required.&nbsp; The attribute value must be un
 definition.
 <h4 id="STARTVALUE_Section"> STARTVALUE Section </h4>
 <br>The<b> startvalue</b> section specifies the sequence to be output to perform the font switch, and is started with the<b>
-:startvalue</b> tag.&nbsp; Device functions are then entered after the :startvalue tag, and may be specified on more than
-one line.&nbsp; The<b> :estartvalue</b> tag delimits the end of a startvalue section, and must be the first non-space characters
-in the line.
+:startvalue</b> tag.&nbsp; Device functions are then entered after the<b> startvalue</b> tag, and may be specified on more
+than one line.&nbsp; The<b> :estartvalue</b> tag delimits the end of a startvalue section, and must be the first non-space
+characters in the line.
 <br><br>When a switch between two fonts is necessary, the startvalue sections of the two fonts are evaluated.&nbsp; The font
 switch is only performed if the results of the two evaluations are different.
 <h4 id="ENDVALUE_Section"> ENDVALUE Section </h4>
 <br>The<b> endvalue</b> section specifies the sequence to be output before the font switch sequence of the new font is performed,
-and is started with the<b> :endvalue</b> tag.&nbsp; Device functions are then entered after the :endvalue tag, and may be
-specified on more than one line.&nbsp; The<b> :eendvalue</b> tag delimits the end of an endvalue section, and must be the
-first non-space characters in the line.
+and is started with the<b> :endvalue</b> tag.&nbsp; Device functions are then entered after the<b> :endvalue</b> tag, and
+may be specified on more than one line.&nbsp; The<b> :eendvalue</b> tag delimits the end of an endvalue section, and must
+be the first non-space characters in the line.
 <h3 id="PAGEADDRESS_Block"> PAGEADDRESS Block </h3>
 <br>As text is placed on the output page, the X and Y components of the address are adjusted to make a new address.&nbsp;
 With some output devices, this adjustment is added (positive) to the address.&nbsp; The adjustment is subtracted (negative)
