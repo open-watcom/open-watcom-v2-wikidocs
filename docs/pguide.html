@@ -1909,7 +1909,7 @@ DOS/4G Copyright banner */</tt>
 of an AT machine consists of 640KB of DOS memory, 384KB of upper memory, and an undetermined amount of extended memory.&nbsp;
 DOS memory and upper memory together compose real memory, the memory that can be addressed when the processor is running in
 real mode.
-<br><br><tt><img src="mem1.bmp" align=middle></tt>
+<br><br><tt><img src="mem1.bmp" style="vertical-align:middle"></tt>
 <br><b><i>Figure 1.</i></b><b><i></i></b><i> Basic Memory Layout</i>
 <br><br>Under<i> DOS/4GW</i>, the first megabyte of physical memory - the real memory - is mapped as a shared linear address
 space.&nbsp; This allows your application to use absolute addresses in real memory, to access video RAM or BIOS ROM, for example.
@@ -1921,7 +1921,7 @@ at 4MB, the first address in the second page table, to avoid conflicts with VCPI
 the address space mapped to the first MB of physical memory - is called a<i> split flat model.</i>
 <br><br>The illustration below shows the layout of physical memory on the left, and the layout of the linear address space
 on the right.
-<br><br><tt><img src="mem2.bmp" align=middle></tt>
+<br><br><tt><img src="mem2.bmp" style="vertical-align:middle"></tt>
 <br><b><i>Figure 2.</i></b><b><i></i></b><i> Physical Memory/Linear Address Space</i>
 <br><br>The 1KB label in the diagram indicates the top of the real-mode interrupt vectors.&nbsp; 4KB marks the end of the
 first page.
@@ -2698,10 +2698,10 @@ only.&nbsp; To examine the access rights of a descriptor, use the<tt> lar</tt> i
 in BX is invalid, the call fails.&nbsp; The call also fails if the access rights/type byte does not match the format and meet
 the requirements shown in the figures below.
 <br><br>The access rights/type byte passed in CL has the format shown in the figure below.
-<br><br><tt><img src="mem3.bmp" align=middle></tt>
+<br><br><tt><img src="mem3.bmp" style="vertical-align:middle"></tt>
 <br><b><i>Figure 3.</i></b><b><i></i></b><i> Access Rights/Type</i>
 <br><br>The extended access rights/type byte passed in CH has the following format.
-<br><br><tt><img src="mem4.bmp" align=middle></tt>
+<br><br><tt><img src="mem4.bmp" style="vertical-align:middle"></tt>
 <br><b><i>Figure 4.</i></b><b><i></i></b><i> Extended Access Rights/Type</i>
 <dt><br>Function 000AH
 <dd>This function creates an alias to a code segment.&nbsp; This function creates a data descriptor that has the same base and
@@ -5669,9 +5669,9 @@ is needed.&nbsp; This interface would switch into the 16-bit environment, and th
 <br><br>These issues, along with other minor items, are handled by Open Watcom C/C++, and are discussed in more technical
 detail in later sections.
 <h2 id="Windows__System_Structure"> Windows:&nbsp; System Structure </h2>
-<br><tt><img src="struct.bmp" align=middle></tt>
+<br><tt><img src="struct.bmp" style="vertical-align:middle"></tt>
 <br><b><i>Figure 5.</i></b><b><i></i></b><i> WIN386 Structure</i>
-<br><br><tt><img src="struct2.bmp" align=middle></tt>
+<br><br><tt><img src="struct2.bmp" style="vertical-align:middle"></tt>
 <br><b><i>Figure 6.</i></b><b><i></i></b><i> 32-bit Application Structure</i>
 <h2 id="Windows__System_Overview"> Windows:&nbsp; System Overview </h2>
 <ul>
