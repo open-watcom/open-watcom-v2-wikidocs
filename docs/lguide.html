@@ -3318,8 +3318,9 @@ option (short form &quot;OFF&quot;) is as follows.
 number.&nbsp; If<i> k</i> is specified, the value is multiplied by 1024.&nbsp; If<i> m</i> is specified, the value is multiplied
 by 1024*1024.
 </dl>
-<br><i>n</i> specifies the offset at which the output image will be located.&nbsp; The following describes a use of the &quot;OFFSET&quot;
-option.
+<br><i>n</i> specifies the offset (in bytes) at which the output image will be located.&nbsp; The Open Watcom Linker will
+round the value up to a multiple of 256 bytes if it is not already a multiple of 256.
+<br><br>The following describes a use of the &quot;OFFSET&quot; option.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option offset=0xc0000000</tt>
 <br><br>The image will be virtually/physically located to the linear address 0xc0000000.
