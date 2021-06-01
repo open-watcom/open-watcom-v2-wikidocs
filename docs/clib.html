@@ -43946,7 +43946,9 @@ environment variable specified by<i> env_var</i>.&nbsp; Common values for<i> env
 <br>The current directory is searched first to find the specified file.&nbsp; If the file is not found in the current directory,
 each of the directories specified by the environment variable is searched.
 <br><br>The full pathname is placed in the buffer pointed to by the argument<i> pathname</i>.&nbsp; If the specified file
-cannot be found, then<i> pathname</i> will contain an empty string.
+cannot be found, then<i> pathname</i> will contain an empty string.&nbsp; The<i> pathname</i> buffer should be at least _MAX_PATH
+characters long to accommodate the full length of the constructed path name.&nbsp; Otherwise, _searchenv might overrun the
+pathname buffer and cause unexpected behavior.
 <br><br>The<tt> _wsearchenv</tt> function is a wide-character version of<tt> _searchenv</tt> that operates with wide-character
 strings.
 </dl>
