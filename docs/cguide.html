@@ -16,6 +16,10 @@
 <br><a href="#16Mbit_Memory_Layout">16-bit Memory Layout</a>
 <br><a href="#16Mbit_Memory_Models">16-bit Memory Models</a>
 <br><a href="#16Mbit_Pragmas">16-bit Pragmas</a>
+<br><a href="#16Mbit___check_stack__Option">16-bit:&nbsp; &quot;check_stack&quot; Option</a>
+<br><a href="#16Mbit___inline__Option_LC_onlyR">16-bit:&nbsp; &quot;inline&quot; Option (C only)</a>
+<br><a href="#16Mbit___reuse_duplicate_strings__Option_LC_onlyR">16-bit:&nbsp; &quot;reuse_duplicate_strings&quot; Option (C only)</a>
+<br><a href="#16Mbit___unreferenced__Option">16-bit:&nbsp; &quot;unreferenced&quot; Option</a>
 <br><a href="#16Mbit__A_Function_that_Never_Returns">16-bit:&nbsp; A Function that Never Returns</a>
 <br><a href="#16Mbit__Alias_Names">16-bit:&nbsp; Alias Names</a>
 <br><a href="#16Mbit__Alternate_Names_for_Symbols">16-bit:&nbsp; Alternate Names for Symbols</a>
@@ -75,6 +79,7 @@
 <br><a href="#16Mbit__The_INLINE_DEPTH_Pragma_LCPP_OnlyR">16-bit:&nbsp; The INLINE_DEPTH Pragma (C++ Only)</a>
 <br><a href="#16Mbit__The_INLINE_RECURSION_Pragma_LCPP_OnlyR">16-bit:&nbsp; The INLINE_RECURSION Pragma (C++ Only)</a>
 <br><a href="#16Mbit__The_INTRINSIC_Pragma">16-bit:&nbsp; The INTRINSIC Pragma</a>
+<br><a href="#16Mbit__The_LIBRARY_Pragma">16-bit:&nbsp; The LIBRARY Pragma</a>
 <br><a href="#16Mbit__The_MESSAGE_Pragma">16-bit:&nbsp; The MESSAGE Pragma</a>
 <br><a href="#16Mbit__The_ONCE_Pragma">16-bit:&nbsp; The ONCE Pragma</a>
 <br><a href="#16Mbit__The_PACK_Pragma">16-bit:&nbsp; The PACK Pragma</a>
@@ -87,7 +92,6 @@
 <br><a href="#16Mbit__Type__int_">16-bit:&nbsp; Type &quot;int&quot;</a>
 <br><a href="#16Mbit__Type__long_int_">16-bit:&nbsp; Type &quot;long int&quot;</a>
 <br><a href="#16Mbit__Type__short_int_">16-bit:&nbsp; Type &quot;short int&quot;</a>
-<br><a href="#16Mbit__Using_Pragmas_to_Specify_Default_Libraries">16-bit:&nbsp; Using Pragmas to Specify Default Libraries</a>
 <br><a href="#16Mbit__Using_Pragmas_to_Specify_Options">16-bit:&nbsp; Using Pragmas to Specify Options</a>
 <br><a href="#16Mbit__Using_the_80x87_to_Pass_Arguments">16-bit:&nbsp; Using the 80x87 to Pass Arguments</a>
 <br><a href="#16Mbit__Using_the_80x87_to_Return_Function_Values">16-bit:&nbsp; Using the 80x87 to Return Function Values</a>
@@ -101,6 +105,10 @@
 <br><a href="#32Mbit_Memory_Layout">32-bit Memory Layout</a>
 <br><a href="#32Mbit_Memory_Models">32-bit Memory Models</a>
 <br><a href="#32Mbit_Pragmas">32-bit Pragmas</a>
+<br><a href="#32Mbit___check_stack__Option">32-bit:&nbsp; &quot;check_stack&quot; Option</a>
+<br><a href="#32Mbit___inline__Option_LC_onlyR">32-bit:&nbsp; &quot;inline&quot; Option (C only)</a>
+<br><a href="#32Mbit___reuse_duplicate_strings__Option_LC_onlyR">32-bit:&nbsp; &quot;reuse_duplicate_strings&quot; Option (C only)</a>
+<br><a href="#32Mbit___unreferenced__Option">32-bit:&nbsp; &quot;unreferenced&quot; Option</a>
 <br><a href="#32Mbit__A_Function_that_Never_Returns">32-bit:&nbsp; A Function that Never Returns</a>
 <br><a href="#32Mbit__Alias_Names">32-bit:&nbsp; Alias Names</a>
 <br><a href="#32Mbit__Alternate_Names_for_Symbols">32-bit:&nbsp; Alternate Names for Symbols</a>
@@ -162,6 +170,7 @@
 <br><a href="#32Mbit__The_INLINE_DEPTH_Pragma_LCPP_OnlyR">32-bit:&nbsp; The INLINE_DEPTH Pragma (C++ Only)</a>
 <br><a href="#32Mbit__The_INLINE_RECURSION_Pragma_LCPP_OnlyR">32-bit:&nbsp; The INLINE_RECURSION Pragma (C++ Only)</a>
 <br><a href="#32Mbit__The_INTRINSIC_Pragma">32-bit:&nbsp; The INTRINSIC Pragma</a>
+<br><a href="#32Mbit__The_LIBRARY_Pragma">32-bit:&nbsp; The LIBRARY Pragma</a>
 <br><a href="#32Mbit__The_MESSAGE_Pragma">32-bit:&nbsp; The MESSAGE Pragma</a>
 <br><a href="#32Mbit__The_ONCE_Pragma">32-bit:&nbsp; The ONCE Pragma</a>
 <br><a href="#32Mbit__The_PACK_Pragma">32-bit:&nbsp; The PACK Pragma</a>
@@ -174,7 +183,6 @@
 <br><a href="#32Mbit__Type__int_">32-bit:&nbsp; Type &quot;int&quot;</a>
 <br><a href="#32Mbit__Type__long_int_">32-bit:&nbsp; Type &quot;long int&quot;</a>
 <br><a href="#32Mbit__Type__short_int_">32-bit:&nbsp; Type &quot;short int&quot;</a>
-<br><a href="#32Mbit__Using_Pragmas_to_Specify_Default_Libraries">32-bit:&nbsp; Using Pragmas to Specify Default Libraries</a>
 <br><a href="#32Mbit__Using_Pragmas_to_Specify_Options">32-bit:&nbsp; Using Pragmas to Specify Options</a>
 <br><a href="#32Mbit__Using_StackMBased_Calling_Conventions">32-bit:&nbsp; Using Stack-Based Calling Conventions</a>
 <br><a href="#32Mbit__Using_the_80x87_to_Pass_Arguments">32-bit:&nbsp; Using the 80x87 to Pass Arguments</a>
@@ -6409,45 +6417,74 @@ syntactical notation is used.
 <li>pragmas that provide auxiliary information used for code generation
 </ul>
 <h2 id="16Mbit__Using_Pragmas_to_Specify_Options"> 16-bit:&nbsp; Using Pragmas to Specify Options </h2>
-<br>Currently, the following options can be specified with pragmas:&nbsp; 
+<br>The following describes the form of the pragma to specify option.
+<hr>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on ( </tt><b>option_name</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off ( </tt><b>option_name</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop ( </tt><b>option_name</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<hr>
 <dl>
-<dt>unreferenced
-<dd>The &quot;unreferenced&quot; option controls the way Open Watcom C/C++ handles unused symbols.&nbsp; For example,
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (unreferenced);</tt>
-<br><br>will cause Open Watcom C/C++ to issue warning messages for all unused symbols.&nbsp; This is the default.&nbsp; Specifying
+<dt><b><i>where</i></b>
+<dd><b><i>description</i></b>
+<dt><br>on
+<dd>activates option.
+<dt><br>off
+<dd>deactivates option.
+<dt><br>pop
+<dd>restore option to previous setting.
+</dl>
+<br>The first two forms all push the previous setting before establishing the new setting.
+<dl>
+<dt>option_name
+<dd>is a name of the option to be manipulate.
+</dl>
+<br>It is also possible to specify more than one option in a pragma as illustrated by the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (unreferenced);</tt>
-<br><br>will cause Open Watcom C/C++ to ignore unused symbols.&nbsp; Note that if the warning level is not high enough, warning
-messages for unused symbols will not be issued even if &quot;unreferenced&quot; was specified.
-<dt><br>check_stack
-<dd>The &quot;check_stack&quot; option controls the way stack overflows are to be handled.&nbsp; For example,
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack);</tt>
-<br><br>will cause stack overflows to be detected and
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack unreferenced)</tt>
+<h3 id="16Mbit___unreferenced__Option"> 16-bit:&nbsp; &quot;unreferenced&quot; Option </h3>
+<br>The &quot;unreferenced&quot; option controls the way Open Watcom C/C++ handles unused symbols.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
-<br><br>will cause stack overflows to be ignored.&nbsp; When &quot;check_stack&quot; is on, Open Watcom C/C++ will generate
-a run-time call to a stack-checking routine at the start of every routine compiled.&nbsp; This run-time routine will issue
-an error if a stack overflow occurs when invoking the routine.&nbsp; The default is to check for stack overflows.&nbsp; Stack
-overflow checking is particularly useful when functions are invoked recursively.&nbsp; Note that if the stack overflows and
-stack checking has been suppressed, unpredictable results can occur.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (unreferenced)</tt>
+<br><br>will cause Open Watcom C/C++ to issue warning messages for all unused symbols.&nbsp; This is the default.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (unreferenced)</tt>
+<br><br>will cause Open Watcom C/C++ to ignore unused symbols.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (unreferenced)</tt>
+<br><br>will returns to previous settings of &quot;unreferenced&quot; option.
+<br><br>Note that if the warning level is not high enough, warning messages for unused symbols will not be issued even if
+&quot;unreferenced&quot; was specified.
+<h3 id="16Mbit___check_stack__Option"> 16-bit:&nbsp; &quot;check_stack&quot; Option </h3>
+<br>The &quot;check_stack&quot; option controls the way stack overflows are to be handled.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack)</tt>
+<br><br>will cause stack overflows to be detected.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
+<br><br>will cause stack overflows to be ignored.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (check_stack)</tt>
+<br><br>will returns to previous settings of &quot;check_stack&quot; option.
+<br><br>When &quot;check_stack&quot; is on, Open Watcom C/C++ will generate a run-time call to a stack-checking routine at
+the start of every routine compiled.&nbsp; This run-time routine will issue an error if a stack overflow occurs when invoking
+the routine.&nbsp; The default is to check for stack overflows.&nbsp; Stack overflow checking is particularly useful when
+functions are invoked recursively.&nbsp; Note that if the stack overflows and stack checking has been suppressed, unpredictable
+results can occur.
 <br><br>If a stack overflow does occur during execution and you are sure that your program is not in error (i.e.&nbsp; it
 is not unnecessarily recursing), you must increase the stack size.&nbsp; This is done by linking your application again and
 specifying the &quot;STACK&quot; option to the Open Watcom Linker with a larger stack size.
-<br><br>It is also possible to specify more than one option in a pragma as illustrated by the following example.
+<h3 id="16Mbit___reuse_duplicate_strings__Option_LC_onlyR"> 16-bit:&nbsp; &quot;reuse_duplicate_strings&quot; Option (C only) </h3>
+<br>The &quot;reuse_duplicate_strings&quot; option controls the way Open Watcom C handles identical strings in an expression.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack unreferenced);</tt>
-<dt><br>reuse_duplicate_strings (C only)
-<dd>(C Only) The &quot;reuse_duplicate_strings&quot; option controls the way Open Watcom C handles identical strings in an expression.
-&nbsp;For example,
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (reuse_duplicate_strings);</tt>
-<br><br>will cause Open Watcom C to reuse identical strings in an expression.&nbsp; This is the default.&nbsp; Specifying
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (reuse_duplicate_strings)</tt>
+<br><br>will cause Open Watcom C to reuse identical strings in an expression.&nbsp; This is the default.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (reuse_duplicate_strings);</tt>
-<br><br>will cause Open Watcom C to generate additional copies of the identical string.&nbsp; The following example shows
-where this may be of importance to the way the application behaves.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (reuse_duplicate_strings)</tt>
+<br><br>will cause Open Watcom C to generate additional copies of the identical string.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (reuse_duplicate_strings)</tt>
+<br><br>will returns to previous settings of &quot;reuse_duplicate_strings&quot; option.
+<br><br>The following example shows where this may be of importance to the way the application behaves.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (reuse_duplicate_strings)</tt>
@@ -6468,32 +6505,19 @@ where this may be of importance to the way the application behaves.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HelXo world</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HelXY world</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-</dl>
-<h2 id="16Mbit__Using_Pragmas_to_Specify_Default_Libraries"> 16-bit:&nbsp; Using Pragmas to Specify Default Libraries </h2>
-<br>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special
-records by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in
-linker &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
-directives have been searched.
-<br><br>By default, that is if no library pragma is specified, the Open Watcom C/C++ compiler generates, in the object file
-defining the main program, default libraries corresponding to the memory model and floating-point model used to compile the
-file.&nbsp; For example, if you have compiled the source file containing the main program for the medium memory model and
-the floating-point calls floating-point model, the libraries &quot;clibm&quot; and &quot;mathm&quot; will be placed in the
-object file.
-<br><br>If you wish to add your own default libraries to this list, you can do so with a library pragma.&nbsp; Consider the
-following example.
+<h3 id="16Mbit___inline__Option_LC_onlyR"> 16-bit:&nbsp; &quot;inline&quot; Option (C only) </h3>
+<br>The &quot;inline&quot; option controls the way Open Watcom C emits user functions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib);</tt>
-<br><br>The name &quot;mylib&quot; will be added to the list of default libraries specified in the object file.
-<br><br>If the library specification contains characters such as '\', ':' or ',' (i.e., any character not allowed in a C identifier),
-you must enclose it in double quotes as in the following example.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (inline)</tt>
+<br><br>will cause Open Watcom C to emit user functions inline.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib286\dos\graph.lib&quot;);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib386\dos\graph.lib&quot;);</tt>
-<br><br>If you wish to specify more than one library in a library pragma you must separate them with spaces as in the following
-example.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (inline)</tt>
+<br><br>will cause Open Watcom C to not emit user functions inline.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib286\dos\graph.lib&quot;);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib386\dos\graph.lib&quot;);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (inline)</tt>
+<br><br>will returns to previous settings of &quot;inline&quot; option.
+<br><br>Note that additional rules are checked for custom functions, so the functions do not have to be emited inline even
+if the &quot;inline&quot; option has been specified.
 <h2 id="16Mbit__The_ALIAS_Pragma_LC_OnlyR"> 16-bit:&nbsp; The ALIAS Pragma (C Only) </h2>
 <br>The &quot;alias&quot; pragma can be used to emit alias records in the object file, causing the linker to substitute references
 to a specified symbol with references to another symbol.&nbsp; Either identifiers or names (strings) may be used.&nbsp; Strings
@@ -6517,7 +6541,7 @@ of the symbol.&nbsp; The following describes the form of the &quot;alias&quot; p
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var = 3;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alias ( var, &quot;other_var&quot; );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alias ( var, &quot;other_var&quot; )</tt>
 <br><br>Instead of<tt> var</tt> the linker will reference symbol named &quot;other_var&quot;.&nbsp; Symbol<tt> var</tt> need
 not be defined, although &quot;other_var&quot; has to be.
 <h2 id="16Mbit__The_ALLOC_TEXT_Pragma_LC_OnlyR"> 16-bit:&nbsp; The ALLOC_TEXT Pragma (C Only) </h2>
@@ -6540,7 +6564,7 @@ pragma.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn1(int);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn2(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alloc_text ( my_text, fn1, fn2 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alloc_text ( my_text, fn1, fn2 )</tt>
 <br><br>The code for the functions<tt> fn1</tt> and<tt> fn2</tt> will be placed in the segment<tt> my_text</tt>.&nbsp; Note:
 &nbsp;function prototypes for the named functions must exist prior to the &quot;alloc_text&quot; pragma.
 <h2 id="16Mbit__The_CODE_SEG_Pragma"> 16-bit:&nbsp; The CODE_SEG Pragma </h2>
@@ -6557,17 +6581,17 @@ functions is to be placed.&nbsp; The following describes the form of the &quot;c
 <dd>is the name of the text segment optionally enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define seg_name &quot;MY_CODE_SEG&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( seg_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( seg_name )</tt>
 <dt><br>class_name
 <dd>is the optional class name of the text segment and may be enclosed in quotes.&nbsp; Please note that in order to be recognized
 by the linker as code, a class name has to end in &quot;CODE&quot;.&nbsp; Also,<tt> class_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define class_name &quot;MY_CODE&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( &quot;MY_CODE_SEG&quot;, class_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( &quot;MY_CODE_SEG&quot;, class_name )</tt>
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( my_text );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( my_text )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int incr( int i )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( i + 1 );</tt>
@@ -6579,7 +6603,7 @@ by the linker as code, a class name has to end in &quot;CODE&quot;.&nbsp; Also,<
 <br><br>The code for the functions<tt> incr</tt> and<tt> decr</tt> will be placed in the segment<tt> my_text</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ()</tt>
 <h2 id="16Mbit__The_COMMENT_Pragma"> 16-bit:&nbsp; The COMMENT Pragma </h2>
 <br>The &quot;comment&quot; pragma can be used to place a comment record in an object file or executable file.&nbsp; The following
 describes the form of the &quot;comment&quot; pragma.
@@ -6599,15 +6623,14 @@ by the Open Watcom Linker.&nbsp; When unresolved references remain after process
 &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
 directives have been searched.
 <br>The &quot;lib&quot; form of this pragma offers the same features as the &quot;library&quot; pragma.&nbsp; See the section
-entitled <a href="#16Mbit__Using_Pragmas_to_Specify_Default_Libraries">16-bit:&nbsp; Using Pragmas to Specify Default Libraries</a>
-for more information.
+entitled <a href="#16Mbit__The_LIBRARY_Pragma">16-bit:&nbsp; The LIBRARY Pragma</a> for more information.
 </dl>
 <dt><br>&quot;comment_string&quot;
 <dd>is an optional string literal that provides additional information for some comment types.
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( lib, &quot;mylib&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( lib, &quot;mylib&quot; )</tt>
 <h2 id="16Mbit__The_DATA_SEG_Pragma"> 16-bit:&nbsp; The DATA_SEG Pragma </h2>
 <br>The &quot;data_seg&quot; pragma can be used to specify the name of the segment into which data is to be placed.&nbsp;
 The following describes the form of the &quot;data_seg&quot; pragma.
@@ -6622,23 +6645,23 @@ The following describes the form of the &quot;data_seg&quot; pragma.
 <dd>is the name of the data segment and may be enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define seg_name &quot;MY_DATA_SEG&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( seg_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( seg_name )</tt>
 <dt><br>class_name
 <dd>is the optional class name of the data segment and may be enclosed in quotes.&nbsp; Also,<tt> class_name</tt> may be a macro
 as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define class_name &quot;MY_CLASS&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( &quot;MY_DATA_SEG&quot;, class_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( &quot;MY_DATA_SEG&quot;, class_name )</tt>
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( my_data );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( my_data )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int j;</tt>
 <br><br>The data for<tt> i</tt> and<tt> j</tt> will be placed in the segment<tt> my_data</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ()</tt>
 <h2 id="16Mbit__The_DISABLE_MESSAGE_Pragma"> 16-bit:&nbsp; The DISABLE_MESSAGE Pragma </h2>
 <br>The &quot;disable_message&quot; pragma disables the issuance of specified diagnostic messages.&nbsp; The form of the &quot;disable_message&quot;
 pragma is as follows.
@@ -6724,7 +6747,7 @@ with legacy code.&nbsp; The following is an example.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #elseif defined(__86__)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma error ( &quot;neither __386__ or __86__ defined&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma error ( &quot;neither __386__ or __86__ defined&quot; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h2 id="16Mbit__The_EXTREF_Pragma"> 16-bit:&nbsp; The EXTREF Pragma </h2>
 <br>The &quot;extref&quot; pragma is used to generate a reference to an external function or data item.&nbsp; The form of
@@ -6768,7 +6791,7 @@ have an intrinsic form.&nbsp; By specifying<tt> sin</tt> in a &quot;function&quo
 removed, causing the function<tt> sin</tt> to be treated as a regular user-defined function.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;math.h&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma function( sin );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma function( sin )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; double test( double x )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( sin( x ) );</tt>
@@ -6893,11 +6916,36 @@ attribute.&nbsp; If we wanted the intrinsic form of the<tt> sin</tt> function to
 an &quot;intrinsic&quot; pragma.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;math.h&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma intrinsic( sin );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma intrinsic( sin )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; double test( double x )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( sin( x ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<h2 id="16Mbit__The_LIBRARY_Pragma"> 16-bit:&nbsp; The LIBRARY Pragma </h2>
+<br>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special
+records by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in
+linker &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
+directives have been searched.
+<br><br>By default, that is if no library pragma is specified, the Open Watcom C/C++ compiler generates, in the object file
+defining the main program, default libraries corresponding to the memory model and floating-point model used to compile the
+file.&nbsp; For example, if you have compiled the source file containing the main program for the medium memory model and
+the floating-point calls floating-point model, the libraries &quot;clibm&quot; and &quot;mathm&quot; will be placed in the
+object file.
+<br><br>If you wish to add your own default libraries to this list, you can do so with a library pragma.&nbsp; Consider the
+following example.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib)</tt>
+<br><br>The name &quot;mylib&quot; will be added to the list of default libraries specified in the object file.
+<br><br>If the library specification contains characters such as '\', ':' or ',' (i.e., any character not allowed in a C identifier),
+you must enclose it in double quotes as in the following example.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib286\dos\graph.lib&quot;)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib386\dos\graph.lib&quot;)</tt>
+<br><br>If you wish to specify more than one library in a library pragma you must separate them with spaces as in the following
+example.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib286\dos\graph.lib&quot;)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib386\dos\graph.lib&quot;)</tt>
 <h2 id="16Mbit__The_MESSAGE_Pragma"> 16-bit:&nbsp; The MESSAGE Pragma </h2>
 <br>The &quot;message&quot; pragma can be used to issue a message with the specified text to the standard output without terminating
 compilation.&nbsp; The following describes the form of the &quot;message&quot; pragma.
@@ -6915,7 +6963,7 @@ compilation.&nbsp; The following describes the form of the &quot;message&quot; p
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__386__)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma message ( &quot;assuming 16-bit compile&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma message ( &quot;assuming 16-bit compile&quot; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h2 id="16Mbit__The_ONCE_Pragma"> 16-bit:&nbsp; The ONCE Pragma </h2>
 <br>The &quot;once&quot; pragma can be used to indicate that the file which contains this pragma should only be opened and
@@ -7029,7 +7077,7 @@ specified, a warning message will be issued and the default value for<tt> n</tt>
 </dl>
 <br>The following example of recursive template expansion illustrates why this pragma can be useful.
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma template_depth(10);</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma template_depth(10)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; template &lt;class T&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S&lt;T*&gt; x;</tt>
@@ -7078,11 +7126,11 @@ by a previous auxiliary pragma.
 <br><br>Note that all auxiliary pragmas are processed before code generation begins.&nbsp; Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol x is referenced</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux y &lt;attrs_1&gt;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux y &lt;attrs_1&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol y is referenced</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol z is referenced</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &lt;attrs_2&gt;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux x &lt;attrs_3&gt;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &lt;attrs_2&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux x &lt;attrs_3&gt;</tt>
 <br><br>Auxiliary attributes are assigned to<tt> x</tt>,<tt> y</tt> and<tt> z</tt> in the following way.
 <ol>
 <li>Symbol<tt> x</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>
@@ -7111,15 +7159,15 @@ of the alias name as well as the attributes specified by the additional auxiliar
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93; ;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( rtn, push_args ) ;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( rtn, push_args ) </tt>
 <br><br>The routine<tt> rtn</tt> assumes the attributes of the alias name<tt> push_args</tt> which specifies that the arguments
 to<tt> rtn</tt> are passed on the stack.
 <br><br>Let us look at an example in which the symbol is a type definition.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef void (func_type)(int);</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( func_type, push_args );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( func_type, push_args )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern func_type rtn1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern func_type rtn2;</tt>
 <br><br>The first auxiliary pragma defines an alias name called<tt> push_args</tt> that specifies the mechanism to be used
@@ -7151,10 +7199,10 @@ rtn2</tt> are of type<tt> func_type</tt>, arguments to either of those functions
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; value struct float struct routine &#91;ax&#93;\</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; modify &#91;ax bx cx dx es&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn1;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn2;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn3;</tt>
+&nbsp; modify &#91;ax bx cx dx es&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn1</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn3</tt>
 <br><br>The routines<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> MS_C</tt>
 which defines the calling convention used by the Microsoft C compiler.&nbsp; Whenever calls are made to<tt> rtn1</tt>,<tt>
 rtn2</tt> and<tt> rtn3</tt>, the Microsoft C calling convention will be used.
@@ -7274,28 +7322,28 @@ with variable argument lists, or for symbols that are not functions
 <br>Several examples of source to object form symbol name translation follow:
 <br><br>In the following example, the name &quot;MyRtn&quot; will be replaced by &quot;MyRtn_&quot; in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;*_&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;*_&quot;</tt>
 <br><br>This is the default for all function names.
 <br><br>In the following example, the name &quot;MyVar&quot; will be replaced by &quot;_MyVar&quot; in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyVar &quot;_*&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyVar &quot;_*&quot;</tt>
 <br><br>This is the default for all variable names.
 <br><br>In the following example, the lower case version &quot;myrtn&quot; will be placed in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;!&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;!&quot;</tt>
 <br><br>In the following example, the upper case version &quot;MYRTN&quot; will be placed in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;^&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;^&quot;</tt>
 <br><br>In the following example, the name &quot;MyRtn&quot; will be replaced by &quot;_MyRtn@nnn&quot; in the object file.
 &nbsp;&quot;nnn&quot; represents the size of all function parameters.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*#&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*#&quot;</tt>
 <br><br>In the following example, the name &quot;MyRtn&quot; will be replaced by &quot;_MyRtn#&quot; in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*\#&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*\#&quot;</tt>
 <br><br>The default mapping for all symbols can also be changed as illustrated by the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &quot;_*_&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &quot;_*_&quot;</tt>
 <br><br>The above auxiliary pragma specifies that all names will be prefixed and suffixed by an underscore character ('_').
 <h3 id="16Mbit__Describing_Calling_Information"> 16-bit:&nbsp; Describing Calling Information </h3>
 <br>The following form of the auxiliary pragma can be used to describe the way a function is to be called.&nbsp; 
@@ -7333,12 +7381,12 @@ so that special fixups are applied to the 80x87 instruction.
 </dl>
 <br>In the following example, Open Watcom C/C++ will generate a far call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn far;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn far</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a far call will be generated even if you are compiling for a memory model with a small code model.
 <br><br>In the following example, Open Watcom C/C++ will generate a near call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn near;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn near</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a near call will be generated even if you are compiling for a memory model with a big code model.
 <br><br>In the following DOS example, Open Watcom C/C++ will generate the sequence of bytes following the &quot;=&quot; character
@@ -7352,7 +7400,7 @@ in the auxiliary pragma whenever a call to<tt> mode4</tt> is encountered.<tt>&nb
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xb0 0x04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* mov AL,4 */ \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xcd 0x10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* int 10H&nbsp; */
 \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
 <br><br>The sequence in the above DOS example represents the following lines of assembly language instructions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; AH,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; select function &quot;set mode&quot;</tt>
@@ -7372,7 +7420,7 @@ are used instead of the binary encoding of the assembly language instructions.
 \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10H&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
 <br><br>If a sequence of in-line assembly language instructions contains 80x87 floating-point instructions, each floating-point
 instruction must be preceded by &quot;float&quot;.&nbsp; Note that this is only required if you have specified the &quot;fpi&quot;
 compiler option; otherwise it will be ignored.
@@ -7380,7 +7428,7 @@ compiler option; otherwise it will be ignored.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; double mysqrt(double);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mysqrt parm &#91;8087&#93; = \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float 0xd9 0xfa /* fsqrt */;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float 0xd9 0xfa /* fsqrt */</tt>
 <br><br>A sequence of in-line assembly language instructions may contain symbolic references.&nbsp; In the following example,
 a near call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is called.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -7388,14 +7436,14 @@ a near call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xe8 reloff myalias /* near call */;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xe8 reloff myalias /* near call */</tt>
 <br><br>In the following example, a far call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is called.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myalias(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x9a offset myalias seg myalias /* far call */;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x9a offset myalias seg myalias /* far call */</tt>
 <h4 id="16Mbit__Loading_Data_Segment_Register"> 16-bit:&nbsp; Loading Data Segment Register </h4>
 <br>An application may have been compiled so that the segment register DS does not contain the segment address of the default
 data segment (group &quot;DGROUP&quot;).&nbsp; This is usually the case if you are using a large data memory model.&nbsp;
@@ -7563,7 +7611,7 @@ containing register DS are legal.
 </ol>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;ax bx cx dx&#93; &#91;bp si&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;ax bx cx dx&#93; &#91;bp si&#93;</tt>
 <br><br>Suppose<tt> myrtn</tt> is a routine with 3 arguments each of type<b> long int</b>.
 <ol>
 <li>The first argument will be passed in the register pair DX:AX.
@@ -7574,7 +7622,7 @@ int</b>.
 <br>It is possible for registers from the second register set to be used before registers from the first register set are
 used.&nbsp; Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;ax bx cx dx&#93; &#91;si di&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;ax bx cx dx&#93; &#91;si di&#93;</tt>
 <br><br>Suppose<tt> myrtn</tt> is a routine with 3 arguments, the first of type<b> int</b> and the second and third of type<b>
 long int</b>.
 <ol>
@@ -7598,7 +7646,7 @@ the length to copy.&nbsp; If we want the first argument to be passed in the regi
 in register DI and the third argument to be passed in register CX, the following auxiliary pragma can be used.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void mycopy( char near *, char *, int );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mycopy parm &#91;SI&#93; &#91;DI&#93; &#91;CX&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mycopy parm &#91;SI&#93; &#91;DI&#93; &#91;CX&#93;</tt>
 <br><br>Note that you must be aware of the size of the arguments to ensure that the arguments get passed in the appropriate
 registers.
 <h4 id="16Mbit__Passing_Arguments_to_InMLine_Functions"> 16-bit:&nbsp; Passing Arguments to In-Line Functions </h4>
@@ -7614,7 +7662,7 @@ called<tt> scrollactivepgup</tt>.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm &#91;ch&#93; &#91;cl&#93; &#91;dh&#93; &#91;dl&#93; &#91;al&#93;
 &#91;bh&#93; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;ah&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;ah&#93;</tt>
 <br><br>The BIOS video call to scroll the active page up requires the following arguments.
 <ol>
 <li>The row and column of the upper left corner of the scroll window is passed in registers CH and CL respectively.
@@ -7670,7 +7718,7 @@ are pushed from left to right.
 <br><br>Reversing arguments is most useful for functions that require arguments to be passed on the stack in an order opposite
 from the default.&nbsp; The following auxiliary pragma demonstrates such a function.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux rtn parm reverse &#91;&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux rtn parm reverse &#91;&#93;</tt>
 <h3 id="16Mbit__Describing_Function_Return_Information"> 16-bit:&nbsp; Describing Function Return Information </h3>
 <br>Using auxiliary pragmas, you can describe the way functions are to return values.&nbsp; This is particularly useful when
 interfacing to functions that have been compiled by other compilers or functions written in other programming languages.
@@ -7845,7 +7893,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux exitrtn aborts;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux exitrtn aborts</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void exitrtn(void);</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void rtn()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -7868,7 +7916,7 @@ or static variables) that is used directly or indirectly by the caller.&nbsp;
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myrtn(void);</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn() {</tt>
@@ -7896,7 +7944,7 @@ lines taken from<tt> rtn.c.</tt>&nbsp; The listing file<tt> rtn.lst</tt> appears
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Module: rtn.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Group: 'DGROUP' CONST,_DATA</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Segment: '_TEXT' BYTE&nbsp; 0026 bytes</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void MyRtn( void );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn()</tt>
@@ -7945,16 +7993,16 @@ L1</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Let us add the following auxiliary pragma to the source file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn modify nomemory;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn modify nomemory</tt>
 <br><br>If we compile the source file with the above pragma and disassemble the object file using the Open Watcom Disassembler,
 we get the following listing file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Module: rtn.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Group: 'DGROUP' CONST,_DATA</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Segment: '_TEXT' BYTE&nbsp; 0022 bytes</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void MyRtn( void );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn modify nomemory;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn modify nomemory</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -8020,16 +8068,16 @@ any memory (i.e., global or static variables) that is used directly or indirectl
 </ol>
 <br>Let us replace the auxiliary pragma in the above example with the following auxiliary pragma.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm nomemory modify nomemory;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm nomemory modify nomemory</tt>
 <br><br>If you now compile our source file and disassemble the object file using WDIS, the result is the following listing
 file.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Module: rtn.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Group: 'DGROUP' CONST,_DATA</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Segment: '_TEXT' BYTE&nbsp; 001e bytes</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void MyRtn( void );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn parm nomemory modify nomemory;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn parm nomemory modify nomemory</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -8121,9 +8169,9 @@ whatsoever.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned GetSP(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__386__)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;esp&#93; modify exact &#91;&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;esp&#93; modify exact &#91;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;sp&#93; modify exact &#91;&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;sp&#93; modify exact &#91;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h3 id="16Mbit__An_Example"> 16-bit:&nbsp; An Example </h3>
 <br>As mentioned in an earlier section, the following pragma defines the calling convention for functions compiled by Microsoft
@@ -8138,7 +8186,7 @@ C.&nbsp;
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; value struct float struct routine &#91;ax&#93;\</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; modify &#91;ax bx cx dx es&#93;;</tt>
+&nbsp; modify &#91;ax bx cx dx es&#93;</tt>
 <br><br>Let us discuss this pragma in detail.
 <dl>
 <dt>&quot;_*&quot;
@@ -8266,7 +8314,7 @@ argument will be in ST(0).&nbsp; Otherwise the floating-point argument is assign
 </ol>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;8087&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;8087&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp;&nbsp; x;</tt>
@@ -8294,7 +8342,7 @@ holds even though there are some 80x87 floating-point registers available for pa
 </ol>
 <br>Let us change the auxiliary pragma in the above example as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;ax 8087&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;ax 8087&#93;</tt>
 <br><br>The arguments will now be passed to<tt> myrtn</tt> in the following way.
 <ol>
 <li>Since &quot;8087&quot; was specified in the register set, the first argument, being of type<b> float</b> will be passed
@@ -9437,45 +9485,74 @@ syntactical notation is used.
 <li>pragmas that provide auxiliary information used for code generation
 </ul>
 <h2 id="32Mbit__Using_Pragmas_to_Specify_Options"> 32-bit:&nbsp; Using Pragmas to Specify Options </h2>
-<br>Currently, the following options can be specified with pragmas:&nbsp; 
+<br>The following describes the form of the pragma to specify option.
+<hr>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on ( </tt><b>option_name</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off ( </tt><b>option_name</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop ( </tt><b>option_name</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<hr>
 <dl>
-<dt>unreferenced
-<dd>The &quot;unreferenced&quot; option controls the way Open Watcom C/C++ handles unused symbols.&nbsp; For example,
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (unreferenced);</tt>
-<br><br>will cause Open Watcom C/C++ to issue warning messages for all unused symbols.&nbsp; This is the default.&nbsp; Specifying
+<dt><b><i>where</i></b>
+<dd><b><i>description</i></b>
+<dt><br>on
+<dd>activates option.
+<dt><br>off
+<dd>deactivates option.
+<dt><br>pop
+<dd>restore option to previous setting.
+</dl>
+<br>The first two forms all push the previous setting before establishing the new setting.
+<dl>
+<dt>option_name
+<dd>is a name of the option to be manipulate.
+</dl>
+<br>It is also possible to specify more than one option in a pragma as illustrated by the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (unreferenced);</tt>
-<br><br>will cause Open Watcom C/C++ to ignore unused symbols.&nbsp; Note that if the warning level is not high enough, warning
-messages for unused symbols will not be issued even if &quot;unreferenced&quot; was specified.
-<dt><br>check_stack
-<dd>The &quot;check_stack&quot; option controls the way stack overflows are to be handled.&nbsp; For example,
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack);</tt>
-<br><br>will cause stack overflows to be detected and
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack unreferenced)</tt>
+<h3 id="32Mbit___unreferenced__Option"> 32-bit:&nbsp; &quot;unreferenced&quot; Option </h3>
+<br>The &quot;unreferenced&quot; option controls the way Open Watcom C/C++ handles unused symbols.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
-<br><br>will cause stack overflows to be ignored.&nbsp; When &quot;check_stack&quot; is on, Open Watcom C/C++ will generate
-a run-time call to a stack-checking routine at the start of every routine compiled.&nbsp; This run-time routine will issue
-an error if a stack overflow occurs when invoking the routine.&nbsp; The default is to check for stack overflows.&nbsp; Stack
-overflow checking is particularly useful when functions are invoked recursively.&nbsp; Note that if the stack overflows and
-stack checking has been suppressed, unpredictable results can occur.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (unreferenced)</tt>
+<br><br>will cause Open Watcom C/C++ to issue warning messages for all unused symbols.&nbsp; This is the default.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (unreferenced)</tt>
+<br><br>will cause Open Watcom C/C++ to ignore unused symbols.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (unreferenced)</tt>
+<br><br>will returns to previous settings of &quot;unreferenced&quot; option.
+<br><br>Note that if the warning level is not high enough, warning messages for unused symbols will not be issued even if
+&quot;unreferenced&quot; was specified.
+<h3 id="32Mbit___check_stack__Option"> 32-bit:&nbsp; &quot;check_stack&quot; Option </h3>
+<br>The &quot;check_stack&quot; option controls the way stack overflows are to be handled.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack)</tt>
+<br><br>will cause stack overflows to be detected.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
+<br><br>will cause stack overflows to be ignored.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (check_stack)</tt>
+<br><br>will returns to previous settings of &quot;check_stack&quot; option.
+<br><br>When &quot;check_stack&quot; is on, Open Watcom C/C++ will generate a run-time call to a stack-checking routine at
+the start of every routine compiled.&nbsp; This run-time routine will issue an error if a stack overflow occurs when invoking
+the routine.&nbsp; The default is to check for stack overflows.&nbsp; Stack overflow checking is particularly useful when
+functions are invoked recursively.&nbsp; Note that if the stack overflows and stack checking has been suppressed, unpredictable
+results can occur.
 <br><br>If a stack overflow does occur during execution and you are sure that your program is not in error (i.e.&nbsp; it
 is not unnecessarily recursing), you must increase the stack size.&nbsp; This is done by linking your application again and
 specifying the &quot;STACK&quot; option to the Open Watcom Linker with a larger stack size.
-<br><br>It is also possible to specify more than one option in a pragma as illustrated by the following example.
+<h3 id="32Mbit___reuse_duplicate_strings__Option_LC_onlyR"> 32-bit:&nbsp; &quot;reuse_duplicate_strings&quot; Option (C only) </h3>
+<br>The &quot;reuse_duplicate_strings&quot; option controls the way Open Watcom C handles identical strings in an expression.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (check_stack unreferenced);</tt>
-<dt><br>reuse_duplicate_strings (C only)
-<dd>(C Only) The &quot;reuse_duplicate_strings&quot; option controls the way Open Watcom C handles identical strings in an expression.
-&nbsp;For example,
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (reuse_duplicate_strings);</tt>
-<br><br>will cause Open Watcom C to reuse identical strings in an expression.&nbsp; This is the default.&nbsp; Specifying
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (reuse_duplicate_strings)</tt>
+<br><br>will cause Open Watcom C to reuse identical strings in an expression.&nbsp; This is the default.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (reuse_duplicate_strings);</tt>
-<br><br>will cause Open Watcom C to generate additional copies of the identical string.&nbsp; The following example shows
-where this may be of importance to the way the application behaves.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (reuse_duplicate_strings)</tt>
+<br><br>will cause Open Watcom C to generate additional copies of the identical string.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (reuse_duplicate_strings)</tt>
+<br><br>will returns to previous settings of &quot;reuse_duplicate_strings&quot; option.
+<br><br>The following example shows where this may be of importance to the way the application behaves.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;stdio.h&gt;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (reuse_duplicate_strings)</tt>
@@ -9496,32 +9573,19 @@ where this may be of importance to the way the application behaves.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HelXo world</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HelXY world</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-</dl>
-<h2 id="32Mbit__Using_Pragmas_to_Specify_Default_Libraries"> 32-bit:&nbsp; Using Pragmas to Specify Default Libraries </h2>
-<br>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special
-records by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in
-linker &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
-directives have been searched.
-<br><br>By default, that is if no library pragma is specified, the Open Watcom C/C++ compiler generates, in the object file
-defining the main program, default libraries corresponding to the memory model and floating-point model used to compile the
-file.&nbsp; For example, if you have compiled the source file containing the main program for the flat memory model and the
-floating-point calls floating-point model, the libraries &quot;clib3r&quot; and &quot;math3r&quot; will be placed in the object
-file.
-<br><br>If you wish to add your own default libraries to this list, you can do so with a library pragma.&nbsp; Consider the
-following example.
+<h3 id="32Mbit___inline__Option_LC_onlyR"> 32-bit:&nbsp; &quot;inline&quot; Option (C only) </h3>
+<br>The &quot;inline&quot; option controls the way Open Watcom C emits user functions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib);</tt>
-<br><br>The name &quot;mylib&quot; will be added to the list of default libraries specified in the object file.
-<br><br>If the library specification contains characters such as '\', ':' or ',' (i.e., any character not allowed in a C identifier),
-you must enclose it in double quotes as in the following example.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma on (inline)</tt>
+<br><br>will cause Open Watcom C to emit user functions inline.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib286\dos\graph.lib&quot;);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib386\dos\graph.lib&quot;);</tt>
-<br><br>If you wish to specify more than one library in a library pragma you must separate them with spaces as in the following
-example.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (inline)</tt>
+<br><br>will cause Open Watcom C to not emit user functions inline.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib286\dos\graph.lib&quot;);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib386\dos\graph.lib&quot;);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (inline)</tt>
+<br><br>will returns to previous settings of &quot;inline&quot; option.
+<br><br>Note that additional rules are checked for custom functions, so the functions do not have to be emited inline even
+if the &quot;inline&quot; option has been specified.
 <h2 id="32Mbit__The_ALIAS_Pragma_LC_OnlyR"> 32-bit:&nbsp; The ALIAS Pragma (C Only) </h2>
 <br>The &quot;alias&quot; pragma can be used to emit alias records in the object file, causing the linker to substitute references
 to a specified symbol with references to another symbol.&nbsp; Either identifiers or names (strings) may be used.&nbsp; Strings
@@ -9545,7 +9609,7 @@ of the symbol.&nbsp; The following describes the form of the &quot;alias&quot; p
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var = 3;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alias ( var, &quot;other_var&quot; );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alias ( var, &quot;other_var&quot; )</tt>
 <br><br>Instead of<tt> var</tt> the linker will reference symbol named &quot;other_var&quot;.&nbsp; Symbol<tt> var</tt> need
 not be defined, although &quot;other_var&quot; has to be.
 <h2 id="32Mbit__The_ALLOC_TEXT_Pragma_LC_OnlyR"> 32-bit:&nbsp; The ALLOC_TEXT Pragma (C Only) </h2>
@@ -9568,7 +9632,7 @@ pragma.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn1(int);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int fn2(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alloc_text ( my_text, fn1, fn2 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma alloc_text ( my_text, fn1, fn2 )</tt>
 <br><br>The code for the functions<tt> fn1</tt> and<tt> fn2</tt> will be placed in the segment<tt> my_text</tt>.&nbsp; Note:
 &nbsp;function prototypes for the named functions must exist prior to the &quot;alloc_text&quot; pragma.
 <h2 id="32Mbit__The_CODE_SEG_Pragma"> 32-bit:&nbsp; The CODE_SEG Pragma </h2>
@@ -9585,17 +9649,17 @@ functions is to be placed.&nbsp; The following describes the form of the &quot;c
 <dd>is the name of the text segment optionally enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define seg_name &quot;MY_CODE_SEG&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( seg_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( seg_name )</tt>
 <dt><br>class_name
 <dd>is the optional class name of the text segment and may be enclosed in quotes.&nbsp; Please note that in order to be recognized
 by the linker as code, a class name has to end in &quot;CODE&quot;.&nbsp; Also,<tt> class_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define class_name &quot;MY_CODE&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( &quot;MY_CODE_SEG&quot;, class_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( &quot;MY_CODE_SEG&quot;, class_name )</tt>
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( my_text );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ( my_text )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int incr( int i )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( i + 1 );</tt>
@@ -9607,7 +9671,7 @@ by the linker as code, a class name has to end in &quot;CODE&quot;.&nbsp; Also,<
 <br><br>The code for the functions<tt> incr</tt> and<tt> decr</tt> will be placed in the segment<tt> my_text</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma code_seg ()</tt>
 <h2 id="32Mbit__The_COMMENT_Pragma"> 32-bit:&nbsp; The COMMENT Pragma </h2>
 <br>The &quot;comment&quot; pragma can be used to place a comment record in an object file or executable file.&nbsp; The following
 describes the form of the &quot;comment&quot; pragma.
@@ -9627,15 +9691,14 @@ by the Open Watcom Linker.&nbsp; When unresolved references remain after process
 &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
 directives have been searched.
 <br>The &quot;lib&quot; form of this pragma offers the same features as the &quot;library&quot; pragma.&nbsp; See the section
-entitled <a href="#32Mbit__Using_Pragmas_to_Specify_Default_Libraries">32-bit:&nbsp; Using Pragmas to Specify Default Libraries</a>
-for more information.
+entitled <a href="#32Mbit__The_LIBRARY_Pragma">32-bit:&nbsp; The LIBRARY Pragma</a> for more information.
 </dl>
 <dt><br>&quot;comment_string&quot;
 <dd>is an optional string literal that provides additional information for some comment types.
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( lib, &quot;mylib&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( lib, &quot;mylib&quot; )</tt>
 <h2 id="32Mbit__The_DATA_SEG_Pragma"> 32-bit:&nbsp; The DATA_SEG Pragma </h2>
 <br>The &quot;data_seg&quot; pragma can be used to specify the name of the segment into which data is to be placed.&nbsp;
 The following describes the form of the &quot;data_seg&quot; pragma.
@@ -9650,23 +9713,23 @@ The following describes the form of the &quot;data_seg&quot; pragma.
 <dd>is the name of the data segment and may be enclosed in quotes.&nbsp; Also,<tt> seg_name</tt> may be a macro as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define seg_name &quot;MY_DATA_SEG&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( seg_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( seg_name )</tt>
 <dt><br>class_name
 <dd>is the optional class name of the data segment and may be enclosed in quotes.&nbsp; Also,<tt> class_name</tt> may be a macro
 as in:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #define class_name &quot;MY_CLASS&quot;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( &quot;MY_DATA_SEG&quot;, class_name );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( &quot;MY_DATA_SEG&quot;, class_name )</tt>
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( my_data );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ( my_data )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int i;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; static int j;</tt>
 <br><br>The data for<tt> i</tt> and<tt> j</tt> will be placed in the segment<tt> my_data</tt>.
 <br><br>To return to the default segment, do not specify any string between the opening and closing parenthesis.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ();</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma data_seg ()</tt>
 <h2 id="32Mbit__The_DISABLE_MESSAGE_Pragma"> 32-bit:&nbsp; The DISABLE_MESSAGE Pragma </h2>
 <br>The &quot;disable_message&quot; pragma disables the issuance of specified diagnostic messages.&nbsp; The form of the &quot;disable_message&quot;
 pragma is as follows.
@@ -9752,7 +9815,7 @@ with legacy code.&nbsp; The following is an example.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #elseif defined(__86__)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma error ( &quot;neither __386__ or __86__ defined&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma error ( &quot;neither __386__ or __86__ defined&quot; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h2 id="32Mbit__The_EXTREF_Pragma"> 32-bit:&nbsp; The EXTREF Pragma </h2>
 <br>The &quot;extref&quot; pragma is used to generate a reference to an external function or data item.&nbsp; The form of
@@ -9796,7 +9859,7 @@ have an intrinsic form.&nbsp; By specifying<tt> sin</tt> in a &quot;function&quo
 removed, causing the function<tt> sin</tt> to be treated as a regular user-defined function.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;math.h&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma function( sin );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma function( sin )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; double test( double x )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( sin( x ) );</tt>
@@ -9921,11 +9984,36 @@ attribute.&nbsp; If we wanted the intrinsic form of the<tt> sin</tt> function to
 an &quot;intrinsic&quot; pragma.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #include &lt;math.h&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma intrinsic( sin );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma intrinsic( sin )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; double test( double x )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( sin( x ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<h2 id="32Mbit__The_LIBRARY_Pragma"> 32-bit:&nbsp; The LIBRARY Pragma </h2>
+<br>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special
+records by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in
+linker &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
+directives have been searched.
+<br><br>By default, that is if no library pragma is specified, the Open Watcom C/C++ compiler generates, in the object file
+defining the main program, default libraries corresponding to the memory model and floating-point model used to compile the
+file.&nbsp; For example, if you have compiled the source file containing the main program for the flat memory model and the
+floating-point calls floating-point model, the libraries &quot;clib3r&quot; and &quot;math3r&quot; will be placed in the object
+file.
+<br><br>If you wish to add your own default libraries to this list, you can do so with a library pragma.&nbsp; Consider the
+following example.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib)</tt>
+<br><br>The name &quot;mylib&quot; will be added to the list of default libraries specified in the object file.
+<br><br>If the library specification contains characters such as '\', ':' or ',' (i.e., any character not allowed in a C identifier),
+you must enclose it in double quotes as in the following example.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib286\dos\graph.lib&quot;)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;\watcom\lib386\dos\graph.lib&quot;)</tt>
+<br><br>If you wish to specify more than one library in a library pragma you must separate them with spaces as in the following
+example.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib286\dos\graph.lib&quot;)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (mylib &quot;\watcom\lib386\dos\graph.lib&quot;)</tt>
 <h2 id="32Mbit__The_MESSAGE_Pragma"> 32-bit:&nbsp; The MESSAGE Pragma </h2>
 <br>The &quot;message&quot; pragma can be used to issue a message with the specified text to the standard output without terminating
 compilation.&nbsp; The following describes the form of the &quot;message&quot; pragma.
@@ -9943,7 +10031,7 @@ compilation.&nbsp; The following describes the form of the &quot;message&quot; p
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__386__)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma message ( &quot;assuming 16-bit compile&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma message ( &quot;assuming 16-bit compile&quot; )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h2 id="32Mbit__The_ONCE_Pragma"> 32-bit:&nbsp; The ONCE Pragma </h2>
 <br>The &quot;once&quot; pragma can be used to indicate that the file which contains this pragma should only be opened and
@@ -10057,7 +10145,7 @@ specified, a warning message will be issued and the default value for<tt> n</tt>
 </dl>
 <br>The following example of recursive template expansion illustrates why this pragma can be useful.
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma template_depth(10);</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma template_depth(10)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; template &lt;class T&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct S {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S&lt;T*&gt; x;</tt>
@@ -10106,11 +10194,11 @@ by a previous auxiliary pragma.
 <br><br>Note that all auxiliary pragmas are processed before code generation begins.&nbsp; Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol x is referenced</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux y &lt;attrs_1&gt;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux y &lt;attrs_1&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol y is referenced</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; code in which symbol z is referenced</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &lt;attrs_2&gt;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux x &lt;attrs_3&gt;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &lt;attrs_2&gt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux x &lt;attrs_3&gt;</tt>
 <br><br>Auxiliary attributes are assigned to<tt> x</tt>,<tt> y</tt> and<tt> z</tt> in the following way.
 <ol>
 <li>Symbol<tt> x</tt> is assigned the initial default attributes merged with the attributes specified by<tt> &lt;attrs_2&gt;</tt>
@@ -10147,15 +10235,15 @@ be a function whose attributes are those specified by one of the alias names <tt
 These alias names will be described in a later section.
 <br><br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93; ;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( rtn, push_args ) ;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( rtn, push_args ) </tt>
 <br><br>The routine<tt> rtn</tt> assumes the attributes of the alias name<tt> push_args</tt> which specifies that the arguments
 to<tt> rtn</tt> are passed on the stack.
 <br><br>Let us look at an example in which the symbol is a type definition.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef void (func_type)(int);</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( func_type, push_args );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux push_args parm &#91;&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux ( func_type, push_args )</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern func_type rtn1;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern func_type rtn2;</tt>
 <br><br>The first auxiliary pragma defines an alias name called<tt> push_args</tt> that specifies the mechanism to be used
@@ -10188,10 +10276,10 @@ rtn2</tt> are of type<tt> func_type</tt>, arguments to either of those functions
 &nbsp;&nbsp;&nbsp; value no8087&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx fs gs&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn1;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn2;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn3;</tt>
+&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx fs gs&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn1</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn3</tt>
 <br><br>The routines<tt> rtn1</tt>,<tt> rtn2</tt> and<tt> rtn3</tt> assume the same attributes as the alias name<tt> HIGH_C</tt>
 which defines the calling convention used by the MetaWare High C compiler.&nbsp; Note that register ES must also be specified
 in the &quot;modify&quot; register set when using a memory model that is not a small data model.&nbsp; Whenever calls are
@@ -10375,28 +10463,28 @@ with variable argument lists, or for symbols that are not functions
 <br>Several examples of source to object form symbol name translation follow:
 <br><br>In the following example, the name &quot;MyRtn&quot; will be replaced by &quot;MyRtn_&quot; in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;*_&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;*_&quot;</tt>
 <br><br>This is the default for all function names.
 <br><br>In the following example, the name &quot;MyVar&quot; will be replaced by &quot;_MyVar&quot; in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyVar &quot;_*&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyVar &quot;_*&quot;</tt>
 <br><br>This is the default for all variable names.
 <br><br>In the following example, the lower case version &quot;myrtn&quot; will be placed in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;!&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;!&quot;</tt>
 <br><br>In the following example, the upper case version &quot;MYRTN&quot; will be placed in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;^&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;^&quot;</tt>
 <br><br>In the following example, the name &quot;MyRtn&quot; will be replaced by &quot;_MyRtn@nnn&quot; in the object file.
 &nbsp;&quot;nnn&quot; represents the size of all function parameters.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*#&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*#&quot;</tt>
 <br><br>In the following example, the name &quot;MyRtn&quot; will be replaced by &quot;_MyRtn#&quot; in the object file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*\#&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MyRtn &quot;_*\#&quot;</tt>
 <br><br>The default mapping for all symbols can also be changed as illustrated by the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &quot;_*_&quot;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux default &quot;_*_&quot;</tt>
 <br><br>The above auxiliary pragma specifies that all names will be prefixed and suffixed by an underscore character ('_').
 <h3 id="32Mbit__Describing_Calling_Information"> 32-bit:&nbsp; Describing Calling Information </h3>
 <br>The following form of the auxiliary pragma can be used to describe the way a function is to be called.&nbsp; 
@@ -10431,12 +10519,12 @@ id)</b>
 </dl>
 <br>In the following example, Open Watcom C/C++ will generate a far call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn far;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn far</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a far call will be generated even if you are compiling for a memory model with a small code model.
 <br><br>In the following example, Open Watcom C/C++ will generate a near call to the function<tt> myrtn</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn near;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn near</tt>
 <br><br>Note that this overrides the calling sequence that would normally be generated for a particular memory model.&nbsp;
 In other words, a near call will be generated even if you are compiling for a memory model with a big code model.
 <br><br>In the following DOS example, Open Watcom C/C++ will generate the sequence of bytes following the &quot;=&quot; character
@@ -10450,7 +10538,7 @@ in the auxiliary pragma whenever a call to<tt> mode4</tt> is encountered.<tt>&nb
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xb0 0x04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* mov AL,4 */ \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xcd 0x10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* int 10H&nbsp; */
 \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
 <br><br>The sequence in the above DOS example represents the following lines of assembly language instructions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; AH,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; select function &quot;set mode&quot;</tt>
@@ -10470,7 +10558,7 @@ are used instead of the binary encoding of the assembly language instructions.
 \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10H&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
 <br><br>A sequence of in-line assembly language instructions may contain symbolic references.&nbsp; In the following example,
 a near call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is called.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -10478,14 +10566,14 @@ a near call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xe8 reloff myalias /* near call */;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xe8 reloff myalias /* near call */</tt>
 <br><br>In the following example, a far call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is called.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myalias(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x9a offset myalias seg myalias /* far call */;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x9a offset myalias seg myalias /* far call */</tt>
 <h4 id="32Mbit__Loading_Data_Segment_Register"> 32-bit:&nbsp; Loading Data Segment Register </h4>
 <br>An application may have been compiled so that the segment register DS does not contain the segment address of the default
 data segment (group &quot;DGROUP&quot;).&nbsp; This is usually the case if you are using a large data memory model.&nbsp;
@@ -10639,7 +10727,7 @@ must remain unchanged.
 </ol>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;eax ebx ecx edx&#93; &#91;ebp esi&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;eax ebx ecx edx&#93; &#91;ebp esi&#93;</tt>
 <br><br>Suppose<tt> myrtn</tt> is a routine with 3 arguments each of type<b> double</b>.
 <ol>
 <li>The first argument will be passed in the register pair EDX:EAX.
@@ -10649,7 +10737,7 @@ must remain unchanged.
 <br>It is possible for registers from the second register set to be used before registers from the first register set are
 used.&nbsp; Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;eax ebx ecx edx&#93; &#91;esi edi&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;eax ebx ecx edx&#93; &#91;esi edi&#93;</tt>
 <br><br>Suppose<tt> myrtn</tt> is a routine with 3 arguments, the first of type<b> int</b> and the second and third of type<b>
 double</b>.
 <ol>
@@ -10673,7 +10761,7 @@ the length to copy.&nbsp; If we want the first argument to be passed in the regi
 in register EDI and the third argument to be passed in register ECX, the following auxiliary pragma can be used.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void mycopy( char near *, char *, int );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mycopy parm &#91;ESI&#93; &#91;EDI&#93; &#91;ECX&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mycopy parm &#91;ESI&#93; &#91;EDI&#93; &#91;ECX&#93;</tt>
 <br><br>Note that you must be aware of the size of the arguments to ensure that the arguments get passed in the appropriate
 registers.
 <h4 id="32Mbit__Passing_Arguments_to_InMLine_Functions"> 32-bit:&nbsp; Passing Arguments to In-Line Functions </h4>
@@ -10689,7 +10777,7 @@ called<tt> scrollactivepgup</tt>.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm &#91;ch&#93; &#91;cl&#93; &#91;dh&#93; &#91;dl&#93; &#91;al&#93;
 &#91;bh&#93; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;ah&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;ah&#93;</tt>
 <br><br>The BIOS video call to scroll the active page up requires the following arguments.
 <ol>
 <li>The row and column of the upper left corner of the scroll window is passed in registers CH and CL respectively.
@@ -10745,7 +10833,7 @@ are pushed from left to right.
 <br><br>Reversing arguments is most useful for functions that require arguments to be passed on the stack in an order opposite
 from the default.&nbsp; The following auxiliary pragma demonstrates such a function.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux rtn parm reverse &#91;&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux rtn parm reverse &#91;&#93;</tt>
 <h3 id="32Mbit__Describing_Function_Return_Information"> 32-bit:&nbsp; Describing Function Return Information </h3>
 <br>Using auxiliary pragmas, you can describe the way functions are to return values.&nbsp; This is particularly useful when
 interfacing to functions that have been compiled by other compilers or functions written in other programming languages.
@@ -10922,7 +11010,7 @@ form of the auxiliary pragma is not legal for the &quot;fpc&quot; option.&nbsp;
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux exitrtn aborts;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux exitrtn aborts</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void exitrtn(void);</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void rtn()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -10945,7 +11033,7 @@ or static variables) that is used directly or indirectly by the caller.&nbsp;
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myrtn(void);</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn() {</tt>
@@ -10973,7 +11061,7 @@ lines taken from<tt> rtn.c.</tt>&nbsp; The listing file<tt> rtn.lst</tt> appears
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Module: rtn.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Group: 'DGROUP' CONST,_DATA</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Segment: '_TEXT' BYTE USE32&nbsp; 00000036 bytes</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myrtn(void);</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn() {</tt>
@@ -11021,15 +11109,15 @@ L1</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------------------------------------------</tt>
 <br><br>Let us add the following auxiliary pragma to the source file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn modify nomemory;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn modify nomemory</tt>
 <br><br>If we compile the source file with the above pragma and disassemble the object file using the Open Watcom Disassembler,
 we get the following listing file.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Module: rtn.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Group: 'DGROUP' CONST,_DATA</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Segment: '_TEXT' BYTE USE32&nbsp; 00000030 bytes</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn modify nomemory;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn modify nomemory</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myrtn(void);</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn() {</tt>
@@ -11095,15 +11183,15 @@ any memory (i.e., global or static variables) that is used directly or indirectl
 </ol>
 <br>Let us replace the auxiliary pragma in the above example with the following auxiliary pragma.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm nomemory modify nomemory;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm nomemory modify nomemory</tt>
 <br><br>If you now compile our source file and disassemble the object file using WDIS, the result is the following listing
 file.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Module: rtn.c</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Group: 'DGROUP' CONST,_DATA</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Segment: '_TEXT' BYTE USE32&nbsp; 0000002a bytes</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm nomemory modify nomemory;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma off (check_stack)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm nomemory modify nomemory</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myrtn(void);</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int i = { 1033 };</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern Rtn() {</tt>
@@ -11195,9 +11283,9 @@ whatsoever.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned GetSP(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__386__)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;esp&#93; modify exact &#91;&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;esp&#93; modify exact &#91;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;sp&#93; modify exact &#91;&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux GetSP = value &#91;sp&#93; modify exact &#91;&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <h3 id="32Mbit__An_Example"> 32-bit:&nbsp; An Example </h3>
 <br>As mentioned in an earlier section, the following pragma defines the calling convention for functions compiled by MetaWare's
@@ -11213,7 +11301,7 @@ High C compiler.
 &nbsp;&nbsp;&nbsp; value no8087&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx fs gs&#93;;</tt>
+&nbsp;&nbsp;&nbsp; modify &#91;eax ecx edx fs gs&#93;</tt>
 <br><br>Note that register ES must also be specified in the &quot;modify&quot; register set when using a memory model with
 a non-small data model.&nbsp; Let us discuss this pragma in detail.
 <dl>
@@ -11330,7 +11418,7 @@ argument will be in ST(0).&nbsp; Otherwise the floating-point argument is assign
 </ol>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;8087&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;8087&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp;&nbsp; x;</tt>
@@ -11358,7 +11446,7 @@ holds even though there are some 80x87 floating-point registers available for pa
 </ol>
 <br>Let us change the auxiliary pragma in the above example as follows.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;eax 8087&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn parm &#91;eax 8087&#93;</tt>
 <br><br>The arguments will now be passed to<tt> myrtn</tt> in the following way.
 <ol>
 <li>Since &quot;8087&quot; was specified in the register set, the first argument, being of type<b> float</b> will be passed

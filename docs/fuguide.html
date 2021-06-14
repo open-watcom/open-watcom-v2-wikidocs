@@ -49,7 +49,6 @@
 <br><a href="#16Mbit__Returning_Subprogram_Values_in_Registers">16-bit:&nbsp; Returning Subprogram Values in Registers</a>
 <br><a href="#16Mbit__Returning_Values_from_Assembly_Language_Functions">16-bit:&nbsp; Returning Values from Assembly Language Functions</a>
 <br><a href="#16Mbit__Specifying_Symbol_Attributes">16-bit:&nbsp; Specifying Symbol Attributes</a>
-<br><a href="#16Mbit__Using_Pragmas_to_Specify_Default_Libraries">16-bit:&nbsp; Using Pragmas to Specify Default Libraries</a>
 <br><a href="#16Mbit__Using_the_80x87_to_Pass_Arguments">16-bit:&nbsp; Using the 80x87 to Pass Arguments</a>
 <br><a href="#16Mbit__Using_the_80x87_to_Return_Subprogram_Values">16-bit:&nbsp; Using the 80x87 to Return Subprogram Values</a>
 <br><a href="#16Mbit__Writing_Assembly_Language_Subprograms">16-bit:&nbsp; Writing Assembly Language Subprograms</a>
@@ -99,7 +98,6 @@
 <br><a href="#32Mbit__Returning_Values_from_Assembly_Language_Functions">32-bit:&nbsp; Returning Values from Assembly Language Functions</a>
 <br><a href="#32Mbit__Specifying_Symbol_Attributes">32-bit:&nbsp; Specifying Symbol Attributes</a>
 <br><a href="#32Mbit__StackMBased_Calling_Convention">32-bit:&nbsp; Stack-Based Calling Convention</a>
-<br><a href="#32Mbit__Using_Pragmas_to_Specify_Default_Libraries">32-bit:&nbsp; Using Pragmas to Specify Default Libraries</a>
 <br><a href="#32Mbit__Using_the_80x87_to_Pass_Arguments">32-bit:&nbsp; Using the 80x87 to Pass Arguments</a>
 <br><a href="#32Mbit__Using_the_80x87_to_Return_Subprogram_Values">32-bit:&nbsp; Using the 80x87 to Return Subprogram Values</a>
 <br><a href="#32Mbit__Using_the_StackMBased_Calling_Convention">32-bit:&nbsp; Using the Stack-Based Calling Convention</a>
@@ -4822,29 +4820,6 @@ syntactical notation is used.
 <li>pragmas that specify default libraries
 <li>pragmas that provide auxiliary information used for code generation
 </ul>
-<h2 id="16Mbit__Using_Pragmas_to_Specify_Default_Libraries"> 16-bit:&nbsp; Using Pragmas to Specify Default Libraries </h2>
-<br>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special
-records by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in
-linker &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
-directives have been searched.
-<br><br>By default, that is if no library pragma is specified, the Open Watcom F77 compiler generates, in the object file
-defining the main program, default libraries corresponding to the memory model and floating-point model used to compile the
-file.&nbsp; For example, if you have compiled the source file containing the main program for the medium memory model and
-the floating-point calls floating-point model, the library &quot;flibm&quot; will be placed in the object file.
-<br><br>If you wish to add your own default libraries to this list, you can do so with a library pragma.&nbsp; Consider the
-following example.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library mylib</tt>
-<br><br>The name &quot;mylib&quot; will be added to the list of default libraries specified in the object file.
-<br><br>If you wish to specify more than one library in a library pragma you must separate them with spaces as in the following
-example.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library mylib \watcom\lib286\dos\graph.lib</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library mylib \watcom\lib386\dos\graph.lib</tt>
-<br><br>If no libraries are specified as in the following example,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library</tt>
-<br><br>the run-time libraries corresponding to the memory and floating-point models used to compile the file will be generated.
 <h2 id="16Mbit__Auxiliary_Pragmas"> 16-bit:&nbsp; Auxiliary Pragmas </h2>
 <br>The following sections describe the capabilities provided by auxiliary pragmas.
 <br><br>The backslash character ('\') is used to continue a pragma on the next line.&nbsp; Text following the backslash character
@@ -6042,7 +6017,7 @@ argument will be in ST(0).&nbsp; Otherwise the floating-point argument is assign
 </ol>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn parm (value) &#91;8087&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn parm (value) &#91;8087&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real x</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double precision y</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer*2 i</tt>
@@ -6110,7 +6085,7 @@ may be modified by the specified subprogram.&nbsp;
 <br>This instructs Open Watcom F77 to save any local variables that are located in the 80x87 cache before calling the specified
 routine.
 <h1 id="32Mbit_Memory_Models"> 32-bit Memory Models </h1>
-<br><br>This chapter describes the various 32-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
+<br>This chapter describes the various 32-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
 by two properties; the code model used to implement subprogram calls and the data model used to reference data.
 <h2 id="32Mbit_Code_Models"> 32-bit Code Models </h2>
 <br>There are two code models;
@@ -6994,29 +6969,6 @@ syntactical notation is used.
 <li>pragmas that specify default libraries
 <li>pragmas that provide auxiliary information used for code generation
 </ul>
-<h2 id="32Mbit__Using_Pragmas_to_Specify_Default_Libraries"> 32-bit:&nbsp; Using Pragmas to Specify Default Libraries </h2>
-<br>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special
-records by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in
-linker &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
-directives have been searched.
-<br><br>By default, that is if no library pragma is specified, the Open Watcom F77 compiler generates, in the object file
-defining the main program, default libraries corresponding to the memory model and floating-point model used to compile the
-file.&nbsp; For example, if you have compiled the source file containing the main program for the flat memory model and the
-floating-point calls floating-point model, the library &quot;flib&quot; will be placed in the object file.
-<br><br>If you wish to add your own default libraries to this list, you can do so with a library pragma.&nbsp; Consider the
-following example.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library mylib</tt>
-<br><br>The name &quot;mylib&quot; will be added to the list of default libraries specified in the object file.
-<br><br>If you wish to specify more than one library in a library pragma you must separate them with spaces as in the following
-example.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library mylib \watcom\lib286\dos\graph.lib</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library mylib \watcom\lib386\dos\graph.lib</tt>
-<br><br>If no libraries are specified as in the following example,
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma library</tt>
-<br><br>the run-time libraries corresponding to the memory and floating-point models used to compile the file will be generated.
 <h2 id="32Mbit__Auxiliary_Pragmas"> 32-bit:&nbsp; Auxiliary Pragmas </h2>
 <br>The following sections describe the capabilities provided by auxiliary pragmas.
 <br><br>The backslash character ('\') is used to continue a pragma on the next line.&nbsp; Text following the backslash character
@@ -8325,7 +8277,7 @@ argument will be in ST(0).&nbsp; Otherwise the floating-point argument is assign
 </ol>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn parm (value) &#91;8087&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux myrtn parm (value) &#91;8087&#93;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real x</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double precision y</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer i</tt>
@@ -8393,8 +8345,8 @@ may be modified by the specified subprogram.&nbsp;
 <br>This instructs Open Watcom F77 to save any local variables that are located in the 80x87 cache before calling the specified
 routine.
 <h1 id="Use_of_Environment_Variables"> Use of Environment Variables </h1>
-<br>In the Open Watcom FORTRAN 77 software development package, a number of environment variables are used.&nbsp; This appendix
-summarizes their use with a particular component of the package.
+<br><br>In the Open Watcom FORTRAN 77 software development package, a number of environment variables are used.&nbsp; This
+appendix summarizes their use with a particular component of the package.
 <h2 id="FINCLUDE"> FINCLUDE </h2>
 <br>The <b> FINCLUDE</b> environment variable describes the location of the Open Watcom FORTRAN 77 include files.&nbsp; This
 variable is used by Open Watcom FORTRAN 77.
