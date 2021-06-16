@@ -6516,8 +6516,8 @@ specifying the &quot;STACK&quot; option to the Open Watcom Linker with a larger 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (inline)</tt>
 <br><br>will returns to previous settings of &quot;inline&quot; option.
-<br><br>Note that additional rules are checked for custom functions, so the functions do not have to be emited inline even
-if the &quot;inline&quot; option has been specified.
+<br><br>Note that additional rules are checked for user functions, so the functions do not have to be emited inline even if
+the &quot;inline&quot; option has been specified.
 <h2 id="16Mbit__The_ALIAS_Pragma_LC_OnlyR"> 16-bit:&nbsp; The ALIAS Pragma (C Only) </h2>
 <br>The &quot;alias&quot; pragma can be used to emit alias records in the object file, causing the linker to substitute references
 to a specified symbol with references to another symbol.&nbsp; Either identifiers or names (strings) may be used.&nbsp; Strings
@@ -6985,17 +6985,26 @@ the file's name.&nbsp; Subsequently, whenever the compiler encounters a<tt> #inc
 it will not open the include file again.&nbsp; This can help speed up processing of<tt> #include</tt> files and reduce the
 time required to compile an application.
 <h2 id="16Mbit__The_PACK_Pragma"> 16-bit:&nbsp; The PACK Pragma </h2>
-<br>The &quot;pack&quot; pragma can be used to control the way in which structures are stored in memory.&nbsp; There are 4
-forms of the &quot;pack&quot; pragma.
-<br><br>The following form of the &quot;pack&quot; pragma can be used to change the alignment of structures and their fields
-in memory.
+<br>The &quot;pack&quot; pragma can be used to control the way in which structures are stored in memory.&nbsp; The forms of
+the &quot;pack&quot; pragma are as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( </tt><b>number</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, </tt><b>number</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
+<br>The following form of the &quot;pack&quot; pragma can be used to change the alignment of structures and their fields in
+memory.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( number )</tt>
+<br><br>The following form of the &quot;pack&quot; pragma saves the current alignment amount on an internal stack before alignment
+amount change.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, number )</tt>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
-<dt><br>n
+<dt><br>number
 <dd>is 1, 2, 4, 8 or 16 and specifies the method of alignment.
 </dl>
 <br>The alignment of structure members is described in the following table.&nbsp; If the size of the member is 1, 2, 4, 8
@@ -7033,19 +7042,12 @@ according to row 16.
 value can be changed with the &quot;zp&quot; Open Watcom C/C++ compiler command line option.
 <br><br>The following form of the &quot;pack&quot; pragma can be used to save the current alignment amount on an internal
 stack.
-<hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<hr>
-<br>The following form of the &quot;pack&quot; pragma can be used to save the current alignment amount on an internal stack
-and set the current alignment.
-<hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, </tt><b>number</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<hr>
-<br>The following form of the &quot;pack&quot; pragma can be used to restore the previous alignment amount from an internal
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push )</tt>
+<br><br>The following form of the &quot;pack&quot; pragma can be used to restore the previous alignment amount from an internal
 stack.
-<hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<hr>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop )</tt>
 <h2 id="16Mbit__The_READ_ONLY_FILE_Pragma"> 16-bit:&nbsp; The READ_ONLY_FILE Pragma </h2>
 <br>Explicit listing of dependencies in a makefile can often be tedious in the development and maintenance phases of a project.
 &nbsp;The Open Watcom C/C++ compiler will insert dependency information into the object file as it processes source files
@@ -9584,8 +9586,8 @@ specifying the &quot;STACK&quot; option to the Open Watcom Linker with a larger 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pop (inline)</tt>
 <br><br>will returns to previous settings of &quot;inline&quot; option.
-<br><br>Note that additional rules are checked for custom functions, so the functions do not have to be emited inline even
-if the &quot;inline&quot; option has been specified.
+<br><br>Note that additional rules are checked for user functions, so the functions do not have to be emited inline even if
+the &quot;inline&quot; option has been specified.
 <h2 id="32Mbit__The_ALIAS_Pragma_LC_OnlyR"> 32-bit:&nbsp; The ALIAS Pragma (C Only) </h2>
 <br>The &quot;alias&quot; pragma can be used to emit alias records in the object file, causing the linker to substitute references
 to a specified symbol with references to another symbol.&nbsp; Either identifiers or names (strings) may be used.&nbsp; Strings
@@ -10053,17 +10055,26 @@ the file's name.&nbsp; Subsequently, whenever the compiler encounters a<tt> #inc
 it will not open the include file again.&nbsp; This can help speed up processing of<tt> #include</tt> files and reduce the
 time required to compile an application.
 <h2 id="32Mbit__The_PACK_Pragma"> 32-bit:&nbsp; The PACK Pragma </h2>
-<br>The &quot;pack&quot; pragma can be used to control the way in which structures are stored in memory.&nbsp; There are 4
-forms of the &quot;pack&quot; pragma.
-<br><br>The following form of the &quot;pack&quot; pragma can be used to change the alignment of structures and their fields
-in memory.
+<br>The &quot;pack&quot; pragma can be used to control the way in which structures are stored in memory.&nbsp; The forms of
+the &quot;pack&quot; pragma are as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( </tt><b>number</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, </tt><b>number</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
+<br>The following form of the &quot;pack&quot; pragma can be used to change the alignment of structures and their fields in
+memory.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( number )</tt>
+<br><br>The following form of the &quot;pack&quot; pragma saves the current alignment amount on an internal stack before alignment
+amount change.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, number )</tt>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
-<dt><br>n
+<dt><br>number
 <dd>is 1, 2, 4, 8 or 16 and specifies the method of alignment.
 </dl>
 <br>The alignment of structure members is described in the following table.&nbsp; If the size of the member is 1, 2, 4, 8
@@ -10101,19 +10112,12 @@ according to row 16.
 value can be changed with the &quot;zp&quot; Open Watcom C/C++ compiler command line option.
 <br><br>The following form of the &quot;pack&quot; pragma can be used to save the current alignment amount on an internal
 stack.
-<hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<hr>
-<br>The following form of the &quot;pack&quot; pragma can be used to save the current alignment amount on an internal stack
-and set the current alignment.
-<hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, </tt><b>number</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<hr>
-<br>The following form of the &quot;pack&quot; pragma can be used to restore the previous alignment amount from an internal
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push )</tt>
+<br><br>The following form of the &quot;pack&quot; pragma can be used to restore the previous alignment amount from an internal
 stack.
-<hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<hr>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop )</tt>
 <h2 id="32Mbit__The_READ_ONLY_FILE_Pragma"> 32-bit:&nbsp; The READ_ONLY_FILE Pragma </h2>
 <br>Explicit listing of dependencies in a makefile can often be tedious in the development and maintenance phases of a project.
 &nbsp;The Open Watcom C/C++ compiler will insert dependency information into the object file as it processes source files
