@@ -4781,7 +4781,7 @@ language level.&nbsp; The code generator can use this information to generate mo
 object code.
 </ul>
 <br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,
-<b><i> _Pragma</i></b> ( string-literal ) is an alternative method of specifying <b><i> pragma</i></b> directives.
+<b><i> _Pragma</i></b> ( &quot;string-literal&quot; ) is an alternative method of specifying <b><i> pragma</i></b> directives.
 <br><br>For example, the following two statements are equivalent.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _Pragma( &quot;library (\&quot;kernel32.lib\&quot;)&quot; )</tt>
@@ -5495,7 +5495,7 @@ interfacing to functions that have been compiled by other compilers or functions
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>{</b><tt>no8087 </tt><b>|</b><tt> </tt><b>reg_set</b><tt>
 </tt><b>|</b><tt> </tt><b>struct_info}</b><tt> </tt>
-<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
 </tt><b>(</b><tt>routine </tt><b>|</b><tt> caller</tt><b>)</b><tt> </tt><b>|</b><tt> </tt><b>reg_set}</b>
 <hr>
 <dl>
@@ -5561,7 +5561,7 @@ as a<i> structure</i> containing two real numbers.
 <br><br>The following form of the auxiliary pragma can be used to specify the register that is to be used to point to the
 return value.&nbsp; 
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct </tt><b>(</b><tt>caller</tt><b>|</b><tt>routine</tt><b>)</b><tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct </tt><b>(</b><tt>caller </tt><b>|</b><tt> routine</tt><b>)</b><tt>
 </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
@@ -6930,7 +6930,7 @@ language level.&nbsp; The code generator can use this information to generate mo
 object code.
 </ul>
 <br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,
-<b><i> _Pragma</i></b> ( string-literal ) is an alternative method of specifying <b><i> pragma</i></b> directives.
+<b><i> _Pragma</i></b> ( &quot;string-literal&quot; ) is an alternative method of specifying <b><i> pragma</i></b> directives.
 <br><br>For example, the following two statements are equivalent.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _Pragma( &quot;library (\&quot;kernel32.lib\&quot;)&quot; )</tt>
@@ -7690,7 +7690,7 @@ interfacing to functions that have been compiled by other compilers or functions
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>{</b><tt>no8087 </tt><b>|</b><tt> </tt><b>reg_set</b><tt>
 </tt><b>|</b><tt> </tt><b>struct_info}</b><tt> </tt>
-<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
+<br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
 </tt><b>(</b><tt>routine </tt><b>|</b><tt> caller</tt><b>)</b><tt> </tt><b>|</b><tt> </tt><b>reg_set}</b>
 <hr>
 <dl>
@@ -7760,7 +7760,7 @@ as a<i> structure</i> containing two real numbers.
 <br><br>The following form of the auxiliary pragma can be used to specify the register that is to be used to point to the
 return value.&nbsp; 
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct </tt><b>(</b><tt>caller</tt><b>|</b><tt>routine</tt><b>)</b><tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value struct </tt><b>(</b><tt>caller </tt><b>|</b><tt> routine</tt><b>)</b><tt>
 </tt><b>reg_set</b><tt> </tt>
 <hr>
 <dl>
