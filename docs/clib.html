@@ -31166,15 +31166,15 @@ It accepts far pointer arguments and returns a far pointer.&nbsp; It is most use
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>int mbrlen( const char *s, size_t n, mbstate_t *ps );</tt>
-<br><tt>int _fmbrlen( const char far *s, size_t n, mbstate_t far *ps );</tt>
+<br><tt>size_t mbrlen( const char *s, size_t n, mbstate_t *ps );</tt>
+<br><tt>size_t _fmbrlen( const char far *s, size_t n, mbstate_t far *ps );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The<tt> mbrlen</tt> function determines the number of bytes comprising the multibyte character pointed to by<i> s</i>.&nbsp;
 The<tt> mbrlen</tt> function is equivalent to the following call:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mbrtowc((wchar_t *)0, s, n, ps != 0 ? ps : &amp;internal)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mbrtowc(NULL, s, n, ps != NULL ? ps : &amp;internal)</tt>
 <br><br>where<tt> &amp;internal</tt> is the address of the internal <tt> mbstate_t</tt> object for the<tt> mbrlen</tt> function.
 <br><br>The<tt> _fmbrlen</tt> function is a data model independent form of the mbrlen function that accepts far pointer arguments.
 &nbsp;It is most useful in mixed memory model applications.
@@ -31192,8 +31192,8 @@ to the <tt> mbstate_t</tt> argument is ignored.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> mbrlen</tt> function returns a value between -2 and<i> n</i>, inclusive.&nbsp; The<tt> mbrlen</tt> function returns
-the first of the following that applies:
+<dd>The<tt> mbrlen</tt> function returns a value between 0 and<i> n</i>, inclusive,<tt> (size_t)-2</tt> or<tt> (size_t)-1</tt>.
+&nbsp;The<tt> mbrlen</tt> function returns the first of the following that applies:
 <dl>
 <dt><b><i>Value</i></b>
 <dd><b><i>Meaning</i></b>
@@ -31202,13 +31202,14 @@ the first of the following that applies:
 <dt><br>&gt;0
 <dd>if the next<i> n</i> or fewer bytes form a valid multibyte character; the value returned is the number of bytes that constitute
 that multibyte character.
-<dt><br>-2
+<dt><br>(size_t)-2
 <dd>if the next<i> n</i> bytes form an incomplete (but potentially valid) multibyte character, and all<i> n</i> bytes have been
 processed; it is unspecified whether this can occur when the value of<i> n</i> is less than that of the <tt> MB_CUR_MAX</tt>
 macro.
-<dt><br>-1
+<dt><br>(size_t)-1
 <dd>if an encoding error occurs (when the next<i> n</i> or fewer bytes do not form a complete and valid multibyte character);
-the value of the macro <tt> EILSEQ</tt> will be stored in <tt> errno</tt>, but the conversion state will be unchanged.
+the<tt> mbrlen</tt> function stores the value of the macro <tt> EILSEQ</tt> in <tt> errno</tt> and returns<tt> (size_t)-1</tt>;
+but the conversion state is unspecified.
 </dl>
 </dl>
 <dl>
@@ -31295,9 +31296,9 @@ the value of the macro <tt> EILSEQ</tt> will be stored in <tt> errno</tt>, but t
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>int mbrtowc( wchar_t *pwc, const char *s,</tt>
+<br><tt>size_t mbrtowc( wchar_t *pwc, const char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n, mbstate_t *ps );</tt>
-<br><tt>int _fmbrtowc( wchar_t __far *pwc, const char __far *s,</tt>
+<br><tt>size_t _fmbrtowc( wchar_t __far *pwc, const char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n, mbstate_t __far *ps
 );</tt>
 </dl>
@@ -31327,9 +31328,8 @@ to the <tt> mbstate_t</tt> argument is ignored.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If<i> s</i> is a null pointer, the<tt> mbrtowc</tt> function returns the number of bytes necessary to enter the initial shift
-state.&nbsp; The value returned will not be greater than that of the <tt> MB_CUR_MAX</tt> macro.
-<br>If<i> s</i> is not a null pointer, the<tt> mbrtowc</tt> function returns the first of the following that applies:
+<dd>The<tt> mbrtowc</tt> function returns a value between 0 and<i> n</i>, inclusive,<tt> (size_t)-2</tt> or<tt> (size_t)-1</tt>.
+&nbsp;The<tt> mbrtowc</tt> function returns the first of the following that applies:
 <dl>
 <dt><b><i>Value</i></b>
 <dd><b><i>Meaning</i></b>
@@ -31338,13 +31338,14 @@ state.&nbsp; The value returned will not be greater than that of the <tt> MB_CUR
 <dt><br>&gt;0
 <dd>if the next<i> n</i> or fewer bytes form a valid multibyte character; the value returned is the number of bytes that constitute
 that multibyte character.
-<dt><br>-2
+<dt><br>(size_t)-2
 <dd>if the next<i> n</i> bytes form an incomplete (but potentially valid) multibyte character, and all<i> n</i> bytes have been
 processed; it is unspecified whether this can occur when the value of<i> n</i> is less than that of the <tt> MB_CUR_MAX</tt>
 macro.
-<dt><br>-1
+<dt><br>(size_t)-1
 <dd>if an encoding error occurs (when the next<i> n</i> or fewer bytes do not form a complete and valid multibyte character);
-the value of the macro <tt> EILSEQ</tt> will be stored in <tt> errno</tt>, but the conversion state will be unchanged.
+the<tt> mbrtowc</tt> function stores the value of the macro <tt> EILSEQ</tt> in <tt> errno</tt> and returns<tt> (size_t)-1</tt>;
+but the conversion state is unspecified.
 </dl>
 </dl>
 <dl>
@@ -32088,9 +32089,7 @@ characters, these functions return the number of characters in the string.
 <dd>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
 <br><tt>unsigned int _mbsnextc( const unsigned char *string );</tt>
-<br><tt>unsigned int _fmbsnextc(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-const unsigned char __far *string );</tt>
+<br><tt>unsigned int _fmbsnextc( const unsigned char __far *string );</tt>
 <br><tt>#include &lt;tchar.h&gt;</tt>
 <br><tt>unsigned int _strnextc( const char *string );</tt>
 <br><tt>unsigned int _wcsnextc( const wchar_t *string ) {</tt>
@@ -32208,9 +32207,9 @@ sequence.&nbsp; For encodings without state dependency, the pointer to the <tt> 
 </dl>
 <dl>
 <dt>Returns:
-<dd>If the input string does not begin with a valid multibyte character, an encoding error occurs:&nbsp; The<tt> mbsrtowcs</tt>
-function stores the value of the macro <tt> EILSEQ</tt> in <tt> errno</tt> and returns<tt> (size_t)-1,</tt> but the conversion
-state will be unchanged.&nbsp; Otherwise, it returns the number of multibyte characters successfully converted, which is the
+<dd>If the input string does not begin with a valid multibyte character, an encoding error occurs:&nbsp; the<tt> mbsrtowcs</tt>
+function stores the value of the macro <tt> EILSEQ</tt> in <tt> errno</tt> and returns<tt> (size_t)-1</tt>; but the conversion
+state is unspecified.&nbsp; Otherwise, it returns the number of multibyte characters successfully converted, which is the
 same as the number of array elements modified when<i> dst</i> is not a null pointer.
 </dl>
 <dl>
@@ -32318,8 +32317,8 @@ pointer, then<i> dstmax</i> shall equal zero.&nbsp; If<i> dst</i> is not a null 
 zero.&nbsp; If<i> dst</i> is not a null pointer and<i> len</i> is not less than<i> dstmax</i>, then a null character shall
 occur within the first<i> dstmax</i> multibyte characters of the array pointed to by<i> *src</i>.
 <br><br>If there is a runtime-constraint violation, then<tt> mbsrtowcs_s</tt> does the following.&nbsp; If<i> retval</i> is
-not a null pointer, then<tt> mbsrtowcs_s</tt> sets<i> *retval</i> to (size_t)(-1).&nbsp; If<i> dst</i> is not a null pointer
-and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> mbsrtowcs_s</tt> sets<i> dst&#91;0&#93;</i>
+not a null pointer, then the<tt> mbsrtowcs_s</tt> sets<i> *retval</i> to<tt> (size_t)-1</tt>.&nbsp; If<i> dst</i> is not a
+null pointer and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> mbsrtowcs_s</tt> sets<i> dst&#91;0&#93;</i>
 to the null wide character.
 </dl>
 <dl>
@@ -32339,7 +32338,7 @@ converted (if any).&nbsp; If conversion stopped due to reaching a terminating nu
 pointer, the resulting state described is the initial conversion state.
 <br><br>Regardless of whether<i> dst</i> is or is not a null pointer, if the input conversion encounters a sequence of bytes
 that do not form a valid multibyte character, an encoding error occurs:&nbsp; the<tt> mbsrtowcs_s</tt> function stores the
-value (size_t)(-1) into<i> *retval</i> and the conversion state is unspecified.&nbsp; Otherwise, the<tt> mbsrtowcs_s</tt>
+value<tt> (size_t)-1</tt> into<i> *retval</i> and the conversion state is unspecified.&nbsp; Otherwise, the<tt> mbsrtowcs_s</tt>
 function stores into<i> *retval</i> the number of multibyte characters successfully converted, not including the terminating
 null character (if any).
 <br><br>All elements following the terminating null wide character (if any) written by<tt> mbsrtowcs_s</tt> in the array of<i>
@@ -32447,7 +32446,7 @@ pointed to by<i> pwcs</i> will be modified.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If an invalid multibyte character is encountered, the<tt> mbstowcs</tt> function returns<tt> (size_t)-1.</tt>&nbsp; Otherwise,
+<dd>If an invalid multibyte character is encountered, the<tt> mbstowcs</tt> function returns<tt> (size_t)-1</tt>.&nbsp; Otherwise,
 the<tt> mbstowcs</tt> function returns the number of array elements modified, not including the terminating zero code if present.
 </dl>
 <dl>
@@ -32519,8 +32518,8 @@ shall equal zero.&nbsp; If<i> dst</i> is not a null pointer, then<i> dstmax</i> 
 is not a null pointer and<i> len</i> is not less than<i> dstmax</i>, then a null character shall occur within the first<i>
 dstmax</i> multibyte characters of the array pointed to by<i> src</i>.
 <br><br>If there is a runtime-constraint violation, then<tt> mbstowcs_s</tt> does the following.&nbsp; If<i> retval</i> is
-not a null pointer, then<tt> mbstowcs_s</tt> sets<i> *retval</i> to (size_t)(-1).&nbsp; If<i> dst</i> is not a null pointer
-and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> mbstowcs_s</tt> sets<i> dst&#91;0&#93;</i>
+not a null pointer, then the<tt> mbstowcs_s</tt> sets<i> *retval</i> to<tt> (size_t)-1</tt>.&nbsp; If<i> dst</i> is not a
+null pointer and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> mbstowcs_s</tt> sets<i> dst&#91;0&#93;</i>
 to the null wide character.
 </dl>
 <dl>
@@ -32535,8 +32534,8 @@ dst</i> is not a null pointer and no null wide character was stored into the arr
 is set to the null wide character.&nbsp; Each conversion takes place as if by a call to the <tt> mbrtowc</tt> function.
 <br><br>Regardless of whether<i> dst</i> is or is not a null pointer, if the input conversion encounters a sequence of bytes
 that do not form a valid multibyte character, an encoding error occurs:&nbsp; the<tt> mbstowcs_s</tt> function stores the
-value (size_t)(-1) into<i> *retval</i>.&nbsp; Otherwise, the<tt> mbstowcs_s</tt> function stores into<i> *retval</i> the number
-of multibyte characters successfully converted, not including the terminating null character (if any).
+value<tt> (size_t)-1</tt> into<i> *retval</i>.&nbsp; Otherwise, the<tt> mbstowcs_s</tt> function stores into<i> *retval</i>
+the number of multibyte characters successfully converted, not including the terminating null character (if any).
 <br><br>All elements following the terminating null wide character (if any) written by<tt> mbstowcs_s</tt> in the array of<i>
 dstmax</i> wide characters pointed to by<i> dst</i> take unspecified values when<tt> mbstowcs_s</tt> returns.
 <br><br>If copying takes place between objects that overlap, the objects take on unspecified values.
@@ -56830,8 +56829,8 @@ NULL );</tt>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>int wcrtomb( char *s, wchar_t wc, mbstate_t *ps );</tt>
-<br><tt>int _fwcrtomb( char __far *s, wchar_t wc, mbstate_t __far *ps );</tt>
+<br><tt>size_t wcrtomb( char *s, wchar_t wc, mbstate_t *ps );</tt>
+<br><tt>size_t _fwcrtomb( char __far *s, wchar_t wc, mbstate_t __far *ps );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -56868,8 +56867,8 @@ to the <tt> mbstate_t</tt> argument is ignored.
 state.&nbsp; The value returned will not be greater than that of the <tt> MB_CUR_MAX</tt> macro.
 <br>If<i> s</i> is not a null pointer, the<tt> wcrtomb</tt> function returns the number of bytes stored in the array object
 (including any shift sequences) when<i> wc</i> is a valid wide character; otherwise (when<i> wc</i> is not a valid wide character),
-an encoding error occurs, the value of the macro <tt> EILSEQ</tt> will be stored in <tt> errno</tt> and -1 will be returned,
-but the conversion state will be unchanged.
+an encoding error occurs:&nbsp; the<tt> wcrtomb</tt> function stores the value of the macro <tt> EILSEQ</tt> in <tt> errno</tt>
+and returns<tt> (size_t)-1</tt>; but the conversion state is unspecified.
 </dl>
 <dl>
 <dt>See Also:
@@ -56984,8 +56983,8 @@ shall be not be less than the number of bytes to be stored in the array pointed 
 pointer, then<i> smax</i> shall equal zero.
 <br><br>If there is a runtime-constraint violation, then<tt> wcrtomb_s</tt> does the following.&nbsp; If<i> s</i> is not a
 null pointer and<i> smax</i> is greater than zero and not greater than <tt> RSIZE_MAX</tt>, then<tt> wcrtomb_s</tt> sets<i>
-s&#91;0&#93;</i> to the null character.&nbsp; If<i> retval</i> is not a null pointer, then <tt> wcrtomb_s</tt> sets<i> *retval</i>
-to (size_t)(-1).
+s&#91;0&#93;</i> to the null character.&nbsp; If<i> retval</i> is not a null pointer, then the<tt> wcrtomb_s</tt> sets<i>
+*retval</i> to<tt> (size_t)-1</tt>.
 </dl>
 <dl>
 <dt>Description:
@@ -56999,9 +56998,9 @@ the multibyte character representation in the array whose first element is point
 bytes are stored.&nbsp; If<i> wc</i> is a null wide character, a null byte is stored, preceded by any shift sequence needed
 to restore the initial shift state; the resulting state described is the initial conversion state.
 <br><br>If<i> wc</i> does not correspond to a valid multibyte character, an encoding error occurs:&nbsp; the<tt> wcrtomb_s</tt>
-function stores the value (size_t)(-1) into<i> *retval</i> and the conversion state is unspecified.&nbsp; Otherwise, the<tt>
-wcrtomb_s</tt> function stores into<i> *retval</i> the number of bytes (including any shift sequences) stored in the array
-pointed to by<i> s</i>.
+function stores the value<tt> (size_t)-1</tt> into<i> *retval</i> and the conversion state is unspecified.&nbsp; Otherwise,
+the<tt> wcrtomb_s</tt> function stores into<i> *retval</i> the number of bytes (including any shift sequences) stored in the
+array pointed to by<i> s</i>.
 <br><br>The function is a data model independent form of the wcrtomb_s function that accepts far pointer arguments.&nbsp;
 It is most useful in mixed memory model applications.
 </dl>
@@ -57147,8 +57146,8 @@ sequence.&nbsp; For encodings without state dependency, the pointer to the <tt> 
 </dl>
 <dl>
 <dt>Returns:
-<dd>If the first code is not a valid wide character, an encoding error occurs:&nbsp; The<tt> wcsrtombs</tt> function stores the
-value of the macro <tt> EILSEQ</tt> in <tt> errno</tt> and returns<tt> (size_t)-1,</tt> but the conversion state will be unchanged.
+<dd>If the first code is not a valid wide character, an encoding error occurs:&nbsp; the<tt> wcsrtombs</tt> function stores the
+value of the macro <tt> EILSEQ</tt> in <tt> errno</tt> and returns<tt> (size_t)-1</tt>; but the conversion state is unspecified.
 &nbsp;Otherwise, it returns the number of bytes in the resulting multibyte characters sequence, which is the same as the number
 of array elements modified when<i> dst</i> is not a null pointer.
 </dl>
@@ -57269,8 +57268,8 @@ pointer, then<i> dstmax</i> shall equal zero.&nbsp; If<i> dst</i> is not a null 
 zero.&nbsp; If<i> dst</i> is not a null pointer and<i> len</i> is not less than<i> dstmax</i>, then the conversion shall have
 been stopped (see below) because a terminating null wide character was reached or because an encoding error occurred.
 <br><br>If there is a runtime-constraint violation, then<tt> wcsrtombs_s</tt> does the following.&nbsp; If<i> retval</i> is
-not a null pointer,then<tt> wcsrtombs_s</tt> sets<i> *retval</i> to (size_t)(-1).&nbsp; If<i> dst</i> is not a null pointer
-and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> wcsrtombs_s</tt> sets<i> dst&#91;0&#93;</i>
+not a null pointer, then the<tt> wcsrtombs_s</tt> sets<i> *retval</i> to<tt> (size_t)-1</tt>.&nbsp; If<i> dst</i> is not a
+null pointer and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> wcsrtombs_s</tt> sets<i> dst&#91;0&#93;</i>
 to the null character.
 </dl>
 <dl>
@@ -57295,9 +57294,9 @@ converted (if any).&nbsp; If conversion stopped due to reaching a terminating nu
 is the initial conversion state.
 <br><br>Regardless of whether<i> dst</i> is or is not a null pointer, if the input conversion encounters a wide character
 that does not correspond to a valid multibyte character, an encoding error occurs:&nbsp; the<tt> wcsrtombs_s</tt> function
-stores the value (size_t)(-1) into<i> *retval</i> and the conversion state is unspecified.&nbsp; Otherwise, the<tt> wcsrtombs_s</tt>
-function stores into<i> *retval</i> the number of bytes in the resulting multibyte character sequence, not including the terminating
-null character (if any).
+stores the value<tt> (size_t)-1</tt> into<i> *retval</i> and the conversion state is unspecified.&nbsp; Otherwise, the<tt>
+wcsrtombs_s</tt> function stores into<i> *retval</i> the number of bytes in the resulting multibyte character sequence, not
+including the terminating null character (if any).
 <br><br>All elements following the terminating null character (if any) written by wcsrtombs_s in the array of<i> dstmax</i>
 elements pointed to by<i> dst</i> take unspecified values when<tt> wcsrtombs_s</tt> returns.
 <br><br>If copying takes place between objects that overlap, the objects take on unspecified values.
@@ -57421,7 +57420,7 @@ most<i> n</i> bytes of the array pointed to by<i> s</i> will be modified.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If an invalid multibyte character is encountered, the<tt> wcstombs</tt> function returns<tt> (size_t)-1.</tt>&nbsp; Otherwise,
+<dd>If an invalid multibyte character is encountered, the<tt> wcstombs</tt> function returns<tt> (size_t)-1</tt>.&nbsp; Otherwise,
 the<tt> wcstombs</tt> function returns the number of array elements modified, not including the terminating zero code if present.
 </dl>
 <dl>
@@ -57505,8 +57504,8 @@ shall equal zero.&nbsp; If<i> dst</i> is not a null pointer,then<i> dstmax</i> s
 not a null pointer and<i> len</i> is not less than<i> dstmax</i>, then the conversion shall have been stopped (see below)
 because a terminating null wide character was reached or because an encoding error occurred.
 <br><br>If there is a runtime-constraint violation, then<tt> wcstombs_s</tt> does the following.&nbsp; If<i> retval</i> is
-not a null pointer,then<tt> wcstombs_s</tt> sets<i> *retval</i> to (size_t)(-1).&nbsp; If<i> dst</i> is not a null pointer
-and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> wcstombs_s</tt> sets<i> dst&#91;0&#93;</i>
+not a null pointer, then the<tt> wcstombs_s</tt> sets<i> *retval</i> to<tt> (size_t)-1</tt>.&nbsp; If<i> dst</i> is not a
+null pointer and<i> dstmax</i> is greater than zero and less than <tt> RSIZE_MAX</tt>, then<tt> wcstombs_s</tt> sets<i> dst&#91;0&#93;</i>
 to the null character.
 </dl>
 <dl>
@@ -57525,8 +57524,9 @@ is stored into the array pointed to by<i> dst</i> immediately following any mult
 conversion takes place as if by a call to the wcrtomb function.
 <br><br>Regardless of whether<i> dst</i> is or is not a null pointer, if the input conversion encounters a wide character
 that does not correspond to a valid multibyte character, an encoding error occurs:&nbsp; the<tt> wcstombs_s</tt> function
-stores the value (size_t)(-1) into<i> *retval</i>.&nbsp; Otherwise, the<tt> wcstombs_s</tt> function stores into<i> *retval</i>
-the number of bytes in the resulting multibyte character sequence, not including the terminating null character (if any).
+stores the value<tt> (size_t)-1</tt> into<i> *retval</i>.&nbsp; Otherwise, the<tt> wcstombs_s</tt> function stores into<i>
+*retval</i> the number of bytes in the resulting multibyte character sequence, not including the terminating null character
+(if any).
 <br><br>All elements following the terminating null character (if any) written by wcstombs_s in the array of<i> dstmax</i>
 elements pointed to by<i> dst</i> take unspecified values when<tt> wcstombs_s</tt> returns.
 <br><br>If copying takes place between objects that overlap, the objects take on unspecified values.
