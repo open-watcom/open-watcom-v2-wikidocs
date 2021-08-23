@@ -4645,7 +4645,7 @@ for the file can be determined when<i> mode</i> is a combination of the bits:
 <br>With DOS, all files have read permission; it is a good idea to test for read permission anyway, since a later version
 of DOS may support write-only files.
 <br><br>The<tt> _access</tt> function is identical to<tt> access</tt>.&nbsp; Use<tt> _access</tt> for ANSI naming conventions.
-&nbsp;The<tt> _waccess</tt> function is a wide character version of<tt> access</tt> that operates with wide character strings.
+<br><br>The<tt> _waccess</tt> function is a wide character version of<tt> access</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -5492,8 +5492,8 @@ the type of error that has been detected.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> atoi</tt> function converts the string pointed to by<i> ptr</i> to<tt> int</tt> representation.&nbsp; The<tt> _wtoi</tt>
-function is a wide character version of<tt> atoi</tt> that operates with wide character strings.
+<dd>The<tt> atoi</tt> function converts the string pointed to by<i> ptr</i> to<tt> int</tt> representation.
+<br>The<tt> _wtoi</tt> function is a wide character version of<tt> atoi</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -5536,8 +5536,8 @@ function is a wide character version of<tt> atoi</tt> that operates with wide ch
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> atol</tt> function converts the string pointed to by<i> ptr</i> to<tt> long int</tt> representation.&nbsp; The<tt>
-_wtol</tt> function is a wide character version of<tt> atol</tt> that operates with wide character strings.
+<dd>The<tt> atol</tt> function converts the string pointed to by<i> ptr</i> to<tt> long int</tt> representation.
+<br>The<tt> _wtol</tt> function is a wide character version of<tt> atol</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -5580,8 +5580,8 @@ _wtol</tt> function is a wide character version of<tt> atol</tt> that operates w
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> atoll</tt> function converts the string pointed to by<i> ptr</i> to<tt> long long int</tt> representation.&nbsp; The<tt>
-_wtoll</tt> function is a wide character version of<tt> atoll</tt> that operates with wide character strings.
+<dd>The<tt> atoll</tt> function converts the string pointed to by<i> ptr</i> to<tt> long long int</tt> representation.
+<br>The<tt> _wtoll</tt> function is a wide character version of<tt> atoll</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -7539,7 +7539,7 @@ directory on the specified drive or it can be an absolute path name.
 <br>Each drive under DOS, OS/2 or Windows has a current directory.&nbsp; The current working directory is the current directory
 of the current drive.&nbsp; If you wish to change the current drive, you must use the <tt> _dos_setdrive</tt> function.
 <br><br>The<tt> _chdir</tt> function is identical to<tt> chdir</tt>.&nbsp; Use<tt> _chdir</tt> for ANSI naming conventions.
-&nbsp;The<tt> _wchdir</tt> function is a wide character version of<tt> chdir</tt> that operates with wide character strings.
+<br><br>The<tt> _wchdir</tt> function is a wide character version of<tt> chdir</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -7700,7 +7700,7 @@ in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>Upon successful completion, the<tt> chmod</tt> function will mark for update the<i> st_ctime</i> field of the file.
 <br><br>The<tt> _chmod</tt> function is identical to<tt> chmod</tt>.&nbsp; Use<tt> _chmod</tt> for ANSI naming conventions.
-&nbsp;The<tt> _wchmod</tt> function is a wide character version of<tt> chmod</tt> that operates with wide character strings.
+<br><br>The<tt> _wchmod</tt> function is a wide character version of<tt> chmod</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -15732,8 +15732,8 @@ the<i> mode</i> argument), both input and output may be performed on the associa
 <br><br>When a stream is opened in update mode, both reading and writing may be performed.&nbsp; However, writing may not
 be followed by reading without an intervening call to the <tt> fflush</tt> function or to a file positioning function (<tt>
 fseek</tt>, <tt> fsetpos</tt>, <tt> rewind</tt>).&nbsp; Similarly, reading may not be followed by writing without an intervening
-call to a file positioning function, unless the read resulted in end-of-file.&nbsp; The<tt> _wfopen</tt> function is a wide
-character version of<tt> fopen</tt> that operates with wide character strings.
+call to a file positioning function, unless the read resulted in end-of-file.
+<br><br>The<tt> _wfopen</tt> function is a wide character version of<tt> fopen</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -15869,8 +15869,9 @@ the<i> mode</i> argument), both input and output may be performed on the associa
 <br><br>When a stream is opened in update mode, both reading and writing may be performed.&nbsp; However, writing may not
 be followed by reading without an intervening call to the <tt> fflush</tt> function or to a file positioning function (<tt>
 fseek</tt>, <tt> fsetpos</tt>, <tt> rewind</tt>).&nbsp; Similarly, reading may not be followed by writing without an intervening
-call to a file positioning function, unless the read resulted in end-of-file.&nbsp; The<tt> _wfopen_s</tt> function is a wide
-character version of<tt> fopen_s</tt> that operates with wide character strings.
+call to a file positioning function, unless the read resulted in end-of-file.
+<br><br>The<tt> _wfopen_s</tt> function is a wide character version of<tt> fopen_s</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -16674,8 +16675,9 @@ freopen</tt> function.
 <dd>The stream located by the <tt> fp</tt> pointer is closed.&nbsp; The<tt> freopen</tt> function opens the file whose name is
 the string pointed to by<i> filename</i>, and associates a stream with it.&nbsp; The stream information is placed in the structure
 located by the<i> fp</i> pointer.
-<br>The argument<i> mode</i> is described in the description of the <tt> fopen</tt> function.&nbsp; The<tt> _wfreopen</tt>
-function is a wide character version of<tt> freopen</tt> that operates with wide character strings.
+<br>The argument<i> mode</i> is described in the description of the <tt> fopen</tt> function.
+<br><br>The<tt> _wfreopen</tt> function is a wide character version of<tt> freopen</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -16757,8 +16759,9 @@ associated with the stream had been used.&nbsp; It is implementation-defined whi
 and under what circumstances.&nbsp; The<tt> freopen_s</tt> function first attempts to close any file that is associated with<i>
 stream</i>.&nbsp; Failure to close the file is ignored.&nbsp; The error and end-of-file indicators for the stream are cleared.
 &nbsp;If the file was opened successfully, then the pointer to FILE pointed to by<i> newstreamptr</i> will be set to the value
-of stream.&nbsp; Otherwise, the pointer to FILE pointed to by<i> newstreamptr</i> will be set to a null pointer.&nbsp; The<tt>
-_wfreopen_s</tt> function is a wide character version of<tt> freopen_s</tt> that operates with wide character strings.
+of stream.&nbsp; Otherwise, the pointer to FILE pointed to by<i> newstreamptr</i> will be set to a null pointer.
+<br>The<tt> _wfreopen_s</tt> function is a wide character version of<tt> freopen_s</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -17197,8 +17200,8 @@ header file.&nbsp; The following values may be set:
 <dd>Permit both read and write access to the file.
 </dl>
 <br>You should consult the technical documentation for the DOS system that you are using for more detailed information about
-these sharing modes.&nbsp; The<tt> _wfsopen</tt> function is a wide character version of<tt> _fsopen</tt> that operates with
-wide character strings.
+these sharing modes.
+<br><br>The<tt> _wfsopen</tt> function is a wide character version of<tt> _fsopen</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -17650,8 +17653,9 @@ small,<tt> NULL</tt> is returned and <tt> errno</tt> is set.
 <br><br>If<i> buffer</i> is<tt> NULL</tt> then a buffer of size <tt> _MAX_PATH</tt> is allocated using <tt> malloc</tt>.&nbsp;
 This buffer may be freed using the <tt> free</tt> function.
 <br><br>If<i> path</i> is<tt> NULL</tt> or points to a null string (&quot;&quot;) then the current working directory is returned
-in<i> buffer</i>.&nbsp; The<tt> _wfullpath</tt> function is a wide character version of<tt> _fullpath</tt> that operates with
-wide character strings.
+in<i> buffer</i>.
+<br><br>The<tt> _wfullpath</tt> function is a wide character version of<tt> _fullpath</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -18468,9 +18472,9 @@ be used to store this name.&nbsp; An error occurs if the length of the path (inc
 maxlen</i>.
 <br>The maximum size that might be required for<i> buffer</i> is <tt> PATH_MAX</tt> + 1 bytes.
 <br><br><i>Extension:</i>&nbsp; When<i> buffer</i> has a value of<tt> NULL,</tt> a string is allocated using <tt> malloc</tt>
-to contain the name of the current working directory.&nbsp; This string may be freed using the <tt> free</tt> function.&nbsp;
-The<tt> _wgetcwd</tt> function is a wide character version of<tt> getcwd</tt> that operates with wide character strings.&nbsp;
-The<i> maxlen</i> is the length in wide characters (wchar_t).
+to contain the name of the current working directory.&nbsp; This string may be freed using the <tt> free</tt> function.
+<br><br>The<tt> _wgetcwd</tt> function is a wide character version of<tt> getcwd</tt> that operates with wide character strings.
+&nbsp;The<i> maxlen</i> is the length in wide characters (wchar_t).
 </dl>
 <dl>
 <dt>Returns:
@@ -18539,9 +18543,9 @@ the value of<i> maxlen</i> is the length in characters (including the terminatin
 store this name.&nbsp; An error occurs if the length of the path (including the terminating null character) exceeds<i> maxlen</i>.
 <br>The maximum size that might be required for<i> buffer</i> is <tt> PATH_MAX</tt> + 1 bytes.
 <br><br>When<i> buffer</i> has a value of<tt> NULL,</tt> a string is allocated using <tt> malloc</tt> to contain the name
-of the current working directory.&nbsp; This string may be freed using the <tt> free</tt> function.&nbsp; The<tt> _wgetdcwd</tt>
-function is a wide character version of<tt> _getdcwd</tt> that operates with wide character strings.&nbsp; The<i> maxlen</i>
-is the length in wide characters (wchar_t).
+of the current working directory.&nbsp; This string may be freed using the <tt> free</tt> function.
+<br><br>The<tt> _wgetdcwd</tt> function is a wide character version of<tt> _getdcwd</tt> that operates with wide character
+strings.&nbsp; The<i> maxlen</i> is the length in wide characters (wchar_t).
 </dl>
 <dl>
 <dt>Returns:
@@ -20600,12 +20604,12 @@ value from this function.
 <dt>Description:
 <dd>The<tt> gets</tt> function gets a string of characters from the file designated by <tt> stdin</tt> and stores them in the
 array pointed to by<i> buf</i> until end-of-file is encountered or a new-line character is read.&nbsp; Any new-line character
-is discarded, and a null character is placed immediately after the last character read into the array.&nbsp; The<tt> _getws</tt>
-function is a wide character version of<tt> gets</tt> that operates with wide character strings.&nbsp; The<tt> _getws</tt>
-function gets a string of multibyte characters (if present) from the input stream pointed to by <tt> stdin</tt>, converts
-them to wide characters, and stores them in the wide character array pointed to by<i> buf</i> until end-of-file is encountered
-or a wide character new-line character is read.
-<br>It is recommended that <tt> fgets</tt> be used instead of<tt> gets</tt> because data beyond the array<i> buf</i> will
+is discarded, and a null character is placed immediately after the last character read into the array.
+<br>The<tt> _getws</tt> function is a wide character version of<tt> gets</tt> that operates with wide character strings.&nbsp;
+The<tt> _getws</tt> function gets a string of multibyte characters (if present) from the input stream pointed to by <tt> stdin</tt>,
+converts them to wide characters, and stores them in the wide character array pointed to by<i> buf</i> until end-of-file is
+encountered or a wide character new-line character is read.
+<br><br>It is recommended that <tt> fgets</tt> be used instead of<tt> gets</tt> because data beyond the array<i> buf</i> will
 be destroyed if a new-line character is not read from the input stream <tt> stdin</tt> before the end of the array<i> buf</i>
 is reached.
 <br><br>A common programming error is to assume the presence of a new-line character in every string that is read into the
@@ -29682,9 +29686,8 @@ LPSTR cmdline, int cmdshow )</tt>
 <dt>Description:
 <dd>The<tt> _makepath</tt> function constructs a full pathname from the components consisting of a drive letter, directory path,
 file name and file name extension.&nbsp; The full pathname is placed in the buffer pointed to by the argument<i> path</i>.
-&nbsp;The<tt> _wmakepath</tt> function is a wide character version of<tt> _makepath</tt> that operates with wide character
-strings.
-<br>The maximum size required for each buffer is specified by the manifest constants <tt> _MAX_PATH</tt>, <tt> _MAX_DRIVE</tt>,
+<br>The<tt> _wmakepath</tt> function is a wide character version of<tt> _makepath</tt> that operates with wide character strings.
+<br><br>The maximum size required for each buffer is specified by the manifest constants <tt> _MAX_PATH</tt>, <tt> _MAX_DRIVE</tt>,
 <tt> _MAX_DIR</tt>, <tt> _MAX_FNAME</tt>, and <tt> _MAX_EXT</tt> which are defined in<tt> &lt;stdlib.h&gt;.</tt>
 <dl>
 <dt>drive
@@ -31732,7 +31735,7 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return the number of bytes in the string up to the specified number of characters (single-byte, wide, or multi-byte)
+<dd>These functions return the number of bytes in the string up to the specified number of characters (multi-byte, wide, or single-byte)
 or until a null character is encountered.&nbsp; The null character is not included in the count.&nbsp; If the character preceding
 the null character was a lead byte, the lead byte is not included in the count.
 </dl>
@@ -32027,7 +32030,7 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return the number of characters (single-byte, wide, or multi-byte) from the beginning of the string to byte<i>
+<dd>These functions return the number of characters (multi-byte, wide, or single-byte) from the beginning of the string to byte<i>
 n</i>.&nbsp; If these functions find a null character before byte<i> n</i>, they return the number of characters before the
 null character.&nbsp; If the string consists of fewer than<i> n</i> characters, these functions return the number of characters
 in the string.
@@ -32103,7 +32106,7 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strnextc</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return the integer value of the next character (single-byte, wide, or multi-byte) pointed to by<i> string</i>.
+<dd>These functions return the integer value of the next character (multi-byte, wide, or single-byte) pointed to by<i> string</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -32446,8 +32449,8 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strspnp</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters (single-byte, wide, or multi-byte) from<i>
-charset</i> (single-byte, wide, or multi-byte).
+<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters (multi-byte, wide, or single-byte) from<i>
+charset</i> (multi-byte, wide, or single-byte).
 </dl>
 <dl>
 <dt>See Also:
@@ -33006,9 +33009,9 @@ and copied, otherwise it returns NULL.
 <dd>The<tt> memchr</tt> function locates the first occurrence of<i> ch</i> (converted to an unsigned char) in the first<i> length</i>
 characters of the object pointed to by<i> buf</i>.
 <br>The<tt> _fmemchr</tt> function is a data model independent form of the<tt> memchr</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wmemchr</tt>
-function is a wide character version of<tt> memchr</tt> that operates with wide character strings.&nbsp; The argument<i> length</i>
-is interpreted to mean the number of wide characters.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wmemchr</tt> function is a wide character version of<tt> memchr</tt> that operates with wide character strings.
+&nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
 <dl>
 <dt>Returns:
@@ -33074,9 +33077,9 @@ in the object.
 <dd>The<tt> memcmp</tt> function compares the first<i> length</i> characters of the object pointed to by<i> s1</i> to the object
 pointed to by<i> s2</i>.
 <br>The<tt> _fmemcmp</tt> function is a data model independent form of the<tt> memcmp</tt> function that accepts far pointer
-arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wmemcmp</tt> function is a wide character
-version of<tt> memcmp</tt> that operates with wide character strings.&nbsp; The argument<i> length</i> is interpreted to mean
-the number of wide characters.
+arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wmemcmp</tt> function is a wide character version of<tt> memcmp</tt> that operates with wide character strings.
+&nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
 <dl>
 <dt>Returns:
@@ -33145,9 +33148,9 @@ function.
 to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <tt> memmove</tt>
 function if you wish to copy objects that overlap.
 <br>The<tt> _fmemcpy</tt> function is a data model independent form of the<tt> memcpy</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wmemcpy</tt>
-function is a wide character version of<tt> memcpy</tt> that operates with wide character strings.&nbsp; The argument<i> length</i>
-is interpreted to mean the number of wide characters.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wmemcpy</tt> function is a wide character version of<tt> memcpy</tt> that operates with wide character strings.
+&nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
 <dl>
 <dt>Returns:
@@ -33218,9 +33221,9 @@ RSIZE_MAX</tt>.
 <dt>Description:
 <dd>The<tt> memcpy_s</tt> function copies<i> n</i> characters from the buffer pointed to by<i> s2</i> into the buffer pointed
 to by<i> s1</i>.&nbsp; Copying between overlapping objects is not allowed.&nbsp; See the <tt> memmove_s</tt> function if you
-wish to copy objects that overlap.&nbsp; The<tt> wmemcpy_s</tt> function is a wide character version of<tt> memcpy_s</tt>
-that operates with wide character strings.&nbsp; The arguments<i> s1max</i> and<i> n</i> are interpreted to mean the number
-of wide characters.
+wish to copy objects that overlap.
+<br>The<tt> wmemcpy_s</tt> function is a wide character version of<tt> memcpy_s</tt> that operates with wide character strings.
+&nbsp;The arguments<i> s1max</i> and<i> n</i> are interpreted to mean the number of wide characters.
 </dl>
 <dl>
 <dt>Returns:
@@ -33399,9 +33402,9 @@ memmove</tt> function.
 to by<i> dst</i>.&nbsp; Copying of overlapping objects will take place properly.&nbsp; See the <tt> memcpy</tt> function to
 copy objects that do not overlap.
 <br>The<tt> _fmemmove</tt> function is a data model independent form of the<tt> memmove</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wmemmove</tt>
-function is a wide character version of<tt> memmove</tt> that operates with wide character strings.&nbsp; The argument<i>
-length</i> is interpreted to mean the number of wide characters.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wmemmove</tt> function is a wide character version of<tt> memmove</tt> that operates with wide character strings.
+&nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
 <dl>
 <dt>Returns:
@@ -33473,9 +33476,9 @@ RSIZE_MAX</i>.
 to by<i> s1</i>.&nbsp; This copying takes place as if the<i> n</i> characters from the buffer pointed to by<i> s2</i> are
 first copied into a temporary array of<i> n</i> characters that does not overlap the objects pointed to by<i> s1</i> or<i>
 s2</i>, and then the<i> n</i> characters from the temporary array are copied into the object pointed to by<i> s1</i>.
-<br>See the<i> memcpy_s</i> function if you wish to copy objects that do not overlap.&nbsp; The<tt> wmemmove_s</tt> function
-is a wide character version of<tt> memmove_s</tt> that operates with wide character strings.&nbsp; The arguments<i> s1max</i>
-and<i> n</i> are interpreted to mean the number of wide characters.
+<br>See the<i> memcpy_s</i> function if you wish to copy objects that do not overlap.
+<br><br>The<tt> wmemmove_s</tt> function is a wide character version of<tt> memmove_s</tt> that operates with wide character
+strings.&nbsp; The arguments<i> s1max</i> and<i> n</i> are interpreted to mean the number of wide characters.
 </dl>
 <dl>
 <dt>Returns:
@@ -33602,9 +33605,9 @@ one type.
 <dd>The<tt> memset</tt> function fills the first<i> length</i> characters of the object pointed to by<i> dst</i> with the value<i>
 c</i>.
 <br>The<tt> _fmemset</tt> function is a data model independent form of the<tt> memset</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wmemset</tt>
-function is a wide character version of<tt> memset</tt> that operates with wide character strings.&nbsp; The argument<i> length</i>
-is interpreted to mean the number of wide characters.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wmemset</tt> function is a wide character version of<tt> memset</tt> that operates with wide character strings.
+&nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
 <dl>
 <dt>Returns:
@@ -33742,8 +33745,8 @@ is interpreted to mean the number of wide characters.
 <dt>Description:
 <dd>The<tt> mkdir</tt> function creates a new subdirectory with name<i> path</i>.&nbsp; The<i> path</i> can be either relative
 to the current working directory or it can be an absolute path name.
-<br>The<tt> _mkdir</tt> function is identical to<tt> mkdir</tt>.&nbsp; Use<tt> _mkdir</tt> for ANSI naming conventions.&nbsp;
-The<tt> _wmkdir</tt> function is a wide character version of<tt> mkdir</tt> that operates with wide character strings.
+<br>The<tt> _mkdir</tt> function is identical to<tt> mkdir</tt>.&nbsp; Use<tt> _mkdir</tt> for ANSI naming conventions.
+<br><br>The<tt> _wmkdir</tt> function is a wide character version of<tt> mkdir</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -33918,14 +33921,14 @@ name );</tt>
 <dt>Description:
 <dd>The<tt> _mktemp</tt> function creates a unique filename by modifying the<i> template</i> argument.<tt>&nbsp; _mktemp</tt>
 automatically handles multi-byte character string arguments as appropriate, recognizing multi-byte character sequences according
-to the multibyte code page currently in use by the run-time system.&nbsp; The<tt> _wmktemp</tt> function is a wide character
-version of<tt> _mktemp</tt> that operates with wide character strings.
-<br>The string<i> template</i> has the form<tt> baseXXXXXX</tt> where<tt> base</tt> is the fixed part of the generated filename
-and<tt> XXXXXX</tt> is the variable part of the generated filename.&nbsp; Each of the 6 X's is a placeholder for a character
-supplied by _mktemp.&nbsp; Each placeholder character in<i> template</i> must be an uppercase &quot;X&quot;.<tt>&nbsp; _mktemp</tt>
-preserves<tt> base</tt> and replaces the first of the 6 trailing X's with a lowercase alphabetic character (a-z).<tt>&nbsp;
-_mktemp</tt> replaces the following 5 trailing X's with a five-digit value; this value is a unique number identifying the
-calling process or thread.
+to the multibyte code page currently in use by the run-time system.
+<br>The<tt> _wmktemp</tt> function is a wide character version of<tt> _mktemp</tt> that operates with wide character strings.
+<br><br>The string<i> template</i> has the form<tt> baseXXXXXX</tt> where<tt> base</tt> is the fixed part of the generated
+filename and<tt> XXXXXX</tt> is the variable part of the generated filename.&nbsp; Each of the 6 X's is a placeholder for
+a character supplied by _mktemp.&nbsp; Each placeholder character in<i> template</i> must be an uppercase &quot;X&quot;.<tt>
+&nbsp;_mktemp</tt> preserves<tt> base</tt> and replaces the first of the 6 trailing X's with a lowercase alphabetic character
+(a-z).<tt>&nbsp; _mktemp</tt> replaces the following 5 trailing X's with a five-digit value; this value is a unique number
+identifying the calling process or thread.
 <br><br><tt>_mktemp</tt> checks to see if a file with the generated name already exists and if so selects another letter,
 in succession, from &quot;a&quot; to &quot;z&quot; until it finds a file that doesn't exist.&nbsp; If it is unsuccessful at
 finding a name for a file that does not already exist,<tt> _mktemp</tt> returns NULL.&nbsp; At most, 26 unique file names
@@ -39027,8 +39030,8 @@ _pclose</tt> returns (-1) with <tt> errno</tt> set appropriately.
 <dd>The<tt> perror</tt> function prints, on the file designated by <tt> stderr</tt>, the error message corresponding to the error
 number contained in <tt> errno</tt>.&nbsp; The<tt> perror</tt> function writes first the string pointed to by<i> prefix</i>
 to stderr.&nbsp; This is followed by a colon (&quot;:&quot;), a space, the string returned by<tt> strerror(errno)</tt>, and
-a newline character.&nbsp; The<tt> _wperror</tt> function is a wide character version of<tt> perror</tt> that operates with
-wide character strings.
+a newline character.
+<br>The<tt> _wperror</tt> function is a wide character version of<tt> perror</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -42744,8 +42747,8 @@ otherwise, (-1) is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> remove</tt> function deletes the file whose name is the string pointed to by<i> filename</i>.&nbsp; The<tt> _wremove</tt>
-function is a wide character version of<tt> remove</tt> that operates with wide character strings.
+<dd>The<tt> remove</tt> function deletes the file whose name is the string pointed to by<i> filename</i>.
+<br>The<tt> _wremove</tt> function is a wide character version of<tt> remove</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -42782,8 +42785,8 @@ function is a wide character version of<tt> remove</tt> that operates with wide 
 <dl>
 <dt>Description:
 <dd>The<tt> rename</tt> function causes the file whose name is indicated by the string<i> old</i> to be renamed to the name given
-by the string<i> new</i>.&nbsp; The<tt> _wrename</tt> function is a wide character version of<tt> rename</tt> that operates
-with wide character strings.
+by the string<i> new</i>.
+<br>The<tt> _wrename</tt> function is a wide character version of<tt> rename</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -42990,8 +42993,8 @@ mode.
 <dt>Description:
 <dd>The<tt> rmdir</tt> function removes (deletes) the specified directory.&nbsp; The directory must not contain any files or directories.
 &nbsp;The<i> path</i> can be either relative to the current working directory or it can be an absolute path name.
-<br>The<tt> _rmdir</tt> function is identical to<tt> rmdir</tt>.&nbsp; Use<tt> _rmdir</tt> for ANSI naming conventions.&nbsp;
-The<tt> _wrmdir</tt> function is a wide character version of<tt> rmdir</tt> that operates with wide character strings.
+<br>The<tt> _rmdir</tt> function is identical to<tt> rmdir</tt>.&nbsp; Use<tt> _rmdir</tt> for ANSI naming conventions.
+<br><br>The<tt> _wrmdir</tt> function is a wide character version of<tt> rmdir</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -44009,8 +44012,9 @@ each of the directories specified by the environment variable is searched.
 <br><br>The full pathname is placed in the buffer pointed to by the argument<i> pathname</i>.&nbsp; If the specified file
 cannot be found, then<i> pathname</i> will contain an empty string.&nbsp; The<i> pathname</i> buffer should be at least _MAX_PATH
 characters long to accommodate the full length of the constructed path name.&nbsp; Otherwise, _searchenv might overrun the
-pathname buffer and cause unexpected behavior.&nbsp; The<tt> _wsearchenv</tt> function is a wide character version of<tt>
-_searchenv</tt> that operates with wide character strings.
+pathname buffer and cause unexpected behavior.
+<br><br>The<tt> _wsearchenv</tt> function is a wide character version of<tt> _searchenv</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -44882,7 +44886,7 @@ setenv</tt> functions.&nbsp; All entries in the environment list can be obtained
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE=C:\WATCOM\H</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C&gt;</tt>
 <br><br>The<tt> _setenv</tt> function is identical to<tt> setenv</tt>.&nbsp; Use<tt> _setenv</tt> for ANSI naming conventions.
-&nbsp;The<tt> _wsetenv</tt> function is a wide character version of<tt> setenv</tt> that operates with wide character strings.
+<br><br>The<tt> _wsetenv</tt> function is a wide character version of<tt> setenv</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -48144,9 +48148,10 @@ status &gt;&gt; 8 );</tt>
 <dt>Description:
 <dd>The<tt> _splitpath</tt> function splits up a full pathname into four components consisting of a drive letter, directory path,
 file name and file name extension.&nbsp; The argument<i> path</i> points to a buffer containing the full pathname to be split
-up.&nbsp; The<tt> _wsplitpath</tt> function is a wide character version of<tt> _splitpath</tt> that operates with wide character
+up.
+<br>The<tt> _wsplitpath</tt> function is a wide character version of<tt> _splitpath</tt> that operates with wide character
 strings.
-<br>The maximum size required for each buffer is specified by the manifest constants <tt> _MAX_PATH</tt>, <tt> _MAX_DRIVE</tt>
+<br><br>The maximum size required for each buffer is specified by the manifest constants <tt> _MAX_PATH</tt>, <tt> _MAX_DRIVE</tt>
 (or <tt> _MAX_VOLUME</tt> for Netware applications), <tt> _MAX_DIR</tt>, <tt> _MAX_FNAME</tt>, and <tt> _MAX_EXT</tt> which
 are defined in<tt> &lt;stdlib.h&gt;.</tt>
 <dl>
@@ -48273,8 +48278,9 @@ period if an extension is specified in the full pathname (filled in by<tt> _spli
 <br>The arguments<i> drive</i>,<i> dir</i>,<i> fname</i> and<i> ext</i> will not be filled in if they are NULL pointers.
 <br><br>For each component of the full pathname that is not present, its corresponding pointer will be set to point at a NULL
 string ('\0').
-<br><br>This function reduces the amount of memory space required when compared to the <tt> splitpath</tt> function.&nbsp;
-The<tt> _wsplitpath2</tt> function is a wide character version of<tt> _splitpath2</tt> that operates with wide character strings.
+<br><br>This function reduces the amount of memory space required when compared to the <tt> splitpath</tt> function.
+<br><br>The<tt> _wsplitpath2</tt> function is a wide character version of<tt> _splitpath2</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49094,9 +49100,10 @@ function.
 to the end of the string pointed to by<i> dst</i>.&nbsp; The first character of<i> src</i> overwrites the null character at
 the end of<i> dst</i>.
 <br>The<tt> _fstrcat</tt> function is a data model independent form of the<tt> strcat</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcscat</tt>
-function is a wide character version of<tt> strcat</tt> that operates with wide character strings.&nbsp; The<tt> _mbscat</tt>
-function is a multi-byte character version of<tt> strcat</tt> that operates with multi-byte character strings.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcscat</tt> function is a wide character version of<tt> strcat</tt> that operates with wide character strings.
+<br><br>The<tt> _mbscat</tt> function is a multi-byte character version of<tt> strcat</tt> that operates with multi-byte character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49168,8 +49175,8 @@ zero and not greater than <tt> RSIZE_MAX</tt>, then <tt> strcat_s</tt> sets<i> s
 <dd>The<tt> strcat_s</tt> function appends a copy of the string pointed to by<i> s2</i> (including the terminating null character)
 to the end of the string pointed to by<i> s1</i>.&nbsp; The initial character from<i> s2</i> overwrites the null character
 at the end of<i> s1</i>.&nbsp; All elements following the terminating null character (if any) written by<tt> strcat_s</tt>
-in the array of<i> s1max</i> characters pointed to by<i> s1</i> take unspecified values when<tt> strcat_s</tt> returns.&nbsp;
-The<tt> wcscat_s</tt> function is a wide character version of<tt> strcat_s</tt> that operates with wide character strings.
+in the array of<i> s1max</i> characters pointed to by<i> s1</i> take unspecified values when<tt> strcat_s</tt> returns.
+<br>The<tt> wcscat_s</tt> function is a wide character version of<tt> strcat_s</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49227,9 +49234,10 @@ is returned.
 <dd>The<tt> strchr</tt> function locates the first occurrence of<i> c</i> (converted to a char) in the string pointed to by<i>
 s</i>.&nbsp; The terminating null character is considered to be part of the string.
 <br>The<tt> _fstrchr</tt> function is a data model independent form of the<tt> strchr</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcschr</tt>
-function is a wide character version of<tt> strchr</tt> that operates with wide character strings.&nbsp; The<tt> _mbschr</tt>
-function is a multi-byte character version of<tt> strchr</tt> that operates with multi-byte character strings.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcschr</tt> function is a wide character version of<tt> strchr</tt> that operates with wide character strings.
+<br><br>The<tt> _mbschr</tt> function is a multi-byte character version of<tt> strchr</tt> that operates with multi-byte character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49292,9 +49300,10 @@ in the string.
 <dt>Description:
 <dd>The<tt> strcmp</tt> function compares the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 <br>The<tt> _fstrcmp</tt> function is a data model independent form of the<tt> strcmp</tt> function that accepts far pointer
-arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcscmp</tt> function is a wide character
-version of<tt> strcmp</tt> that operates with wide character strings.&nbsp; The<tt> _mbscmp</tt> function is a multi-byte
-character version of<tt> strcmp</tt> that operates with multi-byte character strings.
+arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcscmp</tt> function is a wide character version of<tt> strcmp</tt> that operates with wide character strings.
+<br><br>The<tt> _mbscmp</tt> function is a multi-byte character version of<tt> strcmp</tt> that operates with multi-byte character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49353,8 +49362,8 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-&nbsp;The<tt> strcmpi</tt> function is identical to the <tt> stricmp</tt> function.&nbsp; The<tt> wcscmpi</tt> function is
-a wide character version of<tt> strcmpi</tt> that operates with wide character strings.
+&nbsp;The<tt> strcmpi</tt> function is identical to the <tt> stricmp</tt> function.
+<br>The<tt> wcscmpi</tt> function is a wide character version of<tt> strcmpi</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49410,9 +49419,10 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dt>Description:
 <dd>The<tt> strcoll</tt> function compares the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.&nbsp; The
 comparison uses the collating sequence selected by the <tt> setlocale</tt> function.&nbsp; The function will be equivalent
-to the <tt> strcmp</tt> function when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.&nbsp; The<tt>
-wcscoll</tt> function is a wide character version of<tt> strcoll</tt> that operates with wide character strings.&nbsp; The<tt>
-_mbscoll</tt> function is a multi-byte character version of<tt> strcoll</tt> that operates with multi-byte character strings.
+to the <tt> strcmp</tt> function when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.
+<br>The<tt> wcscoll</tt> function is a wide character version of<tt> strcoll</tt> that operates with wide character strings.
+<br><br>The<tt> _mbscoll</tt> function is a multi-byte character version of<tt> strcoll</tt> that operates with multi-byte
+character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49477,9 +49487,10 @@ function.
 array pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the description
 for the <tt> memmove</tt> function to copy objects that overlap.
 <br>The<tt> _fstrcpy</tt> function is a data model independent form of the<tt> strcpy</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcscpy</tt>
-function is a wide character version of<tt> strcpy</tt> that operates with wide character strings.&nbsp; The<tt> _mbscpy</tt>
-function is a multi-byte character version of<tt> strcpy</tt> that operates with multi-byte character strings.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcscpy</tt> function is a wide character version of<tt> strcpy</tt> that operates with wide character strings.
+<br><br>The<tt> _mbscpy</tt> function is a multi-byte character version of<tt> strcpy</tt> that operates with multi-byte character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49549,8 +49560,8 @@ zero and not greater than <tt> RSIZE_MAX</tt>, then <tt> strcpy_s</tt> sets<i> s
 <dt>Description:
 <dd>The<tt> strcpy_s</tt> function copies the string pointed to by<i> s2</i> (including the terminating null character) into the
 array pointed to by<i> s1</i>.&nbsp; All elements following the terminating null character (if any) written by<tt> strcpy_s</tt>
-in the array of<i> s1max</i> characters pointed to by<i> s1</i> take unspecified values when<tt> strcpy_s</tt> returns.&nbsp;
-The<tt> wcscpy_s</tt> function is a wide character version of<tt> strcpy_s</tt> that operates with wide character strings.
+in the array of<i> s1max</i> characters pointed to by<i> s1</i> take unspecified values when<tt> strcpy_s</tt> returns.
+<br>The<tt> wcscpy_s</tt> function is a wide character version of<tt> strcpy_s</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49614,9 +49625,10 @@ char __far *charset );</tt>
 which consists entirely of characters<i> not</i> from the string pointed to by<i> charset</i>.&nbsp; The terminating null
 character is not considered part of<i> str</i>.
 <br>The<tt> _fstrcspn</tt> function is a data model independent form of the<tt> strcspn</tt> function that accepts far pointer
-arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcscspn</tt> function is a wide character
-version of<tt> strcspn</tt> that operates with wide character strings.&nbsp; The<tt> _mbscspn</tt> function is a multi-byte
-character version of<tt> strcspn</tt> that operates with multi-byte character strings.
+arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcscspn</tt> function is a wide character version of<tt> strcspn</tt> that operates with wide character strings.
+<br><br>The<tt> _mbscspn</tt> function is a multi-byte character version of<tt> strcspn</tt> that operates with multi-byte
+character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49669,8 +49681,8 @@ character version of<tt> strcspn</tt> that operates with multi-byte character st
 <dt>Description:
 <dd>The<tt> _strdate</tt> function copies the current date to the buffer pointed to by<i> datestr</i>.&nbsp; The date is formatted
 as &quot;MM/DD/YY&quot; where &quot;MM&quot; is two digits representing the month, where &quot;DD&quot; is two digits representing
-the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The buffer must be at least 9 bytes long.&nbsp;
-The<tt> _wstrdate</tt> function is a wide character version of<tt> _strdate</tt> that operates with wide character strings.
+the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The buffer must be at least 9 bytes long.
+<br>The<tt> _wstrdate</tt> function is a wide character version of<tt> _strdate</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -49733,7 +49745,7 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strdec</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return a pointer to the previous character (single-byte, wide, or multi-byte).
+<dd>These functions return a pointer to the previous character (multi-byte, wide, or single-byte).
 </dl>
 <dl>
 <dt>See Also:
@@ -49828,9 +49840,10 @@ be freed using the <tt> free</tt> function.&nbsp; For _fstrdup, the memory for t
 _fmalloc</tt> function and can be freed using the <tt> _ffree</tt> function.
 <br>The<tt> _strdup</tt> function is identical to<tt> strdup</tt>.&nbsp; Use<tt> _strdup</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrdup</tt> function is a data model independent form of the<tt> strdup</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.&nbsp; The<tt>
-_mbsdup</tt> function is a multi-byte character version of<tt> strdup</tt> that operates with multi-byte character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsdup</tt> function is a multi-byte character version of<tt> strdup</tt> that operates with multi-byte character
+strings.
 <br><br>The<tt> _fmbsdup</tt> function is a data model independent form of the<tt> _mbsdup</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -49956,8 +49969,9 @@ length of the desired string is less than<i> maxsize</i>, then the string is cop
 Otherwise, if<i> maxsize</i> is greater than zero, then<i> maxsize-1</i> characters are copied from the string to the array
 pointed to by<i> s</i> and then<i> s&#91;maxsize-1&#93;</i> is set to the null character.&nbsp; Then, if<i> maxsize</i> is
 greater than 3, then<i> s&#91;maxsize-2&#93;, s&#91;maxsize-3&#93;</i>, and<i> s&#91;maxsize-4&#93;</i> are set to the character
-period (.).&nbsp; The<tt> wcserror_s</tt> function is a wide character version of<tt> strerror_s</tt> that operates with wide
-character strings.
+period (.).
+<br>The<tt> wcserror_s</tt> function is a wide character version of<tt> strerror_s</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -50013,8 +50027,9 @@ is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> strerrorlen_s</tt> function calculates the length of the (untruncated) locale-specific message string that the <tt>
-strerror_s</tt> function maps to<i> errnum</i>.&nbsp; The<tt> wcserrorlen_s</tt> function is a wide character version of<tt>
-strerrorlen_s</tt> that operates with wide character strings.
+strerror_s</tt> function maps to<i> errnum</i>.
+<br>The<tt> wcserrorlen_s</tt> function is a wide character version of<tt> strerrorlen_s</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -50095,10 +50110,11 @@ string.
 <dl>
 <dt>Description:
 <dd>The<tt> strftime</tt> function formats the time in the argument<i> timeptr</i> into the array pointed to by the argument<i>
-s</i> according to the<i> format</i> argument.&nbsp; The<tt> _wstrftime_ms</tt> function is a wide character version of<tt>
-strftime</tt> that operates with wide character strings.
-<br>The <tt> _wstrftime_ms</tt> function is identical to<tt> _wstrftime_ms</tt> except that the<i> format</i> is not a wide
-character string.
+s</i> according to the<i> format</i> argument.
+<br>The<tt> _wstrftime_ms</tt> function is a wide character version of<tt> strftime</tt> that operates with wide character
+strings.
+<br><br>The <tt> _wstrftime_ms</tt> function is identical to<tt> _wstrftime_ms</tt> except that the<i> format</i> is not a
+wide character string.
 <br><br>The<i> format</i> string consists of zero or more directives and ordinary characters.&nbsp; A directive consists of
 a '%' character followed by a character that determines the substitution that is to take place.&nbsp; All ordinary characters
 are copied unchanged into the array.&nbsp; No more than<i> maxsize</i> characters are placed in the array.&nbsp; The format
@@ -50219,8 +50235,8 @@ that has been detected.
 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, buffer );</tt>
 <br><tt>&nbsp; }</tt>
-<br><br>produces the following:
-<br><tt>Today is Friday December 25, 1987</tt>
+<br>produces the following:
+<br><br><tt>Today is Friday December 25, 1987</tt>
 </dl>
 <dl>
 <dt>Classification:
@@ -50258,9 +50274,10 @@ that has been detected.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
 <br>The<tt> _stricmp</tt> function is identical to<tt> stricmp</tt>.&nbsp; Use<tt> _stricmp</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstricmp</tt> function is a data model independent form of the<tt> stricmp</tt> function that accepts far
-pointer arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> _wcsicmp</tt> function is a wide
-character version of<tt> stricmp</tt> that operates with wide character strings.&nbsp; The<tt> _mbsicmp</tt> function is a
-multi-byte character version of<tt> stricmp</tt> that operates with multi-byte character strings.
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsicmp</tt> function is a wide character version of<tt> stricmp</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsicmp</tt> function is a multi-byte character version of<tt> stricmp</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsicmp</tt> function is a data model independent form of the<tt> _mbsicmp</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -50323,9 +50340,9 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dt>Description:
 <dd>The function performs a comparison without case sensitivity of the string pointed to by<i> s1</i> to the string pointed to
 by<i> s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <tt> _setmbcp</tt> function.&nbsp;
-All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.&nbsp;
-The<tt> _wcsicoll</tt> function is a wide character version of<tt> _stricoll</tt> that operates with wide character strings.
-&nbsp;The<tt> _mbsicoll</tt> function is a multi-byte character version of<tt> _stricoll</tt> that operates with multi-byte
+All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
+<br>The<tt> _wcsicoll</tt> function is a wide character version of<tt> _stricoll</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsicoll</tt> function is a multi-byte character version of<tt> _stricoll</tt> that operates with multi-byte
 character strings.
 </dl>
 <dl>
@@ -50392,7 +50409,7 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strinc</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return a pointer to the next character (single-byte, wide, or multi-byte).
+<dd>These functions return a pointer to the next character (multi-byte, wide, or single-byte).
 </dl>
 <dl>
 <dt>See Also:
@@ -50480,8 +50497,8 @@ j, k;</tt>
 <dd>The<tt> strlcat</tt> function appends characters of the string pointed to by<i> src</i> to the end of the string in a buffer
 pointed to by<i> dst</i> that can hold up to<i> n</i> characters.&nbsp; The first character of<i> src</i> overwrites the null
 character at the end of<i> dst</i>.&nbsp; A terminating null character is always appended to the result, unless<i> n</i> characters
-of<i> dst</i> are scanned and no null character is found.&nbsp; The<tt> wcslcat</tt> function is a wide character version
-of<tt> strlcat</tt> that operates with wide character strings.
+of<i> dst</i> are scanned and no null character is found.
+<br>The<tt> wcslcat</tt> function is a wide character version of<tt> strlcat</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -50538,8 +50555,8 @@ scanned without finding a null character,<i> n</i> is returned.
 pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <tt> memmove</tt>
 function if you wish to copy objects that overlap.
 <br>If the string pointed to by<i> src</i> is longer than<i> n</i> characters, then only<i> n</i> - 1 characters will be copied
-and the result will be null terminated.&nbsp; The<tt> wcslcpy</tt> function is a wide character version of<tt> strlcpy</tt>
-that operates with wide character strings.
+and the result will be null terminated.
+<br><br>The<tt> wcslcpy</tt> function is a wide character version of<tt> strlcpy</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -50596,9 +50613,10 @@ strlen</tt> function.
 <dt>Description:
 <dd>The<tt> strlen</tt> function computes the length of the string pointed to by<i> s</i>.
 <br>The<tt> _fstrlen</tt> function is a data model independent form of the<tt> strlen</tt> function that accepts far pointer
-arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcslen</tt> function is a wide character
-version of<tt> strlen</tt> that operates with wide character strings.&nbsp; The<tt> _mbslen</tt> function is a multi-byte
-character version of<tt> strlen</tt> that operates with multi-byte character strings.
+arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcslen</tt> function is a wide character version of<tt> strlen</tt> that operates with wide character strings.
+<br><br>The<tt> _mbslen</tt> function is a multi-byte character version of<tt> strlen</tt> that operates with multi-byte character
+strings.
 <br><br>The<tt> _fmbslen</tt> function is a data model independent form of the<tt> _mbslen</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -50661,8 +50679,8 @@ pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strnlen_s</tt> function calculates the length of the string pointed to by<i> s</i>.&nbsp; The<tt> wcsnlen_s</tt> function
-is a wide character version of<tt> strnlen_s</tt> that operates with wide character strings.
+<dd>The<tt> strnlen_s</tt> function calculates the length of the string pointed to by<i> s</i>.
+<br>The<tt> wcsnlen_s</tt> function is a wide character version of<tt> strnlen_s</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -50719,9 +50737,10 @@ maxsize</i> characters of<i> s</i> shall be accessed by strnlen_s
 for each character in the string.
 <br>The<tt> _strlwr</tt> function is identical to<tt> strlwr</tt>.&nbsp; Use<tt> _strlwr</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> strlwr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_wcslwr</tt> function is a wide character version of<tt> strlwr</tt> that operates with wide character strings.&nbsp; The<tt>
-_mbslwr</tt> function is a multi-byte character version of<tt> strlwr</tt> that operates with multi-byte character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcslwr</tt> function is a wide character version of<tt> strlwr</tt> that operates with wide character strings.
+<br><br>The<tt> _mbslwr</tt> function is a multi-byte character version of<tt> strlwr</tt> that operates with multi-byte character
+strings.
 <br><br>The<tt> _fmbslwr</tt> function is a data model independent form of the<tt> _mbslwr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -50856,9 +50875,10 @@ strncat</tt> function.
 of the string pointed to by<i> dst</i>.&nbsp; The first character of<i> src</i> overwrites the null character at the end of<i>
 dst</i>.&nbsp; A terminating null character is always appended to the result.
 <br>The<tt> _fstrncat</tt> function is a data model independent form of the<tt> strncat</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcsncat</tt>
-function is a wide character version of<tt> strncat</tt> that operates with wide character strings.&nbsp; The<tt> _mbsncat</tt>
-function is a multi-byte character version of<tt> strncat</tt> that operates with multi-byte character strings.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcsncat</tt> function is a wide character version of<tt> strncat</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsncat</tt> function is a multi-byte character version of<tt> strncat</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsncat</tt> function is a data model independent form of the<tt> _mbsncat</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -50944,8 +50964,8 @@ are not copied) from the array pointed to by<i> s2</i> to the end of the string 
 character from<i> s2</i> overwrites the null character at the end of<i> s1</i>.&nbsp; If no null character was copied from<i>
 s2,then s1&#91;s1max-m+n&#93;</i> is set to a null character.&nbsp; All elements following the terminating null character
 (if any) written by<tt> strncat_s</tt> in the array of<i> s1max</i> characters pointed to by<i> s1</i> take unspecified values
-when<tt> strncat_s</tt> returns.&nbsp; The<tt> wcsncat_s</tt> function is a wide character version of<tt> strncat_s</tt> that
-operates with wide character strings.
+when<tt> strncat_s</tt> returns.
+<br>The<tt> wcsncat_s</tt> function is a wide character version of<tt> strncat_s</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -51012,9 +51032,10 @@ is returned.
 <dd>The<tt> strncmp</tt> compares not more than<i> n</i> characters from the string pointed to by<i> s1</i> to the string pointed
 to by<i> s2</i>.
 <br>The<tt> _fstrncmp</tt> function is a data model independent form of the<tt> strncmp</tt> function that accepts far pointer
-arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcsncmp</tt> function is a wide character
-version of<tt> strncmp</tt> that operates with wide character strings.&nbsp; The<tt> _mbsncmp</tt> function is a multi-byte
-character version of<tt> strncmp</tt> that operates with multi-byte character strings.
+arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcsncmp</tt> function is a wide character version of<tt> strncmp</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsncmp</tt> function is a multi-byte character version of<tt> strncmp</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsncmp</tt> function is a data model independent form of the<tt> _mbsncmp</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -51081,10 +51102,10 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 <dl>
 <dt>Description:
 <dd>These functions compare the first<i> count</i> characters of the string pointed to by<i> s1</i> to the string pointed to by<i>
-s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <tt> _setmbcp</tt> function.&nbsp; The<tt>
-_wcsncoll</tt> function is a wide character version of<tt> _strncoll</tt> that operates with wide character strings.&nbsp;
-The<tt> _mbsncoll</tt> function is a multi-byte character version of<tt> _strncoll</tt> that operates with multi-byte character
-strings.
+s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <tt> _setmbcp</tt> function.
+<br>The<tt> _wcsncoll</tt> function is a wide character version of<tt> _strncoll</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsncoll</tt> function is a multi-byte character version of<tt> _strncoll</tt> that operates with multi-byte
+character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -51170,9 +51191,10 @@ function if you wish to copy objects that overlap.
 the array pointed to by<i> dst</i>, until<i> n</i> characters in all have been written.&nbsp; If the string pointed to by<i>
 src</i> is longer than<i> n</i> characters, then the result will not be terminated by a null character.
 <br><br>The<tt> _fstrncpy</tt> function is a data model independent form of the<tt> strncpy</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-wcsncpy</tt> function is a wide character version of<tt> strncpy</tt> that operates with wide character strings.&nbsp; The<tt>
-_mbsncpy</tt> function is a multi-byte character version of<tt> strncpy</tt> that operates with multi-byte character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcsncpy</tt> function is a wide character version of<tt> strncpy</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsncpy</tt> function is a multi-byte character version of<tt> strncpy</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsncpy</tt> function is a data model independent form of the<tt> _mbsncpy</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -51258,8 +51280,9 @@ zero and not greater than <tt> RSIZE_MAX</tt>, then <tt> strncpy_s</tt> sets<i> 
 are not copied) from the array pointed to by<i> s2</i> to the array pointed to by<i> s1</i>.&nbsp; If no null character was
 copied from<i> s2</i>, then<i> s1&#91;n&#93;</i> is set to a null character.
 <br>All elements following the terminating null character (if any) written by <tt> strncpy_s</tt> in the array of<i> s1max</i>
-characters pointed to by<i> s1</i> take unspecified values when <tt> strncpy_s</tt> returns.&nbsp; The<tt> wcsncpy_s</tt>
-function is a wide character version of<tt> strncpy_s</tt> that operates with wide character strings.
+characters pointed to by<i> s1</i> take unspecified values when <tt> strncpy_s</tt> returns.
+<br><br>The<tt> wcsncpy_s</tt> function is a wide character version of<tt> strncpy_s</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -51338,9 +51361,11 @@ for at most<i> len</i> characters.&nbsp; All uppercase characters from<i> s1</i>
 the purposes of doing the comparison.
 <br>The<tt> _strnicmp</tt> function is identical to<tt> strnicmp</tt>.&nbsp; Use<tt> _strnicmp</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrnicmp</tt> function is a data model independent form of the<tt> strnicmp</tt> function that accepts far
-pointer arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> _wcsnicmp</tt> function is a
-wide character version of<tt> strnicmp</tt> that operates with wide character strings.&nbsp; The<tt> _mbsnicmp</tt> function
-is a multi-byte character version of<tt> strnicmp</tt> that operates with multi-byte character strings.
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsnicmp</tt> function is a wide character version of<tt> strnicmp</tt> that operates with wide character
+strings.
+<br><br>The<tt> _mbsnicmp</tt> function is a multi-byte character version of<tt> strnicmp</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsnicmp</tt> function is a data model independent form of the<tt> _mbsnicmp</tt> function that accepts
 far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -51408,9 +51433,11 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dd>The function performs a comparison without case sensitivity of the first<i> count</i> characters of the string pointed to
 by<i> s1</i> to the string pointed to by<i> s2</i>.&nbsp; The comparison uses the current code page which can be selected
 by the <tt> _setmbcp</tt> function.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for
-the purposes of doing the comparison.&nbsp; The<tt> _wcsnicoll</tt> function is a wide character version of<tt> _strnicoll</tt>
-that operates with wide character strings.&nbsp; The<tt> _mbsnicoll</tt> function is a multi-byte character version of<tt>
-_strnicoll</tt> that operates with multi-byte character strings.
+the purposes of doing the comparison.
+<br>The<tt> _wcsnicoll</tt> function is a wide character version of<tt> _strnicoll</tt> that operates with wide character
+strings.
+<br><br>The<tt> _mbsnicoll</tt> function is a multi-byte character version of<tt> _strnicoll</tt> that operates with multi-byte
+character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -51478,8 +51505,8 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strninc</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return a pointer to<i> str</i> after it has been incremented by<i> count</i> of characters (single-byte, wide,
-or multi-byte) or <tt> NULL</tt> if<i> str</i> was <tt> NULL</tt>.&nbsp; If<i> count</i> exceeds the number of characters
+<dd>These functions return a pointer to<i> str</i> after it has been incremented by<i> count</i> of characters (multi-byte, wide,
+or single-byte) or <tt> NULL</tt> if<i> str</i> was <tt> NULL</tt>.&nbsp; If<i> count</i> exceeds the number of characters
 remaining in the string, the result is undefined.
 </dl>
 <dl>
@@ -51586,11 +51613,11 @@ value.&nbsp; When the value of<i> count</i> is greater than the length of the st
 that number of characters at the start of the string are set to the fill character.
 <br>The<tt> _strnset</tt> function is identical to<tt> strnset</tt>.&nbsp; Use<tt> _strnset</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrnset</tt> function is a data model independent form of the<tt> strnset</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_wcsnset</tt> function is a wide character version of<tt> strnset</tt> that operates with wide character strings.&nbsp; For
-_wcsnset, the value of<i> count</i> is the number of wide characters to fill.&nbsp; This is half the number of bytes.&nbsp;
-The<tt> _mbsnset</tt> function is a multi-byte character version of<tt> strnset</tt> that operates with multi-byte character
-strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsnset</tt> function is a wide character version of<tt> strnset</tt> that operates with wide character strings.
+&nbsp;For _wcsnset, the value of<i> count</i> is the number of wide characters to fill.&nbsp; This is half the number of bytes.
+<br><br>The<tt> _mbsnset</tt> function is a multi-byte character version of<tt> strnset</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsnset</tt> function is a data model independent form of the<tt> _mbsnset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>For _mbsnset, the value of<i> count</i> is the number of multibyte characters to fill.&nbsp; If the number of bytes
@@ -51664,9 +51691,10 @@ const unsigned char __far *charset );</tt>
 <dd>The<tt> strpbrk</tt> function locates the first occurrence in the string pointed to by<i> str</i> of any character from the
 string pointed to by<i> charset</i>.
 <br>The<tt> _fstrpbrk</tt> function is a data model independent form of the<tt> strpbrk</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcspbrk</tt>
-function is a wide character version of<tt> strpbrk</tt> that operates with wide character strings.&nbsp; The<tt> _mbspbrk</tt>
-function is a multi-byte character version of<tt> strpbrk</tt> that operates with multi-byte character strings.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcspbrk</tt> function is a wide character version of<tt> strpbrk</tt> that operates with wide character strings.
+<br><br>The<tt> _mbspbrk</tt> function is a multi-byte character version of<tt> strpbrk</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbspbrk</tt> function is a data model independent form of the<tt> _mbspbrk</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -51738,9 +51766,10 @@ occurs in<i> str</i>.
 <dd>The<tt> strrchr</tt> function locates the last occurrence of<i> c</i> (converted to a char) in the string pointed to by<i>
 s</i>.&nbsp; The terminating null character is considered to be part of the string.
 <br>The<tt> _fstrrchr</tt> function is a data model independent form of the<tt> strrchr</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcsrchr</tt>
-function is a wide character version of<tt> strrchr</tt> that operates with wide character strings.&nbsp; The<tt> _mbsrchr</tt>
-function is a multi-byte character version of<tt> strrchr</tt> that operates with multi-byte character strings.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcsrchr</tt> function is a wide character version of<tt> strrchr</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsrchr</tt> function is a multi-byte character version of<tt> strrchr</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsrchr</tt> function is a data model independent form of the<tt> _mbsrchr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -51802,9 +51831,10 @@ in the string.
 <dd>The<tt> strrev</tt> function replaces the string<i> s1</i> with a string whose characters are in the reverse order.
 <br>The<tt> _strrev</tt> function is identical to<tt> strrev</tt>.&nbsp; Use<tt> _strrev</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrrev</tt> function is a data model independent form of the<tt> strrev</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_wcsrev</tt> function is a wide character version of<tt> strrev</tt> that operates with wide character strings.&nbsp; The<tt>
-_mbsrev</tt> function is a multi-byte character version of<tt> strrev</tt> that operates with multi-byte character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsrev</tt> function is a wide character version of<tt> strrev</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsrev</tt> function is a multi-byte character version of<tt> strrev</tt> that operates with multi-byte character
+strings.
 <br><br>The<tt> _fmbsrev</tt> function is a data model independent form of the<tt> _mbsrev</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -51867,9 +51897,10 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 null character in the original string remains unchanged.
 <br>The<tt> _strset</tt> function is identical to<tt> strset</tt>.&nbsp; Use<tt> _strset</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrset</tt> function is a data model independent form of the<tt> strset</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_wcsset</tt> function is a wide character version of<tt> strset</tt> that operates with wide character strings.&nbsp; The<tt>
-_mbsset</tt> function is a multi-byte character version of<tt> strset</tt> that operates with multi-byte character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsset</tt> function is a wide character version of<tt> strset</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsset</tt> function is a multi-byte character version of<tt> strset</tt> that operates with multi-byte character
+strings.
 <br><br>The<tt> _fmbsset</tt> function is a data model independent form of the<tt> _mbsset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -51939,9 +51970,10 @@ __far *charset );</tt>
 which consists of characters from the string pointed to by<i> charset</i>.&nbsp; The terminating null character is not considered
 to be part of<i> charset</i>.
 <br>The<tt> _fstrspn</tt> function is a data model independent form of the<tt> strspn</tt> function that accepts far pointer
-arguments.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcsspn</tt> function is a wide character
-version of<tt> strspn</tt> that operates with wide character strings.&nbsp; The<tt> _mbsspn</tt> function is a multi-byte
-character version of<tt> strspn</tt> that operates with multi-byte character strings.
+arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcsspn</tt> function is a wide character version of<tt> strspn</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsspn</tt> function is a multi-byte character version of<tt> strspn</tt> that operates with multi-byte character
+strings.
 <br><br>The<tt> _fmbsspn</tt> function is a data model independent form of the<tt> _mbsspn</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -52060,9 +52092,10 @@ const unsigned char __far *substr );</tt>
 <dd>The<tt> strstr</tt> function locates the first occurrence in the string pointed to by<i> str</i> of the sequence of characters
 (excluding the terminating null character) in the string pointed to by<i> substr</i>.
 <br>The<tt> _fstrstr</tt> function is a data model independent form of the<tt> strstr</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt> wcsstr</tt>
-function is a wide character version of<tt> strstr</tt> that operates with wide character strings.&nbsp; The<tt> _mbsstr</tt>
-function is a multi-byte character version of<tt> strstr</tt> that operates with multi-byte character strings.
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcsstr</tt> function is a wide character version of<tt> strstr</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsstr</tt> function is a multi-byte character version of<tt> strstr</tt> that operates with multi-byte character
+strings.
 <br><br>The<tt> _fmbsstr</tt> function is a data model independent form of the<tt> _mbsstr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -52115,8 +52148,8 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dd>The<tt> _strtime</tt> function copies the current time to the buffer pointed to by<i> timestr</i>.&nbsp; The time is formatted
 as &quot;HH:MM:SS&quot; where &quot;HH&quot; is two digits representing the hour in 24-hour notation, where &quot;MM&quot;
 is two digits representing the minutes past the hour, and where &quot;SS&quot; is two digits representing seconds.&nbsp; The
-buffer must be at least 9 bytes long.&nbsp; The<tt> _wstrtime</tt> function is a wide character version of<tt> _strtime</tt>
-that operates with wide character strings.
+buffer must be at least 9 bytes long.
+<br>The<tt> _wstrtime</tt> function is a wide character version of<tt> _strtime</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52194,8 +52227,8 @@ be returned.&nbsp; This case can be distinguished from overflow by checking <tt>
 <br><br>For a hexadecimal floating-point number, the optional exponent is binary (that is, denotes a power of two), not decimal.
 <br><br>A pointer to the final string (following the subject sequence) will be stored in the object to which<i> endptr</i>
 points if<i> endptr</i> is not<tt> NULL.</tt>&nbsp; By comparing the &quot;end&quot; pointer with<i> ptr</i>, it can be determined
-how much of the string, if any, was scanned by the<tt> strtod</tt> function.&nbsp; The<tt> wcstod</tt> function is a wide
-character version of<tt> strtod</tt> that operates with wide character strings.
+how much of the string, if any, was scanned by the<tt> strtod</tt> function.
+<br><br>The<tt> wcstod</tt> function is a wide character version of<tt> strtod</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52293,16 +52326,17 @@ is a NULL pointer.
 &nbsp;This pointer is used internally by the function for subsequent calls to perform tokenizing without relying on internal
 state within the function.
 <br><br>The<tt> _fstrtok</tt> function is a data model independent form of the<tt> strtok</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-wcstok</tt> function is a wide character version of<tt> strtok</tt> that operates with wide character strings.&nbsp; The third
-argument<i> ptr</i> points to a caller-provided <tt> wchar_t</tt> pointer into which the<tt> wcstok</tt> function stores information
-necessary for it to continue scanning the same wide string.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> wcstok</tt> function is a wide character version of<tt> strtok</tt> that operates with wide character strings.
+&nbsp;The third argument<i> ptr</i> points to a caller-provided <tt> wchar_t</tt> pointer into which the<tt> wcstok</tt> function
+stores information necessary for it to continue scanning the same wide string.
 <br><br>On the first call in the sequence of calls to wcstok,<i> s1</i> points to a wide string.&nbsp; In subsequent calls
 for the same string,<i> s1</i> must be NULL.&nbsp; If<i> s1</i> is NULL, the value pointed to by<i> ptr</i> matches that set
 by the previous call to<tt> wcstok</tt> for the same wide string.&nbsp; Otherwise, the value of<i> ptr</i> is ignored.&nbsp;
 The list of delimiters pointed to by<i> s2</i> may be different from one call to the next.&nbsp; The tokenization of<i> s1</i>
-is similar to that for the<tt> strtok</tt> function.&nbsp; The<tt> _mbstok_r</tt> function is a multi-byte character version
-of<tt> strtok</tt> that operates with multi-byte character strings.
+is similar to that for the<tt> strtok</tt> function.
+<br><br>The<tt> _mbstok_r</tt> function is a multi-byte character version of<tt> strtok</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbstok_r</tt> function is a data model independent form of the<tt> _mbstok_r</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -52416,8 +52450,9 @@ to by<i> s1</i>, and subsequent searches in the same string for a token return a
 found, it is overwritten by a null character, which terminates the current token.&nbsp; In all cases, the<tt> strtok_s</tt>
 function stores sufficient information in the pointer pointed to by<i> ptr</i> so that subsequent calls, with a null pointer
 for<i> s1</i> and the unmodified pointer value for<i> ptr</i>, shall start searching
-<br>just past the element overwritten by a null character (if any).&nbsp; The<tt> wcstok_s</tt> function is a wide character
-version of<tt> strtok_s</tt> that operates with wide character strings.
+<br>just past the element overwritten by a null character (if any).
+<br><br>The<tt> wcstok_s</tt> function is a wide character version of<tt> strtok_s</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52499,7 +52534,7 @@ is '0', the digits are treated as octal.&nbsp; Otherwise the digits are treated 
 <br><br>If<i> base</i> is not zero, it must have a value between 2 and 36.&nbsp; The letters a-z and A-Z represent the values
 10 through 35.&nbsp; Only those letters whose designated values are less than<i> base</i> are permitted.&nbsp; If the value
 of<i> base</i> is 16, the characters &quot;0x&quot; or &quot;0X&quot; may optionally precede the sequence of letters and digits.
-&nbsp;The<tt> wcstol</tt> function is a wide character version of<tt> strtol</tt> that operates with wide character strings.
+<br><br>The<tt> wcstol</tt> function is a wide character version of<tt> strtol</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52567,7 +52602,7 @@ is '0', the digits are treated as octal.&nbsp; Otherwise the digits are treated 
 <br><br>If<i> base</i> is not zero, it must have a value between 2 and 36.&nbsp; The letters a-z and A-Z represent the values
 10 through 35.&nbsp; Only those letters whose designated values are less than<i> base</i> are permitted.&nbsp; If the value
 of<i> base</i> is 16, the characters &quot;0x&quot; or &quot;0X&quot; may optionally precede the sequence of letters and digits.
-&nbsp;The<tt> wcstoll</tt> function is a wide character version of<tt> strtoll</tt> that operates with wide character strings.
+<br><br>The<tt> wcstoll</tt> function is a wide character version of<tt> strtoll</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52634,7 +52669,7 @@ is '0', the digits are treated as octal.&nbsp; Otherwise the digits are treated 
 <br><br>If<i> base</i> is not zero, it must have a value between 2 and 36.&nbsp; The letters a-z and A-Z represent the values
 10 through 35.&nbsp; Only those letters whose designated values are less than<i> base</i> are permitted.&nbsp; If the value
 of<i> base</i> is 16, the characters &quot;0x&quot; or &quot;0X&quot; may optionally precede the sequence of letters and digits.
-&nbsp;The<tt> wcstoimax</tt> function is a wide character version of<tt> strtoimax</tt> that operates with wide character
+<br><br>The<tt> wcstoimax</tt> function is a wide character version of<tt> strtoimax</tt> that operates with wide character
 strings.
 </dl>
 <dl>
@@ -52700,8 +52735,8 @@ are treated as octal.&nbsp; Otherwise the digits are treated as decimal.
 values 10 through 35.&nbsp; Only those letters whose designated values are less than<i> base</i> are permitted.&nbsp; If the
 value of<i> base</i> is 16, the characters &quot;0x&quot; or &quot;0X&quot; may optionally precede the sequence of letters
 and digits.
-<br><br>If there is a leading minus sign in the string, the value is negated.&nbsp; The<tt> wcstoul</tt> function is a wide
-character version of<tt> strtoul</tt> that operates with wide character strings.
+<br><br>If there is a leading minus sign in the string, the value is negated.
+<br><br>The<tt> wcstoul</tt> function is a wide character version of<tt> strtoul</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52765,8 +52800,9 @@ are treated as octal.&nbsp; Otherwise the digits are treated as decimal.
 values 10 through 35.&nbsp; Only those letters whose designated values are less than<i> base</i> are permitted.&nbsp; If the
 value of<i> base</i> is 16, the characters &quot;0x&quot; or &quot;0X&quot; may optionally precede the sequence of letters
 and digits.
-<br><br>If there is a leading minus sign in the string, the value is negated.&nbsp; The<tt> wcstoull</tt> function is a wide
-character version of<tt> strtoull</tt> that operates with wide character strings.
+<br><br>If there is a leading minus sign in the string, the value is negated.
+<br><br>The<tt> wcstoull</tt> function is a wide character version of<tt> strtoull</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52830,8 +52866,9 @@ are treated as octal.&nbsp; Otherwise the digits are treated as decimal.
 values 10 through 35.&nbsp; Only those letters whose designated values are less than<i> base</i> are permitted.&nbsp; If the
 value of<i> base</i> is 16, the characters &quot;0x&quot; or &quot;0X&quot; may optionally precede the sequence of letters
 and digits.
-<br><br>If there is a leading minus sign in the string, the value is negated.&nbsp; The<tt> wcstoumax</tt> function is a wide
-character version of<tt> strtoumax</tt> that operates with wide character strings.
+<br><br>If there is a leading minus sign in the string, the value is negated.
+<br><br>The<tt> wcstoumax</tt> function is a wide character version of<tt> strtoumax</tt> that operates with wide character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52886,9 +52923,10 @@ errno</tt> is set to <tt> EDOM</tt>.
 for each character in the string.
 <br>The<tt> _strupr</tt> function is identical to<tt> strupr</tt>.&nbsp; Use<tt> _strupr</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> strupr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_wcsupr</tt> function is a wide character version of<tt> strupr</tt> that operates with wide character strings.&nbsp; The<tt>
-_mbsupr</tt> function is a multi-byte character version of<tt> strupr</tt> that operates with multi-byte character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsupr</tt> function is a wide character version of<tt> strupr</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsupr</tt> function is a multi-byte character version of<tt> strupr</tt> that operates with multi-byte character
+strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52949,11 +52987,11 @@ buffer pointed to by<i> dst</i>.&nbsp; The transformation uses the collating seq
 function so that two transformed strings will compare identically (using the <tt> strncmp</tt> function) to a comparison of
 the original two strings using the <tt> strcoll</tt> function.&nbsp; The function will be equivalent to the <tt> strncpy</tt>
 function (except there is no padding of the<i> dst</i> argument with null characters when the argument<i> src</i> is shorter
-than<i> n</i> characters) when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.&nbsp; The<tt> wcsxfrm</tt>
-function is a wide character version of<tt> strxfrm</tt> that operates with wide character strings.&nbsp; For wcsxfrm, after
-the string transformation, a call to <tt> wcscmp</tt> with the two transformed strings yields results identical to those of
-a call to <tt> wcscoll</tt> applied to the original two strings.<tt>&nbsp; wcsxfrm</tt> and<tt> strxfrm</tt> behave identically
-otherwise.
+than<i> n</i> characters) when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.
+<br>The<tt> wcsxfrm</tt> function is a wide character version of<tt> strxfrm</tt> that operates with wide character strings.
+&nbsp;For wcsxfrm, after the string transformation, a call to <tt> wcscmp</tt> with the two transformed strings yields results
+identical to those of a call to <tt> wcscoll</tt> applied to the original two strings.<tt>&nbsp; wcsxfrm</tt> and<tt> strxfrm</tt>
+behave identically otherwise.
 </dl>
 <dl>
 <dt>Returns:
@@ -53207,8 +53245,8 @@ is present (&quot;COMMAND.COM&quot; in DOS and Windows 95/98 or &quot;CMD.EXE&qu
 to it for processing.&nbsp; This function uses <tt> spawnl</tt> to load a copy of the command processor identified by the
 <tt> COMSPEC</tt> environment variable.
 <br><br>This means that any command that can be entered to DOS can be executed, including programs, DOS commands and batch
-files.&nbsp; The <tt> exec...</tt>&nbsp; and <tt> spawn...</tt>&nbsp; functions can only cause programs to be executed.&nbsp;
-The<tt> _wsystem</tt> function is a wide character version of<tt> system</tt> that operates with wide character strings.
+files.&nbsp; The <tt> exec...</tt>&nbsp; and <tt> spawn...</tt>&nbsp; functions can only cause programs to be executed.
+<br><br>The<tt> _wsystem</tt> function is a wide character version of<tt> system</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -54096,7 +54134,7 @@ to<tt> tmpnam</tt> reuse the internal buffer.&nbsp;
 <dt>Description:
 <dd>The<tt> tolower</tt> function converts<i> c</i> to a lowercase letter if<i> c</i> represents an uppercase letter.
 <br>The<tt> _tolower</tt> function is a version of<tt> tolower</tt> to be used only when<i> c</i> is known to be uppercase.
-&nbsp;The<tt> towlower</tt> function is a wide character version of<tt> tolower</tt> that operates with wide character strings.
+<br><br>The<tt> towlower</tt> function is a wide character version of<tt> tolower</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -54162,7 +54200,7 @@ letter when the argument is a wide character uppercase letter; otherwise, the or
 <dt>Description:
 <dd>The<tt> toupper</tt> function converts<i> c</i> to a uppercase letter if<i> c</i> represents a lowercase letter.
 <br>The<tt> _toupper</tt> function is a version of<tt> toupper</tt> to be used only when<i> c</i> is known to be lowercase.
-&nbsp;The<tt> towupper</tt> function is a wide character version of<tt> toupper</tt> that operates with wide character strings.
+<br><br>The<tt> towupper</tt> function is a wide character version of<tt> toupper</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -54830,7 +54868,7 @@ will be detected by the function <tt> kbhit</tt>.&nbsp; Only the last character 
 <dd>The<tt> unlink</tt> function deletes the file whose name is the string pointed to by<i> path</i>.&nbsp; This function is equivalent
 to the <tt> remove</tt> function.
 <br>The<tt> _unlink</tt> function is identical to<tt> unlink</tt>.&nbsp; Use<tt> _unlink</tt> for ANSI naming conventions.
-&nbsp;The<tt> _wunlink</tt> function is a wide character version of<tt> unlink</tt> that operates with wide character strings.
+<br><br>The<tt> _wunlink</tt> function is a wide character version of<tt> unlink</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
