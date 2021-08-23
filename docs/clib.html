@@ -1399,7 +1399,7 @@ following functions are defined:
 <dd>copy a string
 <dt><br><a href="#strcspn">strcspn</a>
 <dd>get number of string characters not from a set of characters
-<dt><br><a href="#_strdec">_strdec</a>
+<dt><br>_strdec (see <a href="#_mbsdec">_mbsdec</a>)
 <dd>returns pointer to the previous character in string
 <dt><br>_strdup (see <a href="#strdup">strdup</a>)
 <dd>allocate and duplicate a string
@@ -1407,7 +1407,7 @@ following functions are defined:
 <dd>get error message as string
 <dt><br>_stricmp (see <a href="#stricmp">stricmp</a>)
 <dd>compare two strings with case insensitivity
-<dt><br><a href="#_strinc">_strinc</a>
+<dt><br>_strinc (see <a href="#_mbsinc">_mbsinc</a>)
 <dd>return pointer to next character in string
 <dt><br><a href="#strlcat">strlcat</a>
 <dd>concatenate string into a bounded buffer
@@ -1429,7 +1429,7 @@ following functions are defined:
 <dd>return integer value of the next character in string
 <dt><br>_strnicmp (see <a href="#strnicmp">strnicmp</a>)
 <dd>compare two strings with case insensitivity up to a maximum length
-<dt><br><a href="#_strninc">_strninc</a>
+<dt><br>_strninc (see <a href="#_mbsninc">_mbsninc</a>)
 <dd>increment character pointer by &quot;n&quot; characters
 <dt><br>_strnset (see <a href="#strnset">strnset</a>)
 <dd>fill string with character to a maximum length
@@ -1491,7 +1491,7 @@ for.&nbsp; The following functions are defined:
 <dd>copy a string
 <dt><br>wcscspn (see <a href="#strcspn">strcspn</a>)
 <dd>get number of string characters not from a set of characters
-<dt><br>_wcsdec (see <a href="#_strdec">_strdec</a>)
+<dt><br>_wcsdec (see <a href="#_mbsdec">_mbsdec</a>)
 <dd>returns pointer to the previous character in string
 <dt><br>_wcsdup (see <a href="#strdup">strdup</a>)
 <dd>allocate and duplicate a string
@@ -1499,7 +1499,7 @@ for.&nbsp; The following functions are defined:
 <dd>get error message as string
 <dt><br>_wcsicmp (see <a href="#stricmp">stricmp</a>)
 <dd>compare two strings with case insensitivity
-<dt><br>_wcsinc (see <a href="#_strinc">_strinc</a>)
+<dt><br>_wcsinc (see <a href="#_mbsinc">_mbsinc</a>)
 <dd>return pointer to next character in string
 <dt><br>wcslcat (see <a href="#strlcat">strlcat</a>)
 <dd>concatenate string into a bounded buffer
@@ -1521,7 +1521,7 @@ for.&nbsp; The following functions are defined:
 <dd>return integer value of the next multi-byte character in string
 <dt><br>_wcsnicmp (see <a href="#strnicmp">strnicmp</a>)
 <dd>compare two strings with case insensitivity up to a maximum length
-<dt><br>_wcsninc (see <a href="#_strninc">_strninc</a>)
+<dt><br>_wcsninc (see <a href="#_mbsninc">_mbsninc</a>)
 <dd>increment wide character pointer by &quot;n&quot; characters
 <dt><br>_wcsnset (see <a href="#strnset">strnset</a>)
 <dd>fill string with character to a maximum length
@@ -1567,13 +1567,13 @@ for.&nbsp; The following functions are defined:
 <dd>copy far string
 <dt><br>_fmbscspn (see <a href="#strcspn">strcspn</a>)
 <dd>get number of string characters not from a set of characters
-<dt><br>_fmbsdec (see <a href="#_strdec">_strdec</a>)
+<dt><br>_fmbsdec (see <a href="#_mbsdec">_mbsdec</a>)
 <dd>returns far pointer to the previous character in far string
 <dt><br>_fmbsdup (see <a href="#strdup">strdup</a>)
 <dd>allocate and duplicate a far string
 <dt><br>_fmbsicmp (see <a href="#stricmp">stricmp</a>)
 <dd>compare two far strings with case insensitivity
-<dt><br>_fmbsinc (see <a href="#_strinc">_strinc</a>)
+<dt><br>_fmbsinc (see <a href="#_mbsinc">_mbsinc</a>)
 <dd>return far pointer to next character in far string
 <dt><br>_fmbslen (see <a href="#strlen">strlen</a>)
 <dd>length of a far string
@@ -1603,7 +1603,7 @@ for.&nbsp; The following functions are defined:
 <dd>return integer value of the next multi-byte character in far string
 <dt><br>_fmbsnicmp (see <a href="#strnicmp">strnicmp</a>)
 <dd>compare two far strings with case insensitivity up to a maximum length
-<dt><br>_fmbsninc (see <a href="#_strninc">_strninc</a>)
+<dt><br>_fmbsninc (see <a href="#_mbsninc">_mbsninc</a>)
 <dd>increment wide character far pointer by &quot;n&quot; characters
 <dt><br>_fmbsnset (see <a href="#strnset">strnset</a>)
 <dd>fill far string with character to a maximum length
@@ -1653,13 +1653,13 @@ for.&nbsp; The following functions are defined:
 <dd>copy a string
 <dt><br>_mbscspn (see <a href="#strcspn">strcspn</a>)
 <dd>get number of string characters not from a set of characters
-<dt><br>_mbsdec (see <a href="#_strdec">_strdec</a>)
+<dt><br><a href="#_mbsdec">_mbsdec</a>
 <dd>returns pointer to the previous character in string
 <dt><br>_mbsdup (see <a href="#strdup">strdup</a>)
 <dd>allocate and duplicate a string
 <dt><br>_mbsicmp (see <a href="#stricmp">stricmp</a>)
 <dd>compare two strings with case insensitivity
-<dt><br>_mbsinc (see <a href="#_strinc">_strinc</a>)
+<dt><br><a href="#_mbsinc">_mbsinc</a>
 <dd>return pointer to next character in string
 <dt><br><a href="#mbsinit">mbsinit</a>
 <dd>determine if mbstate_t object describes an initial conversion state
@@ -1691,7 +1691,7 @@ for.&nbsp; The following functions are defined:
 <dd>return integer value of the next multi-byte character in string
 <dt><br>_mbsnicmp (see <a href="#strnicmp">strnicmp</a>)
 <dd>compare two strings with case insensitivity up to a maximum length
-<dt><br>_mbsninc (see <a href="#_strninc">_strninc</a>)
+<dt><br><a href="#_mbsninc">_mbsninc</a>
 <dd>increment wide character pointer by &quot;n&quot; characters
 <dt><br>_mbsnset (see <a href="#strnset">strnset</a>)
 <dd>fill string with up to &quot;n&quot; multibyte characters
@@ -15555,32 +15555,32 @@ would cause an overflow.
 <dd>
 <br><tt>#include &lt;fnmatch.h&gt;</tt>
 <br><tt>int fnmatch( const char *pattern,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *string, int flags );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *s, int flags );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> fnmatch</tt> function checks the string specified by the<i> string</i> argument to see if it matches the pattern specified
+<dd>The<tt> fnmatch</tt> function checks the string specified by the<i> s</i> argument to see if it matches the pattern specified
 by the<i> pattern</i> argument.
 <br>The<i> flag</i> argument is a bitwise inclusive OR of the bits described below.&nbsp; It modifies the interpretation of<i>
-pattern</i> and<i> string</i>.
+pattern</i> and<i> s</i>.
 <dl>
 <dt><b><i>Flag&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>FNM_PATHNAME
-<dd>If set, a path separator in<i> string</i> is explicitly matched by a slash in<i> pattern</i>.&nbsp; It isn't matched by either
+<dd>If set, a path separator in<i> s</i> is explicitly matched by a slash in<i> pattern</i>.&nbsp; It isn't matched by either
 the asterisk or question mark special characters, or by a bracket expression.
 <dt><br>FNM_PERIOD
-<dd>If set, a leading period in<i> string</i> matches a period in<i> pattern</i>, where the definition of &quot;leading&quot;
-depends on FNM_PATHNAME:
+<dd>If set, a leading period in<i> s</i> matches a period in<i> pattern</i>, where the definition of &quot;leading&quot; depends
+on FNM_PATHNAME:
 <ul>
-<li>If FNM_PATHNAME is set, a period is leading if it's the first character in<i> string</i>, or if it immediately follows
-a path separator.
-<li>If FNM_PATHNAME isn't set, a period is leading only if it's the first character in<i> string</i>.
+<li>If FNM_PATHNAME is set, a period is leading if it's the first character in<i> s</i>, or if it immediately follows a path
+separator.
+<li>If FNM_PATHNAME isn't set, a period is leading only if it's the first character in<i> s</i>.
 </ul>
 <dt><br>FNM_NOESCAPE
 <dd>If set, disables backslash escaping:
 <ul>
 <li>If FNM_NOESCAPE isn't set in<i> flags</i>, a backslash character (\) in<i> pattern</i> followed by any other character
-matches that second character in<i> string</i>.&nbsp; In particular, \\ matches a backslash in<i> string</i>.
+matches that second character in<i> s</i>.&nbsp; In particular, \\ matches a backslash in<i> s</i>.
 <li>If FNM_NOESCAPE is set, a backslash character is treated as an ordinary character.
 </ul>
 <dt><br>FNM_IGNORECASE
@@ -15588,7 +15588,7 @@ matches that second character in<i> string</i>.&nbsp; In particular, \\ matches 
 <dt><br>FNM_CASEFOLD
 <dd>A synonym for FNM_IGNORECASE.
 <dt><br>FNM_LEADING_DIR
-<dd>If set, the final path separator and any following characters in<i> string</i> are ignored during matching.
+<dd>If set, the final path separator and any following characters in<i> s</i> are ignored during matching.
 </dl>
 <br>A pattern-matching special character that is quoted is a pattern that matches the special character itself.&nbsp; When
 not quoted, such special characters have special meaning in the specification of patterns.&nbsp; The pattern-matching special
@@ -15621,8 +15621,8 @@ aaaad</tt> and<tt> adddd.</tt>
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> fnmatch</tt> function returns zero when<i> string</i> matches the pattern specified by<i> pattern</i>.&nbsp; If there
-is no match, FNM_NOMATCH is returned.&nbsp; If an error occurs, fnmatch returns another non-zero value.
+<dd>The<tt> fnmatch</tt> function returns zero when<i> s</i> matches the pattern specified by<i> pattern</i>.&nbsp; If there is
+no match, FNM_NOMATCH is returned.&nbsp; If an error occurs, fnmatch returns another non-zero value.
 </dl>
 <dl>
 <dt>Example:
@@ -30937,7 +30937,7 @@ returns a single-byte character.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbgetcode</tt> function places the next single- or double-byte character from the start of the Kanji string specified
+<dd>The<tt> _mbgetcode</tt> function places the next single-byte or double-byte character from the start of the Kanji string specified
 by<i> mbstr</i> in the wide character pointed to by<i> dbchp</i>.&nbsp; If the second-half of a double-byte character is NULL,
 then the returned wide character is NULL.
 <br>The<tt> _fmbgetcode</tt> function is a data model independent form of the<tt> _mbgetcode</tt> function.&nbsp; It accepts
@@ -31113,8 +31113,8 @@ and non-zero otherwise.&nbsp; If<i> s</i> is not a NULL pointer, the<tt> mblen</
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbputchar</tt> function places the next single- or double-byte character specified by<i> dbch</i> at the start of
-the buffer specified by<i> mbstr</i>.
+<dd>The<tt> _mbputchar</tt> function places the next single-byte or double-byte character specified by<i> dbch</i> at the start
+of the buffer specified by<i> mbstr</i>.
 <br>The<tt> _fmbputchar</tt> function is a data model independent form of the<tt> _mbputchar</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -31541,6 +31541,325 @@ only the byte at offset<i> count</i> in<i> mbstr</i>, ignoring invalid character
 <dd><tt> _mbsbtype - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsbtype - DOS, Windows, OS/2 1.x(all)</tt>
 </dl>
+<h2 id="_mbsdec"> _mbsdec, _fmbsdec, _strdec, _wcsdec </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><tt>unsigned char *_mbsdec( const unsigned char *start,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; const unsigned char *current );</tt>
+<br><tt>unsigned char __far *_fmbsdec( const unsigned char __far *start,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *current );</tt>
+<br><tt>#include &lt;tchar.h&gt;</tt>
+<br><tt>char *_strdec( const char *start, const char *current );</tt>
+<br><tt>wchar_t *_wcsdec( const wchar_t *start,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t
+*current );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> _mbsdec</tt> function returns a pointer to the previous multi-byte character in the multi-byte character string pointed
+to by<i> start</i> which must precede<i> current</i>.&nbsp; The current multi-byte character in the string is pointed to by<i>
+current</i>.&nbsp; You must ensure that<i> current</i> does not point into the middle of a multi-byte or wide character.
+<br>The<tt> _fmbsdec</tt> function is a data model independent form of the<tt> _mbsdec</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsdec</tt>.
+<br><br>This macro maps to<tt> _mbsdec</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsdec</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strdec</tt> macro.
+<br><tt>_strdec</tt> and<tt> _wcsdec</tt> are single-byte character string and wide character string versions of<tt> _mbsdec</tt>.
+<br>The<tt> _strdec</tt> and<tt> _wcsdec</tt> macros are provided only for this mapping and should not be used otherwise.
+</dl>
+<dl>
+<dt>Returns:
+<dd>These functions return a pointer to the previous character (multi-byte, wide, or single-byte).
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>, <a href="#_strninc">_strninc</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;mbctype.h&gt;</tt>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><br><tt>const unsigned char chars&#91;&#93; = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
+<br><tt>};</tt>
+<br><br><tt>#define SIZE sizeof( chars ) / sizeof( unsigned char )</tt>
+<br><br><tt>void main()</tt>
+<br><tt>&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+j, k;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; const unsigned char *prev;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; prev = &amp;chars&#91; SIZE - 1 &#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; do {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev = _mbsdec( chars, prev );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mblen( prev, MB_CUR_MAX );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *prev;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *(prev)&lt;&lt;8 | *(prev+1);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Previous character %#6.4x\n&quot;, k );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; } while( prev != chars );</tt>
+<br><tt>&nbsp; }</tt>
+<br><br>produces the following:
+<br><br><tt>Previous character 0xe0a1</tt>
+<br><tt>Previous character 0x00df</tt>
+<br><tt>Previous character 0x00a6</tt>
+<br><tt>Previous character 0x00a1</tt>
+<br><tt>Previous character 0x8342</tt>
+<br><tt>Previous character 0x82a6</tt>
+<br><tt>Previous character 0x8260</tt>
+<br><tt>Previous character 0x8140</tt>
+<br><tt>Previous character 0x0041</tt>
+<br><tt>Previous character 0x0031</tt>
+<br><tt>Previous character 0x002e</tt>
+<br><tt>Previous character 0x0020</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd><tt> _mbsdec - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<br><tt>_fmbsdec - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>_strdec - MACRO</tt>
+<br><tt>_wcsdec - MACRO</tt>
+</dl>
+<h2 id="_mbsinc"> _mbsinc, _fmbsinc, _strinc, _wcsinc </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><tt>unsigned char *_mbsinc( const unsigned char *current );</tt>
+<br><tt>unsigned char __far *_fmbsinc( const unsigned char __far *current );</tt>
+<br><tt>#include &lt;tchar.h&gt;</tt>
+<br><tt>char *_strinc( const char *current );</tt>
+<br><tt>wchar_t *_wcsinc( const wchar_t *current );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> _mbsinc</tt> function returns a pointer to the next multi-byte character in the string pointed to by<i> current</i>.
+&nbsp;You must ensure that<i> current</i> does not point into the middle of a multi-byte or wide character.
+<br>The<tt> _fmbsinc</tt> function is a data model independent form of the<tt> _mbsinc</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsinc</tt>.
+<br><br>This macro maps to<tt> _mbsinc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsinc</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strinc</tt> macro.
+<br><tt>_strinc</tt> and<tt> _wcsinc</tt> are single-byte character string and wide character string versions of<tt> _mbsinc</tt>.
+<br>The<tt> _strinc</tt> and<tt> _wcsinc</tt> macros are provided only for this mapping and should not be used otherwise.
+</dl>
+<dl>
+<dt>Returns:
+<dd>These functions return a pointer to the next character (multi-byte, wide, or single-byte).
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>, <a href="#_strninc">_strninc</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;mbctype.h&gt;</tt>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><br><tt>const unsigned char chars&#91;&#93; = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
+<br><tt>};</tt>
+<br><br><tt>#define SIZE sizeof( chars ) / sizeof( unsigned char )</tt>
+<br><br><tt>void main()</tt>
+<br><tt>&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+j, k;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; const unsigned char *next;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; next = chars;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; do {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next = _mbsinc( next );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mblen( next, MB_CUR_MAX );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *next;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *(next)&lt;&lt;8 | *(next+1);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Next character %#6.4x\n&quot;, k );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; } while( next != &amp;chars&#91; SIZE - 1 &#93; );</tt>
+<br><tt>&nbsp; }</tt>
+<br><br>produces the following:
+<br><br><tt>Next character 0x002e</tt>
+<br><tt>Next character 0x0031</tt>
+<br><tt>Next character 0x0041</tt>
+<br><tt>Next character 0x8140</tt>
+<br><tt>Next character 0x8260</tt>
+<br><tt>Next character 0x82a6</tt>
+<br><tt>Next character 0x8342</tt>
+<br><tt>Next character 0x00a1</tt>
+<br><tt>Next character 0x00a6</tt>
+<br><tt>Next character 0x00df</tt>
+<br><tt>Next character 0xe0a1</tt>
+<br><tt>Next character&nbsp;&nbsp; 0000</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd><tt> _mbsinc - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux, RDOS</tt>
+<br><tt>_fmbsinc - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>_strinc - MACRO</tt>
+<br><tt>_wcsinc - MACRO</tt>
+</dl>
+<h2 id="mbsinit"> mbsinit, sisinit </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;wchar.h&gt;</tt>
+<br><tt>int mbsinit( const mbstate_t *ps );</tt>
+<br><tt>int sisinit( const mbstate_t *ps );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>If<i> ps</i> is not a null pointer, the<tt> mbsinit</tt> function determines whether the pointed-to <tt> mbstate_t</tt> object
+describes an initial conversion state.
+</dl>
+<dl>
+<dt>Returns:
+<dd>The<tt> mbsinit</tt> function returns nonzero if<i> ps</i> is a null pointer or if the pointed-to object describes an initial
+conversion state; otherwise, it returns zero.
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#_mbccmp">_mbccmp</a>, <a href="#_mbccpy">_mbccpy</a>, <a href="#_mbcicmp">_mbcicmp</a>, <a href="#_mbcjistojms">_mbcjistojms</a>,
+<a href="#_mbcjmstojis">_mbcjmstojis</a>, <a href="#_mbclen">_mbclen</a>, <a href="#_mbctohira">_mbctohira</a>, <a href="#_mbctokata">_mbctokata</a>,
+<a href="#_mbctolower">_mbctolower</a>, <a href="#_mbctombb">_mbctombb</a>, <a href="#_mbctoupper">_mbctoupper</a>, <a href="#mblen">mblen</a>,
+<a href="#mbrlen">mbrlen</a>, <a href="#mbrtowc">mbrtowc</a>, <a href="#mbsrtowcs">mbsrtowcs</a>, <a href="#mbsrtowcs_s">mbsrtowcs_s</a>,
+<a href="#mbstowcs">mbstowcs</a>, <a href="#mbstowcs_s">mbstowcs_s</a>, <a href="#mbtowc">mbtowc</a>, <a href="#btowc">btowc</a>,
+<a href="#wcrtomb">wcrtomb</a>, <a href="#wcrtomb_s">wcrtomb_s</a>, <a href="#wcsrtombs">wcsrtombs</a>, <a href="#wcsrtombs_s">wcsrtombs_s</a>,
+<a href="#wcstombs">wcstombs</a>, <a href="#wcstombs_s">wcstombs_s</a>, <a href="#wctob">wctob</a>, <a href="#wctomb">wctomb</a>,
+<a href="#wctomb_s">wctomb_s</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;wchar.h&gt;</tt>
+<br><tt>#include &lt;mbctype.h&gt;</tt>
+<br><tt>#include &lt;errno.h&gt;</tt>
+<br><br><tt>const char chars&#91;&#93; = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
+<br><tt>};</tt>
+<br><br><tt>void main( void )</tt>
+<br><tt>{</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i, j, k;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; pwc;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; mbstate_t&nbsp;&nbsp; pstate = { 0 };</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; j = 1;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; for( i = 0; j &gt; 0; i += j ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;We are %sin an initial conversion state\n&quot;,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mbsinit( &amp;pstate ) ? &quot;not
+&quot; : &quot;&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mbrtowc( &amp;pwc, &amp;chars&#91;i&#93;, MB_CUR_MAX, &amp;pstate );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%d bytes in character &quot;, j );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( errno == EILSEQ ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot; - illegal multibyte character\n&quot; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = chars&#91;i&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = chars&#91;i&#93;&lt;&lt;8 | chars&#91;i+1&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;(%#6.4x-&gt;%#6.4x)\n&quot;, k, pwc );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>}</tt>
+<br><br>produces the following:
+<br><br><tt>We are in an initial conversion state</tt>
+<br><tt>1 bytes in character (0x0020-&gt;0x0020)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>1 bytes in character (0x002e-&gt;0x002e)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>1 bytes in character (0x0031-&gt;0x0031)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>1 bytes in character (0x0041-&gt;0x0041)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>2 bytes in character (0x8140-&gt;0x3000)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>2 bytes in character (0x8260-&gt;0xff21)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>2 bytes in character (0x82a6-&gt;0x3048)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>2 bytes in character (0x8342-&gt;0x30a3)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>1 bytes in character (0x00a1-&gt;0xff61)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>1 bytes in character (0x00a6-&gt;0xff66)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>1 bytes in character (0x00df-&gt;0xff9f)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>2 bytes in character (0xe0a1-&gt;0x720d)</tt>
+<br><tt>We are in an initial conversion state</tt>
+<br><tt>0 bytes in character (&nbsp; 0000-&gt;&nbsp; 0000)</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>ISO C95
+<br>sisinit is WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd><tt> mbsinit - All, Linux, RDOS, Netware</tt>
+<br><tt>sisinit - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+</dl>
 <h2 id="_mbsnbcat"> _mbsnbcat, _fmbsnbcat </h2>
 <dl>
 <dt>Synopsis:
@@ -31713,17 +32032,15 @@ to <tt> _mbsncmp</tt>, except that<tt> _mbsnbcmp</tt> compares strings by length
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>size_t _mbsnbcnt( const unsigned char *string, size_t n );</tt>
-<br><tt>size_t _fmbsnbcnt( const unsigned char __far *string,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t
-n );</tt>
+<br><tt>size_t _mbsnbcnt( const unsigned char *s, size_t n );</tt>
+<br><tt>size_t _fmbsnbcnt( const unsigned char __far *s, size_t n );</tt>
 <br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>size_t _strncnt( const char *string, size_t n );</tt>
-<br><tt>size_t _wcsncnt( const wchar_t *string, size_t n ) {</tt>
+<br><tt>size_t _strncnt( const char *s, size_t n );</tt>
+<br><tt>size_t _wcsncnt( const wchar_t *s, size_t n );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbsnbcnt</tt> function counts the number of bytes in the first<i> n</i> multi-byte characters of the string<i> string</i>.
+<dd>The<tt> _mbsnbcnt</tt> function counts the number of bytes in the first<i> n</i> multi-byte characters of the string<i> s</i>.
 <br><i>Note:</i>&nbsp; This function was called <tt> mtob</tt> in earlier versions.
 <br><br>The<tt> _fmbsnbcnt</tt> function is a data model independent form of the<tt> _mbsnbcnt</tt> function that accepts
 far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
@@ -31938,12 +32255,12 @@ except that<tt> _mbsnbicmp</tt> compares strings by length in bytes rather than 
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsnbset( unsigned char *str,</tt>
+<br><tt>unsigned char *_mbsnbset( unsigned char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
-<br><tt>unsigned char __far *_fmbsnbset( unsigned char __far *str,</tt>
+<br><tt>unsigned char __far *_fmbsnbset( unsigned char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -31951,7 +32268,7 @@ except that<tt> _mbsnbicmp</tt> compares strings by length in bytes rather than 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbsnbset</tt> function fills the string<i> str</i> with the value of the argument<i> fill</i>.&nbsp; When the value
+<dd>The<tt> _mbsnbset</tt> function fills the string<i> s</i> with the value of the argument<i> fill</i>.&nbsp; When the value
 of<i> len</i> is greater than the length of the string, the entire string is filled.&nbsp; Otherwise, that number of characters
 at the start of the string are set to the fill character.
 <br><tt>_mbsnbset</tt> is similar to <tt> _mbsnset</tt>, except that it fills in<i> count</i> bytes rather than<i> count</i>
@@ -31962,7 +32279,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 </dl>
 <dl>
 <dt>Returns:
-<dd>The address of the original string<i> str</i> is returned.
+<dd>The address of the original string<i> s</i> is returned.
 </dl>
 <dl>
 <dt>See Also:
@@ -32008,15 +32325,15 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>size_t _mbsnccnt( const unsigned char *string, size_t n );</tt>
-<br><tt>size_t _fmbsnccnt( const unsigned char __far *string, size_t n );</tt>
+<br><tt>size_t _mbsnccnt( const unsigned char *s, size_t n );</tt>
+<br><tt>size_t _fmbsnccnt( const unsigned char __far *s, size_t n );</tt>
 <br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>size_t _strncnt( const char *string, size_t n );</tt>
-<br><tt>size_t _wcsncnt( const wchar_t *string, size_t n ) {</tt>
+<br><tt>size_t _strncnt( const char *s, size_t n );</tt>
+<br><tt>size_t _wcsncnt( const wchar_t *s, size_t n );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbsnccnt</tt> function counts the number of multi-byte characters in the first<i> n</i> bytes of the string<i> string</i>.
+<dd>The<tt> _mbsnccnt</tt> function counts the number of multi-byte characters in the first<i> n</i> bytes of the string<i> s</i>.
 &nbsp;If<tt> _mbsnccnt</tt> finds a null byte as the second byte of a double-byte character, the first (lead) byte is not
 included in the count.
 <br><i>Note:</i>&nbsp; This function was called <tt> btom</tt> in earlier versions.
@@ -32085,15 +32402,15 @@ in the string.
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned int _mbsnextc( const unsigned char *string );</tt>
-<br><tt>unsigned int _fmbsnextc( const unsigned char __far *string );</tt>
+<br><tt>unsigned int _mbsnextc( const unsigned char *s );</tt>
+<br><tt>unsigned int _fmbsnextc( const unsigned char __far *s );</tt>
 <br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>unsigned int _strnextc( const char *string );</tt>
-<br><tt>unsigned int _wcsnextc( const wchar_t *string ) {</tt>
+<br><tt>unsigned int _strnextc( const char *s );</tt>
+<br><tt>unsigned int _wcsnextc( const wchar_t *s ) {</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbsnextc</tt> function returns the integer value of the next multi-byte character in<i> string</i>, without advancing
+<dd>The<tt> _mbsnextc</tt> function returns the integer value of the next multi-byte character in<i> s</i>, without advancing
 the string pointer.<tt>&nbsp; _mbsnextc</tt> recognizes multi-byte character sequences according to the multi-byte character
 code page currently in use.
 <br>The<tt> _fmbsnextc</tt> function is a data model independent form of the<tt> _mbsnextc</tt> function that accepts far
@@ -32106,7 +32423,7 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strnextc</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return the integer value of the next character (multi-byte, wide, or single-byte) pointed to by<i> string</i>.
+<dd>These functions return the integer value of the next character (multi-byte, wide, or single-byte) pointed to by<i> s</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -32155,6 +32472,108 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strnextc</tt> macro.
 <br><tt>_fmbsnextc - DOS, Windows, OS/2 1.x(all)</tt>
 <br><tt>_strnextc - MACRO</tt>
 <br><tt>_wcsnextc - MACRO</tt>
+</dl>
+<h2 id="_mbsninc"> _mbsninc, _fmbsninc, _strninc, _wcsninc </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><tt>unsigned char *_mbsninc( const unsigned char *s, size_t count );</tt>
+<br><tt>unsigned char __far *_fmbsninc( const unsigned char __far *s,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
+<br><tt>#include &lt;tchar.h&gt;</tt>
+<br><tt>char *_strninc( const char *s, size_t count );</tt>
+<br><tt>wchar_t *_wcsninc( const wchar_t *s, size_t count );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> _mbsninc</tt> function increments<i> s</i> by<i> count</i> of multi-byte characters.<tt>&nbsp; _mbsninc</tt> recognizes
+multi-byte character sequences according to the multi-byte character code page currently in use.
+<br>The<tt> _fmbsninc</tt> function is a data model independent form of the<tt> _mbsninc</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsninc</tt>.
+<br><br>This macro maps to<tt> _mbsninc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsninc</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strninc</tt> macro.
+<br><tt>_strninc</tt> and<tt> _wcsninc</tt> are single-byte character string and wide character string versions of<tt> _mbsninc</tt>.
+<br>The<tt> _strninc</tt> and<tt> _wcsninc</tt> macros are provided only for this mapping and should not be used otherwise.
+</dl>
+<dl>
+<dt>Returns:
+<dd>These functions return a pointer to<i> s</i> after it has been incremented by<i> count</i> of characters (multi-byte, wide,
+or single-byte) or <tt> NULL</tt> if<i> s</i> was <tt> NULL</tt>.&nbsp; If<i> count</i> exceeds the number of characters remaining
+in the string, the result is undefined.
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>, <a href="#_strninc">_strninc</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;mbctype.h&gt;</tt>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><br><tt>const unsigned char chars&#91;&#93; = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
+<br><tt>};</tt>
+<br><br><tt>#define SIZE sizeof( chars ) / sizeof( unsigned char )</tt>
+<br><br><tt>void main()</tt>
+<br><tt>&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+j, k;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; const unsigned char *next;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; next = chars;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; do {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next = _mbsninc( next, 1 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mblen( next, MB_CUR_MAX );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *next;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *(next)&lt;&lt;8 | *(next+1);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Next character %#6.4x\n&quot;, k );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; } while( next != &amp;chars&#91; SIZE - 1 &#93; );</tt>
+<br><tt>&nbsp; }</tt>
+<br><br>produces the following:
+<br><br><tt>Next character 0x002e</tt>
+<br><tt>Next character 0x0031</tt>
+<br><tt>Next character 0x0041</tt>
+<br><tt>Next character 0x8140</tt>
+<br><tt>Next character 0x8260</tt>
+<br><tt>Next character 0x82a6</tt>
+<br><tt>Next character 0x8342</tt>
+<br><tt>Next character 0x00a1</tt>
+<br><tt>Next character 0x00a6</tt>
+<br><tt>Next character 0x00df</tt>
+<br><tt>Next character 0xe0a1</tt>
+<br><tt>Next character&nbsp;&nbsp; 0000</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd><tt> _mbsninc - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<br><tt>_fmbsninc - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>_strninc - MACRO</tt>
+<br><tt>_wcsninc - MACRO</tt>
 </dl>
 <h2 id="mbsrtowcs"> mbsrtowcs, _fmbsrtowcs </h2>
 <dl>
@@ -32420,24 +32839,24 @@ is returned.
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsspnp( const unsigned char *str,</tt>
+<br><tt>unsigned char *_mbsspnp( const unsigned char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *charset );</tt>
 <br><tt>unsigned char __far *_fmbsspnp(</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-const unsigned char __far *str,</tt>
+const unsigned char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 const unsigned char __far *charset );</tt>
 <br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>char *_strspnp( const char *str,</tt>
+<br><tt>char *_strspnp( const char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *charset );</tt>
-<br><tt>wchar_t *_wcsspnp( const wchar_t *str,</tt>
+<br><tt>wchar_t *_wcsspnp( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const
 wchar_t *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _mbsspnp</tt> function returns a pointer to the first multi-byte character in<i> str</i> that does not belong to the
+<dd>The<tt> _mbsspnp</tt> function returns a pointer to the first multi-byte character in<i> s</i> that does not belong to the
 set of multi-byte characters in<i> charset</i>.&nbsp; The terminating null character is not considered to be part of<i> charset</i>.
 <br>The<tt> _fmbsspnp</tt> function is a data model independent form of the<tt> _mbsspnp</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
@@ -32449,7 +32868,7 @@ _UNICODE</tt> has been defined, otherwise it maps to<tt> _strspnp</tt> macro.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters (multi-byte, wide, or single-byte) from<i>
+<dd>These functions return<tt> NULL</tt> if<i> s</i> consists entirely of characters (multi-byte, wide, or single-byte) from<i>
 charset</i> (multi-byte, wide, or single-byte).
 </dl>
 <dl>
@@ -37754,13 +38173,13 @@ address space.
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;math.h&gt;</tt>
-<br><tt>float nanf( const char *str );</tt>
-<br><tt>double nan( const char *str );</tt>
-<br><tt>long double nanl( const char *str );</tt>
+<br><tt>float nanf( const char *s );</tt>
+<br><tt>double nan( const char *s );</tt>
+<br><tt>long double nanl( const char *s );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> nan</tt> function returns not-a-number, or NAN.&nbsp; The argument<i> str</i> is ignored.
+<dd>The<tt> nan</tt> function returns not-a-number, or NAN.&nbsp; The argument<i> s</i> is ignored.
 </dl>
 <dl>
 <dt>Returns:
@@ -47165,122 +47584,6 @@ stream.
 <dt>Systems:
 <dd>Math
 </dl>
-<h2 id="mbsinit"> mbsinit, sisinit </h2>
-<dl>
-<dt>Synopsis:
-<dd>
-<br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>int mbsinit( const mbstate_t *ps );</tt>
-<br><tt>int sisinit( const mbstate_t *ps );</tt>
-</dl>
-<dl>
-<dt>Description:
-<dd>If<i> ps</i> is not a null pointer, the<tt> mbsinit</tt> function determines whether the pointed-to <tt> mbstate_t</tt> object
-describes an initial conversion state.
-</dl>
-<dl>
-<dt>Returns:
-<dd>The<tt> mbsinit</tt> function returns nonzero if<i> ps</i> is a null pointer or if the pointed-to object describes an initial
-conversion state; otherwise, it returns zero.
-</dl>
-<dl>
-<dt>See Also:
-<dd><a href="#_mbccmp">_mbccmp</a>, <a href="#_mbccpy">_mbccpy</a>, <a href="#_mbcicmp">_mbcicmp</a>, <a href="#_mbcjistojms">_mbcjistojms</a>,
-<a href="#_mbcjmstojis">_mbcjmstojis</a>, <a href="#_mbclen">_mbclen</a>, <a href="#_mbctohira">_mbctohira</a>, <a href="#_mbctokata">_mbctokata</a>,
-<a href="#_mbctolower">_mbctolower</a>, <a href="#_mbctombb">_mbctombb</a>, <a href="#_mbctoupper">_mbctoupper</a>, <a href="#mblen">mblen</a>,
-<a href="#mbrlen">mbrlen</a>, <a href="#mbrtowc">mbrtowc</a>, <a href="#mbsrtowcs">mbsrtowcs</a>, <a href="#mbsrtowcs_s">mbsrtowcs_s</a>,
-<a href="#mbstowcs">mbstowcs</a>, <a href="#mbstowcs_s">mbstowcs_s</a>, <a href="#mbtowc">mbtowc</a>, <a href="#btowc">btowc</a>,
-<a href="#wcrtomb">wcrtomb</a>, <a href="#wcrtomb_s">wcrtomb_s</a>, <a href="#wcsrtombs">wcsrtombs</a>, <a href="#wcsrtombs_s">wcsrtombs_s</a>,
-<a href="#wcstombs">wcstombs</a>, <a href="#wcstombs_s">wcstombs_s</a>, <a href="#wctob">wctob</a>, <a href="#wctomb">wctomb</a>,
-<a href="#wctomb_s">wctomb_s</a>
-</dl>
-<dl>
-<dt>Example:
-<dd>
-<br><tt>#include &lt;stdio.h&gt;</tt>
-<br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>#include &lt;mbctype.h&gt;</tt>
-<br><tt>#include &lt;errno.h&gt;</tt>
-<br><br><tt>const char chars&#91;&#93; = {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
-<br><tt>};</tt>
-<br><br><tt>void main( void )</tt>
-<br><tt>{</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i, j, k;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; pwc;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; mbstate_t&nbsp;&nbsp; pstate = { 0 };</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; j = 1;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; for( i = 0; j &gt; 0; i += j ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;We are %sin an initial conversion state\n&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mbsinit( &amp;pstate ) ? &quot;not
-&quot; : &quot;&quot; );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mbrtowc( &amp;pwc, &amp;chars&#91;i&#93;, MB_CUR_MAX, &amp;pstate );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%d bytes in character &quot;, j );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( errno == EILSEQ ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot; - illegal multibyte character\n&quot; );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = chars&#91;i&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = chars&#91;i&#93;&lt;&lt;8 | chars&#91;i+1&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;(%#6.4x-&gt;%#6.4x)\n&quot;, k, pwc );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; }</tt>
-<br><tt>}</tt>
-<br><br>produces the following:
-<br><br><tt>We are in an initial conversion state</tt>
-<br><tt>1 bytes in character (0x0020-&gt;0x0020)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>1 bytes in character (0x002e-&gt;0x002e)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>1 bytes in character (0x0031-&gt;0x0031)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>1 bytes in character (0x0041-&gt;0x0041)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>2 bytes in character (0x8140-&gt;0x3000)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>2 bytes in character (0x8260-&gt;0xff21)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>2 bytes in character (0x82a6-&gt;0x3048)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>2 bytes in character (0x8342-&gt;0x30a3)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>1 bytes in character (0x00a1-&gt;0xff61)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>1 bytes in character (0x00a6-&gt;0xff66)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>1 bytes in character (0x00df-&gt;0xff9f)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>2 bytes in character (0xe0a1-&gt;0x720d)</tt>
-<br><tt>We are in an initial conversion state</tt>
-<br><tt>0 bytes in character (&nbsp; 0000-&gt;&nbsp; 0000)</tt>
-</dl>
-<dl>
-<dt>Classification:
-<dd>ISO C95
-<br>sisinit is WATCOM
-</dl>
-<dl>
-<dt>Systems:
-<dd><tt> mbsinit - All, Linux, RDOS, Netware</tt>
-<br><tt>sisinit - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
-</dl>
 <h2 id="sleep"> sleep </h2>
 <dl>
 <dt>Synopsis:
@@ -49602,28 +49905,28 @@ is returned.
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>size_t strcspn( const char *str,</tt>
+<br><tt>size_t strcspn( const char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *charset );</tt>
-<br><tt>size_t _fstrcspn( const char __far *str,</tt>
+<br><tt>size_t _fstrcspn( const char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char
 __far *charset );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>size_t wcscspn( const wchar_t *str,</tt>
+<br><tt>size_t wcscspn( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *charset
 );</tt>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>size_t _mbscpsn( const unsigned char *str,</tt>
+<br><tt>size_t _mbscpsn( const unsigned char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char
 *charset );</tt>
-<br><tt>size_t _fmbscpsn( const unsigned char __far *str,</tt>
+<br><tt>size_t _fmbscpsn( const unsigned char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned
 char __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strcspn</tt> function computes the length, in bytes, of the initial segment of the string pointed to by<i> str</i>
-which consists entirely of characters<i> not</i> from the string pointed to by<i> charset</i>.&nbsp; The terminating null
-character is not considered part of<i> str</i>.
+<dd>The<tt> strcspn</tt> function computes the length, in bytes, of the initial segment of the string pointed to by<i> s</i> which
+consists entirely of characters<i> not</i> from the string pointed to by<i> charset</i>.&nbsp; The terminating null character
+is not considered part of<i> s</i>.
 <br>The<tt> _fstrcspn</tt> function is a data model independent form of the<tt> strcspn</tt> function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscspn</tt> function is a wide character version of<tt> strcspn</tt> that operates with wide character strings.
@@ -49712,111 +50015,6 @@ the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The
 <dt>Systems:
 <dd><tt> _strdate - All, Linux, RDOS</tt>
 <br><tt>_wstrdate - All, Linux</tt>
-</dl>
-<h2 id="_mbsdec"> _mbsdec, _fmbsdec, _strdec, _wcsdec </h2>
-<dl>
-<dt>Synopsis:
-<dd>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsdec( const unsigned char *start,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; const unsigned char *current );</tt>
-<br><tt>unsigned char __far *_fmbsdec( const unsigned char __far *start,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *current );</tt>
-<br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>char *_strdec( const char *start, const char *current );</tt>
-<br><tt>wchar_t *_wcsdec( const wchar_t *start,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t
-*current );</tt>
-</dl>
-<dl>
-<dt>Description:
-<dd>The<tt> _mbsdec</tt> function returns a pointer to the previous multi-byte character in the multi-byte character string pointed
-to by<i> start</i> which must precede<i> current</i>.&nbsp; The current multi-byte character in the string is pointed to by<i>
-current</i>.&nbsp; You must ensure that<i> current</i> does not point into the middle of a multi-byte or wide character.
-<br>The<tt> _fmbsdec</tt> function is a data model independent form of the<tt> _mbsdec</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsdec</tt>.
-<br><br>This macro maps to<tt> _mbsdec</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsdec</tt> macro if <tt>
-_UNICODE</tt> has been defined, otherwise it maps to<tt> _strdec</tt> macro.
-<br><tt>_strdec</tt> and<tt> _wcsdec</tt> are single-byte character string and wide character string versions of<tt> _mbsdec</tt>.
-<br>The<tt> _strdec</tt> and<tt> _wcsdec</tt> macros are provided only for this mapping and should not be used otherwise.
-</dl>
-<dl>
-<dt>Returns:
-<dd>These functions return a pointer to the previous character (multi-byte, wide, or single-byte).
-</dl>
-<dl>
-<dt>See Also:
-<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>, <a href="#_strninc">_strninc</a>
-</dl>
-<dl>
-<dt>Example:
-<dd>
-<br><tt>#include &lt;stdio.h&gt;</tt>
-<br><tt>#include &lt;mbctype.h&gt;</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><br><tt>const unsigned char chars&#91;&#93; = {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
-<br><tt>};</tt>
-<br><br><tt>#define SIZE sizeof( chars ) / sizeof( unsigned char )</tt>
-<br><br><tt>void main()</tt>
-<br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-j, k;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; const unsigned char *prev;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; prev = &amp;chars&#91; SIZE - 1 &#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; do {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev = _mbsdec( chars, prev );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mblen( prev, MB_CUR_MAX );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *prev;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *(prev)&lt;&lt;8 | *(prev+1);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Previous character %#6.4x\n&quot;, k );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; } while( prev != chars );</tt>
-<br><tt>&nbsp; }</tt>
-<br><br>produces the following:
-<br><br><tt>Previous character 0xe0a1</tt>
-<br><tt>Previous character 0x00df</tt>
-<br><tt>Previous character 0x00a6</tt>
-<br><tt>Previous character 0x00a1</tt>
-<br><tt>Previous character 0x8342</tt>
-<br><tt>Previous character 0x82a6</tt>
-<br><tt>Previous character 0x8260</tt>
-<br><tt>Previous character 0x8140</tt>
-<br><tt>Previous character 0x0041</tt>
-<br><tt>Previous character 0x0031</tt>
-<br><tt>Previous character 0x002e</tt>
-<br><tt>Previous character 0x0020</tt>
-</dl>
-<dl>
-<dt>Classification:
-<dd>WATCOM
-</dl>
-<dl>
-<dt>Systems:
-<dd><tt> _mbsdec - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
-<br><tt>_fmbsdec - DOS, Windows, OS/2 1.x(all)</tt>
-<br><tt>_strdec - MACRO</tt>
-<br><tt>_wcsdec - MACRO</tt>
 </dl>
 <h2 id="strdup"> strdup, _strdup, _fstrdup, _wcsdup, _mbsdup, _fmbsdup </h2>
 <dl>
@@ -50383,104 +50581,6 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <dd><tt> _stricoll - All, Linux, RDOS, Netware</tt>
 <br><tt>_wcsicoll - All, Linux</tt>
 <br><tt>_mbsicoll - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
-</dl>
-<h2 id="_mbsinc"> _mbsinc, _fmbsinc, _strinc, _wcsinc </h2>
-<dl>
-<dt>Synopsis:
-<dd>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsinc( const unsigned char *current );</tt>
-<br><tt>unsigned char __far *_fmbsinc( const unsigned char __far *current );</tt>
-<br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>char *_strinc( const char *current );</tt>
-<br><tt>wchar_t *_wcsinc( const wchar_t *current );</tt>
-</dl>
-<dl>
-<dt>Description:
-<dd>The<tt> _mbsinc</tt> function returns a pointer to the next multi-byte character in the string pointed to by<i> current</i>.
-&nbsp;You must ensure that<i> current</i> does not point into the middle of a multi-byte or wide character.
-<br>The<tt> _fmbsinc</tt> function is a data model independent form of the<tt> _mbsinc</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsinc</tt>.
-<br><br>This macro maps to<tt> _mbsinc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsinc</tt> macro if <tt>
-_UNICODE</tt> has been defined, otherwise it maps to<tt> _strinc</tt> macro.
-<br><tt>_strinc</tt> and<tt> _wcsinc</tt> are single-byte character string and wide character string versions of<tt> _mbsinc</tt>.
-<br>The<tt> _strinc</tt> and<tt> _wcsinc</tt> macros are provided only for this mapping and should not be used otherwise.
-</dl>
-<dl>
-<dt>Returns:
-<dd>These functions return a pointer to the next character (multi-byte, wide, or single-byte).
-</dl>
-<dl>
-<dt>See Also:
-<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>, <a href="#_strninc">_strninc</a>
-</dl>
-<dl>
-<dt>Example:
-<dd>
-<br><tt>#include &lt;stdio.h&gt;</tt>
-<br><tt>#include &lt;mbctype.h&gt;</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><br><tt>const unsigned char chars&#91;&#93; = {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
-<br><tt>};</tt>
-<br><br><tt>#define SIZE sizeof( chars ) / sizeof( unsigned char )</tt>
-<br><br><tt>void main()</tt>
-<br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-j, k;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; const unsigned char *next;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; next = chars;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; do {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next = _mbsinc( next );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mblen( next, MB_CUR_MAX );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *next;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *(next)&lt;&lt;8 | *(next+1);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Next character %#6.4x\n&quot;, k );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; } while( next != &amp;chars&#91; SIZE - 1 &#93; );</tt>
-<br><tt>&nbsp; }</tt>
-<br><br>produces the following:
-<br><br><tt>Next character 0x002e</tt>
-<br><tt>Next character 0x0031</tt>
-<br><tt>Next character 0x0041</tt>
-<br><tt>Next character 0x8140</tt>
-<br><tt>Next character 0x8260</tt>
-<br><tt>Next character 0x82a6</tt>
-<br><tt>Next character 0x8342</tt>
-<br><tt>Next character 0x00a1</tt>
-<br><tt>Next character 0x00a6</tt>
-<br><tt>Next character 0x00df</tt>
-<br><tt>Next character 0xe0a1</tt>
-<br><tt>Next character&nbsp;&nbsp; 0000</tt>
-</dl>
-<dl>
-<dt>Classification:
-<dd>WATCOM
-</dl>
-<dl>
-<dt>Systems:
-<dd><tt> _mbsinc - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux, RDOS</tt>
-<br><tt>_fmbsinc - DOS, Windows, OS/2 1.x(all)</tt>
-<br><tt>_strinc - MACRO</tt>
-<br><tt>_wcsinc - MACRO</tt>
 </dl>
 <h2 id="strlcat"> strlcat, wcslcat </h2>
 <dl>
@@ -51478,129 +51578,27 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <br><tt>_wcsnicoll - All, Linux</tt>
 <br><tt>_mbsnicoll - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 </dl>
-<h2 id="_mbsninc"> _mbsninc, _fmbsninc, _strninc, _wcsninc </h2>
-<dl>
-<dt>Synopsis:
-<dd>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsninc( const unsigned char *str, size_t count );</tt>
-<br><tt>unsigned char __far *_fmbsninc( const unsigned char __far *str,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
-<br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>char *_strninc( const char *str, size_t count );</tt>
-<br><tt>wchar_t *_wcsninc( const wchar_t *str, size_t count );</tt>
-</dl>
-<dl>
-<dt>Description:
-<dd>The<tt> _mbsninc</tt> function increments<i> str</i> by<i> count</i> of multi-byte characters.<tt>&nbsp; _mbsninc</tt> recognizes
-multi-byte character sequences according to the multi-byte character code page currently in use.
-<br>The<tt> _fmbsninc</tt> function is a data model independent form of the<tt> _mbsninc</tt> function.&nbsp; It accepts far
-pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsninc</tt>.
-<br><br>This macro maps to<tt> _mbsninc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsninc</tt> macro if <tt>
-_UNICODE</tt> has been defined, otherwise it maps to<tt> _strninc</tt> macro.
-<br><tt>_strninc</tt> and<tt> _wcsninc</tt> are single-byte character string and wide character string versions of<tt> _mbsninc</tt>.
-<br>The<tt> _strninc</tt> and<tt> _wcsninc</tt> macros are provided only for this mapping and should not be used otherwise.
-</dl>
-<dl>
-<dt>Returns:
-<dd>These functions return a pointer to<i> str</i> after it has been incremented by<i> count</i> of characters (multi-byte, wide,
-or single-byte) or <tt> NULL</tt> if<i> str</i> was <tt> NULL</tt>.&nbsp; If<i> count</i> exceeds the number of characters
-remaining in the string, the result is undefined.
-</dl>
-<dl>
-<dt>See Also:
-<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>, <a href="#_strninc">_strninc</a>
-</dl>
-<dl>
-<dt>Example:
-<dd>
-<br><tt>#include &lt;stdio.h&gt;</tt>
-<br><tt>#include &lt;mbctype.h&gt;</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><br><tt>const unsigned char chars&#91;&#93; = {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; '1',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 'A',</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x81,0x40, /* double-byte space */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0x60, /* double-byte A */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x82,0xA6, /* double-byte Hiragana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x83,0x42, /* double-byte Katakana */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana punctuation */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xA6,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xDF,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* single-byte Katakana alphabetic */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0xE0,0xA1, /* double-byte Kanji */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; 0x00</tt>
-<br><tt>};</tt>
-<br><br><tt>#define SIZE sizeof( chars ) / sizeof( unsigned char )</tt>
-<br><br><tt>void main()</tt>
-<br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-j, k;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; const unsigned char *next;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; _setmbcp( 932 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; next = chars;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; do {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next = _mbsninc( next, 1 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = mblen( next, MB_CUR_MAX );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( j == 0 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if ( j == 1 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *next;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( j == 2 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k = *(next)&lt;&lt;8 | *(next+1);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Next character %#6.4x\n&quot;, k );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; } while( next != &amp;chars&#91; SIZE - 1 &#93; );</tt>
-<br><tt>&nbsp; }</tt>
-<br><br>produces the following:
-<br><br><tt>Next character 0x002e</tt>
-<br><tt>Next character 0x0031</tt>
-<br><tt>Next character 0x0041</tt>
-<br><tt>Next character 0x8140</tt>
-<br><tt>Next character 0x8260</tt>
-<br><tt>Next character 0x82a6</tt>
-<br><tt>Next character 0x8342</tt>
-<br><tt>Next character 0x00a1</tt>
-<br><tt>Next character 0x00a6</tt>
-<br><tt>Next character 0x00df</tt>
-<br><tt>Next character 0xe0a1</tt>
-<br><tt>Next character&nbsp;&nbsp; 0000</tt>
-</dl>
-<dl>
-<dt>Classification:
-<dd>WATCOM
-</dl>
-<dl>
-<dt>Systems:
-<dd><tt> _mbsninc - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
-<br><tt>_fmbsninc - DOS, Windows, OS/2 1.x(all)</tt>
-<br><tt>_strninc - MACRO</tt>
-<br><tt>_wcsninc - MACRO</tt>
-</dl>
 <h2 id="strnset"> strnset, _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strnset( char *str, int fill, size_t count );</tt>
-<br><tt>char *_strnset( char *str, int fill, size_t count );</tt>
-<br><tt>char __far *_fstrnset( char __far *str,</tt>
+<br><tt>char *strnset( char *s, int fill, size_t count );</tt>
+<br><tt>char *_strnset( char *s, int fill, size_t count );</tt>
+<br><tt>char __far *_fstrnset( char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; int fill,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; size_t count );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>wchar_t *_wcsnset( wchar_t *str, int fill, size_t count );</tt>
+<br><tt>wchar_t *_wcsnset( wchar_t *s, int fill, size_t count );</tt>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsnset( unsigned char *str,</tt>
+<br><tt>unsigned char *_mbsnset( unsigned char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
-<br><tt>unsigned char __far *_fmbsnset( unsigned char __far *str,</tt>
+<br><tt>unsigned char __far *_fmbsnset( unsigned char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -51608,7 +51606,7 @@ j, k;</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strnset</tt> function fills the string<i> str</i> with the value of the argument<i> fill</i>, converted to be a character
+<dd>The<tt> strnset</tt> function fills the string<i> s</i> with the value of the argument<i> fill</i>, converted to be a character
 value.&nbsp; When the value of<i> count</i> is greater than the length of the string, the entire string is filled.&nbsp; Otherwise,
 that number of characters at the start of the string are set to the fill character.
 <br>The<tt> _strnset</tt> function is identical to<tt> strnset</tt>.&nbsp; Use<tt> _strnset</tt> for ANSI naming conventions.
@@ -51626,7 +51624,7 @@ character.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The address of the original string<i> str</i> is returned.
+<dd>The address of the original string<i> s</i> is returned.
 </dl>
 <dl>
 <dt>See Also:
@@ -51668,27 +51666,27 @@ character.
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strpbrk( const char *str, const char *charset );</tt>
-<br><tt>char __far *_fstrpbrk( const char __far *str,</tt>
+<br><tt>char *strpbrk( const char *s, const char *charset );</tt>
+<br><tt>char __far *_fstrpbrk( const char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; const char __far *charset );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>wchar_t *wcspbrk( const wchar_t *str,</tt>
+<br><tt>wchar_t *wcspbrk( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t
 *charset );</tt>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbspbrk( const unsigned char *str,</tt>
+<br><tt>unsigned char *_mbspbrk( const unsigned char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *charset );</tt>
 <br><tt>unsigned char __far *_fmbspbrk(</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-const unsigned char __far *str,</tt>
+const unsigned char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 const unsigned char __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strpbrk</tt> function locates the first occurrence in the string pointed to by<i> str</i> of any character from the
+<dd>The<tt> strpbrk</tt> function locates the first occurrence in the string pointed to by<i> s</i> of any character from the
 string pointed to by<i> charset</i>.
 <br>The<tt> _fstrpbrk</tt> function is a data model independent form of the<tt> strpbrk</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
@@ -51701,7 +51699,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dl>
 <dt>Returns:
 <dd>The<tt> strpbrk</tt> function returns a pointer to the located character, or<tt> NULL</tt> if no character from<i> charset</i>
-occurs in<i> str</i>.
+occurs in<i> s</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -51948,26 +51946,26 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>size_t strspn( const char *str,</tt>
+<br><tt>size_t strspn( const char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *charset );</tt>
-<br><tt>size_t _fstrspn( const char __far *str,</tt>
+<br><tt>size_t _fstrspn( const char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char __far
 *charset );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>size_t wcsspn( const wchar_t *str,</tt>
+<br><tt>size_t wcsspn( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *charset );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>size_t _mbsspn( const unsigned char *str,</tt>
+<br><tt>size_t _mbsspn( const unsigned char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *charset
 );</tt>
-<br><tt>size_t _fmbsspn( const unsigned char __far *str,</tt>
+<br><tt>size_t _fmbsspn( const unsigned char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char
 __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strspn</tt> function computes the length, in bytes, of the initial segment of the string pointed to by<i> str</i>
-which consists of characters from the string pointed to by<i> charset</i>.&nbsp; The terminating null character is not considered
+<dd>The<tt> strspn</tt> function computes the length, in bytes, of the initial segment of the string pointed to by<i> s</i> which
+consists of characters from the string pointed to by<i> charset</i>.&nbsp; The terminating null character is not considered
 to be part of<i> charset</i>.
 <br>The<tt> _fstrspn</tt> function is a data model independent form of the<tt> strspn</tt> function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
@@ -52019,22 +52017,22 @@ pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strspnp( const char *str,</tt>
+<br><tt>char *strspnp( const char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *charset );</tt>
-<br><tt>char __far *_fstrspnp( const char __far *str,</tt>
+<br><tt>char __far *_fstrspnp( const char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; const char __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strspnp</tt> function returns a pointer to the first character in<i> str</i> that does not belong to the set of characters
+<dd>The<tt> strspnp</tt> function returns a pointer to the first character in<i> s</i> that does not belong to the set of characters
 in<i> charset</i>.&nbsp; The terminating null character is not considered to be part of<i> charset</i>.
 <br>The<tt> _fstrspnp</tt> function is a data model independent form of the<tt> strspnp</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters from<i> charset</i>.
+<dd>These functions return<tt> NULL</tt> if<i> s</i> consists entirely of characters from<i> charset</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -52068,28 +52066,28 @@ pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed me
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strstr( const char *str,</tt>
+<br><tt>char *strstr( const char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *substr );</tt>
-<br><tt>char __far *_fstrstr( const char __far *str,</tt>
+<br><tt>char __far *_fstrstr( const char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; const char __far *substr );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>wchar_t *wcsstr( const wchar_t *str,</tt>
+<br><tt>wchar_t *wcsstr( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *substr
 );</tt>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsstr( const unsigned char *str,</tt>
+<br><tt>unsigned char *_mbsstr( const unsigned char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; const unsigned char *substr );</tt>
 <br><tt>unsigned char __far *_fmbsstr(</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-const unsigned char __far *str,</tt>
+const unsigned char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 const unsigned char __far *substr );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strstr</tt> function locates the first occurrence in the string pointed to by<i> str</i> of the sequence of characters
+<dd>The<tt> strstr</tt> function locates the first occurrence in the string pointed to by<i> s</i> of the sequence of characters
 (excluding the terminating null character) in the string pointed to by<i> substr</i>.
 <br>The<tt> _fstrstr</tt> function is a data model independent form of the<tt> strstr</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
@@ -56596,10 +56594,10 @@ violation occurred,<tt> vswprintf_s</tt> returns zero.
 <dd>
 <br><tt>#include &lt;stdio.h&gt;</tt>
 <br><tt>#include &lt;stdarg.h&gt;</tt>
-<br><tt>int vsscanf( const char *in_string,</tt>
+<br><tt>int vsscanf( const char *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *format,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; va_list arg );</tt>
-<br><tt>int vswscanf( const wchar_t *in_string,</tt>
+<br><tt>int vswscanf( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *format,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; va_list arg );</tt>
 </dl>
@@ -56611,8 +56609,8 @@ vsscanf</tt> function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vsscanf</tt> function scans input from the string designated by<i> in_string</i> under control of the argument<i>
-format</i>.&nbsp; The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
+<dd>The<tt> vsscanf</tt> function scans input from the string designated by<i> s</i> under control of the argument<i> format</i>.
+&nbsp;The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
 <br>The<tt> vsscanf</tt> function is equivalent to the <tt> sscanf</tt> function, with a variable argument list replaced with<i>
 arg</i>, which has been initialized using the <tt> va_start</tt> macro.
 <br><br>The<tt> vswscanf</tt> function is identical to<tt> vsscanf</tt> except that it accepts a wide character string argument
@@ -56668,12 +56666,12 @@ Otherwise, the number of input arguments for which values were successfully scan
 <br><tt>#define __STDC_WANT_LIB_EXT1__ 1</tt>
 <br><tt>#include &lt;stdarg.h&gt;</tt>
 <br><tt>#include &lt;stdio.h&gt;</tt>
-<br><tt>int vsscanf_s( const char * restrict s,</tt>
+<br><tt>int vsscanf_s( const char * restrict str,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char * restrict format,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; va_list arg );</tt>
 <br><tt>#include &lt;stdarg.h&gt;</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>int vswscanf_s( const wchar_t * restrict s,</tt>
+<br><tt>int vswscanf_s( const wchar_t * restrict str,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t * restrict
 format,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; va_list arg );</tt>
@@ -56682,8 +56680,8 @@ format,</tt>
 <dt>Constraints:
 <dd>If any of the following runtime-constraints is violated, the currently active runtime-constraint handler will be invoked and<tt>
 vsscanf_s</tt> will return a non-zero value to indicate an error, or the runtime-constraint handler aborts the program.
-<br>Neither<i> s</i> not<i> format</i> shall be a null pointer.&nbsp; Any argument indirected through in order to store converted
-input shall not be a null pointer.
+<br>Neither<i> str</i> not<i> format</i> shall be a null pointer.&nbsp; Any argument indirected through in order to store
+converted input shall not be a null pointer.
 <br><br>If there is a runtime-constraint violation, the<tt> vsscanf_s</tt> function does not attempt to perform further input,
 and it is unspecified to what extent<tt> vsscanf_s</tt> performed input before discovering the runtime-constraint violation.
 </dl>
@@ -56693,7 +56691,7 @@ and it is unspecified to what extent<tt> vsscanf_s</tt> performed input before d
 which shall have been initialized by the <tt> va_start</tt> macro (and possibly subsequent <tt> va_arg</tt> calls).&nbsp;
 The<tt> vsscanf_s</tt> function does not invoke the <tt> va_end</tt> macro.
 <br>The<tt> vswscanf_s</tt> function is identical to<tt> vsscanf_s</tt> except that it accepts wide character string arguments
-for<i> s</i> and<i> format</i>.
+for<i> str</i> and<i> format</i>.
 </dl>
 <dl>
 <dt>Returns:
