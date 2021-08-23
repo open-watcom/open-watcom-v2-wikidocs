@@ -237,6 +237,8 @@
 <br><a href="#_mbsnbset">_mbsnbset, _fmbsnbset</a>
 <br><a href="#_mbsnccnt">_mbsnccnt, _fmbsnccnt, _strncnt, _wcsncnt</a>
 <br><a href="#_mbsnextc">_mbsnextc, _fmbsnextc, _strnextc, _wcsnextc</a>
+<br><a href="#_mbsninc">_mbsninc, _fmbsninc, _strninc, _wcsninc</a>
+<br><a href="#_mbsspnp">_mbsspnp, _fmbsspnp, _strspnp, _wcsspnp</a>
 <br><a href="#_mbterm">_mbterm, _fmbterm</a>
 <br><a href="#_mbvtop">_mbvtop, _fmbvtop</a>
 <br><a href="#_memavl">_memavl</a>
@@ -319,7 +321,6 @@
 <br><a href="#_stricoll">_stricoll, _wcsicoll, _mbsicoll</a>
 <br><a href="#_strncoll">_strncoll, _wcsncoll, _mbsncoll</a>
 <br><a href="#_strnicoll">_strnicoll, _wcsnicoll, _mbsnicoll</a>
-<br><a href="#_strninc">_strninc, _wcsninc, _mbsninc, _fmbsninc</a>
 <br><a href="#_strtime">_strtime, _wstrtime</a>
 <br><a href="#_tempnam">_tempnam, _wtempnam</a>
 <br><a href="#_unregisterfonts">_unregisterfonts</a>
@@ -831,7 +832,7 @@
 <br><a href="#strrev">strrev, _strrev, _fstrrev, _wcsrev, _mbsrev, _fmbsrev</a>
 <br><a href="#strset">strset, _strset, _fstrset, _wcsset, _mbsset, _fmbsset</a>
 <br><a href="#strspn">strspn, _fstrspn, wcsspn, _mbsspn, _fmbsspn</a>
-<br><a href="#strspnp">strspnp, _strspnp, _fstrspnp, _wcsspnp, _mbsspnp, _fmbsspnp</a>
+<br><a href="#strspnp">strspnp, _fstrspnp</a>
 <br><a href="#strstr">strstr, _fstrstr, wcsstr, _mbsstr, _fmbsstr</a>
 <br><a href="#strtod">strtod, wcstod</a>
 <br><a href="#strtoimax">strtoimax, wcstoimax</a>
@@ -1442,7 +1443,7 @@ following functions are defined:
 <dd>fill string with a character
 <dt><br><a href="#strspn">strspn</a>
 <dd>find number of characters at start of string which are also in a second string
-<dt><br>_strspnp (see <a href="#strspnp">strspnp</a>)
+<dt><br>_strspnp (see <a href="#_mbsspnp">_mbsspnp</a>)
 <dd>return pointer to first character of string not in set
 <dt><br><a href="#strstr">strstr</a>
 <dd>find first occurrence of string in second string
@@ -1534,7 +1535,7 @@ for.&nbsp; The following functions are defined:
 <dd>fill string with a character
 <dt><br>wcsspn (see <a href="#strspn">strspn</a>)
 <dd>find number of characters at start of string which are also in a second string
-<dt><br>_wcsspnp (see <a href="#strspnp">strspnp</a>)
+<dt><br>_wcsspnp (see <a href="#_mbsspnp">_mbsspnp</a>)
 <dd>return pointer to first character of string not in set
 <dt><br>wcsstr (see <a href="#strstr">strstr</a>)
 <dd>find first occurrence of string in second string
@@ -1618,7 +1619,7 @@ for.&nbsp; The following functions are defined:
 <dd>fill far string with a character
 <dt><br>_fmbsspn (see <a href="#strspn">strspn</a>)
 <dd>find number of characters at start of string which are also in a second string
-<dt><br>_fmbsspnp (see <a href="#strspnp">strspnp</a>)
+<dt><br>_fmbsspnp (see <a href="#_mbsspnp">_mbsspnp</a>)
 <dd>return far pointer to first character of far string not in set
 <dt><br>_fmbsstr (see <a href="#strstr">strstr</a>)
 <dd>find first occurrence of string in second string
@@ -1706,7 +1707,7 @@ for.&nbsp; The following functions are defined:
 <dd>fill string with a character
 <dt><br>_mbsspn (see <a href="#strspn">strspn</a>)
 <dd>find number of characters at start of string which are also in a second string
-<dt><br>_mbsspnp (see <a href="#strspnp">strspnp</a>)
+<dt><br><a href="#_mbsspnp">_mbsspnp</a>
 <dd>return pointer to first character of string not in set
 <dt><br>_mbsstr (see <a href="#strstr">strstr</a>)
 <dd>find first occurrence of string in second string
@@ -29244,7 +29245,7 @@ function).
 <br><br>The _lseeki64 function is identical to<tt> lseek</tt> except that it accepts a 64-bit value for the<i> offset</i>
 argument.
 <br><br>The<tt> lseek</tt> function can be used to obtain the current file position (the <tt> tell</tt> function is implemented
-in terms of _strnextc).&nbsp; This value can then be used with the<tt> lseek</tt> function to reset the file position to that
+in terms of &amp;func).&nbsp; This value can then be used with the<tt> lseek</tt> function to reset the file position to that
 point in the file:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; off_t file_posn;</tt>
@@ -31722,24 +31723,21 @@ n );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The function counts the number of bytes in the first<i> n</i> multibyte characters of the string<i> string</i>.
+<dd>The<tt> _mbsnbcnt</tt> function counts the number of bytes in the first<i> n</i> multibyte characters of the string<i> string</i>.
 <br><i>Note:</i>&nbsp; This function was called <tt> mtob</tt> in earlier versions.
 <br><br>The<tt> _fmbsnbcnt</tt> function is a code and data model independent form of the<tt> _mbsnbcnt</tt> function that
 accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text routine <tt> _tcsnbcnt</tt>.&nbsp; This macro maps
-to if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt> macro if <tt> _UNICODE</tt> has been defined.&nbsp; Otherwise
-<tt> _tcsnbcnt</tt> maps to _mbsnbcnt.<tt>&nbsp; _mbsnbcnt</tt> and<tt> _wcsncnt</tt> are single-byte character string and
-wide-character string versions of .&nbsp; The<tt> _mbsnbcnt</tt> and<tt> _wcsncnt</tt> macros are provided only for this mapping
-and should not be used otherwise.
-<br><br>The<tt> _mbsnbcnt</tt> function returns the number of characters (i.e.,<i> n</i>) in the first<i> n</i> bytes of the
-single-byte string<i> string</i>.&nbsp; The<tt> _wcsncnt</tt> function returns the number of bytes (i.e., 2 *<i> n</i>) in
-the first<i> n</i> wide characters of the wide-character string<i> string</i>.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsnbcnt</tt>.
+<br><br>This macro maps to<tt> _mbsnbcnt</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
+<br><tt>_strncnt</tt> and<tt> _wcsncnt</tt> are single-byte character string and wide-character string versions of<tt> _mbsnbcnt</tt>.
+<br>The<tt> _strncnt</tt> and<tt> _wcsncnt</tt> macros are provided only for this mapping and should not be used otherwise.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _mbsnbcnt</tt> functions return the number of bytes in the string up to the specified number of characters or until
-a null character is encountered.&nbsp; The null character is not included in the count.&nbsp; If the character preceding the
-null character was a lead byte, the lead byte is not included in the count.
+<dd>These functions return the number of bytes in the string up to the specified number of characters (single-byte, wide, or multi-byte)
+or until a null character is encountered.&nbsp; The null character is not included in the count.&nbsp; If the character preceding
+the null character was a lead byte, the lead byte is not included in the count.
 </dl>
 <dl>
 <dt>See Also:
@@ -32024,22 +32022,18 @@ included in the count.
 <br><i>Note:</i>&nbsp; This function was called <tt> btom</tt> in earlier versions.
 <br><br>The<tt> _fmbsnccnt</tt> function is a code and data model independent form of the<tt> _mbsnccnt</tt> function that
 accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text routine <tt> _tcsnccnt</tt>.&nbsp; This macro maps
-to<tt> _mbsnccnt</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt> macro if <tt> _UNICODE</tt> has been
-defined.&nbsp; Otherwise <tt> _tcsnccnt</tt> maps to _strncnt.<tt>&nbsp; _strncnt</tt> and<tt> _wcsncnt</tt> are single-byte
-character string and wide-character string versions of _mbsnccnt.&nbsp; The<tt> _strncnt</tt> and<tt> _wcsncnt</tt> macros
-are provided only for this mapping and should not be used otherwise.
-<br><br>The<tt> _mbsnccnt</tt> function returns the number of characters (i.e.,<i> n</i>) in the first<i> n</i> bytes of the
-single-byte string<i> string</i>.&nbsp; The<tt> _wcsncnt</tt> function returns the number of bytes (i.e., 2 *<i> n</i>) in
-the first<i> n</i> wide characters of the wide-character string<i> string</i>.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsnccnt</tt>.
+<br><br>This macro maps to<tt> _mbsnccnt</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
+<br><tt>_strncnt</tt> and<tt> _wcsncnt</tt> are single-byte character string and wide-character string versions of<tt> _mbsnccnt</tt>.
+<br>The<tt> _strncnt</tt> and<tt> _wcsncnt</tt> macros are provided only for this mapping and should not be used otherwise.
 </dl>
 <dl>
 <dt>Returns:
-<dd><tt> _mbsnccnt</tt> returns the number of characters from the beginning of the string to byte<i> n</i>.<tt>&nbsp; _wcsncnt</tt>
-returns the number of wide characters from the beginning of the string to byte<i> n</i>.<tt>&nbsp; _mbsnccnt</tt> returns
-the number of multibyte characters from the beginning of the string to byte<i> n</i>.&nbsp; If these functions find a null
-character before byte<i> n</i>, they return the number of characters before the null character.&nbsp; If the string consists
-of fewer than<i> n</i> characters, these functions return the number of characters in the string.
+<dd>These functions return the number of characters (single-byte, wide, or multi-byte) from the beginning of the string to byte<i>
+n</i>.&nbsp; If these functions find a null character before byte<i> n</i>, they return the number of characters before the
+null character.&nbsp; If the string consists of fewer than<i> n</i> characters, these functions return the number of characters
+in the string.
 </dl>
 <dl>
 <dt>See Also:
@@ -32099,18 +32093,20 @@ of fewer than<i> n</i> characters, these functions return the number of characte
 </dl>
 <dl>
 <dt>Description:
-<dd>The function returns the integer value of the next multibyte-character in<i> string</i>, without advancing the string pointer.
-&nbsp;recognizes multibyte character sequences according to the multibyte code page currently in use.
-<br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text routine <tt> _tcsnextc</tt>.&nbsp; This macro maps to
-if <tt> _MBCS</tt> has been defined, or to<tt> _wcsnextc</tt> if <tt> _UNICODE</tt> has been defined.&nbsp; Otherwise <tt>
-_tcsnextc</tt> maps to _mbsnextc.<tt>&nbsp; _mbsnextc</tt> and<tt> _wcsnextc</tt> are single-byte character string and wide-character
-string versions of .<tt>&nbsp; _mbsnextc</tt> and<tt> _wcsnextc</tt> are provided only for this mapping and should not be
-used otherwise.<tt>&nbsp; _mbsnextc</tt> returns the integer value of the next single-byte character in the string.<tt>&nbsp;
-_wcsnextc</tt> returns the integer value of the next wide character in the string.
+<dd>The<tt> _mbsnextc</tt> function returns the integer value of the next character in<i> string</i>, without advancing the string
+pointer.<tt>&nbsp; _mbsnextc</tt> recognizes multi-byte character sequences according to the multi-byte character code page
+currently in use.
+<br>The<tt> _fmbsnextc</tt> function is a code and data model independent form of the<tt> _mbsnextc</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsnextc</tt>.
+<br><br>This macro maps to<tt> _mbsnextc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsnextc</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strnextc</tt> macro.
+<br><tt>_strnextc</tt> and<tt> _wcsnextc</tt> are single-byte character string and wide-character string versions of<tt> _mbsnextc</tt>.
+<br>The<tt> _strnextc</tt> and<tt> _wcsnextc</tt> macros are provided only for this mapping and should not be used otherwise.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return the integer value of the next character (single-byte, wide, or multibyte) pointed to by<i> string</i>.
+<dd>These functions return the integer value of the next character (single-byte, wide, or multi-byte) pointed to by<i> string</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -32418,6 +32414,72 @@ is returned.
 <dt>Systems:
 <dd><tt> mbsrtowcs_s - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux, RDOS</tt>
 <br><tt>_fmbsrtowcs_s - DOS, Windows, OS/2 1.x(all)</tt>
+</dl>
+<h2 id="_mbsspnp"> _mbsspnp, _fmbsspnp, _strspnp, _wcsspnp </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><tt>unsigned char *_mbsspnp( const unsigned char *str,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *charset );</tt>
+<br><tt>unsigned char __far *_fmbsspnp(</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+const unsigned char __far *str,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+const unsigned char __far *charset );</tt>
+<br><tt>#include &lt;tchar.h&gt;</tt>
+<br><tt>char *_strspnp( const char *str,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *charset );</tt>
+<br><tt>wchar_t *_wcsspnp( const wchar_t *str,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const
+wchar_t *charset );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> _mbsspnp</tt> function returns a pointer to the first character in<i> str</i> that does not belong to the set of characters
+in<i> charset</i>.&nbsp; The terminating null character is not considered to be part of<i> charset</i>.
+<br>The<tt> _fmbsspnp</tt> function is a code and data model independent form of the<tt> _mbsspnp</tt> function.&nbsp; It
+accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsspnp</tt>.
+<br><br>This macro maps to<tt> _mbsspnp</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsspnp</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strspnp</tt> macro.
+<br><tt>_strspnp</tt> and<tt> _wcsspnp</tt> are single-byte character string and wide-character string versions of<tt> _mbsspnp</tt>.
+<br>The<tt> _strspnp</tt> and<tt> _wcsspnp</tt> macros are provided only for this mapping and should not be used otherwise.
+</dl>
+<dl>
+<dt>Returns:
+<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters (single-byte, wide, or multi-byte) from<i>
+charset</i> (single-byte, wide, or multi-byte).
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#strspnp">strspnp</a>, <a href="#strcspn">strcspn</a>, <a href="#strspn">strspn</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;string.h&gt;</tt>
+<br><br><tt>void main()</tt>
+<br><tt>&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strspnp( &quot;out to lunch&quot;, &quot;aeiou&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strspnp( &quot;out to lunch&quot;, &quot;xyz&quot; ) );</tt>
+<br><tt>&nbsp; }</tt>
+<br><br>produces the following:
+<br><br><tt>t to lunch</tt>
+<br><tt>out to lunch</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd><tt> _mbsspnp - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<br><tt>_fmbsspnp - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>_strspnp - All, Linux, RDOS, Netware</tt>
+<br><tt>_wcsspnp - All, Linux</tt>
 </dl>
 <h2 id="mbstowcs"> mbstowcs, _fmbstowcs </h2>
 <dl>
@@ -49674,14 +49736,16 @@ the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The
 pointed to by<i> start</i> which must precede<i> current</i>.&nbsp; The current character in the string is pointed to by<i>
 current</i>.&nbsp; You must ensure that<i> current</i> does not point into the middle of a multibyte or wide character.
 <br>The<tt> _fmbsdec</tt> function is a code and data model independent form of the<tt> _mbsdec</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_strdec</tt> function is a single-byte character version of<tt> _mbsdec</tt> that operates with single-byte character strings.
-&nbsp;The<tt> _wcsdec</tt> function is a wide-character version of<tt> _mbsdec</tt> that operates with wide-character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsdec</tt>.
+<br><br>This macro maps to<tt> _mbsdec</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsdec</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strdec</tt> macro.
+<br><tt>_strdec</tt> and<tt> _wcsdec</tt> are single-byte character string and wide-character string versions of<tt> _mbsdec</tt>.
+<br>The<tt> _strdec</tt> and<tt> _wcsdec</tt> macros are provided only for this mapping and should not be used otherwise.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _mbsdec</tt> function returns a pointer to the previous character (single-byte, wide, or multibyte depending on the
-function used).
+<dd>These functions return a pointer to the previous character (single-byte, wide, or multi-byte).
 </dl>
 <dl>
 <dt>See Also:
@@ -50336,14 +50400,16 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <dd>The<tt> _mbsinc</tt> function returns a pointer to the next character (single-byte, wide, or multibyte) in the string pointed
 to by<i> current</i>.&nbsp; You must ensure that<i> current</i> does not point into the middle of a multibyte or wide character.
 <br>The<tt> _fmbsinc</tt> function is a code and data model independent form of the<tt> _mbsinc</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.&nbsp; The<tt>
-_strinc</tt> function is a single-byte character version of<tt> _mbsinc</tt> that operates with single-byte character strings.
-&nbsp;The<tt> _wcsinc</tt> function is a wide-character version of<tt> _mbsinc</tt> that operates with wide-character strings.
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsinc</tt>.
+<br><br>This macro maps to<tt> _mbsinc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsinc</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strinc</tt> macro.
+<br><tt>_strinc</tt> and<tt> _wcsinc</tt> are single-byte character string and wide-character string versions of<tt> _mbsinc</tt>.
+<br>The<tt> _strinc</tt> and<tt> _wcsinc</tt> macros are provided only for this mapping and should not be used otherwise.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _mbsinc</tt> function returns a pointer to the next character (single-byte, wide, or multibyte depending on the function
-used).
+<dd>These functions return a pointer to the next character (single-byte, wide, or multi-byte).
 </dl>
 <dl>
 <dt>See Also:
@@ -51410,48 +51476,47 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <br><tt>_wcsnicoll - All, Linux</tt>
 <br><tt>_mbsnicoll - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 </dl>
-<h2 id="_strninc"> _strninc, _wcsninc, _mbsninc, _fmbsninc </h2>
+<h2 id="_mbsninc"> _mbsninc, _fmbsninc, _strninc, _wcsninc </h2>
 <dl>
 <dt>Synopsis:
 <dd>
-<br><tt>#ninclude &lt;tchar.h&gt;</tt>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
+<br><tt>unsigned char *_mbsninc( const unsigned char *str, size_t count );</tt>
+<br><tt>unsigned char __far *_fmbsninc( const unsigned char __far *str,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
+<br><tt>#include &lt;tchar.h&gt;</tt>
 <br><tt>char *_strninc( const char *str, size_t count );</tt>
 <br><tt>wchar_t *_wcsninc( const wchar_t *str, size_t count );</tt>
-<br><tt>#ninclude &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsninc( const unsigned char *str,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
-<br><tt>unsigned char __far *_fmbsninc(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; const unsigned char __far *str,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; size_t count );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The<tt> _mbsninc</tt> function increments<i> str</i> by<i> count</i> multibyte characters.<tt>&nbsp; _mbsninc</tt> recognizes
-multibyte-character sequences according to the multibyte code page currently in use.&nbsp; The header file<tt> &lt;tchar.h&gt;</tt>
-defines the generic-text routine <tt> _tcsninc</tt>.&nbsp; This macro maps to<tt> _mbsninc</tt> if <tt> _MBCS</tt> has been
-defined, or to<tt> _wcsninc</tt> if <tt> _UNICODE</tt> has been defined.&nbsp; Otherwise <tt> _tcsninc</tt> maps to _strninc.<tt>
-&nbsp;_strninc</tt> and<tt> _wcsninc</tt> are single-byte-character string and wide-character string versions of _mbsninc.<tt>
-&nbsp;_wcsninc</tt> and<tt> _strninc</tt> are provided only for this mapping and should not be used otherwise.
+multibyte-character sequences according to the multibyte code page currently in use.
+<br>The<tt> _fmbsninc</tt> function is a code and data model independent form of the<tt> _mbsninc</tt> function.&nbsp; It
+accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsninc</tt>.
+<br><br>This macro maps to<tt> _mbsninc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsninc</tt> macro if <tt>
+_UNICODE</tt> has been defined, otherwise it maps to<tt> _strninc</tt> macro.
+<br><tt>_strninc</tt> and<tt> _wcsninc</tt> are single-byte character string and wide-character string versions of<tt> _mbsninc</tt>.
+<br>The<tt> _strninc</tt> and<tt> _wcsninc</tt> macros are provided only for this mapping and should not be used otherwise.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _strninc</tt> function returns a pointer to<i> str</i> after it has been incremented by<i> count</i> characters or
-<tt> NULL</tt> if<i> str</i> was <tt> NULL</tt>.&nbsp; If<i> count</i> exceeds the number of characters remaining in the string,
-the result is undefined.
+<dd>These functions return a pointer to<i> str</i> after it has been incremented by<i> count</i> characters (single-byte, wide,
+or multi-byte) or <tt> NULL</tt> if<i> str</i> was <tt> NULL</tt>.&nbsp; If<i> count</i> exceeds the number of characters
+remaining in the string, the result is undefined.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>
+<dd><a href="#_strdec">_strdec</a>, <a href="#_strinc">_strinc</a>, <a href="#_strninc">_strninc</a>
 </dl>
 <dl>
 <dt>Example:
 <dd>
-<br><tt>#ninclude &lt;stdio.h&gt;</tt>
-<br><tt>#ninclude &lt;mbctype.h&gt;</tt>
-<br><tt>#ninclude &lt;mbstring.h&gt;</tt>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;mbctype.h&gt;</tt>
+<br><tt>#include &lt;mbstring.h&gt;</tt>
 <br><br><tt>const unsigned char chars&#91;&#93; = {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; ' ',</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; '.',</tt>
@@ -51508,10 +51573,10 @@ j, k;</tt>
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> _strninc - MACRO</tt>
-<br><tt>_wcsninc - MACRO</tt>
-<br><tt>_mbsninc - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<dd><tt> _mbsninc - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsninc - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>_strninc - MACRO</tt>
+<br><tt>_wcsninc - MACRO</tt>
 </dl>
 <h2 id="strnset"> strnset, _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset </h2>
 <dl>
@@ -51947,48 +52012,28 @@ far pointer arguments.&nbsp; It is most useful in mixed memory model application
 <br><tt>_mbsspn - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsspn - DOS, Windows, OS/2 1.x(all)</tt>
 </dl>
-<h2 id="strspnp"> strspnp, _strspnp, _fstrspnp, _wcsspnp, _mbsspnp, _fmbsspnp </h2>
+<h2 id="strspnp"> strspnp, _fstrspnp </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
 <br><tt>char *strspnp( const char *str,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *charset );</tt>
-<br><tt>char *_strspnp( const char *str,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *charset );</tt>
 <br><tt>char __far *_fstrspnp( const char __far *str,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; const char __far *charset );</tt>
-<br><tt>#include &lt;tchar.h&gt;</tt>
-<br><tt>wchar_t *_wcsspnp( const wchar_t *str,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const
-wchar_t *charset );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsspnp( const unsigned char *str,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *charset );</tt>
-<br><tt>unsigned char __far *_fmbsspnp(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-const unsigned char __far *str,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-const unsigned char __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The<tt> strspnp</tt> function returns a pointer to the first character in<i> str</i> that does not belong to the set of characters
 in<i> charset</i>.&nbsp; The terminating null character is not considered to be part of<i> charset</i>.
-<br>The<tt> _strspnp</tt> function is identical to<tt> strspnp</tt>.&nbsp; Use<tt> _strspnp</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrspnp</tt> function is a code and data model independent form of the<tt> strspnp</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsspnp</tt> function is a wide-character version of<tt> strspnp</tt> that operates with wide-character strings.
-&nbsp;The<tt> _mbsspnp</tt> function is a multi-byte character version of<tt> strspnp</tt> that operates with multi-byte character
-strings.
-<br><br>The<tt> _fmbsspnp</tt> function is a code and data model independent form of the<tt> _mbsspnp</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrspnp</tt> function is a code and data model independent form of the<tt> strspnp</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> strspnp</tt> function returns<tt> NULL</tt> if<i> str</i> consists entirely of characters from<i> charset</i>.
+<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters from<i> charset</i> (single-byte, wide,
+or multi-byte).
 </dl>
 <dl>
 <dt>See Also:
@@ -52011,16 +52056,11 @@ It accepts far pointer arguments and returns a far pointer.&nbsp; It is most use
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_strspnp conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
 <dd><tt> strspnp - All, Linux, RDOS, Netware</tt>
-<br><tt>_strspnp - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrspnp - All, Linux, RDOS</tt>
-<br><tt>_wcsspnp - All, Linux</tt>
-<br><tt>_mbsspnp - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
-<br><tt>_fmbsspnp - DOS, Windows, OS/2 1.x(all)</tt>
 </dl>
 <h2 id="strstr"> strstr, _fstrstr, wcsstr, _mbsstr, _fmbsstr </h2>
 <dl>
@@ -58212,10 +58252,10 @@ isgraph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; islower&nbsp;&nbsp;&nbsp;&nbsp
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
-<br><br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language
-standard describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly
-from the ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the
-standard that discusses the behavior.
+<br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language standard
+describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly from the
+ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the standard
+that discusses the behavior.
 <h2 id="NULL_Macro"> NULL Macro </h2>
 <br><b>The null pointer constant to which the macro </b><tt> NULL</tt><b> expands (7.1.6).</b>
 <br><br>The macro <tt> NULL</tt> expands to 0 in small data models and to 0L in large data models.
