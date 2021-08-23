@@ -30144,8 +30144,8 @@ of<i> type</i> is 1,<tt> _mbbtype</tt> tests for a valid trail byte of a multiby
 <dl>
 <dt>Description:
 <dd>The<tt> _mbccmp</tt> function compares one multibyte character from<i> s1</i> to one multibyte character from<i> s2</i>.
-<br>The<tt> _fmbccmp</tt> function is a code and data model independent form of the<tt> _mbccmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbccmp</tt> function is a data model independent form of the<tt> _mbccmp</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -30222,8 +30222,8 @@ far pointer arguments.&nbsp; It is most useful in mixed memory model application
 <dl>
 <dt>Description:
 <dd>The<tt> _mbccpy</tt> function copies one multibyte character from<i> ch</i> to<i> dest</i>.
-<br>The<tt> _fmbccpy</tt> function is a code and data model independent form of the<tt> _mbccpy</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbccpy</tt> function is a data model independent form of the<tt> _mbccpy</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -30286,8 +30286,8 @@ far pointer arguments.&nbsp; It is most useful in mixed memory model application
 <dt>Description:
 <dd>The function compares one multibyte character from<i> s1</i> to one multibyte character from<i> s2</i> using a case-insensitive
 comparison.&nbsp; Uppercase character from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> _fmbcicmp</tt> function is a code and data model independent form of the<tt> _mbcicmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbcicmp</tt> function is a data model independent form of the<tt> _mbcicmp</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -30484,8 +30484,8 @@ code is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> _mbclen</tt> function determines the number of bytes comprising the multibyte character pointed to by<i> ch</i>.
-<br>The<tt> _fmbclen</tt> function is a code and data model independent form of the<tt> _mbclen</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbclen</tt> function is a data model independent form of the<tt> _mbclen</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -30940,8 +30940,8 @@ returns a single-byte character.
 <dd>The<tt> _mbgetcode</tt> function places the next single- or double-byte character from the start of the Kanji string specified
 by<i> mbstr</i> in the wide character pointed to by<i> dbchp</i>.&nbsp; If the second-half of a double-byte character is NULL,
 then the returned wide character is NULL.
-<br>The<tt> _fmbgetcode</tt> function is a code and data model independent form of the<tt> _mbgetcode</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbgetcode</tt> function is a data model independent form of the<tt> _mbgetcode</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -31004,8 +31004,8 @@ points at a null character then<i> mbstr</i> is returned.
 <dt>Description:
 <dd>The<tt> mblen</tt> function determines the number of bytes comprising the multibyte character pointed to by<i> s</i>.&nbsp;
 At most<i> n</i> bytes of the array pointed to by<i> s</i> will be examined.
-<br>The<tt> _fmblen</tt> function is a code and data model independent form of the<tt> mblen</tt> function that accepts far
-pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmblen</tt> function is a data model independent form of the<tt> mblen</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -31115,8 +31115,8 @@ and non-zero otherwise.&nbsp; If<i> s</i> is not a NULL pointer, the<tt> mblen</
 <dt>Description:
 <dd>The<tt> _mbputchar</tt> function places the next single- or double-byte character specified by<i> dbch</i> at the start of
 the buffer specified by<i> mbstr</i>.
-<br>The<tt> _fmbputchar</tt> function is a code and data model independent form of the<tt> _mbputchar</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbputchar</tt> function is a data model independent form of the<tt> _mbputchar</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -31177,8 +31177,8 @@ The<tt> mbrlen</tt> function is equivalent to the following call:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mbrtowc(NULL, s, n, ps != NULL ? ps : &amp;internal)</tt>
 <br><br>where<tt> &amp;internal</tt> is the address of the internal <tt> mbstate_t</tt> object for the<tt> mbrlen</tt> function.
-<br><br>The<tt> _fmbrlen</tt> function is a code and data model independent form of the<tt> mbrlen</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbrlen</tt> function is a data model independent form of the<tt> mbrlen</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide character conversion functions differ from the corresponding internal-state multibyte
 character functions ( <tt> mblen</tt>, <tt> mbtowc</tt>, and <tt> wctomb</tt>) in that they have an extra argument,<i> ps</i>,
 of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state
@@ -31317,8 +31317,8 @@ state.
 <br><br>In this case, the values of the parameters<i> pwc</i> and<i> n</i> are ignored.&nbsp; Function determines the number
 of bytes necessary to enter the initial shift state (zero if encodings are not state-dependent or if the initial conversion
 state is described).
-<br><br>The<tt> _fmbrtowc</tt> function is a code and data model independent form of the<tt> mbrtowc</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbrtowc</tt> function is a data model independent form of the<tt> mbrtowc</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide character conversion functions differ from the corresponding internal-state multibyte
 character functions ( <tt> mblen</tt>, <tt> mbtowc</tt>, and <tt> wctomb</tt>) in that they have an extra argument,<i> ps</i>,
 of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state
@@ -31566,8 +31566,8 @@ the initial byte of<i> src</i> overwrites this lead byte.&nbsp; Otherwise, the i
 null character at the end of<i> dst</i>.&nbsp; If the last byte to be copied from<i> src</i> is a lead byte, the lead byte
 is not copied and a null character replaces it in<i> dst</i>.&nbsp; In any case, a terminating null character is always appended
 to the result.
-<br>The<tt> _fmbsnbcat</tt> function is a code and data model independent form of the<tt> _mbsnbcat</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsnbcat</tt> function is a data model independent form of the<tt> _mbsnbcat</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -31661,8 +31661,8 @@ accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful
 <dt>Description:
 <dd>The<tt> _mbsnbcmp</tt> lexicographically compares not more than<i> n</i> bytes from the string pointed to by<i> s1</i> to
 the string pointed to by<i> s2</i>.
-<br>The<tt> _fmbsnbcmp</tt> function is a code and data model independent form of the<tt> _mbsnbcmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsnbcmp</tt> function is a data model independent form of the<tt> _mbsnbcmp</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -31725,8 +31725,8 @@ n );</tt>
 <dt>Description:
 <dd>The<tt> _mbsnbcnt</tt> function counts the number of bytes in the first<i> n</i> multibyte characters of the string<i> string</i>.
 <br><i>Note:</i>&nbsp; This function was called <tt> mtob</tt> in earlier versions.
-<br><br>The<tt> _fmbsnbcnt</tt> function is a code and data model independent form of the<tt> _mbsnbcnt</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsnbcnt</tt> function is a data model independent form of the<tt> _mbsnbcnt</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsnbcnt</tt>.
 <br><br>This macro maps to<tt> _mbsnbcnt</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt> macro if <tt>
 _UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
@@ -31807,8 +31807,8 @@ pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed
 <br>If the string pointed to by<i> src</i> is shorter than<i> n</i> bytes, null characters are appended to the copy in the
 array pointed to by<i> dst</i>, until<i> n</i> bytes in all have been written.&nbsp; If the string pointed to by<i> src</i>
 is longer than<i> n</i> characters, then the result will not be terminated by a null character.
-<br><br>The<tt> _fmbsnbcpy</tt> function is a code and data model independent form of the<tt> _mbsnbcpy</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsnbcpy</tt> function is a data model independent form of the<tt> _mbsnbcpy</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -31885,8 +31885,8 @@ It accepts far pointer arguments and returns a far pointer.&nbsp; It is most use
 <dd>The function lexicographically compares not more than<i> n</i> bytes from the string pointed to by<i> s1</i> to the string
 pointed to by<i> s2</i>.&nbsp; The comparison is insensitive to case.&nbsp; All uppercase characters from<i> s1</i> and<i>
 s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> _fmbsnbicmp</tt> function is a code and data model independent form of the<tt> _mbsnbicmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsnbicmp</tt> function is a data model independent form of the<tt> _mbsnbicmp</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -31957,8 +31957,8 @@ at the start of the string are set to the fill character.
 <br><tt>_mbsnbset</tt> is similar to <tt> _mbsnset</tt>, except that it fills in<i> count</i> bytes rather than<i> count</i>
 characters.&nbsp; If the number of bytes to be filled is odd and<i> fill</i> is a double-byte character, the partial byte
 at the end is filled with an ASCII space character.
-<br><br>The<tt> _fmbsnbset</tt> function is a code and data model independent form of the<tt> _mbsnbset</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsnbset</tt> function is a data model independent form of the<tt> _mbsnbset</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -32020,8 +32020,8 @@ It accepts far pointer arguments and returns a far pointer.&nbsp; It is most use
 &nbsp;If<tt> _mbsnccnt</tt> finds a null byte as the second byte of a double-byte character, the first (lead) byte is not
 included in the count.
 <br><i>Note:</i>&nbsp; This function was called <tt> btom</tt> in earlier versions.
-<br><br>The<tt> _fmbsnccnt</tt> function is a code and data model independent form of the<tt> _mbsnccnt</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsnccnt</tt> function is a data model independent form of the<tt> _mbsnccnt</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsnccnt</tt>.
 <br><br>This macro maps to<tt> _mbsnccnt</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt> macro if <tt>
 _UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
@@ -32096,8 +32096,8 @@ in the string.
 <dd>The<tt> _mbsnextc</tt> function returns the integer value of the next character in<i> string</i>, without advancing the string
 pointer.<tt>&nbsp; _mbsnextc</tt> recognizes multi-byte character sequences according to the multi-byte character code page
 currently in use.
-<br>The<tt> _fmbsnextc</tt> function is a code and data model independent form of the<tt> _mbsnextc</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsnextc</tt> function is a data model independent form of the<tt> _mbsnextc</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsnextc</tt>.
 <br><br>This macro maps to<tt> _mbsnextc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsnextc</tt> macro if <tt>
 _UNICODE</tt> has been defined, otherwise it maps to<tt> _strnextc</tt> macro.
@@ -32188,8 +32188,8 @@ takes place as if by a call to the <tt> mbrtowc</tt> function.
 (if conversion stopped due to reaching a terminating null character) or the address just past the last multibyte character
 converted.&nbsp; If conversion stopped due to reaching a terminating null character and if<i> dst</i> is not a null pointer,
 the resulting state described will be the initial conversion state.
-<br><br>The<tt> _fmbsrtowcs</tt> function is a code and data model independent form of the<tt> mbsrtowcs</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsrtowcs</tt> function is a data model independent form of the<tt> mbsrtowcs</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide string conversion functions differ from the corresponding internal-state multibyte
 string functions ( <tt> mbstowcs</tt> and <tt> wcstombs</tt>) in that they have an extra argument,<i> ps</i>, of type pointer
 to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state of the associated
@@ -32343,8 +32343,8 @@ null character (if any).
 <br><br>All elements following the terminating null wide character (if any) written by<tt> mbsrtowcs_s</tt> in the array of<i>
 dstmax</i> wide characters pointed to by<i> dst</i> take unspecified values when<tt> mbsrtowcs_s</tt> returns.
 <br><br>If copying takes place between objects that overlap, the objects take on unspecified values.
-<br><br>The<tt> _fmbsrtowcs_s</tt> function is a code and data model independent form of the<tt> mbsrtowcs_s</tt> function
-that accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsrtowcs_s</tt> function is a data model independent form of the<tt> mbsrtowcs_s</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -32439,8 +32439,8 @@ wchar_t *charset );</tt>
 <dt>Description:
 <dd>The<tt> _mbsspnp</tt> function returns a pointer to the first character in<i> str</i> that does not belong to the set of characters
 in<i> charset</i>.&nbsp; The terminating null character is not considered to be part of<i> charset</i>.
-<br>The<tt> _fmbsspnp</tt> function is a code and data model independent form of the<tt> _mbsspnp</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsspnp</tt> function is a data model independent form of the<tt> _mbsspnp</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsspnp</tt>.
 <br><br>This macro maps to<tt> _mbsspnp</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsspnp</tt> macro if <tt>
 _UNICODE</tt> has been defined, otherwise it maps to<tt> _strspnp</tt> macro.
@@ -32506,8 +32506,8 @@ mbstowcs</tt> function.
 wide character codes and stores not more than<i> n</i> codes into the array pointed to by<i> pwcs</i>.&nbsp; The<tt> mbstowcs</tt>
 function does not convert any multibyte characters beyond the null character.&nbsp; At most<i> n</i> elements of the array
 pointed to by<i> pwcs</i> will be modified.
-<br>The<tt> _fmbstowcs</tt> function is a code and data model independent form of the<tt> mbstowcs</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbstowcs</tt> function is a data model independent form of the<tt> mbstowcs</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -32604,8 +32604,8 @@ the number of multibyte characters successfully converted, not including the ter
 <br><br>All elements following the terminating null wide character (if any) written by<tt> mbstowcs_s</tt> in the array of<i>
 dstmax</i> wide characters pointed to by<i> dst</i> take unspecified values when<tt> mbstowcs_s</tt> returns.
 <br><br>If copying takes place between objects that overlap, the objects take on unspecified values.
-<br><br>The<tt> _fmbstowcs_s</tt> function is a code and data model independent form of the<tt> mbstowcs_s</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbstowcs_s</tt> function is a data model independent form of the<tt> mbstowcs_s</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -32666,8 +32666,8 @@ is returned.
 <dt>Description:
 <dd>The<tt> _mbterm</tt> function determines if the next multibyte character in the string pointed to by<i> ch</i> is a null character
 or a valid lead byte followed by a null character.
-<br>The<tt> _fmbterm</tt> function is a code and data model independent form of the<tt> _mbterm</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbterm</tt> function is a data model independent form of the<tt> _mbterm</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -32748,8 +32748,8 @@ corresponds to that multibyte character.&nbsp; The code for the null character i
 valid and<i> pwc</i> is not a NULL pointer, the code is stored in the object pointed to by<i> pwc</i>.&nbsp; At most<i> n</i>
 bytes of the array pointed to by<i> s</i> will be examined.
 <br>The<tt> mbtowc</tt> function does not examine more than <tt> MB_CUR_MAX</tt> bytes.
-<br><br>The<tt> _fmbtowc</tt> function is a code and data model independent form of the<tt> mbtowc</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbtowc</tt> function is a data model independent form of the<tt> mbtowc</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -32822,8 +32822,8 @@ and non-zero otherwise.&nbsp; If<i> s</i> is not a NULL pointer, the<tt> mbtowc<
 <dl>
 <dt>Description:
 <dd>The<tt> _mbvtop</tt> function stores the multibyte character<i> ch</i> into the string pointed to by<i> addr</i>.
-<br>The<tt> _fmbvtop</tt> function is a code and data model independent form of the<tt> _mbvtop</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbvtop</tt> function is a data model independent form of the<tt> _mbvtop</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -32953,8 +32953,8 @@ Functions, <a href="#malloc">malloc</a> Functions, <a href="#realloc">realloc</a
 <dt>Description:
 <dd>The<tt> memccpy</tt> function copies bytes from<i> src</i> to<i> dest</i> up to and including the first occurrence of the
 character<i> c</i> or until<i> cnt</i> bytes have been copied, whichever comes first.
-<br>The<tt> _fmemccpy</tt> function is a code and data model independent form of the<tt> memccpy</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmemccpy</tt> function is a data model independent form of the<tt> memccpy</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -33008,8 +33008,8 @@ and copied, otherwise it returns NULL.
 <dt>Description:
 <dd>The<tt> memchr</tt> function locates the first occurrence of<i> ch</i> (converted to an unsigned char) in the first<i> length</i>
 characters of the object pointed to by<i> buf</i>.
-<br>The<tt> _fmemchr</tt> function is a code and data model independent form of the<tt> memchr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmemchr</tt> function is a data model independent form of the<tt> memchr</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wmemchr</tt> function is a wide-character version of<tt> memchr</tt> that operates with wide-character strings.
 &nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
@@ -33076,8 +33076,8 @@ in the object.
 <dt>Description:
 <dd>The<tt> memcmp</tt> function compares the first<i> length</i> characters of the object pointed to by<i> s1</i> to the object
 pointed to by<i> s2</i>.
-<br>The<tt> _fmemcmp</tt> function is a code and data model independent form of the<tt> memcmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmemcmp</tt> function is a data model independent form of the<tt> memcmp</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wmemcmp</tt> function is a wide-character version of<tt> memcmp</tt> that operates with wide-character strings.
 &nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
@@ -33147,8 +33147,8 @@ function.
 <dd>The<tt> memcpy</tt> function copies<i> length</i> characters from the buffer pointed to by<i> src</i> into the buffer pointed
 to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <tt> memmove</tt>
 function if you wish to copy objects that overlap.
-<br>The<tt> _fmemcpy</tt> function is a code and data model independent form of the<tt> memcpy</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmemcpy</tt> function is a data model independent form of the<tt> memcpy</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wmemcpy</tt> function is a wide-character version of<tt> memcpy</tt> that operates with wide-character strings.
 &nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
@@ -33278,8 +33278,8 @@ is returned.
 <dd>The function compares, without case sensitivity (upper- and lowercase characters are equivalent), the first<i> length</i>
 characters of the object pointed to by<i> s1</i> to the object pointed to by<i> s2</i>.&nbsp; All uppercase characters from<i>
 s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> _fmemicmp</tt> function is a code and data model independent form of the<tt> memicmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmemicmp</tt> function is a data model independent form of the<tt> memicmp</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _memicmp</tt> function is identical to<tt> memicmp</tt>.&nbsp; Use<tt> _memicmp</tt> for ANSI naming conventions.
 </dl>
 <dl>
@@ -33401,8 +33401,8 @@ memmove</tt> function.
 <dd>The<tt> memmove</tt> function copies<i> length</i> characters from the buffer pointed to by<i> src</i> to the buffer pointed
 to by<i> dst</i>.&nbsp; Copying of overlapping objects will take place properly.&nbsp; See the <tt> memcpy</tt> function to
 copy objects that do not overlap.
-<br>The<tt> _fmemmove</tt> function is a code and data model independent form of the<tt> memmove</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmemmove</tt> function is a data model independent form of the<tt> memmove</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wmemmove</tt> function is a wide-character version of<tt> memmove</tt> that operates with wide-character strings.
 &nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
@@ -33604,8 +33604,8 @@ one type.
 <dt>Description:
 <dd>The<tt> memset</tt> function fills the first<i> length</i> characters of the object pointed to by<i> dst</i> with the value<i>
 c</i>.
-<br>The<tt> _fmemset</tt> function is a code and data model independent form of the<tt> memset</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmemset</tt> function is a data model independent form of the<tt> memset</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wmemset</tt> function is a wide-character version of<tt> memset</tt> that operates with wide-character strings.
 &nbsp;The argument<i> length</i> is interpreted to mean the number of wide characters.
 </dl>
@@ -49099,8 +49099,8 @@ function.
 <dd>The<tt> strcat</tt> function appends a copy of the string pointed to by<i> src</i> (including the terminating null character)
 to the end of the string pointed to by<i> dst</i>.&nbsp; The first character of<i> src</i> overwrites the null character at
 the end of<i> dst</i>.
-<br>The<tt> _fstrcat</tt> function is a code and data model independent form of the<tt> strcat</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrcat</tt> function is a data model independent form of the<tt> strcat</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscat</tt> function is a wide-character version of<tt> strcat</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbscat</tt> function is a multi-byte character version of<tt> strcat</tt> that operates with multi-byte character
 strings.
@@ -49233,8 +49233,8 @@ is returned.
 <dt>Description:
 <dd>The<tt> strchr</tt> function locates the first occurrence of<i> c</i> (converted to a char) in the string pointed to by<i>
 s</i>.&nbsp; The terminating null character is considered to be part of the string.
-<br>The<tt> _fstrchr</tt> function is a code and data model independent form of the<tt> strchr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrchr</tt> function is a data model independent form of the<tt> strchr</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcschr</tt> function is a wide-character version of<tt> strchr</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbschr</tt> function is a multi-byte character version of<tt> strchr</tt> that operates with multi-byte character
 strings.
@@ -49299,8 +49299,8 @@ in the string.
 <dl>
 <dt>Description:
 <dd>The<tt> strcmp</tt> function compares the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
-<br>The<tt> _fstrcmp</tt> function is a code and data model independent form of the<tt> strcmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrcmp</tt> function is a data model independent form of the<tt> strcmp</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscmp</tt> function is a wide-character version of<tt> strcmp</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbscmp</tt> function is a multi-byte character version of<tt> strcmp</tt> that operates with multi-byte character
 strings.
@@ -49486,8 +49486,8 @@ function.
 <dd>The<tt> strcpy</tt> function copies the string pointed to by<i> src</i> (including the terminating null character) into the
 array pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the description
 for the <tt> memmove</tt> function to copy objects that overlap.
-<br>The<tt> _fstrcpy</tt> function is a code and data model independent form of the<tt> strcpy</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrcpy</tt> function is a data model independent form of the<tt> strcpy</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscpy</tt> function is a wide-character version of<tt> strcpy</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbscpy</tt> function is a multi-byte character version of<tt> strcpy</tt> that operates with multi-byte character
 strings.
@@ -49624,8 +49624,8 @@ char __far *charset );</tt>
 <dd>The<tt> strcspn</tt> function computes the length, in bytes, of the initial segment of the string pointed to by<i> str</i>
 which consists entirely of characters<i> not</i> from the string pointed to by<i> charset</i>.&nbsp; The terminating null
 character is not considered part of<i> str</i>.
-<br>The<tt> _fstrcspn</tt> function is a code and data model independent form of the<tt> strcspn</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrcspn</tt> function is a data model independent form of the<tt> strcspn</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscspn</tt> function is a wide-character version of<tt> strcspn</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbscspn</tt> function is a multi-byte character version of<tt> strcspn</tt> that operates with multi-byte character
 strings.
@@ -49735,8 +49735,8 @@ the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The
 <dd>The<tt> _mbsdec</tt> function returns a pointer to the previous character (single-byte, wide, or multibyte) in the string
 pointed to by<i> start</i> which must precede<i> current</i>.&nbsp; The current character in the string is pointed to by<i>
 current</i>.&nbsp; You must ensure that<i> current</i> does not point into the middle of a multibyte or wide character.
-<br>The<tt> _fmbsdec</tt> function is a code and data model independent form of the<tt> _mbsdec</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsdec</tt> function is a data model independent form of the<tt> _mbsdec</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsdec</tt>.
 <br><br>This macro maps to<tt> _mbsdec</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsdec</tt> macro if <tt>
 _UNICODE</tt> has been defined, otherwise it maps to<tt> _strdec</tt> macro.
@@ -49839,13 +49839,13 @@ new copy.&nbsp; For<tt> strdup</tt> the memory for the new string is obtained by
 be freed using the <tt> free</tt> function.&nbsp; For _fstrdup, the memory for the new string is obtained by using the <tt>
 _fmalloc</tt> function and can be freed using the <tt> _ffree</tt> function.
 <br>The<tt> _strdup</tt> function is identical to<tt> strdup</tt>.&nbsp; Use<tt> _strdup</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrdup</tt> function is a code and data model independent form of the<tt> strdup</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrdup</tt> function is a data model independent form of the<tt> strdup</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsdup</tt> function is a wide-character version of<tt> strdup</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsdup</tt> function is a multi-byte character version of<tt> strdup</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsdup</tt> function is a code and data model independent form of the<tt> _mbsdup</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsdup</tt> function is a data model independent form of the<tt> _mbsdup</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50273,13 +50273,13 @@ that has been detected.
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
 <br>The<tt> _stricmp</tt> function is identical to<tt> stricmp</tt>.&nbsp; Use<tt> _stricmp</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstricmp</tt> function is a code and data model independent form of the<tt> stricmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstricmp</tt> function is a data model independent form of the<tt> stricmp</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsicmp</tt> function is a wide-character version of<tt> stricmp</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsicmp</tt> function is a multi-byte character version of<tt> stricmp</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsicmp</tt> function is a code and data model independent form of the<tt> _mbsicmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsicmp</tt> function is a data model independent form of the<tt> _mbsicmp</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50399,8 +50399,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <dt>Description:
 <dd>The<tt> _mbsinc</tt> function returns a pointer to the next character (single-byte, wide, or multibyte) in the string pointed
 to by<i> current</i>.&nbsp; You must ensure that<i> current</i> does not point into the middle of a multibyte or wide character.
-<br>The<tt> _fmbsinc</tt> function is a code and data model independent form of the<tt> _mbsinc</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsinc</tt> function is a data model independent form of the<tt> _mbsinc</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsinc</tt>.
 <br><br>This macro maps to<tt> _mbsinc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsinc</tt> macro if <tt>
 _UNICODE</tt> has been defined, otherwise it maps to<tt> _strinc</tt> macro.
@@ -50612,13 +50612,13 @@ strlen</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> strlen</tt> function computes the length of the string pointed to by<i> s</i>.
-<br>The<tt> _fstrlen</tt> function is a code and data model independent form of the<tt> strlen</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrlen</tt> function is a data model independent form of the<tt> strlen</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcslen</tt> function is a wide-character version of<tt> strlen</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbslen</tt> function is a multi-byte character version of<tt> strlen</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbslen</tt> function is a code and data model independent form of the<tt> _mbslen</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbslen</tt> function is a data model independent form of the<tt> _mbslen</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50736,13 +50736,13 @@ maxsize</i> characters of<i> s</i> shall be accessed by strnlen_s
 <dd>The<tt> strlwr</tt> function replaces the string<i> s1</i> with lowercase characters by invoking the <tt> tolower</tt> function
 for each character in the string.
 <br>The<tt> _strlwr</tt> function is identical to<tt> strlwr</tt>.&nbsp; Use<tt> _strlwr</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrlwr</tt> function is a code and data model independent form of the<tt> strlwr</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> strlwr</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcslwr</tt> function is a wide-character version of<tt> strlwr</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbslwr</tt> function is a multi-byte character version of<tt> strlwr</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbslwr</tt> function is a code and data model independent form of the<tt> _mbslwr</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbslwr</tt> function is a data model independent form of the<tt> _mbslwr</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50874,13 +50874,13 @@ strncat</tt> function.
 <dd>The<tt> strncat</tt> function appends not more than<i> n</i> characters of the string pointed to by<i> src</i> to the end
 of the string pointed to by<i> dst</i>.&nbsp; The first character of<i> src</i> overwrites the null character at the end of<i>
 dst</i>.&nbsp; A terminating null character is always appended to the result.
-<br>The<tt> _fstrncat</tt> function is a code and data model independent form of the<tt> strncat</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrncat</tt> function is a data model independent form of the<tt> strncat</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsncat</tt> function is a wide-character version of<tt> strncat</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsncat</tt> function is a multi-byte character version of<tt> strncat</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsncat</tt> function is a code and data model independent form of the<tt> _mbsncat</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsncat</tt> function is a data model independent form of the<tt> _mbsncat</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51031,13 +51031,13 @@ is returned.
 <dt>Description:
 <dd>The<tt> strncmp</tt> compares not more than<i> n</i> characters from the string pointed to by<i> s1</i> to the string pointed
 to by<i> s2</i>.
-<br>The<tt> _fstrncmp</tt> function is a code and data model independent form of the<tt> strncmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrncmp</tt> function is a data model independent form of the<tt> strncmp</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsncmp</tt> function is a wide-character version of<tt> strncmp</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsncmp</tt> function is a multi-byte character version of<tt> strncmp</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsncmp</tt> function is a code and data model independent form of the<tt> _mbsncmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsncmp</tt> function is a data model independent form of the<tt> _mbsncmp</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51190,13 +51190,13 @@ function if you wish to copy objects that overlap.
 <br>If the string pointed to by<i> src</i> is shorter than<i> n</i> characters, null characters are appended to the copy in
 the array pointed to by<i> dst</i>, until<i> n</i> characters in all have been written.&nbsp; If the string pointed to by<i>
 src</i> is longer than<i> n</i> characters, then the result will not be terminated by a null character.
-<br><br>The<tt> _fstrncpy</tt> function is a code and data model independent form of the<tt> strncpy</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrncpy</tt> function is a data model independent form of the<tt> strncpy</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsncpy</tt> function is a wide-character version of<tt> strncpy</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsncpy</tt> function is a multi-byte character version of<tt> strncpy</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsncpy</tt> function is a code and data model independent form of the<tt> _mbsncpy</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsncpy</tt> function is a data model independent form of the<tt> _mbsncpy</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51360,13 +51360,13 @@ is returned.
 for at most<i> len</i> characters.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for
 the purposes of doing the comparison.
 <br>The<tt> _strnicmp</tt> function is identical to<tt> strnicmp</tt>.&nbsp; Use<tt> _strnicmp</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrnicmp</tt> function is a code and data model independent form of the<tt> strnicmp</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrnicmp</tt> function is a data model independent form of the<tt> strnicmp</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsnicmp</tt> function is a wide-character version of<tt> strnicmp</tt> that operates with wide-character
 strings.&nbsp; The<tt> _mbsnicmp</tt> function is a multi-byte character version of<tt> strnicmp</tt> that operates with multi-byte
 character strings.
-<br><br>The<tt> _fmbsnicmp</tt> function is a code and data model independent form of the<tt> _mbsnicmp</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsnicmp</tt> function is a data model independent form of the<tt> _mbsnicmp</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51493,8 +51493,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <dt>Description:
 <dd>The<tt> _mbsninc</tt> function increments<i> str</i> by<i> count</i> multibyte characters.<tt>&nbsp; _mbsninc</tt> recognizes
 multibyte-character sequences according to the multibyte code page currently in use.
-<br>The<tt> _fmbsninc</tt> function is a code and data model independent form of the<tt> _mbsninc</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fmbsninc</tt> function is a data model independent form of the<tt> _mbsninc</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macro <tt> _tcsninc</tt>.
 <br><br>This macro maps to<tt> _mbsninc</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsninc</tt> macro if <tt>
 _UNICODE</tt> has been defined, otherwise it maps to<tt> _strninc</tt> macro.
@@ -51610,14 +51610,14 @@ j, k;</tt>
 value.&nbsp; When the value of<i> count</i> is greater than the length of the string, the entire string is filled.&nbsp; Otherwise,
 that number of characters at the start of the string are set to the fill character.
 <br>The<tt> _strnset</tt> function is identical to<tt> strnset</tt>.&nbsp; Use<tt> _strnset</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrnset</tt> function is a code and data model independent form of the<tt> strnset</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrnset</tt> function is a data model independent form of the<tt> strnset</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsnset</tt> function is a wide-character version of<tt> strnset</tt> that operates with wide-character strings.
 &nbsp;For _wcsnset, the value of<i> count</i> is the number of wide characters to fill.&nbsp; This is half the number of bytes.
 &nbsp;The<tt> _mbsnset</tt> function is a multi-byte character version of<tt> strnset</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsnset</tt> function is a code and data model independent form of the<tt> _mbsnset</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsnset</tt> function is a data model independent form of the<tt> _mbsnset</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>For _mbsnset, the value of<i> count</i> is the number of multibyte characters to fill.&nbsp; If the number of bytes
 to be filled is odd and<i> fill</i> is a double-byte character, the partial byte at the end is filled with an ASCII space
 character.
@@ -51688,13 +51688,13 @@ const unsigned char __far *charset );</tt>
 <dt>Description:
 <dd>The<tt> strpbrk</tt> function locates the first occurrence in the string pointed to by<i> str</i> of any character from the
 string pointed to by<i> charset</i>.
-<br>The<tt> _fstrpbrk</tt> function is a code and data model independent form of the<tt> strpbrk</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrpbrk</tt> function is a data model independent form of the<tt> strpbrk</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcspbrk</tt> function is a wide-character version of<tt> strpbrk</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbspbrk</tt> function is a multi-byte character version of<tt> strpbrk</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbspbrk</tt> function is a code and data model independent form of the<tt> _mbspbrk</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbspbrk</tt> function is a data model independent form of the<tt> _mbspbrk</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51763,13 +51763,13 @@ occurs in<i> str</i>.
 <dt>Description:
 <dd>The<tt> strrchr</tt> function locates the last occurrence of<i> c</i> (converted to a char) in the string pointed to by<i>
 s</i>.&nbsp; The terminating null character is considered to be part of the string.
-<br>The<tt> _fstrrchr</tt> function is a code and data model independent form of the<tt> strrchr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrrchr</tt> function is a data model independent form of the<tt> strrchr</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsrchr</tt> function is a wide-character version of<tt> strrchr</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsrchr</tt> function is a multi-byte character version of<tt> strrchr</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsrchr</tt> function is a code and data model independent form of the<tt> _mbsrchr</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsrchr</tt> function is a data model independent form of the<tt> _mbsrchr</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51828,13 +51828,13 @@ in the string.
 <dt>Description:
 <dd>The<tt> strrev</tt> function replaces the string<i> s1</i> with a string whose characters are in the reverse order.
 <br>The<tt> _strrev</tt> function is identical to<tt> strrev</tt>.&nbsp; Use<tt> _strrev</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrrev</tt> function is a code and data model independent form of the<tt> strrev</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrrev</tt> function is a data model independent form of the<tt> strrev</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsrev</tt> function is a wide-character version of<tt> strrev</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsrev</tt> function is a multi-byte character version of<tt> strrev</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsrev</tt> function is a code and data model independent form of the<tt> _mbsrev</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsrev</tt> function is a data model independent form of the<tt> _mbsrev</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51894,13 +51894,13 @@ accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful
 <dd>The<tt> strset</tt> function fills the string pointed to by<i> s1</i> with the character<i> fill</i>.&nbsp; The terminating
 null character in the original string remains unchanged.
 <br>The<tt> _strset</tt> function is identical to<tt> strset</tt>.&nbsp; Use<tt> _strset</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrset</tt> function is a code and data model independent form of the<tt> strset</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrset</tt> function is a data model independent form of the<tt> strset</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsset</tt> function is a wide-character version of<tt> strset</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsset</tt> function is a multi-byte character version of<tt> strset</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsset</tt> function is a code and data model independent form of the<tt> _mbsset</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsset</tt> function is a data model independent form of the<tt> _mbsset</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51967,13 +51967,13 @@ __far *charset );</tt>
 <dd>The<tt> strspn</tt> function computes the length, in bytes, of the initial segment of the string pointed to by<i> str</i>
 which consists of characters from the string pointed to by<i> charset</i>.&nbsp; The terminating null character is not considered
 to be part of<i> charset</i>.
-<br>The<tt> _fstrspn</tt> function is a code and data model independent form of the<tt> strspn</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrspn</tt> function is a data model independent form of the<tt> strspn</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsspn</tt> function is a wide-character version of<tt> strspn</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsspn</tt> function is a multi-byte character version of<tt> strspn</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsspn</tt> function is a code and data model independent form of the<tt> _mbsspn</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsspn</tt> function is a data model independent form of the<tt> _mbsspn</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -52027,13 +52027,12 @@ far pointer arguments.&nbsp; It is most useful in mixed memory model application
 <dt>Description:
 <dd>The<tt> strspnp</tt> function returns a pointer to the first character in<i> str</i> that does not belong to the set of characters
 in<i> charset</i>.&nbsp; The terminating null character is not considered to be part of<i> charset</i>.
-<br>The<tt> _fstrspnp</tt> function is a code and data model independent form of the<tt> strspnp</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrspnp</tt> function is a data model independent form of the<tt> strspnp</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters from<i> charset</i> (single-byte, wide,
-or multi-byte).
+<dd>These functions return<tt> NULL</tt> if<i> str</i> consists entirely of characters from<i> charset</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -52090,13 +52089,13 @@ const unsigned char __far *substr );</tt>
 <dt>Description:
 <dd>The<tt> strstr</tt> function locates the first occurrence in the string pointed to by<i> str</i> of the sequence of characters
 (excluding the terminating null character) in the string pointed to by<i> substr</i>.
-<br>The<tt> _fstrstr</tt> function is a code and data model independent form of the<tt> strstr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrstr</tt> function is a data model independent form of the<tt> strstr</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsstr</tt> function is a wide-character version of<tt> strstr</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsstr</tt> function is a multi-byte character version of<tt> strstr</tt> that operates with multi-byte character
 strings.
-<br><br>The<tt> _fmbsstr</tt> function is a code and data model independent form of the<tt> _mbsstr</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbsstr</tt> function is a data model independent form of the<tt> _mbsstr</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -52324,8 +52323,8 @@ is a NULL pointer.
 <br><br>The reentrant form of this function, <tt> strtok_r</tt>, also requires a pointer to a string pointer to be passed.
 &nbsp;This pointer is used internally by the function for subsequent calls to perform tokenizing without relying on internal
 state within the function.
-<br><br>The<tt> _fstrtok</tt> function is a code and data model independent form of the<tt> strtok</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrtok</tt> function is a data model independent form of the<tt> strtok</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcstok</tt> function is a wide-character version of<tt> strtok</tt> that operates with wide-character strings.
 &nbsp;The third argument<i> ptr</i> points to a caller-provided <tt> wchar_t</tt> pointer into which the<tt> wcstok</tt> function
 stores information necessary for it to continue scanning the same wide string.
@@ -52335,8 +52334,8 @@ by the previous call to<tt> wcstok</tt> for the same wide string.&nbsp; Otherwis
 The list of delimiters pointed to by<i> s2</i> may be different from one call to the next.&nbsp; The tokenization of<i> s1</i>
 is similar to that for the<tt> strtok</tt> function.&nbsp; The<tt> _mbstok_r</tt> function is a multi-byte character version
 of<tt> strtok</tt> that operates with multi-byte character strings.
-<br><br>The<tt> _fmbstok_r</tt> function is a code and data model independent form of the<tt> _mbstok_r</tt> function.&nbsp;
-It accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fmbstok_r</tt> function is a data model independent form of the<tt> _mbstok_r</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -52920,8 +52919,8 @@ errno</tt> is set to <tt> EDOM</tt>.
 <dd>The<tt> strupr</tt> function replaces the string<i> s</i> with uppercase characters by invoking the <tt> toupper</tt> function
 for each character in the string.
 <br>The<tt> _strupr</tt> function is identical to<tt> strupr</tt>.&nbsp; Use<tt> _strupr</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrupr</tt> function is a code and data model independent form of the<tt> strupr</tt> function.&nbsp; It
-accepts far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> strupr</tt> function.&nbsp; It accepts
+far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsupr</tt> function is a wide-character version of<tt> strupr</tt> that operates with wide-character strings.
 &nbsp;The<tt> _mbsupr</tt> function is a multi-byte character version of<tt> strupr</tt> that operates with multi-byte character
 strings.
@@ -56879,8 +56878,8 @@ state described will be the initial conversion state.
 multibyte character that corresponds to the wide character given by<i> wc</i> (including any shift sequences), and stores
 the resulting bytes in the array whose first element is pointed to by<i> s</i>.&nbsp; At most <tt> MB_CUR_MAX</tt> bytes will
 be stored.&nbsp; If<i> wc</i> is a null wide character, the resulting state described will be the initial conversion state.
-<br><br>The<tt> _fwcrtomb</tt> function is a code and data model independent form of the<tt> wcrtomb</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fwcrtomb</tt> function is a data model independent form of the<tt> wcrtomb</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide character conversion functions differ from the corresponding internal-state multibyte
 character functions ( <tt> mblen</tt>, <tt> mbtowc</tt>, and <tt> wctomb</tt>) in that they have an extra argument,<i> ps</i>,
 of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state
@@ -57033,8 +57032,8 @@ to restore the initial shift state; the resulting state described is the initial
 function stores the value<tt> (size_t)-1</tt> into<i> *retval</i> and the conversion state is unspecified.&nbsp; Otherwise,
 the<tt> wcrtomb_s</tt> function stores into<i> *retval</i> the number of bytes (including any shift sequences) stored in the
 array pointed to by<i> s</i>.
-<br><br>The<tt> _fwcrtomb_s</tt> function is a code and data model independent form of the<tt> wcrtomb_s</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fwcrtomb_s</tt> function is a data model independent form of the<tt> wcrtomb_s</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -57160,8 +57159,8 @@ into the array pointed to by<i> dst</i>.&nbsp; Each conversion takes place as if
 (if conversion stopped due to reaching a terminating null wide character) or the address just past the last wide character
 converted.&nbsp; If conversion stopped due to reaching a terminating null wide character and if<i> dst</i> is not a null pointer,
 the resulting state described will be the initial conversion state.
-<br><br>The<tt> _fwcsrtombs</tt> function is a code and data model independent form of the<tt> wcsrtombs</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fwcsrtombs</tt> function is a data model independent form of the<tt> wcsrtombs</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide string conversion functions differ from the corresponding internal-state multibyte
 string functions ( <tt> mbstowcs</tt> and <tt> wcstombs</tt>) in that they have an extra argument,<i> ps</i>, of type pointer
 to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state of the associated
@@ -57332,8 +57331,8 @@ including the terminating null character (if any).
 <br><br>All elements following the terminating null character (if any) written by wcsrtombs_s in the array of<i> dstmax</i>
 elements pointed to by<i> dst</i> take unspecified values when<tt> wcsrtombs_s</tt> returns.
 <br><br>If copying takes place between objects that overlap, the objects take on unspecified values.
-<br><br>The<tt> _fwcsrtombs_s</tt> function is a code and data model independent form of the<tt> wcsrtombs_s</tt> function
-that accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fwcsrtombs_s</tt> function is a data model independent form of the<tt> wcsrtombs_s</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -57447,8 +57446,8 @@ wcstombs</tt> function.
 sequence of multibyte characters and stores them in the array pointed to by<i> s</i>.&nbsp; The<tt> wcstombs</tt> function
 stops if a multibyte character would exceed the limit of<i> n</i> total bytes, or if the null character is stored.&nbsp; At
 most<i> n</i> bytes of the array pointed to by<i> s</i> will be modified.
-<br>The<tt> _fwcstombs</tt> function is a code and data model independent form of the<tt> wcstombs</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fwcstombs</tt> function is a data model independent form of the<tt> wcstombs</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -57562,8 +57561,8 @@ stores the value<tt> (size_t)-1</tt> into<i> *retval</i>.&nbsp; Otherwise, the<t
 <br><br>All elements following the terminating null character (if any) written by wcstombs_s in the array of<i> dstmax</i>
 elements pointed to by<i> dst</i> take unspecified values when<tt> wcstombs_s</tt> returns.
 <br><br>If copying takes place between objects that overlap, the objects take on unspecified values.
-<br><br>The<tt> _fwcstombs_s</tt> function is a code and data model independent form of the<tt> wcstombs_s</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fwcstombs_s</tt> function is a data model independent form of the<tt> wcstombs_s</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -57732,8 +57731,8 @@ function.
 <dd>The<tt> wctomb</tt> function determines the number of bytes required to represent the multibyte character corresponding to
 the wide character contained in<i> wc</i>.&nbsp; If<i> s</i> is not a NULL pointer, the multibyte character representation
 is stored in the array pointed to by<i> s</i>.&nbsp; At most <tt> MB_CUR_MAX</tt> characters will be stored.
-<br>The<tt> _fwctomb</tt> function is a code and data model independent form of the<tt> wctomb</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fwctomb</tt> function is a data model independent form of the<tt> wctomb</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -57824,8 +57823,8 @@ or zero value, if multibyte character encodings, respectively, do or do not have
 <br><br>If<i> s</i> is not a null pointer,the<tt> wctomb_s</tt> function stores into the int pointed to by<i> status</i> either<i>
 n</i> or<i> -1</i> if<i> wc</i>, respectively, does or does not correspond to a valid multibyte character.
 <br><br>In no case will the int pointed to by<i> status</i> be set to a value greater than the <tt> MB_CUR_MAX</tt> macro.
-<br><br>The<tt> _fwctomb_s</tt> function is a code and data model independent form of the<tt> wctomb_s</tt> function that
-accepts far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _fwctomb_s</tt> function is a data model independent form of the<tt> wctomb_s</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
