@@ -19594,8 +19594,8 @@ line would result from a value of<tt> 0xF0F0</tt>
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _getmbcp</tt> function returns the current multibyte code page.&nbsp; A return value of zero indicates that a single
-byte code page is in use.
+<dd>The<tt> _getmbcp</tt> function returns the current multibyte code page.&nbsp; A return value of zero indicates that a single-byte
+character code page is in use.
 </dl>
 <dl>
 <dt>See Also:
@@ -43410,7 +43410,7 @@ converted to a value of type<tt> void*</tt> and then assigned to the object poin
 <dd>A sequence of non-white-space characters is matched.&nbsp; The argument is assumed to point to the first element of a character
 array of sufficient size to contain the sequence and a terminating null character, which is added by the conversion operation.
 <dt><br>S
-<dd>A sequence of multibyte characters is matched.&nbsp; None of the multibyte characters in the sequence may be single byte white-space
+<dd>A sequence of multibyte characters is matched.&nbsp; None of the multibyte characters in the sequence may be single-byte white-space
 characters.&nbsp; Each multibyte character is converted to a wide character.&nbsp; The argument is assumed to point to the
 first element of an array of<tt> wchar_t</tt> of sufficient size to contain the sequence and a terminating null wide character,
 which is added by the conversion operation.
@@ -57597,12 +57597,12 @@ is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> wctob</tt> function determines whether<i> wc</i> corresponds to a member of the extended character set whose multibyte
-character representation is as a single byte when in the initial shift state.
+character representation is as a single-byte character when in the initial shift state.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> wctob</tt> function returns <tt> EOF</tt> if<i> wc</i> does not correspond to a multibyte character with length one;
-otherwise, it returns the single byte representation.
+otherwise, it returns the single-byte character representation.
 </dl>
 <dl>
 <dt>See Also:

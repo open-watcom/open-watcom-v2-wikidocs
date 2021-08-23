@@ -1354,8 +1354,8 @@ the header <tt> &lt;stddef.h&gt;</tt>.
 character set, and has type <tt> wchar_t</tt>.&nbsp; In contrast, the constant<tt> 'a'</tt> is a character constant containing
 the letter<tt> a</tt>, and has type <tt> int</tt>.
 <br><br>How the multibyte character maps onto the wide character value is defined by the <tt> mbtowc</tt> library function.
-<br><br>As shown above, a wide character constant may also contain a single byte character, since an extended character set
-contains the single byte characters.&nbsp; The single byte character is mapped onto the corresponding wide character code.
+<br><br>As shown above, a wide character constant may also contain a single-byte character, since an extended character set
+contains the single-byte characters.&nbsp; The single-byte character is mapped onto the corresponding wide character code.
 <h2 id="String_Literals"> String Literals </h2>
 <br>A sequence of zero or more characters enclosed within double-quotes is a <i> string literal.</i>
 <br><br>Most of the same rules for creating character constants also apply to creating string literals.&nbsp; However, the
@@ -1411,8 +1411,8 @@ and<tt> b</tt>.&nbsp; Its type is &quot;array &#91;3&#93; of <tt> wchar_t</tt>&q
 L'a'</tt>,<tt> L'b'</tt> and<tt> '\0'</tt>.&nbsp; In contrast, the string literal<tt> &quot;ab&quot;</tt> has type &quot;array
 &#91;3&#93; of <tt> char</tt>&quot;, and the values of its elements are<tt> 'a'</tt>,<tt> 'b'</tt> and<tt> '\0'</tt>.
 <br><br>How the multibyte characters map onto wide character values is defined by the <tt> mbtowc</tt> library function.
-<br><br>As shown above, a wide string literal may also contain single byte characters, since the extended character set contains
-the single byte characters.&nbsp; The single byte characters are mapped onto the corresponding wide character codes.
+<br><br>As shown above, a wide string literal may also contain single-byte characters, since the extended character set contains
+the single-byte characters.&nbsp; The single-byte characters are mapped onto the corresponding wide character codes.
 <br><br>Adjacent wide string literals will be concatenated by the compiler and a null character appended to the end.&nbsp;
 If a string literal and a wide string literal are adjacent, the behavior when the compiler attempts to concatentate them is
 undefined.
