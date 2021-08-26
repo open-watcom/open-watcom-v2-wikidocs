@@ -808,9 +808,9 @@
 <br><a href="#strdup">strdup, _strdup, _fstrdup, _wcsdup, _mbsdup, _fmbsdup</a>
 <br><a href="#Stream_IDO_Functions">Stream I/O Functions</a>
 <br><a href="#The_strerror_Function">The strerror Function</a>
-<br><a href="#strerror">strerror, wcserror</a>
-<br><a href="#strerror_s">strerror_s, wcserror_s</a>
-<br><a href="#strerrorlen_s">strerrorlen_s, wcserrorlen_s</a>
+<br><a href="#strerror">strerror, _wcserror</a>
+<br><a href="#strerror_s">strerror_s, _wcserror_s</a>
+<br><a href="#strerrorlen_s">strerrorlen_s, _wcserrorlen_s</a>
 <br><a href="#strftime">strftime, wcsftime, _wstrftime_ms</a>
 <br><a href="#stricmp">stricmp, _stricmp, _fstricmp, _wcsicmp, _mbsicmp, _fmbsicmp</a>
 <br><a href="#String_Manipulation_Functions">String Manipulation Functions</a>
@@ -1495,7 +1495,7 @@ for.&nbsp; The following functions are defined:
 <dd>returns pointer to the previous character in string
 <dt><br>_wcsdup (see <a href="#strdup">strdup</a>)
 <dd>allocate and duplicate a string
-<dt><br>wcserror (see <a href="#strerror">strerror</a>)
+<dt><br>_wcserror (see <a href="#strerror">strerror</a>)
 <dd>get error message as string
 <dt><br>_wcsicmp (see <a href="#stricmp">stricmp</a>)
 <dd>compare two strings with case insensitivity
@@ -50090,13 +50090,13 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><tt>_mbsdup - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsdup - DOS, Windows, OS/2 1.x(all)</tt>
 </dl>
-<h2 id="strerror"> strerror, wcserror </h2>
+<h2 id="strerror"> strerror, _wcserror </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
 <br><tt>char *strerror( int errnum );</tt>
-<br><tt>wchar_t *wcserror( int errnum );</tt>
+<br><tt>wchar_t *_wcserror( int errnum );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -50107,7 +50107,7 @@ strerror</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> strerror</tt> function maps the error number contained in<i> errnum</i> to an error message.
-<br>The<tt> wcserror</tt> function is a wide character version of<tt> strerror</tt>.&nbsp; It produces a wide character string.
+<br>The<tt> _wcserror</tt> function is a wide character version of<tt> strerror</tt>.&nbsp; It produces a wide character string.
 </dl>
 <dl>
 <dt>Returns:
@@ -50139,13 +50139,14 @@ not be modified by the program.&nbsp; This array may be overwritten by a subsequ
 <dl>
 <dt>Classification:
 <dd>ISO C
+<br>_wcserror is WATCOM
 </dl>
 <dl>
 <dt>Systems:
 <dd><tt> strerror - All, Linux, RDOS, Netware</tt>
-<br><tt>wcserror - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux</tt>
+<br><tt>_wcserror - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux</tt>
 </dl>
-<h2 id="strerror_s"> strerror_s, wcserror_s </h2>
+<h2 id="strerror_s"> strerror_s, _wcserror_s </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -50156,7 +50157,7 @@ not be modified by the program.&nbsp; This array may be overwritten by a subsequ
 rsize_t maxsize,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 errno_t errnum );</tt>
-<br><tt>errno_t wcserror_s( wchar_t * s,</tt>
+<br><tt>errno_t _wcserror_s( wchar_t * s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 rsize_t maxsize,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -50179,7 +50180,7 @@ Otherwise, if<i> maxsize</i> is greater than zero, then<i> maxsize-1</i> charact
 pointed to by<i> s</i> and then<i> s&#91;maxsize-1&#93;</i> is set to the null character.&nbsp; Then, if<i> maxsize</i> is
 greater than 3, then<i> s&#91;maxsize-2&#93;, s&#91;maxsize-3&#93;</i>, and<i> s&#91;maxsize-4&#93;</i> are set to the character
 period (.).
-<br>The<tt> wcserror_s</tt> function is a wide character version of<tt> strerror_s</tt> that operates with wide character
+<br>The<tt> _wcserror_s</tt> function is a wide character version of<tt> strerror_s</tt> that operates with wide character
 strings.
 </dl>
 <dl>
@@ -50217,9 +50218,9 @@ is returned.
 <dl>
 <dt>Systems:
 <dd><tt> strerror_s - All, Linux, RDOS, Netware</tt>
-<br><tt>wcserror_s - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux</tt>
+<br><tt>_wcserror_s - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux</tt>
 </dl>
-<h2 id="strerrorlen_s"> strerrorlen_s, wcserrorlen_s </h2>
+<h2 id="strerrorlen_s"> strerrorlen_s, _wcserrorlen_s </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -50227,7 +50228,7 @@ is returned.
 <br><tt>#include &lt;string.h&gt;</tt>
 <br><tt>size_t strerrorlen_s( errno_t errnum );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>size_t wcserrorlen_s( errno errnum );</tt>
+<br><tt>size_t _wcserrorlen_s( errno errnum );</tt>
 </dl>
 <dl>
 <dt>Constraints:
@@ -50237,7 +50238,7 @@ is returned.
 <dt>Description:
 <dd>The<tt> strerrorlen_s</tt> function calculates the length of the (untruncated) locale-specific message string that the <tt>
 strerror_s</tt> function maps to<i> errnum</i>.
-<br>The<tt> wcserrorlen_s</tt> function is a wide character version of<tt> strerrorlen_s</tt> that operates with wide character
+<br>The<tt> _wcserrorlen_s</tt> function is a wide character version of<tt> strerrorlen_s</tt> that operates with wide character
 strings.
 </dl>
 <dl>
@@ -50277,7 +50278,7 @@ string.
 <dl>
 <dt>Systems:
 <dd><tt> strerrorlen_s - All, Linux, RDOS, Netware</tt>
-<br><tt>wcserrorlen_s - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux</tt>
+<br><tt>_wcserrorlen_s - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux</tt>
 </dl>
 <h2 id="strftime"> strftime, wcsftime, _wstrftime_ms </h2>
 <dl>
@@ -58257,8 +58258,8 @@ isgraph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; islower&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp;&nbsp; strupr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;tolower&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;
-&nbsp; wcscat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcserror_s&nbsp;&nbsp;&nbsp;
-&nbsp;wcserrorlen_s&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;
+&nbsp; wcscat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp;
+&nbsp;_wcserrorlen_s&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;
 &nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; </tt>
