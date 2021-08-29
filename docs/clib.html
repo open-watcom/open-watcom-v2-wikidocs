@@ -317,10 +317,14 @@
 <br><a href="#_splitpath2">_splitpath2, _wsplitpath2</a>
 <br><a href="#_status87">_status87</a>
 <br><a href="#_strdate">_strdate, _wstrdate</a>
+<br><a href="#stricmp">_stricmp, _fstricmp, _wcsicmp, _mbsicmp, _fmbsicmp, stricmp</a>
 <br><a href="#_stricoll">_stricoll, _wcsicoll, _mbsicoll</a>
+<br><a href="#strlwr">_strlwr, _fstrlwr, _wcslwr, _mbslwr, _fmbslwr, strlwr</a>
 <br><a href="#_strncoll">_strncoll, _wcsncoll, _mbsncoll</a>
+<br><a href="#strnicmp">_strnicmp, _fstrnicmp, _wcsnicmp, _mbsnicmp, _fmbsnicmp, strnicmp</a>
 <br><a href="#_strnicoll">_strnicoll, _wcsnicoll, _mbsnicoll</a>
 <br><a href="#_strtime">_strtime, _wstrtime</a>
+<br><a href="#strupr">_strupr, _fstrupr, _wcsupr, _mbsupr, _fmbsupr, strupr</a>
 <br><a href="#_tempnam">_tempnam, _wtempnam</a>
 <br><a href="#_unregisterfonts">_unregisterfonts</a>
 <br><a href="#_vbprintf">_vbprintf, _vbwprintf</a>
@@ -655,7 +659,7 @@
 <br><a href="#mbstowcs">mbstowcs, _fmbstowcs</a>
 <br><a href="#mbstowcs_s">mbstowcs_s, _fmbstowcs_s</a>
 <br><a href="#mbtowc">mbtowc, _fmbtowc</a>
-<br><a href="#memccpy">memccpy, _fmemccpy</a>
+<br><a href="#memccpy">memccpy, _fmemccpy, _memccpy</a>
 <br><a href="#memchr">memchr, _fmemchr, wmemchr</a>
 <br><a href="#memcmp">memcmp, _fmemcmp, wmemcmp</a>
 <br><a href="#memcpy">memcpy, _fmemcpy, wmemcpy</a>
@@ -805,26 +809,23 @@
 <br><a href="#strcpy">strcpy, _fstrcpy, wcscpy, _mbscpy, _fmbscpy</a>
 <br><a href="#strcpy_s">strcpy_s, wcscpy_s</a>
 <br><a href="#strcspn">strcspn, _fstrcspn, wcscspn, _mbscspn, _fmbscspn</a>
-<br><a href="#strdup">strdup, _strdup, _fstrdup, _wcsdup, _mbsdup, _fmbsdup</a>
+<br><a href="#strdup">strdup, _strdup, _fstrdup, wcsdup, _wcsdup, _mbsdup, _fmbsdup</a>
 <br><a href="#Stream_IDO_Functions">Stream I/O Functions</a>
 <br><a href="#The_strerror_Function">The strerror Function</a>
 <br><a href="#strerror">strerror, _wcserror</a>
 <br><a href="#strerror_s">strerror_s, _wcserror_s</a>
 <br><a href="#strerrorlen_s">strerrorlen_s, _wcserrorlen_s</a>
 <br><a href="#strftime">strftime, wcsftime, _wstrftime_ms</a>
-<br><a href="#stricmp">stricmp, _stricmp, _fstricmp, _wcsicmp, _mbsicmp, _fmbsicmp</a>
 <br><a href="#String_Manipulation_Functions">String Manipulation Functions</a>
 <br><a href="#strlcat">strlcat, wcslcat</a>
 <br><a href="#strlcpy">strlcpy, wcslcpy</a>
 <br><a href="#strlen">strlen, _fstrlen, wcslen, _mbslen, _fmbslen</a>
-<br><a href="#strlwr">strlwr, _strlwr, _fstrlwr, _wcslwr, _mbslwr, _fmbslwr</a>
 <br><a href="#strncasecmp">strncasecmp</a>
 <br><a href="#strncat">strncat, _fstrncat, wcsncat, _mbsncat, _fmbsncat</a>
 <br><a href="#strncat_s">strncat_s, wcsncat_s</a>
 <br><a href="#strncmp">strncmp, _fstrncmp, wcsncmp, _mbsncmp, _fmbsncmp</a>
 <br><a href="#strncpy">strncpy, _fstrncpy, wcsncpy, _mbsncpy, _fmbsncpy</a>
 <br><a href="#strncpy_s">strncpy_s, wcsncpy_s</a>
-<br><a href="#strnicmp">strnicmp, _strnicmp, _fstrnicmp, _wcsnicmp, _mbsnicmp, _fmbsnicmp</a>
 <br><a href="#strnlen_s">strnlen_s, wcsnlen_s</a>
 <br><a href="#strnset">strnset, _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset</a>
 <br><a href="#strpbrk">strpbrk, _fstrpbrk, wcspbrk, _mbspbrk, _fmbspbrk</a>
@@ -843,7 +844,6 @@
 <br><a href="#strtoul">strtoul, wcstoul</a>
 <br><a href="#strtoull">strtoull, wcstoull</a>
 <br><a href="#strtoumax">strtoumax, wcstoumax</a>
-<br><a href="#strupr">strupr, _strupr, _fstrupr, _wcsupr, _mbsupr, _fmbsupr</a>
 <br><a href="#strxfrm">strxfrm, wcsxfrm</a>
 <br><a href="#swab">swab</a>
 <br><a href="#sysconf">sysconf</a>
@@ -1401,7 +1401,7 @@ following functions are defined:
 <dd>get number of string characters not from a set of characters
 <dt><br><a href="#_mbsdec">_strdec</a>
 <dd>returns pointer to the previous character in string
-<dt><br><a href="#strdup">_strdup</a>
+<dt><br><a href="#strdup">strdup</a>
 <dd>allocate and duplicate a string
 <dt><br><a href="#strerror">strerror</a>
 <dd>get error message as string
@@ -1493,7 +1493,7 @@ for.&nbsp; The following functions are defined:
 <dd>get number of string characters not from a set of characters
 <dt><br><a href="#_mbsdec">_wcsdec</a>
 <dd>returns pointer to the previous character in string
-<dt><br><a href="#strdup">_wcsdup</a>
+<dt><br><a href="#strdup">wcsdup</a>
 <dd>allocate and duplicate a string
 <dt><br><a href="#strerror">_wcserror</a>
 <dd>get error message as string
@@ -1811,8 +1811,8 @@ are defined:
 <dd>wide character string to &quot;long long int&quot;
 </dl>
 <br>See also <tt> tolower</tt>, <tt> towlower</tt>, <tt> _mbctolower</tt>, <tt> toupper</tt>, <tt> towupper</tt>, <tt> _mbctoupper</tt>,
-<tt> strlwr</tt>, <tt> _wcslwr</tt>, <tt> _mbslwr</tt>, <tt> strupr</tt>, <tt> _wcsupr</tt> and <tt> _mbsupr</tt> which convert
-the cases of characters and strings.
+<tt> _strlwr</tt>, <tt> _wcslwr</tt>, <tt> _mbslwr</tt>, <tt> _strupr</tt>, <tt> _wcsupr</tt> and <tt> _mbsupr</tt> which
+convert the cases of characters and strings.
 <h3 id="Memory_Allocation_Functions"> Memory Allocation Functions </h3>
 <br>These functions allocate and de-allocate blocks of memory.
 <br><br>Unless you are running your program in 32-bit protect mode, where segments have a limit of 4 gigabytes, the default
@@ -32172,7 +32172,7 @@ to <tt> _mbsncmp</tt>, except that<tt> _mbsnbcmp</tt> compares strings by length
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbicmp">_mbsnbicmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>
+<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbicmp">_mbsnbicmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -32320,7 +32320,7 @@ except that<tt> _mbsnbicmp</tt> compares strings by length in bytes rather than 
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbcmp">_mbsnbcmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>
+<dd><a href="#_mbsnbcat">_mbsnbcat</a>, <a href="#_mbsnbcmp">_mbsnbcmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -33477,7 +33477,7 @@ Functions, <a href="#malloc">malloc</a> Functions, <a href="#realloc">realloc</a
 <dt>Systems:
 <dd>All, Linux, RDOS
 </dl>
-<h2 id="memccpy"> memccpy, _fmemccpy </h2>
+<h2 id="memccpy"> memccpy, _fmemccpy, _memccpy </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -33489,6 +33489,8 @@ Functions, <a href="#malloc">malloc</a> Functions, <a href="#realloc">realloc</a
 &nbsp;&nbsp; const void __far *src,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; int c, size_t cnt );</tt>
+<br><tt>void *_memccpy( void *dest, const void *src,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int c, size_t cnt );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -33530,6 +33532,7 @@ and copied, otherwise it returns NULL.
 <dt>Systems:
 <dd><tt> memccpy - All, Linux, RDOS, Netware</tt>
 <br><tt>_fmemccpy - All, Linux, RDOS</tt>
+<br><tt>_memccpy - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="memchr"> memchr, _fmemchr, wmemchr </h2>
 <dl>
@@ -42135,12 +42138,12 @@ these new processes get any new items added by<tt> putenv</tt> and _wputenv.
 <br><br>With regard to environment entries, observe the following cautions:
 <ul>
 <li>Do not change an environment entry directly; instead, use putenv or<tt> _wputenv</tt> to change it.&nbsp; To modify the
-return value of<tt> putenv</tt> or<tt> _wputenv</tt> without affecting the environment table, use <tt> _strdup</tt> or <tt>
+return value of<tt> putenv</tt> or<tt> _wputenv</tt> without affecting the environment table, use <tt> strdup</tt> or <tt>
 strcpy</tt> to make a copy of the string.
 <li>If the argument<i> env_name</i> is not a literal string, you should duplicate the string, since putenv does not copy the
 value; for example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putenv( _strdup( buffer ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putenv( strdup( buffer ) );</tt>
 <li>Never free a pointer to an environment entry, because the environment variable will then point to freed space.&nbsp; A
 similar problem can occur if you pass<tt> putenv</tt> or<tt> _wputenv</tt> a pointer to a local variable, then exit the function
 in which the variable is declared.
@@ -49456,7 +49459,7 @@ floating-point operations.&nbsp; The description of this status is found in the<
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> strcasecmp</tt> function is identical to the <tt> stricmp</tt> function.
+<br>The<tt> strcasecmp</tt> function is identical to the <tt> _stricmp</tt> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -49465,7 +49468,7 @@ is, ignoring case, less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>,
+<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>,
 <a href="#strcmpi">strcmpi</a>, <a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
@@ -49746,7 +49749,7 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#stricmp">stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
+<dd><a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
 <a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
@@ -49797,7 +49800,7 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-&nbsp;The<tt> strcmpi</tt> function is identical to the <tt> stricmp</tt> function.
+&nbsp;The<tt> strcmpi</tt> function is identical to the <tt> _stricmp</tt> function.
 <br>The<tt> wcscmpi</tt> function is a wide character version of<tt> strcmpi</tt> that operates with wide character strings.
 </dl>
 <dl>
@@ -49807,7 +49810,7 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>,
+<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>,
 <a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
@@ -50152,7 +50155,7 @@ the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The
 <dd><tt> _strdate - All, Linux, RDOS</tt>
 <br><tt>_wstrdate - All, Linux</tt>
 </dl>
-<h2 id="strdup"> strdup, _strdup, _fstrdup, _wcsdup, _mbsdup, _fmbsdup </h2>
+<h2 id="strdup"> strdup, _strdup, _fstrdup, wcsdup, _wcsdup, _mbsdup, _fmbsdup </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -50161,6 +50164,7 @@ the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The
 <br><tt>char *_strdup( const char *src );</tt>
 <br><tt>char __far *_fstrdup( const char __far *src );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
+<br><tt>wchar_t *wcsdup( const wchar_t *src );</tt>
 <br><tt>wchar_t *_wcsdup( const wchar_t *src );</tt>
 <br><tt>#include &lt;mbstring.h&gt;</tt>
 <br><tt>unsigned char *_mbsdup( unsigned char *src );</tt>
@@ -50175,7 +50179,7 @@ _fmalloc</tt> function and can be freed using the <tt> _ffree</tt> function.
 <br>The<tt> _strdup</tt> function is identical to<tt> strdup</tt>.&nbsp; Use<tt> _strdup</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrdup</tt> function is a data model independent form of the<tt> strdup</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.
+<br><br>The<tt> wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.
 <br><br>The<tt> _mbsdup</tt> function is a multi-byte character version of<tt> strdup</tt> that operates with multi-byte character
 strings.
 <br><br>The<tt> _fmbsdup</tt> function is a data model independent form of the<tt> _mbsdup</tt> function.&nbsp; It accepts
@@ -50211,6 +50215,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dd><tt> strdup - All, Linux, RDOS, Netware</tt>
 <br><tt>_strdup - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrdup - All, Linux, RDOS</tt>
+<br><tt>wcsdup - All, Linux, RDOS</tt>
 <br><tt>_wcsdup - All, Linux, RDOS</tt>
 <br><tt>_mbsdup - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsdup - DOS, Windows, OS/2 1.x(all)</tt>
@@ -50584,12 +50589,11 @@ that has been detected.
 <br><tt>wcsftime - All, Linux</tt>
 <br><tt>_wstrftime_ms - All, Linux</tt>
 </dl>
-<h2 id="stricmp"> stricmp, _stricmp, _fstricmp, _wcsicmp, _mbsicmp, _fmbsicmp </h2>
+<h2 id="stricmp"> _stricmp, _fstricmp, _wcsicmp, _mbsicmp, _fmbsicmp, stricmp </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>int stricmp( const char *s1, const char *s2 );</tt>
 <br><tt>int _stricmp( const char *s1, const char *s2 );</tt>
 <br><tt>int _fstricmp( const char __far *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char __far *s2 );</tt>
@@ -50601,16 +50605,19 @@ that has been detected.
 <br><tt>int _fmbsicmp( const unsigned char __far *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s2
 );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int stricmp( const char *s1, const char *s2 );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> _stricmp</tt> function is identical to<tt> stricmp</tt>.&nbsp; Use<tt> _stricmp</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstricmp</tt> function is a data model independent form of the<tt> stricmp</tt> function that accepts far
+<br>The<tt> _stricmp</tt> function is identical to<tt> _stricmp</tt>.&nbsp; Use<tt> _stricmp</tt> for ANSI naming conventions.
+<br><br>The<tt> _fstricmp</tt> function is a data model independent form of the<tt> _stricmp</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsicmp</tt> function is a wide character version of<tt> stricmp</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsicmp</tt> function is a multi-byte character version of<tt> stricmp</tt> that operates with multi-byte
+<br><br>The<tt> _wcsicmp</tt> function is a wide character version of<tt> _stricmp</tt> that operates with wide character
+strings.
+<br><br>The<tt> _mbsicmp</tt> function is a multi-byte character version of<tt> _stricmp</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbsicmp</tt> function is a data model independent form of the<tt> _mbsicmp</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
@@ -50622,7 +50629,7 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
+<dd><a href="#strcmp">strcmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
 <a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
@@ -50632,11 +50639,11 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <br><tt>#include &lt;string.h&gt;</tt>
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, stricmp( &quot;AbCDEF&quot;, &quot;abcdef&quot; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, stricmp( &quot;abcdef&quot;, &quot;ABC&quot;&nbsp;&nbsp;&nbsp; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, stricmp( &quot;abc&quot;,&nbsp;&nbsp;&nbsp; &quot;ABCdef&quot; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, stricmp( &quot;Abcdef&quot;, &quot;mnopqr&quot; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, stricmp( &quot;Mnopqr&quot;, &quot;abcdef&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _stricmp( &quot;AbCDEF&quot;, &quot;abcdef&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _stricmp( &quot;abcdef&quot;, &quot;ABC&quot;&nbsp;&nbsp;&nbsp; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _stricmp( &quot;abc&quot;,&nbsp;&nbsp;&nbsp; &quot;ABCdef&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _stricmp( &quot;Abcdef&quot;, &quot;mnopqr&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _stricmp( &quot;Mnopqr&quot;, &quot;abcdef&quot; ) );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
 <br><br><tt>0</tt>
@@ -50648,16 +50655,15 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_stricmp conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> stricmp - All, Linux, RDOS, Netware</tt>
-<br><tt>_stricmp - All, Linux, RDOS, Netware</tt>
+<dd><tt> _stricmp - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstricmp - All, Linux, RDOS</tt>
 <br><tt>_wcsicmp - All, Linux</tt>
 <br><tt>_mbsicmp - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsicmp - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>stricmp - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="_stricoll"> _stricoll, _wcsicoll, _mbsicoll </h2>
 <dl>
@@ -50686,8 +50692,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_setmbcp">_setmbcp</a>, <a href="#strcoll">strcoll</a>, <a href="#stricmp">stricmp</a>, <a href="#strncmp">strncmp</a>,
-<a href="#_strncoll">_strncoll</a>, <a href="#strnicmp">strnicmp</a>, <a href="#_strnicoll">_strnicoll</a>
+<dd><a href="#_setmbcp">_setmbcp</a>, <a href="#strcoll">strcoll</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>,
+<a href="#_strncoll">_strncoll</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#_strnicoll">_strnicoll</a>
 </dl>
 <dl>
 <dt>Example:
@@ -50953,12 +50959,11 @@ maxsize</i> characters of<i> s</i> shall be accessed by strnlen_s
 <dd><tt> strnlen_s - All, RDOS, Netware</tt>
 <br><tt>wcsnlen_s - All, Linux</tt>
 </dl>
-<h2 id="strlwr"> strlwr, _strlwr, _fstrlwr, _wcslwr, _mbslwr, _fmbslwr </h2>
+<h2 id="strlwr"> _strlwr, _fstrlwr, _wcslwr, _mbslwr, _fmbslwr, strlwr </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strlwr( char *s1 );</tt>
 <br><tt>char *_strlwr( char *s1 );</tt>
 <br><tt>char __far *_fstrlwr( char __far *s1 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
@@ -50966,17 +50971,19 @@ maxsize</i> characters of<i> s</i> shall be accessed by strnlen_s
 <br><tt>#include &lt;mbstring.h&gt;</tt>
 <br><tt>unsigned char *_mbslwr( unsigned char *s1 );</tt>
 <br><tt>unsigned char __far *_fmbslwr( unsigned char __far *s1 );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>char *strlwr( char *s1 );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strlwr</tt> function replaces the string<i> s1</i> with lowercase characters by invoking the <tt> tolower</tt> function
+<dd>The<tt> _strlwr</tt> function replaces the string<i> s1</i> with lowercase characters by invoking the <tt> tolower</tt> function
 for each character in the string.
-<br>The<tt> _strlwr</tt> function is identical to<tt> strlwr</tt>.&nbsp; Use<tt> _strlwr</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> strlwr</tt> function.&nbsp; It accepts
+<br>The<tt> _strlwr</tt> function is identical to<tt> _strlwr</tt>.&nbsp; Use<tt> _strlwr</tt> for ANSI naming conventions.
+<br><br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> _strlwr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcslwr</tt> function is a wide character version of<tt> strlwr</tt> that operates with wide character strings.
-<br><br>The<tt> _mbslwr</tt> function is a multi-byte character version of<tt> strlwr</tt> that operates with multi-byte character
-strings.
+<br><br>The<tt> _wcslwr</tt> function is a wide character version of<tt> _strlwr</tt> that operates with wide character strings.
+<br><br>The<tt> _mbslwr</tt> function is a multi-byte character version of<tt> _strlwr</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbslwr</tt> function is a data model independent form of the<tt> _mbslwr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -50986,7 +50993,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strupr">strupr</a>
+<dd><a href="#strupr">_strupr</a>
 </dl>
 <dl>
 <dt>Example:
@@ -50997,7 +51004,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, source );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strlwr( source ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strlwr( source ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, source );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
@@ -51008,16 +51015,15 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_strlwr conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> strlwr - All, Linux, RDOS, Netware</tt>
-<br><tt>_strlwr - All, Linux, RDOS, Netware</tt>
+<dd><tt> _strlwr - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrlwr - All, Linux, RDOS</tt>
 <br><tt>_wcslwr - All, Linux</tt>
 <br><tt>_mbslwr - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbslwr - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>strlwr - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="strncasecmp"> strncasecmp </h2>
 <dl>
@@ -51033,7 +51039,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>,
 for at most<i> len</i> characters.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for
 the purposes of doing the comparison.
-<br>The<tt> strncasecmp</tt> function is identical to the <tt> strnicmp</tt> function.
+<br>The<tt> strncasecmp</tt> function is identical to the <tt> _strnicmp</tt> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -51042,7 +51048,7 @@ is, ignoring case, less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>,
+<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>,
 <a href="#strcmpi">strcmpi</a>, <a href="#strcasecmp">strcasecmp</a>
 </dl>
 <dl>
@@ -51282,7 +51288,7 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">stricmp</a>, <a href="#strnicmp">strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
+<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
 <a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
@@ -51350,8 +51356,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_setmbcp">_setmbcp</a>, <a href="#strcoll">strcoll</a>, <a href="#stricmp">stricmp</a>, <a href="#_stricoll">_stricoll</a>,
-<a href="#strncmp">strncmp</a>, <a href="#strnicmp">strnicmp</a>, <a href="#_strnicoll">_strnicoll</a>
+<dd><a href="#_setmbcp">_setmbcp</a>, <a href="#strcoll">strcoll</a>, <a href="#stricmp">_stricmp</a>, <a href="#_stricoll">_stricoll</a>,
+<a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#_strnicoll">_strnicoll</a>
 </dl>
 <dl>
 <dt>Example:
@@ -51563,14 +51569,11 @@ is returned.
 <dd><tt> strncpy_s - All, Linux, RDOS, Netware</tt>
 <br><tt>wcsncpy_s - All, Linux</tt>
 </dl>
-<h2 id="strnicmp"> strnicmp, _strnicmp, _fstrnicmp, _wcsnicmp, _mbsnicmp, _fmbsnicmp </h2>
+<h2 id="strnicmp"> _strnicmp, _fstrnicmp, _wcsnicmp, _mbsnicmp, _fmbsnicmp, strnicmp </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>int strnicmp( const char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t len );</tt>
 <br><tt>int _strnicmp( const char *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t len );</tt>
@@ -51589,18 +51592,22 @@ is returned.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far
 *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int strnicmp( const char *s1,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *s2,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t len );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>,
 for at most<i> len</i> characters.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for
 the purposes of doing the comparison.
-<br>The<tt> _strnicmp</tt> function is identical to<tt> strnicmp</tt>.&nbsp; Use<tt> _strnicmp</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrnicmp</tt> function is a data model independent form of the<tt> strnicmp</tt> function that accepts far
-pointer arguments.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsnicmp</tt> function is a wide character version of<tt> strnicmp</tt> that operates with wide character
+<br>The<tt> _strnicmp</tt> function is identical to<tt> _strnicmp</tt>.&nbsp; Use<tt> _strnicmp</tt> for ANSI naming conventions.
+<br><br>The<tt> _fstrnicmp</tt> function is a data model independent form of the<tt> _strnicmp</tt> function that accepts
+far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _wcsnicmp</tt> function is a wide character version of<tt> _strnicmp</tt> that operates with wide character
 strings.
-<br><br>The<tt> _mbsnicmp</tt> function is a multi-byte character version of<tt> strnicmp</tt> that operates with multi-byte
+<br><br>The<tt> _mbsnicmp</tt> function is a multi-byte character version of<tt> _strnicmp</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbsnicmp</tt> function is a data model independent form of the<tt> _mbsnicmp</tt> function that accepts
 far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
@@ -51612,7 +51619,7 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strcmpi">strcmpi</a>,
+<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strcmpi">strcmpi</a>,
 <a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
@@ -51622,10 +51629,10 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <br><tt>#include &lt;string.h&gt;</tt>
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;, 10 ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;,&nbsp; 6 ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;,&nbsp; 3 ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;,&nbsp; 0 ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;, 10 ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;,&nbsp; 6 ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;,&nbsp; 3 ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strnicmp( &quot;abcdef&quot;, &quot;ABCXXX&quot;,&nbsp; 0 ) );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
 <br><br><tt>-20</tt>
@@ -51636,16 +51643,15 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_strnicmp conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> strnicmp - All, Linux, RDOS, Netware</tt>
-<br><tt>_strnicmp - All, Linux, RDOS, Netware</tt>
+<dd><tt> _strnicmp - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrnicmp - All, Linux, RDOS</tt>
 <br><tt>_wcsnicmp - All, Linux</tt>
 <br><tt>_mbsnicmp - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsnicmp - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>strnicmp - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="_strnicoll"> _strnicoll, _wcsnicoll, _mbsnicoll </h2>
 <dl>
@@ -51682,8 +51688,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_setmbcp">_setmbcp</a>, <a href="#strcoll">strcoll</a>, <a href="#stricmp">stricmp</a>, <a href="#_stricoll">_stricoll</a>,
-<a href="#strncmp">strncmp</a>, <a href="#_strncoll">_strncoll</a>, <a href="#strnicmp">strnicmp</a>
+<dd><a href="#_setmbcp">_setmbcp</a>, <a href="#strcoll">strcoll</a>, <a href="#stricmp">_stricmp</a>, <a href="#_stricoll">_stricoll</a>,
+<a href="#strncmp">strncmp</a>, <a href="#_strncoll">_strncoll</a>, <a href="#strnicmp">_strnicmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -53037,12 +53043,11 @@ errno</tt> is set to <tt> EDOM</tt>.
 <dd><tt> strtoumax - All, Linux, RDOS, Netware</tt>
 <br><tt>wcstoumax - All, Linux, RDOS</tt>
 </dl>
-<h2 id="strupr"> strupr, _strupr, _fstrupr, _wcsupr, _mbsupr, _fmbsupr </h2>
+<h2 id="strupr"> _strupr, _fstrupr, _wcsupr, _mbsupr, _fmbsupr, strupr </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strupr( char *s );</tt>
 <br><tt>char *_strupr( char *s );</tt>
 <br><tt>char __far *_fstrupr( char __far *s );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
@@ -53050,17 +53055,19 @@ errno</tt> is set to <tt> EDOM</tt>.
 <br><tt>#include &lt;mbstring.h&gt;</tt>
 <br><tt>unsigned char *_mbsupr( unsigned char *s );</tt>
 <br><tt>unsigned char __far *_fmbsupr( unsigned char __far *s );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>char *strupr( char *s );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strupr</tt> function replaces the string<i> s</i> with uppercase characters by invoking the <tt> toupper</tt> function
+<dd>The<tt> _strupr</tt> function replaces the string<i> s</i> with uppercase characters by invoking the <tt> toupper</tt> function
 for each character in the string.
-<br>The<tt> _strupr</tt> function is identical to<tt> strupr</tt>.&nbsp; Use<tt> _strupr</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> strupr</tt> function.&nbsp; It accepts
+<br>The<tt> _strupr</tt> function is identical to<tt> _strupr</tt>.&nbsp; Use<tt> _strupr</tt> for ANSI naming conventions.
+<br><br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> _strupr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsupr</tt> function is a wide character version of<tt> strupr</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsupr</tt> function is a multi-byte character version of<tt> strupr</tt> that operates with multi-byte character
-strings.
+<br><br>The<tt> _wcsupr</tt> function is a wide character version of<tt> _strupr</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsupr</tt> function is a multi-byte character version of<tt> _strupr</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsupr</tt> function is a data model independent form of the<tt> _mbsupr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -53070,7 +53077,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strlwr">strlwr</a>
+<dd><a href="#strlwr">_strlwr</a>
 </dl>
 <dl>
 <dt>Example:
@@ -53081,7 +53088,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, source );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strupr( source ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strupr( source ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, source );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
@@ -53092,16 +53099,15 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_strupr conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> strupr - All, Linux, RDOS, Netware</tt>
-<br><tt>_strupr - All, Linux, RDOS, Netware</tt>
+<dd><tt> _strupr - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrupr - All, Linux, RDOS</tt>
 <br><tt>_wcsupr - All, Linux</tt>
 <br><tt>_mbsupr - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsupr - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>strupr - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="strxfrm"> strxfrm, wcsxfrm </h2>
 <dl>
@@ -54285,7 +54291,7 @@ letter when the argument is a wide character uppercase letter; otherwise, the or
 <a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
 <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
 <a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>,
-<a href="#strlwr">strlwr</a>, <a href="#strupr">strupr</a>, <a href="#toupper">toupper</a>
+<a href="#strlwr">_strlwr</a>, <a href="#strupr">_strupr</a>, <a href="#toupper">toupper</a>
 </dl>
 <dl>
 <dt>Example:
@@ -54351,7 +54357,7 @@ letter when the argument is a wide character lowercase letter; otherwise, the or
 <a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
 <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
 <a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#towctrans">towctrans</a>,
-<a href="#strlwr">strlwr</a>, <a href="#strupr">strupr</a>, <a href="#tolower">tolower</a>
+<a href="#strlwr">_strlwr</a>, <a href="#strupr">_strupr</a>, <a href="#tolower">tolower</a>
 </dl>
 <dl>
 <dt>Example:
@@ -58377,21 +58383,20 @@ isgraph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; islower&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp;strcat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strcmp&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strcoll&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strcpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; strcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strcspn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strerror_s&nbsp;&nbsp;
-&nbsp; strerrorlen_s&nbsp; stricmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strlen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;strlwr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat_s&nbsp;
-&nbsp;&nbsp;&nbsp; strncmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy_s
-&nbsp;&nbsp;&nbsp;&nbsp; strnicmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnlen_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnset&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strpbrk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;strrev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strspn
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strstr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strtok_s&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; strupr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;tolower&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;
-&nbsp; wcscat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp;
-&nbsp;_wcserrorlen_s&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;
-&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt>
+&nbsp; strerrorlen_s&nbsp; _stricmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strlen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+_strlwr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat_s&nbsp;&nbsp;
+&nbsp;&nbsp; strncmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy_s
+&nbsp;&nbsp;&nbsp;&nbsp; _strnicmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnlen_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnset&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; strpbrk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+strrev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strspn&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strstr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strtok_s&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; _strupr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tolower
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;&nbsp;&nbsp; wcscat_s
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp; _wcserrorlen_s wcsncat_s
+&nbsp;&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;
+&nbsp;&nbsp; wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
