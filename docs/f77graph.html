@@ -236,10 +236,10 @@ FORTRAN 77 Graphics Library supports three coordinate systems:&nbsp;
 at the top left corner of the screen.&nbsp; A pixel to the right of the origin has a positive x-coordinate and a pixel below
 the origin will have a positive y-coordinate.&nbsp; The x- and y-coordinates will never be negative values.
 <br><br>The view coordinate system can be defined upon the physical coordinate system by moving the origin from the top left
-corner of the screen to any physical coordinate (see the <tt> _setvieworg</tt> routine).&nbsp; In the view coordinate system,
-negative x- and y-coordinates are allowed.&nbsp; The scale of the view and physical coordinate systems is identical (both
-are in terms of pixels).
-<br><br>The window coordinate system is defined in terms of a range of user-specified values (see the <tt> _setwindow</tt>
+corner of the screen to any physical coordinate (see the <a href="#_setvieworg">_setvieworg</a> routine).&nbsp; In the view
+coordinate system, negative x- and y-coordinates are allowed.&nbsp; The scale of the view and physical coordinate systems
+is identical (both are in terms of pixels)
+<br><br>The window coordinate system is defined in terms of a range of user-specified values (see the <a href="#_setwindow">_setwindow</a>
 routine).&nbsp; These values are scaled to map onto the physical coordinates of the screen.&nbsp; This allows for consistent
 pictures regardless of the resolution (number of pixels) of the screen.
 <br><br>The following routines are defined:
@@ -267,9 +267,9 @@ pictures regardless of the resolution (number of pixels) of the screen.
 </dl>
 <h3 id="Attribute_Routines"> Attribute Routines </h3>
 <br>These routines control the display of graphical images such as lines and circles.&nbsp; Lines and figures are drawn using
-the current color (see the <tt> _setcolor</tt> routine), the current line style (see the <tt> _setlinestyle</tt> routine),
-the current fill mask (see the <tt> _setfillmask</tt> routine), and the current plotting action (see the <tt> _setplotaction</tt>
-routine).
+the current color (see the <a href="#_setcolor">_setcolor</a> routine), the current line style (see the <a href="#_setlinestyle">_setlinestyle</a>
+routine), the current fill mask (see the <a href="#_setfillmask">_setfillmask</a> routine), and the current plotting action
+(see the <a href="#_setplotaction">_setplotaction</a> routine).
 <br><br>The following routines are defined:
 <dl>
 <dt><a href="#_getarcinfo">_getarcinfo</a>
@@ -303,9 +303,9 @@ routine).
 </dl>
 <h3 id="Drawing_Routines"> Drawing Routines </h3>
 <br>These routines display graphical images such as lines and ellipses.&nbsp; Routines exist to draw straight lines (see the
-<tt> _lineto</tt> routines), rectangles (see the <tt> _rectangle</tt> routines), polygons (see the <tt> _polygon</tt> routines),
-ellipses (see the <tt> _ellipse</tt> routines), elliptical arcs (see the <tt> _arc</tt> routines) and pie-shaped wedges from
-ellipses (see the <tt> _pie</tt> routines).
+<a href="#_lineto">_lineto</a> routine), rectangles (see the <a href="#_rectangle">_rectangle</a> routine), polygons (see
+the <a href="#_polygon">_polygon</a> routine), ellipses (see the <a href="#_ellipse">_ellipse</a> routine), elliptical arcs
+(see the <a href="#_arc">_arc</a> routine) and pie-shaped wedges from ellipses (see the <a href="#_pie">_pie</a> routine).
 <br><br>These figures are drawn using the attributes described in the previous section.&nbsp; The routines ending with<tt>
 _w</tt> or<tt> _wxy</tt> use the window coordinate system; the others use the view coordinate system.
 <br><br>The following routines are defined:
@@ -371,9 +371,9 @@ _w</tt> or<tt> _wxy</tt> use the window coordinate system; the others use the vi
 <br>These routines deal with displaying text in both graphics and text modes.&nbsp; This type of text output can be displayed
 in only one size.
 <br><br>This text is displayed using the <tt> _outtext</tt> and <tt> _outmem</tt> routines.&nbsp; The output position for
-text follows the last text that was displayed or can be reset (see the <tt> _settextposition</tt> routine).&nbsp; Text windows
-can be created (see the <tt> _settextwindow</tt> routine) in which the text will scroll.&nbsp; Text is displayed with the
-current text color (see the <tt> _settextcolor</tt> routine).
+text follows the last text that was displayed or can be reset (see the <a href="#_settextposition">_settextposition</a> routine).
+&nbsp;Text windows can be created (see the <a href="#_settextwindow">_settextwindow</a> routine) in which the text will scroll.
+&nbsp;Text is displayed with the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine).
 <br><br>The following routines are defined:
 <dl>
 <dt><a href="#_clearscreen">_clearscreen</a>
@@ -411,9 +411,10 @@ current text color (see the <tt> _settextcolor</tt> routine).
 </dl>
 <h3 id="Graphics_Text_Routines"> Graphics Text Routines </h3>
 <br>These routines deal with displaying graphics text.&nbsp; Graphics text is displayed as a sequence of line segments, and
-can be drawn in different sizes (see the <tt> _setcharsize</tt> routine), with different orientations (see the <tt> _settextorient</tt>
-routine) and alignments (see the <tt> _settextalign</tt> routine).&nbsp; The routines ending with<tt> _w</tt> use the window
-coordinate system; the others use the view coordinate system.
+can be drawn in different sizes (see the <a href="#_setcharsize">_setcharsize</a> routine), with different orientations (see
+the <a href="#_settextorient">_settextorient</a> routine) and alignments (see the <a href="#_settextalign">_settextalign</a>
+routine).&nbsp; The routines ending with<tt> _w</tt> use the window coordinate system; the others use the view coordinate
+system.
 <br><br>The following routines are defined:
 <dl>
 <dt><a href="#_gettextextent">_gettextextent</a>
@@ -2629,9 +2630,9 @@ text output can be set by use of the <tt> _settextposition</tt> routine.
 <dt>Description:
 <dd>The<tt> _outgtext</tt> routine displays the character string indicated by the argument<i> text</i>.&nbsp; The string must
 be terminated by a null character (char(0)).
-<br>The string is displayed starting at the current position (see the <tt> _moveto</tt> routine) in the current color and
-in the currently selected font (see the <tt> _setfont</tt> routine).&nbsp; The current position is updated to follow the displayed
-text.
+<br>The string is displayed starting at the current position (see the <a href="#_moveto">_moveto</a> routine) in the current
+color and in the currently selected font (see the <a href="#_setfont">_setfont</a> routine).&nbsp; The current position is
+updated to follow the displayed text.
 <br><br>When no font has been previously selected with <tt> _setfont</tt>, a default font will be used.&nbsp; The default
 font is an 8-by-8 bit-mapped font.
 <br><br>The graphics library can display text in three different ways.
@@ -2692,9 +2693,9 @@ supported; the size and type of text depends on the fonts that are available.
 <dd>The<tt> _outmem</tt> routine displays the character string indicated by the argument<i> text</i>.&nbsp; The argument<i> length</i>
 specifies the number of characters to be displayed.&nbsp; Unlike the <tt> _outtext</tt> routine,<tt> _outmem</tt> will display
 the graphical representation of characters such as ASCII 10 and 0, instead of interpreting them as control characters.
-<br>The text is displayed using the current text color (see the <tt> _settextcolor</tt> routine), starting at the current
-text position (see the <tt> _settextposition</tt> routine).&nbsp; The text position is updated to follow the end of the displayed
-text.
+<br>The text is displayed using the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine), starting
+at the current text position (see the <a href="#_settextposition">_settextposition</a> routine).&nbsp; The text position is
+updated to follow the end of the displayed text.
 <br><br>The graphics library can display text in three different ways.
 <ol>
 <li>The <tt> _outtext</tt> and <tt> _outmem</tt> routines can be used in any video mode.&nbsp; However, this variety of text
@@ -2748,9 +2749,9 @@ supported; the size and type of text depends on the fonts that are available.
 <dd>The<tt> _outtext</tt> routine displays the character string indicated by the argument<i> text</i>.&nbsp; The string must be
 terminated by a null character (char(0)).&nbsp; When a line-feed character (char(10)) is encountered in the string, the characters
 following will be displayed on the next row of the screen.
-<br>The text is displayed using the current text color (see the <tt> _settextcolor</tt> routine), starting at the current
-text position (see the <tt> _settextposition</tt> routine).&nbsp; The text position is updated to follow the end of the displayed
-text.
+<br>The text is displayed using the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine), starting
+at the current text position (see the <a href="#_settextposition">_settextposition</a> routine).&nbsp; The text position is
+updated to follow the end of the displayed text.
 <br><br>The graphics library can display text in three different ways.
 <ol>
 <li>The <tt> _outtext</tt> and <tt> _outmem</tt> routines can be used in any video mode.&nbsp; However, this variety of text
@@ -5058,8 +5059,8 @@ whose opposite corners are established by the physical points<tt> (x1,y1)</tt> a
 <dt>Description:
 <dd>The<tt> _setcolor</tt> routine sets the pixel value for the current color to be that indicated by the<i> pixval</i> argument.
 &nbsp;The current color is only used by the routines that produce graphics output; text output with <tt> _outtext</tt> uses
-the current text color (see the <tt> _settextcolor</tt> routine).&nbsp; The default color value is one less than the maximum
-number of colors in the current video mode.
+the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine).&nbsp; The default color value is one
+less than the maximum number of colors in the current video mode.
 </dl>
 <dl>
 <dt>Returns:
@@ -5159,9 +5160,10 @@ current color.&nbsp; By default, no fill mask is set.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setfont</tt> routine selects a font from the list of registered fonts (see the <tt> _registerfonts</tt> routine).
-&nbsp;The font selected becomes the current font and is used whenever text is displayed with the <tt> _outgtext</tt> routine.
-&nbsp;The routine will fail if no fonts have been registered, or if a font cannot be found that matches the given characteristics.
+<dd>The<tt> _setfont</tt> routine selects a font from the list of registered fonts (see the <a href="#_registerfonts">_registerfonts</a>
+routine).&nbsp; The font selected becomes the current font and is used whenever text is displayed with the <tt> _outgtext</tt>
+routine.&nbsp; The routine will fail if no fonts have been registered, or if a font cannot be found that matches the given
+characteristics.
 <br>The argument<i> opt</i> is a string of characters specifying the characteristics of the desired font.&nbsp; These characteristics
 determine which font is selected.&nbsp; The options may be separated by blanks and are not case-sensitive.&nbsp; Any number
 of options may be specified and in any order.&nbsp; The available options are:

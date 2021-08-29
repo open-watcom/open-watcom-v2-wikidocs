@@ -359,7 +359,7 @@
 <br><a href="#bdos">bdos</a>
 <br><a href="#bessel">bessel Functions</a>
 <br><a href="#BIOS_Functions">BIOS Functions</a>
-<br><a href="#break____Functions">break...&nbsp; Functions</a>
+<br><a href="#break">break...&nbsp; Functions</a>
 <br><a href="#bsearch">bsearch</a>
 <br><a href="#bsearch_s">bsearch_s</a>
 <br><a href="#btowc">btowc</a>
@@ -530,6 +530,7 @@
 <br><a href="#getenv_s">getenv_s</a>
 <br><a href="#geteuid">geteuid</a>
 <br><a href="#getgid">getgid</a>
+<br><a href="#gethostbyaddr">gethostbyaddr</a>
 <br><a href="#gethostbyname">gethostbyname</a>
 <br><a href="#gethostent">gethostent</a>
 <br><a href="#getline">getline</a>
@@ -1309,16 +1310,12 @@ functions are defined:
 <dd>copy memory block, with segment information
 <dt><br><a href="#swab">swab</a>
 <dd>swap bytes of a memory block
-<dt><br>_wmemccpy
-<dd>copy memory block up to a certain character
 <dt><br><a href="#memchr">wmemchr</a>
 <dd>search memory block for a wide character value
 <dt><br><a href="#memcmp">wmemcmp</a>
 <dd>compare memory blocks
 <dt><br><a href="#memcpy">wmemcpy</a>
 <dd>copy memory block, overlap not allowed
-<dt><br>_wmemicmp
-<dd>compare memory, case insensitive
 <dt><br><a href="#memmove">wmemmove</a>
 <dd>copy memory block, overlap allowed
 <dt><br><a href="#memset">wmemset</a>
@@ -2166,31 +2163,31 @@ ending in &quot;87&quot; pertain to this specific hardware and should be isolate
 <dd>return date in buffer
 <dt><br><a href="#strftime">strftime</a>
 <dd>format date and time
-<dt><br>wcsftime&quot; format date and time
-<dd>
-<dt><br>_wstrftime_ms&quot; format date and time
-<dd>
-<dt><br>_strtime&quot; return time in buffer
-<dd>
-<dt><br>_wstrtime&quot; return time in buffer
-<dd>
-<dt><br>time&quot; get current calendar time
-<dd>
-<dt><br>tzset&quot; set global variables to reflect the local time zone
-<dd>
-<dt><br>_wstrdate&quot; return date in buffer
-<dd>
+<dt><br><a href="#strftime">wcsftime</a>
+<dd>format date and time
+<dt><br><a href="#strftime">_wstrftime_ms</a>
+<dd>format date and time
+<dt><br><a href="#_strtime">_strtime</a>
+<dd>return time in buffer
+<dt><br><a href="#_strtime">_wstrtime</a>
+<dd>return time in buffer
+<dt><br><a href="#time">time</a>
+<dd>get current calendar time
+<dt><br><a href="#tzset">tzset</a>
+<dd>set global variables to reflect the local time zone
+<dt><br><a href="#_strdate">_wstrdate</a>
+<dd>return date in buffer
 </dl>
 <h3 id="VariableMlength_Argument_Lists"> Variable-length Argument Lists </h3>
 <br>Variable-length argument lists are used when a function does not have a fixed number of arguments.&nbsp; These macros
 provide the capability to access these arguments.&nbsp; The following functions are defined:
 <dl>
-<dt>va_arg&quot; get next variable argument
-<dd>
-<dt><br>va_end&quot; complete access of variable arguments
-<dd>
-<dt><br>va_start&quot; start access of variable arguments
-<dd>
+<dt><a href="#va_arg">va_arg</a>
+<dd>get next variable argument
+<dt><br><a href="#va_end">va_end</a>
+<dd>complete access of variable arguments
+<dt><br><a href="#va_start">va_start</a>
+<dd>start access of variable arguments
 </dl>
 <h3 id="Stream_IDO_Functions"> Stream I/O Functions </h3>
 <br>A<i> stream</i> is the name given to a file or device which has been opened for data transmission.&nbsp; When a stream
@@ -2226,96 +2223,96 @@ function to obtain the file handle).&nbsp; Since the stream functions may buffer
 be used with caution to avoid unexpected results.
 <br><br>The following functions are defined:
 <dl>
-<dt>clearerr&quot; clear end-of-file and error indicators for stream
-<dd>
-<dt><br>fclose&quot; close stream
-<dd>
-<dt><br>fcloseall&quot; close all open streams
-<dd>
-<dt><br>fdopen&quot; open stream, given handle
-<dd>
-<dt><br>feof&quot; test for end of file
-<dd>
-<dt><br>ferror&quot; test for file error
-<dd>
-<dt><br>fflush&quot; flush output buffer
-<dd>
-<dt><br>fgetc&quot; get next character from file
-<dd>
-<dt><br>_fgetchar&quot; equivalent to &quot;fgetc&quot; with the argument &quot;stdin&quot;
-<dd>
-<dt><br>fgetpos&quot; get current file position
-<dd>
-<dt><br>fgets&quot; get a string
-<dd>
-<dt><br>flushall&quot; flush output buffers for all streams
-<dd>
-<dt><br>fopen&quot; open a stream
-<dd>
-<dt><br>fprintf&quot; format output
-<dd>
-<dt><br>fputc&quot; write a character
-<dd>
-<dt><br>_fputchar&quot; write a character to the &quot;stdout&quot; stream
-<dd>
-<dt><br>fputs&quot; write a string
-<dd>
-<dt><br>fread&quot; read a number of objects
-<dd>
-<dt><br>freopen&quot; re-opens a stream
-<dd>
-<dt><br>fscanf&quot; scan input according to format
-<dd>
-<dt><br>fseek&quot; set current file position, relative
-<dd>
-<dt><br>fsetpos&quot; set current file position, absolute
-<dd>
-<dt><br>_fsopen&quot; open a shared stream
-<dd>
-<dt><br>ftell&quot; get current file position
-<dd>
-<dt><br>fwrite&quot; write a number of objects
-<dd>
-<dt><br>getc&quot; read character
-<dd>
-<dt><br>getchar&quot; get next character from &quot;stdin&quot;
-<dd>
-<dt><br>gets&quot; get string from &quot;stdin&quot;
-<dd>
-<dt><br>_getw&quot; read int from stream file
-<dd>
-<dt><br>perror&quot; write error message to &quot;stderr&quot; stream
-<dd>
-<dt><br>printf&quot; format output to &quot;stdout&quot;
-<dd>
-<dt><br>putc&quot; write character to file
-<dd>
-<dt><br>putchar&quot; write character to &quot;stdout&quot;
-<dd>
-<dt><br>puts&quot; write string to &quot;stdout&quot;
-<dd>
-<dt><br>_putw&quot; write int to stream file
-<dd>
-<dt><br>rewind&quot; position to start of file
-<dd>
-<dt><br>scanf&quot; scan input from &quot;stdin&quot; under format control
-<dd>
-<dt><br>setbuf&quot; set buffer
-<dd>
-<dt><br>setvbuf&quot; set buffering
-<dd>
-<dt><br>tmpfile&quot; create temporary file
-<dd>
-<dt><br>ungetc&quot; push character back on input stream
-<dd>
-<dt><br>vfprintf&quot; same as &quot;fprintf&quot; but with variable arguments
-<dd>
-<dt><br>vfscanf&quot; same as &quot;fscanf&quot; but with variable arguments
-<dd>
-<dt><br>vprintf&quot; same as &quot;printf&quot; but with variable arguments
-<dd>
-<dt><br>vscanf&quot; same as &quot;scanf&quot; but with variable arguments
-<dd>
+<dt><a href="#clearerr">clearerr</a>
+<dd>clear end-of-file and error indicators for stream
+<dt><br><a href="#fclose">fclose</a>
+<dd>close stream
+<dt><br><a href="#fcloseall">fcloseall</a>
+<dd>close all open streams
+<dt><br><a href="#fdopen">fdopen</a>
+<dd>open stream, given handle
+<dt><br><a href="#feof">feof</a>
+<dd>test for end of file
+<dt><br><a href="#ferror">ferror</a>
+<dd>test for file error
+<dt><br><a href="#fflush">fflush</a>
+<dd>flush output buffer
+<dt><br><a href="#fgetc">fgetc</a>
+<dd>get next character from file
+<dt><br><a href="#fgetchar">_fgetchar</a>
+<dd>equivalent to &quot;fgetc&quot; with the argument &quot;stdin&quot;
+<dt><br><a href="#fgetpos">fgetpos</a>
+<dd>get current file position
+<dt><br><a href="#fgets">fgets</a>
+<dd>get a string
+<dt><br><a href="#flushall">flushall</a>
+<dd>flush output buffers for all streams
+<dt><br><a href="#fopen">fopen</a>
+<dd>open a stream
+<dt><br><a href="#fprintf">fprintf</a>
+<dd>format output
+<dt><br><a href="#fputc">fputc</a>
+<dd>write a character
+<dt><br><a href="#fputchar">_fputchar</a>
+<dd>write a character to the &quot;stdout&quot; stream
+<dt><br><a href="#fputs">fputs</a>
+<dd>write a string
+<dt><br><a href="#fread">fread</a>
+<dd>read a number of objects
+<dt><br><a href="#freopen">freopen</a>
+<dd>re-opens a stream
+<dt><br><a href="#fscanf">fscanf</a>
+<dd>scan input according to format
+<dt><br><a href="#fseek">fseek</a>
+<dd>set current file position, relative
+<dt><br><a href="#fsetpos">fsetpos</a>
+<dd>set current file position, absolute
+<dt><br><a href="#_fsopen">_fsopen</a>
+<dd>open a shared stream
+<dt><br><a href="#ftell">ftell</a>
+<dd>get current file position
+<dt><br><a href="#fwrite">fwrite</a>
+<dd>write a number of objects
+<dt><br><a href="#getc">getc</a>
+<dd>read character
+<dt><br><a href="#getchar">getchar</a>
+<dd>get next character from &quot;stdin&quot;
+<dt><br><a href="#gets">gets</a>
+<dd>get string from &quot;stdin&quot;
+<dt><br><a href="#_getw">_getw</a>
+<dd>read int from stream file
+<dt><br><a href="#perror">perror</a>
+<dd>write error message to &quot;stderr&quot; stream
+<dt><br><a href="#printf">printf</a>
+<dd>format output to &quot;stdout&quot;
+<dt><br><a href="#putc">putc</a>
+<dd>write character to file
+<dt><br><a href="#putchar">putchar</a>
+<dd>write character to &quot;stdout&quot;
+<dt><br><a href="#puts">puts</a>
+<dd>write string to &quot;stdout&quot;
+<dt><br><a href="#_putw">_putw</a>
+<dd>write int to stream file
+<dt><br><a href="#rewind">rewind</a>
+<dd>position to start of file
+<dt><br><a href="#scanf">scanf</a>
+<dd>scan input from &quot;stdin&quot; under format control
+<dt><br><a href="#setbuf">setbuf</a>
+<dd>set buffer
+<dt><br><a href="#setvbuf">setvbuf</a>
+<dd>set buffering
+<dt><br><a href="#tmpfile">tmpfile</a>
+<dd>create temporary file
+<dt><br><a href="#ungetc">ungetc</a>
+<dd>push character back on input stream
+<dt><br><a href="#vfprintf">vfprintf</a>
+<dd>same as &quot;fprintf&quot; but with variable arguments
+<dt><br><a href="#vfscanf">vfscanf</a>
+<dd>same as &quot;fscanf&quot; but with variable arguments
+<dt><br><a href="#vprintf">vprintf</a>
+<dd>same as &quot;printf&quot; but with variable arguments
+<dt><br><a href="#vscanf">vscanf</a>
+<dd>same as &quot;scanf&quot; but with variable arguments
 </dl>
 <br>See the section<i> Directory Functions</i> for functions which are related to directories.
 <h3 id="Wide_Character_Stream_IDO_Functions"> Wide Character Stream I/O Functions </h3>
@@ -2387,10 +2384,10 @@ characters are written to a stream, they are converted to multibyte characters.
 <dd>open a shared stream using wide character arguments
 <dt><br><a href="#perror">_wperror</a>
 <dd>write error message to &quot;stderr&quot; stream
-<dt><br>wprintf&quot; format wide character output to &quot;stdout&quot;
-<dd>
-<dt><br>wscanf&quot; scan wide character input from &quot;stdin&quot; under format control
-<dd>
+<dt><br><a href="#printf">wprintf</a>
+<dd>format wide character output to &quot;stdout&quot;
+<dt><br><a href="#scanf">wscanf</a>
+<dd>scan wide character input from &quot;stdin&quot; under format control
 </dl>
 <br>See the section<i> Directory Functions</i> for functions which are related to directories.
 <h3 id="Process_Primitive_Functions"> Process Primitive Functions </h3>
@@ -3970,10 +3967,10 @@ C Graphics Library supports three coordinate systems:&nbsp;
 at the top left corner of the screen.&nbsp; A pixel to the right of the origin has a positive x-coordinate and a pixel below
 the origin will have a positive y-coordinate.&nbsp; The x- and y-coordinates will never be negative values.
 <br><br>The view coordinate system can be defined upon the physical coordinate system by moving the origin from the top left
-corner of the screen to any physical coordinate (see the <tt> _setvieworg</tt> function).&nbsp; In the view coordinate system,
-negative x- and y-coordinates are allowed.&nbsp; The scale of the view and physical coordinate systems is identical (both
-are in terms of pixels).
-<br><br>The window coordinate system is defined in terms of a range of user-specified values (see the <tt> _setwindow</tt>
+corner of the screen to any physical coordinate (see the <a href="#_setvieworg">_setvieworg</a> function).&nbsp; In the view
+coordinate system, negative x- and y-coordinates are allowed.&nbsp; The scale of the view and physical coordinate systems
+is identical (both are in terms of pixels)
+<br><br>The window coordinate system is defined in terms of a range of user-specified values (see the <a href="#_setwindow">_setwindow</a>
 function).&nbsp; These values are scaled to map onto the physical coordinates of the screen.&nbsp; This allows for consistent
 pictures regardless of the resolution (number of pixels) of the screen.
 <br><br>The following functions are defined:
@@ -4001,9 +3998,9 @@ pictures regardless of the resolution (number of pixels) of the screen.
 </dl>
 <h3 id="Attribute_Functions"> Attribute Functions </h3>
 <br>These functions control the display of graphical images such as lines and circles.&nbsp; Lines and figures are drawn using
-the current color (see the <tt> _setcolor</tt> function), the current line style (see the <tt> _setlinestyle</tt> function),
-the current fill mask (see the <tt> _setfillmask</tt> function), and the current plotting action (see the <tt> _setplotaction</tt>
-function).
+the current color (see the <a href="#_setcolor">_setcolor</a> function), the current line style (see the <a href="#_setlinestyle">_setlinestyle</a>
+function), the current fill mask (see the <a href="#_setfillmask">_setfillmask</a> function), and the current plotting action
+(see the <a href="#_setplotaction">_setplotaction</a> function).
 <br><br>The following functions are defined:
 <dl>
 <dt><a href="#_getarcinfo">_getarcinfo</a>
@@ -4037,9 +4034,9 @@ function).
 </dl>
 <h3 id="Drawing_Functions"> Drawing Functions </h3>
 <br>These functions display graphical images such as lines and ellipses.&nbsp; Functions exist to draw straight lines (see
-the <tt> _lineto</tt> functions), rectangles (see the <tt> _rectangle</tt> functions), polygons (see the <tt> _polygon</tt>
-functions), ellipses (see the <tt> _ellipse</tt> functions), elliptical arcs (see the <tt> _arc</tt> functions) and pie-shaped
-wedges from ellipses (see the <tt> _pie</tt> functions).
+the <a href="#_lineto">_lineto</a> function), rectangles (see the <a href="#_rectangle">_rectangle</a> function), polygons
+(see the <a href="#_polygon">_polygon</a> function), ellipses (see the <a href="#_ellipse">_ellipse</a> function), elliptical
+arcs (see the <a href="#_arc">_arc</a> function) and pie-shaped wedges from ellipses (see the <a href="#_pie">_pie</a> function).
 <br><br>These figures are drawn using the attributes described in the previous section.&nbsp; The functions ending with<tt>
 _w</tt> or<tt> _wxy</tt> use the window coordinate system; the others use the view coordinate system.
 <br><br>The following functions are defined:
@@ -4105,9 +4102,9 @@ _w</tt> or<tt> _wxy</tt> use the window coordinate system; the others use the vi
 <br>These functions deal with displaying text in both graphics and text modes.&nbsp; This type of text output can be displayed
 in only one size.
 <br><br>This text is displayed using the <tt> _outtext</tt> and <tt> _outmem</tt> functions.&nbsp; The output position for
-text follows the last text that was displayed or can be reset (see the <tt> _settextposition</tt> function).&nbsp; Text windows
-can be created (see the <tt> _settextwindow</tt> function) in which the text will scroll.&nbsp; Text is displayed with the
-current text color (see the <tt> _settextcolor</tt> function).
+text follows the last text that was displayed or can be reset (see the <a href="#_settextposition">_settextposition</a> function).
+&nbsp;Text windows can be created (see the <a href="#_settextwindow">_settextwindow</a> function) in which the text will scroll.
+&nbsp;Text is displayed with the current text color (see the <a href="#_settextcolor">_settextcolor</a> function).
 <br><br>The following functions are defined:
 <dl>
 <dt><a href="#_clearscreen">_clearscreen</a>
@@ -4145,9 +4142,10 @@ current text color (see the <tt> _settextcolor</tt> function).
 </dl>
 <h3 id="Graphics_Text_Functions"> Graphics Text Functions </h3>
 <br>These functions deal with displaying graphics text.&nbsp; Graphics text is displayed as a sequence of line segments, and
-can be drawn in different sizes (see the <tt> _setcharsize</tt> function), with different orientations (see the <tt> _settextorient</tt>
-function) and alignments (see the <tt> _settextalign</tt> function).&nbsp; The functions ending with<tt> _w</tt> use the window
-coordinate system; the others use the view coordinate system.
+can be drawn in different sizes (see the <a href="#_setcharsize">_setcharsize</a> function), with different orientations (see
+the <a href="#_settextorient">_settextorient</a> function) and alignments (see the <a href="#_settextalign">_settextalign</a>
+function).&nbsp; The functions ending with<tt> _w</tt> use the window coordinate system; the others use the view coordinate
+system.
 <br><br>The following functions are defined:
 <dl>
 <dt><a href="#_gettextextent">_gettextextent</a>
@@ -6084,7 +6082,7 @@ can be modified by using the <tt> matherr</tt> routine.
 <dt>Synopsis:
 <dd>
 <br><tt>** deprecated **</tt>
-<br><br><tt>#include &lt;strings.h&gt;</tt>
+<br><tt>#include &lt;strings.h&gt;</tt>
 <br><tt>int bcmp(const void *s1, const void *s2, size_t n);</tt>
 </dl>
 <dl>
@@ -6131,7 +6129,7 @@ use the ISO C function).
 <dt>Synopsis:
 <dd>
 <br><tt>** deprecated **</tt>
-<br><br><tt>#include &lt;strings.h&gt;</tt>
+<br><tt>#include &lt;strings.h&gt;</tt>
 <br><tt>void bcopy( const void *src, void *dst, size_t n );</tt>
 </dl>
 <dl>
@@ -7000,7 +6998,7 @@ the terminating null character.&nbsp; An error can occur while converting a valu
 <dd><tt> _bprintf - All, Linux, RDOS, Netware</tt>
 <br><tt>_bwprintf - All, Linux</tt>
 </dl>
-<h2 id="break____Functions"> break...&nbsp; Functions </h2>
+<h2 id="break"> break...&nbsp; Functions </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -7299,7 +7297,7 @@ character representation of that character.
 <dt>Synopsis:
 <dd>
 <br><tt>** deprecated **</tt>
-<br><br><tt>#include &lt;strings.h&gt;</tt>
+<br><tt>#include &lt;strings.h&gt;</tt>
 <br><tt>void bzero( void *dst, size_t n );</tt>
 </dl>
 <dl>
@@ -14241,7 +14239,8 @@ successfully set to the appropriate state.&nbsp; Otherwise, it returns a nonzero
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#feclearexcept">feclearexcept</a>, <a href="#fegetexceptflag">fegetexceptflag</a>, <a href="#fetestexcept">fetestexcept</a>
+<dd><a href="#feclearexcept">feclearexcept</a>, <a href="#fegetexceptflag">fegetexceptflag</a>, <a href="#feraiseexcept">feraiseexcept</a>,
+<a href="#fetestexcept">fetestexcept</a>
 </dl>
 <dl>
 <dt>Example:
@@ -19357,6 +19356,65 @@ vector.
 <dt>Systems:
 <dd>DOS
 </dl>
+<h2 id="gethostbyaddr"> gethostbyaddr </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;netdb.h&gt;</tt>
+<br><tt>struct hostent *gethostbyaddr( const void *addr,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; socklen_t len,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int type );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> gethostbyaddr</tt> function searches the system's network host database for a host matching the<i> addr</i> argument.
+&nbsp;The address should be specified in network byte order.&nbsp; The<i> len</i> argument specifies the length in bytes of
+the<i> addr</i> argument, and<i> type</i> specifies the address type.&nbsp; Accepted types, such as <tt> AF_INET</tt> or <tt>
+AF_INET6</tt>, are expected.&nbsp; The routine will query only the local network hosts database.
+<br>The structure returned is defined as:
+<br><br><tt>struct hostent {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *h_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* host official name&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **h_aliases;&nbsp;&nbsp; /* host alternate names, up to 16,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terminated by a NULL pointer&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; h_length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* address length in bytes
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; **h_addr_list; /* array of pointers to network</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addresses in network byte order,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terminated by a NULL pointer&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>};</tt>
+<br><br>The pointer returned by<tt> gethostbyaddr</tt> points to a private location, and the user should free neither the
+pointer itself nor any of its constituent structure members.&nbsp; Subsequent calls to this function may result in the values
+changing.
+<br><br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname
+database may affect the return value from this function.
+</dl>
+<dl>
+<dt>Returns:
+<dd>If a matching host is found, the return value will be non-NULL.&nbsp; The returned pointer should not be freed by the calling
+routine.
+<br>If the host is found, the <tt> h_name</tt> member will be the defintive name of the host, and <tt> h_aliases</tt> will
+contain a NULL-terminated list of aliases.&nbsp; The addresses are contained in the <tt> h_addr_list</tt> member as a NULL-terminated
+list, and this structure entry will never be NULL.
+<br><br>If no matching host is found or an error occurs, the return value will be NULL.
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#gethostent">gethostent</a>, <a href="#gethostbyname">gethostbyname</a>
+</dl>
+<dl>
+<dt>Classification:
+<dd>POSIX
+</dl>
+<dl>
+<dt>Systems:
+<dd>Linux
+</dl>
 <h2 id="gethostbyname"> gethostbyname </h2>
 <dl>
 <dt>Synopsis:
@@ -19402,7 +19460,7 @@ contained in the <tt> h_addr_list</tt> member as a NULL-terminated list, and thi
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#gethostent">gethostent</a>
+<dd><a href="#gethostent">gethostent</a>, <a href="#gethostbyaddr">gethostbyaddr</a>
 </dl>
 <dl>
 <dt>Example:
@@ -20851,7 +20909,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#getservent">getservent</a>, <a href="#setservent">setservent</a>, <a href="#endservent">endservent</a>
+<dd><a href="#getservent">getservent</a>, <a href="#setservent">setservent</a>, <a href="#endservent">endservent</a>, <a href="#getservbyport">getservbyport</a>
 </dl>
 <dl>
 <dt>Classification:
@@ -29350,8 +29408,7 @@ written in the gap.&nbsp; On systems such DOS and OS/2 that are not POSIX-confor
 values.
 <br><br>Some versions of MS-DOS allow seeking to a negative offset, but it is not recommended since it is not supported by
 other platforms and may not be supported in future versions of MS-DOS.
-<br><br>The<tt> lseek</tt> function does not, in itself, extend the size of a file (see the description of the <tt> chsize</tt>
-function).
+<br><br>The<tt> lseek</tt> function does not, in itself, extend the size of a file (see the <a href="#chsize">chsize</a> function).
 <br><br>The<tt> _lseek</tt> function is identical to<tt> lseek</tt>.&nbsp; Use<tt> _lseek</tt> for ANSI naming conventions.
 <br><br>The _lseeki64 function is identical to<tt> lseek</tt> except that it accepts a 64-bit value for the<i> offset</i>
 argument.
@@ -32018,8 +32075,8 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsnbcmp">_mbsnbcmp</a>, <a href="#_mbsnbcpy">_mbsnbcpy</a>, <a href="#_mbsnbset">_mbsnbset</a>, <a href="#_mbsnbcnt">_mbsnccnt</a>,
-<a href="#strncat">strncat</a>, <a href="#strcat">strcat</a>
+<dd><a href="#_mbsnbcmp">_mbsnbcmp</a>, <a href="#_mbsnbcpy">_mbsnbcpy</a>, <a href="#_mbsnbicmp">_mbsnbicmp</a>, <a href="#_mbsnbset">_mbsnbset</a>,
+<a href="#_mbsnbcnt">_mbsnccnt</a>, <a href="#strncat">strncat</a>, <a href="#strcat">strcat</a>
 </dl>
 <dl>
 <dt>Example:
@@ -38712,7 +38769,8 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>All files are readable with DOS; however, it is a good idea to set <tt> S_IREAD</tt> when read permission is intended
 for the file.
-<br><br>The<tt> open</tt> function applies the current file permission mask to the specified permissions (see <tt> umask</tt>).
+<br><br>The<tt> open</tt> function applies the current file permission mask to the specified permissions (see the <a href="#umask">umask</a>
+function).
 </dl>
 <dl>
 <dt>Returns:
@@ -39111,9 +39169,9 @@ operating system level handle.
 <dt>Description:
 <dd>The<tt> _outgtext</tt> function displays the character string indicated by the argument<i> text</i>.&nbsp; The string must
 be terminated by a null character ('\0').
-<br>The string is displayed starting at the current position (see the <tt> _moveto</tt> function) in the current color and
-in the currently selected font (see the <tt> _setfont</tt> function).&nbsp; The current position is updated to follow the
-displayed text.
+<br>The string is displayed starting at the current position (see the <a href="#_moveto">_moveto</a> function) in the current
+color and in the currently selected font (see the <a href="#_setfont">_setfont</a> function).&nbsp; The current position is
+updated to follow the displayed text.
 <br><br>When no font has been previously selected with <tt> _setfont</tt>, a default font will be used.&nbsp; The default
 font is an 8-by-8 bit-mapped font.
 <br><br>The graphics library can display text in three different ways.
@@ -39180,9 +39238,9 @@ are supported; the size and type of text depends on the fonts that are available
 <dd>The<tt> _outmem</tt> function displays the character string indicated by the argument<i> text</i>.&nbsp; The argument<i> length</i>
 specifies the number of characters to be displayed.&nbsp; Unlike the <tt> _outtext</tt> function,<tt> _outmem</tt> will display
 the graphical representation of characters such as ASCII 10 and 0, instead of interpreting them as control characters.
-<br>The text is displayed using the current text color (see the <tt> _settextcolor</tt> function), starting at the current
-text position (see the <tt> _settextposition</tt> function).&nbsp; The text position is updated to follow the end of the displayed
-text.
+<br>The text is displayed using the current text color (see the <a href="#_settextcolor">_settextcolor</a> function), starting
+at the current text position (see the <a href="#_settextposition">_settextposition</a> function).&nbsp; The text position
+is updated to follow the end of the displayed text.
 <br><br>The graphics library can display text in three different ways.
 <ol>
 <li>The <tt> _outtext</tt> and <tt> _outmem</tt> functions can be used in any video mode.&nbsp; However, this variety of text
@@ -39369,9 +39427,9 @@ a device and the expected usage of each port for a device.
 <dd>The<tt> _outtext</tt> function displays the character string indicated by the argument<i> text</i>.&nbsp; The string must
 be terminated by a null character ('\0').&nbsp; When a line-feed character ('\n') is encountered in the string, the characters
 following will be displayed on the next row of the screen.
-<br>The text is displayed using the current text color (see the <tt> _settextcolor</tt> function), starting at the current
-text position (see the <tt> _settextposition</tt> function).&nbsp; The text position is updated to follow the end of the displayed
-text.
+<br>The text is displayed using the current text color (see the <a href="#_settextcolor">_settextcolor</a> function), starting
+at the current text position (see the <a href="#_settextposition">_settextposition</a> function).&nbsp; The text position
+is updated to follow the end of the displayed text.
 <br><br>The graphics library can display text in three different ways.
 <ol>
 <li>The <tt> _outtext</tt> and <tt> _outmem</tt> functions can be used in any video mode.&nbsp; However, this variety of text
@@ -45289,8 +45347,8 @@ rectangle whose opposite corners are established by the physical points<tt> (x1,
 <dt>Description:
 <dd>The<tt> _setcolor</tt> function sets the pixel value for the current color to be that indicated by the<i> pixval</i> argument.
 &nbsp;The current color is only used by the functions that produce graphics output; text output with <tt> _outtext</tt> uses
-the current text color (see the <tt> _settextcolor</tt> function).&nbsp; The default color value is one less than the maximum
-number of colors in the current video mode.
+the current text color (see the <a href="#_settextcolor">_settextcolor</a> function).&nbsp; The default color value is one
+less than the maximum number of colors in the current video mode.
 </dl>
 <dl>
 <dt>Returns:
@@ -45482,9 +45540,10 @@ current color.&nbsp; By default, no fill mask is set.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setfont</tt> function selects a font from the list of registered fonts (see the <tt> _registerfonts</tt> function).
-&nbsp;The font selected becomes the current font and is used whenever text is displayed with the <tt> _outgtext</tt> function.
-&nbsp;The function will fail if no fonts have been registered, or if a font cannot be found that matches the given characteristics.
+<dd>The<tt> _setfont</tt> function selects a font from the list of registered fonts (see the <a href="#_registerfonts">_registerfonts</a>
+function).&nbsp; The font selected becomes the current font and is used whenever text is displayed with the <tt> _outgtext</tt>
+function.&nbsp; The function will fail if no fonts have been registered, or if a font cannot be found that matches the given
+characteristics.
 <br>The argument<i> opt</i> is a string of characters specifying the characteristics of the desired font.&nbsp; These characteristics
 determine which font is selected.&nbsp; The options may be separated by blanks and are not case-sensitive.&nbsp; Any number
 of options may be specified and in any order.&nbsp; The available options are:
@@ -47465,7 +47524,7 @@ SIGINT</tt> signal.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#raise">raise</a>
+<dd><a href="#break">break...</a>, <a href="#raise">raise</a>
 </dl>
 <dl>
 <dt>Example:
@@ -48021,7 +48080,8 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>All files are readable with DOS; however, it is a good idea to set <tt> S_IREAD</tt> when read permission is intended
 for the file.
-<br><br>The<tt> sopen</tt> function applies the current file permission mask to the specified permissions (see <tt> umask</tt>).
+<br><br>The<tt> sopen</tt> function applies the current file permission mask to the specified permissions (see the <a href="#umask">umask</a>
+function).
 <br><br>The shared access for the file,<i> share</i>, is established by a combination of bits defined in the<tt> &lt;share.h&gt;</tt>
 header file.&nbsp; The following values may be set:
 <dl>
@@ -49729,7 +49789,7 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 <dt>Synopsis:
 <dd>
 <br><tt>** deprecated **</tt>
-<br><br><tt>#include &lt;string.h&gt;</tt>
+<br><tt>#include &lt;string.h&gt;</tt>
 <br><tt>int strcmpi( const char *s1, const char *s2 );</tt>
 <br><tt>int wcscmpi( const wchar_t *s1, const wchar_t *s2 );</tt>
 </dl>
@@ -58335,10 +58395,10 @@ isgraph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; islower&nbsp;&nbsp;&nbsp;&nbsp
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
-<br><br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language
-standard describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly
-from the ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the
-standard that discusses the behavior.
+<br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language standard
+describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly from the
+ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the standard
+that discusses the behavior.
 <h2 id="NULL_Macro"> NULL Macro </h2>
 <br><b>The null pointer constant to which the macro </b><tt> NULL</tt><b> expands (7.1.6).</b>
 <br><br>The macro <tt> NULL</tt> expands to 0 in small data models and to 0L in large data models.
