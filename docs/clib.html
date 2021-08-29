@@ -241,6 +241,7 @@
 <br><a href="#_mbterm">_mbterm, _fmbterm</a>
 <br><a href="#_mbvtop">_mbvtop, _fmbvtop</a>
 <br><a href="#_memavl">_memavl</a>
+<br><a href="#memicmp">_memicmp, _fmemicmp, memicmp</a>
 <br><a href="#_memmax">_memmax</a>
 <br><a href="#_mktemp">_mktemp, _wmktemp</a>
 <br><a href="#_moveto">_moveto, _moveto_w</a>
@@ -323,6 +324,8 @@
 <br><a href="#_strncoll">_strncoll, _wcsncoll, _mbsncoll</a>
 <br><a href="#strnicmp">_strnicmp, _fstrnicmp, _wcsnicmp, _mbsnicmp, _fmbsnicmp, strnicmp</a>
 <br><a href="#_strnicoll">_strnicoll, _wcsnicoll, _mbsnicoll</a>
+<br><a href="#strnset">_strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset, strnset</a>
+<br><a href="#strset">_strset, _fstrset, _wcsset, _mbsset, _fmbsset, strset</a>
 <br><a href="#_strtime">_strtime, _wstrtime</a>
 <br><a href="#strupr">_strupr, _fstrupr, _wcsupr, _mbsupr, _fmbsupr, strupr</a>
 <br><a href="#_tempnam">_tempnam, _wtempnam</a>
@@ -664,7 +667,6 @@
 <br><a href="#memcmp">memcmp, _fmemcmp, wmemcmp</a>
 <br><a href="#memcpy">memcpy, _fmemcpy, wmemcpy</a>
 <br><a href="#memcpy_s">memcpy_s, wmemcpy_s</a>
-<br><a href="#memicmp">memicmp, _memicmp, _fmemicmp</a>
 <br><a href="#memmove">memmove, _fmemmove, wmemmove</a>
 <br><a href="#memmove_s">memmove_s, wmemmove_s</a>
 <br><a href="#Memory_Allocation_Functions">Memory Allocation Functions</a>
@@ -827,11 +829,9 @@
 <br><a href="#strncpy">strncpy, _fstrncpy, wcsncpy, _mbsncpy, _fmbsncpy</a>
 <br><a href="#strncpy_s">strncpy_s, wcsncpy_s</a>
 <br><a href="#strnlen_s">strnlen_s, wcsnlen_s</a>
-<br><a href="#strnset">strnset, _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset</a>
 <br><a href="#strpbrk">strpbrk, _fstrpbrk, wcspbrk, _mbspbrk, _fmbspbrk</a>
 <br><a href="#strrchr">strrchr, _fstrrchr, wcsrchr, _mbsrchr, _fmbsrchr</a>
 <br><a href="#strrev">strrev, _strrev, _fstrrev, _wcsrev, _mbsrev, _fmbsrev</a>
-<br><a href="#strset">strset, _strset, _fstrset, _wcsset, _mbsset, _fmbsset</a>
 <br><a href="#strspn">strspn, _fstrspn, wcsspn, _mbsspn, _fmbsspn</a>
 <br><a href="#strspnp">strspnp, _fstrspnp</a>
 <br><a href="#strstr">strstr, _fstrstr, wcsstr, _mbsstr, _fmbsstr</a>
@@ -1300,7 +1300,7 @@ functions are defined:
 <dd>compare memory blocks
 <dt><br><a href="#memcpy">memcpy</a>
 <dd>copy memory block, overlap not allowed
-<dt><br><a href="#memicmp">memicmp</a>
+<dt><br><a href="#memicmp">_memicmp</a>
 <dd>compare memory, case insensitive
 <dt><br><a href="#memmove">memmove</a>
 <dd>copy memory block, overlap allowed
@@ -7311,7 +7311,7 @@ character representation of that character.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#bcmp">bcmp</a>, <a href="#bcopy">bcopy</a>, <a href="#memset">memset</a>, <a href="#strset">strset</a>
+<dd><a href="#bcmp">bcmp</a>, <a href="#bcopy">bcopy</a>, <a href="#memset">memset</a>, <a href="#strset">_strset</a>
 </dl>
 <dl>
 <dt>Example:
@@ -32390,7 +32390,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strnset">strnset</a>, <a href="#strset">strset</a>
+<dd><a href="#strnset">_strnset</a>, <a href="#strset">_strset</a>
 </dl>
 <dl>
 <dt>Example:
@@ -33564,7 +33564,7 @@ in the object.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">memicmp</a>, <a href="#memset">memset</a>
+<dd><a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">_memicmp</a>, <a href="#memset">memset</a>
 </dl>
 <dl>
 <dt>Example:
@@ -33632,7 +33632,7 @@ to by<i> s1</i> is less than, equal to, or greater than the object pointed to by
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#memchr">memchr</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">memicmp</a>, <a href="#memset">memset</a>
+<dd><a href="#memchr">memchr</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">_memicmp</a>, <a href="#memset">memset</a>
 </dl>
 <dl>
 <dt>Example:
@@ -33702,7 +33702,7 @@ pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed me
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memicmp">memicmp</a>, <a href="#memmove">memmove</a>,
+<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memicmp">_memicmp</a>, <a href="#memmove">memmove</a>,
 <a href="#memset">memset</a>, <a href="#memcpy_s">memcpy_s</a>, <a href="#memmove_s">memmove_s</a>
 </dl>
 <dl>
@@ -33776,7 +33776,7 @@ is returned.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#memcpy">memcpy</a>, <a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">memicmp</a>,
+<dd><a href="#memcpy">memcpy</a>, <a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">_memicmp</a>,
 <a href="#memmove">memmove</a>, <a href="#memset">memset</a>, <a href="#memmove_s">memmove_s</a>
 </dl>
 <dl>
@@ -33802,29 +33802,30 @@ is returned.
 <dd><tt> memcpy_s - All, Linux, RDOS, Netware</tt>
 <br><tt>wmemcpy_s - All, Linux</tt>
 </dl>
-<h2 id="memicmp"> memicmp, _memicmp, _fmemicmp </h2>
+<h2 id="memicmp"> _memicmp, _fmemicmp, memicmp </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>int memicmp( const void *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const void *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t length );</tt>
 <br><tt>int _memicmp( const void *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const void *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t length );</tt>
 <br><tt>int _fmemicmp( const void __far *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const void __far *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t length );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int memicmp( const void *s1,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const void *s2,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t length );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The function compares, without case sensitivity (upper- and lowercase characters are equivalent), the first<i> length</i>
 characters of the object pointed to by<i> s1</i> to the object pointed to by<i> s2</i>.&nbsp; All uppercase characters from<i>
 s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> _fmemicmp</tt> function is a data model independent form of the<tt> memicmp</tt> function that accepts far pointer
+<br>The<tt> _fmemicmp</tt> function is a data model independent form of the<tt> _memicmp</tt> function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _memicmp</tt> function is identical to<tt> memicmp</tt>.&nbsp; Use<tt> _memicmp</tt> for ANSI naming conventions.
+<br><br>The<tt> _memicmp</tt> function is identical to<tt> _memicmp</tt>.&nbsp; Use<tt> _memicmp</tt> for ANSI naming conventions.
 </dl>
 <dl>
 <dt>Returns:
@@ -33843,7 +33844,7 @@ is less than, equal to, or greater than the object pointed to by<i> s2</i>.
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char buffer&#91;80&#93;;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; if( memicmp( buffer, &quot;Hello&quot;, 5 ) &lt; 0 ) {</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; if( _memicmp( buffer, &quot;Hello&quot;, 5 ) &lt; 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Less than\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp; }</tt>
@@ -33851,13 +33852,12 @@ is less than, equal to, or greater than the object pointed to by<i> s2</i>.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_memicmp conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> memicmp - All, Linux, RDOS, Netware</tt>
-<br><tt>_memicmp - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux, RDOS</tt>
+<dd><tt> _memicmp - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux, RDOS</tt>
 <br><tt>_fmemicmp - All, Linux, RDOS</tt>
+<br><tt>memicmp - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="_memmax"> _memmax </h2>
 <dl>
@@ -33956,7 +33956,7 @@ pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed me
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">memicmp</a>,
+<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">_memicmp</a>,
 <a href="#memset">memset</a>, <a href="#memmove_s">memmove_s</a>, <a href="#memcpy_s">memcpy_s</a>
 </dl>
 <dl>
@@ -34031,7 +34031,7 @@ is returned.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">memicmp</a>,
+<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">_memicmp</a>,
 <a href="#memmove">memmove</a>, <a href="#memset">memset</a>, <a href="#memcpy_s">memcpy_s</a>
 </dl>
 <dl>
@@ -34159,7 +34159,7 @@ pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed me
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">memicmp</a>,
+<dd><a href="#memchr">memchr</a>, <a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memicmp">_memicmp</a>,
 <a href="#memmove">memmove</a>
 </dl>
 <dl>
@@ -51720,12 +51720,11 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <br><tt>_wcsnicoll - All, Linux</tt>
 <br><tt>_mbsnicoll - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 </dl>
-<h2 id="strnset"> strnset, _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset </h2>
+<h2 id="strnset"> _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset, strnset </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strnset( char *s, int fill, size_t count );</tt>
 <br><tt>char *_strnset( char *s, int fill, size_t count );</tt>
 <br><tt>char __far *_fstrnset( char __far *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -51745,18 +51744,21 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>char *strnset( char *s, int fill, size_t count );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strnset</tt> function fills the string<i> s</i> with the value of the argument<i> fill</i>, converted to be a character
+<dd>The<tt> _strnset</tt> function fills the string<i> s</i> with the value of the argument<i> fill</i>, converted to be a character
 value.&nbsp; When the value of<i> count</i> is greater than the length of the string, the entire string is filled.&nbsp; Otherwise,
 that number of characters at the start of the string are set to the fill character.
-<br>The<tt> _strnset</tt> function is identical to<tt> strnset</tt>.&nbsp; Use<tt> _strnset</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrnset</tt> function is a data model independent form of the<tt> strnset</tt> function.&nbsp; It accepts
+<br>The<tt> _strnset</tt> function is identical to<tt> _strnset</tt>.&nbsp; Use<tt> _strnset</tt> for ANSI naming conventions.
+<br><br>The<tt> _fstrnset</tt> function is a data model independent form of the<tt> _strnset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsnset</tt> function is a wide character version of<tt> strnset</tt> that operates with wide character strings.
-&nbsp;For _wcsnset, the value of<i> count</i> is the number of wide characters to fill.&nbsp; This is half the number of bytes.
-<br><br>The<tt> _mbsnset</tt> function is a multi-byte character version of<tt> strnset</tt> that operates with multi-byte
+<br><br>The<tt> _wcsnset</tt> function is a wide character version of<tt> _strnset</tt> that operates with wide character
+strings.&nbsp; For _wcsnset, the value of<i> count</i> is the number of wide characters to fill.&nbsp; This is half the number
+of bytes.
+<br><br>The<tt> _mbsnset</tt> function is a multi-byte character version of<tt> _strnset</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbsnset</tt> function is a data model independent form of the<tt> _mbsnset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
@@ -51770,7 +51772,7 @@ character.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strset">strset</a>
+<dd><a href="#strset">_strset</a>
 </dl>
 <dl>
 <dt>Example:
@@ -51781,8 +51783,8 @@ character.
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, source );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strnset( source, '=', 100 ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strnset( source, '*', 7 ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strnset( source, '=', 100 ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strnset( source, '*', 7 ) );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
 <br><br><tt>A sample STRING</tt>
@@ -51792,16 +51794,15 @@ character.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_strnset conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> strnset - All, Linux, RDOS, Netware</tt>
-<br><tt>_strnset - All, Linux, RDOS, Netware</tt>
+<dd><tt> _strnset - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrnset - All, Linux, RDOS</tt>
 <br><tt>_wcsnset - All, Linux</tt>
 <br><tt>_mbsnset - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsnset - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>strnset - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="strpbrk"> strpbrk, _fstrpbrk, wcspbrk, _mbspbrk, _fmbspbrk </h2>
 <dl>
@@ -52013,12 +52014,11 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><tt>_mbsrev - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsrev - DOS, Windows, OS/2 1.x(all)</tt>
 </dl>
-<h2 id="strset"> strset, _strset, _fstrset, _wcsset, _mbsset, _fmbsset </h2>
+<h2 id="strset"> _strset, _fstrset, _wcsset, _mbsset, _fmbsset, strset </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strset( char *s1, int fill );</tt>
 <br><tt>char *_strset( char *s1, int fill );</tt>
 <br><tt>char __far *_fstrset( char __far *s1, int fill );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
@@ -52030,17 +52030,19 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><tt>unsigned char __far *_fmbsset( unsigned char __far *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>char *strset( char *s1, int fill );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strset</tt> function fills the string pointed to by<i> s1</i> with the character<i> fill</i>.&nbsp; The terminating
+<dd>The<tt> _strset</tt> function fills the string pointed to by<i> s1</i> with the character<i> fill</i>.&nbsp; The terminating
 null character in the original string remains unchanged.
-<br>The<tt> _strset</tt> function is identical to<tt> strset</tt>.&nbsp; Use<tt> _strset</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrset</tt> function is a data model independent form of the<tt> strset</tt> function.&nbsp; It accepts
+<br>The<tt> _strset</tt> function is identical to<tt> _strset</tt>.&nbsp; Use<tt> _strset</tt> for ANSI naming conventions.
+<br><br>The<tt> _fstrset</tt> function is a data model independent form of the<tt> _strset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsset</tt> function is a wide character version of<tt> strset</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsset</tt> function is a multi-byte character version of<tt> strset</tt> that operates with multi-byte character
-strings.
+<br><br>The<tt> _wcsset</tt> function is a wide character version of<tt> _strset</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsset</tt> function is a multi-byte character version of<tt> _strset</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsset</tt> function is a data model independent form of the<tt> _mbsset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -52050,7 +52052,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strnset">strnset</a>
+<dd><a href="#strnset">_strnset</a>
 </dl>
 <dl>
 <dt>Example:
@@ -52061,8 +52063,8 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, source );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strset( source, '=' ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strset( source, '*' ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strset( source, '=' ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strset( source, '*' ) );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
 <br><br><tt>A sample STRING</tt>
@@ -52072,16 +52074,15 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_strset conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> strset - All, Linux, RDOS, Netware</tt>
-<br><tt>_strset - All, Linux, RDOS, Netware</tt>
+<dd><tt> _strset - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrset - All, Linux, RDOS</tt>
 <br><tt>_wcsset - All, Linux</tt>
 <br><tt>_mbsset - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsset - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>strset - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="strspn"> strspn, _fstrspn, wcsspn, _mbsspn, _fmbsspn </h2>
 <dl>
@@ -58374,7 +58375,7 @@ isgraph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; islower&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp;&nbsp; mblen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mbsrtowcs_s&nbsp;&nbsp;&nbsp; mbstowcs&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; mbstowcs_s&nbsp;&nbsp;&nbsp;&nbsp; mbtowc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memccpy&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memcmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; memcpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memicmp&nbsp;
+&nbsp;&nbsp; memcpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _memicmp
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memmove&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memmove_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memset
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; movedata&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qsort&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; qsort_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _rotl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -58386,17 +58387,17 @@ isgraph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; islower&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp; strerrorlen_s&nbsp; _stricmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strlen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 _strlwr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat_s&nbsp;&nbsp;
 &nbsp;&nbsp; strncmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy_s
-&nbsp;&nbsp;&nbsp;&nbsp; _strnicmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnlen_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnset&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; strpbrk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-strrev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strspn&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strstr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strtok_s&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; _strupr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tolower
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;&nbsp;&nbsp; wcscat_s
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp; _wcserrorlen_s wcsncat_s
-&nbsp;&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;
-&nbsp;&nbsp; wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+&nbsp;&nbsp;&nbsp;&nbsp; _strnicmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnlen_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strnset&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; strpbrk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrev
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strspn&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; strstr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strtok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strupr
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tolower&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;&nbsp;&nbsp; wcscat_s&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp; _wcserrorlen_s wcsncat_s&nbsp;
+&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;&nbsp;
+&nbsp; wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
