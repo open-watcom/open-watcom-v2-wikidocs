@@ -314,6 +314,7 @@
 <br><a href="#_setvisualpage">_setvisualpage</a>
 <br><a href="#_setwindow">_setwindow</a>
 <br><a href="#_snprintf">_snprintf, _snwprintf</a>
+<br><a href="#sopen">_sopen, _wsopen, sopen</a>
 <br><a href="#_splitpath">_splitpath, _wsplitpath</a>
 <br><a href="#_splitpath2">_splitpath2, _wsplitpath2</a>
 <br><a href="#_status87">_status87</a>
@@ -789,7 +790,6 @@
 <br><a href="#sleep">sleep</a>
 <br><a href="#snprintf">snprintf, snwprintf</a>
 <br><a href="#snprintf_s">snprintf_s, snwprintf_s</a>
-<br><a href="#sopen">sopen, _sopen, _wsopen</a>
 <br><a href="#sound">sound</a>
 <br><a href="#Space_Characters">Space Characters</a>
 <br><a href="#spawn">spawn...&nbsp; Functions</a>
@@ -1332,13 +1332,13 @@ allowing manipulation of any memory location regardless of which memory model yo
 following functions are defined:
 <dl>
 <dt><a href="#bcmp">bcmp</a>
-<dd>compare two byte strings
+<dd>** deprecated ** compare two byte strings
 <dt><br><a href="#bcopy">bcopy</a>
-<dd>copy a byte string
+<dd>** deprecated ** copy a byte string
 <dt><br><a href="#_bprintf">_bprintf</a>
 <dd>formatted transmission to fixed-length string
 <dt><br><a href="#bzero">bzero</a>
-<dd>zero a byte string
+<dd>** deprecated ** zero a byte string
 <dt><br><a href="#strcat">_fstrcat</a>
 <dd>concatenate two far strings
 <dt><br><a href="#strchr">_fstrchr</a>
@@ -1392,7 +1392,7 @@ following functions are defined:
 <dt><br><a href="#strcmp">strcmp</a>
 <dd>compare two strings
 <dt><br><a href="#strcmpi">strcmpi</a>
-<dd>compare two strings with case insensitivity
+<dd>** deprecated ** compare two strings with case insensitivity
 <dt><br><a href="#strcoll">strcoll</a>
 <dd>compare two strings using &quot;locale&quot; collating sequence
 <dt><br><a href="#strcpy">strcpy</a>
@@ -1484,7 +1484,7 @@ for.&nbsp; The following functions are defined:
 <dt><br><a href="#strcmp">wcscmp</a>
 <dd>compare two strings
 <dt><br><a href="#strcmpi">wcscmpi</a>
-<dd>compare two strings with case insensitivity
+<dd>** deprecated ** compare two strings with case insensitivity
 <dt><br><a href="#strcoll">wcscoll</a>
 <dd>compare two strings using &quot;locale&quot; collating sequence
 <dt><br><a href="#strcpy">wcscpy</a>
@@ -2769,7 +2769,7 @@ the file is opened.&nbsp; The file handle is passed to the other functions.
 <dd>synchronous I/O multiplexing
 <dt><br><a href="#setmode">setmode</a>
 <dd>set file mode
-<dt><br><a href="#sopen">sopen</a>
+<dt><br><a href="#sopen">_sopen</a>
 <dd>open a file for shared access
 <dt><br>symlink
 <dd>create a symbolic link
@@ -3245,7 +3245,7 @@ is available on host system.&nbsp; The following functions are defined:
 <dd>rename a file
 <dt><br><a href="#rmdir">rmdir</a>
 <dd>remove a directory
-<dt><br><a href="#sopen">sopen</a>
+<dt><br><a href="#sopen">_sopen</a>
 <dd>open a file for shared access
 <dt><br><a href="#stat">stat</a>
 <dd>get file status
@@ -3340,7 +3340,7 @@ FP_SEG</tt> and <tt> MK_FP</tt> macros, and for the following structures and uni
 <dd>This ISO C90 header file provides the <tt> extern</tt> declaration for error variable <tt> errno</tt> and provides the symbolic
 names for error codes that can be placed in the error variable.&nbsp; 
 <dt><br>fcntl.h
-<dd>This POSIX header file defines the flags used by the <tt> open</tt> and <tt> sopen</tt> functions.&nbsp; The function declarations
+<dd>This POSIX header file defines the flags used by the <tt> open</tt> and <tt> _sopen</tt> functions.&nbsp; The function declarations
 for these functions are found in the<tt> &lt;io.h&gt;</tt> header file.&nbsp; 
 <dt><br>fenv.h
 <dd>This ISO C99 header file defines several types and declares several functions that give access to the floating point environment.
@@ -3399,7 +3399,7 @@ and <tt> P_OVERLAY</tt>.&nbsp;
 <dt><br>setjmp.h
 <dd>This ISO C90 header file declares the <tt> setjmp</tt> and <tt> longjmp</tt> functions.&nbsp; 
 <dt><br>share.h
-<dd>This header file defines constants for shared access to files using the <tt> sopen</tt> function.&nbsp; 
+<dd>This header file defines constants for shared access to files using the <tt> _sopen</tt> function.&nbsp; 
 <dt><br>signal.h
 <dd>This ISO C90 header file declares the <tt> signal</tt> and <tt> raise</tt> functions.&nbsp; 
 <dt><br>stdarg.h
@@ -3526,7 +3526,7 @@ of either
 operations when they precede linefeed characters.
 </dl>
 <br>These values are defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp; The value of <tt> _fmode</tt> may be changed
-by a program to change the default behavior of the <tt> open</tt>, <tt> fopen</tt>, <tt> creat</tt> and <tt> sopen</tt> functions.
+by a program to change the default behavior of the <tt> open</tt>, <tt> fopen</tt>, <tt> creat</tt> and <tt> _sopen</tt> functions.
 &nbsp;The default setting of <tt> _fmode</tt> is <tt> O_TEXT</tt>, for text-mode translation.&nbsp; <tt> O_BINARY</tt> is
 the setting for binary mode.&nbsp; You can change the value of <tt> _fmode</tt> in either of two ways:&nbsp; 
 <ul>
@@ -4770,7 +4770,7 @@ Otherwise, -1 is returned and <tt> errno</tt> is set to indicate the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chmod">chmod</a>, <a href="#fstat">fstat</a>, <a href="#open">open</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>
+<dd><a href="#chmod">chmod</a>, <a href="#fstat">fstat</a>, <a href="#open">open</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>
 </dl>
 <dl>
 <dt>Example:
@@ -7829,7 +7829,7 @@ indicate the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#fstat">fstat</a>, <a href="#open">open</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>
+<dd><a href="#fstat">fstat</a>, <a href="#open">open</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>
 </dl>
 <dl>
 <dt>Example:
@@ -8478,7 +8478,7 @@ will be -1, and <tt> errno</tt> will be set appropriately.
 <dl>
 <dt>Description:
 <dd>The<tt> close</tt> function closes a file at the operating system level.&nbsp; The<i> handle</i> value is the file handle
-returned by a successful execution of one of the <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>, <tt> open</tt> or <tt> sopen</tt>
+returned by a successful execution of one of the <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>, <tt> open</tt> or <tt> _sopen</tt>
 functions.
 <br>The<tt> _close</tt> function is identical to<tt> close</tt>.&nbsp; Use<tt> _close</tt> for ANSI naming conventions.
 </dl>
@@ -8498,7 +8498,7 @@ the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#open">open</a>, <a href="#sopen">sopen</a>
+<dd><a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#open">open</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -9153,7 +9153,7 @@ and <tt> errno</tt> is set to indicate the error.
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#eof">eof</a>,
 <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>,
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
 <a href="#tell">tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
@@ -10168,7 +10168,7 @@ accordingly.
 <dd><a href="#creat">creat</a>, <a href="#_dos_creatnew">_dos_creatnew</a>, <a href="#_dos_open">_dos_open</a>, <a href="#_dos_close">_dos_close</a>,
 <a href="#open">open</a>, <a href="#fdopen">fdopen</a>, <a href="#fopen">fopen</a>, <a href="#freopen">freopen</a>, <a href="#_fsopen">_fsopen</a>,
 <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>,
-<a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -10243,7 +10243,7 @@ errno</tt>.&nbsp; Possible values and their interpretations:
 <dd><a href="#creat">creat</a>, <a href="#_dos_creat">_dos_creat</a>, <a href="#_dos_open">_dos_open</a>, <a href="#_dos_close">_dos_close</a>,
 <a href="#open">open</a>, <a href="#fdopen">fdopen</a>, <a href="#fopen">fopen</a>, <a href="#freopen">freopen</a>, <a href="#_fsopen">_fsopen</a>,
 <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>,
-<a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -11149,7 +11149,7 @@ errno</tt> to one of the following values:
 <dd><a href="#_dos_close">_dos_close</a>, <a href="#_dos_creat">_dos_creat</a>, <a href="#_dos_creatnew">_dos_creatnew</a>, <a href="#_dos_read">_dos_read</a>,
 <a href="#_dos_write">_dos_write</a>, <a href="#fdopen">fdopen</a>, <a href="#fopen">fopen</a>, <a href="#freopen">freopen</a>,
 <a href="#_fsopen">_fsopen</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>,
-<a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -11844,7 +11844,7 @@ the other.
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup2">dup2</a>, <a href="#eof">eof</a>,
 <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>,
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
 <a href="#tell">tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
@@ -11918,7 +11918,7 @@ the error.
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#eof">eof</a>,
 <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>,
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
 <a href="#tell">tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
@@ -13678,7 +13678,7 @@ pointed to by<i> sign</i> will contain 0 if the number is positive, and non-zero
 <dl>
 <dt>Description:
 <dd>The<tt> fdopen</tt> function associates a stream with the file handle<i> handle</i> which represents an opened file or device.
-&nbsp;The handle was returned by one of <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>, <tt> open</tt>, or <tt> sopen</tt>.
+&nbsp;The handle was returned by one of <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>, <tt> open</tt>, or <tt> _sopen</tt>.
 &nbsp;The open mode<i> mode</i> must match the mode with which the file or device was originally opened.
 <br>The argument<i> mode</i> is described in the description of the <tt> fopen</tt> function.
 <br><br>The<tt> _fdopen</tt> function is identical to<tt> fdopen</tt>.&nbsp; Use<tt> _fdopen</tt> for ANSI naming conventions.
@@ -13696,7 +13696,7 @@ has been detected.
 <dt>See Also:
 <dd><a href="#creat">creat</a>, <a href="#_dos_open">_dos_open</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#fopen">fopen</a>,
 <a href="#freopen">freopen</a>, <a href="#_fsopen">_fsopen</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>,
-<a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -15857,7 +15857,7 @@ has been detected.
 <dd><a href="#_dos_open">_dos_open</a>, <a href="#fclose">fclose</a>, <a href="#fcloseall">fcloseall</a>, <a href="#fdopen">fdopen</a>,
 <a href="#fopen_s">fopen_s</a>, <a href="#freopen">freopen</a>, <a href="#freopen_s">freopen_s</a>, <a href="#_fsopen">_fsopen</a>,
 <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>,
-<a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -15993,7 +15993,7 @@ violation,<tt> fopen_s</tt> returns a non-zero value.
 <dd><a href="#_dos_open">_dos_open</a>, <a href="#fclose">fclose</a>, <a href="#fcloseall">fcloseall</a>, <a href="#fdopen">fdopen</a>,
 <a href="#fopen">fopen</a>, <a href="#freopen">freopen</a>, <a href="#freopen_s">freopen_s</a>, <a href="#_fsopen">_fsopen</a>,
 <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>,
-<a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -16801,7 +16801,7 @@ has been detected.
 <dd><a href="#_dos_open">_dos_open</a>, <a href="#fclose">fclose</a>, <a href="#fcloseall">fcloseall</a>, <a href="#fdopen">fdopen</a>,
 <a href="#fopen">fopen</a>, <a href="#fopen_s">fopen_s</a>, <a href="#freopen_s">freopen_s</a>, <a href="#_fsopen">_fsopen</a>,
 <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>,
-<a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -16883,7 +16883,7 @@ violation,<tt> freopen_s</tt> returns a non-zero value.
 <dd><a href="#_dos_open">_dos_open</a>, <a href="#fclose">fclose</a>, <a href="#fcloseall">fcloseall</a>, <a href="#fdopen">fdopen</a>,
 <a href="#fopen">fopen</a>, <a href="#fopen_s">fopen_s</a>, <a href="#freopen">freopen</a>, <a href="#_fsopen">_fsopen</a>,
 <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>,
-<a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -17324,7 +17324,7 @@ has been detected.
 <dt>See Also:
 <dd><a href="#_dos_open">_dos_open</a>, <a href="#fclose">fclose</a>, <a href="#fcloseall">fcloseall</a>, <a href="#fdopen">fdopen</a>,
 <a href="#fopen">fopen</a>, <a href="#freopen">freopen</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#_hdopen">_hdopen</a>,
-<a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#open">open</a>, <a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -17502,7 +17502,7 @@ returned.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#open">open</a>, <a href="#sopen">sopen</a>,
+<dd><a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#open">open</a>, <a href="#sopen">_sopen</a>,
 <a href="#stat">stat</a>
 </dl>
 <dl>
@@ -21982,7 +21982,7 @@ files that are opened by DOS varies from 3 to 5 depending on the version of DOS 
 <dt>See Also:
 <dd><a href="#_dos_open">_dos_open</a>, <a href="#fdopen">fdopen</a>, <a href="#fileno">fileno</a>, <a href="#fopen">fopen</a>,
 <a href="#freopen">freopen</a>, <a href="#_fsopen">_fsopen</a>, <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>,
-<a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>, <a href="#tmpfile">tmpfile</a>
+<a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>, <a href="#tmpfile">tmpfile</a>
 </dl>
 <dl>
 <dt>Example:
@@ -22385,7 +22385,7 @@ with access and sharing specified by<i> mode</i>, and creates a POSIX-style file
 <dt>See Also:
 <dd><a href="#close">close</a>, <a href="#_dos_open">_dos_open</a>, <a href="#fdopen">fdopen</a>, <a href="#fopen">fopen</a>,
 <a href="#freopen">freopen</a>, <a href="#_fsopen">_fsopen</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#open">open</a>,
-<a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_os_handle">_os_handle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">sopen</a>
+<a href="#_open_osfhandle">_open_osfhandle</a>, <a href="#_os_handle">_os_handle</a>, <a href="#_popen">_popen</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -28804,7 +28804,7 @@ errno</tt> contains a value indicating the type of error that has been detected.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#locking">locking</a>, <a href="#open">open</a>, <a href="#sopen">sopen</a>, <a href="#unlock">unlock</a>
+<dd><a href="#locking">locking</a>, <a href="#open">open</a>, <a href="#sopen">_sopen</a>, <a href="#unlock">unlock</a>
 </dl>
 <dl>
 <dt>Example:
@@ -28898,7 +28898,7 @@ file cannot be locked after 10 attempts.
 <dl>
 <dt>See Also:
 <dd><a href="#creat">creat</a>, <a href="#_dos_creat">_dos_creat</a>, <a href="#_dos_open">_dos_open</a>, <a href="#lock">lock</a>,
-<a href="#open">open</a>, <a href="#sopen">sopen</a>, <a href="#unlock">unlock</a>
+<a href="#open">open</a>, <a href="#sopen">_sopen</a>, <a href="#unlock">unlock</a>
 </dl>
 <dl>
 <dt>Example:
@@ -28916,7 +28916,7 @@ file cannot be locked after 10 attempts.
 <br><tt>&nbsp;&nbsp;&nbsp; auto char buffer&#91;512&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; nbytes = 512;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; offset = 1024;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; handle = sopen( &quot;db.fil&quot;, O_RDWR, SH_DENYNO );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; handle = _sopen( &quot;db.fil&quot;, O_RDWR, SH_DENYNO );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if( handle != -1 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lseek( handle, offset, SEEK_SET );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locking( handle, LK_LOCK, nbytes );</tt>
@@ -29387,7 +29387,7 @@ if it is found, or the newly added key if it was not found.
 <dt>Description:
 <dd>The<tt> lseek</tt> function sets the current file position at the operating system level.&nbsp; The file is referenced using
 the file handle<i> handle</i> returned by a successful execution of one of the <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>,
-<tt> open</tt> or <tt> sopen</tt> functions.&nbsp; The value of<i> offset</i> is used as a relative offset from a file position
+<tt> open</tt> or <tt> _sopen</tt> functions.&nbsp; The value of<i> offset</i> is used as a relative offset from a file position
 determined by the value of the argument<i> origin</i>.
 <br>The new file position is determined in a manner dependent upon the value of<i> origin</i> which may have one of three
 possible values (defined in the<tt> &lt;stdio.h&gt;</tt> header file):
@@ -29453,7 +29453,7 @@ of the file.
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
 <a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#open">open</a>,
-<a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
+<a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
 <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
@@ -31757,7 +31757,7 @@ macro if <tt> _UNICODE</tt> has been defined, otherwise it maps to<tt> _strdec</
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsdec">_strdec</a>, <a href="#_mbsinc">_strinc</a>, <a href="#_mbsninc">_strninc</a>
+<dd><a href="#_mbsinc">_mbsinc</a>, <a href="#_mbsninc">_mbsninc</a>
 </dl>
 <dl>
 <dt>Example:
@@ -31855,7 +31855,7 @@ macro if <tt> _UNICODE</tt> has been defined, otherwise it maps to<tt> _strinc</
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsdec">_strdec</a>, <a href="#_mbsinc">_strinc</a>, <a href="#_mbsninc">_strninc</a>
+<dd><a href="#_mbsdec">_mbsdec</a>, <a href="#_mbsninc">_mbsninc</a>
 </dl>
 <dl>
 <dt>Example:
@@ -32547,7 +32547,7 @@ macro if <tt> _UNICODE</tt> has been defined, otherwise it maps to<tt> _strnextc
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsdec">_strdec</a>, <a href="#_mbsinc">_strinc</a>, <a href="#_mbsninc">_strninc</a>
+<dd><a href="#_mbsdec">_mbsdec</a>, <a href="#_mbsinc">_mbsinc</a>, <a href="#_mbsninc">_mbsninc</a>
 </dl>
 <dl>
 <dt>Example:
@@ -32626,7 +32626,7 @@ in the string, the result is undefined.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_mbsdec">_strdec</a>, <a href="#_mbsinc">_strinc</a>, <a href="#_mbsninc">_strninc</a>
+<dd><a href="#_mbsdec">_mbsdec</a>, <a href="#_mbsinc">_mbsinc</a>
 </dl>
 <dl>
 <dt>Example:
@@ -38797,7 +38797,7 @@ function).
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
 <a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
+<a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
 <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
@@ -39062,7 +39062,7 @@ to call <tt> close</tt> at the right time, i.e., after all I/O operations are co
 <dd><a href="#close">close</a>, <a href="#_dos_open">_dos_open</a>, <a href="#dup2">dup2</a>, <a href="#fdopen">fdopen</a>, <a href="#fopen">fopen</a>,
 <a href="#freopen">freopen</a>, <a href="#_fsopen">_fsopen</a>, <a href="#_get_osfhandle">_get_osfhandle</a>, <a href="#_grow_handles">_grow_handles</a>,
 <a href="#_hdopen">_hdopen</a>, <a href="#open">open</a>, <a href="#_os_handle">_os_handle</a>, <a href="#_popen">_popen</a>,
-<a href="#sopen">sopen</a>
+<a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -46085,7 +46085,7 @@ can be one of:
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
 <a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
 <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
@@ -47977,7 +47977,7 @@ and less than<i> n</i>.
 <dd><tt> snprintf_s - All, Linux, RDOS, Netware</tt>
 <br><tt>snwprintf_s - All, Linux</tt>
 </dl>
-<h2 id="sopen"> sopen, _sopen, _wsopen </h2>
+<h2 id="sopen"> _sopen, _wsopen, sopen </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -47986,22 +47986,23 @@ and less than<i> n</i>.
 <br><tt>#include &lt;sys/stat.h&gt;</tt>
 <br><tt>#include &lt;sys/types.h&gt;</tt>
 <br><tt>#include &lt;share.h&gt;</tt>
-<br><tt>int sopen( const char *filename,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int access, int share, ... );</tt>
 <br><tt>int _sopen( const char *filename,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int access, int share, ... );</tt>
 <br><tt>int _wsopen( const wchar_t *filename,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int access, int share, ... );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int sopen( const char *filename,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int access, int share, ... );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> sopen</tt> function opens a file at the operating system level for shared access.&nbsp; The name of the file to be
+<dd>The<tt> _sopen</tt> function opens a file at the operating system level for shared access.&nbsp; The name of the file to be
 opened is given by<i> filename</i>.&nbsp; The file will be accessed according to the access mode specified by<i> access</i>.
 &nbsp;When the file is to be created, the optional argument must be given which establishes the future access permissions
 for the file.&nbsp; Additionally, the sharing mode of the file is given by the<i> share</i> argument.&nbsp; The optional argument
 is the file permissions to be used when <tt> O_CREAT</tt> flag is on in the<i> access</i> mode.
-<br>The<tt> _sopen</tt> function is identical to<tt> sopen</tt>.&nbsp; Use<tt> _sopen</tt> for ANSI naming conventions.
-<br><br>The<tt> _wsopen</tt> function is identical to<tt> sopen</tt> except that it accepts a wide character string argument.
+<br>The<tt> _sopen</tt> function is identical to<tt> _sopen</tt>.&nbsp; Use<tt> _sopen</tt> for ANSI naming conventions.
+<br><br>The<tt> _wsopen</tt> function is identical to<tt> _sopen</tt> except that it accepts a wide character string argument.
 <br><br>The access mode is established by a combination of the bits defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp;
 The following bits may be set:
 <dl>
@@ -48083,7 +48084,7 @@ a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
 </dl>
 <br>All files are readable with DOS; however, it is a good idea to set <tt> S_IREAD</tt> when read permission is intended
 for the file.
-<br><br>The<tt> sopen</tt> function applies the current file permission mask to the specified permissions (see the <a href="#umask">umask</a>
+<br><br>The<tt> _sopen</tt> function applies the current file permission mask to the specified permissions (see the <a href="#umask">umask</a>
 function).
 <br><br>The shared access for the file,<i> share</i>, is established by a combination of bits defined in the<tt> &lt;share.h&gt;</tt>
 header file.&nbsp; The following values may be set:
@@ -48102,10 +48103,12 @@ header file.&nbsp; The following values may be set:
 </dl>
 <br>You should consult the technical documentation for the DOS system that you are using for more detailed information about
 these sharing modes.
+<br><br><tt>_sopen</tt> function is identical to the<tt> sopen</tt> function.&nbsp; Use <a href="#sopen">_sopen</a> instead
+of<tt> sopen</tt>.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If successful,<tt> sopen</tt> returns a handle for the file.&nbsp; When an error occurs while opening the file, -1 is returned.
+<dd>If successful,<tt> _sopen</tt> returns a handle for the file.&nbsp; When an error occurs while opening the file, -1 is returned.
 &nbsp;When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 </dl>
 <dl>
@@ -48142,16 +48145,16 @@ these sharing modes.
 <br><br><tt>&nbsp;&nbsp;&nbsp; /* open a file for output&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; /* replace existing file if it exists&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; handle = sopen( &quot;file&quot;,</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; handle = _sopen( &quot;file&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O_WRONLY | O_CREAT | O_TRUNC,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SH_DENYWR,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S_IRUSR | S_IWUSR | S_IRGRP
 | S_IWGRP );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; /* read a file which is assumed to exist&nbsp;&nbsp; */</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; handle = sopen( &quot;file&quot;, O_RDONLY, SH_DENYWR );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; handle = _sopen( &quot;file&quot;, O_RDONLY, SH_DENYWR );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; /* append to the end of an existing file&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; /* write a new file if file does not exist */</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; handle = sopen( &quot;file&quot;,</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; handle = _sopen( &quot;file&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O_WRONLY | O_CREAT | O_APPEND,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SH_DENYWR,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S_IRUSR | S_IWUSR | S_IRGRP
@@ -48161,13 +48164,12 @@ these sharing modes.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_sopen conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> sopen - All, Linux, RDOS, Netware</tt>
-<br><tt>_sopen - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<dd><tt> _sopen - All, Linux, RDOS, Netware</tt>
 <br><tt>_wsopen - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux</tt>
+<br><tt>sopen - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="sound"> sound </h2>
 <dl>
@@ -49469,7 +49471,7 @@ is, ignoring case, less than, equal to, or greater than the string pointed to by
 <dl>
 <dt>See Also:
 <dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>,
-<a href="#strcmpi">strcmpi</a>, <a href="#strncasecmp">strncasecmp</a>
+<a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -49749,8 +49751,8 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
-<a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
+<dd><a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcasecmp">strcasecmp</a>,
+<a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -50629,8 +50631,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
-<a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
+<dd><a href="#strcmp">strcmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcasecmp">strcasecmp</a>,
+<a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -51049,7 +51051,7 @@ is, ignoring case, less than, equal to, or greater than the string pointed to by
 <dl>
 <dt>See Also:
 <dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strnicmp">_strnicmp</a>,
-<a href="#strcmpi">strcmpi</a>, <a href="#strcasecmp">strcasecmp</a>
+<a href="#strcasecmp">strcasecmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -51288,8 +51290,8 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcmpi">strcmpi</a>,
-<a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
+<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strnicmp">_strnicmp</a>, <a href="#strcasecmp">strcasecmp</a>,
+<a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -51619,8 +51621,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strcmpi">strcmpi</a>,
-<a href="#strcasecmp">strcasecmp</a>, <a href="#strncasecmp">strncasecmp</a>
+<dd><a href="#strcmp">strcmp</a>, <a href="#stricmp">_stricmp</a>, <a href="#strncmp">strncmp</a>, <a href="#strcasecmp">strcasecmp</a>,
+<a href="#strncasecmp">strncasecmp</a>
 </dl>
 <dl>
 <dt>Example:
@@ -53544,7 +53546,7 @@ of the file.
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
 <a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>,
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
 <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
@@ -54796,7 +54798,7 @@ radix</i> must satisfy the condition:
 <dl>
 <dt>Description:
 <dd>The<tt> umask</tt> function sets the process's file mode creation mask to<i> cmask</i>.&nbsp; The process's file mode creation
-mask is used during <tt> creat</tt>, <tt> open</tt> or <tt> sopen</tt> to turn off permission bits in the<i> permission</i>
+mask is used during <tt> creat</tt>, <tt> open</tt> or <tt> _sopen</tt> to turn off permission bits in the<i> permission</i>
 argument supplied.&nbsp; In other words, if a bit in the mask is on, then the corresponding bit in the file's requested permission
 value is disallowed.
 <br>The<tt> _umask</tt> function is identical to<tt> umask</tt>.&nbsp; Use<tt> _umask</tt> for ANSI naming conventions.
@@ -54857,7 +54859,7 @@ S_IWUSR</tt> is specified, then writing is not allowed (i.e., the file is read o
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chmod">chmod</a>, <a href="#creat">creat</a>, <a href="#mkdir">mkdir</a>, <a href="#open">open</a>, <a href="#sopen">sopen</a>
+<dd><a href="#chmod">chmod</a>, <a href="#creat">creat</a>, <a href="#mkdir">mkdir</a>, <a href="#open">open</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -55069,7 +55071,7 @@ errno</tt> contains a value indicating the type of error that has been detected.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#lock">lock</a>, <a href="#locking">locking</a>, <a href="#open">open</a>, <a href="#sopen">sopen</a>
+<dd><a href="#lock">lock</a>, <a href="#locking">locking</a>, <a href="#open">open</a>, <a href="#sopen">_sopen</a>
 </dl>
 <dl>
 <dt>Example:
@@ -58297,7 +58299,7 @@ has occurred, <tt> errno</tt> contains a value indicating the type of error that
 <dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
 <a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">sopen</a>, <a href="#stat">stat</a>,
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
 <a href="#tell">tell</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
