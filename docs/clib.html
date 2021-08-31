@@ -326,6 +326,7 @@
 <br><a href="#strnicmp">_strnicmp, _fstrnicmp, _wcsnicmp, _mbsnicmp, _fmbsnicmp, strnicmp</a>
 <br><a href="#_strnicoll">_strnicoll, _wcsnicoll, _mbsnicoll</a>
 <br><a href="#strnset">_strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset, strnset</a>
+<br><a href="#strrev">_strrev, _fstrrev, _wcsrev, _mbsrev, _fmbsrev, strrev</a>
 <br><a href="#strset">_strset, _fstrset, _wcsset, _mbsset, _fmbsset, strset</a>
 <br><a href="#_strtime">_strtime, _wstrtime</a>
 <br><a href="#strupr">_strupr, _fstrupr, _wcsupr, _mbsupr, _fmbsupr, strupr</a>
@@ -831,7 +832,6 @@
 <br><a href="#strnlen_s">strnlen_s, wcsnlen_s</a>
 <br><a href="#strpbrk">strpbrk, _fstrpbrk, wcspbrk, _mbspbrk, _fmbspbrk</a>
 <br><a href="#strrchr">strrchr, _fstrrchr, wcsrchr, _mbsrchr, _fmbsrchr</a>
-<br><a href="#strrev">strrev, _strrev, _fstrrev, _wcsrev, _mbsrev, _fmbsrev</a>
 <br><a href="#strspn">strspn, _fstrspn, wcsspn, _mbsspn, _fmbsspn</a>
 <br><a href="#strspnp">strspnp, _fstrspnp</a>
 <br><a href="#strstr">strstr, _fstrstr, wcsstr, _mbsstr, _fmbsstr</a>
@@ -51955,12 +51955,11 @@ in the string.
 <br><tt>_mbsrchr - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsrchr - DOS, Windows, OS/2 1.x(all)</tt>
 </dl>
-<h2 id="strrev"> strrev, _strrev, _fstrrev, _wcsrev, _mbsrev, _fmbsrev </h2>
+<h2 id="strrev"> _strrev, _fstrrev, _wcsrev, _mbsrev, _fmbsrev, strrev </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;string.h&gt;</tt>
-<br><tt>char *strrev( char *s1 );</tt>
 <br><tt>char *_strrev( char *s1 );</tt>
 <br><tt>char __far *_fstrrev( char __far *s1 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
@@ -51968,18 +51967,22 @@ in the string.
 <br><tt>#include &lt;mbstring.h&gt;</tt>
 <br><tt>unsigned char *_mbsrev( unsigned char *s1 );</tt>
 <br><tt>unsigned char __far *_fmbsrev( unsigned char __far *s1 );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>char *strrev( char *s1 );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strrev</tt> function replaces the string<i> s1</i> with a string whose characters are in the reverse order.
-<br>The<tt> _strrev</tt> function is identical to<tt> strrev</tt>.&nbsp; Use<tt> _strrev</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrrev</tt> function is a data model independent form of the<tt> strrev</tt> function.&nbsp; It accepts
+<dd>The<tt> _strrev</tt> function replaces the string<i> s1</i> with a string whose characters are in the reverse order.
+<br>The<tt> _strrev</tt> function is identical to<tt> _strrev</tt>.&nbsp; Use<tt> _strrev</tt> for ANSI naming conventions.
+<br><br>The<tt> _fstrrev</tt> function is a data model independent form of the<tt> _strrev</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _wcsrev</tt> function is a wide character version of<tt> strrev</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsrev</tt> function is a multi-byte character version of<tt> strrev</tt> that operates with multi-byte character
-strings.
+<br><br>The<tt> _wcsrev</tt> function is a wide character version of<tt> _strrev</tt> that operates with wide character strings.
+<br><br>The<tt> _mbsrev</tt> function is a multi-byte character version of<tt> _strrev</tt> that operates with multi-byte
+character strings.
 <br><br>The<tt> _fmbsrev</tt> function is a data model independent form of the<tt> _mbsrev</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br><tt>_strrev</tt> function is identical to the<tt> strrev</tt> function.&nbsp; Use <a href="#strrev">_strrev</a> instead
+of<tt> strrev</tt>.
 </dl>
 <dl>
 <dt>Returns:
@@ -51994,8 +51997,8 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, source );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strrev( source ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, strrev( source ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strrev( source ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%s\n&quot;, _strrev( source ) );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
 <br><br><tt>A sample STRING</tt>
@@ -52005,16 +52008,15 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_strrev conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> strrev - All, Linux, RDOS, Netware</tt>
-<br><tt>_strrev - All, Linux, RDOS, Netware</tt>
+<dd><tt> _strrev - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstrrev - All, Linux, RDOS</tt>
 <br><tt>_wcsrev - All, Linux</tt>
 <br><tt>_mbsrev - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsrev - DOS, Windows, OS/2 1.x(all)</tt>
+<br><tt>strrev - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="strset"> _strset, _fstrset, _wcsset, _mbsset, _fmbsset, strset </h2>
 <dl>
@@ -58390,15 +58392,15 @@ isgraph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; islower&nbsp;&nbsp;&nbsp;&nbsp
 _strlwr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat_s&nbsp;&nbsp;
 &nbsp;&nbsp; strncmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncpy_s
 &nbsp;&nbsp;&nbsp;&nbsp; _strnicmp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strnlen_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strnset&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; strpbrk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrev
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strspn&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; strstr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strtok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strupr
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tolower&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;&nbsp;&nbsp; wcscat_s&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp; _wcserrorlen_s wcsncat_s&nbsp;
-&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;&nbsp;
-&nbsp; wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; strpbrk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strrev
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strspn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; strstr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strtok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strupr&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; b swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tolower&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;&nbsp;&nbsp; wcscat_s&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp; _wcserrorlen_s wcsncat_s&nbsp;&nbsp;
+&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
