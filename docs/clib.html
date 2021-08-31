@@ -21,6 +21,7 @@
 <br><a href="#_bprintf">_bprintf, _bwprintf</a>
 <br><a href="#_chain_intr">_chain_intr</a>
 <br><a href="#_chdrive">_chdrive</a>
+<br><a href="#chsize">_chsize, chsize</a>
 <br><a href="#_clear87">_clear87</a>
 <br><a href="#_clearscreen">_clearscreen</a>
 <br><a href="#_cmdname">_cmdname</a>
@@ -65,9 +66,11 @@
 <br><a href="#_ellipse">_ellipse, _ellipse_w, _ellipse_wxy</a>
 <br><a href="#_enable">_enable</a>
 <br><a href="#_endthread">_endthread, _endthreadex</a>
+<br><a href="#eof">_eof, eof</a>
 <br><a href="#_exit">_Exit, _exit</a>
 <br><a href="#_expand">_expand Functions</a>
 <br><a href="#_fieeetomsbin">_fieeetomsbin</a>
+<br><a href="#filelength">_filelength, _filelengthi64, filelength</a>
 <br><a href="#_findclose">_findclose</a>
 <br><a href="#_findfirst">_findfirst, _findfirsti64, _wfindfirst, _wfindfirsti64</a>
 <br><a href="#_findnext">_findnext, _findnexti64, _wfindnext, _wfindnexti64</a>
@@ -297,6 +300,7 @@
 <br><a href="#_setgtextvector">_setgtextvector</a>
 <br><a href="#_setlinestyle">_setlinestyle</a>
 <br><a href="#_setmbcp">_setmbcp</a>
+<br><a href="#setmode">_setmode, setmode</a>
 <br><a href="#_setpixel">_setpixel, _setpixel_w</a>
 <br><a href="#_setplotaction">_setplotaction</a>
 <br><a href="#_settextalign">_settextalign</a>
@@ -330,6 +334,7 @@
 <br><a href="#strset">_strset, _fstrset, _wcsset, _mbsset, _fmbsset, strset</a>
 <br><a href="#_strtime">_strtime, _wstrtime</a>
 <br><a href="#strupr">_strupr, _fstrupr, _wcsupr, _mbsupr, _fmbsupr, strupr</a>
+<br><a href="#tell">_tell, _telli64, tell</a>
 <br><a href="#_tempnam">_tempnam, _wtempnam</a>
 <br><a href="#_unregisterfonts">_unregisterfonts</a>
 <br><a href="#_vbprintf">_vbprintf, _vbwprintf</a>
@@ -384,7 +389,6 @@
 <br><a href="#Character_Testing">Character Testing</a>
 <br><a href="#chdir">chdir, _chdir, _wchdir</a>
 <br><a href="#chmod">chmod, _chmod, _wchmod</a>
-<br><a href="#chsize">chsize, _chsize</a>
 <br><a href="#Classes_of_Functions">Classes of Functions</a>
 <br><a href="#Classes_of_Graphics_Functions">Classes of Graphics Functions</a>
 <br><a href="#clearenv">clearenv</a>
@@ -446,7 +450,6 @@
 <br><a href="#endservent">endservent</a>
 <br><a href="#Environment_Functions">Environment Functions</a>
 <br><a href="#Environment_Names">Environment Names</a>
-<br><a href="#eof">eof, _eof</a>
 <br><a href="#erf">erf</a>
 <br><a href="#erfc">erfc</a>
 <br><a href="#exec">exec...&nbsp; Functions</a>
@@ -488,7 +491,6 @@
 <br><a href="#File_Names">File Names</a>
 <br><a href="#File_Position_Errors">File Position Errors</a>
 <br><a href="#File_Position_in_Append_Mode">File Position in Append Mode</a>
-<br><a href="#filelength">filelength, _filelength, _filelengthi64</a>
 <br><a href="#FILENAME_MAX">FILENAME_MAX</a>
 <br><a href="#fileno">fileno</a>
 <br><a href="#floor">floor</a>
@@ -776,7 +778,6 @@
 <br><a href="#sethostent">sethostent</a>
 <br><a href="#setjmp">setjmp</a>
 <br><a href="#setlocale">setlocale, _wsetlocale</a>
-<br><a href="#setmode">setmode, _setmode</a>
 <br><a href="#setnetent">setnetent</a>
 <br><a href="#setprotoent">setprotoent</a>
 <br><a href="#setpwent">setpwent</a>
@@ -853,7 +854,6 @@
 <dt><br>- T -
 <dd><a href="#tan">tan</a>
 <br><a href="#tanh">tanh</a>
-<br><a href="#tell">tell, _tell, _telli64</a>
 <br><a href="#Terminating_Newline_Characters">Terminating Newline Characters</a>
 <br><a href="#Text_Functions">Text Functions</a>
 <br><a href="#tgamma">tgamma</a>
@@ -2701,7 +2701,7 @@ as these functions are defined portably and are part of the ISO/ANSI standard fo
 the file is opened.&nbsp; The file handle is passed to the other functions.
 <br><br>The following functions are defined:
 <dl>
-<dt><a href="#chsize">chsize</a>
+<dt><a href="#chsize">_chsize</a>
 <dd>change the size of a file
 <dt><br><a href="#close">close</a>
 <dd>close file
@@ -2713,13 +2713,13 @@ the file is opened.&nbsp; The file handle is passed to the other functions.
 <dd>duplicate file handle, get unused handle number
 <dt><br><a href="#dup2">dup2</a>
 <dd>duplicate file handle, supply new handle number
-<dt><br><a href="#eof">eof</a>
+<dt><br><a href="#eof">_eof</a>
 <dd>test for end of file
 <dt><br>fcntl
 <dd>control over an open file
 <dt><br>fdatasync
 <dd>write queued file data to disk
-<dt><br><a href="#filelength">filelength</a>
+<dt><br><a href="#filelength">_filelength</a>
 <dd>get file size
 <dt><br><a href="#fileno">fileno</a>
 <dd>get file handle for stream file
@@ -2767,7 +2767,7 @@ the file is opened.&nbsp; The file handle is passed to the other functions.
 <dd>read several records placing them into a specified number of buffers
 <dt><br>select
 <dd>synchronous I/O multiplexing
-<dt><br><a href="#setmode">setmode</a>
+<dt><br><a href="#setmode">_setmode</a>
 <dd>set file mode
 <dt><br><a href="#sopen">_sopen</a>
 <dd>open a file for shared access
@@ -2775,7 +2775,7 @@ the file is opened.&nbsp; The file handle is passed to the other functions.
 <dd>create a symbolic link
 <dt><br>sync
 <dd>sync the filesystem
-<dt><br><a href="#tell">tell</a>
+<dt><br><a href="#tell">_tell</a>
 <dd>get current file position
 <dt><br><a href="#umask">umask</a>
 <dd>set file permission mask
@@ -4450,7 +4450,7 @@ followed by a linefeed character.
 </dl>
 <br>Since the conceptual view of text files in the C and C++ languages is that lines are terminated by only linefeed characters,
 the Open Watcom C library will remove carriage returns on input and add them on output, provided the mode is set to be<i>
-text.</i>&nbsp; This mode is set upon opening the file or with the <tt> setmode</tt> function.
+text.</i>&nbsp; This mode is set upon opening the file or with the <a href="#setmode">_setmode</a> function.
 <h2 id="DOS_Commands"> DOS Commands </h2>
 <br>DOS commands are documented in the technical documentation for your DOS system.&nbsp; These may be invoked from a C or
 C++ program with the <tt> system</tt> function.
@@ -7868,23 +7868,24 @@ indicate the error.
 <br><tt>_chmod - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_wchmod - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
 </dl>
-<h2 id="chsize"> chsize, _chsize </h2>
+<h2 id="chsize"> _chsize, chsize </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;io.h&gt;</tt>
-<br><tt>int chsize( int handle, long size );</tt>
 <br><tt>int _chsize( int handle, long size );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int chsize( int handle, long size );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> chsize</tt> function changes the size of the file associated with<i> handle</i> by extending or truncating the file
+<dd>The<tt> _chsize</tt> function changes the size of the file associated with<i> handle</i> by extending or truncating the file
 to the length specified by<i> size</i>.&nbsp; If the file needs to be extended, the file is padded with NULL ('\0') characters.
-<br>The<tt> _chsize</tt> function is identical to<tt> chsize</tt>.&nbsp; Use<tt> _chsize</tt> for ANSI naming conventions.
+<br>The<tt> chsize</tt> function is deprecated, use <a href="#chsize">_chsize</a> instead.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> chsize</tt> function returns zero if successful.&nbsp; A return value of -1 indicates an error, and <tt> errno</tt>
+<dd>The<tt> _chsize</tt> function returns zero if successful.&nbsp; A return value of -1 indicates an error, and <tt> errno</tt>
 is set to indicate the error.
 </dl>
 <dl>
@@ -7918,7 +7919,7 @@ is set to indicate the error.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S_IRUSR | S_IWUSR | S_IRGRP
 | S_IWGRP );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if( handle != -1 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( chsize( handle, 32 * 1024L ) != 0 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( _chsize( handle, 32 * 1024L ) != 0 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Error extending file\n&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; close( handle );</tt>
@@ -7928,12 +7929,11 @@ is set to indicate the error.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_chsize conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> chsize - All, Linux, RDOS, Netware</tt>
-<br><tt>_chsize - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<dd><tt> _chsize - All, Linux, RDOS, Netware</tt>
+<br><tt>chsize - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="_clear87"> _clear87 </h2>
 <dl>
@@ -9150,11 +9150,11 @@ and <tt> errno</tt> is set to indicate the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#eof">eof</a>,
-<a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#eof">_eof</a>,
+<a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
-<a href="#tell">tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
+<a href="#tell">_tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -11841,11 +11841,11 @@ the other.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup2">dup2</a>, <a href="#eof">eof</a>,
-<a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup2">dup2</a>, <a href="#eof">_eof</a>,
+<a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
-<a href="#tell">tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
+<a href="#tell">_tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -11915,11 +11915,11 @@ the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#eof">eof</a>,
-<a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#eof">_eof</a>,
+<a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>, <a href="#fileno">fileno</a>,
 <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
-<a href="#tell">tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
+<a href="#tell">_tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -12738,25 +12738,26 @@ exit code<i> retval</i> must be specified.
 <dd><tt> _endthread - Win32, OS/2 1.x(MT), OS/2 1.x(DL), OS/2-32, Linux, RDOS, Netware</tt>
 <br><tt>_endthreadex - Win32</tt>
 </dl>
-<h2 id="eof"> eof, _eof </h2>
+<h2 id="eof"> _eof, eof </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;io.h&gt;</tt>
-<br><tt>int eof( int handle );</tt>
 <br><tt>int _eof( int handle );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int eof( int handle );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> eof</tt> function determines, at the operating system level, if the end of the file has been reached for the file
+<dd>The<tt> _eof</tt> function determines, at the operating system level, if the end of the file has been reached for the file
 whose file handle is given by<i> handle</i>.&nbsp; Because the current file position is set following an input operation,
-the<tt> eof</tt> function may be called to detect the end of the file before an input operation beyond the end of the file
+the<tt> _eof</tt> function may be called to detect the end of the file before an input operation beyond the end of the file
 is attempted.
-<br>The<tt> _eof</tt> function is identical to<tt> eof</tt>.&nbsp; Use<tt> _eof</tt> for ANSI naming conventions.
+<br>The<tt> eof</tt> function is deprecated, use <a href="#eof">_eof</a> instead.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> eof</tt> function returns 1 if the current file position is at the end of the file, 0 if the current file position
+<dd>The<tt> _eof</tt> function returns 1 if the current file position is at the end of the file, 0 if the current file position
 is not at the end.&nbsp; A return value of -1 indicates an error, and in this case <tt> errno</tt> is set to indicate the
 error.
 </dl>
@@ -12784,7 +12785,7 @@ error.
 <br><tt>&nbsp;&nbsp;&nbsp; char buffer&#91;100&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; handle = open( &quot;file&quot;, O_RDONLY );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if( handle != -1 ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while( ! eof( handle ) ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while( ! _eof( handle ) ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len = read( handle, buffer, sizeof(buffer) - 1
 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buffer&#91; len &#93; = '\0';</tt>
@@ -12797,12 +12798,11 @@ error.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_eof conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> eof - All, Linux, RDOS, Netware</tt>
-<br><tt>_eof - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<dd><tt> _eof - All, Linux, RDOS, Netware</tt>
+<br><tt>eof - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="erf"> erf </h2>
 <dl>
@@ -14779,34 +14779,34 @@ would cause an overflow.
 <dt>Systems:
 <dd>All, Linux, Netware
 </dl>
-<h2 id="filelength"> filelength, _filelength, _filelengthi64 </h2>
+<h2 id="filelength"> _filelength, _filelengthi64, filelength </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;io.h&gt;</tt>
-<br><tt>long filelength( int handle );</tt>
 <br><tt>long _filelength( int handle );</tt>
 <br><tt>__int64 _filelengthi64( int handle );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>long filelength( int handle );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> filelength</tt> function returns, as a 32-bit long integer, the number of bytes in the opened file indicated by the
+<dd>The<tt> _filelength</tt> function returns, as a 32-bit long integer, the number of bytes in the opened file indicated by the
 file handle<i> handle</i>.
 <br>The _filelengthi64 function returns, as a 64-bit integer, the number of bytes in the opened file indicated by the file
 handle<i> handle</i>.
-<br><br>The<tt> _filelength</tt> function is identical to<tt> filelength</tt>.&nbsp; Use<tt> _filelength</tt> for ANSI naming
-conventions.
+<br><br>The<tt> filelength</tt> function is deprecated, use <a href="#filelength">_filelength</a> instead.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If an error occurs in<tt> filelength</tt> (-1L) is returned.
+<dd>If an error occurs in<tt> _filelength</tt> (-1L) is returned.
 <br>If an error occurs in _filelengthi64, (-1I64) is returned.
 <br><br>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <br><br>Otherwise, the number of bytes written to the file is returned.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#fstat">fstat</a>, <a href="#lseek">lseek</a>, <a href="#tell">tell</a>
+<dd><a href="#fstat">fstat</a>, <a href="#lseek">lseek</a>, <a href="#tell">_tell</a>
 </dl>
 <dl>
 <dt>Example:
@@ -14823,7 +14823,7 @@ conventions.
 <br><tt>&nbsp;&nbsp;&nbsp; handle = open( &quot;file&quot;, O_RDONLY | O_TEXT );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if( handle != -1 ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Size of file is %ld bytes\n&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; filelength( handle ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _filelength( handle ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; close( handle );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>}</tt>
@@ -14833,13 +14833,12 @@ conventions.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_filelength conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> filelength - All, Linux, RDOS, Netware</tt>
-<br><tt>_filelength - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
+<dd><tt> _filelength - All, Linux, RDOS, Netware</tt>
 <br><tt>_filelengthi64 - All, Linux</tt>
+<br><tt>filelength - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="FILENAME_MAX"> FILENAME_MAX </h2>
 <dl>
@@ -29408,20 +29407,21 @@ written in the gap.&nbsp; On systems such DOS and OS/2 that are not POSIX-confor
 values.
 <br><br>Some versions of MS-DOS allow seeking to a negative offset, but it is not recommended since it is not supported by
 other platforms and may not be supported in future versions of MS-DOS.
-<br><br>The<tt> lseek</tt> function does not, in itself, extend the size of a file (see the <a href="#chsize">chsize</a> function).
+<br><br>The<tt> lseek</tt> function does not, in itself, extend the size of a file (see the <a href="#chsize">_chsize</a>
+function).
 <br><br>The<tt> _lseek</tt> function is identical to<tt> lseek</tt>.&nbsp; Use<tt> _lseek</tt> for ANSI naming conventions.
 <br><br>The _lseeki64 function is identical to<tt> lseek</tt> except that it accepts a 64-bit value for the<i> offset</i>
 argument.
-<br><br>The<tt> lseek</tt> function can be used to obtain the current file position (the <tt> tell</tt> function is implemented
-in terms of &amp;func).&nbsp; This value can then be used with the<tt> lseek</tt> function to reset the file position to that
-point in the file:
+<br><br>The<tt> lseek</tt> function can be used to obtain the current file position (the <a href="#tell">_tell</a> function
+is implemented in terms of lseek).&nbsp; This value can then be used with the<tt> lseek</tt> function to reset the file position
+to that point in the file:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; off_t file_posn;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; int handle;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* get current file position */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file_posn = lseek( handle, 0L, SEEK_CUR );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* or */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file_posn = tell( handle );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file_posn = _tell( handle );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /* return to previous file position */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; file_posn = lseek( handle, file_posn, SEEK_SET );</tt>
 <br><br>If all records in the file are the same size, the position of the n'th record can be calculated and read, as illustrated
@@ -29450,11 +29450,11 @@ of the file.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
-<a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
-<a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#open">open</a>,
-<a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
-<a href="#write">write</a>, <a href="#umask">umask</a>
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
+<a href="#eof">_eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>,
+<a href="#fileno">fileno</a>, <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>,
+<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
+<a href="#tell">_tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -31937,6 +31937,7 @@ j, k;</tt>
 <dt>Description:
 <dd>If<i> ps</i> is not a null pointer, the<tt> mbsinit</tt> function determines whether the pointed-to <tt> mbstate_t</tt> object
 describes an initial conversion state.
+<br>The<tt> sisinit</tt> function is deprecated, use <a href="#mbsinit">mbsinit</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -33825,7 +33826,7 @@ characters of the object pointed to by<i> s1</i> to the object pointed to by<i> 
 s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
 <br>The<tt> _fmemicmp</tt> function is a data model independent form of the<tt> _memicmp</tt> function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _memicmp</tt> function is identical to<tt> _memicmp</tt>.&nbsp; Use<tt> _memicmp</tt> for ANSI naming conventions.
+<br><br>The<tt> memicmp</tt> function is deprecated, use <a href="#memicmp">_memicmp</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -38794,11 +38795,11 @@ function).
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
-<a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
-<a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
-<a href="#write">write</a>, <a href="#umask">umask</a>
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
+<a href="#eof">_eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>,
+<a href="#fileno">fileno</a>, <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>,
+<a href="#lseek">lseek</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
+<a href="#tell">_tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -42672,8 +42673,8 @@ The sequence can be started at different values by calling the <tt> srand</tt> f
 len</i> and the data is transmitted starting at the address specified by<i> buffer</i>.
 <br>The<i> handle</i> value is returned by the <tt> open</tt> function.&nbsp; The access mode must have included either <tt>
 O_RDONLY</tt> or <tt> O_RDWR</tt> when the <tt> open</tt> function was invoked.&nbsp; The data is read starting at the current
-file position for the file in question.&nbsp; This file position can be determined with the <tt> tell</tt> function and can
-be set with the <tt> lseek</tt> function.
+file position for the file in question.&nbsp; This file position can be determined with the <a href="#tell">_tell</a> function
+and can be set with the <tt> lseek</tt> function.
 <br><br>When <tt> O_BINARY</tt> is included in the access mode, the data is transmitted unchanged.&nbsp; When <tt> O_TEXT</tt>
 is included in the access mode, the data is transmitted with the extra carriage return character removed before each linefeed
 character encountered in the original data.
@@ -46052,18 +46053,19 @@ for<i> codepage</i>, the function returns -1 and the code page setting is unchan
 <dt>Systems:
 <dd>DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, Linux, RDOS
 </dl>
-<h2 id="setmode"> setmode, _setmode </h2>
+<h2 id="setmode"> _setmode, setmode </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;io.h&gt;</tt>
 <br><tt>#include &lt;fcntl.h&gt;</tt>
-<br><tt>int setmode( int handle, int mode );</tt>
 <br><tt>int _setmode( int handle, int mode );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int setmode( int handle, int mode );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> setmode</tt> function sets, at the operating system level, the translation mode to be the value of<i> mode</i> for
+<dd>The<tt> _setmode</tt> function sets, at the operating system level, the translation mode to be the value of<i> mode</i> for
 the file whose file handle is given by<i> handle</i>.&nbsp; The mode, defined in the<tt> &lt;fcntl.h&gt;</tt> header file,
 can be one of:
 <dl>
@@ -46074,19 +46076,20 @@ can be one of:
 <dt><br>O_BINARY
 <dd>Data is read or written unchanged.
 </dl>
+<br>The<tt> setmode</tt> function is deprecated, use <a href="#setmode">_setmode</a> instead.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If successful, the<tt> setmode</tt> function returns the previous mode that was set for the file; otherwise, -1 is returned.
+<dd>If successful, the<tt> _setmode</tt> function returns the previous mode that was set for the file; otherwise, -1 is returned.
 &nbsp;When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
-<a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
-<a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
-<a href="#write">write</a>, <a href="#umask">umask</a>
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
+<a href="#eof">_eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>,
+<a href="#fileno">fileno</a>, <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>,
+<a href="#lseek">lseek</a>, <a href="#open">open</a>, <a href="#read">read</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
+<a href="#tell">_tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -46100,7 +46103,7 @@ can be one of:
 <br><tt>&nbsp;&nbsp;&nbsp; long count;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; fp = fopen( &quot;file&quot;, &quot;rb&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if( fp != NULL ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setmode( fileno( fp ), O_BINARY );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _setmode( fileno( fp ), O_BINARY );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; count = 0L;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while( fgetc( fp ) != EOF ) ++count;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;File contains %lu characters\n&quot;,</tt>
@@ -46115,8 +46118,8 @@ can be one of:
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> setmode - All, Linux, RDOS, Netware</tt>
-<br><tt>_setmode - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS, Netware</tt>
+<dd><tt> _setmode - All, Linux, RDOS, Netware</tt>
+<br><tt>setmode - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="setnetent"> setnetent </h2>
 <dl>
@@ -48103,8 +48106,7 @@ header file.&nbsp; The following values may be set:
 </dl>
 <br>You should consult the technical documentation for the DOS system that you are using for more detailed information about
 these sharing modes.
-<br><br><tt>_sopen</tt> function is identical to the<tt> sopen</tt> function.&nbsp; Use <a href="#sopen">_sopen</a> instead
-of<tt> sopen</tt>.
+<br><br>The<tt> sopen</tt> function is deprecated, use <a href="#sopen">_sopen</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -48126,11 +48128,11 @@ of<tt> sopen</tt>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
-<a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
-<a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#stat">stat</a>, <a href="#tell">tell</a>,
-<a href="#write">write</a>, <a href="#umask">umask</a>
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
+<a href="#eof">_eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>,
+<a href="#fileno">fileno</a>, <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>,
+<a href="#lseek">lseek</a>, <a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#stat">stat</a>,
+<a href="#tell">_tell</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -49200,7 +49202,7 @@ conventions.
 <br><tt>&nbsp;&nbsp;&nbsp; FILE&nbsp;&nbsp;&nbsp; *fp;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; fp = fopen( &quot;file&quot;, &quot;rb&quot; );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; if( fp != NULL ) {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setmode( fileno( fp ), O_BINARY );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _setmode( fileno( fp ), O_BINARY );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;File contains %lu characters\n&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char_count( fp ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fclose( fp );</tt>
@@ -49802,8 +49804,9 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-&nbsp;The<tt> strcmpi</tt> function is identical to the <tt> _stricmp</tt> function.
 <br>The<tt> wcscmpi</tt> function is a wide character version of<tt> strcmpi</tt> that operates with wide character strings.
+<br><br>The<tt> strcmpi</tt> function is deprecated, use <a href="#stricmp">_stricmp</a> instead.
+<br><br>The<tt> wcscmpi</tt> function is deprecated, use <a href="#stricmp">_wcsicmp</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -50614,15 +50617,15 @@ that has been detected.
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> _stricmp</tt> function is identical to<tt> _stricmp</tt>.&nbsp; Use<tt> _stricmp</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstricmp</tt> function is a data model independent form of the<tt> _stricmp</tt> function that accepts far
-pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstricmp</tt> function is a data model independent form of the<tt> _stricmp</tt> function that accepts far pointer
+arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsicmp</tt> function is a wide character version of<tt> _stricmp</tt> that operates with wide character
 strings.
 <br><br>The<tt> _mbsicmp</tt> function is a multi-byte character version of<tt> _stricmp</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbsicmp</tt> function is a data model independent form of the<tt> _mbsicmp</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> stricmp</tt> function is deprecated, use <a href="#stricmp">_stricmp</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -50980,14 +50983,14 @@ maxsize</i> characters of<i> s</i> shall be accessed by strnlen_s
 <dt>Description:
 <dd>The<tt> _strlwr</tt> function replaces the string<i> s1</i> with lowercase characters by invoking the <tt> tolower</tt> function
 for each character in the string.
-<br>The<tt> _strlwr</tt> function is identical to<tt> _strlwr</tt>.&nbsp; Use<tt> _strlwr</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> _strlwr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> _strlwr</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcslwr</tt> function is a wide character version of<tt> _strlwr</tt> that operates with wide character strings.
 <br><br>The<tt> _mbslwr</tt> function is a multi-byte character version of<tt> _strlwr</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbslwr</tt> function is a data model independent form of the<tt> _mbslwr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strlwr</tt> function is deprecated, use <a href="#strlwr">_strlwr</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -51604,15 +51607,15 @@ is returned.
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>,
 for at most<i> len</i> characters.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for
 the purposes of doing the comparison.
-<br>The<tt> _strnicmp</tt> function is identical to<tt> _strnicmp</tt>.&nbsp; Use<tt> _strnicmp</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrnicmp</tt> function is a data model independent form of the<tt> _strnicmp</tt> function that accepts
-far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrnicmp</tt> function is a data model independent form of the<tt> _strnicmp</tt> function that accepts far
+pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsnicmp</tt> function is a wide character version of<tt> _strnicmp</tt> that operates with wide character
 strings.
 <br><br>The<tt> _mbsnicmp</tt> function is a multi-byte character version of<tt> _strnicmp</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbsnicmp</tt> function is a data model independent form of the<tt> _mbsnicmp</tt> function that accepts
 far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strnicmp</tt> function is deprecated, use <a href="#strnicmp">_strnicmp</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -51754,9 +51757,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <dd>The<tt> _strnset</tt> function fills the string<i> s</i> with the value of the argument<i> fill</i>, converted to be a character
 value.&nbsp; When the value of<i> count</i> is greater than the length of the string, the entire string is filled.&nbsp; Otherwise,
 that number of characters at the start of the string are set to the fill character.
-<br>The<tt> _strnset</tt> function is identical to<tt> _strnset</tt>.&nbsp; Use<tt> _strnset</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrnset</tt> function is a data model independent form of the<tt> _strnset</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrnset</tt> function is a data model independent form of the<tt> _strnset</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsnset</tt> function is a wide character version of<tt> _strnset</tt> that operates with wide character
 strings.&nbsp; For _wcsnset, the value of<i> count</i> is the number of wide characters to fill.&nbsp; This is half the number
 of bytes.
@@ -51767,6 +51769,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <br><br>For _mbsnset, the value of<i> count</i> is the number of multibyte characters to fill.&nbsp; If the number of bytes
 to be filled is odd and<i> fill</i> is a double-byte character, the partial byte at the end is filled with an ASCII space
 character.
+<br><br>The<tt> strnset</tt> function is deprecated, use <a href="#strnset">_strnset</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -51981,8 +51984,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 character strings.
 <br><br>The<tt> _fmbsrev</tt> function is a data model independent form of the<tt> _mbsrev</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br><tt>_strrev</tt> function is identical to the<tt> strrev</tt> function.&nbsp; Use <a href="#strrev">_strrev</a> instead
-of<tt> strrev</tt>.
+<br><br>The<tt> strrev</tt> function is deprecated, use <a href="#strrev">_strrev</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -52041,14 +52043,14 @@ of<tt> strrev</tt>.
 <dt>Description:
 <dd>The<tt> _strset</tt> function fills the string pointed to by<i> s1</i> with the character<i> fill</i>.&nbsp; The terminating
 null character in the original string remains unchanged.
-<br>The<tt> _strset</tt> function is identical to<tt> _strset</tt>.&nbsp; Use<tt> _strset</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrset</tt> function is a data model independent form of the<tt> _strset</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrset</tt> function is a data model independent form of the<tt> _strset</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsset</tt> function is a wide character version of<tt> _strset</tt> that operates with wide character strings.
 <br><br>The<tt> _mbsset</tt> function is a multi-byte character version of<tt> _strset</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbsset</tt> function is a data model independent form of the<tt> _mbsset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strset</tt> function is deprecated, use <a href="#strset">_strset</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -53067,14 +53069,14 @@ errno</tt> is set to <tt> EDOM</tt>.
 <dt>Description:
 <dd>The<tt> _strupr</tt> function replaces the string<i> s</i> with uppercase characters by invoking the <tt> toupper</tt> function
 for each character in the string.
-<br>The<tt> _strupr</tt> function is identical to<tt> _strupr</tt>.&nbsp; Use<tt> _strupr</tt> for ANSI naming conventions.
-<br><br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> _strupr</tt> function.&nbsp; It accepts
-far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> _strupr</tt> function.&nbsp; It accepts far
+pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsupr</tt> function is a wide character version of<tt> _strupr</tt> that operates with wide character strings.
 <br><br>The<tt> _mbsupr</tt> function is a multi-byte character version of<tt> _strupr</tt> that operates with multi-byte
 character strings.
 <br><br>The<tt> _fmbsupr</tt> function is a data model independent form of the<tt> _mbsupr</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strupr</tt> function is deprecated, use <a href="#strupr">_strupr</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -53517,27 +53519,28 @@ a value indicating the type of error that has been detected.
 <dt>Systems:
 <dd>Math
 </dl>
-<h2 id="tell"> tell, _tell, _telli64 </h2>
+<h2 id="tell"> _tell, _telli64, tell </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;io.h&gt;</tt>
-<br><tt>off_t tell( int handle );</tt>
 <br><tt>off_t _tell( int handle );</tt>
 <br><tt>__int64 _telli64( int handle );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>off_t tell( int handle );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> tell</tt> function reports the current file position at the operating system level.&nbsp; The<i> handle</i> value
+<dd>The<tt> _tell</tt> function reports the current file position at the operating system level.&nbsp; The<i> handle</i> value
 is the file handle returned by a successful execution of the <tt> open</tt> function.
 <br>The returned value may be used in conjunction with the <tt> lseek</tt> function to reset the current file position.
-<br><br>The<tt> _tell</tt> function is identical to<tt> tell</tt>.&nbsp; Use<tt> _tell</tt> for ANSI naming conventions.
-<br><br>The _telli64 function is similar to the<tt> tell</tt> function but returns a 64-bit file position.&nbsp; This value
+<br><br>The _telli64 function is similar to the<tt> _tell</tt> function but returns a 64-bit file position.&nbsp; This value
 may be used in conjunction with the <tt> _lseeki64</tt> function to reset the current file position.
+<br><br>The<tt> tell</tt> function is deprecated, use <a href="#tell">_tell</a> instead.
 </dl>
 <dl>
 <dt>Returns:
-<dd>If an error occurs in<tt> tell</tt> (-1L) is returned.
+<dd>If an error occurs in<tt> _tell</tt> (-1L) is returned.
 <br>If an error occurs in _telli64, (-1I64) is returned.
 <br><br>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
 <br><br>Otherwise, the current file position is returned in a system-dependent manner.&nbsp; A value of 0 indicates the start
@@ -53545,11 +53548,11 @@ of the file.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
-<a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
-<a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
-<a href="#write">write</a>, <a href="#umask">umask</a>
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
+<a href="#eof">_eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>,
+<a href="#fileno">fileno</a>, <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>,
+<a href="#lseek">lseek</a>, <a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#sopen">_sopen</a>,
+<a href="#stat">stat</a>, <a href="#write">write</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
@@ -53574,13 +53577,13 @@ of the file.
 | S_IWGRP );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; if( handle != -1 ) {</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* print file position */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%ld\n&quot;, tell( handle ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%ld\n&quot;, _tell( handle ) );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* write the text */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_written = write( handle, buffer,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sizeof( buffer ) );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* print file position */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%ld\n&quot;, tell( handle ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%ld\n&quot;, _tell( handle ) );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* close the file */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; close( handle );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; }</tt>
@@ -53592,13 +53595,12 @@ of the file.
 <dl>
 <dt>Classification:
 <dd>WATCOM
-<br>_tell conforms to ANSI naming conventions
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> tell - All, Linux, RDOS, Netware</tt>
-<br><tt>_tell - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<dd><tt> _tell - All, Linux, RDOS, Netware</tt>
 <br><tt>_telli64 - All, Linux</tt>
+<br><tt>tell - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="_tempnam"> _tempnam, _wtempnam </h2>
 <dl>
@@ -58280,13 +58282,13 @@ len</i> and the data to be transmitted is located at the address specified by<i>
 <tt> O_WRONLY</tt> or <tt> O_RDWR</tt> when the <tt> open</tt> function was invoked.
 <br><br>The data is written to the file at the end when the file was opened with <tt> O_APPEND</tt> included as part of the
 access mode; otherwise, it is written at the current file position for the file in question.&nbsp; This file position can
-be determined with the <tt> tell</tt> function and can be set with the <tt> lseek</tt> function.
+be determined with the <tt> _tell</tt> function and can be set with the <tt> lseek</tt> function.
 <br><br>When <tt> O_BINARY</tt> is included in the access mode, the data is transmitted unchanged.&nbsp; When <tt> O_TEXT</tt>
 is included in the access mode, the data is transmitted with extra carriage return characters inserted before each linefeed
 character encountered in the original data.
 <br><br>A file can be truncated under DOS and OS/2 2.0 by specifying 0 as the<i> len</i> argument.<b>&nbsp; Note,</b> however,
 that this doesn't work under OS/2 2.1, Windows NT/2000, and other operating systems.&nbsp; To truncate a file in a portable
-manner, use the <tt> chsize</tt> function.
+manner, use the <a href="#chsize">_chsize</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -58298,11 +58300,11 @@ has occurred, <tt> errno</tt> contains a value indicating the type of error that
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#chsize">chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
-<a href="#eof">eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">filelength</a>, <a href="#fileno">fileno</a>,
-<a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>, <a href="#lseek">lseek</a>,
-<a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">setmode</a>, <a href="#sopen">_sopen</a>, <a href="#stat">stat</a>,
-<a href="#tell">tell</a>, <a href="#umask">umask</a>
+<dd><a href="#chsize">_chsize</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
+<a href="#eof">_eof</a>, <a href="#exec">exec...</a>, <a href="#fdopen">fdopen</a>, <a href="#filelength">_filelength</a>,
+<a href="#fileno">fileno</a>, <a href="#fstat">fstat</a>, <a href="#_grow_handles">_grow_handles</a>, <a href="#isatty">isatty</a>,
+<a href="#lseek">lseek</a>, <a href="#open">open</a>, <a href="#read">read</a>, <a href="#setmode">_setmode</a>, <a href="#sopen">_sopen</a>,
+<a href="#stat">stat</a>, <a href="#tell">_tell</a>, <a href="#umask">umask</a>
 </dl>
 <dl>
 <dt>Example:
