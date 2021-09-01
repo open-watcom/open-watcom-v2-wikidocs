@@ -3527,10 +3527,10 @@ of either
 operations when they precede linefeed characters.
 </dl>
 <br>These values are defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp; The value of <tt> _fmode</tt> may be changed
-by a program to change the default behavior of the <a href="#open">open</a>, <tt> fopen</tt>, <a href="#creat">creat</a> and
-<a href="#sopen">_sopen</a> functions.&nbsp; The default setting of <tt> _fmode</tt> is <tt> O_TEXT</tt>, for text-mode translation.
-&nbsp;<tt> O_BINARY</tt> is the setting for binary mode.&nbsp; You can change the value of <tt> _fmode</tt> in either of two
-ways:&nbsp; 
+by a program to change the default behavior of the <a href="#open">open</a>, <a href="#fopen">fopen</a>, <a href="#creat">creat</a>
+and <a href="#sopen">_sopen</a> functions.&nbsp; The default setting of <tt> _fmode</tt> is <tt> O_TEXT</tt>, for text-mode
+translation.&nbsp; <tt> O_BINARY</tt> is the setting for binary mode.&nbsp; You can change the value of <tt> _fmode</tt> in
+either of two ways:&nbsp; 
 <ul>
 <li>You can include the object file<tt> BINMODE.OBJ</tt> when linking your application.&nbsp; This object file contains code
 to change the initial setting of <tt> _fmode</tt> to <tt> O_BINARY</tt>, causing all files except <tt> stdin</tt>, <tt> stdout</tt>,
@@ -8057,7 +8057,8 @@ set <tt> errno</tt> to indicate the error.
 <dl>
 <dt>Description:
 <dd>The<tt> clearerr</tt> function clears the end-of-file and error indicators for the stream pointed to by<i> fp</i>.&nbsp; These
-indicators are cleared only when the file is opened or by an explicit call to the<tt> clearerr</tt> or <tt> rewind</tt> functions.
+indicators are cleared only when the file is opened or by an explicit call to the<tt> clearerr</tt> or <a href="#rewind">rewind</a>
+functions.
 </dl>
 <dl>
 <dt>Returns:
@@ -13538,8 +13539,8 @@ When an error has occurred, <tt> errno</tt> contains a value indicating the type
 <dl>
 <dt>Description:
 <dd>The<tt> fcloseall</tt> function closes all open stream files, except <tt> stdin</tt>, <tt> stdout</tt>, <tt> stderr</tt>,
-<tt> stdaux</tt>, and <tt> stdprn</tt>.&nbsp; This includes streams created (and not yet closed) by <tt> fdopen</tt>, <tt>
-fopen</tt> and <tt> freopen</tt>.&nbsp; The<i> stdaux</i> and<i> stdprn</i> files are not available for some Windows platforms.
+<tt> stdaux</tt>, and <tt> stdprn</tt>.&nbsp; This includes streams created (and not yet closed) by <tt> fdopen</tt>, <a href="#fopen">fopen</a>
+and <tt> freopen</tt>.&nbsp; The<i> stdaux</i> and<i> stdprn</i> files are not available for some Windows platforms.
 </dl>
 <dl>
 <dt>Returns:
@@ -13688,7 +13689,7 @@ pointed to by<i> sign</i> will contain 0 if the number is positive, and non-zero
 &nbsp;The handle was returned by one of <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#open">open</a>,
 or <a href="#sopen">_sopen</a>.&nbsp; The open mode<i> mode</i> must match the mode with which the file or device was originally
 opened.
-<br>The argument<i> mode</i> is described in the description of the <tt> fopen</tt> function.
+<br>The argument<i> mode</i> is described in the description of the <a href="#fopen">fopen</a> function.
 <br><br>The<tt> _fdopen</tt> function is identical to<tt> fdopen</tt>.&nbsp; Use<tt> _fdopen</tt> for ANSI naming conventions.
 <br><br>The<tt> _wfdopen</tt> function is identical to<tt> fdopen</tt> except that it accepts a wide character string for
 the second argument.
@@ -15419,7 +15420,7 @@ has occurred.
 <dt>Description:
 <dd>The<tt> flushall</tt> function clears all buffers associated with input streams and writes any buffers associated with output
 streams.&nbsp; A subsequent read operation on an input file causes new data to be read from the associated file or device.
-<br>Calling the<tt> flushall</tt> function is equivalent to calling the <tt> fflush</tt> for all open stream files.
+<br>Calling the<tt> flushall</tt> function is equivalent to calling the <a href="#fflush">fflush</a> for all open stream files.
 </dl>
 <dl>
 <dt>Returns:
@@ -15830,7 +15831,7 @@ file.
 <dl>
 <dt>c
 <dd>The letter &quot;c&quot; may be added to any of the above sequences in the second or later position to indicate that any output
-is committed by the operating system whenever a flush ( <tt> fflush</tt> or <tt> flushall</tt>) is done.
+is committed by the operating system whenever a flush ( <a href="#fflush">fflush</a> or <tt> flushall</tt>) is done.
 <br>This option is not supported under Netware.
 <dt><br>n
 <dd>The letter &quot;n&quot; may be added to any of the above sequences in the second or later position to indicate that the operating
@@ -15844,12 +15845,12 @@ and should not be used where ISO C portability is desired.
 <br><br>Opening a file with read mode (<tt>r</tt> as the first character in the<i> mode</i> argument) fails if the file does
 not exist or it cannot be read.&nbsp; Opening a file with append mode (<tt>a</tt> as the first character in the<i> mode</i>
 argument) causes all subsequent writes to the file to be forced to the current end-of-file, regardless of previous calls to
-the <tt> fseek</tt> function.&nbsp; When a file is opened with update mode (<tt>+</tt> as the second or later character of
-the<i> mode</i> argument), both input and output may be performed on the associated stream.
+the <a href="#fseek">fseek</a> function.&nbsp; When a file is opened with update mode (<tt>+</tt> as the second or later character
+of the<i> mode</i> argument), both input and output may be performed on the associated stream.
 <br><br>When a stream is opened in update mode, both reading and writing may be performed.&nbsp; However, writing may not
-be followed by reading without an intervening call to the <tt> fflush</tt> function or to a file positioning function (<tt>
-fseek</tt>, <tt> fsetpos</tt>, <tt> rewind</tt>).&nbsp; Similarly, reading may not be followed by writing without an intervening
-call to a file positioning function, unless the read resulted in end-of-file.
+be followed by reading without an intervening call to the <a href="#fflush">fflush</a> function or to a file positioning function
+(<a href="#fseek">fseek</a>, <tt> fsetpos</tt>, <a href="#rewind">rewind</a>).&nbsp; Similarly, reading may not be followed
+by writing without an intervening call to a file positioning function, unless the read resulted in end-of-file.
 <br><br>The<tt> _wfopen</tt> function is a wide character version of<tt> fopen</tt> that operates with wide character strings.
 </dl>
 <dl>
@@ -15967,7 +15968,7 @@ file.
 <dl>
 <dt>c
 <dd>The letter &quot;c&quot; may be added to any of the above sequences in the second or later position to indicate that any output
-is committed by the operating system whenever a flush ( <tt> fflush</tt> or <tt> flushall</tt>) is done.
+is committed by the operating system whenever a flush ( <a href="#fflush">fflush</a> or <tt> flushall</tt>) is done.
 <br>This option is not supported under Netware.
 <dt><br>n
 <dd>The letter &quot;n&quot; may be added to any of the above sequences in the second or later position to indicate that the operating
@@ -15981,12 +15982,12 @@ ISO C portability is desired.
 <br><br>Opening a file with read mode (<tt>r</tt> as the first character in the<i> mode</i> argument) fails if the file does
 not exist or it cannot be read.&nbsp; Opening a file with append mode (<tt>a</tt> as the first character in the<i> mode</i>
 argument) causes all subsequent writes to the file to be forced to the current end-of-file, regardless of previous calls to
-the <tt> fseek</tt> function.&nbsp; When a file is opened with update mode (<tt>+</tt> as the second or later character of
-the<i> mode</i> argument), both input and output may be performed on the associated stream.
+the <a href="#fseek">fseek</a> function.&nbsp; When a file is opened with update mode (<tt>+</tt> as the second or later character
+of the<i> mode</i> argument), both input and output may be performed on the associated stream.
 <br><br>When a stream is opened in update mode, both reading and writing may be performed.&nbsp; However, writing may not
-be followed by reading without an intervening call to the <tt> fflush</tt> function or to a file positioning function (<tt>
-fseek</tt>, <tt> fsetpos</tt>, <tt> rewind</tt>).&nbsp; Similarly, reading may not be followed by writing without an intervening
-call to a file positioning function, unless the read resulted in end-of-file.
+be followed by reading without an intervening call to the <a href="#fflush">fflush</a> function or to a file positioning function
+(<a href="#fseek">fseek</a>, <tt> fsetpos</tt>, <a href="#rewind">rewind</a>).&nbsp; Similarly, reading may not be followed
+by writing without an intervening call to a file positioning function, unless the read resulted in end-of-file.
 <br><br>The<tt> _wfopen_s</tt> function is a wide character version of<tt> fopen_s</tt> that operates with wide character
 strings.
 </dl>
@@ -16792,7 +16793,7 @@ freopen</tt> function.
 <dd>The stream located by the <tt> fp</tt> pointer is closed.&nbsp; The<tt> freopen</tt> function opens the file whose name is
 the string pointed to by<i> filename</i>, and associates a stream with it.&nbsp; The stream information is placed in the structure
 located by the<i> fp</i> pointer.
-<br>The argument<i> mode</i> is described in the description of the <tt> fopen</tt> function.
+<br>The argument<i> mode</i> is described in the description of the <a href="#fopen">fopen</a> function.
 <br><br>The<tt> _wfreopen</tt> function is a wide character version of<tt> freopen</tt> that operates with wide character
 strings.
 </dl>
@@ -17126,8 +17127,8 @@ assigned, which can be fewer than provided for, or even zero.
 <dt>Description:
 <dd>The<tt> fseek</tt> function changes the read/write position of the file specified by<i> fp</i>.&nbsp; This position defines
 the character that will be read or written on the next I/O operation on the file.&nbsp; The argument<i> fp</i> is a file pointer
-returned by <tt> fopen</tt> or <tt> freopen</tt>.&nbsp; The argument<i> offset</i> is the position to seek to relative to
-one of three positions specified by the argument<i> where</i>.&nbsp; Allowable values for<i> where</i> are:
+returned by <a href="#fopen">fopen</a> or <tt> freopen</tt>.&nbsp; The argument<i> offset</i> is the position to seek to relative
+to one of three positions specified by the argument<i> where</i>.&nbsp; Allowable values for<i> where</i> are:
 <dl>
 <dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>SEEK_SET
@@ -17140,9 +17141,9 @@ negative or zero.
 </dl>
 <br>The<tt> fseek</tt> function clears the end-of-file indicator and undoes any effects of the <tt> ungetc</tt> function on
 the same file.
-<br><br>The <tt> ftell</tt> function can be used to obtain the current position in the file before changing it.&nbsp; The
-position can be restored by using the value returned by <tt> ftell</tt> in a subsequent call to<tt> fseek</tt> with the<i>
-where</i> parameter set to <tt> SEEK_SET</tt>.
+<br><br>The <a href="#ftell">ftell</a> function can be used to obtain the current position in the file before changing it.
+&nbsp;The position can be restored by using the value returned by <a href="#ftell">ftell</a> in a subsequent call to<tt> fseek</tt>
+with the<i> where</i> parameter set to <tt> SEEK_SET</tt>.
 </dl>
 <dl>
 <dt>Returns:
@@ -17295,12 +17296,12 @@ mode.
 <br><br>Opening a file with read mode (<tt>'r'</tt> as the first character in the<i> mode</i> argument) fails if the file
 does not exist or it cannot be read.&nbsp; Opening a file with append mode (<tt>'a'</tt> as the first character in the<i>
 mode</i> argument) causes all subsequent writes to the file to be forced to the current end-of-file, regardless of previous
-calls to the <tt> fseek</tt> function.&nbsp; When a file is opened with update mode (<tt>'+'</tt> as the second or third character
-of the<i> mode</i> argument), both input and output may be performed on the associated stream.
+calls to the <a href="#fseek">fseek</a> function.&nbsp; When a file is opened with update mode (<tt>'+'</tt> as the second
+or third character of the<i> mode</i> argument), both input and output may be performed on the associated stream.
 <br><br>When a stream is opened in update mode, both reading and writing may be performed.&nbsp; However, writing may not
-be followed by reading without an intervening call to the <tt> fflush</tt> function or to a file positioning function (<tt>
-fseek</tt>, <tt> fsetpos</tt>, <tt> rewind</tt>).&nbsp; Similarly, reading may not be followed by writing without an intervening
-call to a file positioning function, unless the read resulted in end-of-file.
+be followed by reading without an intervening call to the <a href="#fflush">fflush</a> function or to a file positioning function
+(<a href="#fseek">fseek</a>, <tt> fsetpos</tt>, <a href="#rewind">rewind</a>).&nbsp; Similarly, reading may not be followed
+by writing without an intervening call to a file positioning function, unless the read resulted in end-of-file.
 <br><br>The shared access for the file,<i> share</i>, is established by a combination of bits defined in the<tt> &lt;share.h&gt;</tt>
 header file.&nbsp; The following values may be set:
 <dl>
@@ -17645,7 +17646,7 @@ the error.&nbsp; If the<tt> fsync</tt> function fails, outstanding i/o operation
 <dt>Description:
 <dd>The<tt> ftell</tt> function returns the current read/write position of the file specified by<i> fp</i>.&nbsp; This position
 defines the character that will be read or written by the next I/O operation on the file.&nbsp; The value returned by<tt>
-ftell</tt> can be used in a subsequent call to <tt> fseek</tt> to set the file to the same position.
+ftell</tt> can be used in a subsequent call to <a href="#fseek">fseek</a> to set the file to the same position.
 </dl>
 <dl>
 <dt>Returns:
@@ -41524,7 +41525,7 @@ to create either the pipe or the subprocess, a<tt> NULL</tt> stream pointer is r
 <dt>EINVAL
 <dd>The<i> mode</i> argument is invalid.
 </dl>
-<br><tt>_popen</tt> may also set <tt> errno</tt> values as described by the <a href="#_pipe">_pipe</a> and <tt> spawnl</tt>
+<br><tt>_popen</tt> may also set <tt> errno</tt> values as described by the <a href="#_pipe">_pipe</a> and <a href="#spawn">spawnl</a>
 functions.
 </dl>
 <dl>
@@ -42690,7 +42691,7 @@ len</i> and the data is transmitted starting at the address specified by<i> buff
 <br>The<i> handle</i> value is returned by the <a href="#open">open</a> function.&nbsp; The access mode must have included
 either <tt> O_RDONLY</tt> or <tt> O_RDWR</tt> when the <a href="#open">open</a> function was invoked.&nbsp; The data is read
 starting at the current file position for the file in question.&nbsp; This file position can be determined with the <a href="#tell">_tell</a>
-function and can be set with the <tt> lseek</tt> function.
+function and can be set with the <a href="#lseek">lseek</a> function.
 <br><br>When <tt> O_BINARY</tt> is included in the access mode, the data is transmitted unchanged.&nbsp; When <tt> O_TEXT</tt>
 is included in the access mode, the data is transmitted with the extra carriage return character removed before each linefeed
 character encountered in the original data.
@@ -48382,18 +48383,18 @@ path definition to be displayed.
 spawn...</b>&nbsp; call.&nbsp; These character strings are concatenated with spaces inserted to separate the arguments to
 form one argument string for the child process.&nbsp; The length of this concatenated string must not exceed 128 bytes for
 DOS systems.
-<br><br>The arguments may be passed as a list of arguments (<tt> spawnl</tt>, <tt> spawnle</tt>, <tt> spawnlp</tt> and <tt>
-spawnlpe</tt>) or as a vector of pointers (<tt> spawnv</tt>, <tt> spawnve</tt>, <tt> spawnvp</tt>, and <tt> spawnvpe</tt>).
-&nbsp;At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>, must be passed to the child process.&nbsp; By convention,
-this first argument is a pointer to the name of the program.
+<br><br>The arguments may be passed as a list of arguments (<a href="#spawn">spawnl</a>, <tt> spawnle</tt>, <a href="#spawn">spawnlp</a>
+and <a href="#spawn">spawnlpe</a>) or as a vector of pointers (<tt> spawnv</tt>, <tt> spawnve</tt>, <tt> spawnvp</tt>, and
+<tt> spawnvpe</tt>).&nbsp; At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>, must be passed to the child process.
+&nbsp;By convention, this first argument is a pointer to the name of the program.
 <br><br>If the arguments are passed as a list, there must be a<tt> NULL</tt> pointer to mark the end of the argument list.
 &nbsp;Similarly, if a pointer to an argument vector is passed, the argument vector must be terminated by a<tt> NULL</tt> pointer.
-<br><br>The environment for the invoked program is inherited from the parent process when you use the <tt> spawnl</tt>, <tt>
-spawnlp</tt>, <tt> spawnv</tt> and <tt> spawnvp</tt> functions.&nbsp; The <tt> spawnle</tt>, <tt> spawnlpe</tt>, <tt> spawnve</tt>
-and <tt> spawnvpe</tt> functions allow a different environment to be passed to the child process through the<i> envp</i> argument.
-&nbsp;The argument<i> envp</i> is a pointer to an array of character pointers, each of which points to a string defining an
-environment variable.&nbsp; The array is terminated with a<tt> NULL</tt> pointer.&nbsp; Each pointer locates a character string
-of the form
+<br><br>The environment for the invoked program is inherited from the parent process when you use the <a href="#spawn">spawnl</a>,
+<a href="#spawn">spawnlp</a>, <tt> spawnv</tt> and <tt> spawnvp</tt> functions.&nbsp; The <tt> spawnle</tt>, <a href="#spawn">spawnlpe</a>,
+<tt> spawnve</tt> and <tt> spawnvpe</tt> functions allow a different environment to be passed to the child process through
+the<i> envp</i> argument.&nbsp; The argument<i> envp</i> is a pointer to an array of character pointers, each of which points
+to a string defining an environment variable.&nbsp; The array is terminated with a<tt> NULL</tt> pointer.&nbsp; Each pointer
+locates a character string of the form
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable=value</tt>
 <br><br>that is used to define an environment variable.&nbsp; If the value of<i> envp</i> is<tt> NULL</tt>, then the child
@@ -53413,8 +53414,8 @@ set appropriately.
 <dd>If the value of<i> command</i> is<tt> NULL,</tt> then the<tt> system</tt> function determines whether or not a command processor
 is present (&quot;COMMAND.COM&quot; in DOS and Windows 95/98 or &quot;CMD.EXE&quot; in OS/2 and Windows NT/2000).
 <br>Otherwise, the<tt> system</tt> function invokes a copy of the command processor, and passes the string<i> command</i>
-to it for processing.&nbsp; This function uses <tt> spawnl</tt> to load a copy of the command processor identified by the
-<tt> COMSPEC</tt> environment variable.
+to it for processing.&nbsp; This function uses <a href="#spawn">spawnl</a> to load a copy of the command processor identified
+by the <tt> COMSPEC</tt> environment variable.
 <br><br>This means that any command that can be entered to DOS can be executed, including programs, DOS commands and batch
 files.&nbsp; The <a href="#exec">exec...</a> and <a href="#spawn">spawn...</a> functions can only cause programs to be executed.
 <br><br>The<tt> _wsystem</tt> function is a wide character version of<tt> system</tt> that operates with wide character strings.
@@ -53555,7 +53556,7 @@ a value indicating the type of error that has been detected.
 <dt>Description:
 <dd>The<tt> _tell</tt> function reports the current file position at the operating system level.&nbsp; The<i> handle</i> value
 is the file handle returned by a successful execution of the <a href="#open">open</a> function.
-<br>The returned value may be used in conjunction with the <tt> lseek</tt> function to reset the current file position.
+<br>The returned value may be used in conjunction with the <a href="#lseek">lseek</a> function to reset the current file position.
 <br><br>The _telli64 function is similar to the<tt> _tell</tt> function but returns a 64-bit file position.&nbsp; This value
 may be used in conjunction with the <tt> _lseeki64</tt> function to reset the current file position.
 <br><br>The<tt> tell</tt> function is deprecated, use <a href="#tell">_tell</a> instead.
@@ -54927,8 +54928,8 @@ S_IWUSR</tt> is specified, then writing is not allowed (i.e., the file is read o
 <dt>Description:
 <dd>The<tt> ungetc</tt> function pushes the character specified by<i> c</i> back onto the input stream pointed to by<i> fp</i>.
 &nbsp;This character will be returned by the next read on the stream.&nbsp; The pushed-back character will be discarded if
-a call is made to the <tt> fflush</tt> function or to a file positioning function (<tt> fseek</tt>, <tt> fsetpos</tt> or <tt>
-rewind</tt>) before the next read operation is performed.
+a call is made to the <a href="#fflush">fflush</a> function or to a file positioning function (<a href="#fseek">fseek</a>,
+<tt> fsetpos</tt> or <a href="#rewind">rewind</a>) before the next read operation is performed.
 <br>Only one character (the most recent one) of pushback is remembered.
 <br><br>The<tt> ungetc</tt> function clears the end-of-file indicator, unless the value of<i> c</i> is <tt> EOF</tt>.
 <br><br>The<tt> ungetwc</tt> function is identical to<tt> ungetc</tt> except that it pushes the wide character specified by<i>
@@ -58306,7 +58307,7 @@ len</i> and the data to be transmitted is located at the address specified by<i>
 either <tt> O_WRONLY</tt> or <tt> O_RDWR</tt> when the <a href="#open">open</a> function was invoked.
 <br><br>The data is written to the file at the end when the file was opened with <tt> O_APPEND</tt> included as part of the
 access mode; otherwise, it is written at the current file position for the file in question.&nbsp; This file position can
-be determined with the <tt> _tell</tt> function and can be set with the <tt> lseek</tt> function.
+be determined with the <a href="#tell">_tell</a> function and can be set with the <a href="#lseek">lseek</a> function.
 <br><br>When <tt> O_BINARY</tt> is included in the access mode, the data is transmitted unchanged.&nbsp; When <tt> O_TEXT</tt>
 is included in the access mode, the data is transmitted with extra carriage return characters inserted before each linefeed
 character encountered in the original data.
@@ -58593,10 +58594,10 @@ for</b><tt> %&#91;</tt><b> conversion in the </b><tt> fscanf</tt><b> function (7
 <br><br>The &quot;-&quot; character indicates a character range.&nbsp; The character prior to the &quot;-&quot; is the first
 character in the range.&nbsp; The character following the &quot;-&quot; is the last character in the range.
 <h2 id="File_Position_Errors"> File Position Errors </h2>
-<br><b>The value to which the macro </b><tt> errno</tt><b> is set by the </b><tt> fgetpos</tt><b> or </b><tt> ftell</tt><b>
+<br><b>The value to which the macro </b><tt> errno</tt><b> is set by the </b><tt> fgetpos</tt><b> or <a href="#ftell">ftell</a>
 function on failure (7.9.9.1, 7.9.9.4).</b>
-<br><br>When the function <tt> fgetpos</tt> or <tt> ftell</tt> fails, they set <tt> errno</tt> to <tt> EBADF</tt> if the file
-number is bad.&nbsp; The constants are defined in the<tt> &lt;errno.h&gt;</tt> header file.
+<br><br>When the function <tt> fgetpos</tt> or <a href="#ftell">ftell</a> fails, they set <tt> errno</tt> to <tt> EBADF</tt>
+if the file number is bad.&nbsp; The constants are defined in the<tt> &lt;errno.h&gt;</tt> header file.
 <h2 id="Messages_Generated_by_the_perror_Function"> Messages Generated by the perror Function </h2>
 <br><b>The messages generated by the </b><tt> perror</tt><b> function (7.9.10.4).</b>
 <br><br>The <tt> perror</tt> function generates the following messages.
