@@ -3514,7 +3514,7 @@ these errors.&nbsp;
 <dt><br>fltused_
 <dd>The C compiler places a reference to the <tt> fltused_</tt> symbol into any module that uses a floating-point library routine
 or library routine that requires floating-point support (e.g., the use of a<tt> float</tt> or<tt> double</tt> as an argument
-to the <tt> printf</tt> function).&nbsp; 
+to the <a href="#printf">printf</a> function).&nbsp; 
 <dt><br>_fmode
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
 <br>This data item contains the default type of file (text or binary) translation for a file.&nbsp; It will contain a value
@@ -3707,11 +3707,12 @@ date</tt> command if the time is not automatically maintained by the computer ha
 as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SET TZ=PST8PDT</tt>
-<br><br>or (during the program execution) by using the <tt> setenv</tt> or <tt> putenv</tt> library functions:
+<br><br>or (during the program execution) by using the <a href="#setenv">setenv</a> or <a href="#putenv">putenv</a> library
+functions:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setenv( &quot;TZ&quot;, &quot;PST8PDT&quot;, 1 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; putenv( &quot;TZ=PST8PDT&quot; );</tt>
-<br><br>The value of the variable can be obtained by using the <tt> getenv</tt> function:
+<br><br>The value of the variable can be obtained by using the <a href="#getenv">getenv</a> function:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *tzvalue;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . .</tt>
@@ -6959,10 +6960,10 @@ has not passed since the last time the system clock was read or set; otherwise, 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _bprintf</tt> function is equivalent to the <tt> sprintf</tt> function, except that the argument<i> bufsize</i> specifies
-the size of the character array<i> buf</i> into which the generated output is placed.&nbsp; A null character is placed at
-the end of the generated character string.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt>
-function.
+<dd>The<tt> _bprintf</tt> function is equivalent to the <a href="#sprintf">sprintf</a> function, except that the argument<i> bufsize</i>
+specifies the size of the character array<i> buf</i> into which the generated output is placed.&nbsp; A null character is
+placed at the end of the generated character string.&nbsp; The<i> format</i> string is described under the description of
+the <a href="#printf">printf</a> function.
 <br>The<tt> _bwprintf</tt> function is a wide character version of<tt> _bprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of wide characters
 into which the generated output is to be written, rather than converted to multibyte characters and written to a stream.
@@ -8980,7 +8981,7 @@ message using the <tt> stderr</tt> stream.
 <dt>Description:
 <dd>The<tt> cprintf</tt> function writes output directly to the console under control of the argument<i> format</i>.&nbsp; The
 <tt> putch</tt> function is used to output characters to the console.&nbsp; The<i> format</i> string is described under the
-description of the <tt> printf</tt> function.
+description of the <a href="#printf">printf</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -12984,8 +12985,8 @@ of the form
 <br><br>that is used to define an environment variable.&nbsp; If the value of<i> envp</i> is<tt> NULL</tt>, then the child
 process inherits the environment of the parent process.
 <br><br>The environment is the collection of environment variables whose values have been defined with the DOS<tt> SET</tt>
-command or by the successful execution of the <tt> putenv</tt> function.&nbsp; A program may read these values with the <tt>
-getenv</tt> function.
+command or by the successful execution of the <a href="#putenv">putenv</a> function.&nbsp; A program may read these values
+with the <a href="#getenv">getenv</a> function.
 <br><br>The <tt> execvpe</tt> and <tt> execlpe</tt> functions are extensions to POSIX 1003.1.
 <br><br>The<tt> _wexec...</tt>&nbsp; functions are similar to their counterparts but operate on wide character strings.
 </dl>
@@ -16293,7 +16294,7 @@ fprintf</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> fprintf</tt> function writes output to the file pointed to by<i> fp</i> under control of the argument<i> format</i>.
-&nbsp;The<i> format</i> string is described under the description of the <tt> printf</tt> function.
+&nbsp;The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.
 <br>The<tt> fwprintf</tt> function is a wide character version of<tt> fprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.
 </dl>
@@ -18932,8 +18933,9 @@ function.
 <dt>Description:
 <dd>The<tt> getenv</tt> function searches the environment list for an entry matching the string pointed to by<i> name</i>.&nbsp;
 The matching is case-insensitive; all lowercase letters are treated as if they were in upper case.
-<br>Entries can be added to the environment list with the DOS<tt> set</tt> command or with the <tt> putenv</tt> or <tt> setenv</tt>
-functions.&nbsp; All entries in the environment list can be displayed by using the DOS<tt> set</tt> command with no arguments.
+<br>Entries can be added to the environment list with the DOS<tt> set</tt> command or with the <a href="#putenv">putenv</a>
+or <a href="#setenv">setenv</a> functions.&nbsp; All entries in the environment list can be displayed by using the DOS<tt>
+set</tt> command with no arguments.
 <br><br>To assign a string to a variable and place it in the environment list:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C&gt;SET INCLUDE=C:\WATCOM\H</tt>
@@ -19010,9 +19012,9 @@ of the associated string is less than<i> maxsize</i>, then the associated string
 zero is stored in the integer pointed to by<i> len</i>.&nbsp; If<i> maxsize</i> is greater than zero, then<i> value&#91;0&#93;</i>
 is set to the null character.
 <br><br>The matching is case-insensitive; all lowercase letters are treated as if they were in upper case.
-<br><br>Entries can be added to the environment list with the DOS<tt> set</tt> command or with the <tt> putenv</tt> or <tt>
-setenv</tt> functions.&nbsp; All entries in the environment list can be displayed by using the DOS<tt> set</tt> command with
-no arguments.
+<br><br>Entries can be added to the environment list with the DOS<tt> set</tt> command or with the <a href="#putenv">putenv</a>
+or <a href="#setenv">setenv</a> functions.&nbsp; All entries in the environment list can be displayed by using the DOS<tt>
+set</tt> command with no arguments.
 <br><br>To assign a string to a variable and place it in the environment list:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C&gt;SET INCLUDE=C:\WATCOM\H</tt>
@@ -22588,10 +22590,10 @@ this, the application can allocate memory from the 200K pool that it has already
 <dl>
 <dt>Description:
 <dd>The <tt> _nheapgrow</tt> function attempts to grow the near heap to the maximum size of 64K.&nbsp; You will want to do this
-in the small data models if you are using both <a href="#malloc">malloc</a> and <a href="#malloc">_fmalloc</a> or <tt> halloc</tt>.
-&nbsp;Once a call to <a href="#malloc">_fmalloc</a> or <tt> halloc</tt> has been made, you may not be able to allocate any
-memory with <a href="#malloc">malloc</a> unless space has been reserved for the near heap using either <a href="#malloc">malloc</a>,
-<tt> sbrk</tt> or <tt> _nheapgrow</tt>.
+in the small data models if you are using both <a href="#malloc">malloc</a> and <a href="#malloc">_fmalloc</a> or <a href="#halloc">halloc</a>.
+&nbsp;Once a call to <a href="#malloc">_fmalloc</a> or <a href="#halloc">halloc</a> has been made, you may not be able to
+allocate any memory with <a href="#malloc">malloc</a> unless space has been reserved for the near heap using either <a href="#malloc">malloc</a>,
+<a href="#sbrk">sbrk</a> or <tt> _nheapgrow</tt>.
 <br>The <tt> _fheapgrow</tt> function doesn't do anything to the heap because the far heap will be extended automatically
 when needed.&nbsp; If the current far heap cannot be extended, then another far heap will be started.
 <br><br>In a small data memory model, the<tt> _heapgrow</tt> function is equivalent to the <tt> _nheapgrow</tt> function;
@@ -23000,8 +23002,9 @@ large data memory model, the<tt> _heapwalk</tt> function is equivalent to the <t
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> hfree</tt> function deallocates a memory block previously allocated by the <tt> halloc</tt> function.&nbsp; The argument<i>
-ptr</i> points to a memory block to be deallocated.&nbsp; After the call, the freed block is available for allocation.
+<dd>The<tt> hfree</tt> function deallocates a memory block previously allocated by the <a href="#halloc">halloc</a> function.
+&nbsp;The argument<i> ptr</i> points to a memory block to be deallocated.&nbsp; After the call, the freed block is available
+for allocation.
 </dl>
 <dl>
 <dt>Returns:
@@ -41755,9 +41758,9 @@ bits and the fractional part is in the low 16 bits.
 of type<tt> short int.</tt>
 <li>&quot;h&quot; causes an &quot;s&quot; operation to treat the argument string as an ASCII character string composed of
 8-bit characters.
-<br><br>For <tt> printf</tt> and related byte input/output functions, this specifier is redundant.&nbsp; For <tt> wprintf</tt>
-and related wide character input/output functions, this specifier is required if the argument string is to be treated as an
-8-bit ASCII character string; otherwise it will be treated as a wide character string.
+<br><br>For <a href="#printf">printf</a> and related byte input/output functions, this specifier is redundant.&nbsp; For <tt>
+wprintf</tt> and related wide character input/output functions, this specifier is required if the argument string is to be
+treated as an 8-bit ASCII character string; otherwise it will be treated as a wide character string.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; printf(&nbsp;&nbsp;&nbsp; &quot;%s%d&quot;, &quot;Num=&quot;, 12345 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wprintf( L&quot;%hs%d&quot;, &quot;Num=&quot;, 12345 );</tt>
@@ -41767,9 +41770,9 @@ and related wide character input/output functions, this specifier is required if
 of type<tt> long int.</tt>
 <li>&quot;l&quot; or &quot;w&quot; cause an &quot;s&quot; operation to treat the argument string as a wide character string
 (a string composed of characters of type <tt> wchar_t</tt>).
-<br><br>For <tt> printf</tt> and related byte input/output functions, this specifier is required if the argument string is
-to be treated as a wide character string; otherwise it will be treated as an 8-bit ASCII character string.&nbsp; For <tt>
-wprintf</tt> and related wide character input/output functions, this specifier is redundant.
+<br><br>For <a href="#printf">printf</a> and related byte input/output functions, this specifier is required if the argument
+string is to be treated as a wide character string; otherwise it will be treated as an 8-bit ASCII character string.&nbsp;
+For <tt> wprintf</tt> and related wide character input/output functions, this specifier is redundant.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; printf(&nbsp; &quot;%ls%d&quot;, L&quot;Num=&quot;, 12345 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wprintf( L&quot;%s%d&quot;, L&quot;Num=&quot;, 12345 );</tt>
@@ -41909,7 +41912,7 @@ and it is unspecified to what extent<tt> printf_s</tt> produced output before di
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> printf_s</tt> function is equivalent to the <tt> printf</tt> function except for the explicit runtime-constraints
+<dd>The<tt> printf_s</tt> function is equivalent to the <a href="#printf">printf</a> function except for the explicit runtime-constraints
 listed above.
 <br>The<tt> wprintf_s</tt> function is a wide character version of<tt> printf_s</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.
@@ -42126,7 +42129,7 @@ set and<tt> putwchar</tt> returns <tt> WEOF</tt>.
 <dd>The environment list consists of a number of environment names, each of which has a value associated with it.&nbsp; Entries
 can be added to the environment list with the DOS<tt> set</tt> command or with the<tt> putenv</tt> function.&nbsp; All entries
 in the environment list can be displayed by using the DOS<tt> set</tt> command with no arguments.&nbsp; A program can obtain
-the value for an environment variable by using the <tt> getenv</tt> function.
+the value for an environment variable by using the <a href="#getenv">getenv</a> function.
 <br>When the value of<i> env_name</i> has the format
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; env_name=value</tt>
@@ -45422,7 +45425,7 @@ one less than the maximum number of colors in the current video mode.
 <dd>The environment list consists of a number of environment names, each of which has a value associated with it.&nbsp; Entries
 can be added to the environment list with the DOS<tt> set</tt> command or with the<tt> setenv</tt> function.&nbsp; All entries
 in the environment list can be displayed by using the DOS<tt> set</tt> command with no arguments.&nbsp; A program can obtain
-the value for an environment variable by using the <tt> getenv</tt> function.
+the value for an environment variable by using the <a href="#getenv">getenv</a> function.
 <br>The<tt> setenv</tt> function searches the environment list for an entry of the form<i> name=value</i>.&nbsp; If no such
 string is present,<tt> setenv</tt> adds an entry of the form<i> name=newvalue</i> to the environment list.&nbsp; Otherwise,
 if the<i> overwrite</i> argument is non-zero,<tt> setenv</tt> either will change the existing value to<i> newvalue</i> or
@@ -45432,8 +45435,9 @@ deleted.
 <br><br>The value of the pointer <tt> environ</tt> may change across a call to the<tt> setenv</tt> function.
 <br><br>The<tt> setenv</tt> function will make copies of the strings associated with<i> name</i> and<i> newvalue</i>.
 <br><br>The matching is case-insensitive; all lowercase letters are treated as if they were in upper case.
-<br><br>Entries can also be added to the environment list with the DOS<tt> set</tt> command or with the <tt> putenv</tt> or<tt>
-setenv</tt> functions.&nbsp; All entries in the environment list can be obtained by using the <tt> getenv</tt> function.
+<br><br>Entries can also be added to the environment list with the DOS<tt> set</tt> command or with the <a href="#putenv">putenv</a>
+or<tt> setenv</tt> functions.&nbsp; All entries in the environment list can be obtained by using the <a href="#getenv">getenv</a>
+function.
 <br><br>To assign a string to a variable and place it in the environment list:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C&gt;SET INCLUDE=C:\WATCOM\H</tt>
@@ -47790,7 +47794,7 @@ using the <tt> stderr</tt> stream.
 <dd>The<tt> _snprintf</tt> function is equivalent to the <tt> fprintf</tt> function, except that the argument<i> buf</i> specifies
 a character array into which the generated output is placed, rather than to a file.&nbsp; The maximum number of characters
 to store is specified by<i> count</i>.&nbsp; A null character is placed at the end of the generated character string if fewer
-than<i> count</i> characters were stored.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt>
+than<i> count</i> characters were stored.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
 function.
 <br>The<tt> _snwprintf</tt> function is a wide character version of<tt> _snprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
@@ -47869,7 +47873,8 @@ snprintf</tt> function.
 <dd>The<tt> snprintf</tt> function is equivalent to the <tt> fprintf</tt> function, except that the argument<i> buf</i> specifies
 a character array into which the generated output is placed, rather than to a file.&nbsp; A null character is placed at the
 end of the generated character string.&nbsp; The maximum number of characters to store, including a terminating null character,
-is specified by<i> count</i>.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt> function.
+is specified by<i> count</i>.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
+function.
 <br>The<tt> snwprintf</tt> function is a wide character version of<tt> snprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of wide characters
 into which the generated output is to be written, rather than converted to multibyte characters and written to a stream.&nbsp;
@@ -48391,8 +48396,8 @@ of the form
 <br><br>that is used to define an environment variable.&nbsp; If the value of<i> envp</i> is<tt> NULL</tt>, then the child
 process inherits the environment of the parent process.
 <br><br>The environment is the collection of environment variables whose values that have been defined with the DOS<tt> SET</tt>
-command or by the successful execution of the <tt> putenv</tt> function.&nbsp; A program may read these values with the <tt>
-getenv</tt> function.
+command or by the successful execution of the <a href="#putenv">putenv</a> function.&nbsp; A program may read these values
+with the <a href="#getenv">getenv</a> function.
 <br><br>The following example invokes &quot;myprog&quot; as if<tt> myprog ARG1 ARG2</tt> had been entered as a command to
 DOS.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -48802,7 +48807,7 @@ sprintf</tt> function.
 <dt>Description:
 <dd>The<tt> sprintf</tt> function is equivalent to the <tt> fprintf</tt> function, except that the argument<i> buf</i> specifies
 a character array into which the generated output is placed, rather than to a file.&nbsp; A null character is placed at the
-end of the generated character string.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt>
+end of the generated character string.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
 function.
 <br>The<tt> swprintf</tt> function is a wide character version of<tt> sprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of wide characters
@@ -48883,7 +48888,7 @@ and less than<tt> RSIZE_MAX,</tt> then the<tt> sprintf_s</tt> function sets<i> s
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> sprintf_s</tt> function is equivalent to the <tt> sprintf</tt> function except for the explicit runtime-constraints
+<dd>The<tt> sprintf_s</tt> function is equivalent to the <a href="#sprintf">sprintf</a> function except for the explicit runtime-constraints
 listed above.
 <br>The<tt> sprintf_s</tt> function, unlike <tt> snprintf_s</tt>, treats a result too big for the array pointed to by<i> s</i>
 as a runtime-constraint violation.
@@ -55553,9 +55558,9 @@ va_list arg );</tt>
 <dt>Description:
 <dd>The<tt> _vbprintf</tt> function formats data under control of the<i> format</i> control string and writes the result to<i>
 buf</i>.&nbsp; The argument<i> bufsize</i> specifies the size of the character array<i> buf</i> into which the generated output
-is placed.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt>
-_vbprintf</tt> function is equivalent to the <tt> _bprintf</tt> function, with the variable argument list replaced with<i>
-arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
+is placed.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.
+&nbsp;The<tt> _vbprintf</tt> function is equivalent to the <a href="#_bprintf">_bprintf</a> function, with the variable argument
+list replaced with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> _vbwprintf</tt> function is a wide character version of<tt> _vbprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
@@ -55614,7 +55619,7 @@ string argument for<i> format</i> and produces wide character output.
 <dt>Description:
 <dd>The<tt> vcprintf</tt> function writes output directly to the console under control of the argument<i> format</i>.&nbsp; The
 <tt> putch</tt> function is used to output characters to the console.&nbsp; The<i> format</i> string is described under the
-description of the <tt> printf</tt> function.&nbsp; The<tt> vcprintf</tt> function is equivalent to the <tt> cprintf</tt>
+description of the <a href="#printf">printf</a> function.&nbsp; The<tt> vcprintf</tt> function is equivalent to the <tt> cprintf</tt>
 function, with the variable argument list replaced with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a>
 macro.
 </dl>
@@ -55746,9 +55751,9 @@ vfprintf</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> vfprintf</tt> function writes output to the file pointed to by<i> fp</i> under control of the argument<i> format</i>.
-&nbsp;The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> vfprintf</tt>
-function is equivalent to the <tt> fprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which
-has been initialized by the <a href="#va_start">va_start</a> macro.
+&nbsp;The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt>
+vfprintf</tt> function is equivalent to the <tt> fprintf</tt> function, with the variable argument list replaced with<i> arg</i>,
+which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vfwprintf</tt> function is a wide character version of<tt> vfprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.
 </dl>
@@ -56055,9 +56060,9 @@ vprintf</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> vprintf</tt> function writes output to the file <tt> stdout</tt> under control of the argument<i> format</i>.&nbsp;
-The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> vprintf</tt> function
-is equivalent to the <tt> printf</tt> function, with the variable argument list replaced with<i> arg</i>, which has been initialized
-by the <a href="#va_start">va_start</a> macro.
+The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt> vprintf</tt>
+function is equivalent to the <a href="#printf">printf</a> function, with the variable argument list replaced with<i> arg</i>,
+which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vwprintf</tt> function is a wide character version of<tt> vprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.
 </dl>
@@ -56342,8 +56347,8 @@ assigned, which can be fewer than provided for, or even zero.
 <dd>The<tt> _vsnprintf</tt> function formats data under control of the<i> format</i> control string and stores the result in<i>
 buf</i>.&nbsp; The maximum number of characters to store is specified by<i> count</i>.&nbsp; A null character is placed at
 the end of the generated character string if fewer than<i> count</i> characters were stored.&nbsp; The<i> format</i> string
-is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> _vsnprintf</tt> function is equivalent
-to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which has been initialized
+is described under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt> _vsnprintf</tt> function is
+equivalent to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which has been initialized
 by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> _vsnwprintf</tt> function is a wide character version of<tt> _vsnprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
@@ -56427,9 +56432,9 @@ vsnprintf</tt> function.
 <dt>Description:
 <dd>The<tt> vsnprintf</tt> function formats data under control of the<i> format</i> control string and stores the result in<i>
 buf</i>.&nbsp; The maximum number of characters to store, including a terminating null character, is specified by<i> count</i>.
-&nbsp;The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> vsnprintf</tt>
-function is equivalent to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which
-has been initialized by the <a href="#va_start">va_start</a> macro.
+&nbsp;The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt>
+vsnprintf</tt> function is equivalent to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i>
+arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vsnwprintf</tt> function is a wide character version of<tt> vsnprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
 wide characters into which the generated output is to be written, rather than converted to multibyte characters and written
@@ -56614,9 +56619,9 @@ vsprintf</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> vsprintf</tt> function formats data under control of the<i> format</i> control string and writes the result to<i>
-buf</i>.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt>
-vsprintf</tt> function is equivalent to the <tt> sprintf</tt> function, with the variable argument list replaced with<i> arg</i>,
-which has been initialized by the <a href="#va_start">va_start</a> macro.
+buf</i>.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.&nbsp;
+The<tt> vsprintf</tt> function is equivalent to the <a href="#sprintf">sprintf</a> function, with the variable argument list
+replaced with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vswprintf</tt> function is a wide character version of<tt> vsprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of wide characters
 into which the generated output is to be written, rather than converted to multibyte characters and written to a stream.&nbsp;
@@ -58641,11 +58646,11 @@ EXIT_SUCCESS</tt><b>, or </b><tt> EXIT_FAILURE</tt><b> (7.10.4.3).</b>
 <br><br>The <a href="#exit">exit</a> function returns the value of its argument to the operating system regardless of its
 value.
 <h2 id="Environment_Names"> Environment Names </h2>
-<br><b>The set of environment names and the method for altering the environment list used by the </b><tt> getenv</tt><b> function
-(7.10.4.4).</b>
+<br><b>The set of environment names and the method for altering the environment list used by the <a href="#getenv">getenv</a>
+function (7.10.4.4).</b>
 <br><br>The set of environment names is unlimited.&nbsp; Environment variables can be set from the DOS command line using
-the SET command.&nbsp; A program can modify its environment variables with the <tt> putenv</tt> function.&nbsp; Such modifications
-last only until the program terminates.
+the SET command.&nbsp; A program can modify its environment variables with the <a href="#putenv">putenv</a> function.&nbsp;
+Such modifications last only until the program terminates.
 <h2 id="The_system_Function"> The system Function </h2>
 <br><b>The contents and mode of execution of the string by the <a href="#system">system</a> function (7.10.4.5).</b>
 <br><br>The <a href="#system">system</a> function executes an internal DOS, Windows, or OS/2 command, or an EXE, COM, BAT
