@@ -204,8 +204,9 @@ graphics adapters:
 <br>The following subsections describe these routine classes in more detail.&nbsp; Each routine in the class is noted with
 a brief description of its purpose.
 <h3 id="Environment_Routines"> Environment Routines </h3>
-<br>These routines deal with the hardware environment.&nbsp; The <tt> _getvideoconfig</tt> routine returns information about
-the current video mode and the hardware configuration.&nbsp; The <tt> _setvideomode</tt> routine selects a new video mode.
+<br>These routines deal with the hardware environment.&nbsp; The <a href="#_getvideoconfig">_getvideoconfig</a> routine returns
+information about the current video mode and the hardware configuration.&nbsp; The <a href="#_setvideomode">_setvideomode</a>
+routine selects a new video mode.
 <br><br>Some video modes support multiple pages of screen memory.&nbsp; The visual page (the one displayed on the screen)
 may be different than the active page (the one to which objects are being written).
 <br><br>The following routines are defined:
@@ -375,10 +376,10 @@ _w</tt> or<tt> _wxy</tt> use the window coordinate system; the others use the vi
 <h3 id="Text_Routines"> Text Routines </h3>
 <br>These routines deal with displaying text in both graphics and text modes.&nbsp; This type of text output can be displayed
 in only one size.
-<br><br>This text is displayed using the <tt> _outtext</tt> and <tt> _outmem</tt> routines.&nbsp; The output position for
-text follows the last text that was displayed or can be reset (see the <a href="#_settextposition">_settextposition</a> routine).
-&nbsp;Text windows can be created (see the <a href="#_settextwindow">_settextwindow</a> routine) in which the text will scroll.
-&nbsp;Text is displayed with the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine).
+<br><br>This text is displayed using the <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines.&nbsp;
+The output position for text follows the last text that was displayed or can be reset (see the <a href="#_settextposition">_settextposition</a>
+routine).&nbsp; Text windows can be created (see the <a href="#_settextwindow">_settextwindow</a> routine) in which the text
+will scroll.&nbsp; Text is displayed with the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine).
 <br><br>The following routines are defined:
 <dl>
 <dt><a href="#_clearscreen">_clearscreen</a>
@@ -446,10 +447,10 @@ system.
 <dd>set the path used to display graphics text
 </dl>
 <h3 id="Image_Manipulation_Routines"> Image Manipulation Routines </h3>
-<br>These routines are used to transfer screen images.&nbsp; The <tt> _getimage</tt> routine transfers a rectangular image
-from the screen into memory.&nbsp; The <tt> _putimage</tt> routine transfers an image from memory back onto the screen.&nbsp;
-The routines ending with<tt> _w</tt> or<tt> _wxy</tt> use the window coordinate system; the others use the view coordinate
-system.
+<br>These routines are used to transfer screen images.&nbsp; The <a href="#_getimage">_getimage</a> routine transfers a rectangular
+image from the screen into memory.&nbsp; The <a href="#_putimage">_putimage</a> routine transfers an image from memory back
+onto the screen.&nbsp; The routines ending with<tt> _w</tt> or<tt> _wxy</tt> use the window coordinate system; the others
+use the view coordinate system.
 <br><br>The following routines are defined:
 <dl>
 <dt><a href="#_getimage">_getimage</a>
@@ -471,8 +472,8 @@ system.
 </dl>
 <h3 id="Font_Manipulation_Routines"> Font Manipulation Routines </h3>
 <br>These routines are for the display of fonts compatible with Microsoft Windows.&nbsp; Fonts are contained in files with
-an extension of<tt> .FON.</tt>&nbsp; Before font based text can be displayed, the fonts must be registered with the <tt> _registerfonts</tt>
-routine, and a font must be selected with the <tt> _setfont</tt> routine.
+an extension of<tt> .FON.</tt>&nbsp; Before font based text can be displayed, the fonts must be registered with the <a href="#_registerfonts">_registerfonts</a>
+routine, and a font must be selected with the <a href="#_setfont">_setfont</a> routine.
 <br><br>The following routines are defined:
 <dl>
 <dt><a href="#_getfontinfo">_getfontinfo</a>
@@ -510,9 +511,9 @@ pie charts.&nbsp; The presentation graphics routines can be further divided into
 a brief description of its purpose.
 <h4 id="Display_Routines"> Display Routines </h4>
 <br>These routines are for the initialization of the presentation graphics system and the displaying of charts.&nbsp; The
-<tt> _pg_initchart</tt> routine initializes the system and should be the first presentation graphics routine called.&nbsp;
-The single-series routines display a single set of data on a chart; the multi-series routines (those ending with<tt> ms)</tt>
-display several sets of data on the same chart.
+<a href="#_pg_initchart">_pg_initchart</a> routine initializes the system and should be the first presentation graphics routine
+called.&nbsp; The single-series routines display a single set of data on a chart; the multi-series routines (those ending
+with<tt> ms)</tt> display several sets of data on the same chart.
 <br><br>The following routines are defined:
 <dl>
 <dt><a href="#_pg_chart">_pg_chart</a>
@@ -926,8 +927,8 @@ has occurred.
 are supported, the active page may differ from the visual page.&nbsp; The graphics information in the visual page determines
 what is displayed upon the screen.&nbsp; Animation may be accomplished by alternating the visual page.&nbsp; A graphics page
 can be constructed without affecting the screen by setting the active page to be different than the visual page.
-<br><br>The number of available video pages can be determined by using the <tt> _getvideoconfig</tt> routine.&nbsp; The default
-video page is 0.
+<br><br>The number of available video pages can be determined by using the <a href="#_getvideoconfig">_getvideoconfig</a>
+routine.&nbsp; The default video page is 0.
 </dl>
 <dl>
 <dt>Returns:
@@ -988,10 +989,10 @@ video page is 0.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _getarcinfo</tt> routine returns information about the arc most recently drawn by the <tt> _arc</tt> or <tt> _pie</tt>
-routines.&nbsp; The arguments<i> start_pt</i> and<i> end_pt</i> are set to contain the endpoints of the arc.&nbsp; The argument<i>
-inside_pt</i> will contain the coordinates of a point within the pie.&nbsp; The points are all specified in the view coordinate
-system.
+<dd>The<tt> _getarcinfo</tt> routine returns information about the arc most recently drawn by the <a href="#_arc">_arc</a> or
+<a href="#_pie">_pie</a> routines.&nbsp; The arguments<i> start_pt</i> and<i> end_pt</i> are set to contain the endpoints
+of the arc.&nbsp; The argument<i> inside_pt</i> will contain the coordinates of a point within the pie.&nbsp; The points are
+all specified in the view coordinate system.
 <br>The endpoints of the arc can be used to connect other lines to the arc.&nbsp; The interior point can be used to fill the
 pie.
 </dl>
@@ -1090,7 +1091,8 @@ default background color is 0.
 <dl>
 <dt>Description:
 <dd>The<tt> _getcliprgn</tt> routine returns the location of the current clipping region.&nbsp; A clipping region is defined with
-the <tt> _setcliprgn</tt> or <tt> _setviewport</tt> routines.&nbsp; By default, the clipping region is the entire screen.
+the <a href="#_setcliprgn">_setcliprgn</a> or <a href="#_setviewport">_setviewport</a> routines.&nbsp; By default, the clipping
+region is the entire screen.
 <br>The current clipping region is a rectangular area of the screen to which graphics output is restricted.&nbsp; The top
 left corner of the clipping region is placed in the arguments<tt> (x1,y1).</tt>&nbsp; The bottom right corner of the clipping
 region is placed in<tt> (x2,y2).</tt>
@@ -1181,10 +1183,10 @@ graphics output.&nbsp; The default color value is one less than the maximum numb
 routine returns the point in view coordinates.&nbsp; The<tt> _getcurrentposition_w</tt> routine returns the point in window
 coordinates.
 <br>The current position defaults to the origin,<tt> (0,0),</tt> when a new video mode is selected.&nbsp; It is changed by
-successful calls to the <tt> _arc</tt>, <tt> _moveto</tt> and <tt> _lineto</tt> routines as well as the <tt> _setviewport</tt>
-routine.
+successful calls to the <a href="#_arc">_arc</a>, <a href="#_moveto">_moveto</a> and <a href="#_lineto">_lineto</a> routines
+as well as the <a href="#_setviewport">_setviewport</a> routine.
 <br><br>Note that the output position for graphics output differs from that for text output.&nbsp; The output position for
-text output can be set by use of the <tt> _settextposition</tt> routine.
+text output can be set by use of the <a href="#_settextposition">_settextposition</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -1230,8 +1232,8 @@ text output can be set by use of the <tt> _settextposition</tt> routine.
 <dl>
 <dt>Description:
 <dd>The<tt> _getfillmask</tt> routine copies the current fill mask into the area located by the argument<i> mask</i>.&nbsp; The
-fill mask is used by the <tt> _ellipse</tt>, <tt> _floodfill</tt>, <tt> _pie</tt>, <tt> _polygon</tt> and <tt> _rectangle</tt>
-routines that fill an area of the screen.
+fill mask is used by the <a href="#_ellipse">_ellipse</a>, <a href="#_floodfill">_floodfill</a>, <a href="#_pie">_pie</a>,
+<a href="#_polygon">_polygon</a> and <a href="#_rectangle">_rectangle</a> routines that fill an area of the screen.
 <br>The fill mask is an eight-byte array which is interpreted as a square pattern (8 by 8) of 64 bits.&nbsp; Each bit in the
 mask corresponds to a pixel.&nbsp; When a region is filled, each point in the region is mapped onto the fill mask.&nbsp; When
 a bit from the mask is one, the pixel value of the corresponding point is set using the current plotting action with the current
@@ -1283,8 +1285,8 @@ current color.
 <dl>
 <dt>Description:
 <dd>The<tt> _getfontinfo</tt> routine returns information about the currently selected font.&nbsp; Fonts are selected with the
-<tt> _setfont</tt> routine.&nbsp; The font information is returned in the<tt> _fontinfo</tt> structure indicated by the argument<i>
-info</i>.&nbsp; The structure contains the following fields:
+<a href="#_setfont">_setfont</a> routine.&nbsp; The font information is returned in the<tt> _fontinfo</tt> structure indicated
+by the argument<i> info</i>.&nbsp; The structure contains the following fields:
 <dl>
 <dt>type
 <dd>1 for a vector font, 0 for a bit-mapped font
@@ -1350,8 +1352,8 @@ is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> _getgtextextent</tt> routine returns the length in pixels of the argument<i> text</i> as it would be displayed in
-the current font by the routine <tt> _outgtext</tt>.&nbsp; Note that the text is not displayed on the screen, only its length
-is determined.
+the current font by the routine <a href="#_outgtext">_outgtext</a>.&nbsp; Note that the text is not displayed on the screen,
+only its length is determined.
 </dl>
 <dl>
 <dt>Returns:
@@ -1399,7 +1401,7 @@ is determined.
 <dl>
 <dt>Description:
 <dd>The<tt> _getgtextvector</tt> routine returns the current value of the text orientation vector.&nbsp; This is the direction
-used when text is displayed by the <tt> _outgtext</tt> routine.
+used when text is displayed by the <a href="#_outgtext">_outgtext</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -1458,8 +1460,9 @@ vector.
 &nbsp;The<tt> _getimage</tt> routine uses the view coordinate system.&nbsp; The<tt> _getimage_w</tt> and<tt> _getimage_wxy</tt>
 routines use the window coordinate system.
 <br>The screen image is the rectangular area defined by the points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>&nbsp; The buffer<i>
-image</i> must be large enough to contain the image (the size of the image can be determined by using the <tt> _imagesize</tt>
-routine).&nbsp; The image may be displayed upon the screen at some later time by using the <tt> _putimage</tt> routines.
+image</i> must be large enough to contain the image (the size of the image can be determined by using the <a href="#_imagesize">_imagesize</a>
+routine).&nbsp; The image may be displayed upon the screen at some later time by using the <a href="#_putimage">_putimage</a>
+routines.
 </dl>
 <dl>
 <dt>See Also:
@@ -1564,7 +1567,8 @@ line would result from a value of<tt> 'F0F0'x.</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> _getphyscoord</tt> routine returns the physical coordinates of the position with view coordinates<tt> (x,y).</tt>
-&nbsp;View coordinates are defined by the <tt> _setvieworg</tt> and <tt> _setviewport</tt> routines.
+&nbsp;View coordinates are defined by the <a href="#_setvieworg">_setvieworg</a> and <a href="#_setviewport">_setviewport</a>
+routines.
 </dl>
 <dl>
 <dt>Returns:
@@ -1734,8 +1738,8 @@ to produce animated effects.
 <dl>
 <dt>Description:
 <dd>The<tt> _gettextcolor</tt> routine returns the pixel value of the current text color.&nbsp; This is the color used for displaying
-text with the <tt> _outtext</tt> and <tt> _outmem</tt> routines.&nbsp; The default text color value is set to 7 whenever a
-new video mode is selected.
+text with the <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines.&nbsp; The default text color value
+is set to 7 whenever a new video mode is selected.
 </dl>
 <dl>
 <dt>Returns:
@@ -1783,8 +1787,8 @@ new video mode is selected.
 <dl>
 <dt>Description:
 <dd>The<tt> _gettextcursor</tt> routine returns the current cursor attribute, or shape.&nbsp; The cursor shape is set with the
-<tt> _settextcursor</tt> routine.&nbsp; See the <tt> _settextcursor</tt> routine for a description of the value returned by
-the<tt> _gettextcursor</tt> routine.
+<a href="#_settextcursor">_settextcursor</a> routine.&nbsp; See the <a href="#_settextcursor">_settextcursor</a> routine for
+a description of the value returned by the<tt> _gettextcursor</tt> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -1835,9 +1839,9 @@ the<tt> _gettextcursor</tt> routine.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _gettextextent</tt> routine simulates the effect of using the <tt> _grtext</tt> routine to display the text string<i>
-text</i> at the position<tt> (x,y),</tt> using the current text settings.&nbsp; The concatenation point is returned in the
-argument<i> concat</i>.&nbsp; The text extent parallelogram is returned in the array<i> extent</i>.
+<dd>The<tt> _gettextextent</tt> routine simulates the effect of using the <a href="#_grtext">_grtext</a> routine to display the
+text string<i> text</i> at the position<tt> (x,y),</tt> using the current text settings.&nbsp; The concatenation point is
+returned in the argument<i> concat</i>.&nbsp; The text extent parallelogram is returned in the array<i> extent</i>.
 <br>The concatenation point is the position to use to output text after the given string.&nbsp; The text extent parallelogram
 outlines the area where the text string would be displayed.&nbsp; The four points are returned in counter-clockwise order,
 starting at the upper-left corner.
@@ -1886,10 +1890,10 @@ starting at the upper-left corner.
 <dd>The<tt> _gettextposition</tt> routine returns the current output position for text.&nbsp; This position is in terms of characters,
 not pixels.
 <br>The current position defaults to the top left corner of the screen,<tt> (1,1),</tt> when a new video mode is selected.
-&nbsp;It is changed by successful calls to the <tt> _outtext</tt>, <tt> _outmem</tt>, <tt> _settextposition</tt> and <tt>
-_settextwindow</tt> routines.
+&nbsp;It is changed by successful calls to the <a href="#_outtext">_outtext</a>, <a href="#_outmem">_outmem</a>, <a href="#_settextposition">_settextposition</a>
+and <a href="#_settextwindow">_settextwindow</a> routines.
 <br><br>Note that the output position for graphics output differs from that for text output.&nbsp; The output position for
-graphics output can be set by use of the <tt> _moveto</tt> routine.
+graphics output can be set by use of the <a href="#_moveto">_moveto</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -1933,8 +1937,8 @@ graphics output can be set by use of the <tt> _moveto</tt> routine.
 <dl>
 <dt>Description:
 <dd>The<tt> _gettextsettings</tt> routine returns information about the current text settings used when text is displayed by the
-<tt> _grtext</tt> routine.&nbsp; The information is stored in the<tt> textsettings</tt> structure indicated by the argument<i>
-settings</i>.&nbsp; The structure contains the following fields (all are<tt> integer*2</tt> fields):
+<a href="#_grtext">_grtext</a> routine.&nbsp; The information is stored in the<tt> textsettings</tt> structure indicated by
+the argument<i> settings</i>.&nbsp; The structure contains the following fields (all are<tt> integer*2</tt> fields):
 <dl>
 <dt>basevectorx
 <dd>x-component of the current base vector
@@ -1994,7 +1998,7 @@ settings</i>.&nbsp; The structure contains the following fields (all are<tt> int
 <dl>
 <dt>Description:
 <dd>The<tt> _gettextwindow</tt> routine returns the location of the current text window.&nbsp; A text window is defined with the
-<tt> _settextwindow</tt> routine.&nbsp; By default, the text window is the entire screen.
+<a href="#_settextwindow">_settextwindow</a> routine.&nbsp; By default, the text window is the entire screen.
 <br>The current text window is a rectangular area of the screen.&nbsp; Text display is restricted to be within this window.
 &nbsp;The top left corner of the text window is placed in the arguments<tt> (row1,col1).</tt>&nbsp; The bottom right corner
 of the text window is placed in<tt> (row2,col2).</tt>
@@ -2176,8 +2180,8 @@ vc.numypixels,</tt>
 <dd>The<tt> _getviewcoord</tt> routines translate a point from one coordinate system to viewport coordinates.&nbsp; The<tt> _getviewcoord</tt>
 routine translates the point<tt> (x,y)</tt> from physical coordinates.&nbsp; The<tt> _getviewcoord_w</tt> and<tt> _getviewcoord_wxy</tt>
 routines translate the point from the window coordinate system.
-<br>Viewport coordinates are defined by the <tt> _setvieworg</tt> and <tt> _setviewport</tt> routines.&nbsp; Window coordinates
-are defined by the <tt> _setwindow</tt> routine.
+<br>Viewport coordinates are defined by the <a href="#_setvieworg">_setvieworg</a> and <a href="#_setviewport">_setviewport</a>
+routines.&nbsp; Window coordinates are defined by the <a href="#_setwindow">_setwindow</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -2235,8 +2239,8 @@ are defined by the <tt> _setwindow</tt> routine.
 are supported, the active page may differ from the visual page.&nbsp; The graphics information in the visual page determines
 what is displayed upon the screen.&nbsp; Animation may be accomplished by alternating the visual page.&nbsp; A graphics page
 can be constructed without affecting the screen by setting the active page to be different than the visual page.
-<br><br>The number of available video pages can be determined by using the <tt> _getvideoconfig</tt> routine.&nbsp; The default
-video page is 0.
+<br><br>The number of available video pages can be determined by using the <a href="#_getvideoconfig">_getvideoconfig</a>
+routine.&nbsp; The default video page is 0.
 </dl>
 <dl>
 <dt>Returns:
@@ -2294,7 +2298,7 @@ video page is 0.
 <dl>
 <dt>Description:
 <dd>The<tt> _getwindowcoord</tt> routine returns the window coordinates of the position with view coordinates<tt> (x,y).</tt>
-&nbsp;Window coordinates are defined by the <tt> _setwindow</tt> routine.
+&nbsp;Window coordinates are defined by the <a href="#_setwindow">_setwindow</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -2416,12 +2420,12 @@ uindex=2
 character (char(0)).&nbsp; The text is displayed in the current color using the current text settings.
 <br><br>The graphics library can display text in three different ways.
 <ol>
-<li>The <tt> _outtext</tt> and <tt> _outmem</tt> routines can be used in any video mode.&nbsp; However, this variety of text
-can be displayed in only one size.
-<li>The <tt> _grtext</tt> routine displays text as a sequence of line segments, and can be drawn in different sizes, with
-different orientations and alignments.
-<li>The <tt> _outgtext</tt> routine displays text in the currently selected font.&nbsp; Both bit-mapped and vector fonts are
-supported; the size and type of text depends on the fonts that are available.
+<li>The <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines can be used in any video mode.&nbsp;
+However, this variety of text can be displayed in only one size.
+<li>The <a href="#_grtext">_grtext</a> routine displays text as a sequence of line segments, and can be drawn in different
+sizes, with different orientations and alignments.
+<li>The <a href="#_outgtext">_outgtext</a> routine displays text in the currently selected font.&nbsp; Both bit-mapped and
+vector fonts are supported; the size and type of text depends on the fonts that are available.
 </ol>
 </dl>
 <dl>
@@ -2476,7 +2480,7 @@ supported; the size and type of text depends on the fonts that are available.
 routine uses the view coordinate system.&nbsp; The<tt> _imagesize_w</tt> and<tt> _imagesize_wxy</tt> routines use the window
 coordinate system.
 <br>The screen image is the rectangular area defined by the points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>&nbsp; The storage
-area used by the <tt> _getimage</tt> routines must be at least this large (in bytes).
+area used by the <a href="#_getimage">_getimage</a> routines must be at least this large (in bytes).
 </dl>
 <dl>
 <dt>Returns:
@@ -2589,9 +2593,9 @@ the current color.
 <dd>The<tt> _moveto</tt> routines set the current output position for graphics.&nbsp; The<tt> _moveto</tt> routine uses the view
 coordinate system.&nbsp; The<tt> _moveto_w</tt> routine uses the window coordinate system.
 <br>The current output position is set to be the point at the coordinates<tt> (x,y).</tt>&nbsp; Nothing is drawn by the routine.
-&nbsp;The <tt> _lineto</tt> routine uses the current output position as the starting point when a line is drawn.
+&nbsp;The <a href="#_lineto">_lineto</a> routine uses the current output position as the starting point when a line is drawn.
 <br><br>Note that the output position for graphics output differs from that for text output.&nbsp; The output position for
-text output can be set by use of the <tt> _settextposition</tt> routine.
+text output can be set by use of the <a href="#_settextposition">_settextposition</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -2638,16 +2642,16 @@ be terminated by a null character (char(0)).
 <br>The string is displayed starting at the current position (see the <a href="#_moveto">_moveto</a> routine) in the current
 color and in the currently selected font (see the <a href="#_setfont">_setfont</a> routine).&nbsp; The current position is
 updated to follow the displayed text.
-<br><br>When no font has been previously selected with <tt> _setfont</tt>, a default font will be used.&nbsp; The default
-font is an 8-by-8 bit-mapped font.
+<br><br>When no font has been previously selected with <a href="#_setfont">_setfont</a>, a default font will be used.&nbsp;
+The default font is an 8-by-8 bit-mapped font.
 <br><br>The graphics library can display text in three different ways.
 <ol>
-<li>The <tt> _outtext</tt> and <tt> _outmem</tt> routines can be used in any video mode.&nbsp; However, this variety of text
-can be displayed in only one size.
-<li>The <tt> _grtext</tt> routine displays text as a sequence of line segments, and can be drawn in different sizes, with
-different orientations and alignments.
-<li>The <tt> _outgtext</tt> routine displays text in the currently selected font.&nbsp; Both bit-mapped and vector fonts are
-supported; the size and type of text depends on the fonts that are available.
+<li>The <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines can be used in any video mode.&nbsp;
+However, this variety of text can be displayed in only one size.
+<li>The <a href="#_grtext">_grtext</a> routine displays text as a sequence of line segments, and can be drawn in different
+sizes, with different orientations and alignments.
+<li>The <a href="#_outgtext">_outgtext</a> routine displays text in the currently selected font.&nbsp; Both bit-mapped and
+vector fonts are supported; the size and type of text depends on the fonts that are available.
 </ol>
 </dl>
 <dl>
@@ -2696,19 +2700,19 @@ supported; the size and type of text depends on the fonts that are available.
 <dl>
 <dt>Description:
 <dd>The<tt> _outmem</tt> routine displays the character string indicated by the argument<i> text</i>.&nbsp; The argument<i> length</i>
-specifies the number of characters to be displayed.&nbsp; Unlike the <tt> _outtext</tt> routine,<tt> _outmem</tt> will display
-the graphical representation of characters such as ASCII 10 and 0, instead of interpreting them as control characters.
+specifies the number of characters to be displayed.&nbsp; Unlike the <a href="#_outtext">_outtext</a> routine,<tt> _outmem</tt>
+will display the graphical representation of characters such as ASCII 10 and 0, instead of interpreting them as control characters.
 <br>The text is displayed using the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine), starting
 at the current text position (see the <a href="#_settextposition">_settextposition</a> routine).&nbsp; The text position is
 updated to follow the end of the displayed text.
 <br><br>The graphics library can display text in three different ways.
 <ol>
-<li>The <tt> _outtext</tt> and <tt> _outmem</tt> routines can be used in any video mode.&nbsp; However, this variety of text
-can be displayed in only one size.
-<li>The <tt> _grtext</tt> routine displays text as a sequence of line segments, and can be drawn in different sizes, with
-different orientations and alignments.
-<li>The <tt> _outgtext</tt> routine displays text in the currently selected font.&nbsp; Both bit-mapped and vector fonts are
-supported; the size and type of text depends on the fonts that are available.
+<li>The <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines can be used in any video mode.&nbsp;
+However, this variety of text can be displayed in only one size.
+<li>The <a href="#_grtext">_grtext</a> routine displays text as a sequence of line segments, and can be drawn in different
+sizes, with different orientations and alignments.
+<li>The <a href="#_outgtext">_outgtext</a> routine displays text in the currently selected font.&nbsp; Both bit-mapped and
+vector fonts are supported; the size and type of text depends on the fonts that are available.
 </ol>
 </dl>
 <dl>
@@ -2759,12 +2763,12 @@ at the current text position (see the <a href="#_settextposition">_settextpositi
 updated to follow the end of the displayed text.
 <br><br>The graphics library can display text in three different ways.
 <ol>
-<li>The <tt> _outtext</tt> and <tt> _outmem</tt> routines can be used in any video mode.&nbsp; However, this variety of text
-can be displayed in only one size.
-<li>The <tt> _grtext</tt> routine displays text as a sequence of line segments, and can be drawn in different sizes, with
-different orientations and alignments.
-<li>The <tt> _outgtext</tt> routine displays text in the currently selected font.&nbsp; Both bit-mapped and vector fonts are
-supported; the size and type of text depends on the fonts that are available.
+<li>The <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines can be used in any video mode.&nbsp;
+However, this variety of text can be displayed in only one size.
+<li>The <a href="#_grtext">_grtext</a> routine displays text as a sequence of line segments, and can be drawn in different
+sizes, with different orientations and alignments.
+<li>The <a href="#_outgtext">_outgtext</a> routine displays text in the currently selected font.&nbsp; Both bit-mapped and
+vector fonts are supported; the size and type of text depends on the fonts that are available.
 </ol>
 </dl>
 <dl>
@@ -2818,10 +2822,10 @@ supported; the size and type of text depends on the fonts that are available.
 routines calculate default values for chart elements without actually displaying the chart.
 <br>The<tt> _pg_analyzechart</tt> routine analyzes a single-series bar, column or line chart.&nbsp; The chart environment
 structure<i> env</i> is filled with default values based on the type of chart and the values of the<i> cat</i> and<i> values</i>
-arguments.&nbsp; The arguments are the same as for the <tt> _pg_chart</tt> routine.
+arguments.&nbsp; The arguments are the same as for the <a href="#_pg_chart">_pg_chart</a> routine.
 <br><br>The<tt> _pg_analyzechartms</tt> routine analyzes a multi-series bar, column or line chart.&nbsp; The chart environment
 structure<i> env</i> is filled with default values based on the type of chart and the values of the<i> cat</i>,<i> values</i>
-and<i> labels</i> arguments.&nbsp; The arguments are the same as for the <tt> _pg_chartms</tt> routine.
+and<i> labels</i> arguments.&nbsp; The arguments are the same as for the <a href="#_pg_chart">_pg_chartms</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -2898,7 +2902,7 @@ and<i> labels</i> arguments.&nbsp; The arguments are the same as for the <tt> _p
 <dd>The<tt> _pg_analyzepie</tt> routine analyzes a pie chart.&nbsp; This routine calculates default values for chart elements
 without actually displaying the chart.
 <br>The chart environment structure<i> env</i> is filled with default values based on the values of the<i> cat</i>,<i> values</i>
-and<i> explode</i> arguments.&nbsp; The arguments are the same as for the <tt> _pg_chartpie</tt> routine.
+and<i> explode</i> arguments.&nbsp; The arguments are the same as for the <a href="#_pg_chartpie">_pg_chartpie</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -2986,10 +2990,10 @@ labels )</tt>
 calculate default values for chart elements without actually displaying the chart.
 <br>The<tt> _pg_analyzescatter</tt> routine analyzes a single-series scatter chart.&nbsp; The chart environment structure<i>
 env</i> is filled with default values based on the values of the<i> x</i> and<i> y</i> arguments.&nbsp; The arguments are
-the same as for the <tt> _pg_chartscatter</tt> routine.
+the same as for the <a href="#_pg_chartscatter">_pg_chartscatter</a> routine.
 <br><br>The<tt> _pg_analyzescatterms</tt> routine analyzes a multi-series scatter chart.&nbsp; The chart environment structure<i>
 env</i> is filled with default values based on the values of the<i> x</i>,<i> y</i> and<i> labels</i> arguments.&nbsp; The
-arguments are the same as for the <tt> _pg_chartscatterms</tt> routine.
+arguments are the same as for the <a href="#_pg_chartscatter">_pg_chartscatterms</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -3701,9 +3705,9 @@ of the chart.&nbsp; The<i> color</i> specifies the palette color used to display
 palette and style-set used when drawing charts.&nbsp; This routine must be called before any of the other presentation graphics
 routines.
 <br>The initialization of the presentation graphics system requires that a valid graphics mode has been selected.&nbsp; For
-this reason the <tt> _setvideomode</tt> routine must be called before<tt> _pg_initchart</tt> is called.&nbsp; If a font has
-been selected (with the <tt> _setfont</tt> routine), that font will be used when text is displayed in a chart.&nbsp; Font
-selection should also be done before initializing the presentation graphics system.
+this reason the <a href="#_setvideomode">_setvideomode</a> routine must be called before<tt> _pg_initchart</tt> is called.
+&nbsp;If a font has been selected (with the <a href="#_setfont">_setfont</a> routine), that font will be used when text is
+displayed in a chart.&nbsp; Font selection should also be done before initializing the presentation graphics system.
 </dl>
 <dl>
 <dt>Returns:
@@ -4225,8 +4229,8 @@ of the chart.&nbsp; The<i> color</i> specifies the palette color used to display
 <dt>Description:
 <dd>The<tt> _pie</tt> routines draw pie-shaped wedges.&nbsp; The<tt> _pie</tt> routine uses the view coordinate system.&nbsp;
 The<tt> _pie_w</tt> and<tt> _pie_wxy</tt> routines use the window coordinate system.
-<br>The pie wedges are drawn by drawing an elliptical arc (in the way described for the <tt> _arc</tt> routines) and then
-joining the center of the rectangle that contains the ellipse to the two endpoints of the arc.
+<br>The pie wedges are drawn by drawing an elliptical arc (in the way described for the <a href="#_arc">_arc</a> routines)
+and then joining the center of the rectangle that contains the ellipse to the two endpoints of the arc.
 <br><br>The elliptical arc is drawn with its center at the center of the rectangle established by the points<tt> (x1,y1)</tt>
 and<tt> (x2,y2).</tt>&nbsp; The arc is a segment of the ellipse drawn within this bounding rectangle.&nbsp; The arc starts
 at the point on this ellipse that intersects the vector from the centre of the ellipse to the point<tt> (x3,y3).</tt>&nbsp;
@@ -4367,8 +4371,8 @@ style
 <dd>The<tt> _putimage</tt> routines display the screen image indicated by the argument<i> image</i>.&nbsp; The<tt> _putimage</tt>
 routine uses the view coordinate system.&nbsp; The<tt> _putimage_w</tt> routine uses the window coordinate system.
 <br>The image is displayed upon the screen with its top left corner located at the point with coordinates<tt> (x,y).</tt>
-&nbsp;The image was previously saved using the <tt> _getimage</tt> routines.&nbsp; The image is displayed in a rectangle whose
-size is the size of the rectangular image saved by the <tt> _getimage</tt> routines.
+&nbsp;The image was previously saved using the <a href="#_getimage">_getimage</a> routines.&nbsp; The image is displayed in
+a rectangle whose size is the size of the rectangular image saved by the <a href="#_getimage">_getimage</a> routines.
 <br><br>The image can be displayed in a number of ways, depending upon the value of the<i> mode</i> argument.&nbsp; This argument
 can have the following values:
 <dl>
@@ -4501,11 +4505,11 @@ style
 <dl>
 <dt>Description:
 <dd>The<tt> _registerfonts</tt> routine initializes the font graphics system.&nbsp; Fonts must be registered, and a font selected,
-before text can be displayed with the <tt> _outgtext</tt> routine.
+before text can be displayed with the <a href="#_outgtext">_outgtext</a> routine.
 <br>The argument<i> path</i> specifies the location of the font files.&nbsp; This argument is a file specification, and can
 contain drive and directory components and may contain wildcard characters.&nbsp; The<tt> _registerfonts</tt> routine opens
 each of the font files specified and reads the font information.&nbsp; Memory is allocated to store the characteristics of
-the font.&nbsp; These font characteristics are used by the <tt> _setfont</tt> routine when selecting a font.
+the font.&nbsp; These font characteristics are used by the <a href="#_setfont">_setfont</a> routine when selecting a font.
 </dl>
 <dl>
 <dt>Returns:
@@ -4562,7 +4566,7 @@ modes, but only works with EGA, MCGA and VGA adapters.
 <br>The array<i> colors</i> must contain at least as many elements as there are supported colors.&nbsp; The newly mapped palette
 will cause the complete screen to change color wherever there is a pixel value of a changed color in the palette.
 <br><br>The representation of colors depends upon the hardware being used.&nbsp; The number of colors in the palette can be
-determined by using the <tt> _getvideoconfig</tt> routine.
+determined by using the <a href="#_getvideoconfig">_getvideoconfig</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -4679,11 +4683,11 @@ otherwise, (-1) is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> _scrolltextwindow</tt> routine scrolls the lines in the current text window.&nbsp; A text window is defined with the
-<tt> _settextwindow</tt> routine.&nbsp; By default, the text window is the entire screen.
+<a href="#_settextwindow">_settextwindow</a> routine.&nbsp; By default, the text window is the entire screen.
 <br>The argument<i> rows</i> specifies the number of rows to scroll.&nbsp; A positive value means to scroll the text window
 up or towards the top of the screen.&nbsp; A negative value means to scroll the text window down or towards the bottom of
 the screen.&nbsp; Specifying a number of rows greater than the height of the text window is equivalent to clearing the text
-window with the <tt> _clearscreen</tt> routine.
+window with the <a href="#_clearscreen">_clearscreen</a> routine.
 <br><br>Two constants are defined that can be used with the<tt> _scrolltextwindow</tt> routine:
 <dl>
 <dt>_GSCROLLUP
@@ -4812,8 +4816,8 @@ selected is given by the<i> pagenum</i> argument.
 are supported, the active page may differ from the visual page.&nbsp; The graphics information in the visual page determines
 what is displayed upon the screen.&nbsp; Animation may be accomplished by alternating the visual page.&nbsp; A graphics page
 can be constructed without affecting the screen by setting the active page to be different than the visual page.
-<br><br>The number of available video pages can be determined by using the <tt> _getvideoconfig</tt> routine.&nbsp; The default
-video page is 0.
+<br><br>The number of available video pages can be determined by using the <a href="#_getvideoconfig">_getvideoconfig</a>
+routine.&nbsp; The default video page is 0.
 </dl>
 <dl>
 <dt>Returns:
@@ -4931,8 +4935,9 @@ is affected.
 and<i> width</i>.&nbsp; For the<tt> _setcharsize</tt> routine, the arguments<i> height</i> and<i> width</i> represent a number
 of pixels.&nbsp; For the<tt> _setcharsize_w</tt> routine, the arguments<i> height</i> and<i> width</i> represent lengths along
 the y-axis and x-axis in the window coordinate system.
-<br>These sizes are used when displaying text with the <tt> _grtext</tt> routine.&nbsp; The default character sizes are dependent
-on the graphics mode selected, and can be determined by the <tt> _gettextsettings</tt> routine.
+<br>These sizes are used when displaying text with the <a href="#_grtext">_grtext</a> routine.&nbsp; The default character
+sizes are dependent on the graphics mode selected, and can be determined by the <a href="#_gettextsettings">_gettextsettings</a>
+routine.
 </dl>
 <dl>
 <dt>See Also:
@@ -4980,8 +4985,8 @@ on the graphics mode selected, and can be determined by the <tt> _gettextsetting
 For the<tt> _setcharspacing</tt> routine,<i> space</i> represents a number of pixels.&nbsp; For the<tt> _setcharspacing_w</tt>
 routine,<i> space</i> represents a length along the x-axis in the window coordinate system.
 <br>The character spacing specifies the additional space to leave between characters when a text string is displayed with
-the <tt> _grtext</tt> routine.&nbsp; A negative value can be specified to cause the characters to be drawn closer together.
-&nbsp;The default value of the character spacing is 0.
+the <a href="#_grtext">_grtext</a> routine.&nbsp; A negative value can be specified to cause the characters to be drawn closer
+together.&nbsp; The default value of the character spacing is 0.
 </dl>
 <dl>
 <dt>See Also:
@@ -5023,8 +5028,8 @@ the <tt> _grtext</tt> routine.&nbsp; A negative value can be specified to cause 
 <dt>Description:
 <dd>The<tt> _setcliprgn</tt> routine restricts the display of graphics output to the clipping region.&nbsp; This region is a rectangle
 whose opposite corners are established by the physical points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>
-<br>The<tt> _setcliprgn</tt> routine does not affect text output using the <tt> _outtext</tt> and <tt> _outmem</tt> routines.
-&nbsp;To control the location of text output, see the <tt> _settextwindow</tt> routine.
+<br>The<tt> _setcliprgn</tt> routine does not affect text output using the <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a>
+routines.&nbsp; To control the location of text output, see the <a href="#_settextwindow">_settextwindow</a> routine.
 </dl>
 <dl>
 <dt>See Also:
@@ -5063,9 +5068,9 @@ whose opposite corners are established by the physical points<tt> (x1,y1)</tt> a
 <dl>
 <dt>Description:
 <dd>The<tt> _setcolor</tt> routine sets the pixel value for the current color to be that indicated by the<i> pixval</i> argument.
-&nbsp;The current color is only used by the routines that produce graphics output; text output with <tt> _outtext</tt> uses
-the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine).&nbsp; The default color value is one
-less than the maximum number of colors in the current video mode.
+&nbsp;The current color is only used by the routines that produce graphics output; text output with <a href="#_outtext">_outtext</a>
+uses the current text color (see the <a href="#_settextcolor">_settextcolor</a> routine).&nbsp; The default color value is
+one less than the maximum number of colors in the current video mode.
 </dl>
 <dl>
 <dt>Returns:
@@ -5166,7 +5171,7 @@ current color.&nbsp; By default, no fill mask is set.
 <dl>
 <dt>Description:
 <dd>The<tt> _setfont</tt> routine selects a font from the list of registered fonts (see the <a href="#_registerfonts">_registerfonts</a>
-routine).&nbsp; The font selected becomes the current font and is used whenever text is displayed with the <tt> _outgtext</tt>
+routine).&nbsp; The font selected becomes the current font and is used whenever text is displayed with the <a href="#_outgtext">_outgtext</a>
 routine.&nbsp; The routine will fail if no fonts have been registered, or if a font cannot be found that matches the given
 characteristics.
 <br>The argument<i> opt</i> is a string of characters specifying the characteristics of the desired font.&nbsp; These characteristics
@@ -5188,7 +5193,7 @@ of options may be specified and in any order.&nbsp; The available options are:
 <dt><br>b
 <dd>choose the font that best matches the options
 <dt><br>nX
-<dd>choose font number X (the number of fonts is returned by the <tt> _registerfonts</tt> routine)
+<dd>choose font number X (the number of fonts is returned by the <a href="#_registerfonts">_registerfonts</a> routine)
 <dt><br>t'facename'
 <dd>choose a font with specified facename
 </dl>
@@ -5269,10 +5274,10 @@ to match the given size.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _setgtextvector</tt> routine sets the orientation for text output used by the <tt> _outgtext</tt> routine to the vector
-specified by the arguments<tt> (x,y).</tt>&nbsp; Each of the arguments can have a value of -1, 0 or 1, allowing for text to
-be displayed at any multiple of a 45-degree angle.&nbsp; The default text orientation, for normal left-to-right text, is the
-vector<tt> (1,0).</tt>
+<dd>The<tt> _setgtextvector</tt> routine sets the orientation for text output used by the <a href="#_outgtext">_outgtext</a> routine
+to the vector specified by the arguments<tt> (x,y).</tt>&nbsp; Each of the arguments can have a value of -1, 0 or 1, allowing
+for text to be displayed at any multiple of a 45-degree angle.&nbsp; The default text orientation, for normal left-to-right
+text, is the vector<tt> (1,0).</tt>
 </dl>
 <dl>
 <dt>Returns:
@@ -5495,8 +5500,8 @@ to produce animated effects.
 <dl>
 <dt>Description:
 <dd>The<tt> _settextalign</tt> routine sets the current text alignment to the values specified by the arguments<i> horiz</i> and<i>
-vert</i>.&nbsp; When text is displayed with the <tt> _grtext</tt> routine, it is aligned (justified) horizontally and vertically
-about the given point according to the current text alignment settings.
+vert</i>.&nbsp; When text is displayed with the <a href="#_grtext">_grtext</a> routine, it is aligned (justified) horizontally
+and vertically about the given point according to the current text alignment settings.
 <br>The horizontal component of the alignment can have one of the following values:
 <dl>
 <dt>_NORMAL
@@ -5566,9 +5571,9 @@ the text path is<tt> _PATH_UP</tt>, in which case<tt> _BOTTOM</tt> alignment is 
 <dl>
 <dt>Description:
 <dd>The<tt> _settextcolor</tt> routine sets the current text color to be the color indicated by the pixel value of the<i> pixval</i>
-argument.&nbsp; This is the color value used for displaying text with the <tt> _outtext</tt> and <tt> _outmem</tt> routines.
-&nbsp;Use the <tt> _setcolor</tt> routine to change the color of graphics output.&nbsp; The default text color value is set
-to 7 whenever a new video mode is selected.
+argument.&nbsp; This is the color value used for displaying text with the <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a>
+routines.&nbsp; Use the <a href="#_setcolor">_setcolor</a> routine to change the color of graphics output.&nbsp; The default
+text color value is set to 7 whenever a new video mode is selected.
 <br>The pixel value<i> pixval</i> is a number in the range 0-31.&nbsp; Colors in the range 0-15 are displayed normally.&nbsp;
 In text modes, blinking colors are specified by adding 16 to the normal color values.&nbsp; The following table specifies
 the default colors in color text modes.
@@ -5699,7 +5704,7 @@ is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> _settextorient</tt> routine sets the current text orientation to the vector specified by the arguments<tt> (vecx,vecy).</tt>
-&nbsp;The text orientation specifies the direction of the base-line vector when a text string is displayed with the <tt> _grtext</tt>
+&nbsp;The text orientation specifies the direction of the base-line vector when a text string is displayed with the <a href="#_grtext">_grtext</a>
 routine.&nbsp; The default text orientation, for normal left-to-right text, is the vector<tt> (1,0).</tt>
 </dl>
 <dl>
@@ -5739,8 +5744,8 @@ routine.&nbsp; The default text orientation, for normal left-to-right text, is t
 <dl>
 <dt>Description:
 <dd>The<tt> _settextpath</tt> routine sets the current text path to have the value of the<i> path</i> argument.&nbsp; The text
-path specifies the writing direction of the text displayed by the <tt> _grtext</tt> routine.&nbsp; The argument can have one
-of the following values:
+path specifies the writing direction of the text displayed by the <a href="#_grtext">_grtext</a> routine.&nbsp; The argument
+can have one of the following values:
 <dl>
 <dt>_PATH_RIGHT
 <dd>subsequent characters are drawn to the right of the previous character
@@ -5793,9 +5798,9 @@ of the following values:
 is in terms of characters, not pixels.
 <br>The text position is relative to the current text window.&nbsp; It defaults to the top left corner of the screen,<tt>
 (1,1),</tt> when a new video mode is selected, or when a new text window is set.&nbsp; The position is updated as text is
-drawn with the <tt> _outtext</tt> and <tt> _outmem</tt> routines.
+drawn with the <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines.
 <br><br>Note that the output position for graphics output differs from that for text output.&nbsp; The output position for
-graphics output can be set by use of the <tt> _moveto</tt> routine.
+graphics output can be set by use of the <a href="#_moveto">_moveto</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -5904,8 +5909,9 @@ call _outtext( buff )</tt>
 <dt>Description:
 <dd>The<tt> _settextwindow</tt> routine sets the text window to be the rectangle with a top left corner at<tt> (row1,col1)</tt>
 and a bottom right corner at<tt> (row2,col2).</tt>&nbsp; These coordinates are in terms of characters not pixels.
-<br>The initial text output position is<tt> (1,1).</tt>&nbsp; Subsequent text positions are reported (by the <tt> _gettextposition</tt>
-routine) and set (by the <tt> _outtext</tt>, <tt> _outmem</tt> and <tt> _settextposition</tt> routines) relative to this rectangle.
+<br>The initial text output position is<tt> (1,1).</tt>&nbsp; Subsequent text positions are reported (by the <a href="#_gettextposition">_gettextposition</a>
+routine) and set (by the <a href="#_outtext">_outtext</a>, <a href="#_outmem">_outmem</a> and <a href="#_settextposition">_settextposition</a>
+routines) relative to this rectangle.
 <br><br>Text is displayed from the current output position for text proceeding along the current row and then downwards.&nbsp;
 When the window is full, the lines scroll upwards one line and then text is displayed on the last line of the window.
 </dl>
@@ -6094,8 +6100,9 @@ vc.numypixels,</tt>
 <dl>
 <dt>Description:
 <dd>The<tt> _setvideomoderows</tt> routine selects a video mode and the number of rows of text displayed on the screen.&nbsp;
-The video mode is specified by the argument<i> mode</i> and is selected with the <tt> _setvideomode</tt> routine.&nbsp; The
-number of rows is specified by the argument<i> rows</i> and is selected with the <tt> _settextrows</tt> routine.
+The video mode is specified by the argument<i> mode</i> and is selected with the <a href="#_setvideomode">_setvideomode</a>
+routine.&nbsp; The number of rows is specified by the argument<i> rows</i> and is selected with the <a href="#_settextrows">_settextrows</a>
+routine.
 <br>Computers equipped with EGA, MCGA and VGA adapters can support different numbers of text rows.&nbsp; The number of rows
 that can be selected depends on the video mode and the type of monitor attached.
 </dl>
@@ -6189,8 +6196,8 @@ point<tt> (x,y).</tt>&nbsp; This causes subsequently drawn images to be translat
 <dd>The<tt> _setviewport</tt> routine restricts the display of graphics output to the clipping region and then sets the origin
 of the view coordinate system to be the top left corner of the region.&nbsp; This region is a rectangle whose opposite corners
 are established by the physical points<tt> (x1,y1)</tt> and<tt> (x2,y2).</tt>
-<br>The<tt> _setviewport</tt> routine does not affect text output using the <tt> _outtext</tt> and <tt> _outmem</tt> routines.
-&nbsp;To control the location of text output, see the <tt> _settextwindow</tt> routine.
+<br>The<tt> _setviewport</tt> routine does not affect text output using the <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a>
+routines.&nbsp; To control the location of text output, see the <a href="#_settextwindow">_settextwindow</a> routine.
 </dl>
 <dl>
 <dt>See Also:
@@ -6237,8 +6244,8 @@ be selected is given by the<i> pagenum</i> argument.
 are supported, the active page may differ from the visual page.&nbsp; The graphics information in the visual page determines
 what is displayed upon the screen.&nbsp; Animation may be accomplished by alternating the visual page.&nbsp; A graphics page
 can be constructed without affecting the screen by setting the active page to be different than the visual page.
-<br><br>The number of available video pages can be determined by using the <tt> _getvideoconfig</tt> routine.&nbsp; The default
-video page is 0.
+<br><br>The number of available video pages can be determined by using the <a href="#_getvideoconfig">_getvideoconfig</a>
+routine.&nbsp; The default video page is 0.
 </dl>
 <dl>
 <dt>Returns:
@@ -6304,7 +6311,7 @@ as a user-defined range of values.&nbsp; This allows for consistent pictures reg
 &nbsp;The argument<i> invert</i> specifies the direction of the y-axis.&nbsp; If the value is<tt> .TRUE.,</tt> the y values
 increase from the bottom of the screen to the top, otherwise, the y values increase as you move down the screen.
 <br><br>The window defined by the<tt> _setwindow</tt> routine is displayed in the current viewport.&nbsp; A viewport is defined
-by the <tt> _setviewport</tt> routine.
+by the <a href="#_setviewport">_setviewport</a> routine.
 <br><br>By default, the window coordinate system is defined with the point<tt> (0.0,0.0)</tt> located at the lower left corner
 of the screen, and the point<tt> (1.0,1.0)</tt> at the upper right corner.
 </dl>
@@ -6361,9 +6368,10 @@ of the screen, and the point<tt> (1.0,1.0)</tt> at the upper right corner.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _unregisterfonts</tt> routine frees the memory previously allocated by the <tt> _registerfonts</tt> routine.&nbsp;
-The currently selected font is also unloaded.
-<br>Attempting to use the <tt> _setfont</tt> routine after calling<tt> _unregisterfonts</tt> will result in an error.
+<dd>The<tt> _unregisterfonts</tt> routine frees the memory previously allocated by the <a href="#_registerfonts">_registerfonts</a>
+routine.&nbsp; The currently selected font is also unloaded.
+<br>Attempting to use the <a href="#_setfont">_setfont</a> routine after calling<tt> _unregisterfonts</tt> will result in
+an error.
 </dl>
 <dl>
 <dt>See Also:
@@ -6410,8 +6418,8 @@ The currently selected font is also unloaded.
 <dl>
 <dt>Description:
 <dd>The<tt> _wrapon</tt> routine is used to control the display of text when the text output reaches the right side of the text
-window.&nbsp; This is text displayed with the <tt> _outtext</tt> and <tt> _outmem</tt> routines.&nbsp; The<i> wrap</i> argument
-can take one of the following values:
+window.&nbsp; This is text displayed with the <a href="#_outtext">_outtext</a> and <a href="#_outmem">_outmem</a> routines.
+&nbsp;The<i> wrap</i> argument can take one of the following values:
 <dl>
 <dt>_GWRAPON
 <dd>causes lines to wrap at the window border
