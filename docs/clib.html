@@ -8540,9 +8540,9 @@ the error.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> closedir</tt> function closes the directory specified by<i> dirp</i> and frees the memory allocated by <tt> opendir</tt>.
+<dd>The<tt> closedir</tt> function closes the directory specified by<i> dirp</i> and frees the memory allocated by <a href="#opendir">opendir</a>.
 <br>The<tt> _wclosedir</tt> function is identical to<tt> closedir</tt> except that it closes a directory of wide character
-filenames opened by <tt> _wopendir</tt>.
+filenames opened by <a href="#opendir">_wopendir</a>.
 </dl>
 <dl>
 <dt>Returns:
@@ -38864,8 +38864,8 @@ function).
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> opendir</tt> function is used in conjunction with the functions <tt> readdir</tt> and <tt> closedir</tt> to obtain
-the list of file names contained in the directory specified by<i> dirname</i>.&nbsp; The path indicated by<i> dirname</i>
+<dd>The<tt> opendir</tt> function is used in conjunction with the functions <a href="#readdir">readdir</a> and <a href="#closedir">closedir</a>
+to obtain the list of file names contained in the directory specified by<i> dirname</i>.&nbsp; The path indicated by<i> dirname</i>
 can be either relative to the current working directory or it can be an absolute path name.&nbsp; As an extension to POSIX,
 the last part of<i> dirname</i> can contain the characters '?' and '*' for matching multiple files within a directory.
 <br>The file<tt> &lt;direct.h&gt;</tt> contains definitions for the structure <tt> dirent</tt>.
@@ -38917,10 +38917,10 @@ Open Watcom header file).
 */</tt>
 <br><tt>} fdate_t;</tt>
 <br>See the sample program below for an example of the use of these structures.
-<br><br>More than one directory can be read at the same time using the <tt> opendir</tt>, <tt> readdir</tt>, and <tt> closedir</tt>
-functions.
+<br><br>More than one directory can be read at the same time using the <a href="#opendir">opendir</a>, <a href="#readdir">readdir</a>,
+and <a href="#closedir">closedir</a> functions.
 <br><br>The<tt> _wopendir</tt> function is identical to<tt> opendir</tt> except that it accepts a wide character string argument
-and returns a pointer to a <tt> _wdirent</tt> structure that can be used with the <tt> _wreaddir</tt> and <tt> _wclosedir</tt>
+and returns a pointer to a <tt> _wdirent</tt> structure that can be used with the <a href="#readdir">_wreaddir</a> and <a href="#closedir">_wclosedir</a>
 functions.
 <br><br>The file<tt> &lt;direct.h&gt;</tt> contains definitions for the structure <tt> _wdirent</tt>.
 <br><br><tt>struct _wdirent {</tt>
@@ -38945,7 +38945,7 @@ functions.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> opendir</tt> function, if successful, returns a pointer to a structure required for subsequent calls to <tt> readdir</tt>
+<dd>The<tt> opendir</tt> function, if successful, returns a pointer to a structure required for subsequent calls to <a href="#readdir">readdir</a>
 to retrieve the file names matching the pattern specified by<i> dirname</i>.&nbsp; The<tt> opendir</tt> function returns<tt>
 NULL</tt> if<i> dirname</i> is not a valid pathname, or if there are no files matching<i> dirname</i>.
 </dl>
@@ -39029,8 +39029,8 @@ NULL</tt> if<i> dirname</i> is not a valid pathname, or if there are no files ma
 <dl>
 <dt>Description:
 <dd>The<tt> _open_osfhandle</tt> function allocates a POSIX-level file handle and sets it to point to the operating system's internal
-file handle specified by<i> osfhandle</i>.&nbsp; The value returned by <tt> _get_osfhandle</tt> can be used as an argument
-to the<tt> _open_osfhandle</tt> function.
+file handle specified by<i> osfhandle</i>.&nbsp; The value returned by <a href="#_get_osfhandle">_get_osfhandle</a> can be
+used as an argument to the<tt> _open_osfhandle</tt> function.
 <br>The access mode is established by a combination of the bits defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp;
 The following bits may be set:
 <dl>
@@ -39063,8 +39063,9 @@ is used to set the file translation mode.&nbsp; When the program begins executio
 <br><br><tt> O_CREAT</tt> must be specified when the file does not exist and it is to be written.
 <br><br>When two or more manifest constants are used to form the<i> flags</i> argument, the constants are combined with the
 bitwise-OR operator (|).
-<br><br>The example below demonstrates the use of the <tt> _get_osfhandle</tt> and<tt> _open_osfhandle</tt> functions.&nbsp;
-Note that the example shows how the <a href="#dup2">dup2</a> function can be used to obtain almost identical functionality.
+<br><br>The example below demonstrates the use of the <a href="#_get_osfhandle">_get_osfhandle</a> and<tt> _open_osfhandle</tt>
+functions.&nbsp; Note that the example shows how the <a href="#dup2">dup2</a> function can be used to obtain almost identical
+functionality.
 <br><br>When the POSIX-level file handles associated with one OS file handle are closed, the first one closes successfully
 but the others return an error (since the first call close the file and released the OS file handle).&nbsp; So it is important
 to call <a href="#close">close</a> at the right time, i.e., after all I/O operations are completed to the file.
@@ -39499,7 +39500,7 @@ vector fonts are supported; the size and type of text depends on the fonts that 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> pclose</tt> function closes the pipe associated with<i> fp</i> and waits for the subprocess created by <tt> popen</tt>
+<dd>The<tt> pclose</tt> function closes the pipe associated with<i> fp</i> and waits for the subprocess created by <a href="#popen">popen</a>
 to terminate.
 </dl>
 <dl>
@@ -39543,7 +39544,7 @@ pclose</tt> returns (-1) with <tt> errno</tt> set appropriately.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _pclose</tt> function closes the pipe associated with<i> fp</i> and waits for the subprocess created by <tt> _popen</tt>
+<dd>The<tt> _pclose</tt> function closes the pipe associated with<i> fp</i> and waits for the subprocess created by <a href="#_popen">_popen</a>
 to terminate.
 </dl>
 <dl>
@@ -41423,7 +41424,7 @@ and the executed command.
 <dt><br>&quot;w&quot;
 <dd>The calling process will write to the standard input of the child process using the stream pointer returned by<tt> popen</tt>
 </dl>
-<br>A stream opened by<tt> popen</tt> should be closed by the <tt> pclose</tt> function.
+<br>A stream opened by<tt> popen</tt> should be closed by the <a href="#pclose">pclose</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -41508,7 +41509,7 @@ file (an ISO C requirement for portability to systems that make a distinction be
 <br><br>When default file translation is specified (i.e., no &quot;t&quot; or &quot;b&quot; is specified), the value of the
 global variable <tt> _fmode</tt> establishes whether the file is to treated as a binary or a text file.&nbsp; Unless this
 value is changed by the program, the default will be text mode.
-<br><br>A stream opened by<tt> _popen</tt> should be closed by the <tt> _pclose</tt> function.
+<br><br>A stream opened by<tt> _popen</tt> should be closed by the <a href="#_pclose">_pclose</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -41523,7 +41524,8 @@ to create either the pipe or the subprocess, a<tt> NULL</tt> stream pointer is r
 <dt>EINVAL
 <dd>The<i> mode</i> argument is invalid.
 </dl>
-<br><tt>_popen</tt> may also set <tt> errno</tt> values as described by the <tt> _pipe</tt> and <tt> spawnl</tt> functions.
+<br><tt>_popen</tt> may also set <tt> errno</tt> values as described by the <a href="#_pipe">_pipe</a> and <tt> spawnl</tt>
+functions.
 </dl>
 <dl>
 <dt>See Also:
@@ -42759,9 +42761,10 @@ a value indicating the type of error that has been detected.
 <dl>
 <dt>Description:
 <dd>The<tt> readdir</tt> function obtains information about the next matching file name from the argument<i> dirp</i>.&nbsp; The
-argument<i> dirp</i> is the value returned from the <tt> opendir</tt> function.&nbsp; The<tt> readdir</tt> function can be
-called repeatedly to obtain the list of file names contained in the directory specified by the pathname given to <tt> opendir</tt>.
-&nbsp;The function <tt> closedir</tt> must be called to close the directory and free the memory allocated by <tt> opendir</tt>.
+argument<i> dirp</i> is the value returned from the <a href="#opendir">opendir</a> function.&nbsp; The<tt> readdir</tt> function
+can be called repeatedly to obtain the list of file names contained in the directory specified by the pathname given to <a href="#opendir">opendir</a>.
+&nbsp;The function <a href="#closedir">closedir</a> must be called to close the directory and free the memory allocated by
+<a href="#opendir">opendir</a>.
 <br>The file<tt> &lt;direct.h&gt;</tt> contains definitions for the structure <tt> dirent</tt>.
 <br><br><tt>#if defined(__OS2__) || defined(__NT__)</tt>
 <br><tt>#define NAME_MAX 255&nbsp;&nbsp;&nbsp; /* maximum for HPFS or NTFS */</tt>
@@ -43435,9 +43438,9 @@ the file.&nbsp; It is equivalent to
 <dt>Description:
 <dd>The<tt> rewinddir</tt> function resets the position of the directory stream to which<i> dirp</i> refers to the beginning of
 the directory.&nbsp; It also causes the directory stream to refer to the current state of the corresponding directory, as
-a call to <tt> opendir</tt> would have done.
+a call to <a href="#opendir">opendir</a> would have done.
 <br>The<tt> _wrewinddir</tt> function is identical to<tt> rewinddir</tt> except that it rewinds a directory of wide character
-filenames opened by <tt> _wopendir</tt>.
+filenames opened by <a href="#opendir">_wopendir</a>.
 </dl>
 <dl>
 <dt>Returns:
