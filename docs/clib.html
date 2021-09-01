@@ -55317,7 +55317,7 @@ buffer, base ) );</tt>
 <dl>
 <dt>Description:
 <dd><tt> va_arg</tt> is a macro that can be used to obtain the next argument in a list of variable arguments.&nbsp; It must be
-used with the associated macros <tt> va_start</tt> and <tt> va_end</tt>.&nbsp; A sequence such as
+used with the associated macros <a href="#va_start">va_start</a> and <a href="#va_end">va_end</a>.&nbsp; A sequence such as
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void example( char *dst, ... )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
@@ -55330,8 +55330,8 @@ used with the associated macros <tt> va_start</tt> and <tt> va_end</tt>.&nbsp; A
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><br>causes<tt> next_arg</tt> to be assigned the value of the next variable argument.&nbsp; The argument<i> type</i> (which
 is <tt> int</tt> in the example) is the type of the argument originally passed to the function.
-<br><br>The macro <tt> va_start</tt> must be executed first in order to properly initialize the variable<tt> curr_arg</tt>
-and the macro <tt> va_end</tt> should be executed after all arguments have been obtained.
+<br><br>The macro <a href="#va_start">va_start</a> must be executed first in order to properly initialize the variable<tt>
+curr_arg</tt> and the macro <a href="#va_end">va_end</a> should be executed after all arguments have been obtained.
 <br><br>The data item<tt> curr_arg</tt> is of type <tt> va_list</tt> which contains the information to permit successive acquisitions
 of the arguments.
 </dl>
@@ -55412,8 +55412,8 @@ of the arguments.
 <dl>
 <dt>Description:
 <dd><tt> va_end</tt> is a macro used to complete the acquisition of arguments from a list of variable arguments.&nbsp; It must
-be used with the associated macros <tt> va_start</tt> and <tt> va_arg</tt>.&nbsp; See the description for <tt> va_arg</tt>
-for complete documentation on these macros.
+be used with the associated macros <a href="#va_start">va_start</a> and <a href="#va_arg">va_arg</a>.&nbsp; See the description
+for <a href="#va_arg">va_arg</a> for complete documentation on these macros.
 </dl>
 <dl>
 <dt>Returns:
@@ -55471,10 +55471,10 @@ for complete documentation on these macros.
 <dl>
 <dt>Description:
 <dd><tt> va_start</tt> is a macro used to start the acquisition of arguments from a list of variable arguments.&nbsp; The<i> param</i>
-argument is used by the <tt> va_arg</tt> macro to locate the current acquired argument.&nbsp; The<i> previous</i> argument
-is the argument that immediately precedes the<tt> &quot;...&quot;</tt> notation in the original function definition.&nbsp;
-It must be used with the associated macros <tt> va_arg</tt> and <tt> va_end</tt>.&nbsp; See the description of <tt> va_arg</tt>
-for complete documentation on these macros.
+argument is used by the <a href="#va_arg">va_arg</a> macro to locate the current acquired argument.&nbsp; The<i> previous</i>
+argument is the argument that immediately precedes the<tt> &quot;...&quot;</tt> notation in the original function definition.
+&nbsp;It must be used with the associated macros <a href="#va_arg">va_arg</a> and <a href="#va_end">va_end</a>.&nbsp; See
+the description of <a href="#va_arg">va_arg</a> for complete documentation on these macros.
 </dl>
 <dl>
 <dt>Returns:
@@ -55541,7 +55541,7 @@ va_list arg );</tt>
 buf</i>.&nbsp; The argument<i> bufsize</i> specifies the size of the character array<i> buf</i> into which the generated output
 is placed.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt>
 _vbprintf</tt> function is equivalent to the <tt> _bprintf</tt> function, with the variable argument list replaced with<i>
-arg</i>, which has been initialized by the <tt> va_start</tt> macro.
+arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> _vbwprintf</tt> function is a wide character version of<tt> _vbprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
@@ -55601,7 +55601,8 @@ string argument for<i> format</i> and produces wide character output.
 <dd>The<tt> vcprintf</tt> function writes output directly to the console under control of the argument<i> format</i>.&nbsp; The
 <tt> putch</tt> function is used to output characters to the console.&nbsp; The<i> format</i> string is described under the
 description of the <tt> printf</tt> function.&nbsp; The<tt> vcprintf</tt> function is equivalent to the <tt> cprintf</tt>
-function, with the variable argument list replaced with<i> arg</i>, which has been initialized by the <tt> va_start</tt> macro.
+function, with the variable argument list replaced with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a>
+macro.
 </dl>
 <dl>
 <dt>Returns:
@@ -55662,7 +55663,7 @@ function, with the variable argument list replaced with<i> arg</i>, which has be
 function uses the function <tt> getche</tt> to read characters from the console.&nbsp; The<i> format</i> string is described
 under the description of the <tt> scanf</tt> function.
 <br>The<tt> vcscanf</tt> function is equivalent to the <tt> cscanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <tt> va_start</tt> macro.
+arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 </dl>
 <dl>
 <dt>Returns:
@@ -55733,7 +55734,7 @@ vfprintf</tt> function.
 <dd>The<tt> vfprintf</tt> function writes output to the file pointed to by<i> fp</i> under control of the argument<i> format</i>.
 &nbsp;The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> vfprintf</tt>
 function is equivalent to the <tt> fprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which
-has been initialized by the <tt> va_start</tt> macro.
+has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vfwprintf</tt> function is a wide character version of<tt> vfprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.
 </dl>
@@ -55892,7 +55893,7 @@ vfscanf</tt> function.
 <dd>The<tt> vfscanf</tt> function scans input from the file designated by<i> fp</i> under control of the argument<i> format</i>.
 &nbsp;The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
 <br>The<tt> vfscanf</tt> function is equivalent to the <tt> fscanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <tt> va_start</tt> macro.
+arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 <br><br>The<tt> vfwscanf</tt> function is a wide character version of<tt> vfscanf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
@@ -55967,8 +55968,8 @@ and it is unspecified to what extent<tt> vfscanf_s</tt> performed input before d
 <dl>
 <dt>Description:
 <dd>The<tt> vfscanf_s</tt> function is equivalent to <tt> fscanf_s</tt>, with the variable argument list replaced by<i> arg</i>,
-which shall have been initialized by the <tt> va_start</tt> macro (and possibly subsequent <tt> va_arg</tt> calls).&nbsp;
-The<tt> vfscanf_s</tt> function does not invoke the <tt> va_end</tt> macro.
+which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
+calls).&nbsp; The<tt> vfscanf_s</tt> function does not invoke the <a href="#va_end">va_end</a> macro.
 <br>The<tt> vfwscanf_s</tt> function is identical to<tt> vfscanf_s</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -56042,7 +56043,7 @@ vprintf</tt> function.
 <dd>The<tt> vprintf</tt> function writes output to the file <tt> stdout</tt> under control of the argument<i> format</i>.&nbsp;
 The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> vprintf</tt> function
 is equivalent to the <tt> printf</tt> function, with the variable argument list replaced with<i> arg</i>, which has been initialized
-by the <tt> va_start</tt> macro.
+by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vwprintf</tt> function is a wide character version of<tt> vprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.
 </dl>
@@ -56183,7 +56184,7 @@ function.
 <dd>The<tt> vscanf</tt> function scans input from the file designated by<i> stdin</i> under control of the argument<i> format</i>.
 &nbsp;The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
 <br>The<tt> vscanf</tt> function is equivalent to the <tt> scanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <tt> va_start</tt> macro.
+arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 <br><br>The<tt> vwscanf</tt> function is identical to<tt> vscanf</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -56253,8 +56254,8 @@ and it is unspecified to what extent<tt> vscanf_s</tt> performed input before di
 <dl>
 <dt>Description:
 <dd>The<tt> vscanf_s</tt> function is equivalent to <tt> scanf_s</tt>, with the variable argument list replaced by<i> arg</i>,
-which shall have been initialized by the <tt> va_start</tt> macro (and possibly subsequent <tt> va_arg</tt> calls).&nbsp;
-The<tt> vscanf_s</tt> function does not invoke the <tt> va_end</tt> macro.
+which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
+calls).&nbsp; The<tt> vscanf_s</tt> function does not invoke the <a href="#va_end">va_end</a> macro.
 <br>The<tt> vwscanf_s</tt> function is identical to<tt> vscanf_s</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -56329,7 +56330,7 @@ buf</i>.&nbsp; The maximum number of characters to store is specified by<i> coun
 the end of the generated character string if fewer than<i> count</i> characters were stored.&nbsp; The<i> format</i> string
 is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> _vsnprintf</tt> function is equivalent
 to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which has been initialized
-by the <tt> va_start</tt> macro.
+by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> _vsnwprintf</tt> function is a wide character version of<tt> _vsnprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
 wide characters into which the generated output is to be written, rather than converted to multibyte characters and written
@@ -56414,7 +56415,7 @@ vsnprintf</tt> function.
 buf</i>.&nbsp; The maximum number of characters to store, including a terminating null character, is specified by<i> count</i>.
 &nbsp;The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt> vsnprintf</tt>
 function is equivalent to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which
-has been initialized by the <tt> va_start</tt> macro.
+has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vsnwprintf</tt> function is a wide character version of<tt> vsnprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
 wide characters into which the generated output is to be written, rather than converted to multibyte characters and written
@@ -56601,7 +56602,7 @@ vsprintf</tt> function.
 <dd>The<tt> vsprintf</tt> function formats data under control of the<i> format</i> control string and writes the result to<i>
 buf</i>.&nbsp; The<i> format</i> string is described under the description of the <tt> printf</tt> function.&nbsp; The<tt>
 vsprintf</tt> function is equivalent to the <tt> sprintf</tt> function, with the variable argument list replaced with<i> arg</i>,
-which has been initialized by the <tt> va_start</tt> macro.
+which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vswprintf</tt> function is a wide character version of<tt> vsprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of wide characters
 into which the generated output is to be written, rather than converted to multibyte characters and written to a stream.&nbsp;
@@ -56764,7 +56765,7 @@ vsscanf</tt> function.
 <dd>The<tt> vsscanf</tt> function scans input from the string designated by<i> s</i> under control of the argument<i> format</i>.
 &nbsp;The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
 <br>The<tt> vsscanf</tt> function is equivalent to the <tt> sscanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <tt> va_start</tt> macro.
+arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 <br><br>The<tt> vswscanf</tt> function is identical to<tt> vsscanf</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -56840,8 +56841,8 @@ and it is unspecified to what extent<tt> vsscanf_s</tt> performed input before d
 <dl>
 <dt>Description:
 <dd>The<tt> vsscanf_s</tt> function is equivalent to <tt> sscanf_s</tt>, with the variable argument list replaced by<i> arg</i>,
-which shall have been initialized by the <tt> va_start</tt> macro (and possibly subsequent <tt> va_arg</tt> calls).&nbsp;
-The<tt> vsscanf_s</tt> function does not invoke the <tt> va_end</tt> macro.
+which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
+calls).&nbsp; The<tt> vsscanf_s</tt> function does not invoke the <a href="#va_end">va_end</a> macro.
 <br>The<tt> vswscanf_s</tt> function is identical to<tt> vsscanf_s</tt> except that it accepts wide character string arguments
 for<i> str</i> and<i> format</i>.
 </dl>
