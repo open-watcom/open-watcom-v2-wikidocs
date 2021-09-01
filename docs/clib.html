@@ -1816,24 +1816,25 @@ convert the cases of characters and strings.
 <br>These functions allocate and de-allocate blocks of memory.
 <br><br>Unless you are running your program in 32-bit protect mode, where segments have a limit of 4 gigabytes, the default
 data segment has a maximum size of 64K bytes.&nbsp; It may be less in a machine with insufficient memory or when other programs
-in the computer already occupy some of the memory.&nbsp; The <tt> _nmalloc</tt> function allocates space within this area
-while the <tt> _fmalloc</tt> function allocates space outside the area (if it is available).
+in the computer already occupy some of the memory.&nbsp; The <a href="#malloc">_nmalloc</a> function allocates space within
+this area while the <a href="#malloc">_fmalloc</a> function allocates space outside the area (if it is available).
 <br><br>In a small data model, the <a href="#malloc">malloc</a>, <a href="#calloc">calloc</a> and <a href="#realloc">realloc</a>
-functions use the <tt> _nmalloc</tt> function to acquire memory; in a large data model, the <tt> _fmalloc</tt> function is
-used.
-<br><br>It is also possible to allocate memory from a based heap using <tt> _bmalloc</tt>.&nbsp; Based heaps are similar to
-far heaps in that they are located outside the normal data segment.&nbsp; Based pointers only store the offset portion of
-the full address, so they behave much like near pointers.&nbsp; The selector portion of the full address specifies which based
-heap a based pointer belongs to, and must be passed to the various based heap functions.
-<br><br>It is important to use the appropriate memory-deallocation function to free memory blocks.&nbsp; The <tt> _nfree</tt>
-function should be used to free space acquired by the <tt> _ncalloc</tt>, <tt> _nmalloc</tt>, or <tt> _nrealloc</tt> functions.
-&nbsp;The <tt> _ffree</tt> function should be used to free space acquired by the <tt> _fcalloc</tt>, <tt> _fmalloc</tt>, or
-<tt> _frealloc</tt> functions.&nbsp; The <tt> _bfree</tt> function should be used to free space acquired by the <tt> _bcalloc</tt>,
-<tt> _bmalloc</tt>, or <tt> _brealloc</tt> functions.
-<br><br>The <a href="#free">free</a> function will use the <tt> _nfree</tt> function when the small data memory model is used;
-it will use the <tt> _ffree</tt> function when the large data memory model is being used.
-<br><br>It should be noted that the <tt> _fmalloc</tt> and <tt> _nmalloc</tt> functions can both be used in either data memory
-model.&nbsp; The following functions are defined:
+functions use the <a href="#malloc">_nmalloc</a> function to acquire memory; in a large data model, the <a href="#malloc">_fmalloc</a>
+function is used.
+<br><br>It is also possible to allocate memory from a based heap using <a href="#malloc">_bmalloc</a>.&nbsp; Based heaps are
+similar to far heaps in that they are located outside the normal data segment.&nbsp; Based pointers only store the offset
+portion of the full address, so they behave much like near pointers.&nbsp; The selector portion of the full address specifies
+which based heap a based pointer belongs to, and must be passed to the various based heap functions.
+<br><br>It is important to use the appropriate memory-deallocation function to free memory blocks.&nbsp; The <a href="#free">_nfree</a>
+function should be used to free space acquired by the <a href="#calloc">_ncalloc</a>, <a href="#malloc">_nmalloc</a>, or <a href="#realloc">_nrealloc</a>
+functions.&nbsp; The <a href="#free">_ffree</a> function should be used to free space acquired by the <a href="#calloc">_fcalloc</a>,
+<a href="#malloc">_fmalloc</a>, or <a href="#realloc">_frealloc</a> functions.&nbsp; The <a href="#free">_bfree</a> function
+should be used to free space acquired by the <a href="#calloc">_bcalloc</a>, <a href="#malloc">_bmalloc</a>, or <a href="#realloc">_brealloc</a>
+functions.
+<br><br>The <a href="#free">free</a> function will use the <a href="#free">_nfree</a> function when the small data memory
+model is used; it will use the <a href="#free">_ffree</a> function when the large data memory model is being used.
+<br><br>It should be noted that the <a href="#malloc">_fmalloc</a> and <a href="#malloc">_nmalloc</a> functions can both be
+used in either data memory model.&nbsp; The following functions are defined:
 <dl>
 <dt><a href="#alloca">alloca</a>
 <dd>allocate auto storage from stack
@@ -2394,14 +2395,14 @@ characters are written to a stream, they are converted to multibyte characters.
 <br>These functions deal with process creation, execution and termination, signal handling, and timer operations.
 <br><br>When a new process is started, it may replace the existing process
 <ul>
-<li><tt> P_OVERLAY</tt> is specified with the <tt> spawn...</tt>&nbsp; functions
-<li>the <tt> exec...</tt>&nbsp; routines are invoked
+<li><tt> P_OVERLAY</tt> is specified with the <a href="#spawn">spawn...</a> functions
+<li>the <a href="#exec">exec...</a> routines are invoked
 </ul>
 <br>or the existing process may be suspended while the new process executes (control continues at the point following the
 place where the new process was started)
 <ul>
-<li><tt> P_WAIT</tt> is specified with the <tt> spawn...</tt>&nbsp; functions
-<li><tt> system</tt> is used
+<li><tt> P_WAIT</tt> is specified with the <a href="#spawn">spawn...</a> functions
+<li><a href="#system">system</a> is used
 </ul>
 <br>The following functions are defined:
 <dl>
@@ -2564,7 +2565,7 @@ place where the new process was started)
 <dt><br><a href="#system">_wsystem</a>
 <dd>execute system command
 </dl>
-<br>There are eight <tt> spawn...</tt>&nbsp; and <tt> exec...</tt>&nbsp; functions each.&nbsp; The<tt> &quot;...&quot;</tt>
+<br>There are eight <a href="#spawn">spawn...</a> and <a href="#exec">exec...</a> functions each.&nbsp; The<tt> &quot;...&quot;</tt>
 is one to three letters:
 <ul>
 <li>&quot;l&quot; or &quot;v&quot; (one is required) to indicate the way the process parameters are passed
@@ -3391,9 +3392,9 @@ subject to change.&nbsp; Other compilers may implement a similar datatype in a d
 <br>It also contains prototypes for multimedia functions and pragmas for the in-line generation of code that operates on multimedia
 registers.&nbsp; 
 <dt><br>process.h
-<dd>This header file declares the <tt> spawn...</tt>&nbsp; functions, the <tt> exec...</tt>&nbsp; functions, and the <tt> system</tt>
-function.&nbsp; The file also contains declarations for the constants <tt> P_WAIT</tt>, <tt> P_NOWAIT</tt>, <tt> P_NOWAITO</tt>,
-and <tt> P_OVERLAY</tt>.&nbsp; 
+<dd>This header file declares the <a href="#spawn">spawn...</a> functions, the <a href="#exec">exec...</a> functions, and the
+<a href="#system">system</a> function.&nbsp; The file also contains declarations for the constants <tt> P_WAIT</tt>, <tt>
+P_NOWAIT</tt>, <tt> P_NOWAITO</tt>, and <tt> P_OVERLAY</tt>.&nbsp; 
 <dt><br>search.h
 <dd>This header file declares the functions <tt> lfind</tt> and <tt> lsearch</tt> 
 <dt><br>setjmp.h
@@ -3496,8 +3497,8 @@ value may be changed by a program at any time.&nbsp;
 <dt><br>daylight
 <dd>Prototype in<tt> &lt;time.h&gt;.</tt>
 <br>This<tt> unsigned int</tt> has a value of one when daylight saving time is supported in this locale and zero otherwise.
-&nbsp;Whenever a time function is called, the <tt> tzset</tt> function is called to set the value of the variable.&nbsp; The
-value will be determined from the value of the<tt> TZ</tt> environment variable.&nbsp; 
+&nbsp;Whenever a time function is called, the <a href="#tzset">tzset</a> function is called to set the value of the variable.
+&nbsp;The value will be determined from the value of the<tt> TZ</tt> environment variable.&nbsp; 
 <dt><br>_doserrno
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
 <br>This<tt> int</tt> item contains the actual error code returned when a DOS, Windows or OS/2 function fails.&nbsp; 
@@ -3650,15 +3651,15 @@ thread identifier, simply code:
 <dt><br>timezone
 <dd>Prototype in<tt> &lt;time.h&gt;.</tt>
 <br>This<tt> long int</tt> contains the number of seconds of time that the local time zone is earlier than Coordinated Universal
-Time (UTC) (formerly known as Greenwich Mean Time (GMT)).&nbsp; Whenever a time function is called, the <tt> tzset</tt> function
-is called to set the value of the variable.&nbsp; The value will be determined from the value of the<tt> TZ</tt> environment
-variable.&nbsp; 
+Time (UTC) (formerly known as Greenwich Mean Time (GMT)).&nbsp; Whenever a time function is called, the <a href="#tzset">tzset</a>
+function is called to set the value of the variable.&nbsp; The value will be determined from the value of the<tt> TZ</tt>
+environment variable.&nbsp; 
 <dt><br>tzname
 <dd>Prototype in<tt> &lt;time.h&gt;.</tt>
 <br>This array of two pointers to character strings indicates the name of the standard abbreviation for the time zone and
 the name of the abbreviation for the time zone when daylight saving time is in effect.&nbsp; Whenever a time function is called,
-the <tt> tzset</tt> function is called to set the values in the array.&nbsp; These values will be determined from the value
-of the<tt> TZ</tt> environment variable.&nbsp; 
+the <a href="#tzset">tzset</a> function is called to set the values in the array.&nbsp; These values will be determined from
+the value of the<tt> TZ</tt> environment variable.&nbsp; 
 <dt><br>__wargc
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
 <br>This<tt> int</tt> item contains the number of arguments passed to <tt> wmain</tt>.&nbsp; 
@@ -3715,10 +3716,10 @@ as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *tzvalue;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . . .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tzvalue = getenv( &quot;TZ&quot; );</tt>
-<br><br>The <tt> tzset</tt> function processes the <tt> TZ</tt> environment variable and sets the global variables <tt> daylight</tt>
-(indicates if daylight saving time is supported in the locale), <tt> timezone</tt> (contains the number of seconds of time
-difference between the local time zone and Coordinated Universal Time (UTC)), and <tt> tzname</tt> (a vector of two pointers
-to character strings containing the standard and daylight time-zone names).
+<br><br>The <a href="#tzset">tzset</a> function processes the <tt> TZ</tt> environment variable and sets the global variables
+<tt> daylight</tt> (indicates if daylight saving time is supported in the locale), <tt> timezone</tt> (contains the number
+of seconds of time difference between the local time zone and Coordinated Universal Time (UTC)), and <tt> tzname</tt> (a vector
+of two pointers to character strings containing the standard and daylight time-zone names).
 <br><br>The value of the <tt> TZ</tt> environment variable should be set as follows (spaces are for clarity only):
 <dl>
 <dt>std offset dst offset , rule
@@ -3774,8 +3775,8 @@ the d'th day occurs.&nbsp; Day zero is Sunday.
 &nbsp;The default, if<i> time</i> is omitted, is<tt> 02:00:00.</tt>
 </dl>
 <br>Whenever <tt> ctime</tt>, <tt> _ctime</tt>, <tt> localtime</tt>, <tt> _localtime</tt> or <tt> mktime</tt> is called, the
-time zone names contained in the external variable <tt> tzname</tt> will be set as if the <tt> tzset</tt> function had been
-called.&nbsp; The same is true if the<tt> %Z</tt> directive of <tt> strftime</tt> is used.
+time zone names contained in the external variable <tt> tzname</tt> will be set as if the <a href="#tzset">tzset</a> function
+had been called.&nbsp; The same is true if the<tt> %Z</tt> directive of <tt> strftime</tt> is used.
 <br><br>Some examples are:
 <dl>
 <dt>TZ=EST5EDT
@@ -4456,16 +4457,16 @@ the Open Watcom C library will remove carriage returns on input and add them on 
 text.</i>&nbsp; This mode is set upon opening the file or with the <a href="#setmode">_setmode</a> function.
 <h2 id="DOS_Commands"> DOS Commands </h2>
 <br>DOS commands are documented in the technical documentation for your DOS system.&nbsp; These may be invoked from a C or
-C++ program with the <tt> system</tt> function.
+C++ program with the <a href="#system">system</a> function.
 <h2 id="DOS_Interrupts"> DOS Interrupts </h2>
 <br>DOS interrupts and 8086 interrupts are documented in the technical documentation for your DOS system.&nbsp; These may
 be generated from a C or C++ program by calling the <tt> bdos</tt>, <tt> intdos</tt>, <tt> intdosx</tt>, <tt> intr</tt>, <tt>
 intrf</tt>, <tt> int386</tt>, <tt> int386x</tt>, <tt> int86</tt> and <tt> int86x</tt> functions.
 <h2 id="DOS_Processes"> DOS Processes </h2>
 <br>Currently, DOS has the capability to execute only one process at a time.&nbsp; Thus, when a process is initiated with
-the <tt> spawn...</tt>&nbsp; parameter <tt> P_WAIT</tt>, the new process will execute to completion before control returns
+the <a href="#spawn">spawn...</a> parameter <tt> P_WAIT</tt>, the new process will execute to completion before control returns
 to the initiating program.&nbsp; Otherwise, the new task replaces the initial task.&nbsp; Tasks can be started by using the
-<tt> system</tt>, <tt> exec...</tt>&nbsp; and <tt> spawn...</tt>&nbsp; functions.
+<a href="#system">system</a>, <a href="#exec">exec...</a> and <a href="#spawn">spawn...</a> functions.
 <h1 id="Library_Functions_and_Macros"> Library Functions and Macros </h1>
 <br>Each of the functions or macros in the C Library is described in this chapter.&nbsp; Each description consists of a number
 of subsections:
@@ -6319,8 +6320,8 @@ program.
 <dt>Description:
 <dd>The<tt> _bheapseg</tt> function allocates a based-heap segment of at least<i> size</i> bytes.
 <br>The argument<i> size</i> indicates the initial size for the heap.&nbsp; The heap will automatically be enlarged as needed
-if there is not enough space available within the heap to satisfy an allocation request by <tt> _bcalloc</tt>, <tt> _bexpand</tt>,
-<tt> _bmalloc</tt>, or <tt> _brealloc</tt>.
+if there is not enough space available within the heap to satisfy an allocation request by <a href="#calloc">_bcalloc</a>,
+<tt> _bexpand</tt>, <a href="#malloc">_bmalloc</a>, or <a href="#realloc">_brealloc</a>.
 <br><br>The value returned by<tt> _bheapseg</tt> is the segment value or selector for the based heap.&nbsp; This value must
 be saved and used as an argument to other based heap functions to indicate which based heap to operate upon.
 <br><br>Each call to<tt> _bheapseg</tt> allocates a new based heap.
@@ -7408,15 +7409,15 @@ element is initialized to 0.
 <dt><br>_ncalloc
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<b> calloc</b> function is equivalent to the <tt> _ncalloc</tt> function; in a large
-data memory model, the<b> calloc</b> function is equivalent to the <tt> _fcalloc</tt> function.
+<br>In a small data memory model, the<b> calloc</b> function is equivalent to the <a href="#calloc">_ncalloc</a> function;
+in a large data memory model, the<b> calloc</b> function is equivalent to the <a href="#calloc">_fcalloc</a> function.
 <br><br>A block of memory allocated should be freed using the appropriate <a href="#free">free</a> function.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<b> calloc</b> functions return a pointer to the start of the allocated memory.&nbsp; The return value is<tt> NULL</tt>
-(<tt> _NULLOFF</tt> for <tt> _bcalloc</tt>) if there is insufficient memory available or if the value of the<i> size</i> argument
-is zero.
+(<tt> _NULLOFF</tt> for <a href="#calloc">_bcalloc</a>) if there is insufficient memory available or if the value of the<i>
+size</i> argument is zero.
 </dl>
 <dl>
 <dt>See Also:
@@ -9269,9 +9270,9 @@ to by<i> buf</i>.
 <br><br>The wide character function <tt> _wctime</tt> is identical to<b> ctime</b> except that it produces a wide character
 string.&nbsp; The wide character function <tt> __wctime</tt> is identical to <tt> _ctime</tt> except that it produces a wide
 character string.
-<br><br>Whenever the<b> ctime</b> functions are called, the <tt> tzset</tt> function is also called.
-<br><br>The calendar time is usually obtained by using the <tt> time</tt> function.&nbsp; That time is Coordinated Universal
-Time (UTC) (formerly known as Greenwich Mean Time (GMT)).
+<br><br>Whenever the<b> ctime</b> functions are called, the <a href="#tzset">tzset</a> function is also called.
+<br><br>The calendar time is usually obtained by using the <a href="#time">time</a> function.&nbsp; That time is Coordinated
+Universal Time (UTC) (formerly known as Greenwich Mean Time (GMT)).
 <br><br>The time set on the computer with the DOS<tt> time</tt> command and the DOS<tt> date</tt> command reflects the local
 time.&nbsp; The environment variable<tt> TZ</tt> is used to establish the time zone to which this local time applies.&nbsp;
 See the section<i> The TZ Environment Variable</i> for a discussion of how to set the time zone.
@@ -9467,8 +9468,8 @@ value in a portable manner.
 </dl>
 <br>The<i> process_id</i> argument specifies which process to wait for.&nbsp; Under Win32, any process can wait for any other
 process for which the process ID is known.&nbsp; Under OS/2, a process can wait for any of its child processes.&nbsp; For
-example, a process ID is returned by certain forms of the <tt> spawn...</tt>&nbsp; functions that is used to start a child
-process.
+example, a process ID is returned by certain forms of the <a href="#spawn">spawn...</a> functions that is used to start a
+child process.
 <br><br>The<i> action</i> argument specifies when the parent process resumes execution.&nbsp; This argument is ignored in
 Win32, but is accepted for compatibility with OS/2 (although Microsoft handles the<i> status</i> value differently from OS/2!).
 &nbsp;The possible values are:
@@ -10403,10 +10404,10 @@ null-terminated filename&nbsp;&nbsp; */</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The <tt> _dos_findfirst</tt> function uses system call 0x4E to return information on the first file whose name and attributes
-match the<i> path</i> and<i> attributes</i> arguments.&nbsp; The information is returned in a <tt> find_t</tt> structure pointed
-to by<i> buffer</i>.&nbsp; The<i> path</i> argument may contain wildcard characters ('?' and '*').&nbsp; The<i> attributes</i>
-argument may be any combination of the following constants:
+<dd>The <a href="#_dos_find">_dos_findfirst</a> function uses system call 0x4E to return information on the first file whose name
+and attributes match the<i> path</i> and<i> attributes</i> arguments.&nbsp; The information is returned in a <tt> find_t</tt>
+structure pointed to by<i> buffer</i>.&nbsp; The<i> path</i> argument may contain wildcard characters ('?' and '*').&nbsp;
+The<i> attributes</i> argument may be any combination of the following constants:
 <dl>
 <dt><b><i>Attribute&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>_A_NORMAL
@@ -10450,16 +10451,17 @@ Open Watcom header file).
 <br><tt>&nbsp;&nbsp;&nbsp; unsigned short&nbsp; year&nbsp;&nbsp;&nbsp; : 7;&nbsp;&nbsp;&nbsp; /* 0 is 1980&nbsp;&nbsp;&nbsp;
 */</tt>
 <br><tt>} fdate_t;</tt>
-<br>The <tt> _dos_findnext</tt> function uses system call 0x4F to return information on the next file whose name and attributes
-match the pattern supplied to the <tt> _dos_findfirst</tt> function.
-<br><br>On some systems (e.g.&nbsp; Win32, OS/2), you must call <tt> _dos_findclose</tt> to indicate that you are done matching
-files.&nbsp; This function deallocates any resources that were allocated by the <tt> _dos_findfirst</tt> function.
+<br>The <a href="#_dos_find">_dos_findnext</a> function uses system call 0x4F to return information on the next file whose
+name and attributes match the pattern supplied to the <a href="#_dos_find">_dos_findfirst</a> function.
+<br><br>On some systems (e.g.&nbsp; Win32, OS/2), you must call <a href="#_dos_find">_dos_findclose</a> to indicate that you
+are done matching files.&nbsp; This function deallocates any resources that were allocated by the <a href="#_dos_find">_dos_findfirst</a>
+function.
 <br><br>The<tt> _wdos_find...</tt>&nbsp; functions are similar to their counterparts but operate on wide character strings.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The <tt> _dos_find...</tt>&nbsp; functions return zero if successful.&nbsp; Otherwise, the <tt> _dos_findfirst</tt> and <tt>
-_dos_findnext</tt> functions return an OS error code and set <tt> errno</tt> accordingly.
+<dd>The <a href="#_dos_find">_dos_find...</a> functions return zero if successful.&nbsp; Otherwise, the <a href="#_dos_find">_dos_findfirst</a>
+and <a href="#_dos_find">_dos_findnext</a> functions return an OS error code and set <tt> errno</tt> accordingly.
 </dl>
 <dl>
 <dt>See Also:
@@ -16665,8 +16667,8 @@ through a call to the appropriate version of <a href="#calloc">calloc</a>, <a hr
 <dt><br>_nfree
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a large data memory model, the<tt> free</tt> function is equivalent to the <tt> _ffree</tt> function; in a small data
-memory model, the<tt> free</tt> function is equivalent to the <tt> _nfree</tt> function.
+<br>In a large data memory model, the<tt> free</tt> function is equivalent to the <a href="#free">_ffree</a> function; in
+a small data memory model, the<tt> free</tt> function is equivalent to the <a href="#free">_nfree</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -16718,9 +16720,9 @@ memory model, the<tt> free</tt> function is equivalent to the <tt> _nfree</tt> f
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _freect</tt> function returns the number of times that <tt> _nmalloc</tt> (or <a href="#malloc">malloc</a> in small
-data models) can be called to allocate a item of<i> size</i> bytes.&nbsp; In the tiny, small and medium memory models, the
-default data segment is only extended as needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need
+<dd>The<tt> _freect</tt> function returns the number of times that <a href="#malloc">_nmalloc</a> (or <a href="#malloc">malloc</a>
+in small data models) can be called to allocate a item of<i> size</i> bytes.&nbsp; In the tiny, small and medium memory models,
+the default data segment is only extended as needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need
 to call <tt> _nheapgrow</tt> in these memory models before calling _freect in order to get a meaningful result.
 </dl>
 <dl>
@@ -22586,9 +22588,10 @@ this, the application can allocate memory from the 200K pool that it has already
 <dl>
 <dt>Description:
 <dd>The <tt> _nheapgrow</tt> function attempts to grow the near heap to the maximum size of 64K.&nbsp; You will want to do this
-in the small data models if you are using both <a href="#malloc">malloc</a> and <tt> _fmalloc</tt> or <tt> halloc</tt>.&nbsp;
-Once a call to <tt> _fmalloc</tt> or <tt> halloc</tt> has been made, you may not be able to allocate any memory with <a href="#malloc">malloc</a>
-unless space has been reserved for the near heap using either <a href="#malloc">malloc</a>, <tt> sbrk</tt> or <tt> _nheapgrow</tt>.
+in the small data models if you are using both <a href="#malloc">malloc</a> and <a href="#malloc">_fmalloc</a> or <tt> halloc</tt>.
+&nbsp;Once a call to <a href="#malloc">_fmalloc</a> or <tt> halloc</tt> has been made, you may not be able to allocate any
+memory with <a href="#malloc">malloc</a> unless space has been reserved for the near heap using either <a href="#malloc">malloc</a>,
+<tt> sbrk</tt> or <tt> _nheapgrow</tt>.
 <br>The <tt> _fheapgrow</tt> function doesn't do anything to the heap because the far heap will be extended automatically
 when needed.&nbsp; If the current far heap cannot be extended, then another far heap will be started.
 <br><br>In a small data memory model, the<tt> _heapgrow</tt> function is equivalent to the <tt> _nheapgrow</tt> function;
@@ -22646,8 +22649,8 @@ in a large data memory model, the<tt> _heapgrow</tt> function is equivalent to t
 <dl>
 <dt>Description:
 <dd>The<tt> _heapmin</tt> functions attempt to shrink the specified heap to its smallest possible size by returning all free entries
-at the end of the heap back to the system.&nbsp; This can be used to free up as much memory as possible before using the <tt>
-system</tt> function or one of the <tt> spawn...</tt>&nbsp; functions.
+at the end of the heap back to the system.&nbsp; This can be used to free up as much memory as possible before using the <a href="#system">system</a>
+function or one of the <a href="#spawn">spawn...</a> functions.
 <br>The various<tt> _heapmin</tt> functions shrink the following heaps:
 <dl>
 <dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Minimized</i></b>
@@ -22800,8 +22803,8 @@ data memory model, the<tt> _heapset</tt> function is equivalent to the <tt> _fhe
 <dl>
 <dt>Description:
 <dd>The<tt> _heapshrink</tt> functions attempt to shrink the heap to its smallest possible size by returning all free entries
-at the end of the heap back to the system.&nbsp; This can be used to free up as much memory as possible before using the <tt>
-system</tt> function or one of the <tt> spawn...</tt>&nbsp; functions.
+at the end of the heap back to the system.&nbsp; This can be used to free up as much memory as possible before using the <a href="#system">system</a>
+function or one of the <a href="#spawn">spawn...</a> functions.
 <br>The various<tt> _heapshrink</tt> functions shrink the following heaps:
 <dl>
 <dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Shrinked</i></b>
@@ -28662,10 +28665,10 @@ localtime</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> localtime</tt> functions convert the calendar time pointed to by<i> timer</i> into a structure of type <tt> tm</tt>,
-of time information, expressed as local time.&nbsp; Whenever<tt> localtime</tt> is called, the <tt> tzset</tt> function is
-also called.
-<br>The calendar time is usually obtained by using the <tt> time</tt> function.&nbsp; That time is Coordinated Universal Time
-(UTC) (formerly known as Greenwich Mean Time (GMT)).
+of time information, expressed as local time.&nbsp; Whenever<tt> localtime</tt> is called, the <a href="#tzset">tzset</a>
+function is also called.
+<br>The calendar time is usually obtained by using the <a href="#time">time</a> function.&nbsp; That time is Coordinated Universal
+Time (UTC) (formerly known as Greenwich Mean Time (GMT)).
 <br><br>The <tt> _localtime</tt> function places the converted time in the <tt> tm</tt> structure pointed to by<i> tmbuf</i>,
 and the<tt> localtime</tt> function places the converted time in a static structure that is re-used each time<tt> localtime</tt>
 is called.
@@ -29957,15 +29960,15 @@ argument has a value of zero.
 <dt><br>_nmalloc
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<tt> malloc</tt> function is equivalent to the <tt> _nmalloc</tt> function; in a large
-data memory model, the<tt> malloc</tt> function is equivalent to the <tt> _fmalloc</tt> function.
+<br>In a small data memory model, the<tt> malloc</tt> function is equivalent to the <a href="#malloc">_nmalloc</a> function;
+in a large data memory model, the<tt> malloc</tt> function is equivalent to the <a href="#malloc">_fmalloc</a> function.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> malloc</tt> functions return a pointer to the start of the allocated memory.&nbsp; The malloc, <tt> _fmalloc</tt>
-and <tt> _nmalloc</tt> functions return<tt> NULL</tt> if there is insufficient memory available or if the requested size is
-zero.&nbsp; The <tt> _bmalloc</tt> function returns <tt> _NULLOFF</tt> if there is insufficient memory available or if the
-requested size is zero.
+<dd>The<tt> malloc</tt> functions return a pointer to the start of the allocated memory.&nbsp; The malloc, <a href="#malloc">_fmalloc</a>
+and <a href="#malloc">_nmalloc</a> functions return<tt> NULL</tt> if there is insufficient memory available or if the requested
+size is zero.&nbsp; The <a href="#malloc">_bmalloc</a> function returns <tt> _NULLOFF</tt> if there is insufficient memory
+available or if the requested size is zero.
 </dl>
 <dl>
 <dt>See Also:
@@ -34561,15 +34564,15 @@ NULL if<i> template</i> is badly formed or no more unique names can be created f
 <dl>
 <dt>Description:
 <dd>The<tt> mktime</tt> function converts the local time information in the structure pointed to by<i> timeptr</i> into a calendar
-time (Coordinated Universal Time) with the same encoding used by the <tt> time</tt> function.&nbsp; The original values of
-the fields <tt> tm_sec</tt>, <tt> tm_min</tt>, <tt> tm_hour</tt>, <tt> tm_mday</tt>, and <tt> tm_mon</tt> are not restricted
-to ranges described for <tt> struct tm</tt>.&nbsp; If these fields are not in their proper ranges, they are adjusted so that
-they are in the proper ranges.&nbsp; Values for the fields <tt> tm_wday</tt> and <tt> tm_yday</tt> are computed after all
-the other fields have been adjusted.
+time (Coordinated Universal Time) with the same encoding used by the <a href="#time">time</a> function.&nbsp; The original
+values of the fields <tt> tm_sec</tt>, <tt> tm_min</tt>, <tt> tm_hour</tt>, <tt> tm_mday</tt>, and <tt> tm_mon</tt> are not
+restricted to ranges described for <tt> struct tm</tt>.&nbsp; If these fields are not in their proper ranges, they are adjusted
+so that they are in the proper ranges.&nbsp; Values for the fields <tt> tm_wday</tt> and <tt> tm_yday</tt> are computed after
+all the other fields have been adjusted.
 <br>If the original value of <tt> tm_isdst</tt> is negative, this field is computed also.&nbsp; Otherwise, a value of 0 is
 treated as &quot;daylight savings time is not in effect&quot; and a positive value is treated as &quot;daylight savings time
 is in effect&quot;.
-<br><br>Whenever<tt> mktime</tt> is called, the <tt> tzset</tt> function is also called.
+<br><br>Whenever<tt> mktime</tt> is called, the <a href="#tzset">tzset</a> function is also called.
 </dl>
 <dl>
 <dt>Returns:
@@ -42958,13 +42961,13 @@ to this memory.
 <dt><br>_nrealloc
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<tt> realloc</tt> function is equivalent to the <tt> _nrealloc</tt> function; in a large
-data memory model, the<tt> realloc</tt> function is equivalent to the <tt> _frealloc</tt> function.
+<br>In a small data memory model, the<tt> realloc</tt> function is equivalent to the <a href="#realloc">_nrealloc</a> function;
+in a large data memory model, the<tt> realloc</tt> function is equivalent to the <a href="#realloc">_frealloc</a> function.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> realloc</tt> functions return a pointer to the start of the re-allocated memory.&nbsp; The return value is<tt> NULL</tt>
-if there is insufficient memory available or if the value of the<i> size</i> argument is zero.&nbsp; The <tt> _brealloc</tt>
+if there is insufficient memory available or if the value of the<i> size</i> argument is zero.&nbsp; The <a href="#realloc">_brealloc</a>
 function returns <tt> _NULLOFF</tt> if there is insufficient memory available or if the requested size is zero.
 </dl>
 <dl>
@@ -43741,10 +43744,11 @@ of 4K.
 <br><br>The variable <tt> _amblksiz</tt> defined in<tt> &lt;stdlib.h&gt;</tt> contains the default increment by which the
 &quot;break&quot; pointer for memory allocation will be advanced when there is no freed block large enough to satisfy a request
 to allocate a block of memory.&nbsp; This value may be changed by a program at any time.
-<br><br>Under 16-bit DOS, a new process started with one of the <tt> spawn...</tt>&nbsp; or <tt> exec...</tt>&nbsp; functions
-is loaded following the break value.&nbsp; Consequently, decreasing the break value leaves more space available to the new
-process.&nbsp; Similarly, for a resident program (a program which remains in memory while another program executes), increasing
-the break value will leave more space available to be allocated by the resident program after other programs are loaded.
+<br><br>Under 16-bit DOS, a new process started with one of the <a href="#spawn">spawn...</a> or <a href="#exec">exec...</a>
+functions is loaded following the break value.&nbsp; Consequently, decreasing the break value leaves more space available
+to the new process.&nbsp; Similarly, for a resident program (a program which remains in memory while another program executes),
+increasing the break value will leave more space available to be allocated by the resident program after other programs are
+loaded.
 </dl>
 <dl>
 <dt>Returns:
@@ -48340,7 +48344,7 @@ Win32 and QNX.&nbsp; The <a href="#wait">wait</a> and <tt> cwait</tt> functions 
 <dt><br>P_OVERLAY
 <dd>The invoked program replaces the original program in memory and is executed.&nbsp; No return is made to the original program.
 &nbsp;This option is supported under DOS (16-bit only), OS/2, Win32, and QNX.&nbsp; This is equivalent to calling the appropriate
-<tt> exec...</tt>&nbsp; function.
+<a href="#exec">exec...</a> function.
 <dt><br>P_DETACH
 <dd>Launches the child process in the background without access to the keyboard or console.&nbsp; This option is supported under
 only Windows NT.
@@ -50190,7 +50194,7 @@ the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The
 <dd>The<tt> strdup</tt> function creates a duplicate copy of the string pointed to by<i> src</i> and returns a pointer to the
 new copy.&nbsp; For<tt> strdup</tt> the memory for the new string is obtained by using the <a href="#malloc">malloc</a> function
 and can be freed using the <a href="#free">free</a> function.&nbsp; For _fstrdup, the memory for the new string is obtained
-by using the <tt> _fmalloc</tt> function and can be freed using the <tt> _ffree</tt> function.
+by using the <a href="#malloc">_fmalloc</a> function and can be freed using the <a href="#free">_ffree</a> function.
 <br>The<tt> _strdup</tt> function is identical to<tt> strdup</tt>.&nbsp; Use<tt> _strdup</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrdup</tt> function is a data model independent form of the<tt> strdup</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
@@ -50550,7 +50554,7 @@ if no timezone is determinable
 <dt><br>%%
 <dd>character %
 </dl>
-<br>When the<tt> %Z</tt> or<tt> %z</tt> directive is specified, the <tt> tzset</tt> function is called.
+<br>When the<tt> %Z</tt> or<tt> %z</tt> directive is specified, the <a href="#tzset">tzset</a> function is called.
 <br><br>% g, %G, %V give values according to the ISO 8601 week-based year.&nbsp; In this system, weeks begin on a monday and
 week 1 of the year is the week that includes January 4th, which is also the week that includes the first Thursday of the year,
 and is also the first week that contains at least four days in the year.&nbsp; If the first Monday of January is the 2nd,
@@ -53404,7 +53408,7 @@ is present (&quot;COMMAND.COM&quot; in DOS and Windows 95/98 or &quot;CMD.EXE&qu
 to it for processing.&nbsp; This function uses <tt> spawnl</tt> to load a copy of the command processor identified by the
 <tt> COMSPEC</tt> environment variable.
 <br><br>This means that any command that can be entered to DOS can be executed, including programs, DOS commands and batch
-files.&nbsp; The <tt> exec...</tt>&nbsp; and <tt> spawn...</tt>&nbsp; functions can only cause programs to be executed.
+files.&nbsp; The <a href="#exec">exec...</a> and <a href="#spawn">spawn...</a> functions can only cause programs to be executed.
 <br><br>The<tt> _wsystem</tt> function is a wide character version of<tt> system</tt> that operates with wide character strings.
 </dl>
 <dl>
@@ -58643,10 +58647,10 @@ value.
 the SET command.&nbsp; A program can modify its environment variables with the <tt> putenv</tt> function.&nbsp; Such modifications
 last only until the program terminates.
 <h2 id="The_system_Function"> The system Function </h2>
-<br><b>The contents and mode of execution of the string by the </b><tt> system</tt><b> function (7.10.4.5).</b>
-<br><br>The <tt> system</tt> function executes an internal DOS, Windows, or OS/2 command, or an EXE, COM, BAT or CMD file
-from within a C program rather than from the command line.&nbsp; The <tt> system</tt> function examines the <tt> COMSPEC</tt>
-environment variable to find the command interpreter and passes the argument string to the command interpreter.
+<br><b>The contents and mode of execution of the string by the <a href="#system">system</a> function (7.10.4.5).</b>
+<br><br>The <a href="#system">system</a> function executes an internal DOS, Windows, or OS/2 command, or an EXE, COM, BAT
+or CMD file from within a C program rather than from the command line.&nbsp; The <a href="#system">system</a> function examines
+the <tt> COMSPEC</tt> environment variable to find the command interpreter and passes the argument string to the command interpreter.
 <h2 id="The_strerror_Function"> The strerror Function </h2>
 <br><b>The contents of the error message strings returned by the </b><tt> strerror</tt><b> function (7.11.6.2).</b>
 <br><br>The <tt> strerror</tt> function generates the following messages.
