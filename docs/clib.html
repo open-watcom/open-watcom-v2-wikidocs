@@ -1818,8 +1818,9 @@ convert the cases of characters and strings.
 data segment has a maximum size of 64K bytes.&nbsp; It may be less in a machine with insufficient memory or when other programs
 in the computer already occupy some of the memory.&nbsp; The <tt> _nmalloc</tt> function allocates space within this area
 while the <tt> _fmalloc</tt> function allocates space outside the area (if it is available).
-<br><br>In a small data model, the <tt> malloc</tt>, <tt> calloc</tt> and <tt> realloc</tt> functions use the <tt> _nmalloc</tt>
-function to acquire memory; in a large data model, the <tt> _fmalloc</tt> function is used.
+<br><br>In a small data model, the <a href="#malloc">malloc</a>, <a href="#calloc">calloc</a> and <a href="#realloc">realloc</a>
+functions use the <tt> _nmalloc</tt> function to acquire memory; in a large data model, the <tt> _fmalloc</tt> function is
+used.
 <br><br>It is also possible to allocate memory from a based heap using <tt> _bmalloc</tt>.&nbsp; Based heaps are similar to
 far heaps in that they are located outside the normal data segment.&nbsp; Based pointers only store the offset portion of
 the full address, so they behave much like near pointers.&nbsp; The selector portion of the full address specifies which based
@@ -1829,8 +1830,8 @@ function should be used to free space acquired by the <tt> _ncalloc</tt>, <tt> _
 &nbsp;The <tt> _ffree</tt> function should be used to free space acquired by the <tt> _fcalloc</tt>, <tt> _fmalloc</tt>, or
 <tt> _frealloc</tt> functions.&nbsp; The <tt> _bfree</tt> function should be used to free space acquired by the <tt> _bcalloc</tt>,
 <tt> _bmalloc</tt>, or <tt> _brealloc</tt> functions.
-<br><br>The <tt> free</tt> function will use the <tt> _nfree</tt> function when the small data memory model is used; it will
-use the <tt> _ffree</tt> function when the large data memory model is being used.
+<br><br>The <a href="#free">free</a> function will use the <tt> _nfree</tt> function when the small data memory model is used;
+it will use the <tt> _ffree</tt> function when the large data memory model is being used.
 <br><br>It should be noted that the <tt> _fmalloc</tt> and <tt> _nmalloc</tt> functions can both be used in either data memory
 model.&nbsp; The following functions are defined:
 <dl>
@@ -3339,8 +3340,8 @@ FP_SEG</tt> and <tt> MK_FP</tt> macros, and for the following structures and uni
 <dd>This ISO C90 header file provides the <tt> extern</tt> declaration for error variable <tt> errno</tt> and provides the symbolic
 names for error codes that can be placed in the error variable.&nbsp; 
 <dt><br>fcntl.h
-<dd>This POSIX header file defines the flags used by the <tt> open</tt> and <tt> _sopen</tt> functions.&nbsp; The function declarations
-for these functions are found in the<tt> &lt;io.h&gt;</tt> header file.&nbsp; 
+<dd>This POSIX header file defines the flags used by the <a href="#open">open</a> and <a href="#sopen">_sopen</a> functions.&nbsp;
+The function declarations for these functions are found in the<tt> &lt;io.h&gt;</tt> header file.&nbsp; 
 <dt><br>fenv.h
 <dd>This ISO C99 header file defines several types and declares several functions that give access to the floating point environment.
 &nbsp;These functions can be used to control status flags and control modes in the floating point processor.&nbsp; 
@@ -3374,8 +3375,8 @@ the <tt> setlocale</tt> function which is also declared.&nbsp;
 &nbsp;
 <dl>
 <dt>exception
-<dd>describes the exception structure passed to the <tt> matherr</tt> function; symbolic constants for the types of exceptions
-are included 
+<dd>describes the exception structure passed to the <a href="#matherr">matherr</a> function; symbolic constants for the types
+of exceptions are included 
 <dt><br>complex
 <dd>declares a complex number
 </dl>
@@ -3398,7 +3399,7 @@ and <tt> P_OVERLAY</tt>.&nbsp;
 <dt><br>setjmp.h
 <dd>This ISO C90 header file declares the <tt> setjmp</tt> and <tt> longjmp</tt> functions.&nbsp; 
 <dt><br>share.h
-<dd>This header file defines constants for shared access to files using the <tt> _sopen</tt> function.&nbsp; 
+<dd>This header file defines constants for shared access to files using the <a href="#sopen">_sopen</a> function.&nbsp; 
 <dt><br>signal.h
 <dd>This ISO C90 header file declares the <tt> signal</tt> and <tt> raise</tt> functions.&nbsp; 
 <dt><br>stdarg.h
@@ -3525,9 +3526,10 @@ of either
 operations when they precede linefeed characters.
 </dl>
 <br>These values are defined in the<tt> &lt;fcntl.h&gt;</tt> header file.&nbsp; The value of <tt> _fmode</tt> may be changed
-by a program to change the default behavior of the <tt> open</tt>, <tt> fopen</tt>, <tt> creat</tt> and <tt> _sopen</tt> functions.
-&nbsp;The default setting of <tt> _fmode</tt> is <tt> O_TEXT</tt>, for text-mode translation.&nbsp; <tt> O_BINARY</tt> is
-the setting for binary mode.&nbsp; You can change the value of <tt> _fmode</tt> in either of two ways:&nbsp; 
+by a program to change the default behavior of the <a href="#open">open</a>, <tt> fopen</tt>, <a href="#creat">creat</a> and
+<a href="#sopen">_sopen</a> functions.&nbsp; The default setting of <tt> _fmode</tt> is <tt> O_TEXT</tt>, for text-mode translation.
+&nbsp;<tt> O_BINARY</tt> is the setting for binary mode.&nbsp; You can change the value of <tt> _fmode</tt> in either of two
+ways:&nbsp; 
 <ul>
 <li>You can include the object file<tt> BINMODE.OBJ</tt> when linking your application.&nbsp; This object file contains code
 to change the initial setting of <tt> _fmode</tt> to <tt> O_BINARY</tt>, causing all files except <tt> stdin</tt>, <tt> stdout</tt>,
@@ -4830,9 +4832,9 @@ not in the range &#91;-1,1&#93;.
 <dl>
 <dt>Returns:
 <dd>The<tt> acos</tt> function returns the arccosine in the range &#91;0,P&#93;.&nbsp; When the argument is outside the permissible
-range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will
-set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the
-<tt> stderr</tt> stream.
+range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function
+is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -4873,9 +4875,9 @@ x</i> is less than 1.0.
 <dl>
 <dt>Returns:
 <dd>The<tt> acosh</tt> function returns the inverse hyperbolic cosine value.&nbsp; When the argument is outside the permissible
-range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will
-set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the
-<tt> stderr</tt> stream.
+range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function
+is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -5246,9 +5248,9 @@ not in the range &#91;-1,1&#93;.
 <dl>
 <dt>Returns:
 <dd>The<tt> asin</tt> function returns the arcsine in the range &#91;-P/2,P/2&#93;.&nbsp; When the argument is outside the permissible
-range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will
-set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the
-<tt> stderr</tt> stream.
+range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function
+is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -5418,9 +5420,9 @@ to determine the quadrant of the return value.&nbsp; A domain error occurs if bo
 <dl>
 <dt>Returns:
 <dd>The<tt> atan2</tt> function returns the arctangent of<i> y/x</i>, in the range (-P,P).&nbsp; When the argument is outside
-the permissible range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced,
-it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message
-using the <tt> stderr</tt> stream.
+the permissible range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a>
+function is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot;
+diagnostic message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -5461,9 +5463,9 @@ of<i> x</i> is outside the range (-1,1).
 <dl>
 <dt>Returns:
 <dd>The<tt> atanh</tt> function returns the inverse hyperbolic tangent value.&nbsp; When the argument is outside the permissible
-range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will
-set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the
-<tt> stderr</tt> stream.
+range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function
+is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -5901,8 +5903,8 @@ the appropriate system call to begin a new thread of execution.
 <br><br>The new thread will use the memory identified by<i> stack_bottom</i> and<i> stack_size</i> for its stack.
 <br><br><i>Note for 16-bit applications:</i>&nbsp; If the stack is not in DGROUP (i.e., the stack pointer does not point to
 an area in DGROUP) then you must compile your application with the &quot;zu&quot; option.&nbsp; For example, the pointer returned
-by <tt> malloc</tt> in a large data model may not be in DGROUP.&nbsp; The &quot;zu&quot; option relaxes the restriction that
-the SS register contains the base address of the default data segment, &quot;DGROUP&quot;.&nbsp; Normally, all data items
+by <a href="#malloc">malloc</a> in a large data model may not be in DGROUP.&nbsp; The &quot;zu&quot; option relaxes the restriction
+that the SS register contains the base address of the default data segment, &quot;DGROUP&quot;.&nbsp; Normally, all data items
 are placed into the group DGROUP and the SS register contains the base address of this group.&nbsp; In a thread, the SS register
 will likely not contain the base address of this group.&nbsp; When the &quot;zu&quot; option is selected, the SS register
 is volatile (assumed to point to another segment) and any global data references require loading a segment register such as
@@ -5912,8 +5914,8 @@ The<i> stack_bottom</i> may be NULL in which case the run-time system will provi
 stack_size</i> for this stack.
 <br><br><i>Note for Win32 applications:</i>&nbsp; Memory for a stack is provided by the run-time system.&nbsp; The size of
 the stack is determined by<i> stack_size</i> and must not be zero.
-<br><br>The <tt> _beginthreadex</tt> function can be used to create a new thread, in a running or suspended state specified
-by<i> initflag</i>, with security attributes specified by<i> security</i>.
+<br><br>The <a href="#_beginthread">_beginthreadex</a> function can be used to create a new thread, in a running or suspended
+state specified by<i> initflag</i>, with security attributes specified by<i> security</i>.
 <br><br>The initial state of the new thread (running or suspended) is specified by the<i> initflag</i> argument.&nbsp; If
 the <tt> CREATE_SUSPENDED</tt> flag (WINBASE.H) is specified, the thread is created in a suspended state, and will not run
 until the Win32 <tt> ResumeThread</tt> function is called with the thread handle as an argument.&nbsp; If this value is zero,
@@ -5922,8 +5924,8 @@ the thread runs immediately after creation.
 a Win32 <tt> SECURITY_ATTRIBUTES</tt> structure (see Microsoft's<i> Win32 Programmer's Reference</i> for more information).
 &nbsp;For default behaviour, the security structure pointer can be <tt> NULL</tt>.
 <br><br>The thread identifier is returned in the location identified by the<i> thrdid</i> argument.
-<br><br>The thread ends when it exits from its main function or calls <tt> exit</tt>, <tt> _Exit</tt>, <tt> _exit</tt>, <tt>
-_endthread</tt> or <tt> _endthreadex</tt>.
+<br><br>The thread ends when it exits from its main function or calls <a href="#exit">exit</a>, <a href="#_exit">_Exit</a>,
+<a href="#_exit">_exit</a>, <a href="#_endthread">_endthread</a> or <a href="#_endthread">_endthreadex</a>.
 <br><br>The variable/function <tt> _threadid</tt> which is defined in<tt> &lt;stddef.h&gt;</tt> may be used by the executing
 thread to obtain its thread ID.&nbsp; In the 16-bit libraries, <tt> _threadid</tt> is a far pointer to an int.&nbsp; In the
 32-bit libraries, it is a function that returns an int.
@@ -5945,8 +5947,8 @@ initialize the global variable<tt> __MaxThreads</tt>.
 -1 to indicate that the thread could not be started.
 <br>Under all other systems that support the<tt> _beginthread</tt> function (OS/2, Netware and QNX), it returns the thread
 ID for the new thread if successful; otherwise it returns -1 to indicate that the thread could not be started.
-<br><br>The <tt> _beginthreadex</tt> function returns the thread handle for the new thread if successful; otherwise it returns
-0 to indicate that the thread could not be started.
+<br><br>The <a href="#_beginthread">_beginthreadex</a> function returns the thread handle for the new thread if successful;
+otherwise it returns 0 to indicate that the thread could not be started.
 <br><br>When the thread could not be started, the value of <tt> errno</tt> could be set to <tt> EAGAIN</tt> if there are too
 many threads, or to <tt> EINVAL</tt> if the argument is invalid or the stack size is incorrect, or to <tt> ENOMEM</tt> if
 there is not enough available memory.
@@ -6040,7 +6042,7 @@ there is not enough available memory.
 <br>Functions <tt> y0</tt>, <tt> y1</tt>, and <tt> yn</tt> return Bessel functions of the second kind.&nbsp; The argument<i>
 x</i> must be positive.&nbsp; If<i> x</i> is negative, <tt> _matherr</tt> will be called to print a DOMAIN error message to
 <tt> stderr</tt>, set <tt> errno</tt> to <tt> EDOM</tt>, and return the value<tt> -HUGE_VAL</tt>.&nbsp; This error handling
-can be modified by using the <tt> matherr</tt> routine.
+can be modified by using the <a href="#matherr">matherr</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -7348,7 +7350,7 @@ character representation of that character.
 <dd>The<tt> cabs</tt> function computes the absolute value of the complex number<i> value</i> by a calculation which is equivalent
 to
 <br><tt>sqrt( (value.x*value.x) + (value.y*value.y) )</tt>
-<br><br>In certain cases, overflow errors may occur which will cause the <tt> matherr</tt> routine to be invoked.
+<br><br>In certain cases, overflow errors may occur which will cause the <a href="#matherr">matherr</a> routine to be invoked.
 </dl>
 <dl>
 <dt>Returns:
@@ -7408,7 +7410,7 @@ element is initialized to 0.
 </dl>
 <br>In a small data memory model, the<b> calloc</b> function is equivalent to the <tt> _ncalloc</tt> function; in a large
 data memory model, the<b> calloc</b> function is equivalent to the <tt> _fcalloc</tt> function.
-<br><br>A block of memory allocated should be freed using the appropriate <tt> free</tt> function.
+<br><br>A block of memory allocated should be freed using the appropriate <a href="#free">free</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -8479,8 +8481,8 @@ will be -1, and <tt> errno</tt> will be set appropriately.
 <dl>
 <dt>Description:
 <dd>The<tt> close</tt> function closes a file at the operating system level.&nbsp; The<i> handle</i> value is the file handle
-returned by a successful execution of one of the <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>, <tt> open</tt> or <tt> _sopen</tt>
-functions.
+returned by a successful execution of one of the <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>,
+<a href="#open">open</a> or <a href="#sopen">_sopen</a> functions.
 <br>The<tt> _close</tt> function is identical to<tt> close</tt>.&nbsp; Use<tt> _close</tt> for ANSI naming conventions.
 </dl>
 <dl>
@@ -8938,9 +8940,9 @@ is too large.
 <dl>
 <dt>Returns:
 <dd>The<tt> cosh</tt> function returns the hyperbolic cosine value.&nbsp; When the argument is outside the permissible range,
-the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will set the
-global variable <tt> errno</tt> to <tt> ERANGE</tt>, and print a &quot;RANGE error&quot; diagnostic message using the <tt>
-stderr</tt> stream.
+the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function is
+replaced, it will set the global variable <tt> errno</tt> to <tt> ERANGE</tt>, and print a &quot;RANGE error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -9406,8 +9408,8 @@ Functions, <a href="#difftime">difftime</a>, <a href="#gmtime">gmtime</a>, <a hr
 return code of the terminated child process.
 <br><br>If the child process terminated normally, then the low order byte of the status word will be set to 0, and the high
 order byte will contain the low order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
-&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <tt> exit</tt>, or <tt> _Exit</tt> or <tt>
-_exit</tt> are explicity called.
+&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <a href="#exit">exit</a>, or <a href="#_exit">_Exit</a>
+or <a href="#_exit">_exit</a> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>
@@ -12659,11 +12661,11 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _endthread</tt> function is used to terminate a thread created by <tt> _beginthread</tt>.&nbsp; For each operating
-environment under which<tt> _endthread</tt> is supported, the<tt> _endthread</tt> function uses the appropriate system call
-to end the current thread of execution.
-<br>The <tt> _endthreadex</tt> function is used to terminate a thread created by <tt> _beginthreadex</tt>.&nbsp; The thread
-exit code<i> retval</i> must be specified.
+<dd>The<tt> _endthread</tt> function is used to terminate a thread created by <a href="#_beginthread">_beginthread</a>.&nbsp;
+For each operating environment under which<tt> _endthread</tt> is supported, the<tt> _endthread</tt> function uses the appropriate
+system call to end the current thread of execution.
+<br>The <a href="#_endthread">_endthreadex</a> function is used to terminate a thread created by <a href="#_beginthread">_beginthreadex</a>.
+&nbsp;The thread exit code<i> retval</i> must be specified.
 </dl>
 <dl>
 <dt>Returns:
@@ -12963,14 +12965,14 @@ path definition to be displayed.
 exec...</b>&nbsp; call.&nbsp; These character strings are concatenated with spaces inserted to separate the arguments to form
 one argument string for the child process.&nbsp; The length of this concatenated string must not exceed 128 bytes for DOS
 systems.
-<br><br>The arguments may be passed as a list of arguments (<tt> execl</tt>, <tt> execle</tt>, <tt> execlp</tt>, and <tt>
-execlpe</tt>) or as a vector of pointers (<tt> execv</tt>, <tt> execve</tt>, <tt> execvp</tt>, and <tt> execvpe</tt>).&nbsp;
-At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>, must be passed to the child process.&nbsp; By convention, this
-first argument is a pointer to the name of the program.
+<br><br>The arguments may be passed as a list of arguments (<a href="#exec">execl</a>, <tt> execle</tt>, <tt> execlp</tt>,
+and <tt> execlpe</tt>) or as a vector of pointers (<tt> execv</tt>, <tt> execve</tt>, <tt> execvp</tt>, and <tt> execvpe</tt>).
+&nbsp;At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>, must be passed to the child process.&nbsp; By convention,
+this first argument is a pointer to the name of the program.
 <br><br>If the arguments are passed as a list, there must be a<tt> NULL</tt> pointer to mark the end of the argument list.
 &nbsp;Similarly, if a pointer to an argument vector is passed, the argument vector must be terminated by a<tt> NULL</tt> pointer.
-<br><br>The environment for the invoked program is inherited from the parent process when you use the <tt> execl</tt>, <tt>
-execlp</tt>, <tt> execv</tt>, and <tt> execvp</tt> functions.&nbsp; The <tt> execle</tt>, <tt> execlpe</tt>, <tt> execve</tt>,
+<br><br>The environment for the invoked program is inherited from the parent process when you use the <a href="#exec">execl</a>,
+<tt> execlp</tt>, <tt> execv</tt>, and <tt> execvp</tt> functions.&nbsp; The <tt> execle</tt>, <tt> execlpe</tt>, <tt> execve</tt>,
 and <tt> execvpe</tt> functions allow a different environment to be passed to the child process through the<i> envp</i> argument.
 &nbsp;The argument<i> envp</i> is a pointer to an array of character pointers, each of which points to a string defining an
 environment variable.&nbsp; The array is terminated with a<tt> NULL</tt> pointer.&nbsp; Each pointer locates a character string
@@ -13127,7 +13129,7 @@ environment variables<tt> SOURCE, TARGET</tt> and<tt> lines.</tt>
 <dt>Description:
 <dd>The<tt> _Exit</tt> function causes normal program termination to occur.
 <ol>
-<li>The functions registered by the <tt> atexit</tt> or <tt> onexit</tt> functions are not called.
+<li>The functions registered by the <a href="#atexit">atexit</a> or <a href="#onexit">onexit</a> functions are not called.
 <li>Any unopened files are not closed and any buffered output is not flushed to the associated files or devices.
 <li>Any files created by <tt> tmpfile</tt> are not removed.
 <li>The return<i> status</i> is made available to the parent process.&nbsp; Only the low order byte of<i> status</i> is available
@@ -13187,11 +13189,11 @@ value to indicate an error.
 <dl>
 <dt>Description:
 <dd>The<tt> exit</tt> function causes normal program termination to occur.
-<br>First, all functions registered by the <tt> atexit</tt> function are called in the reverse order of their registration.
-&nbsp;Next, all open files are flushed and closed, and all files created by the <tt> tmpfile</tt> function are removed.&nbsp;
-Finally, the return<i> status</i> is made available to the parent process.&nbsp; Only the low order byte of<i> status</i>
-is available on DOS systems.&nbsp; The<i> status</i> value is typically set to 0 to indicate successful termination and set
-to some other value to indicate an error.
+<br>First, all functions registered by the <a href="#atexit">atexit</a> function are called in the reverse order of their
+registration.&nbsp; Next, all open files are flushed and closed, and all files created by the <tt> tmpfile</tt> function are
+removed.&nbsp; Finally, the return<i> status</i> is made available to the parent process.&nbsp; Only the low order byte of<i>
+status</i> is available on DOS systems.&nbsp; The<i> status</i> value is typically set to 0 to indicate successful termination
+and set to some other value to indicate an error.
 </dl>
 <dl>
 <dt>Returns:
@@ -13244,8 +13246,8 @@ x</i> is too large.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> exp</tt> function returns the exponential value.&nbsp; When the argument is outside the permissible range, the <tt>
-matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will set the global variable
+<dd>The<tt> exp</tt> function returns the exponential value.&nbsp; When the argument is outside the permissible range, the <a href="#matherr">matherr</a>
+function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function is replaced, it will set the global variable
 <tt> errno</tt> to <tt> ERANGE</tt>, and print a &quot;RANGE error&quot; diagnostic message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
@@ -13680,8 +13682,9 @@ pointed to by<i> sign</i> will contain 0 if the number is positive, and non-zero
 <dl>
 <dt>Description:
 <dd>The<tt> fdopen</tt> function associates a stream with the file handle<i> handle</i> which represents an opened file or device.
-&nbsp;The handle was returned by one of <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>, <tt> open</tt>, or <tt> _sopen</tt>.
-&nbsp;The open mode<i> mode</i> must match the mode with which the file or device was originally opened.
+&nbsp;The handle was returned by one of <a href="#creat">creat</a>, <a href="#dup">dup</a>, <a href="#dup2">dup2</a>, <a href="#open">open</a>,
+or <a href="#sopen">_sopen</a>.&nbsp; The open mode<i> mode</i> must match the mode with which the file or device was originally
+opened.
 <br>The argument<i> mode</i> is described in the description of the <tt> fopen</tt> function.
 <br><br>The<tt> _fdopen</tt> function is identical to<tt> fdopen</tt>.&nbsp; Use<tt> _fdopen</tt> for ANSI naming conventions.
 <br><br>The<tt> _wfdopen</tt> function is identical to<tt> fdopen</tt> except that it accepts a wide character string for
@@ -14894,10 +14897,10 @@ may not work.
 <dl>
 <dt>Description:
 <dd>The<tt> fileno</tt> function returns the number of the file handle for the file designated by<i> stream</i>.&nbsp; This number
-can be used in POSIX input/output calls anywhere the value returned by <tt> open</tt> can be used.&nbsp; The following symbolic
-values in<tt> &lt;io.h&gt;</tt> define the file handles that are associated with the C language <i> stdin, stdout, stderr,
-stdaux,</i> and<i> stdprn</i> files when the application is started.&nbsp; The<i> stdaux</i> and<i> stdprn</i> files are not
-available for Win32.
+can be used in POSIX input/output calls anywhere the value returned by <a href="#open">open</a> can be used.&nbsp; The following
+symbolic values in<tt> &lt;io.h&gt;</tt> define the file handles that are associated with the C language <i> stdin, stdout,
+stderr, stdaux,</i> and<i> stdprn</i> files when the application is started.&nbsp; The<i> stdaux</i> and<i> stdprn</i> files
+are not available for Win32.
 <dl>
 <dt><b><i>Value&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>STDIN_FILENO
@@ -16648,8 +16651,8 @@ struct student_data</tt> declaration.
 <dt>Description:
 <dd>When the value of the argument<i> ptr</i> is<tt> NULL,</tt> the<tt> free</tt> function does nothing; otherwise, the<tt> free</tt>
 function deallocates the memory block located by the argument<i> ptr</i> which points to a memory block previously allocated
-through a call to the appropriate version of <tt> calloc</tt>, <tt> malloc</tt> or <tt> realloc</tt>.&nbsp; After the call,
-the freed block is available for allocation.
+through a call to the appropriate version of <a href="#calloc">calloc</a>, <a href="#malloc">malloc</a> or <a href="#realloc">realloc</a>.
+&nbsp;After the call, the freed block is available for allocation.
 <br>Each function deallocates memory from a particular heap, as listed below:
 <dl>
 <dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap</i></b>
@@ -16715,10 +16718,10 @@ memory model, the<tt> free</tt> function is equivalent to the <tt> _nfree</tt> f
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _freect</tt> function returns the number of times that <tt> _nmalloc</tt> (or <tt> malloc</tt> in small data models)
-can be called to allocate a item of<i> size</i> bytes.&nbsp; In the tiny, small and medium memory models, the default data
-segment is only extended as needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need to call <tt>
-_nheapgrow</tt> in these memory models before calling _freect in order to get a meaningful result.
+<dd>The<tt> _freect</tt> function returns the number of times that <tt> _nmalloc</tt> (or <a href="#malloc">malloc</a> in small
+data models) can be called to allocate a item of<i> size</i> bytes.&nbsp; In the tiny, small and medium memory models, the
+default data segment is only extended as needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need
+to call <tt> _nheapgrow</tt> in these memory models before calling _freect in order to get a meaningful result.
 </dl>
 <dl>
 <dt>Returns:
@@ -17761,8 +17764,8 @@ Functions, <a href="#ctime_s">ctime_s</a>, <a href="#difftime">difftime</a>, <a 
 buffer</i> of length<i> size</i>.
 <br>The maximum size that might be required for<i> buffer</i> is <tt> _MAX_PATH</tt>.&nbsp; If the buffer provided is too
 small,<tt> NULL</tt> is returned and <tt> errno</tt> is set.
-<br><br>If<i> buffer</i> is<tt> NULL</tt> then a buffer of size <tt> _MAX_PATH</tt> is allocated using <tt> malloc</tt>.&nbsp;
-This buffer may be freed using the <tt> free</tt> function.
+<br><br>If<i> buffer</i> is<tt> NULL</tt> then a buffer of size <tt> _MAX_PATH</tt> is allocated using <a href="#malloc">malloc</a>.
+&nbsp;This buffer may be freed using the <a href="#free">free</a> function.
 <br><br>If<i> path</i> is<tt> NULL</tt> or points to a null string (&quot;&quot;) then the current working directory is returned
 in<i> buffer</i>.
 <br><br>The<tt> _wfullpath</tt> function is a wide character version of<tt> _fullpath</tt> that operates with wide character
@@ -18583,8 +18586,8 @@ latter case, the value of<i> maxlen</i> is the length in characters (including t
 be used to store this name.&nbsp; An error occurs if the length of the path (including the terminating null character) exceeds<i>
 maxlen</i>.
 <br>The maximum size that might be required for<i> buffer</i> is <tt> PATH_MAX</tt> + 1 bytes.
-<br><br><i>Extension:</i>&nbsp; When<i> buffer</i> has a value of<tt> NULL,</tt> a string is allocated using <tt> malloc</tt>
-to contain the name of the current working directory.&nbsp; This string may be freed using the <tt> free</tt> function.
+<br><br><i>Extension:</i>&nbsp; When<i> buffer</i> has a value of<tt> NULL,</tt> a string is allocated using <a href="#malloc">malloc</a>
+to contain the name of the current working directory.&nbsp; This string may be freed using the <a href="#free">free</a> function.
 <br><br>The<tt> _wgetcwd</tt> function is a wide character version of<tt> getcwd</tt> that operates with wide character strings.
 &nbsp;The<i> maxlen</i> is the length in wide characters (wchar_t).
 </dl>
@@ -18654,8 +18657,8 @@ or is the location at which a string containing the name of the current working 
 the value of<i> maxlen</i> is the length in characters (including the terminating null character) which can be be used to
 store this name.&nbsp; An error occurs if the length of the path (including the terminating null character) exceeds<i> maxlen</i>.
 <br>The maximum size that might be required for<i> buffer</i> is <tt> PATH_MAX</tt> + 1 bytes.
-<br><br>When<i> buffer</i> has a value of<tt> NULL,</tt> a string is allocated using <tt> malloc</tt> to contain the name
-of the current working directory.&nbsp; This string may be freed using the <tt> free</tt> function.
+<br><br>When<i> buffer</i> has a value of<tt> NULL,</tt> a string is allocated using <a href="#malloc">malloc</a> to contain
+the name of the current working directory.&nbsp; This string may be freed using the <a href="#free">free</a> function.
 <br><br>The<tt> _wgetdcwd</tt> function is a wide character version of<tt> _getdcwd</tt> that operates with wide character
 strings.&nbsp; The<i> maxlen</i> is the length in wide characters (wchar_t).
 </dl>
@@ -20072,11 +20075,11 @@ ofile );</tt>
 file handle specified by<i> posixhandle</i>.
 <br>The value returned by<tt> _get_osfhandle</tt> can be used as an argument to the <tt> _open_osfhandle</tt> function which
 can be used to connect a second POSIX-level handle to an open file.
-<br><br>The example below demonstrates the use of these two functions.&nbsp; Note that the example shows how the <tt> dup2</tt>
+<br><br>The example below demonstrates the use of these two functions.&nbsp; Note that the example shows how the <a href="#dup2">dup2</a>
 function can be used to obtain almost identical functionality.
 <br><br>When the POSIX-level file handles associated with one OS file handle are closed, the first one closes successfully
 but the others return an error (since the first call close the file and released the OS file handle).&nbsp; So it is important
-to call <tt> close</tt> at the right time, i.e., after all I/O operations are completed to the file.
+to call <a href="#close">close</a> at the right time, i.e., after all I/O operations are completed to the file.
 </dl>
 <dl>
 <dt>Returns:
@@ -22583,9 +22586,9 @@ this, the application can allocate memory from the 200K pool that it has already
 <dl>
 <dt>Description:
 <dd>The <tt> _nheapgrow</tt> function attempts to grow the near heap to the maximum size of 64K.&nbsp; You will want to do this
-in the small data models if you are using both <tt> malloc</tt> and <tt> _fmalloc</tt> or <tt> halloc</tt>.&nbsp; Once a call
-to <tt> _fmalloc</tt> or <tt> halloc</tt> has been made, you may not be able to allocate any memory with <tt> malloc</tt>
-unless space has been reserved for the near heap using either <tt> malloc</tt>, <tt> sbrk</tt> or <tt> _nheapgrow</tt>.
+in the small data models if you are using both <a href="#malloc">malloc</a> and <tt> _fmalloc</tt> or <tt> halloc</tt>.&nbsp;
+Once a call to <tt> _fmalloc</tt> or <tt> halloc</tt> has been made, you may not be able to allocate any memory with <a href="#malloc">malloc</a>
+unless space has been reserved for the near heap using either <a href="#malloc">malloc</a>, <tt> sbrk</tt> or <tt> _nheapgrow</tt>.
 <br>The <tt> _fheapgrow</tt> function doesn't do anything to the heap because the far heap will be extended automatically
 when needed.&nbsp; If the current far heap cannot be extended, then another far heap will be started.
 <br><br>In a small data memory model, the<tt> _heapgrow</tt> function is equivalent to the <tt> _nheapgrow</tt> function;
@@ -23046,7 +23049,7 @@ sizeof(long) );</tt>
 <dd>The<tt> hypot</tt> function computes the length of the hypotenuse of a right triangle whose sides are<i> x</i> and<i> y</i>
 adjacent to that right angle.&nbsp; The calculation is equivalent to
 <br><tt>&nbsp;&nbsp;&nbsp; sqrt( x*x + y*y )</tt>
-<br><br>The computation may cause an overflow, in which case the <tt> matherr</tt> function will be invoked.
+<br><br>The computation may cause an overflow, in which case the <a href="#matherr">matherr</a> function will be invoked.
 </dl>
 <dl>
 <dt>Returns:
@@ -28959,9 +28962,9 @@ is negative.&nbsp; A range error occurs if the argument is zero.
 <dl>
 <dt>Returns:
 <dd>The<tt> log</tt> function returns the natural logarithm of the argument.&nbsp; When the argument is outside the permissible
-range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will
-set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the
-<tt> stderr</tt> stream.
+range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function
+is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -29002,9 +29005,9 @@ set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOM
 <dl>
 <dt>Returns:
 <dd>The<tt> log10</tt> function returns the logarithm (base 10) of the argument.&nbsp; When the argument is outside the permissible
-range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will
-set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the
-<tt> stderr</tt> stream.
+range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function
+is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -29086,9 +29089,9 @@ than -1.0, the function returns NAN.
 <dl>
 <dt>Returns:
 <dd>The<tt> log2</tt> function returns the logarithm (base 2) of the argument.&nbsp; When the argument is outside the permissible
-range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will
-set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the
-<tt> stderr</tt> stream.
+range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function
+is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -29390,9 +29393,9 @@ if it is found, or the newly added key if it was not found.
 <dl>
 <dt>Description:
 <dd>The<tt> lseek</tt> function sets the current file position at the operating system level.&nbsp; The file is referenced using
-the file handle<i> handle</i> returned by a successful execution of one of the <tt> creat</tt>, <tt> dup</tt>, <tt> dup2</tt>,
-<tt> open</tt> or <tt> _sopen</tt> functions.&nbsp; The value of<i> offset</i> is used as a relative offset from a file position
-determined by the value of the argument<i> origin</i>.
+the file handle<i> handle</i> returned by a successful execution of one of the <a href="#creat">creat</a>, <a href="#dup">dup</a>,
+<a href="#dup2">dup2</a>, <a href="#open">open</a> or <a href="#sopen">_sopen</a> functions.&nbsp; The value of<i> offset</i>
+is used as a relative offset from a file position determined by the value of the argument<i> origin</i>.
 <br>The new file position is determined in a manner dependent upon the value of<i> origin</i> which may have one of three
 possible values (defined in the<tt> &lt;stdio.h&gt;</tt> header file):
 <dl>
@@ -29707,8 +29710,8 @@ and a double quote character.
 <br>passes the single argument<i> he&quot;l\lo world\</i>
 <br>The command line arguments can also be obtained in its original format by using the <tt> getcmd</tt> function.
 <br><br>Alternatively, the<tt> main</tt> function can be declared to return <tt> void</tt> (i.e., no return value).&nbsp;
-In this case, you will not be able to return an exit code from main using a <tt> return</tt> statement but must use the <tt>
-exit</tt> function to do so.
+In this case, you will not be able to return an exit code from main using a <tt> return</tt> statement but must use the <a href="#exit">exit</a>
+function to do so.
 <br><br>The<tt> wmain</tt> function is a user-defined wide character version of main that operates with wide character strings.
 &nbsp;If this function is present in the application, then it will be called by the run-time system startup code (and the<tt>
 main</tt> function, if present, will not be called).
@@ -38044,7 +38047,8 @@ memory.
 <dl>
 <dt>Description:
 <dd>The<tt> _msize</tt> functions return the size of the memory block pointed to by<i> buffer</i> that was allocated by a call
-to the appropriate version of the <tt> calloc</tt>, <tt> malloc</tt>, or <tt> realloc</tt> functions.
+to the appropriate version of the <a href="#calloc">calloc</a>, <a href="#malloc">malloc</a>, or <a href="#realloc">realloc</a>
+functions.
 <br>You must use the correct<tt> _msize</tt> function as listed below depending on which heap the memory block belongs to.
 <dl>
 <dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap</i></b>
@@ -38639,7 +38643,7 @@ composite</i>.&nbsp; This provides a portable method to determine the offset.
 &nbsp;Successive calls to<tt> onexit</tt> create a list of functions that will be executed on a &quot;last-in, first-out&quot;
 basis.&nbsp; No more than 32 functions can be registered with the<tt> onexit</tt> function.
 <br>The functions have no parameters and do not return values.
-<br><br>NOTE:&nbsp; The<tt> onexit</tt> function is not an ISO C function.&nbsp; The ISO C standard function <tt> atexit</tt>
+<br><br>NOTE:&nbsp; The<tt> onexit</tt> function is not an ISO C function.&nbsp; The ISO C standard function <a href="#atexit">atexit</a>
 does the same thing that<tt> onexit</tt> does and should be used instead of onexit where ISO C portability is concerned.
 </dl>
 <dl>
@@ -39054,10 +39058,10 @@ is used to set the file translation mode.&nbsp; When the program begins executio
 <br><br>When two or more manifest constants are used to form the<i> flags</i> argument, the constants are combined with the
 bitwise-OR operator (|).
 <br><br>The example below demonstrates the use of the <tt> _get_osfhandle</tt> and<tt> _open_osfhandle</tt> functions.&nbsp;
-Note that the example shows how the <tt> dup2</tt> function can be used to obtain almost identical functionality.
+Note that the example shows how the <a href="#dup2">dup2</a> function can be used to obtain almost identical functionality.
 <br><br>When the POSIX-level file handles associated with one OS file handle are closed, the first one closes successfully
 but the others return an error (since the first call close the file and released the OS file handle).&nbsp; So it is important
-to call <tt> close</tt> at the right time, i.e., after all I/O operations are completed to the file.
+to call <a href="#close">close</a> at the right time, i.e., after all I/O operations are completed to the file.
 </dl>
 <dl>
 <dt>Returns:
@@ -41175,7 +41179,7 @@ style
 <dd>The<tt> _pipe</tt> function creates a pipe (an unnamed FIFO) and places a file descriptor for the read end of the pipe in<i>
 phandles&#91;0&#93;</i> and a file descriptor for the write end of the pipe in<i> phandles&#91;1&#93;</i>.&nbsp; Their integer
 values are the two lowest available at the time of the<tt> _pipe</tt> function call.&nbsp; The <tt> O_NONBLOCK</tt> flag is
-cleared for both file descriptors.&nbsp; (The <tt> fcntl</tt> call can be used to set the <tt> O_NONBLOCK</tt> flag.)
+cleared for both file descriptors.&nbsp; (The call can be used to set the <tt> O_NONBLOCK</tt> flag.)
 <br>Data can be written to file descriptor<i> phandles&#91;1&#93;</i> and read from file descriptor<i> phandles&#91;0&#93;</i>.
 &nbsp;A read on file descriptor<i> phandles&#91;0&#93;</i> returns the data written to<i> phandles&#91;1&#93;</i> on a first-in-first-out
 (FIFO) basis.
@@ -41428,8 +41432,7 @@ to create either the pipe or the subprocess, a<tt> NULL</tt> stream pointer is r
 <dt>EINVAL
 <dd>The<i> mode</i> argument is invalid.
 </dl>
-<br><tt>popen</tt> may also set <tt> errno</tt> values as described by the <tt> pipe</tt>, <tt> fork</tt>, and <tt> execl</tt>
-functions.
+<br><tt>popen</tt> may also set <tt> errno</tt> values as described by the,, and <a href="#exec">execl</a> functions.
 </dl>
 <dl>
 <dt>See Also:
@@ -41578,9 +41581,9 @@ occur.
 <dl>
 <dt>Returns:
 <dd>The<tt> pow</tt> function returns the value of<i> x</i> raised to the power<i> y</i>.&nbsp; When the argument is outside the
-permissible range, the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced,
-it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message
-using the <tt> stderr</tt> stream.
+permissible range, the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a>
+function is replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot;
+diagnostic message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -42676,10 +42679,10 @@ The sequence can be started at different values by calling the <tt> srand</tt> f
 <dt>Description:
 <dd>The<tt> read</tt> function reads data at the operating system level.&nbsp; The number of bytes transmitted is given by<i>
 len</i> and the data is transmitted starting at the address specified by<i> buffer</i>.
-<br>The<i> handle</i> value is returned by the <tt> open</tt> function.&nbsp; The access mode must have included either <tt>
-O_RDONLY</tt> or <tt> O_RDWR</tt> when the <tt> open</tt> function was invoked.&nbsp; The data is read starting at the current
-file position for the file in question.&nbsp; This file position can be determined with the <a href="#tell">_tell</a> function
-and can be set with the <tt> lseek</tt> function.
+<br>The<i> handle</i> value is returned by the <a href="#open">open</a> function.&nbsp; The access mode must have included
+either <tt> O_RDONLY</tt> or <tt> O_RDWR</tt> when the <a href="#open">open</a> function was invoked.&nbsp; The data is read
+starting at the current file position for the file in question.&nbsp; This file position can be determined with the <a href="#tell">_tell</a>
+function and can be set with the <tt> lseek</tt> function.
 <br><br>When <tt> O_BINARY</tt> is included in the access mode, the data is transmitted unchanged.&nbsp; When <tt> O_TEXT</tt>
 is included in the access mode, the data is transmitted with the extra carriage return character removed before each linefeed
 character encountered in the original data.
@@ -42923,8 +42926,8 @@ end of the directory is encountered,<tt> _wreaddir</tt> returns the value<tt> NU
 <dl>
 <dt>Description:
 <dd>When the value of the<i> old_blk</i> argument is<tt> NULL,</tt> a new block of memory of<i> size</i> bytes is allocated.
-<br>If the value of<i> size</i> is zero, the corresponding <tt> free</tt> function is called to release the memory pointed
-to by<i> old_blk</i>.
+<br>If the value of<i> size</i> is zero, the corresponding <a href="#free">free</a> function is called to release the memory
+pointed to by<i> old_blk</i>.
 <br><br>Otherwise, the<tt> realloc</tt> function re-allocates space for an object of<i> size</i> bytes by either:
 <ul>
 <li>shrinking the allocated size of the allocated memory block<i> old_blk</i> when<i> size</i> is sufficiently smaller than
@@ -45931,16 +45934,16 @@ otherwise, a<tt> NULL</tt> pointer is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The default <tt> matherr</tt> function supplied in the library can be replaced so that the application can handle mathematical
-errors.&nbsp; To do this, the<tt> _set_matherr</tt> function must be called with the address of the new mathematical error
-handling routine.
+<dd>The default <a href="#matherr">matherr</a> function supplied in the library can be replaced so that the application can handle
+mathematical errors.&nbsp; To do this, the<tt> _set_matherr</tt> function must be called with the address of the new mathematical
+error handling routine.
 <br><b><i>Note:</i></b>&nbsp; Under some systems, the default math error handler can be replaced by providing a user-written
-function of the same name, <tt> matherr</tt>, and using linking strategies to replace the default handler.
-<br><br>A program may contain a user-written version of <tt> matherr</tt> to take any appropriate action when an error is
-detected.&nbsp; When zero is returned by the user-written routine, an error message will be printed upon <tt> stderr</tt>
-and <tt> errno</tt> will be set as was the case with the default function.&nbsp; When a non-zero value is returned, no message
-is printed and <tt> errno</tt> is not changed.&nbsp; The value<tt> err_info-&gt;retval</tt> is used as the return value for
-the function in which the error was detected.
+function of the same name, <a href="#matherr">matherr</a>, and using linking strategies to replace the default handler.
+<br><br>A program may contain a user-written version of <a href="#matherr">matherr</a> to take any appropriate action when
+an error is detected.&nbsp; When zero is returned by the user-written routine, an error message will be printed upon <tt>
+stderr</tt> and <tt> errno</tt> will be set as was the case with the default function.&nbsp; When a non-zero value is returned,
+no message is printed and <tt> errno</tt> is not changed.&nbsp; The value<tt> err_info-&gt;retval</tt> is used as the return
+value for the function in which the error was detected.
 <br><br>When called, the user-written math error handler is passed a pointer to a structure of type<tt> struct _exception</tt>
 which contains information about the error that has been detected:
 <br><br><tt>struct _exception</tt>
@@ -47487,9 +47490,9 @@ executes.&nbsp; These conditions are defined to be:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* &quot;sig_no&quot; is condition being signalled */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signal( sig_no, SIG_DFL );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*func)( sig_no );</tt>
-<br><br>The<i> func</i> function may terminate the program by calling the <tt> exit</tt> or <tt> abort</tt> functions or call
-the <tt> longjmp</tt> function.&nbsp; Because the next signal will be handled with default handling, the program must again
-call<tt> signal</tt> if it is desired to handle the next condition of the type that has been signalled.
+<br><br>The<i> func</i> function may terminate the program by calling the <a href="#exit">exit</a> or <tt> abort</tt> functions
+or call the <tt> longjmp</tt> function.&nbsp; Because the next signal will be handled with default handling, the program must
+again call<tt> signal</tt> if it is desired to handle the next condition of the type that has been signalled.
 <br><br>After returning from the signal-catching function, the receiving process will resume execution at the point at which
 it was interrupted.
 <br><br>The signal catching function is described as follows:
@@ -47693,9 +47696,9 @@ is too large.
 <dl>
 <dt>Returns:
 <dd>The<tt> sinh</tt> function returns the hyperbolic sine value.&nbsp; When the argument is outside the permissible range, the
-<tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will set the global
-variable <tt> errno</tt> to <tt> ERANGE</tt>, and print a &quot;RANGE error&quot; diagnostic message using the <tt> stderr</tt>
-stream.
+<a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function is replaced,
+it will set the global variable <tt> errno</tt> to <tt> ERANGE</tt>, and print a &quot;RANGE error&quot; diagnostic message
+using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -48333,7 +48336,7 @@ option is supported under DOS, OS/2, Win32 and QNX.
 Win32 and QNX.
 <dt><br>P_NOWAITO
 <dd>Causes the current program to execute concurrently with the new child process.&nbsp; This option is supported under OS/2,
-Win32 and QNX.&nbsp; The <tt> wait</tt> and <tt> cwait</tt> functions cannot be used to obtain the exit code.
+Win32 and QNX.&nbsp; The <a href="#wait">wait</a> and <tt> cwait</tt> functions cannot be used to obtain the exit code.
 <dt><br>P_OVERLAY
 <dd>The invoked program replaces the original program in memory and is executed.&nbsp; No return is made to the original program.
 &nbsp;This option is supported under DOS (16-bit only), OS/2, Win32, and QNX.&nbsp; This is equivalent to calling the appropriate
@@ -48427,8 +48430,8 @@ lines.</tt>
 <dd>then the return value from<b> spawn...</b>&nbsp; is the exit status of the child process.
 <dt><br>P_NOWAIT
 <dd>then the return value from<b> spawn...</b>&nbsp; is the process ID (or process handle under Win32) of the child process.&nbsp;
-To obtain the exit code for a process spawned with <tt> P_NOWAIT</tt>, you must call the <tt> wait</tt> (under OS/2 or QNX)
-or <tt> cwait</tt> (under OS/2 or Win32) function specifying the process ID/handle.&nbsp; If the child process terminated
+To obtain the exit code for a process spawned with <tt> P_NOWAIT</tt>, you must call the <a href="#wait">wait</a> (under OS/2
+or QNX) or <tt> cwait</tt> (under OS/2 or Win32) function specifying the process ID/handle.&nbsp; If the child process terminated
 normally, then the low order byte of the returned status word will be set to 0, and the high order byte will contain the low
 order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
 <dt><br>P_NOWAITO
@@ -48949,9 +48952,9 @@ is negative.
 <dl>
 <dt>Returns:
 <dd>The<tt> sqrt</tt> function returns the value of the square root.&nbsp; When the argument is outside the permissible range,
-the <tt> matherr</tt> function is called.&nbsp; Unless the default <tt> matherr</tt> function is replaced, it will set the
-global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic message using the <tt>
-stderr</tt> stream.
+the <a href="#matherr">matherr</a> function is called.&nbsp; Unless the default <a href="#matherr">matherr</a> function is
+replaced, it will set the global variable <tt> errno</tt> to <tt> EDOM</tt>, and print a &quot;DOMAIN error&quot; diagnostic
+message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>See Also:
@@ -50185,9 +50188,9 @@ the day, and where &quot;YY&quot; is two digits representing the year.&nbsp; The
 <dl>
 <dt>Description:
 <dd>The<tt> strdup</tt> function creates a duplicate copy of the string pointed to by<i> src</i> and returns a pointer to the
-new copy.&nbsp; For<tt> strdup</tt> the memory for the new string is obtained by using the <tt> malloc</tt> function and can
-be freed using the <tt> free</tt> function.&nbsp; For _fstrdup, the memory for the new string is obtained by using the <tt>
-_fmalloc</tt> function and can be freed using the <tt> _ffree</tt> function.
+new copy.&nbsp; For<tt> strdup</tt> the memory for the new string is obtained by using the <a href="#malloc">malloc</a> function
+and can be freed using the <a href="#free">free</a> function.&nbsp; For _fstrdup, the memory for the new string is obtained
+by using the <tt> _fmalloc</tt> function and can be freed using the <tt> _ffree</tt> function.
 <br>The<tt> _strdup</tt> function is identical to<tt> strdup</tt>.&nbsp; Use<tt> _strdup</tt> for ANSI naming conventions.
 <br><br>The<tt> _fstrdup</tt> function is a data model independent form of the<tt> strdup</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
@@ -53494,8 +53497,8 @@ the type of error that has been detected.
 <dl>
 <dt>Description:
 <dd>The<tt> tanh</tt> function computes the hyperbolic tangent of<i> x</i>.
-<br>When the<i> x</i> argument is large, partial or total loss of significance may occur.&nbsp; The <tt> matherr</tt> function
-will be invoked in this case.
+<br>When the<i> x</i> argument is large, partial or total loss of significance may occur.&nbsp; The <a href="#matherr">matherr</a>
+function will be invoked in this case.
 </dl>
 <dl>
 <dt>Returns:
@@ -53539,7 +53542,7 @@ a value indicating the type of error that has been detected.
 <dl>
 <dt>Description:
 <dd>The<tt> _tell</tt> function reports the current file position at the operating system level.&nbsp; The<i> handle</i> value
-is the file handle returned by a successful execution of the <tt> open</tt> function.
+is the file handle returned by a successful execution of the <a href="#open">open</a> function.
 <br>The returned value may be used in conjunction with the <tt> lseek</tt> function to reset the current file position.
 <br><br>The _telli64 function is similar to the<tt> _tell</tt> function but returns a 64-bit file position.&nbsp; This value
 may be used in conjunction with the <tt> _lseeki64</tt> function to reset the current file position.
@@ -53620,7 +53623,7 @@ of the file.
 <dl>
 <dt>Description:
 <dd><tt> _tempnam</tt> creates a temporary filename for use in another directory.&nbsp; This filename is different from that of
-any existing file.&nbsp; The<i> prefix</i> argument is the prefix to the filename.<tt>&nbsp; _tempnam</tt> uses <tt> malloc</tt>
+any existing file.&nbsp; The<i> prefix</i> argument is the prefix to the filename.<tt>&nbsp; _tempnam</tt> uses <a href="#malloc">malloc</a>
 to allocate space for the filename; the program is responsible for freeing this space when it is no longer needed.<tt>&nbsp;
 _tempnam</tt> looks for the file with the given name in the following directories, listed in order of precedence.
 <dl>
@@ -54809,9 +54812,9 @@ radix</i> must satisfy the condition:
 <dl>
 <dt>Description:
 <dd>The<tt> umask</tt> function sets the process's file mode creation mask to<i> cmask</i>.&nbsp; The process's file mode creation
-mask is used during <tt> creat</tt>, <tt> open</tt> or <tt> _sopen</tt> to turn off permission bits in the<i> permission</i>
-argument supplied.&nbsp; In other words, if a bit in the mask is on, then the corresponding bit in the file's requested permission
-value is disallowed.
+mask is used during <a href="#creat">creat</a>, <a href="#open">open</a> or <a href="#sopen">_sopen</a> to turn off permission
+bits in the<i> permission</i> argument supplied.&nbsp; In other words, if a bit in the mask is on, then the corresponding
+bit in the file's requested permission value is disallowed.
 <br>The<tt> _umask</tt> function is identical to<tt> umask</tt>.&nbsp; Use<tt> _umask</tt> for ANSI naming conventions.
 <br><br>The argument<i> cmask</i> is a constant expression involving the constants described below.&nbsp; The access permissions
 for the file or directory are specified as a combination of bits (defined in the<tt> &lt;sys/stat.h&gt;</tt> header file).
@@ -56920,8 +56923,8 @@ the <tt> cwait</tt> function should be used (one of its arguments is a process I
 and return code of the terminated child process.
 <br><br>If the child process terminated normally, then the low order byte of the status word will be set to 0, and the high
 order byte will contain the low order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
-&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <tt> exit</tt>, or <tt> _Exit</tt> or <tt>
-_exit</tt> are explicity called.
+&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <a href="#exit">exit</a>, or <a href="#_exit">_Exit</a>
+or <a href="#_exit">_exit</a> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>
@@ -58287,8 +58290,8 @@ window.&nbsp; This is text displayed with the <a href="#_outtext">_outtext</a> a
 <dd>The<tt> write</tt> function writes data at the operating system level.&nbsp; The number of bytes transmitted is given by<i>
 len</i> and the data to be transmitted is located at the address specified by<i> buffer</i>.
 <br>The<tt> _write</tt> function is identical to<tt> write</tt>.&nbsp; Use<tt> _write</tt> for ANSI naming conventions.
-<br><br>The<i> handle</i> value is returned by the <tt> open</tt> function.&nbsp; The access mode must have included either
-<tt> O_WRONLY</tt> or <tt> O_RDWR</tt> when the <tt> open</tt> function was invoked.
+<br><br>The<i> handle</i> value is returned by the <a href="#open">open</a> function.&nbsp; The access mode must have included
+either <tt> O_WRONLY</tt> or <tt> O_RDWR</tt> when the <a href="#open">open</a> function was invoked.
 <br><br>The data is written to the file at the end when the file was opened with <tt> O_APPEND</tt> included as part of the
 access mode; otherwise, it is written at the current file position for the file in question.&nbsp; This file position can
 be determined with the <tt> _tell</tt> function and can be set with the <tt> lseek</tt> function.
@@ -58622,16 +58625,17 @@ number is bad.&nbsp; The constants are defined in the<tt> &lt;errno.h&gt;</tt> h
 <dd>&quot;Resource deadlock would occur&quot;
 </dl>
 <h2 id="Allocating_Zero_Memory"> Allocating Zero Memory </h2>
-<br><b>The behavior of the </b><tt> calloc</tt><b>, </b><tt> malloc</tt><b>, or </b><tt> realloc</tt><b> function if the size
-requested is zero (7.10.3).</b>
+<br><b>The behavior of the <a href="#calloc">calloc</a>, <a href="#malloc">malloc</a>, or <a href="#realloc">realloc</a> function
+if the size requested is zero (7.10.3).</b>
 <br><br>The value returned will be <tt> NULL</tt>.&nbsp; No actual memory is allocated.
 <h2 id="The_abort_Function"> The abort Function </h2>
 <br><b>The behavior of the </b><tt> abort</tt><b> function with regard to open and temporary files (7.10.4.1).</b>
 <br><br>The <tt> abort</tt> function does not close any files that are open or temporary, nor does it flush any output buffers.
 <h2 id="The_atexit_Function"> The atexit Function </h2>
-<br><b>The status returned by the </b><tt> exit</tt><b> function if the value of the argument is other than zero, </b><tt>
+<br><b>The status returned by the <a href="#exit">exit</a> function if the value of the argument is other than zero, </b><tt>
 EXIT_SUCCESS</tt><b>, or </b><tt> EXIT_FAILURE</tt><b> (7.10.4.3).</b>
-<br><br>The <tt> exit</tt> function returns the value of its argument to the operating system regardless of its value.
+<br><br>The <a href="#exit">exit</a> function returns the value of its argument to the operating system regardless of its
+value.
 <h2 id="Environment_Names"> Environment Names </h2>
 <br><b>The set of environment names and the method for altering the environment list used by the </b><tt> getenv</tt><b> function
 (7.10.4.4).</b>
