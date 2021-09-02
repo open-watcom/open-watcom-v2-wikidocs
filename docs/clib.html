@@ -14199,8 +14199,8 @@ were successfully raised.&nbsp; Otherwise, it returns a nonzero value.
 <dt>Description:
 <dd>The<tt> fesetenv</tt> function attempts to establish the floating-point environment to environment represented by the object
 pointed by<i> envp</i> argument.&nbsp; The<i> envp</i> argument shall point to an object set by a call to <a href="#fegetenv">fegetenv</a>
-or <tt> feholdexcept</tt>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that fesetenv merely installs the state of
-the floating-point status flags represented through its argument, and does not raise these floating-point exceptions.
+or <a href="#feholdexcept">feholdexcept</a>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that fesetenv merely installs
+the state of the floating-point status flags represented through its argument, and does not raise these floating-point exceptions.
 </dl>
 <dl>
 <dt>Returns:
@@ -14242,9 +14242,9 @@ nonzero value.
 <dt>Description:
 <dd>The<tt> fesetexceptflag</tt> function attempts to set the exceptions indicated by<i> excepts</i> argument with the states
 stored in the object pointed by<i> flagp</i> argument.&nbsp; The value pointed by the<i> flagp</i> argument shall have been
-set by a previous call to <tt> fegetexceptflag</tt> whose second argument represented at least those floating-point exceptions
-represented by the<i> excepts</i> argument.&nbsp; This function does not raise floating-point exceptions, but only sets the
-state of the flags.
+set by a previous call to <a href="#fegetexceptflag">fegetexceptflag</a> whose second argument represented at least those
+floating-point exceptions represented by the<i> excepts</i> argument.&nbsp; This function does not raise floating-point exceptions,
+but only sets the state of the flags.
 <br>For valid exception values see <a href="#fegetexceptflag">fegetexceptflag</a>.
 </dl>
 <dl>
@@ -25036,8 +25036,8 @@ is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _ismbbgraph</tt> function tests if the argument<i> ch</i> satisfies the condition that one of <tt> isgraph</tt> or
-<a href="#_ismbbkprint">_ismbbkprint</a> is true.
+<dd>The<tt> _ismbbgraph</tt> function tests if the argument<i> ch</i> satisfies the condition that one of <a href="#isgraph">isgraph</a>
+or <a href="#_ismbbkprint">_ismbbkprint</a> is true.
 <br>For example, in code page 932,<tt> _ismbbgraph</tt> tests if the argument<i> ch</i> is a single-byte printable character
 excluding space (&quot; &quot;) or single-byte Katakana character.
 <br><br><i>Note:</i>&nbsp; The argument<i> ch</i> must represent a single-byte value (i.e., 0 &lt;=<i> ch</i> &lt;= 255 ).
@@ -27492,8 +27492,8 @@ determination is based on the type of the argument.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> isprint</tt> function tests for any printable character including space (' ').&nbsp; The <tt> isgraph</tt> function
-is similar, except that the space character is excluded from the character set being tested.
+<dd>The<tt> isprint</tt> function tests for any printable character including space (' ').&nbsp; The <a href="#isgraph">isgraph</a>
+function is similar, except that the space character is excluded from the character set being tested.
 <br>The<tt> iswprint</tt> function is a wide character version of<tt> isprint</tt> that operates with wide character argument.
 </dl>
 <dl>
@@ -28274,7 +28274,7 @@ compare ) == NULL ) {</tt>
 <dt>Description:
 <dd>The<tt> lgamma</tt> function returns the natural logarithm of the absolute value of the Gamma function of<i> x</i>.&nbsp;
 is called will be located in signgam.&nbsp; This function is not thread-safe if the user is interested in the sign of Gamma,
-and <tt> lgamma_r</tt> should be used instead in multithreaded applications.
+and <a href="#lgamma_r">lgamma_r</a> should be used instead in multithreaded applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -29064,7 +29064,7 @@ message using the <tt> stderr</tt> stream.
 <dl>
 <dt>Description:
 <dd>The<tt> log1p</tt> function computes the natural logarithm of one plus<i> x</i>.<i>&nbsp; x</i> this function provides far
-better accuracy than using the <tt> log</tt> function directly.
+better accuracy than using the <a href="#log">log</a> function directly.
 </dl>
 <dl>
 <dt>Returns:
@@ -29729,7 +29729,7 @@ and a double quote character.
 <br><tt>echo &quot;he\&quot;l\lo world\\&quot;</tt>
 </dl>
 <br>passes the single argument<i> he&quot;l\lo world\</i>
-<br>The command line arguments can also be obtained in its original format by using the <tt> getcmd</tt> function.
+<br>The command line arguments can also be obtained in its original format by using the <a href="#getcmd">getcmd</a> function.
 <br><br>Alternatively, the<tt> main</tt> function can be declared to return <tt> void</tt> (i.e., no return value).&nbsp;
 In this case, you will not be able to return an exit code from main using a <tt> return</tt> statement but must use the <a href="#exit">exit</a>
 function to do so.
@@ -32753,7 +32753,7 @@ is not a null pointer, are then stored into the array pointed to by<i> dst</i>.&
 a terminating null character, but the terminating null wide character will not be stored.&nbsp; Conversion will stop earlier
 in two cases:&nbsp; when a sequence of bytes is reached that does not form a valid multibyte character, or (if<i> dst</i>
 is not a null pointer) when<i> len</i> codes have been stored into the array pointed to by<i> dst</i>.&nbsp; Each conversion
-takes place as if by a call to the <tt> mbrtowc</tt> function.
+takes place as if by a call to the <a href="#mbrtowc">mbrtowc</a> function.
 <br>If<i> dst</i> is not a null pointer, the pointer object pointed to by<i> src</i> will be assigned either a null pointer
 (if conversion stopped due to reaching a terminating null character) or the address just past the last multibyte character
 converted.&nbsp; If conversion stopped due to reaching a terminating null character and if<i> dst</i> is not a null pointer,
@@ -32901,7 +32901,7 @@ by<i> dst</i>.&nbsp; Conversion continues up to and including a terminating null
 character, or (if<i> dst</i> is not a null pointer) when<i> len</i> wide characters have been stored into the array pointed
 to by<i> dst</i>.&nbsp; If<i> dst</i> is not a null pointer and no null wide character was stored into the array pointed to
 by<i> dst</i>, then<i> dst&#91;len&#93;</i> is set to the null wide character.&nbsp; Each conversion takes place as if by
-a call to the <tt> mbrtowc</tt> function.
+a call to the <a href="#mbrtowc">mbrtowc</a> function.
 <br><br>If<i> dst</i> is not a null pointer, the pointer object pointed to by<i> src</i> is assigned either a null pointer
 (if conversion stopped due to reaching a terminating null character) or the address just past the last multibyte character
 converted (if any).&nbsp; If conversion stopped due to reaching a terminating null character and if<i> dst</i> is not a null
@@ -33168,7 +33168,8 @@ the converted characters are stored into the array pointed to by<i> dst</i>.
 in two cases:&nbsp; when a sequence of bytes is encountered that does not form a valid multibyte character, or (if<i> dst</i>
 is not a null pointer) when<i> len</i> wide characters have been stored into the array pointed to by<i> dst</i>.&nbsp; If<i>
 dst</i> is not a null pointer and no null wide character was stored into the array pointed to by<i> dst</i>, then<i> dst&#91;len&#93;</i>
-is set to the null wide character.&nbsp; Each conversion takes place as if by a call to the <tt> mbrtowc</tt> function.
+is set to the null wide character.&nbsp; Each conversion takes place as if by a call to the <a href="#mbrtowc">mbrtowc</a>
+function.
 <br><br>Regardless of whether<i> dst</i> is or is not a null pointer, if the input conversion encounters a sequence of bytes
 that do not form a valid multibyte character, an encoding error occurs:&nbsp; the<tt> mbstowcs_s</tt> function stores the
 value<tt> (size_t)-1</tt> into<i> *retval</i>.&nbsp; Otherwise, the<tt> mbstowcs_s</tt> function stores into<i> *retval</i>
@@ -53181,9 +53182,9 @@ the original two strings using the <tt> strcoll</tt> function.&nbsp; The functio
 function (except there is no padding of the<i> dst</i> argument with null characters when the argument<i> src</i> is shorter
 than<i> n</i> characters) when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.
 <br>The<tt> wcsxfrm</tt> function is a wide character version of<tt> strxfrm</tt> that operates with wide character strings.
-&nbsp;For wcsxfrm, after the string transformation, a call to <tt> wcscmp</tt> with the two transformed strings yields results
-identical to those of a call to <tt> wcscoll</tt> applied to the original two strings.<tt>&nbsp; wcsxfrm</tt> and<tt> strxfrm</tt>
-behave identically otherwise.
+&nbsp;For wcsxfrm, after the string transformation, a call to <a href="#strcmp">wcscmp</a> with the two transformed strings
+yields results identical to those of a call to <a href="#strcoll">wcscoll</a> applied to the original two strings.<tt>&nbsp;
+wcsxfrm</tt> and<tt> strxfrm</tt> behave identically otherwise.
 </dl>
 <dl>
 <dt>Returns:
@@ -53314,7 +53315,7 @@ from the kernel via the<i> name</i> passed.&nbsp; This implementation currently 
 <dt><br>_SC_REALTIME_SIGNALS
 <dd>If real-time signals are supported, the value of 1 is returned
 <dt><br>_SC_SOMAXCONN
-<dd>For the socket <tt> listen</tt> function, retrieve the largest supported backlog of listen requests
+<dd>For the socket function, retrieve the largest supported backlog of listen requests
 </dl>
 <br>In this implementation, requesting either _SC_NPROCESSORS_CONF or _SC_NPROCESSORS_ONLN will return the same value.
 <br>Some inputs, specifically _SC_OPEN_MAX and _SC_CHILD_MAX, are configurable via calls to<tt> setrlimit</tt> and may change
@@ -58168,7 +58169,7 @@ wide character that is one of an implementation-defined set for which none of <a
 <a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a> is true
 <dt><br>blank
 <dd>any wide character corresponding to a standard blank character (space or horizontal tab) or is one of an implementation-defined
-set of wide characters for which <tt> iswblank</tt> is true
+set of wide characters for which <a href="#isblank">iswblank</a> is true
 <dt><br>cntrl
 <dd>any control wide character
 <dt><br>digit
