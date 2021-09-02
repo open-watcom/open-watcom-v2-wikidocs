@@ -4465,8 +4465,9 @@ text.</i>&nbsp; This mode is set upon opening the file or with the <a href="#set
 C++ program with the <a href="#system">system</a> function.
 <h2 id="DOS_Interrupts"> DOS Interrupts </h2>
 <br>DOS interrupts and 8086 interrupts are documented in the technical documentation for your DOS system.&nbsp; These may
-be generated from a C or C++ program by calling the <tt> bdos</tt>, <tt> intdos</tt>, <tt> intdosx</tt>, <tt> intr</tt>, <tt>
-intrf</tt>, <tt> int386</tt>, <tt> int386x</tt>, <tt> int86</tt> and <tt> int86x</tt> functions.
+be generated from a C or C++ program by calling the <a href="#bdos">bdos</a>, <a href="#intdos">intdos</a>, <a href="#intdosx">intdosx</a>,
+<a href="#intr">intr</a>, <a href="#intrf">intrf</a>, <a href="#int386">int386</a>, <a href="#int386x">int386x</a>, <a href="#int86">int86</a>
+and <a href="#int86x">int86x</a> functions.
 <h2 id="DOS_Processes"> DOS Processes </h2>
 <br>Currently, DOS has the capability to execute only one process at a time.&nbsp; Thus, when a process is initiated with
 the <a href="#spawn">spawn...</a> parameter <tt> P_WAIT</tt>, the new process will execute to completion before control returns
@@ -23552,7 +23553,7 @@ systems.&nbsp; Before the interrupt, the CPU registers are loaded from the struc
 ES, FS and GS segment registers are loaded from the structure located by<i> seg_regs</i>.&nbsp; All of the segment registers
 must contain valid values.&nbsp; Failure to do so will cause a segment violation when running in protect mode.&nbsp; If you
 don't care about a particular segment register, then it can be set to 0 which will not cause a segment violation.&nbsp; The
-function <tt> segread</tt> can be used to initialize<i> seg_regs</i> to their current values.
+function <a href="#segread">segread</a> can be used to initialize<i> seg_regs</i> to their current values.
 <br>Following the interrupt, the structure located by<i> out_regs</i> is filled with the contents of the CPU registers.&nbsp;
 The<i> in_regs</i> and<i> out_regs</i> structures may be located at the same location in memory.&nbsp; The original values
 of the DS, ES, FS and GS registers are restored.&nbsp; The structure<i> seg_regs</i> is updated with the values of the segment
@@ -23681,7 +23682,7 @@ is given by<i> inter_no</i>.&nbsp; Before the interrupt, the CPU registers are l
 and the DS and ES segment registers are loaded from the structure located by<i> seg_regs</i>.&nbsp; All of the segment registers
 must contain valid values.&nbsp; Failure to do so will cause a segment violation when running in protect mode.&nbsp; If you
 don't care about a particular segment register, then it can be set to 0 which will not cause a segment violation.&nbsp; The
-function <tt> segread</tt> can be used to initialize<i> seg_regs</i> to their current values.
+function <a href="#segread">segread</a> can be used to initialize<i> seg_regs</i> to their current values.
 <br>Following the interrupt, the structure located by<i> out_regs</i> is filled with the contents of the CPU registers.&nbsp;
 The<i> in_regs</i> and<i> out_regs</i> structures may be located at the same location in memory.&nbsp; The original values
 of the DS and ES registers are restored.&nbsp; The structure<i> seg_regs</i> is updated with the values of the segment registers
@@ -23802,7 +23803,7 @@ loaded from the structure located by<i> in_regs</i> and the segment registers DS
 by<i> seg_regs</i>.&nbsp; The AH register contains a number indicating the function requested.&nbsp; All of the segment registers
 must contain valid values.&nbsp; Failure to do so will cause a segment violation when running in protect mode.&nbsp; If you
 don't care about a particular segment register, then it can be set to 0 which will not cause a segment violation.&nbsp; The
-function <tt> segread</tt> can be used to initialize<i> seg_regs</i> to their current values.
+function <a href="#segread">segread</a> can be used to initialize<i> seg_regs</i> to their current values.
 <br>Following the interrupt, the structure located by<i> out_regs</i> is filled with the contents of the CPU registers.&nbsp;
 The<i> in_regs</i> and<i> out_regs</i> structures may be located at the same location in memory.&nbsp; The original values
 for the DS and ES registers are restored.&nbsp; The structure<i> seg_regs</i> is updated with the values of the segment registers
@@ -23870,8 +23871,9 @@ is given by<i> inter_no</i>.&nbsp; Before the interrupt, the CPU registers are l
 in protect mode.&nbsp; If you don't care about a particular segment register, then it can be set to 0 which will not cause
 a segment violation.&nbsp; Following the interrupt, the structure located by<i> regs</i> is filled with the contents of the
 CPU registers.
-<br><br><tt>intr</tt> function is similar to the <tt> int86x</tt> function, except that only one structure is used for the
-register values and that the BP (EBP in 386 library) register is included in the set of registers that are passed and saved.
+<br><br><tt>intr</tt> function is similar to the <a href="#int86x">int86x</a> function, except that only one structure is
+used for the register values and that the BP (EBP in 386 library) register is included in the set of registers that are passed
+and saved.
 <br><br>You should consult the technical documentation for the computer that you are using to determine the expected register
 contents before and after the interrupt in question.
 </dl>
@@ -23930,9 +23932,9 @@ is given by<i> inter_no</i>.&nbsp; Before the interrupt, the CPU registers are l
 in protect mode.&nbsp; If you don't care about a particular segment register, then it can be set to 0 which will not cause
 a segment violation.&nbsp; Following the interrupt, the structure located by<i> regs</i> is filled with the contents of the
 CPU registers.
-<br><br><tt>intrf</tt> function is similar to the <tt> int86x</tt> function.&nbsp; Exception is that only one structure is
-used for the register values and that the BP (EBP in 386 library) register is included in the set of registers that are passed
-and saved and the CPU flags are set to flags member of the structure<i> regs</i>
+<br><br><tt>intrf</tt> function is similar to the <a href="#int86x">int86x</a> function.&nbsp; Exception is that only one
+structure is used for the register values and that the BP (EBP in 386 library) register is included in the set of registers
+that are passed and saved and the CPU flags are set to flags member of the structure<i> regs</i>
 <br><br>You should consult the technical documentation for the computer that you are using to determine the expected register
 contents before and after the interrupt in question.
 </dl>
@@ -31659,7 +31661,7 @@ but the conversion state is unspecified.
 <dt>Description:
 <dd>The<tt> _mbsbtype</tt> function determines the type of a byte in a multibyte character string.&nbsp; The function examines
 only the byte at offset<i> count</i> in<i> mbstr</i>, ignoring invalid characters before the specified byte.
-<br><i>Note:</i>&nbsp; A similar function was called <tt> nthctype</tt> in earlier versions.
+<br><i>Note:</i>&nbsp; A similar function was called in earlier versions.
 <br><br>The<tt> _fmbsbtype</tt> function is a data model independent form of the<tt> _mbsbtype</tt> function that accepts
 far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 </dl>
