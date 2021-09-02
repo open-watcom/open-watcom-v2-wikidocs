@@ -3509,8 +3509,8 @@ value may be changed by a program at any time.&nbsp;
 <dd>Prototype in<tt> &lt;errno.h&gt;.</tt>
 <br>This<tt> int</tt> item contains the number of the last error that was detected.&nbsp; The run-time library never resets
 <tt> errno</tt> to 0.&nbsp; Symbolic names for these errors are found in the<tt> &lt;errno.h&gt;</tt> header file.&nbsp; See
-the descriptions for the <tt> perror</tt> and <tt> strerror</tt> functions for information about the text which describes
-these errors.&nbsp; 
+the descriptions for the <a href="#perror">perror</a> and <tt> strerror</tt> functions for information about the text which
+describes these errors.&nbsp; 
 <dt><br>fltused_
 <dd>The C compiler places a reference to the <tt> fltused_</tt> symbol into any module that uses a floating-point library routine
 or library routine that requires floating-point support (e.g., the use of a<tt> float</tt> or<tt> double</tt> as an argument
@@ -6322,7 +6322,7 @@ program.
 <dd>The<tt> _bheapseg</tt> function allocates a based-heap segment of at least<i> size</i> bytes.
 <br>The argument<i> size</i> indicates the initial size for the heap.&nbsp; The heap will automatically be enlarged as needed
 if there is not enough space available within the heap to satisfy an allocation request by <a href="#calloc">_bcalloc</a>,
-<tt> _bexpand</tt>, <a href="#malloc">_bmalloc</a>, or <a href="#realloc">_brealloc</a>.
+<a href="#_expand">_bexpand</a>, <a href="#malloc">_bmalloc</a>, or <a href="#realloc">_brealloc</a>.
 <br><br>The value returned by<tt> _bheapseg</tt> is the segment value or selector for the based heap.&nbsp; This value must
 be saved and used as an argument to other based heap functions to indicate which based heap to operate upon.
 <br><br>Each call to<tt> _bheapseg</tt> allocates a new based heap.
@@ -9742,8 +9742,8 @@ is a null pointer or points to an empty string, a pointer to the string &quot;.&
 <dl>
 <dt>Description:
 <dd>The<tt> _disable</tt> function causes interrupts to become disabled.
-<br>The<tt> _disable</tt> function would be used in conjunction with the <tt> _enable</tt> function to make sure that a sequence
-of instructions are executed without any intervening interrupts occurring.
+<br>The<tt> _disable</tt> function would be used in conjunction with the <a href="#_enable">_enable</a> function to make sure
+that a sequence of instructions are executed without any intervening interrupts occurring.
 </dl>
 <dl>
 <dt>Returns:
@@ -12459,8 +12459,8 @@ of the x-coordinates or y-coordinates are equal), nothing is drawn.
 <dl>
 <dt>Description:
 <dd>The<tt> _enable</tt> function causes interrupts to become enabled.
-<br>The<tt> _enable</tt> function would be used in conjunction with the <tt> _disable</tt> function to make sure that a sequence
-of instructions are executed without any intervening interrupts occurring.
+<br>The<tt> _enable</tt> function would be used in conjunction with the <a href="#_disable">_disable</a> function to make
+sure that a sequence of instructions are executed without any intervening interrupts occurring.
 </dl>
 <dl>
 <dt>Returns:
@@ -13135,7 +13135,7 @@ environment variables<tt> SOURCE, TARGET</tt> and<tt> lines.</tt>
 <ol>
 <li>The functions registered by the <a href="#atexit">atexit</a> or <a href="#onexit">onexit</a> functions are not called.
 <li>Any unopened files are not closed and any buffered output is not flushed to the associated files or devices.
-<li>Any files created by <tt> tmpfile</tt> are not removed.
+<li>Any files created by <a href="#tmpfile">tmpfile</a> are not removed.
 <li>The return<i> status</i> is made available to the parent process.&nbsp; Only the low order byte of<i> status</i> is available
 on DOS systems.&nbsp; The<i> status</i> value is typically set to 0 to indicate successful termination and set to some other
 value to indicate an error.
@@ -13194,10 +13194,10 @@ value to indicate an error.
 <dt>Description:
 <dd>The<tt> exit</tt> function causes normal program termination to occur.
 <br>First, all functions registered by the <a href="#atexit">atexit</a> function are called in the reverse order of their
-registration.&nbsp; Next, all open files are flushed and closed, and all files created by the <tt> tmpfile</tt> function are
-removed.&nbsp; Finally, the return<i> status</i> is made available to the parent process.&nbsp; Only the low order byte of<i>
-status</i> is available on DOS systems.&nbsp; The<i> status</i> value is typically set to 0 to indicate successful termination
-and set to some other value to indicate an error.
+registration.&nbsp; Next, all open files are flushed and closed, and all files created by the <a href="#tmpfile">tmpfile</a>
+function are removed.&nbsp; Finally, the return<i> status</i> is made available to the parent process.&nbsp; Only the low
+order byte of<i> status</i> is available on DOS systems.&nbsp; The<i> status</i> value is typically set to 0 to indicate successful
+termination and set to some other value to indicate an error.
 </dl>
 <dl>
 <dt>Returns:
@@ -13389,14 +13389,14 @@ old sizes.
 <dt><br>_nexpand
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<tt> _expand</tt> function is equivalent to the <tt> _nexpand</tt> function; in a large
-data memory model, the<tt> _expand</tt> function is equivalent to the <tt> _fexpand</tt> function.
+<br>In a small data memory model, the<tt> _expand</tt> function is equivalent to the <a href="#_expand">_nexpand</a> function;
+in a large data memory model, the<tt> _expand</tt> function is equivalent to the <a href="#_expand">_fexpand</a> function.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> _expand</tt> functions return the value<i> mem_blk</i> if it was successful in changing the size of the block.&nbsp;
-The return value is<tt> NULL</tt> (<tt>_NULLOFF</tt> for <tt> _bexpand</tt>) if the memory block could not be expanded to
-the desired size.&nbsp; It will be expanded as much as possible in this case.
+The return value is<tt> NULL</tt> (<tt>_NULLOFF</tt> for <a href="#_expand">_bexpand</a>) if the memory block could not be
+expanded to the desired size.&nbsp; It will be expanded as much as possible in this case.
 <br>The appropriate <tt> _msize</tt> function can be used to determine the new size of the expanded block.
 </dl>
 <dl>
@@ -16592,9 +16592,9 @@ the buffer specified by<i> buf</i>.
 <dt>Returns:
 <dd>The<tt> fread</tt> function returns the number of complete elements successfully read.&nbsp; This value may be less than the
 requested number of elements.
-<br>The <a href="#feof">feof</a> and <tt> ferror</tt> functions can be used to determine whether the end of the file was encountered
-or if an input/output error has occurred.&nbsp; When an error has occurred, <tt> errno</tt> contains a value indicating the
-type of error that has been detected.
+<br>The <a href="#feof">feof</a> and <a href="#ferror">ferror</a> functions can be used to determine whether the end of the
+file was encountered or if an input/output error has occurred.&nbsp; When an error has occurred, <tt> errno</tt> contains
+a value indicating the type of error that has been detected.
 </dl>
 <dl>
 <dt>See Also:
@@ -16724,7 +16724,7 @@ a small data memory model, the<tt> free</tt> function is equivalent to the <a hr
 <dd>The<tt> _freect</tt> function returns the number of times that <a href="#malloc">_nmalloc</a> (or <a href="#malloc">malloc</a>
 in small data models) can be called to allocate a item of<i> size</i> bytes.&nbsp; In the tiny, small and medium memory models,
 the default data segment is only extended as needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need
-to call <tt> _nheapgrow</tt> in these memory models before calling _freect in order to get a meaningful result.
+to call <a href="#_heapgrow">_nheapgrow</a> in these memory models before calling _freect in order to get a meaningful result.
 </dl>
 <dl>
 <dt>Returns:
@@ -21714,7 +21714,7 @@ _getw</tt> because the size of an<i> int</i> and the ordering of bytes within an
 <dt>Returns:
 <dd>The<tt> _getw</tt> function returns the integer value read or, if a read error or end-of-file occurs, the error indicator
 is set and<tt> _getw</tt> returns <tt> EOF</tt>.&nbsp; Since <tt> EOF</tt> is a legitimate value to read from<i> fp</i>, use
-<tt> ferror</tt> to verify that an error has occurred.
+<a href="#ferror">ferror</a> to verify that an error has occurred.
 </dl>
 <dl>
 <dt>See Also:
@@ -22292,7 +22292,7 @@ will indicate the following:
 <br><br>The handler is very restricted in the type of system calls that it can perform.&nbsp; System calls 0x01 through 0x0C,
 and 0x59 are the only system calls allowed to be issued by the handler.&nbsp; Therefore, many of the standard C run-time functions
 such as stream I/O and low-level I/O cannot be used by the handler.&nbsp; Console I/O is allowed (e.g., cprintf, cputs).
-<br><br>The handler must indicate what action to take by returning one of the following values or calling <tt> _hardresume</tt>
+<br><br>The handler must indicate what action to take by returning one of the following values or calling <a href="#_harderr">_hardresume</a>
 with one of the following values:
 <dl>
 <dt><b><i>Value</i></b>
@@ -22306,23 +22306,23 @@ with one of the following values:
 <dt><br>_HARDERR_FAIL
 <dd>Fail the system call that is in progress (DOS 3.0 or higher)
 </dl>
-<br>Alternatively, the handler can return directly to the application program rather than returning to DOS by using the <tt>
-_hardretn</tt> function.&nbsp; The application program resumes at the point just after the failing I/O function request.&nbsp;
-The <tt> _hardretn</tt> function should be called only from within a user-defined hardware error-handler function.
-<br><br>The<i> error</i> argument of <tt> _hardretn</tt> should be a DOS error code.&nbsp; See<i> The MS-DOS Encyclopedia</i>
-or<i> Programmer's PC Sourcebook, 2nd Edition,</i> for more detailed information on DOS error codes that may be returned by
-a given DOS function call.
-<br><br>If the failing I/O function request is an INT 0x21 function greater than or equal to function 0x38, <tt> _hardretn</tt>
-will return to the application with the carry flag set and the AX register set to the <tt> _hardretn</tt><i> error</i> argument.
-&nbsp;If the failing INT 0x21 function request is less than function 0x38 abd the function can return an error, the AL register
-will be set to 0xFF on return to the application.&nbsp; If the failing INT 0x21 function does not have a way of returning
-an error condition (which is true of certain INT 0x21 functions below 0x38), the<i> error</i> argument of <tt> _hardretn</tt>
-is not used, and no error code is returned to the application.
+<br>Alternatively, the handler can return directly to the application program rather than returning to DOS by using the <a href="#_harderr">_hardretn</a>
+function.&nbsp; The application program resumes at the point just after the failing I/O function request.&nbsp; The <a href="#_harderr">_hardretn</a>
+function should be called only from within a user-defined hardware error-handler function.
+<br><br>The<i> error</i> argument of <a href="#_harderr">_hardretn</a> should be a DOS error code.&nbsp; See<i> The MS-DOS
+Encyclopedia</i> or<i> Programmer's PC Sourcebook, 2nd Edition,</i> for more detailed information on DOS error codes that
+may be returned by a given DOS function call.
+<br><br>If the failing I/O function request is an INT 0x21 function greater than or equal to function 0x38, <a href="#_harderr">_hardretn</a>
+will return to the application with the carry flag set and the AX register set to the <a href="#_harderr">_hardretn</a><i>
+error</i> argument.&nbsp; If the failing INT 0x21 function request is less than function 0x38 abd the function can return
+an error, the AL register will be set to 0xFF on return to the application.&nbsp; If the failing INT 0x21 function does not
+have a way of returning an error condition (which is true of certain INT 0x21 functions below 0x38), the<i> error</i> argument
+of <a href="#_harderr">_hardretn</a> is not used, and no error code is returned to the application.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions do not return a value.&nbsp; The <tt> _hardresume</tt> and <tt> _hardretn</tt> functions do not return to
-the caller.
+<dd>These functions do not return a value.&nbsp; The <a href="#_harderr">_hardresume</a> and <a href="#_harderr">_hardretn</a>
+functions do not return to the caller.
 </dl>
 <dl>
 <dt>See Also:
@@ -22450,8 +22450,8 @@ with access and sharing specified by<i> mode</i>, and creates a POSIX-style file
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _heapchk</tt> functions along with <tt> _heapset</tt> and <tt> _heapwalk</tt> are provided for debugging heap related
-problems in programs.
+<dd>The<tt> _heapchk</tt> functions along with <a href="#_heapset">_heapset</a> and <a href="#_heapwalk">_heapwalk</a> are provided
+for debugging heap related problems in programs.
 <br>The<tt> _heapchk</tt> functions perform a consistency check on the unallocated memory space or &quot;heap&quot;.&nbsp;
 The consistency check determines whether all the heap entries are valid.&nbsp; Each function checks a particular heap, as
 listed below:
@@ -22466,8 +22466,8 @@ listed below:
 <dt><br>_nheapchk
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<tt> _heapchk</tt> function is equivalent to the <tt> _nheapchk</tt> function; in a large
-data memory model, the<tt> _heapchk</tt> function is equivalent to the <tt> _fheapchk</tt> function.
+<br>In a small data memory model, the<tt> _heapchk</tt> function is equivalent to the <a href="#_heapchk">_nheapchk</a> function;
+in a large data memory model, the<tt> _heapchk</tt> function is equivalent to the <a href="#_heapchk">_fheapchk</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -22590,15 +22590,16 @@ this, the application can allocate memory from the 200K pool that it has already
 </dl>
 <dl>
 <dt>Description:
-<dd>The <tt> _nheapgrow</tt> function attempts to grow the near heap to the maximum size of 64K.&nbsp; You will want to do this
-in the small data models if you are using both <a href="#malloc">malloc</a> and <a href="#malloc">_fmalloc</a> or <a href="#halloc">halloc</a>.
-&nbsp;Once a call to <a href="#malloc">_fmalloc</a> or <a href="#halloc">halloc</a> has been made, you may not be able to
-allocate any memory with <a href="#malloc">malloc</a> unless space has been reserved for the near heap using either <a href="#malloc">malloc</a>,
-<a href="#sbrk">sbrk</a> or <tt> _nheapgrow</tt>.
-<br>The <tt> _fheapgrow</tt> function doesn't do anything to the heap because the far heap will be extended automatically
-when needed.&nbsp; If the current far heap cannot be extended, then another far heap will be started.
-<br><br>In a small data memory model, the<tt> _heapgrow</tt> function is equivalent to the <tt> _nheapgrow</tt> function;
-in a large data memory model, the<tt> _heapgrow</tt> function is equivalent to the <tt> _fheapgrow</tt> function.
+<dd>The <a href="#_heapgrow">_nheapgrow</a> function attempts to grow the near heap to the maximum size of 64K.&nbsp; You will
+want to do this in the small data models if you are using both <a href="#malloc">malloc</a> and <a href="#malloc">_fmalloc</a>
+or <a href="#halloc">halloc</a>.&nbsp; Once a call to <a href="#malloc">_fmalloc</a> or <a href="#halloc">halloc</a> has been
+made, you may not be able to allocate any memory with <a href="#malloc">malloc</a> unless space has been reserved for the
+near heap using either <a href="#malloc">malloc</a>, <a href="#sbrk">sbrk</a> or <a href="#_heapgrow">_nheapgrow</a>.
+<br>The <a href="#_heapgrow">_fheapgrow</a> function doesn't do anything to the heap because the far heap will be extended
+automatically when needed.&nbsp; If the current far heap cannot be extended, then another far heap will be started.
+<br><br>In a small data memory model, the<tt> _heapgrow</tt> function is equivalent to the <a href="#_heapgrow">_nheapgrow</a>
+function; in a large data memory model, the<tt> _heapgrow</tt> function is equivalent to the <a href="#_heapgrow">_fheapgrow</a>
+function.
 </dl>
 <dl>
 <dt>Returns:
@@ -22666,9 +22667,9 @@ function or one of the <a href="#spawn">spawn...</a> functions.
 <dt><br>_nheapmin
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<tt> _heapmin</tt> function is equivalent to the <tt> _nheapmin</tt> function; in a large
-data memory model, the<tt> _heapmin</tt> function is equivalent to the <tt> _fheapmin</tt> function.&nbsp; It is identical
-to the <tt> _heapshrink</tt> function.
+<br>In a small data memory model, the<tt> _heapmin</tt> function is equivalent to the <a href="#_heapmin">_nheapmin</a> function;
+in a large data memory model, the<tt> _heapmin</tt> function is equivalent to the <a href="#_heapmin">_fheapmin</a> function.
+&nbsp;It is identical to the <a href="#_heapshrink">_heapshrink</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -22714,10 +22715,10 @@ to the <tt> _heapshrink</tt> function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _heapset</tt> functions along with <tt> _heapchk</tt> and <tt> _heapwalk</tt> are provided for debugging heap related
-problems in programs.
+<dd>The<tt> _heapset</tt> functions along with <a href="#_heapchk">_heapchk</a> and <a href="#_heapwalk">_heapwalk</a> are provided
+for debugging heap related problems in programs.
 <br>The<tt> _heapset</tt> functions perform a consistency check on the unallocated memory space or &quot;heap&quot; just as
-<tt> _heapchk</tt> does, and sets the heap's free entries with the<i> fill_char</i> value.
+<a href="#_heapchk">_heapchk</a> does, and sets the heap's free entries with the<i> fill_char</i> value.
 <br><br>Each function checks and sets a particular heap, as listed below:
 <dl>
 <dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Heap Filled</i></b>
@@ -22730,8 +22731,8 @@ problems in programs.
 <dt><br>_nheapset
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<tt> _heapset</tt> function is equivalent to the <tt> _nheapset</tt> function; in a large
-data memory model, the<tt> _heapset</tt> function is equivalent to the <tt> _fheapset</tt> function.
+<br>In a small data memory model, the<tt> _heapset</tt> function is equivalent to the <a href="#_heapset">_nheapset</a> function;
+in a large data memory model, the<tt> _heapset</tt> function is equivalent to the <a href="#_heapset">_fheapset</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -22820,9 +22821,9 @@ function or one of the <a href="#spawn">spawn...</a> functions.
 <dt><br>_nheapshrink
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In a small data memory model, the<tt> _heapshrink</tt> function is equivalent to the <tt> _nheapshrink</tt> function;
-in a large data memory model, the<tt> _heapshrink</tt> function is equivalent to the <tt> _fheapshrink</tt> function.&nbsp;
-It is identical to the <tt> _heapmin</tt> function.
+<br>In a small data memory model, the<tt> _heapshrink</tt> function is equivalent to the <a href="#_heapshrink">_nheapshrink</a>
+function; in a large data memory model, the<tt> _heapshrink</tt> function is equivalent to the <a href="#_heapshrink">_fheapshrink</a>
+function.&nbsp; It is identical to the <a href="#_heapmin">_heapmin</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -22878,8 +22879,8 @@ It is identical to the <tt> _heapmin</tt> function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _heapwalk</tt> functions along with <tt> _heapchk</tt> and <tt> _heapset</tt> are provided for debugging heap related
-problems in programs.
+<dd>The<tt> _heapwalk</tt> functions along with <a href="#_heapchk">_heapchk</a> and <a href="#_heapset">_heapset</a> are provided
+for debugging heap related problems in programs.
 <br>The<tt> _heapwalk</tt> functions walk through the heap, one entry per call, updating the <tt> _heapinfo</tt> structure
 with information on the next heap entry.&nbsp; The structure is defined in<tt> &lt;malloc.h&gt;.</tt>&nbsp; You must initialize
 the<i> _pentry</i> field with<tt> NULL</tt> to start the walk through the heap.
@@ -33450,8 +33451,8 @@ pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed me
 <dt>Description:
 <dd>The<tt> _memavl</tt> function returns the number of bytes of memory available for dynamic memory allocation in the near heap
 (the default data segment).&nbsp; In the tiny, small and medium memory models, the default data segment is only extended as
-needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need to call <tt> _nheapgrow</tt> in these memory
-models before calling<tt> _memavl</tt> in order to get a meaningful result.
+needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need to call <a href="#_heapgrow">_nheapgrow</a>
+in these memory models before calling<tt> _memavl</tt> in order to get a meaningful result.
 <br>The number returned by<tt> _memavl</tt> may not represent a single contiguous block of memory.&nbsp; Use the <tt> _memmax</tt>
 function to find the largest contiguous block of memory that can be allocated.
 </dl>
@@ -33886,7 +33887,7 @@ is less than, equal to, or greater than the object pointed to by<i> s2</i>.
 <dt>Description:
 <dd>The<tt> _memmax</tt> function returns the size of the largest contiguous block of memory available for dynamic memory allocation
 in the near heap (the default data segment).&nbsp; In the tiny, small and medium memory models, the default data segment is
-only extended as needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need to call <tt> _nheapgrow</tt>
+only extended as needed to satisfy requests for memory allocation.&nbsp; Therefore, you will need to call <a href="#_heapgrow">_nheapgrow</a>
 in these memory models before calling _memmax in order to get a meaningful result.
 </dl>
 <dl>
@@ -42387,8 +42388,8 @@ _putw</tt> because the size of an<i> int</i> and the ordering of bytes within an
 <dl>
 <dt>Returns:
 <dd>The<tt> _putw</tt> function returns the value written or, if a write error occurs, the error indicator is set and<tt> _putw</tt>
-returns <tt> EOF</tt>.&nbsp; Since <tt> EOF</tt> is a legitimate value to write to<i> fp</i>, use <tt> ferror</tt> to verify
-that an error has occurred.
+returns <tt> EOF</tt>.&nbsp; Since <tt> EOF</tt> is a legitimate value to write to<i> fp</i>, use <a href="#ferror">ferror</a>
+to verify that an error has occurred.
 </dl>
 <dl>
 <dt>See Also:
@@ -58601,8 +58602,8 @@ function on failure (7.9.9.1, 7.9.9.4).</b>
 <br><br>When the function <tt> fgetpos</tt> or <a href="#ftell">ftell</a> fails, they set <tt> errno</tt> to <tt> EBADF</tt>
 if the file number is bad.&nbsp; The constants are defined in the<tt> &lt;errno.h&gt;</tt> header file.
 <h2 id="Messages_Generated_by_the_perror_Function"> Messages Generated by the perror Function </h2>
-<br><b>The messages generated by the </b><tt> perror</tt><b> function (7.9.10.4).</b>
-<br><br>The <tt> perror</tt> function generates the following messages.
+<br><b>The messages generated by the <a href="#perror">perror</a> function (7.9.10.4).</b>
+<br><br>The <a href="#perror">perror</a> function generates the following messages.
 <dl>
 <dt><b><i>Error</i></b>
 <dd><b><i>Message</i></b>
