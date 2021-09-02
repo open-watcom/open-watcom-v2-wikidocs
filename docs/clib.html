@@ -7656,7 +7656,8 @@ the stack and registers appear as though the interrupt just occurred.
 drive is specified in<i> path</i> then the current drive is assumed.&nbsp; The<i> path</i> can be either relative to the current
 directory on the specified drive or it can be an absolute path name.
 <br>Each drive under DOS, OS/2 or Windows has a current directory.&nbsp; The current working directory is the current directory
-of the current drive.&nbsp; If you wish to change the current drive, you must use the <tt> _dos_setdrive</tt> function.
+of the current drive.&nbsp; If you wish to change the current drive, you must use the <a href="#_dos_setdrive">_dos_setdrive</a>
+function.
 <br><br>The<tt> _chdir</tt> function is identical to<tt> chdir</tt>.&nbsp; Use<tt> _chdir</tt> for ANSI naming conventions.
 <br><br>The<tt> _wchdir</tt> function is a wide character version of<tt> chdir</tt> that operates with wide character strings.
 </dl>
@@ -10525,8 +10526,8 @@ and <a href="#_dos_find">_dos_findnext</a> functions return an OS error code and
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _dos_freemem</tt> function uses system call 0x49 to release memory that was previously allocated by <tt> _dos_allocmem</tt>.
-&nbsp;The value contained in<i> segment</i> is the one returned by a previous call to <tt> _dos_allocmem</tt>.
+<dd>The<tt> _dos_freemem</tt> function uses system call 0x49 to release memory that was previously allocated by <a href="#_dos_allocmem">_dos_allocmem</a>.
+&nbsp;The value contained in<i> segment</i> is the one returned by a previous call to <a href="#_dos_allocmem">_dos_allocmem</a>.
 <br>For 32-bit DOS applications, it is recommended that the corresponding DPMI services be used.
 </dl>
 <dl>
@@ -11256,8 +11257,8 @@ accordingly.
 <dl>
 <dt>Description:
 <dd>The<tt> _dos_setblock</tt> function uses system call 0x4A to change the size of<i> segment</i>, which was previously allocated
-by <tt> _dos_allocmem</tt>, to<i> size</i> paragraphs.&nbsp; If the request fails, the maximum number of paragraphs that this
-memory block can be changed to is returned in the word pointed to by<i> maxsize</i>.
+by <a href="#_dos_allocmem">_dos_allocmem</a>, to<i> size</i> paragraphs.&nbsp; If the request fails, the maximum number of
+paragraphs that this memory block can be changed to is returned in the word pointed to by<i> maxsize</i>.
 <br>For 32-bit DOS applications, it is recommended that the corresponding DPMI services be used.
 </dl>
 <dl>
@@ -42172,8 +42173,8 @@ these new processes get any new items added by<tt> putenv</tt> and _wputenv.
 <br><br>With regard to environment entries, observe the following cautions:
 <ul>
 <li>Do not change an environment entry directly; instead, use putenv or<tt> _wputenv</tt> to change it.&nbsp; To modify the
-return value of<tt> putenv</tt> or<tt> _wputenv</tt> without affecting the environment table, use <tt> strdup</tt> or <tt>
-strcpy</tt> to make a copy of the string.
+return value of<tt> putenv</tt> or<tt> _wputenv</tt> without affecting the environment table, use <a href="#strdup">strdup</a>
+or <a href="#strcpy">strcpy</a> to make a copy of the string.
 <li>If the argument<i> env_name</i> is not a literal string, you should duplicate the string, since putenv does not copy the
 value; for example,
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -49394,8 +49395,8 @@ group when the file is run as a program.&nbsp; On a regular file, this bit shoul
 <br>The<tt> _stat</tt> function is identical to<tt> stat</tt>.&nbsp; Use<tt> _stat</tt> for ANSI naming conventions.
 <br><br>The <a href="#stat">_stati64</a>, <tt> _wstat</tt>, and <tt> _wstati64</tt> functions differ from<tt> stat</tt> in
 the type of structure that they are asked to fill in.&nbsp; The <tt> _wstat</tt> and <tt> _wstati64</tt> functions deal with
-wide character strings.&nbsp; The differences in the structures are described above.&nbsp; The <tt> lstat</tt> function is
-identical to<tt> stat</tt> on non-UNIX platforms.
+wide character strings.&nbsp; The differences in the structures are described above.&nbsp; The <a href="#stat">lstat</a> function
+is identical to<tt> stat</tt> on non-UNIX platforms.
 </dl>
 <dl>
 <dt>Returns:
@@ -53177,10 +53178,11 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dt>Description:
 <dd>The<tt> strxfrm</tt> function transforms, for no more than<i> n</i> characters, the string pointed to by<i> src</i> to the
 buffer pointed to by<i> dst</i>.&nbsp; The transformation uses the collating sequence selected by the <a href="#setlocale">setlocale</a>
-function so that two transformed strings will compare identically (using the <tt> strncmp</tt> function) to a comparison of
-the original two strings using the <tt> strcoll</tt> function.&nbsp; The function will be equivalent to the <tt> strncpy</tt>
-function (except there is no padding of the<i> dst</i> argument with null characters when the argument<i> src</i> is shorter
-than<i> n</i> characters) when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.
+function so that two transformed strings will compare identically (using the <a href="#strncmp">strncmp</a> function) to a
+comparison of the original two strings using the <a href="#strcoll">strcoll</a> function.&nbsp; The function will be equivalent
+to the <a href="#strncpy">strncpy</a> function (except there is no padding of the<i> dst</i> argument with null characters
+when the argument<i> src</i> is shorter than<i> n</i> characters) when the collating sequence is selected from the<tt> &quot;C&quot;</tt>
+locale.
 <br>The<tt> wcsxfrm</tt> function is a wide character version of<tt> strxfrm</tt> that operates with wide character strings.
 &nbsp;For wcsxfrm, after the string transformation, a call to <a href="#strcmp">wcscmp</a> with the two transformed strings
 yields results identical to those of a call to <a href="#strcoll">wcscoll</a> applied to the original two strings.<tt>&nbsp;
@@ -58199,7 +58201,7 @@ is true
 <dl>
 <dt>Returns:
 <dd>If<i> property</i> identifies a valid class of wide characters according to the <tt> LC_CTYPE</tt> category of the current
-locale, the<tt> wctype</tt> function returns a non-zero value that is valid as the second argument to the <tt> iswctype</tt>
+locale, the<tt> wctype</tt> function returns a non-zero value that is valid as the second argument to the <a href="#iswctype">iswctype</a>
 function; otherwise, it returns zero.
 </dl>
 <dl>
