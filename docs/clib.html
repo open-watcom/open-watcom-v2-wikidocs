@@ -11409,8 +11409,8 @@ to by<i> total</i>.&nbsp; For DOS versions 3.0 or later, the minimum number of d
 <dl>
 <dt>Returns:
 <dd>The<tt> _dos_setdrive</tt> function has no return value.&nbsp; If an invalid drive number is specified, the function fails
-with no error indication.&nbsp; You must use the <tt> _dos_getdrive</tt> function to check that the desired drive has been
-set.
+with no error indication.&nbsp; You must use the <a href="#_dos_getdrive">_dos_getdrive</a> function to check that the desired
+drive has been set.
 </dl>
 <dl>
 <dt>See Also:
@@ -12976,18 +12976,18 @@ path definition to be displayed.
 exec...</b>&nbsp; call.&nbsp; These character strings are concatenated with spaces inserted to separate the arguments to form
 one argument string for the child process.&nbsp; The length of this concatenated string must not exceed 128 bytes for DOS
 systems.
-<br><br>The arguments may be passed as a list of arguments (<a href="#exec">execl</a>, <tt> execle</tt>, <tt> execlp</tt>,
-and <tt> execlpe</tt>) or as a vector of pointers (<tt> execv</tt>, <tt> execve</tt>, <tt> execvp</tt>, and <tt> execvpe</tt>).
-&nbsp;At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>, must be passed to the child process.&nbsp; By convention,
-this first argument is a pointer to the name of the program.
+<br><br>The arguments may be passed as a list of arguments (<a href="#exec">execl</a>, <a href="#exec">execle</a>, <a href="#exec">execlp</a>,
+and <a href="#exec">execlpe</a>) or as a vector of pointers (<a href="#exec">execv</a>, <a href="#exec">execve</a>, <a href="#exec">execvp</a>,
+and <a href="#exec">execvpe</a>).&nbsp; At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>, must be passed to the
+child process.&nbsp; By convention, this first argument is a pointer to the name of the program.
 <br><br>If the arguments are passed as a list, there must be a<tt> NULL</tt> pointer to mark the end of the argument list.
 &nbsp;Similarly, if a pointer to an argument vector is passed, the argument vector must be terminated by a<tt> NULL</tt> pointer.
 <br><br>The environment for the invoked program is inherited from the parent process when you use the <a href="#exec">execl</a>,
-<tt> execlp</tt>, <tt> execv</tt>, and <tt> execvp</tt> functions.&nbsp; The <tt> execle</tt>, <tt> execlpe</tt>, <tt> execve</tt>,
-and <tt> execvpe</tt> functions allow a different environment to be passed to the child process through the<i> envp</i> argument.
-&nbsp;The argument<i> envp</i> is a pointer to an array of character pointers, each of which points to a string defining an
-environment variable.&nbsp; The array is terminated with a<tt> NULL</tt> pointer.&nbsp; Each pointer locates a character string
-of the form
+<a href="#exec">execlp</a>, <a href="#exec">execv</a>, and <a href="#exec">execvp</a> functions.&nbsp; The <a href="#exec">execle</a>,
+<a href="#exec">execlpe</a>, <a href="#exec">execve</a>, and <a href="#exec">execvpe</a> functions allow a different environment
+to be passed to the child process through the<i> envp</i> argument.&nbsp; The argument<i> envp</i> is a pointer to an array
+of character pointers, each of which points to a string defining an environment variable.&nbsp; The array is terminated with
+a<tt> NULL</tt> pointer.&nbsp; Each pointer locates a character string of the form
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable=value</tt>
 <br><br>that is used to define an environment variable.&nbsp; If the value of<i> envp</i> is<tt> NULL</tt>, then the child
@@ -12995,7 +12995,7 @@ process inherits the environment of the parent process.
 <br><br>The environment is the collection of environment variables whose values have been defined with the DOS<tt> SET</tt>
 command or by the successful execution of the <a href="#putenv">putenv</a> function.&nbsp; A program may read these values
 with the <a href="#getenv">getenv</a> function.
-<br><br>The <tt> execvpe</tt> and <tt> execlpe</tt> functions are extensions to POSIX 1003.1.
+<br><br>The <a href="#exec">execvpe</a> and <a href="#exec">execlpe</a> functions are extensions to POSIX 1003.1.
 <br><br>The<tt> _wexec...</tt>&nbsp; functions are similar to their counterparts but operate on wide character strings.
 </dl>
 <dl>
@@ -14201,8 +14201,9 @@ were successfully raised.&nbsp; Otherwise, it returns a nonzero value.
 <dt>Description:
 <dd>The<tt> fesetenv</tt> function attempts to establish the floating-point environment to environment represented by the object
 pointed by<i> envp</i> argument.&nbsp; The<i> envp</i> argument shall point to an object set by a call to <a href="#fegetenv">fegetenv</a>
-or <a href="#feholdexcept">feholdexcept</a>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that fesetenv merely installs
-the state of the floating-point status flags represented through its argument, and does not raise these floating-point exceptions.
+or <a href="#feholdexcept">feholdexcept</a>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that<tt> fesetenv</tt> merely
+installs the state of the floating-point status flags represented through its argument, and does not raise these floating-point
+exceptions.
 </dl>
 <dl>
 <dt>Returns:
@@ -46200,8 +46201,8 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> set_new_handler</tt> functions are used to transfer control to a user-defined error handler if the <tt> new</tt> operator
-fails to allocate memory.&nbsp; The argument<i> pNewHandler</i> is the name of a function of type <tt> PFV</tt> or <tt> PFU</tt>.
+<dd>The<tt> set_new_handler</tt> functions are used to transfer control to a user-defined error handler if the operator fails
+to allocate memory.&nbsp; The argument<i> pNewHandler</i> is the name of a function of type <tt> PFV</tt> or <tt> PFU</tt>.
 <dl>
 <dt><b><i>Type&nbsp;&nbsp;&nbsp;&nbsp; Description</i></b>
 <dt>PFV
@@ -47978,8 +47979,8 @@ and less than<tt> RSIZE_MAX,</tt> then the<tt> snprintf_s</tt> function sets<i> 
 <dt>Description:
 <dd>The<tt> snprintf_s</tt> function is equivalent to the <a href="#snprintf">snprintf</a> function except for the explicit runtime-constraints
 listed above.
-<br>The<tt> snprintf_s</tt> function, unlike <tt> sprintf_s</tt>, will truncate the result to fit within the array pointed
-to by<i> s</i>.
+<br>The<tt> snprintf_s</tt> function, unlike <a href="#sprintf_s">sprintf_s</a>, will truncate the result to fit within the
+array pointed to by<i> s</i>.
 <br><br>The<tt> snwprintf_s</tt> function is a wide character version of<tt> snprintf_s</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
@@ -48229,8 +48230,8 @@ these sharing modes.
 <dl>
 <dt>Description:
 <dd>The<tt> sound</tt> function turns on the PC's speaker at the specified<i> frequency</i>.&nbsp; The frequency is in Hertz (cycles
-per second).&nbsp; The speaker can be turned off by calling the <tt> nosound</tt> function after an appropriate amount of
-time.
+per second).&nbsp; The speaker can be turned off by calling the <a href="#nosound">nosound</a> function after an appropriate
+amount of time.
 </dl>
 <dl>
 <dt>Returns:
@@ -48407,18 +48408,18 @@ path definition to be displayed.
 spawn...</b>&nbsp; call.&nbsp; These character strings are concatenated with spaces inserted to separate the arguments to
 form one argument string for the child process.&nbsp; The length of this concatenated string must not exceed 128 bytes for
 DOS systems.
-<br><br>The arguments may be passed as a list of arguments (<a href="#spawn">spawnl</a>, <tt> spawnle</tt>, <a href="#spawn">spawnlp</a>
-and <a href="#spawn">spawnlpe</a>) or as a vector of pointers (<tt> spawnv</tt>, <tt> spawnve</tt>, <tt> spawnvp</tt>, and
-<tt> spawnvpe</tt>).&nbsp; At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>, must be passed to the child process.
-&nbsp;By convention, this first argument is a pointer to the name of the program.
+<br><br>The arguments may be passed as a list of arguments (<a href="#spawn">spawnl</a>, <a href="#spawn">spawnle</a>, <a href="#spawn">spawnlp</a>
+and <a href="#spawn">spawnlpe</a>) or as a vector of pointers (<a href="#spawn">spawnv</a>, <a href="#spawn">spawnve</a>,
+<a href="#spawn">spawnvp</a>, and <a href="#spawn">spawnvpe</a>).&nbsp; At least one argument,<i> arg0</i> or<i> argv&#91;0&#93;</i>,
+must be passed to the child process.&nbsp; By convention, this first argument is a pointer to the name of the program.
 <br><br>If the arguments are passed as a list, there must be a<tt> NULL</tt> pointer to mark the end of the argument list.
 &nbsp;Similarly, if a pointer to an argument vector is passed, the argument vector must be terminated by a<tt> NULL</tt> pointer.
 <br><br>The environment for the invoked program is inherited from the parent process when you use the <a href="#spawn">spawnl</a>,
-<a href="#spawn">spawnlp</a>, <tt> spawnv</tt> and <tt> spawnvp</tt> functions.&nbsp; The <tt> spawnle</tt>, <a href="#spawn">spawnlpe</a>,
-<tt> spawnve</tt> and <tt> spawnvpe</tt> functions allow a different environment to be passed to the child process through
-the<i> envp</i> argument.&nbsp; The argument<i> envp</i> is a pointer to an array of character pointers, each of which points
-to a string defining an environment variable.&nbsp; The array is terminated with a<tt> NULL</tt> pointer.&nbsp; Each pointer
-locates a character string of the form
+<a href="#spawn">spawnlp</a>, <a href="#spawn">spawnv</a> and <a href="#spawn">spawnvp</a> functions.&nbsp; The <a href="#spawn">spawnle</a>,
+<a href="#spawn">spawnlpe</a>, <a href="#spawn">spawnve</a> and <a href="#spawn">spawnvpe</a> functions allow a different
+environment to be passed to the child process through the<i> envp</i> argument.&nbsp; The argument<i> envp</i> is a pointer
+to an array of character pointers, each of which points to a string defining an environment variable.&nbsp; The array is terminated
+with a<tt> NULL</tt> pointer.&nbsp; Each pointer locates a character string of the form
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable=value</tt>
 <br><br>that is used to define an environment variable.&nbsp; If the value of<i> envp</i> is<tt> NULL</tt>, then the child
@@ -48918,8 +48919,8 @@ and less than<tt> RSIZE_MAX,</tt> then the<tt> sprintf_s</tt> function sets<i> s
 <dt>Description:
 <dd>The<tt> sprintf_s</tt> function is equivalent to the <a href="#sprintf">sprintf</a> function except for the explicit runtime-constraints
 listed above.
-<br>The<tt> sprintf_s</tt> function, unlike <tt> snprintf_s</tt>, treats a result too big for the array pointed to by<i> s</i>
-as a runtime-constraint violation.
+<br>The<tt> sprintf_s</tt> function, unlike <a href="#snprintf_s">snprintf_s</a>, treats a result too big for the array pointed
+to by<i> s</i> as a runtime-constraint violation.
 <br><br>The<tt> swprintf_s</tt> function is a wide character version of<tt> sprintf_s</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
@@ -49027,9 +49028,9 @@ message using the <tt> stderr</tt> stream.
 <dl>
 <dt>Description:
 <dd>The<tt> srand</tt> function uses the argument<i> seed</i> to start a new sequence of pseudo-random integers to be returned
-by subsequent calls to <tt> rand</tt>.&nbsp; A particular sequence of pseudo-random integers can be repeated by calling<tt>
-srand</tt> with the same<i> seed</i> value.&nbsp; The default sequence of pseudo-random integers is selected with a<i> seed</i>
-value of 1.
+by subsequent calls to <a href="#rand">rand</a>.&nbsp; A particular sequence of pseudo-random integers can be repeated by
+calling<tt> srand</tt> with the same<i> seed</i> value.&nbsp; The default sequence of pseudo-random integers is selected with
+a<i> seed</i> value of 1.
 </dl>
 <dl>
 <dt>Returns:
@@ -49395,10 +49396,10 @@ of the owner of the file when the file is run as a program.&nbsp; On a regular f
 group when the file is run as a program.&nbsp; On a regular file, this bit should be cleared on any write.
 </dl>
 <br>The<tt> _stat</tt> function is identical to<tt> stat</tt>.&nbsp; Use<tt> _stat</tt> for ANSI naming conventions.
-<br><br>The <a href="#stat">_stati64</a>, <tt> _wstat</tt>, and <tt> _wstati64</tt> functions differ from<tt> stat</tt> in
-the type of structure that they are asked to fill in.&nbsp; The <tt> _wstat</tt> and <tt> _wstati64</tt> functions deal with
-wide character strings.&nbsp; The differences in the structures are described above.&nbsp; The <a href="#stat">lstat</a> function
-is identical to<tt> stat</tt> on non-UNIX platforms.
+<br><br>The <a href="#stat">_stati64</a>, <a href="#stat">_wstat</a>, and <a href="#stat">_wstati64</a> functions differ from<tt>
+stat</tt> in the type of structure that they are asked to fill in.&nbsp; The <a href="#stat">_wstat</a> and <a href="#stat">_wstati64</a>
+functions deal with wide character strings.&nbsp; The differences in the structures are described above.&nbsp; The <a href="#stat">lstat</a>
+function is identical to<tt> stat</tt> on non-UNIX platforms.
 </dl>
 <dl>
 <dt>Returns:
@@ -49510,7 +49511,7 @@ floating-point operations.&nbsp; The description of this status is found in the<
 <dt>Description:
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.
 &nbsp;All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
-<br>The<tt> strcasecmp</tt> function is identical to the <tt> _stricmp</tt> function.
+<br>The<tt> strcasecmp</tt> function is identical to the <a href="#stricmp">_stricmp</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -49647,12 +49648,13 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dt>Constraints:
 <dd>If any of the following runtime-constraints is violated, the currently active runtime-constraint handler will be invoked and<tt>
 strcat_s</tt> will return a non-zero value to indicate an error, or the runtime-constraint handler aborts the program.
-<br>Let<i> m</i> denote the value<i> s1max - strnlen_s(s1, s1max)</i> upon entry to <tt> strcat_s</tt>.&nbsp; Neither<i> s1</i>
-nor<i> s2</i> shall be a null pointer.<i>&nbsp; s1max</i> shall not be greater than <tt> RSIZE_MAX</tt>.<i>&nbsp; s1max</i>
-shall not equal zero.<i>&nbsp; m</i> shall not equal zero.<i>&nbsp; m</i> shall be greater than<i> strnlen_s(s2, m)</i>.&nbsp;
-Copying shall not take place between objects that overlap.
+<br>Let<i> m</i> denote the value<i> s1max - strnlen_s(s1, s1max)</i> upon entry to <a href="#strcat_s">strcat_s</a>.&nbsp;
+Neither<i> s1</i> nor<i> s2</i> shall be a null pointer.<i>&nbsp; s1max</i> shall not be greater than <tt> RSIZE_MAX</tt>.<i>
+&nbsp;s1max</i> shall not equal zero.<i>&nbsp; m</i> shall not equal zero.<i>&nbsp; m</i> shall be greater than<i> strnlen_s(s2,
+m)</i>.&nbsp; Copying shall not take place between objects that overlap.
 <br><br>If there is a runtime-constraint violation, then if<i> s1</i> is not a null pointer and<i> s1max</i> is greater than
-zero and not greater than <tt> RSIZE_MAX</tt>, then <tt> strcat_s</tt> sets<i> s1&#91;0&#93;</i> to the null character.
+zero and not greater than <tt> RSIZE_MAX</tt>, then <a href="#strcat_s">strcat_s</a> sets<i> s1&#91;0&#93;</i> to the null
+character.
 </dl>
 <dl>
 <dt>Description:
@@ -49909,7 +49911,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dt>Description:
 <dd>The<tt> strcoll</tt> function compares the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.&nbsp; The
 comparison uses the collating sequence selected by the <a href="#setlocale">setlocale</a> function.&nbsp; The function will
-be equivalent to the <tt> strcmp</tt> function when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.
+be equivalent to the <a href="#strcmp">strcmp</a> function when the collating sequence is selected from the<tt> &quot;C&quot;</tt>
+locale.
 <br>The<tt> wcscoll</tt> function is a wide character version of<tt> strcoll</tt> that operates with wide character strings.
 <br><br>The<tt> _mbscoll</tt> function is a multi-byte character version of<tt> strcoll</tt> that operates with multi-byte
 character strings.
@@ -50046,7 +50049,8 @@ strcpy_s</tt> will return a non-zero value to indicate an error, or the runtime-
 &nbsp;s1max</i> shall not equal zero.<i>&nbsp; s1max</i> shall be greater than<i> strnlen_s(s2, s1max)</i>.&nbsp; Copying
 shall not take place between objects that overlap.
 <br><br>If there is a runtime-constraint violation, then if<i> s1</i> is not a null pointer and<i> s1max</i> is greater than
-zero and not greater than <tt> RSIZE_MAX</tt>, then <tt> strcpy_s</tt> sets<i> s1&#91;0&#93;</i> to the null character.
+zero and not greater than <tt> RSIZE_MAX</tt>, then <a href="#strcpy_s">strcpy_s</a> sets<i> s1&#91;0&#93;</i> to the null
+character.
 </dl>
 <dl>
 <dt>Description:
@@ -50418,8 +50422,8 @@ is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> strerrorlen_s</tt> function calculates the length of the (untruncated) locale-specific message string that the <tt>
-strerror_s</tt> function maps to<i> errnum</i>.
+<dd>The<tt> strerrorlen_s</tt> function calculates the length of the (untruncated) locale-specific message string that the <a href="#strerror_s">strerror_s</a>
+function maps to<i> errnum</i>.
 <br>The<tt> _wcserrorlen_s</tt> function is a wide character version of<tt> strerrorlen_s</tt> that operates with wide character
 strings.
 </dl>
@@ -50504,8 +50508,8 @@ string.
 <dd>The<tt> strftime</tt> function formats the time in the argument<i> timeptr</i> into the array pointed to by the argument<i>
 s</i> according to the<i> format</i> argument.
 <br>The<tt> wcsftime</tt> function is a wide character version of<tt> strftime</tt> that operates with wide character strings.
-<br><br>The <tt> _wstrftime_ms</tt> function is identical to<tt> wcsftime</tt> except that the<i> format</i> is not a wide
-character string.
+<br><br>The <a href="#strftime">_wstrftime_ms</a> function is identical to<tt> wcsftime</tt> except that the<i> format</i>
+is not a wide character string.
 <br><br>The<i> format</i> string consists of zero or more directives and ordinary characters.&nbsp; A directive consists of
 a '%' character followed by a character that determines the substitution that is to take place.&nbsp; All ordinary characters
 are copied unchanged into the array.&nbsp; No more than<i> maxsize</i> characters are placed in the array.&nbsp; The format
@@ -50731,8 +50735,9 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dl>
 <dt>Description:
 <dd>The function performs a comparison without case sensitivity of the string pointed to by<i> s1</i> to the string pointed to
-by<i> s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <tt> _setmbcp</tt> function.&nbsp;
-All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the comparison.
+by<i> s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <a href="#_setmbcp">_setmbcp</a>
+function.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the
+comparison.
 <br>The<tt> _wcsicoll</tt> function is a wide character version of<tt> _stricoll</tt> that operates with wide character strings.
 <br><br>The<tt> _mbsicoll</tt> function is a multi-byte character version of<tt> _stricoll</tt> that operates with multi-byte
 character strings.
@@ -51091,7 +51096,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dd>The function compares, without case sensitivity, the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>,
 for at most<i> len</i> characters.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for
 the purposes of doing the comparison.
-<br>The<tt> strncasecmp</tt> function is identical to the <tt> _strnicmp</tt> function.
+<br>The<tt> strncasecmp</tt> function is identical to the <a href="#strnicmp">_strnicmp</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -51396,7 +51401,7 @@ to by<i> s1</i> is less than, equal to, or greater than the string pointed to by
 <dl>
 <dt>Description:
 <dd>These functions compare the first<i> count</i> characters of the string pointed to by<i> s1</i> to the string pointed to by<i>
-s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <tt> _setmbcp</tt> function.
+s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <a href="#_setmbcp">_setmbcp</a> function.
 <br>The<tt> _wcsncoll</tt> function is a wide character version of<tt> _strncoll</tt> that operates with wide character strings.
 <br><br>The<tt> _mbsncoll</tt> function is a multi-byte character version of<tt> _strncoll</tt> that operates with multi-byte
 character strings.
@@ -51566,15 +51571,16 @@ strncpy_s</tt> will return a non-zero value to indicate an error, or the runtime
 shall be greater than<i> strnlen_s(s2, s1max)</i>.
 <br><br>Copying shall not take place between objects that overlap.
 <br><br>If there is a runtime-constraint violation, then if<i> s1</i> is not a null pointer and<i> s1max</i> is greater than
-zero and not greater than <tt> RSIZE_MAX</tt>, then <tt> strncpy_s</tt> sets<i> s1&#91;0&#93;</i> to the null character.
+zero and not greater than <tt> RSIZE_MAX</tt>, then <a href="#strncpy_s">strncpy_s</a> sets<i> s1&#91;0&#93;</i> to the null
+character.
 </dl>
 <dl>
 <dt>Description:
 <dd>The<tt> strncpy_s</tt> function copies not more than<i> n</i> successive characters (characters that follow a null character
 are not copied) from the array pointed to by<i> s2</i> to the array pointed to by<i> s1</i>.&nbsp; If no null character was
 copied from<i> s2</i>, then<i> s1&#91;n&#93;</i> is set to a null character.
-<br>All elements following the terminating null character (if any) written by <tt> strncpy_s</tt> in the array of<i> s1max</i>
-characters pointed to by<i> s1</i> take unspecified values when <tt> strncpy_s</tt> returns.
+<br>All elements following the terminating null character (if any) written by <a href="#strncpy_s">strncpy_s</a> in the array
+of<i> s1max</i> characters pointed to by<i> s1</i> take unspecified values when <a href="#strncpy_s">strncpy_s</a> returns.
 <br><br>The<tt> wcsncpy_s</tt> function is a wide character version of<tt> strncpy_s</tt> that operates with wide character
 strings.
 </dl>
@@ -51726,8 +51732,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dt>Description:
 <dd>The function performs a comparison without case sensitivity of the first<i> count</i> characters of the string pointed to
 by<i> s1</i> to the string pointed to by<i> s2</i>.&nbsp; The comparison uses the current code page which can be selected
-by the <tt> _setmbcp</tt> function.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for
-the purposes of doing the comparison.
+by the <a href="#_setmbcp">_setmbcp</a> function.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to
+lowercase for the purposes of doing the comparison.
 <br>The<tt> _wcsnicoll</tt> function is a wide character version of<tt> _strnicoll</tt> that operates with wide character
 strings.
 <br><br>The<tt> _mbsnicoll</tt> function is a multi-byte character version of<tt> _strnicoll</tt> that operates with multi-byte
@@ -52516,9 +52522,9 @@ such a character is found, it is overwritten by a null character, which terminat
 function saves a pointer to the following character, from which the next search for a token will start when the first argument
 is a NULL pointer.
 <br><br>Because<tt> strtok</tt> may modify the original string, that string should be duplicated if the string is to be re-used.
-<br><br>The reentrant form of this function, <tt> strtok_r</tt>, also requires a pointer to a string pointer to be passed.
-&nbsp;This pointer is used internally by the function for subsequent calls to perform tokenizing without relying on internal
-state within the function.
+<br><br>The reentrant form of this function, <a href="#strtok">strtok_r</a>, also requires a pointer to a string pointer to
+be passed.&nbsp; This pointer is used internally by the function for subsequent calls to perform tokenizing without relying
+on internal state within the function.
 <br><br>The<tt> _fstrtok</tt> function is a data model independent form of the<tt> strtok</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcstok</tt> function is a wide character version of<tt> strtok</tt> that operates with wide character strings.
@@ -53583,7 +53589,7 @@ a value indicating the type of error that has been detected.
 is the file handle returned by a successful execution of the <a href="#open">open</a> function.
 <br>The returned value may be used in conjunction with the <a href="#lseek">lseek</a> function to reset the current file position.
 <br><br>The _telli64 function is similar to the<tt> _tell</tt> function but returns a 64-bit file position.&nbsp; This value
-may be used in conjunction with the <tt> _lseeki64</tt> function to reset the current file position.
+may be used in conjunction with the <a href="#lseek">_lseeki64</a> function to reset the current file position.
 <br><br>The<tt> tell</tt> function is deprecated, use <a href="#tell">_tell</a> instead.
 </dl>
 <dl>
@@ -54459,7 +54465,7 @@ letter when the argument is a wide character lowercase letter; otherwise, the or
 <dl>
 <dt>Description:
 <dd>The<tt> towctrans</tt> function maps the wide character<i> wc</i> using the mapping described by<i> desc</i>.&nbsp; Valid
-values of<i> desc</i> are defined by the use of the <tt> wctrans</tt> function.
+values of<i> desc</i> are defined by the use of the <a href="#wctrans">wctrans</a> function.
 <br>The two expressions listed below behave the same as a call to the wide character case mapping function shown.
 <dl>
 <dt><b><i>Expression&nbsp;&nbsp;&nbsp;&nbsp; Equivalent</i></b>
@@ -54521,7 +54527,7 @@ values of<i> desc</i> are defined by the use of the <tt> wctrans</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> trunc</tt> function truncates the argument<i> x</i> to the appropriate integer.&nbsp; The function is equivalent to
-<tt> floor</tt> for positive numbers and <tt> ceil</tt> for negative numbers.
+<a href="#floor">floor</a> for positive numbers and <a href="#ceil">ceil</a> for negative numbers.
 </dl>
 <dl>
 <dt>Returns:
@@ -54564,16 +54570,17 @@ values of<i> desc</i> are defined by the use of the <tt> wctrans</tt> function.
 <dd>The POSIX-compliant<tt> ttyname</tt> function retrieves the name of a TTY as specified by the<i> fd</i> file descriptor, returning
 a static pointer to the name.&nbsp; Subsequent calls may change the contents of the string pointed to by the original call
 to<tt> ttyname</tt>, and the memory to which the return value points should not be freed.
-<br>The <tt> ttyname_r</tt> function performs the same function as<tt> ttyname</tt>, but the name of the TTY is returned in
-the<i> buf</i> argument.&nbsp; The argument<i> buflen</i> should specify the size of the<i> buf</i> argument.&nbsp; The <tt>
-ttyname_r</tt> function is an Open Watcom extension commonly implemented in other standard libraries.
+<br>The <a href="#ttyname">ttyname_r</a> function performs the same function as<tt> ttyname</tt>, but the name of the TTY
+is returned in the<i> buf</i> argument.&nbsp; The argument<i> buflen</i> should specify the size of the<i> buf</i> argument.
+&nbsp;The <a href="#ttyname">ttyname_r</a> function is an Open Watcom extension commonly implemented in other standard libraries.
 </dl>
 <dl>
 <dt>Returns:
 <dd>Upon success, the<tt> ttyname</tt> function returns a pointer to statically allocated memory containing the name of the TTY.
 &nbsp;Upon failure, the returned pointer will be <tt> NULL</tt> and <tt> errno</tt> will be set appropriately.
-<br>Upon success, the <tt> ttyname_r</tt> function will return zero, and the<i> buf</i> argument will contain the name of
-the TTY.&nbsp; Upon failure, the <tt> ttyname_r</tt> function will return the error code and set <tt> errno</tt> as well.
+<br>Upon success, the <a href="#ttyname">ttyname_r</a> function will return zero, and the<i> buf</i> argument will contain
+the name of the TTY.&nbsp; Upon failure, the <a href="#ttyname">ttyname_r</a> function will return the error code and set
+<tt> errno</tt> as well.
 </dl>
 <dl>
 <dt>Errors:
