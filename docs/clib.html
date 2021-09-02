@@ -613,7 +613,7 @@
 <br><a href="#NULL_Macro">NULL Macro</a>
 <dt><br>- O -
 <dd><a href="#offsetof">offsetof</a>
-<br><a href="#onexit">onexit</a>
+<br><a href="#onexit">_onexit, onexit</a>
 <br><a href="#open">open, _open, _wopen</a>
 <br><a href="#_open_osfhandle">_open_osfhandle</a>
 <br><a href="#opendir">opendir, _wopendir</a>
@@ -2465,7 +2465,7 @@ place where the new process was started)
 <dd>create a new process
 <dt><br>kill
 <dd>send a signal to specified process
-<dt><br><a href="#onexit">onexit</a>
+<dt><br><a href="#onexit">_onexit</a>
 <dd>register exit routine
 <dt><br>pause
 <dd>suspend calling process until signal
@@ -13140,7 +13140,7 @@ environment variables<tt> SOURCE, TARGET</tt> and<tt> lines.</tt>
 <dt>Description:
 <dd>The<tt> _Exit</tt> function causes normal program termination to occur.
 <ol>
-<li>The functions registered by the <a href="#atexit">atexit</a> or <a href="#onexit">onexit</a> functions are not called.
+<li>The functions registered by the <a href="#atexit">atexit</a> or <a href="#onexit">_onexit</a> functions are not called.
 <li>Any unopened files are not closed and any buffered output is not flushed to the associated files or devices.
 <li>Any files created by <a href="#tmpfile">tmpfile</a> are not removed.
 <li>The return<i> status</i> is made available to the parent process.&nbsp; Only the low order byte of<i> status</i> is available
@@ -38657,27 +38657,29 @@ composite</i>.&nbsp; This provides a portable method to determine the offset.
 <dt>Systems:
 <dd>MACRO
 </dl>
-<h2 id="onexit"> onexit </h2>
+<h2 id="onexit"> _onexit, onexit </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>** deprecated **</tt>
 <br><tt>#include &lt;stdlib.h&gt;</tt>
+<br><tt>onexit_t _onexit( _onexit_t func );</tt>
 <br><tt>onexit_t onexit( onexit_t func );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> onexit</tt> function is passed the address of function<i> func</i> to be called when the program terminates normally.
-&nbsp;Successive calls to<tt> onexit</tt> create a list of functions that will be executed on a &quot;last-in, first-out&quot;
-basis.&nbsp; No more than 32 functions can be registered with the<tt> onexit</tt> function.
+<dd>The<tt> _onexit</tt> function is passed the address of function<i> func</i> to be called when the program terminates normally.
+&nbsp;Successive calls to<tt> _onexit</tt> create a list of functions that will be executed on a &quot;last-in, first-out&quot;
+basis.&nbsp; No more than 32 functions can be registered with the<tt> _onexit</tt> function.
 <br>The functions have no parameters and do not return values.
-<br><br>NOTE:&nbsp; The<tt> onexit</tt> function is not an ISO C function.&nbsp; The ISO C standard function <a href="#atexit">atexit</a>
+<br><br>NOTE:&nbsp; The<tt> _onexit</tt> function is not an ISO C function.&nbsp; The ISO C standard function <a href="#atexit">atexit</a>
 does the same thing.
-<br><br>The<tt> onexit</tt> function is deprecated, use <a href="#atexit">atexit</a> instead.
+<br><br>The<tt> _onexit</tt> function is deprecated, use <a href="#atexit">atexit</a> instead.&nbsp; The<tt> onexit</tt> function
+is deprecated, use <a href="#atexit">atexit</a> instead.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> onexit</tt> function returns<i> func</i> if the registration succeeds, NULL if it fails.
+<dd>The<tt> _onexit</tt> function returns<i> func</i> if the registration succeeds, NULL if it fails.
 </dl>
 <dl>
 <dt>See Also:
@@ -38691,9 +38693,9 @@ does the same thing.
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; extern void func1(void), func2(void), func3(void);</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; onexit( func1 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; onexit( func2 );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; onexit( func3 );</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; _onexit( func1 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; _onexit( func2 );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; _onexit( func3 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;Do this first.\n&quot; );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br><tt>void func1(void) { printf( &quot;last.\n&quot; ); }</tt>
@@ -38709,7 +38711,8 @@ does the same thing.
 </dl>
 <dl>
 <dt>Systems:
-<dd>All, Linux, RDOS, Netware
+<dd><tt> _onexit - All, Linux, RDOS, Netware</tt>
+<br><tt>onexit - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="open"> open, _open, _wopen </h2>
 <dl>
