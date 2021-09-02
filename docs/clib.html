@@ -3461,7 +3461,7 @@ characters.&nbsp; Similar functions for ordinary characters are declared in &lt;
 that they are system-dependent header files.&nbsp; 
 <dl>
 <dt>sys/locking.h
-<dd>This header file contains the manifest constants used by the <tt> locking</tt> function.&nbsp; 
+<dd>This header file contains the manifest constants used by the <a href="#locking">locking</a> function.&nbsp; 
 <dt><br>sys/stat.h
 <dd>This POSIX header file contains the declarations pertaining to file status, including definitions for the <tt> fstat</tt>
 and <tt> stat</tt> functions and for the structure:&nbsp; 
@@ -6186,7 +6186,7 @@ code should use the ISO C function).
 <dl>
 <dt>Description:
 <dd>The<tt> _bfreeseg</tt> function frees a based-heap segment.
-<br>The argument<i> seg</i> indicates the segment returned by an earlier call to <tt> _bheapseg</tt>.
+<br>The argument<i> seg</i> indicates the segment returned by an earlier call to <a href="#_bheapseg">_bheapseg</a>.
 </dl>
 <dl>
 <dt>Returns:
@@ -7013,13 +7013,13 @@ the terminating null character.&nbsp; An error can occur while converting a valu
 </dl>
 <dl>
 <dt>Description:
-<dd>The <tt> break_off</tt> function can be used with DOS to restrict break checking (Ctrl+C, Ctrl+Break) to screen output and
-keyboard input.&nbsp; The <tt> break_on</tt> function can be used with DOS to add break checking (Ctrl+C, Ctrl+Break) to other
-activities such as disk file input/output.
+<dd>The <a href="#break">break_off</a> function can be used with DOS to restrict break checking (Ctrl+C, Ctrl+Break) to screen
+output and keyboard input.&nbsp; The <a href="#break">break_on</a> function can be used with DOS to add break checking (Ctrl+C,
+Ctrl+Break) to other activities such as disk file input/output.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The <tt> break_off</tt> and <tt> break_on</tt> functions to not return anything.
+<dd>The <a href="#break">break_off</a> and <a href="#break">break_on</a> functions to not return anything.
 </dl>
 <dl>
 <dt>See Also:
@@ -7308,7 +7308,7 @@ character representation of that character.
 <dl>
 <dt>Description:
 <dd>The<tt> bzero</tt> function fills the first<i> n</i> bytes of the object pointed to by<i> dst</i> with zero (null) bytes.
-<br>Note that this function is similar to the ISO C <tt> memset</tt> function (new code should use the ISO C function).
+<br>Note that this function is similar to the ISO C <a href="#memset">memset</a> function (new code should use the ISO C function).
 </dl>
 <dl>
 <dt>Returns:
@@ -13397,7 +13397,7 @@ in a large data memory model, the<tt> _expand</tt> function is equivalent to the
 <dd>The<tt> _expand</tt> functions return the value<i> mem_blk</i> if it was successful in changing the size of the block.&nbsp;
 The return value is<tt> NULL</tt> (<tt>_NULLOFF</tt> for <a href="#_expand">_bexpand</a>) if the memory block could not be
 expanded to the desired size.&nbsp; It will be expanded as much as possible in this case.
-<br>The appropriate <tt> _msize</tt> function can be used to determine the new size of the expanded block.
+<br>The appropriate <a href="#_msize">_msize</a> function can be used to determine the new size of the expanded block.
 </dl>
 <dl>
 <dt>See Also:
@@ -22897,7 +22897,7 @@ the<i> _pentry</i> field with<tt> NULL</tt> to start the walk through the heap.
 <dd>Near heap (inside the default data segment)
 </dl>
 <br>In a small data memory model, the<tt> _heapwalk</tt> function is equivalent to the <tt> _nheapwalk</tt> function; in a
-large data memory model, the<tt> _heapwalk</tt> function is equivalent to the <tt> _fheapwalk</tt> function.
+large data memory model, the<tt> _heapwalk</tt> function is equivalent to the <a href="#_heapwalk">_fheapwalk</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -38069,8 +38069,8 @@ functions.
 <dt><br>_nmsize
 <dd>Near heap (inside the default data segment)
 </dl>
-<br>In small data models (small and medium memory models),<tt> _msize</tt> maps to <tt> _nmsize</tt>.&nbsp; In large data
-models (compact, large and huge memory models), _msize maps to <tt> _fmsize</tt>.
+<br>In small data models (small and medium memory models),<tt> _msize</tt> maps to <a href="#_msize">_nmsize</a>.&nbsp; In
+large data models (compact, large and huge memory models), _msize maps to <a href="#_msize">_fmsize</a>.
 </dl>
 <dl>
 <dt>Returns:
