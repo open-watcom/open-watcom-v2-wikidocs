@@ -3662,10 +3662,10 @@ the <a href="#tzset">tzset</a> function is called to set the values in the array
 the value of the<tt> TZ</tt> environment variable.&nbsp; 
 <dt><br>__wargc
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
-<br>This<tt> int</tt> item contains the number of arguments passed to <tt> wmain</tt>.&nbsp; 
+<br>This<tt> int</tt> item contains the number of arguments passed to <a href="#main">wmain</a>.&nbsp; 
 <dt><br>__wargv
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
-<br>This<tt> wchar_t **</tt> item contains a pointer to a vector containing the actual arguments passed to <tt> wmain</tt>.
+<br>This<tt> wchar_t **</tt> item contains a pointer to a vector containing the actual arguments passed to <a href="#main">wmain</a>.
 &nbsp;
 <dt><br>_wenviron
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
@@ -8981,8 +8981,8 @@ message using the <tt> stderr</tt> stream.
 <dl>
 <dt>Description:
 <dd>The<tt> cprintf</tt> function writes output directly to the console under control of the argument<i> format</i>.&nbsp; The
-<tt> putch</tt> function is used to output characters to the console.&nbsp; The<i> format</i> string is described under the
-description of the <a href="#printf">printf</a> function.
+<a href="#putch">putch</a> function is used to output characters to the console.&nbsp; The<i> format</i> string is described
+under the description of the <a href="#printf">printf</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -9029,7 +9029,7 @@ description of the <a href="#printf">printf</a> function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> cputs</tt> function writes the character string pointed to by<i> buf</i> directly to the console using the <tt> putch</tt>
+<dd>The<tt> cputs</tt> function writes the character string pointed to by<i> buf</i> directly to the console using the <a href="#putch">putch</a>
 function.&nbsp; Unlike the <tt> puts</tt> function, the carriage-return and line-feed characters are not appended to the string.
 &nbsp;The terminating null character is not written.
 </dl>
@@ -9200,7 +9200,7 @@ and <tt> errno</tt> is set to indicate the error.
 <dl>
 <dt>Description:
 <dd>The<tt> cscanf</tt> function scans input from the console under control of the argument<i> format</i>.&nbsp; Following the
-format string is a list of addresses to receive values.&nbsp; The<tt> cscanf</tt> function uses the function <tt> getche</tt>
+format string is a list of addresses to receive values.&nbsp; The<tt> cscanf</tt> function uses the function <a href="#getche">getche</a>
 to read characters from the console.&nbsp; The<i> format</i> string is described under the description of the <a href="#scanf">scanf</a>
 function.
 </dl>
@@ -14424,9 +14424,8 @@ a nonzero value.
 <dl>
 <dt>Description:
 <dd>If the file<i> fp</i> is open for output or update, the fflush function causes any unwritten data to be written to the file.
-&nbsp;If the file<i> fp</i> is open for input or update, the<tt> fflush</tt> function undoes the effect of any preceding <tt>
-ungetc</tt> operation on the stream.&nbsp; If the value of<i> fp</i> is<tt> NULL,</tt> then all files that are open will be
-flushed.
+&nbsp;If the file<i> fp</i> is open for input or update, the<tt> fflush</tt> function undoes the effect of any preceding <a href="#ungetc">ungetc</a>
+operation on the stream.&nbsp; If the value of<i> fp</i> is<tt> NULL,</tt> then all files that are open will be flushed.
 </dl>
 <dl>
 <dt>Returns:
@@ -17140,8 +17139,8 @@ negative or zero.
 <dt><br>SEEK_END
 <dd>The new file position is computed relative to the end of the file.
 </dl>
-<br>The<tt> fseek</tt> function clears the end-of-file indicator and undoes any effects of the <tt> ungetc</tt> function on
-the same file.
+<br>The<tt> fseek</tt> function clears the end-of-file indicator and undoes any effects of the <a href="#ungetc">ungetc</a>
+function on the same file.
 <br><br>The <a href="#ftell">ftell</a> function can be used to obtain the current position in the file before changing it.
 &nbsp;The position can be restored by using the value returned by <a href="#ftell">ftell</a> in a subsequent call to<tt> fseek</tt>
 with the<i> where</i> parameter set to <tt> SEEK_SET</tt>.
@@ -18236,9 +18235,9 @@ is set to <tt> EILSEQ</tt> and<tt> getwc</tt> returns <tt> WEOF</tt>.
 <dl>
 <dt>Description:
 <dd>The<tt> getch</tt> function obtains the next available keystroke from the console.&nbsp; Nothing is echoed on the screen (the
-function <tt> getche</tt> will echo the keystroke, if possible).&nbsp; When no keystroke is available, the function waits
-until a key is depressed.
-<br>The <tt> kbhit</tt> function can be used to determine if a keystroke is available.
+function <a href="#getche">getche</a> will echo the keystroke, if possible).&nbsp; When no keystroke is available, the function
+waits until a key is depressed.
+<br>The <a href="#kbhit">kbhit</a> function can be used to determine if a keystroke is available.
 </dl>
 <dl>
 <dt>Returns:
@@ -18283,9 +18282,9 @@ key with a letter or a digit), zero is returned and the next call to<tt> getch</
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> getchar</tt> function is equivalent to <tt> getc</tt> with the argument <tt> stdin</tt>.
-<br>The<tt> getwchar</tt> function is similar to<tt> getchar</tt> except that it is equivalent to <tt> getwc</tt> with the
-argument <tt> stdin</tt>.
+<dd>The<tt> getchar</tt> function is equivalent to <a href="#getc">getc</a> with the argument <tt> stdin</tt>.
+<br>The<tt> getwchar</tt> function is similar to<tt> getchar</tt> except that it is equivalent to <a href="#getc">getwc</a>
+with the argument <tt> stdin</tt>.
 </dl>
 <dl>
 <dt>Returns:
@@ -18336,9 +18335,9 @@ read error occurs, the error indicator is set and<tt> getwchar</tt> returns <tt>
 <dl>
 <dt>Description:
 <dd>The<tt> getche</tt> function obtains the next available keystroke from the console.&nbsp; The function will wait until a keystroke
-is available.&nbsp; That character is echoed on the screen at the position of the cursor (use <tt> getch</tt> when it is not
-desired to echo the keystroke).
-<br>The <tt> kbhit</tt> function can be used to determine if a keystroke is available.
+is available.&nbsp; That character is echoed on the screen at the position of the cursor (use <a href="#getch">getch</a> when
+it is not desired to echo the keystroke).
+<br>The <a href="#kbhit">kbhit</a> function can be used to determine if a keystroke is available.
 </dl>
 <dl>
 <dt>Returns:
@@ -27989,7 +27988,7 @@ the size 17 bytes on 16-bit machines, and 33 bytes on 32-bit machines.&nbsp; The
 <dl>
 <dt>Description:
 <dd>The<tt> kbhit</tt> function tests whether or not a keystroke is currently available.&nbsp; When one is available, the function
-<tt> getch</tt> or <tt> getche</tt> may be used to obtain the keystroke in question.
+<a href="#getch">getch</a> or <a href="#getche">getche</a> may be used to obtain the keystroke in question.
 <br>With a stand-alone program, the<tt> kbhit</tt> function may be called continuously until a keystroke is available.
 <br><br>The<tt> _kbhit</tt> function is identical to<tt> kbhit</tt>.&nbsp; Use<tt> _kbhit</tt> for ANSI naming conventions.
 </dl>
@@ -29726,7 +29725,7 @@ main</tt> function, if present, will not be called).
 <br><br>As with<tt> main</tt> the<tt> wmain</tt> function can be declared to return <tt> void</tt> and the same considerations
 will apply.
 <br><br>The <a href="#main">WinMain</a> function is called by the system as the initial entry point for a Windows-based application.
-&nbsp;The <tt> wWinMain</tt> function is a wide character version of <a href="#main">WinMain</a>.
+&nbsp;The <a href="#main">wWinMain</a> function is a wide character version of <a href="#main">WinMain</a>.
 <dl>
 <dt><b><i>Parameters&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>hInstance
@@ -41974,8 +41973,8 @@ or runtime-constraint violation occurred.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> putc</tt> function is equivalent to <tt> fputc</tt>, except it may be implemented as a macro.&nbsp; The<tt> putc</tt>
-function writes the character specified by the argument<i> c</i> to the output stream designated by<i> fp</i>.
+<dd>The<tt> putc</tt> function is equivalent to <a href="#fputc">fputc</a>, except it may be implemented as a macro.&nbsp; The<tt>
+putc</tt> function writes the character specified by the argument<i> c</i> to the output stream designated by<i> fp</i>.
 <br>The<tt> putwc</tt> function is identical to<tt> putc</tt> except that it converts the wide character specified by<i> c</i>
 to a multibyte character and writes it to the output stream.
 </dl>
@@ -54988,8 +54987,9 @@ c</i> back onto the input stream pointed to by<i> fp</i>.
 <dl>
 <dt>Description:
 <dd>The<tt> ungetch</tt> function pushes the character specified by<i> c</i> back onto the input stream for the console.&nbsp;
-This character will be returned by the next read from the console (with <tt> getch</tt> or <tt> getche</tt> functions) and
-will be detected by the function <tt> kbhit</tt>.&nbsp; Only the last character returned in this way is remembered.
+This character will be returned by the next read from the console (with <a href="#getch">getch</a> or <a href="#getche">getche</a>
+functions) and will be detected by the function <a href="#kbhit">kbhit</a>.&nbsp; Only the last character returned in this
+way is remembered.
 <br>The<tt> ungetch</tt> function clears the end-of-file indicator, unless the value of<i> c</i> is <tt> EOF</tt>.
 </dl>
 <dl>
@@ -55624,10 +55624,10 @@ string argument for<i> format</i> and produces wide character output.
 <dl>
 <dt>Description:
 <dd>The<tt> vcprintf</tt> function writes output directly to the console under control of the argument<i> format</i>.&nbsp; The
-<tt> putch</tt> function is used to output characters to the console.&nbsp; The<i> format</i> string is described under the
-description of the <a href="#printf">printf</a> function.&nbsp; The<tt> vcprintf</tt> function is equivalent to the <a href="#cprintf">cprintf</a>
-function, with the variable argument list replaced with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a>
-macro.
+<a href="#putch">putch</a> function is used to output characters to the console.&nbsp; The<i> format</i> string is described
+under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt> vcprintf</tt> function is equivalent to
+the <a href="#cprintf">cprintf</a> function, with the variable argument list replaced with<i> arg</i>, which has been initialized
+by the <a href="#va_start">va_start</a> macro.
 </dl>
 <dl>
 <dt>Returns:
@@ -55685,8 +55685,8 @@ macro.
 <dl>
 <dt>Description:
 <dd>The<tt> vcscanf</tt> function scans input from the console under control of the argument<i> format</i>.&nbsp; The<tt> vcscanf</tt>
-function uses the function <tt> getche</tt> to read characters from the console.&nbsp; The<i> format</i> string is described
-under the description of the <a href="#scanf">scanf</a> function.
+function uses the function <a href="#getche">getche</a> to read characters from the console.&nbsp; The<i> format</i> string
+is described under the description of the <a href="#scanf">scanf</a> function.
 <br>The<tt> vcscanf</tt> function is equivalent to the <a href="#cscanf">cscanf</a> function, with a variable argument list
 replaced with<i> arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 </dl>
@@ -56278,8 +56278,8 @@ and it is unspecified to what extent<tt> vscanf_s</tt> performed input before di
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vscanf_s</tt> function is equivalent to <tt> scanf_s</tt>, with the variable argument list replaced by<i> arg</i>,
-which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
+<dd>The<tt> vscanf_s</tt> function is equivalent to <a href="#scanf_s">scanf_s</a>, with the variable argument list replaced by<i>
+arg</i>, which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
 calls).&nbsp; The<tt> vscanf_s</tt> function does not invoke the <a href="#va_end">va_end</a> macro.
 <br>The<tt> vwscanf_s</tt> function is identical to<tt> vscanf_s</tt> except that it accepts a wide character string argument
 for<i> format</i>.
@@ -56536,8 +56536,8 @@ and less than<tt> RSIZE_MAX,</tt> then the<tt> vsnprintf_s</tt> function sets<i>
 <dt>Description:
 <dd>The<tt> vsnprintf_s</tt> function is equivalent to the <a href="#vsnprintf">vsnprintf</a> function except for the explicit
 runtime-constraints listed above.
-<br>The<tt> vsnprintf_s</tt> function, unlike <tt> vsprintf_s</tt>, will truncate the result to fit within the array pointed
-to by<i> s</i>.
+<br>The<tt> vsnprintf_s</tt> function, unlike <a href="#vsprintf_s">vsprintf_s</a>, will truncate the result to fit within
+the array pointed to by<i> s</i>.
 <br><br>The<tt> vsnwprintf_s</tt> function is a wide character version of<tt> vsnprintf_s</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
