@@ -3350,7 +3350,7 @@ The function declarations for these functions are found in the<tt> &lt;io.h&gt;<
 <dd>This ISO C90 header file declares constants related to floating-point numbers, declarations for low-level floating-point functions,
 and the declaration of the floating-point exception codes.&nbsp; 
 <dt><br>fnmatch.h
-<dd>This header file declares the pattern matching function <tt> fnmatch</tt> 
+<dd>This header file declares the pattern matching function <a href="#fnmatch">fnmatch</a> 
 <dt><br>graph.h
 <dd>This header file contains structure definitions and function declarations for the Open Watcom C Graphics library functions.
 &nbsp;
@@ -3361,7 +3361,7 @@ sized integer types.&nbsp; This header also declares several functions for manip
 &nbsp;
 <dt><br>io.h
 <dd>This header file declares functions that perform input/output operations at the operating system level.&nbsp; These functions
-use file handles to reference files or devices.&nbsp; The function <tt> fstat</tt> is declared in the<tt> &lt;sys/stat.h&gt;</tt>
+use file handles to reference files or devices.&nbsp; The function <a href="#fstat">fstat</a> is declared in the<tt> &lt;sys/stat.h&gt;</tt>
 header file.&nbsp; 
 <dt><br>limits.h
 <dd>This ISO C90 header file contains constant declarations for limits or boundary values for ranges of integers and characters.
@@ -3396,13 +3396,13 @@ registers.&nbsp;
 <a href="#system">system</a> function.&nbsp; The file also contains declarations for the constants <tt> P_WAIT</tt>, <tt>
 P_NOWAIT</tt>, <tt> P_NOWAITO</tt>, and <tt> P_OVERLAY</tt>.&nbsp; 
 <dt><br>search.h
-<dd>This header file declares the functions <tt> lfind</tt> and <tt> lsearch</tt> 
+<dd>This header file declares the functions <a href="#lfind">lfind</a> and <a href="#lsearch">lsearch</a> 
 <dt><br>setjmp.h
-<dd>This ISO C90 header file declares the <tt> setjmp</tt> and <tt> longjmp</tt> functions.&nbsp; 
+<dd>This ISO C90 header file declares the <a href="#setjmp">setjmp</a> and <a href="#longjmp">longjmp</a> functions.&nbsp; 
 <dt><br>share.h
 <dd>This header file defines constants for shared access to files using the <a href="#sopen">_sopen</a> function.&nbsp; 
 <dt><br>signal.h
-<dd>This ISO C90 header file declares the <a href="#signal">signal</a> and <tt> raise</tt> functions.&nbsp; 
+<dd>This ISO C90 header file declares the <a href="#signal">signal</a> and <a href="#raise">raise</a> functions.&nbsp; 
 <dt><br>stdarg.h
 <dd>This ISO C90 header file defines the macros which handle variable argument lists.&nbsp; 
 <dt><br>stdbool.h
@@ -3463,20 +3463,21 @@ that they are system-dependent header files.&nbsp;
 <dt>sys/locking.h
 <dd>This header file contains the manifest constants used by the <a href="#locking">locking</a> function.&nbsp; 
 <dt><br>sys/stat.h
-<dd>This POSIX header file contains the declarations pertaining to file status, including definitions for the <tt> fstat</tt>
+<dd>This POSIX header file contains the declarations pertaining to file status, including definitions for the <a href="#fstat">fstat</a>
 and <tt> stat</tt> functions and for the structure:&nbsp; 
 <dl>
 <dt>stat
 <dd>describes the information obtained for a directory, file or device
 </dl>
 <dt><br>sys/timeb.h
-<dd>This header file describes the <tt> timeb</tt> structure used in conjunction with the <tt> ftime</tt> function.&nbsp; 
+<dd>This header file describes the <tt> timeb</tt> structure used in conjunction with the <a href="#ftime">ftime</a> function.
+&nbsp;
 <dt><br>sys/types.h
 <dd>This POSIX header file contains declarations for the types used by system-level calls to obtain file status or time information.
 &nbsp;
 <dt><br>sys/utime.h
-<dd>This POSIX header file contains a declaration for the <tt> utime</tt> function and for the structured type <tt> utimbuf</tt>
-used by it.
+<dd>This POSIX header file contains a declaration for the <a href="#utime">utime</a> function and for the structured type <tt>
+utimbuf</tt> used by it.
 </dl>
 <h2 id="Global_Data"> Global Data </h2>
 <br>Certain data items are used by the Open Watcom C/C++ run-time library and may be inspected (or changed in some cases)
@@ -3554,20 +3555,21 @@ initialize the global variable<tt> __MaxThreads.</tt>
 &nbsp;
 <dt><br>optarg
 <dd>Prototype in<tt> &lt;unistd.h&gt;.</tt>
-<br>This<tt> char *</tt> variable contains a pointer to an option-argument parsed by the <tt> getopt</tt> function.&nbsp;
-
+<br>This<tt> char *</tt> variable contains a pointer to an option-argument parsed by the <a href="#getopt">getopt</a> function.
+&nbsp;
 <dt><br>opterr
 <dd>Prototype in<tt> &lt;unistd.h&gt;.</tt>
-<br>This<tt> int</tt> variable controls whether the <tt> getopt</tt> function will print error messages.&nbsp; The default
-value is non-zero and will cause the <tt> getopt</tt> function to print error messages on the console.&nbsp; 
+<br>This<tt> int</tt> variable controls whether the <a href="#getopt">getopt</a> function will print error messages.&nbsp;
+The default value is non-zero and will cause the <a href="#getopt">getopt</a> function to print error messages on the console.
+&nbsp;
 <dt><br>optind
 <dd>Prototype in<tt> &lt;unistd.h&gt;.</tt>
-<br>This<tt> int</tt> variable holds the index of the argument array element currently processed by the <tt> getopt</tt> function.
-&nbsp;
+<br>This<tt> int</tt> variable holds the index of the argument array element currently processed by the <a href="#getopt">getopt</a>
+function.&nbsp; 
 <dt><br>optopt
 <dd>Prototype in<tt> &lt;unistd.h&gt;.</tt>
-<br>This<tt> int</tt> variable contains the unrecognized option character in case the <tt> getopt</tt> function returns an
-error.&nbsp; 
+<br>This<tt> int</tt> variable contains the unrecognized option character in case the <a href="#getopt">getopt</a> function
+returns an error.&nbsp; 
 <dt><br>_osmajor
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
 <br>This<tt> unsigned char</tt> variable contains the major number for the version of Operating System executing on the computer.
@@ -3775,9 +3777,9 @@ the d'th day occurs.&nbsp; Day zero is Sunday.
 <br>The<i> time</i> has the same format as<i> offset</i> except that no leading sign (&quot;+&quot; or &quot;-&quot;) is allowed.
 &nbsp;The default, if<i> time</i> is omitted, is<tt> 02:00:00.</tt>
 </dl>
-<br>Whenever <tt> ctime</tt>, <tt> _ctime</tt>, <tt> localtime</tt>, <tt> _localtime</tt> or <tt> mktime</tt> is called, the
-time zone names contained in the external variable <tt> tzname</tt> will be set as if the <a href="#tzset">tzset</a> function
-had been called.&nbsp; The same is true if the<tt> %Z</tt> directive of <tt> strftime</tt> is used.
+<br>Whenever <tt> ctime</tt>, <tt> _ctime</tt>, <tt> localtime</tt>, <a href="#localtime">_localtime</a> or <tt> mktime</tt>
+is called, the time zone names contained in the external variable <tt> tzname</tt> will be set as if the <a href="#tzset">tzset</a>
+function had been called.&nbsp; The same is true if the<tt> %Z</tt> directive of <tt> strftime</tt> is used.
 <br><br>Some examples are:
 <dl>
 <dt>TZ=EST5EDT
@@ -19524,8 +19526,8 @@ contained in the <tt> h_addr_list</tt> member as a NULL-terminated list, and thi
 <dd>The<tt> gethostent</tt> function reads, parses, and returns entries from the network host database at /etc/hosts.&nbsp; The
 first call will return the first entry, and subsequent calls return subsequent entries.&nbsp; A null pointer is returned if
 either an error is encountered or no further entries exist.
-<br>If a call to <tt> sethostent</tt> was not first made, the<tt> gethostent</tt> function will open the database if necessary
-initially.&nbsp; By default, this will always return the first entry in the database.
+<br>If a call to <a href="#sethostent">sethostent</a> was not first made, the<tt> gethostent</tt> function will open the database
+if necessary initially.&nbsp; By default, this will always return the first entry in the database.
 <br><br>The structure returned is defined as:
 <br><br><tt>struct hostent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *h_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* host official name&nbsp;
@@ -19918,8 +19920,8 @@ never be NULL.
 <dl>
 <dt>Description:
 <dd>The<tt> getnetent</tt> function retrieves the next entry in the network database.&nbsp; If not proceeded by an appropriate
-call to <tt> setnetent</tt>, the function will always return the first network in the database.&nbsp; The routine will query
-the local database only.
+call to <a href="#setnetent">setnetent</a>, the function will always return the first network in the database.&nbsp; The routine
+will query the local database only.
 <br>The structure returned is defined as:
 <br><br><tt>struct netent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *n_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -20542,8 +20544,8 @@ entry will never be NULL.
 <dl>
 <dt>Description:
 <dd>The<tt> getprotoent</tt> function retrieves the next entry in the protocol database.&nbsp; If not proceeded by an appropriate
-call to <tt> setprotoent</tt>, the function will always return the first protocol in the database.&nbsp; The routine will
-query the local database only.
+call to <a href="#setprotoent">setprotoent</a>, the function will always return the first protocol in the database.&nbsp;
+The routine will query the local database only.
 <br>The structure returned is defined as:
 <br><br><tt>struct protoent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *p_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official protocol
@@ -20994,8 +20996,8 @@ entry will never be NULL.
 <dl>
 <dt>Description:
 <dd>The<tt> getservent</tt> function retrieves the next entry in the service database.&nbsp; If not proceeded by an appropriate
-call to <tt> setservent</tt>, the function will always return the first service in the database.&nbsp; The routine will query
-the local database only.
+call to <a href="#setservent">setservent</a>, the function will always return the first service in the database.&nbsp; The
+routine will query the local database only.
 <br>The structure returned is defined as:
 <br><br><tt>struct servent {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; *s_name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* official service name
@@ -21833,9 +21835,9 @@ function.
 <dt>Description:
 <dd>The<tt> gmtime</tt> functions convert the calendar time pointed to by<i> timer</i> into a broken-down time, expressed as Coordinated
 Universal Time (UTC) (formerly known as Greenwich Mean Time, or GMT).
-<br>The function <tt> _gmtime</tt> places the converted time in the <tt> tm</tt> structure pointed to by<i> tmbuf</i>, and
-the<tt> gmtime</tt> function places the converted time in a static structure that is re-used each time<tt> gmtime</tt> is
-called.
+<br>The function <a href="#gmtime">_gmtime</a> places the converted time in the <tt> tm</tt> structure pointed to by<i> tmbuf</i>,
+and the<tt> gmtime</tt> function places the converted time in a static structure that is re-used each time<tt> gmtime</tt>
+is called.
 <br><br>The time set on the computer with the DOS<tt> time</tt> command and the DOS<tt> date</tt> command reflects the local
 time.&nbsp; The environment variable<tt> TZ</tt> is used to establish the time zone to which this local time applies.&nbsp;
 See the section<i> The TZ Environment Variable</i> for a discussion of how to set the time zone.
@@ -28679,9 +28681,9 @@ of time information, expressed as local time.&nbsp; Whenever<tt> localtime</tt> 
 function is also called.
 <br>The calendar time is usually obtained by using the <a href="#time">time</a> function.&nbsp; That time is Coordinated Universal
 Time (UTC) (formerly known as Greenwich Mean Time (GMT)).
-<br><br>The <tt> _localtime</tt> function places the converted time in the <tt> tm</tt> structure pointed to by<i> tmbuf</i>,
-and the<tt> localtime</tt> function places the converted time in a static structure that is re-used each time<tt> localtime</tt>
-is called.
+<br><br>The <a href="#localtime">_localtime</a> function places the converted time in the <tt> tm</tt> structure pointed to
+by<i> tmbuf</i>, and the<tt> localtime</tt> function places the converted time in a static structure that is re-used each
+time<tt> localtime</tt> is called.
 <br><br>The time set on the computer with the DOS<tt> time</tt> command and the DOS<tt> date</tt> command reflects the local
 time.&nbsp; The environment variable<tt> TZ</tt> is used to establish the time zone to which this local time applies.&nbsp;
 See the section<i> The TZ Environment Variable</i> for a discussion of how to set the time zone.
@@ -28809,7 +28811,7 @@ Functions, <a href="#ctime_s">ctime_s</a>, <a href="#difftime">difftime</a>, <a 
 <dl>
 <dt>Description:
 <dd>The<tt> lock</tt> function locks<i> nbytes</i> amount of data in the file designated by<i> handle</i> starting at byte<i>
-offset</i> in the file.&nbsp; This prevents other processes from reading or writing into the locked region until an <tt> unlock</tt>
+offset</i> in the file.&nbsp; This prevents other processes from reading or writing into the locked region until an <a href="#unlock">unlock</a>
 has been done for this locked region of the file.
 <br>Multiple regions of a file can be locked, but no overlapping regions are allowed.&nbsp; You cannot unlock multiple regions
 in the same call, even if the regions are contiguous.&nbsp; All locked regions of a file should be unlocked before closing
@@ -29178,16 +29180,16 @@ message using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> longjmp</tt> function restores the environment saved by the most recent call to the <tt> setjmp</tt> function with
-the corresponding <tt> jmp_buf</tt> argument.
+<dd>The<tt> longjmp</tt> function restores the environment saved by the most recent call to the <a href="#setjmp">setjmp</a> function
+with the corresponding <tt> jmp_buf</tt> argument.
 <br>It is generally a bad idea to use<tt> longjmp</tt> to jump out of an interrupt function or a signal handler (unless the
-signal was generated by the <tt> raise</tt> function).
+signal was generated by the <a href="#raise">raise</a> function).
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> longjmp</tt> function does not return to its caller.&nbsp; After the<tt> longjmp</tt> function restores the environment,
-program execution continues as if the corresponding call to <tt> setjmp</tt> had just returned the value specified by<i> return_value</i>.
-&nbsp;If the value of<i> return_value</i> is 0, the value returned is 1.
+program execution continues as if the corresponding call to <a href="#setjmp">setjmp</a> had just returned the value specified
+by<i> return_value</i>.&nbsp; If the value of<i> return_value</i> is 0, the value returned is 1.
 </dl>
 <dl>
 <dt>See Also:
@@ -42586,7 +42588,7 @@ a condition occurs.
 <dt>Returns:
 <dd>The<tt> raise</tt> function returns zero when the condition is successfully raised and a non-zero value otherwise.&nbsp; There
 may be no return of control following the function call if the action for that condition is to terminate the program or to
-transfer control using the <tt> longjmp</tt> function.
+transfer control using the <a href="#longjmp">longjmp</a> function.
 </dl>
 <dl>
 <dt>See Also:
@@ -45732,7 +45734,8 @@ vector.
 <dt>Description:
 <dd>The<tt> sethostent</tt> function opens the network host database at /etc/hosts and sets the position for reading to the first
 entry.&nbsp; If the network host database is already open, the position is reset to the first entry.&nbsp; The<i> stayopen</i>
-argument, if non-zero, will cause the database to remain open after subsequent calls to the <tt> gethostent</tt> function.
+argument, if non-zero, will cause the database to remain open after subsequent calls to the <a href="#gethostent">gethostent</a>
+function.
 </dl>
 <dl>
 <dt>See Also:
@@ -45755,21 +45758,21 @@ argument, if non-zero, will cause the database to remain open after subsequent c
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> setjmp</tt> function saves its calling environment in its <tt> jmp_buf</tt> argument, for subsequent use by the <tt>
-longjmp</tt> function.
+<dd>The<tt> setjmp</tt> function saves its calling environment in its <tt> jmp_buf</tt> argument, for subsequent use by the <a href="#longjmp">longjmp</a>
+function.
 <br>In some cases, error handling can be implemented by using<tt> setjmp</tt> to record the point to which a return will occur
-following an error.&nbsp; When an error is detected in a called function, that function uses <tt> longjmp</tt> to jump back
-to the recorded position.&nbsp; The original function which called<tt> setjmp</tt> must still be active (it cannot have returned
-to the function which called it).
+following an error.&nbsp; When an error is detected in a called function, that function uses <a href="#longjmp">longjmp</a>
+to jump back to the recorded position.&nbsp; The original function which called<tt> setjmp</tt> must still be active (it cannot
+have returned to the function which called it).
 <br><br>Special care must be exercised to ensure that any side effects that are left undone (allocated memory, opened files,
 etc.) are satisfactorily handled.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> setjmp</tt> function returns zero when it is initially called.&nbsp; The return value will be non-zero if the return
-is the result of a call to the <tt> longjmp</tt> function.&nbsp; An<tt> if</tt> statement is often used to handle these two
-returns.&nbsp; When the return value is zero, the initial call to setjmp has been made; when the return value is non-zero,
-a return from a <tt> longjmp</tt> has just occurred.
+is the result of a call to the <a href="#longjmp">longjmp</a> function.&nbsp; An<tt> if</tt> statement is often used to handle
+these two returns.&nbsp; When the return value is zero, the initial call to setjmp has been made; when the return value is
+non-zero, a return from a <a href="#longjmp">longjmp</a> has just occurred.
 </dl>
 <dl>
 <dt>See Also:
@@ -46158,9 +46161,9 @@ can be one of:
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> setnetent</tt> function opens or rewinds the network database for subsequent access by the <tt> getnetent</tt> function.
-&nbsp;If<i> stayopen</i> is non-zero, the network database will remain open between calls to the <tt> getnetent</tt> function.
-&nbsp;The database can be closed when <tt> endnetent</tt> is called.
+<dd>The<tt> setnetent</tt> function opens or rewinds the network database for subsequent access by the <a href="#getnetent">getnetent</a>
+function.&nbsp; If<i> stayopen</i> is non-zero, the network database will remain open between calls to the <a href="#getnetent">getnetent</a>
+function.&nbsp; The database can be closed when <a href="#endnetent">endnetent</a> is called.
 <br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname database
 may affect the return value from this function.
 </dl>
@@ -46403,8 +46406,8 @@ to produce animated effects.
 <dl>
 <dt>Description:
 <dd>The<tt> setprotoent</tt> function opens or rewinds the protocol database to allow reading starting at the first entry.&nbsp;
-If<i> stayopen</i> is non-zero, the database will remain open between subsequent calls to <tt> getprotoent</tt> until the
-<tt> endprotoent</tt> function is called.
+If<i> stayopen</i> is non-zero, the database will remain open between subsequent calls to <a href="#getprotoent">getprotoent</a>
+until the <a href="#endprotoent">endprotoent</a> function is called.
 <br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the protocol database
 may affect the return value from this function.
 </dl>
@@ -46472,7 +46475,8 @@ first entry.
 <dl>
 <dt>Description:
 <dd>The<tt> setservent</tt> function opens or rewinds the service database.&nbsp; If<i> stayopen</i> is non-zero, the database
-will be kept open between calls to <tt> getservent</tt> until <tt> endservent</tt> is called to close the database.
+will be kept open between calls to <a href="#getservent">getservent</a> until <a href="#endservent">endservent</a> is called
+to close the database.
 <br>This function is not thread-safe.&nbsp; Other calls to this function or to other functions accessing the hostname database
 may affect the return value from this function.
 </dl>
@@ -47510,8 +47514,9 @@ executes.&nbsp; These conditions are defined to be:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signal( sig_no, SIG_DFL );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*func)( sig_no );</tt>
 <br><br>The<i> func</i> function may terminate the program by calling the <a href="#exit">exit</a> or <a href="#abort">abort</a>
-functions or call the <tt> longjmp</tt> function.&nbsp; Because the next signal will be handled with default handling, the
-program must again call<tt> signal</tt> if it is desired to handle the next condition of the type that has been signalled.
+functions or call the <a href="#longjmp">longjmp</a> function.&nbsp; Because the next signal will be handled with default
+handling, the program must again call<tt> signal</tt> if it is desired to handle the next condition of the type that has been
+signalled.
 <br><br>After returning from the signal-catching function, the receiving process will resume execution at the point at which
 it was interrupted.
 <br><br>The signal catching function is described as follows:
@@ -47549,7 +47554,7 @@ in the<tt> CONFIG.SYS</tt> file.
 <br><br>Under OS/2, the <tt> SIGBREAK</tt> signal can only be received if Ctrl+Break is pressed and the keyboard is in binary
 (raw) mode.&nbsp; In ASCII (cooked) mode, which is the default, both Ctrl+C and Ctrl+Break combinations will raise the <tt>
 SIGINT</tt> signal.
-<br><br>A condition can be generated by a program using the <tt> raise</tt> function.
+<br><br>A condition can be generated by a program using the <a href="#raise">raise</a> function.
 </dl>
 <dl>
 <dt>Returns:
