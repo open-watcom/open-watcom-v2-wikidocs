@@ -23987,15 +23987,15 @@ contents before and after the interrupt in question.
 <dl>
 <dt>Description:
 <dd>The<tt> isalnum</tt> function tests if the argument<i> c</i> is an alphanumeric character ('a' to 'z', 'A' to 'Z', or '0'
-to '9').&nbsp; An alphanumeric character is any character for which <a href="#isalpha">isalpha</a> or <tt> isdigit</tt> is
-true.
+to '9').&nbsp; An alphanumeric character is any character for which <a href="#isalpha">isalpha</a> or <a href="#isdigit">isdigit</a>
+is true.
 <br>The<tt> iswalnum</tt> function is a wide character version of<tt> isalnum</tt> that operates with wide character argument.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> isalnum</tt> function returns zero if the argument is neither an alphabetic character (A-Z or a-z) nor a digit (0-9).
-&nbsp;Otherwise, a non-zero value is returned.&nbsp; The<tt> iswalnum</tt> function returns a non-zero value if either <tt>
-iswalpha</tt> or <a href="#isdigit">iswdigit</a> is true for<i> c</i>.
+&nbsp;Otherwise, a non-zero value is returned.&nbsp; The<tt> iswalnum</tt> function returns a non-zero value if either <a href="#isalpha">iswalpha</a>
+or <a href="#isdigit">iswdigit</a> is true for<i> c</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -24044,9 +24044,10 @@ An alphabetic character is any character for which <a href="#isupper">isupper</a
 <dl>
 <dt>Returns:
 <dd>The<tt> isalpha</tt> function returns zero if the argument is not an alphabetic character (A-Z or a-z); otherwise, a non-zero
-value is returned.&nbsp; The<tt> iswalpha</tt> function returns a non-zero value only for wide characters for which <tt> iswupper</tt>
-or <tt> iswlower</tt> is true, or any wide character that is one of an implementation-defined set for which none of <a href="#iscntrl">iswcntrl</a>,
-<a href="#isdigit">iswdigit</a>, <a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a> is true.
+value is returned.&nbsp; The<tt> iswalpha</tt> function returns a non-zero value only for wide characters for which <a href="#isupper">iswupper</a>
+or <a href="#islower">iswlower</a> is true, or any wide character that is one of an implementation-defined set for which none
+of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a>
+is true.
 </dl>
 <dl>
 <dt>See Also:
@@ -27772,7 +27773,7 @@ is one of an implementation-defined set of wide characters for which none of <a 
 <dl>
 <dt>Description:
 <dd>The<tt> iswctype</tt> function determines whether the wide character<i> wc</i> has the property described by<i> desc</i>.
-&nbsp;Valid values of<i> desc</i> are defined by the use of the <tt> wctype</tt> function.
+&nbsp;Valid values of<i> desc</i> are defined by the use of the <a href="#wctype">wctype</a> function.
 <br>The twelve expressions listed below have a truth-value equivalent to a call to the wide character testing function shown.
 <dl>
 <dt><b><i>Expression&nbsp;&nbsp;&nbsp;&nbsp; Equivalent</i></b>
@@ -31385,11 +31386,11 @@ The<tt> mbrlen</tt> function is equivalent to the following call:
 <br><br>The<tt> _fmbrlen</tt> function is a data model independent form of the<tt> mbrlen</tt> function that accepts far pointer
 arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide character conversion functions differ from the corresponding internal-state multibyte
-character functions ( <tt> mblen</tt>, <tt> mbtowc</tt>, and <tt> wctomb</tt>) in that they have an extra argument,<i> ps</i>,
-of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state
-of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer, each function uses its own internal
-<tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in the library calls these functions with
-a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
+character functions ( <a href="#mblen">mblen</a>, <a href="#mbtowc">mbtowc</a>, and <a href="#wctomb">wctomb</a>) in that
+they have an extra argument,<i> ps</i>, of type pointer to <tt> mbstate_t</tt> that points to an object that can completely
+describe the current conversion state of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer,
+each function uses its own internal <tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in
+the library calls these functions with a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
 <br><br>Also unlike their corresponding functions, the return value does not represent whether the encoding is state-dependent.
 <br><br>If the encoding is state-dependent, on entry each function takes the described conversion state (either internal or
 pointed to by<i> ps</i>) as current.&nbsp; The conversion state described by the pointed-to object is altered as needed to
@@ -31526,11 +31527,11 @@ state is described).
 <br><br>The<tt> _fmbrtowc</tt> function is a data model independent form of the<tt> mbrtowc</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide character conversion functions differ from the corresponding internal-state multibyte
-character functions ( <tt> mblen</tt>, <tt> mbtowc</tt>, and <tt> wctomb</tt>) in that they have an extra argument,<i> ps</i>,
-of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state
-of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer, each function uses its own internal
-<tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in the library calls these functions with
-a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
+character functions ( <a href="#mblen">mblen</a>, <a href="#mbtowc">mbtowc</a>, and <a href="#wctomb">wctomb</a>) in that
+they have an extra argument,<i> ps</i>, of type pointer to <tt> mbstate_t</tt> that points to an object that can completely
+describe the current conversion state of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer,
+each function uses its own internal <tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in
+the library calls these functions with a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
 <br><br>Also unlike their corresponding functions, the return value does not represent whether the encoding is state-dependent.
 <br><br>If the encoding is state-dependent, on entry each function takes the described conversion state (either internal or
 pointed to by<i> ps</i>) as current.&nbsp; The conversion state described by the pointed-to object is altered as needed to
@@ -32197,7 +32198,8 @@ pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <dt>Returns:
 <dd>The<tt> _mbsnbcmp</tt> function returns an integer less than, equal to, or greater than zero, indicating that the string pointed
 to by<i> s1</i> is less than, equal to, or greater than the string pointed to by<i> s2</i>.<tt>&nbsp; _mbsnbcmp</tt> is similar
-to <tt> _mbsncmp</tt>, except that<tt> _mbsnbcmp</tt> compares strings by length in bytes rather than by length in characters.
+to <a href="#strncmp">_mbsncmp</a>, except that<tt> _mbsnbcmp</tt> compares strings by length in bytes rather than by length
+in characters.
 </dl>
 <dl>
 <dt>See Also:
@@ -32344,7 +32346,7 @@ pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <dl>
 <dt>Returns:
 <dd>The function returns an integer less than, equal to, or greater than zero, indicating that the string pointed to by<i> s1</i>
-is less than, equal to, or greater than the string pointed to by<i> s2</i>.<tt>&nbsp; _mbsnbicmp</tt> is similar to <tt> _mbsnicmp</tt>,
+is less than, equal to, or greater than the string pointed to by<i> s2</i>.<tt>&nbsp; _mbsnbicmp</tt> is similar to <a href="#strnicmp">_mbsnicmp</a>,
 except that<tt> _mbsnbicmp</tt> compares strings by length in bytes rather than by length in characters.
 </dl>
 <dl>
@@ -32407,9 +32409,9 @@ except that<tt> _mbsnbicmp</tt> compares strings by length in bytes rather than 
 <dd>The<tt> _mbsnbset</tt> function fills the string<i> s</i> with the value of the argument<i> fill</i>.&nbsp; When the value
 of<i> len</i> is greater than the length of the string, the entire string is filled.&nbsp; Otherwise, that number of characters
 at the start of the string are set to the fill character.
-<br><tt>_mbsnbset</tt> is similar to <tt> _mbsnset</tt>, except that it fills in<i> count</i> bytes rather than<i> count</i>
-characters.&nbsp; If the number of bytes to be filled is odd and<i> fill</i> is a double-byte character, the partial byte
-at the end is filled with an ASCII space character.
+<br><tt>_mbsnbset</tt> is similar to <a href="#strnset">_mbsnset</a>, except that it fills in<i> count</i> bytes rather than<i>
+count</i> characters.&nbsp; If the number of bytes to be filled is odd and<i> fill</i> is a double-byte character, the partial
+byte at the end is filled with an ASCII space character.
 <br><br>The<tt> _fmbsnbset</tt> function is a data model independent form of the<tt> _mbsnbset</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
@@ -32759,11 +32761,11 @@ the resulting state described will be the initial conversion state.
 <br><br>The<tt> _fmbsrtowcs</tt> function is a data model independent form of the<tt> mbsrtowcs</tt> function that accepts
 far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide string conversion functions differ from the corresponding internal-state multibyte
-string functions ( <tt> mbstowcs</tt> and <tt> wcstombs</tt>) in that they have an extra argument,<i> ps</i>, of type pointer
-to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state of the associated
-multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer, each function uses its own internal <tt> mbstate_t</tt>
-object instead.&nbsp; You are guaranteed that no other function in the library calls these functions with a null pointer for<i>
-ps</i>, thereby ensuring the stability of the state.
+string functions ( <a href="#mbstowcs">mbstowcs</a> and <a href="#wcstombs">wcstombs</a>) in that they have an extra argument,<i>
+ps</i>, of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion
+state of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer, each function uses its own internal
+<tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in the library calls these functions with
+a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
 <br><br>Also unlike their corresponding functions, the conversion source argument,<i> src</i>, has a pointer-to-pointer type.
 &nbsp;When the function is storing conversion results (that is, when<i> dst</i> is not a null pointer), the pointer object
 pointed to by this argument will be updated to reflect the amount of the source processed by that invocation.
@@ -57077,11 +57079,11 @@ be stored.&nbsp; If<i> wc</i> is a null wide character, the resulting state desc
 <br><br>The<tt> _fwcrtomb</tt> function is a data model independent form of the<tt> wcrtomb</tt> function that accepts far
 pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide character conversion functions differ from the corresponding internal-state multibyte
-character functions ( <tt> mblen</tt>, <tt> mbtowc</tt>, and <tt> wctomb</tt>) in that they have an extra argument,<i> ps</i>,
-of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state
-of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer, each function uses its own internal
-<tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in the library calls these functions with
-a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
+character functions ( <a href="#mblen">mblen</a>, <a href="#mbtowc">mbtowc</a>, and <a href="#wctomb">wctomb</a>) in that
+they have an extra argument,<i> ps</i>, of type pointer to <tt> mbstate_t</tt> that points to an object that can completely
+describe the current conversion state of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer,
+each function uses its own internal <tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in
+the library calls these functions with a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
 <br><br>Also unlike their corresponding functions, the return value does not represent whether the encoding is state-dependent.
 <br><br>If the encoding is state-dependent, on entry each function takes the described conversion state (either internal or
 pointed to by<i> ps</i>) as current.&nbsp; The conversion state described by the pointed-to object is altered as needed to
@@ -57352,7 +57354,8 @@ dst</i> is not a null pointer, are then stored into the array pointed to by<i> d
 including a terminating null wide character, but the terminating null character (byte) will not be stored.&nbsp; Conversion
 will stop earlier in two cases:&nbsp; when a code is reached that does not correspond to a valid multibyte character, or (if<i>
 dst</i> is not a null pointer) when the next multibyte character would exceed the limit of<i> len</i> total bytes to be stored
-into the array pointed to by<i> dst</i>.&nbsp; Each conversion takes place as if by a call to the <tt> wcrtomb</tt> function.
+into the array pointed to by<i> dst</i>.&nbsp; Each conversion takes place as if by a call to the <a href="#wcrtomb">wcrtomb</a>
+function.
 <br>If<i> dst</i> is not a null pointer, the pointer object pointed to by<i> src</i> will be assigned either a null pointer
 (if conversion stopped due to reaching a terminating null wide character) or the address just past the last wide character
 converted.&nbsp; If conversion stopped due to reaching a terminating null wide character and if<i> dst</i> is not a null pointer,
@@ -57360,11 +57363,11 @@ the resulting state described will be the initial conversion state.
 <br><br>The<tt> _fwcsrtombs</tt> function is a data model independent form of the<tt> wcsrtombs</tt> function that accepts
 far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The restartable multibyte/wide string conversion functions differ from the corresponding internal-state multibyte
-string functions ( <tt> mbstowcs</tt> and <tt> wcstombs</tt>) in that they have an extra argument,<i> ps</i>, of type pointer
-to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion state of the associated
-multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer, each function uses its own internal <tt> mbstate_t</tt>
-object instead.&nbsp; You are guaranteed that no other function in the library calls these functions with a null pointer for<i>
-ps</i>, thereby ensuring the stability of the state.
+string functions ( <a href="#mbstowcs">mbstowcs</a> and <a href="#wcstombs">wcstombs</a>) in that they have an extra argument,<i>
+ps</i>, of type pointer to <tt> mbstate_t</tt> that points to an object that can completely describe the current conversion
+state of the associated multibyte character sequence.&nbsp; If<i> ps</i> is a null pointer, each function uses its own internal
+<tt> mbstate_t</tt> object instead.&nbsp; You are guaranteed that no other function in the library calls these functions with
+a null pointer for<i> ps</i>, thereby ensuring the stability of the state.
 <br><br>Also unlike their corresponding functions, the conversion source argument,<i> src</i>, has a pointer-to-pointer type.
 &nbsp;When the function is storing conversion results (that is, when<i> dst</i> is not a null pointer), the pointer object
 pointed to by this argument will be updated to reflect the amount of the source processed by that invocation.
@@ -57517,7 +57520,7 @@ n is the lesser of<i> len</i> or<i> dstmax</i>.&nbsp; Otherwise, n is the lesser
 </ul>
 <br>If the conversion stops without converting a null wide character and<i> dst</i> is not a null pointer, then a null character
 is stored into the array pointed to by<i> dst</i> immediately following any multibyte characters already stored.&nbsp; Each
-conversion takes place as if by a call to the <tt> wcrtomb</tt> function.
+conversion takes place as if by a call to the <a href="#wcrtomb">wcrtomb</a> function.
 <br><br>If<i> dst</i> is not a null pointer, the pointer object pointed to by<i> src</i> is assigned either a null pointer
 (if conversion stopped due to reaching a terminating null wide character) or the address just past the last wide character
 converted (if any).&nbsp; If conversion stopped due to reaching a terminating null wide character, the resulting state described
@@ -58100,7 +58103,7 @@ of the current locale; the constructed value becomes indeterminate if the catego
 <dl>
 <dt>Returns:
 <dd>If<i> property</i> identifies a valid class of wide characters according to the <tt> LC_CTYPE</tt> category of the current
-locale, the<tt> wctrans</tt> function returns a non-zero value that is valid as the second argument to the <tt> towctrans</tt>
+locale, the<tt> wctrans</tt> function returns a non-zero value that is valid as the second argument to the <a href="#towctrans">towctrans</a>
 function; otherwise, it returns zero.
 </dl>
 <dl>
@@ -58158,11 +58161,11 @@ current locale; the constructed value becomes indeterminate if the category's se
 <dl>
 <dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>alnum
-<dd>any wide character for which one of <tt> iswalpha</tt> or <a href="#isdigit">iswdigit</a> is true
+<dd>any wide character for which one of <a href="#isalpha">iswalpha</a> or <a href="#isdigit">iswdigit</a> is true
 <dt><br>alpha
-<dd>any wide character for which <tt> iswupper</tt> or <tt> iswlower</tt> is true, that is, for any wide character that is one
-of an implementation-defined set for which none of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#ispunct">iswpunct</a>,
-or <a href="#isspace">iswspace</a> is true
+<dd>any wide character for which <a href="#isupper">iswupper</a> or <a href="#islower">iswlower</a> is true, that is, for any
+wide character that is one of an implementation-defined set for which none of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a> is true
 <dt><br>blank
 <dd>any wide character corresponding to a standard blank character (space or horizontal tab) or is one of an implementation-defined
 set of wide characters for which <tt> iswblank</tt> is true
