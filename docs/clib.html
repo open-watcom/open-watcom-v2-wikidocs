@@ -3489,11 +3489,11 @@ will be advanced when there is no freed block large enough to satisfy a request 
 value may be changed by a program at any time.&nbsp; 
 <dt><br>__argc
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
-<br>This<tt> int</tt> item contains the number of arguments passed to <tt> main</tt>.&nbsp; 
+<br>This<tt> int</tt> item contains the number of arguments passed to <a href="#main">main</a>.&nbsp; 
 <dt><br>__argv
 <dd>Prototype in<tt> &lt;stdlib.h&gt;.</tt>
-<br>This<tt> char **</tt> item contains a pointer to a vector containing the actual arguments passed to <tt> main</tt>.&nbsp;
-
+<br>This<tt> char **</tt> item contains a pointer to a vector containing the actual arguments passed to <a href="#main">main</a>.
+&nbsp;
 <dt><br>daylight
 <dd>Prototype in<tt> &lt;time.h&gt;.</tt>
 <br>This<tt> unsigned int</tt> has a value of one when daylight saving time is supported in this locale and zero otherwise.
@@ -9201,7 +9201,7 @@ and <tt> errno</tt> is set to indicate the error.
 <dt>Description:
 <dd>The<tt> cscanf</tt> function scans input from the console under control of the argument<i> format</i>.&nbsp; Following the
 format string is a list of addresses to receive values.&nbsp; The<tt> cscanf</tt> function uses the function <tt> getche</tt>
-to read characters from the console.&nbsp; The<i> format</i> string is described under the description of the <tt> scanf</tt>
+to read characters from the console.&nbsp; The<i> format</i> string is described under the description of the <a href="#scanf">scanf</a>
 function.
 </dl>
 <dl>
@@ -9411,8 +9411,8 @@ Functions, <a href="#difftime">difftime</a>, <a href="#gmtime">gmtime</a>, <a hr
 return code of the terminated child process.
 <br><br>If the child process terminated normally, then the low order byte of the status word will be set to 0, and the high
 order byte will contain the low order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
-&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <a href="#exit">exit</a>, or <a href="#_exit">_Exit</a>
-or <a href="#_exit">_exit</a> are explicity called.
+&nbsp;The <tt> DOSEXIT</tt> function is called whenever <a href="#main">main</a> returns, or <a href="#exit">exit</a>, or
+<a href="#_exit">_Exit</a> or <a href="#_exit">_exit</a> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>
@@ -16359,7 +16359,7 @@ and it is unspecified to what extent<tt> fprintf_s</tt> produced output before d
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> fprintf_s</tt> function is equivalent to the <tt> fprintf</tt> function except for the explicit runtime-constraints
+<dd>The<tt> fprintf_s</tt> function is equivalent to the <a href="#fprintf">fprintf</a> function except for the explicit runtime-constraints
 listed above.
 <br>The<tt> fwprintf_s</tt> function is a wide character version of<tt> fprintf_s</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
@@ -16593,7 +16593,7 @@ the buffer specified by<i> buf</i>.
 <dt>Returns:
 <dd>The<tt> fread</tt> function returns the number of complete elements successfully read.&nbsp; This value may be less than the
 requested number of elements.
-<br>The <tt> feof</tt> and <tt> ferror</tt> functions can be used to determine whether the end of the file was encountered
+<br>The <a href="#feof">feof</a> and <tt> ferror</tt> functions can be used to determine whether the end of the file was encountered
 or if an input/output error has occurred.&nbsp; When an error has occurred, <tt> errno</tt> contains a value indicating the
 type of error that has been detected.
 </dl>
@@ -16989,7 +16989,7 @@ function.
 <dt>Description:
 <dd>The<tt> fscanf</tt> function scans input from the file designated by<i> fp</i> under control of the argument<i> format</i>.
 &nbsp;Following the format string is a list of addresses to receive values.&nbsp; The<i> format</i> string is described under
-the description of the <tt> scanf</tt> function.
+the description of the <a href="#scanf">scanf</a> function.
 <br>The<tt> fwscanf</tt> function is identical to<tt> fscanf</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -17060,11 +17060,12 @@ and it is unspecified to what extent<tt> fscanf_s</tt> performed input before di
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> fscanf_s</tt> function is equivalent to <tt> fscanf</tt> except that the<tt> c, s,</tt> and<tt> &#91;</tt> conversion
-specifiers apply to a pair of arguments (unless assignment suppression is indicated by a<tt> *</tt>).&nbsp; The first of these
-arguments is the same as for <tt> fscanf</tt>.&nbsp; That argument is immediately followed in the argument list by the second
-argument, which has type <tt> size_t</tt> and gives the number of elements in the array pointed to by the first argument of
-the pair.&nbsp; If the first argument points to a scalar object, it is considered to be an array of one element.
+<dd>The<tt> fscanf_s</tt> function is equivalent to <a href="#fscanf">fscanf</a> except that the<tt> c, s,</tt> and<tt> &#91;</tt>
+conversion specifiers apply to a pair of arguments (unless assignment suppression is indicated by a<tt> *</tt>).&nbsp; The
+first of these arguments is the same as for <a href="#fscanf">fscanf</a>.&nbsp; That argument is immediately followed in the
+argument list by the second argument, which has type <tt> size_t</tt> and gives the number of elements in the array pointed
+to by the first argument of the pair.&nbsp; If the first argument points to a scalar object, it is considered to be an array
+of one element.
 <br>A matching failure occurs if the number of elements in a receiving object is insufficient to hold the converted input
 (including any trailing null character).
 <br><br>The<tt> fwscanf_s</tt> function is identical to<tt> fscanf_s</tt> except that it accepts a wide character string argument
@@ -19966,9 +19967,9 @@ entry will never be NULL.
 <dt>Description:
 <dd>The<tt> getopt</tt> function is a command-line parser that can be used by applications that follow Utility Syntax Guidelines
 3, 4, 5, 6, 7, 9 and 10 in the Base Definitions volume of IEEE Std 1003.1-2001, Section 12.2, Utility Syntax Guidelines.
-<br>The parameters<i> argc</i> and<i> argv</i> are the argument count and argument array as passed to <tt> main</tt>.&nbsp;
-The argument<i> optstring</i> is a string of recognised option characters; if a character is followed by a colon, the option
-takes an argument.&nbsp; All option characters allowed by Utility Syntax Guideline 3 are allowed in<i> optstring</i>.
+<br>The parameters<i> argc</i> and<i> argv</i> are the argument count and argument array as passed to <a href="#main">main</a>.
+&nbsp;The argument<i> optstring</i> is a string of recognised option characters; if a character is followed by a colon, the
+option takes an argument.&nbsp; All option characters allowed by Utility Syntax Guideline 3 are allowed in<i> optstring</i>.
 <br><br>The global variable <tt> optind</tt> is the index of the next element of the<i> argv&#91;&#93;</i> vector to be processed.
 &nbsp;It is initialised to 1 by the system, and getopt updates it when it finishes with each element of<i> argv&#91;&#93;</i>.
 &nbsp;When an element of<i> argv&#91;&#93;</i> contains multiple option characters,<tt> getopt</tt> uses a static variable
@@ -29724,8 +29725,8 @@ function to do so.
 main</tt> function, if present, will not be called).
 <br><br>As with<tt> main</tt> the<tt> wmain</tt> function can be declared to return <tt> void</tt> and the same considerations
 will apply.
-<br><br>The <tt> WinMain</tt> function is called by the system as the initial entry point for a Windows-based application.
-&nbsp;The <tt> wWinMain</tt> function is a wide character version of <tt> WinMain</tt>.
+<br><br>The <a href="#main">WinMain</a> function is called by the system as the initial entry point for a Windows-based application.
+&nbsp;The <tt> wWinMain</tt> function is a wide character version of <a href="#main">WinMain</a>.
 <dl>
 <dt><b><i>Parameters&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>hInstance
@@ -29763,19 +29764,19 @@ position (same as <tt> SW_SHOWNORMAL</tt>).
 position (same as <tt> SW_RESTORE</tt>).
 </dl>
 </dl>
-<br>The <tt> WinMain</tt> function initializes an application, and then performs a message retrieval-and-dispatch loop that
-is the top-level control structure for the remainder of the application's execution.&nbsp; The loop terminates when a <tt>
-WM_QUIT</tt> message is received.&nbsp; At that point, <tt> WinMain</tt> exits the application, returning the value passed
-in the <tt> WM_QUIT</tt> message's <tt> wParam</tt> parameter.&nbsp; If <tt> WM_QUIT</tt> was received as a result of calling
-<tt> PostQuitMessage</tt>, the value of <tt> wParam</tt> is the value of the <tt> PostQuitMessage</tt> function's <tt> nExitCode</tt>
-parameter.
+<br>The <a href="#main">WinMain</a> function initializes an application, and then performs a message retrieval-and-dispatch
+loop that is the top-level control structure for the remainder of the application's execution.&nbsp; The loop terminates when
+a <tt> WM_QUIT</tt> message is received.&nbsp; At that point, <a href="#main">WinMain</a> exits the application, returning
+the value passed in the <tt> WM_QUIT</tt> message's <tt> wParam</tt> parameter.&nbsp; If <tt> WM_QUIT</tt> was received as
+a result of calling <tt> PostQuitMessage</tt>, the value of <tt> wParam</tt> is the value of the <tt> PostQuitMessage</tt>
+function's <tt> nExitCode</tt> parameter.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> main</tt> and<tt> wmain</tt> functions return an exit code to the calling program (usually the operating system).
-<br>If the <tt> WinMain</tt> function terminates before entering the message loop, it should return 0.&nbsp; Otherwise, it
-should terminate when it receives a <tt> WM_QUIT</tt> message and return the exit value contained in that message's <tt> wParam</tt>
-parameter.
+<br>If the <a href="#main">WinMain</a> function terminates before entering the message loop, it should return 0.&nbsp; Otherwise,
+it should terminate when it receives a <tt> WM_QUIT</tt> message and return the exit value contained in that message's <tt>
+wParam</tt> parameter.
 </dl>
 <dl>
 <dt>See Also:
@@ -39598,8 +39599,8 @@ a newline character.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> perror</tt> function returns no value.&nbsp; Because<tt> perror</tt> uses the <tt> fprintf</tt> function, <tt> errno</tt>
-can be set when an error is detected during the execution of that function.
+<dd>The<tt> perror</tt> function returns no value.&nbsp; Because<tt> perror</tt> uses the <a href="#fprintf">fprintf</a> function,
+<tt> errno</tt> can be set when an error is detected during the execution of that function.
 </dl>
 <dl>
 <dt>See Also:
@@ -41761,9 +41762,9 @@ bits and the fractional part is in the low 16 bits.
 of type<tt> short int.</tt>
 <li>&quot;h&quot; causes an &quot;s&quot; operation to treat the argument string as an ASCII character string composed of
 8-bit characters.
-<br><br>For <a href="#printf">printf</a> and related byte input/output functions, this specifier is redundant.&nbsp; For <tt>
-wprintf</tt> and related wide character input/output functions, this specifier is required if the argument string is to be
-treated as an 8-bit ASCII character string; otherwise it will be treated as a wide character string.
+<br><br>For <a href="#printf">printf</a> and related byte input/output functions, this specifier is redundant.&nbsp; For <a href="#printf">wprintf</a>
+and related wide character input/output functions, this specifier is required if the argument string is to be treated as an
+8-bit ASCII character string; otherwise it will be treated as a wide character string.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; printf(&nbsp;&nbsp;&nbsp; &quot;%s%d&quot;, &quot;Num=&quot;, 12345 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wprintf( L&quot;%hs%d&quot;, &quot;Num=&quot;, 12345 );</tt>
@@ -41775,7 +41776,7 @@ of type<tt> long int.</tt>
 (a string composed of characters of type <tt> wchar_t</tt>).
 <br><br>For <a href="#printf">printf</a> and related byte input/output functions, this specifier is required if the argument
 string is to be treated as a wide character string; otherwise it will be treated as an 8-bit ASCII character string.&nbsp;
-For <tt> wprintf</tt> and related wide character input/output functions, this specifier is redundant.
+For <a href="#printf">wprintf</a> and related wide character input/output functions, this specifier is redundant.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; printf(&nbsp; &quot;%ls%d&quot;, L&quot;Num=&quot;, 12345 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wprintf( L&quot;%s%d&quot;, L&quot;Num=&quot;, 12345 );</tt>
@@ -44125,8 +44126,8 @@ and it is unspecified to what extent<tt> scanf_s</tt> performed input before dis
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> scanf_s</tt> function is equivalent to <tt> fscanf_s</tt> with the argument<i> stdin</i> interposed before the arguments
-to scanf_s
+<dd>The<tt> scanf_s</tt> function is equivalent to <a href="#fscanf_s">fscanf_s</a> with the argument<i> stdin</i> interposed
+before the arguments to scanf_s
 <br>The<tt> wscanf_s</tt> function is identical to<tt> scanf_s</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -47795,11 +47796,11 @@ using the <tt> stderr</tt> stream.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _snprintf</tt> function is equivalent to the <tt> fprintf</tt> function, except that the argument<i> buf</i> specifies
-a character array into which the generated output is placed, rather than to a file.&nbsp; The maximum number of characters
-to store is specified by<i> count</i>.&nbsp; A null character is placed at the end of the generated character string if fewer
-than<i> count</i> characters were stored.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
-function.
+<dd>The<tt> _snprintf</tt> function is equivalent to the <a href="#fprintf">fprintf</a> function, except that the argument<i>
+buf</i> specifies a character array into which the generated output is placed, rather than to a file.&nbsp; The maximum number
+of characters to store is specified by<i> count</i>.&nbsp; A null character is placed at the end of the generated character
+string if fewer than<i> count</i> characters were stored.&nbsp; The<i> format</i> string is described under the description
+of the <a href="#printf">printf</a> function.
 <br>The<tt> _snwprintf</tt> function is a wide character version of<tt> _snprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
 wide characters into which the generated output is to be written, rather than converted to multibyte characters and written
@@ -47874,10 +47875,10 @@ snprintf</tt> function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> snprintf</tt> function is equivalent to the <tt> fprintf</tt> function, except that the argument<i> buf</i> specifies
-a character array into which the generated output is placed, rather than to a file.&nbsp; A null character is placed at the
-end of the generated character string.&nbsp; The maximum number of characters to store, including a terminating null character,
-is specified by<i> count</i>.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
+<dd>The<tt> snprintf</tt> function is equivalent to the <a href="#fprintf">fprintf</a> function, except that the argument<i> buf</i>
+specifies a character array into which the generated output is placed, rather than to a file.&nbsp; A null character is placed
+at the end of the generated character string.&nbsp; The maximum number of characters to store, including a terminating null
+character, is specified by<i> count</i>.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
 function.
 <br>The<tt> snwprintf</tt> function is a wide character version of<tt> snprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of wide characters
@@ -47953,7 +47954,7 @@ and less than<tt> RSIZE_MAX,</tt> then the<tt> snprintf_s</tt> function sets<i> 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> snprintf_s</tt> function is equivalent to the <tt> snprintf</tt> function except for the explicit runtime-constraints
+<dd>The<tt> snprintf_s</tt> function is equivalent to the <a href="#snprintf">snprintf</a> function except for the explicit runtime-constraints
 listed above.
 <br>The<tt> snprintf_s</tt> function, unlike <tt> sprintf_s</tt>, will truncate the result to fit within the array pointed
 to by<i> s</i>.
@@ -48349,7 +48350,8 @@ option is supported under DOS, OS/2, Win32 and QNX.
 Win32 and QNX.
 <dt><br>P_NOWAITO
 <dd>Causes the current program to execute concurrently with the new child process.&nbsp; This option is supported under OS/2,
-Win32 and QNX.&nbsp; The <a href="#wait">wait</a> and <tt> cwait</tt> functions cannot be used to obtain the exit code.
+Win32 and QNX.&nbsp; The <a href="#wait">wait</a> and <a href="#cwait">cwait</a> functions cannot be used to obtain the exit
+code.
 <dt><br>P_OVERLAY
 <dd>The invoked program replaces the original program in memory and is executed.&nbsp; No return is made to the original program.
 &nbsp;This option is supported under DOS (16-bit only), OS/2, Win32, and QNX.&nbsp; This is equivalent to calling the appropriate
@@ -48444,9 +48446,9 @@ lines.</tt>
 <dt><br>P_NOWAIT
 <dd>then the return value from<b> spawn...</b>&nbsp; is the process ID (or process handle under Win32) of the child process.&nbsp;
 To obtain the exit code for a process spawned with <tt> P_NOWAIT</tt>, you must call the <a href="#wait">wait</a> (under OS/2
-or QNX) or <tt> cwait</tt> (under OS/2 or Win32) function specifying the process ID/handle.&nbsp; If the child process terminated
-normally, then the low order byte of the returned status word will be set to 0, and the high order byte will contain the low
-order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
+or QNX) or <a href="#cwait">cwait</a> (under OS/2 or Win32) function specifying the process ID/handle.&nbsp; If the child
+process terminated normally, then the low order byte of the returned status word will be set to 0, and the high order byte
+will contain the low order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
 <dt><br>P_NOWAITO
 <dd>then the return value from<b> spawn...</b>&nbsp; is the process ID of the child process.&nbsp; The exit code cannot be obtained
 for a process spawned with <tt> P_NOWAITO</tt>.
@@ -48809,9 +48811,9 @@ sprintf</tt> function.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> sprintf</tt> function is equivalent to the <tt> fprintf</tt> function, except that the argument<i> buf</i> specifies
-a character array into which the generated output is placed, rather than to a file.&nbsp; A null character is placed at the
-end of the generated character string.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
+<dd>The<tt> sprintf</tt> function is equivalent to the <a href="#fprintf">fprintf</a> function, except that the argument<i> buf</i>
+specifies a character array into which the generated output is placed, rather than to a file.&nbsp; A null character is placed
+at the end of the generated character string.&nbsp; The<i> format</i> string is described under the description of the <a href="#printf">printf</a>
 function.
 <br>The<tt> swprintf</tt> function is a wide character version of<tt> sprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of wide characters
@@ -49062,7 +49064,7 @@ function.
 <dt>Description:
 <dd>The<tt> sscanf</tt> function scans input from the character string<i> in_string</i> under control of the argument<i> format</i>.
 &nbsp;Following the format string is the list of addresses of items to receive values.
-<br>The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
+<br>The<i> format</i> string is described under the description of the <a href="#scanf">scanf</a> function.
 <br><br>The<tt> swscanf</tt> function is identical to<tt> sscanf</tt> except that it accepts a wide character string argument
 for<i> format</i> and the input string<i> in_string</i> consists of wide characters.
 </dl>
@@ -49128,10 +49130,10 @@ and it is unspecified to what extent<tt> sscanf_s</tt> performed input before di
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> sscanf_s</tt> function is equivalent to <tt> fscanf_s</tt>, except that input is obtained from a string (specified
-by the argument<i> s</i>) rather than from a stream.&nbsp; Reaching the end of the string is equivalent to encountering end-of-file
-for the <tt> fscanf_s</tt> function.&nbsp; If copying takes place between objects that overlap, the objects take on unspecified
-values.
+<dd>The<tt> sscanf_s</tt> function is equivalent to <a href="#fscanf_s">fscanf_s</a>, except that input is obtained from a string
+(specified by the argument<i> s</i>) rather than from a stream.&nbsp; Reaching the end of the string is equivalent to encountering
+end-of-file for the <a href="#fscanf_s">fscanf_s</a> function.&nbsp; If copying takes place between objects that overlap,
+the objects take on unspecified values.
 <br>The<tt> swscanf_s</tt> function is identical to<tt> sscanf_s</tt> except that it accepts wide character string arguments
 for<i> s</i> and<i> format</i>.
 </dl>
@@ -55623,7 +55625,7 @@ string argument for<i> format</i> and produces wide character output.
 <dt>Description:
 <dd>The<tt> vcprintf</tt> function writes output directly to the console under control of the argument<i> format</i>.&nbsp; The
 <tt> putch</tt> function is used to output characters to the console.&nbsp; The<i> format</i> string is described under the
-description of the <a href="#printf">printf</a> function.&nbsp; The<tt> vcprintf</tt> function is equivalent to the <tt> cprintf</tt>
+description of the <a href="#printf">printf</a> function.&nbsp; The<tt> vcprintf</tt> function is equivalent to the <a href="#cprintf">cprintf</a>
 function, with the variable argument list replaced with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a>
 macro.
 </dl>
@@ -55684,9 +55686,9 @@ macro.
 <dt>Description:
 <dd>The<tt> vcscanf</tt> function scans input from the console under control of the argument<i> format</i>.&nbsp; The<tt> vcscanf</tt>
 function uses the function <tt> getche</tt> to read characters from the console.&nbsp; The<i> format</i> string is described
-under the description of the <tt> scanf</tt> function.
-<br>The<tt> vcscanf</tt> function is equivalent to the <tt> cscanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
+under the description of the <a href="#scanf">scanf</a> function.
+<br>The<tt> vcscanf</tt> function is equivalent to the <a href="#cscanf">cscanf</a> function, with a variable argument list
+replaced with<i> arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 </dl>
 <dl>
 <dt>Returns:
@@ -55756,8 +55758,8 @@ vfprintf</tt> function.
 <dt>Description:
 <dd>The<tt> vfprintf</tt> function writes output to the file pointed to by<i> fp</i> under control of the argument<i> format</i>.
 &nbsp;The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt>
-vfprintf</tt> function is equivalent to the <tt> fprintf</tt> function, with the variable argument list replaced with<i> arg</i>,
-which has been initialized by the <a href="#va_start">va_start</a> macro.
+vfprintf</tt> function is equivalent to the <a href="#fprintf">fprintf</a> function, with the variable argument list replaced
+with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vfwprintf</tt> function is a wide character version of<tt> vfprintf</tt>.&nbsp; It accepts a wide character string
 argument for<i> format</i> and produces wide character output.
 </dl>
@@ -55836,7 +55838,7 @@ and it is unspecified to what extent<tt> vfprintf_s</tt> produced output before 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vfprintf_s</tt> function is equivalent to the <tt> vprintf</tt> function except for the explicit runtime-constraints
+<dd>The<tt> vfprintf_s</tt> function is equivalent to the <a href="#vprintf">vprintf</a> function except for the explicit runtime-constraints
 listed above.
 <br>The<tt> vfwprintf_s</tt> function is a wide character version of<tt> vfprintf_s</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
@@ -55914,9 +55916,9 @@ vfscanf</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> vfscanf</tt> function scans input from the file designated by<i> fp</i> under control of the argument<i> format</i>.
-&nbsp;The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
-<br>The<tt> vfscanf</tt> function is equivalent to the <tt> fscanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
+&nbsp;The<i> format</i> string is described under the description of the <a href="#scanf">scanf</a> function.
+<br>The<tt> vfscanf</tt> function is equivalent to the <a href="#fscanf">fscanf</a> function, with a variable argument list
+replaced with<i> arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 <br><br>The<tt> vfwscanf</tt> function is a wide character version of<tt> vfscanf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
@@ -55990,8 +55992,8 @@ and it is unspecified to what extent<tt> vfscanf_s</tt> performed input before d
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vfscanf_s</tt> function is equivalent to <tt> fscanf_s</tt>, with the variable argument list replaced by<i> arg</i>,
-which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
+<dd>The<tt> vfscanf_s</tt> function is equivalent to <a href="#fscanf_s">fscanf_s</a>, with the variable argument list replaced
+by<i> arg</i>, which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
 calls).&nbsp; The<tt> vfscanf_s</tt> function does not invoke the <a href="#va_end">va_end</a> macro.
 <br>The<tt> vfwscanf_s</tt> function is identical to<tt> vfscanf_s</tt> except that it accepts a wide character string argument
 for<i> format</i>.
@@ -56137,7 +56139,7 @@ and it is unspecified to what extent<tt> vprintf_s</tt> produced output before d
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vprintf_s</tt> function is equivalent to the <tt> vprintf</tt> function except for the explicit runtime-constraints
+<dd>The<tt> vprintf_s</tt> function is equivalent to the <a href="#vprintf">vprintf</a> function except for the explicit runtime-constraints
 listed above.
 <br>The<tt> vwprintf_s</tt> function is a wide character version of<tt> vprintf_s</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
@@ -56205,9 +56207,9 @@ function.
 <dl>
 <dt>Description:
 <dd>The<tt> vscanf</tt> function scans input from the file designated by<i> stdin</i> under control of the argument<i> format</i>.
-&nbsp;The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
-<br>The<tt> vscanf</tt> function is equivalent to the <tt> scanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
+&nbsp;The<i> format</i> string is described under the description of the <a href="#scanf">scanf</a> function.
+<br>The<tt> vscanf</tt> function is equivalent to the <a href="#scanf">scanf</a> function, with a variable argument list replaced
+with<i> arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 <br><br>The<tt> vwscanf</tt> function is identical to<tt> vscanf</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -56352,8 +56354,8 @@ assigned, which can be fewer than provided for, or even zero.
 buf</i>.&nbsp; The maximum number of characters to store is specified by<i> count</i>.&nbsp; A null character is placed at
 the end of the generated character string if fewer than<i> count</i> characters were stored.&nbsp; The<i> format</i> string
 is described under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt> _vsnprintf</tt> function is
-equivalent to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i> arg</i>, which has been initialized
-by the <a href="#va_start">va_start</a> macro.
+equivalent to the <a href="#_snprintf">_snprintf</a> function, with the variable argument list replaced with<i> arg</i>, which
+has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> _vsnwprintf</tt> function is a wide character version of<tt> _vsnprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
 wide characters into which the generated output is to be written, rather than converted to multibyte characters and written
@@ -56437,8 +56439,8 @@ vsnprintf</tt> function.
 <dd>The<tt> vsnprintf</tt> function formats data under control of the<i> format</i> control string and stores the result in<i>
 buf</i>.&nbsp; The maximum number of characters to store, including a terminating null character, is specified by<i> count</i>.
 &nbsp;The<i> format</i> string is described under the description of the <a href="#printf">printf</a> function.&nbsp; The<tt>
-vsnprintf</tt> function is equivalent to the <tt> _snprintf</tt> function, with the variable argument list replaced with<i>
-arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
+vsnprintf</tt> function is equivalent to the <a href="#_snprintf">_snprintf</a> function, with the variable argument list
+replaced with<i> arg</i>, which has been initialized by the <a href="#va_start">va_start</a> macro.
 <br>The<tt> vsnwprintf</tt> function is a wide character version of<tt> vsnprintf</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.&nbsp; The argument<i> buf</i> specifies an array of
 wide characters into which the generated output is to be written, rather than converted to multibyte characters and written
@@ -56532,8 +56534,8 @@ and less than<tt> RSIZE_MAX,</tt> then the<tt> vsnprintf_s</tt> function sets<i>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vsnprintf_s</tt> function is equivalent to the <tt> vsnprintf</tt> function except for the explicit runtime-constraints
-listed above.
+<dd>The<tt> vsnprintf_s</tt> function is equivalent to the <a href="#vsnprintf">vsnprintf</a> function except for the explicit
+runtime-constraints listed above.
 <br>The<tt> vsnprintf_s</tt> function, unlike <tt> vsprintf_s</tt>, will truncate the result to fit within the array pointed
 to by<i> s</i>.
 <br><br>The<tt> vsnwprintf_s</tt> function is a wide character version of<tt> vsnprintf_s</tt>.&nbsp; It accepts a wide character
@@ -56706,10 +56708,10 @@ and less than<tt> RSIZE_MAX,</tt> then the<tt> vsprintf_s</tt> function sets<i> 
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vsprintf_s</tt> function is equivalent to the <tt> vsprintf</tt> function except for the explicit runtime-constraints
+<dd>The<tt> vsprintf_s</tt> function is equivalent to the <a href="#vsprintf">vsprintf</a> function except for the explicit runtime-constraints
 listed above.
-<br>The<tt> vsprintf_s</tt> function, unlike <tt> vsnprintf_s</tt>, treats a result too big for the array pointed to by<i>
-s</i> as a runtime-constraint violation.
+<br>The<tt> vsprintf_s</tt> function, unlike <a href="#vsnprintf_s">vsnprintf_s</a>, treats a result too big for the array
+pointed to by<i> s</i> as a runtime-constraint violation.
 <br><br>The<tt> vswprintf_s</tt> function is a wide character version of<tt> vsprintf_s</tt>.&nbsp; It accepts a wide character
 string argument for<i> format</i> and produces wide character output.
 </dl>
@@ -56786,9 +56788,9 @@ vsscanf</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> vsscanf</tt> function scans input from the string designated by<i> s</i> under control of the argument<i> format</i>.
-&nbsp;The<i> format</i> string is described under the description of the <tt> scanf</tt> function.
-<br>The<tt> vsscanf</tt> function is equivalent to the <tt> sscanf</tt> function, with a variable argument list replaced with<i>
-arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
+&nbsp;The<i> format</i> string is described under the description of the <a href="#scanf">scanf</a> function.
+<br>The<tt> vsscanf</tt> function is equivalent to the <a href="#sscanf">sscanf</a> function, with a variable argument list
+replaced with<i> arg</i>, which has been initialized using the <a href="#va_start">va_start</a> macro.
 <br><br>The<tt> vswscanf</tt> function is identical to<tt> vsscanf</tt> except that it accepts a wide character string argument
 for<i> format</i>.
 </dl>
@@ -56863,8 +56865,8 @@ and it is unspecified to what extent<tt> vsscanf_s</tt> performed input before d
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> vsscanf_s</tt> function is equivalent to <tt> sscanf_s</tt>, with the variable argument list replaced by<i> arg</i>,
-which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
+<dd>The<tt> vsscanf_s</tt> function is equivalent to <a href="#sscanf_s">sscanf_s</a>, with the variable argument list replaced
+by<i> arg</i>, which shall have been initialized by the <a href="#va_start">va_start</a> macro (and possibly subsequent <a href="#va_arg">va_arg</a>
 calls).&nbsp; The<tt> vsscanf_s</tt> function does not invoke the <a href="#va_end">va_end</a> macro.
 <br>The<tt> vswscanf_s</tt> function is identical to<tt> vsscanf_s</tt> except that it accepts wide character string arguments
 for<i> str</i> and<i> format</i>.
@@ -56931,13 +56933,13 @@ assigned, which can be fewer than provided for, or even zero.
 <dd>The<tt> wait</tt> function suspends the calling process until any of the caller's immediate child processes terminate.
 <br>Under Win32, there is no parent-child relationship amongst processes so the<tt> wait</tt> function cannot and does not
 wait for child processes to terminate.&nbsp; To wait for any process, you must specify its process ID.&nbsp; For this reason,
-the <tt> cwait</tt> function should be used (one of its arguments is a process ID).
+the <a href="#cwait">cwait</a> function should be used (one of its arguments is a process ID).
 <br><br>If<i> status</i> is not<tt> NULL,</tt> it points to a word that will be filled in with the termination status word
 and return code of the terminated child process.
 <br><br>If the child process terminated normally, then the low order byte of the status word will be set to 0, and the high
 order byte will contain the low order byte of the return code that the child process passed to the <tt> DOSEXIT</tt> function.
-&nbsp;The <tt> DOSEXIT</tt> function is called whenever <tt> main</tt> returns, or <a href="#exit">exit</a>, or <a href="#_exit">_Exit</a>
-or <a href="#_exit">_exit</a> are explicity called.
+&nbsp;The <tt> DOSEXIT</tt> function is called whenever <a href="#main">main</a> returns, or <a href="#exit">exit</a>, or
+<a href="#_exit">_Exit</a> or <a href="#_exit">_exit</a> are explicity called.
 <br><br>If the child process did not terminate normally, then the high order byte of the status word will be set to 0, and
 the low order byte will contain one of the following values:
 <dl>
@@ -58422,12 +58424,12 @@ _strlwr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strncat&nbsp;&nbsp;&nbsp;&nbsp
 &nbsp;&nbsp;&nbsp; strpbrk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strrchr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strrev
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strspn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; strstr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strtok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _strupr&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; b swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tolower&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;&nbsp;&nbsp; wcscat_s&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp; _wcserrorlen_s wcsncat_s&nbsp;&nbsp;
-&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; swab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tolower&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; toupper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ultoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;utoa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcrtombs_s&nbsp;&nbsp;&nbsp;&nbsp; wcscat_s&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; wcscpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wcserror_s&nbsp;&nbsp;&nbsp; _wcserrorlen_s wcsncat_s&nbsp;
+&nbsp;&nbsp;&nbsp; wcsncat_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsncpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcsnlen_s&nbsp;&nbsp;&nbsp;
+&nbsp; wcsrtombs_s&nbsp;&nbsp;&nbsp; wcstok_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wcstombs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
@@ -58577,20 +58579,20 @@ one file whose names differ only in case).
 <br><b>The effect if a file with the new name exists prior to a call to the </b><tt> rename</tt><b> function (7.9.4.2).</b>
 <br><br>The <tt> rename</tt> function will fail if you attempt to rename a file using a name that exists.
 <h2 id="Printing_Pointer_Values"> Printing Pointer Values </h2>
-<br><b>The output for</b><tt> %p</tt><b> conversion in the </b><tt> fprintf</tt><b> function (7.9.6.1).</b>
+<br><b>The output for</b><tt> %p</tt><b> conversion in the <a href="#fprintf">fprintf</a> function (7.9.6.1).</b>
 <br><br>Two types of pointers are supported:&nbsp; near pointers (%hp), and far pointers (%lp).&nbsp; The output for %p depends
 on the memory model being used.
-<br><br>In 16-bit mode, the <tt> fprintf</tt> function produces hexadecimal values of the form XXXX for 16-bit near pointers,
-and XXXX:XXXX (segment and offset separated by a colon) for 32-bit far pointers.
-<br><br>In 32-bit mode, the <tt> fprintf</tt> function produces hexadecimal values of the form XXXXXXXX for 32-bit near pointers,
-and XXXX:XXXXXXXX (segment and offset separated by a colon) for 48-bit far pointers.
+<br><br>In 16-bit mode, the <a href="#fprintf">fprintf</a> function produces hexadecimal values of the form XXXX for 16-bit
+near pointers, and XXXX:XXXX (segment and offset separated by a colon) for 32-bit far pointers.
+<br><br>In 32-bit mode, the <a href="#fprintf">fprintf</a> function produces hexadecimal values of the form XXXXXXXX for 32-bit
+near pointers, and XXXX:XXXXXXXX (segment and offset separated by a colon) for 48-bit far pointers.
 <h2 id="Reading_Pointer_Values"> Reading Pointer Values </h2>
-<br><b>The input for</b><tt> %p</tt><b> conversion in the </b><tt> fscanf</tt><b> function (7.9.6.2).</b>
-<br><br>The <tt> fscanf</tt> function converts hexadecimal values into the correct address when the %p format specifier is
-used.
+<br><b>The input for</b><tt> %p</tt><b> conversion in the <a href="#fscanf">fscanf</a> function (7.9.6.2).</b>
+<br><br>The <a href="#fscanf">fscanf</a> function converts hexadecimal values into the correct address when the %p format
+specifier is used.
 <h2 id="Reading_Ranges"> Reading Ranges </h2>
 <br><b>The interpretation of a</b><tt> -</tt><b> character that is neither the first nor the last character in the scanlist
-for</b><tt> %&#91;</tt><b> conversion in the </b><tt> fscanf</tt><b> function (7.9.6.2).</b>
+for</b><tt> %&#91;</tt><b> conversion in the <a href="#fscanf">fscanf</a> function (7.9.6.2).</b>
 <br><br>The &quot;-&quot; character indicates a character range.&nbsp; The character prior to the &quot;-&quot; is the first
 character in the range.&nbsp; The character following the &quot;-&quot; is the last character in the range.
 <h2 id="File_Position_Errors"> File Position Errors </h2>
