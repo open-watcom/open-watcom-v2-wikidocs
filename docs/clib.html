@@ -1809,9 +1809,10 @@ are defined:
 <dt><br><a href="#atoll">_wtoll</a>
 <dd>wide character string to &quot;long long int&quot;
 </dl>
-<br>See also <tt> tolower</tt>, <tt> towlower</tt>, <tt> _mbctolower</tt>, <tt> toupper</tt>, <tt> towupper</tt>, <tt> _mbctoupper</tt>,
-<tt> _strlwr</tt>, <tt> _wcslwr</tt>, <tt> _mbslwr</tt>, <tt> _strupr</tt>, <tt> _wcsupr</tt> and <tt> _mbsupr</tt> which
-convert the cases of characters and strings.
+<br>See also <a href="#tolower">tolower</a>, <a href="#tolower">towlower</a>, <a href="#_mbctolower">_mbctolower</a>, <a href="#toupper">toupper</a>,
+<a href="#toupper">towupper</a>, <a href="#_mbctoupper">_mbctoupper</a>, <a href="#strlwr">_strlwr</a>, <a href="#strlwr">_wcslwr</a>,
+<a href="#strlwr">_mbslwr</a>, <a href="#strupr">_strupr</a>, <a href="#strupr">_wcsupr</a> and <a href="#strupr">_mbsupr</a>
+which convert the cases of characters and strings.
 <h3 id="Memory_Allocation_Functions"> Memory Allocation Functions </h3>
 <br>These functions allocate and de-allocate blocks of memory.
 <br><br>Unless you are running your program in 32-bit protect mode, where segments have a limit of 4 gigabytes, the default
@@ -3464,7 +3465,7 @@ that they are system-dependent header files.&nbsp;
 <dd>This header file contains the manifest constants used by the <a href="#locking">locking</a> function.&nbsp; 
 <dt><br>sys/stat.h
 <dd>This POSIX header file contains the declarations pertaining to file status, including definitions for the <a href="#fstat">fstat</a>
-and <tt> stat</tt> functions and for the structure:&nbsp; 
+and <a href="#stat">stat</a> functions and for the structure:&nbsp; 
 <dl>
 <dt>stat
 <dd>describes the information obtained for a directory, file or device
@@ -12353,7 +12354,7 @@ pointed to by<i> sign</i> will contain 0 if the number is positive, and non-zero
 <dl>
 <dt>Returns:
 <dd>The<tt> ecvt</tt> function returns a pointer to a static buffer containing the converted string of digits.&nbsp; Note:<tt>
-&nbsp;ecvt</tt> and <tt> fcvt</tt> both use the same static buffer.
+&nbsp;ecvt</tt> and <a href="#fcvt">fcvt</a> both use the same static buffer.
 </dl>
 <dl>
 <dt>See Also:
@@ -13607,7 +13608,7 @@ pointed to by<i> sign</i> will contain 0 if the number is positive, and non-zero
 <dl>
 <dt>Returns:
 <dd>The<tt> fcvt</tt> function returns a pointer to a static buffer containing the converted string of digits.&nbsp; Note:&nbsp;
-<tt> ecvt</tt> and<tt> fcvt</tt> both use the same static buffer.
+<a href="#ecvt">ecvt</a> and<tt> fcvt</tt> both use the same static buffer.
 </dl>
 <dl>
 <dt>See Also:
@@ -14197,7 +14198,7 @@ were successfully raised.&nbsp; Otherwise, it returns a nonzero value.
 <dl>
 <dt>Description:
 <dd>The<tt> fesetenv</tt> function attempts to establish the floating-point environment to environment represented by the object
-pointed by<i> envp</i> argument.&nbsp; The<i> envp</i> argument shall point to an object set by a call to <tt> fegetenv</tt>
+pointed by<i> envp</i> argument.&nbsp; The<i> envp</i> argument shall point to an object set by a call to <a href="#fegetenv">fegetenv</a>
 or <tt> feholdexcept</tt>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that fesetenv merely installs the state of
 the floating-point status flags represented through its argument, and does not raise these floating-point exceptions.
 </dl>
@@ -17386,7 +17387,7 @@ has been detected.
 <dt>Description:
 <dd>The<tt> fstat</tt> functions obtain information about an open file whose file handle is<i> handle</i>.&nbsp; This information
 is placed in the structure located at the address indicated by<i> buf</i>.
-<br>The file<tt> &lt;sys/stat.h&gt;</tt> contains definitions for the structure <tt> stat</tt>.
+<br>The file<tt> &lt;sys/stat.h&gt;</tt> contains definitions for the structure <a href="#stat">stat</a>.
 <dl>
 <dt><b><i>Field&nbsp;&nbsp;&nbsp;&nbsp; Type/Meaning</i></b>
 <dt>st_dev
@@ -17425,7 +17426,7 @@ is placed in the structure located at the address indicated by<i> buf</i>.
 <dt><br>st_originatingNameSpace
 <dd>(unsigned char) the originating name space
 </dl>
-<br>The structure <tt> _stati64</tt> differs from <tt> stat</tt> in the following way:
+<br>The structure <a href="#stat">_stati64</a> differs from <a href="#stat">stat</a> in the following way:
 <dl>
 <dt>st_size
 <dd>(__int64) total file size (as a 64-bit value)
@@ -17444,9 +17445,9 @@ is placed in the structure located at the address indicated by<i> buf</i>.
 <dt><br>S_ISREG(m)
 <dd>Test for regular file.
 </dl>
-<br>The value<i> m</i> supplied to the macros is the value of the <tt> st_mode</tt> field of a <tt> stat</tt> structure.&nbsp;
-The macro evaluates to a non-zero value if the test is true and zero if the test is false.
-<br><br>The following bits are encoded within the <tt> st_mode</tt> field of a <tt> stat</tt> structure.
+<br>The value<i> m</i> supplied to the macros is the value of the <tt> st_mode</tt> field of a <a href="#stat">stat</a> structure.
+&nbsp;The macro evaluates to a non-zero value if the test is true and zero if the test is false.
+<br><br>The following bits are encoded within the <tt> st_mode</tt> field of a <a href="#stat">stat</a> structure.
 <dl>
 <dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Owner Permissions</i></b>
 <dt>S_IRWXU
@@ -23986,14 +23987,15 @@ contents before and after the interrupt in question.
 <dl>
 <dt>Description:
 <dd>The<tt> isalnum</tt> function tests if the argument<i> c</i> is an alphanumeric character ('a' to 'z', 'A' to 'Z', or '0'
-to '9').&nbsp; An alphanumeric character is any character for which <tt> isalpha</tt> or <tt> isdigit</tt> is true.
+to '9').&nbsp; An alphanumeric character is any character for which <a href="#isalpha">isalpha</a> or <tt> isdigit</tt> is
+true.
 <br>The<tt> iswalnum</tt> function is a wide character version of<tt> isalnum</tt> that operates with wide character argument.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> isalnum</tt> function returns zero if the argument is neither an alphabetic character (A-Z or a-z) nor a digit (0-9).
 &nbsp;Otherwise, a non-zero value is returned.&nbsp; The<tt> iswalnum</tt> function returns a non-zero value if either <tt>
-iswalpha</tt> or <tt> iswdigit</tt> is true for<i> c</i>.
+iswalpha</tt> or <a href="#isdigit">iswdigit</a> is true for<i> c</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -24036,15 +24038,15 @@ iswalpha</tt> or <tt> iswdigit</tt> is true for<i> c</i>.
 <dl>
 <dt>Description:
 <dd>The<tt> isalpha</tt> function tests if the argument<i> c</i> is an alphabetic character ('a' to 'z' and 'A' to 'Z').&nbsp;
-An alphabetic character is any character for which <tt> isupper</tt> or <tt> islower</tt> is true.
+An alphabetic character is any character for which <a href="#isupper">isupper</a> or <a href="#islower">islower</a> is true.
 <br>The<tt> iswalpha</tt> function is a wide character version of<tt> isalpha</tt> that operates with wide character argument.
 </dl>
 <dl>
 <dt>Returns:
 <dd>The<tt> isalpha</tt> function returns zero if the argument is not an alphabetic character (A-Z or a-z); otherwise, a non-zero
 value is returned.&nbsp; The<tt> iswalpha</tt> function returns a non-zero value only for wide characters for which <tt> iswupper</tt>
-or <tt> iswlower</tt> is true, or any wide character that is one of an implementation-defined set for which none of <tt> iswcntrl</tt>,
-<tt> iswdigit</tt>, <tt> iswpunct</tt>, or <tt> iswspace</tt> is true.
+or <tt> iswlower</tt> is true, or any wide character that is one of an implementation-defined set for which none of <a href="#iscntrl">iswcntrl</a>,
+<a href="#isdigit">iswdigit</a>, <a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a> is true.
 </dl>
 <dl>
 <dt>See Also:
@@ -24213,8 +24215,8 @@ returned.&nbsp; When an error has occurred, <tt> errno</tt> contains a value ind
 <dt>Returns:
 <dd>The<tt> isblank</tt> function returns a non-zero character when the argument is one of the indicated blank characters.&nbsp;
 The<tt> iswblank</tt> function returns a non-zero value when the argument is a wide character that corresponds to a standard
-blank character or is one of an implementation-defined set of wide characters for which <tt> iswalnum</tt> is false.&nbsp;
-Otherwise, zero is returned.
+blank character or is one of an implementation-defined set of wide characters for which <a href="#isalnum">iswalnum</a> is
+false.&nbsp; Otherwise, zero is returned.
 </dl>
 <dl>
 <dt>See Also:
@@ -24582,8 +24584,8 @@ type.&nbsp; Then determination is based on the type of the argument.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> isgraph</tt> function tests for any printable character except space (' ').&nbsp; The <tt> isprint</tt> function is
-similar, except that the space character is also included in the character set being tested.
+<dd>The<tt> isgraph</tt> function tests for any printable character except space (' ').&nbsp; The <a href="#isprint">isprint</a>
+function is similar, except that the space character is also included in the character set being tested.
 <br>The<tt> iswgraph</tt> function is a wide character version of<tt> isgraph</tt> that operates with wide character argument.
 </dl>
 <dl>
@@ -24785,8 +24787,8 @@ returned.
 <dt>Returns:
 <dd>The<tt> islower</tt> function returns a non-zero value when argument is a lowercase letter.&nbsp; The<tt> iswlower</tt> function
 returns a non-zero value when the argument is a wide character that corresponds to a lowercase letter, or if it is one of
-an implementation-defined set of wide characters for which none of <tt> iswcntrl</tt>, <tt> iswdigit</tt>, <tt> iswpunct</tt>,
-or <tt> iswspace</tt> is true.&nbsp; Otherwise, zero is returned.
+an implementation-defined set of wide characters for which none of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a> is true.&nbsp; Otherwise, zero is returned.
 </dl>
 <dl>
 <dt>See Also:
@@ -24842,8 +24844,8 @@ or <tt> iswspace</tt> is true.&nbsp; Otherwise, zero is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _ismbbalnum</tt> function tests if the argument<i> ch</i> satisfies the condition that one of <tt> isalnum</tt> or
-<tt> _ismbbkalnum</tt> is true.
+<dd>The<tt> _ismbbalnum</tt> function tests if the argument<i> ch</i> satisfies the condition that one of <a href="#isalnum">isalnum</a>
+or <a href="#_ismbbkalnum">_ismbbkalnum</a> is true.
 <br><i>Note:</i>&nbsp; The argument<i> ch</i> must represent a single-byte value (i.e., 0 &lt;=<i> ch</i> &lt;= 255 ).&nbsp;
 Incorrect results occur if the argument is a double-byte character.
 </dl>
@@ -24937,8 +24939,8 @@ character\n&quot;,</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _ismbbalpha</tt> function tests if the argument<i> ch</i> satisfies the condition that one of <tt> isalpha</tt> or
-<tt> _ismbbkalpha</tt> is true.
+<dd>The<tt> _ismbbalpha</tt> function tests if the argument<i> ch</i> satisfies the condition that one of <a href="#isalpha">isalpha</a>
+or <a href="#_ismbbkalpha">_ismbbkalpha</a> is true.
 <br>For example, in code page 932,<tt> _ismbbalpha</tt> tests if the argument<i> ch</i> is a single-byte alphabetic character
 (&quot;a&quot; to &quot;z&quot; or &quot;A&quot; to &quot;Z&quot;) or single-byte Katakana non-punctuation character.
 <br><br><i>Note:</i>&nbsp; The argument<i> ch</i> must represent a single-byte value (i.e., 0 &lt;=<i> ch</i> &lt;= 255 ).
@@ -25034,7 +25036,7 @@ is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> _ismbbgraph</tt> function tests if the argument<i> ch</i> satisfies the condition that one of <tt> isgraph</tt> or
-<tt> _ismbbkprint</tt> is true.
+<a href="#_ismbbkprint">_ismbbkprint</a> is true.
 <br>For example, in code page 932,<tt> _ismbbgraph</tt> tests if the argument<i> ch</i> is a single-byte printable character
 excluding space (&quot; &quot;) or single-byte Katakana character.
 <br><br><i>Note:</i>&nbsp; The argument<i> ch</i> must represent a single-byte value (i.e., 0 &lt;=<i> ch</i> &lt;= 255 ).
@@ -25883,8 +25885,8 @@ zero is returned.
 <dt>Description:
 <dd>The<tt> _ismbcalnum</tt> function tests if the multibyte character argument<i> ch</i> is an alphanumeric character.&nbsp;
 For example, in code page 932, 'A' through 'Z', 'a' through 'z', or '0' through '9' and its corresponding double-byte versions
-are alphanumeric (among others).&nbsp; An alphanumeric character is any character for which <tt> _ismbcalpha</tt> or <tt>
-_ismbcdigit</tt> is true.
+are alphanumeric (among others).&nbsp; An alphanumeric character is any character for which <a href="#_ismbcalpha">_ismbcalpha</a>
+or <a href="#_ismbcdigit">_ismbcdigit</a> is true.
 </dl>
 <dl>
 <dt>Returns:
@@ -26219,7 +26221,7 @@ zero is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _ismbcgraph</tt> function tests for any printable multibyte character except space (' ').&nbsp; The <tt> _ismbcprint</tt>
+<dd>The<tt> _ismbcgraph</tt> function tests for any printable multibyte character except space (' ').&nbsp; The <a href="#_ismbcprint">_ismbcprint</a>
 function is similar, except that the space character is also included in the character set being tested.
 </dl>
 <dl>
@@ -26905,7 +26907,7 @@ zero is returned.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _ismbcprint</tt> function tests for any printable multibyte character including space (' ').&nbsp; The <tt> _ismbcgraph</tt>
+<dd>The<tt> _ismbcprint</tt> function tests for any printable multibyte character including space (' ').&nbsp; The <a href="#_ismbcgraph">_ismbcgraph</a>
 function is similar, except that the space character is not included in the character set being tested.
 </dl>
 <dl>
@@ -27561,7 +27563,7 @@ function returns a non-zero value when the argument is a printable wide characte
 <dt>Returns:
 <dd>The<tt> ispunct</tt> function returns a non-zero value when the argument is a punctuation character.&nbsp; The<tt> iswpunct</tt>
 function returns a non-zero value when the argument is a printable wide character that is neither the space wide character
-nor a wide character for which <tt> iswalnum</tt> is true.&nbsp; Otherwise, zero is returned.
+nor a wide character for which <a href="#isalnum">iswalnum</a> is true.&nbsp; Otherwise, zero is returned.
 </dl>
 <dl>
 <dt>See Also:
@@ -27646,7 +27648,7 @@ nor a wide character for which <tt> iswalnum</tt> is true.&nbsp; Otherwise, zero
 <dt>Returns:
 <dd>The<tt> isspace</tt> function returns a non-zero character when the argument is one of the indicated white-space characters.
 &nbsp;The<tt> iswspace</tt> function returns a non-zero value when the argument is a wide character that corresponds to a
-standard white-space character or is one of an implementation-defined set of wide characters for which <tt> iswalnum</tt>
+standard white-space character or is one of an implementation-defined set of wide characters for which <a href="#isalnum">iswalnum</a>
 is false.&nbsp; Otherwise, zero is returned.
 </dl>
 <dl>
@@ -27712,8 +27714,8 @@ is false.&nbsp; Otherwise, zero is returned.
 <dt>Returns:
 <dd>The<tt> isupper</tt> function returns a non-zero value when the argument is an uppercase letter.&nbsp; The<tt> iswupper</tt>
 function returns a non-zero value when the argument is a wide character that corresponds to an uppercase letter, or if it
-is one of an implementation-defined set of wide characters for which none of <tt> iswcntrl</tt>, <tt> iswdigit</tt>, <tt>
-iswpunct</tt>, or <tt> iswspace</tt> is true.&nbsp; Otherwise, zero is returned.
+is one of an implementation-defined set of wide characters for which none of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a> is true.&nbsp; Otherwise, zero is returned.
 </dl>
 <dl>
 <dt>See Also:
@@ -49274,7 +49276,7 @@ conventions.
 <dt>Description:
 <dd>The<tt> stat</tt> functions obtain information about the file or directory referenced in<i> path</i>.&nbsp; This information
 is placed in the structure located at the address indicated by<i> buf</i>.
-<br>The file<tt> &lt;sys/stat.h&gt;</tt> contains definitions for the structure <tt> stat</tt>.
+<br>The file<tt> &lt;sys/stat.h&gt;</tt> contains definitions for the structure <a href="#stat">stat</a>.
 <dl>
 <dt><b><i>Field&nbsp;&nbsp;&nbsp;&nbsp; Type/Meaning</i></b>
 <dt>st_dev
@@ -49313,7 +49315,7 @@ is placed in the structure located at the address indicated by<i> buf</i>.
 <dt><br>st_originatingNameSpace
 <dd>(unsigned char) the originating name space
 </dl>
-<br>The structure <tt> _stati64</tt> differs from <tt> stat</tt> in the following way:
+<br>The structure <a href="#stat">_stati64</a> differs from <a href="#stat">stat</a> in the following way:
 <dl>
 <dt>st_size
 <dd>(__int64) total file size (as a 64-bit value)
@@ -49332,9 +49334,9 @@ is placed in the structure located at the address indicated by<i> buf</i>.
 <dt><br>S_ISREG(m)
 <dd>Test for regular file.
 </dl>
-<br>The value<i> m</i> supplied to the macros is the value of the <tt> st_mode</tt> field of a <tt> stat</tt> structure.&nbsp;
-The macro evaluates to a non-zero value if the test is true and zero if the test is false.
-<br><br>The following bits are encoded within the <tt> st_mode</tt> field of a <tt> stat</tt> structure.
+<br>The value<i> m</i> supplied to the macros is the value of the <tt> st_mode</tt> field of a <a href="#stat">stat</a> structure.
+&nbsp;The macro evaluates to a non-zero value if the test is true and zero if the test is false.
+<br><br>The following bits are encoded within the <tt> st_mode</tt> field of a <a href="#stat">stat</a> structure.
 <dl>
 <dt><b><i>Mask&nbsp;&nbsp;&nbsp;&nbsp; Owner Permissions</i></b>
 <dt>S_IRWXU
@@ -49387,10 +49389,10 @@ of the owner of the file when the file is run as a program.&nbsp; On a regular f
 group when the file is run as a program.&nbsp; On a regular file, this bit should be cleared on any write.
 </dl>
 <br>The<tt> _stat</tt> function is identical to<tt> stat</tt>.&nbsp; Use<tt> _stat</tt> for ANSI naming conventions.
-<br><br>The <tt> _stati64</tt>, <tt> _wstat</tt>, and <tt> _wstati64</tt> functions differ from<tt> stat</tt> in the type
-of structure that they are asked to fill in.&nbsp; The <tt> _wstat</tt> and <tt> _wstati64</tt> functions deal with wide character
-strings.&nbsp; The differences in the structures are described above.&nbsp; The <tt> lstat</tt> function is identical to<tt>
-stat</tt> on non-UNIX platforms.
+<br><br>The <a href="#stat">_stati64</a>, <tt> _wstat</tt>, and <tt> _wstati64</tt> functions differ from<tt> stat</tt> in
+the type of structure that they are asked to fill in.&nbsp; The <tt> _wstat</tt> and <tt> _wstati64</tt> functions deal with
+wide character strings.&nbsp; The differences in the structures are described above.&nbsp; The <tt> lstat</tt> function is
+identical to<tt> stat</tt> on non-UNIX platforms.
 </dl>
 <dl>
 <dt>Returns:
@@ -51020,8 +51022,8 @@ maxsize</i> characters of<i> s</i> shall be accessed by strnlen_s
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _strlwr</tt> function replaces the string<i> s1</i> with lowercase characters by invoking the <tt> tolower</tt> function
-for each character in the string.
+<dd>The<tt> _strlwr</tt> function replaces the string<i> s1</i> with lowercase characters by invoking the <a href="#tolower">tolower</a>
+function for each character in the string.
 <br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> _strlwr</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcslwr</tt> function is a wide character version of<tt> _strlwr</tt> that operates with wide character strings.
@@ -53106,8 +53108,8 @@ errno</tt> is set to <tt> EDOM</tt>.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> _strupr</tt> function replaces the string<i> s</i> with uppercase characters by invoking the <tt> toupper</tt> function
-for each character in the string.
+<dd>The<tt> _strupr</tt> function replaces the string<i> s</i> with uppercase characters by invoking the <a href="#toupper">toupper</a>
+function for each character in the string.
 <br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> _strupr</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsupr</tt> function is a wide character version of<tt> _strupr</tt> that operates with wide character strings.
@@ -58156,11 +58158,11 @@ current locale; the constructed value becomes indeterminate if the category's se
 <dl>
 <dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
 <dt>alnum
-<dd>any wide character for which one of <tt> iswalpha</tt> or <tt> iswdigit</tt> is true
+<dd>any wide character for which one of <tt> iswalpha</tt> or <a href="#isdigit">iswdigit</a> is true
 <dt><br>alpha
 <dd>any wide character for which <tt> iswupper</tt> or <tt> iswlower</tt> is true, that is, for any wide character that is one
-of an implementation-defined set for which none of <tt> iswcntrl</tt>, <tt> iswdigit</tt>, <tt> iswpunct</tt>, or <tt> iswspace</tt>
-is true
+of an implementation-defined set for which none of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#ispunct">iswpunct</a>,
+or <a href="#isspace">iswspace</a> is true
 <dt><br>blank
 <dd>any wide character corresponding to a standard blank character (space or horizontal tab) or is one of an implementation-defined
 set of wide characters for which <tt> iswblank</tt> is true
@@ -58172,17 +58174,20 @@ set of wide characters for which <tt> iswblank</tt> is true
 <dd>any printable wide character except a space wide character
 <dt><br>lower
 <dd>any wide character corresponding to a lowercase letter, or one of an implementation-defined set of wide characters for which
-none of <tt> iswcntrl</tt>, <tt> iswdigit</tt>, <tt> iswpunct</tt>, or <tt> iswspace</tt> is true
+none of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a>
+is true
 <dt><br>print
 <dd>any printable wide character including a space wide character
 <dt><br>punct
-<dd>any printable wide character that is not a space wide character or a wide character for which <tt> iswalnum</tt> is true
+<dd>any printable wide character that is not a space wide character or a wide character for which <a href="#isalnum">iswalnum</a>
+is true
 <dt><br>space
 <dd>any wide character corresponding to a standard white-space character or is one of an implementation-defined set of wide characters
-for which <tt> iswalnum</tt> is false
+for which <a href="#isalnum">iswalnum</a> is false
 <dt><br>upper
 <dd>any wide character corresponding to a uppercase letter, or if c is one of an implementation-defined set of wide characters
-for which none of <tt> iswcntrl</tt>, <tt> iswdigit</tt>, <tt> iswpunct</tt>, or <tt> iswspace</tt> is true
+for which none of <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#ispunct">iswpunct</a>, or <a href="#isspace">iswspace</a>
+is true
 <dt><br>xdigit
 <dd>any wide character corresponding to a hexadecimal digit character
 </dl>
@@ -58463,8 +58468,8 @@ routine if the expression is false.&nbsp; The diagnostic message has the followi
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Assertion failed: &#91;expression&#93;, file &#91;name&#93;, line &#91;number&#93;</tt>
 <h2 id="Character_Testing"> Character Testing </h2>
-<br><b>The sets of characters tested for by the </b><tt> isalnum</tt><b>, </b><tt> isalpha</tt><b>, </b><tt> iscntrl</tt><b>,
-</b><tt> islower</tt><b>, </b><tt> isprint</tt><b>, and </b><tt> isupper</tt><b> functions (7.3.1).</b>
+<br><b>The sets of characters tested for by the <a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#iscntrl">iscntrl</a>,
+<a href="#islower">islower</a>, <a href="#isprint">isprint</a>, and <a href="#isupper">isupper</a> functions (7.3.1).</b>
 <dl>
 <dt><b><i>Function&nbsp;&nbsp;&nbsp;&nbsp; Characters Tested For</i></b>
 <dt>isalnum
@@ -58522,9 +58527,9 @@ ERANGE</tt><b> on underflow range errors (7.5.1).</b>
 <br><br>The integer expression <tt> errno</tt> is not set to <tt> ERANGE</tt> on underflow range errors in the mathematics
 functions.
 <h2 id="The_fmod_Function"> The fmod Function </h2>
-<br><b>Whether a domain error occurs or zero is returned when the </b><tt> fmod</tt><b> function has a second argument of
-zero (7.5.6.4).</b>
-<br><br>Zero is returned when the second argument to <tt> fmod</tt> is zero.
+<br><b>Whether a domain error occurs or zero is returned when the <a href="#fmod">fmod</a> function has a second argument
+of zero (7.5.6.4).</b>
+<br><br>Zero is returned when the second argument to <a href="#fmod">fmod</a> is zero.
 <h2 id="The_signal_Function"> The signal Function </h2>
 <br><b>The set of signals for the <a href="#signal">signal</a> function (7.7.1.1).</b>
 <br><br>See the description of the <a href="#signal">signal</a> function presented earlier in this book.
