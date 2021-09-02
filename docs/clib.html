@@ -2219,7 +2219,7 @@ is for only the linefeed character to delimit a text line.
 </dl>
 <br>These standard streams may be re-directed by use of the <a href="#freopen">freopen</a> function.
 <br><br>See also the section<i> File Manipulation Functions</i> for other functions which operate upon files.
-<br><br>The functions referenced in the section<i> Operating System I/O Functions</i> may also be invoked (use the <tt> fileno</tt>
+<br><br>The functions referenced in the section<i> Operating System I/O Functions</i> may also be invoked (use the <a href="#fileno">fileno</a>
 function to obtain the file handle).&nbsp; Since the stream functions may buffer input and output, these functions should
 be used with caution to avoid unexpected results.
 <br><br>The following functions are defined:
@@ -3368,7 +3368,7 @@ header file.&nbsp;
 &nbsp;
 <dt><br>locale.h
 <dd>This ISO C90 header file contains declarations for the categories<tt> (LC...)</tt> of locales which can be selected using
-the <tt> setlocale</tt> function which is also declared.&nbsp; 
+the <a href="#setlocale">setlocale</a> function which is also declared.&nbsp; 
 <dt><br>malloc.h
 <dd>This header file declares the memory allocation and deallocation functions.&nbsp; 
 <dt><br>math.h
@@ -3777,9 +3777,10 @@ the d'th day occurs.&nbsp; Day zero is Sunday.
 <br>The<i> time</i> has the same format as<i> offset</i> except that no leading sign (&quot;+&quot; or &quot;-&quot;) is allowed.
 &nbsp;The default, if<i> time</i> is omitted, is<tt> 02:00:00.</tt>
 </dl>
-<br>Whenever <tt> ctime</tt>, <tt> _ctime</tt>, <tt> localtime</tt>, <a href="#localtime">_localtime</a> or <tt> mktime</tt>
-is called, the time zone names contained in the external variable <tt> tzname</tt> will be set as if the <a href="#tzset">tzset</a>
-function had been called.&nbsp; The same is true if the<tt> %Z</tt> directive of <tt> strftime</tt> is used.
+<br>Whenever <a href="#ctime">ctime</a>, <a href="#ctime">_ctime</a>, <a href="#localtime">localtime</a>, <a href="#localtime">_localtime</a>
+or <a href="#mktime">mktime</a> is called, the time zone names contained in the external variable <tt> tzname</tt> will be
+set as if the <a href="#tzset">tzset</a> function had been called.&nbsp; The same is true if the<tt> %Z</tt> directive of
+<a href="#strftime">strftime</a> is used.
 <br><br>Some examples are:
 <dl>
 <dt>TZ=EST5EDT
@@ -5078,10 +5079,10 @@ exactly 26 characters.&nbsp; This string has the form shown in the following exa
 <br><br>All fields have a constant width.&nbsp; The new-line character<tt> '\n'</tt> and the null character<tt> '\0'</tt>
 occupy the last two positions of the string.
 <br><br>The ISO C function<b> asctime</b> places the result string in a static buffer that is re-used each time<b> asctime</b>
-or <tt> ctime</tt> is called.&nbsp; The non-ISO C function <tt> _asctime</tt> places the result string in the buffer pointed
-to by<i> buf</i>.
-<br><br>The <tt> _wasctime</tt> and <tt> __wasctime</tt> functions are identical to their <tt> asctime</tt> and <tt> _asctime</tt>
-counterparts except that they deal with wide character strings.
+or <a href="#ctime">ctime</a> is called.&nbsp; The non-ISO C function <a href="#asctime">_asctime</a> places the result string
+in the buffer pointed to by<i> buf</i>.
+<br><br>The <a href="#asctime">_wasctime</a> and <a href="#asctime">__wasctime</a> functions are identical to their <a href="#asctime">asctime</a>
+and <a href="#asctime">_asctime</a> counterparts except that they deal with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -6042,11 +6043,12 @@ there is not enough available memory.
 </dl>
 <dl>
 <dt>Description:
-<dd>Functions <tt> j0</tt>, <tt> j1</tt>, and <tt> jn</tt> return Bessel functions of the first kind.
-<br>Functions <tt> y0</tt>, <tt> y1</tt>, and <tt> yn</tt> return Bessel functions of the second kind.&nbsp; The argument<i>
-x</i> must be positive.&nbsp; If<i> x</i> is negative, will be called to print a DOMAIN error message to <tt> stderr</tt>,
-set <tt> errno</tt> to <tt> EDOM</tt>, and return the value<tt> -HUGE_VAL</tt>.&nbsp; This error handling can be modified
-by using the <a href="#matherr">matherr</a> routine.
+<dd>Functions <a href="#bessel">j0</a>, <a href="#bessel">j1</a>, and <a href="#bessel">jn</a> return Bessel functions of the
+first kind.
+<br>Functions <a href="#bessel">y0</a>, <a href="#bessel">y1</a>, and <a href="#bessel">yn</a> return Bessel functions of
+the second kind.&nbsp; The argument<i> x</i> must be positive.&nbsp; If<i> x</i> is negative, will be called to print a DOMAIN
+error message to <tt> stderr</tt>, set <tt> errno</tt> to <tt> EDOM</tt>, and return the value<tt> -HUGE_VAL</tt>.&nbsp; This
+error handling can be modified by using the <a href="#matherr">matherr</a> routine.
 </dl>
 <dl>
 <dt>Returns:
@@ -6096,8 +6098,8 @@ by using the <a href="#matherr">matherr</a> routine.
 <dt>Description:
 <dd>The<tt> bcmp</tt> function compares the byte string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.&nbsp; The
 number of bytes to compare is specified by<i> n</i>.&nbsp; Null characters may be included in the comparision.
-<br>Note that this function is similar to the ISO C <tt> memcmp</tt> function but just tests for equality (new code should
-use the ISO C function).
+<br>Note that this function is similar to the ISO C <a href="#memcmp">memcmp</a> function but just tests for equality (new
+code should use the ISO C function).
 </dl>
 <dl>
 <dt>Returns:
@@ -6144,8 +6146,8 @@ use the ISO C function).
 <dd>The<tt> bcopy</tt> function copies the byte string pointed to by<i> src</i> (including any null characters) into the array
 pointed to by<i> dst</i>.&nbsp; The number of bytes to copy is specified by<i> n</i>.&nbsp; Copying of overlapping objects
 is guaranteed to work properly.
-<br>Note that this function is similar to the ISO C <tt> memmove</tt> function but the order of arguments is different (new
-code should use the ISO C function).
+<br>Note that this function is similar to the ISO C <a href="#memmove">memmove</a> function but the order of arguments is
+different (new code should use the ISO C function).
 </dl>
 <dl>
 <dt>Returns:
@@ -9032,8 +9034,8 @@ under the description of the <a href="#printf">printf</a> function.
 <dl>
 <dt>Description:
 <dd>The<tt> cputs</tt> function writes the character string pointed to by<i> buf</i> directly to the console using the <a href="#putch">putch</a>
-function.&nbsp; Unlike the <tt> puts</tt> function, the carriage-return and line-feed characters are not appended to the string.
-&nbsp;The terminating null character is not written.
+function.&nbsp; Unlike the <a href="#puts">puts</a> function, the carriage-return and line-feed characters are not appended
+to the string.&nbsp; The terminating null character is not written.
 </dl>
 <dl>
 <dt>Returns:
@@ -9269,11 +9271,11 @@ the form shown in the following example:
 <br><br>All fields have a constant width.&nbsp; The new-line character<tt> '\n'</tt> and the null character<tt> '\0'</tt>
 occupy the last two positions of the string.
 <br><br>The ISO C function<b> ctime</b> places the result string in a static buffer that is re-used each time<b> ctime</b>
-or <tt> asctime</tt> is called.&nbsp; The non-ISO C function <tt> _ctime</tt> places the result string in the buffer pointed
-to by<i> buf</i>.
-<br><br>The wide character function <tt> _wctime</tt> is identical to<b> ctime</b> except that it produces a wide character
-string.&nbsp; The wide character function <tt> __wctime</tt> is identical to <tt> _ctime</tt> except that it produces a wide
-character string.
+or <a href="#asctime">asctime</a> is called.&nbsp; The non-ISO C function <a href="#ctime">_ctime</a> places the result string
+in the buffer pointed to by<i> buf</i>.
+<br><br>The wide character function <a href="#ctime">_wctime</a> is identical to<b> ctime</b> except that it produces a wide
+character string.&nbsp; The wide character function <a href="#ctime">__wctime</a> is identical to <a href="#ctime">_ctime</a>
+except that it produces a wide character string.
 <br><br>Whenever the<b> ctime</b> functions are called, the <a href="#tzset">tzset</a> function is also called.
 <br><br>The calendar time is usually obtained by using the <a href="#time">time</a> function.&nbsp; That time is Coordinated
 Universal Time (UTC) (formerly known as Greenwich Mean Time (GMT)).
@@ -13541,8 +13543,9 @@ When an error has occurred, <tt> errno</tt> contains a value indicating the type
 <dl>
 <dt>Description:
 <dd>The<tt> fcloseall</tt> function closes all open stream files, except <tt> stdin</tt>, <tt> stdout</tt>, <tt> stderr</tt>,
-<tt> stdaux</tt>, and <tt> stdprn</tt>.&nbsp; This includes streams created (and not yet closed) by <tt> fdopen</tt>, <a href="#fopen">fopen</a>
-and <a href="#freopen">freopen</a>.&nbsp; The<i> stdaux</i> and<i> stdprn</i> files are not available for some Windows platforms.
+<tt> stdaux</tt>, and <tt> stdprn</tt>.&nbsp; This includes streams created (and not yet closed) by <a href="#fdopen">fdopen</a>,
+<a href="#fopen">fopen</a> and <a href="#freopen">freopen</a>.&nbsp; The<i> stdaux</i> and<i> stdprn</i> files are not available
+for some Windows platforms.
 </dl>
 <dl>
 <dt>Returns:
@@ -16473,7 +16476,7 @@ and<tt> fputwc</tt> returns <tt> WEOF</tt>.
 <dl>
 <dt>Description:
 <dd>The<tt> fputchar</tt> function writes the character specified by the argument<i> c</i> to the output stream <tt> stdout</tt>.
-&nbsp;This function is identical to the <tt> putchar</tt> function.
+&nbsp;This function is identical to the <a href="#putchar">putchar</a> function.
 <br>The function is equivalent to:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fputc( c, stdout );</tt>
@@ -17496,9 +17499,9 @@ of the owner of the file when the file is run as a program.&nbsp; On a regular f
 group when the file is run as a program.&nbsp; On a regular file, this bit should be cleared on any write.
 </dl>
 <br>The<tt> _fstat</tt> function is identical to<tt> fstat</tt>.&nbsp; Use<tt> _fstat</tt> for ANSI naming conventions.
-<br><br>The <tt> _fstati64</tt>, <tt> _wfstat</tt>, and <tt> _wfstati64</tt> functions differ from<tt> fstat</tt> in the type
-of structure that they are asked to fill in.&nbsp; The <tt> _wfstat</tt> and <tt> _wfstati64</tt> functions deal with wide
-character strings.&nbsp; The differences in the structures are described above.
+<br><br>The <a href="#fstat">_fstati64</a>, <a href="#fstat">_wfstat</a>, and <a href="#fstat">_wfstati64</a> functions differ
+from<tt> fstat</tt> in the type of structure that they are asked to fill in.&nbsp; The <a href="#fstat">_wfstat</a> and <a href="#fstat">_wfstati64</a>
+functions deal with wide character strings.&nbsp; The differences in the structures are described above.
 </dl>
 <dl>
 <dt>Returns:
@@ -20796,9 +20799,9 @@ is discarded, and a null character is placed immediately after the last characte
 The<tt> _getws</tt> function gets a string of multibyte characters (if present) from the input stream pointed to by <tt> stdin</tt>,
 converts them to wide characters, and stores them in the wide character array pointed to by<i> buf</i> until end-of-file is
 encountered or a wide character new-line character is read.
-<br><br>It is recommended that <tt> fgets</tt> be used instead of<tt> gets</tt> because data beyond the array<i> buf</i> will
-be destroyed if a new-line character is not read from the input stream <tt> stdin</tt> before the end of the array<i> buf</i>
-is reached.
+<br><br>It is recommended that <a href="#fgets">fgets</a> be used instead of<tt> gets</tt> because data beyond the array<i>
+buf</i> will be destroyed if a new-line character is not read from the input stream <tt> stdin</tt> before the end of the
+array<i> buf</i> is reached.
 <br><br>A common programming error is to assume the presence of a new-line character in every string that is read into the
 array.&nbsp; A new-line character may not appear as the last character in a file, just before end-of-file.
 </dl>
@@ -33713,7 +33716,7 @@ function.
 <dl>
 <dt>Description:
 <dd>The<tt> memcpy</tt> function copies<i> length</i> characters from the buffer pointed to by<i> src</i> into the buffer pointed
-to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <tt> memmove</tt>
+to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <a href="#memmove">memmove</a>
 function if you wish to copy objects that overlap.
 <br>The<tt> _fmemcpy</tt> function is a data model independent form of the<tt> memcpy</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
@@ -33788,8 +33791,8 @@ RSIZE_MAX</tt>.
 <dl>
 <dt>Description:
 <dd>The<tt> memcpy_s</tt> function copies<i> n</i> characters from the buffer pointed to by<i> s2</i> into the buffer pointed
-to by<i> s1</i>.&nbsp; Copying between overlapping objects is not allowed.&nbsp; See the <tt> memmove_s</tt> function if you
-wish to copy objects that overlap.
+to by<i> s1</i>.&nbsp; Copying between overlapping objects is not allowed.&nbsp; See the <a href="#memmove_s">memmove_s</a>
+function if you wish to copy objects that overlap.
 <br>The<tt> wmemcpy_s</tt> function is a wide character version of<tt> memcpy_s</tt> that operates with wide character strings.
 &nbsp;The arguments<i> s1max</i> and<i> n</i> are interpreted to mean the number of wide characters.
 </dl>
@@ -33967,8 +33970,8 @@ memmove</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> memmove</tt> function copies<i> length</i> characters from the buffer pointed to by<i> src</i> to the buffer pointed
-to by<i> dst</i>.&nbsp; Copying of overlapping objects will take place properly.&nbsp; See the <tt> memcpy</tt> function to
-copy objects that do not overlap.
+to by<i> dst</i>.&nbsp; Copying of overlapping objects will take place properly.&nbsp; See the <a href="#memcpy">memcpy</a>
+function to copy objects that do not overlap.
 <br>The<tt> _fmemmove</tt> function is a data model independent form of the<tt> memmove</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wmemmove</tt> function is a wide character version of<tt> memmove</tt> that operates with wide character strings.
@@ -38261,9 +38264,9 @@ of the number of prior calls to lock the referenced memory.
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> munlockall</tt> function unlocks all memory for a process.&nbsp; If, in the preceding call to <tt> mlockall</tt> function,
-the flag <tt> MCL_FUTURE</tt> was specified, all future pages mapped for the process will also not be locked unless another
-call to <tt> mlockall</tt> specifies such behavior.
+<dd>The<tt> munlockall</tt> function unlocks all memory for a process.&nbsp; If, in the preceding call to <a href="#mlockall">mlockall</a>
+function, the flag <tt> MCL_FUTURE</tt> was specified, all future pages mapped for the process will also not be locked unless
+another call to <a href="#mlockall">mlockall</a> specifies such behavior.
 </dl>
 <dl>
 <dt>Returns:
@@ -42654,7 +42657,7 @@ transfer control using the <a href="#longjmp">longjmp</a> function.
 <dl>
 <dt>Description:
 <dd>The<tt> rand</tt> function computes a sequence of pseudo-random integers in the range 0 to <tt> RAND_MAX</tt> (32767).&nbsp;
-The sequence can be started at different values by calling the <tt> srand</tt> function.
+The sequence can be started at different values by calling the <a href="#srand">srand</a> function.
 </dl>
 <dl>
 <dt>Returns:
@@ -45881,7 +45884,7 @@ line would result from a value of<tt> 0xF0F0</tt>
 and the locale specified by<i> locale</i>.&nbsp; A<i> locale</i> affects the collating sequence (the order in which characters
 compare with one another), the way in which certain character-handling functions operate, the decimal-point character that
 is used in formatted input/output and string conversion, and the format and names used in the time string produced by the
-<tt> strftime</tt> function.
+<a href="#strftime">strftime</a> function.
 <br>Potentially, there may be many such environments.&nbsp; Open Watcom C/C++ supports only the<tt> &quot;C&quot;</tt> locale
 and so invoking this function will have no effect upon the behavior of a program at present.&nbsp; Specifying the<tt> &quot;POSIX&quot;</tt>
 locale is supported for POSIX compatibility and equivalent to specifying the<tt> &quot;C&quot;</tt> locale.
@@ -48749,7 +48752,7 @@ period if an extension is specified in the full pathname (filled in by<tt> _spli
 <br>The arguments<i> drive</i>,<i> dir</i>,<i> fname</i> and<i> ext</i> will not be filled in if they are NULL pointers.
 <br><br>For each component of the full pathname that is not present, its corresponding pointer will be set to point at a NULL
 string ('\0').
-<br><br>This function reduces the amount of memory space required when compared to the <tt> splitpath</tt> function.
+<br><br>This function reduces the amount of memory space required when compared to the function.
 <br><br>The<tt> _wsplitpath2</tt> function is a wide character version of<tt> _splitpath2</tt> that operates with wide character
 strings.
 </dl>
@@ -49897,8 +49900,8 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <dl>
 <dt>Description:
 <dd>The<tt> strcoll</tt> function compares the string pointed to by<i> s1</i> to the string pointed to by<i> s2</i>.&nbsp; The
-comparison uses the collating sequence selected by the <tt> setlocale</tt> function.&nbsp; The function will be equivalent
-to the <tt> strcmp</tt> function when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.
+comparison uses the collating sequence selected by the <a href="#setlocale">setlocale</a> function.&nbsp; The function will
+be equivalent to the <tt> strcmp</tt> function when the collating sequence is selected from the<tt> &quot;C&quot;</tt> locale.
 <br>The<tt> wcscoll</tt> function is a wide character version of<tt> strcoll</tt> that operates with wide character strings.
 <br><br>The<tt> _mbscoll</tt> function is a multi-byte character version of<tt> strcoll</tt> that operates with multi-byte
 character strings.
@@ -49964,7 +49967,7 @@ function.
 <dt>Description:
 <dd>The<tt> strcpy</tt> function copies the string pointed to by<i> src</i> (including the terminating null character) into the
 array pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the description
-for the <tt> memmove</tt> function to copy objects that overlap.
+for the <a href="#memmove">memmove</a> function to copy objects that overlap.
 <br>The<tt> _fstrcpy</tt> function is a data model independent form of the<tt> strcpy</tt> function.&nbsp; It accepts far
 pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscpy</tt> function is a wide character version of<tt> strcpy</tt> that operates with wide character strings.
@@ -50835,7 +50838,7 @@ scanned without finding a null character,<i> n</i> is returned.
 <dl>
 <dt>Description:
 <dd>The<tt> strlcpy</tt> function copies no more than<i> n</i> characters from the string pointed to by<i> src</i> into the array
-pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <tt> memmove</tt>
+pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <a href="#memmove">memmove</a>
 function if you wish to copy objects that overlap.
 <br>If the string pointed to by<i> src</i> is longer than<i> n</i> characters, then only<i> n</i> - 1 characters will be copied
 and the result will be null terminated.
@@ -51468,7 +51471,7 @@ strncpy</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> strncpy</tt> function copies no more than<i> n</i> characters from the string pointed to by<i> src</i> into the array
-pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <tt> memmove</tt>
+pointed to by<i> dst</i>.&nbsp; Copying of overlapping objects is not guaranteed to work properly.&nbsp; See the <a href="#memmove">memmove</a>
 function if you wish to copy objects that overlap.
 <br>If the string pointed to by<i> src</i> is shorter than<i> n</i> characters, null characters are appended to the copy in
 the array pointed to by<i> dst</i>, until<i> n</i> characters in all have been written.&nbsp; If the string pointed to by<i>
@@ -53168,7 +53171,7 @@ far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixe
 <dl>
 <dt>Description:
 <dd>The<tt> strxfrm</tt> function transforms, for no more than<i> n</i> characters, the string pointed to by<i> src</i> to the
-buffer pointed to by<i> dst</i>.&nbsp; The transformation uses the collating sequence selected by the <tt> setlocale</tt>
+buffer pointed to by<i> dst</i>.&nbsp; The transformation uses the collating sequence selected by the <a href="#setlocale">setlocale</a>
 function so that two transformed strings will compare identically (using the <tt> strncmp</tt> function) to a comparison of
 the original two strings using the <tt> strcoll</tt> function.&nbsp; The function will be equivalent to the <tt> strncpy</tt>
 function (except there is no padding of the<i> dst</i> argument with null characters when the argument<i> src</i> is shorter
@@ -58719,6 +58722,6 @@ the <tt> COMSPEC</tt> environment variable to find the command interpreter and p
 <br><br>The default time zone is &quot;Eastern Standard Time&quot; (EST), and the corresponding daylight saving time zone
 is &quot;Eastern Daylight Saving Time&quot; (EDT).
 <h2 id="The_clock_Function"> The clock Function </h2>
-<br><b>The era for the </b><tt> clock</tt><b> function (7.12.2.1).</b>
-<br><br>The <tt> clock</tt> function's era begins with a value of 0 when the program starts to execute.
+<br><b>The era for the <a href="#clock">clock</a> function (7.12.2.1).</b>
+<br><br>The <a href="#clock">clock</a> function's era begins with a value of 0 when the program starts to execute.
 </body>
