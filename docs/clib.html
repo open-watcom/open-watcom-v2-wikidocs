@@ -4616,8 +4616,8 @@ code returned to the invoking process is <tt> EXIT_FAILURE</tt> which is defined
 <dl>
 <dt>See Also:
 <dd><a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>, <a href="#_exit">_Exit</a>,
-<a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#onexit">onexit</a>,
-<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -6281,8 +6281,8 @@ program.
 <dl>
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>, <a href="#_exit">_Exit</a>,
-<a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#onexit">onexit</a>,
-<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -13156,8 +13156,8 @@ value to indicate an error.
 <dl>
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
-<a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#onexit">onexit</a>,
-<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -13212,7 +13212,7 @@ termination and set to some other value to indicate an error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#onexit">onexit</a>
+<dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>
 </dl>
 <dl>
 <dt>Example:
@@ -14201,8 +14201,8 @@ were successfully raised.&nbsp; Otherwise, it returns a nonzero value.
 <dt>Description:
 <dd>The<tt> fesetenv</tt> function attempts to establish the floating-point environment to environment represented by the object
 pointed by<i> envp</i> argument.&nbsp; The<i> envp</i> argument shall point to an object set by a call to <a href="#fegetenv">fegetenv</a>
-or <a href="#feholdexcept">feholdexcept</a>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that<tt> fesetenv</tt> merely
-installs the state of the floating-point status flags represented through its argument, and does not raise these floating-point
+or <a href="#feholdexcept">feholdexcept</a>, or equal the <tt> FE_DFL_ENV</tt> macro.&nbsp; Note that <a href="#fesetenv">fesetenv</a>
+merely installs the state of the floating-point status flags represented through its argument, and does not raise these floating-point
 exceptions.
 </dl>
 <dl>
@@ -18457,8 +18457,8 @@ program.
 <dl>
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
-<a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#onexit">onexit</a>,
-<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -20023,7 +20023,7 @@ a missing argument and the first character of<i> optstring</i> was not a colon (
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
 <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>,
-<a href="#onexit">onexit</a>, <a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -29798,8 +29798,8 @@ wParam</tt> parameter.
 <dl>
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
-<a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#onexit">onexit</a>,
-<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#putenv">putenv</a>,
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -38661,6 +38661,7 @@ composite</i>.&nbsp; This provides a portable method to determine the offset.
 <dl>
 <dt>Synopsis:
 <dd>
+<br><tt>** deprecated **</tt>
 <br><tt>#include &lt;stdlib.h&gt;</tt>
 <br><tt>onexit_t onexit( onexit_t func );</tt>
 </dl>
@@ -38671,7 +38672,8 @@ composite</i>.&nbsp; This provides a portable method to determine the offset.
 basis.&nbsp; No more than 32 functions can be registered with the<tt> onexit</tt> function.
 <br>The functions have no parameters and do not return values.
 <br><br>NOTE:&nbsp; The<tt> onexit</tt> function is not an ISO C function.&nbsp; The ISO C standard function <a href="#atexit">atexit</a>
-does the same thing that<tt> onexit</tt> does and should be used instead of onexit where ISO C portability is concerned.
+does the same thing.
+<br><br>The<tt> onexit</tt> function is deprecated, use <a href="#atexit">atexit</a> instead.
 </dl>
 <dl>
 <dt>Returns:
@@ -53464,7 +53466,7 @@ value is returned if the command processor could not be loaded; otherwise, zero 
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
 <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>,
-<a href="#onexit">onexit</a>, <a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>
+<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>
 </dl>
 <dl>
 <dt>Example:
