@@ -38,7 +38,7 @@
 <br><a href="#bcopy">bcopy</a>
 <br><a href="#bdos">bdos</a>
 <br><a href="#_beginthread">_beginthread, _beginthreadex</a>
-<br><a href="#bessel">bessel Functions</a>
+<br><a href="#bessel">Bessel Functions</a>
 <br><a href="#_bfreeseg">_bfreeseg</a>
 <br><a href="#_bgetcmd">_bgetcmd</a>
 <br><a href="#_bheapseg">_bheapseg</a>
@@ -1979,8 +1979,9 @@ ending in &quot;87&quot; pertain to this specific hardware and should be isolate
 <dd>arctangent of two arguments
 <dt><br><a href="#atanh">atanh</a>
 <dd>inverse hyperbolic tangent
-<dt><br><a href="#bessel">bessel</a>
-<dd>bessel functions j0, j1, jn, y0, y1, and yn
+<dt><br><a href="#bessel">Bessel Functions</a>
+<dd>bessel functions <a href="#bessel">j0</a>, <a href="#bessel">j1</a>, <a href="#bessel">jn</a>, <a href="#bessel">y0</a>, <a href="#bessel">y1</a>,
+and <a href="#bessel">yn</a>
 <dt><br><a href="#cabs">cabs</a>
 <dd>absolute value of complex number
 <dt><br><a href="#cbrt">cbrt</a>
@@ -2038,11 +2039,11 @@ ending in &quot;87&quot; pertain to this specific hardware and should be isolate
 <dt><br><a href="#imaxdiv">imaxdiv</a>
 <dd>absolute value of an object of maximum-size integer type
 <dt><br><a href="#bessel">j0</a>
-<dd>return Bessel functions of the first kind (described under &quot;bessel Functions&quot;)
+<dd>return Bessel functions of the first kind (described under <a href="#bessel">Bessel Functions</a> )
 <dt><br><a href="#bessel">j1</a>
-<dd>return Bessel functions of the first kind (described under &quot;bessel Functions&quot;)
+<dd>return Bessel functions of the first kind (described under <a href="#bessel">Bessel Functions</a> )
 <dt><br><a href="#bessel">jn</a>
-<dd>return Bessel functions of the first kind (described under &quot;bessel Functions&quot;)
+<dd>return Bessel functions of the first kind (described under <a href="#bessel">Bessel Functions</a> )
 <dt><br><a href="#labs">labs</a>
 <dd>absolute value of an object of type &quot;long int&quot;
 <dt><br><a href="#ldexp">ldexp</a>
@@ -2108,11 +2109,11 @@ ending in &quot;87&quot; pertain to this specific hardware and should be isolate
 <dt><br><a href="#trunc">trunc</a>
 <dd>truncate a floating point value
 <dt><br><a href="#bessel">y0</a>
-<dd>return Bessel functions of the second kind (described under &quot;bessel&quot;)
+<dd>return Bessel functions of the second kind (described under <a href="#bessel">Bessel Functions</a> )
 <dt><br><a href="#bessel">y1</a>
-<dd>return Bessel functions of the second kind (described under &quot;bessel&quot;)
+<dd>return Bessel functions of the second kind (described under <a href="#bessel">Bessel Functions</a> )
 <dt><br><a href="#bessel">yn</a>
-<dd>return Bessel functions of the second kind (described under &quot;bessel&quot;)
+<dd>return Bessel functions of the second kind (described under <a href="#bessel">Bessel Functions</a> )
 </dl>
 <h3 id="Searching_Functions"> Searching Functions </h3>
 <br>These functions provide searching and sorting capabilities.&nbsp; The following functions are defined:
@@ -6031,7 +6032,7 @@ there is not enough available memory.
 <dd><tt> _beginthread - Win32, OS/2 1.x(MT), OS/2 1.x(DL), OS/2-32, Linux, RDOS, Netware</tt>
 <br><tt>_beginthreadex - Win32</tt>
 </dl>
-<h2 id="bessel"> bessel Functions </h2>
+<h2 id="bessel"> Bessel Functions </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -6045,16 +6046,16 @@ there is not enough available memory.
 </dl>
 <dl>
 <dt>Description:
-<dd>Functions <a href="#bessel">j0</a>, <a href="#bessel">j1</a>, and <a href="#bessel">jn</a> return Bessel functions of the
+<dd>Functions <a href="#bessel">j0</a>, <a href="#bessel">j1</a>, and <a href="#bessel">jn</a> return Bessel Functions of the
 first kind.
-<br>Functions <a href="#bessel">y0</a>, <a href="#bessel">y1</a>, and <a href="#bessel">yn</a> return Bessel functions of
+<br>Functions <a href="#bessel">y0</a>, <a href="#bessel">y1</a>, and <a href="#bessel">yn</a> return Bessel Functions of
 the second kind.&nbsp; The argument<i> x</i> must be positive.&nbsp; If<i> x</i> is negative, will be called to print a DOMAIN
 error message to <tt> stderr</tt>, set <tt> errno</tt> to <tt> EDOM</tt>, and return the value<tt> -HUGE_VAL</tt>.&nbsp; This
 error handling can be modified by using the <a href="#matherr">matherr</a> routine.
 </dl>
 <dl>
 <dt>Returns:
-<dd>These functions return the result of the desired Bessel function of<i> x</i>.
+<dd>These functions return the result of the desired Bessel Function of<i> x</i>.
 </dl>
 <dl>
 <dt>See Also:
@@ -34372,7 +34373,7 @@ to be created.
 <dl>
 <dt>Systems:
 <dd><tt> mkdir - All, Linux, RDOS, Netware</tt>
-<br><tt>_mkdir - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<br><tt>_mkdir - All, Linux, RDOS, Netware</tt>
 <br><tt>_wmkdir - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
 </dl>
 <h2 id="MK_FP"> MK_FP </h2>
@@ -43620,7 +43621,7 @@ mode.
 <dl>
 <dt>Systems:
 <dd><tt> rmdir - All, Linux, RDOS, Netware</tt>
-<br><tt>_rmdir - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<br><tt>_rmdir - All, Linux, RDOS, Netware</tt>
 <br><tt>_wrmdir - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
 </dl>
 <h2 id="_rotl"> _rotl </h2>
