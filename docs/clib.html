@@ -820,7 +820,7 @@
 <br><a href="#strnicmp">_strnicmp, _fstrnicmp, _wcsnicmp, _mbsnicmp, _fmbsnicmp, strnicmp</a>
 <br><a href="#_strnicoll">_strnicoll, _wcsnicoll, _mbsnicoll</a>
 <br><a href="#strnlen_s">strnlen_s, wcsnlen_s</a>
-<br><a href="#strnset">_strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset, strnset</a>
+<br><a href="#strnset">_strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset, strnset, wcsnset</a>
 <br><a href="#strpbrk">strpbrk, _fstrpbrk, wcspbrk, _mbspbrk, _fmbspbrk</a>
 <br><a href="#strrchr">strrchr, _fstrrchr, wcsrchr, _mbsrchr, _fmbsrchr</a>
 <br><a href="#strrev">_strrev, _fstrrev, _wcsrev, _mbsrev, _fmbsrev, strrev</a>
@@ -51875,7 +51875,7 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 <br><tt>_wcsnicoll - All, Linux</tt>
 <br><tt>_mbsnicoll - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 </dl>
-<h2 id="strnset"> _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset, strnset </h2>
+<h2 id="strnset"> _strnset, _fstrnset, _wcsnset, _mbsnset, _fmbsnset, strnset, wcsnset </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -51959,6 +51959,7 @@ character.
 <br><tt>_mbsnset - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fmbsnset - DOS, Windows, OS/2 1.x(all)</tt>
 <br><tt>strnset - All, Linux, RDOS, Netware</tt>
+<br><tt>wcsnset - All, Linux</tt>
 </dl>
 <h2 id="strpbrk"> strpbrk, _fstrpbrk, wcspbrk, _mbspbrk, _fmbspbrk </h2>
 <dl>
@@ -55414,6 +55415,7 @@ the condition:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2 &lt;= radix &lt;= 36</tt>
 <br><br>The<tt> _utoa</tt> function is identical to<tt> utoa</tt>.&nbsp; Use<tt> _utoa</tt> for ANSI naming conventions.
+<br><br>The<tt> utoa</tt> function is a wide character version of<tt> &lt;ret&gt;</tt> that operates with wide character strings.
 </dl>
 <dl>
 <dt>Returns:
