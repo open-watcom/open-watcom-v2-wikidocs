@@ -674,10 +674,11 @@
 <dd><a href="#raise">raise</a>
 <br><a href="#rand">rand</a>
 <br><a href="#ReMentrant_Functions">Re-entrant Functions</a>
-<br><a href="#read">read, _read</a>
+<br><a href="#read">read, _read, readv</a>
 <br><a href="#readdir">readdir, _wreaddir</a>
 <br><a href="#Reading_Pointer_Values">Reading Pointer Values</a>
 <br><a href="#Reading_Ranges">Reading Ranges</a>
+<br><a href="#readlink">readlink</a>
 <br><a href="#realloc">realloc Functions</a>
 <br><a href="#_rectangle">_rectangle, _rectangle_w, _rectangle_wxy</a>
 <br><a href="#_registerfonts">_registerfonts</a>
@@ -925,7 +926,7 @@
 <br><a href="#Wide_Character_Stream_IDO_Functions">Wide Character Stream I/O Functions</a>
 <br><a href="#Wide_String_Manipulation_Functions">Wide String Manipulation Functions</a>
 <br><a href="#_wrapon">_wrapon</a>
-<br><a href="#write">write, _write</a>
+<br><a href="#write">write, _write, writev</a>
 <dt><br>- Z -
 <dd><a href="#ZeroMLength_Files">Zero-Length Files</a>
 </dl>
@@ -2691,7 +2692,7 @@ and terminal identification.&nbsp; The following functions are defined:
 <dd>open directory file
 <dt><br><a href="#readdir">_wreaddir</a>
 <dd>read file name from directory
-<dt><br><a href="#_wrewinddir">_wrewinddir</a>
+<dt><br><a href="#rewinddir">_wrewinddir</a>
 <dd>reset position of directory stream
 <dt><br><a href="#rmdir">_wrmdir</a>
 <dd>remove a directory
@@ -2764,9 +2765,9 @@ the file is opened.&nbsp; The file handle is passed to the other functions.
 <dd>open a pipe
 <dt><br><a href="#read">read</a>
 <dd>read a record
-<dt><br>readlink
+<dt><br><a href="#readlink">readlink</a>
 <dd>read a symbolic link
-<dt><br>readv
+<dt><br><a href="#read">readv</a>
 <dd>read several records placing them into a specified number of buffers
 <dt><br>select
 <dd>synchronous I/O multiplexing
@@ -2790,7 +2791,7 @@ the file is opened.&nbsp; The file handle is passed to the other functions.
 <dd>unlock a section of a file
 <dt><br><a href="#write">write</a>
 <dd>write a record
-<dt><br>writev
+<dt><br><a href="#write">writev</a>
 <dd>write several records from a specified number of buffers
 <dt><br><a href="#creat">_wcreat</a>
 <dd>create a file
@@ -42703,19 +42704,24 @@ The sequence can be started at different values by calling the <a href="#srand">
 <dt>Systems:
 <dd>All, Linux, RDOS, Netware
 </dl>
-<h2 id="read"> read, _read </h2>
+<h2 id="read"> read, _read, readv </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;io.h&gt;</tt>
 <br><tt>int read( int handle, void *buffer, unsigned len );</tt>
 <br><tt>int _read( int handle, void *buffer, unsigned len );</tt>
+<br><tt>int readv( int handle,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const struct iovec *iov,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int iovcnt );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The<tt> read</tt> function reads data at the operating system level.&nbsp; The number of bytes transmitted is given by<i>
 len</i> and the data is transmitted starting at the address specified by<i> buffer</i>.
-<br>The<i> handle</i> value is returned by the <a href="#open">open</a> function.&nbsp; The access mode must have included
+<br>The<tt> readv</tt> function performs the same action as<tt> read</tt>, but places the data into the iovcnt buffers specified
+by the members of the iov array:&nbsp; iov&#91;0&#93;, iov&#91;1&#93;, ..., iov&#91;iovcnt-1&#93;.
+<br><br>The<i> handle</i> value is returned by the <a href="#open">open</a> function.&nbsp; The access mode must have included
 either <tt> O_RDONLY</tt> or <tt> O_RDWR</tt> when the <a href="#open">open</a> function was invoked.&nbsp; The data is read
 starting at the current file position for the file in question.&nbsp; This file position can be determined with the <a href="#tell">_tell</a>
 function and can be set with the <a href="#lseek">lseek</a> function.
@@ -42772,11 +42778,13 @@ a value indicating the type of error that has been detected.
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_read conforms to ANSI naming conventions
+<br>readv is WATCOM
 </dl>
 <dl>
 <dt>Systems:
 <dd><tt> read - All, RDOS, Netware</tt>
 <br><tt>_read - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<br><tt>readv - Linux, Netware</tt>
 </dl>
 <h2 id="readdir"> readdir, _wreaddir </h2>
 <dl>
@@ -42940,6 +42948,89 @@ end of the directory is encountered,<tt> _wreaddir</tt> returns the value<tt> NU
 <dt>Systems:
 <dd><tt> readdir - All, Linux, RDOS, Netware</tt>
 <br><tt>_wreaddir - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
+</dl>
+<h2 id="readlink"> readlink </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;unistd.h&gt;</tt>
+<br><tt>int readlink( const char *path,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char *buf,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t bufsiz );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> readlink</tt> function places the contents of the symbolic link named by path into the buffer pointed to by<i> buf</i>,
+which has a size of<i> bufsiz</i>.&nbsp; The contents of the returned symbolic link don't include a<tt> NULL</tt> terminator.
+&nbsp;Its length must be determined from the<tt> stat</tt> structure returned by the <a href="#stat">lstat</a> function, or
+by the return value of the <a href="#readlink">readlink</a> call.
+<br>If <a href="#readlink">readlink</a> is successful, up to<i> bufsiz</i> bytes from the contents of the symbolic link are
+placed in<i> buf</i>.
+</dl>
+<dl>
+<dt>Returns:
+<dd>On success, the number of bytes placed in the buffer<i> buf</i>.&nbsp; Otherwise, -1 is returned, and<tt> errno</tt> is set
+to indicate the error.
+</dl>
+<dl>
+<dt>Errors:
+<dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
+<dl>
+<dt><b><i>Constant&nbsp;&nbsp;&nbsp;&nbsp; Meaning</i></b>
+<dt>EACCES
+<dd>Search permission is denied for a component of the path prefix.
+<dt><br>EINVAL
+<dd>The named file isn't a symbolic link.
+<dt><br>ELOOP
+<dd>A loop exists in the symbolic links encountered during resolution of the path argument, and more than SYMLOOP_MAX symbolic
+links were encountered.
+<dt><br>ENAMETOOLONG
+<dd>A component of the path exceeded NAME_MAX characters, or the entire pathname exceeded PATH_MAX characters.
+<dt><br>ENOENT
+<dd>The named file doesn't exist.
+<dt><br>ENOSYS
+<dd>Links aren't supported by the resource manager associated with path.
+<dt><br>ENOTDIR
+<dd>A component of the path prefix named by path isn't a directory.
+</dl>
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#read">read</a>, <a href="#close">close</a>, <a href="#creat">creat</a>, <a href="#fread">fread</a>, <a href="#open">open</a>,
+<a href="#write">write</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;limits.h&gt;</tt>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;stdlib.h&gt;</tt>
+<br><tt>#include &lt;unistd.h&gt;</tt>
+<br><br><tt>char buf&#91;PATH_MAX + 1&#93;;</tt>
+<br><br><tt>int main( int argc, char **argv )</tt>
+<br><tt>{</tt>
+<br><tt>&nbsp; int n;</tt>
+<br><tt>&nbsp; int len;</tt>
+<br><tt>&nbsp; int ecode = 0;</tt>
+<br><br><tt>&nbsp; for( n = 1; n &lt; argc; ++n ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; if( (len = readlink( argv&#91;n&#93;, buf, PATH_MAX )) == -1 ) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; perror( argv&#91;n&#93; );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ecode++;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; } else {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buf&#91;len&#93; = '\0';</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;%s -&gt; %s\n&quot;, argv&#91;n&#93;, buf );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; }</tt>
+<br><tt>&nbsp; }</tt>
+<br><tt>&nbsp; return( ecode );</tt>
+<br><tt>}</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>POSIX 1003.1
+</dl>
+<dl>
+<dt>Systems:
+<dd>Linux
 </dl>
 <h2 id="realloc"> realloc Functions </h2>
 <dl>
@@ -58332,19 +58423,24 @@ window.&nbsp; This is text displayed with the <a href="#_outtext">_outtext</a> a
 <dt>Systems:
 <dd>DOS
 </dl>
-<h2 id="write"> write, _write </h2>
+<h2 id="write"> write, _write, writev </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;io.h&gt;</tt>
 <br><tt>int write( int handle, void *buffer, unsigned len );</tt>
 <br><tt>int _write( int handle, void *buffer, unsigned len );</tt>
+<br><tt>int writev( int fildes,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const struct iovec *iov,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int iovcnt );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>The<tt> write</tt> function writes data at the operating system level.&nbsp; The number of bytes transmitted is given by<i>
 len</i> and the data to be transmitted is located at the address specified by<i> buffer</i>.
-<br>The<tt> _write</tt> function is identical to<tt> write</tt>.&nbsp; Use<tt> _write</tt> for ANSI naming conventions.
+<br>The<tt> writev</tt> function performs the same action as<tt> write</tt>, but gathers the output data from the iovcnt buffers
+specified by the members of the iov array:&nbsp; iov&#91;0&#93;, iov&#91;1&#93;, ..., iov&#91;iovcnt-1&#93;.
+<br><br>The<tt> _write</tt> function is identical to<tt> write</tt>.&nbsp; Use<tt> _write</tt> for ANSI naming conventions.
 <br><br>The<i> handle</i> value is returned by the <a href="#open">open</a> function.&nbsp; The access mode must have included
 either <tt> O_WRONLY</tt> or <tt> O_RDWR</tt> when the <a href="#open">open</a> function was invoked.
 <br><br>The data is written to the file at the end when the file was opened with <tt> O_APPEND</tt> included as part of the
@@ -58414,11 +58510,13 @@ has occurred, <tt> errno</tt> contains a value indicating the type of error that
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_write conforms to ANSI naming conventions
+<br>writev is WATCOM
 </dl>
 <dl>
 <dt>Systems:
 <dd><tt> write - All, Linux, RDOS, Netware</tt>
 <br><tt>_write - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
+<br><tt>writev - Linux, Netware</tt>
 </dl>
 <h1 id="ReMentrant_Functions"> Re-entrant Functions </h1>
 <br>The following functions in the C library are re-entrant:
@@ -58474,10 +58572,10 @@ wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
-<br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language standard
-describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly from the
-ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the standard
-that discusses the behavior.
+<br><br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language
+standard describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly
+from the ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the
+standard that discusses the behavior.
 <h2 id="NULL_Macro"> NULL Macro </h2>
 <br><b>The null pointer constant to which the macro </b><tt> NULL</tt><b> expands (7.1.6).</b>
 <br><br>The macro <tt> NULL</tt> expands to 0 in small data models and to 0L in large data models.
