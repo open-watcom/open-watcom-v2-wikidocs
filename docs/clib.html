@@ -7324,7 +7324,7 @@ character representation of that character.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#bcmp">bcmp</a>, <a href="#bcopy">bcopy</a>, <a href="#memset">memset</a>, <a href="#strset">_strset</a>
+<dd><a href="#memcmp">memcmp</a>, <a href="#memcpy">memcpy</a>, <a href="#memset">memset</a>, <a href="#strset">_strset</a>
 </dl>
 <dl>
 <dt>Example:
@@ -49970,11 +49970,11 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>.
 <br><tt>#include &lt;string.h&gt;</tt>
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strcmpi( &quot;AbCDEF&quot;, &quot;abcdef&quot; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strcmpi( &quot;abcdef&quot;, &quot;ABC&quot;&nbsp;&nbsp;&nbsp; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strcmpi( &quot;abc&quot;,&nbsp;&nbsp;&nbsp; &quot;ABCdef&quot; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strcmpi( &quot;Abcdef&quot;, &quot;mnopqr&quot; ) );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, strcmpi( &quot;Mnopqr&quot;, &quot;abcdef&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strcmpi( &quot;AbCDEF&quot;, &quot;abcdef&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strcmpi( &quot;abcdef&quot;, &quot;ABC&quot;&nbsp;&nbsp;&nbsp; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strcmpi( &quot;abc&quot;,&nbsp;&nbsp;&nbsp; &quot;ABCdef&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strcmpi( &quot;Abcdef&quot;, &quot;mnopqr&quot; ) );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;%d\n&quot;, _strcmpi( &quot;Mnopqr&quot;, &quot;abcdef&quot; ) );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
 <br><br><tt>0</tt>
@@ -50332,6 +50332,7 @@ by using the <a href="#malloc">_fmalloc</a> function and can be freed using the 
 <br><br>The<tt> _fstrdup</tt> function is a data model independent form of the<tt> strdup</tt> function.&nbsp; It accepts
 far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.
+<br><br>The<tt> _wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.
 <br><br>The<tt> _mbsdup</tt> function is a multi-byte character version of<tt> strdup</tt> that operates with multi-byte character
 strings.
 <br><br>The<tt> _fmbsdup</tt> function is a data model independent form of the<tt> _mbsdup</tt> function.&nbsp; It accepts
@@ -51900,6 +51901,7 @@ is less than, equal to, or greater than the string pointed to by<i> s2</i>, acco
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>char *strnset( char *s, int fill, size_t count );</tt>
+<br><tt>wchar_t *wcsnset( wchar_t *s, int fill, size_t count );</tt>
 </dl>
 <dl>
 <dt>Description:
