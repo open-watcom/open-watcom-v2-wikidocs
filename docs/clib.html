@@ -883,6 +883,7 @@
 <br><a href="#unlink">unlink, _unlink, _wunlink</a>
 <br><a href="#unlock">unlock</a>
 <br><a href="#_unregisterfonts">_unregisterfonts</a>
+<br><a href="#unsetenv">unsetenv, _wunsetenv</a>
 <br><a href="#Utility_Functions">Utility Functions</a>
 <br><a href="#utime">utime, _utime, _wutime</a>
 <br><a href="#utoa">utoa, _utoa, _utow</a>
@@ -5820,7 +5821,7 @@ storage that may be overwritten by a subsequent call to<tt> basename</tt>
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -8035,7 +8036,8 @@ set <tt> errno</tt> to indicate the error.
 <dl>
 <dt>See Also:
 <dd><a href="#exec">exec...</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>,
-<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
+<a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -8251,7 +8253,7 @@ pointer.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -8292,7 +8294,7 @@ pointer.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -8348,7 +8350,7 @@ errno</tt> appropriately on failures.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -8393,7 +8395,7 @@ ts</i> pointer.&nbsp; Depending on the value of<i> clockid</i>, the function may
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -9736,7 +9738,7 @@ is a null pointer or points to an empty string, a pointer to the string &quot;.&
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -12545,7 +12547,7 @@ open, this call results in no actions.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -12570,7 +12572,7 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -12596,7 +12598,7 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -12635,7 +12637,7 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -12660,7 +12662,7 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -14512,7 +14514,7 @@ at one (the least significant bit).
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -17555,7 +17557,7 @@ returned.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 <br>_fstat conforms to ANSI naming conventions
 <br>_fstati64 is WATCOM
 <br>_wfstat is WATCOM
@@ -18776,7 +18778,7 @@ ENOMEM.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -18974,8 +18976,9 @@ match was found.&nbsp; Note:&nbsp; the value returned should be duplicated if yo
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#clearenv">clearenv</a>, <a href="#exec">exec...</a>, <a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>,
-<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>,
+<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
+<a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -19052,8 +19055,9 @@ stored in the buffer pointed to by<i> value</i>.&nbsp; Otherwise, a non-zero val
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#clearenv">clearenv</a>, <a href="#exec">exec...</a>, <a href="#getenv">getenv</a>, <a href="#putenv">putenv</a>,
-<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#putenv">putenv</a>,
+<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
+<a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -19438,7 +19442,7 @@ list, and this structure entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -19521,7 +19525,7 @@ contained in the <tt> h_addr_list</tt> member as a NULL-terminated list, and thi
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -19597,7 +19601,7 @@ value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -19723,7 +19727,7 @@ ENOMEM.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -19870,7 +19874,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -19917,7 +19921,7 @@ never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -19965,7 +19969,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20080,7 +20084,7 @@ ofile );</tt>
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20496,7 +20500,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20541,7 +20545,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20588,7 +20592,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20654,7 +20658,7 @@ value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20720,7 +20724,7 @@ value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20785,7 +20789,7 @@ value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20944,7 +20948,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -20993,7 +20997,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -21041,7 +21045,7 @@ entry will never be NULL.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -34491,7 +34495,7 @@ name );</tt>
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -34690,7 +34694,7 @@ limit
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -34739,7 +34743,7 @@ unlocked.&nbsp; The<i> flags</i> argument may be one or a combination of the fol
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -34822,7 +34826,7 @@ and errno will be set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -36326,7 +36330,7 @@ the resources to create a private page.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -38182,7 +38186,7 @@ measuring<i> len</i> bytes.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -38267,7 +38271,7 @@ of the number of prior calls to lock the referenced memory.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -38296,7 +38300,7 @@ another call to <a href="#mlockall">mlockall</a> specifies such behavior.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -38333,7 +38337,7 @@ address space.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -38575,7 +38579,7 @@ or unknown, an empty string will be returned.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -42228,7 +42232,9 @@ variables, see _environ, _wenviron.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#setenv">setenv</a>
+<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
+<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
+<a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -44332,7 +44338,7 @@ set.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44370,7 +44376,7 @@ the return value is -1 and <tt> errno</tt> is appropriately set.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44408,7 +44414,7 @@ the return value is -1 and <tt> errno</tt> is appropriately set.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44448,7 +44454,7 @@ the return value is -1 and <tt> errno</tt> is appropriately set.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44492,7 +44498,7 @@ set.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44537,7 +44543,7 @@ set.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44584,7 +44590,7 @@ fails, the return value is -1 and <tt> errno</tt> is appropriately set.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44608,7 +44614,7 @@ it to be the current thread once again.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44712,7 +44718,9 @@ strings.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#getenv">getenv</a>, <a href="#setenv">setenv</a>, <a href="#_splitpath">_splitpath</a>, <a href="#putenv">putenv</a>
+<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
+<a href="#putenv">putenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
+<a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -44888,7 +44896,7 @@ appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44927,7 +44935,7 @@ appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -44969,7 +44977,7 @@ appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -45007,7 +45015,7 @@ appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -45048,7 +45056,7 @@ be locked, the function returns -1 and <tt> errno</tt> is set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -45087,7 +45095,7 @@ be locked, the function returns -1 and <tt> errno</tt> is set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -45595,8 +45603,9 @@ set <tt> errno</tt> to indicate the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#clearenv">clearenv</a>, <a href="#exec">exec...</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
-<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
+<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
+<a href="#system">system</a>
 </dl>
 <dl>
 <dt>Example:
@@ -45858,7 +45867,7 @@ function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -46288,7 +46297,7 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -46533,7 +46542,7 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -46574,7 +46583,7 @@ first entry.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -46601,7 +46610,7 @@ may affect the return value from this function.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -49536,7 +49545,7 @@ returned.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 <br>_stat conforms to ANSI naming conventions
 <br>_stati64 is WATCOM
 <br>_wstat is WATCOM
@@ -49649,7 +49658,7 @@ is, ignoring case, less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -51234,7 +51243,7 @@ is, ignoring case, less than, equal to, or greater than the string pointed to by
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -53454,7 +53463,7 @@ set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -53979,7 +53988,7 @@ fails, the return value is -1, and <tt> errno</tt> will be set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -54016,7 +54025,7 @@ set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -54067,7 +54076,7 @@ set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -54130,7 +54139,7 @@ set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -54167,7 +54176,7 @@ fails, the return value is -1, and <tt> errno</tt> will be set appropriately.
 </dl>
 <dl>
 <dt>Classification:
-<dd>POSIX
+<dd>POSIX 1003.1
 </dl>
 <dl>
 <dt>Systems:
@@ -55330,6 +55339,61 @@ an error.
 <dl>
 <dt>Systems:
 <dd>DOS
+</dl>
+<h2 id="unsetenv"> unsetenv, _wunsetenv </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;stdlib.h&gt;</tt>
+<br><tt>int unsetenv( const char *name );</tt>
+<br><tt>int _wunsetenv( const wchar_t *name );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The environment list consists of a number of environment names, each of which has a value associated with it.
+<br>The<tt> unsetenv</tt> delete all items with name<i> name</i> from the environment list.
+<br><br>The<tt> _wunsetenv</tt> function is a wide character version of<tt> unsetenv</tt> that operates with wide character
+strings.
+</dl>
+<dl>
+<dt>Returns:
+<dd>The<tt> unsetenv</tt> function returns zero upon successful completion.&nbsp; Otherwise, it will return -1 value and set <tt>
+errno</tt> to indicate the error.
+</dl>
+<dl>
+<dt>Errors:
+<dd>When an error has occurred, <tt> errno</tt> contains a value indicating the type of error that has been detected.
+<dl>
+<dt>EINVAL
+<dd>The name argument points to an empty string, or points to a string containing an '=' character.
+</dl>
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
+<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#spawn">spawn...</a>,
+<a href="#system">system</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;stdlib.h&gt;</tt>
+<br><br><tt>int main( void )</tt>
+<br><tt>&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; if( unsetenv( &quot;INCLUDE&quot; ) == 0 )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;INCLUDE environment variable deleted\n&quot; );</tt>
+<br><tt>&nbsp; }</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>POSIX 1003.1
+<br>_wunsetenv is WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd><tt> unsetenv - All, Linux, RDOS</tt>
+<br><tt>_wunsetenv - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
 </dl>
 <h2 id="utime"> utime, _utime, _wutime </h2>
 <dl>
@@ -58586,10 +58650,10 @@ wcstombs_s&nbsp;&nbsp;&nbsp;&nbsp; wctomb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
 </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
-<br><br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language
-standard describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly
-from the ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the
-standard that discusses the behavior.
+<br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language standard
+describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly from the
+ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the standard
+that discusses the behavior.
 <h2 id="NULL_Macro"> NULL Macro </h2>
 <br><b>The null pointer constant to which the macro </b><tt> NULL</tt><b> expands (7.1.6).</b>
 <br><br>The macro <tt> NULL</tt> expands to 0 in small data models and to 0L in large data models.
