@@ -9278,9 +9278,10 @@ occupy the last two positions of the string.
 <br><br>The ISO C function<b> ctime</b> places the result string in a static buffer that is re-used each time<b> ctime</b>
 or <a href="#asctime">asctime</a> is called.&nbsp; The non-ISO C function <a href="#ctime">_ctime</a> places the result string
 in the buffer pointed to by<i> buf</i>.
-<br><br>The wide character function <a href="#ctime">_wctime</a> is identical to<b> ctime</b> except that it produces a wide
-character string.&nbsp; The wide character function <a href="#ctime">__wctime</a> is identical to <a href="#ctime">_ctime</a>
-except that it produces a wide character string.
+<br><br>The<tt> _wctime</tt> function is a wide character version of<tt> ctime</tt> except that it produces a wide character
+string.
+<br><br>The<tt> __wctime</tt> function is a wide character version of<tt> _ctime</tt> except that it produces a wide character
+string.
 <br><br>Whenever the<b> ctime</b> functions are called, the <a href="#tzset">tzset</a> function is also called.
 <br><br>The calendar time is usually obtained by using the <a href="#time">time</a> function.&nbsp; That time is Coordinated
 Universal Time (UTC) (formerly known as Greenwich Mean Time (GMT)).
@@ -12353,7 +12354,8 @@ dec</i> will be filled in with a value indicating the position of the decimal po
 digits.&nbsp; A zero or negative value indicates that the decimal point lies to the left of the first digit.&nbsp; The integer
 pointed to by<i> sign</i> will contain 0 if the number is positive, and non-zero if the number is negative.
 <br><br>The<tt> _ecvt</tt> function is identical to<tt> ecvt</tt>.&nbsp; Use<tt> _ecvt</tt> for ANSI naming conventions.
-<br><br>The<tt> _wecvt</tt> function is a wide character version of<tt> ecvt</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _wecvt</tt> function is a wide character version of<tt> ecvt</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -13607,7 +13609,8 @@ dec</i> will be filled in with a value indicating the position of the decimal po
 digits.&nbsp; A zero or negative value indicates that the decimal point lies to the left of the first digit.&nbsp; The integer
 pointed to by<i> sign</i> will contain 0 if the number is positive, and non-zero if the number is negative.
 <br><br>The<tt> _fcvt</tt> function is identical to<tt> fcvt</tt>.&nbsp; Use<tt> _fcvt</tt> for ANSI naming conventions.
-<br><br>The<tt> _wfcvt</tt> function is a wide character version of<tt> fcvt</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _wfcvt</tt> function is a wide character version of<tt> fcvt</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -17973,7 +17976,8 @@ will be rounded to this position.
 <br>If the exponent of the number is less than -4 or is greater than or equal to the number of significant digits wanted,
 then the number is converted into E-format, otherwise the number is formatted using F-format.
 <br><br>The<tt> _gcvt</tt> function is identical to<tt> gcvt</tt>.&nbsp; Use<tt> _gcvt</tt> for ANSI naming conventions.
-<br><br>The<tt> _wgcvt</tt> function is a wide character version of<tt> gcvt</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _wgcvt</tt> function is a wide character version of<tt> gcvt</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -27949,7 +27953,8 @@ the size 17 bytes on 16-bit machines, and 33 bytes on 32-bit machines.&nbsp; The
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2 &lt;= radix &lt;= 36</tt>
 <br><br>If<i> radix</i> is 10 and<i> value</i> is negative, then a minus sign is prepended to the result.
 <br><br>The<tt> _itoa</tt> function is identical to<tt> itoa</tt>.&nbsp; Use<tt> _itoa</tt> for ANSI naming conventions.
-<br><br>The<tt> _itow</tt> function is a wide character version of<tt> itoa</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _itow</tt> function is a wide character version of<tt> itoa</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -29566,7 +29571,8 @@ satisfy the condition:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2 &lt;= radix &lt;= 36</tt>
 <br><br>If<i> radix</i> is 10 and<i> value</i> is negative, then a minus sign is prepended to the result.
 <br><br>The<tt> _lltoa</tt> function is identical to<tt> lltoa</tt>.&nbsp; Use<tt> _lltoa</tt> for ANSI naming conventions.
-<br><br>The<tt> _lltow</tt> function is a wide character version of<tt> lltoa</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _lltow</tt> function is a wide character version of<tt> lltoa</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -29643,7 +29649,8 @@ satisfy the condition:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2 &lt;= radix &lt;= 36</tt>
 <br><br>If<i> radix</i> is 10 and<i> value</i> is negative, then a minus sign is prepended to the result.
 <br><br>The<tt> _ltoa</tt> function is identical to<tt> ltoa</tt>.&nbsp; Use<tt> _ltoa</tt> for ANSI naming conventions.
-<br><br>The<tt> _ltow</tt> function is a wide character version of<tt> ltoa</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _ltow</tt> function is a wide character version of<tt> ltoa</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -50390,7 +50397,8 @@ strerror</tt> function.
 <dl>
 <dt>Description:
 <dd>The<tt> strerror</tt> function maps the error number contained in<i> errnum</i> to an error message.
-<br>The<tt> _wcserror</tt> function is a wide character version of<tt> strerror</tt>.&nbsp; It produces a wide character string.
+<br>The<tt> _wcserror</tt> function is a wide character version of<tt> strerror</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -54814,7 +54822,8 @@ radix</i> must satisfy the condition:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2 &lt;= radix &lt;= 36</tt>
 <br><br>The<tt> _ulltoa</tt> function is identical to<tt> ulltoa</tt>.&nbsp; Use<tt> _ulltoa</tt> for ANSI naming conventions.
-<br><br>The<tt> _ulltow</tt> function is a wide character version of<tt> ulltoa</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _ulltow</tt> function is a wide character version of<tt> ulltoa</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
@@ -54890,7 +54899,8 @@ radix</i> must satisfy the condition:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 2 &lt;= radix &lt;= 36</tt>
 <br><br>The<tt> _ultoa</tt> function is identical to<tt> ultoa</tt>.&nbsp; Use<tt> _ultoa</tt> for ANSI naming conventions.
-<br><br>The<tt> _ultow</tt> function is a wide character version of<tt> ultoa</tt>.&nbsp; It produces a wide character string.
+<br><br>The<tt> _ultow</tt> function is a wide character version of<tt> ultoa</tt> except that it produces a wide character
+string.
 </dl>
 <dl>
 <dt>Returns:
