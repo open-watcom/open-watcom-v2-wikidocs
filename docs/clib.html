@@ -2649,6 +2649,8 @@ and terminal identification.&nbsp; The following functions are defined:
 <dd>return pointer to string containing pathname of terminal associated with file descriptor argument
 <dt><br>uname
 <dd>return operating system identification
+<dt><br><a href="#unsetenv">unsetenv</a>
+<dd>delete environment variable
 <dt><br><a href="#getenv">_wgetenv</a>
 <dd>get environment variable value
 <dt><br><a href="#putenv">_wputenv</a>
@@ -2657,6 +2659,8 @@ and terminal identification.&nbsp; The following functions are defined:
 <dd>search for a file in list of directories
 <dt><br><a href="#setenv">_wsetenv</a>
 <dd>add, change or delete environment variable
+<dt><br><a href="#unsetenv">_wunsetenv</a>
+<dd>delete environment variable
 </dl>
 <h3 id="Directory_Functions"> Directory Functions </h3>
 <br>These functions pertain to directory manipulation.&nbsp; The following functions are defined:
@@ -4620,7 +4624,7 @@ code returned to the invoking process is <tt> EXIT_FAILURE</tt> which is defined
 <dt>See Also:
 <dd><a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>, <a href="#_exit">_Exit</a>,
 <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
-<a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>, <a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -6285,7 +6289,7 @@ program.
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>, <a href="#_exit">_Exit</a>,
 <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
-<a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>, <a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -6988,7 +6992,8 @@ the terminating null character.&nbsp; An error can occur while converting a valu
 <dt>See Also:
 <dd><a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>, <a href="#sprintf">sprintf</a>,
 <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>, <a href="#vprintf">vprintf</a>,
-<a href="#vsprintf">vsprintf</a>
+<a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>, <a href="#sprintf">swprintf</a>,
+<a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>, <a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -8035,9 +8040,11 @@ set <tt> errno</tt> to indicate the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#exec">exec...</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>,
-<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
-<a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#exec">_wexec...</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
+<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>,
+<a href="#getenv">_wgetenv</a>, <a href="#putenv">_wputenv</a>, <a href="#_searchenv">_wsearchenv</a>, <a href="#setenv">_wsetenv</a>,
+<a href="#unsetenv">_wunsetenv</a>, <a href="#spawn">spawn...</a>, <a href="#spawn">_wspawn...</a>, <a href="#system">system</a>,
+<a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -8571,7 +8578,8 @@ filenames opened by <a href="#opendir">_wopendir</a>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#_dos_find">_dos_find...</a>, <a href="#opendir">opendir</a>, <a href="#readdir">readdir</a>, <a href="#rewinddir">rewinddir</a>
+<dd><a href="#_dos_find">_dos_find...</a>, <a href="#opendir">opendir</a>, <a href="#readdir">readdir</a>, <a href="#rewinddir">rewinddir</a>,
+<a href="#opendir">_wopendir</a>, <a href="#readdir">_wreaddir</a>, <a href="#rewinddir">_wrewinddir</a>
 </dl>
 <dl>
 <dt>Example:
@@ -9003,7 +9011,8 @@ under the description of the <a href="#printf">printf</a> function.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>, <a href="#sprintf">sprintf</a>,
 <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>, <a href="#vprintf">vprintf</a>,
-<a href="#vsprintf">vsprintf</a>
+<a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>, <a href="#sprintf">swprintf</a>,
+<a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>, <a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -9224,7 +9233,8 @@ a file input error occurs, the <tt> errno</tt> global variable may be set.
 <dl>
 <dt>See Also:
 <dd><a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>,
+<a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -13163,7 +13173,7 @@ value to indicate an error.
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
 <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
-<a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>, <a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -16327,7 +16337,8 @@ The<tt> fwprintf</tt> function returns the number of wide characters written, or
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#printf">printf</a>, <a href="#sprintf">sprintf</a>,
 <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>, <a href="#vprintf">vprintf</a>,
-<a href="#vsprintf">vsprintf</a>
+<a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>, <a href="#sprintf">swprintf</a>,
+<a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>, <a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -16393,7 +16404,9 @@ or runtime-constraint violation occurred.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -17020,7 +17033,8 @@ occurs, the <tt> errno</tt> global variable may be set.
 <dl>
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>,
+<a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -17099,7 +17113,9 @@ assigned, which can be fewer than provided for, or even zero.
 <dl>
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#vcscanf">vcscanf</a>,
-<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>,
+<a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>,
+<a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -18466,7 +18482,7 @@ program.
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
 <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>, <a href="#putenv">putenv</a>,
-<a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>, <a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -18976,9 +18992,11 @@ match was found.&nbsp; Note:&nbsp; the value returned should be duplicated if yo
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>,
-<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
-<a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#exec">_wexec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv_s">getenv_s</a>,
+<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>,
+<a href="#getenv">_wgetenv</a>, <a href="#putenv">_wputenv</a>, <a href="#_searchenv">_wsearchenv</a>, <a href="#setenv">_wsetenv</a>,
+<a href="#unsetenv">_wunsetenv</a>, <a href="#spawn">spawn...</a>, <a href="#spawn">_wspawn...</a>, <a href="#system">system</a>,
+<a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -19055,9 +19073,11 @@ stored in the buffer pointed to by<i> value</i>.&nbsp; Otherwise, a non-zero val
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#putenv">putenv</a>,
-<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
-<a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#exec">_wexec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>,
+<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>,
+<a href="#getenv">_wgetenv</a>, <a href="#putenv">_wputenv</a>, <a href="#_searchenv">_wsearchenv</a>, <a href="#setenv">_wsetenv</a>,
+<a href="#unsetenv">_wunsetenv</a>, <a href="#spawn">spawn...</a>, <a href="#spawn">_wspawn...</a>, <a href="#system">system</a>,
+<a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -20033,7 +20053,7 @@ a missing argument and the first character of<i> optstring</i> was not a colon (
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
 <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>,
-<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">system</a>, <a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24014,9 +24034,13 @@ or <a href="#isdigit">iswdigit</a> is true for<i> c</i>.
 <dl>
 <dt>See Also:
 <dd><a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>, <a href="#isdigit">isdigit</a>,
-<a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24066,9 +24090,13 @@ is true.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>, <a href="#isdigit">isdigit</a>,
-<a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24117,9 +24145,13 @@ character.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>,
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>,
+<a href="#isalpha">iswalpha</a>, <a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#isgraph">iswgraph</a>, <a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>,
+<a href="#isspace">iswspace</a>, <a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>,
+<a href="#toupper">towupper</a>, <a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>,
 <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
@@ -24236,9 +24268,13 @@ false.&nbsp; Otherwise, zero is returned.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#iscntrl">iscntrl</a>, <a href="#isdigit">isdigit</a>,
-<a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24300,9 +24336,13 @@ function returns a non-zero value when the argument is a control wide character.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#isdigit">isdigit</a>,
-<a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24365,9 +24405,13 @@ or digit character.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>,
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>,
+<a href="#isalpha">iswalpha</a>, <a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#isgraph">iswgraph</a>, <a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>,
+<a href="#isspace">iswspace</a>, <a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>,
+<a href="#toupper">towupper</a>, <a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>,
 <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
@@ -24504,9 +24548,13 @@ Otherwise, zero is returned.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24612,9 +24660,13 @@ iswgraph</tt> function returns a non-zero value when the argument is a printable
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24720,8 +24772,12 @@ returned.
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
 <a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -24808,9 +24864,13 @@ an implementation-defined set of wide characters for which none of <a href="#isc
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isprint">isprint</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -27518,9 +27578,13 @@ function returns a non-zero value when the argument is a printable wide characte
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#ispunct">ispunct</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -27583,9 +27647,13 @@ nor a wide character for which <a href="#isalnum">iswalnum</a> is true.&nbsp; Ot
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -27669,9 +27737,13 @@ is false.&nbsp; Otherwise, zero is returned.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isupper">isupper</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -27735,9 +27807,13 @@ is one of an implementation-defined set of wide characters for which none of <a 
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#iswctype">iswctype</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -27825,9 +27901,13 @@ described by<i> desc</i>.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>,
+<a href="#isalpha">iswalpha</a>, <a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#isgraph">iswgraph</a>, <a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>,
+<a href="#isspace">iswspace</a>, <a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>,
+<a href="#toupper">towupper</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -27896,9 +27976,13 @@ character.&nbsp; Otherwise, zero is returned.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#tolower">tolower</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -29812,7 +29896,7 @@ wParam</tt> parameter.
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
 <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#putenv">putenv</a>,
-<a href="#spawn">spawn...</a>, <a href="#system">system</a>
+<a href="#spawn">spawn...</a>, <a href="#system">system</a>, <a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -39001,7 +39085,8 @@ NULL</tt> if<i> dirname</i> is not a valid pathname, or if there are no files ma
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#closedir">closedir</a>, <a href="#_dos_find">_dos_find...</a>, <a href="#readdir">readdir</a>, <a href="#rewinddir">rewinddir</a>
+<dd><a href="#closedir">closedir</a>, <a href="#_dos_find">_dos_find...</a>, <a href="#readdir">readdir</a>, <a href="#rewinddir">rewinddir</a>,
+<a href="#opendir">_wopendir</a>, <a href="#readdir">_wreaddir</a>, <a href="#rewinddir">_wrewinddir</a>
 </dl>
 <dl>
 <dt>Example:
@@ -41688,7 +41773,8 @@ argument for<i> format</i> and produces wide character output.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#sprintf">sprintf</a>,
 <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>, <a href="#vprintf">vprintf</a>,
-<a href="#vsprintf">vsprintf</a>
+<a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>, <a href="#sprintf">swprintf</a>,
+<a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>, <a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -41969,7 +42055,9 @@ or runtime-constraint violation occurred.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -42232,9 +42320,11 @@ variables, see _environ, _wenviron.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
-<a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
-<a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#exec">_wexec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>,
+<a href="#getenv_s">getenv_s</a>, <a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>,
+<a href="#getenv">_wgetenv</a>, <a href="#putenv">_wputenv</a>, <a href="#_searchenv">_wsearchenv</a>, <a href="#setenv">_wsetenv</a>,
+<a href="#unsetenv">_wunsetenv</a>, <a href="#spawn">spawn...</a>, <a href="#spawn">_wspawn...</a>, <a href="#system">system</a>,
+<a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -42905,7 +42995,8 @@ end of the directory is encountered,<tt> _wreaddir</tt> returns the value<tt> NU
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#closedir">closedir</a>, <a href="#_dos_find">_dos_find...</a>, <a href="#opendir">opendir</a>, <a href="#rewinddir">rewinddir</a>
+<dd><a href="#closedir">closedir</a>, <a href="#_dos_find">_dos_find...</a>, <a href="#opendir">opendir</a>, <a href="#rewinddir">rewinddir</a>,
+<a href="#opendir">_wopendir</a>, <a href="#readdir">_wreaddir</a>, <a href="#rewinddir">_wrewinddir</a>
 </dl>
 <dl>
 <dt>Example:
@@ -43580,7 +43671,8 @@ filenames opened by <a href="#opendir">_wopendir</a>.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#closedir">closedir</a>, <a href="#_dos_find">_dos_find...</a>, <a href="#opendir">opendir</a>, <a href="#readdir">readdir</a>
+<dd><a href="#closedir">closedir</a>, <a href="#_dos_find">_dos_find...</a>, <a href="#opendir">opendir</a>, <a href="#readdir">readdir</a>,
+<a href="#opendir">_wopendir</a>, <a href="#readdir">_wreaddir</a>, <a href="#rewinddir">_wrewinddir</a>
 </dl>
 <dl>
 <dt>Example:
@@ -44009,7 +44101,9 @@ number of input arguments for which values were successfully scanned and stored 
 <dl>
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#sscanf">sscanf</a>, <a href="#vcscanf">vcscanf</a>,
-<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>,
+<a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>,
+<a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -44271,7 +44365,9 @@ be fewer than provided for, or even zero.
 <dl>
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#vcscanf">vcscanf</a>,
-<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>,
+<a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>,
+<a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -44718,9 +44814,11 @@ strings.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
-<a href="#putenv">putenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
-<a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#exec">_wexec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>,
+<a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>, <a href="#setenv">setenv</a>, <a href="#unsetenv">unsetenv</a>,
+<a href="#getenv">_wgetenv</a>, <a href="#putenv">_wputenv</a>, <a href="#_searchenv">_wsearchenv</a>, <a href="#setenv">_wsetenv</a>,
+<a href="#unsetenv">_wunsetenv</a>, <a href="#spawn">spawn...</a>, <a href="#spawn">_wspawn...</a>, <a href="#system">system</a>,
+<a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -45603,9 +45701,11 @@ set <tt> errno</tt> to indicate the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
-<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#unsetenv">unsetenv</a>, <a href="#spawn">spawn...</a>,
-<a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#exec">_wexec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>,
+<a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#unsetenv">unsetenv</a>,
+<a href="#getenv">_wgetenv</a>, <a href="#putenv">_wputenv</a>, <a href="#_searchenv">_wsearchenv</a>, <a href="#setenv">_wsetenv</a>,
+<a href="#unsetenv">_wunsetenv</a>, <a href="#spawn">spawn...</a>, <a href="#spawn">_wspawn...</a>, <a href="#system">system</a>,
+<a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -47955,7 +48055,9 @@ error that has been detected.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -48034,7 +48136,9 @@ null-terminated output has been completely written if and only if the returned v
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -48111,7 +48215,9 @@ and less than<i> n</i>.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -48967,7 +49073,8 @@ the type of error that has been detected.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>, <a href="#vprintf">vprintf</a>,
-<a href="#vsprintf">vsprintf</a>
+<a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>, <a href="#sprintf">swprintf</a>,
+<a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>, <a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -49050,7 +49157,9 @@ violation occurred,<tt> swprintf_s</tt> returns zero.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -49211,7 +49320,8 @@ for<i> format</i> and the input string<i> in_string</i> consists of wide charact
 <dl>
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>,
+<a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -49281,7 +49391,9 @@ assigned, which can be fewer than provided for, or even zero.
 <dl>
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#vcscanf">vcscanf</a>,
-<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>,
+<a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>,
+<a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -53580,7 +53692,7 @@ value is returned if the command processor could not be loaded; otherwise, zero 
 <dt>See Also:
 <dd><a href="#abort">abort</a>, <a href="#atexit">atexit</a>, <a href="#_bgetcmd">_bgetcmd</a>, <a href="#exec">exec...</a>, <a href="#exit">exit</a>,
 <a href="#_exit">_Exit</a>, <a href="#_exit">_exit</a>, <a href="#getcmd">getcmd</a>, <a href="#getenv">getenv</a>, <a href="#main">main</a>,
-<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>
+<a href="#putenv">putenv</a>, <a href="#spawn">spawn...</a>, <a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -54465,9 +54577,13 @@ letter when the argument is a wide character uppercase letter; otherwise, the or
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#toupper">toupper</a>, <a href="#towctrans">towctrans</a>,
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>,
 <a href="#strlwr">_strlwr</a>, <a href="#strupr">_strupr</a>, <a href="#toupper">toupper</a>
 </dl>
 <dl>
@@ -54531,9 +54647,13 @@ letter when the argument is a wide character lowercase letter; otherwise, the or
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#towctrans">towctrans</a>,
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>, <a href="#isalpha">iswalpha</a>,
+<a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>, <a href="#isgraph">iswgraph</a>,
+<a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>, <a href="#isspace">iswspace</a>,
+<a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>, <a href="#toupper">towupper</a>,
+<a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>,
 <a href="#strlwr">_strlwr</a>, <a href="#strupr">_strupr</a>, <a href="#tolower">tolower</a>
 </dl>
 <dl>
@@ -54598,9 +54718,13 @@ values of<i> desc</i> are defined by the use of the <a href="#wctrans">wctrans</
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>,
+<a href="#isalpha">iswalpha</a>, <a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#isgraph">iswgraph</a>, <a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>,
+<a href="#isspace">iswspace</a>, <a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>,
+<a href="#toupper">towupper</a>, <a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#wctrans">wctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -55370,9 +55494,11 @@ errno</tt> to indicate the error.
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#exec">exec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>, <a href="#getenv_s">getenv_s</a>,
-<a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>, <a href="#spawn">spawn...</a>,
-<a href="#system">system</a>
+<dd><a href="#exec">exec...</a>, <a href="#exec">_wexec...</a>, <a href="#clearenv">clearenv</a>, <a href="#getenv">getenv</a>,
+<a href="#getenv_s">getenv_s</a>, <a href="#putenv">putenv</a>, <a href="#_searchenv">_searchenv</a>, <a href="#setenv">setenv</a>,
+<a href="#getenv">_wgetenv</a>, <a href="#putenv">_wputenv</a>, <a href="#_searchenv">_wsearchenv</a>, <a href="#setenv">_wsetenv</a>,
+<a href="#unsetenv">_wunsetenv</a>, <a href="#spawn">spawn...</a>, <a href="#spawn">_wspawn...</a>, <a href="#system">system</a>,
+<a href="#system">_wsystem</a>
 </dl>
 <dl>
 <dt>Example:
@@ -55905,7 +56031,8 @@ a file input error occurs, the <tt> errno</tt> global variable may be set.
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#va_arg">va_arg</a>,
 <a href="#va_end">va_end</a>, <a href="#va_start">va_start</a>, <a href="#vfscanf">vfscanf</a>, <a href="#vscanf">vscanf</a>,
-<a href="#vsscanf">vsscanf</a>
+<a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>,
+<a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56059,7 +56186,9 @@ or runtime-constraint violation occurred.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56137,7 +56266,8 @@ occurs, the <tt> errno</tt> global variable may be set.
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#va_arg">va_arg</a>,
 <a href="#va_end">va_end</a>, <a href="#va_start">va_start</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vscanf">vscanf</a>,
-<a href="#vsscanf">vsscanf</a>
+<a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>,
+<a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56214,7 +56344,8 @@ assigned, which can be fewer than provided for, or even zero.
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#va_arg">va_arg</a>,
 <a href="#va_end">va_end</a>, <a href="#va_start">va_start</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>,
+<a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56360,7 +56491,9 @@ or runtime-constraint violation occurred.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56427,7 +56560,8 @@ scanned and stored is returned.
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#va_arg">va_arg</a>,
 <a href="#va_end">va_end</a>, <a href="#va_start">va_start</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vsscanf">vsscanf</a>
+<a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>,
+<a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56500,7 +56634,8 @@ assigned, which can be fewer than provided for, or even zero.
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#va_arg">va_arg</a>,
 <a href="#va_end">va_end</a>, <a href="#va_start">va_start</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>,
+<a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56761,7 +56896,9 @@ and less than<i> n</i>.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -56934,7 +57071,9 @@ violation occurred,<tt> vswprintf_s</tt> returns zero.
 <dt>See Also:
 <dd><a href="#_bprintf">_bprintf</a>, <a href="#cprintf">cprintf</a>, <a href="#fprintf">fprintf</a>, <a href="#printf">printf</a>,
 <a href="#sprintf">sprintf</a>, <a href="#_vbprintf">_vbprintf</a>, <a href="#vcprintf">vcprintf</a>, <a href="#vfprintf">vfprintf</a>,
-<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>
+<a href="#vprintf">vprintf</a>, <a href="#vsprintf">vsprintf</a>, <a href="#_bprintf">_bwprintf</a>, <a href="#fprintf">fwprintf</a>,
+<a href="#sprintf">swprintf</a>, <a href="#_vbprintf">_vbwprintf</a>, <a href="#vfprintf">vfwprintf</a>, <a href="#vprintf">vwprintf</a>,
+<a href="#vsprintf">vswprintf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -57008,7 +57147,8 @@ Otherwise, the number of input arguments for which values were successfully scan
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#va_arg">va_arg</a>,
 <a href="#va_end">va_end</a>, <a href="#va_start">va_start</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vscanf">vscanf</a>
+<a href="#vscanf">vscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>, <a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>,
+<a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -57087,7 +57227,8 @@ assigned, which can be fewer than provided for, or even zero.
 <dt>See Also:
 <dd><a href="#cscanf">cscanf</a>, <a href="#fscanf">fscanf</a>, <a href="#scanf">scanf</a>, <a href="#sscanf">sscanf</a>, <a href="#va_arg">va_arg</a>,
 <a href="#va_end">va_end</a>, <a href="#va_start">va_start</a>, <a href="#vcscanf">vcscanf</a>, <a href="#vfscanf">vfscanf</a>,
-<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>
+<a href="#vscanf">vscanf</a>, <a href="#vsscanf">vsscanf</a>, <a href="#fscanf">fwscanf</a>, <a href="#scanf">wscanf</a>,
+<a href="#sscanf">swscanf</a>, <a href="#vfscanf">vfwscanf</a>, <a href="#vscanf">vwscanf</a>, <a href="#vsscanf">vswscanf</a>
 </dl>
 <dl>
 <dt>Example:
@@ -58295,10 +58436,13 @@ function; otherwise, it returns zero.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>,
-<a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>,
+<a href="#isalpha">iswalpha</a>, <a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#isgraph">iswgraph</a>, <a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>,
+<a href="#isspace">iswspace</a>, <a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>,
+<a href="#toupper">towupper</a>, <a href="#iswctype">iswctype</a>, <a href="#wctype">wctype</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
@@ -58390,10 +58534,13 @@ function; otherwise, it returns zero.
 <dl>
 <dt>See Also:
 <dd><a href="#isalnum">isalnum</a>, <a href="#isalpha">isalpha</a>, <a href="#isblank">isblank</a>, <a href="#iscntrl">iscntrl</a>,
-<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#islower">islower</a>,
-<a href="#isprint">isprint</a>, <a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>,
-<a href="#iswctype">iswctype</a>, <a href="#isxdigit">isxdigit</a>, <a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>,
-<a href="#towctrans">towctrans</a>
+<a href="#isdigit">isdigit</a>, <a href="#isgraph">isgraph</a>, <a href="#islower">islower</a>, <a href="#isprint">isprint</a>,
+<a href="#ispunct">ispunct</a>, <a href="#isspace">isspace</a>, <a href="#isupper">isupper</a>, <a href="#isxdigit">isxdigit</a>,
+<a href="#tolower">tolower</a>, <a href="#toupper">toupper</a>, <a href="#isleadbyte">isleadbyte</a>, <a href="#isalnum">iswalnum</a>,
+<a href="#isalpha">iswalpha</a>, <a href="#isblank">iswblank</a>, <a href="#iscntrl">iswcntrl</a>, <a href="#isdigit">iswdigit</a>,
+<a href="#isgraph">iswgraph</a>, <a href="#islower">iswlower</a>, <a href="#isprint">iswprint</a>, <a href="#ispunct">iswpunct</a>,
+<a href="#isspace">iswspace</a>, <a href="#isupper">iswupper</a>, <a href="#isxdigit">iswxdigit</a>, <a href="#tolower">towlower</a>,
+<a href="#toupper">towupper</a>, <a href="#iswctype">iswctype</a>, <a href="#wctrans">wctrans</a>, <a href="#towctrans">towctrans</a>
 </dl>
 <dl>
 <dt>Example:
