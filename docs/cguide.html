@@ -203,7 +203,8 @@
 <dt><br>- _ -
 <dd><a href="#The___declspec_Keyword">The __declspec Keyword</a>
 <dt><br>- A -
-<dd><a href="#About_This_Manual">About This Manual</a>
+<dd><a href="#aa">aa</a>
+<br><a href="#About_This_Manual">About This Manual</a>
 <br><a href="#adUEXfile_nameYV">ad&#91;=&lt;file_name&gt;&#93;</a>
 <br><a href="#adbs">adbs</a>
 <br><a href="#addUEXfile_nameYV">add&#91;=&lt;file_name&gt;&#93;</a>
@@ -602,6 +603,7 @@ options that are available.
 <br><a href="#4_r_s_">4{r|s}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#5_r_s_">5{r|s}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#6_r_s_">6{r|s}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><a href="#aa">aa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#adUEXfile_nameYV">ad&#91;=&lt;file_name&gt;&#93;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#addUEXfile_nameYV">add&#91;=&lt;file_name&gt;&#93;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#adhpUEXpath_nameYV">adhp&#91;=&lt;path_name&gt;&#93;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -817,6 +819,8 @@ conventions (see <a href="#6_r_s_">6{r|s}</a>)
 <dt><br>6s
 <dd>(32-bit only) generate 386 instructions based on Intel Pentium Pro instruction timings and use stack-based argument passing
 conventions (see <a href="#6_r_s_">6{r|s}</a>)
+<dt><br>aa
+<dd>(C only) allow non-constant initializers for local aggregates or unions (see <a href="#aa">aa</a>)
 <dt><br>ad&#91;=&lt;file_name&gt;&#93;
 <dd>generate make style automatic dependency file (see <a href="#adUEXfile_nameYV">ad&#91;=&lt;file_name&gt;&#93;</a>)
 <dt><br>adbs
@@ -2213,6 +2217,10 @@ messages are all suppressed by the &quot;quiet mode&quot; option.&nbsp; Error an
 and so on are performed as usual.
 <h3 id="SourceDOutput_Control"> Source/Output Control </h3>
 <br>This group of options deals with control over the input files and output files that the compiler processes and/or creates.
+<h4 id="aa"> aa </h4>
+<br>(C only) This option allow non-constant initializers for local aggregates or unions
+<br><i>Example:</i>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;</tt><i>compiler_name</i><tt> -aa</tt>
 <h4 id="adUEXfile_nameYV"> ad&#91;=&lt;file_name&gt;&#93; </h4>
 <br>This option enables generation of automatic dependency infomation in makefile format, as a list of targets and their dependents.
 &nbsp;If the name of the automatic dependency file is not specified, it is constructed from the source file name.&nbsp; If
@@ -5499,8 +5507,8 @@ the files<tt> ap1.c</tt>,<tt> ap2.c</tt> and<tt> ap3.c</tt> are stored in the cu
 file must be specified before the Open Watcom C/C++ libraries in the linker command file in order to replace the standard
 &quot;argv&quot; processing.
 <h1 id="16Mbit_Memory_Models"> 16-bit Memory Models </h1>
-<br><br>This chapter describes the various 16-bit memory models supported by Open Watcom C/C++.&nbsp; Each memory model is
-distinguished by two properties; the code model used to implement function calls and the data model used to reference data.
+<br>This chapter describes the various 16-bit memory models supported by Open Watcom C/C++.&nbsp; Each memory model is distinguished
+by two properties; the code model used to implement function calls and the data model used to reference data.
 <h2 id="16Mbit_Code_Models"> 16-bit Code Models </h2>
 <br>There are two code models;
 <ol>
