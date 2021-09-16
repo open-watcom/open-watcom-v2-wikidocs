@@ -260,7 +260,7 @@
 <br><a href="#fseek">fseek</a>
 <br><a href="#fsetpos">fsetpos</a>
 <br><a href="#_fsopen">_fsopen, _wfsopen</a>
-<br><a href="#fstat">fstat, _fstat, _fstati64, _wfstat, _wfstati64</a>
+<br><a href="#fstat">fstat, _fstat, _fstati64</a>
 <br><a href="#fsync">fsync</a>
 <br><a href="#ftell">ftell</a>
 <br><a href="#ftime">ftime</a>
@@ -17397,7 +17397,7 @@ has been detected.
 <dd><tt> _fsopen - All, Linux, RDOS, Netware</tt>
 <br><tt>_wfsopen - All, Linux</tt>
 </dl>
-<h2 id="fstat"> fstat, _fstat, _fstati64, _wfstat, _wfstati64 </h2>
+<h2 id="fstat"> fstat, _fstat, _fstati64 </h2>
 <dl>
 <dt>Synopsis:
 <dd>
@@ -17406,8 +17406,6 @@ has been detected.
 <br><tt>int fstat( int handle, struct stat *buf );</tt>
 <br><tt>int _fstat( int handle, struct stat *buf );</tt>
 <br><tt>int _fstati64( int handle, struct _stati64 *buf );</tt>
-<br><tt>int _wfstat( int handle, struct _stat *buf );</tt>
-<br><tt>int _wfstati64( int handle, struct _stati64 *buf );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -17526,9 +17524,8 @@ of the owner of the file when the file is run as a program.&nbsp; On a regular f
 group when the file is run as a program.&nbsp; On a regular file, this bit should be cleared on any write.
 </dl>
 <br>The<tt> _fstat</tt> function is identical to<tt> fstat</tt>.&nbsp; Use<tt> _fstat</tt> for ANSI naming conventions.
-<br><br>The <a href="#fstat">_fstati64</a>, <a href="#fstat">_wfstat</a>, and <a href="#fstat">_wfstati64</a> functions differ
-from<tt> fstat</tt> in the type of structure that they are asked to fill in.&nbsp; The <a href="#fstat">_wfstat</a> and <a href="#fstat">_wfstati64</a>
-functions deal with wide character strings.&nbsp; The differences in the structures are described above.
+<br><br>The <a href="#fstat">_fstati64</a> function differ from<tt> fstat</tt> in the type of structure that they are asked
+to fill in.&nbsp; The differences in the structures are described above.
 </dl>
 <dl>
 <dt>Returns:
@@ -17576,16 +17573,12 @@ returned.
 <dd>POSIX 1003.1
 <br>_fstat conforms to ANSI naming conventions
 <br>_fstati64 is WATCOM
-<br>_wfstat is WATCOM
-<br>_wfstati64 is WATCOM
 </dl>
 <dl>
 <dt>Systems:
 <dd><tt> fstat - All, Linux, RDOS, Netware</tt>
 <br><tt>_fstat - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32, RDOS</tt>
 <br><tt>_fstati64 - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
-<br><tt>_wfstat - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
-<br><tt>_wfstati64 - DOS, Windows, Win386, Win32, OS/2 1.x(all), OS/2-32</tt>
 </dl>
 <h2 id="fsync"> fsync </h2>
 <dl>
