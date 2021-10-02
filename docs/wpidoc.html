@@ -46,105 +46,105 @@
 <h1 id="WATCOM_Windows_Programming_Interface_LWPIR"> WATCOM Windows Programming Interface (WPI) </h1>
 <br>Paul Fast, December 23, 1993
 <br><br>WATCOM Windows Programming Interface (WPI) is a developers tool to aid in porting applications from Microsoft Windows
-to IBM Presentation Manager (PM).&nbsp; The goal in the creation of WPI (pronounced wippee) is to supply programmers with
-a set of macros and library routines which allow them to quickly convert an application which already exists in Windows code
-to PM.&nbsp; It should be mentioned that this will not necessarily give a very efficient PM program; only a working executable
-in short period of time.&nbsp; Using WPI also allows the developer the luxury of having only one copy of the source instead
-of a Windows version and a PM version.&nbsp; The WPI interface has evolved only as functionality is required; future projects
-may use Windows features which require additional enhancements to WPI.
+ to IBM Presentation Manager (PM).&nbsp; The goal in the creation of WPI (pronounced wippee) is to supply programmers with
+ a set of macros and library routines which allow them to quickly convert an application which already exists in Windows code
+ to PM.&nbsp; It should be mentioned that this will not necessarily give a very efficient PM program; only a working executable
+ in short period of time.&nbsp; Using WPI also allows the developer the luxury of having only one copy of the source instead
+ of a Windows version and a PM version.&nbsp; The WPI interface has evolved only as functionality is required; future projects
+ may use Windows features which require additional enhancements to WPI.
 <br><br>WPI is explicitly designed to port Windows functionality to OS2/PM (not the other way around).&nbsp; Because of this,
-converted projects may require additional system dependent code to take advantage of native OS/2 features (such as drag and
-drop or notebooks in OS/2).
+ converted projects may require additional system dependent code to take advantage of native OS/2 features (such as drag and
+ drop or notebooks in OS/2).
 <br><br>This document is intended to be used by developers porting applications from Windows to PM as an introduction to using
-WPI.&nbsp; It notes situations which are similar to Windows code and some which are quite different from Windows code.
+ WPI.&nbsp; It notes situations which are similar to Windows code and some which are quite different from Windows code.
 <h2 id="What_is_WPI_"> What is WPI? </h2>
 <br>WPI is a combination of macros and library routines.&nbsp; The WPI project is in ./bld/wpi and contains subdirectories
-for source code, header files, and libraries.&nbsp; The header file wpi.h includes the type header file wpitypes.h and either
-wpi_win.h or wpi_os2.h depending on the platform for which you wish to compile.&nbsp; The header files wpi_os2.h and wpi_win.h
-contain the macros and prototypes for functions which correspond to Windows API calls when compiling under the Windows platform
-and PM API calls when compiling for the OS2 platform.&nbsp; It should be noted that these files are not necessarily complete.
-&nbsp;These files will constantly be modified and further macros will no doubt be added as their need arises.&nbsp; Therefore,
-if a particular function is required by the developer and it does not already exist, it is the job of that developer to add
-it to both wpi_win.h and wpi_os2.h.&nbsp; The source code for the library routines are in wpi_win.c and wpi_os2.c.
+ for source code, header files, and libraries.&nbsp; The header file wpi.h includes the type header file wpitypes.h and either
+ wpi_win.h or wpi_os2.h depending on the platform for which you wish to compile.&nbsp; The header files wpi_os2.h and wpi_win.h
+ contain the macros and prototypes for functions which correspond to Windows API calls when compiling under the Windows platform
+ and PM API calls when compiling for the OS2 platform.&nbsp; It should be noted that these files are not necessarily complete.
+&nbsp; These files will constantly be modified and further macros will no doubt be added as their need arises.&nbsp; Therefore,
+ if a particular function is required by the developer and it does not already exist, it is the job of that developer to add
+ it to both wpi_win.h and wpi_os2.h.&nbsp; The source code for the library routines are in wpi_win.c and wpi_os2.c.
 <br><br>To distinguish between the Windows and PM platforms, the WATCOM C compiler provides a __OS2_PM__ macro which indicates
-that the program is being compiled for OS2 Presentation Manager.&nbsp; To separate Windows and PM code something like the
-following is needed:
+ that the program is being compiled for OS2 Presentation Manager.&nbsp; To separate Windows and PM code something like the
+ following is needed:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef __OS2_PM__</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // PM code</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Windows code</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <br><br>The file wpitypes.h contains the conversion of types from Windows to PM.&nbsp; There are some cases in which Windows
-types have equivalent PM data types, such as HDC and HWND.&nbsp; These obviously are not redefined.&nbsp; In other cases,
-a non existent equivalent can easily be added.&nbsp; For example the data type ULONG in PM is defined as unsigned long for
-Windows in wpitypes.h.&nbsp; It should be noted that not all data type definitions are as neat and clean as this; however,
-an attempt has been made to make this as invisible to the developer as possible.
+ types have equivalent PM data types, such as HDC and HWND.&nbsp; These obviously are not redefined.&nbsp; In other cases,
+ a non existent equivalent can easily be added.&nbsp; For example the data type ULONG in PM is defined as unsigned long for
+ Windows in wpitypes.h.&nbsp; It should be noted that not all data type definitions are as neat and clean as this; however,
+ an attempt has been made to make this as invisible to the developer as possible.
 <br><br>The files wpi_win.h and wpi_win.c contain macros and routines which translate to Windows API calls under the Windows
-platform and wpi_os2.h and wpi_os2.c translate to PM API calls under the PM platform.&nbsp; Some of these routine will have
-the same parameter list as the Windows version of the API and others may appear drastically different than their Windows counterpart.
-&nbsp;Many of the Windows APIs do not have corresponding PM APIs and in these cases, many lines of code are required to mimick
-the Windows call.&nbsp; In cases where more than one line of code is required to convert the Windows code to PM, the routines
-have been coded as library functions instead of macros.&nbsp; All WPI functions are prefixed by _wpi_ and contain no uppercase
-characters.&nbsp; Furthermore, an attempt has been made to keep the macro names as similar to the Windows functions as possible.
-&nbsp;Hence, BeginPaint is called _wpi_beginpaint.&nbsp; In cases where the Windows API has an exact equivalent in PM, the
-Windows function is defined as is for PM.&nbsp; For example, GetClientRect has an PM equivalent of WinQueryWindowRect and
-hence GetClientRect has been defined as WinQueryWindowRect for PM.&nbsp; This means that some Windows API names can remain
-the way they are.&nbsp; Even if an API has an exact equivalent and is defined that way for PM, it is also defined in the form
-_wpi_functionname for both Windows and PM.&nbsp; It is up to the developer as to whether they wish to use the Windows name
-or the WPI name.
+ platform and wpi_os2.h and wpi_os2.c translate to PM API calls under the PM platform.&nbsp; Some of these routine will have
+ the same parameter list as the Windows version of the API and others may appear drastically different than their Windows
+ counterpart.&nbsp; Many of the Windows APIs do not have corresponding PM APIs and in these cases, many lines of code are
+ required to mimick the Windows call.&nbsp; In cases where more than one line of code is required to convert the Windows code
+ to PM, the routines have been coded as library functions instead of macros.&nbsp; All WPI functions are prefixed by _wpi_
+ and contain no uppercase characters.&nbsp; Furthermore, an attempt has been made to keep the macro names as similar to the
+ Windows functions as possible.&nbsp; Hence, BeginPaint is called _wpi_beginpaint.&nbsp; In cases where the Windows API has
+ an exact equivalent in PM, the Windows function is defined as is for PM.&nbsp; For example, GetClientRect has an PM equivalent
+ of WinQueryWindowRect and hence GetClientRect has been defined as WinQueryWindowRect for PM.&nbsp; This means that some Windows
+ API names can remain the way they are.&nbsp; Even if an API has an exact equivalent and is defined that way for PM, it is
+ also defined in the form _wpi_functionname for both Windows and PM.&nbsp; It is up to the developer as to whether they wish
+ to use the Windows name or the WPI name.
 <h2 id="Converting_Windows_Applications"> Converting Windows Applications </h2>
 <br>The nature of the application will dictate the amount of code reusability available through WPI (and hence the usefulness
-of WPI).&nbsp; If the application deals with elements that are similar on both the Windows and PM platform then perhaps the
-developer can reuse 90% or more of their code.&nbsp; In cases where Windows and PM handle things quite differently, reuseability
-may only reach 70-80%.&nbsp; The developer should determine places in their Windows application that may differ quite drastically
-in PM such as file storage formats or window classes or messages.&nbsp; These will be the most difficult modules of code to
-port.
+ of WPI).&nbsp; If the application deals with elements that are similar on both the Windows and PM platform then perhaps the
+ developer can reuse 90% or more of their code.&nbsp; In cases where Windows and PM handle things quite differently, reuseability
+ may only reach 70-80%.&nbsp; The developer should determine places in their Windows application that may differ quite drastically
+ in PM such as file storage formats or window classes or messages.&nbsp; These will be the most difficult modules of code
+ to port.
 <br><br>The method the developer uses to port is really up to him or her.&nbsp; The most straightforward way is to (after
-reading this document) choose a module in the applications code that is small or has relatively few major Windows/PM differences
-and begin there.&nbsp; The file wpi.h will need to be included (it includes the other WPI header files) in every module that
-uses WPI macros.&nbsp; Every function call that is a Windows API will need to be replaced with the equivalent _wpi_functionname
-macro.&nbsp; The simplest way to determine which macro to use is to search for the API name in wpi.h.&nbsp; It should be relatively
-easy to determine the name of the macro and whether or not the parameter list has changed.&nbsp; The OS2 Toolkit contains
-on-line help which describes the PM APIs.&nbsp; This will also prove to be very useful since some macros may take parameters
-that are required and only used in the PM calls.
+ reading this document) choose a module in the applications code that is small or has relatively few major Windows/PM differences
+ and begin there.&nbsp; The file wpi.h will need to be included (it includes the other WPI header files) in every module that
+ uses WPI macros.&nbsp; Every function call that is a Windows API will need to be replaced with the equivalent _wpi_functionname
+ macro.&nbsp; The simplest way to determine which macro to use is to search for the API name in wpi.h.&nbsp; It should be
+ relatively easy to determine the name of the macro and whether or not the parameter list has changed.&nbsp; The OS2 Toolkit
+ contains on-line help which describes the PM APIs.&nbsp; This will also prove to be very useful since some macros may take
+ parameters that are required and only used in the PM calls.
 <br><br>The user may find it easier to have separate code for the initialization of their program.&nbsp; While Windows has
-a WinMain key word, PM applications simply begin with the normal C main.&nbsp; Moreover, PM requires the user to initialize
-the windows and create a message queue.&nbsp; Although _wpi_createwindow and _wpi_registerclass are provided in WPI, the user
-may find the code to register and create windows different enough to warrant separate Windows and PM code.&nbsp; It is safest
-to look at the WPI code to see if it performs as you wish.
+ a WinMain key word, PM applications simply begin with the normal C main.&nbsp; Moreover, PM requires the user to initialize
+ the windows and create a message queue.&nbsp; Although _wpi_createwindow and _wpi_registerclass are provided in WPI, the
+ user may find the code to register and create windows different enough to warrant separate Windows and PM code.&nbsp; It
+ is safest to look at the WPI code to see if it performs as you wish.
 <br><br>One final word on converting code.&nbsp; Some applications have unique memory allocation functions they use in order
-to track memory.&nbsp; Since WPI occassionally allocates memory, users may wish to use their own memory allocation and freeing
-routines.&nbsp; They can do so by defining the symbol _wpi_malloc and _wpi_free to be their own routines.&nbsp; If they are
-not defined, WPI sets them to the default of malloc and free.&nbsp; All memory allocations and frees are performed with _wpi_malloc
-and _wpi_free (the exception is in _wpi_selectobject which uses alloca.&nbsp; This routine is discussed later).
+ to track memory.&nbsp; Since WPI occassionally allocates memory, users may wish to use their own memory allocation and freeing
+ routines.&nbsp; They can do so by defining the symbol _wpi_malloc and _wpi_free to be their own routines.&nbsp; If they are
+ not defined, WPI sets them to the default of malloc and free.&nbsp; All memory allocations and frees are performed with _wpi_malloc
+ and _wpi_free (the exception is in _wpi_selectobject which uses alloca.&nbsp; This routine is discussed later).
 <h2 id="Differences_in_Philosophies"> Differences in Philosophies </h2>
 <br>Before beginning the PM conversion, you should become aquainted with a few differences between the philosophies of Windows
-and PM.&nbsp; This document does not cover all of them; only the ones that pertain to WPI.
+ and PM.&nbsp; This document does not cover all of them; only the ones that pertain to WPI.
 <h2 id="PM_Windows"> PM Windows </h2>
 <br>To begin with, windows are put together slightly differently.&nbsp; A typical Windows window has a title bar with a system
-menu and application menu, border and a client area.&nbsp; These are all part of the window indicated by one HWND.&nbsp; In
-PM, each of these components has its own HWND and all are considered to be children of the frame window HWND.&nbsp; Hence,
-the client area has its own HWND as does the menu bar, the scroll bars, etc.&nbsp; Drawing in the client area should be done
-by referencing the HWND of the client; however, visibility, destruction and menu operations need to reference the HWND of
-the frame.&nbsp; To overcome some of these problems, the macros _wpi_getclient(hwnd) and _wpi_getframe(hwnd) have been defined
-which do nothing in Windows and return the client window handle of the supplied frame handle and the frame handle of the given
-client (respectively).&nbsp; Moreover, through WPI, HMENU has been defined as an HWND and routines have been created which
-allow the user to use an HMENU as it is in Window.
+ menu and application menu, border and a client area.&nbsp; These are all part of the window indicated by one HWND.&nbsp;
+ In PM, each of these components has its own HWND and all are considered to be children of the frame window HWND.&nbsp; Hence,
+ the client area has its own HWND as does the menu bar, the scroll bars, etc.&nbsp; Drawing in the client area should be done
+ by referencing the HWND of the client; however, visibility, destruction and menu operations need to reference the HWND of
+ the frame.&nbsp; To overcome some of these problems, the macros _wpi_getclient(hwnd) and _wpi_getframe(hwnd) have been defined
+ which do nothing in Windows and return the client window handle of the supplied frame handle and the frame handle of the
+ given client (respectively).&nbsp; Moreover, through WPI, HMENU has been defined as an HWND and routines have been created
+ which allow the user to use an HMENU as it is in Window.
 <h2 id="Instances_and_Anchor_Blocks"> Instances and Anchor Blocks </h2>
 <br>Windows programs have the concept of an instance which is required by some functions to differentiate between possibly
-numerous instances of the program.&nbsp; PM does not have an instance identifier, however it does have an anchor block.&nbsp;
-In WPI, instance handles and anchor blocks are associated in the data type WPI_INST.&nbsp; This type should be used instead
-of the INSTANCE type for declaring INSTANCE variables in Windows.&nbsp; For PM, it is defined as a follows:
+ numerous instances of the program.&nbsp; PM does not have an instance identifier, however it does have an anchor block.&nbsp;
+ In WPI, instance handles and anchor blocks are associated in the data type WPI_INST.&nbsp; This type should be used instead
+ of the INSTANCE type for declaring INSTANCE variables in Windows.&nbsp; For PM, it is defined as a follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HAB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; hab;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hab;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HMODULE mod_handle;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } WPI_INST;</tt>
 <br><br>The hab is the anchor block that is required for many of the function like creating presentation spaces and registering
-windows.&nbsp; The mod_handle field is required when working with DLLs.&nbsp; It is particularly required for loading accelerator
-tables, menus and other resources.&nbsp; If you are not working with DLLs, you may simply set this field to NULL.&nbsp; PM
-functions that require HABs will have macros that accept a WPI_INST and the hab field will be extracted from the structure.
-&nbsp;The following routines handle the WPI_INST data type:
+ windows.&nbsp; The mod_handle field is required when working with DLLs.&nbsp; It is particularly required for loading accelerator
+ tables, menus and other resources.&nbsp; If you are not working with DLLs, you may simply set this field to NULL.&nbsp; PM
+ functions that require HABs will have macros that accept a WPI_INST and the hab field will be extracted from the structure.
+&nbsp; The following routines handle the WPI_INST data type:
 <dl>
 <dt>_wpi_setwpiinst( hab, mod_handle, &amp;wpi_instance )
 <dd>
@@ -161,10 +161,10 @@ functions that require HABs will have macros that accept a WPI_INST and the hab 
 </dl>
 <h2 id="Coordinates_and_Rectangles"> Coordinates and Rectangles </h2>
 <br>Another major difference between Windows and PM is the coordinate system used for the desktop.&nbsp; In Windows the default
-for the origin is the top left of the screen with the axes extending positively to the right and down.&nbsp; In PM, the origin
-is the bottom left and the axes extend positively to the right and up.&nbsp; Therefore, the coordinates for Windows will differ
-from that of PM.&nbsp; In fact, PM has a slightly different definition for their rectangle data type which also reflects its
-coordinate origin.&nbsp; Where Windows has:
+ for the origin is the top left of the screen with the axes extending positively to the right and down.&nbsp; In PM, the origin
+ is the bottom left and the axes extend positively to the right and up.&nbsp; Therefore, the coordinates for Windows will
+ differ from that of PM.&nbsp; In fact, PM has a slightly different definition for their rectangle data type which also reflects
+ its coordinate origin.&nbsp; Where Windows has:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; left;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; top;</tt>
@@ -179,32 +179,32 @@ coordinate origin.&nbsp; Where Windows has:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LONG&nbsp;&nbsp;&nbsp; yTop;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } RECTL;</tt>
 <br><br>Aside from the different type names the issues that needed resolving through WPI were the differences in field names
-and the different types for the fields.&nbsp; The different structure field names make accessing individual fields in the
-rectangle structure awkward and the different types of the fields once they are accessed is important to bear in mind.&nbsp;
-WPI defines a data type WPI_RECT which is RECT in Windows and RECTL in PM.&nbsp; To get and set the values of the structure,
-a call must be made to a routine (see below) supplying the rectangle structure and the values for the fields.&nbsp; A data
-type called WPI_RECTDIM has been created which is the type of the fields of the structure.&nbsp; WPI_RECTDIM is defined as
-LONG in PM and int in Windows.&nbsp; The following routines handle rectangles and assume that left, top, right, and bottom
-are defined as WPI_RECTDIM:
+ and the different types for the fields.&nbsp; The different structure field names make accessing individual fields in the
+ rectangle structure awkward and the different types of the fields once they are accessed is important to bear in mind.&nbsp;
+ WPI defines a data type WPI_RECT which is RECT in Windows and RECTL in PM.&nbsp; To get and set the values of the structure,
+ a call must be made to a routine (see below) supplying the rectangle structure and the values for the fields.&nbsp; A data
+ type called WPI_RECTDIM has been created which is the type of the fields of the structure.&nbsp; WPI_RECTDIM is defined as
+ LONG in PM and int in Windows.&nbsp; The following routines handle rectangles and assume that left, top, right, and bottom
+ are defined as WPI_RECTDIM:
 <dl>
 <dt>_wpi_setrectvalues(&amp;r, left, top, right, bottom)
 <dd>
 <br>In Windows this simply sets the values of the fields.&nbsp; In PM this will set top to yBottom and bottom to yTop.&nbsp;
-This function can be useful when you have Windows code which subtracts bottom from top to get window heights.
+ This function can be useful when you have Windows code which subtracts bottom from top to get window heights.
 <dt><br>_wpi_setwrectvalues(&amp;r, left, top, right, bottom)
 <dd>
 <br>This will set the values of the relative fields in both Windows and PM (ie no switching is performed between top and bottom).
 <dt><br>_wpi_getrectvalues(r, &amp;left, &amp;top, &amp;right, &amp;bottom)
 <dd>
 <br>This will retrieve the values of the rectangle structure in Windows as expected and will assign the value of yBottom to
-top and yTop to bottom.&nbsp; Again, this is because of the difference in the coordinate systems.
+ top and yTop to bottom.&nbsp; Again, this is because of the difference in the coordinate systems.
 <dt><br>_wpi_getwrectvalues(r, &amp;left, &amp;top, &amp;right, &amp;bottom)
 <dd>
 <br>This will retrieve the values of the fields in both Windows and PM as expected (ie no switching is performed between top
-and bottom).
+ and bottom).
 </dl>
 <br>Because some developers may wish to work strictly with the int data type, the following equivalent functions have been
-created which do the same as the above routines, but accept as parameters int instead of WPI_RECTDIM:
+ created which do the same as the above routines, but accept as parameters int instead of WPI_RECTDIM:
 <dl>
 <dt>_wpi_setintrectvalues(&amp;r, left, top, right, bottom)
 <dd>
@@ -216,17 +216,17 @@ created which do the same as the above routines, but accept as parameters int in
 <dd>
 </dl>
 <br>Using these macros will at first be annoying; however the need to have a WPI_RECT lies in the fact that many macros will
-require a Windows RECT for the Windows API and a PM RECTL for the equivalent PM API.&nbsp; Hence, there is really no getting
-around the matter.&nbsp; Note especially the difference between _wpi_setrectvalues and _wpi_setwrectvalues; and _wpi_getrectvalues
-and _wpi_getwrectvalues.&nbsp; For Windows, top &lt; bottom is normal for a rectangle.&nbsp; However, for PM bottom &lt; top
-is normal for a rectangle.&nbsp; Hence by switching the values of top and bottom in the assignment, we guarantee that if top
-&lt; bottom in Windows, then bottom &lt; top in PM.&nbsp; It is recommended that coordinates that are saved be stored in the
-windows format and then be converted to PM coordinates before displaying or drawing.
+ require a Windows RECT for the Windows API and a PM RECTL for the equivalent PM API.&nbsp; Hence, there is really no getting
+ around the matter.&nbsp; Note especially the difference between _wpi_setrectvalues and _wpi_setwrectvalues; and _wpi_getrectvalues
+ and _wpi_getwrectvalues.&nbsp; For Windows, top &lt; bottom is normal for a rectangle.&nbsp; However, for PM bottom &lt;
+ top is normal for a rectangle.&nbsp; Hence by switching the values of top and bottom in the assignment, we guarantee that
+ if top &lt; bottom in Windows, then bottom &lt; top in PM.&nbsp; It is recommended that coordinates that are saved be stored
+ in the windows format and then be converted to PM coordinates before displaying or drawing.
 <br>The WPI_RECT structure also has a sister WPI_POINT data type.&nbsp; This is defined as POINT in Windows and POINTL in
-PM.&nbsp; This type should be used to replace the POINT structure in the Windows code.&nbsp; This will assure the user that
-Windows APIs will use the POINT structure and PM ones, the POINTL structure.&nbsp; The fields of this structure are named
-the same (x and y); however, the types for Windows are int and for PM, LONG.&nbsp; While there is a _wpi_setpoint macro in
-WPI, it is not essential to use it because of the common field names.
+ PM.&nbsp; This type should be used to replace the POINT structure in the Windows code.&nbsp; This will assure the user that
+ Windows APIs will use the POINT structure and PM ones, the POINTL structure.&nbsp; The fields of this structure are named
+ the same (x and y); however, the types for Windows are int and for PM, LONG.&nbsp; While there is a _wpi_setpoint macro in
+ WPI, it is not essential to use it because of the common field names.
 <br><br>In addition, the following routines work with rectangles, points and coordinates:
 <dl>
 <dt>_wpi_getwidthrect( r )
@@ -238,23 +238,23 @@ WPI, it is not essential to use it because of the common field names.
 <dt><br>_wpi_cvth_y( y, height )
 <dd>
 <br>This will convert the value of y for a window in Windows coordinates to PM coordinates.&nbsp; Height is the height of
-the window and the new value is returned.
+ the window and the new value is returned.
 <dt><br>_wpi_cvth_pt( &amp;pt, height )
 <dd>
 <br>This converts the y value of a WPI_POINT in a window from Windows coordinates to PM coordinates.&nbsp; Height is the height
-of the window.
+ of the window.
 <dt><br>_wpi_cvth_rect(&amp;rect, height)
 <dd>
 <br>This converts the top and bottom values of a WPI_RECT from Windows coordinates to PM coordinates.&nbsp; Height is the
-height of the window and is assumed to be a LONG.
+ height of the window and is assumed to be a LONG.
 <dt><br>_wpi_cvth_wanchor( y, window_cy, parent_cy )
 <dd>
 <br>This converts an anchor point (y) from Windows to PM coordinates.&nbsp; The anchor point is the coordinates at which a
-window is displayed on the desk top (top left for Windows and bottom left for PM).&nbsp; All values are assumed to be LONG.
+ window is displayed on the desk top (top left for Windows and bottom left for PM).&nbsp; All values are assumed to be LONG.
 <dt><br>_wpi_cvts_y( y )
 <dd>
 <br>This converts a value relative to the desktop in Windows coordinates to that of PM.&nbsp; The new value is returned (ie.
-&nbsp;same as _wpi_cvth_y except it is relative to the desktop).
+&nbsp; same as _wpi_cvth_y except it is relative to the desktop).
 <dt><br>_wpi_cvts_pt( &amp;pt )
 <dd>
 <br>Same as _wpi_cvth_pt except that the point is assumed to be relative to the screen (desk top window).
@@ -264,54 +264,54 @@ window is displayed on the desk top (top left for Windows and bottom left for PM
 <dt><br>_wpi_cvts_wanchor( y, window_cy )
 <dd>
 <br>Same as _wpi_cvth_wanchor except the anchor point is assumed to be relative to the screen (desk top window).&nbsp; Values
-are expected to be LONG.
+ are expected to be LONG.
 <dt><br>_wpi_cvtc_y( hwnd, y )
 <dd>
 <br>Same as _wpi_cvth_y except the routine only takes the window handle (it calculates the window height).&nbsp; The new value
-is returned and y is expected to be LONG.
+ is returned and y is expected to be LONG.
 <dt><br>_wpi_cvtc_rect( hwnd, &amp;rect )
 <dd>
 <br>Same as _wpi_cvth_rect except the routine calculates the window height itself.
 </dl>
 <br>The _wpi_cvt* macros are used for converting coordinates between the two target systems.&nbsp; For PM, calling the macros
-once will convert the y values passed in from Windows coordinates to the equivalent PM coordinates.&nbsp; In some instances,
-coordinates may be stored differently for the different platforms (for example when the coordinates are established by a detection
-of a WM_MOUSEMOVE).&nbsp; Be sure the _wpi_cvt* routines are only used when the values will be in Windows coordinates.&nbsp;
-For example, drawing a rectangle according to the coordinates determined from a WM_MOUSEMOVE would not warrant a _wpi_cvt*
-call.&nbsp; For Windows, these macros do not alter the y values.&nbsp; The _wpi_cvt*_wanchor macros can be used to place a
-window on the desktop.&nbsp; The point passed in can be in Windows coordinates and the macro will convert the point to PM
-coordinates.
+ once will convert the y values passed in from Windows coordinates to the equivalent PM coordinates.&nbsp; In some instances,
+ coordinates may be stored differently for the different platforms (for example when the coordinates are established by a
+ detection of a WM_MOUSEMOVE).&nbsp; Be sure the _wpi_cvt* routines are only used when the values will be in Windows coordinates.
+&nbsp; For example, drawing a rectangle according to the coordinates determined from a WM_MOUSEMOVE would not warrant a _wpi_cvt*
+ call.&nbsp; For Windows, these macros do not alter the y values.&nbsp; The _wpi_cvt*_wanchor macros can be used to place
+ a window on the desktop.&nbsp; The point passed in can be in Windows coordinates and the macro will convert the point to
+ PM coordinates.
 <h2 id="Presentation_Spaces_and_Device_Contexts"> Presentation Spaces and Device Contexts </h2>
 <br>PM has the concept of a presentation space which can be used to display graphics.&nbsp; However, the presentation space
-does not replace the notion of a device context, because PM also has device contexts.&nbsp; Since Windows does not have a
-presentation space, a WPI_PRES has been introduced to allow the use of presentation spaces.&nbsp; For Windows, a WPI_PRES
-is simply an HDC and for PM it is an HPS (presentation space handle).&nbsp; The equivalent of creating a memory device context
-in Windows is to create a memory presentation space.&nbsp; In creating a compatible presentation space in PM, an HDC is required
-and must be deleted.&nbsp; WPI handles this.&nbsp; Throughout this document the term presentation space (or pres) is used
-and will refer to an HPS in PM and an HDC in Windows.&nbsp; Hence when phrases such as &quot;drawing on a pres&quot; arise,
-it is implied that drawing is happening on an HPS in PM and an HDC in Windows.&nbsp; Moreover, a compatible pres corresponds
-to a compatible HPS in PM and a compatible (memory) HDC in Windows.&nbsp; When HDC is refered to (unless specifically for
-Windows) it will imply both HDC for Windows and HDC for PM.
+ does not replace the notion of a device context, because PM also has device contexts.&nbsp; Since Windows does not have a
+ presentation space, a WPI_PRES has been introduced to allow the use of presentation spaces.&nbsp; For Windows, a WPI_PRES
+ is simply an HDC and for PM it is an HPS (presentation space handle).&nbsp; The equivalent of creating a memory device context
+ in Windows is to create a memory presentation space.&nbsp; In creating a compatible presentation space in PM, an HDC is required
+ and must be deleted.&nbsp; WPI handles this.&nbsp; Throughout this document the term presentation space (or pres) is used
+ and will refer to an HPS in PM and an HDC in Windows.&nbsp; Hence when phrases such as &quot;drawing on a pres&quot; arise,
+ it is implied that drawing is happening on an HPS in PM and an HDC in Windows.&nbsp; Moreover, a compatible pres corresponds
+ to a compatible HPS in PM and a compatible (memory) HDC in Windows.&nbsp; When HDC is refered to (unless specifically for
+ Windows) it will imply both HDC for Windows and HDC for PM.
 <br><br>The following are some common macros used with presentation spaces and device contexts:
 <dl>
 <dt>_wpi_getpres( hwnd )
 <dd>
 <br>This returns the presentation space associated with the window handle.&nbsp; For Windows this is simply GetDC.&nbsp; hwnd
-can be HWND_DESKTOP (which is the same as NULL).
+ can be HWND_DESKTOP (which is the same as NULL).
 <dt><br>_wpi_releasepres( hwnd, pres )
 <dd>
 <br>This releases the presentation space associated with the given window.&nbsp; In Windows this is a ReleaseDC.
 <dt><br>_wpi_createcompatiblepres( pres, hab, &amp;hdc )
 <dd>
 <br>For PM this macro creates and returns a presentation space that is compatible with the one given.&nbsp; It also creates
-a device context which is required when deleting the presentation space.&nbsp; For normal drawing, the hdc is not used.&nbsp;
-For Windows this simply performs a CreateCompatibleDC.
+ a device context which is required when deleting the presentation space.&nbsp; For normal drawing, the hdc is not used.&nbsp;
+ For Windows this simply performs a CreateCompatibleDC.
 <dt><br>_wpi_deletecompatiblepres( mempres, hdc )
 <dd>
 <br>This function deletes the presentation space and for PM, the device context handle.
 </dl>
 <br>Creating a compatible presentation space handle may appear a little confusing.&nbsp; First, recall that the Windows steps
-to creating a compatible presentation space are as follows:
+ to creating a compatible presentation space are as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; hdc = GetDC( hwnd );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; memdc = CreateCompatibleDC( hdc );</tt>
@@ -324,11 +324,11 @@ to creating a compatible presentation space are as follows:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DeleteDC( memdc );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><br>When using WPI, a presentation space handle and a device context appear to be created.&nbsp; In Windows, the compatible
-DC is returned by the routine and hdc is simply set to NULL (ie.&nbsp; it is not used).&nbsp; When deleting the compatible
-pres in Windows, nothing happens to the hdc parameter since it has been set to NULLonly the compatible DC is deleted (stored
-in mempres).&nbsp; In PM, the device context handle is only used when deleting the presentation space handle.&nbsp; Under
-both platforms, the pres parameter passed into _wpi_createcompatiblepres must be valid and all drawing must take place on
-the returned memory presentation space handle, or pres.&nbsp; The equivalent to the above example would be:
+ DC is returned by the routine and hdc is simply set to NULL (ie.&nbsp; it is not used).&nbsp; When deleting the compatible
+ pres in Windows, nothing happens to the hdc parameter since it has been set to NULLonly the compatible DC is deleted (stored
+ in mempres).&nbsp; In PM, the device context handle is only used when deleting the presentation space handle.&nbsp; Under
+ both platforms, the pres parameter passed into _wpi_createcompatiblepres must be valid and all drawing must take place on
+ the returned memory presentation space handle, or pres.&nbsp; The equivalent to the above example would be:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pres = _wpi_getpres( hwnd );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mempres = _wpi_createcompatiblepres( pres, Instance, &amp;hdc );</tt>
@@ -342,61 +342,62 @@ the returned memory presentation space handle, or pres.&nbsp; The equivalent to 
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <h2 id="Graphics"> Graphics </h2>
 <br>In Windows, the graphics interface is known as the GDI (Graphics Device Interface).&nbsp; The equivalent in PM is the
-GPI (Graphical Programming Interface).&nbsp; The graphics interface includes objects such as pens, brushes, fonts, bitmaps,
-palettes and presentation space attributes.
+ GPI (Graphical Programming Interface).&nbsp; The graphics interface includes objects such as pens, brushes, fonts, bitmaps,
+ palettes and presentation space attributes.
 <br><br>In PM as in Windows, each presentation space has its own set of attributes.&nbsp; When a presentation space is created,
-it has a default set of attributes which are used unless they are specifically changed.&nbsp; Among these attributes are line,
-area, image, and character attributes.&nbsp; Each of these attribute types has a corresponding structure which contains fields
-to describe the type.&nbsp; PM provides APIs to change the values of the individual fields of the attributes.&nbsp; Also,
-there is a GpiSetAttrs API in which the attribute type (line, area, etc.) must be specified and can be set.
+ it has a default set of attributes which are used unless they are specifically changed.&nbsp; Among these attributes are
+ line, area, image, and character attributes.&nbsp; Each of these attribute types has a corresponding structure which contains
+ fields to describe the type.&nbsp; PM provides APIs to change the values of the individual fields of the attributes.&nbsp;
+ Also, there is a GpiSetAttrs API in which the attribute type (line, area, etc.) must be specified and can be set.
 <h2 id="Colours"> Colours </h2>
 <br>There is a slight difference between colours in Windows and PM.&nbsp; In Windows, colours are usually referenced by a
-COLORREF variable which contains an RGB value.&nbsp; Moreover, Windows APIs with a COLORREF parameter expect the variable
-to be an RGB value.&nbsp; This is not necessarily the case in PM.&nbsp; In PM, a presentation space can either be in index
-mode or RGB mode.&nbsp; If a presentation space is in RGB mode, all references are expected to be RGB values.&nbsp; However,
-this is NOT the default mode.&nbsp; The default (index mode) implies that all references to colours are indices into a colour
-table associated with the presentation space.&nbsp; When in index mode, all API references to colours are expected to contain
-indices and when in RGB mode, all APIs expect RGB values.&nbsp; Attempting to use RGB values in index mode will produce unpredictable
-results.&nbsp; Furthermore, PM will interpret index values as RGB values when in RGB mode.
+ COLORREF variable which contains an RGB value.&nbsp; Moreover, Windows APIs with a COLORREF parameter expect the variable
+ to be an RGB value.&nbsp; This is not necessarily the case in PM.&nbsp; In PM, a presentation space can either be in index
+ mode or RGB mode.&nbsp; If a presentation space is in RGB mode, all references are expected to be RGB values.&nbsp; However,
+ this is NOT the default mode.&nbsp; The default (index mode) implies that all references to colours are indices into a colour
+ table associated with the presentation space.&nbsp; When in index mode, all API references to colours are expected to contain
+ indices and when in RGB mode, all APIs expect RGB values.&nbsp; Attempting to use RGB values in index mode will produce unpredictable
+ results.&nbsp; Furthermore, PM will interpret index values as RGB values when in RGB mode.
 <br><br>Since the user is converting from Windows to PM, their Windows code will contain RGB colour values.&nbsp; Since RGB
-is not the default mode, the user will need to switch to RGB mode whenever RGB colour values are used in a newly created presentation
-space.&nbsp; The WPI macro _wpi_torgbmode(pres) will set the given presentation space to RGB mode.&nbsp; This macro does nothing
-in Windows.&nbsp; A very easy mistake to make when converting code is to forget to set the presentation space to RGB mode.
+ is not the default mode, the user will need to switch to RGB mode whenever RGB colour values are used in a newly created
+ presentation space.&nbsp; The WPI macro _wpi_torgbmode(pres) will set the given presentation space to RGB mode.&nbsp; This
+ macro does nothing in Windows.&nbsp; A very easy mistake to make when converting code is to forget to set the presentation
+ space to RGB mode.
 <br><br>WPI defines COLORREF to be ULONG for PM which is how colours are stored in that environment.&nbsp; Hence, the user
-can leave Windows COLORREF variables as COLORREF variables (alternatively, they can declare colour variables as WPI_COLOUR)
-in their converted code.&nbsp; Moreover, the RGB macro used in Windows to create an RGB value is also available with WPI in
-PM.&nbsp; Occurrences like:&nbsp; RGB(red, green, blue) need not change.
+ can leave Windows COLORREF variables as COLORREF variables (alternatively, they can declare colour variables as WPI_COLOUR)
+ in their converted code.&nbsp; Moreover, the RGB macro used in Windows to create an RGB value is also available with WPI
+ in PM.&nbsp; Occurrences like:&nbsp; RGB(red, green, blue) need not change.
 <h2 id="Pens_and_Brushes"> Pens and Brushes </h2>
 <br>Windows includes the data types HPEN and HBRUSH which PM does not.&nbsp; However, through WPI, HPEN and HBRUSH can be
-used in PM.&nbsp; In order to create and use an HPEN or HBRUSH, WPI allocates memory for a structure which describes its attributes.
-&nbsp;When selecting an HPEN or HBRUSH into a presentation space, space must be allocated to store the old pen or brush and
-the attributes of the pen or brush being selected are set for the current pres.&nbsp; Upon deleting an HPEN or HBRUSH, WPI
-frees the memory it has allocated.&nbsp; When a WPI routine returns (or accepts as a parameter) an HPEN or HBRUSH, it is really
-returning an address to the object structure (this address has been defined as a WPI_HANDLE).
+ used in PM.&nbsp; In order to create and use an HPEN or HBRUSH, WPI allocates memory for a structure which describes its
+ attributes.&nbsp; When selecting an HPEN or HBRUSH into a presentation space, space must be allocated to store the old pen
+ or brush and the attributes of the pen or brush being selected are set for the current pres.&nbsp; Upon deleting an HPEN
+ or HBRUSH, WPI frees the memory it has allocated.&nbsp; When a WPI routine returns (or accepts as a parameter) an HPEN or
+ HBRUSH, it is really returning an address to the object structure (this address has been defined as a WPI_HANDLE).
 <br><br>Creating a pen using WPI is the same as creating a pen in Windows.&nbsp; Certain attributes must be set such as the
-pen type (solid or dashed), the pen thickness and the pen colour.&nbsp; The _wpi_createpen macro accepts the same parameters
-as Windows' CreatePen and returns the newly created pen.&nbsp; The pen type should be specified using the Windows pen type
-definitions (these are of the form PS_* and some types may not yet be converted in WPI).&nbsp; After allocating memory for
-the object structure, the PM routine sets the field values of the structure as indicated by the parameters to the function
-(the structure corresponding to an HPEN in PM is a LINEBUNDLE; however, this should be invisible to the user).
+ pen type (solid or dashed), the pen thickness and the pen colour.&nbsp; The _wpi_createpen macro accepts the same parameters
+ as Windows' CreatePen and returns the newly created pen.&nbsp; The pen type should be specified using the Windows pen type
+ definitions (these are of the form PS_* and some types may not yet be converted in WPI).&nbsp; After allocating memory for
+ the object structure, the PM routine sets the field values of the structure as indicated by the parameters to the function
+ (the structure corresponding to an HPEN in PM is a LINEBUNDLE; however, this should be invisible to the user).
 <br><br>Similarly, brushes are created as they are in Windows.&nbsp; The _wpi_createsolidbrush, for example accepts the colour
-of the solid brush and returns the brush being created.&nbsp; Again, the PM version of the function allocates memory for the
-object structure and then sets the fields of the structure as indicated by the parameters to the function (the structure corresponding
-to an HBRUSH in PM is an AREABUNDLE; again, this is invisible to the user).
+ of the solid brush and returns the brush being created.&nbsp; Again, the PM version of the function allocates memory for
+ the object structure and then sets the fields of the structure as indicated by the parameters to the function (the structure
+ corresponding to an HBRUSH in PM is an AREABUNDLE; again, this is invisible to the user).
 <br><br>Recall that both HPEN and HBRUSH are addresses of a object structures in PM.&nbsp; Hence when a pen or brush is created,
-WPI allocates space for the structure before setting the fields of the structure and returning a pointer to the structure.
-&nbsp;Naturally, when deleting an object WPI frees the memory associated with the object.&nbsp; Moreover, when selecting an
-object into a presentation space, the normal Windows behaviour is to return the old object.&nbsp; So WPI needs to allocate
-space for the old object and must know when to free that memory.&nbsp; To accomplish this, WPI uses alloca which allocates
-enough space for the old object and the automatically frees the memory when the routine selecting the object is exited.&nbsp;
-By employing this method, most Windows code is convertable by simply using the _wpi_selectobject routine.&nbsp; The drawback
-to this method is that the old object returned from _wpi_selectobject cannot be a global variable.&nbsp; To accommodate this
-problem, WPI also has the following routines:
+ WPI allocates space for the structure before setting the fields of the structure and returning a pointer to the structure.
+&nbsp; Naturally, when deleting an object WPI frees the memory associated with the object.&nbsp; Moreover, when selecting
+ an object into a presentation space, the normal Windows behaviour is to return the old object.&nbsp; So WPI needs to allocate
+ space for the old object and must know when to free that memory.&nbsp; To accomplish this, WPI uses alloca which allocates
+ enough space for the old object and the automatically frees the memory when the routine selecting the object is exited.&nbsp;
+ By employing this method, most Windows code is convertable by simply using the _wpi_selectobject routine.&nbsp; The drawback
+ to this method is that the old object returned from _wpi_selectobject cannot be a global variable.&nbsp; To accommodate this
+ problem, WPI also has the following routines:
 <dl>
 <dt>_wpi_selectpen( pres, hpen )
 <dd>
 <br>This routine selects the pen associated with hpen into the presentation space.&nbsp; Space for the old pen is allocated
-and returned from the function.&nbsp; The old pen can be global if necessary.
+ and returned from the function.&nbsp; The old pen can be global if necessary.
 <dt><br>_wpi_getoldpen( pres, holdpen )
 <dd>
 <br>This routine sets the presentation space attributes for the old pen and frees the memory associated with the old pen.
@@ -408,26 +409,26 @@ and returned from the function.&nbsp; The old pen can be global if necessary.
 <br>This routine sets the presentation space attributes for the old brush and frees the memory associeated with the old brush.
 </dl>
 <br>The difference between _wpi_selectobject and _wpi_selectpen cannot be over-emphasized!&nbsp; The points to consider when
-using _wpi_selectobject are:
+ using _wpi_selectobject are:
 <br>it is more generic (the same function selects pens, brushes, bitmaps, old pens, old brushes etc...) and looks more like
-windows code
+ windows code
 <br><br>the following code is possible because all old objects will be freed when myproc is exited:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myproc( void ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldpen = _wpi_selectobject( hpres, hpen1
-);</tt>
+ );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_selectobject( hpres, hpen2 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_selectobject( hpres, oldpen );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>if the old object is a global variable, set in one routine and selected back into the pres in another routine, _wpi_selectobject
-cannot be used because alloca will free the memory when exiting the routine in which the old object was created.
+ cannot be used because alloca will free the memory when exiting the routine in which the old object was created.
 <br><br>The points to consider when using _wpi_selectpen or _wpi_selectbrush are:
 <br><br>the old object returned from the select can be used as a global variable because the select does a normal allocate
-(using _wpi_malloc) and the memory will not be freed until a _wpi_getold*
+ (using _wpi_malloc) and the memory will not be freed until a _wpi_getold*
 <br><br>each _wpi_selectpen (or _wpi_selectbrush) must have a corresponding _wpi_getoldpen before the next _wpi_selectpen
-for that presentation space handle; so the following code is not correct because memory for the second _wpi_selectpen will
-never be freed:
+ for that presentation space handle; so the following code is not correct because memory for the second _wpi_selectpen will
+ never be freed:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myproc( void ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oldpen = _wpi_selectpen( hpres, hpen1 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
@@ -436,17 +437,17 @@ never be freed:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getoldpen( hpres, oldpen );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>One final note about selecting pens and brushes:&nbsp; the routines are not interchangable.&nbsp; So if a pen has
-been selected with _wpi_selectobject the old pen should be selected with _wpi_selectobject, not with _wpi_getoldpen!&nbsp;
-Similarly, selecting a pen with _wpi_selectpen necessitates _wpi_getoldpen to select the old pen back into the presentation
-space.
+ been selected with _wpi_selectobject the old pen should be selected with _wpi_selectobject, not with _wpi_getoldpen!&nbsp;
+ Similarly, selecting a pen with _wpi_selectpen necessitates _wpi_getoldpen to select the old pen back into the presentation
+ space.
 <br><br>Finally, deleting a pen or brush is similar to deleting the object in Windows.&nbsp; For PM, the WPI macro frees the
-space associated with the pointer to the structure.&nbsp; The following WPI routines handle creating and deleting pens and
-brushes:
+ space associated with the pointer to the structure.&nbsp; The following WPI routines handle creating and deleting pens and
+ brushes:
 <dl>
 <dt>_wpi_createpen( type, width, colour )
 <dd>
 <br>In Windows, this creates a pen with the specified pen style (PS_*), width and colour.&nbsp; In PM this allocates space
-for the object structure and sets the type, width and foreground colour for the pen.&nbsp; The pen is returned by the function.
+ for the object structure and sets the type, width and foreground colour for the pen.&nbsp; The pen is returned by the function.
 <dt><br>_wpi_createnullpen( )
 <dd>
 <br>Creates and returns a NULL pen (ie.&nbsp; invisible pen).&nbsp; Windows version simply gets the NULL stock pen.
@@ -456,7 +457,7 @@ for the object structure and sets the type, width and foreground colour for the 
 <dt><br>_wpi_createsolidbrush( colour )
 <dd>
 <br>In Windows this returns a solid brush with colour colour.&nbsp; In PM this allocates space for the object structure and
-sets the foreground colour for the brush.
+ sets the foreground colour for the brush.
 <dt><br>_wpi_createpatternbrush( bitmap )
 <dd>
 <br>Returns a pattern brush using bitmap as the pattern.
@@ -475,11 +476,11 @@ sets the foreground colour for the brush.
 <dt><br>_wpi_selectobject( pres, hobject )
 <dd>
 <br>This routine selects a pen, brush or bitmap into the presentation space.&nbsp; The PM version performs an alloca to allocate
-space for the old object which is returned.
+ space for the old object which is returned.
 </dl>
 <br>There may be more functions than are presented here.&nbsp; If the desired routine does not appear in this list, search
-for it in wpi_os2.h and if it does not exist, add it.&nbsp; Here is a typical example of selecting pens and brushes into a
-presentation space.
+ for it in wpi_os2.h and if it does not exist, add it.&nbsp; Here is a typical example of selecting pens and brushes into
+ a presentation space.
 <br>Windows code:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pen1 = CreatePen( PS_SOLID, 0, BLACK );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pen2 = CreatePen( PS_SOLID, 0, WHITE );</tt>
@@ -527,22 +528,22 @@ presentation space.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_deletepen( pen2 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_deletebrush( brush1 );</tt>
 <br><br>Notice that with a few exceptions, the code looks very similar to that of Windows.&nbsp; In general, pens and brushes
-can be used the same way they are in Windows.
+ can be used the same way they are in Windows.
 <h2 id="Bitmaps"> Bitmaps </h2>
 <br>The use of bitmaps is quite similar between Windows and PM.&nbsp; Although both platforms have an HBITMAP data type, WPI
-stores bitmaps as object structures similar to HPENs and HBRUSHes.&nbsp; Hence when a bitmap is created and a handle returned,
-the returned value should not be used for pure PM code, but only in WPI code.&nbsp; For example, the return value from _wpi_createcompatiblepres
-is an address to a structure describing the bitmap (this address is defined as a WPI_HANDLE).&nbsp; This return value (the
-WPI_HANDLE) can be passed to WPI functions expecting a bitmap handle, but the return value should not be used in PM specific
-code (because the return value is a WPI_HANDLE and not an HBITMAP).&nbsp; Like HPEN and HBRUSH, bitmaps can be selected into
-memory presentation spaces with the _wpi_selectobject routine and the old bitmap will be allocated and returned from the routine.
-&nbsp;For example:
+ stores bitmaps as object structures similar to HPENs and HBRUSHes.&nbsp; Hence when a bitmap is created and a handle returned,
+ the returned value should not be used for pure PM code, but only in WPI code.&nbsp; For example, the return value from _wpi_createcompatiblepres
+ is an address to a structure describing the bitmap (this address is defined as a WPI_HANDLE).&nbsp; This return value (the
+ WPI_HANDLE) can be passed to WPI functions expecting a bitmap handle, but the return value should not be used in PM specific
+ code (because the return value is a WPI_HANDLE and not an HBITMAP).&nbsp; Like HPEN and HBRUSH, bitmaps can be selected into
+ memory presentation spaces with the _wpi_selectobject routine and the old bitmap will be allocated and returned from the
+ routine.&nbsp; For example:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; oldbitmap = _wpi_selectobject( mempres, hbitmap );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_selectobject( mempres, oldbitmap );</tt>
 <br><br>Again, if the old bitmap is used outside the routine selecting the bitmap into the space, _wpi_selectbitmap and _wpi_getoldbitmap
-can be used.&nbsp; Note once again that each _wpi_selectbitmap must have a corresponding _wpi_getoldbitmap before another
-bitmap can be selected into the presentation space.&nbsp; So if the old bitmap was global the code would look like:
+ can be used.&nbsp; Note once again that each _wpi_selectbitmap must have a corresponding _wpi_getoldbitmap before another
+ bitmap can be selected into the presentation space.&nbsp; So if the old bitmap was global the code would look like:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Oldbitmap = _wpi_selectbitmap( mempres, hbitmap );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getoldbitmap( mempres, Oldbitmap );</tt>
@@ -551,11 +552,11 @@ bitmap can be selected into the presentation space.&nbsp; So if the old bitmap w
 <dt>_wpi_createcompatiblebitmap( pres, width, height )
 <dd>
 <br>This routine returns a bitmap compatible with the given presentation space (HDC for Windows) and having the specified
-dimensions.
+ dimensions.
 <dt><br>_wpi_createbitmap( width, height, planes, bitcount, &amp;bits )
 <dd>
 <br>This routine returns a bitmap with the attributes given in the parameter list.&nbsp; Like Windows, if bits is NULL then
-the bitmap is left uninitialized.
+ the bitmap is left uninitialized.
 <dt><br>_wpi_deletebitmap(bmp)
 <dd>
 <br>Deletes the given bitmap.&nbsp; The bitmap must have been created by a WPI function.
@@ -568,50 +569,50 @@ the bitmap is left uninitialized.
 <dt><br>_wpi_selectobject( hpres, hobj )
 <dd>
 <br>This will select the bitmap (or pen or brush) into the presentation space.&nbsp; For PM, the old bitmap gets space allocated
-for it and is returned.&nbsp; It will be freed when the routine is exited.
+ for it and is returned.&nbsp; It will be freed when the routine is exited.
 <dt><br>_wpi_selectbitmap( hpres, hbitmap )
 <dd>
 <br>This will select the bitmap into the presentation space.&nbsp; In PM, space is allocated for the old bitmap handle (which
-is return) and will not be freed until a call to _wpi_getoldbitmap.
+ is return) and will not be freed until a call to _wpi_getoldbitmap.
 <dt><br>_wpi_getoldbitmap( hpres, holdbitmap )
 <dd>
 <br>This will select the old bitmap into the presentation space.&nbsp; For PM this frees the memory associated with the old
-bitmap.
+ bitmap.
 </dl>
 <br>This again, is merely a subset of the bitmap functions available in WPI.&nbsp; Many other Windows APIs have been converted
-to WPI.&nbsp; If the desired function is not present in this list then search wpi_os2.h.
+ to WPI.&nbsp; If the desired function is not present in this list then search wpi_os2.h.
 <br>Mention should be made here of how monochrome bitmaps are converted to colour bitmaps.&nbsp; The user should read the
-section on BitBlt (Windows) and GpiBitBlt (PM) to find out how the conversion is done for each platform.&nbsp; Unfortunately
-Windows and PM perform in the opposite manner.&nbsp; Windows converts all white pixels (1's) in the monochrome bitmap to the
-destination DC background colour and all black pixels (0's) in the monochrome bitmap to the destination DC foreground colour.
-&nbsp;PM converts all white pixels to the destination presentation space foreground colour and black pixels to the background
-colour.&nbsp; Hence in WPI, a macro called _wpi_preparemono can be used to prepare the destination background and foreground
-colours to allow the user to copy a monochrome bitmap to a colour bitmap.&nbsp; The macro is used as follows:
+ section on BitBlt (Windows) and GpiBitBlt (PM) to find out how the conversion is done for each platform.&nbsp; Unfortunately
+ Windows and PM perform in the opposite manner.&nbsp; Windows converts all white pixels (1's) in the monochrome bitmap to
+ the destination DC background colour and all black pixels (0's) in the monochrome bitmap to the destination DC foreground
+ colour.&nbsp; PM converts all white pixels to the destination presentation space foreground colour and black pixels to the
+ background colour.&nbsp; Hence in WPI, a macro called _wpi_preparemono can be used to prepare the destination background
+ and foreground colours to allow the user to copy a monochrome bitmap to a colour bitmap.&nbsp; The macro is used as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_preparemono( destpres, black_pixel_colour, white_pixel_colour );</tt>
 <br><br>This will allow the user to set the presentation space to its proper colours for both platforms.&nbsp; The Windows
-default DC attributes should be such that a monochrome bitmap copied to a colour bitmap will in fact be a colour bitmap appearing
-the same as the monochrome bitmap.&nbsp; These default settings cannot be assumed for PM.&nbsp; Hence this macro should be
-used whenever copying from a monochrome to a colour bitmap.
+ default DC attributes should be such that a monochrome bitmap copied to a colour bitmap will in fact be a colour bitmap appearing
+ the same as the monochrome bitmap.&nbsp; These default settings cannot be assumed for PM.&nbsp; Hence this macro should be
+ used whenever copying from a monochrome to a colour bitmap.
 <br><br>A few new types have been declared in wpitypes.h that relate to bitmaps.&nbsp; They are as follows and can be used
-to pass to some of the macros that require different types for Windows and PM:
+ to pass to some of the macros that require different types for Windows and PM:
 <br><br>WPI Data Type Windows Data Type PM Data Type WPI_BITMAP BITMAP PM1632_BITMAPINFO2 WPI_BITMAPINFO BITMAPINFO PM1632_BITMAPINFO2
-WPI_BITMAPINFOHEADER BITMAPINFOHEADER PM1632_BITMAPINFOHEADER2 WPI_BMPBITS LPSTR PBYTE
+ WPI_BITMAPINFOHEADER BITMAPINFOHEADER PM1632_BITMAPINFOHEADER2 WPI_BMPBITS LPSTR PBYTE
 <br><br>Since the bitmap structures for 16 bit PM are different than that for 32 bit PM, a file called pm1632.h handles the
-differences (pm1632.h will be discussed later).&nbsp; There are also functions available to retrieve bitmap information:
+ differences (pm1632.h will be discussed later).&nbsp; There are also functions available to retrieve bitmap information:
 <dl>
 <dt>_wpi_getbitmapparms(hbitmap, &amp;cx, &amp;cy, &amp;planes, &amp;bitcount, &amp;bitspixel)
 <dd>
 <br>Takes the bitmap handle and returns the information about the bitmap.&nbsp; NULL can be passed to any parameters not desired.
-&nbsp;The bitspixel parameter will always be set to 0 in PM because that information is not available under PM.
+&nbsp; The bitspixel parameter will always be set to 0 in PM because that information is not available under PM.
 <dt><br>_wpi_getbitmapstruct(hbitmap, &amp;bitmap_info)
 <dd>
 <br>This routine fills the bitmap_info structure (should be type WPI_BITMAP) according to the attributes of the given bitmap
-handle.&nbsp; This routine may be usefull when a structure is needed to pass to another WPI routine.
+ handle.&nbsp; This routine may be usefull when a structure is needed to pass to another WPI routine.
 </dl>
 <h2 id="Using_WPI_to_Draw"> Using WPI to Draw </h2>
 <br>Once pens, brushes and bitmaps have been selected into their proper presentation spaces, drawing can begin.&nbsp; Many
-of the Windows drawing functions have been converted in WPI to provide functionality for PM.&nbsp; While some of these routine
-are quite similar to the Windows versions, others differ dramatically.&nbsp; The following is a list of some of these routines:
+ of the Windows drawing functions have been converted in WPI to provide functionality for PM.&nbsp; While some of these routine
+ are quite similar to the Windows versions, others differ dramatically.&nbsp; The following is a list of some of these routines:
 <dl>
 <dt>_wpi_moveto(pres, &amp;pt)
 <dd>
@@ -628,18 +629,18 @@ are quite similar to the Windows versions, others differ dramatically.&nbsp; The
 <dt><br>_wpi_rectangle(pres, left, top, right, bottom)
 <dd>
 <br>Draws a rectangle.&nbsp; Note that top is both top in Windows and PM (ie not bottom in PM).&nbsp; Hence _wpi_cvt* macros
-may prove useful before using this macro.
+ may prove useful before using this macro.
 <dt><br>_wpi_ellipse(pres, left, top, right, bottom)
 <dd>
 <br>Draws an ellipse inside the box implied by the dimensions.&nbsp; Note again that top &lt; bottom for Windows and top &gt;
-bottom for PM is assumed.
+ bottom for PM is assumed.
 <dt><br>_wpi_arc(pres, x1, y1, x2, y2, x3, y3, x4, y4)
 <dd>
 <br>Draws an arc (as it does in Windows) defined by the given points.
 <dt><br>_wpi_bitblt(dest, x1, y1, cx, cy, src, x2, y2, rop)
 <dd>
 <br>Identical to Windows BitBlt.&nbsp; PM version assumes (x1, y1) is actually the bottom left corner of the area and uses
-Windows predefined ROP codes.
+ Windows predefined ROP codes.
 <dt><br>_wpi_patblt(dest, x1, y1, cx, cy, rop)
 <dd>
 <br>Identical to Windows PatBlt.&nbsp; Same comments as _wpi_bitblt.
@@ -648,10 +649,10 @@ Windows predefined ROP codes.
 <br>Identical to Windows StretchBlt.&nbsp; Same comments as _wpi_bitblt.
 </dl>
 <br>Note the difference in the first two routines listed.&nbsp; They take a WPI_POINT instead of x and y values.&nbsp; It
-should also be emphasized that the rectangle and ellipse macros for PM expect top &gt; bottom.&nbsp; This is important because
-of the way PM draws these images.&nbsp; Windows draws up to but not including the right and bottom coordinates.&nbsp; PM actually
-includes the right and bottom coordinates.&nbsp; WPI attempts to handle this difference and in so doing, requires that top
-actually be the top.&nbsp; Note the difference between the Windows code and converted code in this example:
+ should also be emphasized that the rectangle and ellipse macros for PM expect top &gt; bottom.&nbsp; This is important because
+ of the way PM draws these images.&nbsp; Windows draws up to but not including the right and bottom coordinates.&nbsp; PM
+ actually includes the right and bottom coordinates.&nbsp; WPI attempts to handle this difference and in so doing, requires
+ that top actually be the top.&nbsp; Note the difference between the Windows code and converted code in this example:
 <br>Windows Code:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Rectangle( hdc, 10, 0, 100, 50 );</tt>
 <br><br>WPI Code:
@@ -662,31 +663,31 @@ actually be the top.&nbsp; Note the difference between the Windows code and conv
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bottom = _wpi_cvth_y( 50, height );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_rectangle( pres, 10, top, 100, bottom );</tt>
 <br><br>The user will be required to add the conversion of the height (depending on the circumstances) in order to assure
-that top &gt; bottom.&nbsp; Currently, ellipses are not drawn very accurately in PM.&nbsp; This is due to the way in which
-PM draws ellipses.&nbsp; The most trouble occurs when the dimensions of the bounding rectangle of the ellipse contain even
-values.&nbsp; Work is underway to rectify this problem.
+ that top &gt; bottom.&nbsp; Currently, ellipses are not drawn very accurately in PM.&nbsp; This is due to the way in which
+ PM draws ellipses.&nbsp; The most trouble occurs when the dimensions of the bounding rectangle of the ellipse contain even
+ values.&nbsp; Work is underway to rectify this problem.
 <br><br>Since the blt functions take only an origin and then the width and height, the origin is assumed to be in PM format
-for PM and Windows format for Windows.&nbsp; This is particularly useful in copying bitmaps since the origin (0, 0) can be
-used under both platforms.
+ for PM and Windows format for Windows.&nbsp; This is particularly useful in copying bitmaps since the origin (0, 0) can be
+ used under both platforms.
 <h2 id="Palettes"> Palettes </h2>
 <br>Currently, WPI does not support many palette operations.&nbsp; The macro _wpi_selectpalette(pres, hpal) will select a
-palette into the given presentation space.&nbsp; Moreover, the data type HPALETTE in PM is defined to be HPAL.&nbsp; If the
-code being converted contains references to palettes, expect to make additions to WPI.
+ palette into the given presentation space.&nbsp; Moreover, the data type HPALETTE in PM is defined to be HPAL.&nbsp; If the
+ code being converted contains references to palettes, expect to make additions to WPI.
 <h2 id="Fonts"> Fonts </h2>
 <br>Fonts can be complicated objects to deal with in PM.&nbsp; PM does not have an HFONT data type nor a LOGFONT data type.
-&nbsp;The font data types declared in WPI are as follows:
+&nbsp; The font data types declared in WPI are as follows:
 <br><br>WPI Data Type Windows Data Type PM Data Type HFONT HFONT LONG WPI_FONT HFONTF ATTRS* WPI_LOGFONT LOGFONT FONTMETRICS
-WPI_TEXTMETRIC TEXTMETRIC FONTMETRICS
+ WPI_TEXTMETRIC TEXTMETRIC FONTMETRICS
 <br><br>In Windows, one can create a font and once a font handle is acquired, use that font handle as a parameter (or any
-other kind of variable) to be selected into a device context for text output.&nbsp; However, creating a font in PM requires
-a presentation space and once that presentation space is released, the created font is gone.&nbsp; So, a division arises between
-the two cases.&nbsp; When a font is desired and a presentation space exists, the following macros can be used:
+ other kind of variable) to be selected into a device context for text output.&nbsp; However, creating a font in PM requires
+ a presentation space and once that presentation space is released, the created font is gone.&nbsp; So, a division arises
+ between the two cases.&nbsp; When a font is desired and a presentation space exists, the following macros can be used:
 <dl>
 <dt>_wpi_createfont(pres, &amp;wlfont, &amp;hfont)
 <dd>
 <br>For Windows this is the same as CreateFontIndirect with wlfont as the logfont.&nbsp; The font handle is returned in hfont.
-&nbsp;For PM this creates a font from the specifed WPI_LOGFONT and returns the font handle (the value:&nbsp; 1) in hfont.
-&nbsp;The font can only be used in the given presentation space.
+&nbsp; For PM this creates a font from the specifed WPI_LOGFONT and returns the font handle (the value:&nbsp; 1) in hfont.
+&nbsp; The font can only be used in the given presentation space.
 <dt><br>_wpi_getdeffm(wlfont)
 <dd>
 <br>Sets the WPI_LOGFONT to its default values.
@@ -704,12 +705,12 @@ the two cases.&nbsp; When a font is desired and a presentation space exists, the
 <br>Selects the old font into the given presentation space.
 </dl>
 <br>In addition to these macros, there are macros to set the font to italics, bold, strikeout, and more.&nbsp; Moreover, macros
-exist to set the font height, width and pointsize.&nbsp; Due to the number of macros available, they are not all listed here.
-&nbsp;To find the proper macro, search for _wpi_setfont in wpi_os2.h until the required macro has been found.
+ exist to set the font height, width and pointsize.&nbsp; Due to the number of macros available, they are not all listed here.
+&nbsp; To find the proper macro, search for _wpi_setfont in wpi_os2.h until the required macro has been found.
 <br>All of the above macros work with the HFONT data type.&nbsp; They all assume that text output will occur with the presentation
-space used in the macro calls.&nbsp; However, there may be situations in which the user wishes to create a font and use it
-with a presentation space created at a later time.&nbsp; This is the purpose of the WPI_FONT data type.&nbsp; The following
-macros handle WPI_FONTs:
+ space used in the macro calls.&nbsp; However, there may be situations in which the user wishes to create a font and use it
+ with a presentation space created at a later time.&nbsp; This is the purpose of the WPI_FONT data type.&nbsp; The following
+ macros handle WPI_FONTs:
 <dl>
 <dt>_wpi_createwpifont(&amp;wlfont, wfont)
 <dd>
@@ -717,7 +718,7 @@ macros handle WPI_FONTs:
 <dt><br>_wpi_selectwpifont(pres, wfont)
 <dd>
 <br>Windows version selects the font into the DC.&nbsp; PM allocates memory for the old font and sets the font of the given
-pres to be that of wfont.
+ pres to be that of wfont.
 <dt><br>_wpi_getoldwpifont(pres, oldfont)
 <dd>
 <br>Restores the font of pres to be the old font and frees the old font memory.
@@ -726,52 +727,52 @@ pres to be that of wfont.
 <br>Deletes the font associated with wfont.
 </dl>
 <br>A WPI_FONT for PM is actually a pointer.&nbsp; The creation macro allocates space for the structure on the PM platform
-and the deletion frees the space.&nbsp; As with pens and brushes, selecting the font into the presentation space allocates
-space for the old font structure so it is essential that the old font be selected back into the presentation space to free
-the memory associated with it.&nbsp; A quick look at _wpi_selectwpifont for PM will show that the font is actually being created
-in this routine.&nbsp; This is because the font is always tied to the presentation space.&nbsp; Once again, before calling
-the creation macro, the user may use the _wpi_setfont* macros to set the attributes of the desired font.
+ and the deletion frees the space.&nbsp; As with pens and brushes, selecting the font into the presentation space allocates
+ space for the old font structure so it is essential that the old font be selected back into the presentation space to free
+ the memory associated with it.&nbsp; A quick look at _wpi_selectwpifont for PM will show that the font is actually being
+ created in this routine.&nbsp; This is because the font is always tied to the presentation space.&nbsp; Once again, before
+ calling the creation macro, the user may use the _wpi_setfont* macros to set the attributes of the desired font.
 <h2 id="Window_Functions"> Window Functions </h2>
 <br>There are some similarities between Windows window procedures and PM window procedures and hence converting these is relatively
-straightforward.&nbsp; The format and main philosophy of windows procedures is the same on both platforms and much is accomplished
-by simply defining a new set of types or function names.
+ straightforward.&nbsp; The format and main philosophy of windows procedures is the same on both platforms and much is accomplished
+ by simply defining a new set of types or function names.
 <h2 id="Window_APIs"> Window APIs </h2>
 <br>Since many of the windows related functions differ only in name between the two platforms, WPI allows the user to use
-the Windows name when calling the API.&nbsp; The following is a list of some of the window related macros and the names available
-to the user:
+ the Windows name when calling the API.&nbsp; The following is a list of some of the window related macros and the names available
+ to the user:
 <br><br>DefWindowProc(hwnd, msg, wp, lp) _wpi_defwindowproc(hwnd, msg, wp, lp) Takes default window procedure action.&nbsp;
-ShowWindow(hwnd, state) _wpi_showwindow(hwnd, state) Shows the window according the given state.&nbsp; Windows predefined
-states are used.&nbsp; GetClientRect(hwnd, &amp;wrect) _wpi_getclientrect(hwnd, &amp;wrect) Gets the rectangle dimensions
-of the given window.&nbsp; The function fills the WPI_RECT variable.&nbsp; DestroyWindow(hwnd) _wpi_destroywindow(hwnd) Destroys
-the given window.&nbsp; SetWindowText(hwnd, str) _wpi_setwindowtext(hwnd, str) Sets the caption of the given window.&nbsp;
-MessageBox(hpar, txt, title, style) _wpi_messagebox(hpar, txt, title, style)Displays a message box as it does in Windows.
-&nbsp;Most of the MB_* styles have been converted, using the Windows naming convention.&nbsp; GetMenu(hwnd) _wpi_getmenu(hwnd)
-Gets the menu of the window.&nbsp; For PM this window handle must be a frame window.
+ ShowWindow(hwnd, state) _wpi_showwindow(hwnd, state) Shows the window according the given state.&nbsp; Windows predefined
+ states are used.&nbsp; GetClientRect(hwnd, &amp;wrect) _wpi_getclientrect(hwnd, &amp;wrect) Gets the rectangle dimensions
+ of the given window.&nbsp; The function fills the WPI_RECT variable.&nbsp; DestroyWindow(hwnd) _wpi_destroywindow(hwnd) Destroys
+ the given window.&nbsp; SetWindowText(hwnd, str) _wpi_setwindowtext(hwnd, str) Sets the caption of the given window.&nbsp;
+ MessageBox(hpar, txt, title, style) _wpi_messagebox(hpar, txt, title, style)Displays a message box as it does in Windows.
+&nbsp; Most of the MB_* styles have been converted, using the Windows naming convention.&nbsp; GetMenu(hwnd) _wpi_getmenu(hwnd)
+ Gets the menu of the window.&nbsp; For PM this window handle must be a frame window.
 <br><br>The user may decide whether or not to keep the Windows names or use the available WPI names.
 <h2 id="Window_Creation"> Window Creation </h2>
 <br>Window creation is somewhat different in PM than Windows.&nbsp; The user may wish to use separate PM code from their Windows
-code in order to gain clarity and the flexibility when creating windows.&nbsp; In WPI however, an attempt has been made to
-convert the window creation routines.&nbsp; The two main macros are _wpi_registerclass and _wpi_createwindow.&nbsp; The _wpi_createwindow
-routine may prove useful for creating a standard window style, however it is limiting in some areas including the fact that
-it will not allow initialization data to be passed in the WM_CREATE message.&nbsp; The user should examine this routine to
-verify its usefulness for the situation at hand.
+ code in order to gain clarity and the flexibility when creating windows.&nbsp; In WPI however, an attempt has been made to
+ convert the window creation routines.&nbsp; The two main macros are _wpi_registerclass and _wpi_createwindow.&nbsp; The _wpi_createwindow
+ routine may prove useful for creating a standard window style, however it is limiting in some areas including the fact that
+ it will not allow initialization data to be passed in the WM_CREATE message.&nbsp; The user should examine this routine to
+ verify its usefulness for the situation at hand.
 <h2 id="Window_Procedures"> Window Procedures </h2>
 <br>Window procedures are also similar in both Windows and PM.&nbsp; Under the WPI scheme, windows functions should be declared
-as follows:
+ as follows:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MRESULT CALLBACK WindowsProc( HWND hwnd,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_MSG msg,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_MSG msg,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM1 wparam,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM1 wparam,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM2 lparam );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM2 lparam );</tt>
 <br><br>Most of the messages are similar in name and where they differ, the Windows convention has been used.&nbsp; The user
-should note that messages such as WM_MOUSEMOVE that store coordinates will store the coordinates according to the platform
-under which they are running (ie Windows will return the mouse coordinates with the top left as the origin and PM with the
-bottom left as the origin).
+ should note that messages such as WM_MOUSEMOVE that store coordinates will store the coordinates according to the platform
+ under which they are running (ie Windows will return the mouse coordinates with the top left as the origin and PM with the
+ bottom left as the origin).
 <br><br>When creating windows, PM does not specify the background colour of the window.&nbsp; This suggests that no default
-painting goes on when a PM window procedure receives a WM_PAINT.&nbsp; The user may be required to add the following to their
-WM_PAINT messages:
+ painting goes on when a PM window procedure receives a WM_PAINT.&nbsp; The user may be required to add the following to their
+ WM_PAINT messages:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; case WM_PAINT:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_beginpaint( hps, NULL, &amp;wrect );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
@@ -782,61 +783,61 @@ WM_PAINT messages:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_endpaint( hwnd, pres, &amp;wrect );</tt>
 <h2 id="Resources"> Resources </h2>
 <br>WATCOM does not currently have a resource compiler for PM hence requiring the use of the OS2 toolkit resource compiler.
-&nbsp;RC files in PM look similar to those of Windows.&nbsp; The user should look at the PM help files or an available example
-in order to convert their RC files.
+&nbsp; RC files in PM look similar to those of Windows.&nbsp; The user should look at the PM help files or an available example
+ in order to convert their RC files.
 <h2 id="Dialogs"> Dialogs </h2>
 <br>Dialogs, like other windows have some definite similarities between Windows and PM.&nbsp; Because of these similarities,
-a program has been created to transform Microsoft Dialog Editor DLG files to PM DLG files.&nbsp; This program is called parsedlg.exe
-and can be found in r:\cmds.&nbsp; To use this program simply type:
+ a program has been created to transform Microsoft Dialog Editor DLG files to PM DLG files.&nbsp; This program is called parsedlg.exe
+ and can be found in r:\cmds.&nbsp; To use this program simply type:
 <br><br>parsedlg infile.dlg outfile.dlg
 <br><br>The user will need to compile their PM application with the newly parsed DLG file.&nbsp; Note that this new dialog
-should look the same as the Windows dialog.&nbsp; The user does not need to convert any coordinates.&nbsp; One should also
-note that in Windows a dialog can either be referenced by either a unique string name or a unique integer (this gets passed
-into the DialogBox API).&nbsp; In PM however, a dialog box can be referenced only by a unique integer.&nbsp; If a string is
-currently used, the user will need to change this to an integer.
+ should look the same as the Windows dialog.&nbsp; The user does not need to convert any coordinates.&nbsp; One should also
+ note that in Windows a dialog can either be referenced by either a unique string name or a unique integer (this gets passed
+ into the DialogBox API).&nbsp; In PM however, a dialog box can be referenced only by a unique integer.&nbsp; If a string
+ is currently used, the user will need to change this to an integer.
 <br><br>Once the dialog file is parsed, the user can convert the code generating the dialog procedure.&nbsp; Initializing
-a dialog box procedure would look like the following under WPI:
+ a dialog box procedure would look like the following under WPI:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; fp = _wpi_makeprocinstance( (WPI_PROC)DlgProc, Instance );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ret_val = _wpi_dialogbox( hparent, fp, Instance, DLG_ID, 0L );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_freeprocinstance( fp );</tt>
 <br><br>The dialog procedure itself looks much like a Windows dialog procedure excluding the WPI conversion names:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DLG_RESULT CALLBACK DlgProc( HWND hwnd,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_MSG msg,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_MSG msg,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM1 wparam,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM1 wparam,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM2 lparam );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM2 lparam );</tt>
 <br><br>The user may continue to use the constants IDOK and IDCANCEL since they are defined in WPI to be consistent with the
-constants used by the parsedlg.exe program.&nbsp; Unique to PM is the use of a default dialog procedure.&nbsp; Where Windows
-usually returns FALSE, PM returns WinDefDlgProc with the same parameters as the procedure from which it is returned.&nbsp;
-Hence the user will want to return _wpi_defdlgproc(hwnd, msg, wparam, lparam) for unprocessed dialog messages.&nbsp; This
-will simply return FALSE for Windows.
+ constants used by the parsedlg.exe program.&nbsp; Unique to PM is the use of a default dialog procedure.&nbsp; Where Windows
+ usually returns FALSE, PM returns WinDefDlgProc with the same parameters as the procedure from which it is returned.&nbsp;
+ Hence the user will want to return _wpi_defdlgproc(hwnd, msg, wparam, lparam) for unprocessed dialog messages.&nbsp; This
+ will simply return FALSE for Windows.
 <br><br>The following is an example of a dialog procedure for which there are a number of tricky points between Windows and
-PM.&nbsp; This is done to illustrate some of the differences between Windows and PM as well as where to spot trouble.
+ PM.&nbsp; This is done to illustrate some of the differences between Windows and PM as well as where to spot trouble.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_DLGRESULT CALLBACK dlg_sample( HWND dlg_hld,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_MSG
-msg,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_MSG
+ msg,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM1
-parm1,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM1
+ parm1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM2
-parm2 )</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WPI_PARAM2
+ parm2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; initial_col;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; initial_col;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; tmp;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( msg == WM_INITDIALOG ) {</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* PM expects a pointer to the data&nbsp;
-&nbsp; */</tt>
+&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* while Windows just expects the data */</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef __OS2_PM__</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *ptr;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *ptr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ptr = (int *) parm2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; initial_col = *ptr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
@@ -845,57 +846,58 @@ parm2 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( (WPI_DLGRESULT) TRUE );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* The following line is necessary because
-for PM */</tt>
+ for PM */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* because some messages which are caught
-under&nbsp;&nbsp; */</tt>
+ under&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* WM_COMMAND in PM are not in Windows and
-vice&nbsp;&nbsp; */</tt>
+ vice&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* versa.&nbsp; Hence, use this routine to
-trap the&nbsp;&nbsp;&nbsp; */</tt>
+ trap the&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* WM_COMMAND message.&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( _wpi_dlg_command( dlg_hld, &amp;msg, &amp;parm1, &amp;parm2
-) ) {</tt>
+ ) ) {</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( _wpi_getid( parm1 ) == IDOK ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_enddialog( dlg_hld,
-TRUE );</tt>
+ TRUE );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( (WPI_DLGRESULT)
-TRUE );</tt>
+ TRUE );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( _wpi_getid( parm1 ) == IDCANCEL
-) {</tt>
+ ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_enddialog( dlg_hld,
-FALSE );</tt>
+ FALSE );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( (WPI_DLGRESULT)
-TRUE );</tt>
+ TRUE );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( _wpi_isbuttoncode( parm1,
-parm2, LBN_SELCHANGE ) &amp;&amp;</tt>
+ parm2, LBN_SELCHANGE ) &amp;&amp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getid( parm1 ) == DLG_SAMPLE_BUTTON ) {</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getid( parm1 ) == DLG_SAMPLE_BUTTON )
+ {</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Many messages
-in PM pack the information&nbsp;&nbsp; */</tt>
+ in PM pack the information&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* in different places
-than in Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+ than in Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* hence the need
-for _wpi_getid, and new&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+ for _wpi_getid, and new&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* parameters for
-the following messages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+ the following messages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* cf. _wpi_getdlgitemlbtext
-etc. as well&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+ etc. as well&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp = (int) _wpi_senddlgitemmessage(
-dlg_hld,</tt>
+ dlg_hld,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; DLG_GPCMN_GROUP, LB_GETCURSEL, LIT_FIRST, NULL );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DLG_GPCMN_GROUP, LB_GETCURSEL, LIT_FIRST, NULL );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_senddlgitemmessage(
-dlg_hld, DLG_GPCMN_GROUP,</tt>
+ dlg_hld, DLG_GPCMN_GROUP,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LB_SETCURSEL, initial_col, LIT_SELECT );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LB_SETCURSEL, initial_col, LIT_SELECT );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; initial_col =
-tmp;</tt>
+ tmp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( _wpi_defdlgproc( dlg_hld, msg, parm1,
-parm2 ) );</tt>
+ parm2 ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return( (WPI_DLGRESULT) FALSE );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
@@ -903,82 +905,82 @@ parm2 ) );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* PM expects a pointer to the data&nbsp;
-&nbsp; */</tt>
+&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* while Windows just expects the data */</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef __OS2_PM__</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dlg_ret = _wpi_dialogbox(
-frame_win_hld, proc, Inst, tpl,</tt>
+ frame_win_hld, proc, Inst, tpl,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;id );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;id );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dlg_ret = _wpi_dialogbox(
-frame_win_hld, proc, Inst, tpl,</tt>
+ frame_win_hld, proc, Inst, tpl,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .</tt>
 <h2 id="OwnerMDrawn_Controls"> Owner-Drawn Controls </h2>
 <br>This section covers only buttons and listboxes since menus have not been researched or tested.&nbsp; There is some fully
-functioning code in the datactl library (cf.&nbsp; Dan Pronovost).
+ functioning code in the datactl library (cf.&nbsp; Dan Pronovost).
 <br><br>To begin with, owner-drawn buttons get drawn by responding to a WM_CONTROL (WM_DLGCOMMAND) message while everything
-else should respond to a WM_DRAWITEM message.&nbsp; The following section of code illustrates how to determine what type to
-draw:
+ else should respond to a WM_DRAWITEM message.&nbsp; The following section of code illustrates how to determine what type
+ to draw:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getcursorpos( &amp;q_pt );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_setanchorblock( hwnd, inst );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time = _wpi_getcurrenttime( inst );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_setqmsgvalues( &amp;qmsg, hwnd, msg, parm1, parm2, time, q_pt
-);</tt>
+ );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * make absolutely sure that any buttons handle the WM_QUERYDLGCODE</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * message and return DLGC_BUTTON</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is_button = ((int)_wpi_sendmessage(hwnd, WM_QUERYDLGCODE, &amp;qmsg,
-0L)</tt>
+ 0L)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp; DLGC_BUTTON);</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp; DLGC_BUTTON);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is_button = is_button &amp;&amp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( SHORT2FROMMP( parm1 ) == BN_PAINT ) &amp;&amp;
-( msg == WM_DLGCOMMAND );</tt>
+ ( msg == WM_DLGCOMMAND );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( is_button ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt; draw the button &gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if( msg == WM_DRAWITEM ) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt; draw the listbox &gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><br>Buttons are sent a USERBUTTON structure in the second parameter.&nbsp; The following section of code illustrates how
-to obtain information from this structure:
+ to obtain information from this structure:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USERBUTTON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *b2;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *b2;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b2 = (USERBUTTON *) parm2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; win_hld = b2-&gt;hwnd;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pres = b2-&gt;hps;</tt>
@@ -988,67 +990,67 @@ to obtain information from this structure:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selected = ( tmp_word == BDS_HILITED );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp_word = LOWORD( b2-&gt;fsStateOld );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; old_selected = ( tmp_word == BDS_HILITED
-);</tt>
+ );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select_changed = ( selected == old_selected
-);</tt>
+ );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; has_focus = ( GetFocus() == win_hld );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getclientrect( win_hld, &amp;rect );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt; draw the button based on above information
-&gt;</tt>
+ &gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // tells the system you did the highlighting</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b2-&gt;fsStateOld = b2-&gt;fsState;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // tells the system you drew the item</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to_ret = (WPI_DLGRESULT) TRUE;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><br>Listboxes are sent an OWNERITEM structure in the second parameter.&nbsp; The following section of code illustrates
-how to obtain information from this structure:
+ how to obtain information from this structure:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poi = (OWNERITEM *) parm2;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; win_hld = poi-&gt;hwnd;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pres = poi-&gt;hps;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id = poi-&gt;idItem;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rect = poi-&gt;rclItem;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; disabled = !WinIsControlEnabled( win_hld,
-id );</tt>
+ id );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selected = poi-&gt;fsState;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; focus_changed = !( poi-&gt;fsState == poi-&gt;fsStateOld
-);</tt>
+ );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select_changed = !focus_changed;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt; draw the listbox based on above information
-&gt;</tt>
+ &gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // tells the system you did the highlighting</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poi-&gt;fsState = poi-&gt;fsStateOld = 0;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // tells the system you drew the item</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to_ret = (WPI_DLGRESULT) TRUE;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;.</tt>
+&nbsp; .</tt>
 <h2 id="Menus"> Menus </h2>
 <br>Menus are handled in the WM_DRAWITEM message, similar to listboxes, and also use the OWNERITEM structure but take advantage
-of the attribute and old attribute fields (MIA_).&nbsp; The following routines handle menu operations:
+ of the attribute and old attribute fields (MIA_).&nbsp; The following routines handle menu operations:
 <dl>
 <dt>_wpi_getmenu( hwnd )
 <dd>
@@ -1059,7 +1061,7 @@ of the attribute and old attribute fields (MIA_).&nbsp; The following routines h
 <dt><br>_wpi_checkmenuitem( hmenu, id, fchecked, fby_pos )
 <dd>
 <br>This checks a menu item identified by id.&nbsp; The fchecked variable should be either TRUE or FALSE (whether the item
-should be checked or unchecked) and by_pos indicates whether the id indicates the position (TRUE) or the actual identifier.
+ should be checked or unchecked) and by_pos indicates whether the id indicates the position (TRUE) or the actual identifier.
 <dt><br>_wpi_enablemenuitem( hmenu, id, fenabled, fby_pos )
 <dd>
 <br>Similar to _wpi_checkmenuitem except it indicates whether the item should be enabled (TRUE) or grayed (FALSE).
@@ -1067,26 +1069,26 @@ should be checked or unchecked) and by_pos indicates whether the id indicates th
 <br>Once again, this is only a subset of the available menu functions.
 <h2 id="Other_Platform_Considerations"> Other Platform Considerations </h2>
 <br>There is a good possibility that the Windows program being converted to PM has already been converted to 32 or 64 bit
-Windows (or will be converted to 32 or 64 bit Windows).&nbsp; Furthermore, there is the possibility that a PM application
-is desired for both 16 and 32 bit platforms.&nbsp; These can produce somewhat precarious situations; however, there should
-not be too many problems if the user is careful.&nbsp; To begin with, wpitypes.h includes wi163264.h if compiling for Windows
-and pm1632.h if compiling for PM.&nbsp; These header files contain macros which translate between 16 and 32 and 64 bit Windows;
-and 16 and 32 bit PM.
+ Windows (or will be converted to 32 or 64 bit Windows).&nbsp; Furthermore, there is the possibility that a PM application
+ is desired for both 16 and 32 bit platforms.&nbsp; These can produce somewhat precarious situations; however, there should
+ not be too many problems if the user is careful.&nbsp; To begin with, wpitypes.h includes wi163264.h if compiling for Windows
+ and pm1632.h if compiling for PM.&nbsp; These header files contain macros which translate between 16 and 32 and 64 bit Windows;
+ and 16 and 32 bit PM.
 <br><br>Where possible, if adding to WPI the user should be certain that the Windows version will be compatible with wi163264.h
-and the PM version with pm1632.h.&nbsp; This means for example, that it may be appropriate for a WPI macro on the Windows
-side to refer to another macro defined in wi163264.h.
+ and the PM version with pm1632.h.&nbsp; This means for example, that it may be appropriate for a WPI macro on the Windows
+ side to refer to another macro defined in wi163264.h.
 <h2 id="Adding_To_WPI"> Adding To WPI </h2>
 <br>A few considerations should be made when modifying WPI.
 <br><br>Note first of all that all references to malloc should use the _wpi_malloc symbol since the user may decide to define
-their own memory allocating routine.
+ their own memory allocating routine.
 <br><br>Remember that if a routine is changing there could be several parties affected by the change.
 <br><br>When adding routines, be sure to consider how the code may affect 32 or 64 bit Windows or may be different for 16
-and 32 bit PM.&nbsp; Be sure to check wi163264.h and pm1632.h to make sure one of the contained macros is not needed.&nbsp;
-It is best after adding a routine to WPI to create the library for all of 16 and 32 and 64 bit Windows, and 16 bit PM, and
-32 bit PM, even if you are not using all levels.
+ and 32 bit PM.&nbsp; Be sure to check wi163264.h and pm1632.h to make sure one of the contained macros is not needed.&nbsp;
+ It is best after adding a routine to WPI to create the library for all of 16 and 32 and 64 bit Windows, and 16 bit PM, and
+ 32 bit PM, even if you are not using all levels.
 <br><br>One should be certain when adding macros to WPI that no size values are hard coded.&nbsp; Whenever possible the sizeof
-operator should be used since structures may be different sizes in 16 and 32 and 64 bit Windows; and 16 and 32 bit PM.
+ operator should be used since structures may be different sizes in 16 and 32 and 64 bit Windows; and 16 and 32 bit PM.
 <br><br>When using macros be generous in the use of parentheses.&nbsp; Bracket pointers and structures in case expressions
-are passed to the macros.&nbsp; In general, if the macro requires more than 1 line of code or if the routine needs to return
-a value, add the routine to the library.
+ are passed to the macros.&nbsp; In general, if the macro requires more than 1 line of code or if the routine needs to return
+ a value, add the routine to the library.
 </body>

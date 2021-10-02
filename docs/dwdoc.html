@@ -103,36 +103,36 @@
 <br>The include file &quot;dw.h&quot; should be included to access the DW library.
 <h2 id="Data_Types"> Data Types </h2>
 <br>The following types are defined in &quot;dwcnf.h&quot; and may be redefined if the entire library is to be recompiled
-(&quot;dw.h&quot; automatically includes &quot;dwcnf.h&quot;).
+ (&quot;dw.h&quot; automatically includes &quot;dwcnf.h&quot;).
 <dl>
 <dt><b><i>Type</i></b>
 <dd><b><i>Description</i></b>
 <dt><br>dw_sym_handle
 <dd>Has a client defined meaning; the DW library will pass these back to the client in<tt> CLIRelocs</tt> for<tt> DW_W_STATIC</tt>
-, and<tt> DW_W_SEGMENT</tt>.
+ , and<tt> DW_W_SEGMENT</tt>.
 <dt><br>dw_targ_addr
 <dd>The contents of<tt> dw_targ_addr</tt> is unimportant to the DW library; it is only used for<tt> sizeof( dw_targ_addr )</tt>.
-&nbsp;A<tt> dw_targ_addr</tt> is the type that will be emitted for relocations to run-time addresses.
+&nbsp; A<tt> dw_targ_addr</tt> is the type that will be emitted for relocations to run-time addresses.
 <dt><br>dw_targ_seg
 <dd>This is the size of the quantity that<tt> DW_W_SEGMENT</tt> emits.
 <dt><br>dw_addr_offset
 <dd>The type used for offsets from some base address.&nbsp; For example, the<tt> start_scope</tt> parameter to typing routines,
-or the<tt> addr</tt> parameter to line number information.&nbsp; The code assumes this is an unsigned integer type.
+ or the<tt> addr</tt> parameter to line number information.&nbsp; The code assumes this is an unsigned integer type.
 <dt><br>dw_addr_delta
 <dd>An integer type that can hold the largest possible difference between the<tt> addr</tt> parameter for two subsequent calls
-to<tt> DWLineNum</tt>.
+ to<tt> DWLineNum</tt>.
 <dt><br>dw_linenum
 <dd>A line number.&nbsp; It must be an unsigned integer type.
 <dt><br>dw_linenum_delta
 <dd>dw_linenum_delta is a type that can hold the largest possible difference between two adjacent line numbers passed to<tt> DWLineNum</tt>
-or<tt> DWReference</tt>.
+ or<tt> DWReference</tt>.
 <dt><br>dw_column
 <dd>A column number.&nbsp; It must be an unsigned integer type.
 <dt><br>dw_column_delta
 <dd>Type that can hold the largest possible difference between two adjacent column numbers passed to<tt> DWReference</tt>.
 <dt><br>dw_size_t
 <dd>Used for sizes of various things such as block constants (i.e.&nbsp; for DWAddConstant) and the<tt> size</tt> parameter to<tt>
-CLIWrite</tt>.
+ CLIWrite</tt>.
 <dt><br>dw_uconst
 <dd>An unsigned integer type that can hold the largest possible unsigned integer constant.
 <dt><br>dw_sconst
@@ -147,29 +147,29 @@ CLIWrite</tt>.
 <h2 id="Initialization_and_Finalization"> Initialization and Finalization </h2>
 <br>In the following functions, unless specified otherwise all strings are assumed to be null-terminated.
 <br><br>The DW library does not assume that a pointer passed to it is valid beyond the function call used to pass it.&nbsp;
-For example, you can pass the address of an auto-buffer that contains a string.
+ For example, you can pass the address of an auto-buffer that contains a string.
 <br><br>All names passed to the DW library should be unmangled.
 <br><br>The<tt> cli</tt> parameter required for all DW functions except<tt> DWInit</tt> is assumed to be a valid value returned
-by a call to<tt> DWInit</tt>.
+ by a call to<tt> DWInit</tt>.
 <br><br>Currently DWENTRY is defined to be nothing.&nbsp; It was created in case there is ever a need to put the DW library
-into a DLL.
+ into a DLL.
 <h3 id="DWInit"> DWInit </h3>
 <br><b>dw_client DWENTRY DWInit( dw_init_info *info );</b>
 <br><br>Initialization for a compilation unit.&nbsp; Return an unique client id.&nbsp; This function will call client functions
-passed to it, so any client function initialization must be done before the call to DWInit.
+ passed to it, so any client function initialization must be done before the call to DWInit.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*reloc)(
-dw_sectnum, uint, ... );</tt>
+ dw_sectnum, uint, ... );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*write)(
-dw_sectnum, const void *, dw_size_t );</tt>
+ dw_sectnum, const void *, dw_size_t );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*seek)(
-dw_sectnum, dw_out_offset, int );</tt>
+ dw_sectnum, dw_out_offset, int );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_out_offset (*tell)( dw_sectnum );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *(*alloc)(
-size_t );</tt>
+ size_t );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*free)(
-void * );</tt>
+ void * );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } dw_funcs;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_lang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; language;</tt>
@@ -211,22 +211,22 @@ void * );</tt>
 <dd>A string that identifies the compiler.
 <dt><br>exception_handler
 <dd>If the library ends up in a situation which it can't handle (can we say bug ;-) ) this jmp_buf will be called with a non-zero
-value.&nbsp; This is a fatal exit, and the client should not call any of the DW functions.
+ value.&nbsp; This is a fatal exit, and the client should not call any of the DW functions.
 <br>FIXME:&nbsp; The library is currently not very good at cleaning up memory in these situations.
 <dt><br>funcs
 <dd>These functions are described in a later section.&nbsp; The initialization routines may call any of them; so any initialization
-necessary for these routines must be done before DWInit is called.
+ necessary for these routines must be done before DWInit is called.
 </dl>
 <br>The details of the above functions are discussed in Part 3.
 <h3 id="DWFini"> DWFini </h3>
 <br><b>void DWENTRY DWFini( dw_client cli );</b>
 <br><br>Finalize the debugging information generator.&nbsp; This routine must be called last.&nbsp; It frees any structures
-that the DW library required, and flushes all the debugging information.
+ that the DW library required, and flushes all the debugging information.
 <h3 id="DWBeginCompileUnit"> DWBeginCompileUnit </h3>
 <br><b>dw_handle DWENTRY DWBeginCompileUnit( dw_client cli, const char *source_filename, const char *directory, dw_loc_handle
-segment, const unsigned offset_size );</b>
+ segment, const unsigned offset_size );</b>
 <br><br>This function is called some time after<tt> DWInit</tt>.&nbsp; The only other DW functions that can be called in between
-are those dealing with location expressions.
+ are those dealing with location expressions.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -253,12 +253,12 @@ are those dealing with location expressions.
 <h3 id="DWEndCompileUnit"> DWEndCompileUnit </h3>
 <br><b>void DWENTRY DWEndCompileUnit( dw_client cli );</b>
 <br><br>This function pairs up with<tt> DWBeginCompileUnit</tt>.&nbsp; After this, until the next<tt> DWBeginCompileUnit</tt>
-, the only valid calls are those made to location expression routines (or<tt> DWFini</tt> ).
+ , the only valid calls are those made to location expression routines (or<tt> DWFini</tt> ).
 <h1 id="Ordering_Considerations"> Ordering Considerations </h1>
 <br>In general the DW routines are called in an order that matches the order of the declarations during the source program.
-&nbsp;The sole exception to this are the Macro information routines.&nbsp; Since it is possible to have a separate preprocessor
-pass, the library assumes that these routines can be called before any of the other routines.&nbsp; That is why the macro
-routines have a separate mechanism for specifying file and line number.
+&nbsp; The sole exception to this are the Macro information routines.&nbsp; Since it is possible to have a separate preprocessor
+ pass, the library assumes that these routines can be called before any of the other routines.&nbsp; That is why the macro
+ routines have a separate mechanism for specifying file and line number.
 <h1 id="Macro_Information"> Macro Information </h1>
 <h2 id="DWMacStartFile"> DWMacStartFile </h2>
 <br><b>void DWENTRY DWMacStartFile( dw_client cli, dw_linenum line, const char *name );</b>
@@ -269,11 +269,11 @@ routines have a separate mechanism for specifying file and line number.
 <h2 id="DWMacDef"> DWMacDef </h2>
 <br><b>dw_macro DWENTRY DWMacDef( dw_client cli, dw_linenum line, const char *name );</b>
 <br><br>Defines a macro.<tt>&nbsp; name</tt> is the name of the macro.&nbsp; A<tt> dw_macro</tt> is returned and must be used
-in a subsequent call to<tt> DWMacFini</tt> (and possibly<tt> DWMacParam</tt> ).
+ in a subsequent call to<tt> DWMacFini</tt> (and possibly<tt> DWMacParam</tt> ).
 <h2 id="DWMacParam"> DWMacParam </h2>
 <br><b>void DWENTRY DWMacParam( dw_client cli, dw_macro mac, const char *name );</b>
 <br><br>Adds a parameter to the macro definition<tt> mac</tt>.<tt>&nbsp; name</tt> is the name of the parameter with no leading
-or trailing white-space.&nbsp; The order of parameters must be the same as they appear in the source program.
+ or trailing white-space.&nbsp; The order of parameters must be the same as they appear in the source program.
 <h2 id="DWMacFini"> DWMacFini </h2>
 <br><b>void DWENTRY DWMacFini( dw_client cli, dw_macro mac, const char *def );</b>
 <br><br>Finishes the macro definition<tt> mac</tt>.<tt>&nbsp; def</tt> is the definition string.
@@ -287,12 +287,12 @@ or trailing white-space.&nbsp; The order of parameters must be the same as they 
 <h2 id="DWSetFile"> DWSetFile </h2>
 <br><b>void DWENTRY DWSetFile( dw_client cli, const char *file );</b>
 <br><br>Specifies the current file.&nbsp; The default is for the source_filename parameter from the dw_init_info to be the
-current file.
+ current file.
 <h2 id="DWLineNum"> DWLineNum </h2>
 <br><b>void DWLineNum( dw_client cli, uint info, dw_linenum line, uint col, dw_addr_offset addr );</b>
 <br><br>Sets the current source line number and machine address.&nbsp; The line numbers information of all instructions, not
-just declarations, are stored by this routine.&nbsp; Note that all source line numbers are relative to the beginning of their
-corresponding source file.&nbsp; So the line number of the first line of an included file is one.
+ just declarations, are stored by this routine.&nbsp; Note that all source line numbers are relative to the beginning of their
+ corresponding source file.&nbsp; So the line number of the first line of an included file is one.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -314,9 +314,9 @@ corresponding source file.&nbsp; So the line number of the first line of an incl
 <dd>Source column number, which begins at 1.
 <dt><br>addr
 <dd>Address of instruction relative to the beginning of the compilation unit.&nbsp; If it is at all possible the client should
-call<tt> DWLineNum</tt> with increasing addrs.&nbsp; The line parameter does not have to be increasing.&nbsp; The size of
-the emitted line number information is smaller if increasing addrs are used (There is also an implementation limitation that
-the maximum decrease of addr between two calls is 32768).
+ call<tt> DWLineNum</tt> with increasing addrs.&nbsp; The line parameter does not have to be increasing.&nbsp; The size of
+ the emitted line number information is smaller if increasing addrs are used (There is also an implementation limitation that
+ the maximum decrease of addr between two calls is 32768).
 </dl>
 <h2 id="DWDeclFile"> DWDeclFile </h2>
 <br><b>void DWENTRY DWDeclFile( dw_client cli, const char *name );</b>
@@ -324,32 +324,32 @@ the maximum decrease of addr between two calls is 32768).
 <h2 id="DWDeclPos"> DWDeclPos </h2>
 <br><b>void DWENTRY DWDeclPos( dw_client cli, dw_linenum line, dw_column column );</b>
 <br><br>The next declaration occurs at the indicated line and column in the source file set by the last call to<tt> DWDeclFile</tt>.
-&nbsp;Note that the position is only used for the immediate next declaration.&nbsp; If there are multiple declarations on
-the same line, then multiple calls should be made.
+&nbsp; Note that the position is only used for the immediate next declaration.&nbsp; If there are multiple declarations on
+ the same line, then multiple calls should be made.
 <h2 id="DWReference"> DWReference </h2>
 <br><b>void DWENTRY DWReference( dw_client cli, dw_linenum line, dw_column column, dw_handle dependant );</b>
 <br><br>Indicate that in the source code there is a reference to the dependant.&nbsp; This reference is attributed to the
-current scope of debugging information.&nbsp; (i.e., if it is done inside a structure, then the structure is considered to
-be the &quot;referencer&quot;).
+ current scope of debugging information.&nbsp; (i.e., if it is done inside a structure, then the structure is considered to
+ be the &quot;referencer&quot;).
 <h1 id="Location_Expression_Routines"> Location Expression Routines </h1>
 <br>Many functions require a<tt> dw_loc_handle</tt>.&nbsp; These are handles for expressions that the debugger will evaluate.
-&nbsp;A<tt> dw_loc_handle</tt> can be either a single expression, or a list of expressions created by<tt> DWListFini</tt>.
-&nbsp;The BROWSER is only interested in whether a location expression is present or not; so when creating BROWSER output the
-client may create an empty location expression and use that wherever appropriate.
+&nbsp; A<tt> dw_loc_handle</tt> can be either a single expression, or a list of expressions created by<tt> DWListFini</tt>.
+&nbsp; The BROWSER is only interested in whether a location expression is present or not; so when creating BROWSER output
+ the client may create an empty location expression and use that wherever appropriate.
 <br><br>The expressions are evaluated on a stack machine, with operations described later.&nbsp; In some cases the stack will
-be initially empty, in other cases (such as when calculating the address of a structure field) some base address will be on
-the stack.
+ be initially empty, in other cases (such as when calculating the address of a structure field) some base address will be
+ on the stack.
 <br><br>A location expression is limited to roughly 64K.&nbsp; Since each op-code is a single byte, this shouldn't pose much
-of a limitation (famous last words).&nbsp; The destination of the branch instructions<tt> DW_LOC_BRA</tt> and<tt> DW_LOC_SKIP</tt>
-must be within 32K of the current instruction (This is a limitation of the DWARF format, not a limitation of the DW library).
+ of a limitation (famous last words).&nbsp; The destination of the branch instructions<tt> DW_LOC_BRA</tt> and<tt> DW_LOC_SKIP</tt>
+ must be within 32K of the current instruction (This is a limitation of the DWARF format, not a limitation of the DW library).
 <h2 id="DWLocInit"> DWLocInit </h2>
 <br><b>dw_loc_id DWENTRY DWLocInit( dw_client cli );</b>
 <br><br>First function called to create a location expression for a symbol.&nbsp; An unique<tt> dw_loc_id</tt> is returned
-to the front end.
+ to the front end.
 <h2 id="DWLocNewLabel"> DWLocNewLabel </h2>
 <br><b>dw_loc_label DWENTRY DWLocNewLabel( dw_client cli, dw_loc_id loc );</b>
 <br><br>Create a label for the location expression being built in<tt> loc</tt>.&nbsp; This label can be used for forward or
-backward references by<tt> DW_LOC_SKIP</tt> and<tt> DW_LOC_BRA</tt>.
+ backward references by<tt> DW_LOC_SKIP</tt> and<tt> DW_LOC_BRA</tt>.
 <h2 id="DWLocSetLabel"> DWLocSetLabel </h2>
 <br><b>void DWENTRY DWLocSetLabel( dw_client cli, dw_loc_id loc, dw_loc_label label );</b>
 <br><br>Give the label<tt> label</tt> the address of the next operation emitted into the location expression<tt> loc</tt>.
@@ -381,10 +381,10 @@ backward references by<tt> DW_LOC_SKIP</tt> and<tt> DW_LOC_BRA</tt>.
 <dd>It pops the top two stack values, performs the logical AND operation on the two, and pushes the result.
 <dt><br>DW_LOC_DEREF
 <dd>It pops the top stack entry and treats it as an address.&nbsp; The value retrieved from that address is pushed.&nbsp; The
-size of data retrieved from the dereferenced address is an addressing unit.
+ size of data retrieved from the dereferenced address is an addressing unit.
 <dt><br>DW_LOC_DIV
 <dd>It pops the top two stack values, divides the former second entry by the former top of the stack using signed division, and
-pushes the result.
+ pushes the result.
 <dt><br>DW_LOC_DROP
 <dd>It pops the value at the top of the stack.
 <dt><br>DW_LOC_DUP
@@ -393,12 +393,12 @@ pushes the result.
 <dd>Pop two entries from stack, push 1 if they are equal; push 0 otherwise.
 <dt><br>DW_LOC_GE, DW_LOC_GT, DW_LOC_LE, DW_LOC_LT
 <dd>These operation pop the top two stack values, compare the former top of stack from the former second entry, and pushes 1 onto
-stack if the comparison is true, 0 if it is false.&nbsp; The comparisons are signed comparison.
+ stack if the comparison is true, 0 if it is false.&nbsp; The comparisons are signed comparison.
 <dt><br>DW_LOC_MINUS
 <dd>It pops the top two stack values, subtracts the former top of the stack from the former second entry, and pushes the result.
 <dt><br>DW_LOC_MOD
 <dd>It pops the top two stack values, and pushes the result of the calculation:&nbsp; former second stack entry modulo the former
-top of the stack.
+ top of the stack.
 <dt><br>DW_LOC_MUL
 <dd>It pops the top two stack values, multiplies them together, and pushes the result.
 <dt><br>DW_LOC_NE
@@ -417,23 +417,23 @@ top of the stack.
 <dd>It pops the top two stack entries, and pushes their sum.
 <dt><br>DW_LOC_ROT
 <dd>It rotates the first three stack entries.&nbsp; The entry at the top of the stack becomes the third entry, the second entry
-becomes the top, and the third entry becomes the second.
+ becomes the top, and the third entry becomes the second.
 <dt><br>DW_LOC_SHL
 <dd>It pops the top two stack entries, shifts the former second entry left by the number of bits specified by the former top of
-the stack, and pushes the result.
+ the stack, and pushes the result.
 <dt><br>DW_LOC_SHR
 <dd>It pops the top two stack entries, shifts the former second entry right (logically) by the number of bits specified by the
-former top of the stack, and pushes the result.
+ former top of the stack, and pushes the result.
 <dt><br>DW_LOC_SHRA
 <dd>It pops the top two stack entries, shifts the former second entry right (arithmetically) by the number of bits specified by
-the former top of the stack, and pushes the result.
+ the former top of the stack, and pushes the result.
 <dt><br>DW_LOC_SWAP
 <dd>It swaps the top two stack entries.
 <dt><br>DW_LOC_XDEREF
 <dd>It provides an extended dereference mechanism.&nbsp; The entry at the top of the stack is treated as an address.&nbsp; The
-second stack entry is treated as an &quot;address space identifier&quot; for those architectures that support multiple address
-spaces.&nbsp; The top two stack elements are popped, a data item is retrieved through an implementation-defined address calculation
-and pushed as the new stack top.&nbsp; The size of data retrieved is an addressing unit.
+ second stack entry is treated as an &quot;address space identifier&quot; for those architectures that support multiple address
+ spaces.&nbsp; The top two stack elements are popped, a data item is retrieved through an implementation-defined address calculation
+ and pushed as the new stack top.&nbsp; The size of data retrieved is an addressing unit.
 <dt><br>DW_LOC_XOR
 <dd>It pops the top two stack entries, performs the logical EXCLUSIVE-OR operation on them, and pushes the result.
 </dl>
@@ -445,16 +445,16 @@ and pushed as the new stack top.&nbsp; The size of data retrieved is an addressi
 <dd><b><i>Description</i></b>
 <dt><br>DW_LOC_BRA
 <dd>It is followed by a dw_loc_label operand.&nbsp; This operation pops the top stack entry, if the value is not zero, then jump
-to the label.
+ to the label.
 <dt><br>DW_LOC_BREG
 <dd>Followed by two operands, the first is a register, and the second is an dw_sconst to add to the value in the register.&nbsp;
-The result is pushed onto the stack.
+ The result is pushed onto the stack.
 <dt><br>DW_LOC_FBREG
 <dd>Takes one dw_sconst parameter which is added to the value calculated by the frame_base_loc parameter to the current subroutine,
-then pushed on the stack.
+ then pushed on the stack.
 <dt><br>DW_LOC_PICK
 <dd>It is followed by a uint operand which is an index.&nbsp; The stack entry with the specified index (0 through 255, inclusive;
-0 means the top) is pushed on the stack.
+ 0 means the top) is pushed on the stack.
 <dt><br>DW_LOC_PLUS_UCONST
 <dd>It is followed an dw_sconst operand.&nbsp; It pops the top stack entry, adds it to the operand and pushes the result.
 <dt><br>DW_LOC_SKIP
@@ -474,12 +474,12 @@ then pushed on the stack.
 <dd><b><i> </i></b>
 <dt><br>beg
 <dd>A beginning address.&nbsp; This address is relative to the base address of the compilation unit referencing this location
-list.&nbsp; It marks the beginning of the range over which the location is valid.
+ list.&nbsp; It marks the beginning of the range over which the location is valid.
 <dt><br>end
 <dd>A ending address.&nbsp; This address is relative to the base address of the compilation unit referencing this location list.
-&nbsp;It marks the first address past the end of the range over which the location is valid.&nbsp; Overlapping ranges are
-possible and are interpreted to mean that the value may be found in one of many places during the overlap.&nbsp; A CLIReloc
-for<tt> DW_W_LABEL</tt> will be made for each dw_sym_handle.
+&nbsp; It marks the first address past the end of the range over which the location is valid.&nbsp; Overlapping ranges are
+ possible and are interpreted to mean that the value may be found in one of many places during the overlap.&nbsp; A CLIReloc
+ for<tt> DW_W_LABEL</tt> will be made for each dw_sym_handle.
 <dt><br>loc
 <dd>A location expression describing the location of the object over the range specified by the beginning and end addresses.
 </dl>
@@ -489,21 +489,21 @@ for<tt> DW_W_LABEL</tt> will be made for each dw_sym_handle.
 <h2 id="DWLocTrash"> DWLocTrash </h2>
 <br><b>void DWENTRY DWLocTrash( dw_client cli, dw_loc_handle loc );</b>
 <br><br>Frees the memory associated with the location expression or list loc.&nbsp; A location expression/list can be created
-and used over and over again until it is freed by calling this function.
+ and used over and over again until it is freed by calling this function.
 <h1 id="Typing_Information"> Typing Information </h1>
 <br>Unless otherwise noted, calls to these functions emit debugging information immediately.&nbsp; The DWARF format requires
-that debugging information appear in the same order as it does in the source code.&nbsp; So, for example, a structure's fields
-must be created in the same order that they appear in the source program.
+ that debugging information appear in the same order as it does in the source code.&nbsp; So, for example, a structure's fields
+ must be created in the same order that they appear in the source program.
 <br><br>Some of the following functions have common parameters.&nbsp; Here is the documentation for these common parameters:
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
 <dt><br>char *name
 <dd>A null-terminated type name.&nbsp; i.e., &quot;struct foobar {}&quot; has the name foobar.&nbsp; If this parm is NULL then
-no name is emitted.
+ no name is emitted.
 <dt><br>dw_addr_offset start_scope
 <dd>This is the offset from the low_pc value for the enclosing block that the declaration occurs at.&nbsp; This is most commonly
-0.
+ 0.
 <dt><br>uint flags
 <dd>Some routines have additional flags available here; but unless otherwise noted, the following are always available:
 <dl>
@@ -541,8 +541,8 @@ no name is emitted.
 <dd>
 </dl>
 <br>For convenience, DW_FT_MIN, and DW_FT_MAX are defined.&nbsp; A valid fundamental type is in the range DW_FT_MIN &lt;=
-ft &lt; DW_FT_MAX.&nbsp; The DW library will always return the same handle when called with the same fundamental type (so
-the client does not need to save fundamental type handles).
+ ft &lt; DW_FT_MAX.&nbsp; The DW library will always return the same handle when called with the same fundamental type (so
+ the client does not need to save fundamental type handles).
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -554,7 +554,7 @@ the client does not need to save fundamental type handles).
 <h2 id="DWModifier"> DWModifier </h2>
 <br><b>dw_handle DWENTRY DWModifier( dw_client cli, dw_handle base_type, uint modifiers );</b>
 <br><br>Specifies a modifier to a type.<tt>&nbsp; base_type</tt> is the base type to be modified with the modifier<tt> modifier</tt>.
-&nbsp;The available modifiers are:
+&nbsp; The available modifiers are:
 <dl>
 <dt><b><i>Modifier Constant</i></b>
 <dd><b><i>Description</i></b>
@@ -573,9 +573,9 @@ the client does not need to save fundamental type handles).
 </dl>
 <h2 id="DWTypedef"> DWTypedef </h2>
 <br><b>dw_handle DWENTRY DWTypedef( dw_client cli, dw_handle base_type, const char *name, dw_addr_offset start_scope, uint
-flags );</b>
+ flags );</b>
 <br><br>This function gives a name to a type.&nbsp; The<tt> name</tt> must not be NULL.&nbsp; The flag value<tt> DW_FLAG_DECLARATION</tt>
-is not allowed.
+ is not allowed.
 <h2 id="DWPointer"> DWPointer </h2>
 <br><b>dw_handle DWENTRY DWPointer( dw_client cli, dw_handle base_type, uint flags );</b>
 <br><br>Declares a pointer type.
@@ -607,22 +607,22 @@ is not allowed.
 </dl>
 <h2 id="DWString"> DWString </h2>
 <br><b>dw_handle DWENTRY DWString( dw_client cli, dw_loc_handle string_length, dw_size_t byte_size, const char *name, dw_addr_offset
-start_scope, uint flags );</b>
+ start_scope, uint flags );</b>
 <br><br>Declares a type to be a block of characters.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
 <dt><br>string_length
 <dd>If this parameter is non-NULL then it is a location expression that the debugger executes to get the address where the length
-of the string is stored in the program.&nbsp; In this case the<tt> byte_size</tt> parameter describes the number of bytes
-to be retrieved at the location calculated.&nbsp; If<tt> byte_size</tt> is 0, then the debugger will use<tt> sizeof( long
-)</tt>.
+ of the string is stored in the program.&nbsp; In this case the<tt> byte_size</tt> parameter describes the number of bytes
+ to be retrieved at the location calculated.&nbsp; If<tt> byte_size</tt> is 0, then the debugger will use<tt> sizeof( long
+ )</tt>.
 <dt><br>byte_size
 <dd>If<tt> string_length</tt> is NULL then this parameter is the number of bytes in the string.&nbsp; Otherwise see<tt> string_length</tt>.
 </dl>
 <h2 id="DWMemberPointer"> DWMemberPointer </h2>
 <br><b>dw_handle DWENTRY DWMemberPointer( dw_client cli, dw_handle containing_struct, dw_loc_handle use_location, dw_handle
-base_type, const char *name, unsigned flags );</b>
+ base_type, const char *name, unsigned flags );</b>
 <br><br>Declares a C++ pointer type to a data or function member of a class or structure.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -631,17 +631,17 @@ base_type, const char *name, unsigned flags );</b>
 <dd>A handle to the class or struct to whose members objects of this type may point.
 <dt><br>use_location
 <dd>This refers to the location expression which describes how to get to the member it points to from the beginning of the entire
-class.&nbsp; It expects the base address of the structure/class object to be on the stack before the debugger starts to execute
-the location description.
+ class.&nbsp; It expects the base address of the structure/class object to be on the stack before the debugger starts to execute
+ the location description.
 <dt><br>base_type
 <dd>The type of the member to which this object may point to.
 </dl>
 <h2 id="Array_Types"> Array Types </h2>
 <h3 id="DWBeginArray"> DWBeginArray </h3>
 <br><b>dw_handle DWENTRY DWBeginArray( dw_client cli, dw_handle elt_type, uint stride_size, const char *name, dw_addr_offset
-scope, uint flags );</b>
+ scope, uint flags );</b>
 <br><br>Begin the declaration of an array.&nbsp; This function call must be followed by calls to<tt> DWArrayDimension</tt>
-and<tt> DWEndArray</tt>.
+ and<tt> DWEndArray</tt>.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -649,13 +649,13 @@ and<tt> DWEndArray</tt>.
 <dd>Handle for the type of the elements of this array.
 <dt><br>stride_size
 <dd>If this value is non-zero then it indicates the number of bits of each element of the array (Useful if the number of bits
-used to store an element in the array is different from the number of bits used to store an individual element of type<tt>
-elt_type</tt> ).
+ used to store an element in the array is different from the number of bits used to store an individual element of type<tt>
+ elt_type</tt> ).
 </dl>
 <h3 id="DWArrayDimension"> DWArrayDimension </h3>
 <br><b>void DWENTRY DWArrayDimension( dw_client cli, const dw_dim_info *info );</b>
 <br><br>Add a dimension to the previously started array.&nbsp; This function must be called for each dimension in the order
-that the dimensions appear in the source program.<tt>&nbsp; info</tt> points to an instance of the following structure:
+ that the dimensions appear in the source program.<tt>&nbsp; info</tt> points to an instance of the following structure:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_handle&nbsp;&nbsp; index_type;</tt>
@@ -676,14 +676,14 @@ that the dimensions appear in the source program.<tt>&nbsp; info</tt> points to 
 </dl>
 <h3 id="DWEndArray"> DWEndArray </h3>
 <br><b>void DWENTRY DWEndArray( dw_client cli, dw_handle array_hdl, dw_handle elt_type, uint stride_size, const char *name,
-dw_addr_offset scope, uint flags );</b>
+ dw_addr_offset scope, uint flags );</b>
 <br><br>This finishes the writing of the record to describe the array A sufficient number of calls to<tt> DWArrayDimension</tt>
-must have been made before<tt> DWEndArray</tt> is called.
+ must have been made before<tt> DWEndArray</tt> is called.
 <h2 id="Structure_Types"> Structure Types </h2>
 <h3 id="DWStruct"> DWStruct </h3>
 <br><b>dw_handle DWENTRY DWStruct( dw_client cli, uint kind );</b>
 <br><br>Create a handle for a structure type that will be defined later.&nbsp; This handle can be used for other DW routines
-even before<tt> DWBeginStruct</tt> has been called.
+ even before<tt> DWBeginStruct</tt> has been called.
 <dl>
 <dt><b><i>Kind</i></b>
 <dd><b><i>Description</i></b>
@@ -696,10 +696,10 @@ even before<tt> DWBeginStruct</tt> has been called.
 </dl>
 <h3 id="DWBeginStruct"> DWBeginStruct </h3>
 <br><b>void DWENTRY DWBeginStruct( dw_client cli, dw_handle struct_hdl, dw_size_t size, const char *name, dw_addr_offset scope,
-uint flags );</b>
+ uint flags );</b>
 <br><br>Begin the declaration of the structure reserved by a call to<tt> DWStruct</tt>.&nbsp; This function begins a nesting
-of the debugging information.&nbsp; Subsequent calls, up to the corresponding<tt> DWEndStruct</tt> call, to the DW library
-become children of this structure.&nbsp; i.e., this function marks the beginning of the scope of the structure definition.
+ of the debugging information.&nbsp; Subsequent calls, up to the corresponding<tt> DWEndStruct</tt> call, to the DW library
+ become children of this structure.&nbsp; i.e., this function marks the beginning of the scope of the structure definition.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -721,10 +721,10 @@ become children of this structure.&nbsp; i.e., this function marks the beginning
 <dd>The handle of the ancestor to be inherited.
 <dt><br>loc
 <dd>A location expression that describes the location of the beginning of the data members contributed to the entire class by
-the ancestor relative to the beginning of the address of the data members of the entire class.
+ the ancestor relative to the beginning of the address of the data members of the entire class.
 <dt><br>flags
 <dd>In addition to the common values of<tt> flags</tt> , the flag<tt> DW_FLAG_VIRTUAL</tt> may be supplied to indicate that the
-inheritance serves as a virtual base class.&nbsp; As well, the flag<tt> DW_FLAG_DECLARATION</tt> is not allowed here.
+ inheritance serves as a virtual base class.&nbsp; As well, the flag<tt> DW_FLAG_DECLARATION</tt> is not allowed here.
 </dl>
 <h3 id="DWAddField"> DWAddField </h3>
 <br><b>dw_handle DWENTRY DWAddField( dw_client cli, dw_handle field_hdl, dw_loc_handle loc, const char *name, uint flags );</b>
@@ -736,14 +736,14 @@ inheritance serves as a virtual base class.&nbsp; As well, the flag<tt> DW_FLAG_
 <dd>The dw_handle of the type of this field.
 <dt><br>loc
 <dd>A location expression which expects the base address of the structure to be pushed on the stack and calculates the base address
-of this field.&nbsp; If the structure is a union type, then this parameter may be NULL.&nbsp; If this is a static data member
-of a class then this parameter may be NULL if the actual definition of the parameter is outside the class.
+ of this field.&nbsp; If the structure is a union type, then this parameter may be NULL.&nbsp; If this is a static data member
+ of a class then this parameter may be NULL if the actual definition of the parameter is outside the class.
 <dt><br>flags
 <dd>The additional flag<tt> DW_FLAG_STATIC</tt> may be used to indicate a static structure member.
 </dl>
 <h3 id="DWAddBitField"> DWAddBitField </h3>
 <br><b>dw_handle DWENTRY DWAddBitField( dw_client cli, dw_handle field_hdl, dw_loc_handle loc, dw_size_t byte_size, uint bit_offset,
-uint bit_size, const char *name, uint flags );</b>
+ uint bit_size, const char *name, uint flags );</b>
 <br><br>Add a bitfield member to a structure.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -752,11 +752,11 @@ uint bit_size, const char *name, uint flags );</b>
 <dd>the dw_handle of the type of this field.
 <dt><br>loc
 <dd>A location expression which expects the base address of the structure most closely containing the bit field to be pushed and
-the stack, and which calculates the base address of this field.
+ the stack, and which calculates the base address of this field.
 <dt><br>byte_size
 <dd>This field must be the non-zero byte size of the unit of storage containing the bit-field.&nbsp; This is required only if
-the storage required cannot be determined by the type of the bit-field (i.e., padding bytes).&nbsp; If the size can be determined
-by the type of the bit-field, then this value may be 0.
+ the storage required cannot be determined by the type of the bit-field (i.e., padding bytes).&nbsp; If the size can be determined
+ by the type of the bit-field, then this value may be 0.
 <dt><br>bit_offset
 <dd>The number of bits to the left of the leftmost (most significant); bit of the bit field value.
 <dt><br>bit_size
@@ -768,28 +768,28 @@ by the type of the bit-field, then this value may be 0.
 <h2 id="Enumeration_Types"> Enumeration Types </h2>
 <h3 id="DWBeginEnumeration"> DWBeginEnumeration </h3>
 <br><b>dw_handle DWENTRY DWBeginEnumeration( dw_client cli, dw_size_t byte_size, const char *name, dw_addr_offset scope, uint
-flags );</b>
+ flags );</b>
 <br><br>Begin the definition of an enumerated type.<tt>&nbsp; byte_size</tt> is the number of bytes required to hold an instance
-of this enumeration.&nbsp; This call must be followed by calls to<tt> DWAddConstant</tt> and<tt> DWEndEnumeration</tt>.&nbsp;
-No other DW calls may be made before the call to<tt> DWEndEnumeration</tt>.&nbsp; The DWARF standard requires that the constants
-be defined in<tt> reverse</tt> order to which they appear in the source program.
+ of this enumeration.&nbsp; This call must be followed by calls to<tt> DWAddConstant</tt> and<tt> DWEndEnumeration</tt>.&nbsp;
+ No other DW calls may be made before the call to<tt> DWEndEnumeration</tt>.&nbsp; The DWARF standard requires that the constants
+ be defined in<tt> reverse</tt> order to which they appear in the source program.
 <h3 id="DWAddConstant"> DWAddConstant </h3>
 <br><b>void DWENTRY DWAddConstant( dw_client cli, dw_uconst value, const char *name );</b>
 <br><br>Add the constant<tt> value</tt> (that is<tt> byte_size</tt> bytes large as determined by the parameter to<tt> DWBeginEnumeration</tt>
-); with the name<tt> name</tt> to the current enumeration.
+ ); with the name<tt> name</tt> to the current enumeration.
 <h3 id="DWEndEnumeration"> DWEndEnumeration </h3>
 <br><b>void DWENTRY DWEndEnumeration( dw_client cli );</b>
 <br><br>Finish the current enumeration.
 <h2 id="Subroutine_Type_Declarations"> Subroutine Type Declarations </h2>
 <br>These function calls deal with declarations of subroutines.&nbsp; That is, their prototypes, or for use in creating function
-pointers.
+ pointers.
 <h3 id="DWBeginSubroutineType"> DWBeginSubroutineType </h3>
 <br><b>dw_handle DWENTRY DWBeginSubroutineType( dw_client cli, dw_handle return_type, const char *name, dw_addr_offset scope,
-uint flags );</b>
+ uint flags );</b>
 <br><br>Begin the nested declaration of the subroutine type.&nbsp; All calls to the DW library after this, until<tt> DWEndSubroutineType</tt>
-are in the scope of the declaration of the subroutine type (i.e., if it's a prototyped C function, then declarations before<tt>
-DWEndSubroutineType</tt> are similar to declarations inside the prototype).&nbsp; Parameters for this type are declared using
-the entries<tt> DWAddParmToSubroutineType</tt> and<tt> DWAddEllipsisToSubroutineType</tt>.
+ are in the scope of the declaration of the subroutine type (i.e., if it's a prototyped C function, then declarations before<tt>
+ DWEndSubroutineType</tt> are similar to declarations inside the prototype).&nbsp; Parameters for this type are declared using
+ the entries<tt> DWAddParmToSubroutineType</tt> and<tt> DWAddEllipsisToSubroutineType</tt>.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -797,8 +797,8 @@ the entries<tt> DWAddParmToSubroutineType</tt> and<tt> DWAddEllipsisToSubroutine
 <dd>If the function is void, this parameter must be NULL.&nbsp; Otherwise it is a handle for the return type of the subroutine.
 <dt><br>flags
 <dd>In addition to the standard flags,<tt> DW_FLAG_PROTOTYPED</tt> indicates that the declaration of the subroutine type was prototyped
-in the source code.&nbsp; As well, the &quot;address class&quot; set of flags used in<tt> DWPointer</tt> are also allowed
-here (e.g.<tt>&nbsp; DW_TYPE_FAR16</tt> etc.)
+ in the source code.&nbsp; As well, the &quot;address class&quot; set of flags used in<tt> DWPointer</tt> are also allowed
+ here (e.g.<tt>&nbsp; DW_TYPE_FAR16</tt> etc.)
 </dl>
 <h3 id="DWEndSubroutineType"> DWEndSubroutineType </h3>
 <br><b>void DWENTRY DWEndSubroutineType( dw_client cli );</b>
@@ -807,19 +807,19 @@ here (e.g.<tt>&nbsp; DW_TYPE_FAR16</tt> etc.)
 <h3 id="DWBeginLexicalBlock"> DWBeginLexicalBlock </h3>
 <br><b>dw_handle DWENTRY DWBeginLexicalBlock( dw_client cli, dw_loc_handle segment, const char *name );</b>
 <br><br>Begin a new lexical scope.<tt>&nbsp; name</tt> may be NULL indicating an un-named scope.&nbsp; Two CLIReloc calls
-will made, one for<tt> DW_W_LOW_PC</tt> and one for<tt> DW_W_HIGH_PC</tt> which indicate the first byte of the scope, and
-the first byte beyond the end of the scope.<tt>&nbsp; segment</tt> if non-null is an expression that evaluates to the segment
-this block is in.
+ will made, one for<tt> DW_W_LOW_PC</tt> and one for<tt> DW_W_HIGH_PC</tt> which indicate the first byte of the scope, and
+ the first byte beyond the end of the scope.<tt>&nbsp; segment</tt> if non-null is an expression that evaluates to the segment
+ this block is in.
 <h3 id="DWEndLexicalBlock"> DWEndLexicalBlock </h3>
 <br><b>void DWENTRY DWEndLexicalBlock( dw_client cli );</b>
 <br><br>End a lexical scope.&nbsp; As usual, the client must ensure that Begin/End pairs match.
 <h2 id="Common_Blocks"> Common Blocks </h2>
 <h3 id="DWBeginCommonBlock"> DWBeginCommonBlock </h3>
 <br><b>dw_handle DWENTRY DWBeginCommonBlock( dw_client cli, dw_loc_handle loc, dw_loc_handle segment, const char *name, unsigned
-flag );</b>
+ flag );</b>
 <br><br>Begin the declarations for the common block named<tt> name</tt> and located at<tt> loc</tt>.<tt>&nbsp; segment</tt>
-if non-null indicates which segment the common block is in.&nbsp; The only flag that is valid for the<tt> flag</tt> parameter
-is<tt> DW_FLAG_DECLARATION</tt>.
+ if non-null indicates which segment the common block is in.&nbsp; The only flag that is valid for the<tt> flag</tt> parameter
+ is<tt> DW_FLAG_DECLARATION</tt>.
 <h3 id="DWEndCommonBlock"> DWEndCommonBlock </h3>
 <br><b>void DWENTRY DWEndCommonBlock( dw_client cli );</b>
 <br><br>End of declarations for the common block.
@@ -829,19 +829,19 @@ is<tt> DW_FLAG_DECLARATION</tt>.
 <h2 id="Subroutines"> Subroutines </h2>
 <h3 id="DWBeginInlineSubroutine"> DWBeginInlineSubroutine </h3>
 <br><b>dw_handle DWENTRY DWBeginInlineSubroutine( dw_client cli, dw_handle out_of_line, dw_loc_handle ret_addr, dw_loc_handle
-segment );</b>
+ segment );</b>
 <br><br>Begin a definition of a particular instance of an inlined subroutine.<tt>&nbsp; out_of_line</tt> is a handle to the
-&quot;out of line&quot; instance of the subroutine (i.e., a handle from a<tt> DWBeginSubroutine</tt> call that had the DW_FLAG_OUT_OF_LINE
-flag).&nbsp; Each instance of the inlined subroutine must have it's own copies of entries describing parameters to that subroutine
-and it's local variables.<tt>&nbsp; ret_addr</tt> gives the location of the return address (if any).<tt>&nbsp; segment</tt>
-if non-null indicates which segment the expansion occurs in.
+ &quot;out of line&quot; instance of the subroutine (i.e., a handle from a<tt> DWBeginSubroutine</tt> call that had the DW_FLAG_OUT_OF_LINE
+ flag).&nbsp; Each instance of the inlined subroutine must have it's own copies of entries describing parameters to that subroutine
+ and it's local variables.<tt>&nbsp; ret_addr</tt> gives the location of the return address (if any).<tt>&nbsp; segment</tt>
+ if non-null indicates which segment the expansion occurs in.
 <h3 id="DWBeginSubroutine"> DWBeginSubroutine </h3>
 <br><b>dw_handle DWENTRY DWBeginSubroutine( dw_client cli, dw_call_type call_type, dw_handle return_type, dw_loc_handle return_addr_loc,
-dw_loc_handle frame_base_loc, dw_loc_handle structure_loc, dw_handle member_hdl, dw_loc_handle segment, const char *name,
-dw_addr_offset start_scope, uint flags );</b>
+ dw_loc_handle frame_base_loc, dw_loc_handle structure_loc, dw_handle member_hdl, dw_loc_handle segment, const char *name,
+ dw_addr_offset start_scope, uint flags );</b>
 <br><br>Begin a declaration/definition of a subroutine or entry point.&nbsp; This begins a nesting of the debugging information,
-and must be followed by calls to<tt> DWFormalParameter</tt> et al to declare the parameters, types, and variables for this
-subroutine.&nbsp; Unless<tt> DW_FLAG_DECLARATION</tt> is set, this will require a<tt> DW_W_LOW_PC</tt> and/or a<tt> DW_W_HIGH_PC</tt>.
+ and must be followed by calls to<tt> DWFormalParameter</tt> et al to declare the parameters, types, and variables for this
+ subroutine.&nbsp; Unless<tt> DW_FLAG_DECLARATION</tt> is set, this will require a<tt> DW_W_LOW_PC</tt> and/or a<tt> DW_W_HIGH_PC</tt>.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -861,14 +861,14 @@ subroutine.&nbsp; Unless<tt> DW_FLAG_DECLARATION</tt> is set, this will require 
 <dd>If non-NULL then this is a location expression that calculates the address of memory that stores the return address.
 <dt><br>frame_base_loc
 <dd>If non-NULL then this is a location expression that describes the &quot;frame base&quot; for the subroutine or entry point
-(If the frame base changes during the subroutine, it might be desirable for local variables to be calculated from the frame
-base, and then use a location list for the frame base).
+ (If the frame base changes during the subroutine, it might be desirable for local variables to be calculated from the frame
+ base, and then use a location list for the frame base).
 <dt><br>structure_loc
 <dd>For member functions of structure types, this calculates the address of the slot for the function within the virtual function
-table for the enclosing class or structure.
+ table for the enclosing class or structure.
 <dt><br>member_hdl
 <dd>If this is a definition of a member function occuring outside the body of the structure type, then this is the handle for
-the type definition of the structure.
+ the type definition of the structure.
 <dt><br>segment
 <dd>If non-null then this is a location expression that evaluates to the segment for this subprogram.
 </dl>
@@ -900,7 +900,7 @@ the type definition of the structure.
 <br><br>End the current nesting of<tt> DWBeginSubroutine</tt> or<tt> DWBeginInlineSubroutine</tt>.
 <h3 id="DWFormalParameter"> DWFormalParameter </h3>
 <br><b>dw_handle DWENTRY DWFormalParameter( dw_client cli, dw_handle parm_type, dw_loc_handle parm_loc, dw_loc_handle segment,
-const char *name, uint default_value_type, ...&nbsp; );</b>
+ const char *name, uint default_value_type, ...&nbsp; );</b>
 <br><br>Declare a formal parameter to the current function.
 <dl>
 <dt>parm_type
@@ -920,7 +920,7 @@ const char *name, uint default_value_type, ...&nbsp; );</b>
 <dd>The default value is a null-terminated string that is specified as an extra parameter to this<tt> DWFormalParameter</tt>.
 <dt><br>DW_DEFAULT_BLOCK
 <dd>The default value is a constant block of data that is specified by extra &quot;const void *&quot; and &quot;dw_size_t&quot;
-parameters to<tt> DWFormalParameter</tt>.
+ parameters to<tt> DWFormalParameter</tt>.
 </dl>
 <dt><br>...
 <dd>Extra parameters depend on the<tt> default_value_type</tt>.
@@ -931,11 +931,11 @@ parameters to<tt> DWFormalParameter</tt>.
 <h3 id="DWLabel"> DWLabel </h3>
 <br><b>dw_handle DWENTRY DWLabel( dw_client cli, dw_loc_handle segment, const char *name, dw_addr_offset start_scope );</b>
 <br><br>Declare a label inside a subroutine.<tt>&nbsp; start_scope</tt> will usually be 0, but is here for future compatibility.
-&nbsp;A CLIReloc for<tt> DW_W_LABEL</tt> will be made.<tt>&nbsp; segment</tt> if non-null indicates which segment the label
-belongs to.
+&nbsp; A CLIReloc for<tt> DW_W_LABEL</tt> will be made.<tt>&nbsp; segment</tt> if non-null indicates which segment the label
+ belongs to.
 <h3 id="DWVariable"> DWVariable </h3>
 <br><b>dw_handle DWENTRY DWVariable( dw_client cli, dw_handle type, dw_loc_handle loc, dw_handle member_of, dw_loc_handle
-segment, const char *name, dw_addr_offset start_scope, uint flags );</b>
+ segment, const char *name, dw_addr_offset start_scope, uint flags );</b>
 <br><br>Declare a variable.
 <dl>
 <dt>type
@@ -948,12 +948,12 @@ segment, const char *name, dw_addr_offset start_scope, uint flags );</b>
 <dd>If this is non-null then it evaluates to the segment the variable is in.
 <dt><br>flags
 <dd>If<tt> DW_FLAG_GLOBAL</tt> is set then this is a global variable.&nbsp; Otherwise it is a local variable.&nbsp; File static
-variables in C and C++ are considered local variables.&nbsp; If<tt> DW_FLAG_ARTIFICIAL</tt> is set then this is a variable
-that has been created by the compiler.
+ variables in C and C++ are considered local variables.&nbsp; If<tt> DW_FLAG_ARTIFICIAL</tt> is set then this is a variable
+ that has been created by the compiler.
 </dl>
 <h3 id="DWConstant"> DWConstant </h3>
 <br><b>dw_handle DWENTRY DWConstant( dw_client cli, dw_handle type, const void *value, dw_size_t len, dw_handle member_of,
-const char *name, dw_addr_offset start_scope, uint flags );</b>
+ const char *name, dw_addr_offset start_scope, uint flags );</b>
 <br><br>Declare a named constant.
 <dl>
 <dt>type
@@ -964,17 +964,17 @@ const char *name, dw_addr_offset start_scope, uint flags );</b>
 <dd>The length of this constant.&nbsp; If len is 0, then value is considered to be a null-terminated string.
 <dt><br>member_of
 <dd>If this is the definition of a constant member of a structure type, then this is the handle to the structure type.&nbsp; Otherwise
-it is NULL.
+ it is NULL.
 </dl>
 <h3 id="DWAddress"> DWAddress </h3>
 <br><b>void DWENTRY DWAddress( dw_client cli, uint_32 len );</b>
 <br><br>DWARF builds a table of all the addresses attributed to a compilation unit.&nbsp; The client calls this function to
-add addresses to this table.<tt>&nbsp; len</tt> is the length of this address range.&nbsp; The base of the address range is
-filled in by a CLIReloc for<tt> DW_W_ARANGE_ADDR</tt>.
+ add addresses to this table.<tt>&nbsp; len</tt> is the length of this address range.&nbsp; The base of the address range
+ is filled in by a CLIReloc for<tt> DW_W_ARANGE_ADDR</tt>.
 <h3 id="DWPubname"> DWPubname </h3>
 <br><b>void DWENTRY DWPubname( dw_client cli, dw_handle hdl, const char *name );</b>
 <br><br>These are used to speed up the debugger.&nbsp; This should be called for any name that has global scope.<tt>&nbsp;
-hdl</tt> is the handle for the debugging entry that declares/defines the<tt> name</tt>.
+ hdl</tt> is the handle for the debugging entry that declares/defines the<tt> name</tt>.
 <h1 id="Required_Client_Routines"> Required Client Routines </h1>
 <br>The debugging information has several sections indicated by the following enumerated type:
 <dl>
@@ -984,13 +984,13 @@ hdl</tt> is the handle for the debugging entry that declares/defines the<tt> nam
 <dd>This section is called<b><i> .debug_info</i></b> , which stores all the debugging information entries.
 <dt><br>DW_DEBUG_PUBNAMES
 <dd>This section is called<b><i> .debug_pubnames</i></b> , which stores a table consisting of object name information that is
-used in lookup by Name.
+ used in lookup by Name.
 <dt><br>DW_DEBUG_ARANGES
 <dd>This section is called<b><i> .debug_aranges</i></b> , which stores a table consisting of object address information that is
-used in lookup by Address.
+ used in lookup by Address.
 <dt><br>DW_DEBUG_LINE
 <dd>This section is called<b><i> .debug_line</i></b> , which stores the line number information generated for the compilation
-units.
+ units.
 <dt><br>DW_DEBUG_LOC
 <dd>This section is called<b><i> .debug_loc</i></b> , which stores the location lists information.
 <dt><br>DW_DEBUG_ABBREV
@@ -999,16 +999,16 @@ units.
 <dd>This section is called<b><i> .debug_macinfo</i></b> , which stores macro information.
 <dt><br>DW_DEBUG_REF
 <dd>This section is called<b><i> .WATCOM_references</i></b> , which contains information about the symbols of every instructions
-in the source files.
+ in the source files.
 <dt><br>DW_DEBUG_MAX
 <dd>Defined for convenience; it is the number of sections.
 </dl>
 <h2 id="Performance_Considerations"> Performance Considerations </h2>
 <br>The DW library does it's best to try and group CLIWrite operations together into one larger CLIWrite, and to try and avoid
-using CLISeek.&nbsp; But the library does not go out of it's way to provide this massaging of output.&nbsp; The client should
-attempt to buffer the data itself.&nbsp; CLISeek is most often called on the DW_DEBUG_INFO, and the DW_DEBUG_LOC sections.
-&nbsp;The other sections may have one CLISeek performed at the DWFini stage, and the seek will be to the zero offset.&nbsp;
-The client might wish to optimize performance for only the DW_DEBUG_INFO and the DW_DEBUG_LOC sections.
+ using CLISeek.&nbsp; But the library does not go out of it's way to provide this massaging of output.&nbsp; The client should
+ attempt to buffer the data itself.&nbsp; CLISeek is most often called on the DW_DEBUG_INFO, and the DW_DEBUG_LOC sections.
+&nbsp; The other sections may have one CLISeek performed at the DWFini stage, and the seek will be to the zero offset.&nbsp;
+ The client might wish to optimize performance for only the DW_DEBUG_INFO and the DW_DEBUG_LOC sections.
 <h3 id="CLISeek"> CLISeek </h3>
 <br><b>void CLISeek( uint section, long offset, uint mode );</b>
 <br><br>Repositions the pointer in<tt> section</tt> so that subsequent output occurs at the new pointer.
@@ -1028,8 +1028,8 @@ The client might wish to optimize performance for only the DW_DEBUG_INFO and the
 <h3 id="CLIReloc"> CLIReloc </h3>
 <br><b>void CLIReloc( uint section, uint reloc_type, ...&nbsp; );</b>
 <br><br>Even when writing BROWSER information, relocations such as DW_W_LOC_PC may be asked for.&nbsp; This is because the
-DWARF format requires the presence of certain fields to indicate something specific about a record.&nbsp; For example, if
-a subroutine record doesn't have a low pc then it is assumed to be a declaration of the subroutine rather than a definition.
+ DWARF format requires the presence of certain fields to indicate something specific about a record.&nbsp; For example, if
+ a subroutine record doesn't have a low pc then it is assumed to be a declaration of the subroutine rather than a definition.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
@@ -1044,18 +1044,18 @@ a subroutine record doesn't have a low pc then it is assumed to be a declaration
 <dd>Emit a dw_targ_addr.&nbsp; Used by various entry points to get the high pc address of an object.
 <dt><br>DW_W_STATIC
 <dd>Emit a dw_targ_addr.&nbsp; This relocation has an extra parameter of type dw_sym_handle.&nbsp; This parameter is the target
-of the relocation; the offset of the symbol should be generated.&nbsp; This is used any time a location expression involving
-a<tt> DWLocStatic</tt> is generated.
+ of the relocation; the offset of the symbol should be generated.&nbsp; This is used any time a location expression involving
+ a<tt> DWLocStatic</tt> is generated.
 <dt><br>DW_W_SEGMENT
 <dd>Emit a dw_segment.&nbsp; This relocation has an extra parameter of type dw_sym_handle.&nbsp; It indicates that the segment
-portion of the address of the symbol should be generated.&nbsp; This is used any time a location expression involving a<tt>
-DWLocSegment</tt> operation is generated.
+ portion of the address of the symbol should be generated.&nbsp; This is used any time a location expression involving a<tt>
+ DWLocSegment</tt> operation is generated.
 <dt><br>DW_W_LABEL
 <dd>Emit a dw_targ_addr.&nbsp; Used by<tt> DWLabel</tt>.
 <dt><br>DW_W_SECTION_POS
 <dd>Emit a uint_32.&nbsp; This relocation has an extra parameter of type uint called<tt> targ_sect</tt>.<tt>&nbsp; targ_sect</tt>
-parameter is the number of a section for which the current offset is the target of the relocation.&nbsp; The relocation is
-emitted into<tt> section</tt>.
+ parameter is the number of a section for which the current offset is the target of the relocation.&nbsp; The relocation is
+ emitted into<tt> section</tt>.
 <dt><br>DW_W_DEFAULT_FUNCTION
 <dd>Emit a dw_targ_addr.&nbsp; Used by<tt> DWFormalParameter</tt>.
 <dt><br>DW_W_ARANGE_ADDR
@@ -1082,7 +1082,7 @@ emitted into<tt> section</tt>.
 <h3 id="CLIAlloc"> CLIAlloc </h3>
 <br><b>void *CLIAlloc( size_t size );</b>
 <br><br>Allocates a memory block of size<tt> size</tt> for the library and returns its address.&nbsp; This function cannot
-return NULL.
+ return NULL.
 <h3 id="CLIFree"> CLIFree </h3>
 <br><b>void CLIFree( void *blk );</b>
 <br><br>Free the block pointed by<tt> blk</tt>.
@@ -1090,7 +1090,7 @@ return NULL.
 <br><tt>This section needs a major rewrite.</tt>
 <br><br>The example below shows what functions should be called in order to store the debugging information for this C program.
 <br><br>N.B.&nbsp; In this example, for all the CLIWrite() calls, only the section id is accurate.&nbsp; Also for all DWLineNum()
-calls, the advances in machine instruction address are inaccurate.
+ calls, the advances in machine instruction address are inaccurate.
 <br><br>test.c:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 1 #include &lt;stdlib.h&gt;</tt>
@@ -1106,9 +1106,9 @@ calls, the advances in machine instruction address are inaccurate.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cli_id = DWInit( DW_LANG_C89, DW_CM_DEBUGGER, &quot;test.c&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;c:\mydir&quot;, 0x123, 1, CLILoc, CLIType,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;c:\mydir&quot;, 0x123, 1, CLILoc, CLIType,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLIName, CLIWrite, CLIAlloc, CLIFree );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLIName, CLIWrite, CLIAlloc, CLIFree );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Initialize the .debug_line section */</tt>
@@ -1138,7 +1138,7 @@ calls, the advances in machine instruction address are inaccurate.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWLineNum( cli_id, DW_LN_STMT, 1, 1, 4 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a_dw_handle = DWModSym( cli_id, a_cg_handle, DW_SM_VAR,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; DW_SM_GLO|DW_SM_FILE, DW_SM_NULL );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DW_SM_GLO|DW_SM_FILE, DW_SM_NULL );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name = CLIName( a_cg_handle );</tt>
@@ -1155,7 +1155,7 @@ calls, the advances in machine instruction address are inaccurate.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWLocAtom( cli_id, a_cg_handle, DW_LOC_STATIC );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* The actual address will be filled in by the client when</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the debugging information is written to the
-object file.*/</tt>
+ object file.*/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a_loc_hd = DWLocFini( loc_id );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return a_loc_hd;</tt>
 <br><br>Client:
@@ -1165,7 +1165,7 @@ object file.*/</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mod_handle = DWMod( cli_id, DW_FT_CHAR, DW_MOD_NEAR );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nchar_handle = DWModSym( cli_id, nchar_cg_handle,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DW_SM_TYPEDEF, DW_SM_NULL,
-DW_SM_NULL );</tt>
+ DW_SM_NULL );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name = CLIName( nchar_cg_handle );</tt>
@@ -1180,9 +1180,9 @@ DW_SM_NULL );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWLineNum( cli_id, DW_LN_DEFAULT, 1, 1, 23 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pro_handle = DWBegProc( cli_id, DW_SB_NEAR_CALL, DW_FT_VOID,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; ret_loc_hd, DW_LOC_NULL,</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret_loc_hd, DW_LOC_NULL,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; DW_SB_GLOBAL_SUB|DW_SB_FUNC_PROTOTYPE );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DW_SB_GLOBAL_SUB|DW_SB_FUNC_PROTOTYPE );</tt>
 <br><br>In order to get ret_loc_ad:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loc_id = DWLocInit();</tt>
@@ -1191,10 +1191,10 @@ DW_SM_NULL );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in a symbol with some_cg_handle as its handle.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The actual address will be filled in by the</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; client when the debugging information is
-written</tt>
+ written</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to the object file.&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; */</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret_loc_ad = DWLocFini( cli_id );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1212,7 +1212,7 @@ written</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWLineNum( cli_id, DW_LN_STMT, 1, 1, 10 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b_handle = DWModSym( cli_id, b_cg_handle, DW_SM_VAR,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; DW_SM_NULL, DW_SM_LOC|DW_SM_ROUT );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DW_SM_NULL, DW_SM_LOC|DW_SM_ROUT );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loc = CLILoc( b_cg_handle );</tt>
@@ -1227,7 +1227,7 @@ written</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWLocAtom( cli_id, b_cg_handle, DW_LOC_STACK );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* The offset from stack frame base will be filled in by</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the client when the debugging information
-is written</tt>
+ is written</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to the object file.&nbsp;&nbsp; */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b_loc_hd = DWLocFini( loc_id );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return b_loc_hd;</tt>
@@ -1245,7 +1245,7 @@ is written</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWEndProc( cli_id, pro_handle );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; main_handle = DWModSym( cli_id, main_cg_handle, DW_SM_SUB,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; DW_SM_NULL, DW_SM_NULL );</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DW_SM_NULL, DW_SM_NULL );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name = CLIName( main_cg_handle );</tt>
