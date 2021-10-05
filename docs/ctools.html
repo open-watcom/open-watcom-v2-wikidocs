@@ -3940,17 +3940,8 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __MAKEFILES__ = &lt;list of makefiles&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __VERSION__ = &lt;version number&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LOADDLL__= defined if DLL loading supported</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __MSDOS__ =&nbsp; defined if MS/DOS version</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __NT__ = defined if Windows NT version</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __NT386__ = defined if x86 Windows NT version</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __OS2__ = defined if OS/2 version</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __QNX__ = defined if QNX version</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LINUX__ = defined if Linux version</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LINUX386__ = defined if x86 Linux version</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __UNIX__ = defined if QNX or Linux version</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAKE = &lt;name of file containing WMAKE&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #endif</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # clear .EXTENSIONS list</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # clear .EXTENSIONS list</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS:</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # In general,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # set .EXTENSIONS list as follows</tt>
@@ -3961,6 +3952,23 @@
  .cc .for .pas .cob &amp;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .h .hpp .hxx .hh
  .fi .mif .inc</tt>
+<br><br>The conditional definitions are:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __DOS__=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for DOS host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __MSDOS__=&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __OS2__=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for OS/2 host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __RDOS__=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for RDOS host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __NT__=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for any Windows NT host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __NT386__=&nbsp;&nbsp;&nbsp;&nbsp; for x86 Windows NT host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __NTX64__=&nbsp;&nbsp;&nbsp;&nbsp; for x64 Windows NT host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __NTAXP__=&nbsp;&nbsp;&nbsp;&nbsp; for Alpha AXP Windows NT host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __QNX__=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for QNX host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LINUX__=&nbsp;&nbsp;&nbsp;&nbsp; for any Linux host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LINUX386__=&nbsp; for x86 Linux host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LINUXX64__=&nbsp; for x64 Linux host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LINUXPPC__=&nbsp; for PowerPC Linux host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __LINUXMIPS__= for MIPS Linux host version</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; __UNIX__=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for any QNX or Linux host version</tt>
 <br><br>For Microsoft NMAKE compatibility (when you use the &quot;ms&quot; option), the following default definitions are
  established.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -4020,8 +4028,6 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(PASCAL) /c $(PFLAGS) $*.pas</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .rc.res:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(RC) $(RFLAGS) /r $*</tt>
-<br><br>For OS/2, the<tt> __MSDOS__</tt> macro will be replaced by<tt> __OS2__</tt> and for Windows NT, the<tt> __MSDOS__</tt>
- macro will be replaced by<tt> __NT__</tt>.
 <br><br>For UNIX make compatibility (when you use the &quot;u&quot; option), the following default definition is established.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS: .exe .obj .c .y .l .f</tt>
@@ -4060,6 +4066,48 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .l.c:</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(LEX) $(LFLAGS) $&lt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; move lex.yy.c $@</tt>
+<br><br>For POSIX make compatibility (when you use the &quot;ux&quot; option), the following default definition is established.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .EXTENSIONS: .o .obj .c .y .l .a .sh .f</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; AR=ar</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ARFLAGS=-rv</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; YACC=yacc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; YFLAGS=</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LEX=lex</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LFLAGS=</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LDFLAGS=</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CC=owcc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CFLAGS=-O</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FC=fort77</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FFLAGS=-O 1</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .c.o:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(CC) $(CFLAGS) -c $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .f.o:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(FC) $(FFLAGS) -c $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .y.o:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(YACC) $(YFLAGS) $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(CC) $(CFLAGS) -c y.tab.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rm -f y.tab.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mv y.tab.o $@</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .l.o:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(LEX) $(LFLAGS) $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(CC) $(CFLAGS) -c lex.yy.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rm -f lex.yy.c</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mv lex.yy.o $@</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .y.c:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(YACC) $(YFLAGS) $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mv y.tab.c $@</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .l.c:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(LEX) $(LFLAGS) $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mv lex.yy.c $@</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .c.a:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(CC) -c $(CFLAGS) $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(AR) $(ARFLAGS) $@ $*.o</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rm -f $*.o</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; .f.a:</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(FC) -c $(FFLAGS) $&lt;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(AR) $(ARFLAGS) $@ $*.o</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rm -f $*.o</tt>
 <br><br>The &quot;r&quot; option will disable these definitions before processing any makefiles.
 <h4 id="s"> s </h4>
 <br>silent mode - do not print commands before execution
@@ -4108,8 +4156,12 @@
 <dl>
 <dt><b><i>Macro</i></b>
 <dd><b><i>Expansion</i></b>
+<dt><br>__DOS__
+<dd>This macro is defined in the DOS environment.
 <dt><br>__MSDOS__
-<dd>This macro is defined in the MS/DOS environment.
+<dd>This macro is defined in the DOS environment.
+<dt><br>__RDOS__
+<dd>This macro is defined in the RDOS environment.
 <dt><br>__NT__
 <dd>This macro is defined in the Windows NT environment.
 <dt><br>__OS2__
