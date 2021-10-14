@@ -24,7 +24,8 @@
 <dt><br>- M -
 <dd><a href="#Menus">Menus</a>
 <dt><br>- O -
-<dd><a href="#Other_Platform_Considerations">Other Platform Considerations</a>
+<dd><a href="#Open_Watcom_Windows_Programming_Interface_LWPIR">Open Watcom Windows Programming Interface (WPI)</a>
+<br><a href="#Other_Platform_Considerations">Other Platform Considerations</a>
 <br><a href="#OwnerMDrawn_Controls">Owner-Drawn Controls</a>
 <dt><br>- P -
 <dd><a href="#Palettes">Palettes</a>
@@ -36,22 +37,21 @@
 <dt><br>- U -
 <dd><a href="#Using_WPI_to_Draw">Using WPI to Draw</a>
 <dt><br>- W -
-<dd><a href="#WATCOM_Windows_Programming_Interface_LWPIR">WATCOM Windows Programming Interface (WPI)</a>
-<br><a href="#What_is_WPI_">What is WPI?</a>
+<dd><a href="#What_is_WPI_">What is WPI?</a>
 <br><a href="#Window_APIs">Window APIs</a>
 <br><a href="#Window_Creation">Window Creation</a>
 <br><a href="#Window_Functions">Window Functions</a>
 <br><a href="#Window_Procedures">Window Procedures</a>
 </dl>
-<h1 id="WATCOM_Windows_Programming_Interface_LWPIR"> WATCOM Windows Programming Interface (WPI) </h1>
+<h1 id="Open_Watcom_Windows_Programming_Interface_LWPIR"> Open Watcom Windows Programming Interface (WPI) </h1>
 <br>Paul Fast, December 23, 1993
-<br><br>WATCOM Windows Programming Interface (WPI) is a developers tool to aid in porting applications from Microsoft Windows
- to IBM Presentation Manager (PM).&nbsp; The goal in the creation of WPI (pronounced wippee) is to supply programmers with
- a set of macros and library routines which allow them to quickly convert an application which already exists in Windows code
- to PM.&nbsp; It should be mentioned that this will not necessarily give a very efficient PM program; only a working executable
- in short period of time.&nbsp; Using WPI also allows the developer the luxury of having only one copy of the source instead
- of a Windows version and a PM version.&nbsp; The WPI interface has evolved only as functionality is required; future projects
- may use Windows features which require additional enhancements to WPI.
+<br><br>Open Watcom Windows Programming Interface (WPI) is a developers tool to aid in porting applications from Microsoft
+ Windows to IBM Presentation Manager (PM).&nbsp; The goal in the creation of WPI (pronounced wippee) is to supply programmers
+ with a set of macros and library routines which allow them to quickly convert an application which already exists in Windows
+ code to PM.&nbsp; It should be mentioned that this will not necessarily give a very efficient PM program; only a working
+ executable in short period of time.&nbsp; Using WPI also allows the developer the luxury of having only one copy of the source
+ instead of a Windows version and a PM version.&nbsp; The WPI interface has evolved only as functionality is required; future
+ projects may use Windows features which require additional enhancements to WPI.
 <br><br>WPI is explicitly designed to port Windows functionality to OS2/PM (not the other way around).&nbsp; Because of this,
  converted projects may require additional system dependent code to take advantage of native OS/2 features (such as drag and
  drop or notebooks in OS/2).
@@ -66,9 +66,9 @@
 &nbsp; These files will constantly be modified and further macros will no doubt be added as their need arises.&nbsp; Therefore,
  if a particular function is required by the developer and it does not already exist, it is the job of that developer to add
  it to both wpi_win.h and wpi_os2.h.&nbsp; The source code for the library routines are in wpi_win.c and wpi_os2.c.
-<br><br>To distinguish between the Windows and PM platforms, the WATCOM C compiler provides a __OS2_PM__ macro which indicates
- that the program is being compiled for OS2 Presentation Manager.&nbsp; To separate Windows and PM code something like the
- following is needed:
+<br><br>To distinguish between the Windows and PM platforms, the Open Watcom C compiler provides a __OS2_PM__ macro which
+ indicates that the program is being compiled for OS2 Presentation Manager.&nbsp; To separate Windows and PM code something
+ like the following is needed:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #ifdef __OS2_PM__</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // PM code</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #else</tt>
@@ -535,9 +535,13 @@
  the returned value should not be used for pure PM code, but only in WPI code.&nbsp; For example, the return value from _wpi_createcompatiblepres
  is an address to a structure describing the bitmap (this address is defined as a WPI_HANDLE).&nbsp; This return value (the
  WPI_HANDLE) can be passed to WPI functions expecting a bitmap handle, but the return value should not be used in PM specific
- code (because the return value is a WPI_HANDLE and not an HBITMAP).&nbsp; Like HPEN and HBRUSH, bitmaps can be selected into
- memory presentation spaces with the _wpi_selectobject routine and the old bitmap will be allocated and returned from the
- routine.&nbsp; For example:
+ code (because the return value is a WPI_HANDLE and not an HBITMAP).&nbsp; The bitmap data types declared in WPI are as follows:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI Data Type&nbsp;&nbsp; Windows Data Type&nbsp;&nbsp; PM Data Type</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------&nbsp;&nbsp; -----------------&nbsp;&nbsp; ------------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_HBITMAP&nbsp;&nbsp;&nbsp;&nbsp; HBITMAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; WPI_HANDLE</tt>
+<br><br>Like HPEN and HBRUSH, bitmaps can be selected into memory presentation spaces with the _wpi_selectobject routine and
+ the old bitmap will be allocated and returned from the routine.&nbsp; For example:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; oldbitmap = _wpi_selectobject( mempres, hbitmap );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _wpi_selectobject( mempres, oldbitmap );</tt>
@@ -595,8 +599,17 @@
  used whenever copying from a monochrome to a colour bitmap.
 <br><br>A few new types have been declared in wpitypes.h that relate to bitmaps.&nbsp; They are as follows and can be used
  to pass to some of the macros that require different types for Windows and PM:
-<br><br>WPI Data Type Windows Data Type PM Data Type WPI_BITMAP BITMAP PM1632_BITMAPINFO2 WPI_BITMAPINFO BITMAPINFO PM1632_BITMAPINFO2
- WPI_BITMAPINFOHEADER BITMAPINFOHEADER PM1632_BITMAPINFOHEADER2 WPI_BMPBITS LPSTR PBYTE
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI Data Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Windows Data
+ Type&nbsp;&nbsp; PM Data Type</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -----------------
+&nbsp;&nbsp; ------------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_BITMAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ BITMAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PM1632_BITMAPINFOHEADER2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_BITMAPINFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BITMAPINFO&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PM1632_BITMAPINFO2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_BITMAPINFOHEADER&nbsp;&nbsp;&nbsp; BITMAPINFOHEADER&nbsp;&nbsp;&nbsp; PM1632_BITMAPINFOHEADER2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_BMPBITS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LPSTR
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PBYTE</tt>
 <br><br>Since the bitmap structures for 16 bit PM are different than that for 32 bit PM, a file called pm1632.h handles the
  differences (pm1632.h will be discussed later).&nbsp; There are also functions available to retrieve bitmap information:
 <dl>
@@ -676,8 +689,15 @@
 <h2 id="Fonts"> Fonts </h2>
 <br>Fonts can be complicated objects to deal with in PM.&nbsp; PM does not have an HFONT data type nor a LOGFONT data type.
 &nbsp; The font data types declared in WPI are as follows:
-<br><br>WPI Data Type Windows Data Type PM Data Type HFONT HFONT LONG WPI_FONT HFONTF ATTRS* WPI_LOGFONT LOGFONT FONTMETRICS
- WPI_TEXTMETRIC TEXTMETRIC FONTMETRICS
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI Data Type&nbsp;&nbsp; Windows Data Type&nbsp;&nbsp; PM Data Type</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------&nbsp;&nbsp; -----------------&nbsp;&nbsp; ------------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; HFONT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HFONT&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LONG</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_FONT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HFONTF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ATTRS*</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_LOGFONT&nbsp;&nbsp;&nbsp;&nbsp; LOGFONT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; FONTMETRICS</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WPI_TEXTMETRIC&nbsp; TEXTMETRIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FONTMETRICS</tt>
 <br><br>In Windows, one can create a font and once a font handle is acquired, use that font handle as a parameter (or any
  other kind of variable) to be selected into a device context for text output.&nbsp; However, creating a font in PM requires
  a presentation space and once that presentation space is released, the created font is gone.&nbsp; So, a division arises
@@ -740,14 +760,27 @@
 <br>Since many of the windows related functions differ only in name between the two platforms, WPI allows the user to use
  the Windows name when calling the API.&nbsp; The following is a list of some of the window related macros and the names available
  to the user:
-<br><br>DefWindowProc(hwnd, msg, wp, lp) _wpi_defwindowproc(hwnd, msg, wp, lp) Takes default window procedure action.&nbsp;
- ShowWindow(hwnd, state) _wpi_showwindow(hwnd, state) Shows the window according the given state.&nbsp; Windows predefined
- states are used.&nbsp; GetClientRect(hwnd, &amp;wrect) _wpi_getclientrect(hwnd, &amp;wrect) Gets the rectangle dimensions
- of the given window.&nbsp; The function fills the WPI_RECT variable.&nbsp; DestroyWindow(hwnd) _wpi_destroywindow(hwnd) Destroys
- the given window.&nbsp; SetWindowText(hwnd, str) _wpi_setwindowtext(hwnd, str) Sets the caption of the given window.&nbsp;
- MessageBox(hpar, txt, title, style) _wpi_messagebox(hpar, txt, title, style)Displays a message box as it does in Windows.
-&nbsp; Most of the MB_* styles have been converted, using the Windows naming convention.&nbsp; GetMenu(hwnd) _wpi_getmenu(hwnd)
- Gets the menu of the window.&nbsp; For PM this window handle must be a frame window.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DefWindowProc(hwnd, msg, wp, lp)&nbsp;&nbsp;&nbsp; _wpi_defwindowproc(hwnd, msg, wp,
+ lp)</tt>
+<br><br>Takes default window procedure action.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ShowWindow(hwnd, state)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; _wpi_showwindow(hwnd, state)</tt>
+<br><br>Shows the window according the given state.&nbsp; Windows predefined states are used.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GetClientRect(hwnd, &amp;wrect)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getclientrect(hwnd,
+ &amp;wrect)</tt>
+<br><br>Gets the rectangle dimensions of the given window.&nbsp; The function fills the WPI_RECT variable.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DestroyWindow(hwnd)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_destroywindow(hwnd)</tt>
+<br><br>Destroys the given window.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SetWindowText(hwnd, str)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; _wpi_setwindowtext(hwnd, str)</tt>
+<br><br>Sets the caption of the given window.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MessageBox(hpar, txt, title, style) _wpi_messagebox(hpar, txt, title, style)</tt>
+<br><br>Displays a message box as it does in Windows.&nbsp; Most of the MB_* styles have been converted, using the Windows
+ naming convention.
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; GetMenu(hwnd)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_getmenu(hwnd)</tt>
+<br><br>Gets the menu of the window.&nbsp; For PM this window handle must be a frame window.
 <br><br>The user may decide whether or not to keep the Windows names or use the available WPI names.
 <h2 id="Window_Creation"> Window Creation </h2>
 <br>Window creation is somewhat different in PM than Windows.&nbsp; The user may wish to use separate PM code from their Windows
@@ -782,7 +815,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _wpi_endpaint( hwnd, pres, &amp;wrect );</tt>
 <h2 id="Resources"> Resources </h2>
-<br>WATCOM does not currently have a resource compiler for PM hence requiring the use of the OS2 toolkit resource compiler.
+<br>Open Watcom has its own resource compiler, so Open Watcom does not require the use of the OS2 toolkit resource compiler.
 &nbsp; RC files in PM look similar to those of Windows.&nbsp; The user should look at the PM help files or an available example
  in order to convert their RC files.
 <h2 id="Dialogs"> Dialogs </h2>
