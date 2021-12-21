@@ -2332,6 +2332,10 @@
 <br><i>n</i> specifies the size of the heap.&nbsp; The default heap size is 0 bytes.&nbsp; The maximum value of<i> n</i> is
  65536 (64K) for 16-bit applications and 4G for 32-bit applications which is the maximum size of a physical segment.&nbsp;
  Actually, for a particular application, the maximum value of<i> n</i> is 64K or 4G less the size of group &quot;DGROUP&quot;.
+<dl>
+<dt>Win32:
+<dd>This parameter is ignored for DLL (zero is used).
+</dl>
 <h2 id="The_HELP_Option"> The HELP Option </h2>
 <br>Formats:&nbsp; NetWare 
 <br><br>The &quot;HELP&quot; option specifies the file name of an internationalized help file whose language corresponds to
@@ -4414,6 +4418,10 @@
  size using the &quot;STACK&quot; option.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; option stack=8192</tt>
+<dl>
+<dt>Note:
+<dd>This parameter is ignored for DLL (zero is used).
+</dl>
 <h2 id="The_STANDARD_Option"> The STANDARD Option </h2>
 <br>Formats:&nbsp; DOS 
 <br><br>The &quot;STANDARD&quot; option instructs the Open Watcom Linker to use the standard overlay manager (as opposed to
