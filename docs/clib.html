@@ -18781,16 +18781,17 @@
 <dd>
 <br>The following program would print out each line in a text file &quot;test.txt&quot; .
 <br><br><tt>#include &lt;stdio.h&gt;</tt>
-<br><br><tt>void main()</tt>
+<br><br><tt>int main( void )</tt>
 <br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char *line;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; size_t n;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char *line = NULL;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; size_t n = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; FILE *fp;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; fp = fopen(&quot;test.txt&quot;, &quot;r&quot;);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; while(getdelim(&amp;line, &amp;n, '\n', fp) &gt;= 0) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;&gt; %s&quot;, line);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; fclose(fp);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; return( 0 );</tt>
 <br><tt>&nbsp; }</tt>
 </dl>
 <dl>
@@ -19735,16 +19736,17 @@
 <dd>
 <br>The following program would print out each line in a text file &quot;test.txt&quot;
 <br><br><tt>#include &lt;stdio.h&gt;</tt>
-<br><br><tt>void main()</tt>
+<br><br><tt>int main( void )</tt>
 <br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; char *line;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; size_t n;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; char *line = NULL;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; size_t n = 0;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; FILE *fp;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp; fp = fopen(&quot;test.txt&quot;, &quot;r&quot;);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; while(getline(&amp;line, &amp;n, fp) &gt;= 0) {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;&gt; %s&quot;, line);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; }</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; fclose(fp);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; return( 0 );</tt>
 <br><tt>&nbsp; }</tt>
 </dl>
 <dl>
