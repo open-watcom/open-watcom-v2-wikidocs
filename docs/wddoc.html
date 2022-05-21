@@ -1990,13 +1990,13 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</tt>
 <br><br>The<tt> file_type</tt> field indicates the type of the input file.&nbsp; File types can be:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_EXE&nbsp; =&nbsp; 0</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_DBG&nbsp; =&nbsp; 1</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_PRS&nbsp; =&nbsp; 2</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_FILE_HLP&nbsp; =&nbsp; 3</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_EXE&nbsp; =&nbsp; 0</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_DBG&nbsp; =&nbsp; 1</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_PRS&nbsp; =&nbsp; 2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_HLP&nbsp; =&nbsp; 3</tt>
 <br><br>This is so the trap file can search different paths for the different types of files.&nbsp; For example, under QNX,
- the PATH environment variable is searched for the FILE_EXE type, and the WD_PATH environment variable is searched for the
- others.&nbsp; The<tt> file_name</tt> field contains the file name to be converted.
+ the PATH environment variable is searched for the TF_TYPE_EXE type, and the WD_PATH environment variable is searched for
+ the others.&nbsp; The<tt> file_name</tt> field contains the file name to be converted.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
