@@ -1870,17 +1870,17 @@
 <br><br>The name of the file to be opened is given by<tt> name</tt>.&nbsp; The<tt> mode</tt> field stores the access mode
  of the file.&nbsp; The following bits are defined:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_READ</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_WRITE</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_CREATE</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; TF_EXEC</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; not used</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; not used</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; not used</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; not used</tt>
-<br><br>For read/write mode, turn both<tt> TF_READ</tt> and<tt> TF_WRITE</tt> bits on.&nbsp; The<tt> TF_EXEC</tt> bit should
- only be used together with<tt> TF_CREATE</tt> and indicates that the created file needs executable permission (if relevant
- on the target platform).
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; DIG_OPEN_READ</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; DIG_OPEN_WRITE</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; DIG_OPEN_CREATE</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; DIG_OPEN_TRUNC</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; DIG_OPEN_APPEND</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; reserved</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; reserved</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Bit 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; reserved</tt>
+<br><br>For read/write mode, turn both<tt> DIG_OPEN_READ</tt> and<tt> DIG_OPEN_WRITE</tt> bits on.&nbsp; The<tt> DIG_OPEN_TRUNC</tt>
+ bit should only be used together with<tt> DIG_OPEN_CREATE</tt> and indicates that the created file needs executable permission
+ (if relevant on the target platform).
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -1898,9 +1898,9 @@
 <br><br>The handle of the file is given by the<tt> handle</tt> field.&nbsp; The<tt> mode</tt> field stores the seek mode.
 &nbsp; There are three seek modes:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_SEEK_ORG = 0&nbsp; - Relative to the start of file</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_SEEK_CUR = 1&nbsp; - Relative to the current file position</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_SEEK_END = 2&nbsp; - Rrelative to the end of file</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_SEEK_ORG = 0&nbsp; - Relative to the start of file</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_SEEK_CUR = 1&nbsp; - Relative to the current file position</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_SEEK_END = 2&nbsp; - Rrelative to the end of file</tt>
 <br><br>The position to seek to is in the<tt> pos</tt> field.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1990,13 +1990,13 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</tt>
 <br><br>The<tt> file_type</tt> field indicates the type of the input file.&nbsp; File types can be:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_EXE&nbsp; =&nbsp; 0</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_DBG&nbsp; =&nbsp; 1</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_PRS&nbsp; =&nbsp; 2</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TF_TYPE_HLP&nbsp; =&nbsp; 3</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_FILETYPE_EXE&nbsp; =&nbsp; 0</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_FILETYPE_DBG&nbsp; =&nbsp; 1</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_FILETYPE_PRS&nbsp; =&nbsp; 2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_FILETYPE_HLP&nbsp; =&nbsp; 3</tt>
 <br><br>This is so the trap file can search different paths for the different types of files.&nbsp; For example, under QNX,
- the PATH environment variable is searched for the TF_TYPE_EXE type, and the WD_PATH environment variable is searched for
- the others.&nbsp; The<tt> file_name</tt> field contains the file name to be converted.
+ the PATH environment variable is searched for the DIG_FILETYPE_EXE type, and the WD_PATH environment variable is searched
+ for the others.&nbsp; The<tt> file_name</tt> field contains the file name to be converted.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
