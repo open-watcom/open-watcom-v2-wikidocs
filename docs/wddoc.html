@@ -2589,33 +2589,51 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h2 id="Capabilities_requests"> Capabilities requests </h2>
 <h3 id="REQ_CAPABILITIES_GET_8B_BP"> REQ_CAPABILITIES_GET_8B_BP </h3>
-<br>Request message:
+<br>Request to get information if 8-byte breakpoints are supported on the remote system.
+<br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
+<br><br>The<tt> status</tt> contains true if 8-byte breakpoints are supported on the remote system otherwise<tt> status</tt>
+ contains false.
 <h3 id="REQ_CAPABILITIES_SET_8B_BP"> REQ_CAPABILITIES_SET_8B_BP </h3>
-<br>Request message:
+<br>Request to set if 8-byte breakpoints are active on the remote system.
+<br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
+<br><br>The input<tt> status</tt> contains if 8-byte breakpoints are required to be active on the remote system.
+<br><br>The output<tt> status</tt> contains status if 8-byte breakpoints are currently active on the remote system.
 <h3 id="REQ_CAPABILITIES_GET_EXACT_BP"> REQ_CAPABILITIES_GET_EXACT_BP </h3>
-<br>Request message:
+<br>Request to get information if exact breakpoints are supported on the remote system.
+<br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
+<br><br>The<tt> status</tt> contains true if exact breakpoints are supported on the remote system otherwise<tt> status</tt>
+ contains false.
 <h3 id="REQ_CAPABILITIES_SET_EXACT_BP"> REQ_CAPABILITIES_SET_EXACT_BP </h3>
-<br>Request message:
+<br>Request to set if exact breakpoints are active on the remote system.
+<br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
+<br><br>The input<tt> status</tt> contains if exact breakpoints are required to be active on the remote system.
+<br><br>The output<tt> status</tt> contains status if exact breakpoints are currently active on the remote system.
 <h1 id="System_Dependent_Aspects"> System Dependent Aspects </h1>
 <br>Every environment has a different method of loading the code for the trap file and locating the TrapInit, TrapRequest,
  and TrapFini routines.&nbsp; This section descibes how the Open Watcom debugger performs these operations for the various
