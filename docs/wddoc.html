@@ -61,9 +61,7 @@
 <br><a href="#REQ_ASYNC_REMOVE_BREAK">REQ_ASYNC_REMOVE_BREAK</a>
 <br><a href="#REQ_ASYNC_STEP">REQ_ASYNC_STEP</a>
 <br><a href="#REQ_ASYNC_STOP">REQ_ASYNC_STOP</a>
-<br><a href="#REQ_CAPABILITIES_GET_8B_BP">REQ_CAPABILITIES_GET_8B_BP</a>
 <br><a href="#REQ_CAPABILITIES_GET_EXACT_BP">REQ_CAPABILITIES_GET_EXACT_BP</a>
-<br><a href="#REQ_CAPABILITIES_SET_8B_BP">REQ_CAPABILITIES_SET_8B_BP</a>
 <br><a href="#REQ_CAPABILITIES_SET_EXACT_BP">REQ_CAPABILITIES_SET_EXACT_BP</a>
 <br><a href="#REQ_CHECKSUM_MEM">REQ_CHECKSUM_MEM</a>
 <br><a href="#REQ_CLEAR_BREAK">REQ_CLEAR_BREAK</a>
@@ -1620,7 +1618,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; watch_addr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size</tt>
 <br><br>The address of the watchpoint is given by the<tt> watch_addr</tt> field.&nbsp; The<tt> size</tt> field gives the number
- of bytes to be watched.
+ of bytes to be watched (1, 2, 4 or 8 bytes).
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -1637,7 +1635,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; watch_addr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size</tt>
 <br><br>The address of the watch point is given by the<tt> watch_addr</tt> field.&nbsp; The<tt> size</tt> field gives the
- size of the watch point.
+ size of the watch point (1, 2, 4 or 8 bytes).
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NONE</tt>
@@ -2588,29 +2586,6 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h2 id="Capabilities_requests"> Capabilities requests </h2>
-<h3 id="REQ_CAPABILITIES_GET_8B_BP"> REQ_CAPABILITIES_GET_8B_BP </h3>
-<br>Request to get information if 8-byte breakpoints are supported on the remote system.
-<br><br>Request message:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
-<br><br>Return message:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
-<br><br>The<tt> status</tt> contains true if 8-byte breakpoints are supported on the remote system otherwise<tt> status</tt>
- contains false.
-<h3 id="REQ_CAPABILITIES_SET_8B_BP"> REQ_CAPABILITIES_SET_8B_BP </h3>
-<br>Request to set if 8-byte breakpoints are active on the remote system.
-<br><br>Request message:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
-<br><br>Return message:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
-<br><br>The input<tt> status</tt> contains if 8-byte breakpoints are required to be active on the remote system.
-<br><br>The output<tt> status</tt> contains status if 8-byte breakpoints are currently active on the remote system.
 <h3 id="REQ_CAPABILITIES_GET_EXACT_BP"> REQ_CAPABILITIES_GET_EXACT_BP </h3>
 <br>Request to get information if exact breakpoints are supported on the remote system.
 <br><br>Request message:
