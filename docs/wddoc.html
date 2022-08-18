@@ -1346,19 +1346,19 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; osminor;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; os;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; huge_shift;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mad_handle&nbsp; mad;</tt>
-<br><br>The<tt> mad</tt> field specifies the MAD (Machine Architecture Description) in use and determines how the other fields
- will be interpreted.&nbsp; Currently the following MADs are used:
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; arch;</tt>
+<br><br>The<tt> arch</tt> field specifies the architecture in use and determines how the other fields will be interpreted.
+&nbsp; Currently the following architectures are used:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAD_X86&nbsp; - Intel Architecture IA-32 compatible</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAD_X64&nbsp; - Intel Architecture X64 compatible</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAD_AXP&nbsp; - Alpha Architecture</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAD_PPC&nbsp; - PowerPC Architecture</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAD_MIPS - MIPS Architecture</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAD_MSJ&nbsp; - Java Virtual Machine (Microsoft)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; MAD_JVM&nbsp; - Java Virtual Machine (Sun)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_ARCH_X86&nbsp; - Intel Architecture IA-32 compatible</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_ARCH_X64&nbsp; - Intel Architecture X64 compatible</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_ARCH_AXP&nbsp; - Alpha Architecture</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_ARCH_PPC&nbsp; - PowerPC Architecture</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_ARCH_MIPS - MIPS Architecture</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_ARCH_MSJ&nbsp; - Java Virtual Machine (Microsoft)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_ARCH_JVM&nbsp; - Java Virtual Machine (Sun)</tt>
 <br><br>The<tt> cpu</tt> fields returns the type of the remote CPU.&nbsp; The size of that field is unsigned_8.&nbsp; Possible
- CPU types for MAD_X86 are:
+ CPU types for DIG_ARCH_X86 are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bits 0-3</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X86_86&nbsp; = 0&nbsp;&nbsp; - 8086</tt>
@@ -1373,7 +1373,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bit&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - XMM registers</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bits 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - unused</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bits 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - unused</tt>
-<br><br>The<tt> fpu</tt> fields tells the type of FPU.&nbsp; The size of the field is unsigned_8.&nbsp; FPU types for MAD_X86
+<br><br>The<tt> fpu</tt> fields tells the type of FPU.&nbsp; The size of the field is unsigned_8.&nbsp; FPU types for DIG_ARCH_X86
  include:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_EMU = -1&nbsp;&nbsp;&nbsp;&nbsp; - Software emulated FPU</tt>
@@ -1389,22 +1389,22 @@
  the remote machine.&nbsp; The type of operating system can be found in<tt> os</tt> field.&nbsp; The size of this field is
  unsigned_8.&nbsp; The OS can be:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_IDUNNO&nbsp;&nbsp;&nbsp; =&nbsp; 0&nbsp;&nbsp; - Unknown operating system</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_DOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 1&nbsp;&nbsp; - DOS</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_OS2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 2&nbsp;&nbsp; - OS/2</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_PHAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 3&nbsp;&nbsp; - Phar Lap 386 DOS Extender</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_ECLIPSE&nbsp;&nbsp; =&nbsp; 4&nbsp;&nbsp; - Eclipse 386 DOS Extender (obsolete)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_NW386&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 5&nbsp;&nbsp; - NetWare 386</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_QNX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 6&nbsp;&nbsp; - QNX 4.x</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_RATIONAL&nbsp; =&nbsp; 7&nbsp;&nbsp; - DOS/4G or compatible</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_WINDOWS&nbsp;&nbsp; =&nbsp; 8&nbsp;&nbsp; - Windows 3.x</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_PENPOINT&nbsp; =&nbsp; 9&nbsp;&nbsp; - PenPoint (obsolete)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_NT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 10&nbsp;&nbsp; - Win32</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_AUTOCAD&nbsp;&nbsp; = 11&nbsp;&nbsp; - ADS/ADI development (obsolete)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_NEUTRINO&nbsp; = 12&nbsp;&nbsp; - QNX 6.x</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_LINUX&nbsp;&nbsp;&nbsp;&nbsp; = 13&nbsp;&nbsp; - Linux</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_FREEBSD&nbsp;&nbsp; = 14&nbsp;&nbsp; - FreeBSD</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; OS_WIN64&nbsp;&nbsp;&nbsp;&nbsp; = 15&nbsp;&nbsp; - Windows 64-bit</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_IDUNNO&nbsp;&nbsp;&nbsp; =&nbsp; 0&nbsp;&nbsp; - Unknown operating system</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_DOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 1&nbsp;&nbsp; - DOS</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_OS2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 2&nbsp;&nbsp; - OS/2</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_PHAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 3&nbsp;&nbsp; - Phar Lap 386 DOS Extender</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_ECLIPSE&nbsp;&nbsp; =&nbsp; 4&nbsp;&nbsp; - Eclipse 386 DOS Extender (obsolete)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_NW386&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 5&nbsp;&nbsp; - NetWare 386</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_QNX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 6&nbsp;&nbsp; - QNX 4.x</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_RATIONAL&nbsp; =&nbsp; 7&nbsp;&nbsp; - DOS/4G or compatible</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_WINDOWS&nbsp;&nbsp; =&nbsp; 8&nbsp;&nbsp; - Windows 3.x</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_PENPOINT&nbsp; =&nbsp; 9&nbsp;&nbsp; - PenPoint (obsolete)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_NT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 10&nbsp;&nbsp; - Win32</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_AUTOCAD&nbsp;&nbsp; = 11&nbsp;&nbsp; - ADS/ADI development (obsolete)</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_NEUTRINO&nbsp; = 12&nbsp;&nbsp; - QNX 6.x</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_LINUX&nbsp;&nbsp;&nbsp;&nbsp; = 13&nbsp;&nbsp; - Linux</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_FREEBSD&nbsp;&nbsp; = 14&nbsp;&nbsp; - FreeBSD</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; DIG_OS_WIN64&nbsp;&nbsp;&nbsp;&nbsp; = 15&nbsp;&nbsp; - Windows 64-bit</tt>
 <br><br>The<tt> huge_shift</tt> field is used to determine the shift needed for huge arithmetic in that system.&nbsp; It stores
  the number of left shifts required in order to calculate the next segment correctly.&nbsp; It is 12 for real mode programs.
 &nbsp; The value in a protect mode environment must be obtained from the OS of the debuggee machine.&nbsp; This field is only
