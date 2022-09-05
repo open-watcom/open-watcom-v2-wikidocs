@@ -229,7 +229,7 @@
 <br><a href="#_finite">_finite</a>
 <br><a href="#_floodfill">_floodfill, _floodfill_w</a>
 <br><a href="#floor">floor</a>
-<br><a href="#flushall">flushall</a>
+<br><a href="#flushall">flushall, _flushall</a>
 <br><a href="#fma">fma</a>
 <br><a href="#fmax">fmax</a>
 <br><a href="#fmin">fmin</a>
@@ -2250,7 +2250,7 @@
 <dd>get current file position
 <dt><br><a href="#fgets">fgets</a>
 <dd>get a string
-<dt><br><a href="#flushall">flushall</a>
+<dt><br><a href="#flushall">_flushall</a>
 <dd>flush output buffers for all streams
 <dt><br><a href="#fopen">fopen</a>
 <dd>open a stream
@@ -14466,7 +14466,7 @@
 </dl>
 <dl>
 <dt>See Also:
-<dd><a href="#fgetc">fgetc</a>, <a href="#fgets">fgets</a>, <a href="#flushall">flushall</a>, <a href="#fopen">fopen</a>, <a href="#getc">getc</a>,
+<dd><a href="#fgetc">fgetc</a>, <a href="#fgets">fgets</a>, <a href="#flushall">_flushall</a>, <a href="#fopen">fopen</a>, <a href="#getc">getc</a>,
  <a href="#gets">gets</a>, <a href="#setbuf">setbuf</a>, <a href="#setvbuf">setvbuf</a>, <a href="#ungetc">ungetc</a>
 </dl>
 <dl>
@@ -15441,12 +15441,13 @@
 <dt>Systems:
 <dd>Math
 </dl>
-<h2 id="flushall"> flushall </h2>
+<h2 id="flushall"> flushall, _flushall </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;stdio.h&gt;</tt>
 <br><tt>int flushall( void );</tt>
+<br><tt>int _flushall( void );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -15470,7 +15471,7 @@
 <br><br><tt>void main()</tt>
 <br><tt>&nbsp; {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;The number of open files is %d\n&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flushall() );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _flushall() );</tt>
 <br><tt>&nbsp; }</tt>
 <br><br>produces the following:
 <br><br><tt>The number of open files is 4</tt>
@@ -15481,7 +15482,8 @@
 </dl>
 <dl>
 <dt>Systems:
-<dd>All, Linux, RDOS, Netware
+<dd><tt> flushall - All, Linux, RDOS, Netware</tt>
+<br><tt>_flushall - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="fma"> fma </h2>
 <dl>
@@ -15863,7 +15865,7 @@
 <dl>
 <dt>c
 <dd>The letter &quot;c&quot; may be added to any of the above sequences in the second or later position to indicate that any output
- is committed by the operating system whenever a flush ( <a href="#fflush">fflush</a> or <a href="#flushall">flushall</a>)
+ is committed by the operating system whenever a flush ( <a href="#fflush">fflush</a> or <a href="#flushall">_flushall</a>)
  is done.
 <br>This option is not supported under Netware.
 <dt><br>n
@@ -16001,7 +16003,7 @@
 <dl>
 <dt>c
 <dd>The letter &quot;c&quot; may be added to any of the above sequences in the second or later position to indicate that any output
- is committed by the operating system whenever a flush ( <a href="#fflush">fflush</a> or <a href="#flushall">flushall</a>)
+ is committed by the operating system whenever a flush ( <a href="#fflush">fflush</a> or <a href="#flushall">_flushall</a>)
  is done.
 <br>This option is not supported under Netware.
 <dt><br>n
