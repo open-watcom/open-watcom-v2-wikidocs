@@ -229,7 +229,7 @@
 <br><a href="#_finite">_finite</a>
 <br><a href="#_floodfill">_floodfill, _floodfill_w</a>
 <br><a href="#floor">floor</a>
-<br><a href="#flushall">flushall, _flushall</a>
+<br><a href="#flushall">_flushall, flushall</a>
 <br><a href="#fma">fma</a>
 <br><a href="#fmax">fmax</a>
 <br><a href="#fmin">fmin</a>
@@ -15441,23 +15441,25 @@
 <dt>Systems:
 <dd>Math
 </dl>
-<h2 id="flushall"> flushall, _flushall </h2>
+<h2 id="flushall"> _flushall, flushall </h2>
 <dl>
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;stdio.h&gt;</tt>
-<br><tt>int flushall( void );</tt>
 <br><tt>int _flushall( void );</tt>
+<br><br><tt>** deprecated **</tt>
+<br><tt>int flushall( void );</tt>
 </dl>
 <dl>
 <dt>Description:
-<dd>The<tt> flushall</tt> function clears all buffers associated with input streams and writes any buffers associated with output
+<dd>The<tt> _flushall</tt> function clears all buffers associated with input streams and writes any buffers associated with output
  streams.&nbsp; A subsequent read operation on an input file causes new data to be read from the associated file or device.
-<br>Calling the<tt> flushall</tt> function is equivalent to calling the <a href="#fflush">fflush</a> for all open stream files.
+<br>Calling the<tt> _flushall</tt> function is equivalent to calling the <a href="#fflush">fflush</a> for all open stream
+ files.&nbsp; The<tt> flushall</tt> function is deprecated, use <a href="#flushall">_flushall</a> instead.
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> flushall</tt> function returns the number of open streams.&nbsp; When an output error occurs while writing to a file,
+<dd>The<tt> _flushall</tt> function returns the number of open streams.&nbsp; When an output error occurs while writing to a file,
  the <tt> errno</tt> global variable will be set.
 </dl>
 <dl>
@@ -15482,8 +15484,8 @@
 </dl>
 <dl>
 <dt>Systems:
-<dd><tt> flushall - All, Linux, RDOS, Netware</tt>
-<br><tt>_flushall - All, Linux, RDOS, Netware</tt>
+<dd><tt> _flushall - All, Linux, RDOS, Netware</tt>
+<br><tt>flushall - All, Linux, RDOS, Netware</tt>
 </dl>
 <h2 id="fma"> fma </h2>
 <dl>
