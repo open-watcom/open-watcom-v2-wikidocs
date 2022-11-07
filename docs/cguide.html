@@ -1108,7 +1108,7 @@
 <dt><br>zs
 <dd>syntax check only (see <a href="#zs">zs</a>)
 <dt><br>zt&lt;number&gt;
-<dd>set data threshold (default is zt32767) (see <a href="#ztXnumberY">zt&lt;number&gt;</a>)
+<dd>set data threshold (default is 32767 for 16-bit and 2147483647 for 32-bit) (see <a href="#ztXnumberY">zt&lt;number&gt;</a>)
 <dt><br>zu
 <dd>do not assume that SS contains segment of DGROUP (see <a href="#zu">zu</a>)
 <dt><br>zv
@@ -2632,10 +2632,11 @@
  so that all objects larger than this size are placed in another (far) data segment.&nbsp; For example, the option &quot;zt100&quot;
  causes all data objects larger than 100 bytes in size to be implicitly declared as <tt> far</tt> and grouped in other data
  segments.
-<br>The default data threshold value is 32767.&nbsp; Thus, by default, all objects greater than 32767 bytes in size are implicitly
- declared as <tt> far</tt> and will be placed in other data segments.&nbsp; If the &quot;zt&quot; option is specified without
- a size, the data threshold value is 256.&nbsp; The largest value that can be specified is 32767 (a larger value will result
- in 256 being selected).
+<br>The default data threshold value is 32767 for 16-bit target and 2147483647 for 32-bit target.&nbsp; Thus, by default,
+ all objects greater than default size are implicitly declared as <tt> far</tt> and will be placed in other data segments.
+&nbsp; If the &quot;zt&quot; option is specified without a size, the data threshold value is 256.&nbsp; The largest value
+ that can be specified is 32767 for 16-bit target and 2147483647 for 32-bit target (a larger value will result in 256 being
+ selected).
 <br><br>If the &quot;zt&quot; option is used to compile any module in a program, then you must compile all the other modules
  in the program with the same option (and value).
 <br><br>Care must be exercised when declaring the size of objects in different modules.&nbsp; Consider the following declarations
@@ -2650,8 +2651,8 @@
 &nbsp; In the second module, the array would be placed in the default data segment since<tt> Array&#91;10&#93;</tt> is smaller
  than the data threshold.&nbsp; The extra code required to reference the object in another data segment would not be generated.
 <br><br>Note that this problem can also occur even when the &quot;zt&quot; option is not used (i.e., for objects greater than
- 32767 bytes in size).&nbsp; There are two solutions to this problem:&nbsp; (1) be consistent when declaring an object's size,
- or, (2) do not specify the size in data reference declarations.
+ 32767 bytes for 16-bit target and 2147483647 bytes for 32-bit target in size).&nbsp; There are two solutions to this problem:
+&nbsp; (1) be consistent when declaring an object's size, or, (2) do not specify the size in data reference declarations.
 <h4 id="zv"> zv </h4>
 <br>(C++ only) Enable virtual function removal optimization.
 <h3 id="80x86_Floating_Point"> 80x86 Floating Point </h3>
