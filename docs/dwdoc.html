@@ -15,7 +15,7 @@
 <dd><a href="#Data_Types">Data Types</a>
 <br><a href="#Debugging_Information">Debugging Information</a>
 <br><a href="#DWAddBitField">DWAddBitField</a>
-<br><a href="#DWAddConstant">DWAddConstant</a>
+<br><a href="#DWAddEnumerationConstant">DWAddEnumerationConstant</a>
 <br><a href="#DWAddField">DWAddField</a>
 <br><a href="#DWAddFriend">DWAddFriend</a>
 <br><a href="#DWAddInheritance">DWAddInheritance</a>
@@ -131,8 +131,8 @@
 <dt><br>dw_column_delta
 <dd>Type that can hold the largest possible difference between two adjacent column numbers passed to<tt> DWReference</tt>.
 <dt><br>dw_size_t
-<dd>Used for sizes of various things such as block constants (i.e.&nbsp; for DWAddConstant) and the<tt> size</tt> parameter to<tt>
- CLIWrite</tt>.
+<dd>Used for sizes of various things such as block constants (i.e.&nbsp; for DWAddEnumerationConstant) and the<tt> size</tt> parameter
+ to<tt> CLIWrite</tt>.
 <dt><br>dw_uconst
 <dd>An unsigned integer type that can hold the largest possible unsigned integer constant.
 <dt><br>dw_sconst
@@ -770,11 +770,11 @@
 <br><b>dw_handle DWENTRY DWBeginEnumeration( dw_client cli, dw_size_t byte_size, const char *name, dw_addr_offset scope, uint
  flags );</b>
 <br><br>Begin the definition of an enumerated type.<tt>&nbsp; byte_size</tt> is the number of bytes required to hold an instance
- of this enumeration.&nbsp; This call must be followed by calls to<tt> DWAddConstant</tt> and<tt> DWEndEnumeration</tt>.&nbsp;
- No other DW calls may be made before the call to<tt> DWEndEnumeration</tt>.&nbsp; The DWARF standard requires that the constants
- be defined in<tt> reverse</tt> order to which they appear in the source program.
-<h3 id="DWAddConstant"> DWAddConstant </h3>
-<br><b>void DWENTRY DWAddConstant( dw_client cli, dw_uconst value, const char *name );</b>
+ of this enumeration.&nbsp; This call must be followed by calls to<tt> DWAddEnumerationConstant</tt> and<tt> DWEndEnumeration</tt>.
+&nbsp; No other DW calls may be made before the call to<tt> DWEndEnumeration</tt>.&nbsp; The DWARF standard requires that
+ the constants be defined in<tt> reverse</tt> order to which they appear in the source program.
+<h3 id="DWAddEnumerationConstant"> DWAddEnumerationConstant </h3>
+<br><b>void DWENTRY DWAddEnumerationConstant( dw_client cli, dw_uconst value, const char *name );</b>
 <br><br>Add the constant<tt> value</tt> (that is<tt> byte_size</tt> bytes large as determined by the parameter to<tt> DWBeginEnumeration</tt>
  ); with the name<tt> name</tt> to the current enumeration.
 <h3 id="DWEndEnumeration"> DWEndEnumeration </h3>
