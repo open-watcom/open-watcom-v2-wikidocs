@@ -36,49 +36,49 @@
 <dl>
 <dt><b><i>Switch</i></b>
 <dd><b><i>Definition</i></b>
-<dt><br>NO_OPTIMIZATION
+<dt><br>CGSW_NO_OPTIMIZATION
 <dd>Turn off optimizations.
-<dt><br>DBG_NUMBERS
+<dt><br>CGSW_DBG_NUMBERS
 <dd>Generate line number debugging information.
-<dt><br>FORTRAN_ALIASING
+<dt><br>CGSW_FORTRAN_ALIASING
 <dd>Assume pointers are only used for parameter passing.
-<dt><br>DBG_DF
+<dt><br>CGSW_DBG_DF
 <dd>Generate debugging information in DWARF format.
-<dt><br>DBG_CV
-<dd>Generate debugging information in CodeView format.&nbsp; If neither DBG_DF nor DBG_CV is set, debugging information (if any)
- is generated in the Watcom format.
-<dt><br>RELAX_ALIAS
+<dt><br>CGSW_DBG_CV
+<dd>Generate debugging information in CodeView format.&nbsp; If neither CGSW_DBG_DF nor CGSW_DBG_CV is set, debugging information
+ (if any) is generated in the Watcom format.
+<dt><br>CGSW_RELAX_ALIAS
 <dd>Assume that a static/extern variable and a pointer to that same variable are not used within the same routine.
-<dt><br>DBG_LOCALS
+<dt><br>CGSW_DBG_LOCALS
 <dd>Generate local symbol information for use by a debugger.
-<dt><br>DBG_TYPES
+<dt><br>CGSW_DBG_TYPES
 <dd>Generate typing information for use by a debugger.
-<dt><br>LOOP_UNROLLING
+<dt><br>CGSW_LOOP_UNROLLING
 <dd>Turn on loop unrolling.
-<dt><br>LOOP_OPTIMIZATION
+<dt><br>CGSW_LOOP_OPTIMIZATION
 <dd>Turn on loop optimizations.
-<dt><br>INS_SCHEDULING
+<dt><br>CGSW_INS_SCHEDULING
 <dd>Turn on instruction scheduling.
-<dt><br>MEMORY_LOW_FAILS
+<dt><br>CGSW_MEMORY_LOW_FAILS
 <dd>Allow the code generator to run out of memory without being able to generate object code (allows the 386 compiler to use EBP
  as a cache register).
-<dt><br>FP_UNSTABLE_OPTIMIZATION
+<dt><br>CGSW_FP_UNSTABLE_OPTIMIZATION
 <dd>Allow the code generator to perform optimizations that are mathematically correct, but are numerically unstable.&nbsp; E.g.
 &nbsp; converting division by a constant to a multiplication by the reciprocal.
-<dt><br>NULL_DEREF_OK
+<dt><br>CGSW_NULL_DEREF_OK
 <dd>NULL points to valid memory and may be dereferenced.
-<dt><br>FPU_ROUNDING_INLINE
+<dt><br>CGSW_FPU_ROUNDING_INLINE
 <dd>Inline floating-point value rounding (actually truncation) routine when converting floating-point values to integers.
-<dt><br>FPU_ROUNDING_OMIT
+<dt><br>CGSW_FPU_ROUNDING_OMIT
 <dd>Omit floating-point value rounding entirely and use FPU default.&nbsp; Results will not be ISO C compliant.
-<dt><br>ECHO_API_CALLS
+<dt><br>CGSW_ECHO_API_CALLS
 <dd>Log each call to the code generator with its arguments and return value.&nbsp; Only available in debug builds.
-<dt><br>OBJ_ELF
+<dt><br>CGSW_OBJ_ELF
 <dd>Emit ELF object files.
-<dt><br>OBJ_COFF
+<dt><br>CGSW_OBJ_COFF
 <dd>Emit COFF object files.&nbsp; For Intel compilers, OMF object files will be emitted in the absence of either switch.
-<dt><br>OBJ_ENDIAN_BIG
-<dd>Emit big-endian object files (COFF or ELF).&nbsp; If OBJ_ENDIAN_BIG is not set, little-endian objects will be generated.
+<dt><br>CGSW_OBJ_ENDIAN_BIG
+<dd>Emit big-endian object files (COFF or ELF).&nbsp; If CGSW_OBJ_ENDIAN_BIG is not set, little-endian objects will be generated.
 </dl>
 <dl>
 <dt><b><i>x86 Switch</i></b>
@@ -2205,10 +2205,10 @@
 <li>CPU_MASK
 <li>C_FRONT_END
 <li>DBG_FWD_TYPE
-<li>DBG_LOCALS
+<li>CGSW_DBG_LOCALS
 <li>DBG_NIL_TYPE
-<li>DBG_NUMBERS
-<li>DBG_TYPES
+<li>CGSW_DBG_NUMBERS
+<li>CGSW_DBG_TYPES
 <li>DLL_EXPORT
 <li>DO_FLOATING_FIXUPS
 <li>DO_SYM_FIXUPS
@@ -2229,7 +2229,7 @@
 <li>FLOATING_FS
 <li>FLOATING_GS
 <li>FLOATING_SS
-<li>FORTRAN_ALIASING
+<li>CGSW_FORTRAN_ALIASING
 <li>FORTRAN_FRONT_END
 <li>FPU_MASK
 <li>FRONT_END_MASK
@@ -2277,7 +2277,7 @@
 <li>HW_TurnOn
 <li>II_REVISION
 <li>INDEXED_GLOBALS
-<li>INS_SCHEDULING
+<li>CGSW_INS_SCHEDULING
 <li>INTERNAL_DBG_OUTPUT
 <li>INTERRUPT
 <li>I_MATH_INLINE
@@ -2287,7 +2287,7 @@
 <li>LAST_TARG_CGSWITCH
 <li>LOAD_DS_ON_CALL
 <li>LOAD_DS_ON_ENTRY
-<li>LOOP_OPTIMIZATION
+<li>CGSW_LOOP_OPTIMIZATION
 <li>MAKE_CALL_INLINE
 <li>MAX_POSSIBLE_REG
 <li>MIN_OP
@@ -2298,7 +2298,7 @@
 <li>NO_FLOAT_REG_RETURNS
 <li>NO_MEMORY_CHANGED
 <li>NO_MEMORY_READ
-<li>NO_OPTIMIZATION
+<li>CGSW_NO_OPTIMIZATION
 <li>NO_STRUCT_REG_RETURNS
 <li>NULL
 <li>NULLCHAR
@@ -2308,7 +2308,7 @@
 <li>O_LAST_FLOW
 <li>PARMS_BY_ADDRESS
 <li>PROLOG_HOOKS
-<li>RELAX_ALIAS
+<li>CGSW_RELAX_ALIAS
 <li>REVERSE_PARMS
 <li>ROUTINE_RETURN
 <li>SEG_EXTRN_FAR
