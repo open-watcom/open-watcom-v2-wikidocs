@@ -737,7 +737,7 @@
 <h2 id="E1055_Unable_to_open___s_"> E1055 Unable to open '%s' </h2>
 <br>The file specified in an<tt> #include</tt> directive could not be located.&nbsp; Make sure that the file name is spelled
  correctly, or that the appropriate path for the file is included in the list of paths specified in the<tt> INCLUDE</tt> environment
- variable or the &quot;-I&quot; option on the command line.
+ variable or the &quot;-I&quot; option on the command line.&nbsp; :ERROR.&nbsp; 1
 <h2 id="E1056_Too_many_parameters_given_for_macro___s_"> E1056 Too many parameters given for macro '%s' </h2>
 <br>You have supplied too many parameters for the specified macro.
 <h2 id="E1057_Modifiers_disagree_with_previous_definition_of___s_"> E1057 Modifiers disagree with previous definition of '%s' </h2>
@@ -770,7 +770,7 @@
 <h2 id="E1067_Cannot_take_address_of_variable_with_storage_class__register_"> E1067 Cannot take address of variable with storage class 'register' </h2>
 <br>If you want to take the address of a local variable, change the storage class from <b><i> register</i></b> to <b><i> auto</i></b>
 <h2 id="E1068_Variable___s__already_initialized"> E1068 Variable '%s' already initialized </h2>
-<br>The specified variable has already been statically initialized.
+<br>The specified variable has already been statically initialized.&nbsp; :ERROR.&nbsp; 1
 <h2 id="E1069_String_literal_not_terminated_before_end_of_line"> E1069 String literal not terminated before end of line </h2>
 <br>A string literal is enclosed by double quote &quot; characters.
 <br><br>The compiler did not find a closing double quote &quot; or line continuation character \ before the end of a line
@@ -1006,7 +1006,7 @@
 <h2 id="E1149_Expecting_constant_but_found___s_"> E1149 Expecting constant but found '%s' </h2>
 <br>The #line directive must be followed by a constant indicating the desired line number.
 <h2 id="E1150_Expecting_B_filenameB__but_found___s_"> E1150 Expecting \&quot;filename\&quot; but found '%s' </h2>
-<br>The second argument of the #line directive must be a filename enclosed in quotes.
+<br>The second argument of the #line directive must be a filename enclosed in quotes.&nbsp; :ERROR.&nbsp; 1
 <h2 id="E1151_Parameter_count_does_not_agree_with_previous_definition"> E1151 Parameter count does not agree with previous definition </h2>
 <br>You have either not enough parameters or too many parameters in a call to a function.&nbsp; If the function is supposed
  to have a variable number of parameters, then you are missing the &quot;, ...&quot; in the function prototype.
@@ -1068,15 +1068,16 @@
  &quot;X&quot; requires two initializers not three.
 <h2 id="E1176_Parameter__d__pointer_type_mismatch"> E1176 Parameter %d, pointer type mismatch </h2>
 <br>You have two pointers that either point to different objects, or the pointers are of different size, or they have different
- modifiers.
+ modifiers.&nbsp; :ERROR.&nbsp; 3
 <h2 id="E1177_Modifier_repeated_in_declaration"> E1177 Modifier repeated in declaration </h2>
 <br>You have repeated the use of a modifier like &quot;const&quot; (an error) or &quot;far&quot; (a warning) in a declaration.
+&nbsp; :ERROR.&nbsp; 1
 <h2 id="E1178_Type_qualifier_mismatch"> E1178 Type qualifier mismatch </h2>
 <br>You have two pointers that have different &quot;const&quot; or &quot;volatile&quot; qualifiers.
 <h2 id="E1179_Parameter__d__type_qualifier_mismatch"> E1179 Parameter %d, type qualifier mismatch </h2>
-<br>You have two pointers that have different const or &quot;volatile&quot; qualifiers.
+<br>You have two pointers that have different const or &quot;volatile&quot; qualifiers.&nbsp; :ERROR.&nbsp; 1
 <h2 id="E1180_Sign_specifier_mismatch"> E1180 Sign specifier mismatch </h2>
-<br>You have two pointers that point to types that have different sign specifiers.
+<br>You have two pointers that point to types that have different sign specifiers.&nbsp; :ERROR.&nbsp; 1
 <h2 id="E1181_Parameter__d__sign_specifier_mismatch"> E1181 Parameter %d, sign specifier mismatch </h2>
 <br>You have two pointers that point to types that have different sign specifiers.
 <h2 id="E1182_Missing_BB_for_string_literal"> E1182 Missing \\ for string literal </h2>
