@@ -36,109 +36,109 @@
 <dl>
 <dt><b><i>Switch</i></b>
 <dd><b><i>Definition</i></b>
-<dt><br>CGSW_NO_OPTIMIZATION
+<dt><br>CGSW_GEN_NO_OPTIMIZATION
 <dd>Turn off optimizations.
-<dt><br>CGSW_DBG_NUMBERS
+<dt><br>CGSW_GEN_DBG_NUMBERS
 <dd>Generate line number debugging information.
-<dt><br>CGSW_FORTRAN_ALIASING
+<dt><br>CGSW_GEN_FORTRAN_ALIASING
 <dd>Assume pointers are only used for parameter passing.
-<dt><br>CGSW_DBG_DF
+<dt><br>CGSW_GEN_DBG_DF
 <dd>Generate debugging information in DWARF format.
-<dt><br>CGSW_DBG_CV
-<dd>Generate debugging information in CodeView format.&nbsp; If neither CGSW_DBG_DF nor CGSW_DBG_CV is set, debugging information
- (if any) is generated in the Watcom format.
-<dt><br>CGSW_RELAX_ALIAS
+<dt><br>CGSW_GEN_DBG_CV
+<dd>Generate debugging information in CodeView format.&nbsp; If neither CGSW_GEN_DBG_DF nor CGSW_GEN_DBG_CV is set, debugging
+ information (if any) is generated in the Watcom format.
+<dt><br>CGSW_GEN_RELAX_ALIAS
 <dd>Assume that a static/extern variable and a pointer to that same variable are not used within the same routine.
-<dt><br>CGSW_DBG_LOCALS
+<dt><br>CGSW_GEN_DBG_LOCALS
 <dd>Generate local symbol information for use by a debugger.
-<dt><br>CGSW_DBG_TYPES
+<dt><br>CGSW_GEN_DBG_TYPES
 <dd>Generate typing information for use by a debugger.
-<dt><br>CGSW_LOOP_UNROLLING
+<dt><br>CGSW_GEN_LOOP_UNROLLING
 <dd>Turn on loop unrolling.
-<dt><br>CGSW_LOOP_OPTIMIZATION
+<dt><br>CGSW_GEN_LOOP_OPTIMIZATION
 <dd>Turn on loop optimizations.
-<dt><br>CGSW_INS_SCHEDULING
+<dt><br>CGSW_GEN_INS_SCHEDULING
 <dd>Turn on instruction scheduling.
-<dt><br>CGSW_MEMORY_LOW_FAILS
+<dt><br>CGSW_GEN_MEMORY_LOW_FAILS
 <dd>Allow the code generator to run out of memory without being able to generate object code (allows the 386 compiler to use EBP
  as a cache register).
-<dt><br>CGSW_FP_UNSTABLE_OPTIMIZATION
+<dt><br>CGSW_GEN_FP_UNSTABLE_OPTIMIZATION
 <dd>Allow the code generator to perform optimizations that are mathematically correct, but are numerically unstable.&nbsp; E.g.
 &nbsp; converting division by a constant to a multiplication by the reciprocal.
-<dt><br>CGSW_NULL_DEREF_OK
+<dt><br>CGSW_GEN_NULL_DEREF_OK
 <dd>NULL points to valid memory and may be dereferenced.
-<dt><br>CGSW_FPU_ROUNDING_INLINE
+<dt><br>CGSW_GEN_FPU_ROUNDING_INLINE
 <dd>Inline floating-point value rounding (actually truncation) routine when converting floating-point values to integers.
-<dt><br>CGSW_FPU_ROUNDING_OMIT
+<dt><br>CGSW_GEN_FPU_ROUNDING_OMIT
 <dd>Omit floating-point value rounding entirely and use FPU default.&nbsp; Results will not be ISO C compliant.
-<dt><br>CGSW_ECHO_API_CALLS
+<dt><br>CGSW_GEN_ECHO_API_CALLS
 <dd>Log each call to the code generator with its arguments and return value.&nbsp; Only available in debug builds.
-<dt><br>CGSW_OBJ_ELF
+<dt><br>CGSW_GEN_OBJ_ELF
 <dd>Emit ELF object files.
-<dt><br>CGSW_OBJ_COFF
+<dt><br>CGSW_GEN_OBJ_COFF
 <dd>Emit COFF object files.&nbsp; For Intel compilers, OMF object files will be emitted in the absence of either switch.
-<dt><br>CGSW_OBJ_ENDIAN_BIG
-<dd>Emit big-endian object files (COFF or ELF).&nbsp; If CGSW_OBJ_ENDIAN_BIG is not set, little-endian objects will be generated.
+<dt><br>CGSW_GEN_OBJ_ENDIAN_BIG
+<dd>Emit big-endian object files (COFF or ELF).&nbsp; If CGSW_GEN_OBJ_ENDIAN_BIG is not set, little-endian objects will be generated.
 </dl>
 <dl>
 <dt><b><i>x86 Switch</i></b>
 <dd><b><i>Definition</i></b>
-<dt><br>I_MATH_INLINE
+<dt><br>CGSW_GEN_I_MATH_INLINE
 <dd>Do not check arguments for operators like O_SQRT.&nbsp; This allows the compiler to use some specialty x87 instructions.
-<dt><br>EZ_OMF
+<dt><br>CGSW_X86_EZ_OMF
 <dd>Generate Phar Lap EZ-OMF object files.
-<dt><br>BIG_DATA
+<dt><br>CGSW_X86_BIG_DATA
 <dd>Use segmented pointers (16:16 or 16:32).&nbsp; This defines TY_POINTER to be equivalent to TY_HUGE_POINTER.
-<dt><br>BIG_CODE
+<dt><br>CGSW_X86_BIG_CODE
 <dd>Use inter segment (far) call and return instructions.
-<dt><br>CHEAP_POINTER
-<dd>Assume far objects are addressable by one segment value.&nbsp; This must be used in conjunction with BIG_DATA.&nbsp; It defines
- TY_POINTER to be equivalent to TY_FAR_POINTER.
-<dt><br>FLAT_MODEL
+<dt><br>CGSW_X86_CHEAP_POINTER
+<dd>Assume far objects are addressable by one segment value.&nbsp; This must be used in conjunction with CGSW_X86_BIG_DATA.&nbsp;
+ It defines TY_POINTER to be equivalent to TY_FAR_POINTER.
+<dt><br>CGSW_X86_FLAT_MODEL
 <dd>Assume all segment registers address the same base memory.
-<dt><br>FLOATING_FS
+<dt><br>CGSW_X86_FLOATING_FS
 <dd>Does FS float (or is it pegged to DGROUP).
-<dt><br>FLOATING_GS
+<dt><br>CGSW_X86_FLOATING_GS
 <dd>Does GS float (or is it pegged to DGROUP).
-<dt><br>FLOATING_ES
+<dt><br>CGSW_X86_FLOATING_ES
 <dd>Does ES float (or is it pegged to DGROUP).
-<dt><br>FLOATING_SS
+<dt><br>CGSW_X86_FLOATING_SS
 <dd>Does SS float (or is it pegged to DGROUP).
-<dt><br>FLOATING_DS
+<dt><br>CGSW_X86_FLOATING_DS
 <dd>Does DS float (or is it pegged to DGROUP).
-<dt><br>USE_32
+<dt><br>CGSW_X86_USE_32
 <dd>Generate code into a use32 segment (versus use16).
-<dt><br>INDEXED_GLOBALS
+<dt><br>CGSW_X86_INDEXED_GLOBALS
 <dd>Generate all global and static variable references as an offset past EBX.
-<dt><br>WINDOWS
+<dt><br>CGSW_X86_WINDOWS
 <dd>Generate windows prolog/epilog sequences for all routines.
-<dt><br>CHEAP_WINDOWS
+<dt><br>CGSW_X86_CHEAP_WINDOWS
 <dd>Generate windows prolog/epilog sequences assuming that call backs functions are defined as __export.
-<dt><br>NO_CALL_RET_TRANSFORM
+<dt><br>CGSW_GEN_NO_CALL_RET_TRANSFORM
 <dd>Do not change a CALL followed by a RET into a JMP.&nbsp; This is used for some older overlay managers that cannot handle a
  JMP to an overlay.
-<dt><br>CONST_IN_CODE
+<dt><br>CGSW_X86_CONST_IN_CODE
 <dd>Generate all constant data into the code segment.&nbsp; This only applies to the internal code generator data, such as floating
  point constants.&nbsp; The front end decides where its data goes using BESetSeg().
-<dt><br>NEED_STACK_FRAME
+<dt><br>CGSW_X86_NEED_STACK_FRAME
 <dd>Generate a traceable stack frame.&nbsp; The first instructions will be<b> INC BP</b> if the routine uses a far return instruction,
  followed by<b> PUSH BP</b> and<b> MOV BP,SP</b>.&nbsp; (ESP and EBP for 386 targets).
-<dt><br>LOAD_DS_DIRECTLY
+<dt><br>CGSW_X86_LOAD_DS_DIRECTLY
 <dd>Generate code to load DS directly.&nbsp; By default, a call to __GETDS routine is generated.
-<dt><br>GEN_FWAIT_386
+<dt><br>CGSW_X86_GEN_FWAIT_386
 <dd>Generate FWAIT instructions on 386 and later CPUs.&nbsp; The 386 never needs FWAIT for data synchronization, but FWAIT may
  still be needed for accurate exception reporting.
 </dl>
 <dl>
 <dt><b><i>RISC Switch</i></b>
 <dd><b><i>Definition</i></b>
-<dt><br>ASM_OUTPUT
+<dt><br>CGSW_RISC_ASM_OUTPUT
 <dd>Print final pseudo-assembly on the console.&nbsp; Debug builds only.
-<dt><br>OWL_LOGGING
+<dt><br>CGSW_RISC_OWL_LOGGING
 <dd>Log calls to the Object Writer Library
-<dt><br>STACK_INIT
+<dt><br>CGSW_RISC_STACK_INIT
 <dd>Pre-initialize stack variables to a known bit pattern.
-<dt><br>EXCEPT_FILTER_USED
+<dt><br>CGSW_RISC_EXCEPT_FILTER_USED
 <dd>Set when SEH (Structured Exception Handling) is used.
 </dl>
 <br>The supported proc_revision CPU values are:
@@ -1381,9 +1381,9 @@
 <h1 id="Front_End_Routines"> Front End Routines </h1>
 <h2 id="void_FEGenProcL_cg_sym_handle_sym_R"> void FEGenProc( cg_sym_handle sym ) </h2>
 <br>This routine will be called when the back end is generating a tree and encounters a function call having the<b> call_class</b>
- MAKE_CALL_INLINE.&nbsp; The front end must save its current state and start generating code for<b> sym</b>.&nbsp; FEGenProc
- calls may be nested if the code generator encounters an inline within the code for an inline function.&nbsp; The front end
- should maintain a state stack.&nbsp; It is up to the front end to prevent infinite recursion.
+ FECALL_GEN_MAKE_CALL_INLINE.&nbsp; The front end must save its current state and start generating code for<b> sym</b>.&nbsp;
+ FEGenProc calls may be nested if the code generator encounters an inline within the code for an inline function.&nbsp; The
+ front end should maintain a state stack.&nbsp; It is up to the front end to prevent infinite recursion.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
@@ -1591,61 +1591,62 @@
 <dl>
 <dt><b><i>Parameters</i></b>
 <dd><b><i>Return Value</i></b>
-<dt><br>( cg_sym_handle, AUX_LOOKUP )
+<dt><br>( cg_sym_handle, FEINF_AUX_LOOKUP )
 <dd>aux_handle - given a cg_sym_handle, return an aux_handle.
-<dt><br>( aux_handle, CALL_BYTES )
+<dt><br>( aux_handle, FEINF_CALL_BYTES )
 <dd>byte_seq * - A pointer to bytes to be generated instead of a call, or NULL if a call is to be generated.
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct byte_seq {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; length;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; data&#91; 1 &#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } byte_seq;</tt>
-<dt><br>( aux_handle, CALL_CLASS )
+<dt><br>( aux_handle, FEINF_CALL_CLASS )
 <dd>call_class * - returns call_class of the given aux_handle.&nbsp; See definitions below.
-<dt><br>( short, FREE_SEGMENT )
+<dt><br>( short, FEINF_FREE_SEGMENT )
 <dd>short - A free segment value which is free memory for the code generator to use.&nbsp; The first word at segment:0 is the
  size of the free memory in bytes.&nbsp; (DOS real mode host only)
-<dt><br>( NULL, OBJECT_FILE_NAME )
+<dt><br>( NULL, FEINF_OBJECT_FILE_NAME )
 <dd>char * - The name of the object file to be generated.&nbsp; 
-<dt><br>( aux_handle, PARM_REGS )
+<dt><br>( aux_handle, FEINF_PARM_REGS )
 <dd>hw_reg_set&#91;&#93; - The set of register to be used as parameters.
-<dt><br>( aux_handle, RETURN_REG )
-<dd>hw_reg_set * - The return register.&nbsp; This is only called if the routine is declared to have the SPECIAL_RETURN call_class.
-<dt><br>( NULL, REVISION_NUMBER )
+<dt><br>( aux_handle, FEINF_RETURN_REG )
+<dd>hw_reg_set * - The return register.&nbsp; This is only called if the routine is declared to have the FEINF_SPECIAL_RETURN
+ call_class.
+<dt><br>( NULL, FEINF_REVISION_NUMBER )
 <dd>int - Front end revision number.&nbsp; Must return II_REVISION.
-<dt><br>( aux_handle, SAVE_REGS )
+<dt><br>( aux_handle, FEINF_SAVE_REGS )
 <dd>hw_reg_set * - Registers which are preserved by the routine.
-<dt><br>( cg_sym_handle, SHADOW_SYMBOL )
+<dt><br>( cg_sym_handle, FEINF_SHADOW_SYMBOL )
 <dd>cg_sym_handle - An alternate handle for a symbol.&nbsp; Required for FORTRAN.&nbsp; Usually implemented by turning on the
  LSB of a pointer or MSB of an integer.
-<dt><br>( NULL, SOURCE_NAME )
+<dt><br>( NULL, FEINF_SOURCE_NAME )
 <dd>char * - The name of the source file to be put into the object file.
-<dt><br>( cg_sym_handle, TEMP_LOC_NAME )
+<dt><br>( cg_sym_handle, FEINF_TEMP_LOC_NAME )
 <dd>Return one of TEMP_LOC_NO, TEMP_LOC_YES, TEMP_LOC_QUIT.&nbsp; After the back end has assigned stack locations to those temporaries
  which were not placed in registers, it begins to call FEAuxInfo with this request and passes in the cg_sym_handle for each
- of those temporaries.&nbsp; If the front end responds with TEMP_LOC_QUIT the back end will stop making TEMP_LOC_NAME requests.
-&nbsp; If the front end responds with TEMP_LOC_YES the back end will then perform a TEMP_LOC_TELL request (see next).&nbsp;
- If the front end returns TEMP_LOC_NO the back end moves onto the next cg_sym_handle in its list.
-<dt><br>( int, TEMP_LOC_TELL )
+ of those temporaries.&nbsp; If the front end responds with TEMP_LOC_QUIT the back end will stop making FEINF_TEMP_LOC_NAME
+ requests.&nbsp; If the front end responds with TEMP_LOC_YES the back end will then perform a FEINF_TEMP_LOC_TELL request
+ (see next).&nbsp; If the front end returns TEMP_LOC_NO the back end moves onto the next cg_sym_handle in its list.
+<dt><br>( int, FEINF_TEMP_LOC_TELL )
 <dd>Returns nothing.&nbsp; The 'int' value passed in is the relative position on the stack for the temporary identified by the
- cg_sym_handle passed in from the previous TEMP_LOC_NAME.&nbsp; The value for an individual temporary has no meaning, but
- the difference between two of the values is the number of bytes between the addresses of the temporaries on the stack.
-<dt><br>( void *, NEXT_DEPENDENCY )
+ cg_sym_handle passed in from the previous FEINF_TEMP_LOC_NAME.&nbsp; The value for an individual temporary has no meaning,
+ but the difference between two of the values is the number of bytes between the addresses of the temporaries on the stack.
+<dt><br>( void *, FEINF_NEXT_DEPENDENCY )
 <dd>Returns the handle of the next dependency file for which information is available.&nbsp; To start the list off, the back end
  passes in NULL for the dependency file handle.
-<dt><br>( void *, DEPENDENCY_TIMESTAMP )
-<dd>Given the dependency file handle from the last NEXT_DEPENDENCY request, return pointer to an unsigned long containing a timestamp
- value for the dependency file.
-<dt><br>( void *, DEPENDENCY_NAME )
-<dd>Given the dependency file handle from the last NEXT_DEPENDENCY request, return a pointer to a string containing the name for
- the dependency file.
-<dt><br>( NULL, SOURCE_LANGUAGE )
+<dt><br>( void *, FEINF_DEPENDENCY_TIMESTAMP )
+<dd>Given the dependency file handle from the last FEINF_NEXT_DEPENDENCY request, return pointer to an unsigned long containing
+ a timestamp value for the dependency file.
+<dt><br>( void *, FEINF_DEPENDENCY_NAME )
+<dd>Given the dependency file handle from the last FEINF_NEXT_DEPENDENCY request, return a pointer to a string containing the
+ name for the dependency file.
+<dt><br>( NULL, FEINF_SOURCE_LANGUAGE )
 <dd>Returns a pointer to a string which identifies the source language of the pointer.&nbsp; E.g.&nbsp; &quot;C&quot; for C, &quot;FORTRAN&quot;
  for FORTRAN, &quot;CPP&quot; for C++.
-<dt><br>( cg_sym_handle, DEFAULT_IMPORT_RESOLVE )
+<dt><br>( cg_sym_handle, FEINF_DEFAULT_IMPORT_RESOLVE )
 <dd>Only called for imported symbols.&nbsp; Returns a cg_sym_handle for another imported symbol which the reference should be
- resolved to if certain conditions are met (see IMPORT_TYPE request).&nbsp; If NULL or the original cg_sym_handle is returned,
- there is no default import resolution symbol.
-<dt><br>( int, UNROLL_COUNT )
+ resolved to if certain conditions are met (see FEINF_IMPORT_TYPE request).&nbsp; If NULL or the original cg_sym_handle is
+ returned, there is no default import resolution symbol.
+<dt><br>( int, FEINF_UNROLL_COUNT )
 <dd>Returns a user-specified unroll count, or 0 if the user did not specify an unroll count.&nbsp; The parameter is the nesting
  level of the loop for which the request is being made.&nbsp; Loops which are not contained inside of other loops are nesting
  level 1.&nbsp; If this function returns a non-zero value, the loop in question will be unrolled that many times (there will
@@ -1654,63 +1655,63 @@
 <dl>
 <dt><b><i>x86 Parameters</i></b>
 <dd><b><i>Return value</i></b>
-<dt><br>( NULL, CODE_GROUP )
+<dt><br>( NULL, FEINF_CODE_GROUP )
 <dd>char * - The name of the code group.
-<dt><br>( aux_handle, STRETURN_REG )
-<dd>hw_reg_set * - The register which points to a structure return value.&nbsp; Only called if the routine has the SPECIAL_STRUCT_RETURN
+<dt><br>( aux_handle, FEINF_STRETURN_REG )
+<dd>hw_reg_set * - The register which points to a structure return value.&nbsp; Only called if the routine has the FEINF_SPECIAL_STRUCT_RETURN
  attribute.
-<dt><br>( void *, NEXT_IMPORT )
+<dt><br>( void *, FEINF_NEXT_IMPORT )
 <dd>void * (See notes at end) - A handle for the next symbol to generate a reference to in the object file.
-<dt><br>( void*, IMPORT_NAME )
+<dt><br>( void*, FEINF_IMPORT_NAME )
 <dd>char * - The EXTDEF name to generate given a handle
-<dt><br>( void *, NEXT_IMPORT_S )
+<dt><br>( void *, FEINF_NEXT_IMPORT_S )
 <dd>void * (See notes at end) - A handle for the next symbol to generate a reference to in the object file.
-<dt><br>( void*, IMPORT_NAME_S )
+<dt><br>( void*, FEINF_IMPORT_NAME_S )
 <dd>Returns a cg_sym_handle.&nbsp; The EXTDEF name symbol reference to generate given a handle.
-<dt><br>( void*, NEXT_LIBRARY )
+<dt><br>( void*, FEINF_NEXT_LIBRARY )
 <dd>void * (See notes at end) - Handle for the next library required
-<dt><br>( void*, LIBRARY_NAME )
+<dt><br>( void*, FEINF_LIBRARY_NAME )
 <dd>char * - The library name to generate given a handle
-<dt><br>( NULL, DATA_GROUP )
+<dt><br>( NULL, FEINF_DATA_GROUP )
 <dd>char * - Used to name DGROUP exactly.&nbsp; NULL means use no group at all.
-<dt><br>( segment_id, CLASS_NAME )
+<dt><br>( segment_id, FEINF_CLASS_NAME )
 <dd>NULL - Used to name the class of a segment.
-<dt><br>( NULL, USED_8087 )
+<dt><br>( NULL, FEINF_USED_8087 )
 <dd>NULL - Indicate that 8087 instructions were generated.
-<dt><br>( NULL, STACK_SIZE_8087 )
+<dt><br>( NULL, FEINF_STACK_SIZE_8087 )
 <dd>int - How many 8087 registers are reserved for stack.
-<dt><br>( NULL, CODE_LABEL_ALIGNMENT )
+<dt><br>( NULL, FEINF_CODE_LABEL_ALIGNMENT )
 <dd>char * - An array x, such that x&#91;i&#93; is the label alignment requirements for labels nested within i loops.
-<dt><br>( NULL, PROEPI_DATA_SIZE )
+<dt><br>( NULL, FEINF_PROEPI_DATA_SIZE )
 <dd>int - How much stack is reserved for the prolog hook routine.
-<dt><br>( cg_sym_handle, IMPORT_TYPE )
-<dd>Returns IMPORT_IS_WEAK, IMPORT_IS_LAZY, IMPORT_IS_CONDITIONAL.&nbsp; If the DEFAULT_IMPORT_RESOLVE request returned a default
- resolution symbol the back end then performs an IMPORT_TYPE request to determine the type of the resolution.&nbsp; IMPORT_IS_WEAK
- generates a weak import (the symbol is not searched for in libraries).&nbsp; IMPORT_IS_LAZY generates a lazy import (the
- symbol is searched for in libraries).&nbsp; IMPORT_IS_CONDITIONAL is used for eliminating unused virtual functions.&nbsp;
- The default symbol resolution is used if none of the conditional symbols are referenced/defined by the program.&nbsp; The
- back end is informed of the list of conditional symbols by the following three aux requests.&nbsp; IMPORT_IS_CONDITIONAL_PURE
- is used for eliminating unused pure virtual functions.
-<dt><br>( cg_sym_handle, CONDITIONAL_IMPORT )
+<dt><br>( cg_sym_handle, FEINF_IMPORT_TYPE )
+<dd>Returns IMPORT_IS_WEAK, IMPORT_IS_LAZY, IMPORT_IS_CONDITIONAL or IMPORT_IS_CONDITIONAL_PURE.&nbsp; If the FEINF_DEFAULT_IMPORT_RESOLVE
+ request returned a default resolution symbol the back end then performs an FEINF_IMPORT_TYPE request to determine the type
+ of the resolution.&nbsp; IMPORT_IS_WEAK generates a weak import (the symbol is not searched for in libraries).&nbsp; IMPORT_IS_LAZY
+ generates a lazy import (the symbol is searched for in libraries).&nbsp; IMPORT_IS_CONDITIONAL is used for eliminating unused
+ virtual functions.&nbsp; The default symbol resolution is used if none of the conditional symbols are referenced/defined
+ by the program.&nbsp; The back end is informed of the list of conditional symbols by the following three aux requests.&nbsp;
+ IMPORT_IS_CONDITIONAL_PURE is used for eliminating unused pure virtual functions.
+<dt><br>( cg_sym_handle, FEINF_CONDITIONAL_IMPORT )
 <dd>Returns void *.&nbsp; Once the back end determines that it has a conditional import, it performs this request to get a conditional
  list handle which is the head of the list of conditional symbols.
-<dt><br>( void *, CONDITIONAL_SYMBOL )
+<dt><br>( void *, FEINF_CONDITIONAL_SYMBOL )
 <dd>Returns a cg_sym_handle.&nbsp; Give an conditional list handle, return the front end symbol associated with it.
-<dt><br>( void *, NEXT_CONDITIONAL )
+<dt><br>( void *, FEINF_NEXT_CONDITIONAL )
 <dd>Given an conditional list handle, return the next conditional list handle.&nbsp; Return NULL at the end of the list.
-<dt><br>( aux_handle, VIRT_FUNC_REFERENCE )
+<dt><br>( aux_handle, FEINF_VIRT_FUNC_REFERENCE )
 <dd>Returns void *.&nbsp; When performing an indirect function call, the back end invokes FEAuxInfo passing the aux_handle supplied
  with the CGInitCall.&nbsp; If the indirect call is referencing a C++ virtual function, the front end should return a magic
  cookie which is the head of a list of virtual functions that might be invoked by this call.&nbsp; If it is not a virtual
  function invocation, return NULL.
-<dt><br>( void *, VIRT_FUNC_NEXT_REFERENCE )
-<dd>Returns void *.&nbsp; Given the magic cookie returned by the VIRT_FUNC_REFERENCE or a previous VIRT_FUNC_NEXT_REFRENCE, return
- the next magic cookie in the list of virtual functions that might be refrenced from this indirect call.&nbsp; Return NULL
- if at the end of the list.
-<dt><br>( void *, VIRT_FUNC_SYM )
-<dd>Returns cg_sym_handle.&nbsp; Given a magic cookie from a VIRT_FUNC_REFERENCE or VIRT_FUNC_NEXT_REFERENCE, return the cg_sym_handle
- for that entry in the list of virtual functions that might be invoked.
-<dt><br>( segment_id, PEGGED_REGISTER )
+<dt><br>( void *, FEINF_VIRT_FUNC_NEXT_REFERENCE )
+<dd>Returns void *.&nbsp; Given the magic cookie returned by the FEINF_VIRT_FUNC_REFERENCE or a previous FEINF_VIRT_FUNC_NEXT_REFRENCE,
+ return the next magic cookie in the list of virtual functions that might be refrenced from this indirect call.&nbsp; Return
+ NULL if at the end of the list.
+<dt><br>( void *, FEINF_VIRT_FUNC_SYM )
+<dd>Returns cg_sym_handle.&nbsp; Given a magic cookie from a FEINF_VIRT_FUNC_REFERENCE or FEINF_VIRT_FUNC_NEXT_REFERENCE, return
+ the cg_sym_handle for that entry in the list of virtual functions that might be invoked.
+<dt><br>( segment_id, FEINF_PEGGED_REGISTER )
 <dd>Returns a pointer at a hw_reg_set or NULL.&nbsp; If the pointer is non-NULL and the hw_reg_set is not EMPTY, the hw_reg_set
  will indicate a segment register that is pegged (pointing) to the given segment_id.&nbsp; The code generator will use this
  segment register in any references to objects in the segment.&nbsp; If the pointer is NULL or the hw_reg_set is EMPTY, the
@@ -1720,65 +1721,67 @@
 <dl>
 <dt><b><i>Call Class</i></b>
 <dd><b><i>Meaning</i></b> 
-<dt><br>REVERSE_PARMS
+<dt><br>FECALL_GEN_REVERSE_PARMS
 <dd>Reverse the parameter list.
-<dt><br>SUICIDAL
-<dd>Routine never returns.
-<dt><br>PARMS_BY_ADDRESS
+<dt><br>FECALL_GEN_ABORTS
+<dd>Routine never returns, optimize caller and callee.
+<dt><br>FECALL_GEN_NORETURN
+<dd>Routine never returns, no optimization, portable.
+<dt><br>FECALL_GEN_PARMS_BY_ADDRESS
 <dd>Pass parameters by reference.
-<dt><br>MAKE_CALL_INLINE
+<dt><br>FECALL_GEN_MAKE_CALL_INLINE
 <dd>Call should be inline.&nbsp; FEGenProc will be called for code sequence when required.
 </dl>
 <dl>
 <dt><b><i>x86 Call Class</i></b>
 <dd><b><i>Meaning</i></b>
-<dt><br>FAR
+<dt><br>FECALL_X86_FAR_CALL
 <dd>Does routine require a far call/return.
-<dt><br>LOAD_DS_ON_CALL
+<dt><br>FECALL_X86_LOAD_DS_ON_CALL
 <dd>Load DS from DGROUP prior to call.
-<dt><br>CALLER_POPS
+<dt><br>FECALL_X86_CALLER_POPS
 <dd>Caller pops/removes parms from the stack.
-<dt><br>ROUTINE_RETURN
+<dt><br>FECALL_X86_ROUTINE_RETURN
 <dd>Routine allocates structure return memory.
-<dt><br>SPECIAL_RETURN
+<dt><br>FECALL_X86_SPECIAL_RETURN
 <dd>Routine has non-default return register.
-<dt><br>NO_MEMORY_CHANGED
+<dt><br>FECALL_X86_NO_MEMORY_CHANGED
 <dd>Routine modifies no visible statics.
-<dt><br>NO_MEMORY_READ
+<dt><br>FECALL_X86_NO_MEMORY_READ
 <dd>Routine reads no visible statics.
-<dt><br>MODIFY_EXACT
+<dt><br>FECALL_X86_MODIFY_EXACT
 <dd>Routine modifies no parameter registers.
-<dt><br>SPECIAL_STRUCT_RETURN
+<dt><br>FECALL_X86_SPECIAL_STRUCT_RETURN
 <dd>Routine has special struct return register.
-<dt><br>NO_STRUCT_REG_RETURNS
+<dt><br>FECALL_X86_NO_STRUCT_REG_RETURNS
 <dd>Pass 2/4/8 byte structs on stack, as opposed to registers.
-<dt><br>NO_FLOAT_REG_RETURNS
+<dt><br>FECALL_X86_NO_FLOAT_REG_RETURNS
 <dd>Return floats as structs.
-<dt><br>INTERRUPT
+<dt><br>FECALL_X86_INTERRUPT
 <dd>Routine is an interrupt routine.
-<dt><br>NO_8087_RETURNS
+<dt><br>FECALL_X86_NO_8087_RETURNS
 <dd>No return values in the 8087.
-<dt><br>LOAD_DS_ON_ENTRY
+<dt><br>FECALL_X86_LOAD_DS_ON_ENTRY
 <dd>Load ds with dgroup on entry.
-<dt><br>DLL_EXPORT
+<dt><br>FECALL_GEN_DLL_EXPORT
 <dd>Is routine an OS/2 export symbol?
-<dt><br>FAT_WINDOWS_PROLOG
+<dt><br>FECALL_X86_FAT_WINDOWS_PROLOG
 <dd>Generate the real mode windows prolog code.
-<dt><br>GENERATE_STACK_FRAME
+<dt><br>FECALL_X86_GENERATE_STACK_FRAME
 <dd>Always generate a traceable prolog.
-<dt><br>EMIT_FUNCTION_NAME
+<dt><br>FECALL_X86_EMIT_FUNCTION_NAME
 <dd>Emit the function name in front of the function in the code segment.
-<dt><br>GROW_STACK
+<dt><br>FECALL_X86_GROW_STACK
 <dd>Emit a call to grow the stack on entry
-<dt><br>PROLOG_HOOKS
+<dt><br>FECALL_X86_PROLOG_HOOKS
 <dd>Generate a prolog hook call.
-<dt><br>EPILOG_HOOKS
+<dt><br>FECALL_X86_EPILOG_HOOKS
 <dd>Generate an epilog hook call.
-<dt><br>THUNK_PROLOG
+<dt><br>FECALL_X86_THUNK_PROLOG
 <dd>Generate a thunking prolog for routines calling 16 bit code.
-<dt><br>FAR16_CALL
+<dt><br>FECALL_X86_FAR16_CALL
 <dd>Performs a 16:16 call in the 386 compiler.
-<dt><br>TOUCH_STACK
+<dt><br>FECALL_X86_TOUCH_STACK
 <dd>Certain people (who shall remain nameless) have implemented an operating system (which shall remain nameless) that can't be
  bothered figuring out whether a page reference is in the stack or not.&nbsp; This attribute forces the first reference to
  the stack (after a routine prologue has grown it) to be through the SS register.
@@ -2125,7 +2128,7 @@
 <dt><br>back_handle
 <dd>(void*) A handle for a back end symbol table entry.
 <dt><br>byte_seq
-<dd>(struct) Passed to back end in response to CALL_BYTES FEAuxInfo request.
+<dd>(struct) Passed to back end in response to FEINF_CALL_BYTES FEAuxInfo request.
 <dt><br>call_class
 <dd>(unsigned long) A set of combinable bits indicating the call attributes for a routine.
 <dt><br>call_handle
@@ -2190,55 +2193,24 @@
 <h1 id="PreMdefined_macros"> Pre-defined macros </h1>
 <br>The following macros are defined by the code generator include files.
 <ul style="list-style-type:none;">
-<li>HW_D
-<li>HW_D_1
-<li>HW_D_2
-<li>HW_D_3
-<li>HW_D_4
-<li>HW_D_5
-<li>BIG_CODE
-<li>BIG_DATA
-<li>CALLER_POPS
-<li>CHEAP_POINTER
-<li>CHEAP_WINDOWS
-<li>CONST_IN_CODE
-<li>CPU_MASK
 <li>C_FRONT_END
+<li>CPU_MASK
 <li>DBG_FWD_TYPE
-<li>CGSW_DBG_LOCALS
 <li>DBG_NIL_TYPE
-<li>CGSW_DBG_NUMBERS
-<li>CGSW_DBG_TYPES
-<li>DLL_EXPORT
 <li>DO_FLOATING_FIXUPS
 <li>DO_SYM_FIXUPS
-<li>EMIT_FUNCTION_NAME
-<li>EPILOG_HOOKS
-<li>EZ_OMF
-<li>E_8087
 <li>FALSE
-<li>FAR
-<li>FAT_WINDOWS_PROLOG
 <li>FIX_SYM_OFFSET
 <li>FIX_SYM_RELOFF
 <li>FIX_SYM_SEGMENT
-<li>FLAT_MODEL
-<li>FLOATING_DS
-<li>FLOATING_ES
 <li>FLOATING_FIXUP_BYTE
-<li>FLOATING_FS
-<li>FLOATING_GS
-<li>FLOATING_SS
-<li>CGSW_FORTRAN_ALIASING
 <li>FORTRAN_FRONT_END
 <li>FPU_MASK
 <li>FRONT_END_MASK
 <li>FUNCS_IN_OWN_SEGMENTS
-<li>GENERATE_STACK_FRAME
 <li>GET_CPU
 <li>GET_FPU
 <li>GET_WTK
-<li>GROW_STACK
 <li>HWREG_INCLUDED
 <li>HW_0
 <li>HW_1
@@ -2254,6 +2226,12 @@
 <li>HW_CSubset
 <li>HW_CTurnOff
 <li>HW_CTurnOn
+<li>HW_D
+<li>HW_D_1
+<li>HW_D_2
+<li>HW_D_3
+<li>HW_D_4
+<li>HW_D_5
 <li>HW_DEFINE_COMPOUND
 <li>HW_DEFINE_GLOBAL_CONST
 <li>HW_DEFINE_SIMPLE
@@ -2276,55 +2254,21 @@
 <li>HW_TurnOff
 <li>HW_TurnOn
 <li>II_REVISION
-<li>INDEXED_GLOBALS
-<li>CGSW_INS_SCHEDULING
-<li>INTERNAL_DBG_OUTPUT
-<li>INTERRUPT
-<li>I_MATH_INLINE
-<li>LAST_AUX_ATTRIBUTE
-<li>LAST_CGSWITCH
-<li>LAST_TARG_AUX_ATTRIBUTE
-<li>LAST_TARG_CGSWITCH
-<li>LOAD_DS_ON_CALL
-<li>LOAD_DS_ON_ENTRY
-<li>CGSW_LOOP_OPTIMIZATION
-<li>MAKE_CALL_INLINE
 <li>MAX_POSSIBLE_REG
 <li>MIN_OP
-<li>MODIFY_EXACT
-<li>NEED_STACK_FRAME
-<li>NO_8087_RETURNS
-<li>NO_CALL_RET_TRANSFORM
-<li>NO_FLOAT_REG_RETURNS
-<li>NO_MEMORY_CHANGED
-<li>NO_MEMORY_READ
-<li>CGSW_NO_OPTIMIZATION
-<li>NO_STRUCT_REG_RETURNS
 <li>NULL
 <li>NULLCHAR
 <li>O_FIRST_COND
 <li>O_FIRST_FLOW
 <li>O_LAST_COND
 <li>O_LAST_FLOW
-<li>PARMS_BY_ADDRESS
-<li>PROLOG_HOOKS
-<li>CGSW_RELAX_ALIAS
-<li>REVERSE_PARMS
-<li>ROUTINE_RETURN
 <li>SEG_EXTRN_FAR
 <li>SET_CPU
 <li>SET_FPU
 <li>SET_WTK
-<li>SPECIAL_RETURN
-<li>SPECIAL_STRUCT_RETURN
-<li>STANDARD_INCLUDED
-<li>SUICIDAL
 <li>SYM_FIXUP_BYTE
-<li>THUNK_PROLOG
 <li>TRUE
 <li>TY_HUGE_CODE_PTR
-<li>USE_32
-<li>WINDOWS
 <li>WTK_MASK
 <li>_AL
 <li>_AX
