@@ -260,8 +260,8 @@
 <dd>The segment is read only.
 <dt><br>BACK
 <dd>The code generator may put its data here.&nbsp; One segment must be marked with this attribute.&nbsp; It may not be a COMMON,
- PRIVATE or EXEC segment.&nbsp; If the front end requires code in the EXEC segment, the CONST_IN_CODE switch must be passed
- to BEInit().
+ PRIVATE or EXEC segment.&nbsp; If the front end requires code in the EXEC segment, the CGSW_X86_CONST_IN_CODE switch must
+ be passed to BEInit().
 <dt><br>COMMON
 <dd>All occurrences of this segment will be overlayed.&nbsp; This is used for FORTRAN common blocks.
 <dt><br>PRIVATE
@@ -270,8 +270,8 @@
 <dd>Normally, the back end feels free to prepend or append strings to the segment name passed in by the front end.&nbsp; This
  allows a naive front end to specify a constant set of segment names, and have the code generator mangle them in such a manner
  that they work properly in concert with the set of cg_switches that have been specified (e.g.&nbsp; prepending the module
- name to the code segments when BIG_CODE is specified on the x86).&nbsp; When GIVEN_NAME is specified, the back end outputs
- the segment name to the object file exactly as given.
+ name to the code segments when CGSW_X86_BIG_CODE is specified on the x86).&nbsp; When GIVEN_NAME is specified, the back end
+ outputs the segment name to the object file exactly as given.
 <dt><br>THREAD_LOCAL
 <dd>Segment contains thread local data.&nbsp; Such segments may need special handling in executable modules.
 </dl>
