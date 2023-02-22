@@ -1376,15 +1376,15 @@
 <br><br>The<tt> fpu</tt> fields tells the type of FPU.&nbsp; The size of the field is unsigned_8.&nbsp; FPU types for DIG_ARCH_X86
  include:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_EMU = -1&nbsp;&nbsp;&nbsp;&nbsp; - Software emulated FPU</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_NO&nbsp; =&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; - No FPU</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_87&nbsp; =&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; - 8087</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_287 =&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; - 80287</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_387 =&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; - 80387</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_487 =&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; - 486 integrated FPU</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_587 =&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp; - Pentium integrated FPU</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_587 =&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp; - Pentium Pro/II/III integrated FPU</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_P47 =&nbsp; 15&nbsp;&nbsp;&nbsp; - Pentium 4 integrated FPU</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_NOFPU =&nbsp; 0&nbsp;&nbsp; - No FPU</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_87&nbsp;&nbsp;&nbsp; =&nbsp; 1&nbsp;&nbsp; - 8087</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_287&nbsp;&nbsp; =&nbsp; 2&nbsp;&nbsp; - 80287</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_387&nbsp;&nbsp; =&nbsp; 3&nbsp;&nbsp; - 80387</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_487&nbsp;&nbsp; =&nbsp; 4&nbsp;&nbsp; - 486 integrated FPU</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_587&nbsp;&nbsp; =&nbsp; 5&nbsp;&nbsp; - Pentium integrated FPU</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_687&nbsp;&nbsp; =&nbsp; 6&nbsp;&nbsp; - Pentium Pro/II/III integrated FPU</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_P47&nbsp;&nbsp; =&nbsp; 15&nbsp; - Pentium 4 integrated FPU</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; X86_EMU&nbsp;&nbsp; = 255&nbsp; - Software emulated FPU</tt>
 <br><br>The<tt> osmajor</tt> and<tt> osminor</tt> contains the major and minor version number for the operating system of
  the remote machine.&nbsp; The type of operating system can be found in<tt> os</tt> field.&nbsp; The size of this field is
  unsigned_8.&nbsp; The OS can be:
