@@ -32587,10 +32587,14 @@
 <dl>
 <dt>Description:
 <dd>The<tt> _mbsnbcnt</tt> function counts the number of bytes in the first<i> n</i> multibyte characters of the string<i> string</i>.
-&nbsp; This function was called <tt> mtob</tt> in earlier versions.
 <br>The<tt> _mbsnccnt</tt> function counts the number of multibyte characters in the first<i> n</i> bytes of the string<i>
  string</i>.&nbsp; If<tt> _mbsnccnt</tt> finds a null byte as the second byte of a double-byte character, the first (lead)
- byte is not included in the count.&nbsp; This function was called <tt> btom</tt> in earlier versions.
+ byte is not included in the count.
+<br><i>Note:</i><tt>&nbsp; _mbsnbcnt</tt> function was called <tt> mtob</tt> and<tt> _mbsnccnt</tt> function was called <tt>
+ btom</tt> in earlier versions.
+<br>The<tt> _fmbsnbcnt</tt> function is a data model independent form of the _mbsnbcnt function that accepts far pointer arguments.
+<br>The<tt> _fmbsnccnt</tt> function is a data model independent form of the _fmbsnccnt function that accepts far pointer
+ arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _fmbsnbcnt</tt> function is a data model independent form of the<tt> _mbsnbcnt</tt> function that accepts
  far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _fmbsnccnt</tt> function is a data model independent form of the<tt> _mbsnccnt</tt> function that accepts
@@ -32604,12 +32608,11 @@
 </dl>
 <dl>
 <dt>Returns:
-<dd>The<tt> _mbsnbcnt</tt> functions return the number of bytes in the string up to the specified number of characters or until
- a null character is encountered.&nbsp; The null character is not included in the count.&nbsp; If the character preceding
- the null character was a lead byte, the lead byte is not included in the count.
-<br>The<tt> _mbsnccnt</tt> returns the number of characters from the beginning of the string to byte<i> n</i>.&nbsp; If these
- functions find a null character before byte<i> n</i>, they return the number of characters before the null character.&nbsp;
- If the string consists of fewer than<i> n</i> characters, these functions return the number of characters in the string.
+<dd>The<tt> _mbsnbcnt</tt> functions return the number of bytes in the string from the beginning of the string up to the specified
+ number of characters<i> n</i>.
+<br>The<tt> _mbsnccnt</tt> funstions return the number of characters in the string from the beginning of the string up to
+ the specified number of bytes<i> n</i> or until a null character is encountered.&nbsp; The null character is not included
+ in the count.&nbsp; If the character preceding the null character was a lead byte, the lead byte is not included in the count.
 </dl>
 <dl>
 <dt>See Also:
