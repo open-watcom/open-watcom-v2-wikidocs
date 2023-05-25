@@ -4139,8 +4139,8 @@
 <dd>Open Watcom C/C++ predefines the <tt> _INTEGRAL_MAX_BITS</tt> macro to indicate that maximum number of bits supported in an
  integral type (see the description of the &quot;__int64&quot; keyword in the next section).&nbsp; Its value is 64 currently.
 <dt><br>_PUSHPOP_SUPPORTED
-<dd>Open Watcom C/C++ predefines the <tt> _PUSHPOP_SUPPORTED</tt> macro to indicate that<tt> #pragma pack(push)</tt> and<tt> #pragma
- pack(pop)</tt> are supported.
+<dd>Open Watcom C/C++ predefines the <tt> _PUSHPOP_SUPPORTED</tt> macro to indicate that<tt> #pragma pack(__push)</tt> and<tt>
+ #pragma pack(__pop)</tt> are supported.
 <dt><br>_STDCALL_SUPPORTED
 <dd>Open Watcom C/C++ predefines the <tt> _STDCALL_SUPPORTED</tt> macro to indicate that the standard 32-bit Win32 calling convention
  is supported.
@@ -7054,9 +7054,9 @@
  the &quot;pack&quot; pragma are as follows.
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push, </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
 <br>The following form of the &quot;pack&quot; pragma can be used to change the alignment of structures and their fields in
  memory.
@@ -7065,7 +7065,7 @@
 <br><br>The following form of the &quot;pack&quot; pragma saves the current alignment amount on an internal stack before alignment
  amount change.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, n )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push, n )</tt>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
@@ -7108,11 +7108,11 @@
 <br><br>The following form of the &quot;pack&quot; pragma can be used to save the current alignment amount on an internal
  stack.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push )</tt>
 <br><br>The following form of the &quot;pack&quot; pragma can be used to restore the previous alignment amount from an internal
  stack.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __pop )</tt>
 <h2 id="16Mbit__The_READ_ONLY_FILE_Pragma"> 16-bit:&nbsp; The READ_ONLY_FILE Pragma </h2>
 <br>Explicit listing of dependencies in a makefile can often be tedious in the development and maintenance phases of a project.
 &nbsp; The Open Watcom C/C++ compiler will insert dependency information into the object file as it processes source files
@@ -10157,9 +10157,9 @@
  the &quot;pack&quot; pragma are as follows.
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push, </tt><b>n</b><tt> ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __pop ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
 <br>The following form of the &quot;pack&quot; pragma can be used to change the alignment of structures and their fields in
  memory.
@@ -10168,7 +10168,7 @@
 <br><br>The following form of the &quot;pack&quot; pragma saves the current alignment amount on an internal stack before alignment
  amount change.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push, n )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push, n )</tt>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
@@ -10211,11 +10211,11 @@
 <br><br>The following form of the &quot;pack&quot; pragma can be used to save the current alignment amount on an internal
  stack.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( push )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __push )</tt>
 <br><br>The following form of the &quot;pack&quot; pragma can be used to restore the previous alignment amount from an internal
  stack.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( pop )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma pack ( __pop )</tt>
 <h2 id="32Mbit__The_READ_ONLY_FILE_Pragma"> 32-bit:&nbsp; The READ_ONLY_FILE Pragma </h2>
 <br>Explicit listing of dependencies in a makefile can often be tedious in the development and maintenance phases of a project.
 &nbsp; The Open Watcom C/C++ compiler will insert dependency information into the object file as it processes source files
