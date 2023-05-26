@@ -732,7 +732,7 @@
  there is a large amount of static data, it is often useful to set the data threshold size so that all objects of the specified
  size or larger are placed into another segment.&nbsp; For example, the option:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; /DT=100</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -DT=100</tt>
 <br><br>causes all data objects of 100 bytes or more to be placed in a far data segment.&nbsp; The &quot;data threshold&quot;
  only applies to the large and huge memory models where there can be more than one data segment.&nbsp; The default data threshold
  value is 256.
@@ -763,12 +763,12 @@
 <dd>By default, the object file name is constructed from the source file name.&nbsp; Using the &quot;fo&quot; option, the default
  object file drive, path, file name and extension can be specified.
 <br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report /fo=d:\programs\obj\</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report -fo=d:\programs\obj\</tt>
 <br><br>A trailing &quot;\&quot; must be specified for directory names.&nbsp; If, for example, the option was specified as
- &quot;/fo=d:\programs\obj&quot; then the object file would be called<tt> D:\PROGRAMS\OBJ.OBJ.</tt>
+ &quot;-fo=d:\programs\obj&quot; then the object file would be called<tt> D:\PROGRAMS\OBJ.OBJ.</tt>
 <br><br>A default extension must be preceded by a period (&quot;.&quot;).
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report /fo=d:\programs\obj\.dbo</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report -fo=d:\programs\obj\.dbo</tt>
 <dt><br>&#91;NO&#93;FORmat
 <dd>The &quot;format&quot; option suppresses the run-time checking that ensures that the type of an input/output list item matches
  the format edit descriptor in a format specification.&nbsp; This allows an input/output list item of type INTEGER to be formatted
@@ -1264,34 +1264,34 @@
 <h2 id="Open_Watcom_FORTRAN_77_Command_Line_Examples"> Open Watcom FORTRAN 77 Command Line Examples </h2>
 <br>The following are some examples of using Open Watcom FORTRAN 77 to compile FORTRAN 77 source programs.
 <br><br><i>Example 1:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report /d1 /stack</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 report -d1 -stack</tt>
 <br><br>The 32-bit Open Watcom F77 compiler processes<tt> REPORT.FOR</tt> producing an object file which contains source line
  number information.&nbsp; Stack overflow checking code is included in the object code.
 <br><br><i>Example 2:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc kwikdraw /2 /fpi87</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc kwikdraw -2 -fpi87</tt>
 <br><br>The 16-bit Open Watcom F77 compiler processes<tt> KWIKDRAW.FOR</tt> producing object code for an Intel 286 system
  equipped with an Intel 287 numeric data processor (or any upward compatible 386/387, 486 or Intel Pentium system).&nbsp;
  While the choice of these options narrows the number of microcomputer systems where this code will execute, the resulting
  code will be highly optimized for this type of system.
 <br><br><i>Example 3:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc ..\source\modabs /d2</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc ..\source\modabs -d2</tt>
 <br><br>The 16-bit Open Watcom F77 compiler processes<tt> ..\SOURCE\MODABS.FOR</tt> (a file in a directory which is adjacent
  to the current one).&nbsp; The object file is placed in the current directory.&nbsp; Included with the object code and data
  is information on local symbols and data types.&nbsp; The code generated is straight-forward, unoptimized code which can
  be readily debugged with Open Watcom Debugger.&nbsp; 
 <br><br><i>Example 4:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 /mf calc</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 -mf calc</tt>
 <br><br>The 32-bit Open Watcom F77 compiler compiles<tt> CALC.FOR</tt> for the &quot;flat&quot; memory model.&nbsp; 32-bit
  memory models are described in the chapter entitled <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.&nbsp; 32-bit
  argument passing conventions are described in the chapter entitled <a href="#32Mbit_Assembly_Language_Considerations">32-bit Assembly Language Considerations</a>.
 <br><br><i>Example 5:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 kwikdraw /fpi87</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 kwikdraw -fpi87</tt>
 <br><br>The 32-bit Open Watcom F77 compiler processes<tt> KWIKDRAW.FOR</tt> producing object code for an Intel 386 system
  equipped with an Intel 80x87 numeric data processor.
 <br><br><i>Example 6:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc=/short /d2 /fo#*.dbj</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;set wfc=-short -d2 -fo#*.dbj</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc ..\source\modabs</tt>
-<br><br>The options<tt> /short</tt>,<tt> /d2</tt> and<tt> /fo=*.dbj</tt> are established as defaults using the <b> WFC</b>
+<br><br>The options<tt> -short</tt>,<tt> -d2</tt> and<tt> -fo=*.dbj</tt> are established as defaults using the <b> WFC</b>
  environment variable.&nbsp; The 16-bit compiler processes<tt> ..\SOURCE\MODABS.FOR</tt> (a file in a directory which is adjacent
  to the current one).&nbsp; The object file is placed in the current directory and it will have a default file extension of
  &quot;DBJ&quot;.&nbsp; All INTEGER and LOGICAL variables will have a default type of INTEGER*2 and LOGICAL*1 unless explicitly
@@ -1330,7 +1330,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</tt>
 <br><br>If we compile this program with the &quot;extensions&quot; option, the following output appears on the screen.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc demo1 /exten</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc demo1 -exten</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WATCOM FORTRAN 77/16 Optimizing Compiler Version 2.0 1997/07/16 09:22:47</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Copyright (c) 2002-2023 the Open Watcom Contributors. All Rights Reserved.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Portions Copyright (c) 1984-2002 Sybase, Inc. All Rights Reserved.</tt>
@@ -1348,9 +1348,9 @@
 <br><br>Diagnostic messages are also included in the listing file if the &quot;list&quot; option is specified.&nbsp; If we
  recompile our program and include the &quot;list&quot; option, a listing file will be created.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc demo1 /exten/list</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc demo1 -exten-list</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 demo1 /exten/list</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 demo1 -exten-list</tt>
 <br><br>The contents of the listing file are:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WATCOM FORTRAN 77/16 Optimizing Compiler Version 2.0 1997/07/16 09:22:47</tt>
@@ -1705,8 +1705,8 @@
 <br><br>In the above example, the macro<tt> debug</tt> is defined.
 <br><br>The DEFINE compiler option can also be used to define a macro.&nbsp; 
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc /define=debug test</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 /define=debug test</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc -define=debug test</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 -define=debug test</tt>
 <h2 id="The_UNDEFINE_Compiler_Directive"> The UNDEFINE Compiler Directive </h2>
 <br>The UNDEFINE compiler directive sets the definition status of a<i> macro</i> to undefined.
 <br><br><i>Example:</i>
@@ -1780,8 +1780,8 @@
  the &quot;define&quot; option.&nbsp; In the following example, the &quot;define&quot; option is used to force compilation
  of debugging statements.
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc /def=__debug__ test</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 /def=__debug__ test</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc -def=__debug__ test</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 -def=__debug__ test</tt>
 <h2 id="General_Notes_About_Compiler_Directives"> General Notes About Compiler Directives </h2>
 <ol>
 <li>Compiler directives must not contain embedded blanks.&nbsp; The following is not a valid ENDIF compiler directive.
@@ -3245,14 +3245,14 @@
  default windowing FORTRAN application can be built using the following command(s):
 <dl>
 <dt>16-bit Windows
-<dd><tt> C&gt;wfl &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; /bw /windows /l=windows</tt>
+<dd><tt> C&gt;wfl &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; -bw -windows -l=windows</tt>
 <dt><br>32-bit Windows
-<dd><tt> C&gt;wfl386 &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; /bw /l=win386</tt>
+<dd><tt> C&gt;wfl386 &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; -bw -l=win386</tt>
 <br><tt>C&gt;wbind -n &#91;fn1&#93;</tt>
 <dt><br>32-bit Windows NT or Windows 95
-<dd><tt> C&gt;wfl386 &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; /bw /l=nt_win</tt>
+<dd><tt> C&gt;wfl386 &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; -bw -l=nt_win</tt>
 <dt><br>32-bit OS/2 Presentation Manager
-<dd><tt> C&gt;wfl386 &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; /bw /l=os2v2_pm</tt>
+<dd><tt> C&gt;wfl386 &#91;fn1&#93; &#91;fn2&#93; ...&nbsp; -bw -l=os2v2_pm</tt>
 </dl>
 <dl>
 <dt>Note:
@@ -4096,28 +4096,28 @@
 &nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --------------</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /fpc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ml, /mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; /fpc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7m.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7l.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ml, /mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clibm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /fpc, /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clibl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ml, /mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; /fpc, /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mathm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mm,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /fpc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mathl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /ml, /mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; /fpc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math87m.lib&nbsp;&nbsp;&nbsp;&nbsp; /mm,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math87l.lib&nbsp;&nbsp;&nbsp;&nbsp; /ml, /mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; emu87.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mm, /ml, /mh&nbsp;&nbsp;&nbsp; /fpi</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; noemu87.lib&nbsp;&nbsp;&nbsp;&nbsp; /mm, /ml, /mh&nbsp;&nbsp;&nbsp; /fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -fpc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -ml, -mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; -fpc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7m.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7l.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -ml, -mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clibm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -fpc, -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clibl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -ml, -mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; -fpc, -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mathm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -fpc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mathl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -ml, -mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; -fpc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math87m.lib&nbsp;&nbsp;&nbsp;&nbsp; -mm,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math87l.lib&nbsp;&nbsp;&nbsp;&nbsp; -ml, -mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; emu87.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm, -ml, -mh&nbsp;&nbsp;&nbsp; -fpi</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; noemu87.lib&nbsp;&nbsp;&nbsp;&nbsp; -mm, -ml, -mh&nbsp;&nbsp;&nbsp; -fpi87</tt>
 <h2 id="16Mbit_Memory_Layout"> 16-bit Memory Layout </h2>
 <br>The following describes the segment ordering of an application linked by the Open Watcom Linker.&nbsp; Note that this
  assumes that the &quot;DOSSEG&quot; linker option has been specified.&nbsp; 
@@ -5089,7 +5089,7 @@
  \ mov AL,4</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; zcd z10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  \ int 10h</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; ah al &#93;</tt>
 <br><br>The sequence in the above DOS example represents the following lines of assembly language instructions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; AH,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; select function &quot;set mode&quot;</tt>
@@ -5107,7 +5107,7 @@
  \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; &quot;int 10H&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; ah al &#93;</tt>
 <br><br>If a sequence of in-line assembly language instructions contains 80x87 floating-point instructions, each floating-point
  instruction must be preceded by &quot;float&quot;.&nbsp; Note that this is only required if you have specified the &quot;fpi&quot;
  compiler option; otherwise it will be ignored.
@@ -5181,11 +5181,8 @@
  {reg_set} }</b>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_info ::=</b><tt> ( </tt><b>arg_attr</b><tt> </tt><b>{</b><tt>, </tt><b>arg_attr}</b><tt>
  )</tt>
-<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> reference </tt><b>&#91;r_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
+<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b><tt> </tt><b>|</b><tt> reference
+ </tt><b>&#91;r_attr&#93;</b><tt> </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; v_attr ::=</b><tt> far </tt><b>|</b><tt> near </tt><b>|</b><tt> *1 </tt><b>|</b><tt> *2
  </tt><b>|</b><tt> *4 </tt><b>|</b><tt> *8</tt>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; r_attr ::=</b><tt> </tt><b>&#91;</b><tt>far </tt><b>|</b><tt> near</tt><b>&#93;</b><tt>
@@ -5211,11 +5208,8 @@
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm ( </tt><b>arg_attr</b><tt> </tt><b>{</b><tt>, </tt><b>arg_attr}</b><tt>
  )</tt>
-<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> reference </tt><b>&#91;r_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
+<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b><tt> </tt><b>|</b><tt> reference
+ </tt><b>&#91;r_attr&#93;</b><tt> </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; v_attr ::=</b><tt> far </tt><b>|</b><tt> near </tt><b>|</b><tt> *1 </tt><b>|</b><tt> *2
  </tt><b>|</b><tt> *4 </tt><b>|</b><tt> *8</tt>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; r_attr ::=</b><tt> </tt><b>&#91;</b><tt>far </tt><b>|</b><tt> near</tt><b>&#93;</b><tt>
@@ -5313,7 +5307,7 @@
 &nbsp; AX:BX:CX:DX.&nbsp; For example, if the following register set was specified for a routine having an argument of type<b>
  DOUBLE PRECISION</b>,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;AX BX SI DI&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;ax bx si di&#93;</tt>
 <br><br>the argument would be pushed on the stack since a valid register combination for 8-byte arguments is not contained
  in the register set.&nbsp; Note that this method for passing arguments of type<b> DOUBLE PRECISION</b> is supported only
  when the &quot;fpc&quot; option is used.&nbsp; Note that this argument passing method does not include arguments of type<b>
@@ -5323,7 +5317,7 @@
  DX:SI, DI:BX, SI:AX, CX:DX, DX:DI, DI:SI, SI:BX, BX:AX, DS:CX, DS:DX, DS:DI, DS:SI, DS:BX, DS:AX, ES:CX, ES:DX, ES:DI, ES:SI,
  ES:BX or ES:AX.&nbsp; For example, if a far pointer is passed to a function with the following register set,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;ES BP&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;es bp&#93;</tt>
 <br><br>the argument would be pushed on the stack since a valid register combination for a far pointer is not contained in
  the register set.&nbsp; Far pointers are used to pass arguments by reference in a big data memory model.
 <dt><br>INTEGER*4, REAL
@@ -5331,7 +5325,7 @@
  are:&nbsp; DX:AX, CX:BX, CX:AX, CX:SI, DX:BX, DI:AX, CX:DI, DX:SI, DI:BX, SI:AX, CX:DX, DX:DI, DI:SI, SI:BX and BX:AX.&nbsp;
  For example, if the following register set was specified for a routine with one argument of type<b> INTEGER*4</b>,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;ES DI&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;es di&#93;</tt>
 <br><br>the argument would be pushed on the stack since a valid register combination for 4-byte arguments is not contained
  in the register set.&nbsp; Note that this argument passing method includes arguments of type<b> REAL</b> but only when the
  &quot;fpc&quot; option is used.
@@ -5340,7 +5334,7 @@
  or arguments passed by reference in a small data memory model) are:&nbsp; AX, BX, CX, DX, SI and DI.&nbsp; For example, if
  the following register set was specified for a routine with one argument of type<b> INTEGER*2</b>,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;BP&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;bp&#93;</tt>
 <br><br>the argument would be pushed on the stack since a valid register combination for 2-byte arguments is not contained
  in the register set.
 <dt><br>INTEGER*1
@@ -5353,7 +5347,7 @@
 </dl>
 <br><i>Notes:</i>
 <ol>
-<li>The default register set is &#91;AX BX CX DX&#93;.
+<li>The default register set is &#91;ax bx cx dx&#93;.
 <li>Specifying registers AH and AL is equivalent to specifying register AX.&nbsp; Specifying registers DH and DL is equivalent
  to specifying register DX.&nbsp; Specifying registers CH and CL is equivalent to specifying register CX.&nbsp; Specifying
  registers BH and BL is equivalent to specifying register BX.
@@ -5392,7 +5386,7 @@
 <br><br><i>Notes:</i>
 <ol>
 <li>If a single empty register set is specified, all arguments are passed on the stack.
-<li>If no register set is specified, the default register set &#91;AX BX CX DX&#93; is used.
+<li>If no register set is specified, the default register set &#91;ax bx cx dx&#93; is used.
 </ol>
 <h4 id="16Mbit__Forcing_Arguments_into_Specific_Registers"> 16-bit:&nbsp; Forcing Arguments into Specific Registers </h4>
 <br>It is possible to force arguments into specific registers.&nbsp; Suppose you have a subprogram, say &quot;mycopy&quot;,
@@ -5402,7 +5396,7 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux mycopy parm (value) \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;SI&#93; &#91;DI&#93; &#91;CX&#93;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;si&#93; &#91;di&#93; &#91;cx&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*10&nbsp; dst</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call mycopy( dst, '0123456789', 10 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
@@ -5422,7 +5416,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; parm (value)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;ch&#93; &#91;cl&#93; &#91;dh&#93; &#91;dl&#93;
  &#91;al&#93; &#91;bh&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; modify &#91;ah&#93;</tt>
@@ -6194,23 +6188,23 @@
 &nbsp;&nbsp;&nbsp;&nbsp; convention</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  --------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----------</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibs.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpc&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7s.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpi, /fpi87&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clib3r.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpc, /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clib3r.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpc, /fpi, /fpi87&nbsp;
-&nbsp;&nbsp; /sc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math387r.lib&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpi, /fpi87</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math387s.lib&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpi, /fpi87&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math3r.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math3s.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpc&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sc</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; emu387.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpi</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; noemu387.lib&nbsp;&nbsp;&nbsp; /mf, /ms&nbsp;&nbsp;&nbsp; /fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibs.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -sc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib7s.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi, -fpi87&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -sc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clib3r.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc, -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; clib3r.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc, -fpi, -fpi87&nbsp;
+&nbsp;&nbsp; -sc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math387r.lib&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi, -fpi87</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math387s.lib&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi, -fpi87&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -sc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math3r.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; math3s.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -sc</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; emu387.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; noemu387.lib&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi87</tt>
 <h2 id="32Mbit_Memory_Layout"> 32-bit Memory Layout </h2>
 <br>The following describes the segment ordering of an application linked by the Open Watcom Linker.&nbsp; Note that this
  assumes that the &quot;DOSSEG&quot; linker option has been specified.&nbsp; 
@@ -7298,7 +7292,7 @@
  \ mov AL,4</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; zcd z10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  \ int 10h</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; ah al &#93;</tt>
 <br><br>The sequence in the above DOS example represents the following lines of assembly language instructions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mov&nbsp;&nbsp; AH,0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; select function &quot;set mode&quot;</tt>
@@ -7316,7 +7310,7 @@
  \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; &quot;int 10H&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; AH AL &#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; modify &#91; ah al &#93;</tt>
 <br><br>The <tt> __far16</tt> attribute should only be used on systems that permit the calling of 16-bit code from 32-bit
  code.&nbsp; Currently, the only supported operating system that allows this is 32-bit OS/2.&nbsp; If you have any libraries
  of subprograms or APIs that are only available as 16-bit code and you wish to access these subprograms and APIs from 32-bit
@@ -7377,11 +7371,8 @@
  {reg_set} }</b>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_info ::=</b><tt> ( </tt><b>arg_attr</b><tt> </tt><b>{</b><tt>, </tt><b>arg_attr}</b><tt>
  )</tt>
-<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> reference </tt><b>&#91;r_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
+<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b><tt> </tt><b>|</b><tt> reference
+ </tt><b>&#91;r_attr&#93;</b><tt> </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; v_attr ::=</b><tt> far </tt><b>|</b><tt> near </tt><b>|</b><tt> *1 </tt><b>|</b><tt> *2
  </tt><b>|</b><tt> *4 </tt><b>|</b><tt> *8</tt>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; r_attr ::=</b><tt> </tt><b>&#91;</b><tt>far </tt><b>|</b><tt> near</tt><b>&#93;</b><tt>
@@ -7407,11 +7398,8 @@
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> parm ( </tt><b>arg_attr</b><tt> </tt><b>{</b><tt>, </tt><b>arg_attr}</b><tt>
  )</tt>
-<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> reference </tt><b>&#91;r_attr&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
+<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; arg_attr ::=</b><tt> value </tt><b>&#91;v_attr&#93;</b><tt> </tt><b>|</b><tt> reference
+ </tt><b>&#91;r_attr&#93;</b><tt> </tt><b>|</b><tt> data_reference </tt><b>&#91;d_attr&#93;</b>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; v_attr ::=</b><tt> far </tt><b>|</b><tt> near </tt><b>|</b><tt> *1 </tt><b>|</b><tt> *2
  </tt><b>|</b><tt> *4 </tt><b>|</b><tt> *8</tt>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; r_attr ::=</b><tt> </tt><b>&#91;</b><tt>far </tt><b>|</b><tt> near</tt><b>&#93;</b><tt>
@@ -7510,7 +7498,7 @@
  ESI:EBX or EBX:EAX.&nbsp; For example, if the following register set was specified for a routine having an argument of type<b>
  DOUBLE PRECISION</b>,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;EBP EBX&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;ebp ebx&#93;</tt>
 <br><br>the argument would be pushed on the stack since a valid register combination for 8-byte arguments is not contained
  in the register set.&nbsp; Note that this method for passing arguments of type<b> DOUBLE PRECISION</b> is supported only
  when the &quot;fpc&quot; option is used.&nbsp; Note that this argument passing method does not include arguments of type<b>
@@ -7521,7 +7509,7 @@
  GS:EDX, GS:EDI, GS:ESI, GS:EBX, GS:EAX, DS:ECX, DS:EDX, DS:EDI, DS:ESI, DS:EBX, DS:EAX, ES:ECX, ES:EDX, ES:EDI, ES:ESI, ES:EBX
  or ES:EAX.&nbsp; For example, if a far pointer is passed to a function with the following register set,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;ES EBP&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;es ebp&#93;</tt>
 <br><br>the argument would be pushed on the stack since a valid register combination for a far pointer is not contained in
  the register set.&nbsp; Far pointers are used to pass arguments by reference in a big data memory model.
 <dt><br>INTEGER
@@ -7529,7 +7517,7 @@
  or arguments passed by reference in a small data memory model) are:&nbsp; EAX, EBX, ECX, EDX, ESI and EDI.&nbsp; For example,
  if the following register set was specified for a routine with one argument of type<b> INTEGER</b>,
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;EBP&#93;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; &#91;ebp&#93;</tt>
 <br><br>the argument would be pushed on the stack since a valid register combination for 4-byte arguments is not contained
  in the register set.&nbsp; Note that this argument passing method also includes arguments of type<b> REAL</b> but only when
  the &quot;fpc&quot; option is used.
@@ -7543,7 +7531,7 @@
 </dl>
 <br><i>Notes:</i>
 <ol>
-<li>The default register set is &#91;EAX EBX ECX EDX&#93;.
+<li>The default register set is &#91;eax ebx ecx edx&#93;.
 <li>Specifying registers AH and AL is equivalent to specifying register AX.&nbsp; Specifying registers DH and DL is equivalent
  to specifying register DX.&nbsp; Specifying registers CH and CL is equivalent to specifying register CX.&nbsp; Specifying
  registers BH and BL is equivalent to specifying register BX.&nbsp; Specifying register EAX implies that register AX has been
@@ -7591,7 +7579,7 @@
 <br><br><i>Notes:</i>
 <ol>
 <li>If a single empty register set is specified, all arguments are passed on the stack.
-<li>If no register set is specified, the default register set &#91;EAX EBX ECX EDX&#93; is used.
+<li>If no register set is specified, the default register set &#91;eax ebx ecx edx&#93; is used.
 </ol>
 <h4 id="32Mbit__Forcing_Arguments_into_Specific_Registers"> 32-bit:&nbsp; Forcing Arguments into Specific Registers </h4>
 <br>It is possible to force arguments into specific registers.&nbsp; Suppose you have a subprogram, say &quot;mycopy&quot;,
@@ -7601,7 +7589,7 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux mycopy parm (value) \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;ESI&#93; &#91;EDI&#93; &#91;ECX&#93;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;esi&#93; &#91;edi&#93; &#91;ecx&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; character*10&nbsp; dst</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call mycopy( dst, '0123456789', 10 )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
@@ -7621,7 +7609,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; parm (value)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;ch&#93; &#91;cl&#93; &#91;dh&#93; &#91;dl&#93;
  &#91;al&#93; &#91;bh&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; modify &#91;ah&#93;</tt>

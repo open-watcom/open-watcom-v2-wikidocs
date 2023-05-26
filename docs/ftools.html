@@ -1713,7 +1713,7 @@
 <dt><br>564
 <dd>include path %s.
 <dt><br>565
-<dd>Unknown option %s.&nbsp; Use /?&nbsp; for list of options.
+<dd>Unknown option %s.&nbsp; Use -?&nbsp; for list of options.
 <dt><br>566
 <dd>read more command line from %s.
 <dt><br>567
@@ -1729,7 +1729,7 @@
 <dt><br>572
 <dd>Expecting file name
 <dt><br>573
-<dd>Floating point instruction not allowed with /fpc
+<dd>Floating point instruction not allowed with -fpc
 <dt><br>574
 <dd>Too many errors
 <dt><br>575
@@ -3764,9 +3764,9 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wfc386 $&#91;* $(compile_options)</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; test.exe : a.obj b.obj c.obj test.res</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wlink FILE a.obj, b.obj, c.obj</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wrc /q /bt=windows test.res test.exe</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wrc -q -bt=windows test.res test.exe</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; test.res : test.rc test.ico .AUTODEPEND</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wrc /ad /q /bt=windows /r $&#91;@ $^@</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wrc -ad -q -bt=windows -r $&#91;@ $^@</tt>
 <br><br>In the above example, Make will use the contents of the object file to determine whether the object file has to be
  built during processing.&nbsp; The Open Watcom Resource Compiler can also insert dependency information into a resource file
  that can be used by Make.

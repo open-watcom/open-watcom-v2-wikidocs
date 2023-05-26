@@ -9392,7 +9392,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = -12.0</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! an exception will not be generated since the intrinsic
  function</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! will validate the argument - if you compile with /om,
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! will validate the argument - if you compile with -om,
  the &quot;fsqrt&quot;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! 80x87 instruction will be generated in-line and an
  exception</tt>
@@ -9744,7 +9744,7 @@
  linker directive.
 <br><br>If the linker reports an unresolved reference for &quot;_cstart_&quot;, this indicates that the linker could not find
  the FORTRAN 77 run-time libraries.&nbsp; In 16-bit applications, the FORTRAN 77 run-time libraries for the medium memory
- model (/mm) and the floating-point calls floating-point model (/fpc) would be<tt> flibm.lib.</tt>&nbsp; In 32-bit applications,
+ model (-mm) and the floating-point calls floating-point model (-fpc) would be<tt> flibm.lib.</tt>&nbsp; In 32-bit applications,
  the FORTRAN 77 run-time libraries for the flat memory model would be<tt> flib.lib.</tt>&nbsp; Verify that the &quot;LIB&quot;
  environment variable has been set to point to the correct <b> WATCOM</b> library directories and that the library corresponds
  to the memory and floating-point model that you selected.

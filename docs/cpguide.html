@@ -1289,10 +1289,10 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int msi, int mdi )</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux click_handler __parm &#91;EAX&#93; &#91;EBX&#93; &#91;ECX&#93; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux click_handler __parm &#91;__eax&#93; &#91;__ebx&#93; &#91;__ecx&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;EDX&#93;
- &#91;ESI&#93; &#91;EDI&#93;</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;__edx&#93;
+ &#91;__esi&#93; &#91;__edi&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cbd.mouse_event = 1;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cbd.mouse_code = (unsigned short)max;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cbd.mouse_bx&nbsp;&nbsp; = (unsigned short)mbx;</tt>

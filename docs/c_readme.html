@@ -2238,12 +2238,12 @@
  or to define a &quot;__cdecl_old&quot; pragma that matches the old calling conventions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux __cdecl_old &quot;_*&quot; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __parm __caller &#91;&#93;
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parm caller &#91;&#93;
  \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __value __struct
- __float __struct __routine &#91;eax&#93; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __modify &#91;eax
- ebx ecx edx&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value struct float
+ struct routine &#91;eax&#93; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modify &#91;eax ebx
+ ecx edx&#93;;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (__cdecl_old) foo;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern int foo( int a, int b );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void main()</tt>
