@@ -5410,13 +5410,10 @@
  F77 assumes that each register set corresponds to an argument.&nbsp; Consider the following DOS example of an in-line subprogram
  called<tt> scrollactivepgup</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux scrollactivepgup =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;mov AH,6&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; parm (value)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux scrollactivepgup = \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;mov AH,6&quot; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;int 10h&quot; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; parm (value) \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;ch&#93; &#91;cl&#93; &#91;dh&#93; &#91;dl&#93;
  &#91;al&#93; &#91;bh&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; modify &#91;ah&#93;</tt>
@@ -7603,13 +7600,10 @@
  F77 assumes that each register set corresponds to an argument.&nbsp; Consider the following DOS example of an in-line subprogram
  called<tt> scrollactivepgup</tt>.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux scrollactivepgup =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;mov AH,6&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; parm (value)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux scrollactivepgup = \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;mov AH,6&quot; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; &quot;int 10h&quot; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; parm (value) \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#91;ch&#93; &#91;cl&#93; &#91;dh&#93; &#91;dl&#93;
  &#91;al&#93; &#91;bh&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp; modify &#91;ah&#93;</tt>

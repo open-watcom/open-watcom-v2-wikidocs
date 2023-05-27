@@ -6657,12 +6657,12 @@
 <dt><br>comment_type
 <dd>specifies the type of comment record.&nbsp; The allowable comment types are:
 <dl>
-<dt>lib
+<dt>__lib
 <dd>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special records
  by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in linker
  &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
  directives have been searched.
-<br>The &quot;lib&quot; form of this pragma offers the same features as the &quot;library&quot; pragma.&nbsp; See the section
+<br>The &quot;__lib&quot; form of this pragma offers the same features as the &quot;library&quot; pragma.&nbsp; See the section
  entitled <a href="#16Mbit__The_LIBRARY_Pragma">16-bit:&nbsp; The LIBRARY Pragma</a> for more information.
 </dl>
 <dt><br>&quot;comment_string&quot;
@@ -6670,7 +6670,7 @@
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( lib, &quot;mylib&quot; )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( __lib, &quot;mylib&quot; )</tt>
 <h2 id="16Mbit__The_DATA_SEG_Pragma"> 16-bit:&nbsp; The DATA_SEG Pragma </h2>
 <br>The &quot;data_seg&quot; pragma can be used to specify the name of the segment into which data is to be placed.&nbsp;
  The following describes the form of the &quot;data_seg&quot; pragma.
@@ -6755,21 +6755,21 @@
 <br>The &quot;enum&quot; pragma affects the underlying storage-definition for subsequent<i> enum</i> declarations.&nbsp; The
  forms of the &quot;enum&quot; pragma are as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>int</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>minimum</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>original</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>pop</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__int</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__minimum</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__original</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__pop</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
-<dt><br>int
-<dd>Make<i> int</i> the underlying storage definition (same as the &quot;ei&quot; compiler option).
-<dt><br>minimum
+<dt><br>__int
+<dd>Make<i> __int</i> the underlying storage definition (same as the &quot;ei&quot; compiler option).
+<dt><br>__minimum
 <dd>Minimize the underlying storage definition (same as not specifying the &quot;ei&quot; compiler option).
-<dt><br>original
+<dt><br>__original
 <dd>Reset back to the original compiler option setting (i.e., what was or was not specified on the command line).
-<dt><br>pop
+<dt><br>__pop
 <dd>Restore the previous setting.
 </dl>
 <br>The first three forms all push the previous setting before establishing the new setting.
@@ -6879,48 +6879,48 @@
  be used.
 <br><br>The general form of the &quot;initialize&quot; pragma is as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>before </tt><b>|</b><tt> after</tt><b>&#93;</b><tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>__before </tt><b>|</b><tt> __after</tt><b>&#93;</b><tt>
  </tt><b>n</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>before </tt><b>|</b><tt> after</tt><b>&#93;</b><tt>
- </tt><b>library</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>before </tt><b>|</b><tt> after</tt><b>&#93;</b><tt>
- </tt><b>program</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>__before </tt><b>|</b><tt> __after</tt><b>&#93;</b><tt>
+ </tt><b>__library</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>__before </tt><b>|</b><tt> __after</tt><b>&#93;</b><tt>
+ </tt><b>__program</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
 <dd>is a number in the range 0-255
-<dt><br>library
+<dt><br>__library
 <dd>the keyword represents a priority of 32 and can be used for class libraries that require initialization before the program
  is initialized.
-<dt><br>program
+<dt><br>__program
 <dd>the keyword represents a priority of 64 and is the default priority for any compiled code.
 </dl>
 <br>Priorities in the range 0-20 are reserved for the C++ compiler.&nbsp; This is to ensure that proper initialization of
- the C++ run-time system takes place before the execution of your program.&nbsp; Specifying &quot;before&quot; adjusts the
- priority by subtracting one.&nbsp; Specifying &quot;after&quot; adjusts the priority by adding one.
+ the C++ run-time system takes place before the execution of your program.&nbsp; Specifying &quot;__before&quot; adjusts the
+ priority by subtracting one.&nbsp; Specifying &quot;__after&quot; adjusts the priority by adding one.
 <br><br>A source file containing the following &quot;initialize&quot; pragma specifies that the initialization of static data
  in the file will take place before initialization of all other static data in the program since a priority of 63 will be
  assigned.
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize before program</tt>
-<br><br>If we specify &quot;after&quot; instead of &quot;before&quot;, the initialization of the static data in the file will
- occur after initialization of all other static data in the program since a priority of 65 will be assigned.
-<br><br>Note that the following is equivalent to the &quot;before&quot; example
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize __before __program</tt>
+<br><br>If we specify &quot;__after&quot; instead of &quot;__before&quot;, the initialization of the static data in the file
+ will occur after initialization of all other static data in the program since a priority of 65 will be assigned.
+<br><br>Note that the following is equivalent to the &quot;__before&quot; example
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize 63</tt>
-<br><br>and the following is equivalent to the &quot;after&quot; example.
+<br><br>and the following is equivalent to the &quot;__after&quot; example.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize 65</tt>
-<br><br>The use of the &quot;before&quot;, &quot;after&quot;, and &quot;program&quot; keywords are more descriptive in the
- intent of the pragmas.
-<br><br>It is recommended that a priority of 32 (the priority used when the &quot;library&quot; keyword is specified) be used
- when developing class libraries.&nbsp; This will ensure that initialization of static data defined by the class library will
- take place before initialization of static data defined by the program.&nbsp; The following &quot;initialize&quot; pragma
+<br><br>The use of the &quot;__before&quot;, &quot;__after&quot;, and &quot;__program&quot; keywords are more descriptive
+ in the intent of the pragmas.
+<br><br>It is recommended that a priority of 32 (the priority used when the &quot;__library&quot; keyword is specified) be
+ used when developing class libraries.&nbsp; This will ensure that initialization of static data defined by the class library
+ will take place before initialization of static data defined by the program.&nbsp; The following &quot;initialize&quot; pragma
  can be used to achieve this.
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize library</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize __library</tt>
 <h2 id="16Mbit__The_INLINE_DEPTH_Pragma_LCPP_OnlyR"> 16-bit:&nbsp; The INLINE_DEPTH Pragma (C++ Only) </h2>
 <br>When an in-line function is called, the function call may be replaced by the in-line expansion for that function.&nbsp;
  This in-line expansion may include calls to other in-line functions which can also be expanded.&nbsp; The &quot;inline_depth&quot;
@@ -6943,11 +6943,11 @@
 <br>The &quot;inline_recursion&quot; pragma controls the recursive expansion of inline functions.&nbsp; The form of the &quot;inline_recursion&quot;
  pragma is as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion on </tt><b>|</b><tt> off </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion ( on </tt><b>|</b><tt> off ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion __on </tt><b>|</b><tt> __off </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion ( __on </tt><b>|</b><tt> __off ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
-<br>Specifying &quot;on&quot; will enable expansion of recursive inline functions.&nbsp; The depth of expansion is specified
- by the &quot;inline_depth&quot; pragma.&nbsp; The default depth is 3.&nbsp; Specifying &quot;off&quot; suppresses expansion
+<br>Specifying &quot;__on&quot; will enable expansion of recursive inline functions.&nbsp; The depth of expansion is specified
+ by the &quot;inline_depth&quot; pragma.&nbsp; The default depth is 3.&nbsp; Specifying &quot;__off&quot; suppresses expansion
  of recursive inline functions.&nbsp; This is the default.
 <h2 id="16Mbit__The_INTRINSIC_Pragma"> 16-bit:&nbsp; The INTRINSIC Pragma </h2>
 <br>Certain functions, those listed in the description of the &quot;oi&quot; option, have intrinsic forms.&nbsp; These functions
@@ -7257,14 +7257,11 @@
 </dl>
 <br>Consider the following example.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MS_C &quot;_*&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MS_C &quot;_*&quot; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; __parm __caller &#91;&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp; __parm __caller &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; __value __struct __float __struct __routine &#91;__ax&#93;\</tt>
+&nbsp;&nbsp; __value __struct __float __struct __routine &#91;__ax&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; __modify &#91;__ax __bx __cx __dx __es&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (MS_C) rtn1</tt>
@@ -7460,7 +7457,7 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void mode4(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mode4 =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xb4 0x00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* mov AH,0 */ \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xb0 0x04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* mov AL,4 */ \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xcd 0x10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* int 10H&nbsp; */
@@ -7478,7 +7475,7 @@
  are used instead of the binary encoding of the assembly language instructions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void mode4(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mode4 =&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mode4 =&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AH,0&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AL,4&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -7499,15 +7496,13 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myalias(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn = \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xe8 __reloff myalias /* near call */</tt>
 <br><br>In the following example, a far call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is called.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myalias(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn = \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x9a __offset myalias __seg myalias /* far call */</tt>
 <h4 id="16Mbit__Loading_Data_Segment_Register"> 16-bit:&nbsp; Loading Data Segment Register </h4>
 <br>An application may have been compiled so that the segment register DS does not contain the segment address of the default
@@ -7723,8 +7718,8 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void scrollactivepgup(char,char,char,char,char,char);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux scrollactivepgup = \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AH,6&quot;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AH,6&quot; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10h&quot; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __parm &#91;__ch&#93; &#91;__cl&#93; &#91;__dh&#93; &#91;__dl&#93;
  &#91;__al&#93; &#91;__bh&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __modify &#91;__ah&#93;</tt>
@@ -8247,14 +8242,11 @@
 <br>As mentioned in an earlier section, the following pragma defines the calling convention for functions compiled by Microsoft
  C.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MS_C &quot;_*&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux MS_C &quot;_*&quot; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; __parm __caller &#91;&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp; __parm __caller &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; __value __struct __float __struct __routine &#91;__ax&#93;\</tt>
+&nbsp;&nbsp; __value __struct __float __struct __routine &#91;__ax&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; __modify &#91;__ax __bx __cx __dx __es&#93;</tt>
 <br><br>Let us discuss this pragma in detail.
@@ -9760,12 +9752,12 @@
 <dt><br>comment_type
 <dd>specifies the type of comment record.&nbsp; The allowable comment types are:
 <dl>
-<dt>lib
+<dt>__lib
 <dd>Default libraries are specified in special object module records.&nbsp; Library names are extracted from these special records
  by the Open Watcom Linker.&nbsp; When unresolved references remain after processing all object modules specified in linker
  &quot;FILE&quot; directives, these default libraries are searched after all libraries specified in linker &quot;LIBRARY&quot;
  directives have been searched.
-<br>The &quot;lib&quot; form of this pragma offers the same features as the &quot;library&quot; pragma.&nbsp; See the section
+<br>The &quot;__lib&quot; form of this pragma offers the same features as the &quot;library&quot; pragma.&nbsp; See the section
  entitled <a href="#32Mbit__The_LIBRARY_Pragma">32-bit:&nbsp; The LIBRARY Pragma</a> for more information.
 </dl>
 <dt><br>&quot;comment_string&quot;
@@ -9773,7 +9765,7 @@
 </dl>
 <br>Consider the following example.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( lib, &quot;mylib&quot; )</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma comment ( __lib, &quot;mylib&quot; )</tt>
 <h2 id="32Mbit__The_DATA_SEG_Pragma"> 32-bit:&nbsp; The DATA_SEG Pragma </h2>
 <br>The &quot;data_seg&quot; pragma can be used to specify the name of the segment into which data is to be placed.&nbsp;
  The following describes the form of the &quot;data_seg&quot; pragma.
@@ -9858,21 +9850,21 @@
 <br>The &quot;enum&quot; pragma affects the underlying storage-definition for subsequent<i> enum</i> declarations.&nbsp; The
  forms of the &quot;enum&quot; pragma are as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>int</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>minimum</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>original</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>pop</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__int</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__minimum</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__original</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma enum </tt><b>__pop</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
-<dt><br>int
-<dd>Make<i> int</i> the underlying storage definition (same as the &quot;ei&quot; compiler option).
-<dt><br>minimum
+<dt><br>__int
+<dd>Make<i> __int</i> the underlying storage definition (same as the &quot;ei&quot; compiler option).
+<dt><br>__minimum
 <dd>Minimize the underlying storage definition (same as not specifying the &quot;ei&quot; compiler option).
-<dt><br>original
+<dt><br>__original
 <dd>Reset back to the original compiler option setting (i.e., what was or was not specified on the command line).
-<dt><br>pop
+<dt><br>__pop
 <dd>Restore the previous setting.
 </dl>
 <br>The first three forms all push the previous setting before establishing the new setting.
@@ -9982,48 +9974,48 @@
  be used.
 <br><br>The general form of the &quot;initialize&quot; pragma is as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>before </tt><b>|</b><tt> after</tt><b>&#93;</b><tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>__before </tt><b>|</b><tt> __after</tt><b>&#93;</b><tt>
  </tt><b>n</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>before </tt><b>|</b><tt> after</tt><b>&#93;</b><tt>
- </tt><b>library</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>before </tt><b>|</b><tt> after</tt><b>&#93;</b><tt>
- </tt><b>program</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>__before </tt><b>|</b><tt> __after</tt><b>&#93;</b><tt>
+ </tt><b>__library</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize </tt><b>&#91;</b><tt>__before </tt><b>|</b><tt> __after</tt><b>&#93;</b><tt>
+ </tt><b>__program</b><tt> </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
 <dl>
 <dt><b><i>where</i></b>
 <dd><b><i>description</i></b>
 <dt><br>n
 <dd>is a number in the range 0-255
-<dt><br>library
+<dt><br>__library
 <dd>the keyword represents a priority of 32 and can be used for class libraries that require initialization before the program
  is initialized.
-<dt><br>program
+<dt><br>__program
 <dd>the keyword represents a priority of 64 and is the default priority for any compiled code.
 </dl>
 <br>Priorities in the range 0-20 are reserved for the C++ compiler.&nbsp; This is to ensure that proper initialization of
- the C++ run-time system takes place before the execution of your program.&nbsp; Specifying &quot;before&quot; adjusts the
- priority by subtracting one.&nbsp; Specifying &quot;after&quot; adjusts the priority by adding one.
+ the C++ run-time system takes place before the execution of your program.&nbsp; Specifying &quot;__before&quot; adjusts the
+ priority by subtracting one.&nbsp; Specifying &quot;__after&quot; adjusts the priority by adding one.
 <br><br>A source file containing the following &quot;initialize&quot; pragma specifies that the initialization of static data
  in the file will take place before initialization of all other static data in the program since a priority of 63 will be
  assigned.
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize before program</tt>
-<br><br>If we specify &quot;after&quot; instead of &quot;before&quot;, the initialization of the static data in the file will
- occur after initialization of all other static data in the program since a priority of 65 will be assigned.
-<br><br>Note that the following is equivalent to the &quot;before&quot; example
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize __before __program</tt>
+<br><br>If we specify &quot;__after&quot; instead of &quot;__before&quot;, the initialization of the static data in the file
+ will occur after initialization of all other static data in the program since a priority of 65 will be assigned.
+<br><br>Note that the following is equivalent to the &quot;__before&quot; example
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize 63</tt>
-<br><br>and the following is equivalent to the &quot;after&quot; example.
+<br><br>and the following is equivalent to the &quot;__after&quot; example.
 <br><br><i>Example:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize 65</tt>
-<br><br>The use of the &quot;before&quot;, &quot;after&quot;, and &quot;program&quot; keywords are more descriptive in the
- intent of the pragmas.
-<br><br>It is recommended that a priority of 32 (the priority used when the &quot;library&quot; keyword is specified) be used
- when developing class libraries.&nbsp; This will ensure that initialization of static data defined by the class library will
- take place before initialization of static data defined by the program.&nbsp; The following &quot;initialize&quot; pragma
+<br><br>The use of the &quot;__before&quot;, &quot;__after&quot;, and &quot;__program&quot; keywords are more descriptive
+ in the intent of the pragmas.
+<br><br>It is recommended that a priority of 32 (the priority used when the &quot;__library&quot; keyword is specified) be
+ used when developing class libraries.&nbsp; This will ensure that initialization of static data defined by the class library
+ will take place before initialization of static data defined by the program.&nbsp; The following &quot;initialize&quot; pragma
  can be used to achieve this.
 <br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize library</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma initialize __library</tt>
 <h2 id="32Mbit__The_INLINE_DEPTH_Pragma_LCPP_OnlyR"> 32-bit:&nbsp; The INLINE_DEPTH Pragma (C++ Only) </h2>
 <br>When an in-line function is called, the function call may be replaced by the in-line expansion for that function.&nbsp;
  This in-line expansion may include calls to other in-line functions which can also be expanded.&nbsp; The &quot;inline_depth&quot;
@@ -10046,11 +10038,11 @@
 <br>The &quot;inline_recursion&quot; pragma controls the recursive expansion of inline functions.&nbsp; The form of the &quot;inline_recursion&quot;
  pragma is as follows.
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion on </tt><b>|</b><tt> off </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion ( on </tt><b>|</b><tt> off ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion __on </tt><b>|</b><tt> __off </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma inline_recursion ( __on </tt><b>|</b><tt> __off ) </tt><b>&#91;</b><tt>;</tt><b>&#93;</b>
 <hr>
-<br>Specifying &quot;on&quot; will enable expansion of recursive inline functions.&nbsp; The depth of expansion is specified
- by the &quot;inline_depth&quot; pragma.&nbsp; The default depth is 3.&nbsp; Specifying &quot;off&quot; suppresses expansion
+<br>Specifying &quot;__on&quot; will enable expansion of recursive inline functions.&nbsp; The depth of expansion is specified
+ by the &quot;inline_depth&quot; pragma.&nbsp; The default depth is 3.&nbsp; Specifying &quot;__off&quot; suppresses expansion
  of recursive inline functions.&nbsp; This is the default.
 <h2 id="32Mbit__The_INTRINSIC_Pragma"> 32-bit:&nbsp; The INTRINSIC Pragma </h2>
 <br>Certain functions, those listed in the description of the &quot;oi&quot; option, have intrinsic forms.&nbsp; These functions
@@ -10368,15 +10360,11 @@
 </dl>
 <br>Consider the following example.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux HIGH_C &quot;*&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux HIGH_C &quot;*&quot; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; __parm __caller &#91;&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp;&nbsp;&nbsp; __parm __caller &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; __value __no8087&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp;&nbsp;&nbsp; __value __no8087 \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; __modify &#91;__eax __ecx __edx __fs __gs&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux (HIGH_C) rtn1</tt>
@@ -10636,7 +10624,7 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void mode4(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mode4 =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xb4 0x00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* mov AH,0 */ \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xb0 0x04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* mov AL,4 */ \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xcd 0x10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* int 10H&nbsp; */
@@ -10654,7 +10642,7 @@
  are used instead of the binary encoding of the assembly language instructions.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void mode4(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mode4 =&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux mode4 =&nbsp;&nbsp;&nbsp; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AH,0&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AL,4&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -10667,15 +10655,13 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myalias(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn = \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xe8 __reloff myalias /* near call */</tt>
 <br><br>In the following example, a far call to the function<tt> myalias</tt> is made whenever<tt> myrtn</tt> is called.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; extern void myalias(void);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void myrtn(void);</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux myrtn = \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x9a __offset myalias __seg myalias /* far call */</tt>
 <h4 id="32Mbit__Loading_Data_Segment_Register"> 32-bit:&nbsp; Loading Data Segment Register </h4>
 <br>An application may have been compiled so that the segment register DS does not contain the segment address of the default
@@ -10876,8 +10862,8 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void scrollactivepgup(char,char,char,char,char,char);</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux scrollactivepgup = \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AH,6&quot;&nbsp;&nbsp; \</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10h&quot;&nbsp;&nbsp;&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;mov AH,6&quot; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;int 10h&quot; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __parm &#91;__ch&#93; &#91;__cl&#93; &#91;__dh&#93; &#91;__dl&#93;
  &#91;__al&#93; &#91;__bh&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __modify &#91;__ah&#93;</tt>
@@ -11395,15 +11381,11 @@
 <br>As mentioned in an earlier section, the following pragma defines the calling convention for functions compiled by MetaWare's
  High C compiler.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux HIGH_C &quot;*&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; \</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma aux HIGH_C &quot;*&quot; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; __parm __caller &#91;&#93;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp;&nbsp;&nbsp; __parm __caller &#91;&#93; \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; __value __no8087&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \</tt>
+&nbsp;&nbsp;&nbsp;&nbsp; __value __no8087 \</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; __modify &#91;__eax __ecx __edx __fs __gs&#93;</tt>
 <br><br>Note that register ES must also be specified in the &quot;__modify&quot; register set when using a memory model with
