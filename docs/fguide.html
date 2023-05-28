@@ -7,11 +7,10 @@
 <dt>- &quot; -
 <dd><a href="#The__NO87__Environment_Variable">The &quot;NO87&quot; Environment Variable</a>
 <dt><br>- 1 -
-<dd><a href="#16Mbit_Assembly_Language_Considerations">16-bit Assembly Language Considerations</a>
-<br><a href="#16Mbit_Code_Models">16-bit Code Models</a>
-<br><a href="#16Mbit_Data_Models">16-bit Data Models</a>
-<br><a href="#16Mbit_Memory_Layout">16-bit Memory Layout</a>
-<br><a href="#16Mbit_Memory_Models">16-bit Memory Models</a>
+<dd><a href="#16Mbit__16Mbit_Assembly_Language_Considerations">16-bit:&nbsp; 16-bit Assembly Language Considerations</a>
+<br><a href="#16Mbit__16Mbit_Code_Models">16-bit:&nbsp; 16-bit Code Models</a>
+<br><a href="#16Mbit__16Mbit_Data_Models">16-bit:&nbsp; 16-bit Data Models</a>
+<br><a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>
 <br><a href="#16Mbit__16Mbit_Pragmas">16-bit:&nbsp; 16-bit Pragmas</a>
 <br><a href="#16Mbit__A_Subprogram_that_Never_Returns">16-bit:&nbsp; A Subprogram that Never Returns</a>
 <br><a href="#16Mbit__Alias_Names">16-bit:&nbsp; Alias Names</a>
@@ -29,7 +28,10 @@
 <br><a href="#16Mbit__Describing_Subprogram_Return_Information">16-bit:&nbsp; Describing Subprogram Return Information</a>
 <br><a href="#16Mbit__Describing_the_Registers_Modified_by_a_Subprogram">16-bit:&nbsp; Describing the Registers Modified by a Subprogram</a>
 <br><a href="#16Mbit__Forcing_Arguments_into_Specific_Registers">16-bit:&nbsp; Forcing Arguments into Specific Registers</a>
+<br><a href="#16Mbit__Linking_Applications_for_the_Various_16Mbit_Memory_Models">16-bit:&nbsp; Linking Applications for the Various 16-bit Memory Models</a>
 <br><a href="#16Mbit__Loading_Data_Segment_Register">16-bit:&nbsp; Loading Data Segment Register</a>
+<br><a href="#16Mbit__Memory_Layout">16-bit:&nbsp; Memory Layout</a>
+<br><a href="#16Mbit__Mixed_16Mbit_Memory_Model">16-bit:&nbsp; Mixed 16-bit Memory Model</a>
 <br><a href="#16Mbit__Passing_Arguments_in_Registers">16-bit:&nbsp; Passing Arguments in Registers</a>
 <br><a href="#16Mbit__Passing_Arguments_in_Reverse_Order">16-bit:&nbsp; Passing Arguments in Reverse Order</a>
 <br><a href="#16Mbit__Passing_Arguments_to_InMLine_Subprograms">16-bit:&nbsp; Passing Arguments to In-Line Subprograms</a>
@@ -48,15 +50,15 @@
 <br><a href="#16Mbit__Returning_Subprogram_Values_in_Registers">16-bit:&nbsp; Returning Subprogram Values in Registers</a>
 <br><a href="#16Mbit__Returning_Values_from_Assembly_Language_Functions">16-bit:&nbsp; Returning Values from Assembly Language Functions</a>
 <br><a href="#16Mbit__Specifying_Symbol_Attributes">16-bit:&nbsp; Specifying Symbol Attributes</a>
+<br><a href="#16Mbit__Summary_of_16Mbit_Memory_Models">16-bit:&nbsp; Summary of 16-bit Memory Models</a>
 <br><a href="#16Mbit__Using_the_80x87_to_Pass_Arguments">16-bit:&nbsp; Using the 80x87 to Pass Arguments</a>
 <br><a href="#16Mbit__Using_the_80x87_to_Return_Subprogram_Values">16-bit:&nbsp; Using the 80x87 to Return Subprogram Values</a>
 <br><a href="#16Mbit__Writing_Assembly_Language_Subprograms">16-bit:&nbsp; Writing Assembly Language Subprograms</a>
 <dt><br>- 3 -
-<dd><a href="#32Mbit_Assembly_Language_Considerations">32-bit Assembly Language Considerations</a>
-<br><a href="#32Mbit_Code_Models">32-bit Code Models</a>
-<br><a href="#32Mbit_Data_Models">32-bit Data Models</a>
-<br><a href="#32Mbit_Memory_Layout">32-bit Memory Layout</a>
-<br><a href="#32Mbit_Memory_Models">32-bit Memory Models</a>
+<dd><a href="#32Mbit__32Mbit_Assembly_Language_Considerations">32-bit:&nbsp; 32-bit Assembly Language Considerations</a>
+<br><a href="#32Mbit__32Mbit_Code_Models">32-bit:&nbsp; 32-bit Code Models</a>
+<br><a href="#32Mbit__32Mbit_Data_Models">32-bit:&nbsp; 32-bit Data Models</a>
+<br><a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>
 <br><a href="#32Mbit__32Mbit_Pragmas">32-bit:&nbsp; 32-bit Pragmas</a>
 <br><a href="#32Mbit__A_Subprogram_that_Never_Returns">32-bit:&nbsp; A Subprogram that Never Returns</a>
 <br><a href="#32Mbit__Alias_Names">32-bit:&nbsp; Alias Names</a>
@@ -72,8 +74,12 @@
 <br><a href="#32Mbit__Describing_How_Subprograms_Use_Variables_in_Common">32-bit:&nbsp; Describing How Subprograms Use Variables in Common</a>
 <br><a href="#32Mbit__Describing_Subprogram_Return_Information">32-bit:&nbsp; Describing Subprogram Return Information</a>
 <br><a href="#32Mbit__Describing_the_Registers_Modified_by_a_Subprogram">32-bit:&nbsp; Describing the Registers Modified by a Subprogram</a>
+<br><a href="#32Mbit__Flat_Memory_Model">32-bit:&nbsp; Flat Memory Model</a>
 <br><a href="#32Mbit__Forcing_Arguments_into_Specific_Registers">32-bit:&nbsp; Forcing Arguments into Specific Registers</a>
+<br><a href="#32Mbit__Linking_Applications_for_the_Various_32Mbit_Memory_Models">32-bit:&nbsp; Linking Applications for the Various 32-bit Memory Models</a>
 <br><a href="#32Mbit__Loading_Data_Segment_Register">32-bit:&nbsp; Loading Data Segment Register</a>
+<br><a href="#32Mbit__Memory_Layout">32-bit:&nbsp; Memory Layout</a>
+<br><a href="#32Mbit__Mixed_32Mbit_Memory_Model">32-bit:&nbsp; Mixed 32-bit Memory Model</a>
 <br><a href="#32Mbit__Passing_Arguments_in_Registers">32-bit:&nbsp; Passing Arguments in Registers</a>
 <br><a href="#32Mbit__Passing_Arguments_in_Reverse_Order">32-bit:&nbsp; Passing Arguments in Reverse Order</a>
 <br><a href="#32Mbit__Passing_Arguments_to_InMLine_Subprograms">32-bit:&nbsp; Passing Arguments to In-Line Subprograms</a>
@@ -96,6 +102,7 @@
 <br><a href="#32Mbit__Returning_Values_from_Assembly_Language_Functions">32-bit:&nbsp; Returning Values from Assembly Language Functions</a>
 <br><a href="#32Mbit__Specifying_Symbol_Attributes">32-bit:&nbsp; Specifying Symbol Attributes</a>
 <br><a href="#32Mbit__StackMBased_Calling_Convention">32-bit:&nbsp; Stack-Based Calling Convention</a>
+<br><a href="#32Mbit__Summary_of_32Mbit_Memory_Models">32-bit:&nbsp; Summary of 32-bit Memory Models</a>
 <br><a href="#32Mbit__Using_the_80x87_to_Pass_Arguments">32-bit:&nbsp; Using the 80x87 to Pass Arguments</a>
 <br><a href="#32Mbit__Using_the_80x87_to_Return_Subprogram_Values">32-bit:&nbsp; Using the 80x87 to Return Subprogram Values</a>
 <br><a href="#32Mbit__Using_the_StackMBased_Calling_Convention">32-bit:&nbsp; Using the Stack-Based Calling Convention</a>
@@ -136,7 +143,6 @@
 <br><a href="#File_Sharing">File Sharing</a>
 <br><a href="#Files_with_no_Record_Structure">Files with no Record Structure</a>
 <br><a href="#FINCLUDE">FINCLUDE</a>
-<br><a href="#Flat_Memory_Model">Flat Memory Model</a>
 <br><a href="#FloatingMpoint_Accuracy_On_x86Mbased_Platforms">Floating-point Accuracy On x86-based Platforms</a>
 <br><a href="#FloatingMpoint_Exception_Handling">Floating-point Exception Handling</a>
 <br><a href="#FloatingMpoint_Exceptions_On_x86Mbased_Platforms">Floating-point Exceptions On x86-based Platforms</a>
@@ -171,15 +177,11 @@
 <br><a href="#LIBOS2">LIBOS2</a>
 <br><a href="#LIBPHAR">LIBPHAR</a>
 <br><a href="#LIBWIN">LIBWIN</a>
-<br><a href="#Linking_Applications_for_the_Various_16Mbit_Memory_Models">Linking Applications for the Various 16-bit Memory Models</a>
-<br><a href="#Linking_Applications_for_the_Various_32Mbit_Memory_Models">Linking Applications for the Various 32-bit Memory Models</a>
 <br><a href="#LOGICAL_and_LOGICALT4_Data_Types">LOGICAL and LOGICAL*4 Data Types</a>
 <br><a href="#Logical_File_Name_Support">Logical File Name Support</a>
 <br><a href="#LOGICALT1_Data_Type">LOGICAL*1 Data Type</a>
 <dt><br>- M -
 <dd><a href="#Math_Error_Functions">Math Error Functions</a>
-<br><a href="#Mixed_16Mbit_Memory_Model">Mixed 16-bit Memory Model</a>
-<br><a href="#Mixed_32Mbit_Memory_Model">Mixed 32-bit Memory Model</a>
 <dt><br>- N -
 <dd><a href="#NO87">NO87</a>
 <dt><br>- O -
@@ -217,8 +219,6 @@
 <br><a href="#Subroutine_FTRACEBACK">Subroutine FTRACEBACK</a>
 <br><a href="#Subroutine_GETDAT">Subroutine GETDAT</a>
 <br><a href="#Subroutine_GETTIM">Subroutine GETTIM</a>
-<br><a href="#Summary_of_16Mbit_Memory_Models">Summary of 16-bit Memory Models</a>
-<br><a href="#Summary_of_32Mbit_Memory_Models">Summary of 32-bit Memory Models</a>
 <dt><br>- T -
 <dd><a href="#Terminal_or_Console_Device_Support">Terminal or Console Device Support</a>
 <br><a href="#TMP">TMP</a>
@@ -267,22 +267,22 @@
 <dd><a href="#The_Open_Watcom_F77_Subprogram_Library">The Open Watcom F77 Subprogram Library</a>.
 <br>This chapter describes subprograms available for special operations.
 <dt><br>Chapter 8 -
-<dd><a href="#16Mbit_Memory_Models">16-bit Memory Models</a>.
+<dd><a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>.
 <br>This chapter describes the Open Watcom FORTRAN 77 memory models (including code and data models), the tiny memory model,
  the mixed memory model, linking applications for the various memory models, creating a tiny memory model application, and
  memory layout in an executable.
 <dt><br>Chapter 9 -
-<dd><a href="#16Mbit_Assembly_Language_Considerations">16-bit Assembly Language Considerations</a>.
+<dd><a href="#16Mbit__16Mbit_Assembly_Language_Considerations">16-bit:&nbsp; 16-bit Assembly Language Considerations</a>.
 <br>This chapter describes issues relating to 16-bit interfacing such as parameter passing conventions.
 <dt><br>Chapter 10 -
 <dd><a href="#16Mbit__16Mbit_Pragmas">16-bit:&nbsp; 16-bit Pragmas</a>.
 <br>This chapter describes the use of pragmas with the 16-bit compilers.
 <dt><br>Chapter 11 -
-<dd><a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
+<dd><a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.
 <br>This chapter describes the Open Watcom FORTRAN 77 memory models (including code and data models), the flat memory model,
  the mixed memory model, linking applications for the various memory models, and memory layout in an executable.
 <dt><br>Chapter 12 -
-<dd><a href="#32Mbit_Assembly_Language_Considerations">32-bit Assembly Language Considerations</a>.
+<dd><a href="#32Mbit__32Mbit_Assembly_Language_Considerations">32-bit:&nbsp; 32-bit Assembly Language Considerations</a>.
 <br>This chapter describes issues relating to 32-bit interfacing such as parameter passing conventions.
 <dt><br>Chapter 13 -
 <dd><a href="#32Mbit__32Mbit_Pragmas">32-bit:&nbsp; 32-bit Pragmas</a>.
@@ -945,24 +945,30 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _COMMON_BLK&nbsp;&nbsp;&nbsp;&nbsp; SEGMENT PARA COMMON USE32 '_COMMON_BLK_DATA'</tt>
 <dt><br>MC
 <dd>(32-bit only) The &quot;compact&quot; memory model (small code, big data) is selected.&nbsp; The various models supported
- by Open Watcom F77 are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a> and <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
+ by Open Watcom F77 are described in the chapters entitled <a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>
+ and <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.
 <dt><br>MF
 <dd>(32-bit only) The &quot;flat&quot; memory model (code and data up to 4 gigabytes) is selected.&nbsp; The various models supported
- by Open Watcom F77 are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a> and <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
-&nbsp; This is the default memory model option.
+ by Open Watcom F77 are described in the chapters entitled <a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>
+ and <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.&nbsp; This is the default memory model
+ option.
 <dt><br>MH
 <dd>(16-bit only) The &quot;huge&quot; memory model (big code, huge data) is selected.&nbsp; The various models supported by Open
- Watcom F77 are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a> and <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
+ Watcom F77 are described in the chapters entitled <a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>
+ and <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.
 <dt><br>ML
 <dd>The &quot;large&quot; memory model (big code, big data) is selected.&nbsp; The various models supported by Open Watcom F77
- are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a> and <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
-&nbsp; This is the default 16-bit memory model option.
+ are described in the chapters entitled <a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a> and
+ <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.&nbsp; This is the default 16-bit memory model
+ option.
 <dt><br>MM
 <dd>The &quot;medium&quot; memory model (big code, small data) is selected.&nbsp; The various models supported by Open Watcom
- F77 are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a> and <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
+ F77 are described in the chapters entitled <a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>
+ and <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.
 <dt><br>MS
 <dd>(32-bit only) The &quot;small&quot; memory model (small code, small data) is selected.&nbsp; The various models supported
- by Open Watcom F77 are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a> and <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
+ by Open Watcom F77 are described in the chapters entitled <a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>
+ and <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.
 <dt><br>OB
 <dd>(32-bit only) This option allows the use of the ESP register as a base register to reference local variables and subprogram
  arguments in the generated code.&nbsp; This can reduce the size of the prologue/epilogue sequences generated by the compiler
@@ -1280,8 +1286,8 @@
 <br><br><i>Example 4:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 -mf calc</tt>
 <br><br>The 32-bit Open Watcom F77 compiler compiles<tt> CALC.FOR</tt> for the &quot;flat&quot; memory model.&nbsp; 32-bit
- memory models are described in the chapter entitled <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.&nbsp; 32-bit
- argument passing conventions are described in the chapter entitled <a href="#32Mbit_Assembly_Language_Considerations">32-bit Assembly Language Considerations</a>.
+ memory models are described in the chapter entitled <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.
+&nbsp; 32-bit argument passing conventions are described in the chapter entitled <a href="#32Mbit__32Mbit_Assembly_Language_Considerations">32-bit:&nbsp; 32-bit Assembly Language Considerations</a>.
 <br><br><i>Example 5:</i>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; C&gt;wfc386 kwikdraw -fpi87</tt>
 <br><br>The 32-bit Open Watcom F77 compiler processes<tt> KWIKDRAW.FOR</tt> producing object code for an Intel 386 system
@@ -1462,8 +1468,8 @@
  libraries are provided.&nbsp; You must use the libraries which coincide with the particular architecture, operating system,
  and code generation strategy or model that you have selected.&nbsp; For the type of code generation strategy or model that
  you intend to use, refer to the description of the &quot;m?&quot; memory model compiler option in the chapter entitled <a href="#Open_Watcom_FORTRAN_77_Compiler_Options">Open Watcom FORTRAN 77 Compiler Options</a>.
-&nbsp; The various code models supported by Open Watcom FORTRAN 77 are described in the chapters entitled <a href="#16Mbit_Memory_Models">16-bit Memory Models</a>
- and <a href="#32Mbit_Memory_Models">32-bit Memory Models</a>.
+&nbsp; The various code models supported by Open Watcom FORTRAN 77 are described in the chapters entitled <a href="#16Mbit__16Mbit_Memory_Models">16-bit:&nbsp; 16-bit Memory Models</a>
+ and <a href="#32Mbit__32Mbit_Memory_Models">32-bit:&nbsp; 32-bit Memory Models</a>.
 <br><br>We have selected a simple naming convention for the libraries that are provided with Open Watcom FORTRAN 77.&nbsp;
  Letters are affixed to the file name to indicate the particular strategy with which the modules in the library have been
  compiled.
@@ -4010,10 +4016,10 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp; cause an abnormal program termination</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</tt>
 <br><br>Note the use of the<tt> VOLATILE</tt> intrinsic function to obtain up-to-date contents of the variable<tt> SIGNAL_COUNT</tt>.
-<h1 id="16Mbit_Memory_Models"> 16-bit Memory Models </h1>
-<br>This chapter describes the various 16-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
+<h1 id="16Mbit__16Mbit_Memory_Models"> 16-bit:&nbsp; 16-bit Memory Models </h1>
+<br><br>This chapter describes the various 16-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
  by two properties; the code model used to implement subprogram calls and the data model used to reference data.
-<h2 id="16Mbit_Code_Models"> 16-bit Code Models </h2>
+<h2 id="16Mbit__16Mbit_Code_Models"> 16-bit:&nbsp; 16-bit Code Models </h2>
 <br>There are two code models;
 <ol>
 <li>the small code model and
@@ -4026,7 +4032,7 @@
 <br><br>A big code model is one in which all calls to subprograms are made with<i> far calls.</i>&nbsp; In a far call, the
  destination address is 32 bits (a segment value and an offset relative to the segment value).&nbsp; This model allows the
  size of the code comprising your program to exceed 64K.
-<h2 id="16Mbit_Data_Models"> 16-bit Data Models </h2>
+<h2 id="16Mbit__16Mbit_Data_Models"> 16-bit:&nbsp; 16-bit Data Models </h2>
 <br>There are three data models;
 <ol>
 <li>the small data model,
@@ -4057,7 +4063,7 @@
  since a run-time routine is called in order to increment far pointers.&nbsp; This increases the size of the code significantly
  and increases execution time.
 </ol>
-<h2 id="Summary_of_16Mbit_Memory_Models"> Summary of 16-bit Memory Models </h2>
+<h2 id="16Mbit__Summary_of_16Mbit_Memory_Models"> 16-bit:&nbsp; Summary of 16-bit Memory Models </h2>
 <br>As previously mentioned, a memory model is a combination of a code model and a data model.&nbsp; The following table describes
  the memory models supported by Open Watcom F77.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -4076,14 +4082,14 @@
  big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; huge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; huge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; huge</tt>
-<h2 id="Mixed_16Mbit_Memory_Model"> Mixed 16-bit Memory Model </h2>
+<h2 id="16Mbit__Mixed_16Mbit_Memory_Model"> 16-bit:&nbsp; Mixed 16-bit Memory Model </h2>
 <br>A mixed memory model application combines elements from the various code and data models.&nbsp; A mixed memory model application
  might be characterized as one that includes arrays which are larger than 64K bytes.
 <br><br>For example, a medium memory model application that uses some arrays which exceed 64K bytes in total size can be described
  as a mixed memory model.&nbsp; In an application such as this, most of the data is in a 64K segment (DGROUP) and hence can
  be referenced with near pointers relative to the segment value in segment register DS.&nbsp; This results in more efficient
  code being generated and better execution times than one can expect from a big data model.
-<h2 id="Linking_Applications_for_the_Various_16Mbit_Memory_Models"> Linking Applications for the Various 16-bit Memory Models </h2>
+<h2 id="16Mbit__Linking_Applications_for_the_Various_16Mbit_Memory_Models"> 16-bit:&nbsp; Linking Applications for the Various 16-bit Memory Models </h2>
 <br>Each memory model requires different run-time and floating-point libraries.&nbsp; Each library assumes a particular memory
  model and should be linked only with modules that have been compiled with the same memory model.&nbsp; The following table
  lists the libraries that are to be used to link an application that has been compiled for a particular memory model.
@@ -4116,7 +4122,7 @@
  -fpi, -fpi87</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; emu87.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm, -ml, -mh&nbsp;&nbsp;&nbsp; -fpi</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; noemu87.lib&nbsp;&nbsp;&nbsp;&nbsp; -mm, -ml, -mh&nbsp;&nbsp;&nbsp; -fpi87</tt>
-<h2 id="16Mbit_Memory_Layout"> 16-bit Memory Layout </h2>
+<h2 id="16Mbit__Memory_Layout"> 16-bit:&nbsp; Memory Layout </h2>
 <br>The following describes the segment ordering of an application linked by the Open Watcom Linker.&nbsp; Note that this
  assumes that the &quot;DOSSEG&quot; linker option has been specified.&nbsp; 
 <ol>
@@ -4148,7 +4154,7 @@
 <dd>equivalenced variables in large data memory models
 </dl>
 </ol>
-<h1 id="16Mbit_Assembly_Language_Considerations"> 16-bit Assembly Language Considerations </h1>
+<h1 id="16Mbit__16Mbit_Assembly_Language_Considerations"> 16-bit:&nbsp; 16-bit Assembly Language Considerations </h1>
 <br>This chapter will deal with the following topics.
 <ol>
 <li>The memory layout of a program compiled by Open Watcom F77.
@@ -6046,10 +6052,10 @@
 </dl>
 <br>This instructs Open Watcom F77 to save any local variables that are located in the 80x87 cache before calling the specified
  routine.
-<h1 id="32Mbit_Memory_Models"> 32-bit Memory Models </h1>
+<h1 id="32Mbit__32Mbit_Memory_Models"> 32-bit:&nbsp; 32-bit Memory Models </h1>
 <br><br>This chapter describes the various 32-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
  by two properties; the code model used to implement subprogram calls and the data model used to reference data.
-<h2 id="32Mbit_Code_Models"> 32-bit Code Models </h2>
+<h2 id="32Mbit__32Mbit_Code_Models"> 32-bit:&nbsp; 32-bit Code Models </h2>
 <br>There are two code models;
 <ol>
 <li>the small code model and
@@ -6066,7 +6072,7 @@
  the small code model.&nbsp; This will result in smaller and faster code since near calls are smaller instructions and are
  processed faster by the CPU.
 <hr>
-<h2 id="32Mbit_Data_Models"> 32-bit Data Models </h2>
+<h2 id="32Mbit__32Mbit_Data_Models"> 32-bit:&nbsp; 32-bit Data Models </h2>
 <br>There are two data models;
 <ol>
 <li>the small data model and
@@ -6085,7 +6091,7 @@
 <br><b><i>&nbsp; Note:</i></b>&nbsp; If your program contains less than 4GB of data, you should use the small data model.
 &nbsp; This will result in smaller and faster code since references using near pointers produce fewer instructions.
 <hr>
-<h2 id="Summary_of_32Mbit_Memory_Models"> Summary of 32-bit Memory Models </h2>
+<h2 id="32Mbit__Summary_of_32Mbit_Memory_Models"> 32-bit:&nbsp; Summary of 32-bit Memory Models </h2>
 <br>As previously mentioned, a memory model is a combination of a code model and a data model.&nbsp; The following table describes
  the memory models supported by Open Watcom F77.&nbsp; 
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -6108,19 +6114,19 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; near&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; large&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far</tt>
-<h2 id="Flat_Memory_Model"> Flat Memory Model </h2>
+<h2 id="32Mbit__Flat_Memory_Model"> 32-bit:&nbsp; Flat Memory Model </h2>
 <br>In the flat memory model, the application's code and data must total less than 4GB in size.&nbsp; Segment registers CS,
  DS, SS and ES point to the same linear address space (this does not imply that the segment registers contain the same value).
 &nbsp; That is, a given offset in one segment refers to the same memory location as that offset in another segment.&nbsp;
  Essentially, a flat model operates as if there were no segments.
-<h2 id="Mixed_32Mbit_Memory_Model"> Mixed 32-bit Memory Model </h2>
+<h2 id="32Mbit__Mixed_32Mbit_Memory_Model"> 32-bit:&nbsp; Mixed 32-bit Memory Model </h2>
 <br>A mixed memory model application combines elements from the various code and data models.&nbsp; A mixed memory model application
  might be characterized as one that includes arrays which are larger than 4GB.
 <br><br>For example, a medium memory model application that uses some arrays which exceed 4GB in total size can be described
  as a mixed memory model.&nbsp; In an application such as this, most of the data is in a 4GB segment (DGROUP) and hence can
  be referenced with near pointers relative to the segment value in segment register DS.&nbsp; This results in more efficient
  code being generated and better execution times than one can expect from a big data model.
-<h2 id="Linking_Applications_for_the_Various_32Mbit_Memory_Models"> Linking Applications for the Various 32-bit Memory Models </h2>
+<h2 id="32Mbit__Linking_Applications_for_the_Various_32Mbit_Memory_Models"> 32-bit:&nbsp; Linking Applications for the Various 32-bit Memory Models </h2>
 <br>Each memory model requires different run-time and floating-point libraries.&nbsp; Each library assumes a particular memory
  model and should be linked only with modules that have been compiled with the same memory model.&nbsp; The following table
  lists the libraries that are to be used to link an application that has been compiled for a particular memory model.&nbsp;
@@ -6158,7 +6164,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -sc</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; emu387.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; noemu387.lib&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpi87</tt>
-<h2 id="32Mbit_Memory_Layout"> 32-bit Memory Layout </h2>
+<h2 id="32Mbit__Memory_Layout"> 32-bit:&nbsp; Memory Layout </h2>
 <br>The following describes the segment ordering of an application linked by the Open Watcom Linker.&nbsp; Note that this
  assumes that the &quot;DOSSEG&quot; linker option has been specified.&nbsp; 
 <ol>
@@ -6191,7 +6197,7 @@
 <dd>equivalenced variables in large data memory models
 </dl>
 </ol>
-<h1 id="32Mbit_Assembly_Language_Considerations"> 32-bit Assembly Language Considerations </h1>
+<h1 id="32Mbit__32Mbit_Assembly_Language_Considerations"> 32-bit:&nbsp; 32-bit Assembly Language Considerations </h1>
 <br>This chapter will deal with the following topics.
 <ol>
 <li>The memory layout of a program compiled by Open Watcom F77.
@@ -8256,8 +8262,8 @@
 <br>This instructs Open Watcom F77 to save any local variables that are located in the 80x87 cache before calling the specified
  routine.
 <h1 id="Use_of_Environment_Variables"> Use of Environment Variables </h1>
-<br>In the Open Watcom FORTRAN 77 software development package, a number of environment variables are used.&nbsp; This appendix
- summarizes their use with a particular component of the package.
+<br><br>In the Open Watcom FORTRAN 77 software development package, a number of environment variables are used.&nbsp; This
+ appendix summarizes their use with a particular component of the package.
 <h2 id="FINCLUDE"> FINCLUDE </h2>
 <br>The <b> FINCLUDE</b> environment variable describes the location of the Open Watcom FORTRAN 77 include files.&nbsp; This
  variable is used by Open Watcom FORTRAN 77.
