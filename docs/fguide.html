@@ -4791,17 +4791,7 @@
 <li>Any sequence of in-line machine language instructions, including DOS and BIOS function calls, can be generated in the
  object code.
 </ul>
-<br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,
- <b><i> _Pragma</i></b> ( &quot;string-literal&quot; ) is an alternative method of specifying <b><i> pragma</i></b> directives.
-<br><br>For example, the following two statements are equivalent.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _Pragma( &quot;library (\&quot;kernel32.lib\&quot;)&quot; )</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;kernel32.lib&quot;)</tt>
-<br><br>The <b><i> _Pragma</i></b> operator can be used in macro definition.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define LIBRARY(X) PRAGMA(library (#X))</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define PRAGMA(X) _Pragma(#X)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LIBRARY(kernel32.lib)&nbsp; // same as #pragma library (&quot;kernel32.lib&quot;)</tt>
+<br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.
 <br><br>The following notation is used to describe the syntax of pragmas.
 <dl>
 <dt>keywords
@@ -6935,17 +6925,7 @@
 <li>Any sequence of in-line machine language instructions, including DOS and BIOS function calls, can be generated in the
  object code.
 </ul>
-<br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.&nbsp; A pragma operator of the form,
- <b><i> _Pragma</i></b> ( &quot;string-literal&quot; ) is an alternative method of specifying <b><i> pragma</i></b> directives.
-<br><br>For example, the following two statements are equivalent.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; _Pragma( &quot;library (\&quot;kernel32.lib\&quot;)&quot; )</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma library (&quot;kernel32.lib&quot;)</tt>
-<br><br>The <b><i> _Pragma</i></b> operator can be used in macro definition.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define LIBRARY(X) PRAGMA(library (#X))</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; # define PRAGMA(X) _Pragma(#X)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LIBRARY(kernel32.lib)&nbsp; // same as #pragma library (&quot;kernel32.lib&quot;)</tt>
+<br>Pragmas are specified in the source file using the <b><i> pragma</i></b> directive.
 <br><br>The following notation is used to describe the syntax of pragmas.
 <dl>
 <dt>keywords
