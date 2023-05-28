@@ -30,7 +30,6 @@
 <br><a href="#16Mbit__Describing_the_Registers_Modified_by_a_Subprogram">16-bit:&nbsp; Describing the Registers Modified by a Subprogram</a>
 <br><a href="#16Mbit__Forcing_Arguments_into_Specific_Registers">16-bit:&nbsp; Forcing Arguments into Specific Registers</a>
 <br><a href="#16Mbit__Loading_Data_Segment_Register">16-bit:&nbsp; Loading Data Segment Register</a>
-<br><a href="#16Mbit__Memory_Layout">16-bit:&nbsp; Memory Layout</a>
 <br><a href="#16Mbit__Passing_Arguments_in_Registers">16-bit:&nbsp; Passing Arguments in Registers</a>
 <br><a href="#16Mbit__Passing_Arguments_in_Reverse_Order">16-bit:&nbsp; Passing Arguments in Reverse Order</a>
 <br><a href="#16Mbit__Passing_Arguments_to_InMLine_Subprograms">16-bit:&nbsp; Passing Arguments to In-Line Subprograms</a>
@@ -75,7 +74,6 @@
 <br><a href="#32Mbit__Describing_the_Registers_Modified_by_a_Subprogram">32-bit:&nbsp; Describing the Registers Modified by a Subprogram</a>
 <br><a href="#32Mbit__Forcing_Arguments_into_Specific_Registers">32-bit:&nbsp; Forcing Arguments into Specific Registers</a>
 <br><a href="#32Mbit__Loading_Data_Segment_Register">32-bit:&nbsp; Loading Data Segment Register</a>
-<br><a href="#32Mbit__Memory_Layout">32-bit:&nbsp; Memory Layout</a>
 <br><a href="#32Mbit__Passing_Arguments_in_Registers">32-bit:&nbsp; Passing Arguments in Registers</a>
 <br><a href="#32Mbit__Passing_Arguments_in_Reverse_Order">32-bit:&nbsp; Passing Arguments in Reverse Order</a>
 <br><a href="#32Mbit__Passing_Arguments_to_InMLine_Subprograms">32-bit:&nbsp; Passing Arguments to In-Line Subprograms</a>
@@ -4293,38 +4291,6 @@
  were passed.&nbsp; However the two hidden arguments for the return value of the character function are placed at the beginning
  of the actual argument list.&nbsp; The first argument is the the pointer to the storage immediately followed by the size
  of the storage.
-<h2 id="16Mbit__Memory_Layout"> 16-bit:&nbsp; Memory Layout </h2>
-<br>The following describes the segment ordering of an application linked by the Open Watcom Linker.&nbsp; Note that this
- assumes that the &quot;DOSSEG&quot; linker option has been specified.&nbsp; 
-<ol>
-<li>all segments not belonging to group &quot;DGROUP&quot; with class &quot;CODE&quot;
-<li>all other segments not belonging to group &quot;DGROUP&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;BEGDATA&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; not with class &quot;BEGDATA&quot;, &quot;BSS&quot; or &quot;STACK&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;BSS&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;STACK&quot;
-</ol>
-<br>A special segment belonging to class &quot;BEGDATA&quot; is defined when linking with Open Watcom run-time libraries.
-&nbsp; This segment is initialized with the hexadecimal byte pattern &quot;01&quot; and is the first segment in group &quot;DGROUP&quot;
- so that storing data at location 0 can be detected.
-<br><br>Segments belonging to class &quot;BSS&quot; contain uninitialized data.&nbsp; Note that this only includes uninitialized
- data in segments belonging to group &quot;DGROUP&quot;.&nbsp; Segments belonging to class &quot;STACK&quot; are used to define
- the size of the stack used for your application.&nbsp; Segments belonging to the classes &quot;BSS&quot; and &quot;STACK&quot;
- are last in the segment ordering so that uninitialized data need not take space in the executable file.
-<br><br>In addition to these special segments, the following conventions are used by Open Watcom F77.
-<ol>
-<li>The &quot;CODE&quot; class contains the executable code for your application.&nbsp; In a small code model, this consists
- of the segment &quot;_TEXT&quot;.&nbsp; In a big code model, this consists of the segments &quot;&lt;subprogram&gt;_TEXT&quot;
- where &lt;subprogram&gt; is the name of a subprogram.
-<li>The &quot;FAR_DATA&quot; class consists of the following:
-<dl>
-<dt>(a)
-<dd>arrays whose size exceeds the data threshold in large data memory models (the data threshold is 256 bytes unless changed using
- the &quot;dt&quot; compiler option)
-<dt><br>(b)
-<dd>equivalenced variables in large data memory models
-</dl>
-</ol>
 <h2 id="16Mbit__Writing_Assembly_Language_Subprograms"> 16-bit:&nbsp; Writing Assembly Language Subprograms </h2>
 <br>When writing assembly language subprograms, use the following guidelines.
 <ol>
@@ -6081,7 +6047,7 @@
 <br>This instructs Open Watcom F77 to save any local variables that are located in the 80x87 cache before calling the specified
  routine.
 <h1 id="32Mbit_Memory_Models"> 32-bit Memory Models </h1>
-<br>This chapter describes the various 32-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
+<br><br>This chapter describes the various 32-bit memory models supported by Open Watcom F77.&nbsp; Each memory model is distinguished
  by two properties; the code model used to implement subprogram calls and the data model used to reference data.
 <h2 id="32Mbit_Code_Models"> 32-bit Code Models </h2>
 <br>There are two code models;
@@ -6382,39 +6348,6 @@
  were passed.&nbsp; However the two hidden arguments for the return value of the character function are placed at the beginning
  of the actual argument list.&nbsp; The first argument is the the pointer to the storage immediately followed by the size
  of the storage.
-<h2 id="32Mbit__Memory_Layout"> 32-bit:&nbsp; Memory Layout </h2>
-<br>The following describes the segment ordering of an application linked by the Open Watcom Linker.&nbsp; Note that this
- assumes that the &quot;DOSSEG&quot; linker option has been specified.&nbsp; 
-<ol>
-<li>all &quot;USE16&quot; segments.&nbsp; These segments are present in applications that execute in both real mode and protected
- mode.&nbsp; They are first in the segment ordering so that the &quot;REALBREAK&quot; option of the &quot;RUNTIME&quot; directive
- can be used to separate the real-mode part of the application from the protected-mode part of the application.&nbsp; Currently,
- the &quot;RUNTIME&quot; directive is valid for Phar Lap executables only.
-<li>all segments not belonging to group &quot;DGROUP&quot; with class &quot;CODE&quot;
-<li>all other segments not belonging to group &quot;DGROUP&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;BEGDATA&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; not with class &quot;BEGDATA&quot;, &quot;BSS&quot; or &quot;STACK&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;BSS&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;STACK&quot;
-</ol>
-<br>Segments belonging to class &quot;BSS&quot; contain uninitialized data.&nbsp; Note that this only includes uninitialized
- data in segments belonging to group &quot;DGROUP&quot;.&nbsp; Segments belonging to class &quot;STACK&quot; are used to define
- the size of the stack used for your application.&nbsp; Segments belonging to the classes &quot;BSS&quot; and &quot;STACK&quot;
- are last in the segment ordering so that uninitialized data need not take space in the executable file.
-<br><br>In addition to these special segments, the following conventions are used by Open Watcom F77.
-<ol>
-<li>The &quot;CODE&quot; class contains the executable code for your application.&nbsp; In a small code model, this consists
- of the segment &quot;_TEXT&quot;.&nbsp; In a big code model, this consists of the segments &quot;&lt;subprogram&gt;_TEXT&quot;
- where &lt;subprogram&gt; is the name of a subprogram.
-<li>The &quot;FAR_DATA&quot; class consists of the following:
-<dl>
-<dt>(a)
-<dd>arrays whose size exceeds the data threshold in large data memory models (the data threshold is 256 bytes unless changed using
- the &quot;dt&quot; compiler option)
-<dt><br>(b)
-<dd>equivalenced variables in large data memory models
-</dl>
-</ol>
 <h2 id="32Mbit__Writing_Assembly_Language_Subprograms"> 32-bit:&nbsp; Writing Assembly Language Subprograms </h2>
 <br>When writing assembly language subprograms, use the following guidelines.
 <ol>
@@ -8323,8 +8256,8 @@
 <br>This instructs Open Watcom F77 to save any local variables that are located in the 80x87 cache before calling the specified
  routine.
 <h1 id="Use_of_Environment_Variables"> Use of Environment Variables </h1>
-<br><br>In the Open Watcom FORTRAN 77 software development package, a number of environment variables are used.&nbsp; This
- appendix summarizes their use with a particular component of the package.
+<br>In the Open Watcom FORTRAN 77 software development package, a number of environment variables are used.&nbsp; This appendix
+ summarizes their use with a particular component of the package.
 <h2 id="FINCLUDE"> FINCLUDE </h2>
 <br>The <b> FINCLUDE</b> environment variable describes the location of the Open Watcom FORTRAN 77 include files.&nbsp; This
  variable is used by Open Watcom FORTRAN 77.
