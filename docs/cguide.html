@@ -5544,8 +5544,8 @@
  address is 16 bits and is relative to the segment value in segment register CS.&nbsp; Hence, in a small code model, all code
  comprising your program, including library functions, must be less than 64kB.
 <br><br>A big code model is one in which all calls to functions are made with<i> far calls.</i>&nbsp; In a far call, the destination
- address is 32 bits (a segment value and an offset relative to the segment value).&nbsp; This model allows the size of the
- code comprising your program to exceed 64kB.
+ address is 32 bits (a 16-bit segment value and a 16-bit offset relative to the segment value).&nbsp; This model allows the
+ size of the code comprising your program to exceed 64kB.
 <hr>
 <br><b><i>&nbsp; Note:</i></b>&nbsp; If your program contains less than 64kB of code, you should use a memory model that employs
  the small code model.&nbsp; This will result in smaller and faster code since near calls are smaller instructions and are
@@ -5562,10 +5562,10 @@
  16 bits; all data references are made relative to the segment value in segment register DS.&nbsp; Hence, in a small data
  model, all data comprising your program must be less than 64kB.
 <br><br>A big data model is one in which all references to data are made with<i> far pointers.</i>&nbsp; Far pointers are
- 32 bits (a segment value and an offset relative to the segment value).&nbsp; This removes the 64kB limitation on data size
- imposed by the small data model.&nbsp; However, when a far pointer is incremented, only the offset is adjusted.&nbsp; Open
- Watcom C/C++ assumes that the offset portion of a far pointer will not be incremented beyond 64kB.&nbsp; The compiler will
- assign an object to a new segment if the grouping of data in a segment will cause the object to cross a segment boundary.
+ 32 bits (a 16-bit segment value and a 16-bit offset relative to the segment value).&nbsp; This removes the 64kB limitation
+ on data size imposed by the small data model.&nbsp; However, when a far pointer is incremented, only the offset is adjusted.
+&nbsp; Open Watcom C/C++ assumes that the offset portion of a far pointer will not be incremented beyond 64kB.&nbsp; The compiler
+ will assign an object to a new segment if the grouping of data in a segment will cause the object to cross a segment boundary.
 &nbsp; Implicit in this is the requirement that no individual object exceed 64kB.&nbsp; For example, an array containing 40,000
  integers does not fit into the big data model.&nbsp; An object such as this should be described as<i> huge.</i>
 <br><br>A huge data model is one in which all references to data are made with far pointers.&nbsp; This is similar to the
