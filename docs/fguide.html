@@ -4053,11 +4053,11 @@
 <ol>
 <li>The huge data model has the same characteristics as the big data model, but formal array arguments are assumed to exceed
  64kB.&nbsp; You should use the huge data model whenever any arrays in your application exceed 64kB in size.
-<li>If your program contains less than 64kB of data, you should use the small data model.&nbsp; This will result in smaller
- and faster code since references using near pointers produce fewer instructions.
 <li>The huge data model should be used only if needed.&nbsp; The code generated in the huge data model is not very efficient
  since a run-time routine is called in order to increment far pointers.&nbsp; This increases the size of the code significantly
  and increases execution time.
+<li>If your program contains less than 64kB of data, you should use the small data model.&nbsp; This will result in smaller
+ and faster code since references using near pointers produce fewer instructions.
 </ol>
 <h2 id="16Mbit__Summary_of_Memory_Models"> 16-bit:&nbsp; Summary of Memory Models </h2>
 <br>As previously mentioned, a memory model is a combination of a code model and a data model.&nbsp; The following table describes
