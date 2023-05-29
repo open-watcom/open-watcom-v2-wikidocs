@@ -5535,10 +5535,10 @@
 <br><br>This chapter describes the various memory models supported by Open Watcom C/C++.&nbsp; Each memory model is distinguished
  by two properties; the code model used to implement function calls and the data model used to reference data.
 <h2 id="16Mbit__Code_Models"> 16-bit:&nbsp; Code Models </h2>
-<br>There are two code models;
+<br>There are two code models:
 <ol>
-<li>the small code model and
-<li>the big code model.
+<li>the small code model
+<li>the big code model
 </ol>
 <br>A small code model is one in which all calls to functions are made with<i> near calls.</i>&nbsp; In a near call, the destination
  address is 16 bits and is relative to the segment value in segment register CS.&nbsp; Hence, in a small code model, all code
@@ -5552,11 +5552,11 @@
  processed faster by the CPU.
 <hr>
 <h2 id="16Mbit__Data_Models"> 16-bit:&nbsp; Data Models </h2>
-<br>There are three data models;
+<br>There are three data models:
 <ol>
-<li>the small data model,
-<li>the big data model and
-<li>the huge data model.
+<li>the small data model
+<li>the big data model
+<li>the huge data model
 </ol>
 <br>A small data model is one in which all references to data are made with<i> near pointers.</i>&nbsp; Near pointers are
  16 bits; all data references are made relative to the segment value in segment register DS.&nbsp; Hence, in a small data
@@ -8403,10 +8403,10 @@
 <br><br>This chapter describes the various memory models supported by Open Watcom C/C++.&nbsp; Each memory model is distinguished
  by two properties; the code model used to implement function calls and the data model used to reference data.
 <h2 id="32Mbit__Code_Models"> 32-bit:&nbsp; Code Models </h2>
-<br>There are two code models;
+<br>There are two code models:
 <ol>
-<li>the small code model and
-<li>the big code model.
+<li>the small code model
+<li>the big code model
 </ol>
 <br>A small code model is one in which all calls to functions are made with<i> near calls.</i>&nbsp; In a near call, the destination
  address is 32 bits and is relative to the segment value in segment register CS.&nbsp; Hence, in a small code model, all code
@@ -8420,10 +8420,10 @@
  processed faster by the CPU.
 <hr>
 <h2 id="32Mbit__Data_Models"> 32-bit:&nbsp; Data Models </h2>
-<br>There are two data models;
+<br>There are two data models:
 <ol>
-<li>the small data model and
-<li>the big data model.
+<li>the small data model
+<li>the big data model
 </ol>
 <br>A small data model is one in which all references to data are made with<i> near pointers.</i>&nbsp; Near pointers are
  32 bits; all data references are made relative to the segment value in segment register DS.&nbsp; Hence, in a small data
@@ -8451,16 +8451,16 @@
  Pointer&nbsp;&nbsp;&nbsp;&nbsp; Pointer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; --------&nbsp;&nbsp;&nbsp; --------&nbsp;&nbsp;&nbsp; --------&nbsp;&nbsp;&nbsp; --------
 &nbsp;&nbsp;&nbsp; --------</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; near&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; near</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; near&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; near</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; medium&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; medium&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; near</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compact&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; compact&nbsp;&nbsp;&nbsp;&nbsp; small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; near&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; large&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; large&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ big&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; far</tt>
 <h2 id="32Mbit__Flat_Memory_Model"> 32-bit:&nbsp; Flat Memory Model </h2>
 <br>In the flat memory model, the application's code and data must total less than 4GB in size.&nbsp; Segment registers CS,
  DS, SS and ES point to the same linear address space (this does not imply that the segment registers contain the same value).
