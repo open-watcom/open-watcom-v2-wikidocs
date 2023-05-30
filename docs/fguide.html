@@ -4102,8 +4102,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Floating-point</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------------------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -----------&nbsp;&nbsp;&nbsp;&nbsp; -------------&nbsp;&nbsp;&nbsp; ------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -fpc</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -ml, -mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -5013,11 +5012,11 @@
 <h3 id="16Mbit__Describing_Calling_Information"> 16-bit:&nbsp; Describing Calling Information </h3>
 <br>The following form of the auxiliary pragma can be used to describe the way a subprogram is to be called.&nbsp; 
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> far</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> far </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> near</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> near </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> = </tt><b>in_line</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> = </tt><b>in_line</b><tt> </tt>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; in_line ::= { const | </b><tt>&quot;</tt><b>asm</b><tt>&quot;</tt><b> | (</b><tt>float</tt><b>
  fpinst) }</b>
 <hr>
@@ -5464,7 +5463,7 @@
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>{</b><tt>no8087 </tt><b>|</b><tt> </tt><b>reg_set</b><tt>
  </tt><b>|</b><tt> </tt><b>struct_info}</b><tt> </tt>
-<br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
+<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
  </tt><b>(</b><tt>routine </tt><b>|</b><tt> caller</tt><b>)</b><tt> </tt><b>|</b><tt> </tt><b>reg_set}</b>
 <hr>
 <dl>
@@ -6150,8 +6149,8 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; convention</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- ------------------&nbsp;&nbsp;&nbsp; ----------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------&nbsp;&nbsp;&nbsp; --------&nbsp;&nbsp;&nbsp; ------------------&nbsp;&nbsp;
+&nbsp; ----------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibs.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -sc</tt>
@@ -7173,13 +7172,13 @@
 <h3 id="32Mbit__Describing_Calling_Information"> 32-bit:&nbsp; Describing Calling Information </h3>
 <br>The following form of the auxiliary pragma can be used to describe the way a subprogram is to be called.&nbsp; 
 <hr>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> far</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> far </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> far16</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> far16 </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> near</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> near </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> = </tt><b>in_line</b>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> = </tt><b>in_line</b><tt> </tt>
 <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; in_line ::= { const | </b><tt>&quot;</tt><b>asm</b><tt>&quot;</tt><b> }</b>
 <hr>
 <dl>
@@ -7612,7 +7611,7 @@
 <hr>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; *$pragma aux </tt><b>sym</b><tt> value </tt><b>{</b><tt>no8087 </tt><b>|</b><tt> </tt><b>reg_set</b><tt>
  </tt><b>|</b><tt> </tt><b>struct_info}</b><tt> </tt>
-<br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
+<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp; struct_info ::=</b><tt> struct </tt><b>{</b><tt>float </tt><b>|</b><tt> struct </tt><b>|</b><tt>
  </tt><b>(</b><tt>routine </tt><b>|</b><tt> caller</tt><b>)</b><tt> </tt><b>|</b><tt> </tt><b>reg_set}</b>
 <hr>
 <dl>
