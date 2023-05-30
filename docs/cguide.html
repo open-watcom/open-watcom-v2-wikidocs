@@ -8468,8 +8468,8 @@
  Essentially, a flat model operates as if there were no segments.
 <h2 id="32Mbit__Mixed_Memory_Model"> 32-bit:&nbsp; Mixed Memory Model </h2>
 <br>A mixed memory model application combines elements from the various code and data models.&nbsp; A mixed memory model application
- might be characterized as one that uses the <b><i> near</i></b>, <b><i> far</i></b>, or <b><i> huge</i></b> keywords when
- describing some of its functions or data objects.
+ might be characterized as one that uses the <b><i> near</i></b>, or <b><i> far</i></b> keywords when describing some of its
+ functions or data objects.
 <br><br>For example, a medium memory model application that uses some far pointers to data can be described as a mixed memory
  model.&nbsp; In an application such as this, most of the data is in a 4GB segment (DGROUP) and hence can be referenced with
  near pointers relative to the segment value in segment register DS.&nbsp; This results in more efficient code being generated
@@ -8478,21 +8478,23 @@
 <h2 id="32Mbit__Linking_Applications_for_the_Various_Memory_Models"> 32-bit:&nbsp; Linking Applications for the Various Memory Models </h2>
 <br>Each memory model requires different run-time and floating-point libraries.&nbsp; Each library assumes a particular memory
  model and should be linked only with modules that have been compiled with the same memory model.&nbsp; The following table
- lists the libraries that are to be used to link an application that has been compiled for a particular memory model.&nbsp;
- Currently, only libraries for the flat/small memory model are provided.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+ lists the libraries that are to be used to link an application that has been compiled for a particular memory model.
+<hr>
+<br><b><i>&nbsp; Note:</i></b>&nbsp; Currently, only libraries for the flat/small memory model are provided.
+<hr>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Memory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Run-time&nbsp;&nbsp;&nbsp; Floating-Point&nbsp;&nbsp;
  Floating-Point</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Library&nbsp;&nbsp;&nbsp;&nbsp; Library (80x87)
 &nbsp; Library (f-p calls)</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ----------&nbsp; ----------&nbsp; ---------------&nbsp; -------------------</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flat/small&nbsp; CLIB3R.LIB&nbsp;&nbsp;&nbsp; MATH387R.LIB&nbsp;&nbsp;&nbsp;&nbsp; MATH3R.LIB</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flat/small&nbsp; CLIB3R.LIB&nbsp; MATH387R.LIB&nbsp;&nbsp;&nbsp;&nbsp; MATH3R.LIB</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLIB3S.LIB&nbsp;
-&nbsp;&nbsp; MATH387S.LIB&nbsp;&nbsp;&nbsp;&nbsp; MATH3S.LIB</tt>
+ MATH387S.LIB&nbsp;&nbsp;&nbsp;&nbsp; MATH3S.LIB</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PLIB3R.LIB&nbsp;
-&nbsp;&nbsp; CPLX73R.LIB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CPLX3R.LIB</tt>
+ CPLX73R.LIB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CPLX3R.LIB</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PLIB3S.LIB&nbsp;
-&nbsp;&nbsp; CPLX73S.LIB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CPLX3S.LIB</tt>
+ CPLX73S.LIB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CPLX3S.LIB</tt>
 <br><br>The letter &quot;R&quot; or &quot;S&quot; which is affixed to the file name indicates the particular strategy with
  which the modules in the library have been compiled.
 <dl>

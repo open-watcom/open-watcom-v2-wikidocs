@@ -4090,14 +4090,20 @@
 <h2 id="16Mbit__Linking_Applications_for_the_Various_Memory_Models"> 16-bit:&nbsp; Linking Applications for the Various Memory Models </h2>
 <br>Each memory model requires different run-time and floating-point libraries.&nbsp; Each library assumes a particular memory
  model and should be linked only with modules that have been compiled with the same memory model.&nbsp; The following table
- lists the libraries that are to be used to link an application that has been compiled for a particular memory model.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+ lists the libraries that are to be used to link an application that has been compiled for a particular memory model.&nbsp;
+ The following table lists the run-time libraries used by FORTRAN 77 and the compiler options that cause their use.
+<ol>
+<li>The &quot;Library&quot; column specified the library name.
+<li>The &quot;Memory model&quot; column indicates the compiler options that specify the memory model of the library.
+<li>The &quot;Floating-point column&quot; indicates the compiler options that specify the floating-point model of the library.
+</ol>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Library&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Floating-point</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --------------</tt>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibm.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -fpc</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibl.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -ml, -mh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -6127,9 +6133,10 @@
 <h2 id="32Mbit__Linking_Applications_for_the_Various_Memory_Models"> 32-bit:&nbsp; Linking Applications for the Various Memory Models </h2>
 <br>Each memory model requires different run-time and floating-point libraries.&nbsp; Each library assumes a particular memory
  model and should be linked only with modules that have been compiled with the same memory model.&nbsp; The following table
- lists the libraries that are to be used to link an application that has been compiled for a particular memory model.&nbsp;
- Currently, only libraries for the flat/small memory model are provided.&nbsp; The following table lists the run-time libraries
- used by FORTRAN 77 and the compiler options that cause their use.
+ lists the libraries that are to be used to link an application that has been compiled for a particular memory model.
+<hr>
+<br><b><i>&nbsp; Note:</i></b>&nbsp; Currently, only libraries for the flat/small memory model are provided.
+<hr>
 <ol>
 <li>The &quot;Library&quot; column specified the library name.
 <li>The &quot;Memory model&quot; column indicates the compiler options that specify the memory model of the library.
@@ -6144,7 +6151,7 @@
 &nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp; convention</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- --------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----------</tt>
+ ------------------&nbsp;&nbsp;&nbsp; ----------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flib.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; flibs.lib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -mf, -ms&nbsp;&nbsp;&nbsp; -fpc&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -sc</tt>
