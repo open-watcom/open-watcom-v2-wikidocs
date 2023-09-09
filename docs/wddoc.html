@@ -1093,7 +1093,7 @@
 <dd>2 byte unsigned quantity
 <dt><br>unsigned_32
 <dd>4 byte unsigned quantity
-<dt><br>access_req
+<dt><br>trap_req
 <dd>The first field of every request is of this type.&nbsp; It is a 1 byte field which identifies the request to be performed.
 <dt><br>addr48_ptr
 <dd>This type encapsulates the concept of a 16:32 pointer.&nbsp; All addresses in the debuggee memory are described with these.
@@ -1196,7 +1196,7 @@
  of elements will be given by the<tt> num_out_mx</tt> field.&nbsp; The total number of bytes actually filled in to the return
  message by the trap file is returned by the function (this may be less than the total number of bytes described by the<tt>
  mx_out</tt> array).
-<br><br>Since every request must start with an<tt> access_req</tt> field, the minimum size of a request message is one byte.
+<br><br>Since every request must start with an<tt> trap_req</tt> field, the minimum size of a request message is one byte.
 <br><br>Some requests do not require a return message.&nbsp; In this case, the program invoking TrapRequest<b> must</b> pass
  zero for<tt> num_out_mx</tt> and NULL for<tt> mx_out</tt>.
 <h4 id="Request_Example"> Request Example </h4>
@@ -1207,8 +1207,8 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; mx_entry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; out&#91;1&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned char&nbsp;&nbsp; buffer&#91;30&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct in_msg_def {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- req;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; req;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
@@ -1244,7 +1244,7 @@
 <br>Request to connect to the remote machine.&nbsp; This must be the first request made.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; major;&nbsp;&nbsp; &lt;-+- struct trap_version</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minor;&nbsp;&nbsp;&nbsp;&nbsp; |</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remote;&nbsp; &lt;-+</tt>
@@ -1270,7 +1270,7 @@
  next one made.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The<tt> req</tt> field contains the request.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1283,7 +1283,7 @@
  missing files to the remote machine before continuing the debugging process.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The<tt> req</tt> field contains the request.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1293,7 +1293,7 @@
  spawned sub-shell exits.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The<tt> req</tt> field contains the request.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1302,7 +1302,7 @@
 <br>Request to obtain a supplementary service id.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; service_name</tt>
 <br><br>The<tt> req</tt> field contains the request.&nbsp; The<tt> service_name</tt> field contains a string identifying the
@@ -1322,7 +1322,7 @@
 <br>Request to perform a supplementary service.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 service_id</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</tt>
@@ -1336,7 +1336,7 @@
 <br>Request to get system information from the remote machine.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The<tt> req</tt> field contains the request.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1415,7 +1415,7 @@
  obtains that relocation information so that the debugger can update its addresses.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in_addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_mhandle&nbsp;&nbsp;&nbsp; mod_handle;</tt>
 <br><br>The<tt> req</tt> field contains the request.&nbsp; The<tt> in_addr</tt> tells the address to map.&nbsp; The<tt> mod_handle</tt>
@@ -1444,7 +1444,7 @@
  not care how the checksum is calculated.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in_addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><br>The<tt> req</tt> field stores the request.&nbsp; The<tt> in_addr</tt> contains the starting address and the<tt> len</tt>
@@ -1457,7 +1457,7 @@
 <br>Request to read a block of memory.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem_addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; len;</tt>
 <br><br>The<tt> mem_addr</tt> contains the address of the memory block to read from the remote machine.&nbsp; The length of
@@ -1472,7 +1472,7 @@
 <br>Request to write a block of memory.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem_addr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</tt>
@@ -1487,7 +1487,7 @@
 <br>Request to read data from I/O address space of the debuggee.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; IO_offset</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len</tt>
 <br><br>The<tt> IO_offset</tt> contains the I/O address of the debuggee machine.&nbsp; The length of the block is determined
@@ -1502,7 +1502,7 @@
 <br>Request to write data to the I/O address space of the debuggee.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; IO_offset</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</tt>
@@ -1522,7 +1522,7 @@
  can just single step the program and return COND_WATCH for every instruction when there are active watchpoints present.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The request is in<tt> req</tt> field.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -1568,7 +1568,7 @@
 <br>Request to load a program.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; true_argv</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; argv</tt>
@@ -1602,7 +1602,7 @@
 <br>Request to kill the program.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_phandle&nbsp;&nbsp;&nbsp; task_id</tt>
 <br><br>The<tt> req</tt> field contains the request.&nbsp; The<tt> task_id</tt> field (obtained from REQ_PROG_LOAD) identifies
  the program to be killed.
@@ -1614,7 +1614,7 @@
 <br>Request to set a watchpoint at the address given.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; watch_addr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size</tt>
 <br><br>The address of the watchpoint is given by the<tt> watch_addr</tt> field.&nbsp; The<tt> size</tt> field gives the number
@@ -1631,7 +1631,7 @@
 <br>Request to clear a watchpoint at the address given.&nbsp; The trap file may assume all watch points are cleared at once.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; watch_addr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size</tt>
 <br><br>The address of the watch point is given by the<tt> watch_addr</tt> field.&nbsp; The<tt> size</tt> field gives the
@@ -1643,7 +1643,7 @@
 <br>Request to set a breakpoint at the address given.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break_addr</tt>
 <br><br>The address of the break point is given by the<tt> break_addr</tt> field.
 <br><br>Return message:
@@ -1654,7 +1654,7 @@
 <br>Request to clear a breakpoint at the address given.&nbsp; The trap file may assume all breakpoints are cleared at once.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break_addr</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; old</tt>
 <br><br>The address of the break point is given by the<tt> break_addr</tt> field.&nbsp; The<tt> old</tt> field holds the old
@@ -1668,7 +1668,7 @@
  (so that symbolic information is properly displayed).
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; seg</tt>
 <br><br>The<tt> seg</tt> field contains the segment.&nbsp; To get the first alias, put zero in this field.
 <br><br>Return message:
@@ -1682,7 +1682,7 @@
 <br>Request to make the debuggee's screen visible.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NONE</tt>
@@ -1690,7 +1690,7 @@
 <br>Request to make the debugger's screen visible.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NONE</tt>
@@ -1698,7 +1698,7 @@
 <br>Request to read the remote keyboard input.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; wait</tt>
 <br><br>The request will be time out if it waits longer than the period specifies in the<tt> wait</tt> field.&nbsp; The waiting
  period is measured in seconds.&nbsp; A value of zero means to wait forever.
@@ -1710,7 +1710,7 @@
 <br>Request to get the name of a newly loaded library (DLL).
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_mhandle&nbsp;&nbsp;&nbsp; mod_handle</tt>
 <br><br>The<tt> mod_handle</tt> field contains the library handle.&nbsp; It should be zero to get the name of the first DLL
  or the value from the<tt> mod_handle</tt> of a previous request.
@@ -1728,7 +1728,7 @@
 <br>Request to get the error message text for an error code.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <br><br>The<tt> err</tt> field contains the error code number of the error text requested.
 <br><br>Return message:
@@ -1742,7 +1742,7 @@
  message text that the trap file wants to display to the user.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flags</tt>
@@ -1767,7 +1767,7 @@
 <br>Request to redirect the standard input (REQ_REDIRECT_STDIN) or standard output (REQ_REDIRECT_STDOUT) of the debuggee.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
 <br><br>The file name to be redirected to/from is given by the<tt> name</tt> field.
@@ -1780,7 +1780,7 @@
 <br>Request to split the command line into the command name and parameters.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd</tt>
 <br><br>The<tt> cmd</tt> field contains the command.&nbsp; Command can be a single command line or an array of command strings.
@@ -1795,7 +1795,7 @@
  MAD file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</tt>
@@ -1805,7 +1805,7 @@
 <br>Request to write CPU register contents.&nbsp; The data is target architecture specific.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</tt>
 <br><br>The message content is specific to the MAD in use and will contain a<tt> mad_registers</tt> union.
@@ -1816,7 +1816,7 @@
 <br>Request to retrieve machine specific data.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info_type;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; addr48_ptr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; addr;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -----------------------------</tt>
@@ -1846,7 +1846,7 @@
 <br>Request to retreive characteristics of the remote file system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ext_separator;</tt>
@@ -1861,7 +1861,7 @@
 <br>Request to create/open a file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
@@ -1889,7 +1889,7 @@
 <br>Request to seek to a particular file position.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mode</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; pos</tt>
@@ -1910,7 +1910,7 @@
 <br>Request to read a block of data from a file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handle</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; len</tt>
 <br><br>The handle of the file is given by the<tt> handle</tt> field.&nbsp; The<tt> len</tt> field stores the number of bytes
@@ -1930,7 +1930,7 @@
 <br>Request to write a block of data to a file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</tt>
@@ -1945,7 +1945,7 @@
 <br>Request to write a block of data to the debuggee's screen.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</tt>
 <br><br>The data is given in<tt> data</tt> field.
@@ -1959,7 +1959,7 @@
 <br>Request to close a file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</tt>
 <br><br>The handle of the file is given by the<tt> handle</tt> field.
 <br><br>Return message:
@@ -1970,7 +1970,7 @@
 <br>Request to erase a file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</tt>
 <br><br>The<tt> file_name</tt> field contains the file name to be deleted.
@@ -1982,7 +1982,7 @@
 <br>Request to convert a file name to its full path name.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_type</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</tt>
@@ -2007,7 +2007,7 @@
 <br>Request to run a command on the target (debuggee's) system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; chk_size</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmd</tt>
@@ -2053,7 +2053,7 @@
  contents of the return message.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The<tt> req</tt> field contains the request.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2065,7 +2065,7 @@
  request.&nbsp; See the Overlay Manager Interface document for more information on the contents of the return message.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_16&nbsp;&nbsp;&nbsp;&nbsp; sect_id</tt>
 <br><br>The<tt> sect_id</tt> field indicates the overlay section the information is being requested of.
 <br><br>Return message:
@@ -2081,7 +2081,7 @@
  of the returned data is provided by the REQ_OVL_STATE_SIZE trap file request.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</tt>
@@ -2091,7 +2091,7 @@
 &nbsp; See the Overlay Manager Interface document for more information on the contents of the return message.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; --------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data</tt>
 <br><br>The<tt> data</tt> field contains the overlay state information to be restored.
@@ -2104,7 +2104,7 @@
  of the messages.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</tt>
 <br><br>The<tt> mach</tt> field is the machine address.&nbsp; The<tt> sect_id</tt> field stores the number of entries down
  in the overlay stack.
@@ -2119,7 +2119,7 @@
  of the messages.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2131,7 +2131,7 @@
  request.&nbsp; See the Overlay Manager Interface document for more information on the contents of the messages.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ovl_address&nbsp;&nbsp;&nbsp;&nbsp; ovl_addr</tt>
 <br><br>The<tt> ovl_addr</tt> field contains the overlay address.
 <br><br>Return message:
@@ -2156,7 +2156,7 @@
 <br>Request to get next thread.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</tt>
 <br><br>The<tt> thread</tt> contains the either a zero to get information on the first thread, or the value of the<tt> thread</tt>
  field in the return message of a previous request.
@@ -2173,7 +2173,7 @@
 <br>Request to set a given thread ID to be the current thread.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</tt>
 <br><br>The<tt> thread</tt> contains the thread number to set.&nbsp; If it's zero, do not attempt to set the thread, just
  return the current thread ID.
@@ -2187,7 +2187,7 @@
 <br>Request to freeze a thread so that it will not be run next time when executing the task program.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</tt>
 <br><br>The<tt> thread</tt> contains the thread number to freeze.
 <br><br>Return message:
@@ -2198,7 +2198,7 @@
 <br>Request to allow a thread to run next time when executing the program.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_thandle&nbsp;&nbsp;&nbsp; thread</tt>
 <br><br>The<tt> thread</tt> contains the thread number to thaw.
 <br><br>Return message:
@@ -2211,7 +2211,7 @@
  for the user to know.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; thread</tt>
 <br><br>The<tt> thread</tt> field contains the thread ID.&nbsp; A zero value means to get the title string for the thread
  extra information.&nbsp; This is displayed at the top of the thread window.
@@ -2228,7 +2228,7 @@
 <br>Request to rename a file on the debuggee's system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; from_name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
@@ -2243,7 +2243,7 @@
 <br>Request to create a directory on the target (debuggee) system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_name</tt>
 <br><br>The<tt> dir_name</tt> field contains the name of the directory to be created.
@@ -2255,7 +2255,7 @@
 <br>Request to remove a directory on the target system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_name</tt>
 <br><br>The<tt> dir_name</tt> field contains the name of the directory to be removed.
@@ -2267,7 +2267,7 @@
 <br>Request to set the current drive on the target system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drive</tt>
 <br><br>The<tt> drive</tt> field contains the drive number to be set on the target system (0=A,1=B,...).
 <br><br>Return message:
@@ -2278,7 +2278,7 @@
 <br>Request to get the current drive on the target system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The<tt> req</tt> field contains the request.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2288,7 +2288,7 @@
 <br>Request to set a directory on the target system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_name</tt>
 <br><br>The<tt> dir_name</tt> field contains the name of the directory to be set.
@@ -2300,7 +2300,7 @@
 <br>Request to get the current directory name on the target system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drive</tt>
 <br><br>The<tt> drive</tt> field contains the target drive number (0=current drive,1=A,2=B,...).
 <br><br>Return message:
@@ -2314,7 +2314,7 @@
 <br>Request to set a file's date and time information on the target system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; time_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time</tt>
 <br><br>The<tt> handle</tt> contains the file handle.&nbsp; The<tt> time</tt> field follows the UNIX time format.&nbsp; The<tt>
@@ -2326,7 +2326,7 @@
 <br>Request to get the date and time information for a file on the target system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_fhandle&nbsp;&nbsp;&nbsp; handle</tt>
 <br><br>The<tt> handle</tt> contains the file handle.
 <br><br>Return message:
@@ -2338,7 +2338,7 @@
 <br>Request to get the amount of free space left on the drive.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drive</tt>
 <br><br>The<tt> drive</tt> field contains the target drive number (0=current drive,1=A,2=B,...).
 <br><br>Return message:
@@ -2349,7 +2349,7 @@
 <br>Request to set the file attribute of a file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32&nbsp;&nbsp;&nbsp;&nbsp; attribute</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
@@ -2363,7 +2363,7 @@
 <br>Request to get the file attribute of a file.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; --------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
 <br><br>The<tt> name</tt> field contains the name to be checked.
@@ -2375,7 +2375,7 @@
 <br>Request to convert a file name to its canonical form.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name</tt>
 <br><br>The<tt> file_name</tt> field contains the file name to be converted.
@@ -2391,7 +2391,7 @@
 <br>Request to find the first file in a directory.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; attrib</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ----------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
@@ -2420,7 +2420,7 @@
 <br>Request to find the next file in the directory.&nbsp; This request should be used only after REQ_RFX_FINDFIRST.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; --------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rfx_find&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info</tt>
 <br><br>The<tt> req</tt> field contains the request.&nbsp; The<tt> info</tt> field contains the rfx_find structure returned
@@ -2435,7 +2435,7 @@
 <br>Request to end the directory search operation.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>The<tt> req</tt> field contains the request.
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2450,7 +2450,7 @@
 <br>Request to retreive Environment variable from the remote system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
 <br><br>Return message:
@@ -2462,7 +2462,7 @@
 <br>Request to set Environment variable on the remote system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value;</tt>
@@ -2474,14 +2474,14 @@
 <h3 id="REQ_FILE_INFO_GET_DATE"> REQ_FILE_INFO_GET_DATE </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_FILE_INFO_SET_DATE"> REQ_FILE_INFO_SET_DATE </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -2489,42 +2489,42 @@
 <h3 id="REQ_ASYNC_GO"> REQ_ASYNC_GO </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_ASYNC_STEP"> REQ_ASYNC_STEP </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_ASYNC_POLL"> REQ_ASYNC_POLL </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_ASYNC_STOP"> REQ_ASYNC_STOP </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_ASYNC_ADD_BREAK"> REQ_ASYNC_ADD_BREAK </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_ASYNC_REMOVE_BREAK"> REQ_ASYNC_REMOVE_BREAK </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -2532,56 +2532,56 @@
 <h3 id="REQ_RUN_THREAD_INFO"> REQ_RUN_THREAD_INFO </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_RUN_THREAD_GET_NEXT"> REQ_RUN_THREAD_GET_NEXT </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_RUN_THREAD_GET_RUNTIME"> REQ_RUN_THREAD_GET_RUNTIME </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_RUN_THREAD_POLL"> REQ_RUN_THREAD_POLL </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_RUN_THREAD_SET"> REQ_RUN_THREAD_SET </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_RUN_THREAD_GET_NAME"> REQ_RUN_THREAD_GET_NAME </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_RUN_THREAD_STOP"> REQ_RUN_THREAD_STOP </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h3 id="REQ_RUN_THREAD_SIGNAL_STOP"> REQ_RUN_THREAD_SIGNAL_STOP </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -2590,7 +2590,7 @@
 <br>Request to get information if exact breakpoints are supported on the remote system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
@@ -2601,7 +2601,7 @@
 <br>Request to set if exact breakpoints are active on the remote system.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; access_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status</tt>
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
