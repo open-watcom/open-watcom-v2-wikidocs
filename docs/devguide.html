@@ -431,15 +431,27 @@
 <br>Note that there are no other requirements here - it is very annoying when a project requires you to define handles for
  tools, create directories in which it can deposit stuff, scrounge up obscure tools from who knows where or pretend to be
  Jim Welch in order to get a debuggable version of the executable.
-<br><br>There is more than one way to switch between development and release build.&nbsp; A<tt> OWDEBUGBUILD</tt> environment
- variable provides global control.&nbsp; When set to 1, debug builds are produced, otherwise release builds are created.&nbsp;
- When building individual projects with wmake, it is also possible to give the<i> release</i> macro on the wmake command line
- (0 means debug build, 1 means release build).
-<br><br>Perhaps it should be noted that &quot;releasable&quot; build still contains debugging information, but only at the
- -d1 level and in a separate .sym file.&nbsp; In case of crashes or other highly unusual behaviour, release build should be
- enough to point you in the right direction but usually not sufficient to fully diagnose and rectify the problem.
-<br><br>Now, if you wish to allow certain abberant behaviours based upon cryptic make variables, that is fine, as long as
- the project can build both a debuggable (ie full -d2) version as well as a release (ie no -d2, -d1 only and no memory tracker)
+<br><br>There is more than one way to switch between development, debug and release build.
+<ul>
+<li><tt> OWDEVBUILD</tt> environment variable provides global control.&nbsp; When set to 1, development debug build is produced.
+<li><tt> OWDEBUGBUILD</tt> environment variable provides global control.&nbsp; When set to 1, debug build is produced.
+<li>Otherwise standard release build is created.
+</ul>
+<br>When building individual projects with wmake, it is also possible to give the<i> debug</i> macro on the wmake command
+ line.
+<dl>
+<dt>0
+<dd>means release build
+<dt><br>1
+<dd>means debug build
+<dt><br>2
+<dd>means development debug build
+</dl>
+<br>Perhaps it should be noted that &quot;release&quot; build contains minimal debugging information, only at the -d1 level
+ and in a separate .sym file.&nbsp; In case of crashes or other highly unusual behaviour, release build should be enough to
+ point you in the right direction but usually not sufficient to fully diagnose and rectify the problem.
+<br>Now, if you wish to allow certain abberant behaviours based upon cryptic make variables, that is fine, as long as the
+ project can build both a debuggable (ie full -d2) version as well as a release (ie no -d2, -d1 only and no memory tracker)
  version without these things being set.&nbsp; That is, if you want stupid stuff in your<i> makeinit</i> - fine, but don't
  require others to do this in order to build the project.
 <br><br>Any non-standard makefile variables which you do use should be prepended by the name of your project and an underscore,
