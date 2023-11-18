@@ -1523,58 +1523,58 @@
 <dt><br>FE_INTERNAL
 <dd>The symbol is not at file scope.
 </dl>
-<h2 id="void_FEMessageL_msg_class_msg__void_Textra_R"> void FEMessage( msg_class msg, void *extra ) </h2>
+<h2 id="void_FEMessageL_fe_msg_femsg__void_Textra_R"> void FEMessage( fe_msg femsg, void *extra ) </h2>
 <br>Relays information to the front end.
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
-<dt><br>msg
+<dt><br>femsg
 <dd>Defined below.
 <dt><br>extra
-<dd>Extra information.&nbsp; The type and meaning depends on the value of<b> msg</b> and is indicated below.
+<dd>Extra information.&nbsp; The type and meaning depends on the value of<b> femsg</b> and is indicated below.
 </dl>
 <dl>
-<dt>MSG_INFO_FILE
+<dt>FEMSG_INFO_FILE
 <dd>Informational message about file.&nbsp; extra (void) is ignored.
-<dt><br>MSG_CODE_SIZE
+<dt><br>FEMSG_CODE_SIZE
 <dd>Code size.&nbsp; Extra (int) is the size of the generated code.
-<dt><br>MSG_DATA_SIZE
+<dt><br>FEMSG_DATA_SIZE
 <dd>Data size.&nbsp; Extra (int) is the size of the generated data.
-<dt><br>MSG_ERROR
+<dt><br>FEMSG_ERROR
 <dd>A back end error message.&nbsp; Extra (char *) is the error message.
-<dt><br>MSG_FATAL
+<dt><br>FEMSG_FATAL
 <dd>A fatal code generator error.&nbsp; Extra (char *) is the reason for the fatal error.&nbsp; The front end should issue this
  message and exit immediately to the system.
-<dt><br>MSG_INFO_PROC
+<dt><br>FEMSG_INFO_PROC
 <dd>Informational message about current procedure.&nbsp; Extra (char *) is a message.
-<dt><br>MSG_BAD_PARM_REGISTER
+<dt><br>FEMSG_BAD_PARM_REGISTER
 <dd>Invalid parameter register returned from FEAuxInfo.&nbsp; Extra (int) is position of the offending parameter.
-<dt><br>MSG_BAD_RETURN_REGISTER
+<dt><br>FEMSG_BAD_RETURN_REGISTER
 <dd>Invalid return register returned from FEAuxInfo.&nbsp; Extra (aux_handle) is the offending aux_handle.
-<dt><br>MSG_REGALLOC_DIED
+<dt><br>FEMSG_REGALLOC_DIED
 <dd>The register alloc ran out of memory.&nbsp; Extra (cg_sym_handle) is the procedure which was not fully optimized.
-<dt><br>MSG_SCOREBOARD_DIED
+<dt><br>FEMSG_SCOREBOARD_DIED
 <dd>The register scoreboard ran out of memory.&nbsp; Extra (cg_sym_handle) is the procedure which was not fully optimized.
-<dt><br>MSG_PEEPHOLE_FLUSHED
+<dt><br>FEMSG_PEEPHOLE_FLUSHED
 <dd>Peep hole optimizer flushed due to lack of memory.&nbsp; (void)
-<dt><br>MSG_BACK_END_ERROR
+<dt><br>FEMSG_BACK_END_ERROR
 <dd>BAD NEWS!&nbsp; Internal compiler error.&nbsp; Extra (int) is an internal error number.
-<dt><br>MSG_BAD_SAVE
+<dt><br>FEMSG_BAD_SAVE
 <dd>Invalid register modification information return from FEAuxInfo.&nbsp; Extra (aux_handle) is the offending aux_handle.
-<dt><br>MSG_WANT_MORE_DATA
+<dt><br>FEMSG_WANT_MORE_DATA
 <dd>The back end wants more data space.&nbsp; Extra (int) is amount of additional memory needed to run.&nbsp; (DOS real mode hosts
  only).
-<dt><br>MSG_BLIP
+<dt><br>FEMSG_BLIP
 <dd>Blip.&nbsp; Let the world know we're still alive by printing a dot on the screen.&nbsp; This is called approximately every
  4 seconds during code generation.&nbsp; (void)
-<dt><br>MSG_BAD_LINKAGE
+<dt><br>FEMSG_BAD_LINKAGE
 <dd>Cannot resolve linkage conventions.&nbsp; 370 only.&nbsp; (sym)
-<dt><br>MSG_SCHEDULER_DIED
+<dt><br>FEMSG_SCHEDULER_DIED
 <dd>Instruction scheduler ran out of memory.&nbsp; Extra (cg_sym_handle) is the procedure which was not fully optimized.
-<dt><br>MSG_NO_SEG_REGS
+<dt><br>FEMSG_NO_SEG_REGS
 <dd>(Only occurs in the x86 version).&nbsp; The cg_switches did not allow any segment registers to float, but the user has requested
  a far pointer indirection.&nbsp; Extra (cg_sym_handle) is the procedure which contained the far pointer usage.
-<dt><br>MSG_SYMBOL_TOO_LONG
+<dt><br>FEMSG_SYMBOL_TOO_LONG
 <dd>Given symbol is too long and is truncated to maximum permited length for current module output format.&nbsp; Extra (cg_sym_handle)
  is the symbol which was truncated.
 </dl>
@@ -2155,7 +2155,7 @@
 <dd>(struct) For 370 linkage conventions.
 <dt><br>more_cg_types
 <dd>(enum)
-<dt><br>msg_class
+<dt><br>fe_msg
 <dd>(enum) The 1st parameter to FEMessage.
 <dt><br>proc_revision
 <dd>(enum) The 3rd parameter to BEInit.
