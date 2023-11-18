@@ -193,16 +193,16 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II_TARG_PPC,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II_TARG_MIPS</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<h2 id="void_BEStartLR"> void BEStart() </h2>
+<h2 id="void_BEStartL_void_R"> void BEStart( void ) </h2>
 <br>Start the code generator.&nbsp; Must be called immediately after all calls to BEDefSeg have been made.&nbsp; This restriction
  is relaxed somewhat for the 80(x)86 code generator.&nbsp; See BEDefSeg for details.
-<h2 id="void_BEStopLR"> void BEStop() </h2>
+<h2 id="void_BEStopL_void_R"> void BEStop( void ) </h2>
 <br>Normal termination of code generator.&nbsp; This must be the second last routine called.
-<h2 id="void_BEAbortLR"> void BEAbort() </h2>
+<h2 id="void_BEAbortL_void_R"> void BEAbort( void ) </h2>
 <br>Abnormal termination of code generator.&nbsp; This must be the second last routine called.
-<h2 id="void_BEFiniLR"> void BEFini() </h2>
+<h2 id="void_BEFiniL_void_R"> void BEFini( void ) </h2>
 <br>Finalize the code generator.&nbsp; This must be the last routine called.
-<h2 id="patch_handle_BEPatchLR"> patch_handle BEPatch() </h2>
+<h2 id="patch_handle_BEPatchL_void_R"> patch_handle BEPatch( void ) </h2>
 <br>Allocate a patch handle which can be used to create a patchable integer (an integer which will have a constant value provided
  sometime while the codegen is handling the CGDone call).&nbsp; See CGPatchNode.
 <h2 id="void_BEPatchIntegerL_patch_handle_hdl__signed_32_value_R"> void BEPatchInteger( patch_handle hdl, signed_32 value ) </h2>
@@ -313,7 +313,7 @@
 <br>The back end uses a<b> label_handle</b> for flow of control.&nbsp; Each<b> label_handle</b> is a unique code label.&nbsp;
  These labels may only be used for flow of control.&nbsp; In order to define a label in a data segment, a<b> back_handle</b>
  must be used.
-<h2 id="label_handle_BENewLabelLR"> label_handle BENewLabel() </h2>
+<h2 id="label_handle_BENewLabelL_void_R"> label_handle BENewLabel( void ) </h2>
 <br>Allocate a new control flow label.
 <dl>
 <dt>Returns
@@ -515,7 +515,7 @@
 <dt><br>type
 <dd>The type of the parameter.
 </dl>
-<h2 id="label_handle_CGLastParmLR"> label_handle CGLastParm() </h2>
+<h2 id="label_handle_CGLastParmL_void_R"> label_handle CGLastParm( void ) </h2>
 <br>End a parameter declaration section.&nbsp; This function must be called after the last parameter has been declared.&nbsp;
  Prior to this function, the only calls the front-end is allowed to make are CGParmDecl and CGAutoDecl.
 <h2 id="void_CGAutoDeclL_cg_sym_handle_name__cg_type_type_R"> void CGAutoDecl( cg_sym_handle name, cg_type type ) </h2>
@@ -1035,7 +1035,7 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_LABEL, NULL, sel_label );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGSelect( sel_handle );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_LABEL, NULL, end_label );</tt>
-<h2 id="sel_handle_CGSelInitLR"> sel_handle CGSelInit() </h2>
+<h2 id="sel_handle_CGSelInitL_void_R"> sel_handle CGSelInit( void ) </h2>
 <br>Create a sel_handle.
 <dl>
 <dt>Returns
@@ -1368,7 +1368,7 @@
 <dt>Returns
 <dd>The current location in the segment before the seek takes place.
 </dl>
-<h2 id="unsigned_long_DGTellLR"> unsigned long DGTell() </h2>
+<h2 id="unsigned_long_DGTellL_void_R"> unsigned long DGTell( void ) </h2>
 <dl>
 <dt>Returns
 <dd>The current location within the segment.
@@ -1416,7 +1416,7 @@
 <dt>Returns
 <dd>A segment_id.
 </dl>
-<h2 id="char_TFEModuleNameLR"> char *FEModuleName() </h2>
+<h2 id="char_TFEModuleNameL_void_R"> char *FEModuleName( void ) </h2>
 <dl>
 <dt>Returns
 <dd>A null terminated string which is the name of the module being compiled.&nbsp; This is usually the file name with path and
@@ -1462,7 +1462,7 @@
 <dd>The type to which to promote an argument with a given type before passing it to a procedure.&nbsp; Type will be a dealiased
  type.
 </dl>
-<h2 id="int_FETrueLR"> int FETrue() </h2>
+<h2 id="int_FETrueL_void_R"> int FETrue( void ) </h2>
 <dl>
 <dt>Returns
 <dd>The value of TRUE.&nbsp; This is normally 1.
@@ -1529,12 +1529,15 @@
 <dt><b><i>Parameter</i></b>
 <dd><b><i>Definition</i></b>
 <dt><br>femsg
-<dd>Defined below.
+<dd>Front-end message.
 <dt><br>extra
 <dd>Extra information.&nbsp; The type and meaning depends on the value of<b> femsg</b> and is indicated below.
 </dl>
+<br>The femsg parameter values and extra information description.
 <dl>
-<dt>FEMSG_INFO_FILE
+<dt><b><i>Value</i></b>
+<dd><b><i>Description</i></b>
+<dt><br>FEMSG_INFO_FILE
 <dd>Informational message about file.&nbsp; extra (void) is ignored.
 <dt><br>FEMSG_CODE_SIZE
 <dd>Code size.&nbsp; Extra (int) is the size of the generated code.
@@ -1662,15 +1665,15 @@
  attribute.
 <dt><br>( void *, FEINF_NEXT_IMPORT )
 <dd>void * (See notes at end) - A handle for the next symbol to generate a reference to in the object file.
-<dt><br>( void*, FEINF_IMPORT_NAME )
+<dt><br>( void *, FEINF_IMPORT_NAME )
 <dd>char * - The EXTDEF name to generate given a handle
 <dt><br>( void *, FEINF_NEXT_IMPORT_S )
 <dd>void * (See notes at end) - A handle for the next symbol to generate a reference to in the object file.
-<dt><br>( void*, FEINF_IMPORT_NAME_S )
+<dt><br>( void *, FEINF_IMPORT_NAME_S )
 <dd>Returns a cg_sym_handle.&nbsp; The EXTDEF name symbol reference to generate given a handle.
-<dt><br>( void*, FEINF_NEXT_LIBRARY )
+<dt><br>( void *, FEINF_NEXT_LIBRARY )
 <dd>void * (See notes at end) - Handle for the next library required
-<dt><br>( void*, FEINF_LIBRARY_NAME )
+<dt><br>( void *, FEINF_LIBRARY_NAME )
 <dd>char * - The library name to generate given a handle
 <dt><br>( NULL, FEINF_DATA_GROUP )
 <dd>char * - Used to name DGROUP exactly.&nbsp; NULL means use no group at all.
@@ -1834,9 +1837,9 @@
 <dt><br>scoped
 <dd>whether the symbol is file scoped or not.
 </dl>
-<h2 id="void_DBBegBlockLR"> void DBBegBlock() </h2>
+<h2 id="void_DBBegBlockL_void_R"> void DBBegBlock( void ) </h2>
 <br>Open a new scope level.
-<h2 id="void_DBEndBlockLR"> void DBEndBlock() </h2>
+<h2 id="void_DBEndBlockL_void_R"> void DBEndBlock( void ) </h2>
 <br>Close the current scope level.
 <h2 id="dbg_type_DBScalarL_char_Tname__cg_type_tipe_R"> dbg_type DBScalar( char *name, cg_type tipe ) </h2>
 <br>Defines the string<b> name</b> to have type<b> tipe</b>.
@@ -1861,7 +1864,7 @@
 <br>declare a based pointer type.&nbsp; The 'seg_loc' parameter is a location expression which evaluates to the base address
  for the pointer after the indirection has been performed.&nbsp; Before the location expression is evalated, the current lvalue
  of the pointer symbol associated with this type is pushed onto the expression stack (needed for based on self pointers).
-<h2 id="dbg_struct_DBBegStructLR"> dbg_struct DBBegStruct() </h2>
+<h2 id="dbg_struct_DBBegStructL_void_R"> dbg_struct DBBegStruct( void ) </h2>
 <br>start a structure type definition
 <h2 id="void_DBAddFieldL_dbg_struct_st__unsigned_32_off__char_Tnm__dbg_type_base_R"> void DBAddField( dbg_struct st, unsigned_32 off, char *nm, dbg_type base ) </h2>
 <br>add a field to a structure
