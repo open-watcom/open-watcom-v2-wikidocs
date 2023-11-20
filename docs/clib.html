@@ -52,6 +52,7 @@
 <br><a href="#_bios_timeofday">_bios_timeofday</a>
 <br><a href="#_bprintf">_bprintf, _bwprintf</a>
 <br><a href="#break">break...&nbsp; Functions</a>
+<br><a href="#brk">brk</a>
 <br><a href="#bsearch">bsearch</a>
 <br><a href="#bsearch_s">bsearch_s</a>
 <br><a href="#btowc">btowc</a>
@@ -1857,6 +1858,8 @@
 <dd>return the size of a memory block
 <dt><br><a href="#realloc">_brealloc</a>
 <dd>re-allocate a memory block in a based heap
+<dt><br><a href="#brk">brk</a>
+<dd>set allocation &quot;break&quot; position
 <dt><br><a href="#calloc">calloc</a>
 <dd>allocate and zero memory
 <dt><br><a href="#_expand">_expand</a>
@@ -7068,6 +7071,45 @@
 <dt>Systems:
 <dd><tt> break_off - DOS, Windows, Win386</tt>
 <br><tt>break_on - DOS, Windows, Win386</tt>
+</dl>
+<h2 id="brk"> brk </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;stdlib.h&gt;</tt>
+<br><tt>int brk( void __near *addr );</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>Change data segment size, the &quot;break&quot; value.&nbsp; The &quot;break&quot; value is the address of the first byte
+ of unallocated memory.&nbsp; When a program starts execution, the break value is placed following the code and constant data
+ for the program.&nbsp; As memory is allocated, this pointer will advance when there is no freed block large enough to satisfy
+ an allocation request.&nbsp; The<tt> brk</tt> function can be used to set a new &quot;break&quot; value for the program.
+<br>This value may be changed by a program at any time.
+</dl>
+<dl>
+<dt>Returns:
+<dd>If the call to<tt> brk</tt> succeeds, &quot;break&quot; value is set to new value and 0 is returned.&nbsp; If the call to<tt>
+ brk</tt> fails, -1 is returned.&nbsp; When an error has occurred, <tt> errno</tt> contains a value indicating the type of
+ error that has been detected.
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#calloc">calloc</a> Functions, <a href="#_expand">_expand</a> Functions, <a href="#free">free</a> Functions, <a href="#halloc">halloc</a>,
+ <a href="#hfree">hfree</a>, <a href="#malloc">malloc</a> Functions, <a href="#_msize">_msize</a> Functions, <a href="#realloc">realloc</a>
+ Functions, <a href="#sbrk">sbrk</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+</dl>
+<dl>
+<dt>Classification:
+<dd>WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd>Linux
 </dl>
 <h2 id="bsearch"> bsearch </h2>
 <dl>
@@ -43979,7 +44021,6 @@
 <dt>Synopsis:
 <dd>
 <br><tt>#include &lt;stdlib.h&gt;</tt>
-<br><tt>int brk( void __near *addr );</tt>
 <br><tt>void __near *sbrk( int increment );</tt>
 </dl>
 <dl>
@@ -44028,25 +44069,25 @@
 <br><tt>#endif</tt>
 <br><br><tt>void main()</tt>
 <br><tt> {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; void *brk;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; void *brkval;</tt>
 <br><br><tt>#if defined(M_I86)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x0000, brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x0000, brkval );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; /* calling printf will cause an allocation */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;Original break value %p\n&quot;, brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;Original break value %p\n&quot;, brkval );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;Current amblksiz value %x\n&quot;, _amblksiz );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x0000, brk );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;New break value after printf \t\t%p\n&quot;, brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x0000, brkval );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;New break value after printf \t\t%p\n&quot;, brkval );</tt>
 <br><tt>#endif</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x3100, brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x3100, brkval );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;New break value after sbrk( 0x3100 ) \t%p\n&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; brk );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x0200, brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; brkval );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; alloc( 0x0200, brkval );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;New break value after sbrk( 0x0200 ) \t%p\n&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; brkval );</tt>
 <br><tt>#if defined(M_I86)</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; alloc( -0x0100, brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; alloc( -0x0100, brkval );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;New break value after sbrk( -0x0100 ) \t%p\n&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; brk );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; brkval );</tt>
 <br><tt>#endif</tt>
 <br><tt> }</tt>
 </dl>
@@ -58829,10 +58870,10 @@
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
  </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
-<br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language standard
- describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly from the
- ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the standard
- that discusses the behavior.
+<br><br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language
+ standard describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly
+ from the ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of
+ the standard that discusses the behavior.
 <h2 id="NULL_Macro"> NULL Macro </h2>
 <br><b>The null pointer constant to which the macro </b><tt> NULL</tt><b> expands (7.1.6).</b>
 <br><br>The macro <tt> NULL</tt> expands to 0 in small data models and to 0L in large data models.
