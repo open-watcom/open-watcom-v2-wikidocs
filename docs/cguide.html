@@ -3491,6 +3491,8 @@
 </ul>
 <h3 id="DoubleMByteDUnicode_Characters"> Double-Byte/Unicode Characters </h3>
 <br>This group of options deals with compile-time aspects of character sets used in the source code.
+<br><br>By default, the compiler uses output Unicode encoding and source code page 437 (US-ASCII) to output wide characters.
+&nbsp; This setting is equivalent to using the -zku=437 option.
 <h4 id="zk_0_1_2_l_"> zk{0,1,2,l} </h4>
 <br>This option causes the compiler to recognize double-byte characters in strings.&nbsp; When the compiler scans a text string
  enclosed in quotes (&quot;), it will recognize the first byte of a double-byte character and suppress lexical analysis of
