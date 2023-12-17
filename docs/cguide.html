@@ -480,9 +480,9 @@
 <br><a href="#xx">xx</a>
 <dt><br>- Z -
 <dd><a href="#za">za</a>
-<br><a href="#za89">za89</a>
 <br><a href="#za99">za99</a>
 <br><a href="#zam">zam</a>
+<br><a href="#zastdEXstandardY">zastd=&lt;standard&gt;</a>
 <br><a href="#zat">zat</a>
 <br><a href="#zc">zc</a>
 <br><a href="#zdl">zdl</a>
@@ -741,7 +741,7 @@
 <br><a href="#xss">xss</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#xx">xx</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#za">za</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<br><a href="#za89">za89</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<br><a href="#zastdEXstandardY">zastd=&lt;standard&gt;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#za99">za99</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#zam">zam</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <br><a href="#zat">zat</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -1051,10 +1051,10 @@
 <dd>ignore default directories for file search (.,../h,../c,...) (see <a href="#xx">xx</a>)
 <dt><br>z{a,e}
 <dd>disable/enable language extensions (default is ze) (see <a href="#za">za</a>) (see <a href="#ze">ze</a>)
-<dt><br>za89
-<dd>use ISO/ANSI C89 language standard (see <a href="#za89">za89</a>)
+<dt><br>zastd=&lt;standard&gt;
+<dd>use specified ISO/ANSI language standard (see <a href="#zastdEXstandardY">zastd=&lt;standard&gt;</a>)
 <dt><br>za99
-<dd>use ISO/ANSI C99 language standard (see <a href="#za89">za89</a>)
+<dd>use ISO/ANSI C99 language standard; deprecated, use zastd=c99 (see <a href="#zastdEXstandardY">zastd=&lt;standard&gt;</a>)
 <dt><br>zam
 <dd>disable all predefined old extension macros (keyword macros, non-ISO names) (see <a href="#zam">zam</a>)
 <dt><br>zat
@@ -1258,10 +1258,10 @@
 <dd>set warning level to maximum setting (see <a href="#wx">wx</a>)
 <dt><br>z{a,e}
 <dd>disable/enable language extensions (see <a href="#za">za</a>) (see <a href="#ze">ze</a>)
-<dt><br>za89
-<dd>use ISO/ANSI C89 language standard (see <a href="#za89">za89</a>)
+<dt><br>zastd=&lt;standard&gt;
+<dd>use specified ISO/ANSI language standard (see <a href="#zastdEXstandardY">zastd=&lt;standard&gt;</a>)
 <dt><br>za99
-<dd>use ISO/ANSI C99 language standard (see <a href="#za99">za99</a>)
+<dd>use ISO/ANSI C99 language standard; deprecated, use zastd=c99 (see <a href="#zastdEXstandardY">zastd=&lt;standard&gt;</a>)
 <dt><br>zq
 <dd>operate quietly (see <a href="#zq">zq</a>)
 <dt><br>zs
@@ -2137,10 +2137,26 @@
  the &quot;ze&quot; option.
 <br>When using the C compiler, there is an exception to the enforcement of the ISO C standard programming language specification.
 &nbsp; The use of C++ style comments (// comment) are not diagnosed.
-<h4 id="za89"> za89 </h4>
-<br>This option helps to ensure that the module to be compiled conforms to the ISO/ANSI C programming language standard
+<h4 id="zastdEXstandardY"> zastd=&lt;standard&gt; </h4>
+<br>This option helps to ensure that the module to be compiled conforms to the selected ISO/ANSI C programming language standard.
+<dl>
+<dt><b><i>C compiler value</i></b>
+<dd><b><i>Description</i></b>
+<dt><br>c89
+<dd>C 1989 standard (default)
+<dt><br>c99
+<dd>C 1999 standard
+</dl>
+<dl>
+<dt><b><i>C++ compiler value</i></b>
+<dd><b><i>Description</i></b>
+<dt><br>c++98
+<dd>C++ 1998 standard (default)
+<dt><br>c++0x
+<dd>experimental, some features of new C++ standards
+</dl>
 <h4 id="za99"> za99 </h4>
-<br>This option helps to ensure that the module to be compiled conforms to the ISO/ANSI C programming language standard
+<br>This option is deprecated, use zastd=c99 (see <a href="#zastdEXstandardY">zastd=&lt;standard&gt;</a>)
 <h4 id="ze"> ze </h4>
 <br>The &quot;ze&quot; option (default) enables the use of the following compiler extensions:
 <ol>
