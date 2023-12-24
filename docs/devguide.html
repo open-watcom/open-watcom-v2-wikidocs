@@ -111,7 +111,7 @@
 &nbsp; This file controls the operation of wmake and is the key to understanding of the build process.&nbsp; Since wmake looks
  for<i> makeinit</i> along the<tt> PATH</tt>, the<i> build</i> directory should be placed at or near the start of your<tt>
  PATH</tt> environment variable.
-<dt><br>build/bin
+<dt><br>build/binbuild
 <dd>contains binaries created during first build phase (bootstrap) and used during main building process (second build phase).
 <dt><br>build/mif
 <dd>contains all main make files (global).
@@ -131,7 +131,7 @@
 &nbsp; There's a lot of projects!
 <dl>
 <dt>as
-<dd>the Alpha AXP and PowerPC assembler.&nbsp; The x86 assembler lives separately.
+<dd>the Alpha AXP, the PowerPC and the MIPS assemblers.&nbsp; (The x86 assembler lives separately.)
 <dt><br>aui
 <dd>user interface library employed by the debugger and profiler.
 <dt><br>bdiff
@@ -152,7 +152,8 @@
 <dd>utility function for conversion between various floating point binary formats.
 <dt><br>cg
 <dd>Open Watcom code generators, the heart of the compilers.&nbsp; These are shared by all languages (C, C++, FORTRAN).&nbsp;
- Currently supported targets are 16-bit and 32-bit x86 as well as Alpha AXP.
+ Currently supported targets are 16-bit and 32-bit x86 as well as Alpha AXP.&nbsp; There are also code generators build for
+ PowerPC and MIPS.&nbsp; A very old code generator for s370 is present, but unused.
 <dt><br>clib
 <dd>the C runtime library.&nbsp; Pretty big project in itself.
 <dt><br>cmdedit
