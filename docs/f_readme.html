@@ -86,7 +86,7 @@
  to commercial compilers previously marketed by Sybase, Powersoft and originally WATCOM International Corp.
 <br><br>Version 2.0 of Open Watcom FORTRAN 77 is a professional, optimizing, multi-platform FORTRAN 77 compiler with a comprehensive
  suite of development tools for developing and debugging both 16-bit and 32-bit applications for DOS, extended DOS, Novell
- NLMs, 16-bit OS/2, 32-bit OS/2, Windows 3.x, Windows 95/98/Me, Win32s, and Windows NT/2000/XP (Win32).
+ NLMs, 16-bit OS/2, 32-bit OS/2, Windows 3.x, Windows 95/98/Me, Win32s, Windows NT/2000/XP upto Windows 11 (Win32) and Linux.
 <br><br>You should read the entire contents of this booklet, as it contains information on new programs and modifications
  that have been made since the previous release.
 <hr>
@@ -98,10 +98,11 @@
 <dl>
 <dt>Open, Multi-target Integrated Development Environment
 <dd>The IDE allows you to easily edit, compile, link, debug and build applications for 16-bit systems like DOS, OS/2 1.x, and
- Windows 3.x and 32-bit systems like extended DOS, Novell NLMs, OS/2, Windows 3.x (Win32s), Windows 95/98/Me, and Windows
- NT/2000/XP.&nbsp; Projects can be made up of multiple targets which permit a project to include EXEs and DLLs.&nbsp; The
- IDE produces makefiles for the project which can be viewed and edited with a text editor.&nbsp; The IDE is hosted under Windows
- 3.x, Windows 95/98/Me, Windows NT/2000/XP, and 32-bit OS/2.
+ Windows 3.x and 32-bit systems like extended DOS, Novell NLMs, OS/2, Windows 3.x (Win32s), Windows 95/98/Me, Windows NT/2000/XP
+ upto Windows 11 and Linux.&nbsp; Projects can be made up of multiple targets which permit a project to include EXEs and DLLs.
+&nbsp; The IDE produces makefiles for the project which can be viewed and edited with a text editor.&nbsp; The IDE is hosted
+ under Windows 3.x, Windows 95/98/Me, Windows NT/2000/XP upto Windows 11 and 32-bit OS/2.&nbsp; (There is no IDE on Linux
+ yet).
 <dt><br>The Widest Range of Intel x86 Platforms
 <dd>
 <dl>
@@ -112,13 +113,14 @@
 <li>32-bit OS/2 (IDE and command line)
 <li>Windows 3.x (IDE)
 <li>Windows 95/98/Me (IDE and command line)
-<li>Windows NT/2000/XP (IDE and command line)
+<li>Windows NT/2000/XP upto Windows 11 (IDE and command line)
+<li>Linux (command line)
 </ul>
 <dt><br>16-bit Target Platforms
 <dd>
 <ul>
 <li>DOS
-<li>Windows 3.x
+<li>Windows 1 upto Windows 3.x
 <li>OS/2 1.x
 </ul>
 <dt><br>32-bit Target Platforms
@@ -127,30 +129,31 @@
 <li>Extended DOS
 <li>Win32s
 <li>Windows 95/98/Me
-<li>Windows NT/2000/XP
+<li>Windows NT/2000/XP upto Windows 11
 <li>32-bit OS/2
 <li>Novell NLMs
 </ul>
 </dl>
 <dt><br>Cross-Platform Development Tools
 <dd>The core tools in the package permit cross-platform development that allows developers to exploit the advanced features of
- today's popular 32-bit operating systems, including Windows 95/98/Me, Windows NT/2000/XP, and OS/2.&nbsp; Cross-platform
- support allows you to develop on a host development environment for execution on a different target system.
+ many well known 32-bit operating systems, including Windows 95/98/Me, Windows NT/2000/XP upto Windows 11, OS/2 and Linux.
+&nbsp; Cross-platform support allows you to develop on a host development environment for execution on a different target
+ system.
 <dt><br>Multi-Platform Debugger
 <dd>The new debugger advances developer productivity.&nbsp; New features include redesigned interface, ability to set breakpoints
  on nested function calls, improved C++ and DLL debugging, reverse execution, and configurable interface.&nbsp; Graphical
- versions of the debugger are available under Windows 3.x, Windows 95/98/Me, Windows NT/2000/XP, and 32-bit OS/2.&nbsp; Character
- versions of the debugger are available under DOS, Windows 3.x, Windows NT/2000/XP, and 32-bit OS/2.&nbsp; For VIDEO fans,
- we have kept the command line compatibility from the original debugger.
+ versions of the debugger are available under Windows 3.x, Windows 95/98/Me, Windows NT/2000/XP upto Windows 11, and 32-bit
+ OS/2.&nbsp; Character versions of the debugger are available under DOS, Windows 3.x, Windows NT/2000/XP upto Windows 11,
+ 32-bit OS/2 and Linux.&nbsp; For VIDEO fans, we have kept the command line compatibility from the original debugger.
 <dt><br>Performance Analysis
 <dd>The Open Watcom Execution Sampler and Open Watcom Execution Profiler are performance analysis tools that locate heavily used
  sections of code so that you may focus your efforts on these areas and improve your application's performance.
 <dt><br>Editor
 <dd>The Open Watcom Editor is a context sensitive source editor, integrated into the Windows 3.x, Windows 95/98/Me and Windows
- NT/2000/XP version of the IDE.
+ NT/2000/XP (upto Wondows 11) version of the IDE.
 <dt><br>Graphical Development Tools
 <dd>Open Watcom FORTRAN 77 includes a suite of graphical development tools to aid development of Windows 3.x, Windows 95/98/Me
- and Windows NT/2000/XP applications.&nbsp; The development tools include:
+ and Windows NT/2000/XP upto Windows 11 applications.&nbsp; The development tools include:
 <dl>
 <dt>Resource Editors
 <dd>Enable you to create resources for your 16-bit and 32-bit Windows applications.&nbsp; For 32-bit OS/2 PM development, Open
@@ -168,7 +171,7 @@
 <dd>Monitors all DDE activity occurring in the system.
 <dt><br>Dr.&nbsp; Watcom
 <dd>Enables you to debug your program by examining both the program and the system after an exception occurs; monitors native
- applications running under Windows 3.x, Windows 95/98/Me or Windows NT/2000/XP.
+ applications running under Windows 3.x, Windows 95/98/Me or Windows NT/2000/XP upto Windows 11.
 </dl>
 <dt><br>Assembler
 <dd>An assembler is included in the package.&nbsp; It is compatible with a subset of the Microsoft macro assembler (MASM).
@@ -213,7 +216,7 @@
  offer a resolution.&nbsp; Here is a list of information that will help technical support solve the problem:
 <dl>
 <dt>Contact information
-<dd>We would like your name, as well as telephone and fax numbers where you can be reached during the day.
+<dd>We would like your name, as well as your email adress, where you can be reached.
 <dt><br>Product information
 <dd>Please tell us the product name and exact version number.
 <dt><br>Hardware configuration
@@ -226,9 +229,9 @@
  example with compile and link options is ideal.
 </dl>
 <h3 id="Suggested_Reading"> Suggested Reading </h3>
-<br>There are a number of good books and references that can help you answer your questions.&nbsp; Following is a list of
- some of the books and documents we feel might be helpful.&nbsp; This is by no means an exhaustive list.&nbsp; Contact your
- local bookstore for additional information.
+<br>There are a number of good books and references that can help you answer your questions.&nbsp; Following is an old list
+ of some of the books and documents we feel might be helpful.&nbsp; This is by no means an exhaustive list.&nbsp; Contact
+ your local bookstore for additional information.
 <h4 id="DOS_Developers"> DOS Developers </h4>
 <dl>
 <dt>PC Interrupts, Second Edition
