@@ -630,13 +630,13 @@
 <h2 id="Builder"> Builder </h2>
 <br>This wondrous tool is called<i> builder.</i>&nbsp; You can see<i> bld\builder\builder.doc</i> for detailed info on the
  tool and/or look at the source if the documentation doesn't satisfy you.
-<br><br>So how does builder work?&nbsp; Each project has a<i> lang.ctl</i> builder script file.&nbsp; If you go to a project
+<br><br>So how does builder work?&nbsp; Each project has a<i> builder.ctl</i> builder script file.&nbsp; If you go to a project
  directory and run builder, it will make only that project; if you go to<i> bld</i> and run builder, it will build everything
- under the sun.&nbsp; The overall build uses<i> bat\lang.ctl</i> which includes all of the individual project<i> lang.ctl</i>
- files that we use.&nbsp; Note that if you run builder, it will traverse directories upwards until it finds a<i> lang.ctl</i>
- (or it hits the root and still doesn't find anything, but then you must have surely done something wrong).&nbsp; Results
- are logged to<i> build.log</i> in the current project directory and the previous<i> build.log</i> file is copied to<i> build.lo1.</i>
-&nbsp; The log file contains captured console output (both stdout and stderr).
+ under the sun.&nbsp; The overall build uses<i> builder.ctl</i> in the<i> bld</i> directory, which includes all of the individual
+ project<i> builder.ctl</i> files that we use.&nbsp; Note that if you run builder, it will traverse directories upwards until
+ it finds a<i> builder.ctl</i> (or it hits the root and still doesn't find anything, but then you must have surely done something
+ wrong).&nbsp; Results are logged to<i> build.log</i> in the current project directory and the previous<i> build.log</i> file
+ is copied to<i> build.lo1.</i>&nbsp; The log file contains captured console output (both stdout and stderr).
 <br><br>Common commands:
 <dl>
 <dt>builder build
@@ -649,7 +649,7 @@
 <h2 id="Pmake"> Pmake </h2>
 <br>Many of the projects use the &quot;pmake&quot; features of builder (see<i> builder.doc</i> ) or standalone pmake tool.
 &nbsp; If you want to see its guts, the<i> pmake</i> source is in<i> bld\pmake.</i>
-<br><br>Each makefile has a comment line at the top of the file which is read by<i> pmake.</i>&nbsp; Most of our<i> lang.ctl</i>
+<br><br>Each makefile has a comment line at the top of the file which is read by<i> pmake.</i>&nbsp; Most of our<i> builder.ctl</i>
  files will have a line similar to this:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; pmake -d build -h ...</tt>
