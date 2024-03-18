@@ -3805,17 +3805,16 @@
 <br><br>As indicated by the square brackets &#91; &#93;, all items are optional.
 <dl>
 <dt>options
-<dd>is a list of valid Open Watcom Make options, each preceded by a slash (&quot;/&quot;) or a dash (&quot;-&quot;).&nbsp; Options
- may be specified in any order.
+<dd>is a list of valid Open Watcom Make options, each preceded by a dash (&quot;-&quot;).&nbsp; Alternatively, a slash (&quot;/&quot;)
+ can be used on non-UNIX systems.&nbsp; Options may be specified in any order.
 <dt><br>macro_defs
 <dd>is a list of valid Open Watcom Make macro definitions.&nbsp; Macro definitions are of the form:
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; A=B</tt>
-<br><br>and are readily identified by the presence of the &quot;=&quot; (the &quot;#&quot; character may be used instead of
- the &quot;=&quot; character if necessary).&nbsp; Surround the definition with quotes (&quot;) if it contains blanks (e.g.,
- &quot;debug_opt=debug all&quot;).&nbsp; The macro definitions specified on the command line supersede any macro definitions
- defined in makefiles.&nbsp; Macro names are case-insensitive unless the &quot;ms&quot; option is used to select Microsoft
- NMAKE mode.&nbsp; 
+<br><br>and are readily identified by the presence of the &quot;=&quot;.&nbsp; Surround the definition with quotes (&quot;)
+ if it contains blanks (e.g., &quot;debug_opt=debug all&quot;).&nbsp; The macro definitions specified on the command line
+ supersede any macro definitions defined in makefiles.&nbsp; Macro names are case-insensitive unless the &quot;ms&quot; option
+ is used to select Microsoft NMAKE mode.&nbsp; 
 <dt><br>targets
 <dd>is one or more targets described in the makefile.
 </dl>
