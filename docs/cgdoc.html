@@ -176,14 +176,11 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_FPU( proc, FPU_387 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; SET_WTK( proc, WTK_3167 );</tt>
 <br><br>The return value structure is defined as follows:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef union&nbsp;&nbsp; cg_init_info {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned revision&nbsp;&nbsp; : 10; /* contains II_REVISION */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned target&nbsp;&nbsp;&nbsp;&nbsp; : 5;&nbsp; /* has II_TARG_???
- */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned is_large&nbsp;&nbsp; : 1;&nbsp; /* 1 if 16 bit host */</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } version;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; success;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct&nbsp;&nbsp;&nbsp; cg_init_info {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short&nbsp;&nbsp;&nbsp; revision;&nbsp;&nbsp;&nbsp; /* contains
+ II_REVISION */</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned short&nbsp;&nbsp;&nbsp; target;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; /* has II_TARG_??? */</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } cg_init_info;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; enum {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II_TARG_8086,</tt>
