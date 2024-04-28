@@ -29,7 +29,6 @@
 <br><a href="#Commands_from_a_File_or_Environment_Variable">Commands from a File or Environment Variable</a>
 <br><a href="#Compatibility_Between_Open_Watcom_Make_and_UNIX_Make">Compatibility Between Open Watcom Make and UNIX Make</a>
 <br><a href="#Conditional_Processing">Conditional Processing</a>
-<br><a href="#copy_command">copy command</a>
 <br><a href="#Creating_a_Listing_File_M__l__Option">Creating a Listing File - &quot;l&quot; Option</a>
 <br><a href="#Creating_Import_Libraries">Creating Import Libraries</a>
 <br><a href="#Creating_Import_Library_Entries">Creating Import Library Entries</a>
@@ -5468,8 +5467,6 @@
 <dd>start NT or OS/2 command processor
 <dt><br>command
 <dd>start DOS command processor
-<dt><br>copy
-<dd>copy or combine files, intercepted by WMAKE
 <dt><br>ctty
 <dd>DOS redirect input/output to COM port
 <dt><br>d:
@@ -5671,17 +5668,12 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; rmdir &lt;directory&gt;</tt>
 <br><br>The &quot;rmdir&quot; command may be used to delete a directory.&nbsp; Make &quot;rmdir&quot; command is is simplified
  implementation of the POSIX &quot;rmdir&quot; command.&nbsp; It handles directory names consistently with other Make commands.
-<h3 id="copy_command"> copy command </h3>
-<br>The commands &quot;copy&quot; is intercepted by Make.&nbsp; It uses following syntax:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; copy &lt;source file&gt; &lt;destination file&gt;</tt>
-<br><br>The &quot;copy&quot; command may be used to copy a file.&nbsp; Make &quot;copy&quot; command is simplified implementation
- of DOS &quot;copy&quot; command.&nbsp; It handles file names consistently with other Make commands.
 <h3 id="Make_internal_commands"> Make internal commands </h3>
 <br>Make supports nine internal commands:
 <ol>
 <li><tt> %abort</tt>
 <li><tt> %append</tt>
+<li><tt> %copy</tt>
 <li><tt> %create</tt>
 <li><tt> %erase</tt>
 <li><tt> %make</tt>
@@ -5712,6 +5704,10 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %append &lt;file&gt; &lt;text&gt;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %write &lt;file&gt; &lt;text&gt;</tt>
 <br><br>where<tt> &lt;file&gt;</tt> is a file specification and<tt> &lt;text&gt;</tt> is arbitrary text.
+<br><br>The<tt> %copy</tt> internal command will copy a file.&nbsp; The command has the form:
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %copy &lt;from file&gt; &lt;to file&gt;</tt>
+<br><br>where<tt> &lt;from file&gt;</tt> and<tt> &lt;to file&gt;</tt> are a file specification.
 <br><br>The<tt> %ren</tt> internal command will rename a file.&nbsp; The command has the form:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; %ren &lt;from file&gt; &lt;to file&gt;</tt>
