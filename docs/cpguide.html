@@ -48,7 +48,6 @@
 <br><a href="#Creating_NetWare_386_NLM_Applications">Creating NetWare 386 NLM Applications</a>
 <dt><br>- D -
 <dd><a href="#Definitions_of_Windows_Terms">Definitions of Windows Terms</a>
-<br><a href="#Determining_my_current_patch_level">Determining my current patch level</a>
 <br><a href="#The_difference_between_the__d1__and__d2__compiler_options">The difference between the &quot;d1&quot; and &quot;d2&quot; compiler options</a>
 <br><a href="#DOSD4GW__32MBit_Gates">DOS/4GW:&nbsp; 32-Bit Gates</a>
 <br><a href="#DOSD4GW__Access_to_Technical_Support">DOS/4GW:&nbsp; Access to Technical Support</a>
@@ -10395,44 +10394,6 @@
 <li>How can I see my source files in the debugger?
 <li>What is the difference between the &quot;d1&quot; and &quot;d2&quot; compiler options?
 </ul>
-<h2 id="Determining_my_current_patch_level"> Determining my current patch level </h2>
-<br>In an effort to immediately correct any problems discovered in the originally shipped product, Open Watcom provides patches
- as a continued service to its customers.&nbsp; To determine the current patch level of your Open Watcom software, a TECHINFO
- utility program has been provided.&nbsp; This program will display your current environment variables, the patch level of
- various Open Watcom software programs, and other pertinent information, such as your<tt> AUTOEXEC.BAT</tt> and<tt> CONFIG.SYS</tt>
- files.&nbsp; This information proves to be very useful when reporting a problem to the Technical Support team.
-<br><br>To run TECHINFO, you must ensure the Open Watcom environment variable has been set to the directory where your Open
- Watcom software has been installed.&nbsp; TECHINFO will pause after each screenful of information.&nbsp; The output is also
- placed in the file<tt> TECHINFO.OUT.</tt>
-<br><br>Below is an example of some partial output produced by running the TECHINFO utility:
-<br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WATCOM's Techinfo Utility, Version 1.4</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Current Time: Thu Oct 27 15:58:34 1994</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WATCOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone: (519) 884-0702</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 415 Phillip St.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; Fax: (519) 747-4971</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Waterloo, Ontario</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CANADA&nbsp;&nbsp;&nbsp; N2L 3X2</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; -------------WATCOM C Environment Variables -------------</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WATCOM=&lt;c:\watcom&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; EDPATH=&lt;c:\watcom\eddat&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; INCLUDE=&lt;c:\watcom\h;c:\watcom\h\os2&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; FINCLUDE=&lt;c:\watcom\src\fortran;c:\watcom\src\fortran\win&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; LIBOS2=&lt;c:\watcom\lib286\os2;c:\watcom\lib286&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; PATH=&lt;c:\dos;c:\windows;c:\watcom\binw&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; TMP=&lt;h:\temp&gt;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; File 'c:\watcom\binw\wcc386.exe' has been patched to level '.d'</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ...etc...</tt>
-<br><br>In this example, the software has been patched to level &quot;d&quot;.&nbsp; In most cases, all tools will share a
- common patch level.&nbsp; However, there are instances where certain tools have been patched to one level while others are
- patched to a different level.&nbsp; For example, the compiler may be patched to level &quot;d&quot; while the debugger is
- only patched to level &quot;c&quot;.&nbsp; Basically, this means that there were no debugger changes in the D-level patches.
-<br><br>If you run the TECHINFO utility, and determine that you are not at the current patch level, it is recommended that
- you update your software.&nbsp; Patches are available on Open Watcom's bulletin board, Open Watcom's FTP site and CompuServe.
-&nbsp; They are available 24 hours a day.&nbsp; Patches are also available on the current release CD-ROM.&nbsp; Each patch
- will include a batch file that allows you to apply the patches to your existing software.&nbsp; Note that patches must be
- applied in sequential order, as each patch depends on the previous one.
 <h2 id="Converting_to_Open_Watcom_CDCPP"> Converting to Open Watcom C/C++ </h2>
 <br>There are some common steps involved in converting C programs written for other compilers.&nbsp; Conversion from UNIX
  and other IBM-compatible PC compilers will be covered in detail later.&nbsp; There are six major problems with most programs
