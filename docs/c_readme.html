@@ -89,7 +89,7 @@
 <br><a href="#Making_a_Target">Making a Target</a>
 <br><a href="#Making_All_Targets">Making All Targets</a>
 <dt><br>- O -
-<dd><a href="#OnMline_Documentation_under_DOS">On-line Documentation under DOS</a>
+<dd><a href="#OnMline_Documentation_under_DOS_and_Linux">On-line Documentation under DOS and Linux</a>
 <br><a href="#OnMline_Documentation_under_OSD2">On-line Documentation under OS/2</a>
 <br><a href="#OnMline_Documentation_under_Windows">On-line Documentation under Windows</a>
 <br><a href="#The_Open_Watcom_CDCPP_Tutorial">The Open Watcom C/C++ Tutorial</a>
@@ -174,6 +174,7 @@
 <li>Windows NT/2000/XP upto Windows 11
 <li>32-bit OS/2
 <li>Novell NLMs
+<li>Linux 32/64-bit Intel CPU
 </ul>
 </dl>
 <dt><br>Cross-Platform Development Tools
@@ -380,6 +381,7 @@
 <li>Microsoft Windows 95 or higher
 <li>Microsoft Windows NT version 3.1 or higher
 <li>IBM OS/2 2.1 or higher
+<li>Linux 32/64-bit with Kernel 3.x or higher
 </ul>
 <h2 id="The_README_File"> The README File </h2>
 <br>Before you install Open Watcom C/C++, you should read the contents of the &quot;README&quot; file which is stored in the
@@ -929,8 +931,8 @@
 <dt><br>Open Watcom C/C++ Programmer's Guide
 <dd>This manual includes 5 major sections each of which describes operating system specific development issues.&nbsp; The operating
  systems covered include extended DOS, OS/2, Windows 3.x, Windows NT/2000/XP, Windows 95/98/Me, 32-bit Windows 3.x (using
- Open Watcom's Supervisor technology) and Novell NLMs.&nbsp; Topics include creating a sample program, operating system specific
- error messages, and debugging techniques.
+ Open Watcom's Supervisor technology), Novell NLMs and Linux.&nbsp; Topics include creating a sample program, operating system
+ specific error messages, and debugging techniques.
 <dt><br>Open Watcom C Language Reference
 <dd>This manual describes the ISO C programming language and extensions which are supported by Open Watcom C.
 <dt><br>Open Watcom C Library Reference
@@ -941,18 +943,18 @@
 <dd>This manual describes the Open Watcom Debugger and discusses advanced debugging techniques.
 <dt><br>Open Watcom Linker User's Guide
 <dd>This manual describes how to use the Open Watcom Linker to generate executables for target systems such as extended DOS, Windows
- 3.x, Windows 95/98/Me, Windows NT/2000/XP, OS/2, and Novell NLMs.
+ 3.x, Windows 95/98/Me, Windows NT/2000/XP, OS/2, Novell NLMs and Linux.
 </dl>
 <h2 id="Accessing_OnMline_Documentation"> Accessing On-line Documentation </h2>
-<br>The following sections describe how to access the on-line help that is available for DOS, Windows and OS/2.
-<h3 id="OnMline_Documentation_under_DOS"> On-line Documentation under DOS </h3>
-<br>The Open Watcom Help program, <b><i> WHELP</i></b>, may be used under DOS to access on-line documentation.&nbsp; The Open
- Watcom Help command line syntax is:
+<br>The following sections describe how to access the on-line help that is available for DOS, Windows, OS/2 and Linux.
+<h3 id="OnMline_Documentation_under_DOS_and_Linux"> On-line Documentation under DOS and Linux </h3>
+<br>The Open Watcom Help program, <b><i> WHELP</i></b>, may be used under DOS or Linux to access on-line documentation.&nbsp;
+ The Open Watcom Help command line syntax is:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WHELP help_file &#91;topic_name&#93;</tt>
 <br><br><i>Notes:</i>
 <ol>
-<li>If<i> help_file</i> is specified without an extension then &quot;.IHP&quot; is assumed.
+<li>If<i> help_file</i> is specified without an extension then &quot;.ihp&quot; is assumed.
 <li>The<i> topic_name</i> parameter is optional.
 <li>If<i> topic_name</i> is not specified, the default topic is &quot;Table of Contents&quot;.
 <li>If<i> topic_name</i> contains spaces then it must be enclosed in quotes.
