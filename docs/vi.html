@@ -4307,14 +4307,14 @@
 <h3 id="FGREP"> FGREP </h3>
 <dl>
 <dt>Syntax:
-<dd>FGRep &quot;-c&quot; &quot;-u&quot; &lt;string&gt; &lt;files&gt;
+<dd>FGRep &quot;-c&quot; &quot;-i&quot; &lt;string&gt; &lt;files&gt;
 </dl>
 <dl>
 <dt>Description:
 <dd>Searches the file list<b> &lt;files&gt;</b> for the string<b> &lt;string&gt;</b>.
-<br>The search is by default case insensitive, unless<b> -c</b> is specified, which forces the search to be case sensitive.
-&nbsp; Specifying<b> -u</b> causes the setting of <a href="#caseignore">caseignore</a> to determine whether or not to be case
- sensitive in the search.
+<br>If<b> -c</b> is specified then the search to be case sensitive or if<b> -i</b> is specified then the search to be case
+ insensitive otherwise the setting of <a href="#caseignore">caseignore</a> to determine whether or not to be case sensitive
+ in the search.
 <br><br><b>&lt;string&gt;</b> may be surrounded by double quotes (&quot;) or a forward slash (/) if it contains any spaces.
 <br><br><b>&lt;files&gt;</b> may be a single file or a list of files.&nbsp; Each file name may contain file regular expressions,
  see the section <a href="#File_Matching_Regular_Expressions">File Matching Regular Expressions</a> in the chapter <a href="#Regular_Expressions">Regular Expressions</a>
