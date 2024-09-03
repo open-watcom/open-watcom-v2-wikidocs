@@ -7,11 +7,13 @@
 <dt>- A -
 <dd><a href="#Address_information_class">Address information class</a>
 <br><a href="#ARRAY_Lvalue_0x2_R">ARRAY (value 0x2?)</a>
+<br><a href="#Asynchronous_Debugging_requests">Asynchronous Debugging requests</a>
 <dt><br>- B -
 <dd><a href="#Base_Types">Base Types</a>
 <br><a href="#Byte_Order">Byte Order</a>
 <dt><br>- C -
-<dd><a href="#CHARACTER_BLOCK_Lvalue_0x8_R">CHARACTER_BLOCK (value 0x8?)</a>
+<dd><a href="#Capabilities_requests">Capabilities requests</a>
+<br><a href="#CHARACTER_BLOCK_Lvalue_0x8_R">CHARACTER_BLOCK (value 0x8?)</a>
 <br><a href="#CODE_Lvalue_0x2_R">CODE (value 0x2?)</a>
 <br><a href="#Core_Requests">Core Requests</a>
 <dt><br>- D -
@@ -22,6 +24,7 @@
 <br><a href="#Executable_file_structures">Executable file structures</a>
 <dt><br>- F -
 <dd><a href="#File_IDO_requests">File I/O requests</a>
+<br><a href="#File_Info_requests">File Info requests</a>
 <dt><br>- G -
 <dd><a href="#GET_MOVED_SECTION">GET_MOVED_SECTION</a>
 <br><a href="#GET_OVERLAY_STATE">GET_OVERLAY_STATE</a>
@@ -45,6 +48,7 @@
 <br><a href="#Module_information_class">Module information class</a>
 <dt><br>- N -
 <dd><a href="#NEW_BASE_Lvalue_0x3_R">NEW_BASE (value 0x3?)</a>
+<br><a href="#NonMblocking_Thread_requests">Non-blocking Thread requests</a>
 <dt><br>- O -
 <dd><a href="#Object_file_structures">Object file structures</a>
 <br><a href="#Overlay_manager_interface">Overlay manager interface</a>
@@ -98,14 +102,16 @@
 <br><a href="#REQ_OVL_TRANS_VECT_ADDR">REQ_OVL_TRANS_VECT_ADDR</a>
 <br><a href="#REQ_OVL_WRITE_STATE">REQ_OVL_WRITE_STATE</a>
 <br><a href="#REQ_PERFORM_SUPPLEMENTARY_SERVICE">REQ_PERFORM_SUPPLEMENTARY_SERVICE</a>
-<br><a href="#REQ_PROG_GODREQ_PROG_STEP">REQ_PROG_GO/REQ_PROG_STEP</a>
+<br><a href="#REQ_PROG_GO">REQ_PROG_GO</a>
 <br><a href="#REQ_PROG_KILL">REQ_PROG_KILL</a>
 <br><a href="#REQ_PROG_LOAD">REQ_PROG_LOAD</a>
+<br><a href="#REQ_PROG_STEP">REQ_PROG_STEP</a>
 <br><a href="#REQ_READ_IO">REQ_READ_IO</a>
 <br><a href="#REQ_READ_MEM">REQ_READ_MEM</a>
 <br><a href="#REQ_READ_REGS">REQ_READ_REGS</a>
 <br><a href="#REQ_READ_USER_KEYBOARD">REQ_READ_USER_KEYBOARD</a>
-<br><a href="#REQ_REDIRECT_STDINDREQ_REDIRECT_STDOUT">REQ_REDIRECT_STDIN/REQ_REDIRECT_STDOUT</a>
+<br><a href="#REQ_REDIRECT_STDIN">REQ_REDIRECT_STDIN</a>
+<br><a href="#REQ_REDIRECT_STDOUT">REQ_REDIRECT_STDOUT</a>
 <br><a href="#REQ_RESUME">REQ_RESUME</a>
 <br><a href="#REQ_RFX_FINDCLOSE">REQ_RFX_FINDCLOSE</a>
 <br><a href="#REQ_RFX_FINDFIRST">REQ_RFX_FINDFIRST</a>
@@ -1234,8 +1240,8 @@
 <br><br>After calling<tt> TrapFini</tt> , it is illegal to call<tt> TrapRequest</tt> without calling<tt> TrapInit</tt> again.
 <h1 id="The_Requests"> The Requests </h1>
 <br>This section descibes the individual requests, their parameters, and their return values.&nbsp; A line of dashes indicates
- where an<tt> mx_entry</tt> is allowed (but not required) to start.&nbsp; The debugger allows (via REQ_GET_SUPPLEMENTARY_SERVICE/REQ_PERFORM_SUPPLEMENTARY_SERVICE)
- optional components to be implemented only on specific systems.
+ where an<tt> mx_entry</tt> is allowed (but not required) to start.&nbsp; The debugger allows (via REQ_GET_SUPPLEMENTARY_SERVICE
+ and REQ_PERFORM_SUPPLEMENTARY_SERVICE) optional components to be implemented only on specific systems.
 <br>The numeric value of the request which is placed in the<tt> req</tt> field follows the symbolic name in parentheses.
 <h2 id="Core_Requests"> Core Requests </h2>
 <br>These requests need to be implemented in all versions of the trap file, although some of them may only be stub implementations
@@ -1322,9 +1328,9 @@
 <br>Request to perform a supplementary service.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp; req</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_32 service_id</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ------------------------</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_shandle&nbsp;&nbsp;&nbsp; id</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ---------------------</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unspecified</tt>
 <br><br>The<tt> req</tt> field contains the request.&nbsp; The<tt> service_id</tt> field indicates which service is being
  requested.&nbsp; The remainder of the request is specified by the individual supplementary service provider.
@@ -1513,7 +1519,8 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; unsigned_8&nbsp; len</tt>
 <br><br>The<tt> len</tt> field tells the number of bytes actually written out.&nbsp; If an error has occurred in writing,
  the length returned will not be equal to the number of bytes requested.
-<h3 id="REQ_PROG_GODREQ_PROG_STEP"> REQ_PROG_GO/REQ_PROG_STEP </h3>
+<h3 id="REQ_PROG_GO"> REQ_PROG_GO </h3>
+<h3 id="REQ_PROG_STEP"> REQ_PROG_STEP </h3>
 <br>Requests to execute the debuggee.&nbsp; REQ_PROG_GO causes the debuggee to resume execution, while REQ_PROG_STEP requests
  only a single machine instruction to be executed before returning.&nbsp; In either case, this request will return when a
  breakpoint, watchpoint, machine exception or other significant event has been encountered.&nbsp; While executing, a trap
@@ -1763,7 +1770,8 @@
 &nbsp; The MSG_MORE bit indicates that there is another line of output to come and the debugger should make another REQ_GET_MESSAGE_TEXT.
 &nbsp; MSG_WARNING indicates that the message is a warning level message while MSG_ERROR is an error level message.&nbsp;
  If neither of these bits are on, the message is merely informational.
-<h3 id="REQ_REDIRECT_STDINDREQ_REDIRECT_STDOUT"> REQ_REDIRECT_STDIN/REQ_REDIRECT_STDOUT </h3>
+<h3 id="REQ_REDIRECT_STDIN"> REQ_REDIRECT_STDIN </h3>
+<h3 id="REQ_REDIRECT_STDOUT"> REQ_REDIRECT_STDOUT </h3>
 <br>Request to redirect the standard input (REQ_REDIRECT_STDIN) or standard output (REQ_REDIRECT_STDOUT) of the debuggee.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
