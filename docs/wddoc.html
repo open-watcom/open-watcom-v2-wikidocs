@@ -59,7 +59,8 @@
 <br><a href="#Pointer_Sizes">Pointer Sizes</a>
 <br><a href="#PROCEDURE_Lvalue_0x7_R">PROCEDURE (value 0x7?)</a>
 <dt><br>- R -
-<dd><a href="#REQ_ASYNC_ADD_BREAK">REQ_ASYNC_ADD_BREAK</a>
+<dd><a href="#Remote_File_transfer_LRFXR_requests">Remote File transfer (RFX) requests</a>
+<br><a href="#REQ_ASYNC_ADD_BREAK">REQ_ASYNC_ADD_BREAK</a>
 <br><a href="#REQ_ASYNC_GO">REQ_ASYNC_GO</a>
 <br><a href="#REQ_ASYNC_POLL">REQ_ASYNC_POLL</a>
 <br><a href="#REQ_ASYNC_REMOVE_BREAK">REQ_ASYNC_REMOVE_BREAK</a>
@@ -155,7 +156,6 @@
 <br><a href="#The_Request_Interface">The Request Interface</a>
 <br><a href="#Request_Structure">Request Structure</a>
 <br><a href="#The_Requests">The Requests</a>
-<br><a href="#RFX_requests">RFX requests</a>
 <dt><br>- S -
 <dd><a href="#Section_debug_header">Section debug header</a>
 <br><a href="#Section_debug_information">Section debug information</a>
@@ -1313,7 +1313,29 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; service_name</tt>
 <br><br>The<tt> req</tt> field contains the request.&nbsp; The<tt> service_name</tt> field contains a string identifying the
  supplementary service.&nbsp; This string is case insensitive.
-<br><br>Return message:
+<dl>
+<dt><b><i>service_name</i></b>
+<dd><b><i>Description</i></b>
+<dt><br>&quot;FileInfo&quot;
+<dd>See <a href="#File_Info_requests">File Info requests</a>.
+<dt><br>&quot;Environment&quot;
+<dd>See <a href="#Environment_requests">Environment requests</a>.
+<dt><br>&quot;Files&quot;
+<dd>See <a href="#File_IDO_requests">File I/O requests</a>.
+<dt><br>&quot;Overlays&quot;
+<dd>See <a href="#Overlay_requests">Overlay requests</a>.
+<dt><br>&quot;Threads&quot;
+<dd>See <a href="#Thread_requests">Thread requests</a>.
+<dt><br>&quot;RunThread&quot;
+<dd>See <a href="#NonMblocking_Thread_requests">Non-blocking Thread requests</a>.
+<dt><br>&quot;Rfx&quot;
+<dd>See <a href="#Remote_File_transfer_LRFXR_requests">Remote File transfer (RFX) requests</a>.
+<dt><br>&quot;Capabilities&quot;
+<dd>See <a href="#Capabilities_requests">Capabilities requests</a>.
+<dt><br>&quot;Asynch&quot;
+<dd>See <a href="#Asynchronous_Debugging_requests">Asynchronous Debugging requests</a>.
+</dl>
+<br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_shandle&nbsp;&nbsp;&nbsp; id;</tt>
@@ -2227,7 +2249,7 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; extra</tt>
 <br><br>The extra information of the thread will be returned in<tt> extra</tt> field.
-<h2 id="RFX_requests"> RFX requests </h2>
+<h2 id="Remote_File_transfer_LRFXR_requests"> Remote File transfer (RFX) requests </h2>
 <br>This section deals with requests that are only used by the RFX (Remote File Xfer) program.&nbsp; These requests are actually
  performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following descriptions
  do not show that &quot;prefix&quot; to the request messages.
@@ -2479,6 +2501,10 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <br><br>The<tt> value</tt> contains the new value for Environment variable<tt> name</tt> on the remote system.
 <h2 id="File_Info_requests"> File Info requests </h2>
+<br>This section describes requests that deal with file information on the target (debuggee) machine.&nbsp; These requests
+ are actually performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following
+ descriptions do not show that &quot;prefix&quot; to the request messages.
+<br><br>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;FileInfo&quot;.
 <h3 id="REQ_FILE_INFO_GET_DATE"> REQ_FILE_INFO_GET_DATE </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2494,6 +2520,10 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h2 id="Asynchronous_Debugging_requests"> Asynchronous Debugging requests </h2>
+<br>This section describes requests that deal with asynchronous debugging on the target (debuggee) machine.&nbsp; These requests
+ are actually performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The following
+ descriptions do not show that &quot;prefix&quot; to the request messages.
+<br><br>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;Asynch&quot;.
 <h3 id="REQ_ASYNC_GO"> REQ_ASYNC_GO </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2537,6 +2567,10 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h2 id="NonMblocking_Thread_requests"> Non-blocking Thread requests </h2>
+<br>This section describes requests that deal with Non-blocking Thread requests on the target (debuggee) machine.&nbsp; These
+ requests are actually performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The
+ following descriptions do not show that &quot;prefix&quot; to the request messages.
+<br><br>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;RunThread&quot;.
 <h3 id="REQ_RUN_THREAD_INFO"> REQ_RUN_THREAD_INFO </h3>
 <br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
@@ -2594,6 +2628,10 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; err</tt>
 <h2 id="Capabilities_requests"> Capabilities requests </h2>
+<br>This section describes requests that deal with capabilities information on the target (debuggee) machine.&nbsp; These
+ requests are actually performed by the core request REQ_PERFORM_SUPPLEMENTARY_SERVICE and appropriate service ID.&nbsp; The
+ following descriptions do not show that &quot;prefix&quot; to the request messages.
+<br><br>The service name to be used in the REQ_GET_SUPPLEMENTARY_SERVICE is &quot;Capabilities&quot;.
 <h3 id="REQ_CAPABILITIES_GET_EXACT_BP"> REQ_CAPABILITIES_GET_EXACT_BP </h3>
 <br>Request to get information if exact breakpoints are supported on the remote system.
 <br><br>Request message:
