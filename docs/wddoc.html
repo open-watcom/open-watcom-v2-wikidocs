@@ -2079,8 +2079,8 @@
 </dl>
 <h3 id="REQ_OVL_STATE_SIZE"> REQ_OVL_STATE_SIZE </h3>
 <br>Request to return the size of the overlay state information in bytes of the task program.&nbsp; This request maps onto
- the overlay manager's GET_STATE_SIZE request.&nbsp; See the Overlay Manager Interface document for more information on the
- contents of the return message.
+ the overlay manager's GET_STATE_SIZE request.&nbsp; See the <a href="#Overlay_manager_interface">Overlay manager interface</a>
+ document for more information on the contents of the return message.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
@@ -2092,7 +2092,8 @@
  debuggee and none of the other requests dealing with overlays will ever be called.
 <h3 id="REQ_OVL_GET_DATA"> REQ_OVL_GET_DATA </h3>
 <br>Request to get the address and size of an overlay section.&nbsp; This request maps onto the overlay manager's GET_SECTION_DATA
- request.&nbsp; See the Overlay Manager Interface document for more information on the contents of the return message.
+ request.&nbsp; See the <a href="#Overlay_manager_interface">Overlay manager interface</a> document for more information on
+ the contents of the return message.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
@@ -2107,8 +2108,8 @@
  is no section for the given id, the<tt> segment</tt> field will be zero.
 <h3 id="REQ_OVL_READ_STATE"> REQ_OVL_READ_STATE </h3>
 <br>Request to read the overlay table state.&nbsp; This request maps onto the overlay manager's GET_OVERLAY_STATE request.
-&nbsp; See the Overlay Manager Interface document for more information on the contents of the return message.&nbsp; The size
- of the returned data is provided by the REQ_OVL_STATE_SIZE trap file request.
+&nbsp; See the <a href="#Overlay_manager_interface">Overlay manager interface</a> document for more information on the contents
+ of the return message.&nbsp; The size of the returned data is provided by the REQ_OVL_STATE_SIZE trap file request.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
@@ -2118,7 +2119,8 @@
 <br><br>The<tt> data</tt> field contains the overlay state information requested.
 <h3 id="REQ_OVL_WRITE_STATE"> REQ_OVL_WRITE_STATE </h3>
 <br>Request to write the overlay table state.&nbsp; This request maps onto the overlay manager's SET_OVERLAY_STATE request.
-&nbsp; See the Overlay Manager Interface document for more information on the contents of the return message.
+&nbsp; See the <a href="#Overlay_manager_interface">Overlay manager interface</a> document for more information on the contents
+ of the return message.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
@@ -2130,8 +2132,8 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; NONE</tt>
 <h3 id="REQ_OVL_TRANS_VECT_ADDR"> REQ_OVL_TRANS_VECT_ADDR </h3>
 <br>Request to check if the input overlay address is actually an overlay vector.&nbsp; This request maps onto the overlay
- manager's TRANSLATE_VECTOR_ADDR request.&nbsp; See the Overlay Manager Interface document for more information on the contents
- of the messages.
+ manager's TRANSLATE_VECTOR_ADDR request.&nbsp; See the <a href="#Overlay_manager_interface">Overlay manager interface</a>
+ document for more information on the contents of the messages.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
@@ -2145,8 +2147,8 @@
  then the input address will be returned and the<tt> sect_id</tt> field will be zero.
 <h3 id="REQ_OVL_TRANS_RET_ADDR"> REQ_OVL_TRANS_RET_ADDR </h3>
 <br>Request to check if the address is the overlay manager parallel return code.&nbsp; This request maps onto the overlay
- manager's TRANSLATE_RETURN_ADDR request.&nbsp; See the Overlay Manager Interface document for more information on the contents
- of the messages.
+ manager's TRANSLATE_RETURN_ADDR request.&nbsp; See the <a href="#Overlay_manager_interface">Overlay manager interface</a>
+ document for more information on the contents of the messages.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
@@ -2158,7 +2160,8 @@
  code, then the input address will be returned and the<tt> sect_id</tt> field in the structure<tt> ovl_addr</tt> will be zero.
 <h3 id="REQ_OVL_GET_REMAP_ENTRY"> REQ_OVL_GET_REMAP_ENTRY </h3>
 <br>Request to check if the overlay address needs to be remapped.&nbsp; This request maps onto the overlay manager's GET_MOVED_SECTION
- request.&nbsp; See the Overlay Manager Interface document for more information on the contents of the messages.
+ request.&nbsp; See the <a href="#Overlay_manager_interface">Overlay manager interface</a> document for more information on
+ the contents of the messages.
 <br><br>Request message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; trap_req&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req</tt>
