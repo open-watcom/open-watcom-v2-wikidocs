@@ -3330,19 +3330,10 @@
 <dd>This header file declares functions related to directories and the type <tt> DIR</tt> which describes an entry in a directory.
 &nbsp; 
 <dt><br>dos.h
-<dd>This header file declares functions that interact with DOS.&nbsp; It includes the definitions of the <tt> FP_OFF</tt>, <tt>
- FP_SEG</tt> and <tt> MK_FP</tt> macros, and for the following structures and unions:&nbsp; 
+<dd>This header file declares functions that interact with DOS and define the following structures.&nbsp; 
 <dl>
 <dt>DOSERROR
-<dd>describes the DOS error information.&nbsp; 
-<dt><br>REGS
-<dd>describes the CPU registers for Intel 8086 family.&nbsp; 
-<dt><br>SREGS
-<dd>describes the segment registers for the Intel 8086 family.&nbsp; 
-<dt><br>REGPACK
-<dd>describes the CPU registers and segment registers for Intel 8086 family.&nbsp; 
-<dt><br>INTPACK
-<dd>describes the input parameter to an &quot;interrupt&quot; function.
+<dd>
 </dl>
 <dt><br>env.h
 <dd>This POSIX header file declares environment string functions.&nbsp; 
@@ -3363,6 +3354,21 @@
 <dt><br>graph.h
 <dd>This header file contains structure definitions and function declarations for the Open Watcom C Graphics library functions.
 &nbsp; 
+<dt><br>i86.h
+<dd>This header file is used with functions that interact with the Intel architecture.&nbsp; It defines the structs and unions
+ used to handle the input and output registers for the Intel 80x86 and 80386/80486 interrupt interface routines.&nbsp; It
+ includes prototypes for the interrupt functions, definitions for the <tt> FP_OFF</tt>, <tt> FP_SEG</tt> and <tt> MK_FP</tt>
+ macros, and definitions for the following structures and unions:&nbsp; 
+<dl>
+<dt>REGS
+<dd>describes the CPU registers for Intel 8086 family.&nbsp; 
+<dt><br>SREGS
+<dd>describes the segment registers for the Intel 8086 family.&nbsp; 
+<dt><br>REGPACK
+<dd>describes the CPU registers and segment registers for Intel 8086 family.&nbsp; 
+<dt><br>INTPACK
+<dd>describes the input parameter to an &quot;interrupt&quot; function.
+</dl>
 <dt><br>inttypes.h
 <dd>This ISO C99 header file includes &lt;stdint.h&gt; and expands on it by definition macros for printing and scanning specific
  sized integer types.&nbsp; This header also declares several functions for manipulating maximum sized integers.
