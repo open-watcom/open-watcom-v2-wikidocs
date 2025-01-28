@@ -843,8 +843,8 @@
 <dd>AX= 0ff2bh
 <br>BX= File handle.
 <dt><br>Outputs:
-<dd>Carry set if not a CWC'd file, else
-<br>ECX= Expanded data size.
+<dd>Carry set on error and EAX is error code, else
+<br>ECX= Expanded data size.&nbsp; EAX= Compressed data length.
 <dt><br>Errors:
 <dd>None.
 <dt><br>Notes:
@@ -859,7 +859,7 @@
 <br>BX= Source file handle.&nbsp; ES:EDI= Destination memory.
 <dt><br>Outputs:
 <dd>Carry set on error and EAX is error code, else
-<br>ECX= Expanded data length.
+<br>ECX= Expanded data length.&nbsp; EAX= 0
 <dt><br>Errors:
 <dd>1 - Error during file access.
 <br>2 - Bad data.
