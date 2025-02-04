@@ -91,7 +91,7 @@
  to conventional DOS memory.&nbsp; This allows CauseWay applications to allocate memory through the CauseWay DOS extender
  without the need to detect or manipulate the various memory handling schemes.
 <br><br>A primary objective of CauseWay development was to ensure minimal effort would be needed by programmers to adapt their
- code to work with the CauseWay DOS e tender.&nbsp; As a result, most Open Watcom C/C++ and many realmode assembly language
+ code to work with the CauseWay DOS extender.&nbsp; As a result, most Open Watcom C/C++ and many realmode assembly language
  programs need no or minor changes to produce a fully operational CauseWay protected mode application.
 <h2 id="Minimum_System_Requirements"> Minimum System Requirements </h2>
 <br>CauseWay for Open Watcom C/C++ requires a 386SX based computer or better.&nbsp; The required operating environment is
@@ -1262,7 +1262,8 @@
 <br>DX= DOS transfer buffer real mode segment address.
 <br>ES:&#91;E&#93;SI= DOS transfer buffer address.
 <br>ESI+ECX always &lt;64KB
-<br>EDI= System flags.&nbsp; Bits significant if set.
+<br>EDI= System flags.
+<br>Bits significant if set:
 <br>0 - 32 bit code default.
 <br>1 - Virtual memory manager functional.
 <br>2-3 - Mode, 0 - raw, 1 - VCPI, 2 - DPMI.
@@ -1810,7 +1811,7 @@
 &nbsp; To reflect this, the convention of an &#91;E&#93; in brackets is used before a listed register when it must be a 32-bit
  value with a 32-bit selector and a 16-bit value with a 16-bit selector.
 <br><br>Required registers that are not specified in this list should be set up in the same way as required for normal DOS
- real mode operation.&nbsp; For INT APIs that are not listed and require segemnt pointers, either handle them using the CauseWay
+ real mode operation.&nbsp; For INT APIs that are not listed and require segment pointers, either handle them using the CauseWay
  IntXX function or create your own interrupt translation code.
 <br><br>INT 10h
 <br><br>10h sub function 02h, &#91;E&#93;DX instead of DX.
@@ -1882,7 +1883,7 @@
  vectors.&nbsp; The remaining interrupts are serviced via the vector table appropriate to the mode.&nbsp; Use the real to
  protected mode callback services to provide real mode code with access to protected mode code, and allow any interrupt to
  be re-signaled in protected mode.
-<br><br>If you add your own hardware interrupt handlers, suchas the timer tick at vector 08h, any memory that the handler
+<br><br>If you add your own hardware interrupt handlers, such as the timer tick at vector 08h, any memory that the handler
  reads or writes, including its code, must reside in locked memory.&nbsp; (CauseWay provides a locked stack.) This limitation
  is required because DOS is not re-entrant and hardware interrupts can occur at any time.&nbsp; Interrupts occurring during
  DOS activity prevent CauseWay's virtual memory manager from accessing its swap file.&nbsp; Lock memory will not move to the
