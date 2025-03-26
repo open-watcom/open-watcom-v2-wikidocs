@@ -1880,13 +1880,18 @@
 <br><br>Return message:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ext_separator;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_separator&#91;3&#93;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newline&#91;2&#93;;</tt>
-<br><br>The<tt> ext_separator</tt> contains the separator for file name extensions.&nbsp; The possible path separators can
- be found in array<tt> path_separator</tt>.&nbsp; The first one is the &quot;preferred&quot; path separator for that operating
- system.&nbsp; This is the path separator that the debugger will use if it needs to construct a file name for the remote system.
-&nbsp; The new line control characters are stored in array<tt> newline</tt>.&nbsp; If the operating system uses only a single
- character for newline, put a zero in the second element.
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; drv_separator;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path_separator&#91;2&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line_eol&#91;2&#93;;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list_separator;</tt>
+<br><br>The<tt> ext_separator</tt> contains the separator for file name extensions.
+<br><br>The<tt> drv_separator</tt> contains the separator for file name drive.
+<br><br>The possible path separators can be found in array<tt> path_separator</tt>.&nbsp; The first one is the &quot;preferred&quot;
+ path separator for that operating system.&nbsp; This is the path separator that the debugger will use if it needs to construct
+ a file name for the remote system.
+<br><br>The new line control characters are stored in array<tt> line_eol</tt>.&nbsp; If the operating system uses only a single
+ character for new line, put a zero in the second element.
+<br><br>The<tt> list_separator</tt> contains the separator for path list items.
 <h3 id="REQ_FILE_OPEN"> REQ_FILE_OPEN </h3>
 <br>Request to create/open a file.
 <br><br>Request message:
