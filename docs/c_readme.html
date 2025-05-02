@@ -2316,7 +2316,8 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; void foo( struct Z *p );&nbsp;&nbsp;&nbsp; // declares ::Z</tt>
 <li>We have fixed unduly harsh restriction on virtual ...-style functions.&nbsp; They are now allowed in single inheritance
  hierarchies as long as the return type is not changed when the virtual function is overridden.&nbsp; In multiple inheritance
- hierarchies, an implementation restriction is still present for generating a 'this' adjustment thunk for virtual functions.
+ hierarchies, an implementation restriction is still present for generating a 'this' adjustment thunk for virtual ...-style
+ functions.
 <li>We have fixed line number information for multi-line statement expressions in some weird cases.
 <li>We have fixed function template parsing of user-defined conversions that use an uninstantiated class in their operator
  name.
