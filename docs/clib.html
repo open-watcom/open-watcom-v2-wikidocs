@@ -4828,7 +4828,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_access conforms to ANSI naming conventions
-<br>_waccess is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -5130,9 +5129,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_asctime is WATCOM
-<br>_wasctime is WATCOM
-<br>__wasctime is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -5602,7 +5598,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wtof is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -5646,7 +5641,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wtoi is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -5690,7 +5684,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wtol is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -5734,7 +5727,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wtoll is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -7497,9 +7489,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_bcalloc is WATCOM
-<br>_fcalloc is WATCOM
-<br>_ncalloc is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -7758,7 +7747,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_chdir conforms to ANSI naming conventions
-<br>_wchdir is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -7924,7 +7912,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_chmod conforms to ANSI naming conventions
-<br>_wchmod is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -8673,7 +8660,6 @@
 <dl>
 <dt>Classification:
 <dd>POSIX 1003.1
-<br>_wclosedir is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -9246,7 +9232,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_creat conforms to ANSI naming conventions
-<br>_wcreat is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -9374,9 +9359,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_ctime is WATCOM
-<br>_wctime is WATCOM
-<br>__wctime is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -13140,29 +13122,6 @@
 <dl>
 <dt>Classification:
 <dd>POSIX 1003.1 with extensions
-<br>execle is WATCOM
-<br>execlp is WATCOM
-<br>execlpe is WATCOM
-<br>execv is WATCOM
-<br>execve is WATCOM
-<br>execvp is WATCOM
-<br>execvpe is WATCOM
-<br>_execl is WATCOM
-<br>_execle is WATCOM
-<br>_execlp is WATCOM
-<br>_execlpe is WATCOM
-<br>_execv is WATCOM
-<br>_execve is WATCOM
-<br>_execvp is WATCOM
-<br>_execvpe is WATCOM
-<br>_wexecl is WATCOM
-<br>_wexecle is WATCOM
-<br>_wexeclp is WATCOM
-<br>_wexeclpe is WATCOM
-<br>_wexecv is WATCOM
-<br>_wexecve is WATCOM
-<br>_wexecvp is WATCOM
-<br>_wexecvpe is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -13808,7 +13767,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_fdopen conforms to ANSI naming conventions
-<br>_wfdopen is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -15116,7 +15074,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br>The _findfirsti64 function returns information on the first file whose name matches the<i> filespec</i> argument.
+<br><br>The _wfindfirsti64 function returns information on the first file whose name matches the<i> filespec</i> argument.
 &nbsp; It differs from the<tt> _findfirst</tt> function in that it returns a 64-bit file size.&nbsp; The<i> filespec</i> argument
  may contain wildcard characters ('?' and '*').&nbsp; The information is returned in a <tt> _finddatai64_t</tt> structure
  pointed to by<i> fileinfo</i>.
@@ -15145,8 +15103,8 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br>The wide character _wfindfirsti64 function is similar to the _findfirsti64 function but operates on wide character
- strings.&nbsp; It differs from the<tt> _wfindfirst</tt> function in that it returns a 64-bit file size.
+<br><br>The wide character function is similar to the _wfindfirsti64 function but operates on wide character strings.&nbsp;
+ It differs from the<tt> _wfindfirst</tt> function in that it returns a 64-bit file size.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _wfinddatai64_t {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
@@ -15239,7 +15197,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br>The<tt> _findnexti64</tt> function returns information on the next file whose name matches the<i> filespec</i> argument
+<br><br>The<tt> _wfindnexti64</tt> function returns information on the next file whose name matches the<i> filespec</i> argument
  that was specified in a call to the <a href="#_findfirst">_findfirsti64</a> function.&nbsp; It differs from the<tt> _findnext</tt>
  function in that it returns a 64-bit file size.&nbsp; The<i> handle</i> argument was returned by the <a href="#_findfirst">_findfirsti64</a>
  function.&nbsp; The information is returned in a <tt> _finddatai64_t</tt> structure pointed to by<i> fileinfo</i>.
@@ -15268,8 +15226,8 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _fsize_t&nbsp;&nbsp;&nbsp; size;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t&nbsp;&nbsp;&nbsp;&nbsp; name&#91;_MAX_PATH&#93;;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
-<br><br>The wide character<tt> _wfindnexti64</tt> function is similar to the<tt> _findnexti64</tt> function but operates on
- wide character strings.&nbsp; It differs from the<tt> _wfindnext</tt> function in that it returns a 64-bit file size.
+<br><br>The wide character function is similar to the<tt> _wfindnexti64</tt> function but operates on wide character strings.
+&nbsp; It differs from the<tt> _wfindnext</tt> function in that it returns a 64-bit file size.
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; struct _wfinddatai64_t {</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned&nbsp;&nbsp;&nbsp; attrib;</tt>
@@ -15964,7 +15922,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C ('t', 'c', 'n' are Open Watcom extensions)
-<br>_wfopen is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -16786,9 +16743,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_bfree is WATCOM
-<br>_ffree is WATCOM
-<br>_nfree is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -16915,7 +16869,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wfreopen is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -18722,7 +18675,6 @@
 <dl>
 <dt>Classification:
 <dd>POSIX 1003.1 with extensions
-<br>_wgetcwd is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -19063,7 +19015,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wgetenv is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -20369,7 +20320,6 @@
 <dl>
 <dt>Classification:
 <dd>POSIX 1003.1
-<br>_getpid is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -20916,7 +20866,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_getws is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -21963,7 +21912,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_gmtime is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -28880,7 +28828,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_localtime is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -30168,9 +30115,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_bmalloc is WATCOM
-<br>_fmalloc is WATCOM
-<br>_nmalloc is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -30557,7 +30501,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fmbccmp is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -31457,7 +31400,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fmblen is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -31651,7 +31593,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C95
-<br>_fmbrlen is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -31797,7 +31738,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C95
-<br>_fmbrtowc is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -32643,13 +32583,13 @@
  arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _fmbsnbcnt</tt> function is a data model independent form of the<tt> _mbsnbcnt</tt> function that accepts
  far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
-<br><br>The<tt> _fmbsnccnt</tt> function is a data model independent form of the<tt> _mbsnccnt</tt> function that accepts
- far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 <br><br>The header file<tt> &lt;tchar.h&gt;</tt> defines the generic-text macros <tt> _tcsnbcnt</tt> and <tt> _tcsnccnt</tt>.
 <br><br>The<tt> _tcsnbcnt</tt> macro maps to<tt> _mbsnbcnt</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt>
  macro if <tt> _UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
-<br>The<tt> _tcsnccnt</tt> macro maps to<tt> _mbsnccnt</tt> if <tt> _MBCS</tt> has been defined, or to the<tt> _wcsncnt</tt>
- macro if <tt> _UNICODE</tt> has been defined, otherwise it maps to<tt> _strncnt</tt> macro.
+<br>The<tt> _tcsnccnt</tt> macro maps to<tt> _strncnt</tt> if <tt> _MBCS</tt> has been defined, or to the macro if <tt> _UNICODE</tt>
+ has been defined, otherwise it maps to<tt> _wcsncnt</tt> macro.
 <br>The<tt> _strncnt</tt> and<tt> _wcsncnt</tt> macros are provided only for this mapping and should not be used otherwise.
 </dl>
 <dl>
@@ -33011,7 +32951,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C95
-<br>_fmbsrtowcs is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -33280,7 +33219,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C95
-<br>_fmbstowcs is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -33536,7 +33474,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fmbtowc is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -34526,7 +34463,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_mkdir conforms to ANSI naming conventions
-<br>_wmkdir is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -39039,7 +38975,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_open conforms to ANSI naming conventions
-<br>_wopen is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -39206,7 +39141,6 @@
 <dl>
 <dt>Classification:
 <dd>POSIX 1003.1
-<br>_wopendir is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -39814,7 +39748,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wperror is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -42425,7 +42358,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_putenv conforms to ANSI naming conventions
-<br>_wputenv is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -42563,7 +42495,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_putws is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -43116,7 +43047,6 @@
 <dl>
 <dt>Classification:
 <dd>POSIX 1003.1
-<br>_wreaddir is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -43295,9 +43225,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_brealloc is WATCOM
-<br>_frealloc is WATCOM
-<br>_nrealloc is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -43623,7 +43550,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wremove is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -43661,7 +43587,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wrename is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -43786,7 +43711,6 @@
 <dl>
 <dt>Classification:
 <dd>POSIX 1003.1
-<br>_wrewinddir is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -43882,7 +43806,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_rmdir conforms to ANSI naming conventions
-<br>_wrmdir is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -46233,7 +46156,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wsetlocale is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -49728,8 +49650,6 @@
 <dd>POSIX 1003.1
 <br>_stat conforms to ANSI naming conventions
 <br>_stati64 is WATCOM
-<br>_wstat is WATCOM
-<br>_wstati64 is WATCOM
 <br>lstat is POSIX
 </dl>
 <dl>
@@ -49855,13 +49775,6 @@
 &nbsp;&nbsp; const char __far *src );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *wcscat( wchar_t *dst, const wchar_t *src );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbscat( unsigned char *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned
- char *src );</tt>
-<br><tt>unsigned char __far *_fmbscat( unsigned char __far *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *src );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -49877,10 +49790,9 @@
 <br>The<tt> _fstrcat</tt> function is a data model independent form of the<tt> strcat</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscat</tt> function is a wide character version of<tt> strcat</tt> that operates with wide character strings.
-<br><br>The<tt> _mbscat</tt> function is a multi-byte character version of<tt> strcat</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbscat</tt> function is a data model independent form of the<tt> _mbscat</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strcat</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -49908,9 +49820,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrcat is WATCOM
-<br>_mbscat is WATCOM
-<br>_fmbscat is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -49999,13 +49908,6 @@
 <br><tt>char __far *_fstrchr( const char __far *s, int c );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *wcschr( const wchar_t *s, wint_t c );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbschr( const unsigned char *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; unsigned int c );</tt>
-<br><tt>unsigned char __far *_fmbschr(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int c );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -50014,10 +49916,9 @@
 <br>The<tt> _fstrchr</tt> function is a data model independent form of the<tt> strchr</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcschr</tt> function is a wide character version of<tt> strchr</tt> that operates with wide character strings.
-<br><br>The<tt> _mbschr</tt> function is a multi-byte character version of<tt> strchr</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbschr</tt> function is a data model independent form of the<tt> _mbschr</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strchr</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50048,9 +49949,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrchr is WATCOM
-<br>_mbschr is WATCOM
-<br>_fmbschr is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -50070,11 +49968,6 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char __far *s2 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>int wcscmp( const wchar_t *s1, const wchar_t *s2 );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbscmp( const unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *s2 );</tt>
-<br><tt>int _fmbscmp( const unsigned char __far *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s2 );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -50082,10 +49975,9 @@
 <br>The<tt> _fstrcmp</tt> function is a data model independent form of the<tt> strcmp</tt> function that accepts far pointer
  arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscmp</tt> function is a wide character version of<tt> strcmp</tt> that operates with wide character strings.
-<br><br>The<tt> _mbscmp</tt> function is a multi-byte character version of<tt> strcmp</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbscmp</tt> function is a data model independent form of the<tt> _mbscmp</tt> function that accepts far
- pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strcmp</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50120,9 +50012,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrcmp is WATCOM
-<br>_mbscmp is WATCOM
-<br>_fmbscmp is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -50196,8 +50085,6 @@
 <br><tt>int strcoll( const char *s1, const char *s2 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>int wcscoll( const wchar_t *s1, const wchar_t *s2 );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbscoll( const unsigned char *s1, const unsigned char *s2 );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -50206,8 +50093,7 @@
  be equivalent to the <a href="#strcmp">strcmp</a> function when the collating sequence is selected from the<tt> &quot;C&quot;</tt>
  locale.
 <br>The<tt> wcscoll</tt> function is a wide character version of<tt> strcoll</tt> that operates with wide character strings.
-<br><br>The<tt> _mbscoll</tt> function is a multi-byte character version of<tt> strcoll</tt> that operates with multi-byte
- character strings.
+<br><br>The<tt> strcoll</tt> function is a multi-byte character version of that operates with multi-byte character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -50235,7 +50121,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_mbscoll is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -50254,11 +50139,6 @@
 &nbsp;&nbsp; const char __far *src );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *wcscpy( wchar_t *dst, const wchar_t *src );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbscpy( unsigned char *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *src );</tt>
-<br><tt>int _fmbscpy( unsigned char __far *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *src );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -50274,10 +50154,9 @@
 <br>The<tt> _fstrcpy</tt> function is a data model independent form of the<tt> strcpy</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscpy</tt> function is a wide character version of<tt> strcpy</tt> that operates with wide character strings.
-<br><br>The<tt> _mbscpy</tt> function is a multi-byte character version of<tt> strcpy</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbscpy</tt> function is a data model independent form of the<tt> _mbscpy</tt> function that accepts far
- pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strcpy</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50305,9 +50184,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrcpy is WATCOM
-<br>_mbscpy is WATCOM
-<br>_fmbscpy is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -50399,13 +50275,6 @@
 <br><tt>size_t wcscspn( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *charset
  );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>size_t _mbscpsn( const unsigned char *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char
- *charset );</tt>
-<br><tt>size_t _fmbscpsn( const unsigned char __far *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned
- char __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -50415,10 +50284,9 @@
 <br>The<tt> _fstrcspn</tt> function is a data model independent form of the<tt> strcspn</tt> function that accepts far pointer
  arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcscspn</tt> function is a wide character version of<tt> strcspn</tt> that operates with wide character strings.
-<br><br>The<tt> _mbscspn</tt> function is a multi-byte character version of<tt> strcspn</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbscspn</tt> function is a data model independent form of the<tt> _mbscspn</tt> function that accepts far
- pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strcspn</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50447,9 +50315,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrcspn is WATCOM
-<br>_mbscspn is WATCOM
-<br>_fmbscspn is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -50514,9 +50379,6 @@
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *wcsdup( const wchar_t *src );</tt>
 <br><tt>wchar_t *_wcsdup( const wchar_t *src );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsdup( unsigned char *src );</tt>
-<br><tt>unsigned char __far *_fmbsdup( unsigned char __far *src );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -50529,10 +50391,9 @@
  far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.
 <br><br>The<tt> _wcsdup</tt> function is a wide character version of<tt> strdup</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsdup</tt> function is a multi-byte character version of<tt> strdup</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbsdup</tt> function is a data model independent form of the<tt> _mbsdup</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strdup</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -50619,7 +50480,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wcserror is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -50931,7 +50791,6 @@
 <dt>Classification:
 <dd>ISO C, POSIX
 <br>wcsftime is ISO C95
-<br>_wstrftime_ms is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -50949,12 +50808,6 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char __far *s2 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>int _wcsicmp( const wchar_t *s1, const wchar_t *s2 );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbsicmp( const unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *s2 );</tt>
-<br><tt>int _fmbsicmp( const unsigned char __far *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s2
- );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>int stricmp( const char *s1, const char *s2 );</tt>
 </dl>
@@ -50966,10 +50819,9 @@
  arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsicmp</tt> function is a wide character version of<tt> _stricmp</tt> that operates with wide character
  strings.
-<br><br>The<tt> _mbsicmp</tt> function is a multi-byte character version of<tt> _stricmp</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsicmp</tt> function is a data model independent form of the<tt> _mbsicmp</tt> function that accepts far
- pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _stricmp</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 <br><br>The<tt> stricmp</tt> function is deprecated, use <a href="#stricmp">_stricmp</a> instead.
 </dl>
 <dl>
@@ -51023,8 +50875,6 @@
 <br><tt>int _stricoll( const char *s1, const char *s2 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>int _wcsicoll( const wchar_t *s1, const wchar_t *s2 );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbsicoll( const unsigned char *s1, const unsigned char *s2 );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -51033,8 +50883,7 @@
  function.&nbsp; All uppercase characters from<i> s1</i> and<i> s2</i> are mapped to lowercase for the purposes of doing the
  comparison.
 <br>The<tt> _wcsicoll</tt> function is a wide character version of<tt> _stricoll</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsicoll</tt> function is a multi-byte character version of<tt> _stricoll</tt> that operates with multi-byte
- character strings.
+<br><br>The<tt> _stricoll</tt> function is a multi-byte character version of that operates with multi-byte character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -51192,9 +51041,6 @@
 <br><tt>size_t _fstrlen( const char __far *s );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>size_t wcslen( const wchar_t *s );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>size_t _mbslen( const unsigned char *s );</tt>
-<br><tt>size_t _fmbslen( const unsigned char __far *s );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -51208,10 +51054,9 @@
 <br>The<tt> _fstrlen</tt> function is a data model independent form of the<tt> strlen</tt> function that accepts far pointer
  arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcslen</tt> function is a wide character version of<tt> strlen</tt> that operates with wide character strings.
-<br><br>The<tt> _mbslen</tt> function is a multi-byte character version of<tt> strlen</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbslen</tt> function is a data model independent form of the<tt> _mbslen</tt> function that accepts far
- pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strlen</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51240,9 +51085,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrlen is WATCOM
-<br>_mbslen is WATCOM
-<br>_fmbslen is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -51319,9 +51161,6 @@
 <br><tt>char __far *_fstrlwr( char __far *s1 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *_wcslwr( wchar_t *s1 );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbslwr( unsigned char *s1 );</tt>
-<br><tt>unsigned char __far *_fmbslwr( unsigned char __far *s1 );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>char *strlwr( char *s1 );</tt>
 </dl>
@@ -51332,10 +51171,9 @@
 <br>The<tt> _fstrlwr</tt> function is a data model independent form of the<tt> _strlwr</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcslwr</tt> function is a wide character version of<tt> _strlwr</tt> that operates with wide character strings.
-<br><br>The<tt> _mbslwr</tt> function is a multi-byte character version of<tt> _strlwr</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbslwr</tt> function is a data model independent form of the<tt> _mbslwr</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _strlwr</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> strlwr</tt> function is deprecated, use <a href="#strlwr">_strlwr</a> instead.
 </dl>
 <dl>
@@ -51444,17 +51282,6 @@
 <br><tt>wchar_t *wcsncat( wchar_t *dst,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *src,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsncat( unsigned char *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const
- unsigned char *src,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
-<br><tt>unsigned char __far *_fmbsncat( unsigned char __far *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *src,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -51470,10 +51297,9 @@
 <br>The<tt> _fstrncat</tt> function is a data model independent form of the<tt> strncat</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsncat</tt> function is a wide character version of<tt> strncat</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsncat</tt> function is a multi-byte character version of<tt> strncat</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsncat</tt> function is a data model independent form of the<tt> _mbsncat</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strncat</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51504,9 +51330,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrncat is WATCOM
-<br>_mbsncat is WATCOM
-<br>_fmbsncat is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -51612,13 +51435,6 @@
 <br><tt>int wcsncmp( const wchar_t *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbsncmp( const unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
-<br><tt>int _fmbsncmp( const unsigned char __far *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -51627,10 +51443,9 @@
 <br>The<tt> _fstrncmp</tt> function is a data model independent form of the<tt> strncmp</tt> function that accepts far pointer
  arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsncmp</tt> function is a wide character version of<tt> strncmp</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsncmp</tt> function is a multi-byte character version of<tt> strncmp</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsncmp</tt> function is a data model independent form of the<tt> _mbsncmp</tt> function that accepts far
- pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strncmp</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51663,9 +51478,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrncmp is WATCOM
-<br>_mbsncmp is WATCOM
-<br>_fmbsncmp is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -51687,18 +51499,13 @@
 <br><tt>int _wcsncoll( const wchar_t *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbsncoll( const unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
 </dl>
 <dl>
 <dt>Description:
 <dd>These functions compare the first<i> count</i> characters of the string pointed to by<i> s1</i> to the string pointed to by<i>
  s2</i>.&nbsp; The comparison uses the current code page which can be selected by the <a href="#_setmbcp">_setmbcp</a> function.
 <br>The<tt> _wcsncoll</tt> function is a wide character version of<tt> _strncoll</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsncoll</tt> function is a multi-byte character version of<tt> _strncoll</tt> that operates with multi-byte
- character strings.
+<br><br>The<tt> _strncoll</tt> function is a multi-byte character version of that operates with multi-byte character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -51757,17 +51564,6 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t
  *src,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsncpy( unsigned char *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const
- unsigned char *src,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
-<br><tt>unsigned char __far *_fmbsncpy( unsigned char __far *dst,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *src,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -51786,10 +51582,9 @@
 <br><br>The<tt> _fstrncpy</tt> function is a data model independent form of the<tt> strncpy</tt> function.&nbsp; It accepts
  far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsncpy</tt> function is a wide character version of<tt> strncpy</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsncpy</tt> function is a multi-byte character version of<tt> strncpy</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsncpy</tt> function is a data model independent form of the<tt> _mbsncpy</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strncpy</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -51822,9 +51617,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrncpy is WATCOM
-<br>_mbsncpy is WATCOM
-<br>_fmbsncpy is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -51936,14 +51728,6 @@
 <br><tt>int _wcsnicmp( const wchar_t *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t len );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbsnicmp( const unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
-<br><tt>int _fmbsnicmp( const unsigned char __far *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far
- *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t n );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>int strnicmp( const char *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char *s2,</tt>
@@ -51958,10 +51742,9 @@
  pointer arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsnicmp</tt> function is a wide character version of<tt> _strnicmp</tt> that operates with wide character
  strings.
-<br><br>The<tt> _mbsnicmp</tt> function is a multi-byte character version of<tt> _strnicmp</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsnicmp</tt> function is a data model independent form of the<tt> _mbsnicmp</tt> function that accepts
- far pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _strnicmp</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 <br><br>The<tt> strnicmp</tt> function is deprecated, use <a href="#strnicmp">_strnicmp</a> instead.
 </dl>
 <dl>
@@ -52017,10 +51800,6 @@
 <br><tt>int _wcsnicoll( const wchar_t *s1,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>int _mbsnicoll( const unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -52030,8 +51809,7 @@
  to lowercase for the purposes of doing the comparison.
 <br>The<tt> _wcsnicoll</tt> function is a wide character version of<tt> _strnicoll</tt> that operates with wide character
  strings.
-<br><br>The<tt> _mbsnicoll</tt> function is a multi-byte character version of<tt> _strnicoll</tt> that operates with multi-byte
- character strings.
+<br><br>The<tt> _strnicoll</tt> function is a multi-byte character version of that operates with multi-byte character strings.
 </dl>
 <dl>
 <dt>Returns:
@@ -52085,17 +51863,6 @@
 &nbsp;&nbsp;&nbsp; size_t count );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *_wcsnset( wchar_t *s, int fill, size_t count );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsnset( unsigned char *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
-<br><tt>unsigned char __far *_fmbsnset( unsigned char __far *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t count );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>char *strnset( char *s, int fill, size_t count );</tt>
 <br><tt>wchar_t *wcsnset( wchar_t *s, int fill, size_t count );</tt>
@@ -52110,13 +51877,11 @@
 <br><br>The<tt> _wcsnset</tt> function is a wide character version of<tt> _strnset</tt> that operates with wide character
  strings.&nbsp; For _wcsnset, the value of<i> count</i> is the number of wide characters to fill.&nbsp; This is half the number
  of bytes.
-<br><br>The<tt> _mbsnset</tt> function is a multi-byte character version of<tt> _strnset</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsnset</tt> function is a data model independent form of the<tt> _mbsnset</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
-<br><br>For _mbsnset, the value of<i> count</i> is the number of multibyte characters to fill.&nbsp; If the number of bytes
- to be filled is odd and<i> fill</i> is a double-byte character, the partial byte at the end is filled with an ASCII space
- character.
+<br><br>The<tt> _strnset</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>For , the value of<i> count</i> is the number of multibyte characters to fill.&nbsp; If the number of bytes to be
+ filled is odd and<i> fill</i> is a double-byte character, the partial byte at the end is filled with an ASCII space character.
 <br><br>The<tt> strnset</tt> function is deprecated, use <a href="#strnset">_strnset</a> instead.
 </dl>
 <dl>
@@ -52171,15 +51936,6 @@
 <br><tt>wchar_t *wcspbrk( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t
  *charset );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbspbrk( const unsigned char *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *charset );</tt>
-<br><tt>unsigned char __far *_fmbspbrk(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- const unsigned char __far *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- const unsigned char __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -52188,10 +51944,9 @@
 <br>The<tt> _fstrpbrk</tt> function is a data model independent form of the<tt> strpbrk</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcspbrk</tt> function is a wide character version of<tt> strpbrk</tt> that operates with wide character strings.
-<br><br>The<tt> _mbspbrk</tt> function is a multi-byte character version of<tt> strpbrk</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbspbrk</tt> function is a data model independent form of the<tt> _mbspbrk</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strpbrk</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -52225,9 +51980,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrpbrk is WATCOM
-<br>_mbspbrk is WATCOM
-<br>_fmbspbrk is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -52246,15 +51998,6 @@
 <br><tt>char __far *_fstrrchr( const char __far *s, int c );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *wcsrchr( const wchar_t *s, wint_t c );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsrchr( const unsigned char *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int c );</tt>
-<br><tt>unsigned char __far *_fmbsrchr(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; unsigned int c );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -52263,10 +52006,9 @@
 <br>The<tt> _fstrrchr</tt> function is a data model independent form of the<tt> strrchr</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsrchr</tt> function is a wide character version of<tt> strrchr</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsrchr</tt> function is a multi-byte character version of<tt> strrchr</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsrchr</tt> function is a data model independent form of the<tt> _mbsrchr</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strrchr</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -52295,9 +52037,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrrchr is WATCOM
-<br>_mbsrchr is WATCOM
-<br>_fmbsrchr is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -52316,9 +52055,6 @@
 <br><tt>char __far *_fstrrev( char __far *s1 );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *_wcsrev( wchar_t *s1 );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsrev( unsigned char *s1 );</tt>
-<br><tt>unsigned char __far *_fmbsrev( unsigned char __far *s1 );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>char *strrev( char *s1 );</tt>
 </dl>
@@ -52329,10 +52065,9 @@
 <br><br>The<tt> _fstrrev</tt> function is a data model independent form of the<tt> _strrev</tt> function.&nbsp; It accepts
  far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsrev</tt> function is a wide character version of<tt> _strrev</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsrev</tt> function is a multi-byte character version of<tt> _strrev</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsrev</tt> function is a data model independent form of the<tt> _mbsrev</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _strrev</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> strrev</tt> function is deprecated, use <a href="#strrev">_strrev</a> instead.
 </dl>
 <dl>
@@ -52378,13 +52113,6 @@
 <br><tt>char __far *_fstrset( char __far *s1, int fill );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *_wcsset( wchar_t *s1, int fill );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsset( unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill );</tt>
-<br><tt>unsigned char __far *_fmbsset( unsigned char __far *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned int fill );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>char *strset( char *s1, int fill );</tt>
 </dl>
@@ -52395,10 +52123,9 @@
 <br>The<tt> _fstrset</tt> function is a data model independent form of the<tt> _strset</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsset</tt> function is a wide character version of<tt> _strset</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsset</tt> function is a multi-byte character version of<tt> _strset</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsset</tt> function is a data model independent form of the<tt> _mbsset</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _strset</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> strset</tt> function is deprecated, use <a href="#strset">_strset</a> instead.
 </dl>
 <dl>
@@ -52452,13 +52179,6 @@
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>size_t wcsspn( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *charset );</tt>
-<br><tt>#include &lt;wchar.h&gt;</tt>
-<br><tt>size_t _mbsspn( const unsigned char *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *charset
- );</tt>
-<br><tt>size_t _fmbsspn( const unsigned char __far *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char
- __far *charset );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -52468,10 +52188,9 @@
 <br>The<tt> _fstrspn</tt> function is a data model independent form of the<tt> strspn</tt> function that accepts far pointer
  arguments.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsspn</tt> function is a wide character version of<tt> strspn</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsspn</tt> function is a multi-byte character version of<tt> strspn</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbsspn</tt> function is a data model independent form of the<tt> _mbsspn</tt> function that accepts far
- pointer arguments.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strspn</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function that accepts far pointer arguments.&nbsp; It is most
+ useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -52498,9 +52217,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fstrspn is WATCOM
-<br>_mbsspn is WATCOM
-<br>_fmbsspn is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -52573,15 +52289,6 @@
 <br><tt>wchar_t *wcsstr( const wchar_t *s,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const wchar_t *substr
  );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsstr( const unsigned char *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char *substr );</tt>
-<br><tt>unsigned char __far *_fmbsstr(</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- const unsigned char __far *s,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- const unsigned char __far *substr );</tt>
 </dl>
 <dl>
 <dt>Description:
@@ -52590,10 +52297,9 @@
 <br>The<tt> _fstrstr</tt> function is a data model independent form of the<tt> strstr</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> wcsstr</tt> function is a wide character version of<tt> strstr</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsstr</tt> function is a multi-byte character version of<tt> strstr</tt> that operates with multi-byte character
- strings.
-<br><br>The<tt> _fmbsstr</tt> function is a data model independent form of the<tt> _mbsstr</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strstr</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -52778,23 +52484,6 @@
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *wcstok( wchar_t *s1, const wchar_t *s2,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wchar_t **ptr );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbstok( unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned
- char *s2 );</tt>
-<br><tt>unsigned char *_mbstok_r( unsigned char *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned
- char *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char
- **p1 );</tt>
-<br><tt>unsigned char __far *_fmbstok( unsigned char __far *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s2 );</tt>
-<br><tt>unsigned char __far *_fmbstok_r( unsigned char __far *s1,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const unsigned char __far *s2,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned char __far **p1 );</tt>
 </dl>
 <dl>
 <dt>Safer C:
@@ -52831,10 +52520,9 @@
  set by the previous call to<tt> wcstok</tt> for the same wide string.&nbsp; Otherwise, the value of<i> ptr</i> is ignored.
 &nbsp; The list of delimiters pointed to by<i> s2</i> may be different from one call to the next.&nbsp; The tokenization of<i>
  s1</i> is similar to that for the<tt> strtok</tt> function.
-<br><br>The<tt> _mbstok_r</tt> function is a multi-byte character version of<tt> strtok</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbstok_r</tt> function is a data model independent form of the<tt> _mbstok_r</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> strtok</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 </dl>
 <dl>
 <dt>Returns:
@@ -53411,9 +53099,6 @@
 <br><tt>char __far *_fstrupr( char __far *s );</tt>
 <br><tt>#include &lt;wchar.h&gt;</tt>
 <br><tt>wchar_t *_wcsupr( wchar_t *s );</tt>
-<br><tt>#include &lt;mbstring.h&gt;</tt>
-<br><tt>unsigned char *_mbsupr( unsigned char *s );</tt>
-<br><tt>unsigned char __far *_fmbsupr( unsigned char __far *s );</tt>
 <br><br><tt>** deprecated **</tt>
 <br><tt>char *strupr( char *s );</tt>
 </dl>
@@ -53424,10 +53109,9 @@
 <br>The<tt> _fstrupr</tt> function is a data model independent form of the<tt> _strupr</tt> function.&nbsp; It accepts far
  pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> _wcsupr</tt> function is a wide character version of<tt> _strupr</tt> that operates with wide character strings.
-<br><br>The<tt> _mbsupr</tt> function is a multi-byte character version of<tt> _strupr</tt> that operates with multi-byte
- character strings.
-<br><br>The<tt> _fmbsupr</tt> function is a data model independent form of the<tt> _mbsupr</tt> function.&nbsp; It accepts
- far pointer arguments and returns a far pointer.&nbsp; It is most useful in mixed memory model applications.
+<br><br>The<tt> _strupr</tt> function is a multi-byte character version of that operates with multi-byte character strings.
+<br><br>The function is a data model independent form of the function.&nbsp; It accepts far pointer arguments and returns
+ a far pointer.&nbsp; It is most useful in mixed memory model applications.
 <br><br>The<tt> strupr</tt> function is deprecated, use <a href="#strupr">_strupr</a> instead.
 </dl>
 <dl>
@@ -53784,7 +53468,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C, POSIX 1003.2
-<br>_wsystem is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -54618,7 +54301,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_wtmpnam is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -55413,7 +55095,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_unlink conforms to ANSI naming conventions
-<br>_wunlink is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -55659,7 +55340,6 @@
 <dt>Classification:
 <dd>POSIX 1003.1
 <br>_utime conforms to ANSI naming conventions
-<br>_wutime is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -57582,7 +57262,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fwcrtomb is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -57859,7 +57538,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fwcsrtombs is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -58100,7 +57778,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fwcstombs is WATCOM
 </dl>
 <dl>
 <dt>Systems:
@@ -58384,7 +58061,6 @@
 <dl>
 <dt>Classification:
 <dd>ISO C
-<br>_fwctomb is WATCOM
 </dl>
 <dl>
 <dt>Systems:
