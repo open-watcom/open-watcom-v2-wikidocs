@@ -183,12 +183,11 @@
  void * );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } dw_funcs;</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; typedef struct {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_langnum&nbsp;&nbsp;&nbsp; language;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_lang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; language;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uint_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compiler_options;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const char&nbsp;&nbsp;&nbsp; *producer_name;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jmp_buf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exception_handler;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_funcs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; funcs;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_sym_handle abbrev_sym;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; } dw_init_info;</tt>
 <dl>
 <dt><b><i>Member</i></b>
@@ -198,11 +197,11 @@
 <dl>
 <dt><b><i>Constant</i></b>
 <dd><b><i>Language</i></b>
-<dt><br>DW_LANG_C89
+<dt><br>DWLANG_C
 <dd>ISO/ANSI C
-<dt><br>DW_LANG_C_plus_plus
+<dt><br>DWLANG_CPP
 <dd>C++
-<dt><br>DW_LANG_Fortran77
+<dt><br>DWLANG_FORTRAN
 <dd>FORTRAN77
 </dl>
 <dt><br>compile_options
@@ -1116,19 +1115,11 @@
 <br><br>Functions called by the client and the DWARF library.
 <br><br>Client:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dw_init_info info;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.language = DW_LANG_C89;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.compiler_options = DW_CM_DEBUGGER;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.producer_name = &quot;test.c&quot;;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.exception_handler =</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.dw_funcs.cli_reloc = CLIReloc;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.dw_funcs.cli_write = CLIWrite;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.dw_funcs.cli_seek = CLISeek;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.dw_funcs.cli_tell = CLITell;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.dw_funcs.cli_alloc = CLIAlloc;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.dw_funcs.cli_free = CLIFree;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info.abbrev_sym = NULL;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cli_id = DWInit( &amp;info );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cli_id = DWInit( DW_LANG_C89, DW_CM_DEBUGGER, &quot;test.c&quot;,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;c:\mydir&quot;, 0x123, 1, CLILoc, CLIType,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLIName, CLIWrite, CLIAlloc, CLIFree );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Initialize the .debug_line section */</tt>
@@ -1253,14 +1244,14 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return b_loc_hd;</tt>
 <br><br>Client:
 <br><br><i>b := 5;</i>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWLineNum( cli_id, DW_LN_STMT, 1, 4, 14 );</tt>
 <br><br>DWARF Library:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLIWrite( DW_DEBUG_LINE, 0, &amp;info, 24, block );</tt>
 <br><br>Client:
 <br><br><i>}</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWLineNum( cli_id, DW_LN_DEFAULT, 1, 1, 4 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DWEndProc( cli_id, pro_handle );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; main_handle = DWModSym( cli_id, main_cg_handle, DW_SM_SUB,</tt>
