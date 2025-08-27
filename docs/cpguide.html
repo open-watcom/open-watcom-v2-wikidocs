@@ -50,7 +50,6 @@
 <dd><a href="#Definitions_of_Windows_Terms">Definitions of Windows Terms</a>
 <br><a href="#The_difference_between_the__d1__and__d2__compiler_options">The difference between the &quot;d1&quot; and &quot;d2&quot; compiler options</a>
 <br><a href="#DOSD4GW__32MBit_Gates">DOS/4GW:&nbsp; 32-Bit Gates</a>
-<br><a href="#DOSD4GW__Access_to_Technical_Support">DOS/4GW:&nbsp; Access to Technical Support</a>
 <br><a href="#DOSD4GW__Addressing">DOS/4GW:&nbsp; Addressing</a>
 <br><a href="#DOSD4GW__Building_and_Running_the_Sample_DOSD4GW_Application">DOS/4GW:&nbsp; Building and Running the Sample DOS/4GW Application</a>
 <br><a href="#DOSD4GW__Chaining_16Mbit_and_32Mbit_Handlers">DOS/4GW:&nbsp; Chaining 16-bit and 32-bit Handlers</a>
@@ -722,18 +721,10 @@
 <li>How do you install a bi-modal interrupt handler with DOS/4GW?
 </ul>
 <br>Please refer to the<b><i> DOS Protected-Mode Interface (DPMI) Specification</i></b> for information on DPMI services.
-&nbsp; In the past, the DPMI specification could be obtained free of charge by contacting Intel Literature JP26 at 800-548-4725
- or by writing to the address below.&nbsp; We have been advised that the DPMI specification is no longer available in printed
- form.
-<br><br>&nbsp;&nbsp;&nbsp;&nbsp; Intel Literature JP26
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 3065 Bowers Avenue
-<br>&nbsp;&nbsp;&nbsp;&nbsp; P.O. Box 58065
-<br>&nbsp;&nbsp;&nbsp;&nbsp; Santa Clara, California
-<br>&nbsp;&nbsp;&nbsp;&nbsp; U.S.A. 95051-8065
-<br><br>However, the DPMI 1.0 specification can be obtained from the Intel ftp site.&nbsp; Here is the URL.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ftp://ftp.intel.com/pub/IAL/software_specs/dpmiv1.zip</tt>
-<br><br>This ZIP file contains a Postscript version of the DPMI 1.0 specification.
+<br><br>The DPMI 1.0 specification can be obtained from the Open Watcom website https://open-watcom.github.io/open-watcom-1.9/devel/dpmi10.pdf.
+&nbsp; This file contains a PDF version of the DPMI 1.0 specification.
+<br><br>Alternatively the DPMI 1.0 specification can be obtained at http://www.delorie.com/djgpp/doc/dpmi/dpmi-specs.tar.gz.
+&nbsp; This file contains online HTML version of the DPMI 1.0 specification.
 <h2 id="How_can_I_write_directly_to_video_memory_using_a_DOS_extender_"> How can I write directly to video memory using a DOS extender? </h2>
 <br>Many programmers require access to video RAM in order to directly manipulate data on the screen.&nbsp; Under DOS, it was
  standard practice to use a far pointer, with the segment part of the far pointer set to the screen segment.&nbsp; Under DOS
@@ -999,18 +990,10 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FreeAlias16( mi_16 );</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; }</tt>
 <br><br>Please refer to the<b><i> DOS Protected-Mode Interface (DPMI) Specification</i></b> for information on DPMI services.
-&nbsp; In the past, the DPMI specification could be obtained free of charge by contacting Intel Literature JP26 at 800-548-4725
- or by writing to the address below.&nbsp; We have been advised that the DPMI specification is no longer available in printed
- form.
-<br><br>&nbsp;&nbsp;&nbsp;&nbsp; Intel Literature JP26
-<br>&nbsp;&nbsp;&nbsp;&nbsp; 3065 Bowers Avenue
-<br>&nbsp;&nbsp;&nbsp;&nbsp; P.O. Box 58065
-<br>&nbsp;&nbsp;&nbsp;&nbsp; Santa Clara, California
-<br>&nbsp;&nbsp;&nbsp;&nbsp; U.S.A. 95051-8065
-<br><br>However, the DPMI 1.0 specification can be obtained from the Intel ftp site.&nbsp; Here is the URL.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ftp://ftp.intel.com/pub/IAL/software_specs/dpmiv1.zip</tt>
-<br><br>This ZIP file contains a Postscript version of the DPMI 1.0 specification.
+<br><br>The DPMI 1.0 specification can be obtained from the Open Watcom website https://open-watcom.github.io/open-watcom-1.9/devel/dpmi10.pdf.
+&nbsp; This file contains a PDF version of the DPMI 1.0 specification.
+<br><br>Alternatively the DPMI 1.0 specification can be obtained at http://www.delorie.com/djgpp/doc/dpmi/dpmi-specs.tar.gz.
+&nbsp; This file contains online HTML version of the DPMI 1.0 specification.
 <h2 id="How_do_I_access_the_first_megabyte_in_the_extended_DOS_environment_"> How do I access the first megabyte in the extended DOS environment? </h2>
 <br>Many programmers require access to the first megabyte of memory in order to look at key low memory addresses.&nbsp; Under
  DOS, it was standard practice to use a far pointer, with the far pointer set to the segmented address of the memory area
@@ -2557,11 +2540,10 @@
  host.<i>&nbsp; DOS/4GW</i> supports many of the common DPMI system services.&nbsp; Not all of the services described below
  are supported by other DPMI hosts.
 <br><br>Some of the information in this chapter was obtained from the the DOS Protected-Mode Interface (DPMI) specification.
-&nbsp; It is no longer in print; however the DPMI 1.0 specification can be obtained from the Intel ftp site.&nbsp; Here is
- the URL.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ftp://ftp.intel.com/pub/IAL/software_specs/dpmiv1.zip</tt>
-<br><br>This ZIP file contains a Postscript version of the DPMI 1.0 specification.
+<br><br>The DPMI 1.0 specification can be obtained from the Open Watcom website https://open-watcom.github.io/open-watcom-1.9/devel/dpmi10.pdf.
+&nbsp; This file contains a PDF version of the DPMI 1.0 specification.
+<br><br>Alternatively the DPMI 1.0 specification can be obtained at http://www.delorie.com/djgpp/doc/dpmi/dpmi-specs.tar.gz.
+&nbsp; This file contains online HTML version of the DPMI 1.0 specification.
 <h2 id="DOSD4GW__Using_Interrupt_31H_Function_Calls"> DOS/4GW:&nbsp; Using Interrupt 31H Function Calls </h2>
 <br>Interrupt 31H DPMI function calls can be used only by protected-mode programs.
 <br><br>The general ground rules for Interrupt 31H calls are as follows:
@@ -4265,7 +4247,6 @@
  to both products.
 <br><br>This chapter covers the following topics:
 <ul>
-<li>Access to technical support
 <li>Differences within the DOS/4G product line
 <li>Addressing
 <li>Interrupt and exception handling
@@ -4275,47 +4256,15 @@
 <li>Debugging
 <li>Compatibility
 </ul>
-<h2 id="DOSD4GW__Access_to_Technical_Support"> DOS/4GW:&nbsp; Access to Technical Support </h2>
 <dl>
-<dt>1a.&nbsp; How to reach technical support.
-<dd>
-<br>Here are the various ways you may contact Tenberry Software for technical support.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WWW:&nbsp;&nbsp;&nbsp; http://www.tenberry.com/dos4g/</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Email:&nbsp; 4gwhelp@tenberry.com</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Phone:&nbsp; 1.480.767.8868</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Fax:&nbsp;&nbsp;&nbsp; 1.480.767.8709</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; Mail:&nbsp;&nbsp; Tenberry Software, Inc.</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PO Box 20050</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fountain Hills, Arizona</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U.S.A&nbsp; 85269-0050</tt>
-<br><br><b><i>PLEASE GIVE YOUR SERIAL NUMBER WHEN YOU CONTACT TENBERRY.</i></b>
-<dt><br>1b.&nbsp; When to contact Open Watcom, when to contact Tenberry.
-<dd>
-<br>Since DOS/4GW Professional is intended to be completely compatible with DOS/4GW, you may wish to ascertain whether your
- program works properly under DOS/4GW before contacting Tenberry Software for technical support.&nbsp; (This is likely to
- be the second question we ask you, after your serial number.)
-<br><br>If your program fails under both DOS/4GW and DOS/4GW Professional, and you suspect your own code or a problem compiling
- or linking, you may wish to contact Open Watcom first.&nbsp; Tenberry Software support personnel are not able to help you
- with most programming questions, or questions about using the Open Watcom tools.
-<br><br>If your program only fails with DOS/4GW Professional, you have probably found a bug in DOS/4GW Professional, so please
- contact us right away.
-<dt><br>1c.&nbsp; Telephone support.
-<dd>
-<br>Tenberry Software's hours for telephone support are 9am-6pm EST.&nbsp; Please note that telephone support is free for
- the first 30 days only.&nbsp; A one-year contract for continuing telephone support on DOS/4GW Professional is US$500 per
- developer, including an update subscription for one year, to customers in the United States and Canada; for overseas customers,
- the price is $600.&nbsp; Site licenses may be negotiated.
-<br><br>There is no time limit on free support by fax, mail, or electronic means.
-<dt><br>1d.&nbsp; References.
+<dt>1a.&nbsp; References.
 <dd>
 <br>The DOS/4GW documentation from Open Watcom is the primary reference for DOS/4GW Professional as well.&nbsp; Another useful
- reference is the DPMI specification.&nbsp; In the past, the DPMI specification could be obtained free of charge by contacting
- Intel Literature.&nbsp; We have been advised that the DPMI specification is no longer available in printed form.
-<br><br>However, the DPMI 1.0 specification can be obtained at:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; http://www.delorie.com/djgpp/doc/dpmi/</tt>
-<br><br>Online HTML as well as a downloadable archive are provided.
+ reference is the DPMI specification.
+<br><br>The DPMI 1.0 specification can be obtained from the Open Watcom website https://open-watcom.github.io/open-watcom-1.9/devel/dpmi10.pdf.
+&nbsp; This file contains a PDF version of the DPMI 1.0 specification.
+<br><br>Alternatively the DPMI 1.0 specification can be obtained at http://www.delorie.com/djgpp/doc/dpmi/dpmi-specs.tar.gz.
+&nbsp; This file contains online HTML version of the DPMI 1.0 specification.
 </dl>
 <h2 id="DOSD4GW__Differences_Within_the_DOSD4G_Product_Line"> DOS/4GW:&nbsp; Differences Within the DOS/4G Product Line </h2>
 <dl>
@@ -4541,11 +4490,11 @@
 <br><br>You should also lock the code and data of a mouse callback function.
 <dt><br>4d.&nbsp; Open Watcom signal() function and Ctrl-Break.
 <dd>
-<br>In earlier versions of the Open Watcom C/C++ library, there was a bug that caused signal(SIGBREAK) not to work.&nbsp;
- Calling signal(SIGBREAK) did not actually install an interrupt handler for Ctrl-Break (INT 1Bh), so Ctrl-Break would terminate
- the application rather than invoking the signal handler.
+<br>In earlier versions of the Watcom C/C++ library, there was a bug that caused signal(SIGBREAK) not to work.&nbsp; Calling
+ signal(SIGBREAK) did not actually install an interrupt handler for Ctrl-Break (INT 1Bh), so Ctrl-Break would terminate the
+ application rather than invoking the signal handler.
 <br><br>With these earlier versions of the library, you could work around this problem by hooking INT 1Bh directly.&nbsp;
- With release 10.0, this problem has been fixed.
+ With Watcom release 10.0, this problem has been fixed.
 <dt><br>4e.&nbsp; More tips on writing hardware interrupt handlers.
 <dd>
 <ul>
@@ -4596,8 +4545,8 @@
 <dl>
 <dt>5a.&nbsp; Using the realloc() function.
 <dd>
-<br>In versions of Open Watcom C/C++ prior to 9.5b, there was a bug in the library implementation of realloc() under DOS/4GW
- and DOS/4GW Professional.&nbsp; This bug was corrected by Open Watcom in the 9.5b release.
+<br>In versions of Watcom C/C++ prior to 9.5b, there was a bug in the library implementation of realloc() under DOS/4GW and
+ DOS/4GW Professional.&nbsp; This bug was corrected by Watcom in the 9.5b release.
 <dt><br>5b.&nbsp; Using all of physical memory.
 <dd>
 <br>DOS/4GW Professional is currently limited to 64 MB of physical memory.&nbsp; We do not expect to be able to fix this problem
@@ -4668,13 +4617,13 @@
 <dt><br>7g.&nbsp; Improving demand-load performance of large static arrays.
 <dd>
 <br>DOS/4GW demand-loading feature normally cuts the load time of a large program drastically.&nbsp; However, if your program
- has large amounts of global, zero-initialized data (storage class BSS), the Open Watcom startup code will explicitly zero
- it (version 9.5a or earlier).&nbsp; Because the zeroing operation touches every page of the data, the benefits of demand-loading
- are lost.
+ has large amounts of global, zero-initialized data (storage class BSS), the Watcom startup code will explicitly zero it (version
+ 9.5a or earlier).&nbsp; Because the zeroing operation touches every page of the data, the benefits of demand-loading are
+ lost.
 <br><br>Demand loading can be made fast again by taking advantage of the fact that DOS/4GW automatically zeroes pages of BSS
  data as they are loaded.&nbsp; You can make this change yourself by inserting a few lines into the startup routine, assembling
  it (MASM 6.0 will work), and listing the modified object module first when you link your program.
-<br><br>Here are the changes for<tt> \watcom\src\startup\386\cstart3r.asm</tt> (startup module from the C/C++ 9.5 compiler,
+<br><br>Here are the changes for<tt> \watcom\src\startup\386\cstart3r.asm</tt> (startup module from the Watcom C/C++ 9.5 compiler,
  library using register calling conventions).&nbsp; You can modify the workaround easily for other Open Watcom compilers:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4719,7 +4668,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rep&nbsp;&nbsp;&nbsp;&nbsp; stosb&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; ...</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</tt>
-<br><br>Note that the 9.5b and later versions of the Open Watcom C library already contain this enhancement.
+<br><br>Note that the Watcom 9.5b and later versions of the Open Watcom C library already contain this enhancement.
 <dt><br>7h.&nbsp; How should I configure VM for best performance?
 <dd>
 <br>Here are some recommendations for setting up the DOS/4GW virtual memory manager.
@@ -4752,7 +4701,7 @@
  take apart a bound application so that you can debug it:
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp; 4GWBIND -U &lt;boundapp.exe&gt; &lt;yourapp.exe&gt;</tt>
-<dt><br>8b.&nbsp; Debugging with an old version of the Open Watcom debugger.
+<dt><br>8b.&nbsp; Debugging with an old version of the Watcom debugger.
 <dd>
 <br>DOS/4GW supports versions 8.5 and up of the Open Watcom C, C++ and FORTRAN compilers.&nbsp; However, in order to debug
  your unbound application with a Open Watcom debugger, you must have version 9.5a or later of the debugger.

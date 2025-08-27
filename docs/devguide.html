@@ -355,7 +355,7 @@
  makefiles, as well as the steps needed to get projects to compile.
 <br>For those who do not desire a lecture on the preparation and maintenance of makefiles, feel free to skip straight to the
  Executive Summary at the end.
-<br><br>Every development and build machine must have the mif project (<i> build\mif</i> ) installed.&nbsp; That is taken
+<br><br>Every development and build machine must have the mif project (<i> build/mif</i> ) installed.&nbsp; That is taken
  care of by uncompressing the Open Watcom source archive and/or syncing up with Perforce.
 <h2 id="Makeinit"> Makeinit </h2>
 <br>All the magic starts with<i> makeinit.</i>&nbsp; Every development machine must have a<i> makeinit</i> file with the following
@@ -428,7 +428,7 @@
 <li>the mif project is uptodate and make knows to look for .mif files in there
 <li>all depended upon projects are uptodate and have<tt> $(proj_name)_dir</tt> set correctly
 <li>all depended upon projects have been built
-<li>any required executables from under<i> build/binbuild</i> are in the path
+<li>any required executables from under<i> build/&lt;OWOBJDIR&gt;</i> are in the path
 </ul>
 <br>Note that there are no other requirements here - it is very annoying when a project requires you to define handles for
  tools, create directories in which it can deposit stuff, scrounge up obscure tools from who knows where or pretend to be
@@ -464,10 +464,10 @@
  tools should be checked in along with the project and built as part of the build process (so that we don't have to check
  in zillions of binaries for all supported platforms).&nbsp; An important future consideration will be the ability to build
  on a different architecture.&nbsp; Please try and avoid weirdo tools that have no hope of running on an Alpha or PPC running
- NT or on Linux.&nbsp; These tools should be referenced from the makefile as<tt> $(bld_dir)\tool</tt>.&nbsp; If your tool
+ NT or on Linux.&nbsp; These tools should be referenced from the makefile as<tt> $(bld_dir)/tool</tt>.&nbsp; If your tool
  cannot run under a particular OS, you should at least put a batchfile in that bin which echoes a message to that effect (to
  alert people to the fact that you've just made their life difficult).&nbsp; More general tools (yacc, re2c) that are likely
- to be used by several projects should be copied up into the build/binbuild directory.
+ to be used by several projects should be copied up into the build/&lt;OWOBJDIR&gt; directory.
 <h2 id="The_Runtime_DLL_Libraries"> The Runtime DLL Libraries </h2>
 <br>If you set<tt> $(proj_name)_rtdll</tt> = 1, the -br switch should be thrown for you automatically, providing the target
  os supports it.
@@ -477,7 +477,7 @@
  our code.
 <br><br>If the memory tracker is an optional part of your project, and independant of the release mode, it is suggested that
  you enable it if<tt> $(proj_name)_trmem</tt> is set to 1, and disable it otherwise.
-<br><br>The source to the memory tracker can be found in<i> bld\trmem.</i>
+<br><br>The source to the memory tracker can be found in<i> bld/trmem.</i>
 <h2 id="The_Clean_Target"> The Clean Target </h2>
 <br>Each makefile should support a clean target.&nbsp; This should not be part of the default target list, and should delete
  every makefile generated file.&nbsp; Which means that after running &quot;wmake clean&quot;, the directory should look exactly
