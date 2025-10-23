@@ -858,6 +858,7 @@
 <br><a href="#time">time</a>
 <br><a href="#Time_Functions">Time Functions</a>
 <br><a href="#The_Time_Zone">The Time Zone</a>
+<br><a href="#timegm">timegm</a>
 <br><a href="#timer_create">timer_create</a>
 <br><a href="#timer_delete">timer_delete</a>
 <br><a href="#timer_getoverrun">timer_getoverrun</a>
@@ -34496,6 +34497,80 @@
 <dt>Systems:
 <dd>MACRO
 </dl>
+<h2 id="_mkgmtime"> _mkgmtime </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;time.h&gt;</tt>
+<br><tt>time_t _mkgmtime( struct tm *timeptr );</tt>
+<br><br><tt>struct&nbsp; tm {</tt>
+<br><tt>&nbsp; int tm_sec;&nbsp;&nbsp; /* seconds after the minute -- &#91;0,61&#93; */</tt>
+<br><tt>&nbsp; int tm_min;&nbsp;&nbsp; /* minutes after the hour&nbsp;&nbsp; -- &#91;0,59&#93; */</tt>
+<br><tt>&nbsp; int tm_hour;&nbsp; /* hours after midnight&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,23&#93; */</tt>
+<br><tt>&nbsp; int tm_mday;&nbsp; /* day of the month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;1,31&#93; */</tt>
+<br><tt>&nbsp; int tm_mon;&nbsp;&nbsp; /* months since January&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,11&#93; */</tt>
+<br><tt>&nbsp; int tm_year;&nbsp; /* years since 1900&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
+<br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>};</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> _mkgmtime</tt> function converts the Coordinated Universal Time (UTC) information in the structure pointed to by<i>
+ timeptr</i> into a calendar time (UTC) with the same encoding used by the <a href="#time">time</a> function.&nbsp; The original
+ values of the fields <tt> tm_sec</tt>, <tt> tm_min</tt>, <tt> tm_hour</tt>, <tt> tm_mday</tt>, and <tt> tm_mon</tt> are not
+ restricted to ranges described for <tt> struct tm</tt>.&nbsp; If these fields are not in their proper ranges, they are adjusted
+ so that they are in the proper ranges.&nbsp; Values for the fields <tt> tm_wday</tt> and <tt> tm_yday</tt> are computed after
+ all the other fields have been adjusted.
+<br>The value of <tt> tm_isdst</tt> is ignored.
+</dl>
+<dl>
+<dt>Returns:
+<dd>The<tt> _mkgmtime</tt> function returns the converted calendar time.
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#asctime">asctime</a> Functions, <a href="#asctime_s">asctime_s</a>, <a href="#clock">clock</a>, <a href="#ctime">ctime</a>
+ Functions, <a href="#ctime_s">ctime_s</a>, <a href="#difftime">difftime</a>, <a href="#gmtime">gmtime</a>, <a href="#gmtime_s">gmtime_s</a>,
+ <a href="#localtime">localtime</a>, <a href="#localtime_s">localtime_s</a>, <a href="#mktime">mktime</a>, <a href="#strftime">strftime</a>,
+ <a href="#time">time</a>, <a href="#tzset">tzset</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;time.h&gt;</tt>
+<br><br><tt>static const char *week_day&#91;&#93; = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; &quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;</tt>
+<br><tt>};</tt>
+<br><br><tt>void main()</tt>
+<br><tt>&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; struct tm new_year;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_year&nbsp; = 2001 - 1900;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_mon&nbsp;&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_mday&nbsp; = 1;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_hour&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_min&nbsp;&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_sec&nbsp;&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_isdst = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; _mkgmtime( &amp;new_year );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;The 21st century began on a %s\n&quot;,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; week_day&#91; new_year.tm_wday &#93; );</tt>
+<br><tt>&nbsp; }</tt>
+<br><br>produces the following:
+<br><br><tt>The 21st century began on a Monday</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd>All, Linux, RDOS, Netware
+</dl>
 <h2 id="mkstemp"> mkstemp </h2>
 <dl>
 <dt>Synopsis:
@@ -34720,77 +34795,6 @@
 <dl>
 <dt>Systems:
 <dd>All, Linux, RDOS, Netware
-</dl>
-<h2 id="_mkgmtime"> _mkgmtime </h2>
-<dl>
-<dt>Synopsis:
-<dd>
-<br><tt>#include &lt;time.h&gt;</tt>
-<br><tt>time_t _mkgmtime( struct tm *timeptr );</tt>
-<br><tt>time_t timegm( struct tm *timeptr );</tt>
-<br><br><tt>struct&nbsp; tm {</tt>
-<br><tt>&nbsp; int tm_sec;&nbsp;&nbsp; /* seconds after the minute -- &#91;0,61&#93; */</tt>
-<br><tt>&nbsp; int tm_min;&nbsp;&nbsp; /* minutes after the hour&nbsp;&nbsp; -- &#91;0,59&#93; */</tt>
-<br><tt>&nbsp; int tm_hour;&nbsp; /* hours after midnight&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,23&#93; */</tt>
-<br><tt>&nbsp; int tm_mday;&nbsp; /* day of the month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;1,31&#93; */</tt>
-<br><tt>&nbsp; int tm_mon;&nbsp;&nbsp; /* months since January&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,11&#93; */</tt>
-<br><tt>&nbsp; int tm_year;&nbsp; /* years since 1900&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
-<br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
-<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
-<br><tt>};</tt>
-</dl>
-<dl>
-<dt>Description:
-<dd>The<tt> _mkgmtime</tt> function converts the Coordinated Universal Time (UTC) information in the structure pointed to by<i>
- timeptr</i> into a calendar time (UTC) with the same encoding used by the <a href="#time">time</a> function.&nbsp; The original
- values of the fields <tt> tm_sec</tt>, <tt> tm_min</tt>, <tt> tm_hour</tt>, <tt> tm_mday</tt>, and <tt> tm_mon</tt> are not
- restricted to ranges described for <tt> struct tm</tt>.&nbsp; If these fields are not in their proper ranges, they are adjusted
- so that they are in the proper ranges.&nbsp; Values for the fields <tt> tm_wday</tt> and <tt> tm_yday</tt> are computed after
- all the other fields have been adjusted.
-<br>The value of <tt> tm_isdst</tt> is ignored.
-</dl>
-<dl>
-<dt>Returns:
-<dd>The<tt> _mkgmtime</tt> function returns the converted calendar time.
-</dl>
-<dl>
-<dt>See Also:
-<dd><a href="#asctime">asctime</a> Functions, <a href="#asctime_s">asctime_s</a>, <a href="#clock">clock</a>, <a href="#ctime">ctime</a>
- Functions, <a href="#ctime_s">ctime_s</a>, <a href="#difftime">difftime</a>, <a href="#gmtime">gmtime</a>, <a href="#gmtime_s">gmtime_s</a>,
- <a href="#localtime">localtime</a>, <a href="#localtime_s">localtime_s</a>, <a href="#mktime">mktime</a>, <a href="#strftime">strftime</a>,
- <a href="#time">time</a>, <a href="#tzset">tzset</a>
-</dl>
-<dl>
-<dt>Example:
-<dd>
-<br><tt>#include &lt;stdio.h&gt;</tt>
-<br><tt>#include &lt;time.h&gt;</tt>
-<br><br><tt>static const char *week_day&#91;&#93; = {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; &quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;</tt>
-<br><tt>};</tt>
-<br><br><tt>void main()</tt>
-<br><tt>&nbsp; {</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; struct tm new_year;</tt>
-<br><br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_year&nbsp; = 2001 - 1900;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_mon&nbsp;&nbsp; = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_mday&nbsp; = 1;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_hour&nbsp; = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_min&nbsp;&nbsp; = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_sec&nbsp;&nbsp; = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_isdst = 0;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; _mkgmtime( &amp;new_year );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;The 21st century began on a %s\n&quot;,</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; week_day&#91; new_year.tm_wday &#93; );</tt>
-<br><tt>&nbsp; }</tt>
-<br><br>produces the following:
-<br><br><tt>The 21st century began on a Monday</tt>
-</dl>
-<dl>
-<dt>Classification:
-<dd>Watcom
 </dl>
 <h2 id="mlock"> mlock </h2>
 <dl>
@@ -53848,6 +53852,80 @@
 <dt>Systems:
 <dd>All, Linux, RDOS, Netware
 </dl>
+<h2 id="timegm"> timegm </h2>
+<dl>
+<dt>Synopsis:
+<dd>
+<br><tt>#include &lt;time.h&gt;</tt>
+<br><tt>time_t timegm( struct tm *timeptr );</tt>
+<br><br><tt>struct&nbsp; tm {</tt>
+<br><tt>&nbsp; int tm_sec;&nbsp;&nbsp; /* seconds after the minute -- &#91;0,61&#93; */</tt>
+<br><tt>&nbsp; int tm_min;&nbsp;&nbsp; /* minutes after the hour&nbsp;&nbsp; -- &#91;0,59&#93; */</tt>
+<br><tt>&nbsp; int tm_hour;&nbsp; /* hours after midnight&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,23&#93; */</tt>
+<br><tt>&nbsp; int tm_mday;&nbsp; /* day of the month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;1,31&#93; */</tt>
+<br><tt>&nbsp; int tm_mon;&nbsp;&nbsp; /* months since January&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,11&#93; */</tt>
+<br><tt>&nbsp; int tm_year;&nbsp; /* years since 1900&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp; int tm_wday;&nbsp; /* days since Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,6&#93;&nbsp; */</tt>
+<br><tt>&nbsp; int tm_yday;&nbsp; /* days since January 1&nbsp;&nbsp;&nbsp;&nbsp; -- &#91;0,365&#93;*/</tt>
+<br><tt>&nbsp; int tm_isdst; /* Daylight Savings Time flag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>};</tt>
+</dl>
+<dl>
+<dt>Description:
+<dd>The<tt> timegm</tt> function converts the Coordinated Universal Time (UTC) information in the structure pointed to by<i> timeptr</i>
+ into a calendar time (UTC) with the same encoding used by the <a href="#time">time</a> function.&nbsp; The original values
+ of the fields <tt> tm_sec</tt>, <tt> tm_min</tt>, <tt> tm_hour</tt>, <tt> tm_mday</tt>, and <tt> tm_mon</tt> are not restricted
+ to ranges described for <tt> struct tm</tt>.&nbsp; If these fields are not in their proper ranges, they are adjusted so that
+ they are in the proper ranges.&nbsp; Values for the fields <tt> tm_wday</tt> and <tt> tm_yday</tt> are computed after all
+ the other fields have been adjusted.
+<br>The value of <tt> tm_isdst</tt> is ignored.
+</dl>
+<dl>
+<dt>Returns:
+<dd>The<tt> timegm</tt> function returns the converted calendar time.
+</dl>
+<dl>
+<dt>See Also:
+<dd><a href="#asctime">asctime</a> Functions, <a href="#asctime_s">asctime_s</a>, <a href="#clock">clock</a>, <a href="#ctime">ctime</a>
+ Functions, <a href="#ctime_s">ctime_s</a>, <a href="#difftime">difftime</a>, <a href="#gmtime">gmtime</a>, <a href="#gmtime_s">gmtime_s</a>,
+ <a href="#localtime">localtime</a>, <a href="#localtime_s">localtime_s</a>, <a href="#mktime">mktime</a>, <a href="#strftime">strftime</a>,
+ <a href="#time">time</a>, <a href="#tzset">tzset</a>
+</dl>
+<dl>
+<dt>Example:
+<dd>
+<br><tt>#include &lt;stdio.h&gt;</tt>
+<br><tt>#include &lt;time.h&gt;</tt>
+<br><br><tt>static const char *week_day&#91;&#93; = {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; &quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;</tt>
+<br><tt>};</tt>
+<br><br><tt>void main()</tt>
+<br><tt>&nbsp; {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; struct tm new_year;</tt>
+<br><br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_year&nbsp; = 2001 - 1900;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_mon&nbsp;&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_mday&nbsp; = 1;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_hour&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_min&nbsp;&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_sec&nbsp;&nbsp; = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new_year.tm_isdst = 0;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; _mkgmtime( &amp;new_year );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; printf( &quot;The 21st century began on a %s\n&quot;,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; week_day&#91; new_year.tm_wday &#93; );</tt>
+<br><tt>&nbsp; }</tt>
+<br><br>produces the following:
+<br><br><tt>The 21st century began on a Monday</tt>
+</dl>
+<dl>
+<dt>Classification:
+<dd>WATCOM
+</dl>
+<dl>
+<dt>Systems:
+<dd>All, Linux, RDOS, Netware
+</dl>
 <h2 id="timer_create"> timer_create </h2>
 <dl>
 <dt>Synopsis:
@@ -58570,10 +58648,10 @@
 <br><tt>wctomb_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemcpy_s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wmemmove_s&nbsp;&nbsp;&nbsp;
  </tt>
 <h1 id="ImplementationMDefined_Behavior_of_the_C_Library"> Implementation-Defined Behavior of the C Library </h1>
-<br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language standard
- describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly from the
- ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of the standard
- that discusses the behavior.
+<br><br>This appendix describes the behavior of the 16-bit and 32-bit Open Watcom C libraries when the ISO/ANSI C Language
+ standard describes the behavior as<i> implementation-defined.</i>&nbsp; The term describing each behavior is taken directly
+ from the ISO/ANSI C Language standard.&nbsp; The numbers in parentheses at the end of each term refers to the section of
+ the standard that discusses the behavior.
 <h2 id="NULL_Macro"> NULL Macro </h2>
 <br><b>The null pointer constant to which the macro </b><tt> NULL</tt><b> expands (7.1.6).</b>
 <br><br>The macro <tt> NULL</tt> expands to 0 in small data models and to 0L in large data models.
