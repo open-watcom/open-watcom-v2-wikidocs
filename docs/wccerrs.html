@@ -287,6 +287,7 @@
 <br><a href="#W141_message_number___d__is_invalid">W141 message number '%d' is invalid</a>
 <br><a href="#W142_warning_level_must_be_an_integer_in_range_0_to_5">W142 warning level must be an integer in range 0 to 5</a>
 <br><a href="#W143__s">W143 %s</a>
+<br><a href="#W144_integer_constant_is_so_large_that_it_is_unsigned">W144 integer constant is so large that it is unsigned</a>
 <br><a href="#W200___s__has_been_referenced_but_never_assigned_a_value">W200 '%s' has been referenced but never assigned a value</a>
 <br><a href="#W201_Unreachable_code">W201 Unreachable code</a>
 <br><a href="#W202_Symbol___s__has_been_defined__but_not_referenced">W202 Symbol '%s' has been defined, but not referenced</a>
@@ -523,6 +524,9 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #pragma message( &quot;my very own warning&quot; );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; or</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; #warning my very own warning</tt>
+<h2 id="W144_integer_constant_is_so_large_that_it_is_unsigned"> W144 integer constant is so large that it is unsigned </h2>
+<br>This warning indicates that the number is too large to fit into the standard signed integer type, so the compiler treats
+ it as an unsigned integer type.
 <h2 id="W200___s__has_been_referenced_but_never_assigned_a_value"> W200 '%s' has been referenced but never assigned a value </h2>
 <br>You have used the variable in an expression without previously assigning a value to that variable.
 <h2 id="W201_Unreachable_code"> W201 Unreachable code </h2>
