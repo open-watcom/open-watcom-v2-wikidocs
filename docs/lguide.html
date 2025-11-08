@@ -422,11 +422,6 @@
 <br><a href="#WinVxD__The_Windows_Virtual_Device_Driver_File_Format">WinVxD:&nbsp; The Windows Virtual Device Driver File Format</a>
 <dt><br>- X -
 <dd><a href="#The_XDCDATA_Option">The XDCDATA Option</a>
-<dt><br>- Z -
-<dd><a href="#ZDOS__Converting_Microsoft_Response_Files_to_Directive_Files">ZDOS:&nbsp; Converting Microsoft Response Files to Directive Files</a>
-<br><a href="#ZDOS__Memory_Layout">ZDOS:&nbsp; Memory Layout</a>
-<br><a href="#ZDOS__The_Open_Watcom_Linker_Memory_Requirements">ZDOS:&nbsp; The Open Watcom Linker Memory Requirements</a>
-<br><a href="#ZDOS__The_ZDOS_Executable_File_Format">ZDOS:&nbsp; The ZDOS Executable File Format</a>
 </dl>
 <h1 id="The_Open_Watcom_Linker"> The Open Watcom Linker </h1>
 <br>The Open Watcom Linker is a linkage editor (linker) that takes object and library files as input and produces executable
@@ -445,7 +440,6 @@
 <ul>
 <li>DOS executable files
 <li>RDOS executable files including Dynamic Link Libraries
-<li>ZDOS executable files
 <li>ELF executable files
 <li>executable files that run under CauseWay DOS extender including Dynamic Link Libraries
 <li>executable files that run under Tenberry Software's DOS/4G and DOS/4GW DOS extenders, and compatible products
@@ -463,7 +457,6 @@
  of operating systems.&nbsp; Currently, the Open Watcom Linker runs under the following operating systems.
 <ul>
 <li>DOS
-<li>ZDOS
 <li>Linux
 <li>OS/2
 <li>QNX
@@ -584,7 +577,7 @@
 <br>The various systems that we have listed above are defined in special linker directive files which are plain ASCII text
  files that you can edit.&nbsp; These files are called<tt> wlink.lnk</tt> and<tt> wlsystem.lnk</tt>.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
- Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
+ Linker before processing any other directives.&nbsp; On a DOS, OS/2, or Windows-hosted system, this file must be located
  in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
  located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
  on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
@@ -942,7 +935,7 @@
  the Open Watcom Linker which object files are to be included in the program, which library files to search to resolve undefined
  references, and the name of the executable file.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
- Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
+ Linker before processing any other directives.&nbsp; On a DOS, OS/2, or Windows-hosted system, this file must be located
  in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
  located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
  on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
@@ -1240,7 +1233,7 @@
 <br><br>You can specify the &quot;NOCASEEXACT&quot; option in the default directive files<tt> wlink.lnk</tt> or<tt> wlsystem.lnk</tt>
  if required.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
- Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
+ Linker before processing any other directives.&nbsp; On a DOS, OS/2, or Windows-hosted system, this file must be located
  in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
  located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
  on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
@@ -1854,7 +1847,7 @@
 <br><br>You can specify the &quot;NOFARCALLS&quot; option in the default directive files<tt> wlink.lnk</tt> or<tt> wlsystem.lnk</tt>
  if required.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
- Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
+ Linker before processing any other directives.&nbsp; On a DOS, OS/2, or Windows-hosted system, this file must be located
  in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
  located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
  on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
@@ -1986,8 +1979,6 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FORMAT form</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form ::= DOS &#91;COM&#93;</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ZDOS &#91;SYS |
- HWD | FSD&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | RAW &#91;BIN |
  HEX&#93;</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | WINDOWS &#91;win_dll_attrs&#93;
@@ -2035,13 +2026,6 @@
  you must use the &quot;SYMFILE&quot; option to instruct the Open Watcom Linker to place the debugging information in a separate
  file.
 <br><br>For more information on DOS executable file formats, see the chapter entitled <a href="#DOS__The_DOS_Executable_File_Format">DOS:&nbsp; The DOS Executable File Format</a>.
-<dt><br>ZDOS
-<dd>(short form &quot;ZD&quot;) tells the Open Watcom Linker to generate a ZDOS &quot;EXE&quot; file.
-<br>The name of the executable file will have extension &quot;exe&quot;.&nbsp; If &quot;SYS&quot;, &quot;HWD&quot; or &quot;FSD&quot;
- is specified, a ZDOS driver file will be generated in which case the name of the executable file will have the extension
- &quot;sys&quot;, &quot;hwd&quot; or &quot;fsd&quot;.&nbsp; Note that these default extensions can be overridden by using
- the &quot;NAME&quot; directive to name the executable file.
-<br><br>For more information on ZDOS executable file formats, see the chapter entitled <a href="#ZDOS__The_ZDOS_Executable_File_Format">ZDOS:&nbsp; The ZDOS Executable File Format</a>.
 <dt><br>RAW
 <dd>(short form &quot;R&quot;) tells the Open Watcom Linker to generate a RAW output file.
 <br>If &quot;HEX&quot; is specified, a raw 32-bit output file in Intel Hex format with the extension &quot;hex&quot; will
@@ -4631,7 +4615,7 @@
 <br><br>For additional examples on the use of the &quot;SYSTEM&quot; directive, examine the contents of the<tt> wlink.lnk</tt>
  and<tt> wlsystem.lnk</tt> files.
 <br><br>The file<tt> wlink.lnk</tt> is a special linker directive file that is automatically processed by the Open Watcom
- Linker before processing any other directives.&nbsp; On a DOS, ZDOS, OS/2, or Windows-hosted system, this file must be located
+ Linker before processing any other directives.&nbsp; On a DOS, OS/2, or Windows-hosted system, this file must be located
  in one of the paths specified in the <b> PATH</b> environment variable.&nbsp; On a QNX-hosted system, this file should be
  located in the<tt> /etc</tt> directory.&nbsp; A default version of this file is located in the<tt> \watcom\binw</tt> directory
  on DOS-hosted systems, the<tt> \watcom\binp</tt> directory on OS/2-hosted systems, the<tt> /etc</tt> directory on QNX-hosted
@@ -5351,170 +5335,6 @@
  for executable files on networks that may be accessed simultaneously by many users.
 <br><br>In assembly language, the function is called<tt> _ovl_openflags_</tt> with its argument being passed in register AX.
 <h2 id="DOS__Converting_Microsoft_Response_Files_to_Directive_Files"> DOS:&nbsp; Converting Microsoft Response Files to Directive Files </h2>
-<br>A utility called MS2WLINK can be used to convert Microsoft linker response files to Open Watcom Linker directive files.
-&nbsp; The response files must correspond to the linker found in version 7 or earlier of Microsoft C.&nbsp; Later versions
- of response files such as those used with Microsoft Visual C++ are not entirely supported.
-<br><br>The same utility can also convert much of the content of IBM OS/2 LINK386 response files since the syntax is similar.
-<br><br>Input to MS2WLINK is processed in the same way as the Microsoft linker processes its input.&nbsp; The difference is
- that MS2WLINK writes the corresponding Open Watcom Linker directive file to the standard output device instead of a creating
- an executable file.&nbsp; The resulting output can be redirected to a disk file which can then be used as input to the Open
- Watcom Linker to produce an executable file.
-<br><br>Suppose you have a Microsoft linker response file called &quot;test.rsp&quot;.&nbsp; You can convert this file to
- a Open Watcom Linker directive file by issuing the following command.
-<br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp &gt;test.lnk</tt>
-<br><br>You can now use the Open Watcom Linker to link your program by issuing the following command.
-<br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink @test</tt>
-<br><br>An alternative way to link your application with the Open Watcom Linker from a Microsoft response file is to issue
- the following command.
-<br><br><i>Example:</i>
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; ms2wlink @test.rsp | wlink</tt>
-<br><br>Since the Open Watcom Linker gets its input from the standard input device, you do not have to create a Open Watcom
- Linker directive file to link your application.
-<br><br>Note that MS2WLINK can also process module-definition files used for creating OS/2 applications.
-<h1 id="ZDOS__The_ZDOS_Executable_File_Format"> ZDOS:&nbsp; The ZDOS Executable File Format </h1>
-<br>This chapter deals specifically with aspects of ZDOS executable files.&nbsp; The ZDOS executable file format will only
- run under the ZDOS operating system.
-<br><br>Input to the Open Watcom Linker is specified on the command line and can be redirected to one or more files or environment
- strings.&nbsp; The Open Watcom Linker command line format is as follows.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; WLINK {directive}</tt>
-<br><br>where<b><i> directive</i></b> is any of the following:
-<dl>
-<dt>ALIAS alias_name=symbol_name{,alias_name=symbol_name}
-<dd>
-<dt><br>DEBUG dbtype &#91;dblist&#93; | DEBUG &#91;dblist&#93;
-<dd>
-<dt><br>DISABLE msg_num{,msg_num}
-<dd>
-<dt><br>ENDLINK
-<dd>
-<dt><br>FILE obj_spec{,obj_spec}
-<dd>
-<dt><br>FORMAT ZDOS &#91;SYS | HWD | FSD&#93;
-<dd>
-<dt><br>LANGUAGE lang
-<dd>
-<dt><br>LIBFILE obj_file{,obj_file}
-<dd>
-<dt><br>LIBPATH path_name{;path_name}
-<dd>
-<dt><br>LIBRARY library_file{,library_file}
-<dd>
-<dt><br>MODFILE obj_file{,obj_file}
-<dd>
-<dt><br>MODTRACE obj_module{,obj_module}
-<dd>
-<dt><br>NAME exe_file
-<dd>
-<dt><br>OPTION option{,option}
-<dd>
-<dl>
-<dt>ARTIFICIAL
-<dd>
-<dt><br>&#91;NO&#93;CACHE
-<dd>
-<dt><br>&#91;NO&#93;CASEEXACT
-<dd>
-<dt><br>CVPACK
-<dd>
-<dt><br>DOSSEG
-<dd>
-<dt><br>ELIMINATE
-<dd>
-<dt><br>&#91;NO&#93;FARCALLS
-<dd>
-<dt><br>INCREMENTAL
-<dd>
-<dt><br>MANGLEDNAMES
-<dd>
-<dt><br>MAP&#91;=map_file&#93;
-<dd>
-<dt><br>MAXERRORS=n
-<dd>
-<dt><br>NAMELEN=n
-<dd>
-<dt><br>NODEFAULTLIBS
-<dd>
-<dt><br>NOEXTENSION
-<dd>
-<dt><br>OSNAME='string'
-<dd>
-<dt><br>QUIET
-<dd>
-<dt><br>REDEFSOK
-<dd>
-<dt><br>STACK=n
-<dd>
-<dt><br>START=symbol_name
-<dd>
-<dt><br>STATICS
-<dd>
-<dt><br>SYMFILE&#91;=symbol_file&#93;
-<dd>
-<dt><br>&#91;NO&#93;UNDEFSOK
-<dd>
-<dt><br>VERBOSE
-<dd>
-<dt><br>VFREMOVAL
-<dd>
-</dl>
-<dt><br>OPTLIB library_file{,library_file}
-<dd>
-<dt><br>PATH path_name{;path_name}
-<dd>
-<dt><br>REFERENCE symbol_name{,symbol_name}
-<dd>
-<dt><br>SORT &#91;GLOBAL&#93; &#91;ALPHABETICAL&#93;
-<dd>
-<dt><br>STARTLINK
-<dd>
-<dt><br>SYMTRACE symbol_name{,symbol_name}
-<dd>
-<dt><br>SYSTEM BEGIN system_name {directive} END
-<dd>
-<dt><br>SYSTEM system_name
-<dd>
-<dt><br># comment
-<dd>
-<dt><br>@ directive_file
-<dd>
-</dl>
-<br>You can view all the directives specific to ZDOS executable files by simply typing the following:
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; wlink ? zdos</tt>
-<h2 id="ZDOS__Memory_Layout"> ZDOS:&nbsp; Memory Layout </h2>
-<br>The following describes the segment ordering of an application linked by the Open Watcom Linker.&nbsp; Note that this
- assumes that the &quot;DOSSEG&quot; linker option has been specified.&nbsp; 
-<ol>
-<li>all segments not belonging to group &quot;DGROUP&quot; with class &quot;CODE&quot;
-<li>all other segments not belonging to group &quot;DGROUP&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;BEGDATA&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; not with class &quot;BEGDATA&quot;, &quot;BSS&quot; or &quot;STACK&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;BSS&quot;
-<li>all segments belonging to group &quot;DGROUP&quot; with class &quot;STACK&quot;
-</ol>
-<br>A special segment belonging to class &quot;BEGDATA&quot; is defined when linking with Open Watcom run-time libraries.
-&nbsp; This segment is initialized with the hexadecimal byte pattern &quot;01&quot; and is the first segment in group &quot;DGROUP&quot;
- so that storing data at location 0 can be detected.
-<br><br>Segments belonging to class &quot;BSS&quot; contain uninitialized data.&nbsp; Note that this only includes uninitialized
- data in segments belonging to group &quot;DGROUP&quot;.&nbsp; Segments belonging to class &quot;STACK&quot; are used to define
- the size of the stack used for your application.&nbsp; Segments belonging to the classes &quot;BSS&quot; and &quot;STACK&quot;
- are last in the segment ordering so that uninitialized data need not take space in the executable file.
-<h2 id="ZDOS__The_Open_Watcom_Linker_Memory_Requirements"> ZDOS:&nbsp; The Open Watcom Linker Memory Requirements </h2>
-<br>The Open Watcom Linker uses all available memory when linking an application.&nbsp; For DOS-hosted versions of the Open
- Watcom Linker, this includes expanded memory (EMS) and extended memory.&nbsp; It is possible for the size of the image being
- linked to exceed the amount of memory available in your machine, particularly if the image file is to contain debugging information.
-&nbsp; For this reason, a temporary disk file is used when all available memory is used by the Open Watcom Linker.
-<br><br>Normally, the temporary file is created in the current working directory.&nbsp; However, by defining the &quot;tmp&quot;
- environment variable to be a directory, you can tell the Open Watcom Linker where to create the temporary file.&nbsp; This
- can be particularly useful if you have a RAM disk.&nbsp; Consider the following definition of the &quot;tmp&quot; environment
- variable.
-<br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; set tmp=\tmp</tt>
-<br><br>The Open Watcom Linker will create the temporary file in the directory &quot;\tmp&quot;.
-<h2 id="ZDOS__Converting_Microsoft_Response_Files_to_Directive_Files"> ZDOS:&nbsp; Converting Microsoft Response Files to Directive Files </h2>
 <br>A utility called MS2WLINK can be used to convert Microsoft linker response files to Open Watcom Linker directive files.
 &nbsp; The response files must correspond to the linker found in version 7 or earlier of Microsoft C.&nbsp; Later versions
  of response files such as those used with Microsoft Visual C++ are not entirely supported.
@@ -7368,7 +7188,7 @@
 <li><tt> %x</tt> represents a hexadecimal number.
 <li><tt> %d</tt> represents integers in the range -32768 and 32767.
 <li><tt> %l</tt> represents integers in the range -2147483648 and 2147483647.
-<li><tt> %f</tt> represents an executable file format such as DOS, ZDOS, WINDOWS, PHARLAP, NOVELL, OS2, QNX or ELF.
+<li><tt> %f</tt> represents an executable file format such as DOS, WINDOWS, PHARLAP, NOVELL, OS2, QNX or ELF.
 </ol>
 <br>The following is a list of all warning and error messages produced by the Open Watcom Linker followed by a description
  of the message.&nbsp; A message may contain more than one reference to &quot;%s&quot;.&nbsp; In such a case, the description
@@ -7598,9 +7418,9 @@
 &nbsp; &quot;%a&quot; defines the location of the fixup.
 <h2 id="2068_absolute_segment_fixup_not_valid_in_protected_mode"> 2068 absolute segment fixup not valid in protected mode </h2>
 <br>A reference to an absolute location is not allowed in protected mode.&nbsp; A protected-mode application is one that is
- being generated for ZDOS, OS/2, CauseWay DOS extender, Tenberry Software's DOS/4G or DOS/4GW DOS extender, FlashTek's DOS
- extender, Phar Lap's 386|DOS-Extender, Novell's NetWare operating systems, Windows NT, or Windows 95.&nbsp; An absolute location
- is most commonly defined by the &quot;EQU&quot; assembler directive.
+ being generated for OS/2, CauseWay DOS extender, Tenberry Software's DOS/4G or DOS/4GW DOS extender, FlashTek's DOS extender,
+ Phar Lap's 386|DOS-Extender, Novell's NetWare operating systems, Windows NT, or Windows 95.&nbsp; An absolute location is
+ most commonly defined by the &quot;EQU&quot; assembler directive.
 <h2 id="1069_unload_CHECK_procedure_not_found"> 1069 unload CHECK procedure not found </h2>
 <br>This message is issued only if a NetWare executable file is being generated.&nbsp; The symbol specified in the &quot;CHECK&quot;
  option has not been defined.
