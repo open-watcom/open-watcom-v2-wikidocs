@@ -1032,7 +1032,7 @@
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... generate &quot;otherwise&quot; code here</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_GOTO, NULL, end_label ); // or else, fall through</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_LABEL, NULL, sel_label );</tt>
-<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGSelect( sel_handle );</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGSelect( sel_handle, sel_expr );</tt>
 <br><br><tt>&nbsp;&nbsp;&nbsp;&nbsp; CGControl( O_LABEL, NULL, end_label );</tt>
 <h2 id="sel_handle_CGSelInitL_void_R"> sel_handle CGSelInit( void ) </h2>
 <br>Create a sel_handle.
