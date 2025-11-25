@@ -226,7 +226,7 @@
  the FESegID() call when it is passed the cg_sym_handle for the routine.&nbsp; It is illegal to write data to the code segment
  for a routine in between the CGProcDecl call and the CGReturn call.
 <br><br>The following routines are used for initializing, finalizing, defining and selecting segments.
-<h2 id="void_BEDefSegL_segment_id_segid__seg_attr_attr__char_Tstr__uint_algn_R"> void BEDefSeg( segment_id segid, seg_attr attr, char *str, uint algn ) </h2>
+<h2 id="void_BEDefSegL_segment_id_segid__seg_attr_attr__const_char_Tstr__uint_algn_R"> void BEDefSeg( segment_id segid, seg_attr attr, const char *str, uint algn ) </h2>
 <br>Define a segment.&nbsp; This must be called after BEInit and before BEStart.&nbsp; For the 80(x)86 code generator, you
  are allowed to define additional segments after BEStart if they are:
 <ol>
@@ -715,7 +715,7 @@
 <dt><br>type
 <dd>An integral type.
 </dl>
-<h2 id="cg_name_CGFloatL_char_Tnum__cg_type_type_R"> cg_name CGFloat( char *num, cg_type type ) </h2>
+<h2 id="cg_name_CGFloatL_const_char_Tnum__cg_type_type_R"> cg_name CGFloat( const char *num, cg_type type ) </h2>
 <br>Create a floating-point constant leaf node.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -1291,7 +1291,7 @@
 <dt><br>type
 <dd>The integral type to be used.
 </dl>
-<h2 id="void_DGFloatL_char_Tvalue__cg_type_type_R"> void DGFloat( char *value, cg_type type ) </h2>
+<h2 id="void_DGFloatL_const_char_Tvalue__cg_type_type_R"> void DGFloat( const char *value, cg_type type ) </h2>
 <br>Generate a floating-point constant.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -1309,7 +1309,7 @@
 <dt><br>value
 <dd>A character value.
 </dl>
-<h2 id="void_DGStringL_char_Tvalue__uint_len_R"> void DGString( char *value, uint len ) </h2>
+<h2 id="void_DGStringL_const_char_Tvalue__uint_len_R"> void DGString( const char *value, uint len ) </h2>
 <br>Generate a character string.&nbsp; Will be translated if cross compiling.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -1415,7 +1415,7 @@
 <dt>Returns
 <dd>A segment_id.
 </dl>
-<h2 id="char_TFEModuleNameL_void_R"> char *FEModuleName( void ) </h2>
+<h2 id="const_char_TFEModuleNameL_void_R"> const char *FEModuleName( void ) </h2>
 <dl>
 <dt>Returns
 <dd>A null terminated string which is the name of the module being compiled.&nbsp; This is usually the file name with path and
@@ -1432,13 +1432,13 @@
 <dd>The lexical level of routine<b> sym</b>.&nbsp; This must be zero for all languages except Pascal.&nbsp; In Pascal, 1 indicates
  the level of the main program.&nbsp; Each nested procedures adds an additional level.
 </dl>
-<h2 id="char_TFENameL_cg_sym_handle_sym_R"> char *FEName( cg_sym_handle sym ) </h2>
+<h2 id="const_char_TFENameL_cg_sym_handle_sym_R"> const char *FEName( cg_sym_handle sym ) </h2>
 <dl>
 <dt>Returns
 <dd>A NULL terminated character string which is the name of sym.&nbsp; A null string should be returned if the symbol has no name.
 &nbsp; NULL should never be returned.
 </dl>
-<h2 id="char_TFEExtNameL_cg_sym_handle_sym__int_request_R"> char *FEExtName( cg_sym_handle sym, int request ) </h2>
+<h2 id="const_char_TFEExtNameL_cg_sym_handle_sym__int_request_R"> const char *FEExtName( cg_sym_handle sym, int request ) </h2>
 <dl>
 <dt>Returns
 <dd>A various kind in dependency on request parameter.
@@ -1840,9 +1840,9 @@
 <br>Open a new scope level.
 <h2 id="void_DBEndBlockL_void_R"> void DBEndBlock( void ) </h2>
 <br>Close the current scope level.
-<h2 id="dbg_type_DBScalarL_char_Tname__cg_type_tipe_R"> dbg_type DBScalar( char *name, cg_type tipe ) </h2>
+<h2 id="dbg_type_DBScalarL_const_char_Tname__cg_type_tipe_R"> dbg_type DBScalar( const char *name, cg_type tipe ) </h2>
 <br>Defines the string<b> name</b> to have type<b> tipe</b>.
-<h2 id="dbg_type_DBScopeL_char_Tname_R"> dbg_type DBScope( char *name ) </h2>
+<h2 id="dbg_type_DBScopeL_const_char_Tname_R"> dbg_type DBScope( const char *name ) </h2>
 <br>define a symbol which &quot;scopes&quot; subsequent symbols.&nbsp; In C, the keywords<b> enum</b>,<b> union</b>,<b> struct</b>
  may perform this function as in<b> struct foo</b>.
 <h2 id="dbg_name_DBBegNameL_const_char_Tname__dbg_type_scope_R"> dbg_name DBBegName( const char *name, dbg_type scope ) </h2>
@@ -1865,11 +1865,11 @@
  of the pointer symbol associated with this type is pushed onto the expression stack (needed for based on self pointers).
 <h2 id="dbg_struct_DBBegStructL_void_R"> dbg_struct DBBegStruct( void ) </h2>
 <br>start a structure type definition
-<h2 id="void_DBAddFieldL_dbg_struct_st__unsigned_32_off__char_Tnm__dbg_type_base_R"> void DBAddField( dbg_struct st, unsigned_32 off, char *nm, dbg_type base ) </h2>
+<h2 id="void_DBAddFieldL_dbg_struct_st__unsigned_32_off__const_char_Tnm__dbg_type_base_R"> void DBAddField( dbg_struct st, unsigned_32 off, const char *nm, dbg_type base ) </h2>
 <br>add a field to a structure
-<h2 id="void_DBAddBitFieldL_dbg_struct_st__unsigned_32_off__byte_strt__byte_len__char_Tnm__dbg_type_base_R"> void DBAddBitField( dbg_struct st, unsigned_32 off, byte strt, byte len, char *nm, dbg_type base ) </h2>
+<h2 id="void_DBAddBitFieldL_dbg_struct_st__unsigned_32_off__byte_strt__byte_len__const_char_Tnm__dbg_type_base_R"> void DBAddBitField( dbg_struct st, unsigned_32 off, byte strt, byte len, const char *nm, dbg_type base ) </h2>
 <br>add a bit field to a structure
-<h2 id="void_DBAddLocFieldL_dbg_struct_st__dbg_loc_loc__uint_attr__byte_strt__byte_len__char_Tnm__dbg_type_base_R"> void DBAddLocField( dbg_struct st, dbg_loc loc, uint attr, byte strt, byte len, char *nm, dbg_type base ) </h2>
+<h2 id="void_DBAddLocFieldL_dbg_struct_st__dbg_loc_loc__uint_attr__byte_strt__byte_len__const_char_Tnm__dbg_type_base_R"> void DBAddLocField( dbg_struct st, dbg_loc loc, uint attr, byte strt, byte len, const char *nm, dbg_type base ) </h2>
 <br>Add a field or bit field to a structure with a generalized location expression 'loc'.&nbsp; The location expression should
  assume the the address of the base of the structure has already been pushed onto the debugger's evaluation stack.&nbsp; The
  'attr' parameter contains a zero or more of the following attributes or'd together:
@@ -1916,7 +1916,7 @@
 <br>declare a parameter to the procedure
 <h2 id="dbg_type_DBEndProcL_proc_list_Tpr_R"> dbg_type DBEndProc( proc_list *pr ) </h2>
 <br>end the current procedure
-<h2 id="dbg_type_DBFtnTypeL_char_Tname__dbg_ftn_type_tipe_R"> dbg_type DBFtnType( char *name, dbg_ftn_type tipe ) </h2>
+<h2 id="dbg_type_DBFtnTypeL_const_char_Tname__dbg_ftn_type_tipe_R"> dbg_type DBFtnType( const char *name, dbg_ftn_type tipe ) </h2>
 <br>declare a fortran COMPLEX type
 <h2 id="dbg_type_DBCharBlockL_unsigned_32_len_R"> dbg_type DBCharBlock( unsigned_32 len ) </h2>
 <br>declare a type to be a block of length<b> len</b> characters
@@ -1967,7 +1967,7 @@
 </dl>
 <h2 id="void_DBLocFiniL_dbg_loc_loc_R"> void DBLocFini( dbg_loc loc ) </h2>
 <br>the given location expression will not be used anymore.
-<h2 id="unsigned_DBSrcFileL_char_Tfname_R"> unsigned DBSrcFile( char *fname ) </h2>
+<h2 id="unsigned_DBSrcFileL_const_char_Tfname_R"> unsigned DBSrcFile( const char *fname ) </h2>
 <br>add the file name into the list of source files for positon info, return handle to this name
 <br><br><b>NOTE:</b>&nbsp; Handle 0 is reserved for base source file name and is added by BE automaticaly during initialization.
 <h2 id="void_DBSrcCueL_unsigned_fno__unsigned_line__unsigned_col_R"> void DBSrcCue( unsigned fno, unsigned line, unsigned col ) </h2>
