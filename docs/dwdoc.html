@@ -515,12 +515,12 @@
 <dt><br>dw_addr_offset start_scope
 <dd>This is the offset from the low_pc value for the enclosing block that the declaration occurs at.&nbsp; This is most commonly
  0.
-<dt><br>uint flags
+<dt><br>dw_flags flags
 <dd>Some routines have additional flags available here; but unless otherwise noted, the following are always available:
 <dl>
 <dt><b><i>Flag</i></b>
 <dd><b><i>Description</i></b>
-<dt><br>DW_DECLARATION
+<dt><br>DW_FLAG_DECLARATION
 <dd>The object is a declaration, not a definition
 <dt><br>DW_FLAG_PRIVATE
 <dd>The object has the C++ private attribute.
@@ -583,12 +583,12 @@
 <dd>The object is a far16 object.
 </dl>
 <h2 id="DWTypedef"> DWTypedef </h2>
-<br><b>dw_handle DWENTRY DWTypedef( dw_client cli, dw_handle base_type, const char *name, dw_addr_offset start_scope, uint
+<br><b>dw_handle DWENTRY DWTypedef( dw_client cli, dw_handle base_type, const char *name, dw_addr_offset start_scope, dw_flags
  flags );</b>
 <br><br>This function gives a name to a type.&nbsp; The<tt> name</tt> must not be NULL.&nbsp; The flag value<tt> DW_FLAG_DECLARATION</tt>
  is not allowed.
 <h2 id="DWPointer"> DWPointer </h2>
-<br><b>dw_handle DWENTRY DWPointer( dw_client cli, dw_handle base_type, uint flags );</b>
+<br><b>dw_handle DWENTRY DWPointer( dw_client cli, dw_handle base_type, dw_flags flags );</b>
 <br><br>Declares a pointer type.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -602,23 +602,23 @@
 <dd><b><i>Description</i></b>
 <dt><br>DW_FLAG_REFERENCE
 <dd>Declare a pointer that is dereferenced automatically.
-<dt><br>DW_PTR_TYPE_NORMAL
+<dt><br>DW_FLAG_PTR_TYPE_NORMAL
 <dd>A normal pointer (i.e.&nbsp; a model dependant pointer).
-<dt><br>DW_PTR_TYPE_NEAR16
+<dt><br>DW_FLAG_PTR_TYPE_NEAR16
 <dd>A near 16-bit pointer.
-<dt><br>DW_PTR_TYPE_FAR16
+<dt><br>DW_FLAG_PTR_TYPE_FAR16
 <dd>A far 16-bit pointer.
-<dt><br>DW_PTR_TYPE_HUGE
+<dt><br>DW_FLAG_PTR_TYPE_HUGE
 <dd>A huge 16-bit pointer.
-<dt><br>DW_PTR_TYPE_NEAR32
+<dt><br>DW_FLAG_PTR_TYPE_NEAR32
 <dd>A near 32-bit pointer.
-<dt><br>DW_PTR_TYPE_FAR32
+<dt><br>DW_FLAG_PTR_TYPE_FAR32
 <dd>A far 32-bit pointer.
 </dl>
 </dl>
 <h2 id="DWString"> DWString </h2>
 <br><b>dw_handle DWENTRY DWString( dw_client cli, dw_loc_handle string_length, dw_size_t byte_size, const char *name, dw_addr_offset
- start_scope, uint flags );</b>
+ start_scope, dw_flags flags );</b>
 <br><br>Declares a type to be a block of characters.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -633,7 +633,7 @@
 </dl>
 <h2 id="DWMemberPointer"> DWMemberPointer </h2>
 <br><b>dw_handle DWENTRY DWMemberPointer( dw_client cli, dw_handle containing_struct, dw_loc_handle use_location, dw_handle
- base_type, const char *name, unsigned flags );</b>
+ base_type, const char *name, dw_flags flags );</b>
 <br><br>Declares a C++ pointer type to a data or function member of a class or structure.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -650,7 +650,7 @@
 <h2 id="Array_Types"> Array Types </h2>
 <h3 id="DWBeginArray"> DWBeginArray </h3>
 <br><b>dw_handle DWENTRY DWBeginArray( dw_client cli, dw_handle elt_type, uint stride_size, const char *name, dw_addr_offset
- scope, uint flags );</b>
+ scope, dw_flags flags );</b>
 <br><br>Begin the declaration of an array.&nbsp; This function call must be followed by calls to<tt> DWArrayDimension</tt>
  and<tt> DWEndArray</tt>.
 <dl>
@@ -687,7 +687,7 @@
 </dl>
 <h3 id="DWEndArray"> DWEndArray </h3>
 <br><b>void DWENTRY DWEndArray( dw_client cli, dw_handle array_hdl, dw_handle elt_type, uint stride_size, const char *name,
- dw_addr_offset scope, uint flags );</b>
+ dw_addr_offset scope, dw_flags flags );</b>
 <br><br>This finishes the writing of the record to describe the array A sufficient number of calls to<tt> DWArrayDimension</tt>
  must have been made before<tt> DWEndArray</tt> is called.
 <h2 id="Structure_Types"> Structure Types </h2>
@@ -707,7 +707,7 @@
 </dl>
 <h3 id="DWBeginStruct"> DWBeginStruct </h3>
 <br><b>void DWENTRY DWBeginStruct( dw_client cli, dw_handle struct_hdl, dw_size_t size, const char *name, dw_addr_offset scope,
- uint flags );</b>
+ dw_flags flags );</b>
 <br><br>Begin the declaration of the structure reserved by a call to<tt> DWStruct</tt>.&nbsp; This function begins a nesting
  of the debugging information.&nbsp; Subsequent calls, up to the corresponding<tt> DWEndStruct</tt> call, to the DW library
  become children of this structure.&nbsp; i.e., this function marks the beginning of the scope of the structure definition.
@@ -723,7 +723,7 @@
 <br><b>void DWENTRY DWAddFriend( dw_client cli, dw_handle friend );</b>
 <br><br>Add<tt> friend</tt> as a friend to the current structure.
 <h3 id="DWAddInheritance"> DWAddInheritance </h3>
-<br><b>dw_handle DWENTRY DWAddInheritance( dw_client cli, dw_handle ancestor, dw_loc_handle loc, uint flags );</b>
+<br><b>dw_handle DWENTRY DWAddInheritance( dw_client cli, dw_handle ancestor, dw_loc_handle loc, dw_flags flags );</b>
 <br><br>Indicate the the current structure inherits from another structure.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -738,7 +738,8 @@
  inheritance serves as a virtual base class.&nbsp; As well, the flag<tt> DW_FLAG_DECLARATION</tt> is not allowed here.
 </dl>
 <h3 id="DWAddField"> DWAddField </h3>
-<br><b>dw_handle DWENTRY DWAddField( dw_client cli, dw_handle field_hdl, dw_loc_handle loc, const char *name, uint flags );</b>
+<br><b>dw_handle DWENTRY DWAddField( dw_client cli, dw_handle field_hdl, dw_loc_handle loc, const char *name, dw_flags flags
+ );</b>
 <br><br>Add a data member to a structure.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -754,7 +755,7 @@
 </dl>
 <h3 id="DWAddBitField"> DWAddBitField </h3>
 <br><b>dw_handle DWENTRY DWAddBitField( dw_client cli, dw_handle field_hdl, dw_loc_handle loc, dw_size_t byte_size, uint bit_offset,
- uint bit_size, const char *name, uint flags );</b>
+ uint bit_size, const char *name, dw_flags flags );</b>
 <br><br>Add a bitfield member to a structure.
 <dl>
 <dt><b><i>Parameter</i></b>
@@ -778,7 +779,7 @@
 <br><br>End the current structure.&nbsp; Client must ensure proper Begin/End matching.
 <h2 id="Enumeration_Types"> Enumeration Types </h2>
 <h3 id="DWBeginEnumeration"> DWBeginEnumeration </h3>
-<br><b>dw_handle DWENTRY DWBeginEnumeration( dw_client cli, dw_size_t byte_size, const char *name, dw_addr_offset scope, uint
+<br><b>dw_handle DWENTRY DWBeginEnumeration( dw_client cli, dw_size_t byte_size, const char *name, dw_addr_offset scope, dw_flags
  flags );</b>
 <br><br>Begin the definition of an enumerated type.<tt>&nbsp; byte_size</tt> is the number of bytes required to hold an instance
  of this enumeration.&nbsp; This call must be followed by calls to<tt> DWAddEnumerationConstant</tt> and<tt> DWEndEnumeration</tt>.
@@ -796,7 +797,7 @@
  pointers.
 <h3 id="DWBeginSubroutineType"> DWBeginSubroutineType </h3>
 <br><b>dw_handle DWENTRY DWBeginSubroutineType( dw_client cli, dw_handle return_type, const char *name, dw_addr_offset scope,
- uint flags );</b>
+ dw_flags flags );</b>
 <br><br>Begin the nested declaration of the subroutine type.&nbsp; All calls to the DW library after this, until<tt> DWEndSubroutineType</tt>
  are in the scope of the declaration of the subroutine type (i.e., if it's a prototyped C function, then declarations before<tt>
  DWEndSubroutineType</tt> are similar to declarations inside the prototype).&nbsp; Parameters for this type are declared using
@@ -849,7 +850,7 @@
 <h3 id="DWBeginSubroutine"> DWBeginSubroutine </h3>
 <br><b>dw_handle DWENTRY DWBeginSubroutine( dw_client cli, dw_call_type call_type, dw_handle return_type, dw_loc_handle return_addr_loc,
  dw_loc_handle frame_base_loc, dw_loc_handle structure_loc, dw_handle member_hdl, dw_loc_handle segment, const char *name,
- dw_addr_offset start_scope, uint flags );</b>
+ dw_addr_offset start_scope, dw_flags flags );</b>
 <br><br>Begin a declaration/definition of a subroutine or entry point.&nbsp; This begins a nesting of the debugging information,
  and must be followed by calls to<tt> DWFormalParameter</tt> et al to declare the parameters, types, and variables for this
  subroutine.&nbsp; Unless<tt> DW_FLAG_DECLARATION</tt> is set, this will require a<tt> DW_W_LOW_PC</tt> and/or a<tt> DW_W_HIGH_PC</tt>.
@@ -897,10 +898,8 @@
 <dd>This is a pure virtual subroutine.
 <dt><br>DW_FLAG_MAIN
 <dd>For Fortran PROGRAM-type subroutines.
-<dt><br>DW_SUB_STATIC
+<dt><br>DW_FLAG_SUB_STATIC
 <dd>A file static subroutine or function.&nbsp; Also used for a static member function, and for nested subroutine declarations.
-<dt><br>DW_SUB_ENTRY
-<dd>A FORTRAN Entry point.&nbsp; DW requires only a DW_W_LOW_PC for this type of function.
 <dt><br>DW_FLAG_WAS_INLINED
 <dd>The function was generated inline by the compiler.
 <dt><br>DW_FLAG_DECLARED_INLINED
@@ -946,7 +945,7 @@
  belongs to.
 <h3 id="DWVariable"> DWVariable </h3>
 <br><b>dw_handle DWENTRY DWVariable( dw_client cli, dw_handle type, dw_loc_handle loc, dw_handle member_of, dw_loc_handle
- segment, const char *name, dw_addr_offset start_scope, uint flags );</b>
+ segment, const char *name, dw_addr_offset start_scope, dw_flags flags );</b>
 <br><br>Declare a variable.
 <dl>
 <dt>type
@@ -964,7 +963,7 @@
 </dl>
 <h3 id="DWConstant"> DWConstant </h3>
 <br><b>dw_handle DWENTRY DWConstant( dw_client cli, dw_handle type, const void *value, dw_size_t len, dw_handle member_of,
- const char *name, dw_addr_offset start_scope, uint flags );</b>
+ const char *name, dw_addr_offset start_scope, dw_flags flags );</b>
 <br><br>Declare a named constant.
 <dl>
 <dt>type
