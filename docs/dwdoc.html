@@ -552,8 +552,8 @@
 <dd>
 </dl>
 <br>For convenience, DW_FT_MIN, and DW_FT_MAX are defined.&nbsp; A valid fundamental type is in the range DW_FT_MIN &lt;=
- ft &lt; DW_FT_MAX.&nbsp; The DW library will always return the same handle when called with the same fundamental type (so
- the client does not need to save fundamental type handles).
+ ft &lt; DW_FT_MAX.&nbsp; The DW library will not return the same handle when called with the same base type (so the client
+ must store the base type handlers).
 <dl>
 <dt><b><i>Parameter</i></b>
 <dd><b><i> </i></b>
