@@ -12958,6 +12958,16 @@
 <br><tt>int execve(&nbsp; path, argv, envp );</tt>
 <br><tt>int execvp(&nbsp; file, argv );</tt>
 <br><tt>int execvpe( file, argv, envp );</tt>
+<br><tt>&nbsp; const char *path;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file name incl.
+ path */</tt>
+<br><tt>&nbsp; const char *file;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* file name&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp; const char *arg0, ..., *argn; /* arguments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ */</tt>
+<br><tt>&nbsp; char *const argv&#91;&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* array of arguments
+&nbsp;&nbsp; */</tt>
+<br><tt>&nbsp; char *const envp&#91;&#93;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* environment strings
+&nbsp; */</tt>
 <br><tt>int _execl(&nbsp;&nbsp; path, arg0, arg1..., argn, NULL );</tt>
 <br><tt>int _execle(&nbsp; path, arg0, arg1..., argn, NULL, envp );</tt>
 <br><tt>int _execlp(&nbsp; file, arg0, arg1..., argn, NULL );</tt>
@@ -13086,7 +13096,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp; myprog.com</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; myprog.exe</tt>
 <br><br>is found in the current working directory.
-<br><br><tt>#include &lt;stddef.h&gt;</tt>
+<br><tt>#include &lt;stddef.h&gt;</tt>
 <br><tt>#include &lt;process.h&gt;</tt>
 <br><br><tt>char *env_list&#91;&#93; = { &quot;SOURCE=MYDATA&quot;,</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -13102,7 +13112,7 @@
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; env_list );</tt>
 <br><br>The preceding invokes &quot;myprog&quot; as if
 <br><br><tt>&nbsp;&nbsp;&nbsp; myprog ARG1 ARG2</tt>
-<br>had been entered as a command to DOS.&nbsp; The program will be found if one of
+<br><br>had been entered as a command to DOS.&nbsp; The program will be found if one of
 <br><br><tt>&nbsp;&nbsp;&nbsp; myprog.</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; myprog.com</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; myprog.exe</tt>
